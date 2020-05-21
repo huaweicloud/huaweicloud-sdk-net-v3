@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Core.csproj" />
+      <ProjectReference Include="..\Services\As\As.csproj" />
+      <ProjectReference Include="..\Services\Ces\Ces.csproj" />
+      <ProjectReference Include="..\Services\Dds\Dds.csproj" />
+      <ProjectReference Include="..\Services\Ecs\Ecs.csproj" />
+      <ProjectReference Include="..\Services\Evs\Evs.csproj" />
+      <ProjectReference Include="..\Services\Fgs\Fgs.csproj" />
+      <ProjectReference Include="..\Services\Iam\Iam.csproj" />
+      <ProjectReference Include="..\Services\Image\Image.csproj" />
+      <ProjectReference Include="..\Services\Ims\Ims.csproj" />
+      <ProjectReference Include="..\Services\Vpc\Vpc.csproj" />
+    </ItemGroup>
+
+</Project>

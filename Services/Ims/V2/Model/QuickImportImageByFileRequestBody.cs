@@ -1,0 +1,535 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Ims.V2.Model
+{
+    /// <summary>
+    /// 快速通道创建镜像的请求体
+    /// </summary>
+    public class QuickImportImageByFileRequestBody 
+    {
+        /// <summary>
+        /// 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.
+        /// </summary>
+        /// <value>制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum ECS for value: ECS
+            /// </summary>
+            public static readonly TypeEnum ECS = new TypeEnum("ECS");
+
+            /// <summary>
+            /// Enum BMS for value: BMS
+            /// </summary>
+            public static readonly TypeEnum BMS = new TypeEnum("BMS");
+
+            /// <summary>
+            /// Enum DATAIMAGE for value: DataImage
+            /// </summary>
+            public static readonly TypeEnum DATAIMAGE = new TypeEnum("DataImage");
+
+            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                {"ECS", ECS},
+                {"BMS", BMS},
+                {"DataImage", DATAIMAGE},
+            };
+
+            private string Value;
+
+            public TypeEnum(string Value)
+            {
+                this.Value = Value;
+            }
+
+            public static TypeEnum FromValue(string Value)
+            {
+                if(Value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(Value))
+                {
+                    return StaticFields[Value];
+                }
+
+                return null;
+            }
+
+            public override string ToString()
+            {
+                return this.Value;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。
+        /// </summary>
+        /// <value>镜像的架构类型。取值包括： x86 arm 默认使用“x86”。</value>
+        [JsonConverter(typeof(EnumClassConverter<ArchitectureEnum>))]
+        public class ArchitectureEnum
+        {
+            /// <summary>
+            /// Enum X86 for value: x86
+            /// </summary>
+            public static readonly ArchitectureEnum X86 = new ArchitectureEnum("x86");
+
+            /// <summary>
+            /// Enum ARM for value: arm
+            /// </summary>
+            public static readonly ArchitectureEnum ARM = new ArchitectureEnum("arm");
+
+            public static readonly Dictionary<string, ArchitectureEnum> StaticFields =
+            new Dictionary<string, ArchitectureEnum>()
+            {
+                {"x86", X86},
+                {"arm", ARM},
+            };
+
+            private string Value;
+
+            public ArchitectureEnum(string Value)
+            {
+                this.Value = Value;
+            }
+
+            public static ArchitectureEnum FromValue(string Value)
+            {
+                if(Value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(Value))
+                {
+                    return StaticFields[Value];
+                }
+
+                return null;
+            }
+
+            public override string ToString()
+            {
+                return this.Value;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ArchitectureEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ArchitectureEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ArchitectureEnum a, ArchitectureEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ArchitectureEnum a, ArchitectureEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。
+        /// </summary>
+        /// <value>操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。</value>
+        [JsonConverter(typeof(EnumClassConverter<OsTypeEnum>))]
+        public class OsTypeEnum
+        {
+            /// <summary>
+            /// Enum LINUX for value: Linux
+            /// </summary>
+            public static readonly OsTypeEnum LINUX = new OsTypeEnum("Linux");
+
+            /// <summary>
+            /// Enum WINDOWS for value: Windows
+            /// </summary>
+            public static readonly OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
+
+            public static readonly Dictionary<string, OsTypeEnum> StaticFields =
+            new Dictionary<string, OsTypeEnum>()
+            {
+                {"Linux", LINUX},
+                {"Windows", WINDOWS},
+            };
+
+            private string Value;
+
+            public OsTypeEnum(string Value)
+            {
+                this.Value = Value;
+            }
+
+            public static OsTypeEnum FromValue(string Value)
+            {
+                if(Value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(Value))
+                {
+                    return StaticFields[Value];
+                }
+
+                return null;
+            }
+
+            public override string ToString()
+            {
+                return this.Value;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as OsTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(OsTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(OsTypeEnum a, OsTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(OsTypeEnum a, OsTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 镜像名称
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 镜像描述信息。_description参数说明请参考镜像属性。支持字母、数字、中文等，不支持回车、&lt;、 &gt;，长度不能超过1024个字符。默认为空。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 操作系统版本。使用上传至OBS桶中的外部镜像文件制作镜像时生效
+        /// </summary>
+        [JsonProperty("os_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string OsVersion { get; set; }
+
+        /// <summary>
+        /// OBS桶中外部镜像文件地址。在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。格式为&lt;OBS桶名&gt;:&lt;OBS镜像文件名称&gt;。注意：此处的OBS桶和镜像文件的存储类别必须是OBS标准存储。
+        /// </summary>
+        [JsonProperty("image_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageUrl { get; set; }
+
+        /// <summary>
+        /// 最小系统盘大小。在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。取值为1至1024GB。
+        /// </summary>
+        [JsonProperty("min_disk", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinDisk { get; set; }
+
+        /// <summary>
+        /// 镜像标签列表。默认为空。 tags和image_tags只能使用一个。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
+        /// 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。
+        /// </summary>
+        [JsonProperty("architecture", NullValueHandling = NullValueHandling.Ignore)]
+        public ArchitectureEnum Architecture { get; set; }
+        /// <summary>
+        /// 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。
+        /// </summary>
+        [JsonProperty("os_type", NullValueHandling = NullValueHandling.Ignore)]
+        public OsTypeEnum OsType { get; set; }
+        /// <summary>
+        /// 新规范的镜像标签列表。默认为空。 tags和image_tags只能使用一个。
+        /// </summary>
+        [JsonProperty("image_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> ImageTags { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class QuickImportImageByFileRequestBody {\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  osVersion: ").Append(OsVersion).Append("\n");
+            sb.Append("  imageUrl: ").Append(ImageUrl).Append("\n");
+            sb.Append("  minDisk: ").Append(MinDisk).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  architecture: ").Append(Architecture).Append("\n");
+            sb.Append("  osType: ").Append(OsType).Append("\n");
+            sb.Append("  imageTags: ").Append(ImageTags).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as QuickImportImageByFileRequestBody);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(QuickImportImageByFileRequestBody input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.OsVersion == input.OsVersion ||
+                    (this.OsVersion != null &&
+                    this.OsVersion.Equals(input.OsVersion))
+                ) && 
+                (
+                    this.ImageUrl == input.ImageUrl ||
+                    (this.ImageUrl != null &&
+                    this.ImageUrl.Equals(input.ImageUrl))
+                ) && 
+                (
+                    this.MinDisk == input.MinDisk ||
+                    (this.MinDisk != null &&
+                    this.MinDisk.Equals(input.MinDisk))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Architecture == input.Architecture ||
+                    (this.Architecture != null &&
+                    this.Architecture.Equals(input.Architecture))
+                ) && 
+                (
+                    this.OsType == input.OsType ||
+                    (this.OsType != null &&
+                    this.OsType.Equals(input.OsType))
+                ) && 
+                (
+                    this.ImageTags == input.ImageTags ||
+                    this.ImageTags != null &&
+                    input.ImageTags != null &&
+                    this.ImageTags.SequenceEqual(input.ImageTags)
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.OsVersion != null)
+                    hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
+                if (this.ImageUrl != null)
+                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                if (this.MinDisk != null)
+                    hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Architecture != null)
+                    hashCode = hashCode * 59 + this.Architecture.GetHashCode();
+                if (this.OsType != null)
+                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.ImageTags != null)
+                    hashCode = hashCode * 59 + this.ImageTags.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}
