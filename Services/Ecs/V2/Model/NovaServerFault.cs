@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }
 
+        /// <summary>
+        /// 异常详情信息。
+        /// </summary>
+        [JsonProperty("details", NullValueHandling = NullValueHandling.Ignore)]
+        public string Details { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  code: ").Append(Code).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  details: ").Append(Details).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Details == input.Details ||
+                    (this.Details != null &&
+                    this.Details.Equals(input.Details))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Details != null)
+                    hashCode = hashCode * 59 + this.Details.GetHashCode();
                 return hashCode;
             }
         }

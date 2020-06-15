@@ -62,8 +62,6 @@ namespace Examples.Iam.V3
         {
             var keystoneListPermissionsRequest = new KeystoneListPermissionsRequest()
             {
-                
-                DomainId = "",
                 Name = ""
             };
             try
@@ -123,8 +121,6 @@ namespace Examples.Iam.V3
         {
             var keystoneListDomainPermissionsForGroupRequest = new KeystoneListDomainPermissionsForGroupRequest()
             {
-                
-                DomainId = "",
                 GroupId = ""
             };
             try
@@ -189,8 +185,6 @@ namespace Examples.Iam.V3
         {
             var keystoneGrantPermissionToGroupOnDomainRequest = new KeystoneAssociateGroupWithDomainPermissionRequest()
             {
-                
-                DomainId = "",
                 GroupId = "",
                 RoleId = "",
             };
@@ -254,8 +248,6 @@ namespace Examples.Iam.V3
             var keystoneCheckPermissionForGroupOnDomainRequest =
                 new KeystoneCheckDomainPermissionForGroupRequest()
                 {
-                    
-                    DomainId = "",
                     GroupId = "",
                     RoleId = ""
                 };
@@ -320,8 +312,6 @@ namespace Examples.Iam.V3
             var keystoneRemovePermissionFromGroupOnDomainRequest =
                 new KeystoneRemoveDomainPermissionFromGroupRequest()
                 {
-                    
-                    DomainId = "",
                     GroupId = "",
                     RoleId = ""
                 };

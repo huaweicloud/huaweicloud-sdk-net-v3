@@ -7,43 +7,31 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ecs.V2.Model
+namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
-    /// 
+    /// 目标实例信息。
     /// </summary>
-    public class NovaSecurityGroup 
+    public class TargetInstanceBody 
     {
 
         /// <summary>
-        /// 安全组描述信息，长度0-255
-        /// </summary>
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// 安全组ID，UUID格式
+        /// Redis实例ID（target_instance信息中必须填写）。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 安全组名字，长度0-255
+        /// Redis实例名称(target_instance信息中填写)。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 租户ID或项目ID
+        /// Redis密码，如果设置了密码，则必须填写。
         /// </summary>
-        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TenantId { get; set; }
-
-        /// <summary>
-        /// 安全组规则列表
-        /// </summary>
-        [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
-        public List<NovaSecurityGroupCommonRule> Rules { get; set; }
+        [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
+        public string Password { get; set; }
 
 
         /// <summary>
@@ -52,12 +40,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NovaSecurityGroup {\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("class TargetInstanceBody {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
-            sb.Append("  rules: ").Append(Rules).Append("\n");
+            sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,23 +53,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NovaSecurityGroup);
+            return this.Equals(input as TargetInstanceBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(NovaSecurityGroup input)
+        public bool Equals(TargetInstanceBody input)
         {
             if (input == null)
                 return false;
 
             return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -95,15 +76,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
+                    this.Password == input.Password ||
+                    (this.Password != null &&
+                    this.Password.Equals(input.Password))
                 );
         }
 
@@ -115,16 +90,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                if (this.Password != null)
+                    hashCode = hashCode * 59 + this.Password.GetHashCode();
                 return hashCode;
             }
         }

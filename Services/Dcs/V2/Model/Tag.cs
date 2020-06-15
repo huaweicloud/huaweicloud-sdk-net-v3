@@ -7,25 +7,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ecs.V2.Model
+namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NovaSecurityGroupCommonGroup 
+    public class Tag 
     {
 
         /// <summary>
-        /// 对端安全组的名称
+        /// 标签键，最大长度36个unicode字符。 
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
+        public string Key { get; set; }
 
         /// <summary>
-        /// 对端安全组所属租户的租户ID
+        /// 标签值
         /// </summary>
-        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TenantId { get; set; }
+        [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Values { get; set; }
 
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NovaSecurityGroupCommonGroup {\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
+            sb.Append("class Tag {\n");
+            sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("  values: ").Append(Values).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,27 +46,28 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NovaSecurityGroupCommonGroup);
+            return this.Equals(input as Tag);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(NovaSecurityGroupCommonGroup input)
+        public bool Equals(Tag input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
                 ) && 
                 (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
+                    this.Values == input.Values ||
+                    this.Values != null &&
+                    input.Values != null &&
+                    this.Values.SequenceEqual(input.Values)
                 );
         }
 
@@ -78,10 +79,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.Key != null)
+                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Values != null)
+                    hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

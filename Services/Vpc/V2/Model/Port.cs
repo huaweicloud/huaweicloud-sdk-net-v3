@@ -337,6 +337,36 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("dns_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DnsName { get; set; }
 
+        /// <summary>
+        /// 功能说明：vif的详细信息，  \&quot;ovs_hybrid_plug\&quot;: 是否为ovs/bridge混合模式 约束：管理员权限，普通租户不可指定
+        /// </summary>
+        [JsonProperty("binding:vif_details", NullValueHandling = NullValueHandling.Ignore)]
+        public Object BindingvifDetails { get; set; }
+
+        /// <summary>
+        /// 功能说明：提供用户设置自定义信息(扩展属性)
+        /// </summary>
+        [JsonProperty("binding:profile", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Bindingprofile { get; set; }
+
+        /// <summary>
+        /// 功能说明：端口所属实例ID，例如RDS实例ID 约束：不支持设置和更新，由系统自动维护
+        /// </summary>
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// 功能说明：端口所属实例类型，例如“RDS” 约束：不支持设置和更新，由系统自动维护
+        /// </summary>
+        [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceType { get; set; }
+
+        /// <summary>
+        /// 功能说明：端口安全使能标记，如果不使能则安全组和dhcp防欺骗不生效 取值范围：启用（true）或禁用（false）
+        /// </summary>
+        [JsonProperty("port_security_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PortSecurityEnabled { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -361,6 +391,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  bindingvnicType: ").Append(BindingvnicType).Append("\n");
             sb.Append("  dnsAssignment: ").Append(DnsAssignment).Append("\n");
             sb.Append("  dnsName: ").Append(DnsName).Append("\n");
+            sb.Append("  bindingvifDetails: ").Append(BindingvifDetails).Append("\n");
+            sb.Append("  bindingprofile: ").Append(Bindingprofile).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
+            sb.Append("  portSecurityEnabled: ").Append(PortSecurityEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -466,6 +501,31 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.DnsName == input.DnsName ||
                     (this.DnsName != null &&
                     this.DnsName.Equals(input.DnsName))
+                ) && 
+                (
+                    this.BindingvifDetails == input.BindingvifDetails ||
+                    (this.BindingvifDetails != null &&
+                    this.BindingvifDetails.Equals(input.BindingvifDetails))
+                ) && 
+                (
+                    this.Bindingprofile == input.Bindingprofile ||
+                    (this.Bindingprofile != null &&
+                    this.Bindingprofile.Equals(input.Bindingprofile))
+                ) && 
+                (
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
+                ) && 
+                (
+                    this.InstanceType == input.InstanceType ||
+                    (this.InstanceType != null &&
+                    this.InstanceType.Equals(input.InstanceType))
+                ) && 
+                (
+                    this.PortSecurityEnabled == input.PortSecurityEnabled ||
+                    (this.PortSecurityEnabled != null &&
+                    this.PortSecurityEnabled.Equals(input.PortSecurityEnabled))
                 );
         }
 
@@ -509,6 +569,16 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.DnsAssignment.GetHashCode();
                 if (this.DnsName != null)
                     hashCode = hashCode * 59 + this.DnsName.GetHashCode();
+                if (this.BindingvifDetails != null)
+                    hashCode = hashCode * 59 + this.BindingvifDetails.GetHashCode();
+                if (this.Bindingprofile != null)
+                    hashCode = hashCode * 59 + this.Bindingprofile.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceType != null)
+                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.PortSecurityEnabled != null)
+                    hashCode = hashCode * 59 + this.PortSecurityEnabled.GetHashCode();
                 return hashCode;
             }
         }

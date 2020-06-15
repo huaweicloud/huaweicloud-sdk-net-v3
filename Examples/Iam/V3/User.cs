@@ -56,8 +56,6 @@ namespace Examples.Iam.V3
         {
             var keystoneListUsersRequest = new KeystoneListUsersRequest()
             {
-                
-                DomainId = "",
                 Enabled = true,
                 Name = "",
                 PasswordExpiresAt = ""

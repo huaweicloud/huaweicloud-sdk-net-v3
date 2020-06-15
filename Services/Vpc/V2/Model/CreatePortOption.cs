@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 功能说明：管理状态 取值范围：只支持true，默认为true
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
-        public string AdminStateUp { get; set; }
+        public bool? AdminStateUp { get; set; }
 
         /// <summary>
         /// 功能说明：IP/Mac对列表 约束：IP地址不允许为 “0.0.0.0/0” 如果配置的地址池较大（CIDR掩码小于24位），建议为该port配置一个单独的安全组。

@@ -15,7 +15,7 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Ecs</PackageId>
-        <Version>3.0.2-beta</Version>
+        <Version>3.0.3-beta</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2020 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>

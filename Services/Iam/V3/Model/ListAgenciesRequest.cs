@@ -18,12 +18,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("domain_id", IsQuery = true)]
-        public string DomainId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("trust_domain_id", IsQuery = true)]
         public string TrustDomainId { get; set; }
 
@@ -41,7 +35,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAgenciesRequest {\n");
-            sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  trustDomainId: ").Append(TrustDomainId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
@@ -66,11 +59,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             return 
                 (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
                     this.TrustDomainId == input.TrustDomainId ||
                     (this.TrustDomainId != null &&
                     this.TrustDomainId.Equals(input.TrustDomainId))
@@ -90,8 +78,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.TrustDomainId != null)
                     hashCode = hashCode * 59 + this.TrustDomainId.GetHashCode();
                 if (this.Name != null)

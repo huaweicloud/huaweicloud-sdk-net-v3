@@ -18,12 +18,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("domain_id", IsQuery = true)]
-        public string DomainId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("name", IsQuery = true)]
         public string Name { get; set; }
 
@@ -35,7 +29,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class KeystoneListGroupsRequest {\n");
-            sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -59,11 +52,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             return 
                 (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -78,8 +66,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;

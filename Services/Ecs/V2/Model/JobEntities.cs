@@ -27,18 +27,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("sub_jobs_total", NullValueHandling = NullValueHandling.Ignore)]
         public int? SubJobsTotal { get; set; }
 
-        /// <summary>
-        /// 云服务器相关操作显示server_id。
-        /// </summary>
-        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServerId { get; set; }
-
-        /// <summary>
-        /// 网卡相关操作显示nic_id。
-        /// </summary>
-        [JsonProperty("nic_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string NicId { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -49,8 +37,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("class JobEntities {\n");
             sb.Append("  subJobs: ").Append(SubJobs).Append("\n");
             sb.Append("  subJobsTotal: ").Append(SubJobsTotal).Append("\n");
-            sb.Append("  serverId: ").Append(ServerId).Append("\n");
-            sb.Append("  nicId: ").Append(NicId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,16 +68,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.SubJobsTotal == input.SubJobsTotal ||
                     (this.SubJobsTotal != null &&
                     this.SubJobsTotal.Equals(input.SubJobsTotal))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.NicId == input.NicId ||
-                    (this.NicId != null &&
-                    this.NicId.Equals(input.NicId))
                 );
         }
 
@@ -107,10 +83,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
                 if (this.SubJobsTotal != null)
                     hashCode = hashCode * 59 + this.SubJobsTotal.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.NicId != null)
-                    hashCode = hashCode * 59 + this.NicId.GetHashCode();
                 return hashCode;
             }
         }

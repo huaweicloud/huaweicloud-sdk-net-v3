@@ -21,12 +21,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [SDKProperty("name", IsQuery = true)]
         public string Name { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("domain_id", IsQuery = true)]
-        public string DomainId { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -36,7 +30,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             var sb = new StringBuilder();
             sb.Append("class KeystoneListPermissionsRequest {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -62,11 +55,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
                 );
         }
 
@@ -80,8 +68,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 return hashCode;
             }
         }

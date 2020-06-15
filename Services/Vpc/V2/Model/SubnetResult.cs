@@ -14,6 +14,117 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     /// </summary>
     public class SubnetResult 
     {
+        /// <summary>
+        /// 功能说明：子网的状态。   取值范围：ACTIVE,UNKNOWN,ERROR       ACTIVE表示子网已挂载到ROUTER上       UNKNOWN表示子网还未挂载到ROUTER上       ERROR表示子网状态故障  
+        /// </summary>
+        /// <value>功能说明：子网的状态。   取值范围：ACTIVE,UNKNOWN,ERROR       ACTIVE表示子网已挂载到ROUTER上       UNKNOWN表示子网还未挂载到ROUTER上       ERROR表示子网状态故障  </value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum ACTIVE for value: ACTIVE
+            /// </summary>
+            public static readonly StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+            /// <summary>
+            /// Enum UNKNOWN for value: UNKNOWN
+            /// </summary>
+            public static readonly StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
+
+            /// <summary>
+            /// Enum ERROR for value: ERROR
+            /// </summary>
+            public static readonly StatusEnum ERROR = new StatusEnum("ERROR");
+
+            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                {"ACTIVE", ACTIVE},
+                {"UNKNOWN", UNKNOWN},
+                {"ERROR", ERROR},
+            };
+
+            private string Value;
+
+            public StatusEnum(string Value)
+            {
+                this.Value = Value;
+            }
+
+            public static StatusEnum FromValue(string Value)
+            {
+                if(Value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(Value))
+                {
+                    return StaticFields[Value];
+                }
+
+                return null;
+            }
+
+            public override string ToString()
+            {
+                return this.Value;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// uuid形式的一个资源标识。
@@ -25,8 +136,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 功能说明：子网的状态。   取值范围：ACTIVE,UNKNOWN,ERROR       ACTIVE表示子网已挂载到ROUTER上       UNKNOWN表示子网还未挂载到ROUTER上       ERROR表示子网状态故障  
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
+        public StatusEnum Status { get; set; }
 
         /// <summary>
         /// Get the string

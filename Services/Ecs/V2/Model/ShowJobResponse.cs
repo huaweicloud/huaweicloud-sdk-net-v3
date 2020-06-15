@@ -136,7 +136,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 开始时间。
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? BeginTime { get; set; }
+        public string BeginTime { get; set; }
 
         /// <summary>
         /// 查询Job的API请求出现错误时，返回的错误码。
@@ -148,7 +148,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 结束时间。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
         /// 

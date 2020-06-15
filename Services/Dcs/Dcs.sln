@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dcs", "Dcs.csproj", "{c66dd549-8ef4-48f1-a85b-eaffaa736cee}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{c66dd549-8ef4-48f1-a85b-eaffaa736cee}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c66dd549-8ef4-48f1-a85b-eaffaa736cee}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c66dd549-8ef4-48f1-a85b-eaffaa736cee}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{c66dd549-8ef4-48f1-a85b-eaffaa736cee}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

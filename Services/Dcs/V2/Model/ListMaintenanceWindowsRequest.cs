@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ecs.V2.Model
+namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class NovaSecurityGroupCommonIpRange 
+    public class ListMaintenanceWindowsRequest 
     {
 
         /// <summary>
-        /// 对端IP网段，cidr格式。
+        /// 
         /// </summary>
-        [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
-        public string Cidr { get; set; }
+        [SDKProperty("Content-Type", IsHeader = true)]
+        public string ContentType { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NovaSecurityGroupCommonIpRange {\n");
-            sb.Append("  cidr: ").Append(Cidr).Append("\n");
+            sb.Append("class ListMaintenanceWindowsRequest {\n");
+            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NovaSecurityGroupCommonIpRange);
+            return this.Equals(input as ListMaintenanceWindowsRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(NovaSecurityGroupCommonIpRange input)
+        public bool Equals(ListMaintenanceWindowsRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
+                    this.ContentType == input.ContentType ||
+                    (this.ContentType != null &&
+                    this.ContentType.Equals(input.ContentType))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.ContentType != null)
+                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 return hashCode;
             }
         }

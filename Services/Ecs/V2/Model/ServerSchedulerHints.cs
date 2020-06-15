@@ -33,18 +33,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("same_host", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SameHost { get; set; }
 
-        /// <summary>
-        /// 将弹性云服务器scheduler到指定网段的host上，host网段的cidr。当前不支持该功能。
-        /// </summary>
-        [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Cidr { get; set; }
-
-        /// <summary>
-        /// 预留字段，当前不支持该功能。
-        /// </summary>
-        [JsonProperty("build_near_host_ip", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> BuildNearHostIp { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -56,8 +44,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  group: ").Append(Group).Append("\n");
             sb.Append("  differentHost: ").Append(DifferentHost).Append("\n");
             sb.Append("  sameHost: ").Append(SameHost).Append("\n");
-            sb.Append("  cidr: ").Append(Cidr).Append("\n");
-            sb.Append("  buildNearHostIp: ").Append(BuildNearHostIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,18 +82,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.SameHost != null &&
                     input.SameHost != null &&
                     this.SameHost.SequenceEqual(input.SameHost)
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    this.Cidr != null &&
-                    input.Cidr != null &&
-                    this.Cidr.SequenceEqual(input.Cidr)
-                ) && 
-                (
-                    this.BuildNearHostIp == input.BuildNearHostIp ||
-                    this.BuildNearHostIp != null &&
-                    input.BuildNearHostIp != null &&
-                    this.BuildNearHostIp.SequenceEqual(input.BuildNearHostIp)
                 );
         }
 
@@ -125,10 +99,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.DifferentHost.GetHashCode();
                 if (this.SameHost != null)
                     hashCode = hashCode * 59 + this.SameHost.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.BuildNearHostIp != null)
-                    hashCode = hashCode * 59 + this.BuildNearHostIp.GetHashCode();
                 return hashCode;
             }
         }

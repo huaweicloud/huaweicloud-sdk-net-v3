@@ -777,13 +777,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 云服务器创建时间。 时间格式例如：2019-05-22T07:48:53Z
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? Created { get; set; }
+        public string Created { get; set; }
 
         /// <summary>
         /// 云服务器上一次更新时间。时间格式例如：2019-05-22T07:48:53Z
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? Updated { get; set; }
+        public string Updated { get; set; }
 
         /// <summary>
         /// 
@@ -837,7 +837,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 云服务器所属安全组列表。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<NovaSecurityGroup> SecurityGroups { get; set; }
+        public List<NovaServerSecurityGroup> SecurityGroups { get; set; }
 
         /// <summary>
         /// 云服务器相关标记快捷链接信息。

@@ -72,7 +72,6 @@ namespace Examples.Iam.V3
         {
             var listAgenciesRequest = new ListAgenciesRequest()
             {
-                DomainId = "",
                 TrustDomainId = "",
                 Name = ""
             };
@@ -233,7 +232,6 @@ namespace Examples.Iam.V3
         {
             var listPermissionsForAgencyOnDomainRequest = new ListDomainPermissionsForAgencyRequest()
             {
-                DomainId = "",
                 AgencyId = ""
             };
             try
@@ -297,7 +295,6 @@ namespace Examples.Iam.V3
         {
             var grantPermissionToAgencyOnDomainRequest = new AssociateAgencyWithDomainPermissionRequest()
             {
-                DomainId = "",
                 AgencyId = "",
                 RoleId = ""
             };
@@ -357,7 +354,6 @@ namespace Examples.Iam.V3
         {
             var checkPermissionForAgencyOnDomainRequest = new CheckDomainPermissionForAgencyRequest()
             {
-                DomainId = "",
                 AgencyId = "",
                 RoleId = ""
             };
@@ -417,7 +413,6 @@ namespace Examples.Iam.V3
         {
             var removePermissionFromAgencyOnDomainRequest = new RemoveDomainPermissionFromAgencyRequest()
             {
-                DomainId = "",
                 AgencyId = "",
                 RoleId = ""
             };

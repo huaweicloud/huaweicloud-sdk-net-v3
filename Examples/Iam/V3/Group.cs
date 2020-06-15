@@ -56,8 +56,6 @@ namespace Examples.Iam.V3
         {
             var keystoneListGroupsRequest = new KeystoneListGroupsRequest()
             {
-                
-                DomainId = "",
                 Name = ""
             };
             try
@@ -190,7 +188,6 @@ namespace Examples.Iam.V3
         {
             var keystoneDeleteGroupRequest = new KeystoneDeleteGroupRequest()
             {
-                
                 GroupId = ""
             };
             try

@@ -33,6 +33,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string IpAddress { get; set; }
 
+        /// <summary>
+        /// 是否支持ipv6。  取值为true时，标识此网卡支持ipv6。
+        /// </summary>
+        [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Ipv6Enable { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("ipv6_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public Ipv6Bandwidth Ipv6Bandwidth { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +56,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
             sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
+            sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
+            sb.Append("  ipv6Bandwidth: ").Append(Ipv6Bandwidth).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,6 +94,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.IpAddress == input.IpAddress ||
                     (this.IpAddress != null &&
                     this.IpAddress.Equals(input.IpAddress))
+                ) && 
+                (
+                    this.Ipv6Enable == input.Ipv6Enable ||
+                    (this.Ipv6Enable != null &&
+                    this.Ipv6Enable.Equals(input.Ipv6Enable))
+                ) && 
+                (
+                    this.Ipv6Bandwidth == input.Ipv6Bandwidth ||
+                    (this.Ipv6Bandwidth != null &&
+                    this.Ipv6Bandwidth.Equals(input.Ipv6Bandwidth))
                 );
         }
 
@@ -97,6 +121,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 if (this.IpAddress != null)
                     hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.Ipv6Enable != null)
+                    hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
+                if (this.Ipv6Bandwidth != null)
+                    hashCode = hashCode * 59 + this.Ipv6Bandwidth.GetHashCode();
                 return hashCode;
             }
         }

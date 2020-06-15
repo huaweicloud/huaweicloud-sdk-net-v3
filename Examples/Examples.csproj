@@ -6,6 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\..\target\huaweicloud-sdk-net-v3-distribution\huaweicloud-sdk-net-v3\Services\Classroom\Classroom.csproj" />
+      <ProjectReference Include="..\..\..\..\target\huaweicloud-sdk-net-v3-distribution\huaweicloud-sdk-net-v3\Services\Dcs\Dcs.csproj" />
       <ProjectReference Include="..\Core\Core.csproj" />
       <ProjectReference Include="..\Services\As\As.csproj" />
       <ProjectReference Include="..\Services\Ces\Ces.csproj" />

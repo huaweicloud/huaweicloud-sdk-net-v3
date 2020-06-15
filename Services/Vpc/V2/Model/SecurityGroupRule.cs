@@ -75,6 +75,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("remote_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteGroupId { get; set; }
 
+        /// <summary>
+        /// 安全组所属项目ID
+        /// </summary>
+        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TenantId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -93,6 +99,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  portRangeMax: ").Append(PortRangeMax).Append("\n");
             sb.Append("  remoteIpPrefix: ").Append(RemoteIpPrefix).Append("\n");
             sb.Append("  remoteGroupId: ").Append(RemoteGroupId).Append("\n");
+            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +170,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.RemoteGroupId == input.RemoteGroupId ||
                     (this.RemoteGroupId != null &&
                     this.RemoteGroupId.Equals(input.RemoteGroupId))
+                ) && 
+                (
+                    this.TenantId == input.TenantId ||
+                    (this.TenantId != null &&
+                    this.TenantId.Equals(input.TenantId))
                 );
         }
 
@@ -194,6 +206,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
                 if (this.RemoteGroupId != null)
                     hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
+                if (this.TenantId != null)
+                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 return hashCode;
             }
         }

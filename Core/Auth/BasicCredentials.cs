@@ -50,7 +50,16 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public Dictionary<string, string> GetPathParamDictionary()
         {
-            return new Dictionary<string, string> {{"project_id", _projectId}};
+            var pathParamDictionary = new Dictionary<string, string>();
+            if (_projectId != null)
+            {
+                pathParamDictionary.Add("project_id", _projectId);
+            }
+            if (_domainId != null)
+            {
+                pathParamDictionary.Add("domain_id", _domainId);
+            }
+            return pathParamDictionary;
         }
 
         public void SignAuthRequest(HttpRequest request)

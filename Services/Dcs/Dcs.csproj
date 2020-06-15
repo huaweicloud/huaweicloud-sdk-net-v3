@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>HuaweiCloud.SDK.Dcs</AssemblyName>
+        <PackageId>HuaweiCloud.SDK.Dcs</PackageId>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+        <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+        <PackageId>HuaweiCloud.SDK.Dcs</PackageId>
+        <Version>3.0.3-beta</Version>
+        <Authors>HuaweiCloud</Authors>
+        <Copyright>Copyright 2020 Huawei Technologies Co., Ltd.</Copyright>
+        <Company>Huawei Technologies Co., Ltd.</Company>
+        <Description>HuaweiCloud .net SDK</Description>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="..\..\LICENSE" Pack="true" PackagePath=""/>
+        <ProjectReference Include="..\..\Core\Core.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1"/>
+    </ItemGroup>
+</Project>
+
