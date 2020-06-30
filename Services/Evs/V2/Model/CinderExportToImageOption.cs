@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 将云硬盘导出为镜像的请求参数。
+    /// 将云硬盘导出为镜像的请求参数
     /// </summary>
     public class CinderExportToImageOption 
     {
@@ -261,9 +261,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         }
 
         /// <summary>
-        /// 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。
+        /// 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
         /// </summary>
-        /// <value>云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。</value>
+        /// <value>云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。</value>
         [JsonConverter(typeof(EnumClassConverter<OsTypeEnum>))]
         public class OsTypeEnum
         {
@@ -389,7 +389,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string ImageName { get; set; }
 
         /// <summary>
-        /// 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。
+        /// 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
         /// </summary>
         [JsonProperty("__os_type", NullValueHandling = NullValueHandling.Ignore)]
         public OsTypeEnum OsType { get; set; }

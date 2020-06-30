@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 云硬盘类型的规格。
+    /// 云硬盘类型的规格
     /// </summary>
     public class VolumeTypeExtraSpecs 
     {

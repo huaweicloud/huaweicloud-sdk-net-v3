@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     {
 
         /// <summary>
-        /// 可用分区的信息。
+        /// 查询请求返回的可用分区列表，请参见• [availabilityZoneInfo参数说明](https://support.huaweicloud.com/api-evs/evs_04_2081.html#evs_04_2081__li19751007201910)。
         /// </summary>
         [JsonProperty("availabilityZoneInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AvailabilityZone> AvailabilityZoneInfo { get; set; }
+        public List<AzInfo> AvailabilityZoneInfo { get; set; }
 
 
         /// <summary>

@@ -120,7 +120,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 标签列表
+        /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }

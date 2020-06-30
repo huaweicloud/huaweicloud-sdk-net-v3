@@ -23,82 +23,61 @@ using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Net.Security;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Polly;
 
 namespace HuaweiCloud.SDK.Core
 {
-    public class RetryHandler : DelegatingHandler
-    {
-        private const int MaxRetries = 1;
-
-        public RetryHandler(HttpMessageHandler innerHandler) : base(innerHandler)
-        {
-        }
-
-        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-        {
-            HttpResponseMessage response = null;
-            for (var i = 0; i < MaxRetries; i++)
-            {
-                response = await base.SendAsync(request, cancellationToken);
-                if (response.IsSuccessStatusCode) {
-                    return response;
-                }
-            }
-            return response;
-        }
-    }
-    
     public class SdkHttpClient
     {
-        private static HttpClient _httpClient;
+        private readonly HttpClient _myHttpClient;
+        private readonly ILogger _logger;
+        private readonly HttpHandler _httpHandler;
 
-        public SdkHttpClient(HttpConfig config)
+        public SdkHttpClient(HttpConfig config, HttpHandler httpHandler, bool logging, LogLevel logLevel)
         {
-            if (_httpClient != null)
+            if (_myHttpClient != null)
             {
                 return;
             }
-            var handler = new HttpClientHandler
-            {
-                ClientCertificateOptions = ClientCertificateOption.Manual,
-                ServerCertificateCustomValidationCallback =
-                    (httpRequestMessage, cert, cetChain, policyErrors) => 
-                        config.IgnoreSslVerification || policyErrors == SslPolicyErrors.None
-            };
-            if (!string.IsNullOrEmpty(config.ProxyHost))
-            {
-                handler.Proxy = InitProxy(config);
-            }
-            _httpClient = new HttpClient(new RetryHandler(handler));
-            ConfigClientTimeout(config);  
+
+            var serviceProvider = GetServiceCollection(config, logging, logLevel).BuildServiceProvider();
+            var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+            this._logger = loggerFactory.CreateLogger("HuaweiCloud.Sdk");
+            var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
+            this._myHttpClient = httpClientFactory.CreateClient("SdkHttpClient");
+            this._httpHandler = httpHandler;
         }
 
-        private WebProxy InitProxy(HttpConfig config)
+        private IServiceCollection GetServiceCollection(HttpConfig httpConfig, bool logging, LogLevel logLevel)
         {
-            var proxy = config.ProxyPort.HasValue 
-                ? new WebProxy(config.ProxyHost, config.ProxyPort.Value) 
-                : new WebProxy(config.ProxyHost);
-            proxy.BypassProxyOnLocal = true;
-            proxy.UseDefaultCredentials = false;
-            proxy.Credentials = string.IsNullOrEmpty(config.ProxyDomain)
-                ? new NetworkCredential(config.ProxyUsername,
-                    config.ProxyPassword ?? string.Empty)
-                : new NetworkCredential(config.ProxyUsername,
-                    config.ProxyPassword ?? string.Empty,
-                    config.ProxyDomain);
-            return proxy;
-        }
+            var service = new ServiceCollection()
+                .AddHttpClient(
+                    "SdkHttpClient",
+                    x => { x.Timeout = TimeSpan.FromSeconds(httpConfig.Timeout.Value); }
+                )
+                .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[]
+                {
+                    TimeSpan.FromSeconds(3),
+                    TimeSpan.FromSeconds(3),
+                    TimeSpan.FromSeconds(3)
+                }))
+                .ConfigurePrimaryHttpMessageHandler(
+                    () => new HwMessageHandlerFactory(httpConfig).GetHandler()
+                )
+                .Services;
 
-        private void ConfigClientTimeout(HttpConfig config)
-        {
-            if (config.Timeout.HasValue)
+            if (logging)
             {
-                _httpClient.Timeout = TimeSpan.FromSeconds(config.Timeout.Value);
+                service = service.AddLogging(builder => builder
+                    .AddConsole()
+                    .AddDebug()
+                    .AddFilter(level => level >= logLevel));
             }
+
+            return service;
         }
 
         public HttpRequestMessage InitHttpRequest(HttpRequest request)
@@ -109,11 +88,11 @@ namespace HuaweiCloud.SDK.Core
                 Method = new HttpMethod(request.Method)
             };
 
-            foreach (var key in  request.Headers.AllKeys)
+            foreach (var key in request.Headers.AllKeys)
             {
                 if (key.Equals(HttpRequestHeader.Authorization.ToString()))
                 {
-                    message.Headers.TryAddWithoutValidation(HttpRequestHeader.Authorization.ToString(), 
+                    message.Headers.TryAddWithoutValidation(HttpRequestHeader.Authorization.ToString(),
                         request.Headers.GetValues(key));
                 }
                 else
@@ -125,7 +104,8 @@ namespace HuaweiCloud.SDK.Core
             if (request.Body != null)
             {
                 message.Content = new StringContent(request.Body);
-                message.Content.Headers.ContentType = new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
+                message.Content.Headers.ContentType =
+                    new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
             }
 
             return message;
@@ -146,10 +126,12 @@ namespace HuaweiCloud.SDK.Core
             return contentType;
         }
 
-        public Task<HttpResponseMessage> DoHttpRequest(HttpRequestMessage request)
+        public async Task<HttpResponseMessage> DoHttpRequest(HttpRequestMessage request)
         {
-            var task = _httpClient.SendAsync(request);
-            return task;
+            _httpHandler?.ProcessRequest(request, this._logger);
+            var response = await _myHttpClient.SendAsync(request);
+            _httpHandler?.ProcessResponse(response, this._logger);
+            return response;
         }
     }
 }

@@ -1,4 +1,4 @@
-English | [简体中文](./README_ZH.md)
+English | [简体中文](README_CN.md)
 
 # HuaweiCloud .Net Software Development Kit (.Net SDK)
 
@@ -61,21 +61,34 @@ Install-Package HuaweiCloud.SDK.Ecs
     config.ignore_ssl_verification = True
     ```
 
-3. Initialize the `ServiceClient` instance:
+3. Initialize the credentials
 
     ```csharp
-    ICredential auth = new BasicCredentials(ak, sk, projectId);
+    ICredential auth = new BasicCredentials(ak, sk, projectId, domainId);
+    ```
+
+	**where:**
+   	
+    For project services, only need to provide project_id, domain_id is optional.
+    For global services, project_id must be null, domain_id should be filled in according to the actual situation.
+    Global services currently only support Iam.
+
+	- `ak` is the access key id for your account.
+	- `sk` is the secret access key for your account.
+	- `project_id` is the id of the project.
+  	- `project_id` is the account ID of huawei cloud.
+
+4. Initialize the `ServiceClient` instance:
+
+    ```csharp
     VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithHttpConfig(config).Build();
     ```
 
-	where:
+	**where:**
 
-	- `ak` is the access key ID of your account.
-	- `sk` is the secret access key of your account.
-	- `region-id` is the ID of the region.
     - `endpoint` is the service specific endpoints, see [Regions and Endpoints](https://developer.huaweicloud.com/intl/en-us/endpoint)
 
-4. Call a request and print response.
+5. Call a request and print response.
 
 	```csharp
     ListVpcsRequest req = new ListVpcsRequest
@@ -84,6 +97,69 @@ Install-Package HuaweiCloud.SDK.Ecs
     };
 	response = vpcClient.CreateVpc(req)
 	```
+
+6. Exceptions
+
+    | Level 1 | Notice | Level 2 | Notice |
+    | :---- | :---- | :---- | :---- |
+    | ConnectionException | Connection error | HostUnreachableException | Host is not reachable |
+    | | | SslHandShakeException | SSL certification error |
+    | RequestTimeoutException | Request timeout | CallTimeoutException | timeout for single request |
+    | | | RetryOutageException | no response after retrying |
+    | ServiceResponseException | service response error | ServerResponseException | server inner error, http status code: [500,] |
+    | | | ClientRequestException | invalid request, http status code: [400, 500) |
+    
+    ```csharp
+    # 异常处理
+    try
+    {
+        response = vpcClient.ListVpcs(new ListVpcsRequest());
+        Console.WriteLine(response);
+    }
+    catch (ClientRequestException clientRequestException)
+    {
+        Console.WriteLine(clientRequestException.HttpStatusCode);
+        Console.WriteLine(clientRequestException.ErrorCode);
+        Console.WriteLine(clientRequestException.ErrorMsg);
+        Console.WriteLine(clientRequestException.RequestId);
+    }
+    ```
+
+7. Asynchronous Requests
+
+    ```csharp
+    # Initialize asynchronous client
+    VpcAsyncClient vpcClient = VpcAsyncClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithLogging(LogLevel.Information).WithHttpConfig(config).Build();
+
+    # send asynchronous request
+    ListVpcsResponse listVpcsResponse = await vpcClient.ListVpcsAsync(new ListVpcsRequest());
+    Console.WriteLine(JsonUtils.Serialize(listVpcsResponse.Vpcs));
+    ```
+
+8. Troubleshooting
+
+    In some situation, you may need to debug your http requests, original http request and response information will be needed. The SDK provides a listener function to obtain the original encrypted http request and response information.
+
+    **Warning:** The original http log can only be used in troubleshooting scenarios, please do not print the original http header or body in the production environment. The log content is not encrypted and may contain sensitive information such as the password of your ECS or the password of your IAM user account, etc. When the response body is binary content, the body will be printed as "***" without detailed information.
+
+    ```csharp
+    private void RequestHandler(HttpRequestMessage message, ILogger logger)
+    {
+        logger.LogDebug(message.ToString());
+    }
+   
+    private void ResponseHandler(HttpResponseMessage message, ILogger logger)
+    {
+        logger.LogDebug(message.ToString());
+    }
+    
+    VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithLogging(LogLevel.Debug).WithHttpConfig(config).WithHttpHandler(new HttpHandler().AddRequestHandler(RequestHandler).AddResponseHandler(ResponseHandler)).Build();
+    ```
+
+	**where:**
+
+    HttpHandler supports AddRequestHandler and AddResponseHandler.
+
 
 ## Code example
 

@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 
+    /// Job的响应信息。
     /// </summary>
     public class JobEntities 
     {
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 子Job的信息。
+        /// 子Job的信息。当存在子Job信息时，entities中的其他字段将不会返回。
         /// </summary>
         [JsonProperty("sub_jobs", NullValueHandling = NullValueHandling.Ignore)]
         public List<SubJob> SubJobs { get; set; }

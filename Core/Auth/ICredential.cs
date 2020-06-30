@@ -20,6 +20,7 @@
  */
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
@@ -27,6 +28,6 @@ namespace HuaweiCloud.SDK.Core.Auth
     {
         Dictionary<string, string> GetPathParamDictionary();
 
-        void SignAuthRequest(HttpRequest request);
+        Task<HttpRequest> SignAuthRequest(HttpRequest request);
     }
 }

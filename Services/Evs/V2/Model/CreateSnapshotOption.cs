@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 云硬盘快照名称，最大支持255个字节。
+        /// 云硬盘快照名称。最大支持255个字节。  &gt; &gt; 说明： &gt; 对云硬盘创建备份时，同时会创建以autobk_snapshot_为名称前缀的快照，云硬盘控制台对此类快照会有操作限制。因此建议不要创建以&gt; &gt; autobk_snapshot_为名称前缀的快照，避免影响快照的正常使用
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

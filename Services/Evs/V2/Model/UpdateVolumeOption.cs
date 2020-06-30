@@ -10,19 +10,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    ///  
+    /// 
     /// </summary>
     public class UpdateVolumeOption 
     {
 
         /// <summary>
-        /// 新的云硬盘的描述，最大支持255个字节。
+        /// 新的云硬盘的描述，name和description不能同时为null。最大支持255个字节。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 新的云硬盘的名字，最大支持255个字节。
+        /// 新的云硬盘的名字，name和description不能同时为null。最大支持255个字节。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

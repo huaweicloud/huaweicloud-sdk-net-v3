@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     {
 
         /// <summary>
-        /// 云硬盘类型列表信息。
+        /// 
         /// </summary>
         [JsonProperty("volume_types", NullValueHandling = NullValueHandling.Ignore)]
         public List<VolumeType> VolumeTypes { get; set; }

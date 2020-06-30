@@ -300,7 +300,7 @@ namespace Examples.Evs.V2
                         AvailabilityZone = "br-iaas-odin1a",
                         Count = 1,
                         Size = 40,
-                        VolumeType = "SATA",
+                        VolumeType = CreateVolumeOption.VolumeTypeEnum.SATA,
                         Description = "csharp",
                         Name = "test"
                     }

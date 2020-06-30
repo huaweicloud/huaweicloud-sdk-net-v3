@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
     public class ShowQuotasRequest 
     {

@@ -10,14 +10,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// Job详情。
+    /// 子Job的详细信息。
     /// </summary>
     public class SubJob 
     {
         /// <summary>
-        /// job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
+        /// 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
         /// </summary>
-        /// <value>job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。</value>
+        /// <value>子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
 
 
         /// <summary>
-        /// job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
+        /// 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -144,13 +144,13 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public SubJobEntities Entities { get; set; }
 
         /// <summary>
-        /// job的ID。
+        /// 子job的ID。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// job的类型。createVolume：创建单个云硬盘。batchCreateVolume：批量创建云硬盘。deleteVolume：删除单个云硬盘。extendVolume：扩容云硬盘。bulkDeleteVolume：批量删除云硬盘。deleteSingleVolume：批量删除时逐个删除单个云硬盘。retypeVolume：对云硬盘做硬盘类型变更。
+        /// 子job的类型。createVolume：创建单个云硬盘。batchCreateVolume：批量创建云硬盘。deleteVolume：删除单个云硬盘。extendVolume：扩容云硬盘。bulkDeleteVolume：批量删除云硬盘。deleteSingleVolume：批量删除时逐个删除单个云硬盘。retypeVolume：对云硬盘做硬盘类型变更。
         /// </summary>
         [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]
         public string JobType { get; set; }
@@ -168,13 +168,13 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// job执行失败时的错误码。
+        /// 子job执行失败时的错误码。
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// job执行失败时的错误原因。
+        /// 子job执行失败时的错误原因。
         /// </summary>
         [JsonProperty("fail_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string FailReason { get; set; }

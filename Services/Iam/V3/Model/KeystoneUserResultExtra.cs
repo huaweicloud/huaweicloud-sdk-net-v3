@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public bool? PwdStatus { get; set; }
 
         /// <summary>
-        /// IAM用户下次登录是否强制重置密码。
-        /// </summary>
-        [JsonProperty("forceResetPwd", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? ForceResetPwd { get; set; }
-
-        /// <summary>
         /// IAM用户退出系统前，在控制台最后访问的项目ID。
         /// </summary>
         [JsonProperty("last_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -49,7 +43,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class KeystoneUserResultExtra {\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  pwdStatus: ").Append(PwdStatus).Append("\n");
-            sb.Append("  forceResetPwd: ").Append(ForceResetPwd).Append("\n");
             sb.Append("  lastProjectId: ").Append(LastProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -83,11 +76,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.PwdStatus.Equals(input.PwdStatus))
                 ) && 
                 (
-                    this.ForceResetPwd == input.ForceResetPwd ||
-                    (this.ForceResetPwd != null &&
-                    this.ForceResetPwd.Equals(input.ForceResetPwd))
-                ) && 
-                (
                     this.LastProjectId == input.LastProjectId ||
                     (this.LastProjectId != null &&
                     this.LastProjectId.Equals(input.LastProjectId))
@@ -106,8 +94,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.PwdStatus != null)
                     hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
-                if (this.ForceResetPwd != null)
-                    hashCode = hashCode * 59 + this.ForceResetPwd.GetHashCode();
                 if (this.LastProjectId != null)
                     hashCode = hashCode * 59 + this.LastProjectId.GetHashCode();
                 return hashCode;

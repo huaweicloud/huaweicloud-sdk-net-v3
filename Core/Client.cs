@@ -22,7 +22,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core.Auth;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using static System.String;
@@ -36,6 +38,9 @@ namespace HuaweiCloud.SDK.Core
             private ICredential _credential;
             private HttpConfig _httpConfig;
             private string _endPoint;
+            private bool _enableLogging;
+            private LogLevel _logLevel = LogLevel.Information;
+            private HttpHandler _httpHandler;
 
             public ClientBuilder<T> WithCredential(ICredential credential)
             {
@@ -55,6 +60,19 @@ namespace HuaweiCloud.SDK.Core
                 return this;
             }
 
+            public ClientBuilder<T> WithLogging(LogLevel logLevel)
+            {
+                this._enableLogging = true;
+                this._logLevel = logLevel;
+                return this;
+            }
+
+            public ClientBuilder<T> WithHttpHandler(HttpHandler httpHandler)
+            {
+                this._httpHandler = httpHandler;
+                return this;
+            }
+
             public T Build()
             {
                 Client client = Activator.CreateInstance<T>();
@@ -66,7 +84,9 @@ namespace HuaweiCloud.SDK.Core
 
                 client.WithCredential(this._credential)
                     .WithEndPoint(this._endPoint)
-                    .WithHttpConfig(_httpConfig ?? HttpConfig.GetDefaultConfig());
+                    .WithHttpConfig(this._httpConfig ?? HttpConfig.GetDefaultConfig());
+                client.InitSdkHttpClient(this._httpHandler, this._enableLogging, this._logLevel);
+
                 return (T) client;
             }
 
@@ -81,9 +101,12 @@ namespace HuaweiCloud.SDK.Core
             }
         }
 
-        private ICredential _credential;
-        private HttpConfig _httpConfig;
         private string _endpoint;
+        private HttpConfig _httpConfig;
+        private ICredential _credential;
+
+        private SdkHttpClient _sdkHttpClient;
+
         private const string XRequestId = "X-Request-Id";
         private const string XRequestAgent = "User-Agent";
         private const string CredentialsNull = "Credentials cannot be null.";
@@ -107,56 +130,101 @@ namespace HuaweiCloud.SDK.Core
             return this;
         }
 
-        protected SdkResponse DoHttpRequest(string methodType, SdkRequest request)
+        private void InitSdkHttpClient(HttpHandler httpHandler, bool enableLogging, LogLevel logLevel)
+        {
+            this._sdkHttpClient = new SdkHttpClient(_httpConfig, httpHandler, enableLogging, logLevel);
+        }
+
+        protected async Task<SdkResponse> DoHttpRequestAsync(string methodType, SdkRequest request)
         {
             var url = _endpoint
                       + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
                       + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
-            return _http(url, methodType.ToUpper(), request.ContentType, request.Header, request.Body ?? "");
+            return await _async_http(url, methodType.ToUpper(), request.ContentType, request.Header,
+                request.Body ?? "");
         }
 
-        private SdkResponse _http(string url, string method, string contentType, Dictionary<string, string> headers,
+        private async Task<SdkResponse> _async_http(string url, string method, string contentType,
+            Dictionary<string, string> headers,
             string content)
         {
             var request = GetHttpRequest(url, method, contentType, headers, content);
-            _credential.SignAuthRequest(request);
-            var client = new SdkHttpClient(_httpConfig);
-            var message = client.InitHttpRequest(request);
+            request = await _credential.SignAuthRequest(request);
+
+            var message = this._sdkHttpClient.InitHttpRequest(request);
             var result = new SdkResponse();
             try
             {
-                var task = client.DoHttpRequest(message);
-                var requestId = task.Result.Headers.GetValues(XRequestId).FirstOrDefault();
-                result.HttpStatusCode = (int) task.Result.StatusCode;
-                result.HttpHeaders = task.Result.Headers.ToString();
-                result.HttpBody = task.Result.Content.ReadAsStringAsync().Result;
-                if (result.HttpStatusCode < 400)
-                {
-                    return result;
-                }
+                var response = await this._sdkHttpClient.DoHttpRequest(message);
+                var requestId = response.Headers.GetValues(XRequestId).FirstOrDefault();
+                result.HttpStatusCode = (int) response.StatusCode;
+                result.HttpHeaders = response.Headers.ToString();
+                result.HttpBody = await response.Content.ReadAsStringAsync();
 
-                SdkError sdkError;
-                try
-                {
-                    sdkError = GetSdkErrorFromResponse(requestId, result);
-                }
-                catch (Exception exception)
-                {
-                    throw new ServerResponseException(result.HttpStatusCode,
-                        new SdkError {ErrorMsg = exception.Message});
-                }
-
-                if (result.HttpStatusCode >= 400 && result.HttpStatusCode < 500)
-                {
-                    throw new ClientRequestException(result.HttpStatusCode, sdkError);
-                }
-
-                throw new ServerResponseException(result.HttpStatusCode, sdkError);
+                return GetResult(result, requestId);
             }
             catch (AggregateException aggregateException)
             {
                 throw new ConnectionException(aggregateException.Message);
             }
+        }
+
+        protected SdkResponse DoHttpRequestSync(string methodType, SdkRequest request)
+        {
+            var url = _endpoint
+                      + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
+                      + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+            return _sync_http(url, methodType.ToUpper(), request.ContentType, request.Header, request.Body ?? "");
+        }
+
+        private SdkResponse _sync_http(string url, string method, string contentType,
+            Dictionary<string, string> headers,
+            string content)
+        {
+            var request = GetHttpRequest(url, method, contentType, headers, content);
+            request = _credential.SignAuthRequest(request).Result;
+
+            var message = this._sdkHttpClient.InitHttpRequest(request);
+            var result = new SdkResponse();
+            try
+            {
+                var response = this._sdkHttpClient.DoHttpRequest(message).Result;
+                var requestId = response.Headers.GetValues(XRequestId).FirstOrDefault();
+                result.HttpStatusCode = (int) response.StatusCode;
+                result.HttpHeaders = response.Headers.ToString();
+                result.HttpBody = response.Content.ReadAsStringAsync().Result;
+                return GetResult(result, requestId);
+            }
+            catch (AggregateException aggregateException)
+            {
+                throw new ConnectionException(aggregateException.Message);
+            }
+        }
+
+        private SdkResponse GetResult(SdkResponse result, string requestId)
+        {
+            if (result.HttpStatusCode < 400)
+            {
+                return result;
+            }
+
+            SdkError sdkError;
+            try
+            {
+                sdkError = GetSdkErrorFromResponse(requestId, result);
+            }
+            catch (Exception exception)
+            {
+                throw new ServerResponseException(result.HttpStatusCode,
+                    new SdkError {ErrorMsg = exception.Message});
+            }
+
+            if (result.HttpStatusCode >= 400 && result.HttpStatusCode < 500)
+            {
+                throw new ClientRequestException(result.HttpStatusCode, sdkError);
+            }
+
+            throw new ServerResponseException(result.HttpStatusCode, sdkError);
         }
 
         protected virtual SdkError HandleServiceSpecException(SdkResponse response)

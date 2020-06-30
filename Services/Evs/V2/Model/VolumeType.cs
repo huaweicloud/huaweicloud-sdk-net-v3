@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 云硬盘类型信息。
+    /// 
     /// </summary>
     public class VolumeType 
     {
@@ -26,12 +26,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// 预留属性。
-        /// </summary>
-        [JsonProperty("is_public", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsPublic { get; set; }
 
         /// <summary>
         /// 
@@ -51,6 +45,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("qos_specs_id", NullValueHandling = NullValueHandling.Ignore)]
         public string QosSpecsId { get; set; }
 
+        /// <summary>
+        /// 预留属性。
+        /// </summary>
+        [JsonProperty("is_public", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsPublic { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -61,10 +61,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("class VolumeType {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  isPublic: ").Append(IsPublic).Append("\n");
             sb.Append("  extraSpecs: ").Append(ExtraSpecs).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  qosSpecsId: ").Append(QosSpecsId).Append("\n");
+            sb.Append("  isPublic: ").Append(IsPublic).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,11 +97,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.IsPublic == input.IsPublic ||
-                    (this.IsPublic != null &&
-                    this.IsPublic.Equals(input.IsPublic))
-                ) && 
-                (
                     this.ExtraSpecs == input.ExtraSpecs ||
                     (this.ExtraSpecs != null &&
                     this.ExtraSpecs.Equals(input.ExtraSpecs))
@@ -115,6 +110,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.QosSpecsId == input.QosSpecsId ||
                     (this.QosSpecsId != null &&
                     this.QosSpecsId.Equals(input.QosSpecsId))
+                ) && 
+                (
+                    this.IsPublic == input.IsPublic ||
+                    (this.IsPublic != null &&
+                    this.IsPublic.Equals(input.IsPublic))
                 );
         }
 
@@ -130,14 +130,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.IsPublic != null)
-                    hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
                 if (this.ExtraSpecs != null)
                     hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.QosSpecsId != null)
                     hashCode = hashCode * 59 + this.QosSpecsId.GetHashCode();
+                if (this.IsPublic != null)
+                    hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
                 return hashCode;
             }
         }

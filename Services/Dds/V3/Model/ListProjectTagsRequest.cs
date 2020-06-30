@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dds.V3.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
     public class ListProjectTagsRequest 
     {

@@ -34,12 +34,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string LastProjectId { get; set; }
 
         /// <summary>
-        /// IAM用户下次登录是否强制重置密码。
-        /// </summary>
-        [JsonProperty("forceResetPwd", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? ForceResetPwd { get; set; }
-
-        /// <summary>
         /// IAM用户名。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -98,7 +92,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  pwdStatus: ").Append(PwdStatus).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  lastProjectId: ").Append(LastProjectId).Append("\n");
-            sb.Append("  forceResetPwd: ").Append(ForceResetPwd).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  passwordExpiresAt: ").Append(PasswordExpiresAt).Append("\n");
@@ -142,11 +135,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.LastProjectId == input.LastProjectId ||
                     (this.LastProjectId != null &&
                     this.LastProjectId.Equals(input.LastProjectId))
-                ) && 
-                (
-                    this.ForceResetPwd == input.ForceResetPwd ||
-                    (this.ForceResetPwd != null &&
-                    this.ForceResetPwd.Equals(input.ForceResetPwd))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -204,8 +192,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.LastProjectId != null)
                     hashCode = hashCode * 59 + this.LastProjectId.GetHashCode();
-                if (this.ForceResetPwd != null)
-                    hashCode = hashCode * 59 + this.ForceResetPwd.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)

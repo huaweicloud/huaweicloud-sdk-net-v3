@@ -129,6 +129,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 预留属性。
+        /// </summary>
+        [JsonProperty("os-volume-replication:extended_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string OsVolumeReplicationextendedStatus { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -156,6 +162,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  volumeImageMetadata: ").Append(VolumeImageMetadata).Append("\n");
             sb.Append("  volumeType: ").Append(VolumeType).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  osVolumeReplicationextendedStatus: ").Append(OsVolumeReplicationextendedStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -273,6 +280,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.OsVolumeReplicationextendedStatus == input.OsVolumeReplicationextendedStatus ||
+                    (this.OsVolumeReplicationextendedStatus != null &&
+                    this.OsVolumeReplicationextendedStatus.Equals(input.OsVolumeReplicationextendedStatus))
                 );
         }
 
@@ -322,6 +334,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.OsVolumeReplicationextendedStatus != null)
+                    hashCode = hashCode * 59 + this.OsVolumeReplicationextendedStatus.GetHashCode();
                 return hashCode;
             }
         }

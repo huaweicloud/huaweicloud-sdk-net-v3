@@ -125,6 +125,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("token", NullValueHandling = NullValueHandling.Ignore)]
         public IdentityToken Token { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
+        public ServicePolicy Policy { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -135,6 +141,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class TokenAuthIdentity {\n");
             sb.Append("  methods: ").Append(Methods).Append("\n");
             sb.Append("  token: ").Append(Token).Append("\n");
+            sb.Append("  policy: ").Append(Policy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +173,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.Token == input.Token ||
                     (this.Token != null &&
                     this.Token.Equals(input.Token))
+                ) && 
+                (
+                    this.Policy == input.Policy ||
+                    (this.Policy != null &&
+                    this.Policy.Equals(input.Policy))
                 );
         }
 
@@ -181,6 +193,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.Methods.GetHashCode();
                 if (this.Token != null)
                     hashCode = hashCode * 59 + this.Token.GetHashCode();
+                if (this.Policy != null)
+                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

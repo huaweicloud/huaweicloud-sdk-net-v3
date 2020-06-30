@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ims.V2.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
     public class ShowImageQuotaRequest 
     {

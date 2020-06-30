@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using HuaweiCloud.SDK.Core;
-using HuaweiCloud.SDK.Core.Auth;
 using HuaweiCloud.SDK.Ecs.V2.Model;
 
 namespace HuaweiCloud.SDK.Ecs.V2
@@ -22,7 +21,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , attachServerVolumeRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/attachvolume",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachServerVolumeRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<AttachServerVolumeResponse>(response);
         }
         
@@ -35,7 +34,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , batchAddServerNicsRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/nics",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddServerNicsRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<BatchAddServerNicsResponse>(response);
         }
         
@@ -48,7 +47,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , batchCreateServerTagsRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/tags/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateServerTagsRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<BatchCreateServerTagsResponse>(response);
         }
         
@@ -61,7 +60,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , batchDeleteServerNicsRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/nics/delete",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteServerNicsRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<BatchDeleteServerNicsResponse>(response);
         }
         
@@ -74,7 +73,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , batchDeleteServerTagsRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/tags/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteServerTagsRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<BatchDeleteServerTagsResponse>(response);
         }
         
@@ -86,7 +85,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRebootServersRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<BatchRebootServersResponse>(response);
         }
         
@@ -98,7 +97,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStartServersRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<BatchStartServersResponse>(response);
         }
         
@@ -110,7 +109,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStopServersRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<BatchStopServersResponse>(response);
         }
         
@@ -122,8 +121,20 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPostPaidServersRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreatePostPaidServersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建云服务器
+        /// </summary>
+        public CreateServersResponse CreateServers(CreateServersRequest createServersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/cloudservers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createServersRequest);
+            SdkResponse response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateServersResponse>(response);
         }
         
         /// <summary>
@@ -134,7 +145,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/delete",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteServersRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<DeleteServersResponse>(response);
         }
         
@@ -148,7 +159,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("volume_id" , detachServerVolumeRequest.VolumeId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/detachvolume/{volume_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, detachServerVolumeRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DetachServerVolumeResponse>(response);
         }
         
@@ -160,7 +171,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/flavors",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listFlavorsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
         }
         
@@ -173,7 +184,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , listServerBlockDevicesRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/block_device",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listServerBlockDevicesRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListServerBlockDevicesResponse>(response);
         }
         
@@ -186,7 +197,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , listServerInterfacesRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listServerInterfacesRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListServerInterfacesResponse>(response);
         }
         
@@ -198,7 +209,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/detail",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listServersDetailsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListServersDetailsResponse>(response);
         }
         
@@ -210,7 +221,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", novaCreateServersRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<NovaCreateServersResponse>(response);
         }
         
@@ -223,7 +234,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , novaDeleteServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaDeleteServerRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<NovaDeleteServerResponse>(response);
         }
         
@@ -235,7 +246,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/detail",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaListServersDetailsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<NovaListServersDetailsResponse>(response);
         }
         
@@ -248,7 +259,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , novaShowServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaShowServerRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<NovaShowServerResponse>(response);
         }
         
@@ -261,7 +272,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , resizePostPaidServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/resize",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizePostPaidServerRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ResizePostPaidServerResponse>(response);
         }
         
@@ -274,7 +285,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , showServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showServerRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowServerResponse>(response);
         }
         
@@ -287,7 +298,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , showServerTagsRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/tags",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showServerTagsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowServerTagsResponse>(response);
         }
         
@@ -300,7 +311,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , updateServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerRequest);
-            SdkResponse response = DoHttpRequest("PUT",request);
+            SdkResponse response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateServerResponse>(response);
         }
         
@@ -313,7 +324,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("job_id" , showJobRequest.JobId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showJobRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
         }
         

@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 
+    /// 云硬盘镜像的元数据。
     /// </summary>
     public class ImageMetadata 
     {

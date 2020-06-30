@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 
+    /// 云硬盘挂载信息。
     /// </summary>
     public class Attachment 
     {

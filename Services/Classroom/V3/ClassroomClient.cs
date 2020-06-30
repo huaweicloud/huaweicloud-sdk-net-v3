@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using HuaweiCloud.SDK.Core;
-using HuaweiCloud.SDK.Core.Auth;
 using HuaweiCloud.SDK.Classroom.V3.Model;
 
 namespace HuaweiCloud.SDK.Classroom.V3
@@ -22,7 +21,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             urlParam.Add("classroom_id" , listClassroomMembersRequest.ClassroomId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}/members",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listClassroomMembersRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListClassroomMembersResponse>(response);
         }
         
@@ -34,7 +33,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/classrooms",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listClassroomsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListClassroomsResponse>(response);
         }
         
@@ -47,7 +46,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             urlParam.Add("classroom_id" , showClassroomDetailRequest.ClassroomId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showClassroomDetailRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowClassroomDetailResponse>(response);
         }
         
@@ -60,7 +59,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             urlParam.Add("classroom_id" , listClassroomMemberJobsRequest.ClassroomId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}/jobs",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listClassroomMemberJobsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListClassroomMemberJobsResponse>(response);
         }
         
@@ -72,7 +71,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/jobs",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listJobsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListJobsResponse>(response);
         }
         
@@ -86,7 +85,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             urlParam.Add("exercise_id" , listMemberJobRecordsRequest.ExerciseId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/exercises/{exercise_id}/records",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMemberJobRecordsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListMemberJobRecordsResponse>(response);
         }
         
@@ -99,7 +98,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             urlParam.Add("job_id" , showJobDetailRequest.JobId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showJobDetailRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowJobDetailResponse>(response);
         }
         
@@ -112,7 +111,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
             urlParam.Add("job_id" , showJobExercisesRequest.JobId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/exercises",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showJobExercisesRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowJobExercisesResponse>(response);
         }
         

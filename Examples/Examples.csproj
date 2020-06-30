@@ -19,6 +19,7 @@
       <ProjectReference Include="..\Services\Image\Image.csproj" />
       <ProjectReference Include="..\Services\Ims\Ims.csproj" />
       <ProjectReference Include="..\Services\Vpc\Vpc.csproj" />
+      <ProjectReference Include="..\Services\IoTDA\IoTDA.csproj" />
     </ItemGroup>
 
 </Project>

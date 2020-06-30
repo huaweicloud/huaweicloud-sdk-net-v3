@@ -125,6 +125,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("assume_role", NullValueHandling = NullValueHandling.Ignore)]
         public IdentityAssumerole AssumeRole { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
+        public ServicePolicy Policy { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -135,6 +141,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class AgencyAuthIdentity {\n");
             sb.Append("  methods: ").Append(Methods).Append("\n");
             sb.Append("  assumeRole: ").Append(AssumeRole).Append("\n");
+            sb.Append("  policy: ").Append(Policy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +173,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.AssumeRole == input.AssumeRole ||
                     (this.AssumeRole != null &&
                     this.AssumeRole.Equals(input.AssumeRole))
+                ) && 
+                (
+                    this.Policy == input.Policy ||
+                    (this.Policy != null &&
+                    this.Policy.Equals(input.Policy))
                 );
         }
 
@@ -181,6 +193,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.Methods.GetHashCode();
                 if (this.AssumeRole != null)
                     hashCode = hashCode * 59 + this.AssumeRole.GetHashCode();
+                if (this.Policy != null)
+                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

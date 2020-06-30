@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using HuaweiCloud.SDK.Core;
-using HuaweiCloud.SDK.Core.Auth;
 using HuaweiCloud.SDK.Dcs.V2.Model;
 
 namespace HuaweiCloud.SDK.Dcs.V2
@@ -22,7 +21,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , batchCreateOrDeleteDcsTagsRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dcs/{instance_id}/tags/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteDcsTagsRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<BatchCreateOrDeleteDcsTagsResponse>(response);
         }
         
@@ -34,7 +33,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteDCSInstancesRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<BatchDeleteDCSInstancesResponse>(response);
         }
         
@@ -47,7 +46,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , copyInstanceRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/backups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyInstanceRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CopyInstanceResponse>(response);
         }
         
@@ -59,7 +58,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDCSInstanceRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateDCSInstanceResponse>(response);
         }
         
@@ -71,7 +70,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMigrationTaskRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateMigrationTaskResponse>(response);
         }
         
@@ -85,7 +84,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("group_id" , createReplicationRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/groups/{group_id}/replications",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createReplicationRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<CreateReplicationResponse>(response);
         }
         
@@ -99,7 +98,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , deleteBackupFileRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/backups/{backup_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteBackupFileRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteBackupFileResponse>(response);
         }
         
@@ -114,7 +113,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("node_id" , deleteIpFromDomainNameRequest.NodeId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}/remove-ip",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteIpFromDomainNameRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteIpFromDomainNameResponse>(response);
         }
         
@@ -126,7 +125,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-tasks/delete",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteMigrationTaskRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteMigrationTaskResponse>(response);
         }
         
@@ -141,7 +140,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("node_id" , deleteReplicationRequest.NodeId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteReplicationRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteReplicationResponse>(response);
         }
         
@@ -154,7 +153,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , deleteSingleDCSInstanceRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSingleDCSInstanceRequest);
-            SdkResponse response = DoHttpRequest("DELETE",request);
+            SdkResponse response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSingleDCSInstanceResponse>(response);
         }
         
@@ -166,7 +165,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/available-zones",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAvailableZonesRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListAvailableZonesResponse>(response);
         }
         
@@ -180,7 +179,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("backup_id" , listBackupFileLinksRequest.BackupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/backups/{backup_id}/links",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listBackupFileLinksRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ListBackupFileLinksResponse>(response);
         }
         
@@ -193,7 +192,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , listBackupRecordsRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/backups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBackupRecordsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListBackupRecordsResponse>(response);
         }
         
@@ -205,7 +204,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dims/monitored-objects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listCESMonitoredObjectsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListCESMonitoredObjectsResponse>(response);
         }
         
@@ -218,7 +217,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , listConfigurationsRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listConfigurationsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListConfigurationsResponse>(response);
         }
         
@@ -230,7 +229,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dcs/tags",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDcsTagsOfTenantRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListDcsTagsOfTenantResponse>(response);
         }
         
@@ -242,7 +241,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/flavors",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listFlavorsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
         }
         
@@ -255,7 +254,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , listGroupReplicationInfoRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listGroupReplicationInfoRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListGroupReplicationInfoResponse>(response);
         }
         
@@ -267,7 +266,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/instances/maintain-windows",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMaintenanceWindowsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListMaintenanceWindowsResponse>(response);
         }
         
@@ -279,7 +278,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-tasks",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMigrationTaskRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListMigrationTaskResponse>(response);
         }
         
@@ -292,7 +291,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , listMonitoredObjectsOfInstanceRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dims/monitored-objects/{instance_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMonitoredObjectsOfInstanceRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListMonitoredObjectsOfInstanceResponse>(response);
         }
         
@@ -304,7 +303,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/status",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listNumberOfInstancesInDifferentStatusRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListNumberOfInstancesInDifferentStatusResponse>(response);
         }
         
@@ -317,7 +316,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , listRestoreRecordsRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restores",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listRestoreRecordsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListRestoreRecordsResponse>(response);
         }
         
@@ -329,7 +328,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/statistic",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listStatisticsOfRunningInstancesRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListStatisticsOfRunningInstancesResponse>(response);
         }
         
@@ -341,7 +340,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/status",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restartOrFlushDCSInstancesRequest);
-            SdkResponse response = DoHttpRequest("PUT",request);
+            SdkResponse response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<RestartOrFlushDCSInstancesResponse>(response);
         }
         
@@ -354,7 +353,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , restoreInstanceRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restores",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restoreInstanceRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RestoreInstanceResponse>(response);
         }
         
@@ -367,7 +366,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , showDcsTagsRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tags",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDcsTagsRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowDcsTagsResponse>(response);
         }
         
@@ -380,7 +379,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("task_id" , showMigrationTaskRequest.TaskId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMigrationTaskRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowMigrationTaskResponse>(response);
         }
         
@@ -392,7 +391,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/quota",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQuotaOfTenantRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowQuotaOfTenantResponse>(response);
         }
         
@@ -405,7 +404,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("task_id" , stopMigrationTaskRequest.TaskId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}/stop",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, stopMigrationTaskRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<StopMigrationTaskResponse>(response);
         }
         
@@ -418,7 +417,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , updateConfigurationsRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateConfigurationsRequest);
-            SdkResponse response = DoHttpRequest("PUT",request);
+            SdkResponse response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateConfigurationsResponse>(response);
         }
         
@@ -431,7 +430,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , updateDCSInstanceRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDCSInstanceRequest);
-            SdkResponse response = DoHttpRequest("PUT",request);
+            SdkResponse response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateDCSInstanceResponse>(response);
         }
         
@@ -444,7 +443,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , updatePasswordRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/password",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePasswordRequest);
-            SdkResponse response = DoHttpRequest("PUT",request);
+            SdkResponse response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePasswordResponse>(response);
         }
         
@@ -459,7 +458,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("node_id" , updateSlavePriorityRequest.NodeId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}/slave-priority",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlavePriorityRequest);
-            SdkResponse response = DoHttpRequest("POST",request);
+            SdkResponse response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<UpdateSlavePriorityResponse>(response);
         }
         
@@ -472,7 +471,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , showIpWhitelistRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/whitelist",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showIpWhitelistRequest);
-            SdkResponse response = DoHttpRequest("GET",request);
+            SdkResponse response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowIpWhitelistResponse>(response);
         }
         
@@ -485,7 +484,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("instance_id" , updateIpWhitelistRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/whitelist",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpWhitelistRequest);
-            SdkResponse response = DoHttpRequest("PUT",request);
+            SdkResponse response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateIpWhitelistResponse>(response);
         }
         

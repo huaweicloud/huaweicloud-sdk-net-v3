@@ -10,10 +10,127 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    ///  
+    /// 
     /// </summary>
     public class CreateVolumeOption 
     {
+        /// <summary>
+        /// 云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \&quot;GPSSD\&quot;为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+        /// </summary>
+        /// <value>云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \&quot;GPSSD\&quot;为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。</value>
+        [JsonConverter(typeof(EnumClassConverter<VolumeTypeEnum>))]
+        public class VolumeTypeEnum
+        {
+            /// <summary>
+            /// Enum SSD for value: SSD
+            /// </summary>
+            public static readonly VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
+
+            /// <summary>
+            /// Enum GPSSD for value: GPSSD
+            /// </summary>
+            public static readonly VolumeTypeEnum GPSSD = new VolumeTypeEnum("GPSSD");
+
+            /// <summary>
+            /// Enum SAS for value: SAS
+            /// </summary>
+            public static readonly VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
+
+            /// <summary>
+            /// Enum SATA for value: SATA
+            /// </summary>
+            public static readonly VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
+
+            public static readonly Dictionary<string, VolumeTypeEnum> StaticFields =
+            new Dictionary<string, VolumeTypeEnum>()
+            {
+                {"SSD", SSD},
+                {"GPSSD", GPSSD},
+                {"SAS", SAS},
+                {"SATA", SATA},
+            };
+
+            private string Value;
+
+            public VolumeTypeEnum(string Value)
+            {
+                this.Value = Value;
+            }
+
+            public static VolumeTypeEnum FromValue(string Value)
+            {
+                if(Value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(Value))
+                {
+                    return StaticFields[Value];
+                }
+
+                return null;
+            }
+
+            public override string ToString()
+            {
+                return this.Value;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as VolumeTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(VolumeTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(VolumeTypeEnum a, VolumeTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(VolumeTypeEnum a, VolumeTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 指定要创建云硬盘的可用区。
@@ -88,10 +205,15 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string SnapshotId { get; set; }
 
         /// <summary>
-        /// 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败
+        /// 云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \&quot;GPSSD\&quot;为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
         /// </summary>
         [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string VolumeType { get; set; }
+        public VolumeTypeEnum VolumeType { get; set; }
+        /// <summary>
+        /// 云硬盘标签信息。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Tag> Tags { get; set; }
 
 
         /// <summary>
@@ -114,6 +236,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  snapshotId: ").Append(SnapshotId).Append("\n");
             sb.Append("  volumeType: ").Append(VolumeType).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -200,6 +323,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.VolumeType == input.VolumeType ||
                     (this.VolumeType != null &&
                     this.VolumeType.Equals(input.VolumeType))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -237,6 +366,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
                 if (this.VolumeType != null)
                     hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

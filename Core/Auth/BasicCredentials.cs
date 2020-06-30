@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
@@ -37,11 +38,12 @@ namespace HuaweiCloud.SDK.Core.Auth
             {
                 throw new ArgumentNullException("AK can not be null.");
             }
+
             if (string.IsNullOrEmpty(sk))
             {
                 throw new ArgumentNullException("SK cannot be null.");
             }
-            
+
             this._ak = ak;
             this._sk = sk;
             this._projectId = projectId;
@@ -55,28 +57,37 @@ namespace HuaweiCloud.SDK.Core.Auth
             {
                 pathParamDictionary.Add("project_id", _projectId);
             }
+
             if (_domainId != null)
             {
                 pathParamDictionary.Add("domain_id", _domainId);
             }
+
             return pathParamDictionary;
         }
 
-        public void SignAuthRequest(HttpRequest request)
+        public Task<HttpRequest> SignAuthRequest(HttpRequest request)
         {
-            var signer = new Signer {Key = _ak, Secret = _sk};
-
-            if (_domainId != null)
+            Task<HttpRequest> httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
-                request.Headers.Add("X-Domain-Id", _domainId);
-            }
+                var signer = new Signer {Key = _ak, Secret = _sk};
 
-            if (_projectId != null)
-            {
-                request.Headers.Add("X-Project-Id", _projectId);
-            }
+                if (_domainId != null)
+                {
+                    request.Headers.Add("X-Domain-Id", _domainId);
+                }
 
-            signer.Sign(request);
+                if (_projectId != null)
+                {
+                    request.Headers.Add("X-Project-Id", _projectId);
+                }
+
+                signer.Sign(request);
+
+                return request;
+            });
+
+            return httpRequestTask;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [JsonProperty("os-volume_upload_image", NullValueHandling = NullValueHandling.Ignore)]
-        public ExportToImageDetail OsVolumeUploadImage { get; set; }
+        public Image OsVolumeUploadImage { get; set; }
 
 
         /// <summary>
