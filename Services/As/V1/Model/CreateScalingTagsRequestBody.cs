@@ -15,17 +15,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class CreateScalingTagsRequestBody 
     {
         /// <summary>
-        /// 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+        /// 操作标识（区分大小写）：create：创建。若已经存在相同的key值则会覆盖对应的value值。
         /// </summary>
-        /// <value>操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。</value>
+        /// <value>操作标识（区分大小写）：create：创建。若已经存在相同的key值则会覆盖对应的value值。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
-            /// <summary>
-            /// Enum DELETE for value: delete
-            /// </summary>
-            public static readonly ActionEnum DELETE = new ActionEnum("delete");
-
             /// <summary>
             /// Enum CREATE for value: create
             /// </summary>
@@ -34,7 +29,6 @@ namespace HuaweiCloud.SDK.As.V1.Model
             public static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
-                {"delete", DELETE},
                 {"create", CREATE},
             };
 
@@ -121,13 +115,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 标签列表。action为delete时，tags结构体不能缺失，key不能为空，或者空字符串。
+        /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagsSingleValue> Tags { get; set; }
 
         /// <summary>
-        /// 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+        /// 操作标识（区分大小写）：create：创建。若已经存在相同的key值则会覆盖对应的value值。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

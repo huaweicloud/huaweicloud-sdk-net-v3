@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 
+    /// 配额信息。
     /// </summary>
     public class QuotaList 
     {
@@ -19,19 +19,19 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [JsonProperty("backup_gigabytes", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail BackupGigabytes { get; set; }
+        public QuotaDetailBackupGigabytes BackupGigabytes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("backups", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail Backups { get; set; }
+        public QuotaDetailBackups Backups { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("gigabytes", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail Gigabytes { get; set; }
+        public QuotaDetailGigabytes Gigabytes { get; set; }
 
         /// <summary>
         /// 项目ID。
@@ -43,91 +43,91 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [JsonProperty("snapshots", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail Snapshots { get; set; }
+        public QuotaDetailSnapshots Snapshots { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("volumes", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail Volumes { get; set; }
+        public QuotaDetailVolumes Volumes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("gigabytes_SATA", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail GigabytesSATA { get; set; }
+        public QuotaDetailGigabytesSATA GigabytesSATA { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("snapshots_SATA", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail SnapshotsSATA { get; set; }
+        public QuotaDetailSnapshotsSATA SnapshotsSATA { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("volumes_SATA", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail VolumesSATA { get; set; }
+        public QuotaDetailVolumesSATA VolumesSATA { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("gigabytes_SAS", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail GigabytesSAS { get; set; }
+        public QuotaDetailGigabytesSAS GigabytesSAS { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("snapshots_SAS", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail SnapshotsSAS { get; set; }
+        public QuotaDetailSnapshotsSAS SnapshotsSAS { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("volumes_SAS", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail VolumesSAS { get; set; }
+        public QuotaDetailVolumesSAS VolumesSAS { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("gigabytes_SSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail GigabytesSSD { get; set; }
+        public QuotaDetailGigabytesSSD GigabytesSSD { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("snapshots_SSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail SnapshotsSSD { get; set; }
+        public QuotaDetailSnapshotsSSD SnapshotsSSD { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("volumes_SSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail VolumesSSD { get; set; }
+        public QuotaDetailVolumesSSD VolumesSSD { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("gigabytes_GPSSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail GigabytesGPSSD { get; set; }
+        public QuotaDetailGigabytesGPSSD GigabytesGPSSD { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("snapshots_GPSSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail SnapshotsGPSSD { get; set; }
+        public QuotaDetailSnapshotsGPSSD SnapshotsGPSSD { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("volumes_GPSSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail VolumesGPSSD { get; set; }
+        public QuotaDetailVolumesGPSSD VolumesGPSSD { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("per_volume_gigabytes", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetail PerVolumeGigabytes { get; set; }
+        public QuotaDetailPerVolumeGigabytes PerVolumeGigabytes { get; set; }
 
 
         /// <summary>

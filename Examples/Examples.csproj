@@ -2,24 +2,24 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\..\target\huaweicloud-sdk-net-v3-distribution\huaweicloud-sdk-net-v3\Services\Classroom\Classroom.csproj" />
-      <ProjectReference Include="..\..\..\..\target\huaweicloud-sdk-net-v3-distribution\huaweicloud-sdk-net-v3\Services\Dcs\Dcs.csproj" />
-      <ProjectReference Include="..\Core\Core.csproj" />
-      <ProjectReference Include="..\Services\As\As.csproj" />
-      <ProjectReference Include="..\Services\Ces\Ces.csproj" />
-      <ProjectReference Include="..\Services\Dds\Dds.csproj" />
-      <ProjectReference Include="..\Services\Ecs\Ecs.csproj" />
-      <ProjectReference Include="..\Services\Evs\Evs.csproj" />
-      <ProjectReference Include="..\Services\Fgs\Fgs.csproj" />
-      <ProjectReference Include="..\Services\Iam\Iam.csproj" />
-      <ProjectReference Include="..\Services\Image\Image.csproj" />
-      <ProjectReference Include="..\Services\Ims\Ims.csproj" />
-      <ProjectReference Include="..\Services\Vpc\Vpc.csproj" />
-      <ProjectReference Include="..\Services\IoTDA\IoTDA.csproj" />
+        <ProjectReference Include="..\Core\Core.csproj" />
+        <ProjectReference Include="..\Services\As\As.csproj" />
+        <ProjectReference Include="..\Services\Ces\Ces.csproj" />
+        <ProjectReference Include="..\Services\Dds\Dds.csproj" />
+        <ProjectReference Include="..\Services\Ecs\Ecs.csproj" />
+        <ProjectReference Include="..\Services\Evs\Evs.csproj" />
+        <ProjectReference Include="..\Services\Fgs\Fgs.csproj" />
+        <ProjectReference Include="..\Services\Iam\Iam.csproj" />
+        <ProjectReference Include="..\Services\Image\Image.csproj" />
+        <ProjectReference Include="..\Services\Ims\Ims.csproj" />
+        <ProjectReference Include="..\Services\Vpc\Vpc.csproj" />
+        <ProjectReference Include="..\Services\IoTDA\IoTDA.csproj" />
+        <ProjectReference Include="..\Services\Classroom\Classroom.csproj" />
+        <ProjectReference Include="..\Services\Dcs\Dcs.csproj" />
     </ItemGroup>
 
 </Project>

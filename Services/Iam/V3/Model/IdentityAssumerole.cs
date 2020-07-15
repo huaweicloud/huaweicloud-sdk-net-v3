@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// <summary>
         /// AK/SK和securitytoken的有效期，时间单位为秒。取值范围：15min ~ 24h ，默认为15min。
         /// </summary>
-        [JsonProperty("duration-seconds", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("duration_seconds", NullValueHandling = NullValueHandling.Ignore)]
         public int? DurationSeconds { get; set; }
 
         /// <summary>

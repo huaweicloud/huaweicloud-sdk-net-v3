@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// IAM用户信息列表。
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
-        public List<KeystoneUserResult> Users { get; set; }
+        public List<KeystoneListUsersResult> Users { get; set; }
 
 
         /// <summary>

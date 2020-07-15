@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// Keystone API的版本信息。
+        /// 
         /// </summary>
         [JsonProperty("versions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Version> Versions { get; set; }
+        public Versions Versions { get; set; }
 
 
         /// <summary>
@@ -53,9 +53,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             return 
                 (
                     this.Versions == input.Versions ||
-                    this.Versions != null &&
-                    input.Versions != null &&
-                    this.Versions.SequenceEqual(input.Versions)
+                    (this.Versions != null &&
+                    this.Versions.Equals(input.Versions))
                 );
         }
 

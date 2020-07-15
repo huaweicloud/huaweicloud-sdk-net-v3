@@ -434,6 +434,111 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             }
         }
 
+        /// <summary>
+        /// spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+        /// </summary>
+        /// <value>spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 </value>
+        [JsonConverter(typeof(EnumClassConverter<InterruptionPolicyEnum>))]
+        public class InterruptionPolicyEnum
+        {
+            /// <summary>
+            /// Enum IMMEDIATE for value: immediate
+            /// </summary>
+            public static readonly InterruptionPolicyEnum IMMEDIATE = new InterruptionPolicyEnum("immediate");
+
+            /// <summary>
+            /// Enum DELAY for value: delay
+            /// </summary>
+            public static readonly InterruptionPolicyEnum DELAY = new InterruptionPolicyEnum("delay");
+
+            public static readonly Dictionary<string, InterruptionPolicyEnum> StaticFields =
+            new Dictionary<string, InterruptionPolicyEnum>()
+            {
+                {"immediate", IMMEDIATE},
+                {"delay", DELAY},
+            };
+
+            private string Value;
+
+            public InterruptionPolicyEnum(string Value)
+            {
+                this.Value = Value;
+            }
+
+            public static InterruptionPolicyEnum FromValue(string Value)
+            {
+                if(Value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(Value))
+                {
+                    return StaticFields[Value];
+                }
+
+                return null;
+            }
+
+            public override string ToString()
+            {
+                return this.Value;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as InterruptionPolicyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(InterruptionPolicyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(InterruptionPolicyEnum a, InterruptionPolicyEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(InterruptionPolicyEnum a, InterruptionPolicyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 计费模式。  功能说明：付费方式  取值范围：  - prePaid-预付费，即包年包月； - postPaid-后付费，即按需付费； - 默认值是postPaid  &gt; 说明： &gt;  &gt; 当chargingMode为prePaid（即创建包年包月付费的云服务器），且使用SSH秘钥方式登录云服务器时，metadata 中的 op_svc_userid 字段为必选字段。
@@ -497,6 +602,23 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("diskPrior", NullValueHandling = NullValueHandling.Ignore)]
         public string DiskPrior { get; set; }
 
+        /// <summary>
+        /// spot block时间。
+        /// </summary>
+        [JsonProperty("spot_duration_hours", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SpotDurationHours { get; set; }
+
+        /// <summary>
+        /// spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+        /// </summary>
+        [JsonProperty("interruption_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public InterruptionPolicyEnum InterruptionPolicy { get; set; }
+        /// <summary>
+        /// spot block时间个数。  - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于1，最大值由预测系统给出，可以从flavor的extra_specs中查询。 例如客户买5小时，就通过spot_duartion_hours&#x3D;5，不传该值，默认为1. 例如客户买大于6小时，就只能买6小时倍数。spot_duartion_hours&#x3D;6，spot_duartion_count&#x3D;2，代表买12个小时。 
+        /// </summary>
+        [JsonProperty("spot_duration_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SpotDurationCount { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -516,6 +638,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  marketType: ").Append(MarketType).Append("\n");
             sb.Append("  spotPrice: ").Append(SpotPrice).Append("\n");
             sb.Append("  diskPrior: ").Append(DiskPrior).Append("\n");
+            sb.Append("  spotDurationHours: ").Append(SpotDurationHours).Append("\n");
+            sb.Append("  interruptionPolicy: ").Append(InterruptionPolicy).Append("\n");
+            sb.Append("  spotDurationCount: ").Append(SpotDurationCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -591,6 +716,21 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.DiskPrior == input.DiskPrior ||
                     (this.DiskPrior != null &&
                     this.DiskPrior.Equals(input.DiskPrior))
+                ) && 
+                (
+                    this.SpotDurationHours == input.SpotDurationHours ||
+                    (this.SpotDurationHours != null &&
+                    this.SpotDurationHours.Equals(input.SpotDurationHours))
+                ) && 
+                (
+                    this.InterruptionPolicy == input.InterruptionPolicy ||
+                    (this.InterruptionPolicy != null &&
+                    this.InterruptionPolicy.Equals(input.InterruptionPolicy))
+                ) && 
+                (
+                    this.SpotDurationCount == input.SpotDurationCount ||
+                    (this.SpotDurationCount != null &&
+                    this.SpotDurationCount.Equals(input.SpotDurationCount))
                 );
         }
 
@@ -624,6 +764,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.SpotPrice.GetHashCode();
                 if (this.DiskPrior != null)
                     hashCode = hashCode * 59 + this.DiskPrior.GetHashCode();
+                if (this.SpotDurationHours != null)
+                    hashCode = hashCode * 59 + this.SpotDurationHours.GetHashCode();
+                if (this.InterruptionPolicy != null)
+                    hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
+                if (this.SpotDurationCount != null)
+                    hashCode = hashCode * 59 + this.SpotDurationCount.GetHashCode();
                 return hashCode;
             }
         }

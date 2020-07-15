@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
-        public KeystoneUserResult User { get; set; }
+        public KeystoneShowUserResult User { get; set; }
 
 
         /// <summary>

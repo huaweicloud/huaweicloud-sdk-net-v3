@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [JsonProperty("resource_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public ListVolumesDetailsResponseBody ResourceDetail { get; set; }
+        public VolumeDetail ResourceDetail { get; set; }
 
         /// <summary>
         /// 标签列表。

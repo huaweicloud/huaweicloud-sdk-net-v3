@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 
+    /// 创建云硬盘的信息。
     /// </summary>
     public class CreateVolumeOption 
     {
@@ -213,7 +213,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 云硬盘标签信息。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Tag> Tags { get; set; }
+        public Dictionary<string, string> Tags { get; set; }
 
 
         /// <summary>

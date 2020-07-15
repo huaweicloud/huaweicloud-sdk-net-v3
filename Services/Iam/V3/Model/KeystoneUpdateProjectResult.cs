@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class KeystoneCreateProjectResult 
+    public class KeystoneUpdateProjectResult 
     {
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
-        public Links Links { get; set; }
+        public LinksSelf Links { get; set; }
 
         /// <summary>
         /// 项目是否可用。
@@ -76,7 +76,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class KeystoneCreateProjectResult {\n");
+            sb.Append("class KeystoneUpdateProjectResult {\n");
             sb.Append("  isDomain: ").Append(IsDomain).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  extra: ").Append(Extra).Append("\n");
@@ -95,13 +95,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as KeystoneCreateProjectResult);
+            return this.Equals(input as KeystoneUpdateProjectResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(KeystoneCreateProjectResult input)
+        public bool Equals(KeystoneUpdateProjectResult input)
         {
             if (input == null)
                 return false;

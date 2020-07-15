@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("project", NullValueHandling = NullValueHandling.Ignore)]
-        public KeystoneCreateProjectResult Project { get; set; }
+        public KeystoneUpdateProjectResult Project { get; set; }
 
 
         /// <summary>

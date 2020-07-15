@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string ServerId { get; set; }
 
         /// <summary>
-        /// 云硬盘ID
+        /// 云硬盘ID。
         /// </summary>
         [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeId { get; set; }

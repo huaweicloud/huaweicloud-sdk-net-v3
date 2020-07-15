@@ -10,13 +10,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 可用分区的状态
+    /// 可用分区的状态。
     /// </summary>
     public class ZoneState 
     {
 
         /// <summary>
-        /// 可用分区是否可用。 true表示可用 false表示不可用
+        /// 可用分区是否可用。
         /// </summary>
         [JsonProperty("available", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Available { get; set; }

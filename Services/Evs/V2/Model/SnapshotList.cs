@@ -10,49 +10,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 查询快照列表响应结果中的snapshots字段。
+    /// 快照列表信息。
     /// </summary>
     public class SnapshotList 
     {
 
         /// <summary>
-        /// 云硬盘快照ID
+        /// 云硬盘快照ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 云硬盘快照的状态
+        /// 云硬盘快照的状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 云硬盘快照名称
+        /// 云硬盘快照名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 云硬盘快照描述信息
+        /// 云硬盘快照描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 云硬盘快照创建时间
+        /// 云硬盘快照创建时间。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 云硬盘快照更新时间
+        /// 云硬盘快照更新时间。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 云硬盘快照的元数据信息
+        /// 云硬盘快照的元数据信息。
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Metadata { get; set; }
@@ -64,37 +64,37 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string VolumeId { get; set; }
 
         /// <summary>
-        /// 云硬盘快照大小
+        /// 云硬盘快照大小。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public string Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
-        /// 租户ID
+        /// 项目ID。
         /// </summary>
         [JsonProperty("os-extended-snapshot-attributes:project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OsExtendedSnapshotAttributesprojectId { get; set; }
 
         /// <summary>
-        /// 快照进度
+        /// 快照进度。
         /// </summary>
         [JsonProperty("os-extended-snapshot-attributes:progress", NullValueHandling = NullValueHandling.Ignore)]
         public string OsExtendedSnapshotAttributesprogress { get; set; }
 
         /// <summary>
-        /// 专属存储ID
+        /// 专属存储ID。
         /// </summary>
         [JsonProperty("dedicated_storage_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageId { get; set; }
 
         /// <summary>
-        /// 专属存储的名称
+        /// 专属存储名称。
         /// </summary>
         [JsonProperty("dedicated_storage_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageName { get; set; }
 
         /// <summary>
-        /// 服务类型
+        /// 服务类型。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }

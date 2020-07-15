@@ -1609,7 +1609,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 镜像文件的大小，单位为字节
         /// </summary>
         [JsonProperty("__image_size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ImageSize { get; set; }
+        public string ImageSize { get; set; }
 
         /// <summary>
         /// 镜像后端存储类型，目前只支持uds

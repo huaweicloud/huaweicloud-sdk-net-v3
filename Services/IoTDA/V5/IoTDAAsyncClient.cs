@@ -14,6 +14,58 @@ namespace HuaweiCloud.SDK.IoTDA.V5
 
         
         /// <summary>
+        /// 创建资源空间
+        /// </summary>
+        public async Task<AddApplicationResponse> AddApplicationAsync(AddApplicationRequest addApplicationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addApplicationRequest);
+            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<AddApplicationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除资源空间
+        /// </summary>
+        public async Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id" , deleteApplicationRequest.AppId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps/{app_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteApplicationRequest);
+            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            DeleteApplicationResponse deleteApplicationResponse = JsonUtils.DeSerializeNull<DeleteApplicationResponse>(response);
+            deleteApplicationResponse.Body = response.GetHttpBody();
+            return deleteApplicationResponse;
+        }
+        
+        /// <summary>
+        /// 查询资源空间
+        /// </summary>
+        public async Task<ShowApplicationResponse> ShowApplicationAsync(ShowApplicationRequest showApplicationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id" , showApplicationRequest.AppId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps/{app_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showApplicationRequest);
+            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowApplicationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询资源空间列表
+        /// </summary>
+        public async Task<ShowApplicationsResponse> ShowApplicationsAsync(ShowApplicationsRequest showApplicationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showApplicationsRequest);
+            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowApplicationsResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建批量任务
         /// </summary>
         public async Task<CreateBatchTaskResponse> CreateBatchTaskAsync(CreateBatchTaskRequest createBatchTaskRequest)

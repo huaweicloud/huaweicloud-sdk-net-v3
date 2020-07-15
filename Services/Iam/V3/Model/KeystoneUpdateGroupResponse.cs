@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
-        public KeystoneGroupResult Group { get; set; }
+        public KeystoneGroupResultWithLinksSelf Group { get; set; }
 
 
         /// <summary>
