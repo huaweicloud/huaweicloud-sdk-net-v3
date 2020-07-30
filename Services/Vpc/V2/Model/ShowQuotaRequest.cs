@@ -213,6 +213,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
 
         /// <summary>

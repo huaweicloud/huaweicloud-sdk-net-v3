@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("endpoint_id", IsPath = true)]
+        [JsonProperty("endpoint_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EndpointId { get; set; }
 
 

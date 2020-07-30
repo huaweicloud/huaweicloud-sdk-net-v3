@@ -19,42 +19,49 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [SDKProperty("dim.0", IsQuery = true)]
+        [JsonProperty("dim.0", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim0 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dim.1", IsQuery = true)]
+        [JsonProperty("dim.1", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dim.2", IsQuery = true)]
+        [JsonProperty("dim.2", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim2 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
+        [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public long? From { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
+        [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public long? To { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
 

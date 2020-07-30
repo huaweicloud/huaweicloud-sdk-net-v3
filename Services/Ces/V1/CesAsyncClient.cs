@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core;
@@ -21,7 +22,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/batch-query-metric-data",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchListMetricDataRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchListMetricDataResponse>(response);
         }
         
@@ -33,7 +34,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAlarmRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateAlarmResponse>(response);
         }
         
@@ -45,7 +46,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/events",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEventsRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             CreateEventsResponse createEventsResponse = JsonUtils.DeSerializeNull<CreateEventsResponse>(response);
             createEventsResponse.Body = JsonUtils.DeSerializeList<CreateEventsResponseBody>(response);
             return createEventsResponse;
@@ -59,7 +60,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/metric-data",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMetricDataRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CreateMetricDataResponse>(response);
         }
         
@@ -72,7 +73,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             urlParam.Add("alarm_id" , deleteAlarmRequest.AlarmId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteAlarmRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteAlarmResponse>(response);
         }
         
@@ -84,7 +85,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAlarmsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAlarmsResponse>(response);
         }
         
@@ -96,7 +97,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/metrics",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMetricsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListMetricsResponse>(response);
         }
         
@@ -109,7 +110,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             urlParam.Add("alarm_id" , showAlarmRequest.AlarmId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showAlarmRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowAlarmResponse>(response);
         }
         
@@ -121,7 +122,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/event-data",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showEventDataRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowEventDataResponse>(response);
         }
         
@@ -133,7 +134,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/metric-data",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMetricDataRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowMetricDataResponse>(response);
         }
         
@@ -145,7 +146,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/quotas",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQuotasRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
         }
         
@@ -158,7 +159,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             urlParam.Add("alarm_id" , updateAlarmActionRequest.AlarmId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAlarmActionRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateAlarmActionResponse>(response);
         }
         

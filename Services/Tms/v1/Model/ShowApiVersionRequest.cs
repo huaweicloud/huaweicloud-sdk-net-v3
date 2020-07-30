@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         /// 
         /// </summary>
         [SDKProperty("api_version", IsPath = true)]
+        [JsonProperty("api_version", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }
 
 

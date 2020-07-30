@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public CreateScalingConfigRequestBody Body { get; set; }
 
 

@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public KeystoneUpdateGroupRequestBody Body { get; set; }
 
 

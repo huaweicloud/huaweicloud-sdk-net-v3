@@ -22,16 +22,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public List<string> Group { get; set; }
 
         /// <summary>
-        /// 与指定弹性云服务器满足反亲和性。当前不支持该功能。
+        /// 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。值为： shared或dedicated。  - shared：表示共享池。 - dedicated:表示专属主机。  创建与查询此值均有效。
         /// </summary>
-        [JsonProperty("different_host", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> DifferentHost { get; set; }
+        [JsonProperty("tenancy", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tenancy { get; set; }
 
         /// <summary>
-        /// 与指定的弹性云服务器满足亲和性。当前不支持该功能。
+        /// 专属主机ID。  此属性仅在tenancy值为dedicated时有效。  不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。  创建与查询此值均有效。
         /// </summary>
-        [JsonProperty("same_host", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> SameHost { get; set; }
+        [JsonProperty("dedicated_host_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DedicatedHostId { get; set; }
 
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ServerSchedulerHints {\n");
             sb.Append("  group: ").Append(Group).Append("\n");
-            sb.Append("  differentHost: ").Append(DifferentHost).Append("\n");
-            sb.Append("  sameHost: ").Append(SameHost).Append("\n");
+            sb.Append("  tenancy: ").Append(Tenancy).Append("\n");
+            sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -72,16 +72,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Group.SequenceEqual(input.Group)
                 ) && 
                 (
-                    this.DifferentHost == input.DifferentHost ||
-                    this.DifferentHost != null &&
-                    input.DifferentHost != null &&
-                    this.DifferentHost.SequenceEqual(input.DifferentHost)
+                    this.Tenancy == input.Tenancy ||
+                    this.Tenancy != null &&
+                    input.Tenancy != null &&
+                    this.Tenancy.SequenceEqual(input.Tenancy)
                 ) && 
                 (
-                    this.SameHost == input.SameHost ||
-                    this.SameHost != null &&
-                    input.SameHost != null &&
-                    this.SameHost.SequenceEqual(input.SameHost)
+                    this.DedicatedHostId == input.DedicatedHostId ||
+                    this.DedicatedHostId != null &&
+                    input.DedicatedHostId != null &&
+                    this.DedicatedHostId.SequenceEqual(input.DedicatedHostId)
                 );
         }
 
@@ -95,10 +95,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 int hashCode = 41;
                 if (this.Group != null)
                     hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.DifferentHost != null)
-                    hashCode = hashCode * 59 + this.DifferentHost.GetHashCode();
-                if (this.SameHost != null)
-                    hashCode = hashCode * 59 + this.SameHost.GetHashCode();
+                if (this.Tenancy != null)
+                    hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
+                if (this.DedicatedHostId != null)
+                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
                 return hashCode;
             }
         }

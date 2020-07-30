@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("scaling_configuration_id", IsPath = true)]
+        [JsonProperty("scaling_configuration_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingConfigurationId { get; set; }
 
 

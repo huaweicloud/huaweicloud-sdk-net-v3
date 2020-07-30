@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("trust_domain_id", IsQuery = true)]
+        [JsonProperty("trust_domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TrustDomainId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
 

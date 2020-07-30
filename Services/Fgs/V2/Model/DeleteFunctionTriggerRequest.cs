@@ -171,17 +171,20 @@ namespace HuaweiCloud.SDK.Fgs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
+        [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("trigger_type_code", IsPath = true)]
+        [JsonProperty("trigger_type_code", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerTypeCodeEnum TriggerTypeCode { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("triggerId", IsPath = true)]
+        [JsonProperty("triggerId", NullValueHandling = NullValueHandling.Ignore)]
         public string TriggerId { get; set; }
 
 

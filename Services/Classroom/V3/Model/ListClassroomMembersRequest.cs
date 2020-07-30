@@ -19,24 +19,28 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// 
         /// </summary>
         [SDKProperty("classroom_id", IsPath = true)]
+        [JsonProperty("classroom_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClassroomId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
+        [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }
 
 

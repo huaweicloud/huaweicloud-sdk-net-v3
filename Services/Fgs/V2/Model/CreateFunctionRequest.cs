@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Fgs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public CreateFunctionRequestBody Body { get; set; }
 
 

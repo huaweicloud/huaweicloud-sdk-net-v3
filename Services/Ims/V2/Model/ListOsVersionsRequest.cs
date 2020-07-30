@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 
         /// </summary>
         [SDKProperty("tag", IsQuery = true)]
+        [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public string Tag { get; set; }
 
 

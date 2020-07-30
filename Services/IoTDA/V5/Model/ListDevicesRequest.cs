@@ -19,72 +19,84 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// 
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
+        [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("product_id", IsQuery = true)]
+        [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("gateway_id", IsQuery = true)]
+        [JsonProperty("gateway_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GatewayId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("is_cascade_query", IsQuery = true)]
+        [JsonProperty("is_cascade_query", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsCascadeQuery { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("node_id", IsQuery = true)]
+        [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("device_name", IsQuery = true)]
+        [JsonProperty("device_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("app_id", IsQuery = true)]
+        [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
 

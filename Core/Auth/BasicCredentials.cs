@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static System.String;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
@@ -30,24 +31,27 @@ namespace HuaweiCloud.SDK.Core.Auth
         private readonly string _ak;
         private readonly string _sk;
         private readonly string _projectId;
-        private readonly string _domainId;
 
-        public BasicCredentials(string ak, string sk, string projectId, string domainId = null)
+        public BasicCredentials(string ak, string sk, string projectId)
         {
-            if (string.IsNullOrEmpty(ak))
+            if (IsNullOrEmpty(ak))
             {
-                throw new ArgumentNullException("AK can not be null.");
+                throw new ArgumentNullException(nameof(ak));
             }
 
-            if (string.IsNullOrEmpty(sk))
+            if (IsNullOrEmpty(sk))
             {
-                throw new ArgumentNullException("SK cannot be null.");
+                throw new ArgumentNullException(nameof(sk));
+            }
+
+            if (IsNullOrEmpty(projectId))
+            {
+                throw new ArgumentNullException(nameof(projectId));
             }
 
             this._ak = ak;
             this._sk = sk;
             this._projectId = projectId;
-            this._domainId = domainId;
         }
 
         public Dictionary<string, string> GetPathParamDictionary()
@@ -58,30 +62,21 @@ namespace HuaweiCloud.SDK.Core.Auth
                 pathParamDictionary.Add("project_id", _projectId);
             }
 
-            if (_domainId != null)
-            {
-                pathParamDictionary.Add("domain_id", _domainId);
-            }
-
             return pathParamDictionary;
         }
 
         public Task<HttpRequest> SignAuthRequest(HttpRequest request)
         {
-            Task<HttpRequest> httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
+            var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
+                request.Headers.Add("X-Project-Id", _projectId);
+
+                if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
+                {
+                    request.Headers.Add("X-Sdk-Content-Sha256", "UNSIGNED-PAYLOAD");
+                }
+
                 var signer = new Signer {Key = _ak, Secret = _sk};
-
-                if (_domainId != null)
-                {
-                    request.Headers.Add("X-Domain-Id", _domainId);
-                }
-
-                if (_projectId != null)
-                {
-                    request.Headers.Add("X-Project-Id", _projectId);
-                }
-
                 signer.Sign(request);
 
                 return request;

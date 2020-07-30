@@ -435,9 +435,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         }
 
         /// <summary>
-        /// spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+        /// 竞价实例中断策略，当前支持immediate。  - 当interruption_policy&#x3D;immediate时表示释放策略为立即释放。 
         /// </summary>
-        /// <value>spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 </value>
+        /// <value>竞价实例中断策略，当前支持immediate。  - 当interruption_policy&#x3D;immediate时表示释放策略为立即释放。 </value>
         [JsonConverter(typeof(EnumClassConverter<InterruptionPolicyEnum>))]
         public class InterruptionPolicyEnum
         {
@@ -446,16 +446,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly InterruptionPolicyEnum IMMEDIATE = new InterruptionPolicyEnum("immediate");
 
-            /// <summary>
-            /// Enum DELAY for value: delay
-            /// </summary>
-            public static readonly InterruptionPolicyEnum DELAY = new InterruptionPolicyEnum("delay");
-
             public static readonly Dictionary<string, InterruptionPolicyEnum> StaticFields =
             new Dictionary<string, InterruptionPolicyEnum>()
             {
                 {"immediate", IMMEDIATE},
-                {"delay", DELAY},
             };
 
             private string Value;
@@ -603,18 +597,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string DiskPrior { get; set; }
 
         /// <summary>
-        /// spot block时间。
+        /// 购买的竞价实例时长。  - 仅interruption_policy&#x3D;immediate 时该字段有效 。 - spot_duration_hours大于0。最大值由预测系统给出可以从flavor的extra_specs的cond:spot_block:operation:longest_duration_hours字段中查询。
         /// </summary>
         [JsonProperty("spot_duration_hours", NullValueHandling = NullValueHandling.Ignore)]
         public int? SpotDurationHours { get; set; }
 
         /// <summary>
-        /// spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+        /// 竞价实例中断策略，当前支持immediate。  - 当interruption_policy&#x3D;immediate时表示释放策略为立即释放。 
         /// </summary>
         [JsonProperty("interruption_policy", NullValueHandling = NullValueHandling.Ignore)]
         public InterruptionPolicyEnum InterruptionPolicy { get; set; }
         /// <summary>
-        /// spot block时间个数。  - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于1，最大值由预测系统给出，可以从flavor的extra_specs中查询。 例如客户买5小时，就通过spot_duartion_hours&#x3D;5，不传该值，默认为1. 例如客户买大于6小时，就只能买6小时倍数。spot_duartion_hours&#x3D;6，spot_duartion_count&#x3D;2，代表买12个小时。 
+        /// 表示购买的“竞价实例时长”的个数。  - 仅spot_duration_hours&gt;0 时该字段有效。 - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于等于1。  spot_duration_count的最大值由预测系统给出可以从flavor的extra_specs的cond:spot_block:operation:longest_duration_count字段中查询。  
         /// </summary>
         [JsonProperty("spot_duration_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? SpotDurationCount { get; set; }

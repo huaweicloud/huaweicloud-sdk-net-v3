@@ -19,26 +19,29 @@
  * under the License.
  */
 
-using System;
-
 namespace HuaweiCloud.SDK.Core
 {
     public class SdkResponse
     {
-        internal string HttpBody { get; set; }
+        public string HttpBody { get; set; }
 
         public int? HttpStatusCode { get; set; }
 
-        internal string HttpHeaders { get; set; }
+        public string HttpHeaders { get; set; }
 
         public string GetHttpBody()
         {
-            return HttpBody;
+            return this.HttpBody;
+        }
+
+        public int? GetHttpStatusCode()
+        {
+            return this.HttpStatusCode;
         }
 
         public string GetHttpHeaders()
         {
-            return HttpHeaders;
+            return this.HttpHeaders;
         }
     }
 }

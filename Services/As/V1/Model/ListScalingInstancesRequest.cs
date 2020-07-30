@@ -367,33 +367,39 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
+        [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("life_cycle_state", IsQuery = true)]
+        [JsonProperty("life_cycle_state", NullValueHandling = NullValueHandling.Ignore)]
         public LifeCycleStateEnum LifeCycleState { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("health_status", IsQuery = true)]
+        [JsonProperty("health_status", NullValueHandling = NullValueHandling.Ignore)]
         public HealthStatusEnum HealthStatus { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("protect_from_scaling_down", IsQuery = true)]
+        [JsonProperty("protect_from_scaling_down", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectFromScalingDownEnum ProtectFromScalingDown { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
+        [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
 

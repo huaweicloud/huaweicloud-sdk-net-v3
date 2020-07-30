@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 
         /// </summary>
         [SDKProperty("security_group_id", IsPath = true)]
+        [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
 

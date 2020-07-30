@@ -129,11 +129,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("interface", IsQuery = true)]
+        [JsonProperty("interface", NullValueHandling = NullValueHandling.Ignore)]
         public InterfaceEnum Interface { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("service_id", IsQuery = true)]
+        [JsonProperty("service_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceId { get; set; }
 
 

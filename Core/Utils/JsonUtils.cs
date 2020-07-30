@@ -21,6 +21,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -28,39 +30,84 @@ namespace HuaweiCloud.SDK.Core
 {
     public static class JsonUtils
     {
-        public static T DeSerialize<T>(SdkResponse sdkResponse) where T : SdkResponse
+        public static T DeSerialize<T>(HttpResponseMessage message)
         {
-            var jsonObject = JsonConvert.DeserializeObject<T>(sdkResponse.GetHttpBody());
-
-            if (jsonObject == null)
+            if (typeof(T).IsSubclassOf(typeof(SdkStreamResponse)))
             {
-                return DeSerializeNull<T>(sdkResponse);
+                return DeSerializeStream<T>(message);
             }
 
-            jsonObject.HttpStatusCode = sdkResponse.HttpStatusCode;
-            jsonObject.HttpHeaders = sdkResponse.HttpHeaders;
-            jsonObject.HttpBody = sdkResponse.HttpBody;
+            var body = message.Content.ReadAsStringAsync().Result;
+            var jsonObject = JsonConvert.DeserializeObject<T>(body, GetJsonSettings());
+            if (jsonObject == null)
+            {
+                jsonObject = Activator.CreateInstance<T>();
+            }
+
+            jsonObject.GetType().GetProperty("HttpStatusCode")?.SetValue(jsonObject, (int) message.StatusCode, null);
+            jsonObject.GetType().GetProperty("HttpHeaders")?.SetValue(jsonObject, message.Headers.ToString(), null);
+            jsonObject.GetType().GetProperty("HttpBody")?.SetValue(jsonObject, body, null);
+
             return jsonObject;
         }
-
-        public static T DeSerializeNull<T>(SdkResponse sdkResponse) where T : SdkResponse
+        
+        private static T DeSerializeStream<T>(HttpResponseMessage message)
         {
             var t = Activator.CreateInstance<T>();
-            t.HttpHeaders = sdkResponse.HttpHeaders;
-            t.HttpBody = sdkResponse.HttpBody;
-            t.HttpStatusCode = sdkResponse.HttpStatusCode;
+            t.GetType().GetProperty("HttpStatusCode")?.SetValue(t, (int) message.StatusCode, null);
+            t.GetType().GetProperty("HttpHeaders")?.SetValue(t, message.Headers.ToString(), null);
+            BindingFlags flag = BindingFlags.Public | BindingFlags.Instance;
+            t.GetType().GetMethod("SetStream")
+                ?.Invoke(t, flag, Type.DefaultBinder,
+                    new object[] {message.Content.ReadAsStreamAsync().Result}, null);
             return t;
         }
 
-        public static List<T> DeSerializeList<T>(SdkResponse sdkResponse)
+        public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse
         {
-            var data = JArray.Parse(sdkResponse.GetHttpBody()).ToObject<List<T>>();
-            return data;
+            var jsonObject = JsonConvert.DeserializeObject<T>(response.HttpBody, GetJsonSettings()) ?? Activator.CreateInstance<T>();
+
+            jsonObject.HttpStatusCode = response.HttpStatusCode;
+            jsonObject.HttpHeaders = response.HttpHeaders;
+            jsonObject.HttpBody = response.HttpBody;
+            return jsonObject;
+        }
+
+        public static T DeSerializeNull<T>(HttpResponseMessage message) where T : SdkResponse
+        {
+            var t = Activator.CreateInstance<T>();
+            t.HttpStatusCode = (int) message.StatusCode;
+            t.HttpHeaders = message.Headers.ToString();
+            t.HttpBody = message.Content.ReadAsStringAsync().Result;
+            return t;
+        }
+
+        public static List<T> DeSerializeList<T>(HttpResponseMessage message)
+        {
+            var body = message.Content.ReadAsStringAsync().Result;
+            return JArray.Parse(body).ToObject<List<T>>(JsonSerializer.CreateDefault(GetJsonSettings()));
+        }
+
+        public static Dictionary<TK, TV> DeSerializeMap<TK, TV>(HttpResponseMessage message)
+        {
+            var body = message.Content.ReadAsStringAsync().Result;
+            return JArray.Parse(body).ToObject<Dictionary<TK, TV>>(JsonSerializer.CreateDefault(GetJsonSettings()));
         }
 
         public static string Serialize(object item)
         {
             return JsonConvert.SerializeObject(item);
+        }
+        
+        private static JsonSerializerSettings GetJsonSettings()
+        {
+            var settings = new JsonSerializerSettings
+            {
+                DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+                DateParseHandling = DateParseHandling.DateTime
+            };
+            return settings;
         }
     }
 }

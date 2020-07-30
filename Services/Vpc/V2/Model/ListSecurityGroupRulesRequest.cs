@@ -19,18 +19,21 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("security_group_id", IsQuery = true)]
+        [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
 

@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core;
@@ -21,7 +22,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addApplicationRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AddApplicationResponse>(response);
         }
         
@@ -34,9 +35,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("app_id" , deleteApplicationRequest.AppId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps/{app_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteApplicationRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             DeleteApplicationResponse deleteApplicationResponse = JsonUtils.DeSerializeNull<DeleteApplicationResponse>(response);
-            deleteApplicationResponse.Body = response.GetHttpBody();
             return deleteApplicationResponse;
         }
         
@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("app_id" , showApplicationRequest.AppId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps/{app_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showApplicationRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApplicationResponse>(response);
         }
         
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/apps",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showApplicationsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApplicationsResponse>(response);
         }
         
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/batchtasks",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBatchTaskRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateBatchTaskResponse>(response);
         }
         
@@ -85,7 +85,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/batchtasks",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBatchTasksRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListBatchTasksResponse>(response);
         }
         
@@ -98,7 +98,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("task_id" , showBatchTaskRequest.TaskId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/batchtasks/{task_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showBatchTaskRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBatchTaskResponse>(response);
         }
         
@@ -110,7 +110,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addCertificateRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AddCertificateResponse>(response);
         }
         
@@ -123,9 +123,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("certificate_id" , checkCertificateRequest.CertificateId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/{certificate_id}/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkCertificateRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             CheckCertificateResponse checkCertificateResponse = JsonUtils.DeSerializeNull<CheckCertificateResponse>(response);
-            checkCertificateResponse.Body = response.GetHttpBody();
             return checkCertificateResponse;
         }
         
@@ -138,9 +137,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("certificate_id" , deleteCertificateRequest.CertificateId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/{certificate_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteCertificateRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             DeleteCertificateResponse deleteCertificateResponse = JsonUtils.DeSerializeNull<DeleteCertificateResponse>(response);
-            deleteCertificateResponse.Body = response.GetHttpBody();
             return deleteCertificateResponse;
         }
         
@@ -152,7 +150,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listCertificatesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListCertificatesResponse>(response);
         }
         
@@ -165,7 +163,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , createCommandRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/commands",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCommandRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateCommandResponse>(response);
         }
         
@@ -177,7 +175,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-group",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDeviceGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AddDeviceGroupResponse>(response);
         }
         
@@ -190,9 +188,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("group_id" , createOrDeleteDeviceInGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-group/{group_id}/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, createOrDeleteDeviceInGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             CreateOrDeleteDeviceInGroupResponse createOrDeleteDeviceInGroupResponse = JsonUtils.DeSerializeNull<CreateOrDeleteDeviceInGroupResponse>(response);
-            createOrDeleteDeviceInGroupResponse.Body = response.GetHttpBody();
             return createOrDeleteDeviceInGroupResponse;
         }
         
@@ -205,9 +202,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("group_id" , deleteDeviceGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-group/{group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteDeviceGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             DeleteDeviceGroupResponse deleteDeviceGroupResponse = JsonUtils.DeSerializeNull<DeleteDeviceGroupResponse>(response);
-            deleteDeviceGroupResponse.Body = response.GetHttpBody();
             return deleteDeviceGroupResponse;
         }
         
@@ -219,7 +215,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-group",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDeviceGroupsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDeviceGroupsResponse>(response);
         }
         
@@ -232,7 +228,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("group_id" , showDeviceGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-group/{group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDeviceGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDeviceGroupResponse>(response);
         }
         
@@ -245,7 +241,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("group_id" , showDevicesInGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-group/{group_id}/devices",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDevicesInGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDevicesInGroupResponse>(response);
         }
         
@@ -258,7 +254,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("group_id" , updateDeviceGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-group/{group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDeviceGroupResponse>(response);
         }
         
@@ -270,7 +266,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AddDeviceResponse>(response);
         }
         
@@ -283,9 +279,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , deleteDeviceRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             DeleteDeviceResponse deleteDeviceResponse = JsonUtils.DeSerializeNull<DeleteDeviceResponse>(response);
-            deleteDeviceResponse.Body = response.GetHttpBody();
             return deleteDeviceResponse;
         }
         
@@ -298,9 +293,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , freezeDeviceRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/freeze",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, freezeDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             FreezeDeviceResponse freezeDeviceResponse = JsonUtils.DeSerializeNull<FreezeDeviceResponse>(response);
-            freezeDeviceResponse.Body = response.GetHttpBody();
             return freezeDeviceResponse;
         }
         
@@ -312,7 +306,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDevicesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDevicesResponse>(response);
         }
         
@@ -325,7 +319,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , resetDeviceSecretRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetDeviceSecretRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ResetDeviceSecretResponse>(response);
         }
         
@@ -338,7 +332,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , showDeviceRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDeviceResponse>(response);
         }
         
@@ -351,9 +345,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , unfreezeDeviceRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/unfreeze",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, unfreezeDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             UnfreezeDeviceResponse unfreezeDeviceResponse = JsonUtils.DeSerializeNull<UnfreezeDeviceResponse>(response);
-            unfreezeDeviceResponse.Body = response.GetHttpBody();
             return unfreezeDeviceResponse;
         }
         
@@ -366,7 +359,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , updateDeviceRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDeviceResponse>(response);
         }
         
@@ -379,7 +372,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , showDeviceShadowRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/shadow",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDeviceShadowRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDeviceShadowResponse>(response);
         }
         
@@ -392,7 +385,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , updateDeviceShadowDesiredDataRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/shadow",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceShadowDesiredDataRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDeviceShadowDesiredDataResponse>(response);
         }
         
@@ -405,7 +398,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , createMessageRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/messages",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMessageRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateMessageResponse>(response);
         }
         
@@ -418,7 +411,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , listDeviceMessagesRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/messages",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDeviceMessagesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDeviceMessagesResponse>(response);
         }
         
@@ -432,7 +425,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("message_id" , showDeviceMessageRequest.MessageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/messages/{message_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDeviceMessageRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDeviceMessageResponse>(response);
         }
         
@@ -444,7 +437,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/products",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createProductRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateProductResponse>(response);
         }
         
@@ -457,9 +450,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("product_id" , deleteProductRequest.ProductId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/products/{product_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteProductRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             DeleteProductResponse deleteProductResponse = JsonUtils.DeSerializeNull<DeleteProductResponse>(response);
-            deleteProductResponse.Body = response.GetHttpBody();
             return deleteProductResponse;
         }
         
@@ -471,7 +463,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/products",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProductsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListProductsResponse>(response);
         }
         
@@ -484,7 +476,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("product_id" , showProductRequest.ProductId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/products/{product_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showProductRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowProductResponse>(response);
         }
         
@@ -497,7 +489,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("product_id" , updateProductRequest.ProductId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/products/{product_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProductRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateProductResponse>(response);
         }
         
@@ -510,7 +502,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , listPropertiesRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/properties",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPropertiesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPropertiesResponse>(response);
         }
         
@@ -523,7 +515,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("device_id" , updatePropertiesRequest.DeviceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/properties",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePropertiesRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePropertiesResponse>(response);
         }
         
@@ -536,7 +528,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("rule_id" , changeRuleStatusRequest.RuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/rules/{rule_id}/status",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeRuleStatusRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<ChangeRuleStatusResponse>(response);
         }
         
@@ -548,7 +540,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/rules",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRuleRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateRuleResponse>(response);
         }
         
@@ -561,9 +553,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("rule_id" , deleteRuleRequest.RuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/rules/{rule_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteRuleRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             DeleteRuleResponse deleteRuleResponse = JsonUtils.DeSerializeNull<DeleteRuleResponse>(response);
-            deleteRuleResponse.Body = response.GetHttpBody();
             return deleteRuleResponse;
         }
         
@@ -575,7 +566,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/rules",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listRulesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRulesResponse>(response);
         }
         
@@ -588,7 +579,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("rule_id" , showRuleRequest.RuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/rules/{rule_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showRuleRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowRuleResponse>(response);
         }
         
@@ -601,7 +592,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("rule_id" , updateRuleRequest.RuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/rules/{rule_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRuleRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateRuleResponse>(response);
         }
         
@@ -613,7 +604,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/subscriptions",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubscriptionRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateSubscriptionResponse>(response);
         }
         
@@ -626,9 +617,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("subscription_id" , deleteSubscriptionRequest.SubscriptionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/subscriptions/{subscription_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSubscriptionRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             DeleteSubscriptionResponse deleteSubscriptionResponse = JsonUtils.DeSerializeNull<DeleteSubscriptionResponse>(response);
-            deleteSubscriptionResponse.Body = response.GetHttpBody();
             return deleteSubscriptionResponse;
         }
         
@@ -640,7 +630,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/subscriptions",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSubscriptionsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSubscriptionsResponse>(response);
         }
         
@@ -653,7 +643,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("subscription_id" , showSubscriptionRequest.SubscriptionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/subscriptions/{subscription_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSubscriptionRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowSubscriptionResponse>(response);
         }
         
@@ -666,7 +656,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             urlParam.Add("subscription_id" , updateSubscriptionRequest.SubscriptionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/subscriptions/{subscription_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubscriptionRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateSubscriptionResponse>(response);
         }
         
@@ -678,7 +668,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tags/query-resources",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourcesByTagsRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListResourcesByTagsResponse>(response);
         }
         
@@ -690,9 +680,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tags/bind-resource",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             TagDeviceResponse tagDeviceResponse = JsonUtils.DeSerializeNull<TagDeviceResponse>(response);
-            tagDeviceResponse.Body = response.GetHttpBody();
             return tagDeviceResponse;
         }
         
@@ -704,9 +693,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tags/unbind-resource",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagDeviceRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             UntagDeviceResponse untagDeviceResponse = JsonUtils.DeSerializeNull<UntagDeviceResponse>(response);
-            untagDeviceResponse.Body = response.GetHttpBody();
             return untagDeviceResponse;
         }
         

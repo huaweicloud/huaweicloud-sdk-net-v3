@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("job_id", IsPath = true)]
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
 

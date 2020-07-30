@@ -233,47 +233,55 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [SDKProperty("instance_id", IsQuery = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("backup_id", IsQuery = true)]
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BackupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("backup_type", IsQuery = true)]
+        [JsonProperty("backup_type", NullValueHandling = NullValueHandling.Ignore)]
         public BackupTypeEnum BackupType { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("begin_time", IsQuery = true)]
+        [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string BeginTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("mode", IsQuery = true)]
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }
 
         /// <summary>

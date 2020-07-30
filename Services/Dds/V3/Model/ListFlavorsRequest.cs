@@ -123,12 +123,14 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [SDKProperty("region", IsQuery = true)]
+        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("engine_name", IsQuery = true)]
+        [JsonProperty("engine_name", NullValueHandling = NullValueHandling.Ignore)]
         public EngineNameEnum EngineName { get; set; }
 
         /// <summary>

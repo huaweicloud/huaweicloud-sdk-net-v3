@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [SDKProperty("alarm_id", IsPath = true)]
+        [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public ModifyAlarmActionReq Body { get; set; }
 
 

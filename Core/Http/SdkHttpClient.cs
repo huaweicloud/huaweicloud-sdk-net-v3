@@ -20,6 +20,7 @@
  */
 
 using System;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -36,7 +37,8 @@ namespace HuaweiCloud.SDK.Core
         private readonly ILogger _logger;
         private readonly HttpHandler _httpHandler;
 
-        public SdkHttpClient(HttpConfig config, HttpHandler httpHandler, bool logging, LogLevel logLevel)
+        public SdkHttpClient(String clientName, HttpConfig config, HttpHandler httpHandler, bool logging,
+            LogLevel logLevel)
         {
             if (_myHttpClient != null)
             {
@@ -104,6 +106,13 @@ namespace HuaweiCloud.SDK.Core
             if (request.Body != null)
             {
                 message.Content = new StringContent(request.Body);
+                message.Content.Headers.ContentType =
+                    new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
+            }
+
+            if (request.FileStream != null && request.FileStream != Stream.Null)
+            {
+                message.Content = new StreamContent(request.FileStream);
                 message.Content.Headers.ContentType =
                     new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
             }

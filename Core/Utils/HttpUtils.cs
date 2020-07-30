@@ -27,12 +27,12 @@ using System.Text;
 
 namespace HuaweiCloud.SDK.Core
 {
- public static class HttpUtils
+    public static class HttpUtils
     {
         public static string AddUrlPath(string path, Dictionary<string, string> pathParams)
         {
-            return pathParams.Aggregate(path, 
-                (current, keyValuePair) => current.Replace("{" + keyValuePair.Key + "}", 
+            return pathParams.Aggregate(path,
+                (current, keyValuePair) => current.Replace("{" + keyValuePair.Key + "}",
                     keyValuePair.Value));
         }
 
@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Core
             return InitSdkRequest(path, null, data);
         }
 
-        public static SdkRequest InitSdkRequest(string path, String contentType,  object data = null)
+        public static SdkRequest InitSdkRequest(string path, String contentType, object data = null)
         {
             if (path != null && string.IsNullOrEmpty(path))
             {
@@ -210,9 +210,15 @@ namespace HuaweiCloud.SDK.Core
                 request.Body = bodyData;
             }
 
-            if(!string.IsNullOrEmpty(contentType)){
+            if (!string.IsNullOrEmpty(contentType))
+            {
                 request.ContentType = contentType;
                 request.Header.Add("Content-Type", request.ContentType);
+            }
+
+            if (data.GetType().IsSubclassOf(typeof(SdkStreamRequest)))
+            {
+                request.FileStream = ((SdkStreamRequest) data).FileStream;
             }
 
             return request;

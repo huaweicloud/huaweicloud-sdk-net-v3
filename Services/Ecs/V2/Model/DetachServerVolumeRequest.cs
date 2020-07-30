@@ -123,18 +123,21 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("server_id", IsPath = true)]
+        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("volume_id", IsPath = true)]
+        [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("delete_flag", IsQuery = true)]
+        [JsonProperty("delete_flag", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteFlagEnum DeleteFlag { get; set; }
 
         /// <summary>

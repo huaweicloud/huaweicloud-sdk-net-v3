@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Tms.v1.Model;
@@ -8,7 +9,7 @@ namespace HuaweiCloud.SDK.Tms.v1
     {
         public static ClientBuilder<TmsClient> NewBuilder()
         {
-            return new ClientBuilder<TmsClient>();
+            return new ClientBuilder<TmsClient>("GlobalCredentials");
         }
 
         
@@ -20,7 +21,7 @@ namespace HuaweiCloud.SDK.Tms.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPredefineTagsRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<CreatePredefineTagsResponse>(response);
         }
         
@@ -32,7 +33,7 @@ namespace HuaweiCloud.SDK.Tms.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deletePredefineTagsRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<DeletePredefineTagsResponse>(response);
         }
         
@@ -44,7 +45,7 @@ namespace HuaweiCloud.SDK.Tms.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listApiVersionsRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
         }
         
@@ -56,7 +57,7 @@ namespace HuaweiCloud.SDK.Tms.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPredefineTagsRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListPredefineTagsResponse>(response);
         }
         
@@ -69,7 +70,7 @@ namespace HuaweiCloud.SDK.Tms.v1
             urlParam.Add("api_version" , showApiVersionRequest.ApiVersion.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showApiVersionRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
         }
         
@@ -81,7 +82,7 @@ namespace HuaweiCloud.SDK.Tms.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePredefineTagsRequest);
-            SdkResponse response = DoHttpRequestSync("PUT",request);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdatePredefineTagsResponse>(response);
         }
         

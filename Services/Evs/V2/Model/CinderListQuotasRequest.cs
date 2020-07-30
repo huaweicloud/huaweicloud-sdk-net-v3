@@ -117,12 +117,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("target_project_id", IsPath = true)]
+        [JsonProperty("target_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("usage", IsQuery = true)]
+        [JsonProperty("usage", NullValueHandling = NullValueHandling.Ignore)]
         public UsageEnum Usage { get; set; }
 
         /// <summary>

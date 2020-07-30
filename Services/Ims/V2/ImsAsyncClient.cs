@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core;
@@ -21,7 +22,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddMembersRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchAddMembersResponse>(response);
         }
         
@@ -33,7 +34,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<BatchDeleteMembersResponse>(response);
         }
         
@@ -45,7 +46,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<BatchUpdateMembersResponse>(response);
         }
         
@@ -58,7 +59,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , copyImageCrossRegionRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/cross_region_copy",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageCrossRegionRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CopyImageCrossRegionResponse>(response);
         }
         
@@ -71,7 +72,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , copyImageInRegionRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/copy",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageInRegionRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CopyImageInRegionResponse>(response);
         }
         
@@ -83,7 +84,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/dataimages/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDataImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateDataImageResponse>(response);
         }
         
@@ -95,7 +96,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateImageResponse>(response);
         }
         
@@ -107,7 +108,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOrUpdateTagsRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<CreateOrUpdateTagsResponse>(response);
         }
         
@@ -119,7 +120,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/wholeimages/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createWholeImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateWholeImageResponse>(response);
         }
         
@@ -132,7 +133,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , exportImageRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/file",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ExportImageResponse>(response);
         }
         
@@ -144,7 +145,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/quickimport/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importImageQuickRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ImportImageQuickResponse>(response);
         }
         
@@ -156,7 +157,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listImagesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListImagesResponse>(response);
         }
         
@@ -168,7 +169,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/os_version",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listOsVersionsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             ListOsVersionsResponse listOsVersionsResponse = JsonUtils.DeSerializeNull<ListOsVersionsResponse>(response);
             listOsVersionsResponse.Body = JsonUtils.DeSerializeList<ListOsVersionsResponseBody>(response);
             return listOsVersionsResponse;
@@ -182,7 +183,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listTagsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTagsResponse>(response);
         }
         
@@ -195,7 +196,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , registerImageRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/upload",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<RegisterImageResponse>(response);
         }
         
@@ -207,7 +208,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/quota",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showImageQuotaRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowImageQuotaResponse>(response);
         }
         
@@ -220,7 +221,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , updateImageRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/{image_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("PATCH",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<UpdateImageResponse>(response);
         }
         
@@ -233,7 +234,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("job_id" , showJobRequest.JobId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showJobRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
         }
         
@@ -246,7 +247,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , glanceAddImageMemberRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceAddImageMemberRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<GlanceAddImageMemberResponse>(response);
         }
         
@@ -258,7 +259,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/images",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceCreateImageMetadataRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<GlanceCreateImageMetadataResponse>(response);
         }
         
@@ -272,7 +273,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("tag" , glanceCreateTagRequest.Tag.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceCreateTagRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<GlanceCreateTagResponse>(response);
         }
         
@@ -285,7 +286,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , glanceDeleteImageRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceDeleteImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<GlanceDeleteImageResponse>(response);
         }
         
@@ -299,7 +300,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("member_id" , glanceDeleteImageMemberRequest.MemberId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceDeleteImageMemberRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<GlanceDeleteImageMemberResponse>(response);
         }
         
@@ -313,7 +314,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("tag" , glanceDeleteTagRequest.Tag.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceDeleteTagRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<GlanceDeleteTagResponse>(response);
         }
         
@@ -325,7 +326,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/schemas/members",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceListImageMemberSchemasRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceListImageMemberSchemasResponse>(response);
         }
         
@@ -338,7 +339,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , glanceListImageMembersRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceListImageMembersRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceListImageMembersResponse>(response);
         }
         
@@ -350,7 +351,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/schemas/images",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceListImageSchemasRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceListImageSchemasResponse>(response);
         }
         
@@ -362,7 +363,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/images",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceListImagesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceListImagesResponse>(response);
         }
         
@@ -375,7 +376,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , glanceShowImageRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceShowImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceShowImageResponse>(response);
         }
         
@@ -389,7 +390,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("member_id" , glanceShowImageMemberRequest.MemberId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceShowImageMemberRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceShowImageMemberResponse>(response);
         }
         
@@ -401,7 +402,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/schemas/member",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceShowImageMemberSchemasRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceShowImageMemberSchemasResponse>(response);
         }
         
@@ -413,7 +414,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/schemas/image",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, glanceShowImageSchemasRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GlanceShowImageSchemasResponse>(response);
         }
         
@@ -426,7 +427,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("image_id" , glanceUpdateImageRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceUpdateImageRequest);
-            SdkResponse response = await DoHttpRequestAsync("PATCH",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<GlanceUpdateImageResponse>(response);
         }
         
@@ -440,7 +441,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             urlParam.Add("member_id" , glanceUpdateImageMemberRequest.MemberId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceUpdateImageMemberRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<GlanceUpdateImageMemberResponse>(response);
         }
         

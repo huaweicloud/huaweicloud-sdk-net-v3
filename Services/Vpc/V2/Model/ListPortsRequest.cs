@@ -245,70 +245,82 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
+        [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("network_id", IsQuery = true)]
+        [JsonProperty("network_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("mac_address", IsQuery = true)]
+        [JsonProperty("mac_address", NullValueHandling = NullValueHandling.Ignore)]
         public string MacAddress { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("device_id", IsQuery = true)]
+        [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("device_owner", IsQuery = true)]
+        [JsonProperty("device_owner", NullValueHandling = NullValueHandling.Ignore)]
         public DeviceOwnerEnum DeviceOwner { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("fixed_ips", IsQuery = true)]
+        [JsonProperty("fixed_ips", NullValueHandling = NullValueHandling.Ignore)]
         public string FixedIps { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
 

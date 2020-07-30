@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core.Auth;
 using Microsoft.Extensions.Logging;
@@ -35,6 +36,17 @@ namespace HuaweiCloud.SDK.Core
     {
         public class ClientBuilder<T> where T : Client
         {
+            private readonly string _credentialType = nameof(BasicCredentials);
+
+            public ClientBuilder()
+            {
+            }
+
+            public ClientBuilder(string credentialType)
+            {
+                this._credentialType = credentialType;
+            }
+
             private ICredential _credential;
             private HttpConfig _httpConfig;
             private string _endPoint;
@@ -44,6 +56,12 @@ namespace HuaweiCloud.SDK.Core
 
             public ClientBuilder<T> WithCredential(ICredential credential)
             {
+                if (credential.GetType().Name != _credentialType)
+                {
+                    throw new ArgumentException(
+                        $"Need credential type is {_credentialType}, actually is {credential.GetType().Name}");
+                }
+
                 this._credential = credential;
                 return this;
             }
@@ -97,7 +115,15 @@ namespace HuaweiCloud.SDK.Core
                 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
                 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 
-                return new BasicCredentials(ak, sk, projectId, domainId);
+                switch (_credentialType)
+                {
+                    case nameof(BasicCredentials):
+                        return new BasicCredentials(ak, sk, projectId);
+                    case nameof(GlobalCredentials):
+                        return new GlobalCredentials(ak, sk, domainId);
+                    default:
+                        return null;
+                }
             }
         }
 
@@ -132,36 +158,28 @@ namespace HuaweiCloud.SDK.Core
 
         private void InitSdkHttpClient(HttpHandler httpHandler, bool enableLogging, LogLevel logLevel)
         {
-            this._sdkHttpClient = new SdkHttpClient(_httpConfig, httpHandler, enableLogging, logLevel);
+            this._sdkHttpClient =
+                new SdkHttpClient(this.GetType().FullName, _httpConfig, httpHandler, enableLogging, logLevel);
         }
 
-        protected async Task<SdkResponse> DoHttpRequestAsync(string methodType, SdkRequest request)
+        protected async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request)
         {
             var url = _endpoint
                       + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
                       + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
-            return await _async_http(url, methodType.ToUpper(), request.ContentType, request.Header,
-                request.Body ?? "");
+            return await _async_http(url, methodType.ToUpper(), request);
         }
 
-        private async Task<SdkResponse> _async_http(string url, string method, string contentType,
-            Dictionary<string, string> headers,
-            string content)
+        private async Task<HttpResponseMessage> _async_http(string url, string method, SdkRequest sdkRequest)
         {
-            var request = GetHttpRequest(url, method, contentType, headers, content);
+            var request = GetHttpRequest(url, method, sdkRequest);
             request = await _credential.SignAuthRequest(request);
 
             var message = this._sdkHttpClient.InitHttpRequest(request);
-            var result = new SdkResponse();
             try
             {
                 var response = await this._sdkHttpClient.DoHttpRequest(message);
-                var requestId = response.Headers.GetValues(XRequestId).FirstOrDefault();
-                result.HttpStatusCode = (int) response.StatusCode;
-                result.HttpHeaders = response.Headers.ToString();
-                result.HttpBody = await response.Content.ReadAsStringAsync();
-
-                return GetResult(result, requestId);
+                return GetResult(response);
             }
             catch (AggregateException aggregateException)
             {
@@ -169,31 +187,24 @@ namespace HuaweiCloud.SDK.Core
             }
         }
 
-        protected SdkResponse DoHttpRequestSync(string methodType, SdkRequest request)
+        protected HttpResponseMessage DoHttpRequestSync(string methodType, SdkRequest request)
         {
             var url = _endpoint
                       + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
                       + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
-            return _sync_http(url, methodType.ToUpper(), request.ContentType, request.Header, request.Body ?? "");
+            return _sync_http(url, methodType.ToUpper(), request);
         }
 
-        private SdkResponse _sync_http(string url, string method, string contentType,
-            Dictionary<string, string> headers,
-            string content)
+        private HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
         {
-            var request = GetHttpRequest(url, method, contentType, headers, content);
+            var request = GetHttpRequest(url, method, sdkRequest);
             request = _credential.SignAuthRequest(request).Result;
 
             var message = this._sdkHttpClient.InitHttpRequest(request);
-            var result = new SdkResponse();
             try
             {
                 var response = this._sdkHttpClient.DoHttpRequest(message).Result;
-                var requestId = response.Headers.GetValues(XRequestId).FirstOrDefault();
-                result.HttpStatusCode = (int) response.StatusCode;
-                result.HttpHeaders = response.Headers.ToString();
-                result.HttpBody = response.Content.ReadAsStringAsync().Result;
-                return GetResult(result, requestId);
+                return GetResult(response);
             }
             catch (AggregateException aggregateException)
             {
@@ -201,12 +212,20 @@ namespace HuaweiCloud.SDK.Core
             }
         }
 
-        private SdkResponse GetResult(SdkResponse result, string requestId)
+        private HttpResponseMessage GetResult(HttpResponseMessage responseMessage)
         {
-            if (result.HttpStatusCode < 400)
+            if ((int) responseMessage.StatusCode < 400)
             {
-                return result;
+                return responseMessage;
             }
+
+            var result = new SdkResponse
+            {
+                HttpStatusCode = (int) responseMessage.StatusCode,
+                HttpHeaders = responseMessage.Headers.ToString(),
+                HttpBody = responseMessage.Content.ReadAsStringAsync().Result
+            };
+            var requestId = responseMessage.Headers.GetValues(XRequestId).FirstOrDefault();
 
             SdkError sdkError;
             try
@@ -234,7 +253,7 @@ namespace HuaweiCloud.SDK.Core
 
         private SdkError HandleServiceCommonException(SdkResponse response)
         {
-            var exception = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.GetHttpBody());
+            var exception = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.HttpBody);
             if (exception.ContainsKey("code") && exception.ContainsKey("message"))
             {
                 return new SdkError(exception["code"].ToString(), exception["message"].ToString());
@@ -251,7 +270,7 @@ namespace HuaweiCloud.SDK.Core
                 }
             }
 
-            return new SdkError(response.GetHttpBody());
+            return new SdkError(response.HttpBody);
         }
 
         private SdkError GetSdkErrorFromResponse(string requestId, SdkResponse response)
@@ -283,25 +302,31 @@ namespace HuaweiCloud.SDK.Core
             return sdkError;
         }
 
-        private HttpRequest GetHttpRequest(string url, string method, string contentType,
-            Dictionary<string, string> headers, string content)
+        private HttpRequest GetHttpRequest(string url, string method, SdkRequest sdkRequest)
         {
-            var request = new HttpRequest(method.ToUpper(), contentType, new Uri(url)) {Body = content};
-            SetHeaders(request, headers);
+            var request = new HttpRequest(method.ToUpper(), sdkRequest.ContentType, new Uri(url))
+            {
+                Body = sdkRequest.Body ?? "",
+                FileStream = sdkRequest.FileStream
+            };
+
+            UpdateHeaders(request, sdkRequest.Header);
             return request;
         }
 
-        private void SetHeaders(HttpRequest request, Dictionary<string, string> headers)
+        private void UpdateHeaders(HttpRequest request, Dictionary<string, string> headers)
         {
-            if (headers != null)
+            if (headers == null)
             {
-                foreach (var header in headers)
-                {
-                    request.Headers.Add(header.Key, header.Value);
-                }
-
-                request.Headers.Add(XRequestAgent, "huaweicloud-sdk-net/3.0");
+                return;
             }
+
+            foreach (var header in headers)
+            {
+                request.Headers.Add(header.Key, header.Value);
+            }
+
+            request.Headers.Add(XRequestAgent, "huaweicloud-sdk-net/3.0");
         }
     }
 }

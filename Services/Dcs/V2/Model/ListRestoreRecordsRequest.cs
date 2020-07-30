@@ -19,36 +19,42 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("Content-Type", IsHeader = true)]
+        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
         public string ContentType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("begin_time", IsQuery = true)]
+        [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string BeginTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
 

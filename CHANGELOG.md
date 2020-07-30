@@ -1,3 +1,29 @@
+# __3.0.7-beta__ __2020-07-30__
+## HuaweiCloud SDK Core
+ - ### Features
+    - Support file upload and download
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK ECS
+ - ### Features
+    - Publish new interfaces, such as ChangeServerOs and ResetServerPassword.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK VPC
+ - ### Features
+    - Support interfaces of version v3.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 # __3.0.6-beta__ __2020-07-15__
 ## HuaweiCloud SDK EVS
  - ### Features

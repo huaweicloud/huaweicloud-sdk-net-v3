@@ -18,62 +18,72 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("offset", IsQuery = true)]
-        public int? Offset { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("flavor", IsQuery = true)]
-        public string Flavor { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("name", IsQuery = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("status", IsQuery = true)]
-        public string Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("limit", IsQuery = true)]
-        public int? Limit { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("not-tags", IsQuery = true)]
-        public string NotTags { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("reservation_id", IsQuery = true)]
-        public string ReservationId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("tags", IsQuery = true)]
-        public string Tags { get; set; }
+        [SDKProperty("flavor", IsQuery = true)]
+        [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
+        public string Flavor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("ip", IsQuery = true)]
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("not-tags", IsQuery = true)]
+        [JsonProperty("not-tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string NotTags { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("reservation_id", IsQuery = true)]
+        [JsonProperty("reservation_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReservationId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("status", IsQuery = true)]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("tags", IsQuery = true)]
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tags { get; set; }
 
 
         /// <summary>
@@ -83,16 +93,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListServersDetailsRequest {\n");
-            sb.Append("  offset: ").Append(Offset).Append("\n");
-            sb.Append("  flavor: ").Append(Flavor).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  notTags: ").Append(NotTags).Append("\n");
-            sb.Append("  reservationId: ").Append(ReservationId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  ip: ").Append(Ip).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  notTags: ").Append(NotTags).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  reservationId: ").Append(ReservationId).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,9 +125,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             return 
                 (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
                     this.Flavor == input.Flavor ||
@@ -125,14 +135,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Flavor.Equals(input.Flavor))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
                 ) && 
                 (
                     this.Limit == input.Limit ||
@@ -140,9 +145,19 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Limit.Equals(input.Limit))
                 ) && 
                 (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
                     this.NotTags == input.NotTags ||
                     (this.NotTags != null &&
                     this.NotTags.Equals(input.NotTags))
+                ) && 
+                (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
                 ) && 
                 (
                     this.ReservationId == input.ReservationId ||
@@ -150,19 +165,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.ReservationId.Equals(input.ReservationId))
                 ) && 
                 (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 ) && 
                 (
                     this.Tags == input.Tags ||
                     (this.Tags != null &&
                     this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
                 );
         }
 
@@ -174,26 +184,26 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.NotTags != null)
-                    hashCode = hashCode * 59 + this.NotTags.GetHashCode();
-                if (this.ReservationId != null)
-                    hashCode = hashCode * 59 + this.ReservationId.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Flavor != null)
+                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Ip != null)
                     hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.NotTags != null)
+                    hashCode = hashCode * 59 + this.NotTags.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.ReservationId != null)
+                    hashCode = hashCode * 59 + this.ReservationId.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

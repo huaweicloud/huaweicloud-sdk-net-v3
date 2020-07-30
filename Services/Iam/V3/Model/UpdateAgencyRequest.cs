@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("agency_id", IsPath = true)]
+        [JsonProperty("agency_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public UpdateAgencyRequestBody Body { get; set; }
 
 

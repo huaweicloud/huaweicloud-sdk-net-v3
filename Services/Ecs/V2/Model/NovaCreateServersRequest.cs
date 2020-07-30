@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("OpenStack-API-Version", IsHeader = true)]
+        [JsonProperty("OpenStack-API-Version", NullValueHandling = NullValueHandling.Ignore)]
         public string OpenStackAPIVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public NovaCreateServersRequestBody Body { get; set; }
 
 

@@ -19,24 +19,28 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("scaling_configuration_name", IsQuery = true)]
+        [JsonProperty("scaling_configuration_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingConfigurationName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("image_id", IsQuery = true)]
+        [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
+        [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
 

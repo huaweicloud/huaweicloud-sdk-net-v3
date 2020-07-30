@@ -19,18 +19,21 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("Content-Type", IsHeader = true)]
+        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
         public string ContentType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("all_failure", IsQuery = true)]
+        [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AllFailure { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public BatchDeleteBody Body { get; set; }
 
 

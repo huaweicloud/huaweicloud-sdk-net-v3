@@ -141,53 +141,62 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [SDKProperty("dim.0", IsQuery = true)]
+        [JsonProperty("dim.0", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim0 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dim.1", IsQuery = true)]
+        [JsonProperty("dim.1", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dim.2", IsQuery = true)]
+        [JsonProperty("dim.2", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim2 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
+        [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
+        [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public long? From { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("metric_name", IsQuery = true)]
+        [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("period", IsQuery = true)]
+        [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public int? Period { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
+        [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public long? To { get; set; }
 
 

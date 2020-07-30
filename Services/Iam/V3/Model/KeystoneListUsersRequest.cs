@@ -19,18 +19,21 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("enabled", IsQuery = true)]
+        [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("password_expires_at", IsQuery = true)]
+        [JsonProperty("password_expires_at", NullValueHandling = NullValueHandling.Ignore)]
         public string PasswordExpiresAt { get; set; }
 
 

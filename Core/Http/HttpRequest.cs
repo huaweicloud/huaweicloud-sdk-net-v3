@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Web;
 
@@ -35,24 +36,29 @@ namespace HuaweiCloud.SDK.Core
         public WebHeaderCollection Headers = new WebHeaderCollection();
         public string Body = "";
         public string ContentType = "application/json";
+        public Stream FileStream = Stream.Null;
 
-        public HttpRequest(string method = "GET", string contentType = "application/json", Uri url = null, WebHeaderCollection headers = null,
-            string body = null)
+        public HttpRequest(string method = "GET", string contentType = "application/json", Uri url = null,
+            WebHeaderCollection headers = null,
+            string body = null, Stream fileStream = null)
         {
             if (method != null)
             {
                 Method = method;
             }
+
             if (url != null)
             {
                 Url = url;
                 Host = url.Scheme + "://" + url.Host;
                 ParseQueryParam();
             }
+
             if (headers != null)
             {
                 Headers = headers;
             }
+
             if (body != null)
             {
                 Body = body;
@@ -61,9 +67,15 @@ namespace HuaweiCloud.SDK.Core
                     Body = "";
                 }
             }
+
             if (contentType != null)
             {
                 ContentType = contentType;
+            }
+
+            if (fileStream != null)
+            {
+                FileStream = fileStream;
             }
         }
 

@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 
         /// </summary>
         [SDKProperty("port_id", IsPath = true)]
+        [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public UpdatePortRequestBody Body { get; set; }
 
 

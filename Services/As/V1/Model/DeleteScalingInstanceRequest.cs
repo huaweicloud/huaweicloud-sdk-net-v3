@@ -123,12 +123,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("instance_delete", IsQuery = true)]
+        [JsonProperty("instance_delete", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceDeleteEnum InstanceDelete { get; set; }
 
         /// <summary>

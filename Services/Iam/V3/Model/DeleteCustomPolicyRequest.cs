@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("role_id", IsPath = true)]
+        [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RoleId { get; set; }
 
 

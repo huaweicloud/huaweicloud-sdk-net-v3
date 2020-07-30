@@ -19,24 +19,28 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("Content-Type", IsHeader = true)]
+        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
         public string ContentType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BackupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public DownloadBackupFilesReq Body { get; set; }
 
 

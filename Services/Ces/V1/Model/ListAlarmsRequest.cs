@@ -19,18 +19,21 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("order", IsQuery = true)]
+        [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public string Order { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
+        [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
         public string Start { get; set; }
 
 

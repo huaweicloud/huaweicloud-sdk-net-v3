@@ -685,84 +685,99 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("page", IsQuery = true)]
+        [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
         public int? Page { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("__imagetype", IsQuery = true)]
+        [JsonProperty("__imagetype", NullValueHandling = NullValueHandling.Ignore)]
         public ImagetypeEnum Imagetype { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("min_disk", IsQuery = true)]
+        [JsonProperty("min_disk", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinDisk { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("__platform", IsQuery = true)]
+        [JsonProperty("__platform", NullValueHandling = NullValueHandling.Ignore)]
         public string Platform { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("__os_type", IsQuery = true)]
+        [JsonProperty("__os_type", NullValueHandling = NullValueHandling.Ignore)]
         public OsTypeEnum OsType { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("member_status", IsQuery = true)]
+        [JsonProperty("member_status", NullValueHandling = NullValueHandling.Ignore)]
         public MemberStatusEnum MemberStatus { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("virtual_env_type", IsQuery = true)]
+        [JsonProperty("virtual_env_type", NullValueHandling = NullValueHandling.Ignore)]
         public VirtualEnvTypeEnum VirtualEnvType { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("architecture", IsQuery = true)]
+        [JsonProperty("architecture", NullValueHandling = NullValueHandling.Ignore)]
         public ArchitectureEnum Architecture { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("updated_at", IsQuery = true)]
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
 

@@ -19,18 +19,21 @@ namespace HuaweiCloud.SDK.Fgs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
+        [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("name", IsPath = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public UpdateVersionAliasRequestBody Body { get; set; }
 
 

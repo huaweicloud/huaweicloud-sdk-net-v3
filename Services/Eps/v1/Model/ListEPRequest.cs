@@ -227,41 +227,48 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
+        [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
+        [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public SortDirEnum SortDir { get; set; }
 
         /// <summary>

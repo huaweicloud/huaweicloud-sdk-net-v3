@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public BatchStopServersRequestBody Body { get; set; }
 
 

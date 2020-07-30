@@ -123,36 +123,42 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         /// 
         /// </summary>
         [SDKProperty("key", IsQuery = true)]
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("value", IsQuery = true)]
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("order_field", IsQuery = true)]
+        [JsonProperty("order_field", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderField { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("order_method", IsQuery = true)]
+        [JsonProperty("order_method", NullValueHandling = NullValueHandling.Ignore)]
         public OrderMethodEnum OrderMethod { get; set; }
 
         /// <summary>

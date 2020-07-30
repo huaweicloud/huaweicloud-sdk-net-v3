@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Image.V1.Model
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public ImageTaggingReq Body { get; set; }
 
 

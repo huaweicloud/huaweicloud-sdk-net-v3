@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 
         /// </summary>
         [JsonProperty("server", NullValueHandling = NullValueHandling.Ignore)]
-        public ServerDetail Server { get; set; }
+        public UpdateServerResult Server { get; set; }
 
 
         /// <summary>

@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Image.V1.Model;
@@ -20,7 +21,7 @@ namespace HuaweiCloud.SDK.Image.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/image/celebrity-recognition",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runCelebrityRecognitionRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RunCelebrityRecognitionResponse>(response);
         }
         
@@ -32,7 +33,7 @@ namespace HuaweiCloud.SDK.Image.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/image/tagging",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageTaggingRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RunImageTaggingResponse>(response);
         }
         

@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("user_id", IsQuery = true)]
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserId { get; set; }
 
 

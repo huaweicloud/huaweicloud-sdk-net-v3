@@ -135,29 +135,34 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("scaling_group_name", IsQuery = true)]
+        [JsonProperty("scaling_group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("scaling_configuration_id", IsQuery = true)]
+        [JsonProperty("scaling_configuration_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingConfigurationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("scaling_group_status", IsQuery = true)]
+        [JsonProperty("scaling_group_status", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingGroupStatusEnum ScalingGroupStatus { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
+        [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
 

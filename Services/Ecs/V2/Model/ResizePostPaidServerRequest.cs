@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("server_id", IsPath = true)]
+        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public ResizePostPaidServerRequestBody Body { get; set; }
 
 

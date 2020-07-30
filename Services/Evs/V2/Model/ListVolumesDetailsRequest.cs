@@ -19,102 +19,119 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
+        [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SortKey { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
+        [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public string SortDir { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("metadata", IsQuery = true)]
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public string Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("multiattach", IsQuery = true)]
+        [JsonProperty("multiattach", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Multiattach { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("service_type", IsQuery = true)]
+        [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dedicated_storage_id", IsQuery = true)]
+        [JsonProperty("dedicated_storage_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dedicated_storage_name", IsQuery = true)]
+        [JsonProperty("dedicated_storage_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("volume_type_id", IsQuery = true)]
+        [JsonProperty("volume_type_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeTypeId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("ids", IsQuery = true)]
+        [JsonProperty("ids", NullValueHandling = NullValueHandling.Ignore)]
         public string Ids { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
 

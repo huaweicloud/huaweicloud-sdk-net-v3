@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("Content-Type", IsHeader = true)]
+        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
         public string ContentType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("task_id", IsPath = true)]
+        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskId { get; set; }
 
 

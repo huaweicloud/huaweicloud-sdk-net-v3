@@ -123,41 +123,48 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("Content-Type", IsHeader = true)]
+        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
         public string ContentType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("spec_code", IsQuery = true)]
+        [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string SpecCode { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("cache_mode", IsQuery = true)]
+        [JsonProperty("cache_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string CacheMode { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("engine", IsQuery = true)]
+        [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public string Engine { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("engine_version", IsQuery = true)]
+        [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("cpu_type", IsQuery = true)]
+        [JsonProperty("cpu_type", NullValueHandling = NullValueHandling.Ignore)]
         public CpuTypeEnum CpuType { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("capacity", IsQuery = true)]
+        [JsonProperty("capacity", NullValueHandling = NullValueHandling.Ignore)]
         public string Capacity { get; set; }
 
 

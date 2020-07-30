@@ -239,52 +239,61 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("scaling_policy_id", IsPath = true)]
+        [JsonProperty("scaling_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingPolicyId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("log_id", IsQuery = true)]
+        [JsonProperty("log_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("scaling_resource_type", IsQuery = true)]
+        [JsonProperty("scaling_resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingResourceTypeEnum ScalingResourceType { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("scaling_resource_id", IsQuery = true)]
+        [JsonProperty("scaling_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingResourceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("execute_type", IsQuery = true)]
+        [JsonProperty("execute_type", NullValueHandling = NullValueHandling.Ignore)]
         public ExecuteTypeEnum ExecuteType { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
+        [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
 

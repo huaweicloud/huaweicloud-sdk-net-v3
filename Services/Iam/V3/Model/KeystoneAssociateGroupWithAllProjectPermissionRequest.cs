@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("role_id", IsPath = true)]
+        [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RoleId { get; set; }
 
 

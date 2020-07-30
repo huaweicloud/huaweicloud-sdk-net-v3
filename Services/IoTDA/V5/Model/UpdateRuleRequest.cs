@@ -19,18 +19,21 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// 
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
+        [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("rule_id", IsPath = true)]
+        [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public Rule Body { get; set; }
 
 

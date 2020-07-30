@@ -233,46 +233,54 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("mode", IsQuery = true)]
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("datastore_type", IsQuery = true)]
+        [JsonProperty("datastore_type", NullValueHandling = NullValueHandling.Ignore)]
         public DatastoreTypeEnum DatastoreType { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("vpc_id", IsQuery = true)]
+        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("subnet_id", IsQuery = true)]
+        [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
 

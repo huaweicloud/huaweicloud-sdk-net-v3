@@ -19,36 +19,42 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("parent_id", IsQuery = true)]
+        [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("enabled", IsQuery = true)]
+        [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("is_domain", IsQuery = true)]
+        [JsonProperty("is_domain", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsDomain { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("page", IsQuery = true)]
+        [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
         public int? Page { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("per_page", IsQuery = true)]
+        [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]
         public int? PerPage { get; set; }
 
 

@@ -19,18 +19,21 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("project_id", IsPath = true)]
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("agency_id", IsPath = true)]
+        [JsonProperty("agency_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("role_id", IsPath = true)]
+        [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RoleId { get; set; }
 
 

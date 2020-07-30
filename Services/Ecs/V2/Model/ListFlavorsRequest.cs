@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
 

@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BackupId { get; set; }
 
 

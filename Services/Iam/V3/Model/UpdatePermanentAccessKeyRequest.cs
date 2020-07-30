@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("access_key", IsPath = true)]
+        [JsonProperty("access_key", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessKey { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public UpdatePermanentAccessKeyRequestBody Body { get; set; }
 
 

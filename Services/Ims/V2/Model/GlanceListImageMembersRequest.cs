@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 
         /// </summary>
         [SDKProperty("image_id", IsPath = true)]
+        [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
 

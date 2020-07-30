@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 
         /// </summary>
         [SDKProperty("privateip_id", IsPath = true)]
+        [JsonProperty("privateip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateipId { get; set; }
 
 

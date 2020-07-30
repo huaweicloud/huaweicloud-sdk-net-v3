@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("volume_id", IsPath = true)]
+        [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public ResizeVolumeRequestBody Body { get; set; }
 
 

@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Fgs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("maxitems", IsQuery = true)]
+        [JsonProperty("maxitems", NullValueHandling = NullValueHandling.Ignore)]
         public string Maxitems { get; set; }
 
 

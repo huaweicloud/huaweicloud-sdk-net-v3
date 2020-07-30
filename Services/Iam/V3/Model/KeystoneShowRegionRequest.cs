@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [SDKProperty("region_id", IsPath = true)]
+        [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionId { get; set; }
 
 

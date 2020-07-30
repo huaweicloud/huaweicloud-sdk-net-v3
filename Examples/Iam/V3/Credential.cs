@@ -20,7 +20,7 @@ namespace Examples.Iam.V3
 
             var config = HttpConfig.GetDefaultConfig();
             config.IgnoreSslVerification = true;
-            var auth = new BasicCredentials(ak, sk, null, domainId);
+            var auth = new GlobalCredentials(ak, sk, domainId);
             var iamDomainClient = IamClient.NewBuilder()
                 .WithCredential(auth)
                 .WithEndPoint(endpoint)

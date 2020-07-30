@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core;
@@ -9,7 +10,7 @@ namespace HuaweiCloud.SDK.Iam.V3
     {
         public static ClientBuilder<IamAsyncClient> NewBuilder()
         {
-            return new ClientBuilder<IamAsyncClient>();
+            return new ClientBuilder<IamAsyncClient>("GlobalCredentials");
         }
 
         
@@ -23,7 +24,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , associateAgencyWithDomainPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, associateAgencyWithDomainPermissionRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<AssociateAgencyWithDomainPermissionResponse>(response);
         }
         
@@ -38,7 +39,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , associateAgencyWithProjectPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, associateAgencyWithProjectPermissionRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<AssociateAgencyWithProjectPermissionResponse>(response);
         }
         
@@ -52,7 +53,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , checkDomainPermissionForAgencyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, checkDomainPermissionForAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("HEAD",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("HEAD",request);
             return JsonUtils.DeSerializeNull<CheckDomainPermissionForAgencyResponse>(response);
         }
         
@@ -67,7 +68,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , checkProjectPermissionForAgencyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, checkProjectPermissionForAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("HEAD",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("HEAD",request);
             return JsonUtils.DeSerializeNull<CheckProjectPermissionForAgencyResponse>(response);
         }
         
@@ -79,7 +80,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateAgencyResponse>(response);
         }
         
@@ -91,7 +92,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAgencyCustomPolicyRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateAgencyCustomPolicyResponse>(response);
         }
         
@@ -103,7 +104,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createCloudServiceCustomPolicyRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateCloudServiceCustomPolicyResponse>(response);
         }
         
@@ -116,7 +117,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("agency_id" , deleteAgencyRequest.AgencyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteAgencyResponse>(response);
         }
         
@@ -129,7 +130,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , deleteCustomPolicyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteCustomPolicyRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteCustomPolicyResponse>(response);
         }
         
@@ -143,7 +144,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneAddUserToGroupRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneAddUserToGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<KeystoneAddUserToGroupResponse>(response);
         }
         
@@ -157,7 +158,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneAssociateGroupWithAllProjectPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneAssociateGroupWithAllProjectPermissionRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<KeystoneAssociateGroupWithAllProjectPermissionResponse>(response);
         }
         
@@ -171,7 +172,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneAssociateGroupWithDomainPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneAssociateGroupWithDomainPermissionRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<KeystoneAssociateGroupWithDomainPermissionResponse>(response);
         }
         
@@ -186,7 +187,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneAssociateGroupWithProjectPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneAssociateGroupWithProjectPermissionRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<KeystoneAssociateGroupWithProjectPermissionResponse>(response);
         }
         
@@ -200,7 +201,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneCheckDomainPermissionForGroupRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneCheckDomainPermissionForGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("HEAD",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("HEAD",request);
             return JsonUtils.DeSerializeNull<KeystoneCheckDomainPermissionForGroupResponse>(response);
         }
         
@@ -215,7 +216,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneCheckProjectPermissionForGroupRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneCheckProjectPermissionForGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("HEAD",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("HEAD",request);
             return JsonUtils.DeSerializeNull<KeystoneCheckProjectPermissionForGroupResponse>(response);
         }
         
@@ -229,7 +230,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneCheckUserInGroupRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneCheckUserInGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("HEAD",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("HEAD",request);
             return JsonUtils.DeSerializeNull<KeystoneCheckUserInGroupResponse>(response);
         }
         
@@ -241,7 +242,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<KeystoneCreateGroupResponse>(response);
         }
         
@@ -253,7 +254,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/projects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateProjectRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<KeystoneCreateProjectResponse>(response);
         }
         
@@ -266,7 +267,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("group_id" , keystoneDeleteGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneDeleteGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<KeystoneDeleteGroupResponse>(response);
         }
         
@@ -278,7 +279,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/auth/domains",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListAuthDomainsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListAuthDomainsResponse>(response);
         }
         
@@ -290,7 +291,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/auth/projects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListAuthProjectsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListAuthProjectsResponse>(response);
         }
         
@@ -303,7 +304,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("group_id" , keystoneListDomainPermissionsForGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListDomainPermissionsForGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListDomainPermissionsForGroupResponse>(response);
         }
         
@@ -315,7 +316,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/endpoints",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListEndpointsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListEndpointsResponse>(response);
         }
         
@@ -327,7 +328,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListGroupsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListGroupsResponse>(response);
         }
         
@@ -339,7 +340,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListPermissionsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListPermissionsResponse>(response);
         }
         
@@ -353,7 +354,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("group_id" , keystoneListProjectPermissionsForGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListProjectPermissionsForGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListProjectPermissionsForGroupResponse>(response);
         }
         
@@ -365,7 +366,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/projects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListProjectsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListProjectsResponse>(response);
         }
         
@@ -378,7 +379,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneListProjectsForUserRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/projects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListProjectsForUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListProjectsForUserResponse>(response);
         }
         
@@ -390,7 +391,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/regions",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListRegionsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListRegionsResponse>(response);
         }
         
@@ -402,7 +403,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/services",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListServicesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListServicesResponse>(response);
         }
         
@@ -415,7 +416,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("group_id" , keystoneListUsersForGroupByAdminRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListUsersForGroupByAdminRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListUsersForGroupByAdminResponse>(response);
         }
         
@@ -427,7 +428,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListVersionsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerializeNull<KeystoneListVersionsResponse>(response);
         }
         
@@ -441,7 +442,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneRemoveDomainPermissionFromGroupRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneRemoveDomainPermissionFromGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<KeystoneRemoveDomainPermissionFromGroupResponse>(response);
         }
         
@@ -456,7 +457,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneRemoveProjectPermissionFromGroupRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneRemoveProjectPermissionFromGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<KeystoneRemoveProjectPermissionFromGroupResponse>(response);
         }
         
@@ -470,7 +471,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneRemoveUserFromGroupRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneRemoveUserFromGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<KeystoneRemoveUserFromGroupResponse>(response);
         }
         
@@ -482,7 +483,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/auth/catalog",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowCatalogRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowCatalogResponse>(response);
         }
         
@@ -495,7 +496,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("endpoint_id" , keystoneShowEndpointRequest.EndpointId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/endpoints/{endpoint_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowEndpointRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowEndpointResponse>(response);
         }
         
@@ -508,7 +509,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("group_id" , keystoneShowGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowGroupResponse>(response);
         }
         
@@ -521,7 +522,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , keystoneShowPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowPermissionRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowPermissionResponse>(response);
         }
         
@@ -534,7 +535,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("project_id" , keystoneShowProjectRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowProjectRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowProjectResponse>(response);
         }
         
@@ -547,7 +548,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("region_id" , keystoneShowRegionRequest.RegionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/regions/{region_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowRegionRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowRegionResponse>(response);
         }
         
@@ -559,7 +560,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowSecurityComplianceRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowSecurityComplianceResponse>(response);
         }
         
@@ -572,7 +573,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("option" , keystoneShowSecurityComplianceByOptionRequest.Option.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance/{option}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowSecurityComplianceByOptionRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowSecurityComplianceByOptionResponse>(response);
         }
         
@@ -585,7 +586,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("service_id" , keystoneShowServiceRequest.ServiceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/services/{service_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowServiceRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowServiceResponse>(response);
         }
         
@@ -597,7 +598,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowVersionRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowVersionResponse>(response);
         }
         
@@ -610,7 +611,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("group_id" , keystoneUpdateGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateGroupRequest);
-            SdkResponse response = await DoHttpRequestAsync("PATCH",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<KeystoneUpdateGroupResponse>(response);
         }
         
@@ -623,7 +624,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("project_id" , keystoneUpdateProjectRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateProjectRequest);
-            SdkResponse response = await DoHttpRequestAsync("PATCH",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<KeystoneUpdateProjectResponse>(response);
         }
         
@@ -635,7 +636,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAgenciesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAgenciesResponse>(response);
         }
         
@@ -647,7 +648,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listCustomPoliciesRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListCustomPoliciesResponse>(response);
         }
         
@@ -660,7 +661,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("agency_id" , listDomainPermissionsForAgencyRequest.AgencyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDomainPermissionsForAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDomainPermissionsForAgencyResponse>(response);
         }
         
@@ -674,7 +675,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("agency_id" , listProjectPermissionsForAgencyRequest.AgencyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProjectPermissionsForAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListProjectPermissionsForAgencyResponse>(response);
         }
         
@@ -688,7 +689,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , removeDomainPermissionFromAgencyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, removeDomainPermissionFromAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<RemoveDomainPermissionFromAgencyResponse>(response);
         }
         
@@ -703,7 +704,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , removeProjectPermissionFromAgencyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, removeProjectPermissionFromAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<RemoveProjectPermissionFromAgencyResponse>(response);
         }
         
@@ -716,7 +717,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("agency_id" , showAgencyRequest.AgencyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowAgencyResponse>(response);
         }
         
@@ -729,7 +730,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , showCustomPolicyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showCustomPolicyRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowCustomPolicyResponse>(response);
         }
         
@@ -742,7 +743,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("project_id" , showProjectDetailsAndStatusRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3-ext/projects/{project_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showProjectDetailsAndStatusRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowProjectDetailsAndStatusResponse>(response);
         }
         
@@ -755,7 +756,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("agency_id" , updateAgencyRequest.AgencyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateAgencyResponse>(response);
         }
         
@@ -768,7 +769,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , updateAgencyCustomPolicyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAgencyCustomPolicyRequest);
-            SdkResponse response = await DoHttpRequestAsync("PATCH",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<UpdateAgencyCustomPolicyResponse>(response);
         }
         
@@ -781,7 +782,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id" , updateCloudServiceCustomPolicyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCloudServiceCustomPolicyRequest);
-            SdkResponse response = await DoHttpRequestAsync("PATCH",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<UpdateCloudServiceCustomPolicyResponse>(response);
         }
         
@@ -794,7 +795,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("project_id" , updateProjectStatusRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3-ext/projects/{project_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProjectStatusRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateProjectStatusResponse>(response);
         }
         
@@ -806,7 +807,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPermanentAccessKeyRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreatePermanentAccessKeyResponse>(response);
         }
         
@@ -818,7 +819,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/securitytokens",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTemporaryAccessKeyByAgencyRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateTemporaryAccessKeyByAgencyResponse>(response);
         }
         
@@ -830,7 +831,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/securitytokens",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTemporaryAccessKeyByTokenRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateTemporaryAccessKeyByTokenResponse>(response);
         }
         
@@ -843,7 +844,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("access_key" , deletePermanentAccessKeyRequest.AccessKey.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deletePermanentAccessKeyRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePermanentAccessKeyResponse>(response);
         }
         
@@ -855,7 +856,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPermanentAccessKeysRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPermanentAccessKeysResponse>(response);
         }
         
@@ -868,7 +869,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("access_key" , showPermanentAccessKeyRequest.AccessKey.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showPermanentAccessKeyRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowPermanentAccessKeyResponse>(response);
         }
         
@@ -881,7 +882,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("access_key" , updatePermanentAccessKeyRequest.AccessKey.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePermanentAccessKeyRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePermanentAccessKeyResponse>(response);
         }
         
@@ -893,7 +894,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateUserResponse>(response);
         }
         
@@ -905,7 +906,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/users",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<KeystoneCreateUserResponse>(response);
         }
         
@@ -918,7 +919,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneDeleteUserRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneDeleteUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("DELETE",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<KeystoneDeleteUserResponse>(response);
         }
         
@@ -931,7 +932,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneListGroupsForUserRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListGroupsForUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListGroupsForUserResponse>(response);
         }
         
@@ -943,7 +944,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/users",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListUsersRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListUsersResponse>(response);
         }
         
@@ -956,7 +957,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneShowUserRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowUserResponse>(response);
         }
         
@@ -969,7 +970,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneUpdateUserByAdminRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateUserByAdminRequest);
-            SdkResponse response = await DoHttpRequestAsync("PATCH",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<KeystoneUpdateUserByAdminResponse>(response);
         }
         
@@ -982,7 +983,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , keystoneUpdateUserPasswordRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/password",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateUserPasswordRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<KeystoneUpdateUserPasswordResponse>(response);
         }
         
@@ -995,7 +996,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , showUserRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowUserResponse>(response);
         }
         
@@ -1008,7 +1009,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , updateUserRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateUserResponse>(response);
         }
         
@@ -1021,7 +1022,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("user_id" , updateUserInformationRequest.UserId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/info",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserInformationRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateUserInformationResponse>(response);
         }
         

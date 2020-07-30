@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Vpc.V2.Model;
@@ -13,6 +14,19 @@ namespace HuaweiCloud.SDK.Vpc.V2
 
         
         /// <summary>
+        /// 接受对等连接请求
+        /// </summary>
+        public AcceptVpcPeeringResponse AcceptVpcPeering(AcceptVpcPeeringRequest acceptVpcPeeringRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("peering_id" , acceptVpcPeeringRequest.PeeringId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/accept",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, acceptVpcPeeringRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<AcceptVpcPeeringResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建端口
         /// </summary>
         public CreatePortResponse CreatePort(CreatePortRequest createPortRequest)
@@ -20,7 +34,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPortRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreatePortResponse>(response);
         }
         
@@ -32,7 +46,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateSecurityGroupResponse>(response);
         }
         
@@ -44,7 +58,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupRuleRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateSecurityGroupRuleResponse>(response);
         }
         
@@ -56,8 +70,20 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSubnetRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateSubnetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建对等连接
+        /// </summary>
+        public CreateVpcPeeringResponse CreateVpcPeering(CreateVpcPeeringRequest createVpcPeeringRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcPeeringRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVpcPeeringResponse>(response);
         }
         
         /// <summary>
@@ -69,7 +95,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("port_id" , deletePortRequest.PortId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deletePortRequest);
-            SdkResponse response = DoHttpRequestSync("DELETE",request);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePortResponse>(response);
         }
         
@@ -82,7 +108,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("security_group_id" , deleteSecurityGroupRequest.SecurityGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSecurityGroupRequest);
-            SdkResponse response = DoHttpRequestSync("DELETE",request);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSecurityGroupResponse>(response);
         }
         
@@ -95,7 +121,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("security_group_rule_id" , deleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSecurityGroupRuleRequest);
-            SdkResponse response = DoHttpRequestSync("DELETE",request);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSecurityGroupRuleResponse>(response);
         }
         
@@ -109,8 +135,21 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("subnet_id" , deleteSubnetRequest.SubnetId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSubnetRequest);
-            SdkResponse response = DoHttpRequestSync("DELETE",request);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSubnetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除对等连接
+        /// </summary>
+        public DeleteVpcPeeringResponse DeleteVpcPeering(DeleteVpcPeeringRequest deleteVpcPeeringRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("peering_id" , deleteVpcPeeringRequest.PeeringId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteVpcPeeringRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteVpcPeeringResponse>(response);
         }
         
         /// <summary>
@@ -121,7 +160,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPortsRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListPortsResponse>(response);
         }
         
@@ -133,7 +172,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSecurityGroupRulesRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListSecurityGroupRulesResponse>(response);
         }
         
@@ -145,7 +184,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSecurityGroupsRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListSecurityGroupsResponse>(response);
         }
         
@@ -157,8 +196,33 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSubnetsRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListSubnetsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询对等连接列表
+        /// </summary>
+        public ListVpcPeeringsResponse ListVpcPeerings(ListVpcPeeringsRequest listVpcPeeringsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listVpcPeeringsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListVpcPeeringsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 拒绝对等连接请求
+        /// </summary>
+        public RejectVpcPeeringResponse RejectVpcPeering(RejectVpcPeeringRequest rejectVpcPeeringRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("peering_id" , rejectVpcPeeringRequest.PeeringId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/reject",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, rejectVpcPeeringRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<RejectVpcPeeringResponse>(response);
         }
         
         /// <summary>
@@ -170,7 +234,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("port_id" , showPortRequest.PortId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showPortRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowPortResponse>(response);
         }
         
@@ -182,7 +246,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/quotas",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQuotaRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowQuotaResponse>(response);
         }
         
@@ -195,7 +259,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("security_group_id" , showSecurityGroupRequest.SecurityGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSecurityGroupRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSecurityGroupResponse>(response);
         }
         
@@ -208,7 +272,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("security_group_rule_id" , showSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSecurityGroupRuleRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSecurityGroupRuleResponse>(response);
         }
         
@@ -221,8 +285,21 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("subnet_id" , showSubnetRequest.SubnetId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSubnetRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSubnetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询对等连接
+        /// </summary>
+        public ShowVpcPeeringResponse ShowVpcPeering(ShowVpcPeeringRequest showVpcPeeringRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("peering_id" , showVpcPeeringRequest.PeeringId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVpcPeeringRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVpcPeeringResponse>(response);
         }
         
         /// <summary>
@@ -234,7 +311,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("port_id" , updatePortRequest.PortId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePortRequest);
-            SdkResponse response = DoHttpRequestSync("PUT",request);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePortResponse>(response);
         }
         
@@ -248,8 +325,21 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("subnet_id" , updateSubnetRequest.SubnetId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSubnetRequest);
-            SdkResponse response = DoHttpRequestSync("PUT",request);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateSubnetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新对等连接
+        /// </summary>
+        public UpdateVpcPeeringResponse UpdateVpcPeering(UpdateVpcPeeringRequest updateVpcPeeringRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("peering_id" , updateVpcPeeringRequest.PeeringId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVpcPeeringRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateVpcPeeringResponse>(response);
         }
         
         /// <summary>
@@ -260,7 +350,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPrivateipRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreatePrivateipResponse>(response);
         }
         
@@ -273,7 +363,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("privateip_id" , deletePrivateipRequest.PrivateipId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deletePrivateipRequest);
-            SdkResponse response = DoHttpRequestSync("DELETE",request);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePrivateipResponse>(response);
         }
         
@@ -286,7 +376,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("subnet_id" , listPrivateipsRequest.SubnetId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}/privateips",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPrivateipsRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListPrivateipsResponse>(response);
         }
         
@@ -299,7 +389,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("privateip_id" , showPrivateipRequest.PrivateipId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showPrivateipRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowPrivateipResponse>(response);
         }
         
@@ -311,8 +401,20 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcRequest);
-            SdkResponse response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateVpcResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建VPC路由
+        /// </summary>
+        public CreateVpcRouteResponse CreateVpcRoute(CreateVpcRouteRequest createVpcRouteRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcRouteRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVpcRouteResponse>(response);
         }
         
         /// <summary>
@@ -324,8 +426,33 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("vpc_id" , deleteVpcRequest.VpcId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteVpcRequest);
-            SdkResponse response = DoHttpRequestSync("DELETE",request);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteVpcResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除VPC路由
+        /// </summary>
+        public DeleteVpcRouteResponse DeleteVpcRoute(DeleteVpcRouteRequest deleteVpcRouteRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("route_id" , deleteVpcRouteRequest.RouteId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteVpcRouteRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteVpcRouteResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询VPC路由列表
+        /// </summary>
+        public ListVpcRoutesResponse ListVpcRoutes(ListVpcRoutesRequest listVpcRoutesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listVpcRoutesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListVpcRoutesResponse>(response);
         }
         
         /// <summary>
@@ -336,7 +463,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listVpcsRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListVpcsResponse>(response);
         }
         
@@ -349,8 +476,21 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("vpc_id" , showVpcRequest.VpcId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVpcRequest);
-            SdkResponse response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVpcResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询VPC路由
+        /// </summary>
+        public ShowVpcRouteResponse ShowVpcRoute(ShowVpcRouteRequest showVpcRouteRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("route_id" , showVpcRouteRequest.RouteId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVpcRouteRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVpcRouteResponse>(response);
         }
         
         /// <summary>
@@ -362,7 +502,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             urlParam.Add("vpc_id" , updateVpcRequest.VpcId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVpcRequest);
-            SdkResponse response = DoHttpRequestSync("PUT",request);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateVpcResponse>(response);
         }
         

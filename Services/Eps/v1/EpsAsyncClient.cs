@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core;
@@ -9,7 +10,7 @@ namespace HuaweiCloud.SDK.Eps.v1
     {
         public static ClientBuilder<EpsAsyncClient> NewBuilder()
         {
-            return new ClientBuilder<EpsAsyncClient>();
+            return new ClientBuilder<EpsAsyncClient>("GlobalCredentials");
         }
 
         
@@ -21,7 +22,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEPRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateEPResponse>(response);
         }
         
@@ -34,7 +35,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             urlParam.Add("enterprise_project_id" , disableEPRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEPRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<DisableEPResponse>(response);
         }
         
@@ -47,7 +48,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             urlParam.Add("enterprise_project_id" , enableEPRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEPRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<EnableEPResponse>(response);
         }
         
@@ -59,7 +60,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listApiVersionsRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
         }
         
@@ -71,7 +72,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listEPRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListEPResponse>(response);
         }
         
@@ -84,7 +85,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             urlParam.Add("enterprise_project_id" , migrateResourceRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources-migrate",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateResourceRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<MigrateResourceResponse>(response);
         }
         
@@ -97,7 +98,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             urlParam.Add("enterprise_project_id" , modifyEPRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyEPRequest);
-            SdkResponse response = await DoHttpRequestAsync("PUT",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<ModifyEPResponse>(response);
         }
         
@@ -110,7 +111,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             urlParam.Add("api_version" , showApiVersionRequest.ApiVersion.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showApiVersionRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
         }
         
@@ -123,7 +124,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             urlParam.Add("enterprise_project_id" , showEPRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showEPRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowEPResponse>(response);
         }
         
@@ -135,7 +136,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/quotas",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showEPQuotaRequest);
-            SdkResponse response = await DoHttpRequestAsync("GET",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowEPQuotaResponse>(response);
         }
         
@@ -148,7 +149,7 @@ namespace HuaweiCloud.SDK.Eps.v1
             urlParam.Add("enterprise_project_id" , showResourceBindEPRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEPRequest);
-            SdkResponse response = await DoHttpRequestAsync("POST",request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ShowResourceBindEPResponse>(response);
         }
         

@@ -123,47 +123,55 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [SDKProperty("dim.0", IsQuery = true)]
+        [JsonProperty("dim.0", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim0 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dim.1", IsQuery = true)]
+        [JsonProperty("dim.1", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("dim.2", IsQuery = true)]
+        [JsonProperty("dim.2", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim2 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("metric_name", IsQuery = true)]
+        [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("order", IsQuery = true)]
+        [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
+        [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
         public string Start { get; set; }
 
 

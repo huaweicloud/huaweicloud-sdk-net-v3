@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public EnterpriseProject Body { get; set; }
 
 

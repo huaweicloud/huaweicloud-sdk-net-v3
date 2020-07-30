@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [SDKProperty("snapshot_id", IsPath = true)]
+        [JsonProperty("snapshot_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SnapshotId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public UpdateSnapshotRequestBody Body { get; set; }
 
 

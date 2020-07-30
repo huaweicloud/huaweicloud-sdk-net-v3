@@ -19,12 +19,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
+        [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("topic_urn", IsPath = true)]
+        [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicUrn { get; set; }
 
 

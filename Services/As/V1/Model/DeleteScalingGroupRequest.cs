@@ -123,12 +123,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
+        [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("force_delete", IsQuery = true)]
+        [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
         public ForceDeleteEnum ForceDelete { get; set; }
 
         /// <summary>

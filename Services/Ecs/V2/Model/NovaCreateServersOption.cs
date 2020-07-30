@@ -142,7 +142,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 用户自定义字段键值对。  &gt; - key的长度大于0小于256字节 &gt; - value的长度大于等于0小于256字节   系统预留字段  1. admin_pass：弹性云服务器密码        Windows弹性云服务器Administrator用户的密码。     &gt; 说明：     &gt; 创建密码方式鉴权的Windows弹性云服务器时为必选字段。
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, Object> Metadata { get; set; }
+        public Dictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// 如果需要使用密码方式登录云服务器，可使用adminPass字段指定云服务器管理员帐户初始登录密码。其中，Linux管理员帐户为root，Windows管理员帐户为Administrator。

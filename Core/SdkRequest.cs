@@ -20,21 +20,24 @@
  */
 
 using System.Collections.Generic;
+using System.IO;
 
 namespace HuaweiCloud.SDK.Core
 {
     public class SdkRequest
     {
         public string Body { get; set; }
-        
+
         public string Path { get; set; }
-        
+
         public string QueryParams { get; set; }
-        
+
         public string Method { get; set; }
 
         public Dictionary<string, string> Header { get; set; }
 
-        public string ContentType{ get; set; }
+        public string ContentType { get; set; }
+
+        public Stream FileStream { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public ModifyPrefineTag Body { get; set; }
 
 

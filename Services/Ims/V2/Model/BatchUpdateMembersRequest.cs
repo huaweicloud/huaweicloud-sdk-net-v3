@@ -19,6 +19,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public BatchUpdateMembersRequestBody Body { get; set; }
 
 
