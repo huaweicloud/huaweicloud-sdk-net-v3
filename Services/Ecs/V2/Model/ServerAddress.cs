@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// IP地址版本。  - “4”：代表IPv4。 - “6”：代表IPv6。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Version { get; set; }
+        public string Version { get; set; }
 
         /// <summary>
         /// IP地址。

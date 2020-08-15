@@ -20,6 +20,7 @@
         <ProjectReference Include="..\Services\IoTDA\IoTDA.csproj" />
         <ProjectReference Include="..\Services\Classroom\Classroom.csproj" />
         <ProjectReference Include="..\Services\Dcs\Dcs.csproj" />
+        <ProjectReference Include="..\Services\Kms\Kms.csproj" />
     </ItemGroup>
 
 </Project>

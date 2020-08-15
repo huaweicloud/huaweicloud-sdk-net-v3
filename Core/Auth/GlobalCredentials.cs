@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         private readonly string _ak;
         private readonly string _sk;
         private readonly string _domainId;
+        private string _securityToken;
 
         public GlobalCredentials(string ak, string sk, string domainId)
         {
@@ -54,6 +55,12 @@ namespace HuaweiCloud.SDK.Core.Auth
             this._domainId = domainId;
         }
 
+        public GlobalCredentials WithSecurityToken(string token)
+        {
+            this._securityToken = token;
+            return this;
+        }
+
         public Dictionary<string, string> GetPathParamDictionary()
         {
             var pathParamDictionary = new Dictionary<string, string>();
@@ -71,6 +78,11 @@ namespace HuaweiCloud.SDK.Core.Auth
             Task<HttpRequest> httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
                 request.Headers.Add("X-Domain-Id", _domainId);
+
+                if (_securityToken != null)
+                {
+                    request.Headers.Add("X-Security-Token", _securityToken);
+                }
 
                 if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
                 {

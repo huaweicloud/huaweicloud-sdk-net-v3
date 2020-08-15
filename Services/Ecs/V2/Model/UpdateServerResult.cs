@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 弹性云服务器的网络属性。
         /// </summary>
         [JsonProperty("addresses", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, List<ServerAddress>> Addresses { get; set; }
+        public Dictionary<string, List<UpdateServerAddress>> Addresses { get; set; }
 
         /// <summary>
         /// 弹性云服务器创建时间。  时间格式例如：2019-05-22T03:19:19Z

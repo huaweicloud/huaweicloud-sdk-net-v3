@@ -1,27 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Core\Core.csproj" />
-      <ProjectReference Include="..\Services\As\As.csproj" />
-      <ProjectReference Include="..\Services\Ces\Ces.csproj" />
-      <ProjectReference Include="..\Services\Classroom\Classroom.csproj" />
-      <ProjectReference Include="..\Services\Dcs\Dcs.csproj" />
-      <ProjectReference Include="..\Services\Dds\Dds.csproj" />
-      <ProjectReference Include="..\Services\Demo\Demo.csproj" />
-      <ProjectReference Include="..\Services\Ecs\Ecs.csproj" />
-      <ProjectReference Include="..\Services\Eps\Eps.csproj" />
-      <ProjectReference Include="..\Services\Evs\Evs.csproj" />
-      <ProjectReference Include="..\Services\Fgs\Fgs.csproj" />
-      <ProjectReference Include="..\Services\Iam\Iam.csproj" />
-      <ProjectReference Include="..\Services\Image\Image.csproj" />
-      <ProjectReference Include="..\Services\Ims\Ims.csproj" />
-      <ProjectReference Include="..\Services\IoTDA\IoTDA.csproj" />
-      <ProjectReference Include="..\Services\Tms\Tms.csproj" />
-      <ProjectReference Include="..\Services\Vpc\Vpc.csproj" />
-    </ItemGroup>
-
 </Project>

@@ -15,7 +15,7 @@
 
 ## 现在开始
 
-- 要使用华为云 .Net SDK，您需要拥有云账号以及该账号对应的Access Key（AK）和Secret Access Key（SK）。 请在华为云控制台“我的凭证-访问密钥”页面上创建和查看您的AKSK。更多信息请查看[访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html).
+- 要使用华为云 .Net SDK，您需要拥有云账号以及该账号对应的Access Key（AK）和Secret Access Key（SK）。 请在华为云控制台“我的凭证-访问密钥”页面上创建和查看您的 AK/SK 。更多信息请查看[访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html).
 
 - 华为云 .Net SDK适用于：
     - **.NET Framework 4.5** 及其以上版本
@@ -24,19 +24,21 @@
 
 ## 华为云 .NET SDK 获取和安装
 
-您可以通过如下方式获取和安装SDK:
+您可以通过如下方式获取和安装SDK。
+
+无论您要使用哪个产品/服务的开发工具包，都必须安装`HuaweiCloud.SDK.Core`。以使用虚拟私有云VPC SDK为例，您需要安装`HuaweiCloud.SDK.Core` 和 `HuaweiCloud.SDK.Vpc`：
 
 - 使用 .NET CLI 工具
-```bash
-dotnet add package HuaweiCloud.SDK.Core
-dotnet add package HuaweiCloud.SDK.Ecs
-```
+    ```bash
+    dotnet add package HuaweiCloud.SDK.Core
+    dotnet add package HuaweiCloud.SDK.Vpc
+    ```
 
 - 使用 Package Manager
-```bash
-Install-Package HuaweiCloud.SDK.Core
-Install-Package HuaweiCloud.SDK.Ecs
-```
+    ```bash
+    Install-Package HuaweiCloud.SDK.Core
+    Install-Package HuaweiCloud.SDK.Vpc
+    ```
 
 ## 开始使用
 
@@ -46,6 +48,7 @@ Install-Package HuaweiCloud.SDK.Ecs
     using System;
     using HuaweiCloud.SDK.Core;
     using HuaweiCloud.SDK.Core.Auth;
+    # 导入指定云服务的 {Service}，此处以 Vpc 为例
     using HuaweiCloud.SDK.Vpc.V2;
     using HuaweiCloud.SDK.Vpc.V2.Model;
     ```
@@ -68,24 +71,47 @@ Install-Package HuaweiCloud.SDK.Ecs
 
 3. 初始化认证信息
 
-    ```csharp
-    ICredential auth = new BasicCredentials(ak, sk, projectId, domainId);
+    **说明**：
+    华为云服务存在两种部署方式，Region级服务和Global级服务。Global级服务当前仅支持IAM, TMS, EPS。
+    
+    Region级服务仅需要提供 projectId。Global级服务需要提供domainId。
+
+    - `ak` 华为云账号 Access Key 。
+    - `sk` 华为云账号 Secret Access Key 。
+    - `projectId` 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID 。
+    - `domainId` 华为云账号ID 。
+    - `securityToken` 采用临时AK/SK认证场景下的安全票据。
+
+    3.1 使用永久AK/SK
+    
+    ``` csharp
+    // Region级服务
+    ICredential auth = new BasicCredentials(ak, sk, projectId);
+   
+    // Global级服务
+    ICredential auth = new GlobalCredentials(ak, sk, domainId);
     ```
-
-	**说明:**
-
-   	非全局服务仅需要提供project_id，domain_id无需提供。
-    全局服务project_id必须为null，domain_id请按照实际情况填写。
-    全局服务当前仅支持IAM。
-
-    - `ak` 华为云账号Access Key。
-    - `sk` 华为云账号Secret Access Key。
-    - `project_id` 云服务所在项目 ID。
-    - `domain_id` 华为云账号 ID。
+    
+    3.2 使用临时AK/SK
+    
+    首选需要获得临时AK、SK和SecurityToken，获取可以从永久AK/SK获得，或者通过委托授权首选获得。
+    
+    通过永久AK/SK获得可以参考文档：https://support.huaweicloud.com/api-iam/iam_04_0002.html, 对应IAM SDK 中的createTemporaryAccessKeyByToken方法。
+    
+    通过委托授权获得可以参考文档：https://support.huaweicloud.com/api-iam/iam_04_0101.html, 对应IAM SDK 中的createTemporaryAccessKeyByAgency方法。
+    
+    ``` csharp
+    // Region级服务
+    ICredential auth = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
+       
+    // Global级服务
+    ICredential auth = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
+    ```
 
 4. 初始化客户端:
 
     ```csharp
+    # 初始化指定云服务的客户端 {Service}Client，以初始化 VpcClient 为例
     VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithHttpConfig(config).WithLogging(LogLevel.Information).Build();
     ```
 
@@ -96,11 +122,12 @@ Install-Package HuaweiCloud.SDK.Ecs
 5. 发送请求并查看响应.
 
 	```csharp
+    // 初始化请求，以调用接口 ListVpcs 为例
 	ListVpcsRequest req = new ListVpcsRequest
 	{
 		Limit = 1,
 	};
-	response = vpcClient.CreateVpc(req)
+	response = vpcClient.ListVpcs(req)
 	```
 
 6. 异常处理
@@ -133,7 +160,7 @@ Install-Package HuaweiCloud.SDK.Ecs
 7. 异步场景
 
     ```csharp
-    # 初始化异步客户端
+    # 初始化异步客户端，以初始化 VpcAsyncClient 为例
     VpcAsyncClient vpcClient = VpcAsyncClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithLogging(LogLevel.Information).WithHttpConfig(config).Build();
 
     # 发送异步请求
@@ -168,62 +195,63 @@ Install-Package HuaweiCloud.SDK.Ecs
 
 ## 代码实例
 
-使用如下代码将查询指定区域下的VPC列表，调用前请根据实际情况替换如下变量：`{your ak string}`、 `{your sk string}`、 `{your endpoint}` 以及 `{your project id}`。
+- 使用如下代码同步查询特定 Region 下的 VPC 清单，实际使用中请将 `VpcClient` 替换为您使用的产品/服务相应的 `{Service}Client`。
+- 调用前请根据实际情况替换如下变量： `{your ak string}`、`{your sk string}`、`{your endpoint string}` 以及 `{your project id}`。
 
-```csharp
-using System;
-using HuaweiCloud.SDK.Core;
-using HuaweiCloud.SDK.Core.Auth;
-using HuaweiCloud.SDK.Vpc.V2;
-using HuaweiCloud.SDK.Vpc.V2.Model;
-
-namespace ConsoleApp1
-{
-    class Program
+    ``` csharp
+    using System;
+    using HuaweiCloud.SDK.Core;
+    using HuaweiCloud.SDK.Core.Auth;
+    using HuaweiCloud.SDK.Vpc.V2;
+    using HuaweiCloud.SDK.Vpc.V2.Model;
+    
+    namespace ConsoleApp1
     {
-        static void Main(string[] args)
+        class Program
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-            const string endpoint = "{your endpoint string}";
-            const string projectId = "{your projectID string}";
-
-            ICredential auth = new BasicCredentials(ak, sk, projectId);
-            var config = HttpConfig.GetDefaultConfig();
-            config.IgnoreSslVerification = true;
-
-            VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint)
-                .WithHttpConfig(config).Build();
-
-            ListVpcsRequest req = new ListVpcsRequest
+            static void Main(string[] args)
             {
-                Limit = 1,
-            };
-
-            try
-            {
-                ListVpcsResponse resp = vpcClient.ListVpcs(req);
-                foreach (var vpc in resp.Vpcs)
+                const string ak = "{your ak string}";
+                const string sk = "{your sk string}";
+                const string endpoint = "{your endpoint string}";
+                const string projectId = "{your projectID string}";
+    
+                ICredential auth = new BasicCredentials(ak, sk, projectId);
+                var config = HttpConfig.GetDefaultConfig();
+                config.IgnoreSslVerification = true;
+    
+                VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint)
+                    .WithHttpConfig(config).Build();
+    
+                ListVpcsRequest req = new ListVpcsRequest
                 {
-                    Console.WriteLine(vpc.Id);
-                    Console.WriteLine(vpc.Name);
+                    Limit = 1,
+                };
+    
+                try
+                {
+                    ListVpcsResponse resp = vpcClient.ListVpcs(req);
+                    foreach (var vpc in resp.Vpcs)
+                    {
+                        Console.WriteLine(vpc.Id);
+                        Console.WriteLine(vpc.Name);
+                    }
                 }
-            }
-            catch (RequestTimeoutException requestTimeoutException)
-            {
-                Console.WriteLine(requestTimeoutException.ErrorMessage);
-            }
-            catch (ServiceResponseException clientRequestException)
-            {
-                Console.WriteLine(clientRequestException.HttpStatusCode);
-                Console.WriteLine(clientRequestException.ErrorCode);
-                Console.WriteLine(clientRequestException.ErrorMsg);
-            }
-            catch (ConnectionException connectionException)
-            {
-                Console.WriteLine(connectionException.ErrorMessage);
+                catch (RequestTimeoutException requestTimeoutException)
+                {
+                    Console.WriteLine(requestTimeoutException.ErrorMessage);
+                }
+                catch (ServiceResponseException clientRequestException)
+                {
+                    Console.WriteLine(clientRequestException.HttpStatusCode);
+                    Console.WriteLine(clientRequestException.ErrorCode);
+                    Console.WriteLine(clientRequestException.ErrorMsg);
+                }
+                catch (ConnectionException connectionException)
+                {
+                    Console.WriteLine(connectionException.ErrorMessage);
+                }
             }
         }
     }
-}
-```
+    ```

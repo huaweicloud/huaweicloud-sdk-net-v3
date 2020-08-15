@@ -21,17 +21,19 @@ This document introduces how to obtain and use HuaweiCloud .Net SDK.
 
 Run the following command to install .Net SDK:
 
+You must install `HuaweiCloud.SDK.Core` library no matter which product development kit you need to use. Take using VPC SDK for example, you need to install `HuaweiCloud.SDK.Core` library and `HuaweiCloud.SDK.Vpc` library:
+
 - Use .NET CLI
-```bash
-dotnet add package HuaweiCloud.SDK.Core
-dotnet add package HuaweiCloud.SDK.Ecs
-```
+    ``` bash
+    dotnet add package HuaweiCloud.SDK.Core
+    dotnet add package HuaweiCloud.SDK.Vpc
+    ```
 
 - Use Package Manager
-```bash
-Install-Package HuaweiCloud.SDK.Core
-Install-Package HuaweiCloud.SDK.Ecs
-```
+    ```bash
+    Install-Package HuaweiCloud.SDK.Core
+    Install-Package HuaweiCloud.SDK.Vpc
+    ```
 
 ## Use .Net SDK
 
@@ -41,6 +43,7 @@ Install-Package HuaweiCloud.SDK.Ecs
     using System;
     using HuaweiCloud.SDK.Core;
     using HuaweiCloud.SDK.Core.Auth;
+    # import specified service, take Vpc for example
     using HuaweiCloud.SDK.Vpc.V2;
     using HuaweiCloud.SDK.Vpc.V2.Model;
     ```
@@ -63,24 +66,49 @@ Install-Package HuaweiCloud.SDK.Ecs
 
 3. Initialize the credentials
 
-    ```csharp
-    ICredential auth = new BasicCredentials(ak, sk, projectId, domainId);
+    **Notice:**
+    There are two types of HUAWEI CLOUD services, regional services and global services. 
+    Global services currently only support IAM, TMS, EPS.
+
+    For Regional services' authentication, projectId is required. 
+    For global services' authentication, domainId is required. 
+
+    - `ak` is the access key ID for your account.
+    - `sk` is the secret access key for your account.
+    - `projectId` is the ID of your project depending on your region which you want to operate.
+    - `domainId` is the account ID of HUAWEI CLOUD.
+    - `securityToken` is the security token when using temporary AK/SK.
+
+    3.1 Use permanent AK/SK
+    
+    ``` csharp
+    # Regional Services
+    ICredential auth = new BasicCredentials(ak, sk, projectId);
+   
+    # Global Services
+    ICredential auth = new GlobalCredentials(ak, sk, domainId);
     ```
-
-	**where:**
-   	
-    For project services, only need to provide project_id, domain_id is optional.
-    For global services, project_id must be null, domain_id should be filled in according to the actual situation.
-    Global services currently only support Iam.
-
-	- `ak` is the access key id for your account.
-	- `sk` is the secret access key for your account.
-	- `project_id` is the id of the project.
-  	- `project_id` is the account ID of huawei cloud.
+    
+    3.2 Use temporary AK/SK
+    
+    It's preferred to obtain temporary access key, security key and security token first, which could be obtained through permanent access key and security key or through an agency.
+    
+    Obtaining a temporary access key token through permanent access key and security key, you could refer to document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0002.html . The API mentioned in the document above corresponds to the method of createTemporaryAccessKeyByToken in IAM SDK.
+    
+    Obtaining a temporary access key and security token through an agency, you could refer to document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0101.html . The API mentioned in the document above corresponds to the method of createTemporaryAccessKeyByAgency in IAM SDK.
+    
+    ``` csharp
+    # Regional Services
+    ICredential auth = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
+   
+    # Global Services
+    ICredential auth = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
+    ```
 
 4. Initialize the `ServiceClient` instance:
 
     ```csharp
+    # Initialize specified {Service}Client instance, take VpcClient for example
     VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithHttpConfig(config).Build();
     ```
 
@@ -91,11 +119,12 @@ Install-Package HuaweiCloud.SDK.Ecs
 5. Call a request and print response.
 
 	```csharp
+    # Send request and print response, take interface of ListVpcs for example
     ListVpcsRequest req = new ListVpcsRequest
     {
         Limit = 1,
     };
-	response = vpcClient.CreateVpc(req)
+	response = vpcClient.ListVpcs(req)
 	```
 
 6. Exceptions
@@ -110,7 +139,7 @@ Install-Package HuaweiCloud.SDK.Ecs
     | | | ClientRequestException | invalid request, http status code: [400, 500) |
     
     ```csharp
-    # 异常处理
+    # Handle ClientRequestExceptions
     try
     {
         response = vpcClient.ListVpcs(new ListVpcsRequest());
@@ -128,7 +157,7 @@ Install-Package HuaweiCloud.SDK.Ecs
 7. Asynchronous Requests
 
     ```csharp
-    # Initialize asynchronous client
+    # Initialize asynchronous client instance, take VpcAsyncClient for example
     VpcAsyncClient vpcClient = VpcAsyncClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithLogging(LogLevel.Information).WithHttpConfig(config).Build();
 
     # send asynchronous request
@@ -163,62 +192,63 @@ Install-Package HuaweiCloud.SDK.Ecs
 
 ## Code example
 
-The following example shows how to query a list of VPC in a specific region. Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint}` and `{your project id}`.
+- The following example shows how to query a list of VPC in a specific region, you need to substitute your real `{Service}Client` for `VpcClient` in actual use.
+- Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint string}` and `{your project id}`.
 
-```csharp
-using System;
-using HuaweiCloud.SDK.Core;
-using HuaweiCloud.SDK.Core.Auth;
-using HuaweiCloud.SDK.Vpc.V2;
-using HuaweiCloud.SDK.Vpc.V2.Model;
+    ```csharp
+    using System;
+    using HuaweiCloud.SDK.Core;
+    using HuaweiCloud.SDK.Core.Auth;
+    using HuaweiCloud.SDK.Vpc.V2;
+    using HuaweiCloud.SDK.Vpc.V2.Model;
 
-namespace ConsoleApp1
-{
-    class Program
+    namespace ConsoleApp1
     {
-        static void Main(string[] args)
+        class Program
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-            const string endpoint = "{your endpoint string}";
-            const string projectId = "{your projectID string}";
-
-            ICredential auth = new BasicCredentials(ak, sk, projectId);
-            var config = HttpConfig.GetDefaultConfig();
-            config.IgnoreSslVerification = true;
-
-            VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint)
-                .WithHttpConfig(config).Build();
-
-            ListVpcsRequest req = new ListVpcsRequest
+            static void Main(string[] args)
             {
-                Limit = 1,
-            };
+                const string ak = "{your ak string}";
+                const string sk = "{your sk string}";
+                const string endpoint = "{your endpoint string}";
+                const string projectId = "{your projectID string}";
 
-            try
-            {
-                ListVpcsResponse resp = vpcClient.ListVpcs(req);
-                foreach (var vpc in resp.Vpcs)
+                ICredential auth = new BasicCredentials(ak, sk, projectId);
+                var config = HttpConfig.GetDefaultConfig();
+                config.IgnoreSslVerification = true;
+
+                VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint)
+                    .WithHttpConfig(config).Build();
+
+                ListVpcsRequest req = new ListVpcsRequest
                 {
-                    Console.WriteLine(vpc.Id);
-                    Console.WriteLine(vpc.Name);
+                    Limit = 1,
+                };
+
+                try
+                {
+                    ListVpcsResponse resp = vpcClient.ListVpcs(req);
+                    foreach (var vpc in resp.Vpcs)
+                    {
+                        Console.WriteLine(vpc.Id);
+                        Console.WriteLine(vpc.Name);
+                    }
                 }
-            }
-            catch (RequestTimeoutException requestTimeoutException)
-            {
-                Console.WriteLine(requestTimeoutException.ErrorMessage);
-            }
-            catch (ServiceResponseException clientRequestException)
-            {
-                Console.WriteLine(clientRequestException.HttpStatusCode);
-                Console.WriteLine(clientRequestException.ErrorCode);
-                Console.WriteLine(clientRequestException.ErrorMsg);
-            }
-            catch (ConnectionException connectionException)
-            {
-                Console.WriteLine(connectionException.ErrorMessage);
+                catch (RequestTimeoutException requestTimeoutException)
+                {
+                    Console.WriteLine(requestTimeoutException.ErrorMessage);
+                }
+                catch (ServiceResponseException clientRequestException)
+                {
+                    Console.WriteLine(clientRequestException.HttpStatusCode);
+                    Console.WriteLine(clientRequestException.ErrorCode);
+                    Console.WriteLine(clientRequestException.ErrorMsg);
+                }
+                catch (ConnectionException connectionException)
+                {
+                    Console.WriteLine(connectionException.ErrorMessage);
+                }
             }
         }
     }
-}
-```
+    ```

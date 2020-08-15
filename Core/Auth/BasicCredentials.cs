@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         private readonly string _ak;
         private readonly string _sk;
         private readonly string _projectId;
+        private string _securityToken;
 
         public BasicCredentials(string ak, string sk, string projectId)
         {
@@ -54,6 +55,12 @@ namespace HuaweiCloud.SDK.Core.Auth
             this._projectId = projectId;
         }
 
+        public BasicCredentials WithSecurityToken(string token)
+        {
+            this._securityToken = token;
+            return this;
+        }
+
         public Dictionary<string, string> GetPathParamDictionary()
         {
             var pathParamDictionary = new Dictionary<string, string>();
@@ -70,6 +77,11 @@ namespace HuaweiCloud.SDK.Core.Auth
             var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
                 request.Headers.Add("X-Project-Id", _projectId);
+
+                if (_securityToken != null)
+                {
+                    request.Headers.Add("X-Security-Token", _securityToken);
+                }
 
                 if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
                 {
