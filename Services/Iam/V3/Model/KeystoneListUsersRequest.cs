@@ -18,6 +18,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("domain_id", IsQuery = true)]
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("enabled", IsQuery = true)]
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
@@ -44,6 +51,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class KeystoneListUsersRequest {\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  passwordExpiresAt: ").Append(PasswordExpiresAt).Append("\n");
@@ -69,6 +77,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             return 
                 (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                ) && 
+                (
                     this.Enabled == input.Enabled ||
                     (this.Enabled != null &&
                     this.Enabled.Equals(input.Enabled))
@@ -93,6 +106,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.Enabled != null)
                     hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 if (this.Name != null)

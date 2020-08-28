@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 卷、快照的link
+    /// 云硬盘uri自描述信息。
     /// </summary>
     public class Link 
     {

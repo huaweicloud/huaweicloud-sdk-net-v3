@@ -66,6 +66,33 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 下发异步设备命令
+        /// </summary>
+        public async Task<CreateAsyncCommandResponse> CreateAsyncCommandAsync(CreateAsyncCommandRequest createAsyncCommandRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id" , createAsyncCommandRequest.DeviceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAsyncCommandRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateAsyncCommandResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定id的命令
+        /// </summary>
+        public async Task<ShowAsyncDeviceCommandResponse> ShowAsyncDeviceCommandAsync(ShowAsyncDeviceCommandRequest showAsyncDeviceCommandRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id" , showAsyncDeviceCommandRequest.DeviceId.ToString());
+            urlParam.Add("command_id" , showAsyncDeviceCommandRequest.CommandId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands/{command_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showAsyncDeviceCommandRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowAsyncDeviceCommandResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建批量任务
         /// </summary>
         public async Task<CreateBatchTaskResponse> CreateBatchTaskAsync(CreateBatchTaskRequest createBatchTaskRequest)
@@ -100,6 +127,32 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showBatchTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBatchTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除批量任务文件
+        /// </summary>
+        public async Task<DeleteBatchTaskFileResponse> DeleteBatchTaskFileAsync(DeleteBatchTaskFileRequest deleteBatchTaskFileRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("file_id" , deleteBatchTaskFileRequest.FileId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/batchtask-files/{file_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteBatchTaskFileRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            DeleteBatchTaskFileResponse deleteBatchTaskFileResponse = JsonUtils.DeSerializeNull<DeleteBatchTaskFileResponse>(response);
+            return deleteBatchTaskFileResponse;
+        }
+        
+        /// <summary>
+        /// 查询批量任务文件列表
+        /// </summary>
+        public async Task<ListBatchTaskFilesResponse> ListBatchTaskFilesAsync(ListBatchTaskFilesRequest listBatchTaskFilesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/batchtask-files",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBatchTaskFilesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListBatchTaskFilesResponse>(response);
         }
         
         /// <summary>

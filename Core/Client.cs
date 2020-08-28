@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Core
     {
         public class ClientBuilder<T> where T : Client
         {
-            private readonly string _credentialType = nameof(BasicCredentials);
+            private readonly string[] _credentialType = {nameof(BasicCredentials)};
 
             public ClientBuilder()
             {
@@ -44,25 +44,19 @@ namespace HuaweiCloud.SDK.Core
 
             public ClientBuilder(string credentialType)
             {
-                this._credentialType = credentialType;
+                this._credentialType = credentialType.Split(',');
             }
 
-            private ICredential _credential;
+            private Credentials _credentials;
             private HttpConfig _httpConfig;
             private string _endPoint;
             private bool _enableLogging;
             private LogLevel _logLevel = LogLevel.Information;
             private HttpHandler _httpHandler;
 
-            public ClientBuilder<T> WithCredential(ICredential credential)
+            public ClientBuilder<T> WithCredential(Credentials credentials)
             {
-                if (credential.GetType().Name != _credentialType)
-                {
-                    throw new ArgumentException(
-                        $"Need credential type is {_credentialType}, actually is {credential.GetType().Name}");
-                }
-
-                this._credential = credential;
+                this._credentials = credentials;
                 return this;
             }
 
@@ -95,41 +89,29 @@ namespace HuaweiCloud.SDK.Core
             {
                 Client client = Activator.CreateInstance<T>();
 
-                if (this._credential == null)
+                if (this._credentials == null)
                 {
-                    this._credential = GetCredentialFromEnvironmentVariables();
+                    this._credentials = Credentials.GetCredentialFromEnvironment<T>(_credentialType[0]);
                 }
 
-                client.WithCredential(this._credential)
+                if (!_credentialType.Contains(this._credentials.GetType().Name))
+                {
+                    throw new ArgumentException(
+                        $"credential type error, support credential type is {Join(",", _credentialType)}");
+                }
+
+                client.WithCredential(this._credentials)
                     .WithEndPoint(this._endPoint)
                     .WithHttpConfig(this._httpConfig ?? HttpConfig.GetDefaultConfig());
                 client.InitSdkHttpClient(this._httpHandler, this._enableLogging, this._logLevel);
 
                 return (T) client;
             }
-
-            private ICredential GetCredentialFromEnvironmentVariables()
-            {
-                var projectId = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_PROJECT_ID");
-                var domainId = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_DOMAIN_ID");
-                var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
-                var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
-
-                switch (_credentialType)
-                {
-                    case nameof(BasicCredentials):
-                        return new BasicCredentials(ak, sk, projectId);
-                    case nameof(GlobalCredentials):
-                        return new GlobalCredentials(ak, sk, domainId);
-                    default:
-                        return null;
-                }
-            }
         }
 
         private string _endpoint;
         private HttpConfig _httpConfig;
-        private ICredential _credential;
+        private Credentials _credential;
 
         private SdkHttpClient _sdkHttpClient;
 
@@ -137,7 +119,7 @@ namespace HuaweiCloud.SDK.Core
         private const string XRequestAgent = "User-Agent";
         private const string CredentialsNull = "Credentials cannot be null.";
 
-        private Client WithCredential(ICredential credentials)
+        private Client WithCredential(Credentials credentials)
         {
             this._credential = credentials ?? throw new ArgumentNullException(CredentialsNull);
             this._httpConfig = HttpConfig.GetDefaultConfig();

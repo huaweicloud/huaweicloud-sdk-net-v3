@@ -26,12 +26,12 @@ using static System.String;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
-    public class BasicCredentials : ICredential
+    public class BasicCredentials : Credentials
     {
-        private readonly string _ak;
-        private readonly string _sk;
-        private readonly string _projectId;
-        private string _securityToken;
+        private string Ak { set; get; }
+        private string Sk { set; get; }
+        private string ProjectId { set; get; }
+        private string SecurityToken { set; get; }
 
         public BasicCredentials(string ak, string sk, string projectId)
         {
@@ -50,37 +50,37 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw new ArgumentNullException(nameof(projectId));
             }
 
-            this._ak = ak;
-            this._sk = sk;
-            this._projectId = projectId;
+            this.Ak = ak;
+            this.Sk = sk;
+            this.ProjectId = projectId;
         }
 
         public BasicCredentials WithSecurityToken(string token)
         {
-            this._securityToken = token;
+            this.SecurityToken = token;
             return this;
         }
 
-        public Dictionary<string, string> GetPathParamDictionary()
+        public override Dictionary<string, string> GetPathParamDictionary()
         {
             var pathParamDictionary = new Dictionary<string, string>();
-            if (_projectId != null)
+            if (ProjectId != null)
             {
-                pathParamDictionary.Add("project_id", _projectId);
+                pathParamDictionary.Add("project_id", ProjectId);
             }
 
             return pathParamDictionary;
         }
 
-        public Task<HttpRequest> SignAuthRequest(HttpRequest request)
+        public override Task<HttpRequest> SignAuthRequest(HttpRequest request)
         {
             var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
-                request.Headers.Add("X-Project-Id", _projectId);
+                request.Headers.Add("X-Project-Id", ProjectId);
 
-                if (_securityToken != null)
+                if (SecurityToken != null)
                 {
-                    request.Headers.Add("X-Security-Token", _securityToken);
+                    request.Headers.Add("X-Security-Token", SecurityToken);
                 }
 
                 if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                     request.Headers.Add("X-Sdk-Content-Sha256", "UNSIGNED-PAYLOAD");
                 }
 
-                var signer = new Signer {Key = _ak, Secret = _sk};
+                var signer = new Signer {Key = Ak, Secret = Sk};
                 signer.Sign(request);
 
                 return request;

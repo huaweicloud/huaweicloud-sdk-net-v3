@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
-        public LinksSelf Links { get; set; }
+        public Links Links { get; set; }
 
         /// <summary>
         /// IAM用户在外部系统中的ID。
@@ -87,6 +87,24 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTime { get; set; }
 
+        /// <summary>
+        /// IAM用户创建时间。
+        /// </summary>
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// IAM用户最后登录时间。
+        /// </summary>
+        [JsonProperty("last_login_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastLoginTime { get; set; }
+
+        /// <summary>
+        /// IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
+        /// </summary>
+        [JsonProperty("pwd_stength", NullValueHandling = NullValueHandling.Ignore)]
+        public string PwdStength { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -107,6 +125,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  phone: ").Append(Phone).Append("\n");
             sb.Append("  pwdStatus: ").Append(PwdStatus).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  lastLoginTime: ").Append(LastLoginTime).Append("\n");
+            sb.Append("  pwdStength: ").Append(PwdStength).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +208,21 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.UpdateTime == input.UpdateTime ||
                     (this.UpdateTime != null &&
                     this.UpdateTime.Equals(input.UpdateTime))
+                ) && 
+                (
+                    this.CreateTime == input.CreateTime ||
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.LastLoginTime == input.LastLoginTime ||
+                    (this.LastLoginTime != null &&
+                    this.LastLoginTime.Equals(input.LastLoginTime))
+                ) && 
+                (
+                    this.PwdStength == input.PwdStength ||
+                    (this.PwdStength != null &&
+                    this.PwdStength.Equals(input.PwdStength))
                 );
         }
 
@@ -222,6 +258,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
                 if (this.UpdateTime != null)
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.LastLoginTime != null)
+                    hashCode = hashCode * 59 + this.LastLoginTime.GetHashCode();
+                if (this.PwdStength != null)
+                    hashCode = hashCode * 59 + this.PwdStength.GetHashCode();
                 return hashCode;
             }
         }

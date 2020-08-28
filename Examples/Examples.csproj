@@ -12,7 +12,7 @@
         <ProjectReference Include="..\Services\Dds\Dds.csproj" />
         <ProjectReference Include="..\Services\Ecs\Ecs.csproj" />
         <ProjectReference Include="..\Services\Evs\Evs.csproj" />
-        <ProjectReference Include="..\Services\Fgs\Fgs.csproj" />
+        <ProjectReference Include="..\Services\FunctionGraph\FunctionGraph.csproj" />
         <ProjectReference Include="..\Services\Iam\Iam.csproj" />
         <ProjectReference Include="..\Services\Image\Image.csproj" />
         <ProjectReference Include="..\Services\Ims\Ims.csproj" />

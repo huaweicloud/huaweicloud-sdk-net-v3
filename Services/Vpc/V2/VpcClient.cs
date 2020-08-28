@@ -381,6 +381,19 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 查询网络IP使用情况
+        /// </summary>
+        public ShowNetworkIpAvailabilitiesResponse ShowNetworkIpAvailabilities(ShowNetworkIpAvailabilitiesRequest showNetworkIpAvailabilitiesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("network_id" , showNetworkIpAvailabilitiesRequest.NetworkId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/network-ip-availabilities/{network_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showNetworkIpAvailabilitiesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowNetworkIpAvailabilitiesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询私有IP
         /// </summary>
         public ShowPrivateipResponse ShowPrivateip(ShowPrivateipRequest showPrivateipRequest)

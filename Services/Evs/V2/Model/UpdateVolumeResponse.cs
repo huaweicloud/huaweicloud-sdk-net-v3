@@ -14,111 +14,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     /// </summary>
     public class UpdateVolumeResponse : SdkResponse
     {
-        /// <summary>
-        /// 是否为共享云硬盘。
-        /// </summary>
-        /// <value>是否为共享云硬盘。</value>
-        [JsonConverter(typeof(EnumClassConverter<ShareableEnum>))]
-        public class ShareableEnum
-        {
-            /// <summary>
-            /// Enum TRUE for value: true
-            /// </summary>
-            public static readonly ShareableEnum TRUE = new ShareableEnum("true");
-
-            /// <summary>
-            /// Enum FALSE for value: false
-            /// </summary>
-            public static readonly ShareableEnum FALSE = new ShareableEnum("false");
-
-            public static readonly Dictionary<string, ShareableEnum> StaticFields =
-            new Dictionary<string, ShareableEnum>()
-            {
-                {"true", TRUE},
-                {"false", FALSE},
-            };
-
-            private string Value;
-
-            public ShareableEnum(string Value)
-            {
-                this.Value = Value;
-            }
-
-            public static ShareableEnum FromValue(string Value)
-            {
-                if(Value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(Value))
-                {
-                    return StaticFields[Value];
-                }
-
-                return null;
-            }
-
-            public override string ToString()
-            {
-                return this.Value;
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ShareableEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ShareableEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(ShareableEnum a, ShareableEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ShareableEnum a, ShareableEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 是否挂载信息。
@@ -190,7 +85,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 是否为共享云硬盘。
         /// </summary>
         [JsonProperty("shareable", NullValueHandling = NullValueHandling.Ignore)]
-        public ShareableEnum Shareable { get; set; }
+        public string Shareable { get; set; }
+
         /// <summary>
         /// 云硬盘大小。
         /// </summary>

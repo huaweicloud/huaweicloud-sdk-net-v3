@@ -26,7 +26,7 @@ namespace Examples.Evs.V2
             ShowVolume(evsClient);
             CreateVolume(evsClient);
             ResizeVolume(evsClient);
-            ListVolumesDetails(evsClient);
+            ListVolumes(evsClient);
             UpdateVolume(evsClient);
             DeleteVolume(evsClient);
             CinderListVolumeTypes(evsClient);
@@ -64,9 +64,9 @@ namespace Examples.Evs.V2
             }
         }
 
-        private static void ListVolumesDetails(EvsClient client)
+        private static void ListVolumes(EvsClient client)
         {
-            ListVolumesDetailsRequest req = new ListVolumesDetailsRequest()
+            ListVolumesRequest req = new ListVolumesRequest()
             {
                 AvailabilityZone = "br-iaas-odin1a",
                 ServiceType = "EVS",
@@ -77,7 +77,7 @@ namespace Examples.Evs.V2
 
             try
             {
-                var resp = client.ListVolumesDetails(req);
+                var resp = client.ListVolumes(req);
                 Console.WriteLine(resp.Count);
                 Console.WriteLine(resp.HttpStatusCode);
             }

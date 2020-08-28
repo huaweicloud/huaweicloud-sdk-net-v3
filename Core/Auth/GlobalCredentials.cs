@@ -26,12 +26,12 @@ using static System.String;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
-    public class GlobalCredentials : ICredential
+    public class GlobalCredentials : Credentials
     {
-        private readonly string _ak;
-        private readonly string _sk;
-        private readonly string _domainId;
-        private string _securityToken;
+        private string Ak { set; get; }
+        private string Sk { set; get; }
+        private string DomainId { set; get; }
+        private string SecurityToken { set; get; }
 
         public GlobalCredentials(string ak, string sk, string domainId)
         {
@@ -50,38 +50,38 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw new ArgumentNullException(nameof(domainId));
             }
 
-            this._ak = ak;
-            this._sk = sk;
-            this._domainId = domainId;
+            this.Ak = ak;
+            this.Sk = sk;
+            this.DomainId = domainId;
         }
 
         public GlobalCredentials WithSecurityToken(string token)
         {
-            this._securityToken = token;
+            this.SecurityToken = token;
             return this;
         }
 
-        public Dictionary<string, string> GetPathParamDictionary()
+        public override Dictionary<string, string> GetPathParamDictionary()
         {
             var pathParamDictionary = new Dictionary<string, string>();
 
-            if (_domainId != null)
+            if (DomainId != null)
             {
-                pathParamDictionary.Add("domain_id", _domainId);
+                pathParamDictionary.Add("domain_id", DomainId);
             }
 
             return pathParamDictionary;
         }
 
-        public Task<HttpRequest> SignAuthRequest(HttpRequest request)
+        public override Task<HttpRequest> SignAuthRequest(HttpRequest request)
         {
             Task<HttpRequest> httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
-                request.Headers.Add("X-Domain-Id", _domainId);
+                request.Headers.Add("X-Domain-Id", DomainId);
 
-                if (_securityToken != null)
+                if (SecurityToken != null)
                 {
-                    request.Headers.Add("X-Security-Token", _securityToken);
+                    request.Headers.Add("X-Security-Token", SecurityToken);
                 }
 
                 if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                     request.Headers.Add("X-Sdk-Content-Sha256", "UNSIGNED-PAYLOAD");
                 }
 
-                var signer = new Signer {Key = _ak, Secret = _sk};
+                var signer = new Signer {Key = Ak, Secret = Sk};
                 signer.Sign(request);
 
                 return request;

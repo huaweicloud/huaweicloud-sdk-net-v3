@@ -91,7 +91,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 云硬盘镜像的元数据。 &gt; 说明： &gt;  &gt; 关于“volume_image_metadata”字段的详细说明，具体请参见：\&quot;[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\&quot;。
         /// </summary>
         [JsonProperty("volume_image_metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Object VolumeImageMetadata { get; set; }
+        public Dictionary<string, Object> VolumeImageMetadata { get; set; }
 
         /// <summary>
         /// 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
@@ -103,7 +103,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 云硬盘大小，单位为GB。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public string Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 预留属性。
@@ -118,10 +118,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string Bootable { get; set; }
 
         /// <summary>
-        /// 云硬盘的元数据。请参见•[metadata参数说明](https://support.huaweicloud.com/api-evs/evs_04_2006.html#evs_04_2006__evs_04_2010_li29114110314)。 如果元数据中不包含hw:passthrough字段，云硬盘默认为VBD类型。 如果元数据中不包含__system__encrypted字段，云硬盘默认为不加密。
+        /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Metadata { get; set; }
+        public VolumeMetadata Metadata { get; set; }
 
         /// <summary>
         /// 云硬盘更新时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 当前云硬盘服务不支持该字段。
         /// </summary>
         [JsonProperty("encrypted", NullValueHandling = NullValueHandling.Ignore)]
-        public string Encrypted { get; set; }
+        public bool? Encrypted { get; set; }
 
         /// <summary>
         /// 预留属性。
@@ -160,10 +160,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string OsVolMigStatusAttrnameId { get; set; }
 
         /// <summary>
-        /// 是否为共享云硬盘。
+        /// 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
         /// </summary>
         [JsonProperty("shareable", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Shareable { get; set; }
+        public string Shareable { get; set; }
 
         /// <summary>
         /// 预留属性。
@@ -199,7 +199,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 云硬盘的标签。 如果云硬盘有标签，则会有该字段，否则该字段为空。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Tags { get; set; }
+        public Dictionary<string, string> Tags { get; set; }
 
         /// <summary>
         /// 云硬盘挂载时的唯一标识。
@@ -339,8 +339,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                 ) && 
                 (
                     this.VolumeImageMetadata == input.VolumeImageMetadata ||
-                    (this.VolumeImageMetadata != null &&
-                    this.VolumeImageMetadata.Equals(input.VolumeImageMetadata))
+                    this.VolumeImageMetadata != null &&
+                    input.VolumeImageMetadata != null &&
+                    this.VolumeImageMetadata.SequenceEqual(input.VolumeImageMetadata)
                 ) && 
                 (
                     this.VolumeType == input.VolumeType ||
@@ -429,8 +430,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                 ) && 
                 (
                     this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
                     this.Wwn == input.Wwn ||

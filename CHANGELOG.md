@@ -1,3 +1,45 @@
+# 3.0.9-beta 2020-08-28
+## HuaweiCloud SDK EVS
+ - ### Features
+    - None
+ - ### Bug Fix
+    - APIs ListVolumesByTags, solve the problem of type definition error of field `total_count`.
+ - ### Change
+    - None
+
+## HuaweiCloud SDK IAM
+ - ### Features
+    - Support more APIs: consistency of console related APIs.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK IoTDA
+ - ### Features
+    - Support more APIs: batch operation related APIs and asynchronous related APIs.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK ProjectMan
+ - ### Features
+    - Support Project Management service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK VPC
+ - ### Features
+    - Support more APIs: security group, security group rules, available IP count related APIs.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 # 3.0.8-beta 2020-8-14
 ## HuaweiCloud SDK Core
  - ### Features

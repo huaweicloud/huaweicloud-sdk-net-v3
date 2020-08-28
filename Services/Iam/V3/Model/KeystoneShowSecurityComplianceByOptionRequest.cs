@@ -122,6 +122,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("domain_id", IsPath = true)]
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("option", IsPath = true)]
         [JsonProperty("option", NullValueHandling = NullValueHandling.Ignore)]
         public OptionEnum Option { get; set; }
@@ -133,6 +140,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class KeystoneShowSecurityComplianceByOptionRequest {\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  option: ").Append(Option).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -156,6 +164,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             return 
                 (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                ) && 
+                (
                     this.Option == input.Option ||
                     (this.Option != null &&
                     this.Option.Equals(input.Option))
@@ -170,6 +183,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.Option != null)
                     hashCode = hashCode * 59 + this.Option.GetHashCode();
                 return hashCode;

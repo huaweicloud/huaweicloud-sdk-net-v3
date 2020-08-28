@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/zh-cn_topic_0057845624.html)。
+        /// 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }

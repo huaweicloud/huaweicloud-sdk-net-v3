@@ -1,3 +1,45 @@
+# 3.0.9-beta 2020-08-28
+## HuaweiCloud SDK EVS
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - ListVolumesByTags接口，修改total_count类型定义错误的问题
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK IAM
+ - ### 新增特性
+    - 新增支持接口：console一致性相关接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK IoTDA
+ - ### 新增特性
+    - 新增支持接口：批量操作接口和异步接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK ProjectMan
+ - ### 新增特性
+    - 支持项目管理服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK VPC
+ - ### 新增特性
+    - 新增支持接口：安全组、安全组规则和可用IP数
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+
 # 3.0.8-beta 2020-8-14
 ## HuaweiCloud SDK Core
  - ### 新增特性

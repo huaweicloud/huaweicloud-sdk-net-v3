@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 符合查询条件的云硬盘资源个数
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public string TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// 符合查询条件的资源列表

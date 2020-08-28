@@ -27,7 +27,7 @@ namespace Examples.Evs.V2
             UpdateSnapshot(evsClient);
             DeleteSnapshot(evsClient);
             ShowSnapshot(evsClient);
-            ListSnapshotsDetails(evsClient);
+            ListSnapshots(evsClient);
             RollbackSnapshot(evsClient);
         }
 
@@ -163,9 +163,9 @@ namespace Examples.Evs.V2
             }
         }
 
-        private static void ListSnapshotsDetails(EvsClient client)
+        private static void ListSnapshots(EvsClient client)
         {
-            ListSnapshotsDetailsRequest req = new ListSnapshotsDetailsRequest()
+            ListSnapshotsRequest req = new ListSnapshotsRequest()
             {
                 ServiceType = "EVS",
                 Limit = 2,
@@ -175,7 +175,7 @@ namespace Examples.Evs.V2
 
             try
             {
-                ListSnapshotsDetailsResponse resp = client.ListSnapshotsDetails(req);
+                ListSnapshotsResponse resp = client.ListSnapshots(req);
                 Console.WriteLine(resp.Count);
                 Console.WriteLine(resp.HttpStatusCode);
             }

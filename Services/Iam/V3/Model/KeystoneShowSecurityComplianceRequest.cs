@@ -15,6 +15,62 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     public class KeystoneShowSecurityComplianceRequest 
     {
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("domain_id", IsPath = true)]
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
 
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class KeystoneShowSecurityComplianceRequest {\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as KeystoneShowSecurityComplianceRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(KeystoneShowSecurityComplianceRequest input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                return hashCode;
+            }
+        }
     }
 }

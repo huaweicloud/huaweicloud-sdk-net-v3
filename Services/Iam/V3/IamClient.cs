@@ -14,11 +14,27 @@ namespace HuaweiCloud.SDK.Iam.V3
 
         
         /// <summary>
+        /// 为委托授予所有项目服务权限
+        /// </summary>
+        public AssociateAgencyWithAllProjectsPermissionResponse AssociateAgencyWithAllProjectsPermission(AssociateAgencyWithAllProjectsPermissionRequest associateAgencyWithAllProjectsPermissionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_id" , associateAgencyWithAllProjectsPermissionRequest.AgencyId.ToString());
+            urlParam.Add("domain_id" , associateAgencyWithAllProjectsPermissionRequest.DomainId.ToString());
+            urlParam.Add("role_id" , associateAgencyWithAllProjectsPermissionRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, associateAgencyWithAllProjectsPermissionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<AssociateAgencyWithAllProjectsPermissionResponse>(response);
+        }
+        
+        /// <summary>
         /// 为委托授予全局服务权限
         /// </summary>
         public AssociateAgencyWithDomainPermissionResponse AssociateAgencyWithDomainPermission(AssociateAgencyWithDomainPermissionRequest associateAgencyWithDomainPermissionRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , associateAgencyWithDomainPermissionRequest.DomainId.ToString());
             urlParam.Add("agency_id" , associateAgencyWithDomainPermissionRequest.AgencyId.ToString());
             urlParam.Add("role_id" , associateAgencyWithDomainPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
@@ -43,11 +59,27 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 检查委托下是否具有所有项目服务权限
+        /// </summary>
+        public CheckAllProjectsPermissionForAgencyResponse CheckAllProjectsPermissionForAgency(CheckAllProjectsPermissionForAgencyRequest checkAllProjectsPermissionForAgencyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_id" , checkAllProjectsPermissionForAgencyRequest.AgencyId.ToString());
+            urlParam.Add("domain_id" , checkAllProjectsPermissionForAgencyRequest.DomainId.ToString());
+            urlParam.Add("role_id" , checkAllProjectsPermissionForAgencyRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, checkAllProjectsPermissionForAgencyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("HEAD",request);
+            return JsonUtils.DeSerializeNull<CheckAllProjectsPermissionForAgencyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询委托是否拥有全局服务权限
         /// </summary>
         public CheckDomainPermissionForAgencyResponse CheckDomainPermissionForAgency(CheckDomainPermissionForAgencyRequest checkDomainPermissionForAgencyRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , checkDomainPermissionForAgencyRequest.DomainId.ToString());
             urlParam.Add("agency_id" , checkDomainPermissionForAgencyRequest.AgencyId.ToString());
             urlParam.Add("role_id" , checkDomainPermissionForAgencyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
@@ -153,6 +185,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneAssociateGroupWithAllProjectPermissionResponse KeystoneAssociateGroupWithAllProjectPermission(KeystoneAssociateGroupWithAllProjectPermissionRequest keystoneAssociateGroupWithAllProjectPermissionRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneAssociateGroupWithAllProjectPermissionRequest.DomainId.ToString());
             urlParam.Add("group_id" , keystoneAssociateGroupWithAllProjectPermissionRequest.GroupId.ToString());
             urlParam.Add("role_id" , keystoneAssociateGroupWithAllProjectPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects",urlParam);
@@ -167,6 +200,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneAssociateGroupWithDomainPermissionResponse KeystoneAssociateGroupWithDomainPermission(KeystoneAssociateGroupWithDomainPermissionRequest keystoneAssociateGroupWithDomainPermissionRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneAssociateGroupWithDomainPermissionRequest.DomainId.ToString());
             urlParam.Add("group_id" , keystoneAssociateGroupWithDomainPermissionRequest.GroupId.ToString());
             urlParam.Add("role_id" , keystoneAssociateGroupWithDomainPermissionRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}",urlParam);
@@ -196,6 +230,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCheckDomainPermissionForGroupResponse KeystoneCheckDomainPermissionForGroup(KeystoneCheckDomainPermissionForGroupRequest keystoneCheckDomainPermissionForGroupRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneCheckDomainPermissionForGroupRequest.DomainId.ToString());
             urlParam.Add("group_id" , keystoneCheckDomainPermissionForGroupRequest.GroupId.ToString());
             urlParam.Add("role_id" , keystoneCheckDomainPermissionForGroupRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}",urlParam);
@@ -300,6 +335,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListDomainPermissionsForGroupResponse KeystoneListDomainPermissionsForGroup(KeystoneListDomainPermissionsForGroupRequest keystoneListDomainPermissionsForGroupRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneListDomainPermissionsForGroupRequest.DomainId.ToString());
             urlParam.Add("group_id" , keystoneListDomainPermissionsForGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListDomainPermissionsForGroupRequest);
@@ -437,6 +473,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneRemoveDomainPermissionFromGroupResponse KeystoneRemoveDomainPermissionFromGroup(KeystoneRemoveDomainPermissionFromGroupRequest keystoneRemoveDomainPermissionFromGroupRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneRemoveDomainPermissionFromGroupRequest.DomainId.ToString());
             urlParam.Add("group_id" , keystoneRemoveDomainPermissionFromGroupRequest.GroupId.ToString());
             urlParam.Add("role_id" , keystoneRemoveDomainPermissionFromGroupRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}",urlParam);
@@ -557,6 +594,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowSecurityComplianceResponse KeystoneShowSecurityCompliance(KeystoneShowSecurityComplianceRequest keystoneShowSecurityComplianceRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneShowSecurityComplianceRequest.DomainId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowSecurityComplianceRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
@@ -569,6 +607,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowSecurityComplianceByOptionResponse KeystoneShowSecurityComplianceByOption(KeystoneShowSecurityComplianceByOptionRequest keystoneShowSecurityComplianceByOptionRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneShowSecurityComplianceByOptionRequest.DomainId.ToString());
             urlParam.Add("option" , keystoneShowSecurityComplianceByOptionRequest.Option.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance/{option}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowSecurityComplianceByOptionRequest);
@@ -640,6 +679,20 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询委托下的所有项目服务权限列表
+        /// </summary>
+        public ListAllProjectsPermissionsForAgencyResponse ListAllProjectsPermissionsForAgency(ListAllProjectsPermissionsForAgencyRequest listAllProjectsPermissionsForAgencyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_id" , listAllProjectsPermissionsForAgencyRequest.AgencyId.ToString());
+            urlParam.Add("domain_id" , listAllProjectsPermissionsForAgencyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAllProjectsPermissionsForAgencyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAllProjectsPermissionsForAgencyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询自定义策略列表
         /// </summary>
         public ListCustomPoliciesResponse ListCustomPolicies(ListCustomPoliciesRequest listCustomPoliciesRequest)
@@ -657,6 +710,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListDomainPermissionsForAgencyResponse ListDomainPermissionsForAgency(ListDomainPermissionsForAgencyRequest listDomainPermissionsForAgencyRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , listDomainPermissionsForAgencyRequest.DomainId.ToString());
             urlParam.Add("agency_id" , listDomainPermissionsForAgencyRequest.AgencyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDomainPermissionsForAgencyRequest);
@@ -679,11 +733,27 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 移除委托下的所有项目服务权限
+        /// </summary>
+        public RemoveAllProjectsPermissionFromAgencyResponse RemoveAllProjectsPermissionFromAgency(RemoveAllProjectsPermissionFromAgencyRequest removeAllProjectsPermissionFromAgencyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_id" , removeAllProjectsPermissionFromAgencyRequest.AgencyId.ToString());
+            urlParam.Add("domain_id" , removeAllProjectsPermissionFromAgencyRequest.DomainId.ToString());
+            urlParam.Add("role_id" , removeAllProjectsPermissionFromAgencyRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, removeAllProjectsPermissionFromAgencyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<RemoveAllProjectsPermissionFromAgencyResponse>(response);
+        }
+        
+        /// <summary>
         /// 移除委托的全局服务权限
         /// </summary>
         public RemoveDomainPermissionFromAgencyResponse RemoveDomainPermissionFromAgency(RemoveDomainPermissionFromAgencyRequest removeDomainPermissionFromAgencyRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , removeDomainPermissionFromAgencyRequest.DomainId.ToString());
             urlParam.Add("agency_id" , removeDomainPermissionFromAgencyRequest.AgencyId.ToString());
             urlParam.Add("role_id" , removeDomainPermissionFromAgencyRequest.RoleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}",urlParam);
@@ -734,6 +804,84 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询账号接口访问策略
+        /// </summary>
+        public ShowDomainApiAclPolicyResponse ShowDomainApiAclPolicy(ShowDomainApiAclPolicyRequest showDomainApiAclPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , showDomainApiAclPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDomainApiAclPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainApiAclPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询账号控制台访问策略
+        /// </summary>
+        public ShowDomainConsoleAclPolicyResponse ShowDomainConsoleAclPolicy(ShowDomainConsoleAclPolicyRequest showDomainConsoleAclPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , showDomainConsoleAclPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDomainConsoleAclPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainConsoleAclPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询账号登录策略
+        /// </summary>
+        public ShowDomainLoginPolicyResponse ShowDomainLoginPolicy(ShowDomainLoginPolicyRequest showDomainLoginPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , showDomainLoginPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDomainLoginPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainLoginPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询账号密码策略
+        /// </summary>
+        public ShowDomainPasswordPolicyResponse ShowDomainPasswordPolicy(ShowDomainPasswordPolicyRequest showDomainPasswordPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , showDomainPasswordPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDomainPasswordPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainPasswordPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询账号操作保护策略
+        /// </summary>
+        public ShowDomainProtectPolicyResponse ShowDomainProtectPolicy(ShowDomainProtectPolicyRequest showDomainProtectPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , showDomainProtectPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDomainProtectPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainProtectPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询账号配额
+        /// </summary>
+        public ShowDomainQuotaResponse ShowDomainQuota(ShowDomainQuotaRequest showDomainQuotaRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , showDomainQuotaRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-QUOTA/domains/{domain_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDomainQuotaRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainQuotaResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询项目详情与状态
         /// </summary>
         public ShowProjectDetailsAndStatusResponse ShowProjectDetailsAndStatus(ShowProjectDetailsAndStatusRequest showProjectDetailsAndStatusRequest)
@@ -744,6 +892,19 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showProjectDetailsAndStatusRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowProjectDetailsAndStatusResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询项目配额
+        /// </summary>
+        public ShowProjectQuotaResponse ShowProjectQuota(ShowProjectQuotaRequest showProjectQuotaRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , showProjectQuotaRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-QUOTA/projects/{project_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showProjectQuotaRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowProjectQuotaResponse>(response);
         }
         
         /// <summary>
@@ -783,6 +944,71 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCloudServiceCustomPolicyRequest);
             HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
             return JsonUtils.DeSerialize<UpdateCloudServiceCustomPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改账号接口访问策略
+        /// </summary>
+        public UpdateDomainApiAclPolicyResponse UpdateDomainApiAclPolicy(UpdateDomainApiAclPolicyRequest updateDomainApiAclPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , updateDomainApiAclPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainApiAclPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateDomainApiAclPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改账号控制台访问策略
+        /// </summary>
+        public UpdateDomainConsoleAclPolicyResponse UpdateDomainConsoleAclPolicy(UpdateDomainConsoleAclPolicyRequest updateDomainConsoleAclPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , updateDomainConsoleAclPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainConsoleAclPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateDomainConsoleAclPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改账号登录策略
+        /// </summary>
+        public UpdateDomainLoginPolicyResponse UpdateDomainLoginPolicy(UpdateDomainLoginPolicyRequest updateDomainLoginPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , updateDomainLoginPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainLoginPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateDomainLoginPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改账号密码策略
+        /// </summary>
+        public UpdateDomainPasswordPolicyResponse UpdateDomainPasswordPolicy(UpdateDomainPasswordPolicyRequest updateDomainPasswordPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , updateDomainPasswordPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainPasswordPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateDomainPasswordPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改账号操作保护策略
+        /// </summary>
+        public UpdateDomainProtectPolicyResponse UpdateDomainProtectPolicy(UpdateDomainProtectPolicyRequest updateDomainProtectPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , updateDomainProtectPolicyRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainProtectPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateDomainProtectPolicyResponse>(response);
         }
         
         /// <summary>
@@ -987,6 +1213,30 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询IAM用户的登录保护状态信息列表
+        /// </summary>
+        public ListUserLoginProtectsResponse ListUserLoginProtects(ListUserLoginProtectsRequest listUserLoginProtectsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/login-protects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listUserLoginProtectsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListUserLoginProtectsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询IAM用户的MFA绑定信息列表
+        /// </summary>
+        public ListUserMfaDevicesResponse ListUserMfaDevices(ListUserMfaDevicesRequest listUserMfaDevicesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listUserMfaDevicesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListUserMfaDevicesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询IAM用户详情（推荐）
         /// </summary>
         public ShowUserResponse ShowUser(ShowUserRequest showUserRequest)
@@ -997,6 +1247,32 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showUserRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定IAM用户的登录保护状态信息
+        /// </summary>
+        public ShowUserLoginProtectResponse ShowUserLoginProtect(ShowUserLoginProtectRequest showUserLoginProtectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("user_id" , showUserLoginProtectRequest.UserId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/login-protect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showUserLoginProtectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowUserLoginProtectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定IAM用户的MFA绑定信息
+        /// </summary>
+        public ShowUserMfaDeviceResponse ShowUserMfaDevice(ShowUserMfaDeviceRequest showUserMfaDeviceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("user_id" , showUserMfaDeviceRequest.UserId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/users/{user_id}/virtual-mfa-device",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showUserMfaDeviceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowUserMfaDeviceResponse>(response);
         }
         
         /// <summary>

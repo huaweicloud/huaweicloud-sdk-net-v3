@@ -15,6 +15,111 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     public class CreateVolumeOption 
     {
         /// <summary>
+        /// 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
+        /// </summary>
+        /// <value>是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。</value>
+        [JsonConverter(typeof(EnumClassConverter<ShareableEnum>))]
+        public class ShareableEnum
+        {
+            /// <summary>
+            /// Enum TRUE for value: true
+            /// </summary>
+            public static readonly ShareableEnum TRUE = new ShareableEnum("true");
+
+            /// <summary>
+            /// Enum FALSE for value: false
+            /// </summary>
+            public static readonly ShareableEnum FALSE = new ShareableEnum("false");
+
+            public static readonly Dictionary<string, ShareableEnum> StaticFields =
+            new Dictionary<string, ShareableEnum>()
+            {
+                {"true", TRUE},
+                {"false", FALSE},
+            };
+
+            private string Value;
+
+            public ShareableEnum(string Value)
+            {
+                this.Value = Value;
+            }
+
+            public static ShareableEnum FromValue(string Value)
+            {
+                if(Value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(Value))
+                {
+                    return StaticFields[Value];
+                }
+
+                return null;
+            }
+
+            public override string ToString()
+            {
+                return this.Value;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ShareableEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ShareableEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ShareableEnum a, ShareableEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ShareableEnum a, ShareableEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \&quot;GPSSD\&quot;为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
         /// </summary>
         /// <value>云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \&quot;GPSSD\&quot;为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。</value>
@@ -190,8 +295,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
         /// </summary>
         [JsonProperty("shareable", NullValueHandling = NullValueHandling.Ignore)]
-        public string Shareable { get; set; }
-
+        public ShareableEnum Shareable { get; set; }
         /// <summary>
         /// 云硬盘大小，单位为GB，其限制如下： 系统盘：1GB-1024GB 数据盘：10GB-32768GB 创建空白云硬盘和从 镜像/快照 创建云硬盘时，size为必选，且云硬盘大小不能小于 镜像/快照 大小。 从备份创建云硬盘时，size为可选，不指定size时，云硬盘大小和备份大小一致。
         /// </summary>
