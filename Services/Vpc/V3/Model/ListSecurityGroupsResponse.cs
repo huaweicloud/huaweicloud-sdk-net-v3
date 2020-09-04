@@ -16,22 +16,22 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
+        /// 安全组列表响应体
+        /// </summary>
+        [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SecurityGroup> SecurityGroups { get; set; }
+
+        /// <summary>
         /// 请求ID
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 安全组列表响应体
-        /// </summary>
-        [JsonProperty("security_group", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SecurityGroup> SecurityGroup { get; set; }
-
-        /// <summary>
-        /// 分页信息
+        /// 
         /// </summary>
         [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
-        public string PageInfo { get; set; }
+        public PageInfo PageInfo { get; set; }
 
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListSecurityGroupsResponse {\n");
+            sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
-            sb.Append("  securityGroup: ").Append(SecurityGroup).Append("\n");
             sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,15 +66,15 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
 
             return 
                 (
+                    this.SecurityGroups == input.SecurityGroups ||
+                    this.SecurityGroups != null &&
+                    input.SecurityGroups != null &&
+                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
+                ) && 
+                (
                     this.RequestId == input.RequestId ||
                     (this.RequestId != null &&
                     this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.SecurityGroup == input.SecurityGroup ||
-                    this.SecurityGroup != null &&
-                    input.SecurityGroup != null &&
-                    this.SecurityGroup.SequenceEqual(input.SecurityGroup)
                 ) && 
                 (
                     this.PageInfo == input.PageInfo ||
@@ -91,10 +91,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.SecurityGroups != null)
+                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 if (this.RequestId != null)
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.SecurityGroup != null)
-                    hashCode = hashCode * 59 + this.SecurityGroup.GetHashCode();
                 if (this.PageInfo != null)
                     hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;

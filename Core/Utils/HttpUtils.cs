@@ -20,6 +20,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -70,11 +71,24 @@ namespace HuaweiCloud.SDK.Core
                 {
                     continue;
                 }
+                
+                if (value is IList list)
+                {
+                    var qs = new StringBuilder();
+                    foreach (var item in list)
+                    {
+                        qs.Append(sdkPropertyAttribute.PropertyName).Append("=").Append(Convert.ToString(item)).Append("&");
+                    }
 
-                sb.Append(sdkPropertyAttribute.PropertyName).Append("=").Append(Convert.ToString(value)).Append("&");
+                    sb.Append(qs);
+                }
+                else
+                {
+                    sb.Append(sdkPropertyAttribute.PropertyName).Append("=").Append(Convert.ToString(value)).Append("&");
+                }
             }
 
-            int strIndex = sb.Length;
+            var strIndex = sb.Length;
             if (!string.IsNullOrEmpty(sb.ToString()))
             {
                 sb.Remove(strIndex - 1, 1);
@@ -131,7 +145,7 @@ namespace HuaweiCloud.SDK.Core
 
             var sdkPropertyList = new List<object>();
 
-            foreach (PropertyInfo p in pi)
+            foreach (var p in pi)
             {
                 var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
                 SDKPropertyAttribute sdkPropertyAttribute = null;
@@ -141,7 +155,7 @@ namespace HuaweiCloud.SDK.Core
                     continue;
                 }
 
-                foreach (object a in attributes)
+                foreach (var a in attributes)
                 {
                     if (a is SDKPropertyAttribute propertyAttribute)
                     {
@@ -154,7 +168,7 @@ namespace HuaweiCloud.SDK.Core
                     continue;
                 }
 
-                object value = p.GetValue(obj, null);
+                var value = p.GetValue(obj, null);
                 if (value == null)
                 {
                     continue;
@@ -192,7 +206,7 @@ namespace HuaweiCloud.SDK.Core
                 return request;
             }
 
-            string prams = GetQueryParameters(data);
+            var prams = GetQueryParameters(data);
             if (prams != "")
             {
                 request.QueryParams = prams;

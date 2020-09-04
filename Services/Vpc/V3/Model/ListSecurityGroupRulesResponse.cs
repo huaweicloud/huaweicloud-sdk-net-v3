@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("security_group_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<SecurityGroupRule> SecurityGroupRules { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
+        public PageInfo PageInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("class ListSecurityGroupRulesResponse {\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  securityGroupRules: ").Append(SecurityGroupRules).Append("\n");
+            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,6 +75,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.SecurityGroupRules != null &&
                     input.SecurityGroupRules != null &&
                     this.SecurityGroupRules.SequenceEqual(input.SecurityGroupRules)
+                ) && 
+                (
+                    this.PageInfo == input.PageInfo ||
+                    (this.PageInfo != null &&
+                    this.PageInfo.Equals(input.PageInfo))
                 );
         }
 
@@ -83,6 +95,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.SecurityGroupRules != null)
                     hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
+                if (this.PageInfo != null)
+                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }
