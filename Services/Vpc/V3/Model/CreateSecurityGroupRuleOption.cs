@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// 功能说明：端口取值范围 取值范围：支持单端口(80)，连续端口(1-30)以及不连续端口(22,3389,80) 约束：端口值的范围1~65535
         /// </summary>
         [JsonProperty("multiport", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Multiport { get; set; }
+        public string Multiport { get; set; }
 
         /// <summary>
         /// 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：与remote_group_id、remote_address_group_id互斥

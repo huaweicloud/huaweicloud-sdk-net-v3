@@ -58,10 +58,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 安全组规则
         /// </summary>
-        [JsonProperty("security_group_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public SecurityGroupRule SecurityGroupRule { get; set; }
+        [JsonProperty("security_group_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SecurityGroupRule> SecurityGroupRules { get; set; }
 
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  securityGroupRule: ").Append(SecurityGroupRule).Append("\n");
+            sb.Append("  securityGroupRules: ").Append(SecurityGroupRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,9 +136,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
-                    this.SecurityGroupRule == input.SecurityGroupRule ||
-                    (this.SecurityGroupRule != null &&
-                    this.SecurityGroupRule.Equals(input.SecurityGroupRule))
+                    this.SecurityGroupRules == input.SecurityGroupRules ||
+                    this.SecurityGroupRules != null &&
+                    input.SecurityGroupRules != null &&
+                    this.SecurityGroupRules.SequenceEqual(input.SecurityGroupRules)
                 );
         }
 
@@ -164,8 +165,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.SecurityGroupRule != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupRule.GetHashCode();
+                if (this.SecurityGroupRules != null)
+                    hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
                 return hashCode;
             }
         }

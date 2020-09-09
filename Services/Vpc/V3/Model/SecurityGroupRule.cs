@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// 功能说明：端口取值范围 取值范围：支持单端口(80)，连续端口(1-30)以及不连续端口(22,3389,80)
         /// </summary>
         [JsonProperty("multiport", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Multiport { get; set; }
+        public string Multiport { get; set; }
 
         /// <summary>
         /// 功能说明：安全组规则生效策略 取值范围：allow 允许，deny 拒绝 约束：默认值为deny

@@ -1,0 +1,145 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Kafka.V2.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ListInstanceTopicsRespTopics 
+    {
+
+        /// <summary>
+        /// topic名称。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 副本数，配置数据的可靠性。
+        /// </summary>
+        [JsonProperty("replication", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Replication { get; set; }
+
+        /// <summary>
+        /// topic分区数，设置消费的并发数。
+        /// </summary>
+        [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Partition { get; set; }
+
+        /// <summary>
+        /// 消息老化时间。
+        /// </summary>
+        [JsonProperty("retention_time", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RetentionTime { get; set; }
+
+        /// <summary>
+        /// 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks&#x3D;-1，否则不生效，默认关闭。
+        /// </summary>
+        [JsonProperty("sync_replication", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SyncReplication { get; set; }
+
+        /// <summary>
+        /// 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+        /// </summary>
+        [JsonProperty("sync_message_flush", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SyncMessageFlush { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListInstanceTopicsRespTopics {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  replication: ").Append(Replication).Append("\n");
+            sb.Append("  partition: ").Append(Partition).Append("\n");
+            sb.Append("  retentionTime: ").Append(RetentionTime).Append("\n");
+            sb.Append("  syncReplication: ").Append(SyncReplication).Append("\n");
+            sb.Append("  syncMessageFlush: ").Append(SyncMessageFlush).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListInstanceTopicsRespTopics);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListInstanceTopicsRespTopics input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Replication == input.Replication ||
+                    (this.Replication != null &&
+                    this.Replication.Equals(input.Replication))
+                ) && 
+                (
+                    this.Partition == input.Partition ||
+                    (this.Partition != null &&
+                    this.Partition.Equals(input.Partition))
+                ) && 
+                (
+                    this.RetentionTime == input.RetentionTime ||
+                    (this.RetentionTime != null &&
+                    this.RetentionTime.Equals(input.RetentionTime))
+                ) && 
+                (
+                    this.SyncReplication == input.SyncReplication ||
+                    (this.SyncReplication != null &&
+                    this.SyncReplication.Equals(input.SyncReplication))
+                ) && 
+                (
+                    this.SyncMessageFlush == input.SyncMessageFlush ||
+                    (this.SyncMessageFlush != null &&
+                    this.SyncMessageFlush.Equals(input.SyncMessageFlush))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Replication != null)
+                    hashCode = hashCode * 59 + this.Replication.GetHashCode();
+                if (this.Partition != null)
+                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.RetentionTime != null)
+                    hashCode = hashCode * 59 + this.RetentionTime.GetHashCode();
+                if (this.SyncReplication != null)
+                    hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
+                if (this.SyncMessageFlush != null)
+                    hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

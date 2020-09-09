@@ -21,6 +21,9 @@
         <ProjectReference Include="..\Services\Classroom\Classroom.csproj" />
         <ProjectReference Include="..\Services\Dcs\Dcs.csproj" />
         <ProjectReference Include="..\Services\Kms\Kms.csproj" />
+        <ProjectReference Include="..\Services\Dms\Dms.csproj" />
+        <ProjectReference Include="..\Services\Kafka\Kafka.csproj" />
+        <ProjectReference Include="..\Services\Rabbitmq\Rabbitmq.csproj" />
     </ItemGroup>
 
 </Project>
