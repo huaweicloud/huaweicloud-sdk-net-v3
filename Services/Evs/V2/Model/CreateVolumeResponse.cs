@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
+        /// <summary>
+        /// 待创建的磁盘ID列表。
+        /// </summary>
+        [JsonProperty("volume_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> VolumeIds { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("class CreateVolumeResponse {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("  volumeIds: ").Append(VolumeIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
+                ) && 
+                (
+                    this.VolumeIds == input.VolumeIds ||
+                    this.VolumeIds != null &&
+                    input.VolumeIds != null &&
+                    this.VolumeIds.SequenceEqual(input.VolumeIds)
                 );
         }
 
@@ -82,6 +95,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.OrderId != null)
                     hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.VolumeIds != null)
+                    hashCode = hashCode * 59 + this.VolumeIds.GetHashCode();
                 return hashCode;
             }
         }
