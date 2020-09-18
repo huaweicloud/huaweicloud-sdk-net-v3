@@ -231,9 +231,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否            则设置为false。默认为false。
+        /// 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
         /// </summary>
-        /// <value>是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否            则设置为false。默认为false。</value>
+        /// <value>是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。</value>
         [JsonConverter(typeof(EnumClassConverter<IsConfigInitEnum>))]
         public class IsConfigInitEnum
         {
@@ -719,9 +719,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             public static readonly PlatformEnum COREOS = new PlatformEnum("CoreOS");
 
             /// <summary>
-            /// Enum EULEOS for value: EuleOS
+            /// Enum EULEROS for value: EulerOS
             /// </summary>
-            public static readonly PlatformEnum EULEOS = new PlatformEnum("EuleOS");
+            public static readonly PlatformEnum EULEROS = new PlatformEnum("EulerOS");
 
             public static readonly Dictionary<string, PlatformEnum> StaticFields =
             new Dictionary<string, PlatformEnum>()
@@ -737,7 +737,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 {"Fedora", FEDORA},
                 {"Other", OTHER},
                 {"CoreOS", COREOS},
-                {"EuleOS", EULEOS},
+                {"EulerOS", EULEROS},
             };
 
             private string Value;
@@ -1622,7 +1622,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("__imagetype", NullValueHandling = NullValueHandling.Ignore)]
         public ImagetypeEnum Imagetype { get; set; }
         /// <summary>
-        /// 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否            则设置为false。默认为false。
+        /// 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
         /// </summary>
         [JsonProperty("__is_config_init", NullValueHandling = NullValueHandling.Ignore)]
         public IsConfigInitEnum IsConfigInit { get; set; }
@@ -1743,25 +1743,13 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 是否是删除的镜像，取值为true或者false
-        /// </summary>
-        [JsonProperty("deleted", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Deleted { get; set; }
-
-        /// <summary>
-        /// 删除时间。格式为UTC时间
-        /// </summary>
-        [JsonProperty("deleted_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeletedAt { get; set; }
-
-        /// <summary>
         /// 镜像的格式，目前支持vhd，zvhd、raw，qcow2。默认值是vhd
         /// </summary>
         [JsonProperty("disk_format", NullValueHandling = NullValueHandling.Ignore)]
         public string DiskFormat { get; set; }
 
         /// <summary>
-        /// 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目，取值为UUID，表示属于             该UUID对应的企业项目。
+        /// 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目，取值为UUID，表示属于该UUID对应的企业项目。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -1879,6 +1867,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         [JsonProperty("__support_arm", NullValueHandling = NullValueHandling.Ignore)]
         public SupportArmEnum SupportArm { get; set; }
+        /// <summary>
+        /// 镜像支持的最大内存，单位为MB。取值可以参考云服务器规格限制，一般不设置。
+        /// </summary>
+        [JsonProperty("max_ram", NullValueHandling = NullValueHandling.Ignore)]
+        public string MaxRam { get; set; }
+
+        /// <summary>
+        /// 加密镜像所使用的密钥ID。
+        /// </summary>
+        [JsonProperty("__system__cmkid", NullValueHandling = NullValueHandling.Ignore)]
+        public string SystemCmkid { get; set; }
+
+        /// <summary>
+        /// 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。
+        /// </summary>
+        [JsonProperty("__os_feature_list", NullValueHandling = NullValueHandling.Ignore)]
+        public string OsFeatureList { get; set; }
+
+        /// <summary>
+        /// 收费镜像标识。
+        /// </summary>
+        [JsonProperty("__account_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccountCode { get; set; }
+
+        /// <summary>
+        /// 镜像是否支持网卡多队列。取值为“true”或者“false”。
+        /// </summary>
+        [JsonProperty("hw_vif_multiqueue_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public string HwVifMultiqueueEnabled { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -1915,8 +1933,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  checksum: ").Append(Checksum).Append("\n");
             sb.Append("  containerFormat: ").Append(ContainerFormat).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  deleted: ").Append(Deleted).Append("\n");
-            sb.Append("  deletedAt: ").Append(DeletedAt).Append("\n");
             sb.Append("  diskFormat: ").Append(DiskFormat).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  file: ").Append(File).Append("\n");
@@ -1939,6 +1955,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  supportFcInject: ").Append(SupportFcInject).Append("\n");
             sb.Append("  hwFirmwareType: ").Append(HwFirmwareType).Append("\n");
             sb.Append("  supportArm: ").Append(SupportArm).Append("\n");
+            sb.Append("  maxRam: ").Append(MaxRam).Append("\n");
+            sb.Append("  systemCmkid: ").Append(SystemCmkid).Append("\n");
+            sb.Append("  osFeatureList: ").Append(OsFeatureList).Append("\n");
+            sb.Append("  accountCode: ").Append(AccountCode).Append("\n");
+            sb.Append("  hwVifMultiqueueEnabled: ").Append(HwVifMultiqueueEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2101,16 +2122,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                ) && 
-                (
-                    this.DeletedAt == input.DeletedAt ||
-                    (this.DeletedAt != null &&
-                    this.DeletedAt.Equals(input.DeletedAt))
-                ) && 
-                (
                     this.DiskFormat == input.DiskFormat ||
                     (this.DiskFormat != null &&
                     this.DiskFormat.Equals(input.DiskFormat))
@@ -2220,6 +2231,31 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.SupportArm == input.SupportArm ||
                     (this.SupportArm != null &&
                     this.SupportArm.Equals(input.SupportArm))
+                ) && 
+                (
+                    this.MaxRam == input.MaxRam ||
+                    (this.MaxRam != null &&
+                    this.MaxRam.Equals(input.MaxRam))
+                ) && 
+                (
+                    this.SystemCmkid == input.SystemCmkid ||
+                    (this.SystemCmkid != null &&
+                    this.SystemCmkid.Equals(input.SystemCmkid))
+                ) && 
+                (
+                    this.OsFeatureList == input.OsFeatureList ||
+                    (this.OsFeatureList != null &&
+                    this.OsFeatureList.Equals(input.OsFeatureList))
+                ) && 
+                (
+                    this.AccountCode == input.AccountCode ||
+                    (this.AccountCode != null &&
+                    this.AccountCode.Equals(input.AccountCode))
+                ) && 
+                (
+                    this.HwVifMultiqueueEnabled == input.HwVifMultiqueueEnabled ||
+                    (this.HwVifMultiqueueEnabled != null &&
+                    this.HwVifMultiqueueEnabled.Equals(input.HwVifMultiqueueEnabled))
                 );
         }
 
@@ -2287,10 +2323,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Deleted != null)
-                    hashCode = hashCode * 59 + this.Deleted.GetHashCode();
-                if (this.DeletedAt != null)
-                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.DiskFormat != null)
                     hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
                 if (this.EnterpriseProjectId != null)
@@ -2335,6 +2367,16 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.HwFirmwareType.GetHashCode();
                 if (this.SupportArm != null)
                     hashCode = hashCode * 59 + this.SupportArm.GetHashCode();
+                if (this.MaxRam != null)
+                    hashCode = hashCode * 59 + this.MaxRam.GetHashCode();
+                if (this.SystemCmkid != null)
+                    hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
+                if (this.OsFeatureList != null)
+                    hashCode = hashCode * 59 + this.OsFeatureList.GetHashCode();
+                if (this.AccountCode != null)
+                    hashCode = hashCode * 59 + this.AccountCode.GetHashCode();
+                if (this.HwVifMultiqueueEnabled != null)
+                    hashCode = hashCode * 59 + this.HwVifMultiqueueEnabled.GetHashCode();
                 return hashCode;
             }
         }

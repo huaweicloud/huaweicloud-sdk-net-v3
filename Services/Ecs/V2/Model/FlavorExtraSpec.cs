@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 显卡是否直通。  值为“true”，表示GPU直通。
         /// </summary>
         [JsonProperty("pci_passthrough:enable_gpu", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? PciPassthroughenableGpu { get; set; }
+        public string PciPassthroughenableGpu { get; set; }
 
         /// <summary>
         /// G1型和G2型云服务器应用的技术，包括GPU虚拟化和GPU直通。  - 如果该规格的云服务器使用GPU虚拟化技术，且GPU卡的型号为M60-1Q，参数值可设置为“m60_1q:virt:1”。 - 如果该规格的云服务器使用GPU直通技术，且GPU卡的型号为M60，参数值可设置为“m60:direct_graphics:1”。
