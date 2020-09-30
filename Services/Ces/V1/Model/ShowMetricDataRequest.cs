@@ -45,38 +45,38 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             /// </summary>
             public static readonly FilterEnum VARIANCE = new FilterEnum("variance");
 
-            public static readonly Dictionary<string, FilterEnum> StaticFields =
+            private static readonly Dictionary<string, FilterEnum> StaticFields =
             new Dictionary<string, FilterEnum>()
             {
-                {"max", MAX},
-                {"min", MIN},
-                {"average", AVERAGE},
-                {"sum", SUM},
-                {"variance", VARIANCE},
+                { "max", MAX },
+                { "min", MIN },
+                { "average", AVERAGE },
+                { "sum", SUM },
+                { "variance", VARIANCE },
             };
 
             private string Value;
 
-            public FilterEnum(string Value)
+            private FilterEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static FilterEnum FromValue(string Value)
+            public static FilterEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

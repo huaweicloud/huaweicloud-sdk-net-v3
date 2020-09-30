@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly IsAutoPayEnum TRUE = new IsAutoPayEnum("true");
 
-            public static readonly Dictionary<string, IsAutoPayEnum> StaticFields =
+            private static readonly Dictionary<string, IsAutoPayEnum> StaticFields =
             new Dictionary<string, IsAutoPayEnum>()
             {
-                {"false", FALSE},
-                {"true", TRUE},
+                { "false", FALSE },
+                { "true", TRUE },
             };
 
             private string Value;
 
-            public IsAutoPayEnum(string Value)
+            private IsAutoPayEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static IsAutoPayEnum FromValue(string Value)
+            public static IsAutoPayEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

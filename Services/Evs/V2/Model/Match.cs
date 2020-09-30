@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly KeyEnum SERVICE_TYPE = new KeyEnum("service_type");
 
-            public static readonly Dictionary<string, KeyEnum> StaticFields =
+            private static readonly Dictionary<string, KeyEnum> StaticFields =
             new Dictionary<string, KeyEnum>()
             {
-                {"resource_name", RESOURCE_NAME},
-                {"service_type", SERVICE_TYPE},
+                { "resource_name", RESOURCE_NAME },
+                { "service_type", SERVICE_TYPE },
             };
 
             private string Value;
 
-            public KeyEnum(string Value)
+            private KeyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static KeyEnum FromValue(string Value)
+            public static KeyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

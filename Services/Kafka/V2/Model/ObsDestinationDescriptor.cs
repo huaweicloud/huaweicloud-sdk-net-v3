@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly ConsumerStrategyEnum EARLIEST = new ConsumerStrategyEnum("earliest");
 
-            public static readonly Dictionary<string, ConsumerStrategyEnum> StaticFields =
+            private static readonly Dictionary<string, ConsumerStrategyEnum> StaticFields =
             new Dictionary<string, ConsumerStrategyEnum>()
             {
-                {"latest", LATEST},
-                {"earliest", EARLIEST},
+                { "latest", LATEST },
+                { "earliest", EARLIEST },
             };
 
             private string Value;
 
-            public ConsumerStrategyEnum(string Value)
+            private ConsumerStrategyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ConsumerStrategyEnum FromValue(string Value)
+            public static ConsumerStrategyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -131,34 +131,34 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly DestinationFileTypeEnum TEXT = new DestinationFileTypeEnum("TEXT");
 
-            public static readonly Dictionary<string, DestinationFileTypeEnum> StaticFields =
+            private static readonly Dictionary<string, DestinationFileTypeEnum> StaticFields =
             new Dictionary<string, DestinationFileTypeEnum>()
             {
-                {"TEXT", TEXT},
+                { "TEXT", TEXT },
             };
 
             private string Value;
 
-            public DestinationFileTypeEnum(string Value)
+            private DestinationFileTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DestinationFileTypeEnum FromValue(string Value)
+            public static DestinationFileTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

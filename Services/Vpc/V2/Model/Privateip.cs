@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             /// </summary>
             public static readonly StatusEnum DOWN = new StatusEnum("DOWN");
 
-            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                {"ACTIVE", ACTIVE},
-                {"DOWN", DOWN},
+                { "ACTIVE", ACTIVE },
+                { "DOWN", DOWN },
             };
 
             private string Value;
 
-            public StatusEnum(string Value)
+            private StatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StatusEnum FromValue(string Value)
+            public static StatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -141,36 +141,36 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             /// </summary>
             public static readonly DeviceOwnerEnum COMPUTE_XXX = new DeviceOwnerEnum("compute:xxx");
 
-            public static readonly Dictionary<string, DeviceOwnerEnum> StaticFields =
+            private static readonly Dictionary<string, DeviceOwnerEnum> StaticFields =
             new Dictionary<string, DeviceOwnerEnum>()
             {
-                {"network:dhcp", NETWORK_DHCP},
-                {"network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED},
-                {"compute:xxx", COMPUTE_XXX},
+                { "network:dhcp", NETWORK_DHCP },
+                { "network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED },
+                { "compute:xxx", COMPUTE_XXX },
             };
 
             private string Value;
 
-            public DeviceOwnerEnum(string Value)
+            private DeviceOwnerEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DeviceOwnerEnum FromValue(string Value)
+            public static DeviceOwnerEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

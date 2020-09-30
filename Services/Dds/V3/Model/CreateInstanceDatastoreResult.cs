@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly TypeEnum DDS_ENHANCED = new TypeEnum("DDS-Enhanced");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"DDS-Community", DDS_COMMUNITY},
-                {"DDS-Enhanced", DDS_ENHANCED},
+                { "DDS-Community", DDS_COMMUNITY },
+                { "DDS-Enhanced", DDS_ENHANCED },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -136,35 +136,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly StorageEngineEnum ROCKSDB = new StorageEngineEnum("rocksDB");
 
-            public static readonly Dictionary<string, StorageEngineEnum> StaticFields =
+            private static readonly Dictionary<string, StorageEngineEnum> StaticFields =
             new Dictionary<string, StorageEngineEnum>()
             {
-                {"wiredTiger", WIREDTIGER},
-                {"rocksDB", ROCKSDB},
+                { "wiredTiger", WIREDTIGER },
+                { "rocksDB", ROCKSDB },
             };
 
             private string Value;
 
-            public StorageEngineEnum(string Value)
+            private StorageEngineEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StorageEngineEnum FromValue(string Value)
+            public static StorageEngineEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

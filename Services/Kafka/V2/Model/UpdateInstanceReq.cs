@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly RetentionPolicyEnum TIME_BASE = new RetentionPolicyEnum("time_base");
 
-            public static readonly Dictionary<string, RetentionPolicyEnum> StaticFields =
+            private static readonly Dictionary<string, RetentionPolicyEnum> StaticFields =
             new Dictionary<string, RetentionPolicyEnum>()
             {
-                {"produce_reject", PRODUCE_REJECT},
-                {"time_base", TIME_BASE},
+                { "produce_reject", PRODUCE_REJECT },
+                { "time_base", TIME_BASE },
             };
 
             private string Value;
 
-            public RetentionPolicyEnum(string Value)
+            private RetentionPolicyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static RetentionPolicyEnum FromValue(string Value)
+            public static RetentionPolicyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

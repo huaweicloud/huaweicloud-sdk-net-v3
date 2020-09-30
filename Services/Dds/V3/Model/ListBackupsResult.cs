@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly TypeEnum INCREMENTAL = new TypeEnum("incremental");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"auto", AUTO},
-                {"manual", MANUAL},
-                {"fragment", FRAGMENT},
-                {"incremental", INCREMENTAL},
+                { "auto", AUTO },
+                { "manual", MANUAL },
+                { "fragment", FRAGMENT },
+                { "incremental", INCREMENTAL },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -158,37 +158,37 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly StatusEnum DELETING = new StatusEnum("DELETING");
 
-            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                {"BUILDING", BUILDING},
-                {"COMPLETED", COMPLETED},
-                {"FAILED", FAILED},
-                {"DELETING", DELETING},
+                { "BUILDING", BUILDING },
+                { "COMPLETED", COMPLETED },
+                { "FAILED", FAILED },
+                { "DELETING", DELETING },
             };
 
             private string Value;
 
-            public StatusEnum(string Value)
+            private StatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StatusEnum FromValue(string Value)
+            public static StatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

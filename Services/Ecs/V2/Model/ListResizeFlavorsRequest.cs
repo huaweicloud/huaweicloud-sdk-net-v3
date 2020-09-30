@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly SortDirEnum DESC = new SortDirEnum("desc");
 
-            public static readonly Dictionary<string, SortDirEnum> StaticFields =
+            private static readonly Dictionary<string, SortDirEnum> StaticFields =
             new Dictionary<string, SortDirEnum>()
             {
-                {"asc", ASC},
-                {"desc", DESC},
+                { "asc", ASC },
+                { "desc", DESC },
             };
 
             private string Value;
 
-            public SortDirEnum(string Value)
+            private SortDirEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SortDirEnum FromValue(string Value)
+            public static SortDirEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -154,39 +154,39 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly SortKeyEnum ROOT_GB = new SortKeyEnum("root_gb");
 
-            public static readonly Dictionary<string, SortKeyEnum> StaticFields =
+            private static readonly Dictionary<string, SortKeyEnum> StaticFields =
             new Dictionary<string, SortKeyEnum>()
             {
-                {"flavorid", FLAVORID},
-                {"sort_key", SORT_KEY},
-                {"name", NAME},
-                {"memory_mb", MEMORY_MB},
-                {"vcpus", VCPUS},
-                {"root_gb", ROOT_GB},
+                { "flavorid", FLAVORID },
+                { "sort_key", SORT_KEY },
+                { "name", NAME },
+                { "memory_mb", MEMORY_MB },
+                { "vcpus", VCPUS },
+                { "root_gb", ROOT_GB },
             };
 
             private string Value;
 
-            public SortKeyEnum(string Value)
+            private SortKeyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SortKeyEnum FromValue(string Value)
+            public static SortKeyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

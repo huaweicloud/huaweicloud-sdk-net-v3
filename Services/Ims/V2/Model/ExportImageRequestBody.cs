@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly FileFormatEnum VMDK = new FileFormatEnum("vmdk");
 
-            public static readonly Dictionary<string, FileFormatEnum> StaticFields =
+            private static readonly Dictionary<string, FileFormatEnum> StaticFields =
             new Dictionary<string, FileFormatEnum>()
             {
-                {"qcow2", QCOW2},
-                {"vhd", VHD},
-                {"zvhd", ZVHD},
-                {"vmdk", VMDK},
+                { "qcow2", QCOW2 },
+                { "vhd", VHD },
+                { "zvhd", ZVHD },
+                { "vmdk", VMDK },
             };
 
             private string Value;
 
-            public FileFormatEnum(string Value)
+            private FileFormatEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static FileFormatEnum FromValue(string Value)
+            public static FileFormatEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

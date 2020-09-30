@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly InterruptionPolicyEnum IMMEDIATE = new InterruptionPolicyEnum("immediate");
 
-            public static readonly Dictionary<string, InterruptionPolicyEnum> StaticFields =
+            private static readonly Dictionary<string, InterruptionPolicyEnum> StaticFields =
             new Dictionary<string, InterruptionPolicyEnum>()
             {
-                {"immediate", IMMEDIATE},
+                { "immediate", IMMEDIATE },
             };
 
             private string Value;
 
-            public InterruptionPolicyEnum(string Value)
+            private InterruptionPolicyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static InterruptionPolicyEnum FromValue(string Value)
+            public static InterruptionPolicyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

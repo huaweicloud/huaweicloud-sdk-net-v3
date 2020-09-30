@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly ResourceAvailabilityEnum FALSE = new ResourceAvailabilityEnum("false");
 
-            public static readonly Dictionary<string, ResourceAvailabilityEnum> StaticFields =
+            private static readonly Dictionary<string, ResourceAvailabilityEnum> StaticFields =
             new Dictionary<string, ResourceAvailabilityEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public ResourceAvailabilityEnum(string Value)
+            private ResourceAvailabilityEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ResourceAvailabilityEnum FromValue(string Value)
+            public static ResourceAvailabilityEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

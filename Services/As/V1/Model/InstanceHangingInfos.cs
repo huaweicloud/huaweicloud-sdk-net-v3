@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly LifecycleHookStatusEnum ABANDON = new LifecycleHookStatusEnum("ABANDON");
 
-            public static readonly Dictionary<string, LifecycleHookStatusEnum> StaticFields =
+            private static readonly Dictionary<string, LifecycleHookStatusEnum> StaticFields =
             new Dictionary<string, LifecycleHookStatusEnum>()
             {
-                {"HANGING", HANGING},
-                {"CONTINUE", CONTINUE},
-                {"ABANDON", ABANDON},
+                { "HANGING", HANGING },
+                { "CONTINUE", CONTINUE },
+                { "ABANDON", ABANDON },
             };
 
             private string Value;
 
-            public LifecycleHookStatusEnum(string Value)
+            private LifecycleHookStatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static LifecycleHookStatusEnum FromValue(string Value)
+            public static LifecycleHookStatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

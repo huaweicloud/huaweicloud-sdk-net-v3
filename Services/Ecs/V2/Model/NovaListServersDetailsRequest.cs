@@ -75,44 +75,44 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly SortKeyEnum VM_STATE = new SortKeyEnum("vm_state");
 
-            public static readonly Dictionary<string, SortKeyEnum> StaticFields =
+            private static readonly Dictionary<string, SortKeyEnum> StaticFields =
             new Dictionary<string, SortKeyEnum>()
             {
-                {"created_at", CREATED_AT},
-                {"availability_zone", AVAILABILITY_ZONE},
-                {"display_name", DISPLAY_NAME},
-                {"host", HOST},
-                {"instance_type_id", INSTANCE_TYPE_ID},
-                {"key_name", KEY_NAME},
-                {"project_id", PROJECT_ID},
-                {"user_id", USER_ID},
-                {"updated_at", UPDATED_AT},
-                {"uuid", UUID},
-                {"vm_state", VM_STATE},
+                { "created_at", CREATED_AT },
+                { "availability_zone", AVAILABILITY_ZONE },
+                { "display_name", DISPLAY_NAME },
+                { "host", HOST },
+                { "instance_type_id", INSTANCE_TYPE_ID },
+                { "key_name", KEY_NAME },
+                { "project_id", PROJECT_ID },
+                { "user_id", USER_ID },
+                { "updated_at", UPDATED_AT },
+                { "uuid", UUID },
+                { "vm_state", VM_STATE },
             };
 
             private string Value;
 
-            public SortKeyEnum(string Value)
+            private SortKeyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SortKeyEnum FromValue(string Value)
+            public static SortKeyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -248,47 +248,47 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly StatusEnum VERIFY_RESIZE = new StatusEnum("VERIFY_RESIZE");
 
-            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                {"ACTIVE", ACTIVE},
-                {"BUILD", BUILD},
-                {"DELETED", DELETED},
-                {"ERROR", ERROR},
-                {"HARD_REBOOT", HARD_REBOOT},
-                {"MIGRATING", MIGRATING},
-                {"REBOOT", REBOOT},
-                {"RESIZE", RESIZE},
-                {"REVERT_RESIZE", REVERT_RESIZE},
-                {"SHELVED", SHELVED},
-                {"SHELVED_OFFLOADED", SHELVED_OFFLOADED},
-                {"SHUTOFF", SHUTOFF},
-                {"UNKNOWN", UNKNOWN},
-                {"VERIFY_RESIZE", VERIFY_RESIZE},
+                { "ACTIVE", ACTIVE },
+                { "BUILD", BUILD },
+                { "DELETED", DELETED },
+                { "ERROR", ERROR },
+                { "HARD_REBOOT", HARD_REBOOT },
+                { "MIGRATING", MIGRATING },
+                { "REBOOT", REBOOT },
+                { "RESIZE", RESIZE },
+                { "REVERT_RESIZE", REVERT_RESIZE },
+                { "SHELVED", SHELVED },
+                { "SHELVED_OFFLOADED", SHELVED_OFFLOADED },
+                { "SHUTOFF", SHUTOFF },
+                { "UNKNOWN", UNKNOWN },
+                { "VERIFY_RESIZE", VERIFY_RESIZE },
             };
 
             private string Value;
 
-            public StatusEnum(string Value)
+            private StatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StatusEnum FromValue(string Value)
+            public static StatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

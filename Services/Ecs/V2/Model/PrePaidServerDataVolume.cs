@@ -51,39 +51,39 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly VolumetypeEnum UH_L1 = new VolumetypeEnum("uh-l1");
 
-            public static readonly Dictionary<string, VolumetypeEnum> StaticFields =
+            private static readonly Dictionary<string, VolumetypeEnum> StaticFields =
             new Dictionary<string, VolumetypeEnum>()
             {
-                {"SATA", SATA},
-                {"SAS", SAS},
-                {"SSD", SSD},
-                {"GPSSD", GPSSD},
-                {"co-p1", CO_P1},
-                {"uh-l1", UH_L1},
+                { "SATA", SATA },
+                { "SAS", SAS },
+                { "SSD", SSD },
+                { "GPSSD", GPSSD },
+                { "co-p1", CO_P1 },
+                { "uh-l1", UH_L1 },
             };
 
             private string Value;
 
-            public VolumetypeEnum(string Value)
+            private VolumetypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static VolumetypeEnum FromValue(string Value)
+            public static VolumetypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -155,34 +155,34 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly ClusterTypeEnum DSS = new ClusterTypeEnum("DSS");
 
-            public static readonly Dictionary<string, ClusterTypeEnum> StaticFields =
+            private static readonly Dictionary<string, ClusterTypeEnum> StaticFields =
             new Dictionary<string, ClusterTypeEnum>()
             {
-                {"DSS", DSS},
+                { "DSS", DSS },
             };
 
             private string Value;
 
-            public ClusterTypeEnum(string Value)
+            private ClusterTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ClusterTypeEnum FromValue(string Value)
+            public static ClusterTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

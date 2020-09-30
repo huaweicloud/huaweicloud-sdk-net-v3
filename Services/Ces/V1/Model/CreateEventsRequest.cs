@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 上报自定义事件。请求参数。
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]

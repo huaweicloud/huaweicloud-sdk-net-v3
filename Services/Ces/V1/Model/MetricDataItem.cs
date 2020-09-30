@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// 
+    /// 添加一条或多条自定义指标监控数据，请求参数。
     /// </summary>
     public class MetricDataItem 
     {

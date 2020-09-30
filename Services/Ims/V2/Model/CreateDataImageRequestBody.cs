@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly OsTypeEnum LINUX = new OsTypeEnum("Linux");
 
-            public static readonly Dictionary<string, OsTypeEnum> StaticFields =
+            private static readonly Dictionary<string, OsTypeEnum> StaticFields =
             new Dictionary<string, OsTypeEnum>()
             {
-                {"Windows", WINDOWS},
-                {"Linux", LINUX},
+                { "Windows", WINDOWS },
+                { "Linux", LINUX },
             };
 
             private string Value;
 
-            public OsTypeEnum(string Value)
+            private OsTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OsTypeEnum FromValue(string Value)
+            public static OsTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

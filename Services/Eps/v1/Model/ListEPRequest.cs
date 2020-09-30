@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
             /// </summary>
             public static readonly SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
 
-            public static readonly Dictionary<string, SortKeyEnum> StaticFields =
+            private static readonly Dictionary<string, SortKeyEnum> StaticFields =
             new Dictionary<string, SortKeyEnum>()
             {
-                {"created_at", CREATED_AT},
-                {"updated_at", UPDATED_AT},
+                { "created_at", CREATED_AT },
+                { "updated_at", UPDATED_AT },
             };
 
             private string Value;
 
-            public SortKeyEnum(string Value)
+            private SortKeyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SortKeyEnum FromValue(string Value)
+            public static SortKeyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -134,35 +134,35 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
             /// </summary>
             public static readonly SortDirEnum ASC = new SortDirEnum("asc");
 
-            public static readonly Dictionary<string, SortDirEnum> StaticFields =
+            private static readonly Dictionary<string, SortDirEnum> StaticFields =
             new Dictionary<string, SortDirEnum>()
             {
-                {"desc", DESC},
-                {"asc", ASC},
+                { "desc", DESC },
+                { "asc", ASC },
             };
 
             private string Value;
 
-            public SortDirEnum(string Value)
+            private SortDirEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SortDirEnum FromValue(string Value)
+            public static SortDirEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

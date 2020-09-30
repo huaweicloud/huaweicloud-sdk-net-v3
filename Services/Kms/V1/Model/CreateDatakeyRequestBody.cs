@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
             /// </summary>
             public static readonly KeySpecEnum AES_128 = new KeySpecEnum("AES_128");
 
-            public static readonly Dictionary<string, KeySpecEnum> StaticFields =
+            private static readonly Dictionary<string, KeySpecEnum> StaticFields =
             new Dictionary<string, KeySpecEnum>()
             {
-                {"AES_256", AES_256},
-                {"AES_128", AES_128},
+                { "AES_256", AES_256 },
+                { "AES_128", AES_128 },
             };
 
             private string Value;
 
-            public KeySpecEnum(string Value)
+            private KeySpecEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static KeySpecEnum FromValue(string Value)
+            public static KeySpecEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
 
-            public static readonly Dictionary<string, ChargingModeEnum> StaticFields =
+            private static readonly Dictionary<string, ChargingModeEnum> StaticFields =
             new Dictionary<string, ChargingModeEnum>()
             {
-                {"prePaid", PREPAID},
-                {"postPaid", POSTPAID},
+                { "prePaid", PREPAID },
+                { "postPaid", POSTPAID },
             };
 
             private string Value;
 
-            public ChargingModeEnum(string Value)
+            private ChargingModeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ChargingModeEnum FromValue(string Value)
+            public static ChargingModeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -33,12 +33,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
-        /// <summary>
-        /// 指标单位
-        /// </summary>
-        [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Unit { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -50,7 +44,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
             sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
-            sb.Append("  unit: ").Append(Unit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,11 +80,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
                 );
         }
 
@@ -109,8 +97,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.MetricName.GetHashCode();
                 if (this.Namespace != null)
                     hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 return hashCode;
             }
         }

@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
 
-            public static readonly Dictionary<string, ScalingResourceTypeEnum> StaticFields =
+            private static readonly Dictionary<string, ScalingResourceTypeEnum> StaticFields =
             new Dictionary<string, ScalingResourceTypeEnum>()
             {
-                {"SCALING_GROUP", SCALING_GROUP},
-                {"BANDWIDTH", BANDWIDTH},
+                { "SCALING_GROUP", SCALING_GROUP },
+                { "BANDWIDTH", BANDWIDTH },
             };
 
             private string Value;
 
-            public ScalingResourceTypeEnum(string Value)
+            private ScalingResourceTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ScalingResourceTypeEnum FromValue(string Value)
+            public static ScalingResourceTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -144,37 +144,37 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ExecuteTypeEnum MANUAL = new ExecuteTypeEnum("MANUAL");
 
-            public static readonly Dictionary<string, ExecuteTypeEnum> StaticFields =
+            private static readonly Dictionary<string, ExecuteTypeEnum> StaticFields =
             new Dictionary<string, ExecuteTypeEnum>()
             {
-                {"SCHEDULED", SCHEDULED},
-                {"RECURRENCE", RECURRENCE},
-                {"ALARM", ALARM},
-                {"MANUAL", MANUAL},
+                { "SCHEDULED", SCHEDULED },
+                { "RECURRENCE", RECURRENCE },
+                { "ALARM", ALARM },
+                { "MANUAL", MANUAL },
             };
 
             private string Value;
 
-            public ExecuteTypeEnum(string Value)
+            private ExecuteTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ExecuteTypeEnum FromValue(string Value)
+            public static ExecuteTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

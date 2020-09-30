@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly EngineEnum KAFKA = new EngineEnum("kafka");
 
-            public static readonly Dictionary<string, EngineEnum> StaticFields =
+            private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
-                {"kafka", KAFKA},
+                { "kafka", KAFKA },
             };
 
             private string Value;
 
-            public EngineEnum(string Value)
+            private EngineEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EngineEnum FromValue(string Value)
+            public static EngineEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -125,34 +125,34 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
 
-            public static readonly Dictionary<string, EngineVersionEnum> StaticFields =
+            private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
             new Dictionary<string, EngineVersionEnum>()
             {
-                {"1.1.0", _1_1_0},
+                { "1.1.0", _1_1_0 },
             };
 
             private string Value;
 
-            public EngineVersionEnum(string Value)
+            private EngineVersionEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EngineVersionEnum FromValue(string Value)
+            public static EngineVersionEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -239,37 +239,37 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly SpecificationEnum _1200MB = new SpecificationEnum("1200MB");
 
-            public static readonly Dictionary<string, SpecificationEnum> StaticFields =
+            private static readonly Dictionary<string, SpecificationEnum> StaticFields =
             new Dictionary<string, SpecificationEnum>()
             {
-                {"100MB", _100MB},
-                {"300MB", _300MB},
-                {"600MB", _600MB},
-                {"1200MB", _1200MB},
+                { "100MB", _100MB },
+                { "300MB", _300MB },
+                { "600MB", _600MB },
+                { "1200MB", _1200MB },
             };
 
             private string Value;
 
-            public SpecificationEnum(string Value)
+            private SpecificationEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SpecificationEnum FromValue(string Value)
+            public static SpecificationEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -339,48 +339,48 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// <summary>
             /// Enum NUMBER_300 for value: 300
             /// </summary>
-            public static readonly PartitionNumEnum NUMBER_300 = new PartitionNumEnum("300");
+            public static readonly PartitionNumEnum NUMBER_300 = new PartitionNumEnum(300);
 
             /// <summary>
             /// Enum NUMBER_900 for value: 900
             /// </summary>
-            public static readonly PartitionNumEnum NUMBER_900 = new PartitionNumEnum("900");
+            public static readonly PartitionNumEnum NUMBER_900 = new PartitionNumEnum(900);
 
             /// <summary>
             /// Enum NUMBER_1800 for value: 1800
             /// </summary>
-            public static readonly PartitionNumEnum NUMBER_1800 = new PartitionNumEnum("1800");
+            public static readonly PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
 
-            public static readonly Dictionary<string, PartitionNumEnum> StaticFields =
-            new Dictionary<string, PartitionNumEnum>()
+            private static readonly Dictionary<int?, PartitionNumEnum> StaticFields =
+            new Dictionary<int?, PartitionNumEnum>()
             {
-                {"300", NUMBER_300},
-                {"900", NUMBER_900},
-                {"1800", NUMBER_1800},
+                { 300, NUMBER_300 },
+                { 900, NUMBER_900 },
+                { 1800, NUMBER_1800 },
             };
 
-            private string Value;
+            private int? Value;
 
-            public PartitionNumEnum(string Value)
+            private PartitionNumEnum(int? value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static PartitionNumEnum FromValue(string Value)
+            public static PartitionNumEnum FromValue(int? value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public int? GetValue()
             {
                 return this.Value;
             }
@@ -457,35 +457,35 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly RetentionPolicyEnum PRODUCE_REJECT = new RetentionPolicyEnum("produce_reject");
 
-            public static readonly Dictionary<string, RetentionPolicyEnum> StaticFields =
+            private static readonly Dictionary<string, RetentionPolicyEnum> StaticFields =
             new Dictionary<string, RetentionPolicyEnum>()
             {
-                {"time_base", TIME_BASE},
-                {"produce_reject", PRODUCE_REJECT},
+                { "time_base", TIME_BASE },
+                { "produce_reject", PRODUCE_REJECT },
             };
 
             private string Value;
 
-            public RetentionPolicyEnum(string Value)
+            private RetentionPolicyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static RetentionPolicyEnum FromValue(string Value)
+            public static RetentionPolicyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -567,36 +567,36 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA = new StorageSpecCodeEnum("dms.physical.storage.ultra");
 
-            public static readonly Dictionary<string, StorageSpecCodeEnum> StaticFields =
+            private static readonly Dictionary<string, StorageSpecCodeEnum> StaticFields =
             new Dictionary<string, StorageSpecCodeEnum>()
             {
-                {"dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL},
-                {"dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH},
-                {"dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA},
+                { "dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL },
+                { "dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH },
+                { "dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA },
             };
 
             private string Value;
 
-            public StorageSpecCodeEnum(string Value)
+            private StorageSpecCodeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StorageSpecCodeEnum FromValue(string Value)
+            public static StorageSpecCodeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

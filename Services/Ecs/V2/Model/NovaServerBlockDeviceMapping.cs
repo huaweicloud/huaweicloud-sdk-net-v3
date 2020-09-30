@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly SourceTypeEnum IMAGE = new SourceTypeEnum("image");
 
-            public static readonly Dictionary<string, SourceTypeEnum> StaticFields =
+            private static readonly Dictionary<string, SourceTypeEnum> StaticFields =
             new Dictionary<string, SourceTypeEnum>()
             {
-                {"blank", BLANK},
-                {"snapshot", SNAPSHOT},
-                {"volume", VOLUME},
-                {"image", IMAGE},
+                { "blank", BLANK },
+                { "snapshot", SNAPSHOT },
+                { "volume", VOLUME },
+                { "image", IMAGE },
             };
 
             private string Value;
 
-            public SourceTypeEnum(string Value)
+            private SourceTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SourceTypeEnum FromValue(string Value)
+            public static SourceTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -143,34 +143,34 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly DestinationTypeEnum VOLUME = new DestinationTypeEnum("volume");
 
-            public static readonly Dictionary<string, DestinationTypeEnum> StaticFields =
+            private static readonly Dictionary<string, DestinationTypeEnum> StaticFields =
             new Dictionary<string, DestinationTypeEnum>()
             {
-                {"volume", VOLUME},
+                { "volume", VOLUME },
             };
 
             private string Value;
 
-            public DestinationTypeEnum(string Value)
+            private DestinationTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DestinationTypeEnum FromValue(string Value)
+            public static DestinationTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

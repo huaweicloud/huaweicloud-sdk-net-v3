@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// </summary>
             public static readonly EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
 
-            public static readonly Dictionary<string, EngineEnum> StaticFields =
+            private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
-                {"rabbitmq", RABBITMQ},
+                { "rabbitmq", RABBITMQ },
             };
 
             private string Value;
 
-            public EngineEnum(string Value)
+            private EngineEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EngineEnum FromValue(string Value)
+            public static EngineEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -125,34 +125,34 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// </summary>
             public static readonly EngineVersionEnum _3_7_17 = new EngineVersionEnum("3.7.17");
 
-            public static readonly Dictionary<string, EngineVersionEnum> StaticFields =
+            private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
             new Dictionary<string, EngineVersionEnum>()
             {
-                {"3.7.17", _3_7_17},
+                { "3.7.17", _3_7_17 },
             };
 
             private string Value;
 
-            public EngineVersionEnum(string Value)
+            private EngineVersionEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EngineVersionEnum FromValue(string Value)
+            public static EngineVersionEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -234,36 +234,36 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// </summary>
             public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA = new StorageSpecCodeEnum("dms.physical.storage.ultra");
 
-            public static readonly Dictionary<string, StorageSpecCodeEnum> StaticFields =
+            private static readonly Dictionary<string, StorageSpecCodeEnum> StaticFields =
             new Dictionary<string, StorageSpecCodeEnum>()
             {
-                {"dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL},
-                {"dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH},
-                {"dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA},
+                { "dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL },
+                { "dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH },
+                { "dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA },
             };
 
             private string Value;
 
-            public StorageSpecCodeEnum(string Value)
+            private StorageSpecCodeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StorageSpecCodeEnum FromValue(string Value)
+            public static StorageSpecCodeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

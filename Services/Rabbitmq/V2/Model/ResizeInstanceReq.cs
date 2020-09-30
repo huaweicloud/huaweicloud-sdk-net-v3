@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// </summary>
             public static readonly NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 = new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.7");
 
-            public static readonly Dictionary<string, NewSpecCodeEnum> StaticFields =
+            private static readonly Dictionary<string, NewSpecCodeEnum> StaticFields =
             new Dictionary<string, NewSpecCodeEnum>()
             {
-                {"dms.instance.rabbitmq.cluster.c3.4u8g.3", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3},
-                {"dms.instance.rabbitmq.cluster.c3.4u8g.5", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5},
-                {"dms.instance.rabbitmq.cluster.c3.4u8g.7", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7},
+                { "dms.instance.rabbitmq.cluster.c3.4u8g.3", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 },
+                { "dms.instance.rabbitmq.cluster.c3.4u8g.5", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 },
+                { "dms.instance.rabbitmq.cluster.c3.4u8g.7", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 },
             };
 
             private string Value;
 
-            public NewSpecCodeEnum(string Value)
+            private NewSpecCodeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static NewSpecCodeEnum FromValue(string Value)
+            public static NewSpecCodeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -135,48 +135,48 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// <summary>
             /// Enum NUMBER_300 for value: 300
             /// </summary>
-            public static readonly NewStorageSpaceEnum NUMBER_300 = new NewStorageSpaceEnum("300");
+            public static readonly NewStorageSpaceEnum NUMBER_300 = new NewStorageSpaceEnum(300);
 
             /// <summary>
             /// Enum NUMBER_500 for value: 500
             /// </summary>
-            public static readonly NewStorageSpaceEnum NUMBER_500 = new NewStorageSpaceEnum("500");
+            public static readonly NewStorageSpaceEnum NUMBER_500 = new NewStorageSpaceEnum(500);
 
             /// <summary>
             /// Enum NUMBER_700 for value: 700
             /// </summary>
-            public static readonly NewStorageSpaceEnum NUMBER_700 = new NewStorageSpaceEnum("700");
+            public static readonly NewStorageSpaceEnum NUMBER_700 = new NewStorageSpaceEnum(700);
 
-            public static readonly Dictionary<string, NewStorageSpaceEnum> StaticFields =
-            new Dictionary<string, NewStorageSpaceEnum>()
+            private static readonly Dictionary<int?, NewStorageSpaceEnum> StaticFields =
+            new Dictionary<int?, NewStorageSpaceEnum>()
             {
-                {"300", NUMBER_300},
-                {"500", NUMBER_500},
-                {"700", NUMBER_700},
+                { 300, NUMBER_300 },
+                { 500, NUMBER_500 },
+                { 700, NUMBER_700 },
             };
 
-            private string Value;
+            private int? Value;
 
-            public NewStorageSpaceEnum(string Value)
+            private NewStorageSpaceEnum(int? value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static NewStorageSpaceEnum FromValue(string Value)
+            public static NewStorageSpaceEnum FromValue(int? value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public int? GetValue()
             {
                 return this.Value;
             }

@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V1.Model
+namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// 资源列表详情
+    /// Request Object
     /// </summary>
-    public class ResourcesItems 
+    public class ShowReplicationCapabilitiesRequest 
     {
 
 

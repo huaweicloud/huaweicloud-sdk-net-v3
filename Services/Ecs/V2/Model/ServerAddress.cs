@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly OSEXTIPStypeEnum FLOATING = new OSEXTIPStypeEnum("floating");
 
-            public static readonly Dictionary<string, OSEXTIPStypeEnum> StaticFields =
+            private static readonly Dictionary<string, OSEXTIPStypeEnum> StaticFields =
             new Dictionary<string, OSEXTIPStypeEnum>()
             {
-                {"fixed", FIXED},
-                {"floating", FLOATING},
+                { "fixed", FIXED },
+                { "floating", FLOATING },
             };
 
             private string Value;
 
-            public OSEXTIPStypeEnum(string Value)
+            private OSEXTIPStypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OSEXTIPStypeEnum FromValue(string Value)
+            public static OSEXTIPStypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

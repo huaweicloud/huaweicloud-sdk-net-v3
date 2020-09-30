@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly DatastoreNameEnum DDS_ENHANCED = new DatastoreNameEnum("DDS-Enhanced");
 
-            public static readonly Dictionary<string, DatastoreNameEnum> StaticFields =
+            private static readonly Dictionary<string, DatastoreNameEnum> StaticFields =
             new Dictionary<string, DatastoreNameEnum>()
             {
-                {"DDS-Community", DDS_COMMUNITY},
-                {"DDS-Enhanced", DDS_ENHANCED},
+                { "DDS-Community", DDS_COMMUNITY },
+                { "DDS-Enhanced", DDS_ENHANCED },
             };
 
             private string Value;
 
-            public DatastoreNameEnum(string Value)
+            private DatastoreNameEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DatastoreNameEnum FromValue(string Value)
+            public static DatastoreNameEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

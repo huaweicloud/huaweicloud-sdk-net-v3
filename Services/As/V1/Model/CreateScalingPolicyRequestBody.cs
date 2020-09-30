@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
 
-            public static readonly Dictionary<string, ScalingPolicyTypeEnum> StaticFields =
+            private static readonly Dictionary<string, ScalingPolicyTypeEnum> StaticFields =
             new Dictionary<string, ScalingPolicyTypeEnum>()
             {
-                {"ALARM", ALARM},
-                {"SCHEDULED", SCHEDULED},
-                {"RECURRENCE", RECURRENCE},
+                { "ALARM", ALARM },
+                { "SCHEDULED", SCHEDULED },
+                { "RECURRENCE", RECURRENCE },
             };
 
             private string Value;
 
-            public ScalingPolicyTypeEnum(string Value)
+            private ScalingPolicyTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ScalingPolicyTypeEnum FromValue(string Value)
+            public static ScalingPolicyTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

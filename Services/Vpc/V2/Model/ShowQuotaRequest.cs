@@ -105,50 +105,50 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             /// </summary>
             public static readonly TypeEnum ROUTETABLECONTAINROUTES = new TypeEnum("routetableContainRoutes");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"vpc", VPC},
-                {"subnet", SUBNET},
-                {"securityGroup", SECURITYGROUP},
-                {"securityGroupRule", SECURITYGROUPRULE},
-                {"publicIp", PUBLICIP},
-                {"vpn", VPN},
-                {"vpngw", VPNGW},
-                {"vpcPeer", VPCPEER},
-                {"firewall", FIREWALL},
-                {"shareBandwidth", SHAREBANDWIDTH},
-                {"shareBandwidthIP", SHAREBANDWIDTHIP},
-                {"loadbalancer", LOADBALANCER},
-                {"listener", LISTENER},
-                {"physicalConnect", PHYSICALCONNECT},
-                {"virtualInterface", VIRTUALINTERFACE},
-                {"vpcContainRoutetable", VPCCONTAINROUTETABLE},
-                {"routetableContainRoutes", ROUTETABLECONTAINROUTES},
+                { "vpc", VPC },
+                { "subnet", SUBNET },
+                { "securityGroup", SECURITYGROUP },
+                { "securityGroupRule", SECURITYGROUPRULE },
+                { "publicIp", PUBLICIP },
+                { "vpn", VPN },
+                { "vpngw", VPNGW },
+                { "vpcPeer", VPCPEER },
+                { "firewall", FIREWALL },
+                { "shareBandwidth", SHAREBANDWIDTH },
+                { "shareBandwidthIP", SHAREBANDWIDTHIP },
+                { "loadbalancer", LOADBALANCER },
+                { "listener", LISTENER },
+                { "physicalConnect", PHYSICALCONNECT },
+                { "virtualInterface", VIRTUALINTERFACE },
+                { "vpcContainRoutetable", VPCCONTAINROUTETABLE },
+                { "routetableContainRoutes", ROUTETABLECONTAINROUTES },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly SharetypeEnum WHOLE = new SharetypeEnum("WHOLE");
 
-            public static readonly Dictionary<string, SharetypeEnum> StaticFields =
+            private static readonly Dictionary<string, SharetypeEnum> StaticFields =
             new Dictionary<string, SharetypeEnum>()
             {
-                {"PER", PER},
-                {"WHOLE", WHOLE},
+                { "PER", PER },
+                { "WHOLE", WHOLE },
             };
 
             private string Value;
 
-            public SharetypeEnum(string Value)
+            private SharetypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SharetypeEnum FromValue(string Value)
+            public static SharetypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

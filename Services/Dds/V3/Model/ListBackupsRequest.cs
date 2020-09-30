@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly BackupTypeEnum MANUAL = new BackupTypeEnum("Manual");
 
-            public static readonly Dictionary<string, BackupTypeEnum> StaticFields =
+            private static readonly Dictionary<string, BackupTypeEnum> StaticFields =
             new Dictionary<string, BackupTypeEnum>()
             {
-                {"Auto", AUTO},
-                {"Manual", MANUAL},
+                { "Auto", AUTO },
+                { "Manual", MANUAL },
             };
 
             private string Value;
 
-            public BackupTypeEnum(string Value)
+            private BackupTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static BackupTypeEnum FromValue(string Value)
+            public static BackupTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -139,36 +139,36 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly ModeEnum SINGLE = new ModeEnum("Single");
 
-            public static readonly Dictionary<string, ModeEnum> StaticFields =
+            private static readonly Dictionary<string, ModeEnum> StaticFields =
             new Dictionary<string, ModeEnum>()
             {
-                {"Sharding", SHARDING},
-                {"ReplicaSet", REPLICASET},
-                {"Single", SINGLE},
+                { "Sharding", SHARDING },
+                { "ReplicaSet", REPLICASET },
+                { "Single", SINGLE },
             };
 
             private string Value;
 
-            public ModeEnum(string Value)
+            private ModeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ModeEnum FromValue(string Value)
+            public static ModeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

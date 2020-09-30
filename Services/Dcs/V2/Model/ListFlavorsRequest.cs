@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly CpuTypeEnum AARCH64 = new CpuTypeEnum("aarch64");
 
-            public static readonly Dictionary<string, CpuTypeEnum> StaticFields =
+            private static readonly Dictionary<string, CpuTypeEnum> StaticFields =
             new Dictionary<string, CpuTypeEnum>()
             {
-                {"X86_64", X86_64},
-                {"aarch64", AARCH64},
+                { "X86_64", X86_64 },
+                { "aarch64", AARCH64 },
             };
 
             private string Value;
 
-            public CpuTypeEnum(string Value)
+            private CpuTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static CpuTypeEnum FromValue(string Value)
+            public static CpuTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

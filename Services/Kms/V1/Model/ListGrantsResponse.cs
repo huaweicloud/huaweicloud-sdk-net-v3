@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
             /// </summary>
             public static readonly TruncatedEnum FALSE = new TruncatedEnum("false");
 
-            public static readonly Dictionary<string, TruncatedEnum> StaticFields =
+            private static readonly Dictionary<string, TruncatedEnum> StaticFields =
             new Dictionary<string, TruncatedEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public TruncatedEnum(string Value)
+            private TruncatedEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TruncatedEnum FromValue(string Value)
+            public static TruncatedEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

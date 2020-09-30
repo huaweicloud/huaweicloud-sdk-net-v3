@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly IpTypeEnum _5_UNION = new IpTypeEnum("5_union");
 
-            public static readonly Dictionary<string, IpTypeEnum> StaticFields =
+            private static readonly Dictionary<string, IpTypeEnum> StaticFields =
             new Dictionary<string, IpTypeEnum>()
             {
-                {"5_bgp", _5_BGP},
-                {"5_sbgp", _5_SBGP},
-                {"5_telcom", _5_TELCOM},
-                {"5_union", _5_UNION},
+                { "5_bgp", _5_BGP },
+                { "5_sbgp", _5_SBGP },
+                { "5_telcom", _5_TELCOM },
+                { "5_union", _5_UNION },
             };
 
             private string Value;
 
-            public IpTypeEnum(string Value)
+            private IpTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static IpTypeEnum FromValue(string Value)
+            public static IpTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

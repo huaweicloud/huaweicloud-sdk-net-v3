@@ -46,38 +46,38 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
 
-            public static readonly Dictionary<string, DiskFormatEnum> StaticFields =
+            private static readonly Dictionary<string, DiskFormatEnum> StaticFields =
             new Dictionary<string, DiskFormatEnum>()
             {
-                {"vhd", VHD},
-                {"zvhd", ZVHD},
-                {"zvhd2", ZVHD2},
-                {"raw", RAW},
-                {"qcow2", QCOW2},
+                { "vhd", VHD },
+                { "zvhd", ZVHD },
+                { "zvhd2", ZVHD2 },
+                { "raw", RAW },
+                { "qcow2", QCOW2 },
             };
 
             private string Value;
 
-            public DiskFormatEnum(string Value)
+            private DiskFormatEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DiskFormatEnum FromValue(string Value)
+            public static DiskFormatEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

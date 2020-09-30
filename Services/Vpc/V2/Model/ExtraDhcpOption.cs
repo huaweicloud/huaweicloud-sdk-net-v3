@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             /// </summary>
             public static readonly OptNameEnum NTP = new OptNameEnum("ntp");
 
-            public static readonly Dictionary<string, OptNameEnum> StaticFields =
+            private static readonly Dictionary<string, OptNameEnum> StaticFields =
             new Dictionary<string, OptNameEnum>()
             {
-                {"ntp", NTP},
+                { "ntp", NTP },
             };
 
             private string Value;
 
-            public OptNameEnum(string Value)
+            private OptNameEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OptNameEnum FromValue(string Value)
+            public static OptNameEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

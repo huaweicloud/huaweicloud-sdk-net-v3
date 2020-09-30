@@ -55,40 +55,40 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly LifeCycleStateEnum ENTERING_STANDBY = new LifeCycleStateEnum("ENTERING_STANDBY");
 
-            public static readonly Dictionary<string, LifeCycleStateEnum> StaticFields =
+            private static readonly Dictionary<string, LifeCycleStateEnum> StaticFields =
             new Dictionary<string, LifeCycleStateEnum>()
             {
-                {"INSERVICE", INSERVICE},
-                {"PENDING", PENDING},
-                {"REMOVING", REMOVING},
-                {"PENDING_WAIT", PENDING_WAIT},
-                {"REMOVING_WAIT", REMOVING_WAIT},
-                {"STANDBY", STANDBY},
-                {"ENTERING_STANDBY", ENTERING_STANDBY},
+                { "INSERVICE", INSERVICE },
+                { "PENDING", PENDING },
+                { "REMOVING", REMOVING },
+                { "PENDING_WAIT", PENDING_WAIT },
+                { "REMOVING_WAIT", REMOVING_WAIT },
+                { "STANDBY", STANDBY },
+                { "ENTERING_STANDBY", ENTERING_STANDBY },
             };
 
             private string Value;
 
-            public LifeCycleStateEnum(string Value)
+            private LifeCycleStateEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static LifeCycleStateEnum FromValue(string Value)
+            public static LifeCycleStateEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -169,36 +169,36 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly HealthStatusEnum ERROR = new HealthStatusEnum("ERROR");
 
-            public static readonly Dictionary<string, HealthStatusEnum> StaticFields =
+            private static readonly Dictionary<string, HealthStatusEnum> StaticFields =
             new Dictionary<string, HealthStatusEnum>()
             {
-                {"INITIALIZING", INITIALIZING},
-                {"NORMAL", NORMAL},
-                {"ERROR", ERROR},
+                { "INITIALIZING", INITIALIZING },
+                { "NORMAL", NORMAL },
+                { "ERROR", ERROR },
             };
 
             private string Value;
 
-            public HealthStatusEnum(string Value)
+            private HealthStatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static HealthStatusEnum FromValue(string Value)
+            public static HealthStatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -274,35 +274,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ProtectFromScalingDownEnum FALSE = new ProtectFromScalingDownEnum("false");
 
-            public static readonly Dictionary<string, ProtectFromScalingDownEnum> StaticFields =
+            private static readonly Dictionary<string, ProtectFromScalingDownEnum> StaticFields =
             new Dictionary<string, ProtectFromScalingDownEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public ProtectFromScalingDownEnum(string Value)
+            private ProtectFromScalingDownEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ProtectFromScalingDownEnum FromValue(string Value)
+            public static ProtectFromScalingDownEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

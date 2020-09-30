@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly TypeEnum X509 = new TypeEnum("x509");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"ssh", SSH},
-                {"x509", X509},
+                { "ssh", SSH },
+                { "x509", X509 },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

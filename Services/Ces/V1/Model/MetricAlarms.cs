@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             /// </summary>
             public static readonly AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
 
-            public static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
+            private static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
             new Dictionary<string, AlarmTypeEnum>()
             {
-                {"EVENT.SYS", EVENT_SYS},
-                {"EVENT.CUSTOM", EVENT_CUSTOM},
+                { "EVENT.SYS", EVENT_SYS },
+                { "EVENT.CUSTOM", EVENT_CUSTOM },
             };
 
             private string Value;
 
-            public AlarmTypeEnum(string Value)
+            private AlarmTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static AlarmTypeEnum FromValue(string Value)
+            public static AlarmTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -180,6 +180,24 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public List<AlarmActions> OkActions { get; set; }
 
         /// <summary>
+        /// 数据不足触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值： 数据不足触发告警通知类型，取值为notification。 notificationList：数据不足触发告警通知时，被通知对象的ID列表。
+        /// </summary>
+        [JsonProperty("insufficientdata_actions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AlarmActions> InsufficientdataActions { get; set; }
+
+        /// <summary>
+        /// 告警规则生效的开始时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
+        /// </summary>
+        [JsonProperty("alarm_action_begin_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmActionBeginTime { get; set; }
+
+        /// <summary>
+        /// 告警规则生效的结束时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
+        /// </summary>
+        [JsonProperty("alarm_action_end_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmActionEndTime { get; set; }
+
+        /// <summary>
         /// 告警规则的ID。
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -196,6 +214,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         [JsonProperty("alarm_state", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmState { get; set; }
+
+        /// <summary>
+        /// 企业项目ID。 取值为all_granted_eps时，表示所有企业项目; 取值为0时，表示默认的企业项目default。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
         /// <summary>
@@ -215,9 +239,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  alarmActionEnabled: ").Append(AlarmActionEnabled).Append("\n");
             sb.Append("  alarmActions: ").Append(AlarmActions).Append("\n");
             sb.Append("  okActions: ").Append(OkActions).Append("\n");
+            sb.Append("  insufficientdataActions: ").Append(InsufficientdataActions).Append("\n");
+            sb.Append("  alarmActionBeginTime: ").Append(AlarmActionBeginTime).Append("\n");
+            sb.Append("  alarmActionEndTime: ").Append(AlarmActionEndTime).Append("\n");
             sb.Append("  alarmId: ").Append(AlarmId).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  alarmState: ").Append(AlarmState).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -292,6 +320,22 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.OkActions.SequenceEqual(input.OkActions)
                 ) && 
                 (
+                    this.InsufficientdataActions == input.InsufficientdataActions ||
+                    this.InsufficientdataActions != null &&
+                    input.InsufficientdataActions != null &&
+                    this.InsufficientdataActions.SequenceEqual(input.InsufficientdataActions)
+                ) && 
+                (
+                    this.AlarmActionBeginTime == input.AlarmActionBeginTime ||
+                    (this.AlarmActionBeginTime != null &&
+                    this.AlarmActionBeginTime.Equals(input.AlarmActionBeginTime))
+                ) && 
+                (
+                    this.AlarmActionEndTime == input.AlarmActionEndTime ||
+                    (this.AlarmActionEndTime != null &&
+                    this.AlarmActionEndTime.Equals(input.AlarmActionEndTime))
+                ) && 
+                (
                     this.AlarmId == input.AlarmId ||
                     (this.AlarmId != null &&
                     this.AlarmId.Equals(input.AlarmId))
@@ -305,6 +349,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.AlarmState == input.AlarmState ||
                     (this.AlarmState != null &&
                     this.AlarmState.Equals(input.AlarmState))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -336,12 +385,20 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
                 if (this.OkActions != null)
                     hashCode = hashCode * 59 + this.OkActions.GetHashCode();
+                if (this.InsufficientdataActions != null)
+                    hashCode = hashCode * 59 + this.InsufficientdataActions.GetHashCode();
+                if (this.AlarmActionBeginTime != null)
+                    hashCode = hashCode * 59 + this.AlarmActionBeginTime.GetHashCode();
+                if (this.AlarmActionEndTime != null)
+                    hashCode = hashCode * 59 + this.AlarmActionEndTime.GetHashCode();
                 if (this.AlarmId != null)
                     hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
                 if (this.UpdateTime != null)
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.AlarmState != null)
                     hashCode = hashCode * 59 + this.AlarmState.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

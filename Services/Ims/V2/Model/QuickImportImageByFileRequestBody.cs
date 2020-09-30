@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly TypeEnum DATAIMAGE = new TypeEnum("DataImage");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"ECS", ECS},
-                {"BMS", BMS},
-                {"DataImage", DATAIMAGE},
+                { "ECS", ECS },
+                { "BMS", BMS },
+                { "DataImage", DATAIMAGE },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -142,35 +142,35 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly ArchitectureEnum ARM = new ArchitectureEnum("arm");
 
-            public static readonly Dictionary<string, ArchitectureEnum> StaticFields =
+            private static readonly Dictionary<string, ArchitectureEnum> StaticFields =
             new Dictionary<string, ArchitectureEnum>()
             {
-                {"x86", X86},
-                {"arm", ARM},
+                { "x86", X86 },
+                { "arm", ARM },
             };
 
             private string Value;
 
-            public ArchitectureEnum(string Value)
+            private ArchitectureEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ArchitectureEnum FromValue(string Value)
+            public static ArchitectureEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -247,35 +247,35 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
 
-            public static readonly Dictionary<string, OsTypeEnum> StaticFields =
+            private static readonly Dictionary<string, OsTypeEnum> StaticFields =
             new Dictionary<string, OsTypeEnum>()
             {
-                {"Linux", LINUX},
-                {"Windows", WINDOWS},
+                { "Linux", LINUX },
+                { "Windows", WINDOWS },
             };
 
             private string Value;
 
-            public OsTypeEnum(string Value)
+            private OsTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OsTypeEnum FromValue(string Value)
+            public static OsTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

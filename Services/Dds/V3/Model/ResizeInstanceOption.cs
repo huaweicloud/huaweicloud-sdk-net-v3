@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly TargetTypeEnum SHARD = new TargetTypeEnum("shard");
 
-            public static readonly Dictionary<string, TargetTypeEnum> StaticFields =
+            private static readonly Dictionary<string, TargetTypeEnum> StaticFields =
             new Dictionary<string, TargetTypeEnum>()
             {
-                {"mongos", MONGOS},
-                {"shard", SHARD},
+                { "mongos", MONGOS },
+                { "shard", SHARD },
             };
 
             private string Value;
 
-            public TargetTypeEnum(string Value)
+            private TargetTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TargetTypeEnum FromValue(string Value)
+            public static TargetTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -27,26 +27,39 @@ namespace HuaweiCloud.SDK.Core
 {
     public class EnumClassConverter<T> : JsonConverter
     {
+        private readonly FieldInfo _value = typeof(T).GetField("Value", BindingFlags.Instance | BindingFlags.NonPublic);
+        private readonly MethodInfo _methodGetValue = typeof(T).GetMethod("GetValue");
         private readonly MethodInfo _methodFromValue = typeof(T).GetMethod("FromValue");
-        private readonly ConstructorInfo _constructor = typeof(T).GetConstructor(new Type[] {typeof(string)});
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             if (value != null)
             {
-                writer.WriteValue(value.ToString());
+                var actualValue = _methodGetValue.Invoke(value, new object[] { });
+                writer.WriteValue(actualValue);
             }
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
+            JsonSerializer serializer)
         {
             if (reader.Value == null)
             {
                 return null;
             }
 
-            var obj = _methodFromValue.Invoke(null, new object[]{reader.Value.ToString()}) ??
-                      _constructor.Invoke(new object[] {reader.Value.ToString()});
+            var actualValue = reader.Value;
+            if (reader.ValueType != _value.FieldType)
+            {
+                actualValue = Convert.ChangeType(reader.Value, Nullable.GetUnderlyingType(_value.FieldType));
+            }
+
+            var obj = _methodFromValue.Invoke(null, new[] {actualValue});
+            if (obj == null)
+            {
+                ConstructorInfo constructor = typeof(T).GetConstructor(new[] {_value.FieldType});
+                obj = constructor.Invoke(new[] {actualValue});
+            }
 
             return obj;
         }

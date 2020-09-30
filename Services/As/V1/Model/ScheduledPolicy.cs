@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("Monthly");
 
-            public static readonly Dictionary<string, RecurrenceTypeEnum> StaticFields =
+            private static readonly Dictionary<string, RecurrenceTypeEnum> StaticFields =
             new Dictionary<string, RecurrenceTypeEnum>()
             {
-                {"Daily", DAILY},
-                {"Weekly", WEEKLY},
-                {"Monthly", MONTHLY},
+                { "Daily", DAILY },
+                { "Weekly", WEEKLY },
+                { "Monthly", MONTHLY },
             };
 
             private string Value;
 
-            public RecurrenceTypeEnum(string Value)
+            private RecurrenceTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static RecurrenceTypeEnum FromValue(string Value)
+            public static RecurrenceTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

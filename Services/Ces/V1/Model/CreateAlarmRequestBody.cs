@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             /// </summary>
             public static readonly AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
 
-            public static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
+            private static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
             new Dictionary<string, AlarmTypeEnum>()
             {
-                {"EVENT.SYS", EVENT_SYS},
-                {"EVENT.CUSTOM", EVENT_CUSTOM},
+                { "EVENT.SYS", EVENT_SYS },
+                { "EVENT.CUSTOM", EVENT_CUSTOM },
             };
 
             private string Value;
 
-            public AlarmTypeEnum(string Value)
+            private AlarmTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static AlarmTypeEnum FromValue(string Value)
+            public static AlarmTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -127,7 +127,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string AlarmName { get; set; }
 
         /// <summary>
-        /// 
+        /// 告警描述，长度0-256。
         /// </summary>
         [JsonProperty("alarm_description", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmDescription { get; set; }
@@ -185,6 +185,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<AlarmActions> OkActions { get; set; }
 
+        /// <summary>
+        /// 企业项目ID。默认值为0，表示默认的企业项目default。说明：此参数在“华东-上海一”区域上线。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -204,6 +210,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  alarmActions: ").Append(AlarmActions).Append("\n");
             sb.Append("  insufficientdataActions: ").Append(InsufficientdataActions).Append("\n");
             sb.Append("  okActions: ").Append(OkActions).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -282,6 +289,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.OkActions != null &&
                     input.OkActions != null &&
                     this.OkActions.SequenceEqual(input.OkActions)
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -315,6 +327,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.InsufficientdataActions.GetHashCode();
                 if (this.OkActions != null)
                     hashCode = hashCode * 59 + this.OkActions.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

@@ -76,44 +76,44 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
 
-            public static readonly Dictionary<string, RuntimeEnum> StaticFields =
+            private static readonly Dictionary<string, RuntimeEnum> StaticFields =
             new Dictionary<string, RuntimeEnum>()
             {
-                {"Python2.7", PYTHON2_7},
-                {"Python3.6", PYTHON3_6},
-                {"Go1.8", GO1_8},
-                {"Java8", JAVA8},
-                {"Node.js6.10", NODE_JS6_10},
-                {"Node.js8.10", NODE_JS8_10},
-                {"C#(.NET Core 2.0)", C_NET_CORE_2_0_},
-                {"C#(.NET Core 2.1)", C_NET_CORE_2_1_},
-                {"C#(.NET Core 3.1)", C_NET_CORE_3_1_},
-                {"Custom", CUSTOM},
-                {"PHP7.3", PHP7_3},
+                { "Python2.7", PYTHON2_7 },
+                { "Python3.6", PYTHON3_6 },
+                { "Go1.8", GO1_8 },
+                { "Java8", JAVA8 },
+                { "Node.js6.10", NODE_JS6_10 },
+                { "Node.js8.10", NODE_JS8_10 },
+                { "C#(.NET Core 2.0)", C_NET_CORE_2_0_ },
+                { "C#(.NET Core 2.1)", C_NET_CORE_2_1_ },
+                { "C#(.NET Core 3.1)", C_NET_CORE_3_1_ },
+                { "Custom", CUSTOM },
+                { "PHP7.3", PHP7_3 },
             };
 
             private string Value;
 
-            public RuntimeEnum(string Value)
+            private RuntimeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static RuntimeEnum FromValue(string Value)
+            public static RuntimeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -200,37 +200,37 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
-            public static readonly Dictionary<string, CodeTypeEnum> StaticFields =
+            private static readonly Dictionary<string, CodeTypeEnum> StaticFields =
             new Dictionary<string, CodeTypeEnum>()
             {
-                {"inline", INLINE},
-                {"zip", ZIP},
-                {"obs", OBS},
-                {"jar", JAR},
+                { "inline", INLINE },
+                { "zip", ZIP },
+                { "obs", OBS },
+                { "jar", JAR },
             };
 
             private string Value;
 
-            public CodeTypeEnum(string Value)
+            private CodeTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static CodeTypeEnum FromValue(string Value)
+            public static CodeTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

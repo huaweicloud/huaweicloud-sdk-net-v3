@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly FileSourceEnum SELF_BUILD_OBS = new FileSourceEnum("self_build_obs");
 
-            public static readonly Dictionary<string, FileSourceEnum> StaticFields =
+            private static readonly Dictionary<string, FileSourceEnum> StaticFields =
             new Dictionary<string, FileSourceEnum>()
             {
-                {"self_build_obs", SELF_BUILD_OBS},
+                { "self_build_obs", SELF_BUILD_OBS },
             };
 
             private string Value;
 
-            public FileSourceEnum(string Value)
+            private FileSourceEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static FileSourceEnum FromValue(string Value)
+            public static FileSourceEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

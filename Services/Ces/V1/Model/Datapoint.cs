@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 指标值，该字段名称与请求参数中filter使用的查询值相同。
+        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
         /// </summary>
         [JsonProperty("average", NullValueHandling = NullValueHandling.Ignore)]
         public double? Average { get; set; }

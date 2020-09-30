@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly RecordTypeEnum MEG = new RecordTypeEnum("MEG");
 
-            public static readonly Dictionary<string, RecordTypeEnum> StaticFields =
+            private static readonly Dictionary<string, RecordTypeEnum> StaticFields =
             new Dictionary<string, RecordTypeEnum>()
             {
-                {"API", API},
-                {"MEG", MEG},
+                { "API", API },
+                { "MEG", MEG },
             };
 
             private string Value;
 
-            public RecordTypeEnum(string Value)
+            private RecordTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static RecordTypeEnum FromValue(string Value)
+            public static RecordTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -136,35 +136,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly JobStatusEnum FAIL = new JobStatusEnum("FAIL");
 
-            public static readonly Dictionary<string, JobStatusEnum> StaticFields =
+            private static readonly Dictionary<string, JobStatusEnum> StaticFields =
             new Dictionary<string, JobStatusEnum>()
             {
-                {"SUCCESS", SUCCESS},
-                {"FAIL", FAIL},
+                { "SUCCESS", SUCCESS },
+                { "FAIL", FAIL },
             };
 
             private string Value;
 
-            public JobStatusEnum(string Value)
+            private JobStatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static JobStatusEnum FromValue(string Value)
+            public static JobStatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

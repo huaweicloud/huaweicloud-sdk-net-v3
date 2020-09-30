@@ -25,34 +25,34 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly PoliciesEnum ANTI_AFFINITY = new PoliciesEnum("anti-affinity");
 
-            public static readonly Dictionary<string, PoliciesEnum> StaticFields =
+            private static readonly Dictionary<string, PoliciesEnum> StaticFields =
             new Dictionary<string, PoliciesEnum>()
             {
-                {"anti-affinity", ANTI_AFFINITY},
+                { "anti-affinity", ANTI_AFFINITY },
             };
 
             private string Value;
 
-            public PoliciesEnum(string Value)
+            private PoliciesEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static PoliciesEnum FromValue(string Value)
+            public static PoliciesEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

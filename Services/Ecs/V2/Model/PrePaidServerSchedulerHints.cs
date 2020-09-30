@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly TenancyEnum DEDICATED = new TenancyEnum("dedicated");
 
-            public static readonly Dictionary<string, TenancyEnum> StaticFields =
+            private static readonly Dictionary<string, TenancyEnum> StaticFields =
             new Dictionary<string, TenancyEnum>()
             {
-                {"shared", SHARED},
-                {"dedicated", DEDICATED},
+                { "shared", SHARED },
+                { "dedicated", DEDICATED },
             };
 
             private string Value;
 
-            public TenancyEnum(string Value)
+            private TenancyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TenancyEnum FromValue(string Value)
+            public static TenancyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

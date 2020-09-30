@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 响应参数。
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateEventsResponseBody> Body { get; set; }

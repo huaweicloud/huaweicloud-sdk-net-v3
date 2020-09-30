@@ -35,36 +35,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly ImagetypeEnum SHARED = new ImagetypeEnum("shared");
 
-            public static readonly Dictionary<string, ImagetypeEnum> StaticFields =
+            private static readonly Dictionary<string, ImagetypeEnum> StaticFields =
             new Dictionary<string, ImagetypeEnum>()
             {
-                {"gold", GOLD},
-                {"private", PRIVATE},
-                {"shared", SHARED},
+                { "gold", GOLD },
+                { "private", PRIVATE },
+                { "shared", SHARED },
             };
 
             private string Value;
 
-            public ImagetypeEnum(string Value)
+            private ImagetypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ImagetypeEnum FromValue(string Value)
+            public static ImagetypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -140,35 +140,35 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly OsBitEnum _64 = new OsBitEnum("64");
 
-            public static readonly Dictionary<string, OsBitEnum> StaticFields =
+            private static readonly Dictionary<string, OsBitEnum> StaticFields =
             new Dictionary<string, OsBitEnum>()
             {
-                {"32", _32},
-                {"64", _64},
+                { "32", _32 },
+                { "64", _64 },
             };
 
             private string Value;
 
-            public OsBitEnum(string Value)
+            private OsBitEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OsBitEnum FromValue(string Value)
+            public static OsBitEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -249,36 +249,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly OsTypeEnum OTHER = new OsTypeEnum("Other");
 
-            public static readonly Dictionary<string, OsTypeEnum> StaticFields =
+            private static readonly Dictionary<string, OsTypeEnum> StaticFields =
             new Dictionary<string, OsTypeEnum>()
             {
-                {"Linux", LINUX},
-                {"Windows", WINDOWS},
-                {"Other", OTHER},
+                { "Linux", LINUX },
+                { "Windows", WINDOWS },
+                { "Other", OTHER },
             };
 
             private string Value;
 
-            public OsTypeEnum(string Value)
+            private OsTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OsTypeEnum FromValue(string Value)
+            public static OsTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -404,45 +404,45 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly PlatformEnum EULEOS = new PlatformEnum("EuleOS");
 
-            public static readonly Dictionary<string, PlatformEnum> StaticFields =
+            private static readonly Dictionary<string, PlatformEnum> StaticFields =
             new Dictionary<string, PlatformEnum>()
             {
-                {"Windows", WINDOWS},
-                {"Ubuntu", UBUNTU},
-                {"RedHat", REDHAT},
-                {"SUSE", SUSE},
-                {"CentOS", CENTOS},
-                {"Debian", DEBIAN},
-                {"OpenSUSE", OPENSUSE},
-                {"Oracle Linux", ORACLE_LINUX},
-                {"Fedora", FEDORA},
-                {"Other", OTHER},
-                {"CoreOS", COREOS},
-                {"EuleOS", EULEOS},
+                { "Windows", WINDOWS },
+                { "Ubuntu", UBUNTU },
+                { "RedHat", REDHAT },
+                { "SUSE", SUSE },
+                { "CentOS", CENTOS },
+                { "Debian", DEBIAN },
+                { "OpenSUSE", OPENSUSE },
+                { "Oracle Linux", ORACLE_LINUX },
+                { "Fedora", FEDORA },
+                { "Other", OTHER },
+                { "CoreOS", COREOS },
+                { "EuleOS", EULEOS },
             };
 
             private string Value;
 
-            public PlatformEnum(string Value)
+            private PlatformEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static PlatformEnum FromValue(string Value)
+            public static PlatformEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -528,37 +528,37 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
 
-            public static readonly Dictionary<string, DiskFormatEnum> StaticFields =
+            private static readonly Dictionary<string, DiskFormatEnum> StaticFields =
             new Dictionary<string, DiskFormatEnum>()
             {
-                {"vhd", VHD},
-                {"zvhd", ZVHD},
-                {"raw", RAW},
-                {"qcow2", QCOW2},
+                { "vhd", VHD },
+                { "zvhd", ZVHD },
+                { "raw", RAW },
+                { "qcow2", QCOW2 },
             };
 
             private string Value;
 
-            public DiskFormatEnum(string Value)
+            private DiskFormatEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DiskFormatEnum FromValue(string Value)
+            public static DiskFormatEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -649,38 +649,38 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly StatusEnum ACTIVE = new StatusEnum("active");
 
-            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                {"queued", QUEUED},
-                {"saving", SAVING},
-                {"deleted", DELETED},
-                {"killed", KILLED},
-                {"active", ACTIVE},
+                { "queued", QUEUED },
+                { "saving", SAVING },
+                { "deleted", DELETED },
+                { "killed", KILLED },
+                { "active", ACTIVE },
             };
 
             private string Value;
 
-            public StatusEnum(string Value)
+            private StatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StatusEnum FromValue(string Value)
+            public static StatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -761,36 +761,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly VisibilityEnum SHARED = new VisibilityEnum("shared");
 
-            public static readonly Dictionary<string, VisibilityEnum> StaticFields =
+            private static readonly Dictionary<string, VisibilityEnum> StaticFields =
             new Dictionary<string, VisibilityEnum>()
             {
-                {"public", PUBLIC},
-                {"private", PRIVATE},
-                {"shared", SHARED},
+                { "public", PUBLIC },
+                { "private", PRIVATE },
+                { "shared", SHARED },
             };
 
             private string Value;
 
-            public VisibilityEnum(string Value)
+            private VisibilityEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static VisibilityEnum FromValue(string Value)
+            public static VisibilityEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

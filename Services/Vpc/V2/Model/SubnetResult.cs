@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             /// </summary>
             public static readonly StatusEnum ERROR = new StatusEnum("ERROR");
 
-            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                {"ACTIVE", ACTIVE},
-                {"UNKNOWN", UNKNOWN},
-                {"ERROR", ERROR},
+                { "ACTIVE", ACTIVE },
+                { "UNKNOWN", UNKNOWN },
+                { "ERROR", ERROR },
             };
 
             private string Value;
 
-            public StatusEnum(string Value)
+            private StatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StatusEnum FromValue(string Value)
+            public static StatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

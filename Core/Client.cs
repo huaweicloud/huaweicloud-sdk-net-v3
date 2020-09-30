@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Core
     {
         public class ClientBuilder<T> where T : Client
         {
-            private readonly string[] _credentialType = {nameof(BasicCredentials)};
+            private string[] CredentialType { get; } = {nameof(BasicCredentials)};
 
             public ClientBuilder()
             {
@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Core
 
             public ClientBuilder(string credentialType)
             {
-                this._credentialType = credentialType.Split(',');
+                this.CredentialType = credentialType.Split(',');
             }
 
             private Credentials _credentials;
@@ -91,13 +91,13 @@ namespace HuaweiCloud.SDK.Core
 
                 if (this._credentials == null)
                 {
-                    this._credentials = Credentials.GetCredentialFromEnvironment<T>(_credentialType[0]);
+                    this._credentials = Credentials.GetCredentialFromEnvironment<T>(CredentialType[0]);
                 }
 
-                if (!_credentialType.Contains(this._credentials.GetType().Name))
+                if (!CredentialType.Contains(this._credentials.GetType().Name))
                 {
                     throw new ArgumentException(
-                        $"credential type error, support credential type is {Join(",", _credentialType)}");
+                        $"credential type error, support credential type is {Join(",", CredentialType)}");
                 }
 
                 client.WithCredential(this._credentials)

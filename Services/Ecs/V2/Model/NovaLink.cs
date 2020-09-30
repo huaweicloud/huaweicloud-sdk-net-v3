@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly RelEnum DESCRIBEDBY = new RelEnum("describedby");
 
-            public static readonly Dictionary<string, RelEnum> StaticFields =
+            private static readonly Dictionary<string, RelEnum> StaticFields =
             new Dictionary<string, RelEnum>()
             {
-                {"self", SELF},
-                {"bookmark", BOOKMARK},
-                {"alternate", ALTERNATE},
-                {"describedby", DESCRIBEDBY},
+                { "self", SELF },
+                { "bookmark", BOOKMARK },
+                { "alternate", ALTERNATE },
+                { "describedby", DESCRIBEDBY },
             };
 
             private string Value;
 
-            public RelEnum(string Value)
+            private RelEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static RelEnum FromValue(string Value)
+            public static RelEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly OperationEnum SET = new OperationEnum("SET");
 
-            public static readonly Dictionary<string, OperationEnum> StaticFields =
+            private static readonly Dictionary<string, OperationEnum> StaticFields =
             new Dictionary<string, OperationEnum>()
             {
-                {"ADD", ADD},
-                {"REMOVE", REMOVE},
-                {"REDUCE", REDUCE},
-                {"SET", SET},
+                { "ADD", ADD },
+                { "REMOVE", REMOVE },
+                { "REDUCE", REDUCE },
+                { "SET", SET },
             };
 
             private string Value;
 
-            public OperationEnum(string Value)
+            private OperationEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OperationEnum FromValue(string Value)
+            public static OperationEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

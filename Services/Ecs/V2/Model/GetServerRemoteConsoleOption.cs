@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly ProtocolEnum VNC = new ProtocolEnum("vnc");
 
-            public static readonly Dictionary<string, ProtocolEnum> StaticFields =
+            private static readonly Dictionary<string, ProtocolEnum> StaticFields =
             new Dictionary<string, ProtocolEnum>()
             {
-                {"vnc", VNC},
+                { "vnc", VNC },
             };
 
             private string Value;
 
-            public ProtocolEnum(string Value)
+            private ProtocolEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ProtocolEnum FromValue(string Value)
+            public static ProtocolEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -125,34 +125,34 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly TypeEnum NOVNC = new TypeEnum("novnc");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"novnc", NOVNC},
+                { "novnc", NOVNC },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

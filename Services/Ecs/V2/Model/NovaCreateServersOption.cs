@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly OSDCFdiskConfigEnum MANUAL = new OSDCFdiskConfigEnum("MANUAL");
 
-            public static readonly Dictionary<string, OSDCFdiskConfigEnum> StaticFields =
+            private static readonly Dictionary<string, OSDCFdiskConfigEnum> StaticFields =
             new Dictionary<string, OSDCFdiskConfigEnum>()
             {
-                {"AUTO", AUTO},
-                {"MANUAL", MANUAL},
+                { "AUTO", AUTO },
+                { "MANUAL", MANUAL },
             };
 
             private string Value;
 
-            public OSDCFdiskConfigEnum(string Value)
+            private OSDCFdiskConfigEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OSDCFdiskConfigEnum FromValue(string Value)
+            public static OSDCFdiskConfigEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
             /// </summary>
             public static readonly OriginEnum EXTERNAL = new OriginEnum("external");
 
-            public static readonly Dictionary<string, OriginEnum> StaticFields =
+            private static readonly Dictionary<string, OriginEnum> StaticFields =
             new Dictionary<string, OriginEnum>()
             {
-                {"kms", KMS},
-                {"external", EXTERNAL},
+                { "kms", KMS },
+                { "external", EXTERNAL },
             };
 
             private string Value;
 
-            public OriginEnum(string Value)
+            private OriginEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OriginEnum FromValue(string Value)
+            public static OriginEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly ConfigStatusEnum SUCCESS = new ConfigStatusEnum("SUCCESS");
 
-            public static readonly Dictionary<string, ConfigStatusEnum> StaticFields =
+            private static readonly Dictionary<string, ConfigStatusEnum> StaticFields =
             new Dictionary<string, ConfigStatusEnum>()
             {
-                {"UPDATING", UPDATING},
-                {"FAILURE", FAILURE},
-                {"SUCCESS", SUCCESS},
+                { "UPDATING", UPDATING },
+                { "FAILURE", FAILURE },
+                { "SUCCESS", SUCCESS },
             };
 
             private string Value;
 
-            public ConfigStatusEnum(string Value)
+            private ConfigStatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ConfigStatusEnum FromValue(string Value)
+            public static ConfigStatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

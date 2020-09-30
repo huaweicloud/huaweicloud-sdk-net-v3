@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 告警规则的ID。
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }

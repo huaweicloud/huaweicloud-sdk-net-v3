@@ -51,39 +51,39 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ActionEnum EXIT_STANDBY = new ActionEnum("EXIT_STANDBY");
 
-            public static readonly Dictionary<string, ActionEnum> StaticFields =
+            private static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
-                {"ADD", ADD},
-                {"REMOVE", REMOVE},
-                {"PROTECT", PROTECT},
-                {"UNPROTECT", UNPROTECT},
-                {"ENTER_STANDBY", ENTER_STANDBY},
-                {"EXIT_STANDBY", EXIT_STANDBY},
+                { "ADD", ADD },
+                { "REMOVE", REMOVE },
+                { "PROTECT", PROTECT },
+                { "UNPROTECT", UNPROTECT },
+                { "ENTER_STANDBY", ENTER_STANDBY },
+                { "EXIT_STANDBY", EXIT_STANDBY },
             };
 
             private string Value;
 
-            public ActionEnum(string Value)
+            private ActionEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ActionEnum FromValue(string Value)
+            public static ActionEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

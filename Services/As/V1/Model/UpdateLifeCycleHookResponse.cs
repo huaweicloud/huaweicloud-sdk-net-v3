@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly LifecycleHookTypeEnum INSTANCE_LAUNCHING = new LifecycleHookTypeEnum("INSTANCE_LAUNCHING");
 
-            public static readonly Dictionary<string, LifecycleHookTypeEnum> StaticFields =
+            private static readonly Dictionary<string, LifecycleHookTypeEnum> StaticFields =
             new Dictionary<string, LifecycleHookTypeEnum>()
             {
-                {"INSTANCE_TERMINATING", INSTANCE_TERMINATING},
-                {"INSTANCE_LAUNCHING", INSTANCE_LAUNCHING},
+                { "INSTANCE_TERMINATING", INSTANCE_TERMINATING },
+                { "INSTANCE_LAUNCHING", INSTANCE_LAUNCHING },
             };
 
             private string Value;
 
-            public LifecycleHookTypeEnum(string Value)
+            private LifecycleHookTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static LifecycleHookTypeEnum FromValue(string Value)
+            public static LifecycleHookTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -136,35 +136,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly DefaultResultEnum CONTINUE = new DefaultResultEnum("CONTINUE");
 
-            public static readonly Dictionary<string, DefaultResultEnum> StaticFields =
+            private static readonly Dictionary<string, DefaultResultEnum> StaticFields =
             new Dictionary<string, DefaultResultEnum>()
             {
-                {"ABANDON", ABANDON},
-                {"CONTINUE", CONTINUE},
+                { "ABANDON", ABANDON },
+                { "CONTINUE", CONTINUE },
             };
 
             private string Value;
 
-            public DefaultResultEnum(string Value)
+            private DefaultResultEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DefaultResultEnum FromValue(string Value)
+            public static DefaultResultEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

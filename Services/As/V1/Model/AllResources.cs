@@ -46,38 +46,38 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly TypeEnum BANDWIDTH_SCALING_POLICY = new TypeEnum("bandwidth_scaling_policy");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"scaling_group", SCALING_GROUP},
-                {"scaling_config", SCALING_CONFIG},
-                {"scaling_Policy", SCALING_POLICY},
-                {"scaling_Instance", SCALING_INSTANCE},
-                {"bandwidth_scaling_policy", BANDWIDTH_SCALING_POLICY},
+                { "scaling_group", SCALING_GROUP },
+                { "scaling_config", SCALING_CONFIG },
+                { "scaling_Policy", SCALING_POLICY },
+                { "scaling_Instance", SCALING_INSTANCE },
+                { "bandwidth_scaling_policy", BANDWIDTH_SCALING_POLICY },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

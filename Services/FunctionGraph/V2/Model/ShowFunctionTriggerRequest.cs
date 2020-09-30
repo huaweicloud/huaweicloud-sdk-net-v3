@@ -70,43 +70,43 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
 
-            public static readonly Dictionary<string, TriggerTypeCodeEnum> StaticFields =
+            private static readonly Dictionary<string, TriggerTypeCodeEnum> StaticFields =
             new Dictionary<string, TriggerTypeCodeEnum>()
             {
-                {"TIMER", TIMER},
-                {"APIG", APIG},
-                {"CTS", CTS},
-                {"DDS", DDS},
-                {"DMS", DMS},
-                {"DIS", DIS},
-                {"LTS", LTS},
-                {"OBS", OBS},
-                {"SMN", SMN},
-                {"KAFKA", KAFKA},
+                { "TIMER", TIMER },
+                { "APIG", APIG },
+                { "CTS", CTS },
+                { "DDS", DDS },
+                { "DMS", DMS },
+                { "DIS", DIS },
+                { "LTS", LTS },
+                { "OBS", OBS },
+                { "SMN", SMN },
+                { "KAFKA", KAFKA },
             };
 
             private string Value;
 
-            public TriggerTypeCodeEnum(string Value)
+            private TriggerTypeCodeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TriggerTypeCodeEnum FromValue(string Value)
+            public static TriggerTypeCodeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

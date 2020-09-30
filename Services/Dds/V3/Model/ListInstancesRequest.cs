@@ -35,36 +35,36 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly ModeEnum SINGLE = new ModeEnum("Single");
 
-            public static readonly Dictionary<string, ModeEnum> StaticFields =
+            private static readonly Dictionary<string, ModeEnum> StaticFields =
             new Dictionary<string, ModeEnum>()
             {
-                {"Sharding", SHARDING},
-                {"ReplicaSet", REPLICASET},
-                {"Single", SINGLE},
+                { "Sharding", SHARDING },
+                { "ReplicaSet", REPLICASET },
+                { "Single", SINGLE },
             };
 
             private string Value;
 
-            public ModeEnum(string Value)
+            private ModeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ModeEnum FromValue(string Value)
+            public static ModeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -140,35 +140,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly DatastoreTypeEnum DDS_ENHANCED = new DatastoreTypeEnum("DDS-Enhanced");
 
-            public static readonly Dictionary<string, DatastoreTypeEnum> StaticFields =
+            private static readonly Dictionary<string, DatastoreTypeEnum> StaticFields =
             new Dictionary<string, DatastoreTypeEnum>()
             {
-                {"DDS-Community", DDS_COMMUNITY},
-                {"DDS-Enhanced", DDS_ENHANCED},
+                { "DDS-Community", DDS_COMMUNITY },
+                { "DDS-Enhanced", DDS_ENHANCED },
             };
 
             private string Value;
 
-            public DatastoreTypeEnum(string Value)
+            private DatastoreTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DatastoreTypeEnum FromValue(string Value)
+            public static DatastoreTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

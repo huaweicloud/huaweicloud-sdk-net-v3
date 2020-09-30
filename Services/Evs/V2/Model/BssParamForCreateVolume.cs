@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
 
-            public static readonly Dictionary<string, ChargingModeEnum> StaticFields =
+            private static readonly Dictionary<string, ChargingModeEnum> StaticFields =
             new Dictionary<string, ChargingModeEnum>()
             {
-                {"postPaid", POSTPAID},
-                {"prePaid", PREPAID},
+                { "postPaid", POSTPAID },
+                { "prePaid", PREPAID },
             };
 
             private string Value;
 
-            public ChargingModeEnum(string Value)
+            private ChargingModeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ChargingModeEnum FromValue(string Value)
+            public static ChargingModeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -136,35 +136,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly IsAutoPayEnum FALSE = new IsAutoPayEnum("false");
 
-            public static readonly Dictionary<string, IsAutoPayEnum> StaticFields =
+            private static readonly Dictionary<string, IsAutoPayEnum> StaticFields =
             new Dictionary<string, IsAutoPayEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public IsAutoPayEnum(string Value)
+            private IsAutoPayEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static IsAutoPayEnum FromValue(string Value)
+            public static IsAutoPayEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -241,35 +241,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly IsAutoRenewEnum FALSE = new IsAutoRenewEnum("false");
 
-            public static readonly Dictionary<string, IsAutoRenewEnum> StaticFields =
+            private static readonly Dictionary<string, IsAutoRenewEnum> StaticFields =
             new Dictionary<string, IsAutoRenewEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public IsAutoRenewEnum(string Value)
+            private IsAutoRenewEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static IsAutoRenewEnum FromValue(string Value)
+            public static IsAutoRenewEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -346,35 +346,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
 
-            public static readonly Dictionary<string, PeriodTypeEnum> StaticFields =
+            private static readonly Dictionary<string, PeriodTypeEnum> StaticFields =
             new Dictionary<string, PeriodTypeEnum>()
             {
-                {"month", MONTH},
-                {"year", YEAR},
+                { "month", MONTH },
+                { "year", YEAR },
             };
 
             private string Value;
 
-            public PeriodTypeEnum(string Value)
+            private PeriodTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static PeriodTypeEnum FromValue(string Value)
+            public static PeriodTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly ResultEnum FAILED = new ResultEnum("failed");
 
-            public static readonly Dictionary<string, ResultEnum> StaticFields =
+            private static readonly Dictionary<string, ResultEnum> StaticFields =
             new Dictionary<string, ResultEnum>()
             {
-                {"success", SUCCESS},
-                {"passwordFailed", PASSWORDFAILED},
-                {"locked", LOCKED},
-                {"failed", FAILED},
+                { "success", SUCCESS },
+                { "passwordFailed", PASSWORDFAILED },
+                { "locked", LOCKED },
+                { "failed", FAILED },
             };
 
             private string Value;
 
-            public ResultEnum(string Value)
+            private ResultEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ResultEnum FromValue(string Value)
+            public static ResultEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

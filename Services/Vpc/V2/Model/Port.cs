@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             /// </summary>
             public static readonly DeviceOwnerEnum NETWORK_ROUTER_CENTRALIZED_SNAT = new DeviceOwnerEnum("network:router_centralized_snat");
 
-            public static readonly Dictionary<string, DeviceOwnerEnum> StaticFields =
+            private static readonly Dictionary<string, DeviceOwnerEnum> StaticFields =
             new Dictionary<string, DeviceOwnerEnum>()
             {
-                {"network:dhcp", NETWORK_DHCP},
-                {"network:VIP_PORT", NETWORK_VIP_PORT},
-                {"network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED},
-                {"network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT},
+                { "network:dhcp", NETWORK_DHCP },
+                { "network:VIP_PORT", NETWORK_VIP_PORT },
+                { "network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED },
+                { "network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT },
             };
 
             private string Value;
 
-            public DeviceOwnerEnum(string Value)
+            private DeviceOwnerEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DeviceOwnerEnum FromValue(string Value)
+            public static DeviceOwnerEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -153,36 +153,36 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             /// </summary>
             public static readonly StatusEnum DOWN = new StatusEnum("DOWN");
 
-            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                {"ACTIVE", ACTIVE},
-                {"BUILD", BUILD},
-                {"DOWN", DOWN},
+                { "ACTIVE", ACTIVE },
+                { "BUILD", BUILD },
+                { "DOWN", DOWN },
             };
 
             private string Value;
 
-            public StatusEnum(string Value)
+            private StatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StatusEnum FromValue(string Value)
+            public static StatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

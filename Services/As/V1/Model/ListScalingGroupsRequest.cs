@@ -40,37 +40,37 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ScalingGroupStatusEnum DELETING = new ScalingGroupStatusEnum("DELETING");
 
-            public static readonly Dictionary<string, ScalingGroupStatusEnum> StaticFields =
+            private static readonly Dictionary<string, ScalingGroupStatusEnum> StaticFields =
             new Dictionary<string, ScalingGroupStatusEnum>()
             {
-                {"INSERVICE", INSERVICE},
-                {"PAUSED", PAUSED},
-                {"ERROR", ERROR},
-                {"DELETING", DELETING},
+                { "INSERVICE", INSERVICE },
+                { "PAUSED", PAUSED },
+                { "ERROR", ERROR },
+                { "DELETING", DELETING },
             };
 
             private string Value;
 
-            public ScalingGroupStatusEnum(string Value)
+            private ScalingGroupStatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ScalingGroupStatusEnum FromValue(string Value)
+            public static ScalingGroupStatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

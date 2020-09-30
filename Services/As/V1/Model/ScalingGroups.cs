@@ -46,38 +46,38 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ScalingGroupStatusEnum FREEZED = new ScalingGroupStatusEnum("FREEZED");
 
-            public static readonly Dictionary<string, ScalingGroupStatusEnum> StaticFields =
+            private static readonly Dictionary<string, ScalingGroupStatusEnum> StaticFields =
             new Dictionary<string, ScalingGroupStatusEnum>()
             {
-                {"INSERVICE", INSERVICE},
-                {"PAUSED", PAUSED},
-                {"ERROR", ERROR},
-                {"DELETING", DELETING},
-                {"FREEZED", FREEZED},
+                { "INSERVICE", INSERVICE },
+                { "PAUSED", PAUSED },
+                { "ERROR", ERROR },
+                { "DELETING", DELETING },
+                { "FREEZED", FREEZED },
             };
 
             private string Value;
 
-            public ScalingGroupStatusEnum(string Value)
+            private ScalingGroupStatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ScalingGroupStatusEnum FromValue(string Value)
+            public static ScalingGroupStatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -154,35 +154,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly HealthPeriodicAuditMethodEnum NOVA_AUDIT = new HealthPeriodicAuditMethodEnum("NOVA_AUDIT");
 
-            public static readonly Dictionary<string, HealthPeriodicAuditMethodEnum> StaticFields =
+            private static readonly Dictionary<string, HealthPeriodicAuditMethodEnum> StaticFields =
             new Dictionary<string, HealthPeriodicAuditMethodEnum>()
             {
-                {"ELB_AUDIT", ELB_AUDIT},
-                {"NOVA_AUDIT", NOVA_AUDIT},
+                { "ELB_AUDIT", ELB_AUDIT },
+                { "NOVA_AUDIT", NOVA_AUDIT },
             };
 
             private string Value;
 
-            public HealthPeriodicAuditMethodEnum(string Value)
+            private HealthPeriodicAuditMethodEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static HealthPeriodicAuditMethodEnum FromValue(string Value)
+            public static HealthPeriodicAuditMethodEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -252,66 +252,66 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// <summary>
             /// Enum NUMBER_0 for value: 0
             /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_0 = new HealthPeriodicAuditTimeEnum("0");
+            public static readonly HealthPeriodicAuditTimeEnum NUMBER_0 = new HealthPeriodicAuditTimeEnum(0);
 
             /// <summary>
             /// Enum NUMBER_1 for value: 1
             /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_1 = new HealthPeriodicAuditTimeEnum("1");
+            public static readonly HealthPeriodicAuditTimeEnum NUMBER_1 = new HealthPeriodicAuditTimeEnum(1);
 
             /// <summary>
             /// Enum NUMBER_5 for value: 5
             /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_5 = new HealthPeriodicAuditTimeEnum("5");
+            public static readonly HealthPeriodicAuditTimeEnum NUMBER_5 = new HealthPeriodicAuditTimeEnum(5);
 
             /// <summary>
             /// Enum NUMBER_15 for value: 15
             /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_15 = new HealthPeriodicAuditTimeEnum("15");
+            public static readonly HealthPeriodicAuditTimeEnum NUMBER_15 = new HealthPeriodicAuditTimeEnum(15);
 
             /// <summary>
             /// Enum NUMBER_60 for value: 60
             /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_60 = new HealthPeriodicAuditTimeEnum("60");
+            public static readonly HealthPeriodicAuditTimeEnum NUMBER_60 = new HealthPeriodicAuditTimeEnum(60);
 
             /// <summary>
             /// Enum NUMBER_180 for value: 180
             /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_180 = new HealthPeriodicAuditTimeEnum("180");
+            public static readonly HealthPeriodicAuditTimeEnum NUMBER_180 = new HealthPeriodicAuditTimeEnum(180);
 
-            public static readonly Dictionary<string, HealthPeriodicAuditTimeEnum> StaticFields =
-            new Dictionary<string, HealthPeriodicAuditTimeEnum>()
+            private static readonly Dictionary<int?, HealthPeriodicAuditTimeEnum> StaticFields =
+            new Dictionary<int?, HealthPeriodicAuditTimeEnum>()
             {
-                {"0", NUMBER_0},
-                {"1", NUMBER_1},
-                {"5", NUMBER_5},
-                {"15", NUMBER_15},
-                {"60", NUMBER_60},
-                {"180", NUMBER_180},
+                { 0, NUMBER_0 },
+                { 1, NUMBER_1 },
+                { 5, NUMBER_5 },
+                { 15, NUMBER_15 },
+                { 60, NUMBER_60 },
+                { 180, NUMBER_180 },
             };
 
-            private string Value;
+            private int? Value;
 
-            public HealthPeriodicAuditTimeEnum(string Value)
+            private HealthPeriodicAuditTimeEnum(int? value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static HealthPeriodicAuditTimeEnum FromValue(string Value)
+            public static HealthPeriodicAuditTimeEnum FromValue(int? value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public int? GetValue()
             {
                 return this.Value;
             }
@@ -398,37 +398,37 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly InstanceTerminatePolicyEnum NEW_INSTANCE = new InstanceTerminatePolicyEnum("NEW_INSTANCE");
 
-            public static readonly Dictionary<string, InstanceTerminatePolicyEnum> StaticFields =
+            private static readonly Dictionary<string, InstanceTerminatePolicyEnum> StaticFields =
             new Dictionary<string, InstanceTerminatePolicyEnum>()
             {
-                {"OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE},
-                {"OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE},
-                {"OLD_INSTANCE", OLD_INSTANCE},
-                {"NEW_INSTANCE", NEW_INSTANCE},
+                { "OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE },
+                { "OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE },
+                { "OLD_INSTANCE", OLD_INSTANCE },
+                { "NEW_INSTANCE", NEW_INSTANCE },
             };
 
             private string Value;
 
-            public InstanceTerminatePolicyEnum(string Value)
+            private InstanceTerminatePolicyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static InstanceTerminatePolicyEnum FromValue(string Value)
+            public static InstanceTerminatePolicyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

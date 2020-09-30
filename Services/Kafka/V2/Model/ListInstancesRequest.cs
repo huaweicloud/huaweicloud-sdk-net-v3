@@ -25,34 +25,34 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly EngineEnum KAFKA = new EngineEnum("kafka");
 
-            public static readonly Dictionary<string, EngineEnum> StaticFields =
+            private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
-                {"kafka", KAFKA},
+                { "kafka", KAFKA },
             };
 
             private string Value;
 
-            public EngineEnum(string Value)
+            private EngineEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EngineEnum FromValue(string Value)
+            public static EngineEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -153,40 +153,40 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly StatusEnum FROZEN = new StatusEnum("FROZEN");
 
-            public static readonly Dictionary<string, StatusEnum> StaticFields =
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                {"CREATING", CREATING},
-                {"RUNNING", RUNNING},
-                {"FAULTY", FAULTY},
-                {"RESTARTING", RESTARTING},
-                {"RESIZING", RESIZING},
-                {"RESIZING FAILED", RESIZING_FAILED},
-                {"FROZEN", FROZEN},
+                { "CREATING", CREATING },
+                { "RUNNING", RUNNING },
+                { "FAULTY", FAULTY },
+                { "RESTARTING", RESTARTING },
+                { "RESIZING", RESIZING },
+                { "RESIZING FAILED", RESIZING_FAILED },
+                { "FROZEN", FROZEN },
             };
 
             private string Value;
 
-            public StatusEnum(string Value)
+            private StatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static StatusEnum FromValue(string Value)
+            public static StatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -262,35 +262,35 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly IncludeFailureEnum FALSE = new IncludeFailureEnum("false");
 
-            public static readonly Dictionary<string, IncludeFailureEnum> StaticFields =
+            private static readonly Dictionary<string, IncludeFailureEnum> StaticFields =
             new Dictionary<string, IncludeFailureEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public IncludeFailureEnum(string Value)
+            private IncludeFailureEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static IncludeFailureEnum FromValue(string Value)
+            public static IncludeFailureEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -366,35 +366,35 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly ExactMatchNameEnum FALSE = new ExactMatchNameEnum("false");
 
-            public static readonly Dictionary<string, ExactMatchNameEnum> StaticFields =
+            private static readonly Dictionary<string, ExactMatchNameEnum> StaticFields =
             new Dictionary<string, ExactMatchNameEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public ExactMatchNameEnum(string Value)
+            private ExactMatchNameEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ExactMatchNameEnum FromValue(string Value)
+            public static ExactMatchNameEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

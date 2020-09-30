@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             /// </summary>
             public static readonly DurationEnum ONEDAY = new DurationEnum("ONEDAY");
 
-            public static readonly Dictionary<string, DurationEnum> StaticFields =
+            private static readonly Dictionary<string, DurationEnum> StaticFields =
             new Dictionary<string, DurationEnum>()
             {
-                {"FOREVER", FOREVER},
-                {"ONEDAY", ONEDAY},
+                { "FOREVER", FOREVER },
+                { "ONEDAY", ONEDAY },
             };
 
             private string Value;
 
-            public DurationEnum(string Value)
+            private DurationEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DurationEnum FromValue(string Value)
+            public static DurationEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

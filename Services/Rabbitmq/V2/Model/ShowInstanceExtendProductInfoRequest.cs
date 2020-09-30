@@ -40,37 +40,37 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// </summary>
             public static readonly TypeEnum EXP = new TypeEnum("exp");
 
-            public static readonly Dictionary<string, TypeEnum> StaticFields =
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                {"advanced", ADVANCED},
-                {"platinum", PLATINUM},
-                {"dec", DEC},
-                {"exp", EXP},
+                { "advanced", ADVANCED },
+                { "platinum", PLATINUM },
+                { "dec", DEC },
+                { "exp", EXP },
             };
 
             private string Value;
 
-            public TypeEnum(string Value)
+            private TypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TypeEnum FromValue(string Value)
+            public static TypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -141,34 +141,34 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// </summary>
             public static readonly EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
 
-            public static readonly Dictionary<string, EngineEnum> StaticFields =
+            private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
-                {"rabbitmq", RABBITMQ},
+                { "rabbitmq", RABBITMQ },
             };
 
             private string Value;
 
-            public EngineEnum(string Value)
+            private EngineEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EngineEnum FromValue(string Value)
+            public static EngineEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

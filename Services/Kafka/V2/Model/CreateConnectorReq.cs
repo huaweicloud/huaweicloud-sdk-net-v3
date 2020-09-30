@@ -41,37 +41,37 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly SpecificationEnum _1200MB = new SpecificationEnum("1200MB");
 
-            public static readonly Dictionary<string, SpecificationEnum> StaticFields =
+            private static readonly Dictionary<string, SpecificationEnum> StaticFields =
             new Dictionary<string, SpecificationEnum>()
             {
-                {"100MB", _100MB},
-                {"300MB", _300MB},
-                {"600MB", _600MB},
-                {"1200MB", _1200MB},
+                { "100MB", _100MB },
+                { "300MB", _300MB },
+                { "600MB", _600MB },
+                { "1200MB", _1200MB },
             };
 
             private string Value;
 
-            public SpecificationEnum(string Value)
+            private SpecificationEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SpecificationEnum FromValue(string Value)
+            public static SpecificationEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -46,38 +46,38 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly LifeCycleStateEnum REMOVING_WAIT = new LifeCycleStateEnum("REMOVING_WAIT");
 
-            public static readonly Dictionary<string, LifeCycleStateEnum> StaticFields =
+            private static readonly Dictionary<string, LifeCycleStateEnum> StaticFields =
             new Dictionary<string, LifeCycleStateEnum>()
             {
-                {"INSERVICE", INSERVICE},
-                {"PENDING", PENDING},
-                {"REMOVING", REMOVING},
-                {"PENDING_WAIT", PENDING_WAIT},
-                {"REMOVING_WAIT", REMOVING_WAIT},
+                { "INSERVICE", INSERVICE },
+                { "PENDING", PENDING },
+                { "REMOVING", REMOVING },
+                { "PENDING_WAIT", PENDING_WAIT },
+                { "REMOVING_WAIT", REMOVING_WAIT },
             };
 
             private string Value;
 
-            public LifeCycleStateEnum(string Value)
+            private LifeCycleStateEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static LifeCycleStateEnum FromValue(string Value)
+            public static LifeCycleStateEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -159,36 +159,36 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly HealthStatusEnum INITAILIZING = new HealthStatusEnum("INITAILIZING");
 
-            public static readonly Dictionary<string, HealthStatusEnum> StaticFields =
+            private static readonly Dictionary<string, HealthStatusEnum> StaticFields =
             new Dictionary<string, HealthStatusEnum>()
             {
-                {"NORMAL", NORMAL},
-                {"ERROR", ERROR},
-                {"INITAILIZING", INITAILIZING},
+                { "NORMAL", NORMAL },
+                { "ERROR", ERROR },
+                { "INITAILIZING", INITAILIZING },
             };
 
             private string Value;
 
-            public HealthStatusEnum(string Value)
+            private HealthStatusEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static HealthStatusEnum FromValue(string Value)
+            public static HealthStatusEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

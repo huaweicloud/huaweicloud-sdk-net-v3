@@ -25,34 +25,34 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
 
-            public static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
+            private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
             new Dictionary<string, ResourceTypeEnum>()
             {
-                {"scaling_group_tag", SCALING_GROUP_TAG},
+                { "scaling_group_tag", SCALING_GROUP_TAG },
             };
 
             private string Value;
 
-            public ResourceTypeEnum(string Value)
+            private ResourceTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ResourceTypeEnum FromValue(string Value)
+            public static ResourceTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

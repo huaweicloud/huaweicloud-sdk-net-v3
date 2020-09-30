@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly DeleteFlagEnum _1 = new DeleteFlagEnum("1");
 
-            public static readonly Dictionary<string, DeleteFlagEnum> StaticFields =
+            private static readonly Dictionary<string, DeleteFlagEnum> StaticFields =
             new Dictionary<string, DeleteFlagEnum>()
             {
-                {"0", _0},
-                {"1", _1},
+                { "0", _0 },
+                { "1", _1 },
             };
 
             private string Value;
 
-            public DeleteFlagEnum(string Value)
+            private DeleteFlagEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DeleteFlagEnum FromValue(string Value)
+            public static DeleteFlagEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

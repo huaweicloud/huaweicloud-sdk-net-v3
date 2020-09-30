@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly ActionEnum FILTER = new ActionEnum("filter");
 
-            public static readonly Dictionary<string, ActionEnum> StaticFields =
+            private static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
-                {"filter", FILTER},
+                { "filter", FILTER },
             };
 
             private string Value;
 
-            public ActionEnum(string Value)
+            private ActionEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ActionEnum FromValue(string Value)
+            public static ActionEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

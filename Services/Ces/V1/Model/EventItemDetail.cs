@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             /// </summary>
             public static readonly EventStateEnum INCIDENT = new EventStateEnum("incident");
 
-            public static readonly Dictionary<string, EventStateEnum> StaticFields =
+            private static readonly Dictionary<string, EventStateEnum> StaticFields =
             new Dictionary<string, EventStateEnum>()
             {
-                {"normal", NORMAL},
-                {"warning", WARNING},
-                {"incident", INCIDENT},
+                { "normal", NORMAL },
+                { "warning", WARNING },
+                { "incident", INCIDENT },
             };
 
             private string Value;
 
-            public EventStateEnum(string Value)
+            private EventStateEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EventStateEnum FromValue(string Value)
+            public static EventStateEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -152,37 +152,37 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             /// </summary>
             public static readonly EventLevelEnum INFO = new EventLevelEnum("Info");
 
-            public static readonly Dictionary<string, EventLevelEnum> StaticFields =
+            private static readonly Dictionary<string, EventLevelEnum> StaticFields =
             new Dictionary<string, EventLevelEnum>()
             {
-                {"Critical", CRITICAL},
-                {"Major", MAJOR},
-                {"Minor", MINOR},
-                {"Info", INFO},
+                { "Critical", CRITICAL },
+                { "Major", MAJOR },
+                { "Minor", MINOR },
+                { "Info", INFO },
             };
 
             private string Value;
 
-            public EventLevelEnum(string Value)
+            private EventLevelEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static EventLevelEnum FromValue(string Value)
+            public static EventLevelEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

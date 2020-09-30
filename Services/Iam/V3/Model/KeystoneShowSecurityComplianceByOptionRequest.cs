@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             /// </summary>
             public static readonly OptionEnum PASSWORD_REGEX_DESCRIPTION = new OptionEnum("password_regex_description");
 
-            public static readonly Dictionary<string, OptionEnum> StaticFields =
+            private static readonly Dictionary<string, OptionEnum> StaticFields =
             new Dictionary<string, OptionEnum>()
             {
-                {"password_regex", PASSWORD_REGEX},
-                {"password_regex_description", PASSWORD_REGEX_DESCRIPTION},
+                { "password_regex", PASSWORD_REGEX },
+                { "password_regex_description", PASSWORD_REGEX_DESCRIPTION },
             };
 
             private string Value;
 
-            public OptionEnum(string Value)
+            private OptionEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OptionEnum FromValue(string Value)
+            public static OptionEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

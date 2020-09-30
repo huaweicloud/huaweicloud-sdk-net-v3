@@ -25,34 +25,34 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly UsageEnum TRUE = new UsageEnum("true");
 
-            public static readonly Dictionary<string, UsageEnum> StaticFields =
+            private static readonly Dictionary<string, UsageEnum> StaticFields =
             new Dictionary<string, UsageEnum>()
             {
-                {"true", TRUE},
+                { "true", TRUE },
             };
 
             private string Value;
 
-            public UsageEnum(string Value)
+            private UsageEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static UsageEnum FromValue(string Value)
+            public static UsageEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

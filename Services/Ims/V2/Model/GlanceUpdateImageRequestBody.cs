@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly OpEnum REMOVE = new OpEnum("remove");
 
-            public static readonly Dictionary<string, OpEnum> StaticFields =
+            private static readonly Dictionary<string, OpEnum> StaticFields =
             new Dictionary<string, OpEnum>()
             {
-                {"replace", REPLACE},
-                {"add", ADD},
-                {"remove", REMOVE},
+                { "replace", REPLACE },
+                { "add", ADD },
+                { "remove", REMOVE },
             };
 
             private string Value;
 
-            public OpEnum(string Value)
+            private OpEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OpEnum FromValue(string Value)
+            public static OpEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

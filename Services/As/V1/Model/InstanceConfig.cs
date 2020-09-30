@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly TenancyEnum DEDICATED = new TenancyEnum("dedicated");
 
-            public static readonly Dictionary<string, TenancyEnum> StaticFields =
+            private static readonly Dictionary<string, TenancyEnum> StaticFields =
             new Dictionary<string, TenancyEnum>()
             {
-                {"dedicated", DEDICATED},
+                { "dedicated", DEDICATED },
             };
 
             private string Value;
 
-            public TenancyEnum(string Value)
+            private TenancyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static TenancyEnum FromValue(string Value)
+            public static TenancyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -130,35 +130,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly MultiFlavorPriorityPolicyEnum COST_FIRST = new MultiFlavorPriorityPolicyEnum("COST_FIRST");
 
-            public static readonly Dictionary<string, MultiFlavorPriorityPolicyEnum> StaticFields =
+            private static readonly Dictionary<string, MultiFlavorPriorityPolicyEnum> StaticFields =
             new Dictionary<string, MultiFlavorPriorityPolicyEnum>()
             {
-                {"PICK_FIRST", PICK_FIRST},
-                {"COST_FIRST", COST_FIRST},
+                { "PICK_FIRST", PICK_FIRST },
+                { "COST_FIRST", COST_FIRST },
             };
 
             private string Value;
 
-            public MultiFlavorPriorityPolicyEnum(string Value)
+            private MultiFlavorPriorityPolicyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static MultiFlavorPriorityPolicyEnum FromValue(string Value)
+            public static MultiFlavorPriorityPolicyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -230,34 +230,34 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly MarketTypeEnum SPOT = new MarketTypeEnum("spot");
 
-            public static readonly Dictionary<string, MarketTypeEnum> StaticFields =
+            private static readonly Dictionary<string, MarketTypeEnum> StaticFields =
             new Dictionary<string, MarketTypeEnum>()
             {
-                {"spot", SPOT},
+                { "spot", SPOT },
             };
 
             private string Value;
 
-            public MarketTypeEnum(string Value)
+            private MarketTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static MarketTypeEnum FromValue(string Value)
+            public static MarketTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

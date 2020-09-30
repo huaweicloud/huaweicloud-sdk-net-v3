@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 指标信息列表
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<MetricInfo> Metrics { get; set; }
+        public List<MetricInfoList> Metrics { get; set; }
 
         /// <summary>
         /// 

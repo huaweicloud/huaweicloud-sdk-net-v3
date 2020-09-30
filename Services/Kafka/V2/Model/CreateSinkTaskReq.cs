@@ -26,34 +26,34 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly SourceTypeEnum BLOB = new SourceTypeEnum("BLOB");
 
-            public static readonly Dictionary<string, SourceTypeEnum> StaticFields =
+            private static readonly Dictionary<string, SourceTypeEnum> StaticFields =
             new Dictionary<string, SourceTypeEnum>()
             {
-                {"BLOB", BLOB},
+                { "BLOB", BLOB },
             };
 
             private string Value;
 
-            public SourceTypeEnum(string Value)
+            private SourceTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static SourceTypeEnum FromValue(string Value)
+            public static SourceTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -125,34 +125,34 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly DestinationTypeEnum OBS = new DestinationTypeEnum("OBS");
 
-            public static readonly Dictionary<string, DestinationTypeEnum> StaticFields =
+            private static readonly Dictionary<string, DestinationTypeEnum> StaticFields =
             new Dictionary<string, DestinationTypeEnum>()
             {
-                {"OBS", OBS},
+                { "OBS", OBS },
             };
 
             private string Value;
 
-            public DestinationTypeEnum(string Value)
+            private DestinationTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DestinationTypeEnum FromValue(string Value)
+            public static DestinationTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

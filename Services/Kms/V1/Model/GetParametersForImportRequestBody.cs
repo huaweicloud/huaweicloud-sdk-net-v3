@@ -36,36 +36,36 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
             /// </summary>
             public static readonly WrappingAlgorithmEnum RSAES_OAEP_SHA_256 = new WrappingAlgorithmEnum("RSAES_OAEP_SHA_256");
 
-            public static readonly Dictionary<string, WrappingAlgorithmEnum> StaticFields =
+            private static readonly Dictionary<string, WrappingAlgorithmEnum> StaticFields =
             new Dictionary<string, WrappingAlgorithmEnum>()
             {
-                {"RSAES_PKCS1_V1_5", RSAES_PKCS1_V1_5},
-                {"RSAES_OAEP_SHA_1", RSAES_OAEP_SHA_1},
-                {"RSAES_OAEP_SHA_256", RSAES_OAEP_SHA_256},
+                { "RSAES_PKCS1_V1_5", RSAES_PKCS1_V1_5 },
+                { "RSAES_OAEP_SHA_1", RSAES_OAEP_SHA_1 },
+                { "RSAES_OAEP_SHA_256", RSAES_OAEP_SHA_256 },
             };
 
             private string Value;
 
-            public WrappingAlgorithmEnum(string Value)
+            private WrappingAlgorithmEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static WrappingAlgorithmEnum FromValue(string Value)
+            public static WrappingAlgorithmEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

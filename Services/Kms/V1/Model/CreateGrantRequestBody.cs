@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
             /// </summary>
             public static readonly GranteePrincipalTypeEnum DOMAIN = new GranteePrincipalTypeEnum("domain");
 
-            public static readonly Dictionary<string, GranteePrincipalTypeEnum> StaticFields =
+            private static readonly Dictionary<string, GranteePrincipalTypeEnum> StaticFields =
             new Dictionary<string, GranteePrincipalTypeEnum>()
             {
-                {"user", USER},
-                {"domain", DOMAIN},
+                { "user", USER },
+                { "domain", DOMAIN },
             };
 
             private string Value;
 
-            public GranteePrincipalTypeEnum(string Value)
+            private GranteePrincipalTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static GranteePrincipalTypeEnum FromValue(string Value)
+            public static GranteePrincipalTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

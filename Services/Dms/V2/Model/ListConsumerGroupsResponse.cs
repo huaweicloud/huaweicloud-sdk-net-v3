@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
             /// </summary>
             public static readonly RedrivePolicyEnum DISABLE = new RedrivePolicyEnum("disable");
 
-            public static readonly Dictionary<string, RedrivePolicyEnum> StaticFields =
+            private static readonly Dictionary<string, RedrivePolicyEnum> StaticFields =
             new Dictionary<string, RedrivePolicyEnum>()
             {
-                {"enable", ENABLE},
-                {"disable", DISABLE},
+                { "enable", ENABLE },
+                { "disable", DISABLE },
             };
 
             private string Value;
 
-            public RedrivePolicyEnum(string Value)
+            private RedrivePolicyEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static RedrivePolicyEnum FromValue(string Value)
+            public static RedrivePolicyEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly ShareableEnum FALSE = new ShareableEnum("false");
 
-            public static readonly Dictionary<string, ShareableEnum> StaticFields =
+            private static readonly Dictionary<string, ShareableEnum> StaticFields =
             new Dictionary<string, ShareableEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public ShareableEnum(string Value)
+            private ShareableEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ShareableEnum FromValue(string Value)
+            public static ShareableEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -146,37 +146,37 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
 
-            public static readonly Dictionary<string, VolumeTypeEnum> StaticFields =
+            private static readonly Dictionary<string, VolumeTypeEnum> StaticFields =
             new Dictionary<string, VolumeTypeEnum>()
             {
-                {"SSD", SSD},
-                {"GPSSD", GPSSD},
-                {"SAS", SAS},
-                {"SATA", SATA},
+                { "SSD", SSD },
+                { "GPSSD", GPSSD },
+                { "SAS", SAS },
+                { "SATA", SATA },
             };
 
             private string Value;
 
-            public VolumeTypeEnum(string Value)
+            private VolumeTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static VolumeTypeEnum FromValue(string Value)
+            public static VolumeTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

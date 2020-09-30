@@ -16,18 +16,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 名称
-        /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 值
-        /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
-
-        /// <summary>
         /// 配额类型。  枚举值说明：  alarm，告警规则
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,8 +47,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Resource {\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  used: ").Append(Used).Append("\n");
             sb.Append("  unit: ").Append(Unit).Append("\n");
@@ -86,16 +72,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                 return false;
 
             return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
@@ -126,10 +102,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Used != null)

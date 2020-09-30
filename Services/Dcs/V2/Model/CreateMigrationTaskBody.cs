@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly MigrationTypeEnum ONLINE_MIGRATION = new MigrationTypeEnum("online_migration");
 
-            public static readonly Dictionary<string, MigrationTypeEnum> StaticFields =
+            private static readonly Dictionary<string, MigrationTypeEnum> StaticFields =
             new Dictionary<string, MigrationTypeEnum>()
             {
-                {"backupfile_import", BACKUPFILE_IMPORT},
-                {"online_migration", ONLINE_MIGRATION},
+                { "backupfile_import", BACKUPFILE_IMPORT },
+                { "online_migration", ONLINE_MIGRATION },
             };
 
             private string Value;
 
-            public MigrationTypeEnum(string Value)
+            private MigrationTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static MigrationTypeEnum FromValue(string Value)
+            public static MigrationTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -136,35 +136,35 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly MigrationMethodEnum INCREMENTAL_MIGRATION = new MigrationMethodEnum("incremental_migration");
 
-            public static readonly Dictionary<string, MigrationMethodEnum> StaticFields =
+            private static readonly Dictionary<string, MigrationMethodEnum> StaticFields =
             new Dictionary<string, MigrationMethodEnum>()
             {
-                {"full_amount_migration", FULL_AMOUNT_MIGRATION},
-                {"incremental_migration", INCREMENTAL_MIGRATION},
+                { "full_amount_migration", FULL_AMOUNT_MIGRATION },
+                { "incremental_migration", INCREMENTAL_MIGRATION },
             };
 
             private string Value;
 
-            public MigrationMethodEnum(string Value)
+            private MigrationMethodEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static MigrationMethodEnum FromValue(string Value)
+            public static MigrationMethodEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -241,35 +241,35 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly NetworkTypeEnum VPN = new NetworkTypeEnum("vpn");
 
-            public static readonly Dictionary<string, NetworkTypeEnum> StaticFields =
+            private static readonly Dictionary<string, NetworkTypeEnum> StaticFields =
             new Dictionary<string, NetworkTypeEnum>()
             {
-                {"vpc", VPC},
-                {"vpn", VPN},
+                { "vpc", VPC },
+                { "vpn", VPN },
             };
 
             private string Value;
 
-            public NetworkTypeEnum(string Value)
+            private NetworkTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static NetworkTypeEnum FromValue(string Value)
+            public static NetworkTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

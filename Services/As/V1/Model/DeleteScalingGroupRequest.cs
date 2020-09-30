@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ForceDeleteEnum FALSE = new ForceDeleteEnum("false");
 
-            public static readonly Dictionary<string, ForceDeleteEnum> StaticFields =
+            private static readonly Dictionary<string, ForceDeleteEnum> StaticFields =
             new Dictionary<string, ForceDeleteEnum>()
             {
-                {"true", TRUE},
-                {"false", FALSE},
+                { "true", TRUE },
+                { "false", FALSE },
             };
 
             private string Value;
 
-            public ForceDeleteEnum(string Value)
+            private ForceDeleteEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ForceDeleteEnum FromValue(string Value)
+            public static ForceDeleteEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

@@ -46,38 +46,38 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
 
-            public static readonly Dictionary<string, VolumeTypeEnum> StaticFields =
+            private static readonly Dictionary<string, VolumeTypeEnum> StaticFields =
             new Dictionary<string, VolumeTypeEnum>()
             {
-                {"SATA", SATA},
-                {"SAS", SAS},
-                {"SSD", SSD},
-                {"co-pl", CO_PL},
-                {"uh-11", UH_11},
+                { "SATA", SATA },
+                { "SAS", SAS },
+                { "SSD", SSD },
+                { "co-pl", CO_PL },
+                { "uh-11", UH_11 },
             };
 
             private string Value;
 
-            public VolumeTypeEnum(string Value)
+            private VolumeTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static VolumeTypeEnum FromValue(string Value)
+            public static VolumeTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -154,35 +154,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly DiskTypeEnum DATA = new DiskTypeEnum("DATA");
 
-            public static readonly Dictionary<string, DiskTypeEnum> StaticFields =
+            private static readonly Dictionary<string, DiskTypeEnum> StaticFields =
             new Dictionary<string, DiskTypeEnum>()
             {
-                {"SYS", SYS},
-                {"DATA", DATA},
+                { "SYS", SYS },
+                { "DATA", DATA },
             };
 
             private string Value;
 
-            public DiskTypeEnum(string Value)
+            private DiskTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DiskTypeEnum FromValue(string Value)
+            public static DiskTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

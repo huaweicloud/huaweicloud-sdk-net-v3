@@ -31,35 +31,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
 
-            public static readonly Dictionary<string, ShareTypeEnum> StaticFields =
+            private static readonly Dictionary<string, ShareTypeEnum> StaticFields =
             new Dictionary<string, ShareTypeEnum>()
             {
-                {"PER", PER},
-                {"WHOLE", WHOLE},
+                { "PER", PER },
+                { "WHOLE", WHOLE },
             };
 
             private string Value;
 
-            public ShareTypeEnum(string Value)
+            private ShareTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ShareTypeEnum FromValue(string Value)
+            public static ShareTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -136,35 +136,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ChargingModeEnum TRAFFIC = new ChargingModeEnum("traffic");
 
-            public static readonly Dictionary<string, ChargingModeEnum> StaticFields =
+            private static readonly Dictionary<string, ChargingModeEnum> StaticFields =
             new Dictionary<string, ChargingModeEnum>()
             {
-                {"bandwidth", BANDWIDTH},
-                {"traffic", TRAFFIC},
+                { "bandwidth", BANDWIDTH },
+                { "traffic", TRAFFIC },
             };
 
             private string Value;
 
-            public ChargingModeEnum(string Value)
+            private ChargingModeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ChargingModeEnum FromValue(string Value)
+            public static ChargingModeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

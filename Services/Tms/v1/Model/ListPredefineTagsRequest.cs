@@ -30,35 +30,35 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
             /// </summary>
             public static readonly OrderMethodEnum DESC = new OrderMethodEnum("desc");
 
-            public static readonly Dictionary<string, OrderMethodEnum> StaticFields =
+            private static readonly Dictionary<string, OrderMethodEnum> StaticFields =
             new Dictionary<string, OrderMethodEnum>()
             {
-                {"asc", ASC},
-                {"desc", DESC},
+                { "asc", ASC },
+                { "desc", DESC },
             };
 
             private string Value;
 
-            public OrderMethodEnum(string Value)
+            private OrderMethodEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OrderMethodEnum FromValue(string Value)
+            public static OrderMethodEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

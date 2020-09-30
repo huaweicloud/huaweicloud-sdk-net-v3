@@ -46,38 +46,38 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly ContainerFormatEnum BARE = new ContainerFormatEnum("bare");
 
-            public static readonly Dictionary<string, ContainerFormatEnum> StaticFields =
+            private static readonly Dictionary<string, ContainerFormatEnum> StaticFields =
             new Dictionary<string, ContainerFormatEnum>()
             {
-                {"ami", AMI},
-                {"ari", ARI},
-                {"aki", AKI},
-                {"ovf", OVF},
-                {"bare", BARE},
+                { "ami", AMI },
+                { "ari", ARI },
+                { "aki", AKI },
+                { "ovf", OVF },
+                { "bare", BARE },
             };
 
             private string Value;
 
-            public ContainerFormatEnum(string Value)
+            private ContainerFormatEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static ContainerFormatEnum FromValue(string Value)
+            public static ContainerFormatEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -169,38 +169,38 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
 
-            public static readonly Dictionary<string, DiskFormatEnum> StaticFields =
+            private static readonly Dictionary<string, DiskFormatEnum> StaticFields =
             new Dictionary<string, DiskFormatEnum>()
             {
-                {"vhd", VHD},
-                {"zvhd", ZVHD},
-                {"zvhd2", ZVHD2},
-                {"raw", RAW},
-                {"qcow2", QCOW2},
+                { "vhd", VHD },
+                { "zvhd", ZVHD },
+                { "zvhd2", ZVHD2 },
+                { "raw", RAW },
+                { "qcow2", QCOW2 },
             };
 
             private string Value;
 
-            public DiskFormatEnum(string Value)
+            private DiskFormatEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static DiskFormatEnum FromValue(string Value)
+            public static DiskFormatEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
@@ -277,35 +277,35 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly OsTypeEnum LINUX = new OsTypeEnum("linux");
 
-            public static readonly Dictionary<string, OsTypeEnum> StaticFields =
+            private static readonly Dictionary<string, OsTypeEnum> StaticFields =
             new Dictionary<string, OsTypeEnum>()
             {
-                {"windows", WINDOWS},
-                {"linux", LINUX},
+                { "windows", WINDOWS },
+                { "linux", LINUX },
             };
 
             private string Value;
 
-            public OsTypeEnum(string Value)
+            private OsTypeEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static OsTypeEnum FromValue(string Value)
+            public static OsTypeEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }

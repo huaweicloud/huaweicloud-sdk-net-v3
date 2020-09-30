@@ -35,36 +35,36 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             /// </summary>
             public static readonly InterfaceEnum ADMIN = new InterfaceEnum("admin");
 
-            public static readonly Dictionary<string, InterfaceEnum> StaticFields =
+            private static readonly Dictionary<string, InterfaceEnum> StaticFields =
             new Dictionary<string, InterfaceEnum>()
             {
-                {"public", PUBLIC},
-                {"internal", INTERNAL},
-                {"admin", ADMIN},
+                { "public", PUBLIC },
+                { "internal", INTERNAL },
+                { "admin", ADMIN },
             };
 
             private string Value;
 
-            public InterfaceEnum(string Value)
+            private InterfaceEnum(string value)
             {
-                this.Value = Value;
+                this.Value = value;
             }
 
-            public static InterfaceEnum FromValue(string Value)
+            public static InterfaceEnum FromValue(string value)
             {
-                if(Value == null){
+                if(value == null){
                     return null;
                 }
 
-                if (StaticFields.ContainsKey(Value))
+                if (StaticFields.ContainsKey(value))
                 {
-                    return StaticFields[Value];
+                    return StaticFields[value];
                 }
 
                 return null;
             }
 
-            public override string ToString()
+            public string GetValue()
             {
                 return this.Value;
             }
