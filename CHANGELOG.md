@@ -1,3 +1,13 @@
+## 3.0.16-beta 2020-10-12
+## HuaweiCloud SDK CTS
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Delete deprecated interfaces of version v1.
+
+
 ## 3.0.15-beta 2020-09-30
 ## HuaweiCloud SDK Core
  - ### Features

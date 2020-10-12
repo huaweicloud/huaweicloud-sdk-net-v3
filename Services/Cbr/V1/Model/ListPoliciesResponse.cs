@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<Policy> Policies { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListPoliciesResponse {\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +63,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Policies != null &&
                     input.Policies != null &&
                     this.Policies.SequenceEqual(input.Policies)
+                ) && 
+                (
+                    this.Count == input.Count ||
+                    (this.Count != null &&
+                    this.Count.Equals(input.Count))
                 );
         }
 
@@ -69,6 +81,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 int hashCode = 41;
                 if (this.Policies != null)
                     hashCode = hashCode * 59 + this.Policies.GetHashCode();
+                if (this.Count != null)
+                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

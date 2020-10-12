@@ -120,9 +120,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         }
 
         /// <summary>
-        /// 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：其中IPv6暂不支持WHOLE类型带宽，该字段为WHOLE时，必须指定带宽ID。
+        /// 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：该字段为WHOLE时，必须指定带宽ID。
         /// </summary>
-        /// <value>功能说明：带宽类型 取值范围：PER，WHOLE。 约束：其中IPv6暂不支持WHOLE类型带宽，该字段为WHOLE时，必须指定带宽ID。</value>
+        /// <value>功能说明：带宽类型 取值范围：PER，WHOLE。 约束：该字段为WHOLE时，必须指定带宽ID。</value>
         [JsonConverter(typeof(EnumClassConverter<ShareTypeEnum>))]
         public class ShareTypeEnum
         {
@@ -243,7 +243,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：其中IPv6暂不支持WHOLE类型带宽，该字段为WHOLE时，必须指定带宽ID。
+        /// 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：该字段为WHOLE时，必须指定带宽ID。
         /// </summary>
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]
         public ShareTypeEnum ShareType { get; set; }
