@@ -45,9 +45,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private ImagetypeEnum(string value)
+            public ImagetypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ImagetypeEnum FromValue(string value)
@@ -66,7 +66,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -149,9 +154,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private IsregisteredEnum(string value)
+            public IsregisteredEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IsregisteredEnum FromValue(string value)
@@ -170,7 +175,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -253,9 +263,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private OsBitEnum(string value)
+            public OsBitEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OsBitEnum FromValue(string value)
@@ -274,7 +284,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -363,9 +378,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private OsTypeEnum(string value)
+            public OsTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OsTypeEnum FromValue(string value)
@@ -384,7 +399,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -527,9 +547,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private PlatformEnum(string value)
+            public PlatformEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static PlatformEnum FromValue(string value)
@@ -548,7 +568,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -649,9 +674,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private DiskFormatEnum(string value)
+            public DiskFormatEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static DiskFormatEnum FromValue(string value)
@@ -670,7 +695,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -759,9 +789,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private MemberStatusEnum(string value)
+            public MemberStatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static MemberStatusEnum FromValue(string value)
@@ -780,7 +810,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -863,9 +898,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private SortDirEnum(string value)
+            public SortDirEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static SortDirEnum FromValue(string value)
@@ -884,7 +919,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -997,9 +1037,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private SortKeyEnum(string value)
+            public SortKeyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static SortKeyEnum FromValue(string value)
@@ -1018,7 +1058,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -1119,9 +1164,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private StatusEnum(string value)
+            public StatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -1140,7 +1185,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -1229,9 +1279,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private VirtualEnvTypeEnum(string value)
+            public VirtualEnvTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static VirtualEnvTypeEnum FromValue(string value)
@@ -1250,7 +1300,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -1333,9 +1388,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private VisibilityEnum(string value)
+            public VisibilityEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static VisibilityEnum FromValue(string value)
@@ -1354,7 +1409,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -1437,9 +1497,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private ArchitectureEnum(string value)
+            public ArchitectureEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ArchitectureEnum FromValue(string value)
@@ -1458,7 +1518,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

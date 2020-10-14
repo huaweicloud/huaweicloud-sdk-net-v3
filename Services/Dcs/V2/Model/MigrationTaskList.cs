@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     public class MigrationTaskList 
     {
         /// <summary>
-        /// 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING
+        /// 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
         /// </summary>
-        /// <value>迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING</value>
+        /// <value>迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -36,19 +36,25 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly StatusEnum MIGRATING = new StatusEnum("MIGRATING");
 
+            /// <summary>
+            /// Enum TERMINATED for value: TERMINATED
+            /// </summary>
+            public static readonly StatusEnum TERMINATED = new StatusEnum("TERMINATED");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "SUCCESS", SUCCESS },
                 { "FAILED", FAILED },
                 { "MIGRATING", MIGRATING },
+                { "TERMINATED", TERMINATED },
             };
 
             private string Value;
 
-            private StatusEnum(string value)
+            public StatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -67,7 +73,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -151,9 +162,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private MigrationTypeEnum(string value)
+            public MigrationTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static MigrationTypeEnum FromValue(string value)
@@ -172,7 +183,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -256,9 +272,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private MigrationMethodEnum(string value)
+            public MigrationMethodEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static MigrationMethodEnum FromValue(string value)
@@ -277,7 +293,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -349,7 +370,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string TaskName { get; set; }
 
         /// <summary>
-        /// 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING
+        /// 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

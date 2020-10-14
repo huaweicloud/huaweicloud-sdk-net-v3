@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             private string Value;
 
-            private KeyEnum(string value)
+            public KeyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static KeyEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

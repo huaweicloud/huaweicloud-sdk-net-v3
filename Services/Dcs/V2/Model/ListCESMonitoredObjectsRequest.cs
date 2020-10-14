@@ -18,13 +18,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("dim_name", IsQuery = true)]
         [JsonProperty("dim_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DimName { get; set; }
@@ -51,7 +44,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListCESMonitoredObjectsRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  dimName: ").Append(DimName).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
@@ -77,11 +69,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.DimName == input.DimName ||
                     (this.DimName != null &&
                     this.DimName.Equals(input.DimName))
@@ -106,8 +93,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.DimName != null)
                     hashCode = hashCode * 59 + this.DimName.GetHashCode();
                 if (this.Offset != null)

@@ -46,9 +46,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private ConfigStatusEnum(string value)
+            public ConfigStatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ConfigStatusEnum FromValue(string value)
@@ -67,7 +67,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

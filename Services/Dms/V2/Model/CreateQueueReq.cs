@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
 
             private string Value;
 
-            private QueueModeEnum(string value)
+            public QueueModeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static QueueModeEnum FromValue(string value)
@@ -73,7 +73,12 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -157,9 +162,9 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
 
             private string Value;
 
-            private RedrivePolicyEnum(string value)
+            public RedrivePolicyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static RedrivePolicyEnum FromValue(string value)
@@ -178,7 +183,12 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

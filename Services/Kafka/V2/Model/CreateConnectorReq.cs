@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private SpecificationEnum(string value)
+            public SpecificationEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static SpecificationEnum FromValue(string value)
@@ -73,7 +73,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

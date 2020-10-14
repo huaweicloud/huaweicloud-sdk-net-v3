@@ -39,9 +39,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private ImageTypeEnum(string value)
+            public ImageTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ImageTypeEnum FromValue(string value)
@@ -60,7 +60,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -143,9 +148,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private ResourceTypeEnum(string value)
+            public ResourceTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ResourceTypeEnum FromValue(string value)
@@ -164,7 +169,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -283,9 +293,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private StatusEnum(string value)
+            public StatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -304,7 +314,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -393,9 +408,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private OwnTypeEnum(string value)
+            public OwnTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OwnTypeEnum FromValue(string value)
@@ -414,7 +429,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -503,9 +523,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private MemberStatusEnum(string value)
+            public MemberStatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static MemberStatusEnum FromValue(string value)
@@ -524,7 +544,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

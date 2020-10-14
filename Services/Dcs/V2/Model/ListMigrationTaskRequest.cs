@@ -18,13 +18,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
@@ -51,7 +44,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListMigrationTaskRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -77,11 +69,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.Offset == input.Offset ||
                     (this.Offset != null &&
                     this.Offset.Equals(input.Offset))
@@ -106,8 +93,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.Offset != null)
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null)

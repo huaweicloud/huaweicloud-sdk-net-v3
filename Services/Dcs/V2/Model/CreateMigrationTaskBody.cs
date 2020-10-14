@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private MigrationTypeEnum(string value)
+            public MigrationTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static MigrationTypeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -145,9 +150,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private MigrationMethodEnum(string value)
+            public MigrationMethodEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static MigrationMethodEnum FromValue(string value)
@@ -166,7 +171,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -225,9 +235,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         }
 
         /// <summary>
-        /// 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 取值范围： - vpc - vpn 
+        /// 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 
         /// </summary>
-        /// <value>迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 取值范围： - vpc - vpn </value>
+        /// <value>迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 </value>
         [JsonConverter(typeof(EnumClassConverter<NetworkTypeEnum>))]
         public class NetworkTypeEnum
         {
@@ -250,9 +260,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private NetworkTypeEnum(string value)
+            public NetworkTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static NetworkTypeEnum FromValue(string value)
@@ -271,7 +281,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -359,7 +374,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public BackupFilesBody BackupFiles { get; set; }
 
         /// <summary>
-        /// 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 取值范围： - vpc - vpn 
+        /// 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 
         /// </summary>
         [JsonProperty("network_type", NullValueHandling = NullValueHandling.Ignore)]
         public NetworkTypeEnum NetworkType { get; set; }

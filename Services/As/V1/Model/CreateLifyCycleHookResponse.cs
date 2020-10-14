@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private LifecycleHookTypeEnum(string value)
+            public LifecycleHookTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static LifecycleHookTypeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -145,9 +150,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private DefaultResultEnum(string value)
+            public DefaultResultEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static DefaultResultEnum FromValue(string value)
@@ -166,7 +171,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

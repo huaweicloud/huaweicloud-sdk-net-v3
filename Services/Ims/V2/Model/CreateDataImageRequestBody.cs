@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             private string Value;
 
-            private OsTypeEnum(string value)
+            public OsTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OsTypeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

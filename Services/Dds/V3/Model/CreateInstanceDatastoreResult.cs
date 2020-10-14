@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             private string Value;
 
-            private TypeEnum(string value)
+            public TypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static TypeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -145,9 +150,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             private string Value;
 
-            private StorageEngineEnum(string value)
+            public StorageEngineEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StorageEngineEnum FromValue(string value)
@@ -166,7 +171,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

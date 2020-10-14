@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
 
             private string Value;
 
-            private ActionEnum(string value)
+            public ActionEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ActionEnum FromValue(string value)
@@ -55,7 +55,12 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

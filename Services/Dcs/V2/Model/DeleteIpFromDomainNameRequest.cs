@@ -18,13 +18,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
@@ -51,7 +44,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteIpFromDomainNameRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  nodeId: ").Append(NodeId).Append("\n");
@@ -77,11 +69,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
@@ -106,8 +93,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.GroupId != null)

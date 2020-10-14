@@ -39,9 +39,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private CloudTypeEnum(string value)
+            public CloudTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static CloudTypeEnum FromValue(string value)
@@ -60,7 +60,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -143,9 +148,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private ProtectTypeEnum(string value)
+            public ProtectTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ProtectTypeEnum FromValue(string value)
@@ -164,7 +169,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

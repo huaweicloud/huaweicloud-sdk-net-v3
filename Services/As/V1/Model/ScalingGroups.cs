@@ -58,9 +58,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private ScalingGroupStatusEnum(string value)
+            public ScalingGroupStatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ScalingGroupStatusEnum FromValue(string value)
@@ -79,7 +79,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -163,9 +168,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private HealthPeriodicAuditMethodEnum(string value)
+            public HealthPeriodicAuditMethodEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static HealthPeriodicAuditMethodEnum FromValue(string value)
@@ -184,7 +189,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -292,9 +302,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private int? Value;
 
-            private HealthPeriodicAuditTimeEnum(int? value)
+            public HealthPeriodicAuditTimeEnum(int? value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static HealthPeriodicAuditTimeEnum FromValue(int? value)
@@ -313,7 +323,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public int? GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -409,9 +424,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private InstanceTerminatePolicyEnum(string value)
+            public InstanceTerminatePolicyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static InstanceTerminatePolicyEnum FromValue(string value)
@@ -430,7 +445,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

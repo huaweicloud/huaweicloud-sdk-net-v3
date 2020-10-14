@@ -58,9 +58,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private VolumeTypeEnum(string value)
+            public VolumeTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static VolumeTypeEnum FromValue(string value)
@@ -79,7 +79,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -163,9 +168,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private DiskTypeEnum(string value)
+            public DiskTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static DiskTypeEnum FromValue(string value)
@@ -184,7 +189,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

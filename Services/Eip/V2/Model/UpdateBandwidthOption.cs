@@ -46,9 +46,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             private string Value;
 
-            private ChargeModeEnum(string value)
+            public ChargeModeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ChargeModeEnum FromValue(string value)
@@ -67,7 +67,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

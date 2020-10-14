@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string FilePath { get; set; }
 
         /// <summary>
-        /// OBS桶名
+        /// OBS桶名。
         /// </summary>
         [JsonProperty("bucket_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BucketName { get; set; }

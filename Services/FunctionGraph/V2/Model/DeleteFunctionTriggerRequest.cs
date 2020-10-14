@@ -87,9 +87,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             private string Value;
 
-            private TriggerTypeCodeEnum(string value)
+            public TriggerTypeCodeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static TriggerTypeCodeEnum FromValue(string value)
@@ -108,7 +108,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

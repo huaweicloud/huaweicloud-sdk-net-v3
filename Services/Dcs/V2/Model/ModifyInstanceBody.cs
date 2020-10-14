@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string MaintainEnd { get; set; }
 
         /// <summary>
-        /// 安全组ID 可从虚拟私有云服务的控制台界面或者API接口查询得到。 
+        /// 安全组ID  可从虚拟私有云服务的控制台界面或者API接口查询得到。  约束：只有Redis 3.0支持 
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }

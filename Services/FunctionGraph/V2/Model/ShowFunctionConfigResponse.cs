@@ -94,9 +94,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             private string Value;
 
-            private RuntimeEnum(string value)
+            public RuntimeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static RuntimeEnum FromValue(string value)
@@ -115,7 +115,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -211,9 +216,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             private string Value;
 
-            private CodeTypeEnum(string value)
+            public CodeTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static CodeTypeEnum FromValue(string value)
@@ -232,7 +237,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

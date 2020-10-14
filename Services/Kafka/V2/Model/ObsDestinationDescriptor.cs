@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private ConsumerStrategyEnum(string value)
+            public ConsumerStrategyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ConsumerStrategyEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -139,9 +144,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private DestinationFileTypeEnum(string value)
+            public DestinationFileTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static DestinationFileTypeEnum FromValue(string value)
@@ -160,7 +165,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             private string Value;
 
-            private OptNameEnum(string value)
+            public OptNameEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OptNameEnum FromValue(string value)
@@ -55,7 +55,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

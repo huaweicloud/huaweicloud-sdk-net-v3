@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private SourceTypeEnum(string value)
+            public SourceTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static SourceTypeEnum FromValue(string value)
@@ -73,7 +73,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -151,9 +156,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private DestinationTypeEnum(string value)
+            public DestinationTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static DestinationTypeEnum FromValue(string value)
@@ -172,7 +177,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private RetentionPolicyEnum(string value)
+            public RetentionPolicyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static RetentionPolicyEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

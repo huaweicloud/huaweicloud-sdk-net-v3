@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
 
             private string Value;
 
-            private ShareableEnum(string value)
+            public ShareableEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ShareableEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -157,9 +162,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
 
             private string Value;
 
-            private VolumeTypeEnum(string value)
+            public VolumeTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static VolumeTypeEnum FromValue(string value)
@@ -178,7 +183,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

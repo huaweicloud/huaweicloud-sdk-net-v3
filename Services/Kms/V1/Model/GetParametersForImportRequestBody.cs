@@ -46,9 +46,9 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
 
             private string Value;
 
-            private WrappingAlgorithmEnum(string value)
+            public WrappingAlgorithmEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static WrappingAlgorithmEnum FromValue(string value)
@@ -67,7 +67,12 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

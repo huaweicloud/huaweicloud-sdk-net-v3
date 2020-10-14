@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private FileSourceEnum(string value)
+            public FileSourceEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static FileSourceEnum FromValue(string value)
@@ -55,7 +55,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

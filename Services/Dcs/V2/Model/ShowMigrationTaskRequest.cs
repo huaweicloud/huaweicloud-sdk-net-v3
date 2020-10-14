@@ -18,13 +18,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("task_id", IsPath = true)]
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskId { get; set; }
@@ -37,7 +30,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowMigrationTaskRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -61,11 +53,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.TaskId == input.TaskId ||
                     (this.TaskId != null &&
                     this.TaskId.Equals(input.TaskId))
@@ -80,8 +67,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.TaskId != null)
                     hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 return hashCode;

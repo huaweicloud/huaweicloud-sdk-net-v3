@@ -51,9 +51,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             private string Value;
 
-            private DeviceOwnerEnum(string value)
+            public DeviceOwnerEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static DeviceOwnerEnum FromValue(string value)
@@ -72,7 +72,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -161,9 +166,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             private string Value;
 
-            private StatusEnum(string value)
+            public StatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -182,7 +187,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

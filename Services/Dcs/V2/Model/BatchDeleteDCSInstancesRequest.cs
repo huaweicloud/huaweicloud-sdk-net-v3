@@ -18,13 +18,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("all_failure", IsQuery = true)]
         [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AllFailure { get; set; }
@@ -44,7 +37,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BatchDeleteDCSInstancesRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  allFailure: ").Append(AllFailure).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -69,11 +61,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.AllFailure == input.AllFailure ||
                     (this.AllFailure != null &&
                     this.AllFailure.Equals(input.AllFailure))
@@ -93,8 +80,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.AllFailure != null)
                     hashCode = hashCode * 59 + this.AllFailure.GetHashCode();
                 if (this.Body != null)

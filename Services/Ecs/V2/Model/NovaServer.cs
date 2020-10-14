@@ -112,9 +112,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private StatusEnum(string value)
+            public StatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -133,7 +133,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -217,9 +222,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private OSDCFdiskConfigEnum(string value)
+            public OSDCFdiskConfigEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OSDCFdiskConfigEnum FromValue(string value)
@@ -238,7 +243,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -394,9 +404,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private OSEXTSTStaskStateEnum(string value)
+            public OSEXTSTStaskStateEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OSEXTSTStaskStateEnum FromValue(string value)
@@ -415,7 +425,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -559,9 +574,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private OSEXTSTSvmStateEnum(string value)
+            public OSEXTSTSvmStateEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OSEXTSTSvmStateEnum FromValue(string value)
@@ -580,7 +595,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -676,9 +696,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private HostStatusEnum(string value)
+            public HostStatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static HostStatusEnum FromValue(string value)
@@ -697,7 +717,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

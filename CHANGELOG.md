@@ -1,3 +1,21 @@
+## 3.0.17-beta 2020-10-14
+## HuaweiCloud SDK Bss
+ - ### Features
+    - Partner center supports exporting product catalog prices.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK Dcs
+ - ### Features
+    - Support more interfaces.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 ## 3.0.16-beta 2020-10-12
 ## HuaweiCloud SDK CTS
  - ### Features

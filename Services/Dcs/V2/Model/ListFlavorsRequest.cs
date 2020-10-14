@@ -39,9 +39,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private CpuTypeEnum(string value)
+            public CpuTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static CpuTypeEnum FromValue(string value)
@@ -60,7 +60,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -122,13 +127,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("spec_code", IsQuery = true)]
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string SpecCode { get; set; }
@@ -175,7 +173,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListFlavorsRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  cacheMode: ").Append(CacheMode).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
@@ -203,11 +200,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 return false;
 
             return 
-                (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
                 (
                     this.SpecCode == input.SpecCode ||
                     (this.SpecCode != null &&
@@ -248,8 +240,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.SpecCode != null)
                     hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 if (this.CacheMode != null)

@@ -46,9 +46,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             private string Value;
 
-            private NewSpecCodeEnum(string value)
+            public NewSpecCodeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static NewSpecCodeEnum FromValue(string value)
@@ -67,7 +67,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -157,9 +162,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             private int? Value;
 
-            private NewStorageSpaceEnum(int? value)
+            public NewStorageSpaceEnum(int? value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static NewStorageSpaceEnum FromValue(int? value)
@@ -178,7 +183,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             public int? GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

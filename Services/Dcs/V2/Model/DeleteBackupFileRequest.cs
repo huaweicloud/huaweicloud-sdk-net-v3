@@ -18,13 +18,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BackupId { get; set; }
@@ -44,7 +37,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteBackupFileRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
@@ -69,11 +61,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.BackupId == input.BackupId ||
                     (this.BackupId != null &&
                     this.BackupId.Equals(input.BackupId))
@@ -93,8 +80,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.BackupId != null)
                     hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 if (this.InstanceId != null)

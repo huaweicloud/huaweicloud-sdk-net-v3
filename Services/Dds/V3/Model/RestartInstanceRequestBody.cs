@@ -46,9 +46,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             private string Value;
 
-            private TargetTypeEnum(string value)
+            public TargetTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static TargetTypeEnum FromValue(string value)
@@ -67,7 +67,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

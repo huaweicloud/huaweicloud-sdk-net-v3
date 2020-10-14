@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             private string Value;
 
-            private EffectEnum(string value)
+            public EffectEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static EffectEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

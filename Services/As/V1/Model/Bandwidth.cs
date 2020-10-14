@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private ShareTypeEnum(string value)
+            public ShareTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ShareTypeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -145,9 +150,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private ChargingModeEnum(string value)
+            public ChargingModeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ChargingModeEnum FromValue(string value)
@@ -166,7 +171,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

@@ -33,9 +33,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             private string Value;
 
-            private MethodsEnum(string value)
+            public MethodsEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static MethodsEnum FromValue(string value)
@@ -54,7 +54,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

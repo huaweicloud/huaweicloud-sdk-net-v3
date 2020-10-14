@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private IsAutoRenewEnum(string value)
+            public IsAutoRenewEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IsAutoRenewEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -120,9 +125,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         }
 
         /// <summary>
-        /// 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid -预付费，即包年包月； - postPaid -后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
+        /// 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid：预付费，即包年包月； - postPaid：后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
         /// </summary>
-        /// <value>功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid -预付费，即包年包月； - postPaid -后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 </value>
+        /// <value>功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid：预付费，即包年包月； - postPaid：后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 </value>
         [JsonConverter(typeof(EnumClassConverter<ChargingModeEnum>))]
         public class ChargingModeEnum
         {
@@ -145,9 +150,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private ChargingModeEnum(string value)
+            public ChargingModeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ChargingModeEnum FromValue(string value)
@@ -166,7 +171,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -250,9 +260,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private IsAutoPayEnum(string value)
+            public IsAutoPayEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IsAutoPayEnum FromValue(string value)
@@ -271,7 +281,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -355,9 +370,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             private string Value;
 
-            private PeriodTypeEnum(string value)
+            public PeriodTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static PeriodTypeEnum FromValue(string value)
@@ -376,7 +391,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -441,7 +461,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("is_auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public IsAutoRenewEnum IsAutoRenew { get; set; }
         /// <summary>
-        /// 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid -预付费，即包年包月； - postPaid -后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
+        /// 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid：预付费，即包年包月； - postPaid：后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargingModeEnum ChargingMode { get; set; }
@@ -456,7 +476,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 功能说明：订购周期数 取值范围：(后续会随运营策略变化) - period_type为month时，为[1,9]， - period_type为year时，为[1,3] 约束：同period_type约束。 
+        /// 功能说明：订购周期数 取值范围：(后续会随运营策略变化) - period_type为month时，为[1,9]， - period_type为year时，为[1,3]  约束：同period_type约束。 
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }

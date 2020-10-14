@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private EngineEnum(string value)
+            public EngineEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static EngineEnum FromValue(string value)
@@ -55,7 +55,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -133,9 +138,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private EngineVersionEnum(string value)
+            public EngineVersionEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static EngineVersionEnum FromValue(string value)
@@ -154,7 +159,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -250,9 +260,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private SpecificationEnum(string value)
+            public SpecificationEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static SpecificationEnum FromValue(string value)
@@ -271,7 +281,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -361,9 +376,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private int? Value;
 
-            private PartitionNumEnum(int? value)
+            public PartitionNumEnum(int? value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static PartitionNumEnum FromValue(int? value)
@@ -382,7 +397,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public int? GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -466,9 +486,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private RetentionPolicyEnum(string value)
+            public RetentionPolicyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static RetentionPolicyEnum FromValue(string value)
@@ -487,7 +507,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -577,9 +602,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private StorageSpecCodeEnum(string value)
+            public StorageSpecCodeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StorageSpecCodeEnum FromValue(string value)
@@ -598,7 +623,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

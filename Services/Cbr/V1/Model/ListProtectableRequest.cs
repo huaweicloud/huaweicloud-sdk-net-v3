@@ -39,9 +39,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private ProtectableTypeEnum(string value)
+            public ProtectableTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ProtectableTypeEnum FromValue(string value)
@@ -60,7 +60,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

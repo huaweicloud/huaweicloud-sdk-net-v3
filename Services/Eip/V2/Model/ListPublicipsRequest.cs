@@ -39,9 +39,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             private int? Value;
 
-            private IpVersionEnum(int? value)
+            public IpVersionEnum(int? value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IpVersionEnum FromValue(int? value)
@@ -60,7 +60,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             public int? GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

@@ -69,9 +69,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private LifeCycleStateEnum(string value)
+            public LifeCycleStateEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static LifeCycleStateEnum FromValue(string value)
@@ -90,7 +90,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -179,9 +184,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private HealthStatusEnum(string value)
+            public HealthStatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static HealthStatusEnum FromValue(string value)
@@ -200,7 +205,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -283,9 +293,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private ProtectFromScalingDownEnum(string value)
+            public ProtectFromScalingDownEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ProtectFromScalingDownEnum FromValue(string value)
@@ -304,7 +314,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

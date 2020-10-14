@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using Newtonsoft.Json;
@@ -38,19 +39,55 @@ namespace HuaweiCloud.SDK.Core
             }
 
             var body = message.Content.ReadAsStringAsync().Result;
+            var jsonObject = SetResponseBody<T>(body);
+
+            SetAdditionalAttrs(message, jsonObject, body);
+            SetResponseHeaders(message, jsonObject);
+
+            return jsonObject;
+        }
+
+        private static T SetResponseBody<T>(string body)
+        {
             var jsonObject = JsonConvert.DeserializeObject<T>(body, GetJsonSettings());
+
             if (jsonObject == null)
             {
                 jsonObject = Activator.CreateInstance<T>();
             }
 
+            return jsonObject;
+        }
+
+        private static void SetResponseHeaders<T>(HttpResponseMessage message, T jsonObject)
+        {
+            const BindingFlags instanceBindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+
+            var properties = jsonObject.GetType().GetProperties(instanceBindFlags);
+            foreach (var property in properties)
+            {
+                var oriAttrName = "";
+                var customAttrs = property.GetCustomAttributes(typeof(JsonPropertyAttribute), true);
+                if (customAttrs.Length > 0)
+                {
+                    oriAttrName = (string) customAttrs[0].GetType().GetProperty("PropertyName")?.GetValue(
+                        property.GetCustomAttributes(typeof(JsonPropertyAttribute), true)[0]);
+                }
+
+                if (!string.IsNullOrEmpty(oriAttrName) && message.Headers.Contains(oriAttrName))
+                {
+                    property.SetValue(jsonObject, message.Headers.GetValues(oriAttrName).First());
+                }
+            }
+        }
+
+        private static void SetAdditionalAttrs<T>(HttpResponseMessage message, T jsonObject, string body)
+        {
             jsonObject.GetType().GetProperty("HttpStatusCode")?.SetValue(jsonObject, (int) message.StatusCode, null);
             jsonObject.GetType().GetProperty("HttpHeaders")?.SetValue(jsonObject, message.Headers.ToString(), null);
             jsonObject.GetType().GetProperty("HttpBody")?.SetValue(jsonObject, body, null);
-
-            return jsonObject;
         }
-        
+
         private static T DeSerializeStream<T>(HttpResponseMessage message)
         {
             var t = Activator.CreateInstance<T>();
@@ -65,7 +102,8 @@ namespace HuaweiCloud.SDK.Core
 
         public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse
         {
-            var jsonObject = JsonConvert.DeserializeObject<T>(response.HttpBody, GetJsonSettings()) ?? Activator.CreateInstance<T>();
+            var jsonObject = JsonConvert.DeserializeObject<T>(response.HttpBody, GetJsonSettings()) ??
+                             Activator.CreateInstance<T>();
 
             jsonObject.HttpStatusCode = response.HttpStatusCode;
             jsonObject.HttpHeaders = response.HttpHeaders;
@@ -98,7 +136,7 @@ namespace HuaweiCloud.SDK.Core
         {
             return JsonConvert.SerializeObject(item);
         }
-        
+
         private static JsonSerializerSettings GetJsonSettings()
         {
             var settings = new JsonSerializerSettings

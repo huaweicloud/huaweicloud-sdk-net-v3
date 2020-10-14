@@ -39,6 +39,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 主备切换
+        /// </summary>
+        public ChangeMasterStandbyResponse ChangeMasterStandby(ChangeMasterStandbyRequest changeMasterStandbyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , changeMasterStandbyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/swap",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, changeMasterStandbyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<ChangeMasterStandbyResponse>(response);
+        }
+        
+        /// <summary>
         /// 备份指定实例
         /// </summary>
         public CopyInstanceResponse CopyInstance(CopyInstanceRequest copyInstanceRequest)
@@ -52,6 +65,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 创建大key分析任务
+        /// </summary>
+        public CreateBigkeyScanTaskResponse CreateBigkeyScanTask(CreateBigkeyScanTaskRequest createBigkeyScanTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createBigkeyScanTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey-task",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, createBigkeyScanTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateBigkeyScanTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建缓存实例
         /// </summary>
         public CreateDCSInstanceResponse CreateDCSInstance(CreateDCSInstanceRequest createDCSInstanceRequest)
@@ -61,6 +87,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDCSInstanceRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateDCSInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建热key分析任务
+        /// </summary>
+        public CreateHotkeyScanTaskResponse CreateHotkeyScanTask(CreateHotkeyScanTaskRequest createHotkeyScanTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createHotkeyScanTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey-task",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, createHotkeyScanTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateHotkeyScanTaskResponse>(response);
         }
         
         /// <summary>
@@ -90,6 +129,20 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 删除后台任务
+        /// </summary>
+        public DeleteBackgroundTaskResponse DeleteBackgroundTask(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteBackgroundTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id" , deleteBackgroundTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteBackgroundTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除备份文件
         /// </summary>
         public DeleteBackupFileResponse DeleteBackupFile(DeleteBackupFileRequest deleteBackupFileRequest)
@@ -101,6 +154,34 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteBackupFileRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteBackupFileResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除大key分析记录
+        /// </summary>
+        public DeleteBigkeyScanTaskResponse DeleteBigkeyScanTask(DeleteBigkeyScanTaskRequest deleteBigkeyScanTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteBigkeyScanTaskRequest.InstanceId.ToString());
+            urlParam.Add("bigkey_id" , deleteBigkeyScanTaskRequest.BigkeyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteBigkeyScanTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteBigkeyScanTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除热key分析任务
+        /// </summary>
+        public DeleteHotkeyScanTaskResponse DeleteHotkeyScanTask(DeleteHotkeyScanTaskRequest deleteHotkeyScanTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteHotkeyScanTaskRequest.InstanceId.ToString());
+            urlParam.Add("hotkey_id" , deleteHotkeyScanTaskRequest.HotkeyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteHotkeyScanTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteHotkeyScanTaskResponse>(response);
         }
         
         /// <summary>
@@ -159,6 +240,18 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询所有实例列表
+        /// </summary>
+        public ListAllDCSInstancesResponse ListAllDCSInstances(ListAllDCSInstancesRequest listAllDCSInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAllDCSInstancesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAllDCSInstancesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询可用区信息
         /// </summary>
         public ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest)
@@ -168,6 +261,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAvailableZonesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListAvailableZonesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询后台任务列表
+        /// </summary>
+        public ListBackgroundTaskResponse ListBackgroundTask(ListBackgroundTaskRequest listBackgroundTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listBackgroundTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBackgroundTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListBackgroundTaskResponse>(response);
         }
         
         /// <summary>
@@ -195,6 +301,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBackupRecordsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListBackupRecordsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询大key分析任务列表
+        /// </summary>
+        public ListBigkeyScanTasksResponse ListBigkeyScanTasks(ListBigkeyScanTasksRequest listBigkeyScanTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listBigkeyScanTasksRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBigkeyScanTasksRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListBigkeyScanTasksResponse>(response);
         }
         
         /// <summary>
@@ -260,6 +379,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询热key分析任务列表
+        /// </summary>
+        public ListHotKeyScanTasksResponse ListHotKeyScanTasks(ListHotKeyScanTasksRequest listHotKeyScanTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listHotKeyScanTasksRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listHotKeyScanTasksRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListHotKeyScanTasksResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询维护时间窗时间段
         /// </summary>
         public ListMaintenanceWindowsResponse ListMaintenanceWindows(ListMaintenanceWindowsRequest listMaintenanceWindowsRequest)
@@ -322,6 +454,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询慢日志
+        /// </summary>
+        public ListSlowlogResponse ListSlowlog(ListSlowlogRequest listSlowlogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listSlowlogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSlowlogRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListSlowlogResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询运行中实例的统计信息
         /// </summary>
         public ListStatisticsOfRunningInstancesResponse ListStatisticsOfRunningInstances(ListStatisticsOfRunningInstancesRequest listStatisticsOfRunningInstancesRequest)
@@ -359,6 +504,46 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询大key自动分析配置
+        /// </summary>
+        public ShowBigkeyAutoscanConfigResponse ShowBigkeyAutoscanConfig(ShowBigkeyAutoscanConfigRequest showBigkeyAutoscanConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showBigkeyAutoscanConfigRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey/autoscan",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showBigkeyAutoscanConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowBigkeyAutoscanConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询大key分析详情
+        /// </summary>
+        public ShowBigkeyScanTaskDetailsResponse ShowBigkeyScanTaskDetails(ShowBigkeyScanTaskDetailsRequest showBigkeyScanTaskDetailsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showBigkeyScanTaskDetailsRequest.InstanceId.ToString());
+            urlParam.Add("bigkey_id" , showBigkeyScanTaskDetailsRequest.BigkeyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showBigkeyScanTaskDetailsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowBigkeyScanTaskDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定实例
+        /// </summary>
+        public ShowDCSInstanceResponse ShowDCSInstance(ShowDCSInstanceRequest showDCSInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showDCSInstanceRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDCSInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDCSInstanceResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询单个实例标签
         /// </summary>
         public ShowDcsTagsResponse ShowDcsTags(ShowDcsTagsRequest showDcsTagsRequest)
@@ -372,6 +557,33 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询热key自动分析配置
+        /// </summary>
+        public ShowHotkeyAutoscanConfigResponse ShowHotkeyAutoscanConfig(ShowHotkeyAutoscanConfigRequest showHotkeyAutoscanConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showHotkeyAutoscanConfigRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey/autoscan",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showHotkeyAutoscanConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowHotkeyAutoscanConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询热key分析详情
+        /// </summary>
+        public ShowHotkeyTaskDetailsResponse ShowHotkeyTaskDetails(ShowHotkeyTaskDetailsRequest showHotkeyTaskDetailsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showHotkeyTaskDetailsRequest.InstanceId.ToString());
+            urlParam.Add("hotkey_id" , showHotkeyTaskDetailsRequest.HotkeyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showHotkeyTaskDetailsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowHotkeyTaskDetailsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询迁移任务详情
         /// </summary>
         public ShowMigrationTaskResponse ShowMigrationTask(ShowMigrationTaskRequest showMigrationTaskRequest)
@@ -382,6 +594,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMigrationTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowMigrationTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询在线迁移进度明细
+        /// </summary>
+        public ShowMigrationTaskStatsResponse ShowMigrationTaskStats(ShowMigrationTaskStatsRequest showMigrationTaskStatsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showMigrationTaskStatsRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}/stats",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMigrationTaskStatsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowMigrationTaskStatsResponse>(response);
         }
         
         /// <summary>
@@ -410,6 +635,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 设置大key自动分析配置
+        /// </summary>
+        public UpdateBigkeyAutoscanConfigResponse UpdateBigkeyAutoscanConfig(UpdateBigkeyAutoscanConfigRequest updateBigkeyAutoscanConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateBigkeyAutoscanConfigRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey/autoscan",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBigkeyAutoscanConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateBigkeyAutoscanConfigResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改实例配置参数
         /// </summary>
         public UpdateConfigurationsResponse UpdateConfigurations(UpdateConfigurationsRequest updateConfigurationsRequest)
@@ -433,6 +671,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDCSInstanceRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateDCSInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置热key自动分析配置
+        /// </summary>
+        public UpdateHotkeyAutoScanConfigResponse UpdateHotkeyAutoScanConfig(UpdateHotkeyAutoScanConfigRequest updateHotkeyAutoScanConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateHotkeyAutoScanConfigRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey/autoscan",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHotkeyAutoScanConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateHotkeyAutoScanConfigResponse>(response);
         }
         
         /// <summary>

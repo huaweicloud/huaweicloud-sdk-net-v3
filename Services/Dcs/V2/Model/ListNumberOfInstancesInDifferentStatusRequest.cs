@@ -18,16 +18,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("include_failure", IsQuery = true)]
         [JsonProperty("include_failure", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IncludeFailure { get; set; }
+        public string IncludeFailure { get; set; }
 
 
         /// <summary>
@@ -37,7 +30,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListNumberOfInstancesInDifferentStatusRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  includeFailure: ").Append(IncludeFailure).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -61,11 +53,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.IncludeFailure == input.IncludeFailure ||
                     (this.IncludeFailure != null &&
                     this.IncludeFailure.Equals(input.IncludeFailure))
@@ -80,8 +67,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.IncludeFailure != null)
                     hashCode = hashCode * 59 + this.IncludeFailure.GetHashCode();
                 return hashCode;

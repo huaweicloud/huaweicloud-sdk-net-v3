@@ -15,62 +15,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     public class ListStatisticsOfRunningInstancesRequest 
     {
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
 
-
-        /// <summary>
-        /// Get the string
-        /// </summary>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class ListStatisticsOfRunningInstancesRequest {\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ListStatisticsOfRunningInstancesRequest);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        public bool Equals(ListStatisticsOfRunningInstancesRequest input)
-        {
-            if (input == null)
-                return false;
-
-            return 
-                (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                );
-        }
-
-        /// <summary>
-        /// Get hash code
-        /// </summary>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
-                return hashCode;
-            }
-        }
     }
 }

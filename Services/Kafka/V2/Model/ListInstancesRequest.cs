@@ -33,9 +33,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private EngineEnum(string value)
+            public EngineEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static EngineEnum FromValue(string value)
@@ -54,7 +54,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -167,9 +172,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private StatusEnum(string value)
+            public StatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -188,7 +193,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -271,9 +281,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private IncludeFailureEnum(string value)
+            public IncludeFailureEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IncludeFailureEnum FromValue(string value)
@@ -292,7 +302,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -375,9 +390,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             private string Value;
 
-            private ExactMatchNameEnum(string value)
+            public ExactMatchNameEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ExactMatchNameEnum FromValue(string value)
@@ -396,7 +411,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

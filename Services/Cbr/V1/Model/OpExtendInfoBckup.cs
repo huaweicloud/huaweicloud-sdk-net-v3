@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private AppConsistencyStatusEnum(string value)
+            public AppConsistencyStatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static AppConsistencyStatusEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -145,9 +150,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             private string Value;
 
-            private IncrementalEnum(string value)
+            public IncrementalEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IncrementalEnum FromValue(string value)
@@ -166,7 +171,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

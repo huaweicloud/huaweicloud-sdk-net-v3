@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
 
             private string Value;
 
-            private GranteePrincipalTypeEnum(string value)
+            public GranteePrincipalTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static GranteePrincipalTypeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

@@ -33,9 +33,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             private string Value;
 
-            private ResourceTypeEnum(string value)
+            public ResourceTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ResourceTypeEnum FromValue(string value)
@@ -54,7 +54,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

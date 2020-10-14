@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private ChargingModeEnum(string value)
+            public ChargingModeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static ChargingModeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -145,9 +150,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private PeriodTypeEnum(string value)
+            public PeriodTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static PeriodTypeEnum FromValue(string value)
@@ -166,7 +171,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -250,9 +260,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private IsAutoRenewEnum(string value)
+            public IsAutoRenewEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IsAutoRenewEnum FromValue(string value)
@@ -271,7 +281,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -355,9 +370,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private IsAutoPayEnum(string value)
+            public IsAutoPayEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IsAutoPayEnum FromValue(string value)
@@ -376,7 +391,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -454,9 +474,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private InterruptionPolicyEnum(string value)
+            public InterruptionPolicyEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static InterruptionPolicyEnum FromValue(string value)
@@ -475,7 +495,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

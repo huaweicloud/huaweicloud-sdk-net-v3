@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private RelEnum(string value)
+            public RelEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static RelEnum FromValue(string value)
@@ -73,7 +73,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             private string Value;
 
-            private BandwidthShareTypeEnum(string value)
+            public BandwidthShareTypeEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static BandwidthShareTypeEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -211,9 +216,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             private string Value;
 
-            private StatusEnum(string value)
+            public StatusEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -232,7 +237,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
@@ -316,9 +326,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             private int? Value;
 
-            private IpVersionEnum(int? value)
+            public IpVersionEnum(int? value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static IpVersionEnum FromValue(int? value)
@@ -337,7 +347,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
             public int? GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()

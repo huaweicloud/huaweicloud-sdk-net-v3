@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             private string Value;
 
-            private OSDCFdiskConfigEnum(string value)
+            public OSDCFdiskConfigEnum(string value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public static OSDCFdiskConfigEnum FromValue(string value)
@@ -61,7 +61,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public string GetValue()
             {
-                return this.Value;
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
             }
 
             public override int GetHashCode()
