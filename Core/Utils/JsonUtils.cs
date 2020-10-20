@@ -74,7 +74,8 @@ namespace HuaweiCloud.SDK.Core
                         property.GetCustomAttributes(typeof(JsonPropertyAttribute), true)[0]);
                 }
 
-                if (!string.IsNullOrEmpty(oriAttrName) && message.Headers.Contains(oriAttrName))
+                if (property.GetValue(jsonObject) == null && !string.IsNullOrEmpty(oriAttrName) &&
+                    message.Headers.Contains(oriAttrName))
                 {
                     property.SetValue(jsonObject, message.Headers.GetValues(oriAttrName).First());
                 }

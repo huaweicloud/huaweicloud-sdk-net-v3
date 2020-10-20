@@ -21,9 +21,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public class CpuTypeEnum
         {
             /// <summary>
-            /// Enum X86_64 for value: X86_64
+            /// Enum X86_64 for value: x86_64
             /// </summary>
-            public static readonly CpuTypeEnum X86_64 = new CpuTypeEnum("X86_64");
+            public static readonly CpuTypeEnum X86_64 = new CpuTypeEnum("x86_64");
 
             /// <summary>
             /// Enum AARCH64 for value: aarch64
@@ -33,7 +33,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             private static readonly Dictionary<string, CpuTypeEnum> StaticFields =
             new Dictionary<string, CpuTypeEnum>()
             {
-                { "X86_64", X86_64 },
+                { "x86_64", X86_64 },
                 { "aarch64", AARCH64 },
             };
 

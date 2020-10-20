@@ -242,7 +242,7 @@ namespace Examples.Dcs.V2
                 PeriodicalBackupPlan = backupPlan,
                 SaveDays = 7
             };
-            var createDcsInstanceRequest = new CreateDCSInstanceRequest()
+            var createInstanceRequest = new CreateInstanceRequest()
             {
                 Body = new CreateInstanceBody()
                 {
@@ -260,7 +260,7 @@ namespace Examples.Dcs.V2
             };
             try
             {
-                var response = dcsClient.CreateDCSInstance(createDcsInstanceRequest);
+                var response = dcsClient.CreateInstance(createInstanceRequest);
                 Console.WriteLine(response.GetHttpBody());
             }
             catch (RequestTimeoutException requestTimeoutException)

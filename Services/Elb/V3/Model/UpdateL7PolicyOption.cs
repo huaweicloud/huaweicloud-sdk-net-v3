@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Elb.V3.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class UpdateL7PolicyOption 
+    {
+
+        /// <summary>
+        /// 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
+        /// </summary>
+        [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AdminStateUp { get; set; }
+
+        /// <summary>
+        /// 转发策略描述信息。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 转发策略名称。
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。使用说明：只支持protocol为TERMINATED_HTTPS的listener。不能指定为其他loadbalancer下的listener。当action为REDIRECT_TO_POOL时，不可指定。
+        /// </summary>
+        [JsonProperty("redirect_listener_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RedirectListenerId { get; set; }
+
+        /// <summary>
+        /// 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。使用说明：指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。当action为REDIRECT_TO_LISTENER时，不可指定。
+        /// </summary>
+        [JsonProperty("redirect_pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RedirectPoolId { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class UpdateL7PolicyOption {\n");
+            sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  redirectListenerId: ").Append(RedirectListenerId).Append("\n");
+            sb.Append("  redirectPoolId: ").Append(RedirectPoolId).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as UpdateL7PolicyOption);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(UpdateL7PolicyOption input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.AdminStateUp == input.AdminStateUp ||
+                    (this.AdminStateUp != null &&
+                    this.AdminStateUp.Equals(input.AdminStateUp))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.RedirectListenerId == input.RedirectListenerId ||
+                    (this.RedirectListenerId != null &&
+                    this.RedirectListenerId.Equals(input.RedirectListenerId))
+                ) && 
+                (
+                    this.RedirectPoolId == input.RedirectPoolId ||
+                    (this.RedirectPoolId != null &&
+                    this.RedirectPoolId.Equals(input.RedirectPoolId))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.AdminStateUp != null)
+                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.RedirectListenerId != null)
+                    hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
+                if (this.RedirectPoolId != null)
+                    hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

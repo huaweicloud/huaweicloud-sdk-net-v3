@@ -9,7 +9,7 @@ namespace HuaweiCloud.SDK.Iam.V3
     {
         public static ClientBuilder<IamClient> NewBuilder()
         {
-            return new ClientBuilder<IamClient>("GlobalCredentials");
+            return new ClientBuilder<IamClient>("GlobalCredentials,BasicCredentials");
         }
 
         

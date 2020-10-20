@@ -1,5 +1,31 @@
+## 3.0.18-beta 2020-10-20
+## HuaweiCloud SDK DCS
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 接口名中去掉冗余的Dcs服务名
+
+## HuaweiCloud SDK ELB
+ - ### 新增特性
+    - 支持弹性负载均衡服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK IoTDA
+ - ### 新增特性
+    - 增加规则相关接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+
 ## 3.0.17-beta 2020-10-14
-## HuaweiCloud SDK Bss
+## HuaweiCloud SDK BSS
  - ### 新增特性
     - 伙伴中心支持导出产品目录价
  - ### 解决问题
@@ -7,7 +33,7 @@
  - ### 特性变更
     - 无
 
-## HuaweiCloud SDK Dcs
+## HuaweiCloud SDK DCS
  - ### 新增特性
     - 增加支持接口
  - ### 解决问题

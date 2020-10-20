@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string ProductType { get; set; }
 
         /// <summary>
-        /// CPU架构类型。取值范围如下： - X86_64：X86架构 - aarch64: ARM架构 
+        /// CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64: ARM架构 
         /// </summary>
         [JsonProperty("cpu_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CpuType { get; set; }

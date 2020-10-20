@@ -1,0 +1,301 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Elb.V2.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ListLoadbalancersRequest 
+    {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("page_reverse", IsQuery = true)]
+        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PageReverse { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("description", IsQuery = true)]
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("operating_status", IsQuery = true)]
+        [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string OperatingStatus { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("provisioning_status", IsQuery = true)]
+        [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProvisioningStatus { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("vip_address", IsQuery = true)]
+        [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string VipAddress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("vip_port_id", IsQuery = true)]
+        [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VipPortId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("vip_subnet_id", IsQuery = true)]
+        [JsonProperty("vip_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VipSubnetId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("vpc_id", IsQuery = true)]
+        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VpcId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("admin_state_up", IsQuery = true)]
+        [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AdminStateUp { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("member_address", IsQuery = true)]
+        [JsonProperty("member_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string MemberAddress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("member_device_id", IsQuery = true)]
+        [JsonProperty("member_device_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string MemberDeviceId { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListLoadbalancersRequest {\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
+            sb.Append("  provisioningStatus: ").Append(ProvisioningStatus).Append("\n");
+            sb.Append("  vipAddress: ").Append(VipAddress).Append("\n");
+            sb.Append("  vipPortId: ").Append(VipPortId).Append("\n");
+            sb.Append("  vipSubnetId: ").Append(VipSubnetId).Append("\n");
+            sb.Append("  vpcId: ").Append(VpcId).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
+            sb.Append("  memberAddress: ").Append(MemberAddress).Append("\n");
+            sb.Append("  memberDeviceId: ").Append(MemberDeviceId).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListLoadbalancersRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListLoadbalancersRequest input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
+                ) && 
+                (
+                    this.PageReverse == input.PageReverse ||
+                    (this.PageReverse != null &&
+                    this.PageReverse.Equals(input.PageReverse))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.OperatingStatus == input.OperatingStatus ||
+                    (this.OperatingStatus != null &&
+                    this.OperatingStatus.Equals(input.OperatingStatus))
+                ) && 
+                (
+                    this.ProvisioningStatus == input.ProvisioningStatus ||
+                    (this.ProvisioningStatus != null &&
+                    this.ProvisioningStatus.Equals(input.ProvisioningStatus))
+                ) && 
+                (
+                    this.VipAddress == input.VipAddress ||
+                    (this.VipAddress != null &&
+                    this.VipAddress.Equals(input.VipAddress))
+                ) && 
+                (
+                    this.VipPortId == input.VipPortId ||
+                    (this.VipPortId != null &&
+                    this.VipPortId.Equals(input.VipPortId))
+                ) && 
+                (
+                    this.VipSubnetId == input.VipSubnetId ||
+                    (this.VipSubnetId != null &&
+                    this.VipSubnetId.Equals(input.VipSubnetId))
+                ) && 
+                (
+                    this.VpcId == input.VpcId ||
+                    (this.VpcId != null &&
+                    this.VpcId.Equals(input.VpcId))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.AdminStateUp == input.AdminStateUp ||
+                    (this.AdminStateUp != null &&
+                    this.AdminStateUp.Equals(input.AdminStateUp))
+                ) && 
+                (
+                    this.MemberAddress == input.MemberAddress ||
+                    (this.MemberAddress != null &&
+                    this.MemberAddress.Equals(input.MemberAddress))
+                ) && 
+                (
+                    this.MemberDeviceId == input.MemberDeviceId ||
+                    (this.MemberDeviceId != null &&
+                    this.MemberDeviceId.Equals(input.MemberDeviceId))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null)
+                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.OperatingStatus != null)
+                    hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.ProvisioningStatus != null)
+                    hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
+                if (this.VipAddress != null)
+                    hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
+                if (this.VipPortId != null)
+                    hashCode = hashCode * 59 + this.VipPortId.GetHashCode();
+                if (this.VipSubnetId != null)
+                    hashCode = hashCode * 59 + this.VipSubnetId.GetHashCode();
+                if (this.VpcId != null)
+                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.AdminStateUp != null)
+                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.MemberAddress != null)
+                    hashCode = hashCode * 59 + this.MemberAddress.GetHashCode();
+                if (this.MemberDeviceId != null)
+                    hashCode = hashCode * 59 + this.MemberDeviceId.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

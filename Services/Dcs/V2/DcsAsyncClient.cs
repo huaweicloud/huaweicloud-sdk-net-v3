@@ -17,26 +17,26 @@ namespace HuaweiCloud.SDK.Dcs.V2
         /// <summary>
         /// 批量添加或删除标签
         /// </summary>
-        public async Task<BatchCreateOrDeleteDcsTagsResponse> BatchCreateOrDeleteDcsTagsAsync(BatchCreateOrDeleteDcsTagsRequest batchCreateOrDeleteDcsTagsRequest)
+        public async Task<BatchCreateOrDeleteTagsResponse> BatchCreateOrDeleteTagsAsync(BatchCreateOrDeleteTagsRequest batchCreateOrDeleteTagsRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchCreateOrDeleteDcsTagsRequest.InstanceId.ToString());
+            urlParam.Add("instance_id" , batchCreateOrDeleteTagsRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dcs/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteDcsTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<BatchCreateOrDeleteDcsTagsResponse>(response);
+            return JsonUtils.DeSerializeNull<BatchCreateOrDeleteTagsResponse>(response);
         }
         
         /// <summary>
         /// 批量删除实例
         /// </summary>
-        public async Task<BatchDeleteDCSInstancesResponse> BatchDeleteDCSInstancesAsync(BatchDeleteDCSInstancesRequest batchDeleteDCSInstancesRequest)
+        public async Task<BatchDeleteInstancesResponse> BatchDeleteInstancesAsync(BatchDeleteInstancesRequest batchDeleteInstancesRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteDCSInstancesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteInstancesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            return JsonUtils.DeSerialize<BatchDeleteDCSInstancesResponse>(response);
+            return JsonUtils.DeSerialize<BatchDeleteInstancesResponse>(response);
         }
         
         /// <summary>
@@ -79,18 +79,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
-        /// 创建缓存实例
-        /// </summary>
-        public async Task<CreateDCSInstanceResponse> CreateDCSInstanceAsync(CreateDCSInstanceRequest createDCSInstanceRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDCSInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateDCSInstanceResponse>(response);
-        }
-        
-        /// <summary>
         /// 创建热key分析任务
         /// </summary>
         public async Task<CreateHotkeyScanTaskResponse> CreateHotkeyScanTaskAsync(CreateHotkeyScanTaskRequest createHotkeyScanTaskRequest)
@@ -101,6 +89,18 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, createHotkeyScanTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateHotkeyScanTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建缓存实例
+        /// </summary>
+        public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createInstanceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateInstanceResponse>(response);
         }
         
         /// <summary>
@@ -230,26 +230,14 @@ namespace HuaweiCloud.SDK.Dcs.V2
         /// <summary>
         /// 删除实例
         /// </summary>
-        public async Task<DeleteSingleDCSInstanceResponse> DeleteSingleDCSInstanceAsync(DeleteSingleDCSInstanceRequest deleteSingleDCSInstanceRequest)
+        public async Task<DeleteSingleInstanceResponse> DeleteSingleInstanceAsync(DeleteSingleInstanceRequest deleteSingleInstanceRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteSingleDCSInstanceRequest.InstanceId.ToString());
+            urlParam.Add("instance_id" , deleteSingleInstanceRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSingleDCSInstanceRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSingleInstanceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            return JsonUtils.DeSerializeNull<DeleteSingleDCSInstanceResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询所有实例列表
-        /// </summary>
-        public async Task<ListAllDCSInstancesResponse> ListAllDCSInstancesAsync(ListAllDCSInstancesRequest listAllDCSInstancesRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAllDCSInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ListAllDCSInstancesResponse>(response);
+            return JsonUtils.DeSerializeNull<DeleteSingleInstanceResponse>(response);
         }
         
         /// <summary>
@@ -343,18 +331,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
-        /// 查询租户所有标签
-        /// </summary>
-        public async Task<ListDcsTagsOfTenantResponse> ListDcsTagsOfTenantAsync(ListDcsTagsOfTenantRequest listDcsTagsOfTenantRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dcs/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDcsTagsOfTenantRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ListDcsTagsOfTenantResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询产品规格
         /// </summary>
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
@@ -390,6 +366,18 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listHotKeyScanTasksRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListHotKeyScanTasksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询所有实例列表
+        /// </summary>
+        public async Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest listInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListInstancesResponse>(response);
         }
         
         /// <summary>
@@ -480,15 +468,27 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询租户所有标签
+        /// </summary>
+        public async Task<ListTagsOfTenantResponse> ListTagsOfTenantAsync(ListTagsOfTenantRequest listTagsOfTenantRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dcs/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listTagsOfTenantRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTagsOfTenantResponse>(response);
+        }
+        
+        /// <summary>
         /// 重启实例或清空数据
         /// </summary>
-        public async Task<RestartOrFlushDCSInstancesResponse> RestartOrFlushDCSInstancesAsync(RestartOrFlushDCSInstancesRequest restartOrFlushDCSInstancesRequest)
+        public async Task<RestartOrFlushInstancesResponse> RestartOrFlushInstancesAsync(RestartOrFlushInstancesRequest restartOrFlushInstancesRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restartOrFlushDCSInstancesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restartOrFlushInstancesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerialize<RestartOrFlushDCSInstancesResponse>(response);
+            return JsonUtils.DeSerialize<RestartOrFlushInstancesResponse>(response);
         }
         
         /// <summary>
@@ -532,32 +532,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
-        /// 查询指定实例
-        /// </summary>
-        public async Task<ShowDCSInstanceResponse> ShowDCSInstanceAsync(ShowDCSInstanceRequest showDCSInstanceRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showDCSInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDCSInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowDCSInstanceResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询单个实例标签
-        /// </summary>
-        public async Task<ShowDcsTagsResponse> ShowDcsTagsAsync(ShowDcsTagsRequest showDcsTagsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showDcsTagsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDcsTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowDcsTagsResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询热key自动分析配置
         /// </summary>
         public async Task<ShowHotkeyAutoscanConfigResponse> ShowHotkeyAutoscanConfigAsync(ShowHotkeyAutoscanConfigRequest showHotkeyAutoscanConfigRequest)
@@ -582,6 +556,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showHotkeyTaskDetailsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowHotkeyTaskDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定实例
+        /// </summary>
+        public async Task<ShowInstanceResponse> ShowInstanceAsync(ShowInstanceRequest showInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showInstanceRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showInstanceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowInstanceResponse>(response);
         }
         
         /// <summary>
@@ -620,6 +607,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQuotaOfTenantRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowQuotaOfTenantResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询单个实例标签
+        /// </summary>
+        public async Task<ShowTagsResponse> ShowTagsAsync(ShowTagsRequest showTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showTagsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowTagsResponse>(response);
         }
         
         /// <summary>
@@ -662,19 +662,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
-        /// 修改实例信息
-        /// </summary>
-        public async Task<UpdateDCSInstanceResponse> UpdateDCSInstanceAsync(UpdateDCSInstanceRequest updateDCSInstanceRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateDCSInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDCSInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerializeNull<UpdateDCSInstanceResponse>(response);
-        }
-        
-        /// <summary>
         /// 设置热key自动分析配置
         /// </summary>
         public async Task<UpdateHotkeyAutoScanConfigResponse> UpdateHotkeyAutoScanConfigAsync(UpdateHotkeyAutoScanConfigRequest updateHotkeyAutoScanConfigRequest)
@@ -685,6 +672,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHotkeyAutoScanConfigRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateHotkeyAutoScanConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改实例信息
+        /// </summary>
+        public async Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest updateInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateInstanceRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceResponse>(response);
         }
         
         /// <summary>

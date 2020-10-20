@@ -14,6 +14,69 @@ namespace HuaweiCloud.SDK.IoTDA.V5
 
         
         /// <summary>
+        /// 生成接入凭证
+        /// </summary>
+        public CreateAccessCodeResponse CreateAccessCode(CreateAccessCodeRequest createAccessCodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/auth/accesscode",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAccessCodeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateAccessCodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建AMQP队列
+        /// </summary>
+        public AddQueueResponse AddQueue(AddQueueRequest addQueueRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/amqp-queues",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addQueueRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AddQueueResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询AMQP列表
+        /// </summary>
+        public BatchShowQueueResponse BatchShowQueue(BatchShowQueueRequest batchShowQueueRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/amqp-queues",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, batchShowQueueRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<BatchShowQueueResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除AMQP队列
+        /// </summary>
+        public DeleteQueueResponse DeleteQueue(DeleteQueueRequest deleteQueueRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("queue_id" , deleteQueueRequest.QueueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/amqp-queues/{queue_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteQueueRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            DeleteQueueResponse deleteQueueResponse = JsonUtils.DeSerializeNull<DeleteQueueResponse>(response);
+            return deleteQueueResponse;
+        }
+        
+        /// <summary>
+        /// 查询单个AMQP队列
+        /// </summary>
+        public ShowQueueResponse ShowQueue(ShowQueueRequest showQueueRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("queue_id" , showQueueRequest.QueueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/amqp-queues/{queue_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQueueRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowQueueResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建资源空间
         /// </summary>
         public AddApplicationResponse AddApplication(AddApplicationRequest addApplicationRequest)
@@ -569,6 +632,134 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePropertiesRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePropertiesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建规则触发条件
+        /// </summary>
+        public CreateRoutingRuleResponse CreateRoutingRule(CreateRoutingRuleRequest createRoutingRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRoutingRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateRoutingRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建规则动作
+        /// </summary>
+        public CreateRuleActionResponse CreateRuleAction(CreateRuleActionRequest createRuleActionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/actions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRuleActionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateRuleActionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除规则触发条件
+        /// </summary>
+        public DeleteRoutingRuleResponse DeleteRoutingRule(DeleteRoutingRuleRequest deleteRoutingRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("rule_id" , deleteRoutingRuleRequest.RuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/rules/{rule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteRoutingRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            DeleteRoutingRuleResponse deleteRoutingRuleResponse = JsonUtils.DeSerializeNull<DeleteRoutingRuleResponse>(response);
+            return deleteRoutingRuleResponse;
+        }
+        
+        /// <summary>
+        /// 删除规则动作
+        /// </summary>
+        public DeleteRuleActionResponse DeleteRuleAction(DeleteRuleActionRequest deleteRuleActionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("action_id" , deleteRuleActionRequest.ActionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/actions/{action_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteRuleActionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            DeleteRuleActionResponse deleteRuleActionResponse = JsonUtils.DeSerializeNull<DeleteRuleActionResponse>(response);
+            return deleteRuleActionResponse;
+        }
+        
+        /// <summary>
+        /// 查询规则条件列表
+        /// </summary>
+        public ListRoutingRulesResponse ListRoutingRules(ListRoutingRulesRequest listRoutingRulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listRoutingRulesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRoutingRulesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询规则动作列表
+        /// </summary>
+        public ListRuleActionsResponse ListRuleActions(ListRuleActionsRequest listRuleActionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/actions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listRuleActionsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRuleActionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询规则条件
+        /// </summary>
+        public ShowRoutingRuleResponse ShowRoutingRule(ShowRoutingRuleRequest showRoutingRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("rule_id" , showRoutingRuleRequest.RuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/rules/{rule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showRoutingRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowRoutingRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询规则动作
+        /// </summary>
+        public ShowRuleActionResponse ShowRuleAction(ShowRuleActionRequest showRuleActionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("action_id" , showRuleActionRequest.ActionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/actions/{action_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showRuleActionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowRuleActionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改规则触发条件
+        /// </summary>
+        public UpdateRoutingRuleResponse UpdateRoutingRule(UpdateRoutingRuleRequest updateRoutingRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("rule_id" , updateRoutingRuleRequest.RuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/rules/{rule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRoutingRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateRoutingRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改规则动作
+        /// </summary>
+        public UpdateRuleActionResponse UpdateRuleAction(UpdateRuleActionRequest updateRuleActionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("action_id" , updateRuleActionRequest.ActionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/actions/{action_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRuleActionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateRuleActionResponse>(response);
         }
         
         /// <summary>
