@@ -1,3 +1,39 @@
+## 3.0.19-beta 2020-10-31
+## HuaweiCloud SDK CBR
+ - ### Features
+    - Support more interfaces: interfaces related to `TAG`.
+ - ### Bug Fix
+    - [Issue 17](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/issues/17) fix the problem of interface: ListBackups.
+ - ### Change
+    - None
+
+## HuaweiCloud SDK CTS
+ - ### Features
+    - Support more interface: ListQuotas
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK Iam
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Adjust interfaces' names, the involved interfaces are:
+     1. KeystoneCreateUserTokenByPasswordAndMFA → KeystoneCreateUserTokenByPasswordAndMfa
+     2. CreateUnscopeTokenByIDPInitiated → CreateUnscopeTokenByIdpInitiated
+
+## HuaweiCloud SDK ProjectMan
+ - ### Features
+    - Support more interfaces: iteration information, user information, project members, project information, project indicators, project statistics, etc.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 ## 3.0.18-beta 2020-10-20
 ## HuaweiCloud SDK DCS
  - ### Features

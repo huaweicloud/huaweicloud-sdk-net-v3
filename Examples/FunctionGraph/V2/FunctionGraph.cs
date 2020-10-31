@@ -76,6 +76,9 @@ namespace Examples.FunctionGraph.V2
 
             //ShowFunctionTrigger
             //ShowFunctionTrigger(functionGraphClient);
+            
+            //UpdateFunctionTrigger
+            //UpdateFunctionTrigger(functionGraphClient);
 
             //ListFunctionTriggers
             //ListFunctionTriggers(functionGraphClient);
@@ -94,6 +97,15 @@ namespace Examples.FunctionGraph.V2
             
             //DeleteFunction
             //DeleteFunction(functionGraphClient);
+            
+            //ListFunctionStatistics
+            //ListFunctionStatistics(functionGraphClient);
+            
+            //ListStatistics
+            //ListStatistics(functionGraphClient);
+            
+            //ListQuotas
+            //ListQuotas(functionGraphClient);
         }
 
         /// <summary>
@@ -652,7 +664,7 @@ namespace Examples.FunctionGraph.V2
         {
             CreateFunctionTriggerRequest req = new CreateFunctionTriggerRequest
             {
-                FunctionUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:function:CsharpSdkTest:csharpSdkTest:latest",
+                FunctionUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:function:default:commonPython2:latest",
                 Body = new CreateFunctionTriggerRequestBody
                 {
                     TriggerTypeCode = CreateFunctionTriggerRequestBody.TriggerTypeCodeEnum.TIMER,
@@ -710,6 +722,42 @@ namespace Examples.FunctionGraph.V2
                 Console.WriteLine("ShowFunctionTrigger Body=" + JsonConvert.SerializeObject(resp));
                 Console.WriteLine("id="+resp.TriggerId);
                 Console.WriteLine("trigger_type_code="+resp.TriggerTypeCode);
+                Console.WriteLine("ShowFunctionTrigger StatusCode=" + resp.HttpStatusCode);
+            }
+            catch (ClientRequestException e)
+            {
+                Console.WriteLine(e.HttpStatusCode);
+                Console.WriteLine(e.ErrorCode);
+                Console.WriteLine(e.ErrorMsg);
+     
+            }
+            catch (ConnectionException e)
+            {
+                Console.WriteLine(e.ErrorMessage);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+        
+        /// <summary>
+        /// 更新指定触发器状态
+        /// </summary>
+        public static void UpdateFunctionTrigger(FunctionGraphClient client)
+        {
+            UpdateTriggerRequest req = new UpdateTriggerRequest
+            {
+                FunctionUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:function:CsharpSdkTest:csharpSdkTest:latest",
+                TriggerTypeCode = UpdateTriggerRequest.TriggerTypeCodeEnum.TIMER,
+                TriggerId = "6e67697f-e880-4616-92b0-1ec6590c38f2"
+                
+            };
+            try
+            {
+                UpdateTriggerResponse resp = client.UpdateTrigger(req);
+                Console.WriteLine("UpdateTrigger Body=" + JsonConvert.SerializeObject(resp));
                 Console.WriteLine("ShowFunctionTrigger StatusCode=" + resp.HttpStatusCode);
             }
             catch (ClientRequestException e)
@@ -891,6 +939,105 @@ namespace Examples.FunctionGraph.V2
                 AsyncInvokeFunctionResponse resp = client.AsyncInvokeFunction(req);
                 Console.WriteLine("InvokeFunctionAsync Body=" + JsonConvert.SerializeObject(resp));
                 Console.WriteLine("InvokeFunctionAsync StatusCode=" + resp.HttpStatusCode);
+            }
+            catch (ClientRequestException e)
+            {
+                Console.WriteLine(e.HttpStatusCode);
+                Console.WriteLine(e.ErrorCode);
+                Console.WriteLine(e.ErrorMsg);
+     
+            }
+            catch (ConnectionException e)
+            {
+                Console.WriteLine(e.ErrorMessage);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+        
+        /// <summary>
+        /// 获取指定时间段的函数运行指标
+        /// </summary>
+        public static void ListFunctionStatistics(FunctionGraphClient client)
+        {
+            ListFunctionStatisticsRequest req = new ListFunctionStatisticsRequest
+            {
+                FuncUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:nction:CsharpSdkTest:csharpSdkTest",
+                Period = "15"
+            };
+            try
+            {
+                ListFunctionStatisticsResponse resp = client.ListFunctionStatistics(req);
+                Console.WriteLine("ListFunctionStatistics Body="+JsonConvert.SerializeObject(resp));
+                Console.WriteLine("ListFunctionStatistics statusCode="+resp.HttpStatusCode);
+            }
+            catch (ClientRequestException e)
+            {
+                Console.WriteLine(e.HttpStatusCode);
+                Console.WriteLine(e.ErrorCode);
+                Console.WriteLine(e.ErrorMsg);
+     
+            }
+            catch (ConnectionException e)
+            {
+                Console.WriteLine(e.ErrorMessage);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+        
+        /// <summary>
+        /// 租户函数统计信息
+        /// </summary>
+        public static void ListStatistics(FunctionGraphClient client)
+        {
+            ListStatisticsRequest req = new ListStatisticsRequest
+            {
+                Period = "15",
+                MonthCode = ListStatisticsRequest.MonthCodeEnum._0,
+                Filter = ListStatisticsRequest.FilterEnum.METRIC
+            };
+            try
+            {
+                ListStatisticsResponse  resp = client.ListStatistics(req);
+                Console.WriteLine("ListStatistics Body="+JsonConvert.SerializeObject(resp));
+                Console.WriteLine("ListStatistics statusCode="+resp.HttpStatusCode);
+            }
+            catch (ClientRequestException e)
+            {
+                Console.WriteLine(e.HttpStatusCode);
+                Console.WriteLine(e.ErrorCode);
+                Console.WriteLine(e.ErrorMsg);
+     
+            }
+            catch (ConnectionException e)
+            {
+                Console.WriteLine(e.ErrorMessage);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+        
+        /// <summary>
+        /// 查询租户配额
+        /// </summary>
+        public static void ListQuotas(FunctionGraphClient client)
+        {
+            ListQuotasRequest req = new ListQuotasRequest {};
+            try
+            {
+                ListQuotasResponse  resp = client.ListQuotas(req);
+                Console.WriteLine("ListQuotas Body="+JsonConvert.SerializeObject(resp));
+                Console.WriteLine("ListQuotas statusCode="+resp.HttpStatusCode);
             }
             catch (ClientRequestException e)
             {

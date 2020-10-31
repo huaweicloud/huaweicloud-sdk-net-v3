@@ -18,9 +18,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("l7_flavor_id", IsQuery = true)]
-        [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string L7FlavorId { get; set; }
+        [SDKProperty("availability_zone_id", IsQuery = true)]
+        [JsonProperty("availability_zone_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailabilityZoneId { get; set; }
 
         /// <summary>
         /// 
@@ -39,16 +39,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("loadbalancer_id", IsQuery = true)]
-        [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string LoadbalancerId { get; set; }
+        [SDKProperty("l7_flavor_id", IsQuery = true)]
+        [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string L7FlavorId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("availability_zone_id", IsQuery = true)]
-        [JsonProperty("availability_zone_id", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> AvailabilityZoneId { get; set; }
+        [SDKProperty("loadbalancer_id", IsQuery = true)]
+        [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LoadbalancerId { get; set; }
 
 
         /// <summary>
@@ -58,11 +58,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CountPreoccupyIpNumRequest {\n");
-            sb.Append("  l7FlavorId: ").Append(L7FlavorId).Append("\n");
+            sb.Append("  availabilityZoneId: ").Append(AvailabilityZoneId).Append("\n");
             sb.Append("  ipTargetEnable: ").Append(IpTargetEnable).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
+            sb.Append("  l7FlavorId: ").Append(L7FlavorId).Append("\n");
             sb.Append("  loadbalancerId: ").Append(LoadbalancerId).Append("\n");
-            sb.Append("  availabilityZoneId: ").Append(AvailabilityZoneId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,9 +85,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
             return 
                 (
-                    this.L7FlavorId == input.L7FlavorId ||
-                    (this.L7FlavorId != null &&
-                    this.L7FlavorId.Equals(input.L7FlavorId))
+                    this.AvailabilityZoneId == input.AvailabilityZoneId ||
+                    this.AvailabilityZoneId != null &&
+                    input.AvailabilityZoneId != null &&
+                    this.AvailabilityZoneId.SequenceEqual(input.AvailabilityZoneId)
                 ) && 
                 (
                     this.IpTargetEnable == input.IpTargetEnable ||
@@ -100,15 +101,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.IpVersion.Equals(input.IpVersion))
                 ) && 
                 (
+                    this.L7FlavorId == input.L7FlavorId ||
+                    (this.L7FlavorId != null &&
+                    this.L7FlavorId.Equals(input.L7FlavorId))
+                ) && 
+                (
                     this.LoadbalancerId == input.LoadbalancerId ||
                     (this.LoadbalancerId != null &&
                     this.LoadbalancerId.Equals(input.LoadbalancerId))
-                ) && 
-                (
-                    this.AvailabilityZoneId == input.AvailabilityZoneId ||
-                    this.AvailabilityZoneId != null &&
-                    input.AvailabilityZoneId != null &&
-                    this.AvailabilityZoneId.SequenceEqual(input.AvailabilityZoneId)
                 );
         }
 
@@ -120,16 +120,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.L7FlavorId != null)
-                    hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
+                if (this.AvailabilityZoneId != null)
+                    hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
                 if (this.IpTargetEnable != null)
                     hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
                 if (this.IpVersion != null)
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.L7FlavorId != null)
+                    hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
                 if (this.LoadbalancerId != null)
                     hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.AvailabilityZoneId != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
                 return hashCode;
             }
         }

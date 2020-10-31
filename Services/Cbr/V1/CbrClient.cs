@@ -53,6 +53,19 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 批量添加删除存储库资源标签
+        /// </summary>
+        public BatchCreateAndDeleteVaultTagsResponse BatchCreateAndDeleteVaultTags(BatchCreateAndDeleteVaultTagsRequest batchCreateAndDeleteVaultTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vault_id" , batchCreateAndDeleteVaultTagsRequest.VaultId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/{vault_id}/tags/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateAndDeleteVaultTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchCreateAndDeleteVaultTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 复制备份
         /// </summary>
         public CopyBackupResponse CopyBackup(CopyBackupRequest copyBackupRequest)
@@ -114,6 +127,19 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 添加存储库资源标签
+        /// </summary>
+        public CreateVaultTagsResponse CreateVaultTags(CreateVaultTagsRequest createVaultTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vault_id" , createVaultTagsRequest.VaultId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/{vault_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVaultTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateVaultTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除备份
         /// </summary>
         public DeleteBackupResponse DeleteBackup(DeleteBackupRequest deleteBackupRequest)
@@ -164,6 +190,20 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteVaultRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteVaultResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除存储库资源标签
+        /// </summary>
+        public DeleteVaultTagResponse DeleteVaultTag(DeleteVaultTagRequest deleteVaultTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("key" , deleteVaultTagRequest.Key.ToString());
+            urlParam.Add("vault_id" , deleteVaultTagRequest.VaultId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/{vault_id}/tags/{key}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteVaultTagRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteVaultTagResponse>(response);
         }
         
         /// <summary>
@@ -394,6 +434,43 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVaultRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVaultResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询存储库项目标签
+        /// </summary>
+        public ShowVaultProjectTagResponse ShowVaultProjectTag(ShowVaultProjectTagRequest showVaultProjectTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVaultProjectTagRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVaultProjectTagResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询存储库资源实例
+        /// </summary>
+        public ShowVaultResourceInstancesResponse ShowVaultResourceInstances(ShowVaultResourceInstancesRequest showVaultResourceInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/resource_instances/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showVaultResourceInstancesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ShowVaultResourceInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询存储库资源标签
+        /// </summary>
+        public ShowVaultTagResponse ShowVaultTag(ShowVaultTagRequest showVaultTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vault_id" , showVaultTagRequest.VaultId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/{vault_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVaultTagRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVaultTagResponse>(response);
         }
         
         /// <summary>

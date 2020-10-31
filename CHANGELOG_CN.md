@@ -1,3 +1,39 @@
+## 3.0.19-beta 2020-10-31
+## HuaweiCloud SDK CBR
+ - ### 新增特性
+    - 新增支持接口：TAG标签相关接口
+ - ### 解决问题
+    - [Issue 17](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/issues/17) 修复ListBackups接口响应体问题
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK CTS
+ - ### 新增特性
+    - 新增支持接口：ListQuotas（查询租户追踪器配额信息）
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK Iam
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 接口名称调整，涉及接口：
+     1. KeystoneCreateUserTokenByPasswordAndMFA → KeystoneCreateUserTokenByPasswordAndMfa
+     2. CreateUnscopeTokenByIDPInitiated → CreateUnscopeTokenByIdpInitiated
+
+## HuaweiCloud SDK ProjectMan
+ - ### 新增特性
+    - 新增支持接口：迭代信息、用户信息、项目成员、项目信息、项目指标、项目统计等相关方法的接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+
 ## 3.0.18-beta 2020-10-20
 ## HuaweiCloud SDK DCS
  - ### 新增特性

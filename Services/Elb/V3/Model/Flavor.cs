@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? Shared { get; set; }
 
         /// <summary>
-        /// 项目ID。包括flavor所属的项目ID及其共享型的项目ID。
+        /// 项目ID
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }

@@ -197,8 +197,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest deleteMemberRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , deleteMemberRequest.PoolId.ToString());
             urlParam.Add("member_id" , deleteMemberRequest.MemberId.ToString());
+            urlParam.Add("pool_id" , deleteMemberRequest.PoolId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteMemberRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
@@ -219,7 +219,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 查询创建LB可用的可用区
+        /// 查询可用区列表
         /// </summary>
         public async Task<ListAvailabilityZonesResponse> ListAvailabilityZonesAsync(ListAvailabilityZonesRequest listAvailabilityZonesRequest)
         {
@@ -451,8 +451,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowMemberResponse> ShowMemberAsync(ShowMemberRequest showMemberRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , showMemberRequest.PoolId.ToString());
             urlParam.Add("member_id" , showMemberRequest.MemberId.ToString());
+            urlParam.Add("pool_id" , showMemberRequest.PoolId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMemberRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);

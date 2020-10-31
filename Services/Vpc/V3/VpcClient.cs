@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// <summary>
         /// 批量创建辅助弹性网卡
         /// </summary>
-        public BatchCreateSubNetworkInterfaceV3Response BatchCreateSubNetworkInterfaceV3(BatchCreateSubNetworkInterfaceV3Request batchCreateSubNetworkInterfaceV3Request)
+        public BatchCreateSubNetworkInterfaceResponse BatchCreateSubNetworkInterface(BatchCreateSubNetworkInterfaceRequest batchCreateSubNetworkInterfaceRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/batch-create",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSubNetworkInterfaceV3Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSubNetworkInterfaceRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<BatchCreateSubNetworkInterfaceV3Response>(response);
+            return JsonUtils.DeSerialize<BatchCreateSubNetworkInterfaceResponse>(response);
         }
         
         /// <summary>

@@ -141,6 +141,44 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 获取自定义代理登录票据
+        /// </summary>
+        public async Task<CreateLoginTokenResponse> CreateLoginTokenAsync(CreateLoginTokenRequest createLoginTokenRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AUTH/securitytoken/logintokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLoginTokenRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateLoginTokenResponse>(response);
+        }
+        
+        /// <summary>
+        /// 导入Metadata文件
+        /// </summary>
+        public async Task<CreateMetadataResponse> CreateMetadataAsync(CreateMetadataRequest createMetadataRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , createMetadataRequest.IdpId.ToString());
+            urlParam.Add("protocol_id" , createMetadataRequest.ProtocolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMetadataRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateMetadataResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取联邦认证unscoped token(IdP initiated)
+        /// </summary>
+        public async Task<CreateUnscopeTokenByIdpInitiatedResponse> CreateUnscopeTokenByIdpInitiatedAsync(CreateUnscopeTokenByIdpInitiatedRequest createUnscopeTokenByIdpInitiatedRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/tokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", createUnscopeTokenByIdpInitiatedRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateUnscopeTokenByIdpInitiatedResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除委托
         /// </summary>
         public async Task<DeleteAgencyResponse> DeleteAgencyAsync(DeleteAgencyRequest deleteAgencyRequest)
@@ -282,6 +320,32 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 注册身份提供商
+        /// </summary>
+        public async Task<KeystoneCreateIdentityProviderResponse> KeystoneCreateIdentityProviderAsync(KeystoneCreateIdentityProviderRequest keystoneCreateIdentityProviderRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneCreateIdentityProviderRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateIdentityProviderRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<KeystoneCreateIdentityProviderResponse>(response);
+        }
+        
+        /// <summary>
+        /// 注册映射
+        /// </summary>
+        public async Task<KeystoneCreateMappingResponse> KeystoneCreateMappingAsync(KeystoneCreateMappingRequest keystoneCreateMappingRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneCreateMappingRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateMappingRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<KeystoneCreateMappingResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建项目
         /// </summary>
         public async Task<KeystoneCreateProjectResponse> KeystoneCreateProjectAsync(KeystoneCreateProjectRequest keystoneCreateProjectRequest)
@@ -291,6 +355,32 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateProjectRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<KeystoneCreateProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 注册协议
+        /// </summary>
+        public async Task<KeystoneCreateProtocolResponse> KeystoneCreateProtocolAsync(KeystoneCreateProtocolRequest keystoneCreateProtocolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , keystoneCreateProtocolRequest.IdpId.ToString());
+            urlParam.Add("protocol_id" , keystoneCreateProtocolRequest.ProtocolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateProtocolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<KeystoneCreateProtocolResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取联邦认证scoped token
+        /// </summary>
+        public async Task<KeystoneCreateScopedTokenResponse> KeystoneCreateScopedTokenAsync(KeystoneCreateScopedTokenRequest keystoneCreateScopedTokenRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/auth/tokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateScopedTokenRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<KeystoneCreateScopedTokenResponse>(response);
         }
         
         /// <summary>
@@ -304,6 +394,46 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneDeleteGroupRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<KeystoneDeleteGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除身份提供商
+        /// </summary>
+        public async Task<KeystoneDeleteIdentityProviderResponse> KeystoneDeleteIdentityProviderAsync(KeystoneDeleteIdentityProviderRequest keystoneDeleteIdentityProviderRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneDeleteIdentityProviderRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneDeleteIdentityProviderRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<KeystoneDeleteIdentityProviderResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除映射
+        /// </summary>
+        public async Task<KeystoneDeleteMappingResponse> KeystoneDeleteMappingAsync(KeystoneDeleteMappingRequest keystoneDeleteMappingRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneDeleteMappingRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneDeleteMappingRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<KeystoneDeleteMappingResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除协议
+        /// </summary>
+        public async Task<KeystoneDeleteProtocolResponse> KeystoneDeleteProtocolAsync(KeystoneDeleteProtocolRequest keystoneDeleteProtocolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , keystoneDeleteProtocolRequest.IdpId.ToString());
+            urlParam.Add("protocol_id" , keystoneDeleteProtocolRequest.ProtocolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneDeleteProtocolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<KeystoneDeleteProtocolResponse>(response);
         }
         
         /// <summary>
@@ -369,6 +499,30 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询身份提供商列表
+        /// </summary>
+        public async Task<KeystoneListIdentityProvidersResponse> KeystoneListIdentityProvidersAsync(KeystoneListIdentityProvidersRequest keystoneListIdentityProvidersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListIdentityProvidersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneListIdentityProvidersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询映射列表
+        /// </summary>
+        public async Task<KeystoneListMappingsResponse> KeystoneListMappingsAsync(KeystoneListMappingsRequest keystoneListMappingsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListMappingsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneListMappingsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询权限列表
         /// </summary>
         public async Task<KeystoneListPermissionsResponse> KeystoneListPermissionsAsync(KeystoneListPermissionsRequest keystoneListPermissionsRequest)
@@ -417,6 +571,19 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListProjectsForUserRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListProjectsForUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询协议列表
+        /// </summary>
+        public async Task<KeystoneListProtocolsResponse> KeystoneListProtocolsAsync(KeystoneListProtocolsRequest keystoneListProtocolsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , keystoneListProtocolsRequest.IdpId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListProtocolsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneListProtocolsResponse>(response);
         }
         
         /// <summary>
@@ -551,6 +718,32 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询身份提供商详情
+        /// </summary>
+        public async Task<KeystoneShowIdentityProviderResponse> KeystoneShowIdentityProviderAsync(KeystoneShowIdentityProviderRequest keystoneShowIdentityProviderRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneShowIdentityProviderRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowIdentityProviderRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneShowIdentityProviderResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询映射详情
+        /// </summary>
+        public async Task<KeystoneShowMappingResponse> KeystoneShowMappingAsync(KeystoneShowMappingRequest keystoneShowMappingRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneShowMappingRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowMappingRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneShowMappingResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询权限详情
         /// </summary>
         public async Task<KeystoneShowPermissionResponse> KeystoneShowPermissionAsync(KeystoneShowPermissionRequest keystoneShowPermissionRequest)
@@ -574,6 +767,20 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowProjectRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<KeystoneShowProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询协议详情
+        /// </summary>
+        public async Task<KeystoneShowProtocolResponse> KeystoneShowProtocolAsync(KeystoneShowProtocolRequest keystoneShowProtocolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , keystoneShowProtocolRequest.IdpId.ToString());
+            urlParam.Add("protocol_id" , keystoneShowProtocolRequest.ProtocolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneShowProtocolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneShowProtocolResponse>(response);
         }
         
         /// <summary>
@@ -655,6 +862,32 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 更新身份提供商
+        /// </summary>
+        public async Task<KeystoneUpdateIdentityProviderResponse> KeystoneUpdateIdentityProviderAsync(KeystoneUpdateIdentityProviderRequest keystoneUpdateIdentityProviderRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneUpdateIdentityProviderRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateIdentityProviderRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            return JsonUtils.DeSerialize<KeystoneUpdateIdentityProviderResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新映射
+        /// </summary>
+        public async Task<KeystoneUpdateMappingResponse> KeystoneUpdateMappingAsync(KeystoneUpdateMappingRequest keystoneUpdateMappingRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , keystoneUpdateMappingRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateMappingRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            return JsonUtils.DeSerialize<KeystoneUpdateMappingResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改项目信息
         /// </summary>
         public async Task<KeystoneUpdateProjectResponse> KeystoneUpdateProjectAsync(KeystoneUpdateProjectRequest keystoneUpdateProjectRequest)
@@ -665,6 +898,20 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateProjectRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<KeystoneUpdateProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新协议
+        /// </summary>
+        public async Task<KeystoneUpdateProtocolResponse> KeystoneUpdateProtocolAsync(KeystoneUpdateProtocolRequest keystoneUpdateProtocolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , keystoneUpdateProtocolRequest.IdpId.ToString());
+            urlParam.Add("protocol_id" , keystoneUpdateProtocolRequest.ProtocolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateProtocolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            return JsonUtils.DeSerialize<KeystoneUpdateProtocolResponse>(response);
         }
         
         /// <summary>
@@ -880,6 +1127,20 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showDomainQuotaRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDomainQuotaResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询Metadata文件
+        /// </summary>
+        public async Task<ShowMetadataResponse> ShowMetadataAsync(ShowMetadataRequest showMetadataRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , showMetadataRequest.IdpId.ToString());
+            urlParam.Add("protocol_id" , showMetadataRequest.ProtocolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMetadataRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowMetadataResponse>(response);
         }
         
         /// <summary>
@@ -1300,6 +1561,54 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserInformationRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateUserInformationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取委托Token
+        /// </summary>
+        public async Task<KeystoneCreateAgencyTokenResponse> KeystoneCreateAgencyTokenAsync(KeystoneCreateAgencyTokenRequest keystoneCreateAgencyTokenRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/auth/tokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateAgencyTokenRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<KeystoneCreateAgencyTokenResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取IAM用户Token（使用密码）
+        /// </summary>
+        public async Task<KeystoneCreateUserTokenByPasswordResponse> KeystoneCreateUserTokenByPasswordAsync(KeystoneCreateUserTokenByPasswordRequest keystoneCreateUserTokenByPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/auth/tokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateUserTokenByPasswordRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<KeystoneCreateUserTokenByPasswordResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取IAM用户Token（使用密码+虚拟MFA）
+        /// </summary>
+        public async Task<KeystoneCreateUserTokenByPasswordAndMfaResponse> KeystoneCreateUserTokenByPasswordAndMfaAsync(KeystoneCreateUserTokenByPasswordAndMfaRequest keystoneCreateUserTokenByPasswordAndMfaRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/auth/tokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateUserTokenByPasswordAndMfaRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<KeystoneCreateUserTokenByPasswordAndMfaResponse>(response);
+        }
+        
+        /// <summary>
+        /// 校验Token的有效性
+        /// </summary>
+        public async Task<KeystoneValidateTokenResponse> KeystoneValidateTokenAsync(KeystoneValidateTokenRequest keystoneValidateTokenRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/auth/tokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneValidateTokenRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneValidateTokenResponse>(response);
         }
         
     }

@@ -18,23 +18,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("marker", IsQuery = true)]
-        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string Marker { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("limit", IsQuery = true)]
-        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Limit { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("page_reverse", IsQuery = true)]
-        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? PageReverse { get; set; }
+        [SDKProperty("description", IsQuery = true)]
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Description { get; set; }
 
         /// <summary>
         /// 
@@ -46,6 +32,27 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("ip_list", IsQuery = true)]
+        [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> IpList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
@@ -53,16 +60,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("description", IsQuery = true)]
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Description { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("ip_list", IsQuery = true)]
-        [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> IpList { get; set; }
+        [SDKProperty("page_reverse", IsQuery = true)]
+        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PageReverse { get; set; }
 
 
         /// <summary>
@@ -72,13 +72,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListIpGroupsRequest {\n");
-            sb.Append("  marker: ").Append(Marker).Append("\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  ipList: ").Append(IpList).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,19 +101,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
             return 
                 (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
+                    this.Description == input.Description ||
+                    this.Description != null &&
+                    input.Description != null &&
+                    this.Description.SequenceEqual(input.Description)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -122,22 +113,31 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Id.SequenceEqual(input.Id)
                 ) && 
                 (
+                    this.IpList == input.IpList ||
+                    this.IpList != null &&
+                    input.IpList != null &&
+                    this.IpList.SequenceEqual(input.IpList)
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
+                ) && 
+                (
                     this.Name == input.Name ||
                     this.Name != null &&
                     input.Name != null &&
                     this.Name.SequenceEqual(input.Name)
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.IpList == input.IpList ||
-                    this.IpList != null &&
-                    input.IpList != null &&
-                    this.IpList.SequenceEqual(input.IpList)
+                    this.PageReverse == input.PageReverse ||
+                    (this.PageReverse != null &&
+                    this.PageReverse.Equals(input.PageReverse))
                 );
         }
 
@@ -149,20 +149,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.IpList != null)
                     hashCode = hashCode * 59 + this.IpList.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.PageReverse != null)
+                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
                 return hashCode;
             }
         }

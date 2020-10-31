@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
-        public MetricInfo Metric { get; set; }
+        public MetricInfoForAlarm Metric { get; set; }
 
         /// <summary>
         /// 
@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public List<AlarmActions> AlarmActions { get; set; }
 
         /// <summary>
-        /// 告警恢复触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
+        /// 告警恢复触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
         /// </summary>
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<AlarmActions> OkActions { get; set; }

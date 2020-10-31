@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -64,18 +64,31 @@ namespace HuaweiCloud.SDK.Core
             const BindingFlags instanceBindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 
             var properties = jsonObject.GetType().GetProperties(instanceBindFlags);
+
             foreach (var property in properties)
             {
                 var oriAttrName = "";
-                var customAttrs = property.GetCustomAttributes(typeof(JsonPropertyAttribute), true);
+                var customAttrs = property.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
                 if (customAttrs.Length > 0)
                 {
-                    oriAttrName = (string) customAttrs[0].GetType().GetProperty("PropertyName")?.GetValue(
-                        property.GetCustomAttributes(typeof(JsonPropertyAttribute), true)[0]);
+                    SDKPropertyAttribute sdkPropertyAttribute = null;
+                    foreach (var customAttr in customAttrs)
+                    {
+                        if (customAttr is SDKPropertyAttribute propertyAttribute)
+                        {
+                            sdkPropertyAttribute = propertyAttribute;
+                        }
+
+                        if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsHeader)
+                        {
+                            continue;
+                        }
+
+                        oriAttrName = sdkPropertyAttribute.PropertyName;
+                    }
                 }
 
-                if (property.GetValue(jsonObject) == null && !string.IsNullOrEmpty(oriAttrName) &&
-                    message.Headers.Contains(oriAttrName))
+                if (!string.IsNullOrEmpty(oriAttrName) && message.Headers.Contains(oriAttrName))
                 {
                     property.SetValue(jsonObject, message.Headers.GetValues(oriAttrName).First());
                 }

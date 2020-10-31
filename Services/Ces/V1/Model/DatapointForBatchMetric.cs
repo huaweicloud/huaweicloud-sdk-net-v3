@@ -18,8 +18,32 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// <summary>
         /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
         /// </summary>
+        [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Max { get; set; }
+
+        /// <summary>
+        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// </summary>
+        [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Min { get; set; }
+
+        /// <summary>
+        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// </summary>
         [JsonProperty("average", NullValueHandling = NullValueHandling.Ignore)]
         public double? Average { get; set; }
+
+        /// <summary>
+        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// </summary>
+        [JsonProperty("sum", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Sum { get; set; }
+
+        /// <summary>
+        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// </summary>
+        [JsonProperty("variance", NullValueHandling = NullValueHandling.Ignore)]
+        public string Variance { get; set; }
 
         /// <summary>
         /// 指标采集时间，UNIX时间戳，单位毫秒。
@@ -35,7 +59,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DatapointForBatchMetric {\n");
+            sb.Append("  max: ").Append(Max).Append("\n");
+            sb.Append("  min: ").Append(Min).Append("\n");
             sb.Append("  average: ").Append(Average).Append("\n");
+            sb.Append("  sum: ").Append(Sum).Append("\n");
+            sb.Append("  variance: ").Append(Variance).Append("\n");
             sb.Append("  timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -59,9 +87,29 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
             return 
                 (
+                    this.Max == input.Max ||
+                    (this.Max != null &&
+                    this.Max.Equals(input.Max))
+                ) && 
+                (
+                    this.Min == input.Min ||
+                    (this.Min != null &&
+                    this.Min.Equals(input.Min))
+                ) && 
+                (
                     this.Average == input.Average ||
                     (this.Average != null &&
                     this.Average.Equals(input.Average))
+                ) && 
+                (
+                    this.Sum == input.Sum ||
+                    (this.Sum != null &&
+                    this.Sum.Equals(input.Sum))
+                ) && 
+                (
+                    this.Variance == input.Variance ||
+                    (this.Variance != null &&
+                    this.Variance.Equals(input.Variance))
                 ) && 
                 (
                     this.Timestamp == input.Timestamp ||
@@ -78,8 +126,16 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Max != null)
+                    hashCode = hashCode * 59 + this.Max.GetHashCode();
+                if (this.Min != null)
+                    hashCode = hashCode * 59 + this.Min.GetHashCode();
                 if (this.Average != null)
                     hashCode = hashCode * 59 + this.Average.GetHashCode();
+                if (this.Sum != null)
+                    hashCode = hashCode * 59 + this.Sum.GetHashCode();
+                if (this.Variance != null)
+                    hashCode = hashCode * 59 + this.Variance.GetHashCode();
                 if (this.Timestamp != null)
                     hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;

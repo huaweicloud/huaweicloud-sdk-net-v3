@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? MaxRetries { get; set; }
 
         /// <summary>
-        /// 健康检查连续失败多少次后，将后端服务器的健康检查状态由online判定为offline，取值范围[1，10]。 默认值：3
+        /// 健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE
         /// </summary>
         [JsonProperty("max_retries_down", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxRetriesDown { get; set; }

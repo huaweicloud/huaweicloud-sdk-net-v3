@@ -16,39 +16,39 @@ namespace HuaweiCloud.SDK.Eps.v1
         /// <summary>
         /// 创建企业项目
         /// </summary>
-        public CreateEPResponse CreateEP(CreateEPRequest createEPRequest)
+        public CreateEnterpriseProjectResponse CreateEnterpriseProject(CreateEnterpriseProjectRequest createEnterpriseProjectRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<CreateEPResponse>(response);
+            return JsonUtils.DeSerialize<CreateEnterpriseProjectResponse>(response);
         }
         
         /// <summary>
         /// 停用企业项目
         /// </summary>
-        public DisableEPResponse DisableEP(DisableEPRequest disableEPRequest)
+        public DisableEnterpriseProjectResponse DisableEnterpriseProject(DisableEnterpriseProjectRequest disableEnterpriseProjectRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , disableEPRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("enterprise_project_id" , disableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerializeNull<DisableEPResponse>(response);
+            return JsonUtils.DeSerializeNull<DisableEnterpriseProjectResponse>(response);
         }
         
         /// <summary>
         /// 启用企业项目
         /// </summary>
-        public EnableEPResponse EnableEP(EnableEPRequest enableEPRequest)
+        public EnableEnterpriseProjectResponse EnableEnterpriseProject(EnableEnterpriseProjectRequest enableEnterpriseProjectRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , enableEPRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("enterprise_project_id" , enableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerializeNull<EnableEPResponse>(response);
+            return JsonUtils.DeSerializeNull<EnableEnterpriseProjectResponse>(response);
         }
         
         /// <summary>
@@ -66,13 +66,13 @@ namespace HuaweiCloud.SDK.Eps.v1
         /// <summary>
         /// 查询企业项目列表
         /// </summary>
-        public ListEPResponse ListEP(ListEPRequest listEPRequest)
+        public ListEnterpriseProjectResponse ListEnterpriseProject(ListEnterpriseProjectRequest listEnterpriseProjectRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listEPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListEPResponse>(response);
+            return JsonUtils.DeSerialize<ListEnterpriseProjectResponse>(response);
         }
         
         /// <summary>
@@ -91,14 +91,14 @@ namespace HuaweiCloud.SDK.Eps.v1
         /// <summary>
         /// 修改企业项目
         /// </summary>
-        public ModifyEPResponse ModifyEP(ModifyEPRequest modifyEPRequest)
+        public ModifyEnterpriseProjectResponse ModifyEnterpriseProject(ModifyEnterpriseProjectRequest modifyEnterpriseProjectRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , modifyEPRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("enterprise_project_id" , modifyEnterpriseProjectRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyEPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerialize<ModifyEPResponse>(response);
+            return JsonUtils.DeSerialize<ModifyEnterpriseProjectResponse>(response);
         }
         
         /// <summary>
@@ -117,39 +117,39 @@ namespace HuaweiCloud.SDK.Eps.v1
         /// <summary>
         /// 查询企业项目详情
         /// </summary>
-        public ShowEPResponse ShowEP(ShowEPRequest showEPRequest)
+        public ShowEnterpriseProjectResponse ShowEnterpriseProject(ShowEnterpriseProjectRequest showEnterpriseProjectRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , showEPRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("enterprise_project_id" , showEnterpriseProjectRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showEPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowEPResponse>(response);
+            return JsonUtils.DeSerialize<ShowEnterpriseProjectResponse>(response);
         }
         
         /// <summary>
         /// 查询企业项目配额
         /// </summary>
-        public ShowEPQuotaResponse ShowEPQuota(ShowEPQuotaRequest showEPQuotaRequest)
+        public ShowEnterpriseProjectQuotaResponse ShowEnterpriseProjectQuota(ShowEnterpriseProjectQuotaRequest showEnterpriseProjectQuotaRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showEPQuotaRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showEnterpriseProjectQuotaRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowEPQuotaResponse>(response);
+            return JsonUtils.DeSerialize<ShowEnterpriseProjectQuotaResponse>(response);
         }
         
         /// <summary>
         /// 查询企业项目绑定的资源列表
         /// </summary>
-        public ShowResourceBindEPResponse ShowResourceBindEP(ShowResourceBindEPRequest showResourceBindEPRequest)
+        public ShowResourceBindEnterpriseProjectResponse ShowResourceBindEnterpriseProject(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , showResourceBindEPRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("enterprise_project_id" , showResourceBindEnterpriseProjectRequest.EnterpriseProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<ShowResourceBindEPResponse>(response);
+            return JsonUtils.DeSerialize<ShowResourceBindEnterpriseProjectResponse>(response);
         }
         
     }

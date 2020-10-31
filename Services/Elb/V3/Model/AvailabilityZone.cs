@@ -10,19 +10,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// 可用区
     /// </summary>
     public class AvailabilityZone 
     {
 
         /// <summary>
-        /// 可用区code
+        /// 可用区code。
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public string Code { get; set; }
 
         /// <summary>
-        /// az状态.取值：  ACTIVE
+        /// az状态。  取值：ACTIVE
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public string State { get; set; }

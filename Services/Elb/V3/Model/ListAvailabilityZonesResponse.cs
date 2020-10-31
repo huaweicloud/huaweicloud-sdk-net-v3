@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 可用区列表  &gt; 获取可用区列表后，在（如创建LB时）设置可用区，选择的多个可用区必须同时在同一个子集中
+        /// 可用区列表。  &gt; 获取可用区集合列表后，在（如创建LB时）设置可用区，选择的多个可用区必须同时在同一个集合中。
         /// </summary>
         [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<AvailabilityZone>> AvailabilityZones { get; set; }
 
         /// <summary>
-        /// 请求ID。 注：自动生成
+        /// 请求ID。  注：自动生成。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }

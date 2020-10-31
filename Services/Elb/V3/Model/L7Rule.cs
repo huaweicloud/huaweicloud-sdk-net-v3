@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 是否反向匹配，true/false。 使用说明：固定为false。该字段能更新但不会生效。
+        /// 是否反向匹配。 使用说明：固定为false。该字段能更新但不会生效。
         /// </summary>
         [JsonProperty("invert", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Invert { get; set; }

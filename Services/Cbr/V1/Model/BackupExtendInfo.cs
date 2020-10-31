@@ -170,7 +170,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 备份注册镜像ID列表
         /// </summary>
         [JsonProperty("os_images_data", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> OsImagesData { get; set; }
+        public List<ImageData> OsImagesData { get; set; }
 
         /// <summary>
         /// 整机备份是否包含系统盘

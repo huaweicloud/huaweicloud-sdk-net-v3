@@ -23,10 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Net;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 using static System.String;
 
 namespace HuaweiCloud.SDK.Core
@@ -43,7 +41,7 @@ namespace HuaweiCloud.SDK.Core
         private readonly HashSet<string> _unsignedHeaders = new HashSet<string> {"content-type"};
 
         public string Key { get; set; }
-        public string Secret{ get; set; }
+        public string Secret { get; set; }
 
         public void Sign(HttpRequest request)
         {
@@ -64,6 +62,7 @@ namespace HuaweiCloud.SDK.Core
             {
                 host = request.Headers.GetValues(HeaderHost)?[0];
             }
+
             request.Headers.Set("host", host);
 
             var signedHeaders = ProcessSignedHeaders(request);
@@ -102,8 +101,7 @@ namespace HuaweiCloud.SDK.Core
         private string ProcessCanonicalUri(HttpRequest request)
         {
             var uri = request.Url.GetComponents(UriComponents.Path | UriComponents.KeepDelimiter, UriFormat.Unescaped);
-            uri = Join("/", 
-                uri.Split('/').Select(v => HttpUtility.UrlEncode(v, Encoding.UTF8)).ToList());
+            uri = Join("/", uri.Split('/').Select(UrlEncode).ToList());
             uri = uri.EndsWith("/") ? uri : uri + "/";
             return uri;
         }
@@ -136,17 +134,19 @@ namespace HuaweiCloud.SDK.Core
                 foreach (var value in values)
                 {
                     headers.Add(key + ":" + value.Trim());
-                    request.Headers.Set(key, Encoding.GetEncoding("iso-8859-1").GetString(Encoding.UTF8.GetBytes(value)));
+                    request.Headers.Set(key,
+                        Encoding.GetEncoding("iso-8859-1").GetString(Encoding.UTF8.GetBytes(value)));
                 }
             }
+
             return Join("\n", headers) + "\n";
         }
 
         private List<string> ProcessSignedHeaders(HttpRequest request)
         {
-            var signedHeaders = (from key in request.Headers.AllKeys 
-                let keyLower = key.ToLower() 
-                where !_unsignedHeaders.Contains(keyLower) 
+            var signedHeaders = (from key in request.Headers.AllKeys
+                let keyLower = key.ToLower()
+                where !_unsignedHeaders.Contains(keyLower)
                 select key.ToLower()).ToList();
 
             signedHeaders.Sort(CompareOrdinal);
@@ -165,6 +165,7 @@ namespace HuaweiCloud.SDK.Core
                 var data = Encoding.UTF8.GetBytes(request.Body);
                 hexEncodePayload = HexEncodeSha256Hash(data);
             }
+
             return hexEncodePayload;
         }
 
@@ -192,6 +193,7 @@ namespace HuaweiCloud.SDK.Core
                 array[i] = GetHexValue(b / 16);
                 array[i + 1] = GetHexValue(b % 16);
             }
+
             return new string(array, 0, num);
         }
 
@@ -199,9 +201,10 @@ namespace HuaweiCloud.SDK.Core
         {
             if (i < 10)
             {
-                return (char)(i + '0');
+                return (char) (i + '0');
             }
-            return (char)(i - 10 + 'a');
+
+            return (char) (i - 10 + 'a');
         }
 
         string StringToSign(string canonicalRequest, DateTime t)

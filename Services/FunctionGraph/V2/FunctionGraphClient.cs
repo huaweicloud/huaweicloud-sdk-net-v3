@@ -105,6 +105,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取指定时间段的函数运行指标
+        /// </summary>
+        public ListFunctionStatisticsResponse ListFunctionStatistics(ListFunctionStatisticsRequest listFunctionStatisticsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("func_urn" , listFunctionStatisticsRequest.FuncUrn.ToString());
+            urlParam.Add("period" , listFunctionStatisticsRequest.Period.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/statistics/{period}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listFunctionStatisticsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionStatisticsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定函数的版本列表。
         /// </summary>
         public ListFunctionVersionsResponse ListFunctionVersions(ListFunctionVersionsRequest listFunctionVersionsRequest)
@@ -127,6 +141,30 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listFunctionsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListFunctionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询租户配额
+        /// </summary>
+        public ListQuotasResponse ListQuotas(ListQuotasRequest listQuotasRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/quotas",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listQuotasRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListQuotasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 租户函数统计信息
+        /// </summary>
+        public ListStatisticsResponse ListStatistics(ListStatisticsRequest listStatisticsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/statistics",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listStatisticsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListStatisticsResponse>(response);
         }
         
         /// <summary>
@@ -293,6 +331,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showFunctionTriggerRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowFunctionTriggerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新触发器
+        /// </summary>
+        public UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest updateTriggerRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , updateTriggerRequest.FunctionUrn.ToString());
+            urlParam.Add("trigger_type_code" , updateTriggerRequest.TriggerTypeCode.ToString());
+            urlParam.Add("triggerId" , updateTriggerRequest.TriggerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateTriggerResponse>(response);
         }
         
     }

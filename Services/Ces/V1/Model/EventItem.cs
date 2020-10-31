@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string EventName { get; set; }
 
         /// <summary>
-        /// 事件来源。  格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。
+        /// 事件来源。 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。
         /// </summary>
         [JsonProperty("event_source", NullValueHandling = NullValueHandling.Ignore)]
         public string EventSource { get; set; }

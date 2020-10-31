@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// 用户角色id
+        /// 成员角色 -1 项目创建者 3 项目经理 4 开发人员 5 测试经理 6 测试人员 7 参与者 8 浏览
         /// </summary>
-        [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RoleId { get; set; }
+        [JsonProperty("user_role", NullValueHandling = NullValueHandling.Ignore)]
+        public int? UserRole { get; set; }
 
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowCurUserRoleResponse {\n");
-            sb.Append("  roleId: ").Append(RoleId).Append("\n");
+            sb.Append("  userRole: ").Append(UserRole).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 
             return 
                 (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
+                    this.UserRole == input.UserRole ||
+                    (this.UserRole != null &&
+                    this.UserRole.Equals(input.UserRole))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                if (this.UserRole != null)
+                    hashCode = hashCode * 59 + this.UserRole.GetHashCode();
                 return hashCode;
             }
         }

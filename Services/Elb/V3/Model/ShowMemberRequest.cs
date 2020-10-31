@@ -18,16 +18,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("pool_id", IsPath = true)]
-        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PoolId { get; set; }
+        [SDKProperty("member_id", IsPath = true)]
+        [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string MemberId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("member_id", IsPath = true)]
-        [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string MemberId { get; set; }
+        [SDKProperty("pool_id", IsPath = true)]
+        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolId { get; set; }
 
 
         /// <summary>
@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowMemberRequest {\n");
-            sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  memberId: ").Append(MemberId).Append("\n");
+            sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,14 +61,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
             return 
                 (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
-                ) && 
-                (
                     this.MemberId == input.MemberId ||
                     (this.MemberId != null &&
                     this.MemberId.Equals(input.MemberId))
+                ) && 
+                (
+                    this.PoolId == input.PoolId ||
+                    (this.PoolId != null &&
+                    this.PoolId.Equals(input.PoolId))
                 );
         }
 
@@ -80,10 +80,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.MemberId != null)
                     hashCode = hashCode * 59 + this.MemberId.GetHashCode();
+                if (this.PoolId != null)
+                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 return hashCode;
             }
         }

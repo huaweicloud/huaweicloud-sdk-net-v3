@@ -18,9 +18,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("marker", IsQuery = true)]
-        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string Marker { get; set; }
+        [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Id { get; set; }
 
         /// <summary>
         /// 
@@ -32,16 +32,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("page_reverse", IsQuery = true)]
-        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? PageReverse { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("id", IsQuery = true)]
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Id { get; set; }
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
 
         /// <summary>
         /// 
@@ -53,9 +46,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("type", IsQuery = true)]
-        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Type { get; set; }
+        [SDKProperty("page_reverse", IsQuery = true)]
+        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PageReverse { get; set; }
 
         /// <summary>
         /// 
@@ -63,6 +56,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [SDKProperty("shared", IsQuery = true)]
         [JsonProperty("shared", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Shared { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("type", IsQuery = true)]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Type { get; set; }
 
 
         /// <summary>
@@ -72,13 +72,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListFlavorsRequest {\n");
-            sb.Append("  marker: ").Append(Marker).Append("\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
             sb.Append("  shared: ").Append(Shared).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,9 +101,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
             return 
                 (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
+                    this.Id == input.Id ||
+                    this.Id != null &&
+                    input.Id != null &&
+                    this.Id.SequenceEqual(input.Id)
                 ) && 
                 (
                     this.Limit == input.Limit ||
@@ -111,15 +112,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Limit.Equals(input.Limit))
                 ) && 
                 (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -128,15 +123,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Name.SequenceEqual(input.Name)
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    this.Type != null &&
-                    input.Type != null &&
-                    this.Type.SequenceEqual(input.Type)
+                    this.PageReverse == input.PageReverse ||
+                    (this.PageReverse != null &&
+                    this.PageReverse.Equals(input.PageReverse))
                 ) && 
                 (
                     this.Shared == input.Shared ||
                     (this.Shared != null &&
                     this.Shared.Equals(input.Shared))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type != null &&
+                    input.Type != null &&
+                    this.Type.SequenceEqual(input.Type)
                 );
         }
 
@@ -148,20 +148,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.PageReverse != null)
+                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
                 if (this.Shared != null)
                     hashCode = hashCode * 59 + this.Shared.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

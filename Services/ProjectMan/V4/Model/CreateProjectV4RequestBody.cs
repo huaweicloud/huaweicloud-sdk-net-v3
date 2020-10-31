@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 用户创建的项目模板id
         /// </summary>
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TemplateId { get; set; }
+        public int? TemplateId { get; set; }
 
 
         /// <summary>

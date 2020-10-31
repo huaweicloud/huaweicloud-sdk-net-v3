@@ -39,6 +39,18 @@ namespace HuaweiCloud.SDK.Ces.V1
         }
         
         /// <summary>
+        /// 创建自定义告警模板
+        /// </summary>
+        public async Task<CreateAlarmTemplateResponse> CreateAlarmTemplateAsync(CreateAlarmTemplateRequest createAlarmTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAlarmTemplateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateAlarmTemplateResponse>(response);
+        }
+        
+        /// <summary>
         /// 上报事件
         /// </summary>
         public async Task<CreateEventsResponse> CreateEventsAsync(CreateEventsRequest createEventsRequest)
@@ -75,6 +87,43 @@ namespace HuaweiCloud.SDK.Ces.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteAlarmRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteAlarmResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除自定义告警模板
+        /// </summary>
+        public async Task<DeleteAlarmTemplateResponse> DeleteAlarmTemplateAsync(DeleteAlarmTemplateRequest deleteAlarmTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id" , deleteAlarmTemplateRequest.TemplateId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template/{template_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteAlarmTemplateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteAlarmTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询告警历史
+        /// </summary>
+        public async Task<ListAlarmHistoriesResponse> ListAlarmHistoriesAsync(ListAlarmHistoriesRequest listAlarmHistoriesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAlarmHistoriesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListAlarmHistoriesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询自定义告警模板列表
+        /// </summary>
+        public async Task<ListAlarmTemplatesResponse> ListAlarmTemplatesAsync(ListAlarmTemplatesRequest listAlarmTemplatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listAlarmTemplatesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListAlarmTemplatesResponse>(response);
         }
         
         /// <summary>
@@ -151,6 +200,19 @@ namespace HuaweiCloud.SDK.Ces.V1
         }
         
         /// <summary>
+        /// 查询资源分组下的资源
+        /// </summary>
+        public async Task<ShowResourceGroupResponse> ShowResourceGroupAsync(ShowResourceGroupRequest showResourceGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id" , showResourceGroupRequest.GroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showResourceGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowResourceGroupResponse>(response);
+        }
+        
+        /// <summary>
         /// 启停告警规则
         /// </summary>
         public async Task<UpdateAlarmActionResponse> UpdateAlarmActionAsync(UpdateAlarmActionRequest updateAlarmActionRequest)
@@ -161,6 +223,19 @@ namespace HuaweiCloud.SDK.Ces.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAlarmActionRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateAlarmActionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新自定义告警模板
+        /// </summary>
+        public async Task<UpdateAlarmTemplateResponse> UpdateAlarmTemplateAsync(UpdateAlarmTemplateRequest updateAlarmTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id" , updateAlarmTemplateRequest.TemplateId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template/{template_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAlarmTemplateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateAlarmTemplateResponse>(response);
         }
         
     }

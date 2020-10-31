@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 偏移量
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string Offset { get; set; }
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 每页显示数量，每页最多显示100条
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
+        public int? Limit { get; set; }
 
 
         /// <summary>

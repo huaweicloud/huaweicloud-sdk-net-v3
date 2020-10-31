@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 企业项目类型
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
             sb.Append("class EnterpriseProject {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,11 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

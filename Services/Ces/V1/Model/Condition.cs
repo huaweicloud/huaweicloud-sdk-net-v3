@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// 
+    /// 告警规则设置的告警策略
     /// </summary>
     public class Condition 
     {
