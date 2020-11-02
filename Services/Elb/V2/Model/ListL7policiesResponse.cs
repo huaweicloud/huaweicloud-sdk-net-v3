@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 转发策略对象的列表
         /// </summary>
         [JsonProperty("l7policies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<L7policyV2Resp> L7policies { get; set; }
+        public List<L7policyResp> L7policies { get; set; }
 
 
         /// <summary>

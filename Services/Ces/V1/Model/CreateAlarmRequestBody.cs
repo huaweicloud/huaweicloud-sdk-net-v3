@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class CreateAlarmRequestBody 
     {
         /// <summary>
-        /// 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
+        /// 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
         /// </summary>
-        /// <value>告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM</value>
+        /// <value>告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。</value>
         [JsonConverter(typeof(EnumClassConverter<AlarmTypeEnum>))]
         public class AlarmTypeEnum
         {
@@ -31,11 +31,17 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             /// </summary>
             public static readonly AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
 
+            /// <summary>
+            /// Enum RESOURCE_GROUP for value: RESOURCE_GROUP
+            /// </summary>
+            public static readonly AlarmTypeEnum RESOURCE_GROUP = new AlarmTypeEnum("RESOURCE_GROUP");
+
             private static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
             new Dictionary<string, AlarmTypeEnum>()
             {
                 { "EVENT.SYS", EVENT_SYS },
                 { "EVENT.CUSTOM", EVENT_CUSTOM },
+                { "RESOURCE_GROUP", RESOURCE_GROUP },
             };
 
             private string Value;
@@ -141,7 +147,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
-        public MetricInfoExt Metric { get; set; }
+        public MetricInfoForAlarm Metric { get; set; }
 
         /// <summary>
         /// 
@@ -168,7 +174,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public int? AlarmLevel { get; set; }
 
         /// <summary>
-        /// 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
+        /// 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
         /// </summary>
         [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
         public AlarmTypeEnum AlarmType { get; set; }

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 后端云服务器对象的列表
         /// </summary>
         [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
-        public List<MemberV2Resp> Members { get; set; }
+        public List<MemberResp> Members { get; set; }
 
 
         /// <summary>

@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// 创建规则中的监控信息
+    /// 创建规则中的监控指标信息
     /// </summary>
     public class MetricInfoForAlarm 
     {

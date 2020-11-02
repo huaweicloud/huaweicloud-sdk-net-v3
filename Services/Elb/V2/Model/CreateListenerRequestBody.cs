@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 
         /// </summary>
         [JsonProperty("listener", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateListenerV2Req Listener { get; set; }
+        public CreateListenerReq Listener { get; set; }
 
 
         /// <summary>

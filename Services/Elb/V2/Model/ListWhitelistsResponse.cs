@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 白名单对象的列表
         /// </summary>
         [JsonProperty("whitelists", NullValueHandling = NullValueHandling.Ignore)]
-        public List<WhitelistV2Resp> Whitelists { get; set; }
+        public List<WhitelistResp> Whitelists { get; set; }
 
 
         /// <summary>

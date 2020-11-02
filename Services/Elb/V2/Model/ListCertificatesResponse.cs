@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 
         /// </summary>
         [JsonProperty("certificates", NullValueHandling = NullValueHandling.Ignore)]
-        public CertificateV2Resp Certificates { get; set; }
+        public CertificateResp Certificates { get; set; }
 
         /// <summary>
         /// 证书的个数

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 
         /// </summary>
         [JsonProperty("loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateLoadbalancerV2Req Loadbalancer { get; set; }
+        public UpdateLoadbalancerReq Loadbalancer { get; set; }
 
 
         /// <summary>

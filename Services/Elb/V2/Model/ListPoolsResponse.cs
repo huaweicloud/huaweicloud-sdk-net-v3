@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 后端云服务器对象组列表
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PoolV2Resp> Pools { get; set; }
+        public List<PoolResp> Pools { get; set; }
 
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 
         /// </summary>
         [JsonProperty("pool", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdatePoolV2Req Pool { get; set; }
+        public UpdatePoolReq Pool { get; set; }
 
 
         /// <summary>

@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [JsonProperty("meta_data", NullValueHandling = NullValueHandling.Ignore)]
-        public MetaData MetaData { get; set; }
+        public MetaDataForAlarmHistory MetaData { get; set; }
 
 
         /// <summary>

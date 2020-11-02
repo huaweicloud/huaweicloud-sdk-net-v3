@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 
         /// </summary>
         [JsonProperty("healthmonitor", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateHealthmonitorV2Req Healthmonitor { get; set; }
+        public CreateHealthmonitorReq Healthmonitor { get; set; }
 
 
         /// <summary>

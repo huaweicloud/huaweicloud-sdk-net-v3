@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 告警阈值，取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Value { get; set; }
+        public double? Value { get; set; }
 
 
         /// <summary>

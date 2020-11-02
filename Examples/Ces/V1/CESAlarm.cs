@@ -185,7 +185,7 @@ namespace HuaweiCSharpSDK
                 {
                     AlarmName = "ces-sdk-02",
                     AlarmDescription = "create ECS alram",
-                    Metric = new MetricInfoExt()
+                    Metric = new MetricInfoForAlarm
                     {
                         Namespace = "AGT.ECS",
                         Dimensions = new List<MetricsDimension>()

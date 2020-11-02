@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 
         /// </summary>
         [JsonProperty("statuses", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusV2Resp Statuses { get; set; }
+        public StatusResp Statuses { get; set; }
 
 
         /// <summary>

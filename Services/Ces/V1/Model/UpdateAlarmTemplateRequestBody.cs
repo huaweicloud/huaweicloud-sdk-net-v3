@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 自定义告警模板名称，只能包含0-9/a-z/A-Z/_/-或汉字。
+        /// 自定义告警模板名称，只能包含0-9/a-z/A-Z/_/-或汉字，长度为1-128。。
         /// </summary>
         [JsonProperty("template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateName { get; set; }
@@ -28,19 +28,19 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string TemplateDescription { get; set; }
 
         /// <summary>
-        /// 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS
+        /// 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS。
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id
+        /// 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id。
         /// </summary>
         [JsonProperty("dimension_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DimensionName { get; set; }
 
         /// <summary>
-        /// 创建自定义告警模板添加添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。。
+        /// 创建自定义告警模板添加添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。
         /// </summary>
         [JsonProperty("template_items", NullValueHandling = NullValueHandling.Ignore)]
         public List<TemplateItem> TemplateItems { get; set; }

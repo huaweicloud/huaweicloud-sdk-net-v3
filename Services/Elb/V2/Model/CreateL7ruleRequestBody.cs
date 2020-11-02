@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("l7rule", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateL7ruleV2Req L7rule { get; set; }
+        [JsonProperty("rule", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateL7ruleReq Rule { get; set; }
 
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateL7ruleRequestBody {\n");
-            sb.Append("  l7rule: ").Append(L7rule).Append("\n");
+            sb.Append("  rule: ").Append(Rule).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             return 
                 (
-                    this.L7rule == input.L7rule ||
-                    (this.L7rule != null &&
-                    this.L7rule.Equals(input.L7rule))
+                    this.Rule == input.Rule ||
+                    (this.Rule != null &&
+                    this.Rule.Equals(input.Rule))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.L7rule != null)
-                    hashCode = hashCode * 59 + this.L7rule.GetHashCode();
+                if (this.Rule != null)
+                    hashCode = hashCode * 59 + this.Rule.GetHashCode();
                 return hashCode;
             }
         }

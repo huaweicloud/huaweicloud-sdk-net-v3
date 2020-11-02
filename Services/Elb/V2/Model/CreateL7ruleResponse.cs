@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// 
         /// </summary>
         [JsonProperty("rule", NullValueHandling = NullValueHandling.Ignore)]
-        public L7ruleV2Resp Rule { get; set; }
+        public L7ruleResp Rule { get; set; }
 
 
         /// <summary>
