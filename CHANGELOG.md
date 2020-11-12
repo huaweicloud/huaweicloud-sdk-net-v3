@@ -1,3 +1,22 @@
+## 3.0.21-beta 2020-11-11
+## HuaweiCloud SDK CBR
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Interface adjustment: property `object_type` in interface `CreateVault` support key `turbo`.
+    - Interface adjustment: property `description` in interface `UpdatePolicy` is removed.
+
+## HuaweiCloud SDK CES
+ - ### Features
+    - Add examples of interface response and adjust some filed description.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 ## 3.0.20-beta 2020-11-02
 ## HuaweiCloud SDK CES
  - ### Features

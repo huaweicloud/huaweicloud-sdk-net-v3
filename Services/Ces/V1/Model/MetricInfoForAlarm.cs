@@ -34,13 +34,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 创建告警规则是选择的资源分组ID，如：rg1603786526428bWbVmk4rP
+        /// 创建告警规则时选择的资源分组ID，如：rg1603786526428bWbVmk4rP
         /// </summary>
         [JsonProperty("resource_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceGroupId { get; set; }
 
         /// <summary>
-        /// 创建告警规则是选择的资源分组名称，如：Resource-Group-ECS-01
+        /// 创建告警规则时选择的资源分组名称，如：Resource-Group-ECS-01
         /// </summary>
         [JsonProperty("resource_group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceGroupName { get; set; }

@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string DimensionName { get; set; }
 
         /// <summary>
-        /// 创建自定义告警模板添加添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。
+        /// 创建自定义告警模板添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。
         /// </summary>
         [JsonProperty("template_items", NullValueHandling = NullValueHandling.Ignore)]
         public List<TemplateItem> TemplateItems { get; set; }

@@ -1,3 +1,22 @@
+## 3.0.21-beta 2020-11-11
+## HuaweiCloud SDK CBR
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 创建存储库接口(CreateVault)新增存储库turbo类型
+    - 修改策略接口(UpdatePolicy)删除多余字段
+
+## HuaweiCloud SDK CES
+ - ### 新增特性
+    - 新增接口响应示例，调整字段描述
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+
 ## 3.0.20-beta 2020-11-02
 ## HuaweiCloud SDK CES
  - ### 新增特性

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/batch-query-metric-data",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchListMetricDataRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListMetricDataRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<BatchListMetricDataResponse>(response);
         }
@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAlarmRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAlarmRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateAlarmResponse>(response);
         }
@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAlarmTemplateRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAlarmTemplateRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateAlarmTemplateResponse>(response);
         }
@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/events",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEventsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEventsRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             CreateEventsResponse createEventsResponse = JsonUtils.DeSerializeNull<CreateEventsResponse>(response);
             createEventsResponse.Body = JsonUtils.DeSerializeList<CreateEventsResponseBody>(response);
@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/metric-data",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMetricDataRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMetricDataRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<CreateMetricDataResponse>(response);
         }
@@ -219,7 +219,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("alarm_id" , updateAlarmActionRequest.AlarmId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAlarmActionRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmActionRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateAlarmActionResponse>(response);
         }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Ces.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("template_id" , updateAlarmTemplateRequest.TemplateId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template/{template_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAlarmTemplateRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmTemplateRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateAlarmTemplateResponse>(response);
         }

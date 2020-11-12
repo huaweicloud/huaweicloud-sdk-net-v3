@@ -16,12 +16,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 描述
-        /// </summary>
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
-
-        /// <summary>
         /// 是否启用策略
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
@@ -53,7 +47,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PolicyUpdate {\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  operationDefinition: ").Append(OperationDefinition).Append("\n");
@@ -79,11 +72,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 return false;
 
             return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
                 (
                     this.Enabled == input.Enabled ||
                     (this.Enabled != null &&
@@ -114,8 +102,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Enabled != null)
                     hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 if (this.Name != null)
