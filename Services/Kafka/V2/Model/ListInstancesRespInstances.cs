@@ -269,7 +269,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// Kafka实例的最大topic数。
         /// </summary>
         [JsonProperty("partition_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PartitionNum { get; set; }
+        public string PartitionNum { get; set; }
 
         /// <summary>
         /// 已使用的消息存储空间，单位：GB。

@@ -7,27 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class UpdateInstanceCrossVPCIPRequest 
+    public class BatchCreateDnatRulesRequest 
     {
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("instance_id", IsPath = true)]
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateInstanceCrossVPCIPReq Body { get; set; }
+        public BatchCreateDnatRulesRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -36,8 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateInstanceCrossVPCIPRequest {\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("class BatchCreateDnatRulesRequest {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -48,23 +40,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateInstanceCrossVPCIPRequest);
+            return this.Equals(input as BatchCreateDnatRulesRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateInstanceCrossVPCIPRequest input)
+        public bool Equals(BatchCreateDnatRulesRequest input)
         {
             if (input == null)
                 return false;
 
             return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
                 (
                     this.Body == input.Body ||
                     (this.Body != null &&
@@ -80,8 +67,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

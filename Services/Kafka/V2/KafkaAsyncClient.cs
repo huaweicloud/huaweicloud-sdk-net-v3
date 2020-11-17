@@ -545,14 +545,14 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 修改实例跨VPC访问的内网IP
         /// </summary>
-        public async Task<UpdateInstanceCrossVPCIPResponse> UpdateInstanceCrossVPCIPAsync(UpdateInstanceCrossVPCIPRequest updateInstanceCrossVPCIPRequest)
+        public async Task<UpdateInstanceCrossVpcIpResponse> UpdateInstanceCrossVpcIpAsync(UpdateInstanceCrossVpcIpRequest updateInstanceCrossVpcIpRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateInstanceCrossVPCIPRequest.InstanceId.ToString());
+            urlParam.Add("instance_id" , updateInstanceCrossVpcIpRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/crossvpc/modify",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceCrossVPCIPRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceCrossVpcIpRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<UpdateInstanceCrossVPCIPResponse>(response);
+            return JsonUtils.DeSerialize<UpdateInstanceCrossVpcIpResponse>(response);
         }
         
         /// <summary>

@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// topic名称。
         /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
 
         /// <summary>
         /// 副本数，配置数据的可靠性。
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListInstanceTopicsRespTopics {\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  replication: ").Append(Replication).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
             sb.Append("  retentionTime: ").Append(RetentionTime).Append("\n");
@@ -87,9 +87,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
                     this.Replication == input.Replication ||
@@ -126,8 +126,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Replication != null)
                     hashCode = hashCode * 59 + this.Replication.GetHashCode();
                 if (this.Partition != null)

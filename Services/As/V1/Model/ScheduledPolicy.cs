@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 触发时间，遵循UTC时间。如果scaling_policy_type为SCHEDULED，则格式为：YYYY-MM-DDThh:mmZ。如果scaling_policy_type为RECURRENCE，则格式为：hh:mm。
         /// </summary>
         [JsonProperty("launch_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? LaunchTime { get; set; }
+        public string LaunchTime { get; set; }
 
         /// <summary>
         /// 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
@@ -152,13 +152,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 周期策略重复执行开始时间，遵循UTC时间。默认为当前时间，格式为：YYYY-MM-DDThh：mZ
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? StartTime { get; set; }
+        public string StartTime { get; set; }
 
         /// <summary>
         /// 周期策略重复执行结束时间，遵循UTC时间，scaling_policy_type为RECURRENCE时该项必选。当为周期类型策略时，不得早于当前时间和开始时间。格式为：YYYY-MM-DDThh：mmZ
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
 
         /// <summary>

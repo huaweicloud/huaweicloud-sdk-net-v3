@@ -176,13 +176,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// 对等连接描述

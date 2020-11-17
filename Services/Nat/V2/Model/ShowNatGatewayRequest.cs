@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class UpdateInstanceCrossVPCIPReq 
+    public class ShowNatGatewayRequest 
     {
 
         /// <summary>
-        /// 用户自定义的advertised_ip_contents键值对。  键是listeners IP。  值是advertised.listeners IP，或者域名。  &gt; IP修改未修改项也需填上。
+        /// 
         /// </summary>
-        [JsonProperty("advertised_ip_contents", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> AdvertisedIpContents { get; set; }
+        [SDKProperty("nat_gateway_id", IsPath = true)]
+        [JsonProperty("nat_gateway_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NatGatewayId { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateInstanceCrossVPCIPReq {\n");
-            sb.Append("  advertisedIpContents: ").Append(AdvertisedIpContents).Append("\n");
+            sb.Append("class ShowNatGatewayRequest {\n");
+            sb.Append("  natGatewayId: ").Append(NatGatewayId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,23 +40,22 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateInstanceCrossVPCIPReq);
+            return this.Equals(input as ShowNatGatewayRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateInstanceCrossVPCIPReq input)
+        public bool Equals(ShowNatGatewayRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.AdvertisedIpContents == input.AdvertisedIpContents ||
-                    this.AdvertisedIpContents != null &&
-                    input.AdvertisedIpContents != null &&
-                    this.AdvertisedIpContents.SequenceEqual(input.AdvertisedIpContents)
+                    this.NatGatewayId == input.NatGatewayId ||
+                    (this.NatGatewayId != null &&
+                    this.NatGatewayId.Equals(input.NatGatewayId))
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AdvertisedIpContents != null)
-                    hashCode = hashCode * 59 + this.AdvertisedIpContents.GetHashCode();
+                if (this.NatGatewayId != null)
+                    hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
                 return hashCode;
             }
         }

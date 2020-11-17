@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// topic名称。
         /// </summary>
         [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
-        public string Success { get; set; }
+        public bool? Success { get; set; }
 
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 修改broker跨VPC访问的结果。
     /// </summary>
-    public class UpdateInstanceCrossVPCIPRespResults 
+    public class UpdateInstanceCrossVpcIpRespResults 
     {
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateInstanceCrossVPCIPRespResults {\n");
+            sb.Append("class UpdateInstanceCrossVpcIpRespResults {\n");
             sb.Append("  advertisedIp: ").Append(AdvertisedIp).Append("\n");
             sb.Append("  success: ").Append(Success).Append("\n");
             sb.Append("  ip: ").Append(Ip).Append("\n");
@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateInstanceCrossVPCIPRespResults);
+            return this.Equals(input as UpdateInstanceCrossVpcIpRespResults);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateInstanceCrossVPCIPRespResults input)
+        public bool Equals(UpdateInstanceCrossVpcIpRespResults input)
         {
             if (input == null)
                 return false;

@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class UpdateInstanceCrossVPCIPResponse : SdkResponse
+    public class UpdateInstanceCrossVpcIpResponse : SdkResponse
     {
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 修改broker跨VPC访问的结果列表。
         /// </summary>
         [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UpdateInstanceCrossVPCIPRespResults> Results { get; set; }
+        public List<UpdateInstanceCrossVpcIpRespResults> Results { get; set; }
 
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateInstanceCrossVPCIPResponse {\n");
+            sb.Append("class UpdateInstanceCrossVpcIpResponse {\n");
             sb.Append("  success: ").Append(Success).Append("\n");
             sb.Append("  results: ").Append(Results).Append("\n");
             sb.Append("}\n");
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateInstanceCrossVPCIPResponse);
+            return this.Equals(input as UpdateInstanceCrossVpcIpResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateInstanceCrossVPCIPResponse input)
+        public bool Equals(UpdateInstanceCrossVpcIpResponse input)
         {
             if (input == null)
                 return false;

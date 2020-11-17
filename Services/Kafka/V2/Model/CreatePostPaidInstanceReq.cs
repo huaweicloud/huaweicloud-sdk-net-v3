@@ -119,9 +119,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。取值填写为：1.1.0。
+        /// 消息引擎的版本。取值填写为：1.1.0和2.3.0。
         /// </summary>
-        /// <value>消息引擎的版本。取值填写为：1.1.0。</value>
+        /// <value>消息引擎的版本。取值填写为：1.1.0和2.3.0。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
         public class EngineVersionEnum
         {
@@ -130,10 +130,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
 
+            /// <summary>
+            /// Enum _2_3_0 for value: 2.3.0
+            /// </summary>
+            public static readonly EngineVersionEnum _2_3_0 = new EngineVersionEnum("2.3.0");
+
             private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
             new Dictionary<string, EngineVersionEnum>()
             {
                 { "1.1.0", _1_1_0 },
+                { "2.3.0", _2_3_0 },
             };
 
             private string Value;
@@ -705,7 +711,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：1.1.0。
+        /// 消息引擎的版本。取值填写为：1.1.0和2.3.0。
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
