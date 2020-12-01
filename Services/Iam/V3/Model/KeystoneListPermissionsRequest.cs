@@ -29,6 +29,20 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("page", IsQuery = true)]
+        [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Page { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("per_page", IsQuery = true)]
+        [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PerPage { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -39,6 +53,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class KeystoneListPermissionsRequest {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  page: ").Append(Page).Append("\n");
+            sb.Append("  perPage: ").Append(PerPage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +85,16 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.DomainId == input.DomainId ||
                     (this.DomainId != null &&
                     this.DomainId.Equals(input.DomainId))
+                ) && 
+                (
+                    this.Page == input.Page ||
+                    (this.Page != null &&
+                    this.Page.Equals(input.Page))
+                ) && 
+                (
+                    this.PerPage == input.PerPage ||
+                    (this.PerPage != null &&
+                    this.PerPage.Equals(input.PerPage))
                 );
         }
 
@@ -84,6 +110,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.DomainId != null)
                     hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Page != null)
+                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.PerPage != null)
+                    hashCode = hashCode * 59 + this.PerPage.GetHashCode();
                 return hashCode;
             }
         }

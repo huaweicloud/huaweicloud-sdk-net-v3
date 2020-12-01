@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 下一次记录位置
         /// </summary>
         [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string NextMarker { get; set; }
+        public long? NextMarker { get; set; }
 
 
         /// <summary>

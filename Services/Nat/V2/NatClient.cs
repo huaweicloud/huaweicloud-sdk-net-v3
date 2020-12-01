@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Nat.V2
         /// <summary>
         /// 批量创建DNAT规则
         /// </summary>
-        public BatchCreateDnatRulesResponse BatchCreateDnatRules(BatchCreateDnatRulesRequest batchCreateDnatRulesRequest)
+        public BatchCreateNatGatewayDnatRulesResponse BatchCreateNatGatewayDnatRules(BatchCreateNatGatewayDnatRulesRequest batchCreateNatGatewayDnatRulesRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dnat_rules/batch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDnatRulesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateNatGatewayDnatRulesRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<BatchCreateDnatRulesResponse>(response);
+            return JsonUtils.DeSerialize<BatchCreateNatGatewayDnatRulesResponse>(response);
         }
         
         /// <summary>

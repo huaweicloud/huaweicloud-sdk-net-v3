@@ -51,6 +51,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }
 
+        /// <summary>
+        /// 发送告警的周期，值可为0, 300, 600, 900, 1800, 3600, 10800, 21600, 43200, 86400；0表示只告警一次，300表示每5分钟告警一次，600表示每10分钟告警一次，900表示每15分钟告警一次，1800表示每30分钟告警一次，3600表示每1小时告警一次，10800表示每3小时告警一次，21600表示每6小时告警一次，43200表示每12小时告警一次，86400表示每1天告警一次。
+        /// </summary>
+        [JsonProperty("suppress_duration", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SuppressDuration { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  period: ").Append(Period).Append("\n");
             sb.Append("  unit: ").Append(Unit).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  suppressDuration: ").Append(SuppressDuration).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.SuppressDuration == input.SuppressDuration ||
+                    (this.SuppressDuration != null &&
+                    this.SuppressDuration.Equals(input.SuppressDuration))
                 );
         }
 
@@ -138,6 +150,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.SuppressDuration != null)
+                    hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
                 return hashCode;
             }
         }

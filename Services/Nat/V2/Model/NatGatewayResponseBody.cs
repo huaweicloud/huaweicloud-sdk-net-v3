@@ -164,11 +164,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             public static readonly StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
 
             /// <summary>
-            /// Enum EIP_FREEZED for value: EIP_FREEZED
-            /// </summary>
-            public static readonly StatusEnum EIP_FREEZED = new StatusEnum("EIP_FREEZED");
-
-            /// <summary>
             /// Enum INACTIVE for value: INACTIVE
             /// </summary>
             public static readonly StatusEnum INACTIVE = new StatusEnum("INACTIVE");
@@ -180,7 +175,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "PENDING_CREATE", PENDING_CREATE },
                 { "PENDING_UPDATE", PENDING_UPDATE },
                 { "PENDING_DELETE", PENDING_DELETE },
-                { "EIP_FREEZED", EIP_FREEZED },
                 { "INACTIVE", INACTIVE },
             };
 
@@ -284,13 +278,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string TenantId { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的名字。
+        /// 公网NAT网关实例的名字，长度限制为64。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的描述。
+        /// 公网NAT网关实例的描述，长度限制为255。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -324,7 +318,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string RouterId { get; set; }
 
         /// <summary>
-        /// NAT网关下行口（DVR的下一跳）所属的network id。
+        /// 公网NAT网关下行口（DVR的下一跳）所属的network id。
         /// </summary>
         [JsonProperty("internal_network_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalNetworkId { get; set; }

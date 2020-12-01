@@ -51,6 +51,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("password_validity_period", NullValueHandling = NullValueHandling.Ignore)]
         public int? PasswordValidityPeriod { get; set; }
 
+        /// <summary>
+        /// 至少包含字符种类的个数，取值区间[2,4]。
+        /// </summary>
+        [JsonProperty("password_char_combination", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PasswordCharCombination { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  numberOfRecentPasswordsDisallowed: ").Append(NumberOfRecentPasswordsDisallowed).Append("\n");
             sb.Append("  passwordNotUsernameOrInvert: ").Append(PasswordNotUsernameOrInvert).Append("\n");
             sb.Append("  passwordValidityPeriod: ").Append(PasswordValidityPeriod).Append("\n");
+            sb.Append("  passwordCharCombination: ").Append(PasswordCharCombination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.PasswordValidityPeriod == input.PasswordValidityPeriod ||
                     (this.PasswordValidityPeriod != null &&
                     this.PasswordValidityPeriod.Equals(input.PasswordValidityPeriod))
+                ) && 
+                (
+                    this.PasswordCharCombination == input.PasswordCharCombination ||
+                    (this.PasswordCharCombination != null &&
+                    this.PasswordCharCombination.Equals(input.PasswordCharCombination))
                 );
         }
 
@@ -138,6 +150,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.PasswordNotUsernameOrInvert.GetHashCode();
                 if (this.PasswordValidityPeriod != null)
                     hashCode = hashCode * 59 + this.PasswordValidityPeriod.GetHashCode();
+                if (this.PasswordCharCombination != null)
+                    hashCode = hashCode * 59 + this.PasswordCharCombination.GetHashCode();
                 return hashCode;
             }
         }

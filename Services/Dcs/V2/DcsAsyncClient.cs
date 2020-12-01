@@ -306,18 +306,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
-        /// 查询主维度信息列表
-        /// </summary>
-        public async Task<ListCESMonitoredObjectsResponse> ListCESMonitoredObjectsAsync(ListCESMonitoredObjectsRequest listCESMonitoredObjectsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dims/monitored-objects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listCESMonitoredObjectsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ListCESMonitoredObjectsResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询实例配置参数
         /// </summary>
         public async Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest)
@@ -402,6 +390,18 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMigrationTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListMigrationTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询主维度信息列表
+        /// </summary>
+        public async Task<ListMonitoredObjectsResponse> ListMonitoredObjectsAsync(ListMonitoredObjectsRequest listMonitoredObjectsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dims/monitored-objects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMonitoredObjectsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListMonitoredObjectsResponse>(response);
         }
         
         /// <summary>

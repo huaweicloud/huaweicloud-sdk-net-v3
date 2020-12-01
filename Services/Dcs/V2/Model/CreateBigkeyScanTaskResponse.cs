@@ -291,7 +291,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 大key的数量
         /// </summary>
         [JsonProperty("num", NullValueHandling = NullValueHandling.Ignore)]
-        public string Num { get; set; }
+        public int? Num { get; set; }
 
         /// <summary>
         /// 大key记录

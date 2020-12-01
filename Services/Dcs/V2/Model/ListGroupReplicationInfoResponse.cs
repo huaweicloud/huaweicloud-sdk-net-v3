@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 实例分片总数。
         /// </summary>
         [JsonProperty("group_count", NullValueHandling = NullValueHandling.Ignore)]
-        public string GroupCount { get; set; }
+        public int? GroupCount { get; set; }
 
 
         /// <summary>

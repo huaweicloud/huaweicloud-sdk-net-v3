@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
         public List<RoleResult> Roles { get; set; }
 
+        /// <summary>
+        /// 在查询参数存在domain_id时，返回自定义策略总数
+        /// </summary>
+        [JsonProperty("total_number", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalNumber { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class KeystoneListPermissionsResponse {\n");
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  roles: ").Append(Roles).Append("\n");
+            sb.Append("  totalNumber: ").Append(TotalNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,6 +75,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.Roles != null &&
                     input.Roles != null &&
                     this.Roles.SequenceEqual(input.Roles)
+                ) && 
+                (
+                    this.TotalNumber == input.TotalNumber ||
+                    (this.TotalNumber != null &&
+                    this.TotalNumber.Equals(input.TotalNumber))
                 );
         }
 
@@ -83,6 +95,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.Roles != null)
                     hashCode = hashCode * 59 + this.Roles.GetHashCode();
+                if (this.TotalNumber != null)
+                    hashCode = hashCode * 59 + this.TotalNumber.GetHashCode();
                 return hashCode;
             }
         }

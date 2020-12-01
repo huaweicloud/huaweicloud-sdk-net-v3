@@ -430,6 +430,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询SSH密钥详情
+        /// </summary>
+        public NovaShowKeypairResponse NovaShowKeypair(NovaShowKeypairRequest novaShowKeypairRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name" , novaShowKeypairRequest.KeypairName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/os-keypairs/{keypair_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaShowKeypairRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<NovaShowKeypairResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询云服务器详情
         /// </summary>
         public NovaShowServerResponse NovaShowServer(NovaShowServerRequest novaShowServerRequest)

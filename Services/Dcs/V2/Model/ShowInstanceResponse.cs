@@ -127,7 +127,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 实例所在的可用区。返回“可用区Code”
         /// </summary>
         [JsonProperty("az_codes", NullValueHandling = NullValueHandling.Ignore)]
-        public string AzCodes { get; set; }
+        public List<string> AzCodes { get; set; }
 
         /// <summary>
         /// 通过密码认证访问缓存实例的认证用户名。
@@ -416,8 +416,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 ) && 
                 (
                     this.AzCodes == input.AzCodes ||
-                    (this.AzCodes != null &&
-                    this.AzCodes.Equals(input.AzCodes))
+                    this.AzCodes != null &&
+                    input.AzCodes != null &&
+                    this.AzCodes.SequenceEqual(input.AzCodes)
                 ) && 
                 (
                     this.AccessUser == input.AccessUser ||

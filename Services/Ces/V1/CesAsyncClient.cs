@@ -77,6 +77,18 @@ namespace HuaweiCloud.SDK.Ces.V1
         }
         
         /// <summary>
+        /// 创建资源分组
+        /// </summary>
+        public async Task<CreateResourceGroupResponse> CreateResourceGroupAsync(CreateResourceGroupRequest createResourceGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createResourceGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateResourceGroupResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除告警规则
         /// </summary>
         public async Task<DeleteAlarmResponse> DeleteAlarmAsync(DeleteAlarmRequest deleteAlarmRequest)
@@ -100,6 +112,19 @@ namespace HuaweiCloud.SDK.Ces.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteAlarmTemplateRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteAlarmTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除资源分组
+        /// </summary>
+        public async Task<DeleteResourceGroupResponse> DeleteResourceGroupAsync(DeleteResourceGroupRequest deleteResourceGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id" , deleteResourceGroupRequest.GroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteResourceGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteResourceGroupResponse>(response);
         }
         
         /// <summary>
@@ -139,6 +164,31 @@ namespace HuaweiCloud.SDK.Ces.V1
         }
         
         /// <summary>
+        /// 查询某一事件监控详情
+        /// </summary>
+        public async Task<ListEventDetailResponse> ListEventDetailAsync(ListEventDetailRequest listEventDetailRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("event_name" , listEventDetailRequest.EventName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/events/{event_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventDetailRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListEventDetailResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询事件监控列表
+        /// </summary>
+        public async Task<ListEventsResponse> ListEventsAsync(ListEventsRequest listEventsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/events",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listEventsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListEventsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询指标列表
         /// </summary>
         public async Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest listMetricsRequest)
@@ -148,6 +198,18 @@ namespace HuaweiCloud.SDK.Ces.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listMetricsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListMetricsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询所有资源分组
+        /// </summary>
+        public async Task<ListResourceGroupResponse> ListResourceGroupAsync(ListResourceGroupRequest listResourceGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listResourceGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListResourceGroupResponse>(response);
         }
         
         /// <summary>
@@ -213,6 +275,19 @@ namespace HuaweiCloud.SDK.Ces.V1
         }
         
         /// <summary>
+        /// 修改告警规则
+        /// </summary>
+        public async Task<UpdateAlarmResponse> UpdateAlarmAsync(UpdateAlarmRequest updateAlarmRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("alarm_id" , updateAlarmRequest.AlarmId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateAlarmResponse>(response);
+        }
+        
+        /// <summary>
         /// 启停告警规则
         /// </summary>
         public async Task<UpdateAlarmActionResponse> UpdateAlarmActionAsync(UpdateAlarmActionRequest updateAlarmActionRequest)
@@ -236,6 +311,19 @@ namespace HuaweiCloud.SDK.Ces.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmTemplateRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateAlarmTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新资源分组
+        /// </summary>
+        public async Task<UpdateResourceGroupResponse> UpdateResourceGroupAsync(UpdateResourceGroupRequest updateResourceGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id" , updateResourceGroupRequest.GroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateResourceGroupResponse>(response);
         }
         
     }

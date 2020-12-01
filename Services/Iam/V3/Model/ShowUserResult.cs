@@ -105,6 +105,18 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("pwd_stength", NullValueHandling = NullValueHandling.Ignore)]
         public string PwdStength { get; set; }
 
+        /// <summary>
+        /// IAM用户是否为根用户。
+        /// </summary>
+        [JsonProperty("is_domain_owner", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDomainOwner { get; set; }
+
+        /// <summary>
+        /// IAM用户描述信息
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -128,6 +140,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  lastLoginTime: ").Append(LastLoginTime).Append("\n");
             sb.Append("  pwdStength: ").Append(PwdStength).Append("\n");
+            sb.Append("  isDomainOwner: ").Append(IsDomainOwner).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -223,6 +237,16 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.PwdStength == input.PwdStength ||
                     (this.PwdStength != null &&
                     this.PwdStength.Equals(input.PwdStength))
+                ) && 
+                (
+                    this.IsDomainOwner == input.IsDomainOwner ||
+                    (this.IsDomainOwner != null &&
+                    this.IsDomainOwner.Equals(input.IsDomainOwner))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -264,6 +288,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.LastLoginTime.GetHashCode();
                 if (this.PwdStength != null)
                     hashCode = hashCode * 59 + this.PwdStength.GetHashCode();
+                if (this.IsDomainOwner != null)
+                    hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

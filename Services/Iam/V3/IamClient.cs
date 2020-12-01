@@ -204,6 +204,21 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 移除用户组的所有项目服务权限
+        /// </summary>
+        public DeleteDomainGroupInheritedRoleResponse DeleteDomainGroupInheritedRole(DeleteDomainGroupInheritedRoleRequest deleteDomainGroupInheritedRoleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , deleteDomainGroupInheritedRoleRequest.DomainId.ToString());
+            urlParam.Add("group_id" , deleteDomainGroupInheritedRoleRequest.GroupId.ToString());
+            urlParam.Add("role_id" , deleteDomainGroupInheritedRoleRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteDomainGroupInheritedRoleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteDomainGroupInheritedRoleResponse>(response);
+        }
+        
+        /// <summary>
         /// 添加IAM用户到用户组
         /// </summary>
         public KeystoneAddUserToGroupResponse KeystoneAddUserToGroup(KeystoneAddUserToGroupRequest keystoneAddUserToGroupRequest)
@@ -215,21 +230,6 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneAddUserToGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<KeystoneAddUserToGroupResponse>(response);
-        }
-        
-        /// <summary>
-        /// 为用户组授予所有项目服务权限
-        /// </summary>
-        public KeystoneAssociateGroupWithAllProjectPermissionResponse KeystoneAssociateGroupWithAllProjectPermission(KeystoneAssociateGroupWithAllProjectPermissionRequest keystoneAssociateGroupWithAllProjectPermissionRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , keystoneAssociateGroupWithAllProjectPermissionRequest.DomainId.ToString());
-            urlParam.Add("group_id" , keystoneAssociateGroupWithAllProjectPermissionRequest.GroupId.ToString());
-            urlParam.Add("role_id" , keystoneAssociateGroupWithAllProjectPermissionRequest.RoleId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneAssociateGroupWithAllProjectPermissionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerializeNull<KeystoneAssociateGroupWithAllProjectPermissionResponse>(response);
         }
         
         /// <summary>
@@ -304,6 +304,21 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneCheckUserInGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("HEAD",request);
             return JsonUtils.DeSerializeNull<KeystoneCheckUserInGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询用户组是否拥有所有项目指定权限
+        /// </summary>
+        public KeystoneCheckroleForGroupResponse KeystoneCheckroleForGroup(KeystoneCheckroleForGroupRequest keystoneCheckroleForGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneCheckroleForGroupRequest.DomainId.ToString());
+            urlParam.Add("group_id" , keystoneCheckroleForGroupRequest.GroupId.ToString());
+            urlParam.Add("role_id" , keystoneCheckroleForGroupRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneCheckroleForGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("HEAD",request);
+            return JsonUtils.DeSerializeNull<KeystoneCheckroleForGroupResponse>(response);
         }
         
         /// <summary>
@@ -433,6 +448,20 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneDeleteProtocolRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<KeystoneDeleteProtocolResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询用户组的所有项目权限列表
+        /// </summary>
+        public KeystoneListAllProjectPermissionsForGroupResponse KeystoneListAllProjectPermissionsForGroup(KeystoneListAllProjectPermissionsForGroupRequest keystoneListAllProjectPermissionsForGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , keystoneListAllProjectPermissionsForGroupRequest.DomainId.ToString());
+            urlParam.Add("group_id" , keystoneListAllProjectPermissionsForGroupRequest.GroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, keystoneListAllProjectPermissionsForGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneListAllProjectPermissionsForGroupResponse>(response);
         }
         
         /// <summary>
@@ -1234,6 +1263,21 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 为用户组授予所有项目服务权限
+        /// </summary>
+        public UpdateDomainGroupInheritRoleResponse UpdateDomainGroupInheritRole(UpdateDomainGroupInheritRoleRequest updateDomainGroupInheritRoleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , updateDomainGroupInheritRoleRequest.DomainId.ToString());
+            urlParam.Add("group_id" , updateDomainGroupInheritRoleRequest.GroupId.ToString());
+            urlParam.Add("role_id" , updateDomainGroupInheritRoleRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, updateDomainGroupInheritRoleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateDomainGroupInheritRoleResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改账号登录策略
         /// </summary>
         public UpdateDomainLoginPolicyResponse UpdateDomainLoginPolicy(UpdateDomainLoginPolicyRequest updateDomainLoginPolicyRequest)
@@ -1373,6 +1417,30 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 绑定MFA设备
+        /// </summary>
+        public CreateBindingDeviceResponse CreateBindingDevice(CreateBindingDeviceRequest createBindingDeviceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/bind",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBindingDeviceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<CreateBindingDeviceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建MFA设备
+        /// </summary>
+        public CreateMfaDeviceResponse CreateMfaDevice(CreateMfaDeviceRequest createMfaDeviceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMfaDeviceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateMfaDeviceResponse>(response);
+        }
+        
+        /// <summary>
         /// 管理员创建IAM用户（推荐）
         /// </summary>
         public CreateUserResponse CreateUser(CreateUserRequest createUserRequest)
@@ -1382,6 +1450,30 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createUserRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 解绑MFA设备
+        /// </summary>
+        public DeleteBindingDeviceResponse DeleteBindingDevice(DeleteBindingDeviceRequest deleteBindingDeviceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/unbind",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteBindingDeviceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<DeleteBindingDeviceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除MFA设备
+        /// </summary>
+        public DeleteMfaDeviceResponse DeleteMfaDevice(DeleteMfaDeviceRequest deleteMfaDeviceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteMfaDeviceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteMfaDeviceResponse>(response);
         }
         
         /// <summary>
@@ -1486,7 +1578,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 查询IAM用户的MFA绑定信息列表
+        /// 该接口可以用于获取MFA设备。
         /// </summary>
         public ListUserMfaDevicesResponse ListUserMfaDevices(ListUserMfaDevicesRequest listUserMfaDevicesRequest)
         {
@@ -1534,6 +1626,19 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showUserMfaDeviceRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowUserMfaDeviceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改IAM用户登录保护状态信息
+        /// </summary>
+        public UpdateLoginProtectResponse UpdateLoginProtect(UpdateLoginProtectRequest updateLoginProtectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("user_id" , updateLoginProtectRequest.UserId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/login-protect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoginProtectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateLoginProtectResponse>(response);
         }
         
         /// <summary>

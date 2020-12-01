@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 配置参数ID。
         /// </summary>
         [JsonProperty("param_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ParamId { get; set; }
+        public string ParamId { get; set; }
 
 
         /// <summary>

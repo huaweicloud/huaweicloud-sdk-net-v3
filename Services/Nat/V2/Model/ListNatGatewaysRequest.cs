@@ -41,11 +41,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             public static readonly StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
 
             /// <summary>
-            /// Enum EIP_FREEZED for value: EIP_FREEZED
-            /// </summary>
-            public static readonly StatusEnum EIP_FREEZED = new StatusEnum("EIP_FREEZED");
-
-            /// <summary>
             /// Enum INACTIVE for value: INACTIVE
             /// </summary>
             public static readonly StatusEnum INACTIVE = new StatusEnum("INACTIVE");
@@ -57,7 +52,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "PENDING_CREATE", PENDING_CREATE },
                 { "PENDING_UPDATE", PENDING_UPDATE },
                 { "PENDING_DELETE", PENDING_DELETE },
-                { "EIP_FREEZED", EIP_FREEZED },
                 { "INACTIVE", INACTIVE },
             };
 

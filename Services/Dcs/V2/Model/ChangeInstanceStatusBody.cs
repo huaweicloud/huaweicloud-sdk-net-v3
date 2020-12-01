@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<string> Instances { get; set; }
 
         /// <summary>
-        /// 对实例的操作：restart、flush。 &gt; 当前版本，只有Redis 4.0和Redis 5.0实例支持清空数据功能，即flush操作。 
+        /// 对实例的操作：  restart: 强制重启  soft_restart: 软重启，只重启进程  flush: 清空数据 &gt; 当前版本，只有Redis 4.0和Redis 5.0实例支持清空数据功能，即flush操作。 
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
