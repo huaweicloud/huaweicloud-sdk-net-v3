@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -71,20 +71,18 @@ namespace HuaweiCloud.SDK.Core
                 {
                     continue;
                 }
-                
+
                 if (value is IList list)
                 {
-                    var qs = new StringBuilder();
-                    foreach (var item in list)
-                    {
-                        qs.Append(sdkPropertyAttribute.PropertyName).Append("=").Append(Convert.ToString(item)).Append("&");
-                    }
-
-                    sb.Append(qs);
+                    sb.Append(BuildQueryListParameter(sdkPropertyAttribute.PropertyName, list));
+                }
+                else if(value is IDictionary dictionary)
+                {
+                    sb.Append(BuildQueryDictionaryParameter(sdkPropertyAttribute.PropertyName, dictionary));
                 }
                 else
                 {
-                    sb.Append(sdkPropertyAttribute.PropertyName).Append("=").Append(Convert.ToString(value)).Append("&");
+                    sb.Append(BuildQueryStringParameter(sdkPropertyAttribute.PropertyName, Convert.ToString(value)));
                 }
             }
 
@@ -95,6 +93,45 @@ namespace HuaweiCloud.SDK.Core
             }
 
             return sb.ToString();
+        }
+
+        private static StringBuilder BuildQueryStringParameter(string key, string value)
+        {
+            var sb = new StringBuilder();
+            return sb.Append(key).Append("=").Append(Convert.ToString(value)).Append("&");
+        }
+
+        private static StringBuilder BuildQueryListParameter(string key, IList list)
+        {
+            var sb = new StringBuilder();
+            foreach (var item in list)
+            {
+                sb.Append(key).Append("=").Append(Convert.ToString(item)).Append("&");
+            }
+
+            return sb;
+        }
+
+        private static StringBuilder BuildQueryDictionaryParameter(string key, IDictionary dict)
+        {
+            var sb = new StringBuilder();
+            foreach (var k in dict.Keys)
+            {
+                if (dict[k] is IList list)
+                {
+                    sb.Append(BuildQueryListParameter(key + "[" + k + "]", list));
+                }
+                else if (dict[k] is IDictionary dictionary)
+                {
+                    sb.Append(BuildQueryDictionaryParameter(key + "[" + k + "]", dictionary));
+                }
+                else
+                {
+                    sb.Append(BuildQueryStringParameter(key + "[" + k + "]", Convert.ToString(dict[k])));
+                }
+            }
+
+            return sb;
         }
 
         private static Dictionary<string, string> GetRequestHeader(object obj)

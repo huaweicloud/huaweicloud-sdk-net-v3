@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// SSL证书列表对象
         /// </summary>
         [JsonProperty("certificates", NullValueHandling = NullValueHandling.Ignore)]
-        public CertificateResp Certificates { get; set; }
+        public List<CertificateResp> Certificates { get; set; }
 
         /// <summary>
         /// 证书的个数
@@ -60,8 +60,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             return 
                 (
                     this.Certificates == input.Certificates ||
-                    (this.Certificates != null &&
-                    this.Certificates.Equals(input.Certificates))
+                    this.Certificates != null &&
+                    input.Certificates != null &&
+                    this.Certificates.SequenceEqual(input.Certificates)
                 ) && 
                 (
                     this.InstanceNum == input.InstanceNum ||

@@ -221,7 +221,7 @@ namespace HuaweiCloud.SDK.Kms.V1
             urlParam.Add("key" , deleteTagRequest.Key.ToString());
             urlParam.Add("version_id" , deleteTagRequest.VersionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/{key_id}/tags/{key}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteTagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteTagResponse>(response);
         }
@@ -378,7 +378,7 @@ namespace HuaweiCloud.SDK.Kms.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("version_id" , listKmsTagsRequest.VersionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listKmsTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKmsTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListKmsTagsResponse>(response);
         }
@@ -418,7 +418,7 @@ namespace HuaweiCloud.SDK.Kms.V1
             urlParam.Add("version_id" , showKmsTagsRequest.VersionId.ToString());
             urlParam.Add("key_id" , showKmsTagsRequest.KeyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/{key_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showKmsTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowKmsTagsResponse>(response);
         }
@@ -431,7 +431,7 @@ namespace HuaweiCloud.SDK.Kms.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("version_id" , showUserInstancesRequest.VersionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/user-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showUserInstancesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserInstancesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowUserInstancesResponse>(response);
         }
@@ -444,7 +444,7 @@ namespace HuaweiCloud.SDK.Kms.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("version_id" , showUserQuotasRequest.VersionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/user-quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showUserQuotasRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserQuotasRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowUserQuotasResponse>(response);
         }
@@ -496,7 +496,7 @@ namespace HuaweiCloud.SDK.Kms.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("version_id" , showVersionRequest.VersionId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{version_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVersionRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVersionResponse>(response);
         }
@@ -508,7 +508,7 @@ namespace HuaweiCloud.SDK.Kms.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVersionsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVersionsResponse>(response);
         }

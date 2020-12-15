@@ -69,7 +69,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id" , deleteSecurityGroupRequest.SecurityGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSecurityGroupRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSecurityGroupResponse>(response);
         }
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id" , deleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSecurityGroupRuleRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRuleRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSecurityGroupRuleResponse>(response);
         }
@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("sub_network_interface_id" , deleteSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSubNetworkInterfaceRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubNetworkInterfaceRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSubNetworkInterfaceResponse>(response);
         }
@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-group-rules",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSecurityGroupRulesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupRulesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListSecurityGroupRulesResponse>(response);
         }
@@ -119,7 +119,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSecurityGroupsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListSecurityGroupsResponse>(response);
         }
@@ -131,7 +131,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listSubNetworkInterfacesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubNetworkInterfacesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListSubNetworkInterfacesResponse>(response);
         }
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id" , showSecurityGroupRequest.SecurityGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSecurityGroupRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSecurityGroupResponse>(response);
         }
@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id" , showSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSecurityGroupRuleRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRuleRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSecurityGroupRuleResponse>(response);
         }
@@ -170,7 +170,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("sub_network_interface_id" , showSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSubNetworkInterfaceRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubNetworkInterfaceRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSubNetworkInterfaceResponse>(response);
         }
@@ -182,7 +182,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/count",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showSubNetworkInterfacesQuantityRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubNetworkInterfacesQuantityRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSubNetworkInterfacesQuantityResponse>(response);
         }

@@ -144,13 +144,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 虚拟机或者裸机的Port ID，与private_ip参数二选一。
+        /// 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
         /// </summary>
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
 
         /// <summary>
-        /// 用户私有IP地址，例如专线连接的私有云地址，与port_id参数二选一。
+        /// 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
         /// </summary>
         [JsonProperty("private_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateIp { get; set; }

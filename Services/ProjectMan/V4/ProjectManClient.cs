@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , addApplyJoinProjectForAgcRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/members/agc-join",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, addApplyJoinProjectForAgcRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addApplyJoinProjectForAgcRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerializeNull<AddApplyJoinProjectForAgcResponse>(response);
         }
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             urlParam.Add("project_id" , deleteIterationV4Request.ProjectId.ToString());
             urlParam.Add("iteration_id" , deleteIterationV4Request.IterationId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations/{iteration_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteIterationV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIterationV4Request);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteIterationV4Response>(response);
         }
@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , deleteProjectV4Request.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteProjectV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProjectV4Request);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteProjectV4Response>(response);
         }
@@ -149,7 +149,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/domain/not-added",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDomainNotAddedProjectsV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainNotAddedProjectsV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListDomainNotAddedProjectsV4Response>(response);
         }
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , listProjectBugStaticsV4Request.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/bug-statistic",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProjectBugStaticsV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectBugStaticsV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProjectBugStaticsV4Response>(response);
         }
@@ -175,7 +175,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , listProjectDemandStaticV4Request.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/demand-statistic",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProjectDemandStaticV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectDemandStaticV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProjectDemandStaticV4Response>(response);
         }
@@ -188,7 +188,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , listProjectIterationsV4Request.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProjectIterationsV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectIterationsV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProjectIterationsV4Response>(response);
         }
@@ -201,7 +201,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , listProjectMembersV4Request.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProjectMembersV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectMembersV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProjectMembersV4Response>(response);
         }
@@ -213,7 +213,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v4/projects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProjectsV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectsV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProjectsV4Response>(response);
         }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , removeProjectRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/quit",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, removeProjectRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<RemoveProjectResponse>(response);
         }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v4/user",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showCurUserInfoRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCurUserInfoRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowCurUserInfoResponse>(response);
         }
@@ -251,7 +251,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , showCurUserRoleRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/user-role",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showCurUserRoleRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCurUserRoleRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowCurUserRoleResponse>(response);
         }
@@ -264,7 +264,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("iteration_id" , showIterationV4Request.IterationId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/iterations/{iteration_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showIterationV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIterationV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowIterationV4Response>(response);
         }
@@ -277,7 +277,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , showProjectSummaryV4Request.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/summary",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showProjectSummaryV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSummaryV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowProjectSummaryV4Response>(response);
         }
@@ -369,7 +369,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             urlParam.Add("project_id" , deleteIssueV4Request.ProjectId.ToString());
             urlParam.Add("issue_id" , deleteIssueV4Request.IssueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteIssueV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIssueV4Request);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteIssueV4Response>(response);
         }
@@ -383,7 +383,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             urlParam.Add("project_id" , listChildIssuesV4Request.ProjectId.ToString());
             urlParam.Add("issue_id" , listChildIssuesV4Request.IssueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/child",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listChildIssuesV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChildIssuesV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListChildIssuesV4Response>(response);
         }
@@ -397,7 +397,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             urlParam.Add("project_id" , listIssueCommentsV4Request.ProjectId.ToString());
             urlParam.Add("issue_id" , listIssueCommentsV4Request.IssueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/comments",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listIssueCommentsV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueCommentsV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListIssueCommentsV4Response>(response);
         }
@@ -411,7 +411,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             urlParam.Add("project_id" , listIssueRecordsV4Request.ProjectId.ToString());
             urlParam.Add("issue_id" , listIssueRecordsV4Request.IssueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issue/{issue_id}/records",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listIssueRecordsV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueRecordsV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListIssueRecordsV4Response>(response);
         }
@@ -450,7 +450,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             urlParam.Add("project_id" , showIssueV4Request.ProjectId.ToString());
             urlParam.Add("issue_id" , showIssueV4Request.IssueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showIssueV4Request);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssueV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowIssueV4Response>(response);
         }
@@ -476,7 +476,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("project_id" , showtIssueCompletionRateRequest.ProjectId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issue-completion-rate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showtIssueCompletionRateRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showtIssueCompletionRateRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowtIssueCompletionRateResponse>(response);
         }

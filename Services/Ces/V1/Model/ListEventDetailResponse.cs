@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string EventUsers { get; set; }
 
         /// <summary>
-        /// 事件来源，如果是系统事件则值为各服务的命名空间，可查看https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html；如果是自定义事件，则为用户自定义上报定义。
+        /// 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
         /// </summary>
         [JsonProperty("event_sources", NullValueHandling = NullValueHandling.Ignore)]
         public string EventSources { get; set; }

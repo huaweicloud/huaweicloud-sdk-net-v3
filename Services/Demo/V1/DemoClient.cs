@@ -33,7 +33,7 @@ namespace HuaweiCloud.SDK.Demo.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("id" , deleteDemoResourceRequest.Id.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/demo/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteDemoResourceRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDemoResourceRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteDemoResourceResponse>(response);
         }
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Demo.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/array",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDemoArrayRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoArrayRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             ListDemoArrayResponse listDemoArrayResponse = JsonUtils.DeSerializeNull<ListDemoArrayResponse>(response);
             listDemoArrayResponse.Body = JsonUtils.DeSerializeList<ArrayItem>(response);
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Demo.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/map",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDemoMapRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoMapRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             ListDemoMapResponse listDemoMapResponse = JsonUtils.DeSerializeNull<ListDemoMapResponse>(response);
             listDemoMapResponse.Body = JsonUtils.DeSerializeMap<string, string>(response);
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.Demo.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/demo",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listDemoResourcesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoResourcesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListDemoResourcesResponse>(response);
         }

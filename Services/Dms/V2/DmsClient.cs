@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Dms.V2
             urlParam.Add("queue_id" , consumeDeadlettersMessageRequest.QueueId.ToString());
             urlParam.Add("consumer_group_id" , consumeDeadlettersMessageRequest.ConsumerGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/deadletters",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, consumeDeadlettersMessageRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", consumeDeadlettersMessageRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             ConsumeDeadlettersMessageResponse consumeDeadlettersMessageResponse = JsonUtils.DeSerializeNull<ConsumeDeadlettersMessageResponse>(response);
             consumeDeadlettersMessageResponse.Body = JsonUtils.DeSerializeList<ConsumeDeadlettersMessage>(response);
@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Dms.V2
             urlParam.Add("queue_id" , consumeMessagesRequest.QueueId.ToString());
             urlParam.Add("consumer_group_id" , consumeMessagesRequest.ConsumerGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/messages",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, consumeMessagesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", consumeMessagesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             ConsumeMessagesResponse consumeMessagesResponse = JsonUtils.DeSerializeNull<ConsumeMessagesResponse>(response);
             consumeMessagesResponse.Body = JsonUtils.DeSerializeList<ConsumeMessage>(response);
@@ -119,7 +119,7 @@ namespace HuaweiCloud.SDK.Dms.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("queue_id" , deleteQueueRequest.QueueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queues/{queue_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteQueueRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteQueueRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteQueueResponse>(response);
         }
@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.Dms.V2
             urlParam.Add("queue_id" , deleteSpecifiedConsumerGroupRequest.QueueId.ToString());
             urlParam.Add("group_id" , deleteSpecifiedConsumerGroupRequest.GroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queues/{queue_id}/groups/{group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSpecifiedConsumerGroupRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSpecifiedConsumerGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSpecifiedConsumerGroupResponse>(response);
         }
@@ -146,7 +146,7 @@ namespace HuaweiCloud.SDK.Dms.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("queue_id" , listConsumerGroupsRequest.QueueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queues/{queue_id}/groups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listConsumerGroupsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListConsumerGroupsResponse>(response);
         }
@@ -158,7 +158,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queues",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listQueuesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueuesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListQueuesResponse>(response);
         }
@@ -183,7 +183,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queue/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showProjectTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTagsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowProjectTagsResponse>(response);
         }
@@ -196,7 +196,7 @@ namespace HuaweiCloud.SDK.Dms.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("queue_id" , showQueueRequest.QueueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queues/{queue_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQueueRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowQueueResponse>(response);
         }
@@ -209,7 +209,7 @@ namespace HuaweiCloud.SDK.Dms.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("queue_id" , showQueueTagsRequest.QueueId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queue/{queue_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQueueTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueTagsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowQueueTagsResponse>(response);
         }
@@ -221,7 +221,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showQuotasRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
         }

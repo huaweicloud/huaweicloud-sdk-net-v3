@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Nat.V2
             urlParam.Add("nat_gateway_id" , deleteNatGatewayDnatRuleRequest.NatGatewayId.ToString());
             urlParam.Add("dnat_rule_id" , deleteNatGatewayDnatRuleRequest.DnatRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/dnat_rules/{dnat_rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteNatGatewayDnatRuleRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayDnatRuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteNatGatewayDnatRuleResponse>(response);
         }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dnat_rules",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listNatGatewayDnatRulesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayDnatRulesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListNatGatewayDnatRulesResponse>(response);
         }
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Nat.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("dnat_rule_id" , showNatGatewayDnatRuleRequest.DnatRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dnat_rules/{dnat_rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showNatGatewayDnatRuleRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayDnatRuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowNatGatewayDnatRuleResponse>(response);
         }
@@ -110,7 +110,7 @@ namespace HuaweiCloud.SDK.Nat.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("nat_gateway_id" , deleteNatGatewayRequest.NatGatewayId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteNatGatewayRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteNatGatewayResponse>(response);
         }
@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listNatGatewaysRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewaysRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListNatGatewaysResponse>(response);
         }
@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.Nat.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("nat_gateway_id" , showNatGatewayRequest.NatGatewayId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showNatGatewayRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowNatGatewayResponse>(response);
         }
@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.Nat.V2
             urlParam.Add("nat_gateway_id" , deleteNatGatewaySnatRuleRequest.NatGatewayId.ToString());
             urlParam.Add("snat_rule_id" , deleteNatGatewaySnatRuleRequest.SnatRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/snat_rules/{snat_rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteNatGatewaySnatRuleRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewaySnatRuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteNatGatewaySnatRuleResponse>(response);
         }
@@ -186,7 +186,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/snat_rules",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listNatGatewaySnatRulesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewaySnatRulesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListNatGatewaySnatRulesResponse>(response);
         }
@@ -199,7 +199,7 @@ namespace HuaweiCloud.SDK.Nat.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("snat_rule_id" , showNatGatewaySnatRuleRequest.SnatRuleId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/snat_rules/{snat_rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showNatGatewaySnatRuleRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewaySnatRuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowNatGatewaySnatRuleResponse>(response);
         }

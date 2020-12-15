@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_group_id" , deleteServerGroupRequest.ServerGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteServerGroupRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServerGroupRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteServerGroupResponse>(response);
         }
@@ -212,7 +212,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("key" , deleteServerMetadataRequest.Key.ToString());
             urlParam.Add("server_id" , deleteServerMetadataRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata/{key}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteServerMetadataRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServerMetadataRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteServerMetadataResponse>(response);
         }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             urlParam.Add("server_id" , detachServerVolumeRequest.ServerId.ToString());
             urlParam.Add("volume_id" , detachServerVolumeRequest.VolumeId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/detachvolume/{volume_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, detachServerVolumeRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachServerVolumeRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DetachServerVolumeResponse>(response);
         }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/flavors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listFlavorsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
         }
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/resize_flavors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listResizeFlavorsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResizeFlavorsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListResizeFlavorsResponse>(response);
         }
@@ -275,7 +275,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , listServerBlockDevicesRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/block_device",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listServerBlockDevicesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerBlockDevicesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListServerBlockDevicesResponse>(response);
         }
@@ -288,7 +288,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , listServerInterfacesRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listServerInterfacesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerInterfacesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListServerInterfacesResponse>(response);
         }
@@ -300,7 +300,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listServersDetailsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServersDetailsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListServersDetailsResponse>(response);
         }
@@ -350,7 +350,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("keypair_name" , novaDeleteKeypairRequest.KeypairName.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/os-keypairs/{keypair_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaDeleteKeypairRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaDeleteKeypairRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<NovaDeleteKeypairResponse>(response);
         }
@@ -363,7 +363,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , novaDeleteServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaDeleteServerRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaDeleteServerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<NovaDeleteServerResponse>(response);
         }
@@ -388,7 +388,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/os-availability-zone",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaListAvailabilityZonesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListAvailabilityZonesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NovaListAvailabilityZonesResponse>(response);
         }
@@ -400,7 +400,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/os-keypairs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaListKeypairsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListKeypairsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NovaListKeypairsResponse>(response);
         }
@@ -413,7 +413,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , novaListServerSecurityGroupsRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}/os-security-groups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaListServerSecurityGroupsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListServerSecurityGroupsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NovaListServerSecurityGroupsResponse>(response);
         }
@@ -425,7 +425,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaListServersDetailsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListServersDetailsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NovaListServersDetailsResponse>(response);
         }
@@ -438,7 +438,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("keypair_name" , novaShowKeypairRequest.KeypairName.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/os-keypairs/{keypair_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaShowKeypairRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowKeypairRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NovaShowKeypairResponse>(response);
         }
@@ -451,7 +451,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , novaShowServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, novaShowServerRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowServerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NovaShowServerResponse>(response);
         }
@@ -516,7 +516,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , showResetPasswordFlagRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-resetpwd-flag",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showResetPasswordFlagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResetPasswordFlagRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowResetPasswordFlagResponse>(response);
         }
@@ -529,7 +529,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , showServerRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showServerRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowServerResponse>(response);
         }
@@ -541,7 +541,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/limits",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showServerLimitsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerLimitsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowServerLimitsResponse>(response);
         }
@@ -567,7 +567,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("server_id" , showServerTagsRequest.ServerId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showServerTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowServerTagsResponse>(response);
         }
@@ -606,7 +606,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("job_id" , showJobRequest.JobId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showJobRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
         }

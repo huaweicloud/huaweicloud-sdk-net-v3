@@ -193,13 +193,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
-        /// <summary>
-        /// 上报自定义事件。请求参数。
-        /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EventItem> Body { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -218,7 +211,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  to: ").Append(To).Append("\n");
             sb.Append("  start: ").Append(Start).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -289,12 +281,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    this.Body != null &&
-                    input.Body != null &&
-                    this.Body.SequenceEqual(input.Body)
                 );
         }
 
@@ -326,8 +312,6 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.Start.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

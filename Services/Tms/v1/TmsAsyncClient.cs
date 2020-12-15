@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Tms.v1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listApiVersionsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
         }
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.Tms.v1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPredefineTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPredefineTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPredefineTagsResponse>(response);
         }
@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.Tms.v1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("api_version" , showApiVersionRequest.ApiVersion.ToString());
             string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showApiVersionRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
         }

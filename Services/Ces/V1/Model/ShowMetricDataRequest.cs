@@ -145,6 +145,20 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("namespace", IsQuery = true)]
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Namespace { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("metric_name", IsQuery = true)]
+        [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string MetricName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("dim.0", IsQuery = true)]
         [JsonProperty("dim.0", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim0 { get; set; }
@@ -166,36 +180,29 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("dim.3", IsQuery = true)]
+        [JsonProperty("dim.3", NullValueHandling = NullValueHandling.Ignore)]
+        public string Dim3 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("filter", IsQuery = true)]
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("from", IsQuery = true)]
-        [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
-        public long? From { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("metric_name", IsQuery = true)]
-        [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string MetricName { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("namespace", IsQuery = true)]
-        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
-        public string Namespace { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("period", IsQuery = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public int? Period { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("from", IsQuery = true)]
+        [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
+        public long? From { get; set; }
 
         /// <summary>
         /// 
@@ -212,14 +219,15 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowMetricDataRequest {\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  dim0: ").Append(Dim0).Append("\n");
             sb.Append("  dim1: ").Append(Dim1).Append("\n");
             sb.Append("  dim2: ").Append(Dim2).Append("\n");
+            sb.Append("  dim3: ").Append(Dim3).Append("\n");
             sb.Append("  filter: ").Append(Filter).Append("\n");
-            sb.Append("  from: ").Append(From).Append("\n");
-            sb.Append("  metricName: ").Append(MetricName).Append("\n");
-            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  period: ").Append(Period).Append("\n");
+            sb.Append("  from: ").Append(From).Append("\n");
             sb.Append("  to: ").Append(To).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -243,6 +251,16 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
             return 
                 (
+                    this.Namespace == input.Namespace ||
+                    (this.Namespace != null &&
+                    this.Namespace.Equals(input.Namespace))
+                ) && 
+                (
+                    this.MetricName == input.MetricName ||
+                    (this.MetricName != null &&
+                    this.MetricName.Equals(input.MetricName))
+                ) && 
+                (
                     this.Dim0 == input.Dim0 ||
                     (this.Dim0 != null &&
                     this.Dim0.Equals(input.Dim0))
@@ -258,29 +276,24 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.Dim2.Equals(input.Dim2))
                 ) && 
                 (
+                    this.Dim3 == input.Dim3 ||
+                    (this.Dim3 != null &&
+                    this.Dim3.Equals(input.Dim3))
+                ) && 
+                (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
                 ) && 
                 (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
                     this.Period == input.Period ||
                     (this.Period != null &&
                     this.Period.Equals(input.Period))
+                ) && 
+                (
+                    this.From == input.From ||
+                    (this.From != null &&
+                    this.From.Equals(input.From))
                 ) && 
                 (
                     this.To == input.To ||
@@ -297,22 +310,24 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Namespace != null)
+                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.MetricName != null)
+                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
                 if (this.Dim0 != null)
                     hashCode = hashCode * 59 + this.Dim0.GetHashCode();
                 if (this.Dim1 != null)
                     hashCode = hashCode * 59 + this.Dim1.GetHashCode();
                 if (this.Dim2 != null)
                     hashCode = hashCode * 59 + this.Dim2.GetHashCode();
+                if (this.Dim3 != null)
+                    hashCode = hashCode * 59 + this.Dim3.GetHashCode();
                 if (this.Filter != null)
                     hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.From != null)
-                    hashCode = hashCode * 59 + this.From.GetHashCode();
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.Period != null)
                     hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.From != null)
+                    hashCode = hashCode * 59 + this.From.GetHashCode();
                 if (this.To != null)
                     hashCode = hashCode * 59 + this.To.GetHashCode();
                 return hashCode;

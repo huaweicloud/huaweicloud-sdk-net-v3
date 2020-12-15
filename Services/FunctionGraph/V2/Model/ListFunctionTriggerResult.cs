@@ -173,9 +173,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         }
 
         /// <summary>
-        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。
+        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。
         /// </summary>
-        /// <value>\&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。</value>
+        /// <value>\&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。</value>
         [JsonConverter(typeof(EnumClassConverter<TriggerStatusEnum>))]
         public class TriggerStatusEnum
         {
@@ -185,15 +185,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
 
             /// <summary>
-            /// Enum DISABLE for value: DISABLE
+            /// Enum DISABLED for value: DISABLED
             /// </summary>
-            public static readonly TriggerStatusEnum DISABLE = new TriggerStatusEnum("DISABLE");
+            public static readonly TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
 
             private static readonly Dictionary<string, TriggerStatusEnum> StaticFields =
             new Dictionary<string, TriggerStatusEnum>()
             {
                 { "ACTIVE", ACTIVE },
-                { "DISABLE", DISABLE },
+                { "DISABLED", DISABLED },
             };
 
             private string Value;
@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("trigger_type_code", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerTypeCodeEnum TriggerTypeCode { get; set; }
         /// <summary>
-        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。
+        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。
         /// </summary>
         [JsonProperty("trigger_status", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerStatusEnum TriggerStatus { get; set; }

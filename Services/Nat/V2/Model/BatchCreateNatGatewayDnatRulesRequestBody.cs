@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// DNAT规则批量创建对象的请求体。
         /// </summary>
         [JsonProperty("dnat_rules", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateNatGatewayDnatRuleOption> DnatRules { get; set; }
+        public List<CreateNatGatewayDnatOption> DnatRules { get; set; }
 
 
         /// <summary>

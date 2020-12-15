@@ -103,12 +103,9 @@ namespace HuaweiCloud.SDK.Core
                 }
             }
 
-            if (request.Body != null)
-            {
-                message.Content = new StringContent(request.Body);
-                message.Content.Headers.ContentType =
-                    new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
-            }
+            message.Content = new StringContent(request.Body);
+            message.Content.Headers.ContentType =
+                new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
 
             if (request.FileStream != null && request.FileStream != Stream.Null)
             {

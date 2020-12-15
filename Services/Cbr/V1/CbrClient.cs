@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("backup_id" , deleteBackupRequest.BackupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteBackupRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteBackupResponse>(response);
         }
@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             urlParam.Add("backup_id" , deleteMemberRequest.BackupId.ToString());
             urlParam.Add("member_id" , deleteMemberRequest.MemberId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteMemberRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteMemberResponse>(response);
         }
@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("policy_id" , deletePolicyRequest.PolicyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/policies/{policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deletePolicyRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePolicyRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePolicyResponse>(response);
         }
@@ -187,7 +187,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("vault_id" , deleteVaultRequest.VaultId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/{vault_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteVaultRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVaultRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteVaultResponse>(response);
         }
@@ -201,7 +201,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             urlParam.Add("key" , deleteVaultTagRequest.Key.ToString());
             urlParam.Add("vault_id" , deleteVaultTagRequest.VaultId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/{vault_id}/tags/{key}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteVaultTagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVaultTagRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteVaultTagResponse>(response);
         }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBackupsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListBackupsResponse>(response);
         }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/operation-logs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listOpLogsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOpLogsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListOpLogsResponse>(response);
         }
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/policies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPoliciesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPoliciesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListPoliciesResponse>(response);
         }
@@ -275,7 +275,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("protectable_type" , listProtectableRequest.ProtectableType.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/protectables/{protectable_type}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listProtectableRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProtectableRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProtectableResponse>(response);
         }
@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listVaultRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVaultRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListVaultResponse>(response);
         }
@@ -339,7 +339,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("backup_id" , showBackupRequest.BackupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showBackupRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowBackupResponse>(response);
         }
@@ -352,7 +352,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("checkpoint_id" , showCheckpointRequest.CheckpointId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/checkpoints/{checkpoint_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showCheckpointRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCheckpointRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowCheckpointResponse>(response);
         }
@@ -366,7 +366,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             urlParam.Add("backup_id" , showMemberDetailRequest.BackupId.ToString());
             urlParam.Add("member_id" , showMemberDetailRequest.MemberId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMemberDetailRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberDetailRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowMemberDetailResponse>(response);
         }
@@ -379,7 +379,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("backup_id" , showMembersDetailRequest.BackupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showMembersDetailRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMembersDetailRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowMembersDetailResponse>(response);
         }
@@ -392,7 +392,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("operation_log_id" , showOpLogRequest.OperationLogId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/operation-logs/{operation_log_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showOpLogRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOpLogRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowOpLogResponse>(response);
         }
@@ -405,7 +405,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("policy_id" , showPolicyRequest.PolicyId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/policies/{policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showPolicyRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowPolicyResponse>(response);
         }
@@ -419,7 +419,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             urlParam.Add("instance_id" , showProtectableRequest.InstanceId.ToString());
             urlParam.Add("protectable_type" , showProtectableRequest.ProtectableType.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/protectables/{protectable_type}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showProtectableRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProtectableRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowProtectableResponse>(response);
         }
@@ -431,7 +431,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/replication-capabilities",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showReplicationCapabilitiesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationCapabilitiesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowReplicationCapabilitiesResponse>(response);
         }
@@ -444,7 +444,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("vault_id" , showVaultRequest.VaultId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/{vault_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVaultRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVaultRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVaultResponse>(response);
         }
@@ -456,7 +456,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVaultProjectTagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVaultProjectTagRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVaultProjectTagResponse>(response);
         }
@@ -481,7 +481,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("vault_id" , showVaultTagRequest.VaultId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vault/{vault_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showVaultTagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVaultTagRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVaultTagResponse>(response);
         }

@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("bandwidth_id" , deleteSharedBandwidthRequest.BandwidthId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deleteSharedBandwidthRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSharedBandwidthRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSharedBandwidthResponse>(response);
         }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/bandwidths",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listBandwidthsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBandwidthsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListBandwidthsResponse>(response);
         }
@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listQuotasRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotasRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListQuotasResponse>(response);
         }
@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("bandwidth_id" , showBandwidthRequest.BandwidthId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/bandwidths/{bandwidth_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showBandwidthRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBandwidthRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBandwidthResponse>(response);
         }
@@ -211,7 +211,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("publicip_id" , deletePublicipRequest.PublicipId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deletePublicipRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicipRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePublicipResponse>(response);
         }
@@ -225,7 +225,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             urlParam.Add("publicip_id" , deletePublicipTagRequest.PublicipId.ToString());
             urlParam.Add("key" , deletePublicipTagRequest.Key.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags/{key}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, deletePublicipTagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicipTagRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePublicipTagResponse>(response);
         }
@@ -237,7 +237,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPublicipTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicipTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPublicipTagsResponse>(response);
         }
@@ -249,7 +249,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, listPublicipsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicipsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPublicipsResponse>(response);
         }
@@ -274,7 +274,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("publicip_id" , showPublicipRequest.PublicipId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showPublicipRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowPublicipResponse>(response);
         }
@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("publicip_id" , showPublicipTagsRequest.PublicipId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, showPublicipTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowPublicipTagsResponse>(response);
         }
@@ -325,7 +325,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("floatingip_id" , neutronDeleteFloatingIpRequest.FloatingipId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, neutronDeleteFloatingIpRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFloatingIpRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<NeutronDeleteFloatingIpResponse>(response);
         }
@@ -337,7 +337,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, neutronListFloatingIpsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListFloatingIpsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NeutronListFloatingIpsResponse>(response);
         }
@@ -350,7 +350,7 @@ namespace HuaweiCloud.SDK.Eip.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("floatingip_id" , neutronShowFloatingIpRequest.FloatingipId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, neutronShowFloatingIpRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFloatingIpRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NeutronShowFloatingIpResponse>(response);
         }
