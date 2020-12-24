@@ -160,6 +160,18 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("mac_addr", NullValueHandling = NullValueHandling.Ignore)]
         public string MacAddr { get; set; }
 
+        /// <summary>
+        /// 从guest os中，网卡的驱动类型
+        /// </summary>
+        [JsonProperty("driver_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string DriverMode { get; set; }
+
+        /// <summary>
+        /// 弹性网卡在Linux GuestOS里的BDF号
+        /// </summary>
+        [JsonProperty("pci_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string PciAddress { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -173,6 +185,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("  netId: ").Append(NetId).Append("\n");
             sb.Append("  portId: ").Append(PortId).Append("\n");
             sb.Append("  macAddr: ").Append(MacAddr).Append("\n");
+            sb.Append("  driverMode: ").Append(DriverMode).Append("\n");
+            sb.Append("  pciAddress: ").Append(PciAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,6 +233,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     this.MacAddr == input.MacAddr ||
                     (this.MacAddr != null &&
                     this.MacAddr.Equals(input.MacAddr))
+                ) && 
+                (
+                    this.DriverMode == input.DriverMode ||
+                    (this.DriverMode != null &&
+                    this.DriverMode.Equals(input.DriverMode))
+                ) && 
+                (
+                    this.PciAddress == input.PciAddress ||
+                    (this.PciAddress != null &&
+                    this.PciAddress.Equals(input.PciAddress))
                 );
         }
 
@@ -240,6 +264,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     hashCode = hashCode * 59 + this.PortId.GetHashCode();
                 if (this.MacAddr != null)
                     hashCode = hashCode * 59 + this.MacAddr.GetHashCode();
+                if (this.DriverMode != null)
+                    hashCode = hashCode * 59 + this.DriverMode.GetHashCode();
+                if (this.PciAddress != null)
+                    hashCode = hashCode * 59 + this.PciAddress.GetHashCode();
                 return hashCode;
             }
         }

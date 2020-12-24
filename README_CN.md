@@ -76,6 +76,8 @@
     
     Region级服务仅需要提供 projectId。Global级服务需要提供domainId。
 
+    使用Region创建客户端场景ProjectId、DomainId支持自动获取，无需再次配置。
+
     - `ak` 华为云账号 Access Key 。
     - `sk` 华为云账号 Secret Access Key 。
     - `projectId` 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID 。
@@ -108,16 +110,39 @@
     ICredential auth = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
     ```
 
-4. 初始化客户端:
+4. 初始化客户端（两种方式）
 
-    ```csharp
+    4.1 指定云服务Endpoint方式
+
+    ``` csharp
     # 初始化指定云服务的客户端 {Service}Client，以初始化 VpcClient 为例
-    VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithHttpConfig(config).WithLogging(LogLevel.Information).Build();
+    VpcClient vpcClient = VpcClient.NewBuilder()
+        .WithCredential(auth)
+        .WithEndPoint(endpoint)
+        .WithHttpConfig(config)
+        .WithLogging(LogLevel.Information)
+        .Build();
     ```
 
 	**说明:**
 
     - `endpoint` 华为云各服务应用区域和各服务的终端节点，详情请查看[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+
+    4.2 指定Region方式（推荐）
+
+    ``` csharp
+    # 初始化指定云服务的客户端 {Service}Client，以初始化 IamClient 为例
+    IamClient iamClient = IamClient.NewBuilder()
+        .WithCredential(auth)
+        .WithRegion(IamRegion.CN_NORTH_4)
+        .WithHttpConfig(config)
+        .WithLogging(LogLevel.Information)
+        .Build();
+    ```
+    
+    **说明：**
+     - 指定Region方式创建客户端场景，支持自动获取用户的regionId以及domainId，认证Credential中无需再次指定。
+     - 不适用于`多ProjectId`场景。
 
 5. 发送请求并查看响应.
 

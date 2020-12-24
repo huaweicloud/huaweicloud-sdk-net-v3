@@ -49,6 +49,7 @@ namespace HuaweiCloud.SDK.Core
 
             private Credentials _credentials;
             private HttpConfig _httpConfig;
+            private Region _region;
             private string _endPoint;
             private bool _enableLogging;
             private LogLevel _logLevel = LogLevel.Information;
@@ -63,6 +64,12 @@ namespace HuaweiCloud.SDK.Core
             public ClientBuilder<T> WithHttpConfig(HttpConfig httpConfig)
             {
                 this._httpConfig = httpConfig;
+                return this;
+            }
+
+            public ClientBuilder<T> WithRegion(Region region)
+            {
+                this._region = region;
                 return this;
             }
 
@@ -100,10 +107,18 @@ namespace HuaweiCloud.SDK.Core
                         $"credential type error, support credential type is {Join(",", CredentialType)}");
                 }
 
+                client.WithHttpConfig(_httpConfig ?? HttpConfig.GetDefaultConfig())
+                    .InitSdkHttpClient(this._httpHandler, this._enableLogging, this._logLevel);
+
+                if (this._region != null)
+                {
+                    this._endPoint = _region.Endpoint;
+                    this._credentials = _credentials.ProcessAuthParams(client._sdkHttpClient, _region.Id);
+                }
+
+
                 client.WithCredential(this._credentials)
-                    .WithEndPoint(this._endPoint)
-                    .WithHttpConfig(this._httpConfig ?? HttpConfig.GetDefaultConfig());
-                client.InitSdkHttpClient(this._httpHandler, this._enableLogging, this._logLevel);
+                    .WithEndPoint(this._endPoint);
 
                 return (T) client;
             }
@@ -207,7 +222,12 @@ namespace HuaweiCloud.SDK.Core
                 HttpHeaders = responseMessage.Headers.ToString(),
                 HttpBody = responseMessage.Content.ReadAsStringAsync().Result
             };
-            var requestId = responseMessage.Headers.GetValues(XRequestId).FirstOrDefault();
+
+            var requestId = "";
+            if (responseMessage.Headers.Contains(XRequestId))
+            {
+                requestId = responseMessage.Headers.GetValues(XRequestId).FirstOrDefault();
+            }
 
             SdkError sdkError;
             try

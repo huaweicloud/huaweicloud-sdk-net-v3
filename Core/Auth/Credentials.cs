@@ -33,6 +33,8 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public abstract Task<HttpRequest> SignAuthRequest(HttpRequest request);
 
+        public abstract Credentials ProcessAuthParams(SdkHttpClient client, string regionId);
+
         public static Credentials GetCredentialFromEnvironment<T>(string defaultCredentials) where T : Client
         {
             var credentialsTypeDef = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_TYPE");
@@ -75,7 +77,8 @@ namespace HuaweiCloud.SDK.Core.Auth
                     Environment.GetEnvironmentVariable(
                         $"HUAWEICLOUD_SDK_{StringUtils.ToSnakeCase(paramInfo.Name).ToUpper()}"));
             }
-            return (Credentials)Activator.CreateInstance(credentialsType, paramList.ToArray());
+
+            return (Credentials) Activator.CreateInstance(credentialsType, paramList.ToArray());
         }
 
         private static Credentials LoadOptionalParams(Credentials credentials)
@@ -85,8 +88,8 @@ namespace HuaweiCloud.SDK.Core.Auth
             {
                 if (property.GetValue(credentials) == null)
                 {
-                    property.SetValue(credentials,Environment.GetEnvironmentVariable(
-                        $"HUAWEICLOUD_SDK_{StringUtils.ToSnakeCase(property.Name).ToUpper()}")); 
+                    property.SetValue(credentials, Environment.GetEnvironmentVariable(
+                        $"HUAWEICLOUD_SDK_{StringUtils.ToSnakeCase(property.Name).ToUpper()}"));
                 }
             }
 

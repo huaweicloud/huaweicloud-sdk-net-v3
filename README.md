@@ -71,7 +71,9 @@ You must install `HuaweiCloud.SDK.Core` library no matter which product developm
     Global services currently only support IAM, TMS, EPS.
 
     For Regional services' authentication, projectId is required. 
-    For global services' authentication, domainId is required. 
+    For global services' authentication, domainId is required.
+
+    If you use {Service}Region to initialize {Service}Client, projectId/domainId supports automatic acquisition, you don't need to configure it when initializing Credentials.
 
     - `ak` is the access key ID for your account.
     - `sk` is the secret access key for your account.
@@ -105,16 +107,38 @@ You must install `HuaweiCloud.SDK.Core` library no matter which product developm
     ICredential auth = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
     ```
 
-4. Initialize the `ServiceClient` instance:
+4. Initialize the `ServiceClient` instance (Two ways)
 
-    ```csharp
+    4.1 Specify Endpoint when initializing {Service}Client
+
+    ``` csharp
     # Initialize specified {Service}Client instance, take VpcClient for example
-    VpcClient vpcClient = VpcClient.NewBuilder().WithCredential(auth).WithEndPoint(endpoint).WithHttpConfig(config).Build();
+    VpcClient vpcClient = VpcClient.NewBuilder()
+        .WithCredential(auth)
+        .WithEndPoint(endpoint)
+        .WithHttpConfig(config)
+        .Build();
     ```
 
 	**where:**
 
     - `endpoint` is the service specific endpoints, see [Regions and Endpoints](https://developer.huaweicloud.com/intl/en-us/endpoint)
+
+    4.2 Specify Region when initializing {Service}Client **(Recommended)**
+
+    ``` csharp
+    #  Initialize specified {Service}Client instance, take IamClient for example
+    IamClient iamClient = IamClient.NewBuilder()
+        .WithCredential(auth)
+        .WithRegion(IamRegion.CN_NORTH_4)
+        .WithHttpConfig(config)
+        .WithLogging(LogLevel.Information)
+        .Build();
+    ```
+
+    **where:**
+    - If you use {Service}Region to initialize {Service}Client, projectId/domainId supports automatic acquisition, you don't need to configure it when initializing Credentials.
+    - Multiple ProjectId situation is not supported.
 
 5. Call a request and print response.
 

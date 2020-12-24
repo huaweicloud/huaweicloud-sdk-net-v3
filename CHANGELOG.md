@@ -1,3 +1,37 @@
+## 3.0.26-beta 2020-12-23
+## HuaweiCloud SDK Core
+ - ### Features
+    - Support Endpoint Resolver: it's supported to use {Service}Region when initializing {ServiceClient} which can automatically backfill endpoint. After choosing a region, the projectId/domainId will be backfilled automatically.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK BSS
+ - ### Features
+    - Support more interfaces: ListMeasureUnits.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK CES
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Update interface: ShowMetricData
+
+## HuaweiCloud SDK SMN
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Update field type in message_template_name.
+
+
 ## 3.0.25-beta 2020-12-15
 ## HuaweiCloud SDK CCE
  - ### Features

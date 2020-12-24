@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -32,8 +32,9 @@ namespace HuaweiCloud.SDK.Core.Auth
         private string Sk { set; get; }
         private string ProjectId { set; get; }
         private string SecurityToken { set; get; }
+        private string IamEndpoint { set; get; }
 
-        public BasicCredentials(string ak, string sk, string projectId)
+        public BasicCredentials(string ak, string sk, string projectId = null)
         {
             if (IsNullOrEmpty(ak))
             {
@@ -45,14 +46,15 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw new ArgumentNullException(nameof(sk));
             }
 
-            if (IsNullOrEmpty(projectId))
-            {
-                throw new ArgumentNullException(nameof(projectId));
-            }
-
             this.Ak = ak;
             this.Sk = sk;
             this.ProjectId = projectId;
+        }
+
+        public BasicCredentials WithIamEndpoint(string endpoint)
+        {
+            IamEndpoint = endpoint;
+            return this;
         }
 
         public BasicCredentials WithSecurityToken(string token)
@@ -76,7 +78,10 @@ namespace HuaweiCloud.SDK.Core.Auth
         {
             var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
-                request.Headers.Add("X-Project-Id", ProjectId);
+                if (ProjectId != null)
+                {
+                    request.Headers.Add("X-Project-Id", ProjectId);
+                }
 
                 if (SecurityToken != null)
                 {
@@ -95,6 +100,20 @@ namespace HuaweiCloud.SDK.Core.Auth
             });
 
             return httpRequestTask;
+        }
+
+        public override Credentials ProcessAuthParams(SdkHttpClient client, string regionId)
+        {
+            if (ProjectId != null)
+            {
+                return this;
+            }
+
+            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? Iam.DefaultIamEndpoint : IamEndpoint;
+            HttpRequest request = Iam.GetKeystoneListProjectsRequest(IamEndpoint, regionId);
+            request = SignAuthRequest(request).Result;
+            ProjectId = Iam.KeystoneListProjects(client, request);
+            return this;
         }
     }
 }

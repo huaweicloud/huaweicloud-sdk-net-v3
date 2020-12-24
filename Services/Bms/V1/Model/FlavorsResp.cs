@@ -99,12 +99,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("os_extra_specs", NullValueHandling = NullValueHandling.Ignore)]
         public OsExtraSpecs OsExtraSpecs { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("attachableQuantity", NullValueHandling = NullValueHandling.Ignore)]
-        public ServerAttachableQuantity AttachableQuantity { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -127,7 +121,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("  osFlavorAccessisPublic: ").Append(OsFlavorAccessisPublic).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  osExtraSpecs: ").Append(OsExtraSpecs).Append("\n");
-            sb.Append("  attachableQuantity: ").Append(AttachableQuantity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,11 +212,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     this.OsExtraSpecs == input.OsExtraSpecs ||
                     (this.OsExtraSpecs != null &&
                     this.OsExtraSpecs.Equals(input.OsExtraSpecs))
-                ) && 
-                (
-                    this.AttachableQuantity == input.AttachableQuantity ||
-                    (this.AttachableQuantity != null &&
-                    this.AttachableQuantity.Equals(input.AttachableQuantity))
                 );
         }
 
@@ -263,8 +251,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.OsExtraSpecs != null)
                     hashCode = hashCode * 59 + this.OsExtraSpecs.GetHashCode();
-                if (this.AttachableQuantity != null)
-                    hashCode = hashCode * 59 + this.AttachableQuantity.GetHashCode();
                 return hashCode;
             }
         }

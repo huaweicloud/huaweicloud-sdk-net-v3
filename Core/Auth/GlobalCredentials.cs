@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -32,8 +32,9 @@ namespace HuaweiCloud.SDK.Core.Auth
         private string Sk { set; get; }
         private string DomainId { set; get; }
         private string SecurityToken { set; get; }
+        private string IamEndpoint { set; get; }
 
-        public GlobalCredentials(string ak, string sk, string domainId)
+        public GlobalCredentials(string ak, string sk, string domainId = null)
         {
             if (IsNullOrEmpty(ak))
             {
@@ -45,14 +46,15 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw new ArgumentNullException(nameof(sk));
             }
 
-            if (IsNullOrEmpty(domainId))
-            {
-                throw new ArgumentNullException(nameof(domainId));
-            }
-
             this.Ak = ak;
             this.Sk = sk;
             this.DomainId = domainId;
+        }
+
+        public GlobalCredentials WithIamEndpoint(string endpoint)
+        {
+            IamEndpoint = endpoint;
+            return this;
         }
 
         public GlobalCredentials WithSecurityToken(string token)
@@ -77,7 +79,10 @@ namespace HuaweiCloud.SDK.Core.Auth
         {
             Task<HttpRequest> httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
-                request.Headers.Add("X-Domain-Id", DomainId);
+                if (DomainId != null)
+                {
+                    request.Headers.Add("X-Domain-Id", DomainId);
+                }
 
                 if (SecurityToken != null)
                 {
@@ -96,6 +101,20 @@ namespace HuaweiCloud.SDK.Core.Auth
             });
 
             return httpRequestTask;
+        }
+
+        public override Credentials ProcessAuthParams(SdkHttpClient client, string regionId)
+        {
+            if (DomainId != null)
+            {
+                return this;
+            }
+
+            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? Iam.DefaultIamEndpoint : IamEndpoint;
+            HttpRequest request = Iam.GetKeystoneListAuthDomainsRequest(IamEndpoint);
+            request = SignAuthRequest(request).Result;
+            DomainId = Iam.KeystoneListAuthDomains(client, request);
+            return this;
         }
     }
 }

@@ -1,3 +1,37 @@
+## 3.0.26-beta 2020-12-23
+## HuaweiCloud SDK Core
+ - ### 新增特性
+    - 支持Region管理，用户新建客户端时可以通过{Service}Region传入，无需自己配置endpoint。配置Region后，支持自动回填ProjectId/DomainId
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK BSS
+ - ### 新增特性
+    - 新增支持接口：查询用量单位列表
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK CES
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - ShowMetricData接口字段更新
+
+## HuaweiCloud SDK SMN
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 消息模板名称中字段类型调整
+
+
 ## 3.0.25-beta 2020-12-15
 ## HuaweiCloud SDK CCE
  - ### 新增特性
