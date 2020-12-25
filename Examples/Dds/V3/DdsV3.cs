@@ -48,7 +48,7 @@ namespace Examples.DDS.V3
             
             // Tags
             ListInstancesByTags(ddsClient);
-            BatchCreateInstanceTags(ddsClient);
+            BatchTagAction(ddsClient);
             ListInstanceTags(ddsClient);
             BatchDeleteInstanceTags(ddsClient);
             QueryProjectTags(ddsClient);
@@ -192,11 +192,11 @@ namespace Examples.DDS.V3
                 Body = new CreateInstanceRequestBody
                 {
                     Name = "dds-test1",
-                    Datastore = new CreateInstanceDatastoreOption()
+                    Datastore = new Datastore()
                     {
-                        Type = CreateInstanceDatastoreOption.TypeEnum.DDS_COMMUNITY,
+                        Type = Datastore.TypeEnum.DDS_COMMUNITY,
                         Version = "3.4",
-                        StorageEngine = CreateInstanceDatastoreOption.StorageEngineEnum.WIREDTIGER
+                        StorageEngine = Datastore.StorageEngineEnum.WIREDTIGER
                     },
                     Region = "cn-guangzhou-1",
                     AvailabilityZone = "az2pod1gz",
@@ -215,7 +215,7 @@ namespace Examples.DDS.V3
                             SpecCode = "dds.mongodb.s6.medium.4.single"
                         },
                     },
-                    BackupStrategy = new CreateInstanceBackupStrategyOption()
+                    BackupStrategy = new BackupStrategy()
                     {
                         StartTime = "08:15-09:15",
                         KeepDays = "8"
@@ -404,9 +404,9 @@ namespace Examples.DDS.V3
             var req = new AddShardingNodeRequest()
             {
                 InstanceId = "a25de644d3b74b86b4b3010a68897e85in02",
-                Body = new AddShardingNodeRequestBody()
+                Body = new EnlargeInstanceRequestBody()
                 {
-                    Type = AddShardingNodeRequestBody.TypeEnum.MONGOS,
+                    Type = EnlargeInstanceRequestBody.TypeEnum.MONGOS,
                     SpecCode = "dds.mongodb.s6.medium.4.mongos",
                     Num = 2,
                     Volume = new AddShardingNodeVolumeOption()
@@ -628,7 +628,7 @@ namespace Examples.DDS.V3
                 InstanceId = "fd1cac0eee0f4ad5a139a4dd6e994ea7in02",
                 Body = new SetBackupPolicyRequestBody
                 {
-                    BackupPolicy = new SetBackupPolicyOption()
+                    BackupPolicy = new BackupPolicy()
                     {
                         KeepDays = 7,
                         StartTime = "08:15-09:15",
@@ -671,17 +671,17 @@ namespace Examples.DDS.V3
                 Body = new ListInstancesByTagsRequestBody
                 {
                     Action = ListInstancesByTagsRequestBody.ActionEnum.FILTER,
-                    Matches = new List<Match>
+                    Matches = new List<QueryMatchItem>
                     {
-                        new Match
+                        new QueryMatchItem
                         {
-                            Key = Match.KeyEnum.INSTANCE_ID,
+                            Key = QueryMatchItem.KeyEnum.INSTANCE_ID,
                             Value = "value1"
                         }
                     },
-                    Tags = new List<ListInstancesTagOption>
+                    Tags = new List<QueryTagItem>
                     {
-                        new ListInstancesTagOption()
+                        new QueryTagItem()
                         {
                             Key = "key",
                             Values = new List<string>()
@@ -723,17 +723,17 @@ namespace Examples.DDS.V3
         /// <summary>
         /// 批量创建资源标签
         /// </summary>
-        public static void BatchCreateInstanceTags(DdsClient client)
+        public static void BatchTagAction(DdsClient client)
         {
-            var req = new BatchCreateInstanceTagsRequest()
+            var req = new BatchTagActionRequest()
             {
                 InstanceId = "fd1cac0eee0f4ad5a139a4dd6e994ea7in02",
-                Body = new BatchCreateInstanceTagsRequestBody()
+                Body = new BatchOperateInstanceTagRequestBody()
                 {
-                    Action = BatchCreateInstanceTagsRequestBody.ActionEnum.CREATE,
-                    Tags = new List<BatchCreateInstanceTagsOption>
+                    Action = BatchOperateInstanceTagRequestBody.ActionEnum.CREATE,
+                    Tags = new List<TagItem>
                     {
-                        new BatchCreateInstanceTagsOption()
+                        new TagItem()
                         {
                             Key = "key1",
                             Value = "value1"
@@ -743,7 +743,7 @@ namespace Examples.DDS.V3
             };
             try
             {
-                var resp= client.BatchCreateInstanceTags(req);
+                var resp= client.BatchTagAction(req);
                 Console.WriteLine(resp.HttpStatusCode);
                 Console.WriteLine("Batch Resource Instance Success!");
             }
@@ -768,15 +768,15 @@ namespace Examples.DDS.V3
         /// </summary>
         public static void BatchDeleteInstanceTags(DdsClient client)
         {
-            var req = new BatchDeleteInstanceTagsRequest()
+            var req = new BatchTagActionRequest()
             {
                 InstanceId = "fd1cac0eee0f4ad5a139a4dd6e994ea7in02",
-                Body = new BatchDeleteInstanceTagsRequestBody()
+                Body = new BatchOperateInstanceTagRequestBody()
                 {
-                    Action = BatchDeleteInstanceTagsRequestBody.ActionEnum.DELETE,
-                    Tags = new List<BatchDeleteInstanceTagsOption>
+                    Action = BatchOperateInstanceTagRequestBody.ActionEnum.DELETE,
+                    Tags = new List<TagItem>
                     {
-                        new BatchDeleteInstanceTagsOption()
+                        new TagItem()
                         {
                             Key = "key1",
                             Value = "value1"
@@ -786,7 +786,7 @@ namespace Examples.DDS.V3
             };
             try
             {
-                var resp= client.BatchDeleteInstanceTags(req);
+                var resp= client.BatchTagAction(req);
                 Console.WriteLine(resp.HttpStatusCode);
                 Console.WriteLine("Batch Resource Instance Success!");
             }

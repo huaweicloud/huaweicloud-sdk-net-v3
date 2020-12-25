@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("datastore", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateInstanceDatastoreResult Datastore { get; set; }
+        public Datastore Datastore { get; set; }
 
         /// <summary>
         /// 实例名称，与请求参数相同。
@@ -91,19 +91,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 实例规格详情，与请求参数相同。
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateInstanceFlavorResult> Flavor { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("storage", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateInstanceStorageResult Storage { get; set; }
+        public List<CreateInstanceFlavorOption> Flavor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("backup_strategy", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateInstanceBackupStrategyResult BackupStrategy { get; set; }
+        public BackupStrategy BackupStrategy { get; set; }
 
         /// <summary>
         /// 企业项目ID。取值为“0”，表示为default企业项目。
@@ -116,6 +110,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
         public string SslOption { get; set; }
+
+        /// <summary>
+        /// 专属存储池ID。
+        /// </summary>
+        [JsonProperty("dss_pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DssPoolId { get; set; }
 
         /// <summary>
         /// 创建实例的工作流ID。
@@ -144,10 +144,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
-            sb.Append("  storage: ").Append(Storage).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
+            sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -237,11 +237,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Flavor.SequenceEqual(input.Flavor)
                 ) && 
                 (
-                    this.Storage == input.Storage ||
-                    (this.Storage != null &&
-                    this.Storage.Equals(input.Storage))
-                ) && 
-                (
                     this.BackupStrategy == input.BackupStrategy ||
                     (this.BackupStrategy != null &&
                     this.BackupStrategy.Equals(input.BackupStrategy))
@@ -255,6 +250,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.SslOption == input.SslOption ||
                     (this.SslOption != null &&
                     this.SslOption.Equals(input.SslOption))
+                ) && 
+                (
+                    this.DssPoolId == input.DssPoolId ||
+                    (this.DssPoolId != null &&
+                    this.DssPoolId.Equals(input.DssPoolId))
                 ) && 
                 (
                     this.JobId == input.JobId ||
@@ -297,14 +297,14 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Flavor != null)
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
                 if (this.BackupStrategy != null)
                     hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SslOption != null)
                     hashCode = hashCode * 59 + this.SslOption.GetHashCode();
+                if (this.DssPoolId != null)
+                    hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;

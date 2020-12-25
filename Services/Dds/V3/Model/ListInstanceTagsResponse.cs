@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListInstanceTagsResult> Tags { get; set; }
+        public List<QueryResourceTagItem> Tags { get; set; }
 
 
         /// <summary>

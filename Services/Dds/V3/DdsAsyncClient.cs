@@ -28,33 +28,85 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 批量添加指定实例的标签
+        /// 绑定节点的公网IP
         /// </summary>
-        public async Task<BatchCreateInstanceTagsResponse> BatchCreateInstanceTagsAsync(BatchCreateInstanceTagsRequest batchCreateInstanceTagsRequest)
+        public async Task<AttachEipResponse> AttachEipAsync(AttachEipRequest attachEipRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchCreateInstanceTagsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateInstanceTagsRequest);
+            urlParam.Add("node_id" , attachEipRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nodes/{node_id}/bind-eip",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachEipRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<BatchCreateInstanceTagsResponse>(response);
+            return JsonUtils.DeSerialize<AttachEipResponse>(response);
         }
         
         /// <summary>
-        /// 批量删除指定实例的标签
+        /// 修改实例内网IP
         /// </summary>
-        public async Task<BatchDeleteInstanceTagsResponse> BatchDeleteInstanceTagsAsync(BatchDeleteInstanceTagsRequest batchDeleteInstanceTagsRequest)
+        public async Task<AttachInternalIpResponse> AttachInternalIpAsync(AttachInternalIpRequest attachInternalIpRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchDeleteInstanceTagsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceTagsRequest);
+            urlParam.Add("instance_id" , attachInternalIpRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-internal-ip",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachInternalIpRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<BatchDeleteInstanceTagsResponse>(response);
+            return JsonUtils.DeSerialize<AttachInternalIpResponse>(response);
         }
         
         /// <summary>
-        /// 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
+        /// 批量添加或删除指定实例的标签
+        /// </summary>
+        public async Task<BatchTagActionResponse> BatchTagActionAsync(BatchTagActionRequest batchTagActionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , batchTagActionRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagActionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchTagActionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 节点解绑公网IP
+        /// </summary>
+        public async Task<CancelEipResponse> CancelEipAsync(CancelEipRequest cancelEipRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("node_id" , cancelEipRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nodes/{node_id}/unbind-eip",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelEipRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CancelEipResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建数据库角色
+        /// </summary>
+        public async Task<CreateDatabaseRoleResponse> CreateDatabaseRoleAsync(CreateDatabaseRoleRequest createDatabaseRoleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createDatabaseRoleRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-role",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDatabaseRoleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateDatabaseRoleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建数据库用户
+        /// </summary>
+        public async Task<CreateDatabaseUserResponse> CreateDatabaseUserAsync(CreateDatabaseUserRequest createDatabaseUserRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createDatabaseUserRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-user",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDatabaseUserRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateDatabaseUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
         /// </summary>
         public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest)
         {
@@ -104,6 +156,19 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 获取慢日志下载链接
+        /// </summary>
+        public async Task<DownloadSlowlogResponse> DownloadSlowlogAsync(DownloadSlowlogRequest downloadSlowlogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , downloadSlowlogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-download",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowlogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DownloadSlowlogResponse>(response);
+        }
+        
+        /// <summary>
         /// 根据指定条件查询备份列表
         /// </summary>
         public async Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest listBackupsRequest)
@@ -113,6 +178,32 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListBackupsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询数据库角色列表
+        /// </summary>
+        public async Task<ListDatabaseRolesResponse> ListDatabaseRolesAsync(ListDatabaseRolesRequest listDatabaseRolesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listDatabaseRolesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-roles",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabaseRolesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListDatabaseRolesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询数据库用户列表
+        /// </summary>
+        public async Task<ListDatabaseUsersResponse> ListDatabaseUsersAsync(ListDatabaseUsersRequest listDatabaseUsersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listDatabaseUsersRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-user/detail",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabaseUsersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListDatabaseUsersResponse>(response);
         }
         
         /// <summary>
@@ -190,6 +281,44 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询数据库慢日志
+        /// </summary>
+        public async Task<ListSlowLogsResponse> ListSlowLogsAsync(ListSlowLogsRequest listSlowLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listSlowLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListSlowLogsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询当前区域下的数据库磁盘类型
+        /// </summary>
+        public async Task<ListStorageTypeResponse> ListStorageTypeAsync(ListStorageTypeRequest listStorageTypeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/storage-type",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStorageTypeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListStorageTypeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改数据库用户密码
+        /// </summary>
+        public async Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest resetPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , resetPasswordRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reset-password",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<ResetPasswordResponse>(response);
+        }
+        
+        /// <summary>
         /// 变更实例的规格
         /// </summary>
         public async Task<ResizeInstanceResponse> ResizeInstanceAsync(ResizeInstanceRequest resizeInstanceRequest)
@@ -242,6 +371,18 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 获取备份下载链接
+        /// </summary>
+        public async Task<ShowBackupDownloadLinkResponse> ShowBackupDownloadLinkAsync(ShowBackupDownloadLinkRequest showBackupDownloadLinkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/download-file",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupDownloadLinkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowBackupDownloadLinkResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询自动备份策略
         /// </summary>
         public async Task<ShowBackupPolicyResponse> ShowBackupPolicyAsync(ShowBackupPolicyRequest showBackupPolicyRequest)
@@ -252,6 +393,71 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBackupPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 切换mongodb实例的SSL开关
+        /// </summary>
+        public async Task<SwitchSslResponse> SwitchSslAsync(SwitchSslRequest switchSslRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchSslRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-ssl",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<SwitchSslResponse>(response);
+        }
+        
+        /// <summary>
+        /// 副本集主备倒换
+        /// </summary>
+        public async Task<SwitchoverReplicaSetResponse> SwitchoverReplicaSetAsync(SwitchoverReplicaSetRequest switchoverReplicaSetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchoverReplicaSetRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchoverReplicaSetRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<SwitchoverReplicaSetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改实例名称
+        /// </summary>
+        public async Task<UpdateInstanceNameResponse> UpdateInstanceNameAsync(UpdateInstanceNameRequest updateInstanceNameRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateInstanceNameRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-name",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNameRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceNameResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改实例端口
+        /// </summary>
+        public async Task<UpdateInstancePortResponse> UpdateInstancePortAsync(UpdateInstancePortRequest updateInstancePortRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateInstancePortRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-port",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstancePortRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpdateInstancePortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改实例的安全组
+        /// </summary>
+        public async Task<UpdateSecurityGroupResponse> UpdateSecurityGroupAsync(UpdateSecurityGroupRequest updateSecurityGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateSecurityGroupRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-security-group",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpdateSecurityGroupResponse>(response);
         }
         
     }

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("backup_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public SetBackupPolicyOption BackupPolicy { get; set; }
+        public BackupPolicy BackupPolicy { get; set; }
 
 
         /// <summary>

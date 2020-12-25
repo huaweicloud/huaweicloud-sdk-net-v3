@@ -18,9 +18,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("id", IsQuery = true)]
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        [SDKProperty("instance_id", IsQuery = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
         /// <summary>
         /// 
@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListInstancesRequest {\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  includeFailure: ").Append(IncludeFailure).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -117,9 +117,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
                     this.IncludeFailure == input.IncludeFailure ||
@@ -171,8 +171,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.IncludeFailure != null)
                     hashCode = hashCode * 59 + this.IncludeFailure.GetHashCode();
                 if (this.Name != null)

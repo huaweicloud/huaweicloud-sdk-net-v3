@@ -30,11 +30,17 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly BackupTypeEnum MANUAL = new BackupTypeEnum("Manual");
 
+            /// <summary>
+            /// Enum INCREMENTAL for value: Incremental
+            /// </summary>
+            public static readonly BackupTypeEnum INCREMENTAL = new BackupTypeEnum("Incremental");
+
             private static readonly Dictionary<string, BackupTypeEnum> StaticFields =
             new Dictionary<string, BackupTypeEnum>()
             {
                 { "Auto", AUTO },
                 { "Manual", MANUAL },
+                { "Incremental", INCREMENTAL },
             };
 
             private string Value;

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 实例规格信息列表。
         /// </summary>
         [JsonProperty("flavors", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListFlavorsResult> Flavors { get; set; }
+        public List<Flavor> Flavors { get; set; }
 
 
         /// <summary>

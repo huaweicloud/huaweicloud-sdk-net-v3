@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public AddShardingNodeRequestBody Body { get; set; }
+        public EnlargeInstanceRequestBody Body { get; set; }
 
 
         /// <summary>

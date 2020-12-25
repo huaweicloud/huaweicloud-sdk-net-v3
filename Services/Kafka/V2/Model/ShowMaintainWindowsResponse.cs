@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 支持的维护时间窗列表。
         /// </summary>
         [JsonProperty("maintain_windows", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowMaintainWindowsRespMaintainWindows> MaintainWindows { get; set; }
+        public List<MaintainWindowsEntity> MaintainWindows { get; set; }
 
 
         /// <summary>

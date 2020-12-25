@@ -1,3 +1,13 @@
+## 3.0.27-beta 2020-12-25
+## HuaweiCloud SDK DCS
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 接口ListInstances请求Query参数名称调整：id → instance_id
+
+
 ## 3.0.26-beta 2020-12-23
 ## HuaweiCloud SDK Core
  - ### 新增特性

@@ -25,16 +25,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly EngineNameEnum DDS_COMMUNITY = new EngineNameEnum("DDS-Community");
 
-            /// <summary>
-            /// Enum DDS_ENHANCED for value: DDS-Enhanced
-            /// </summary>
-            public static readonly EngineNameEnum DDS_ENHANCED = new EngineNameEnum("DDS-Enhanced");
-
             private static readonly Dictionary<string, EngineNameEnum> StaticFields =
             new Dictionary<string, EngineNameEnum>()
             {
                 { "DDS-Community", DDS_COMMUNITY },
-                { "DDS-Enhanced", DDS_ENHANCED },
             };
 
             private string Value;

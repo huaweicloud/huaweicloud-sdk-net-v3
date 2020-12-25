@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 实例信息。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListInstancesResult> Instances { get; set; }
+        public List<QueryInstanceResponse> Instances { get; set; }
 
         /// <summary>
         /// 总记录数。

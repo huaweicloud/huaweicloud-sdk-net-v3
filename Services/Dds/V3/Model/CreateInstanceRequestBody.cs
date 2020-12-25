@@ -25,10 +25,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("datastore", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateInstanceDatastoreOption Datastore { get; set; }
+        public Datastore Datastore { get; set; }
 
         /// <summary>
-        /// 区域ID。
+        /// 区域ID，恢复到新实例时不可选。
         /// </summary>
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 磁盘加密时的密钥ID，严格UUID正则校验。仅支持社区版引擎。 不传该参数时，表示不进行磁盘加密。
+        /// 磁盘加密时的密钥ID，严格UUID正则校验。 不传该参数时，表示不进行磁盘加密。
         /// </summary>
         [JsonProperty("disk_encryption_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DiskEncryptionId { get; set; }
@@ -84,14 +84,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("storage", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateInstanceStorageOption Storage { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("backup_strategy", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateInstanceBackupStrategyOption BackupStrategy { get; set; }
+        public BackupStrategy BackupStrategy { get; set; }
 
         /// <summary>
         /// 企业项目ID。
@@ -104,6 +98,24 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
         public string SslOption { get; set; }
+
+        /// <summary>
+        /// 创建新实例所在专属存储池ID，仅专属云创建实例时有效。
+        /// </summary>
+        [JsonProperty("dss_pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DssPoolId { get; set; }
+
+        /// <summary>
+        /// 创建新实例设置云服务器组关联的策略名称列表，仅专属云创建实例时有效。 取值    - 取“anti-affinity”，表示DDS实例开启反亲和部署，反亲和部署是出于高可用性考虑，将您的Primary、Secondary和Hidden节点分别创建在不同的物理机上。当前仅支持该值，不传该值默认不开启反亲和部署。
+        /// </summary>
+        [JsonProperty("server_group_policies", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ServerGroupPolicies { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("restore_point", NullValueHandling = NullValueHandling.Ignore)]
+        public RestorePoint RestorePoint { get; set; }
 
 
         /// <summary>
@@ -124,10 +136,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
-            sb.Append("  storage: ").Append(Storage).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
+            sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
+            sb.Append("  serverGroupPolicies: ").Append(ServerGroupPolicies).Append("\n");
+            sb.Append("  restorePoint: ").Append(RestorePoint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -206,11 +220,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Flavor.SequenceEqual(input.Flavor)
                 ) && 
                 (
-                    this.Storage == input.Storage ||
-                    (this.Storage != null &&
-                    this.Storage.Equals(input.Storage))
-                ) && 
-                (
                     this.BackupStrategy == input.BackupStrategy ||
                     (this.BackupStrategy != null &&
                     this.BackupStrategy.Equals(input.BackupStrategy))
@@ -224,6 +233,22 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.SslOption == input.SslOption ||
                     (this.SslOption != null &&
                     this.SslOption.Equals(input.SslOption))
+                ) && 
+                (
+                    this.DssPoolId == input.DssPoolId ||
+                    (this.DssPoolId != null &&
+                    this.DssPoolId.Equals(input.DssPoolId))
+                ) && 
+                (
+                    this.ServerGroupPolicies == input.ServerGroupPolicies ||
+                    this.ServerGroupPolicies != null &&
+                    input.ServerGroupPolicies != null &&
+                    this.ServerGroupPolicies.SequenceEqual(input.ServerGroupPolicies)
+                ) && 
+                (
+                    this.RestorePoint == input.RestorePoint ||
+                    (this.RestorePoint != null &&
+                    this.RestorePoint.Equals(input.RestorePoint))
                 );
         }
 
@@ -257,14 +282,18 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Flavor != null)
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
                 if (this.BackupStrategy != null)
                     hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SslOption != null)
                     hashCode = hashCode * 59 + this.SslOption.GetHashCode();
+                if (this.DssPoolId != null)
+                    hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
+                if (this.ServerGroupPolicies != null)
+                    hashCode = hashCode * 59 + this.ServerGroupPolicies.GetHashCode();
+                if (this.RestorePoint != null)
+                    hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
                 return hashCode;
             }
         }

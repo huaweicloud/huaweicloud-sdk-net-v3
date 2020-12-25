@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 备份列表。
         /// </summary>
         [JsonProperty("backups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListBackupsResult> Backups { get; set; }
+        public List<BackupForList> Backups { get; set; }
 
         /// <summary>
         /// 总记录数。

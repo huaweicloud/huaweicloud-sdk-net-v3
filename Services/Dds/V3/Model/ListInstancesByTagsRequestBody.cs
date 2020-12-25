@@ -146,13 +146,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 搜索字段。   - 该字段值为空，表示不按照实例名称或实例ID查询。   - 该字段值不为空
         /// </summary>
         [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Match> Matches { get; set; }
+        public List<QueryMatchItem> Matches { get; set; }
 
         /// <summary>
         /// 包含标签，最多包含10个key。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListInstancesTagOption> Tags { get; set; }
+        public List<QueryTagItem> Tags { get; set; }
 
 
         /// <summary>
