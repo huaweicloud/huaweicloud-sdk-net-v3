@@ -163,7 +163,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 缓存的端口。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
-        public string Port { get; set; }
+        public int? Port { get; set; }
 
         /// <summary>
         /// 用户id。
