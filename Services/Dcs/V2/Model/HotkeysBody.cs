@@ -155,16 +155,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 大key所在的分片，仅在实例类型为集群时支持,格式为ip:port
+        /// 热key所在的分片，仅在实例类型为集群时支持,格式为ip:port
         /// </summary>
         [JsonProperty("shard", NullValueHandling = NullValueHandling.Ignore)]
         public string Shard { get; set; }
 
         /// <summary>
-        /// 大key所在的db
+        /// 热key所在的db
         /// </summary>
         [JsonProperty("db", NullValueHandling = NullValueHandling.Ignore)]
-        public string Db { get; set; }
+        public int? Db { get; set; }
 
         /// <summary>
         /// key的value大小。

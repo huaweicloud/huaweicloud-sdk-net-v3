@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// tag以及替换tag的参数组成的字典。消息模板中的标签对应的值。使用消息模板方式的消息发布必须携带该参数。字典中的key为消息模板中的参数名称，不超过21个字符。字典中的value为消息模板中的参数被替换后的值，不超过1KB。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Tags { get; set; }
+        public Dictionary<string, string> Tags { get; set; }
 
         /// <summary>
         /// 指消息在SMN系统内部的最长存留时间。超过该存留时间，系统将不再发送该消息。单位是s，变量默认值是3600s，即一小时。值为正整数且小于等于3600*24。
@@ -108,8 +108,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                 ) && 
                 (
                     this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
                     this.TimeToLive == input.TimeToLive ||

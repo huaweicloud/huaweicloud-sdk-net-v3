@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 持续时间，单位是ms
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Duration { get; set; }
+        public string Duration { get; set; }
 
         /// <summary>
         /// 慢命令所在的分片名称，仅在实例类型为集群时支持

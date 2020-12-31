@@ -1,3 +1,24 @@
+## 3.0.29-beta 2020-12-31
+## HuaweiCloud SDK DCS
+ - ### Features
+    - None
+ - ### Bug Fix
+    - Modify the interface return data type to prevent deserialization failure: 
+        - ListSlowlog: change data type of `Tags` from Tag to ResourceTag.
+        - ListInstances: change data type of `duration` from int32 to string.
+        - ShowBigkeyScanTaskDetails: change data type of `db` from int32 to string.
+        - ShowHotkeyTaskDetails: change data type of `db` from int32 to string.
+ - ### Change
+    - None
+
+## HuaweiCloud SDK SMN
+ - ### Features
+    - None
+ - ### Bug Fix
+    - Modify the request parameters of interface `PublishMessage` from Object to Map<String, String>
+ - ### Change
+    - None
+
 ## 3.0.28-beta 2020-12-28
 ## HuaweiCloud SDK DCS
  - ### Features

@@ -164,7 +164,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 大key所在的db
         /// </summary>
         [JsonProperty("db", NullValueHandling = NullValueHandling.Ignore)]
-        public string Db { get; set; }
+        public int? Db { get; set; }
 
         /// <summary>
         /// key的value大小。

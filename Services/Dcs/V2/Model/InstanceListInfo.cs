@@ -205,7 +205,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 实例标签键值。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Tag> Tags { get; set; }
+        public List<ResourceTag> Tags { get; set; }
 
         /// <summary>
         /// 企业项目ID。
