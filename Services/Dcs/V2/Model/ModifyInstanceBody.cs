@@ -28,13 +28,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// &#39;维护时间窗开始时间，格式为HH:mm:ss。&#39; - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。 
+        /// &#39;维护时间窗开始时间，为UTC时间，格式为HH:mm:ss。&#39; - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。 
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainBegin { get; set; }
 
         /// <summary>
-        /// &#39;维护时间窗开始时间，格式为HH:mm:ss。&#39; - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空。 
+        /// &#39;维护时间窗开始时间，为UTC时间，格式为HH:mm:ss。&#39; - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空。 
         /// </summary>
         [JsonProperty("maintain_end", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainEnd { get; set; }

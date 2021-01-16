@@ -109,11 +109,18 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
-            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? Iam.DefaultIamEndpoint : IamEndpoint;
-            HttpRequest request = Iam.GetKeystoneListProjectsRequest(IamEndpoint, regionId);
+            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            var request = IamService.GetKeystoneListProjectsRequest(IamEndpoint, regionId);
             request = SignAuthRequest(request).Result;
-            ProjectId = Iam.KeystoneListProjects(client, request);
-            return this;
+            try
+            {
+                ProjectId = IamService.KeystoneListProjects(client, request);
+                return this;
+            }
+            catch (ServiceResponseException e)
+            {
+                throw new ArgumentException("Failed to get project id, " + e.ErrorMsg);
+            }
         }
     }
 }

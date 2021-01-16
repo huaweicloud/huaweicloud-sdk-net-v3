@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dcs.V2.Model
+namespace HuaweiCloud.SDK.Swr.V2.Model
 {
     /// <summary>
-    /// 添加副本请求体
+    /// Response Object
     /// </summary>
-    public class AddReplicationBody 
+    public class ListRepoDomainsResponse : SdkResponse
     {
 
         /// <summary>
-        /// 表示指定副本所在的可用区编码。 可用区编码可通过[查询可用区信息](https://support.huaweicloud.com/api-dcs/ListAvailableZones.html)接口查询，可用区必须是有资源的，否则添加失败。 
+        /// 共享租户列表
         /// </summary>
-        [JsonProperty("az_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string AzCode { get; set; }
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ShowRepoDomainsResponse> Body { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AddReplicationBody {\n");
-            sb.Append("  azCode: ").Append(AzCode).Append("\n");
+            sb.Append("class ListRepoDomainsResponse {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,23 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddReplicationBody);
+            return this.Equals(input as ListRepoDomainsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AddReplicationBody input)
+        public bool Equals(ListRepoDomainsResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
+                    this.Body == input.Body ||
+                    this.Body != null &&
+                    input.Body != null &&
+                    this.Body.SequenceEqual(input.Body)
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

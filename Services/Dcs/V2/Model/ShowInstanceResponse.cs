@@ -88,13 +88,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string CapacityMinor { get; set; }
 
         /// <summary>
-        /// 维护时间窗开始时间，格式为HH:mm:ss
+        /// 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainBegin { get; set; }
 
         /// <summary>
-        /// 维护时间窗结束时间，格式为HH:mm:ss
+        /// 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss
         /// </summary>
         [JsonProperty("maintain_end", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainEnd { get; set; }

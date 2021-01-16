@@ -110,11 +110,18 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
-            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? Iam.DefaultIamEndpoint : IamEndpoint;
-            HttpRequest request = Iam.GetKeystoneListAuthDomainsRequest(IamEndpoint);
+            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            var request = IamService.GetKeystoneListAuthDomainsRequest(IamEndpoint);
             request = SignAuthRequest(request).Result;
-            DomainId = Iam.KeystoneListAuthDomains(client, request);
-            return this;
+            try
+            {
+                DomainId = IamService.KeystoneListAuthDomains(client, request);
+                return this;
+            }
+            catch (ServiceResponseException e)
+            {
+                throw new ArgumentException("Failed to get domain id, " + e.ErrorMsg);
+            }
         }
     }
 }

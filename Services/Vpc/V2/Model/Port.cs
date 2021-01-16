@@ -377,6 +377,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("port_security_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PortSecurityEnabled { get; set; }
 
+        /// <summary>
+        /// 功能说明：port所属的可用分区
+        /// </summary>
+        [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ZoneId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -406,6 +412,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
             sb.Append("  portSecurityEnabled: ").Append(PortSecurityEnabled).Append("\n");
+            sb.Append("  zoneId: ").Append(ZoneId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -536,6 +543,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.PortSecurityEnabled == input.PortSecurityEnabled ||
                     (this.PortSecurityEnabled != null &&
                     this.PortSecurityEnabled.Equals(input.PortSecurityEnabled))
+                ) && 
+                (
+                    this.ZoneId == input.ZoneId ||
+                    (this.ZoneId != null &&
+                    this.ZoneId.Equals(input.ZoneId))
                 );
         }
 
@@ -589,6 +601,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
                 if (this.PortSecurityEnabled != null)
                     hashCode = hashCode * 59 + this.PortSecurityEnabled.GetHashCode();
+                if (this.ZoneId != null)
+                    hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
                 return hashCode;
             }
         }

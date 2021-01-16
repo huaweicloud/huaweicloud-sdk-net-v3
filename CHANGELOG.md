@@ -1,3 +1,29 @@
+## 3.0.30-rc 2021-01-15
+## HuaweiCloud SDK Core
+- ### Features
+    - Support function `ValueOf` to get region information.
+- ### Bug Fix
+    - Fix response exception when using temporary AK/SK.
+- ### Change
+    - None
+
+## HuaweiCloud SDK IAM
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Modify the data type of response field `is_domain_owner` from string to boolean of interface `ShowUser` and `CreateUser`.
+
+## HuaweiCloud SDK SWR
+- ### Features
+    - Support `Software Repository for Container` service.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+
 ## 3.0.29-beta 2020-12-31
 ## HuaweiCloud SDK DCS
  - ### Features

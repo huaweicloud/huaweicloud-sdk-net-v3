@@ -40,19 +40,19 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public bool? DhcpEnable { get; set; }
 
         /// <summary>
-        /// 功能说明：子网dns服务器地址1 约束：ip格式
+        /// 功能说明：子网dns服务器地址1 约束：ip格式 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
         /// </summary>
         [JsonProperty("primary_dns", NullValueHandling = NullValueHandling.Ignore)]
         public string PrimaryDns { get; set; }
 
         /// <summary>
-        /// 功能说明：子网dns服务器地址2 约束：ip格式
+        /// 功能说明：子网dns服务器地址2 约束：ip格式 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
         /// </summary>
         [JsonProperty("secondary_dns", NullValueHandling = NullValueHandling.Ignore)]
         public string SecondaryDns { get; set; }
 
         /// <summary>
-        /// 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段。 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集
+        /// 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段。 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集 默认值：不填时为空，无法使用云内网DNS功能 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
         /// </summary>
         [JsonProperty("dnsList", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DnsList { get; set; }

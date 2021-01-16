@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -27,9 +27,9 @@ namespace HuaweiCloud.SDK.Core
 
         public string ErrorMsg { get; set; }
 
-        public string ErrorCode{ get; set; }
+        public string ErrorCode { get; set; }
 
-        public string RequestId{ get; set; }
+        public string RequestId { get; set; }
 
         public ServiceResponseException(int? httpStatusCode, SdkError sdkError)
         {
@@ -37,6 +37,21 @@ namespace HuaweiCloud.SDK.Core
             this.ErrorCode = sdkError.ErrorCode;
             this.ErrorMsg = sdkError.ErrorMsg;
             this.RequestId = sdkError.RequestId;
+        }
+
+        public static ServiceResponseException MapException(int? httpStatusCode, SdkError sdkError)
+        {
+            if (httpStatusCode >= 400 && httpStatusCode < 500)
+            {
+                return new ClientRequestException(httpStatusCode, sdkError);
+            }
+
+            if (httpStatusCode >= 500 && httpStatusCode < 600)
+            {
+                return new ServerResponseException(httpStatusCode, sdkError);
+            }
+
+            return new ServiceResponseException(httpStatusCode, sdkError);
         }
     }
 }

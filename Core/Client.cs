@@ -26,8 +26,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core.Auth;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using static System.String;
 
 namespace HuaweiCloud.SDK.Core
@@ -130,7 +128,6 @@ namespace HuaweiCloud.SDK.Core
 
         private SdkHttpClient _sdkHttpClient;
 
-        private const string XRequestId = "X-Request-Id";
         private const string XRequestAgent = "User-Agent";
         private const string CredentialsNull = "Credentials cannot be null.";
 
@@ -216,92 +213,7 @@ namespace HuaweiCloud.SDK.Core
                 return responseMessage;
             }
 
-            var result = new SdkResponse
-            {
-                HttpStatusCode = (int) responseMessage.StatusCode,
-                HttpHeaders = responseMessage.Headers.ToString(),
-                HttpBody = responseMessage.Content.ReadAsStringAsync().Result
-            };
-
-            var requestId = "";
-            if (responseMessage.Headers.Contains(XRequestId))
-            {
-                requestId = responseMessage.Headers.GetValues(XRequestId).FirstOrDefault();
-            }
-
-            SdkError sdkError;
-            try
-            {
-                sdkError = GetSdkErrorFromResponse(requestId, result);
-            }
-            catch (Exception exception)
-            {
-                throw new ServerResponseException(result.HttpStatusCode,
-                    new SdkError {ErrorMsg = exception.Message});
-            }
-
-            if (result.HttpStatusCode >= 400 && result.HttpStatusCode < 500)
-            {
-                throw new ClientRequestException(result.HttpStatusCode, sdkError);
-            }
-
-            throw new ServerResponseException(result.HttpStatusCode, sdkError);
-        }
-
-        protected virtual SdkError HandleServiceSpecException(SdkResponse response)
-        {
-            return new SdkError();
-        }
-
-        private SdkError HandleServiceCommonException(SdkResponse response)
-        {
-            var exception = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.HttpBody);
-            if (exception.ContainsKey("code") && exception.ContainsKey("message"))
-            {
-                return new SdkError(exception["code"].ToString(), exception["message"].ToString());
-            }
-
-            foreach (var item in exception)
-            {
-                var jValue = JObject.Parse(item.Value.ToString());
-                var message = jValue["message"];
-                var code = jValue["code"];
-                if (message != null && code != null)
-                {
-                    return new SdkError(code.ToString(), message.ToString());
-                }
-            }
-
-            return new SdkError(response.HttpBody);
-        }
-
-        private SdkError GetSdkErrorFromResponse(string requestId, SdkResponse response)
-        {
-            SdkError sdkError;
-            try
-            {
-                sdkError = JsonUtils.DeSerialize<SdkError>(response);
-                if (IsNullOrEmpty(sdkError.ErrorCode) || IsNullOrEmpty(sdkError.ErrorMsg))
-                {
-                    sdkError = HandleServiceCommonException(response);
-                }
-            }
-            catch (Exception)
-            {
-                sdkError = new SdkError();
-            }
-
-            if (IsNullOrEmpty(sdkError.ErrorMsg))
-            {
-                sdkError = HandleServiceSpecException(response);
-            }
-
-            if (IsNullOrEmpty(sdkError.RequestId))
-            {
-                sdkError.RequestId = requestId;
-            }
-
-            return sdkError;
+            throw ExceptionUtils.GetException(responseMessage);
         }
 
         private HttpRequest GetHttpRequest(string url, string method, SdkRequest sdkRequest)

@@ -1,3 +1,29 @@
+## 3.0.30-rc 2021-01-15
+## HuaweiCloud SDK Core
+- ### 新增特性
+    - Region管理支持使用`ValueOf`方法获取`region`信息
+- ### 解决问题
+    - 调用临时AK/SK返回异常问题修复
+- ### 特性变更
+    - 无
+
+## HuaweiCloud SDK IAM
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 创建/查询用户接口响应字段 `is_domain_owner` 类型调整：string → boolean
+
+## HuaweiCloud SDK SWR
+- ### 新增特性
+    - 支持容器镜像服务
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 无
+
+
 ## 3.0.29-beta 2020-12-31
 ## HuaweiCloud SDK DCS
  - ### 新增特性

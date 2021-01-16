@@ -333,6 +333,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("zone_id", IsQuery = true)]
+        [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ZoneId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -353,6 +360,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  fixedIps: ").Append(FixedIps).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  zoneId: ").Append(ZoneId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -433,6 +441,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.ZoneId == input.ZoneId ||
+                    (this.ZoneId != null &&
+                    this.ZoneId.Equals(input.ZoneId))
                 );
         }
 
@@ -468,6 +481,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ZoneId != null)
+                    hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
                 return hashCode;
             }
         }

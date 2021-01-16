@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 指定实例所属的安全组。  当前仅Redis3.0支持安全组访问控制，Redis4.0和Redis5.0版本实例不支持安全组控制访问，只支持白名单控制，在创建Redis4.0/5.0实例时，不支持配置该参数。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0002.html)。 
+        /// 指定实例所属的安全组。  当engine为Redis且engine_version为3.0时，或engine为Memcached时，该参数为必选。Redis3.0和Memcached实例支持安全组访问控制。  当engine为Redis且engine_version为4.0和5.0时，该参数为可选。Redis4.0和Redis5.0版本实例不支持安全组控制访问，只支持白名单控制。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0002.html)。 
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
@@ -112,13 +112,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public int? InstanceNum { get; set; }
 
         /// <summary>
-        /// 维护时间窗开始时间，格式为HH:mm:ss - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00:00。 
+        /// 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00:00。 
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainBegin { get; set; }
 
         /// <summary>
-        /// 维护时间窗结束时间，格式为HH:mm:ss。 - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00:00。 
+        /// 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss。 - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00:00。 
         /// </summary>
         [JsonProperty("maintain_end", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainEnd { get; set; }

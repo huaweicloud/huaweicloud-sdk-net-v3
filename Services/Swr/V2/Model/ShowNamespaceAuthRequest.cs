@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dcs.V2.Model
+namespace HuaweiCloud.SDK.Swr.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class DeleteReplicationResponse : SdkResponse
+    public class ShowNamespaceAuthRequest 
     {
 
         /// <summary>
-        /// 删除副本的任务ID。
+        /// 
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [SDKProperty("namespace", IsPath = true)]
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Namespace { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteReplicationResponse {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("class ShowNamespaceAuthRequest {\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +40,22 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteReplicationResponse);
+            return this.Equals(input as ShowNamespaceAuthRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteReplicationResponse input)
+        public bool Equals(ShowNamespaceAuthRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
+                    this.Namespace == input.Namespace ||
+                    (this.Namespace != null &&
+                    this.Namespace.Equals(input.Namespace))
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Namespace != null)
+                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 return hashCode;
             }
         }

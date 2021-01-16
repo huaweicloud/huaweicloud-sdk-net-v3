@@ -115,20 +115,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
-        /// 添加副本
-        /// </summary>
-        public CreateReplicationResponse CreateReplication(CreateReplicationRequest createReplicationRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createReplicationRequest.InstanceId.ToString());
-            urlParam.Add("group_id" , createReplicationRequest.GroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/groups/{group_id}/replications",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createReplicationRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerializeNull<CreateReplicationResponse>(response);
-        }
-        
-        /// <summary>
         /// 删除后台任务
         /// </summary>
         public DeleteBackgroundTaskResponse DeleteBackgroundTask(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
@@ -209,21 +195,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteMigrationTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteMigrationTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 删除副本
-        /// </summary>
-        public DeleteReplicationResponse DeleteReplication(DeleteReplicationRequest deleteReplicationRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteReplicationRequest.InstanceId.ToString());
-            urlParam.Add("group_id" , deleteReplicationRequest.GroupId.ToString());
-            urlParam.Add("node_id" , deleteReplicationRequest.NodeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReplicationRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            return JsonUtils.DeSerialize<DeleteReplicationResponse>(response);
         }
         
         /// <summary>

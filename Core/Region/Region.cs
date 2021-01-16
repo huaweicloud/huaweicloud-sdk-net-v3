@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Core
             Endpoint = endpoint;
         }
 
-        public Region WithEndpointResolver(string newEndpoint)
+        public Region WithEndpointOverride(string newEndpoint)
         {
             Endpoint = newEndpoint;
             return this;

@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dcs.V2.Model
+namespace HuaweiCloud.SDK.Swr.V2.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class CreateReplicationResponse : SdkResponse
+    public class DeleteRetentionResponse : SdkResponse
     {
 
 

@@ -244,6 +244,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("extra_dhcp_opts", NullValueHandling = NullValueHandling.Ignore)]
         public List<ExtraDhcpOption> ExtraDhcpOpts { get; set; }
 
+        /// <summary>
+        /// 功能说明：子网作用域 取值范围：center-表示作用域为中心；{azId}表示作用域为具体的AZ
+        /// </summary>
+        [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
+        public string Scope { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -271,6 +277,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  neutronSubnetId: ").Append(NeutronSubnetId).Append("\n");
             sb.Append("  neutronSubnetIdV6: ").Append(NeutronSubnetIdV6).Append("\n");
             sb.Append("  extraDhcpOpts: ").Append(ExtraDhcpOpts).Append("\n");
+            sb.Append("  scope: ").Append(Scope).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -388,6 +395,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.ExtraDhcpOpts != null &&
                     input.ExtraDhcpOpts != null &&
                     this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts)
+                ) && 
+                (
+                    this.Scope == input.Scope ||
+                    (this.Scope != null &&
+                    this.Scope.Equals(input.Scope))
                 );
         }
 
@@ -437,6 +449,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.NeutronSubnetIdV6.GetHashCode();
                 if (this.ExtraDhcpOpts != null)
                     hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
+                if (this.Scope != null)
+                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
                 return hashCode;
             }
         }

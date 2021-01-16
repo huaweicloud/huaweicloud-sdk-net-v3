@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// IAM用户是否为账号管理员。
         /// </summary>
         [JsonProperty("is_domain_owner", NullValueHandling = NullValueHandling.Ignore)]
-        public string IsDomainOwner { get; set; }
+        public bool? IsDomainOwner { get; set; }
 
         /// <summary>
         /// IAM用户所属账号ID。

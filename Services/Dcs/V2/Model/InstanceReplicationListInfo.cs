@@ -14,6 +14,116 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     /// </summary>
     public class InstanceReplicationListInfo 
     {
+        /// <summary>
+        /// 副本状态。
+        /// </summary>
+        /// <value>副本状态。</value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum ACTIVE for value: Active
+            /// </summary>
+            public static readonly StatusEnum ACTIVE = new StatusEnum("Active");
+
+            /// <summary>
+            /// Enum INACTIVE for value: Inactive
+            /// </summary>
+            public static readonly StatusEnum INACTIVE = new StatusEnum("Inactive");
+
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                { "Active", ACTIVE },
+                { "Inactive", INACTIVE },
+            };
+
+            private string Value;
+
+            public StatusEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static StatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 副本角色，取值有： - master：表示主节点。 - slave：表示从节点。 
@@ -49,8 +159,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 副本状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
+        public StatusEnum Status { get; set; }
         /// <summary>
         /// 副本所在的可用区
         /// </summary>

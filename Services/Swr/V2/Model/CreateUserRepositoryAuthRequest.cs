@@ -7,34 +7,34 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dcs.V2.Model
+namespace HuaweiCloud.SDK.Swr.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CreateReplicationRequest 
+    public class CreateUserRepositoryAuthRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("instance_id", IsPath = true)]
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
+        [SDKProperty("namespace", IsPath = true)]
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Namespace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("group_id", IsPath = true)]
-        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string GroupId { get; set; }
+        [SDKProperty("repository", IsPath = true)]
+        [JsonProperty("repository", NullValueHandling = NullValueHandling.Ignore)]
+        public string Repository { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public AddReplicationBody Body { get; set; }
+        public List<UserAuth> Body { get; set; }
 
 
         /// <summary>
@@ -43,9 +43,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateReplicationRequest {\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("class CreateUserRepositoryAuthRequest {\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  repository: ").Append(Repository).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -56,32 +56,33 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateReplicationRequest);
+            return this.Equals(input as CreateUserRepositoryAuthRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateReplicationRequest input)
+        public bool Equals(CreateUserRepositoryAuthRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
+                    this.Namespace == input.Namespace ||
+                    (this.Namespace != null &&
+                    this.Namespace.Equals(input.Namespace))
                 ) && 
                 (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
+                    this.Repository == input.Repository ||
+                    (this.Repository != null &&
+                    this.Repository.Equals(input.Repository))
                 ) && 
                 (
                     this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.Body != null &&
+                    input.Body != null &&
+                    this.Body.SequenceEqual(input.Body)
                 );
         }
 
@@ -93,10 +94,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.Namespace != null)
+                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Repository != null)
+                    hashCode = hashCode * 59 + this.Repository.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

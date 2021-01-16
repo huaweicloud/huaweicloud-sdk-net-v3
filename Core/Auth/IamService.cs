@@ -21,13 +21,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
-    class Project
+    internal class Project
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -36,13 +34,13 @@ namespace HuaweiCloud.SDK.Core.Auth
         public string Name { get; set; }
     }
 
-    class KeystoneListProjectsResponse
+    internal class KeystoneListProjectsResponse
     {
         [JsonProperty("projects", NullValueHandling = NullValueHandling.Ignore)]
         public List<Project> Projects { get; set; }
     }
 
-    class Domains
+    internal class Domains
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -51,13 +49,13 @@ namespace HuaweiCloud.SDK.Core.Auth
         public string Name { get; set; }
     }
 
-    class KeystoneListAuthDomainsResponse
+    internal class KeystoneListAuthDomainsResponse
     {
         [JsonProperty("domains", NullValueHandling = NullValueHandling.Ignore)]
         public List<Domains> Domains { get; set; }
     }
 
-    public class Iam
+    public static class IamService
     {
         public const string DefaultIamEndpoint = "https://iam.myhuaweicloud.com";
         private const string KeystoneListProjectsUri = "/v3/projects";
@@ -65,9 +63,9 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public static HttpRequest GetKeystoneListProjectsRequest(string iamEndpoint, string regionId)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath(KeystoneListProjectsUri, urlParam);
-            SdkRequest sdkRequest = HttpUtils.InitSdkRequest(urlPath);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath(KeystoneListProjectsUri, urlParam);
+            var sdkRequest = HttpUtils.InitSdkRequest(urlPath);
 
             var url = iamEndpoint + urlPath + "?name=" + regionId;
 
@@ -84,19 +82,26 @@ namespace HuaweiCloud.SDK.Core.Auth
             var message = client.InitHttpRequest(request);
             try
             {
-                HttpResponseMessage response = client.DoHttpRequest(message).Result;
-                if ((int) response.StatusCode == 200)
+                var response = client.DoHttpRequest(message).Result;
+                if ((int) response.StatusCode >= 400)
                 {
-                    KeystoneListProjectsResponse data = JsonUtils.DeSerialize<KeystoneListProjectsResponse>(response);
-                    if (data.Projects != null && data.Projects.Count > 0)
-                    {
-                        return data.Projects[0].Id;
-                    }
+                    throw ExceptionUtils.GetException(response);
+                }
 
+                var data = JsonUtils.DeSerialize<KeystoneListProjectsResponse>(response);
+                // TODO support create new project id here
+                if (data?.Projects == null || data.Projects?.Count == 0)
+                {
                     throw new ArgumentException("Failed to get project id.");
                 }
 
-                throw new ServiceResponseException((int) response.StatusCode, new SdkError("Failed to get project id."));
+                if (data.Projects.Count == 1)
+                {
+                    return data.Projects[0].Id;
+                }
+
+                throw new ArgumentException(
+                    "Multiple project ids have been returned, please specify one when initializing credentials.");
             }
             catch (AggregateException aggregateException)
             {
@@ -106,12 +111,11 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public static HttpRequest GetKeystoneListAuthDomainsRequest(string iamEndpoint)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath(KeystoneListAuthDomainsUri, urlParam);
-            SdkRequest sdkRequest = HttpUtils.InitSdkRequest(urlPath);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath(KeystoneListAuthDomainsUri, urlParam);
+            var sdkRequest = HttpUtils.InitSdkRequest(urlPath);
 
             var url = iamEndpoint + urlPath;
-
             var request = new HttpRequest("GET", sdkRequest.ContentType, new Uri(url))
             {
                 Body = ""
@@ -125,20 +129,19 @@ namespace HuaweiCloud.SDK.Core.Auth
             var message = client.InitHttpRequest(request);
             try
             {
-                HttpResponseMessage response = client.DoHttpRequest(message).Result;
-                if ((int) response.StatusCode == 200)
+                var response = client.DoHttpRequest(message).Result;
+                if ((int) response.StatusCode >= 400)
                 {
-                    KeystoneListAuthDomainsResponse data =
-                        JsonUtils.DeSerialize<KeystoneListAuthDomainsResponse>(response);
-                    if (data.Domains != null && data.Domains.Count > 0)
-                    {
-                        return data.Domains[0].Id;
-                    }
-
-                    throw new ArgumentException("Failed to get domain id.");
+                    throw ExceptionUtils.GetException(response);
                 }
 
-                throw new ServiceResponseException((int) response.StatusCode, new SdkError("Failed to get domain id."));
+                var data = JsonUtils.DeSerialize<KeystoneListAuthDomainsResponse>(response);
+                if (data?.Domains != null && data.Domains.Count > 0)
+                {
+                    return data.Domains[0].Id;
+                }
+
+                throw new ArgumentException("Failed to get domain id.");
             }
             catch (AggregateException aggregateException)
             {
