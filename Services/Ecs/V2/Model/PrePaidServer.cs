@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
+        /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+        /// </summary>
+        [JsonProperty("auto_terminate_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string AutoTerminateTime { get; set; }
+
+        /// <summary>
         /// 待创建云服务器的系统镜像，需要指定已创建镜像的ID，ID格式为通用唯一识别码（Universally Unique Identifier，简称UUID）。
         /// </summary>
         [JsonProperty("imageRef", NullValueHandling = NullValueHandling.Ignore)]
@@ -149,6 +155,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PrePaidServer {\n");
+            sb.Append("  autoTerminateTime: ").Append(AutoTerminateTime).Append("\n");
             sb.Append("  imageRef: ").Append(ImageRef).Append("\n");
             sb.Append("  flavorRef: ").Append(FlavorRef).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -191,6 +198,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 return false;
 
             return 
+                (
+                    this.AutoTerminateTime == input.AutoTerminateTime ||
+                    (this.AutoTerminateTime != null &&
+                    this.AutoTerminateTime.Equals(input.AutoTerminateTime))
+                ) && 
                 (
                     this.ImageRef == input.ImageRef ||
                     (this.ImageRef != null &&
@@ -312,6 +324,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AutoTerminateTime != null)
+                    hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
                 if (this.ImageRef != null)
                     hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
                 if (this.FlavorRef != null)

@@ -126,6 +126,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
 
         /// <summary>
+        /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+        /// </summary>
+        [JsonProperty("auto_terminate_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string AutoTerminateTime { get; set; }
+
+        /// <summary>
         /// 镜像ID或者镜像资源的URL。  - 镜像ID示例：3b8d6fef-af77-42ab-b8b7-5a7f0f0af8f2 - 镜像URL示例：http://glance.openstack.example.com/images/3b8d6fef-af77-42ab-b8b7-5a7f0f0af8f2 - 指定卷作为系统卷创弹性云服务器时，不需填写该参数；非卷创建弹性云服务器时需填写有效的UUID参数，否则API将返回400错误。  &gt; 说明： &gt; - 对于部分规格的弹性云服务器，不能支持公有云平台提供的所有公共镜像。具体规格的镜像支持列表，请登录管理控制台，以“创建弹性云服务器”页面系统自动过滤的镜像信息为准，并在镜像服务页面查询镜像ID。 &gt; - 如果创建失败，请尝试修改参数配置。
         /// </summary>
         [JsonProperty("imageRef", NullValueHandling = NullValueHandling.Ignore)]
@@ -234,6 +240,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class NovaCreateServersOption {\n");
+            sb.Append("  autoTerminateTime: ").Append(AutoTerminateTime).Append("\n");
             sb.Append("  imageRef: ").Append(ImageRef).Append("\n");
             sb.Append("  flavorRef: ").Append(FlavorRef).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -272,6 +279,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 return false;
 
             return 
+                (
+                    this.AutoTerminateTime == input.AutoTerminateTime ||
+                    (this.AutoTerminateTime != null &&
+                    this.AutoTerminateTime.Equals(input.AutoTerminateTime))
+                ) && 
                 (
                     this.ImageRef == input.ImageRef ||
                     (this.ImageRef != null &&
@@ -371,6 +383,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AutoTerminateTime != null)
+                    hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
                 if (this.ImageRef != null)
                     hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
                 if (this.FlavorRef != null)

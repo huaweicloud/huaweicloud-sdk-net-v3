@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
+        /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+        /// </summary>
+        [JsonProperty("auto_terminate_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string AutoTerminateTime { get; set; }
+
+        /// <summary>
         /// 如果需要使用密码方式登录云服务器，可使用adminPass字段指定云服务器管理员帐户初始登录密码。其中，Linux管理员帐户为root，Windows管理员帐户为Administrator。具体使用方法请参见接口描述信息（设置登录鉴权方式）。  密码复杂度要求：   - 长度为8-26位。  - 密码至少必须包含大写字母、小写字母、数字和特殊字符（!@$%^-_&#x3D;+[{}]:,./?）中的三种。 - 密码不能包含用户名或用户名的逆序。  - Windows系统密码不能包含用户名或用户名的逆序，不能包含用户名中超过两个连续字符的部分。
         /// </summary>
         [JsonProperty("adminPass", NullValueHandling = NullValueHandling.Ignore)]
@@ -149,6 +155,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PostPaidServer {\n");
+            sb.Append("  autoTerminateTime: ").Append(AutoTerminateTime).Append("\n");
             sb.Append("  adminPass: ").Append(AdminPass).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
@@ -191,6 +198,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 return false;
 
             return 
+                (
+                    this.AutoTerminateTime == input.AutoTerminateTime ||
+                    (this.AutoTerminateTime != null &&
+                    this.AutoTerminateTime.Equals(input.AutoTerminateTime))
+                ) && 
                 (
                     this.AdminPass == input.AdminPass ||
                     (this.AdminPass != null &&
@@ -312,6 +324,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AutoTerminateTime != null)
+                    hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
                 if (this.AdminPass != null)
                     hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
                 if (this.AvailabilityZone != null)

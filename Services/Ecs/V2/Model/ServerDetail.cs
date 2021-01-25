@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Updated { get; set; }
 
         /// <summary>
+        /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+        /// </summary>
+        [JsonProperty("auto_terminate_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string AutoTerminateTime { get; set; }
+
+        /// <summary>
         /// 弹性云服务器所在主机的主机ID。
         /// </summary>
         [JsonProperty("hostId", NullValueHandling = NullValueHandling.Ignore)]
@@ -289,6 +295,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("class ServerDetail {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
+            sb.Append("  autoTerminateTime: ").Append(AutoTerminateTime).Append("\n");
             sb.Append("  hostId: ").Append(HostId).Append("\n");
             sb.Append("  oSEXTSRVATTRhost: ").Append(OSEXTSRVATTRhost).Append("\n");
             sb.Append("  addresses: ").Append(Addresses).Append("\n");
@@ -361,6 +368,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Updated == input.Updated ||
                     (this.Updated != null &&
                     this.Updated.Equals(input.Updated))
+                ) && 
+                (
+                    this.AutoTerminateTime == input.AutoTerminateTime ||
+                    (this.AutoTerminateTime != null &&
+                    this.AutoTerminateTime.Equals(input.AutoTerminateTime))
                 ) && 
                 (
                     this.HostId == input.HostId ||
@@ -592,6 +604,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Updated != null)
                     hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.AutoTerminateTime != null)
+                    hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
                 if (this.HostId != null)
                     hashCode = hashCode * 59 + this.HostId.GetHashCode();
                 if (this.OSEXTSRVATTRhost != null)

@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Core
 {
     public class HttpConfig
     {
-        public int? Timeout = 60;
+        public int? Timeout = 120;
 
         public bool IgnoreSslVerification = false;
 
