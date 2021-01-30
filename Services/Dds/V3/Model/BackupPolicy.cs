@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 指定已生成的备份文件可以保存的天数。 取值范围：0～732。取0值，表示关闭自动备份策略。
         /// </summary>
         [JsonProperty("keep_days", NullValueHandling = NullValueHandling.Ignore)]
-        public int? KeepDays { get; set; }
+        public string KeepDays { get; set; }
 
         /// <summary>
         /// 备份时间段。自动备份将在该时间段内触发。开启自动备份策略时，该参数必选；关闭自动备份策略时，不传该参数。 取值范围：格式必须为hh:mm-HH:MM，且有效，当前时间指UTC时间。 - HH取值必须比hh大1。 - mm和MM取值必须相同，且取值必须为00、15、30或45。 取值示例： - 08:15-09:15 - 23:00-00:00

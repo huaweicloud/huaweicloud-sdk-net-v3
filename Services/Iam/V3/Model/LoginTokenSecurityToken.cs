@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
+        /// <summary>
+        /// 自定义代理登录票据logintoken的有效时间，时间单位为秒。默认10分钟，取值范围10min~12h，且取值不能大于临时安全凭证securitytoken的过期时间。
+        /// </summary>
+        [JsonProperty("duration_seconds", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DurationSeconds { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  access: ").Append(Access).Append("\n");
             sb.Append("  secret: ").Append(Secret).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  durationSeconds: ").Append(DurationSeconds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.DurationSeconds == input.DurationSeconds ||
+                    (this.DurationSeconds != null &&
+                    this.DurationSeconds.Equals(input.DurationSeconds))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.Secret.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.DurationSeconds != null)
+                    hashCode = hashCode * 59 + this.DurationSeconds.GetHashCode();
                 return hashCode;
             }
         }

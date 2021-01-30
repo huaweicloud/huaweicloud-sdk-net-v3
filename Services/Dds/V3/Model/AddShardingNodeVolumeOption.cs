@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 指定新增的所有shard组的磁盘容量。取值范围：10GB~2000GB。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Size { get; set; }
+        public string Size { get; set; }
 
 
         /// <summary>

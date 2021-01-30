@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public bool? IsDomainOwner { get; set; }
 
         /// <summary>
+        /// IAM用户访问模式。
+        /// </summary>
+        [JsonProperty("access_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessMode { get; set; }
+
+        /// <summary>
         /// IAM用户描述信息
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -141,6 +147,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  lastLoginTime: ").Append(LastLoginTime).Append("\n");
             sb.Append("  pwdStength: ").Append(PwdStength).Append("\n");
             sb.Append("  isDomainOwner: ").Append(IsDomainOwner).Append("\n");
+            sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -244,6 +251,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.IsDomainOwner.Equals(input.IsDomainOwner))
                 ) && 
                 (
+                    this.AccessMode == input.AccessMode ||
+                    (this.AccessMode != null &&
+                    this.AccessMode.Equals(input.AccessMode))
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -290,6 +302,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.PwdStength.GetHashCode();
                 if (this.IsDomainOwner != null)
                     hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
+                if (this.AccessMode != null)
+                    hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;

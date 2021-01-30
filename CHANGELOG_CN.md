@@ -1,3 +1,38 @@
+## 3.0.32-rc 2021-01-30
+## HuaweiCloud SDK DNS
+- ### 新增特性
+    - 支持云解析服务
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 无
+
+## HuaweiCloud SDK ECS
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 接口名称调整: UpdateAutoTerminateTimeServer → UpdateServerAutoTerminateTime
+
+## HuaweiCloud SDK EVS
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 创建云硬盘接口支持指定专属存储池ID
+    - 查询配额相关接口属性 `allocated` 类型调整: string → int
+
+## HuaweiCloud SDK IAM
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 查询IAM用户详情接口响应体增加属性`access_mode`
+
+
 ## 3.0.31-rc 2021-01-25
 ## HuaweiCloud SDK Core
 - ### 新增特性

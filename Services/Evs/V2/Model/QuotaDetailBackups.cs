@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 预留属性。
         /// </summary>
         [JsonProperty("allocated", NullValueHandling = NullValueHandling.Ignore)]
-        public string Allocated { get; set; }
+        public int? Allocated { get; set; }
 
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 数据库端口号。文档数据库实例支持的端口号范围为2100～9500。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Port { get; set; }
+        public string Port { get; set; }
 
         /// <summary>
         /// 实例类型。与请求参数相同。

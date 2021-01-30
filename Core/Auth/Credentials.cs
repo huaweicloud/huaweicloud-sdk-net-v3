@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -19,11 +19,8 @@
  * under the License.
  */
 
-using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading.Tasks;
-using static System.String;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
@@ -34,66 +31,5 @@ namespace HuaweiCloud.SDK.Core.Auth
         public abstract Task<HttpRequest> SignAuthRequest(HttpRequest request);
 
         public abstract Credentials ProcessAuthParams(SdkHttpClient client, string regionId);
-
-        public static Credentials GetCredentialFromEnvironment<T>(string defaultCredentials) where T : Client
-        {
-            var credentialsTypeDef = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_TYPE");
-            if (IsNullOrEmpty(credentialsTypeDef))
-            {
-                credentialsTypeDef = defaultCredentials;
-            }
-
-            var credentialsType = GetCredentialsType<T>(credentialsTypeDef);
-            if (credentialsType == null)
-            {
-                return null;
-            }
-
-            var credentials = InitializeCredentials(credentialsType);
-            credentials = LoadOptionalParams(credentials);
-
-            return credentials;
-        }
-
-        private static Type GetCredentialsType<T>(string credentialType)
-        {
-            var credentialsType = Type.GetType($"HuaweiCloud.SDK.Core.Auth.{credentialType}");
-            if (credentialsType == null)
-            {
-                credentialsType = Type.GetType($"{typeof(T).Namespace}.{credentialType}");
-            }
-
-            return credentialsType;
-        }
-
-        private static Credentials InitializeCredentials(Type credentialsType)
-        {
-            var constructors = credentialsType.GetConstructors();
-            var paramInfos = constructors[0].GetParameters();
-            var paramList = new List<Object>();
-            foreach (var paramInfo in paramInfos)
-            {
-                paramList.Add(
-                    Environment.GetEnvironmentVariable(
-                        $"HUAWEICLOUD_SDK_{StringUtils.ToSnakeCase(paramInfo.Name).ToUpper()}"));
-            }
-
-            return (Credentials) Activator.CreateInstance(credentialsType, paramList.ToArray());
-        }
-
-        private static Credentials LoadOptionalParams(Credentials credentials)
-        {
-            const BindingFlags instanceBindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-            foreach (var property in credentials.GetType().GetProperties(instanceBindFlags))
-            {
-                if (property.GetValue(credentials) == null)
-                {
-                    property.SetValue(credentials, Environment.GetEnvironmentVariable(
-                        $"HUAWEICLOUD_SDK_{StringUtils.ToSnakeCase(property.Name).ToUpper()}"));
-                }
-            }
-
-            return credentials;
-        }
     }
 }

@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 数据库版本总记录数。
         /// </summary>
         [JsonProperty("total_record", NullValueHandling = NullValueHandling.Ignore)]
-        public string TotalRecord { get; set; }
+        public int? TotalRecord { get; set; }
 
 
         /// <summary>

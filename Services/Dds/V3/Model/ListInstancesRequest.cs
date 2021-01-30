@@ -140,10 +140,16 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly DatastoreTypeEnum DDS_COMMUNITY = new DatastoreTypeEnum("DDS-Community");
 
+            /// <summary>
+            /// Enum DDS_ENHANCED for value: DDS-Enhanced
+            /// </summary>
+            public static readonly DatastoreTypeEnum DDS_ENHANCED = new DatastoreTypeEnum("DDS-Enhanced");
+
             private static readonly Dictionary<string, DatastoreTypeEnum> StaticFields =
             new Dictionary<string, DatastoreTypeEnum>()
             {
                 { "DDS-Community", DDS_COMMUNITY },
+                { "DDS-Enhanced", DDS_ENHANCED },
             };
 
             private string Value;

@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("OS-SCH-HNT:scheduler_hints", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateVolumeSchedulerHints OSSCHHNTschedulerHints { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  bssParam: ").Append(BssParam).Append("\n");
             sb.Append("  volume: ").Append(Volume).Append("\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("  oSSCHHNTschedulerHints: ").Append(OSSCHHNTschedulerHints).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.ServerId == input.ServerId ||
                     (this.ServerId != null &&
                     this.ServerId.Equals(input.ServerId))
+                ) && 
+                (
+                    this.OSSCHHNTschedulerHints == input.OSSCHHNTschedulerHints ||
+                    (this.OSSCHHNTschedulerHints != null &&
+                    this.OSSCHHNTschedulerHints.Equals(input.OSSCHHNTschedulerHints))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.Volume.GetHashCode();
                 if (this.ServerId != null)
                     hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.OSSCHHNTschedulerHints != null)
+                    hashCode = hashCode * 59 + this.OSSCHHNTschedulerHints.GetHashCode();
                 return hashCode;
             }
         }

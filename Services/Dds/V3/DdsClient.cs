@@ -79,6 +79,19 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 检查数据库用户密码
+        /// </summary>
+        public CheckPasswordResponse CheckPassword(CheckPasswordRequest checkPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , checkPasswordRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/check-password",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkPasswordRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CheckPasswordResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建数据库角色
         /// </summary>
         public CreateDatabaseRoleResponse CreateDatabaseRole(CreateDatabaseRoleRequest createDatabaseRoleRequest)
@@ -114,6 +127,19 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 打开集群的Shard/Config IP开关
+        /// </summary>
+        public CreateIpResponse CreateIp(CreateIpRequest createIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createIpRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/create-ip",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createIpRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateIpResponse>(response);
         }
         
         /// <summary>
@@ -155,16 +181,29 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 获取慢日志下载链接
+        /// 生成审计日志下载链接
         /// </summary>
-        public DownloadSlowlogResponse DownloadSlowlog(DownloadSlowlogRequest downloadSlowlogRequest)
+        public ListAuditlogLinksResponse ListAuditlogLinks(ListAuditlogLinksRequest listAuditlogLinksRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , downloadSlowlogRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-download",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowlogRequest);
+            urlParam.Add("instance_id" , listAuditlogLinksRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-links",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditlogLinksRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<DownloadSlowlogResponse>(response);
+            return JsonUtils.DeSerialize<ListAuditlogLinksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取审计日志列表
+        /// </summary>
+        public ListAuditlogsResponse ListAuditlogs(ListAuditlogsRequest listAuditlogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listAuditlogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditlogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAuditlogsResponse>(response);
         }
         
         /// <summary>
@@ -216,6 +255,19 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatastoreVersionsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListDatastoreVersionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询数据库错误日志
+        /// </summary>
+        public ListErrorLogsResponse ListErrorLogs(ListErrorLogsRequest listErrorLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listErrorLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/errorlog",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListErrorLogsResponse>(response);
         }
         
         /// <summary>
@@ -277,6 +329,45 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProjectTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取可恢复的数据库集合列表
+        /// </summary>
+        public ListRestoreCollectionsResponse ListRestoreCollections(ListRestoreCollectionsRequest listRestoreCollectionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRestoreCollectionsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-collection",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreCollectionsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRestoreCollectionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取可恢复的数据库列表
+        /// </summary>
+        public ListRestoreDatabasesResponse ListRestoreDatabases(ListRestoreDatabasesRequest listRestoreDatabasesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRestoreDatabasesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-database",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreDatabasesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRestoreDatabasesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询可恢复的时间段
+        /// </summary>
+        public ListRestoreTimesResponse ListRestoreTimes(ListRestoreTimesRequest listRestoreTimesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRestoreTimesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-time",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTimesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRestoreTimesResponse>(response);
         }
         
         /// <summary>
@@ -357,6 +448,44 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 恢复到当前实例
+        /// </summary>
+        public RestoreInstanceResponse RestoreInstance(RestoreInstanceRequest restoreInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recovery",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<RestoreInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 库表级时间点恢复
+        /// </summary>
+        public RestoreInstanceFromCollectionResponse RestoreInstanceFromCollection(RestoreInstanceFromCollectionRequest restoreInstanceFromCollectionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , restoreInstanceFromCollectionRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore/collections",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreInstanceFromCollectionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<RestoreInstanceFromCollectionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置审计日志策略
+        /// </summary>
+        public SetAuditlogPolicyResponse SetAuditlogPolicy(SetAuditlogPolicyRequest setAuditlogPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , setAuditlogPolicyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAuditlogPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<SetAuditlogPolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 设置自动备份策略
         /// </summary>
         public SetBackupPolicyResponse SetBackupPolicy(SetBackupPolicyRequest setBackupPolicyRequest)
@@ -367,6 +496,19 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupPolicyRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<SetBackupPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询审计日志策略
+        /// </summary>
+        public ShowAuditlogPolicyResponse ShowAuditlogPolicy(ShowAuditlogPolicyRequest showAuditlogPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showAuditlogPolicyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowAuditlogPolicyResponse>(response);
         }
         
         /// <summary>
@@ -457,6 +599,31 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<UpdateSecurityGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询当前支持的API版本信息列表
+        /// </summary>
+        public ListApiVersionResponse ListApiVersion(ListApiVersionRequest listApiVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListApiVersionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定API版本信息
+        /// </summary>
+        public ShowApiVersionResponse ShowApiVersion(ShowApiVersionRequest showApiVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("version" , showApiVersionRequest.Version.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{version}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
         }
         
     }

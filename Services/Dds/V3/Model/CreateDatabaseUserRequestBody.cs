@@ -34,10 +34,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string DbName { get; set; }
 
         /// <summary>
-        /// 
+        /// 新用户所拥有的角色。
         /// </summary>
         [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
-        public RolesOption Roles { get; set; }
+        public List<RolesOption> Roles { get; set; }
 
 
         /// <summary>
@@ -89,8 +89,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 ) && 
                 (
                     this.Roles == input.Roles ||
-                    (this.Roles != null &&
-                    this.Roles.Equals(input.Roles))
+                    this.Roles != null &&
+                    input.Roles != null &&
+                    this.Roles.SequenceEqual(input.Roles)
                 );
         }
 

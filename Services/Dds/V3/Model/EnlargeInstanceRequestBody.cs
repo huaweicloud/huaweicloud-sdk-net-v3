@@ -140,7 +140,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 一个集群实例下，最多支持16个mongos节点和16个shard组。
         /// </summary>
         [JsonProperty("num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Num { get; set; }
+        public string Num { get; set; }
 
         /// <summary>
         /// 

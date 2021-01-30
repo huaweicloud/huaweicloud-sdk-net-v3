@@ -572,19 +572,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
-        /// 修改云服务器云主机销毁时间
-        /// </summary>
-        public UpdateAutoTerminateTimeServerResponse UpdateAutoTerminateTimeServer(UpdateAutoTerminateTimeServerRequest updateAutoTerminateTimeServerRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , updateAutoTerminateTimeServerRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/update-auto-terminate-time",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAutoTerminateTimeServerRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerializeNull<UpdateAutoTerminateTimeServerResponse>(response);
-        }
-        
-        /// <summary>
         /// 修改云服务器
         /// </summary>
         public UpdateServerResponse UpdateServer(UpdateServerRequest updateServerRequest)
@@ -595,6 +582,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateServerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改云服务器销毁时间
+        /// </summary>
+        public UpdateServerAutoTerminateTimeResponse UpdateServerAutoTerminateTime(UpdateServerAutoTerminateTimeRequest updateServerAutoTerminateTimeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , updateServerAutoTerminateTimeRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/update-auto-terminate-time",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerAutoTerminateTimeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<UpdateServerAutoTerminateTimeResponse>(response);
         }
         
         /// <summary>

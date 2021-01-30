@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 待扩容到的磁盘容量。取值为10的整数倍，并且大于当前磁盘容量。 - 对于集群实例，表示扩容到的单个shard组的磁盘容量。取值范围：10GB~2000GB。 - 对于副本集实例，表示扩容到的实例的磁盘容量，取值范围：10GB~2000GB。 - 对于单节点实例，表示扩容到的实例的磁盘容量，取值范围：10GB~1000GB。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Size { get; set; }
+        public string Size { get; set; }
 
 
         /// <summary>

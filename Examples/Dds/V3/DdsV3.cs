@@ -210,8 +210,8 @@ namespace Examples.DDS.V3
                         new CreateInstanceFlavorOption
                         {
                             Type = CreateInstanceFlavorOption.TypeEnum.SINGLE,
-                            Num = 1,
-                            Size = 10,
+                            Num = "1",
+                            Size = "10",
                             SpecCode = "dds.mongodb.s6.medium.4.single"
                         },
                     },
@@ -370,7 +370,7 @@ namespace Examples.DDS.V3
                 {
                     Volume = new ResizeInstanceVolumeOption()
                     {
-                        Size = 20
+                        Size = "20"
                     }
                 }
             };
@@ -408,10 +408,10 @@ namespace Examples.DDS.V3
                 {
                     Type = EnlargeInstanceRequestBody.TypeEnum.MONGOS,
                     SpecCode = "dds.mongodb.s6.medium.4.mongos",
-                    Num = 2,
+                    Num = "2",
                     Volume = new AddShardingNodeVolumeOption()
                     {
-                    Size = 20
+                    Size = "20"
                 }
                 }
             };
@@ -630,7 +630,7 @@ namespace Examples.DDS.V3
                 {
                     BackupPolicy = new BackupPolicy()
                     {
-                        KeepDays = 7,
+                        KeepDays = "7",
                         StartTime = "08:15-09:15",
                         Period = "1,4,5,6,7"
                     }
