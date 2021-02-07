@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备命令所属的设备服务ID，在设备关联的产品模型中定义。
+        /// 设备命令所属的设备服务ID，在设备关联的产品模型中定义。如设备需要编解码插件来解析命令，此参数为必填项。
         /// </summary>
         [JsonProperty("service_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceId { get; set; }
 
         /// <summary>
-        /// 设备命令名称，在设备关联的产品模型中定义。
+        /// 设备命令名称，在设备关联的产品模型中定义。如设备需要编解码插件来解析命令，此参数为必填项。
         /// </summary>
         [JsonProperty("command_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CommandName { get; set; }
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public int? ExpireTime { get; set; }
 
         /// <summary>
-        /// 下发策略， immediately表示立即下发，此时expire_time无效；delay表示缓存起来，等数据上报或者设备上线之后下发，默认缓存下发。
+        /// 下发策略， immediately表示立即下发，此时expire_time无效；delay表示缓存下发，等数据上报或者设备上线之后下发，默认缓存下发。delay策略下，expire_time为0或空时，命令会默认缓存24小时。
         /// </summary>
         [JsonProperty("send_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public string SendStrategy { get; set; }

@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string AppId { get; set; }
 
         /// <summary>
-        /// 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 
+        /// 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。 
         /// </summary>
         [JsonProperty("channel", NullValueHandling = NullValueHandling.Ignore)]
         public string Channel { get; set; }
@@ -44,6 +44,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         [JsonProperty("channel_detail", NullValueHandling = NullValueHandling.Ignore)]
         public ChannelDetail ChannelDetail { get; set; }
+
+        /// <summary>
+        /// 是否支持批量接收推送消息。
+        /// </summary>
+        [JsonProperty("batch", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Batch { get; set; }
 
 
         /// <summary>
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  channel: ").Append(Channel).Append("\n");
             sb.Append("  channelDetail: ").Append(ChannelDetail).Append("\n");
+            sb.Append("  batch: ").Append(Batch).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +110,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.ChannelDetail == input.ChannelDetail ||
                     (this.ChannelDetail != null &&
                     this.ChannelDetail.Equals(input.ChannelDetail))
+                ) && 
+                (
+                    this.Batch == input.Batch ||
+                    (this.Batch != null &&
+                    this.Batch.Equals(input.Batch))
                 );
         }
 
@@ -124,6 +136,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Channel.GetHashCode();
                 if (this.ChannelDetail != null)
                     hashCode = hashCode * 59 + this.ChannelDetail.GetHashCode();
+                if (this.Batch != null)
+                    hashCode = hashCode * 59 + this.Batch.GetHashCode();
                 return hashCode;
             }
         }

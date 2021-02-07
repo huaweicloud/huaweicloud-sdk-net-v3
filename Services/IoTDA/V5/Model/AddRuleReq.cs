@@ -57,6 +57,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("where", NullValueHandling = NullValueHandling.Ignore)]
         public string Where { get; set; }
 
+        /// <summary>
+        /// 规则推送消息的消息格式版本，租户无需设置，仅供内部兼容历史推送消息使用，iocsa的历史推送消息版本为V5.0.1
+        /// </summary>
+        [JsonProperty("data_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string DataVersion { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -72,6 +78,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  select: ").Append(Select).Append("\n");
             sb.Append("  where: ").Append(Where).Append("\n");
+            sb.Append("  dataVersion: ").Append(DataVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,6 +134,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Where == input.Where ||
                     (this.Where != null &&
                     this.Where.Equals(input.Where))
+                ) && 
+                (
+                    this.DataVersion == input.DataVersion ||
+                    (this.DataVersion != null &&
+                    this.DataVersion.Equals(input.DataVersion))
                 );
         }
 
@@ -152,6 +164,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Select.GetHashCode();
                 if (this.Where != null)
                     hashCode = hashCode * 59 + this.Where.GetHashCode();
+                if (this.DataVersion != null)
+                    hashCode = hashCode * 59 + this.DataVersion.GetHashCode();
                 return hashCode;
             }
         }

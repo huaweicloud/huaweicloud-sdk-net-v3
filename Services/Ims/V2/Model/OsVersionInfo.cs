@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 操作系统的位数
         /// </summary>
         [JsonProperty("os_bit", NullValueHandling = NullValueHandling.Ignore)]
-        public string OsBit { get; set; }
+        public int? OsBit { get; set; }
 
         /// <summary>
         /// 操作系统的类型，Linux或Windows

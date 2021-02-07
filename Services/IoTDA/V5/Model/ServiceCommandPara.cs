@@ -22,16 +22,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ParaName { get; set; }
 
         /// <summary>
-        /// 参数是否必选。默认为false。
-        /// </summary>
-        [JsonProperty("required", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Required { get; set; }
-
-        /// <summary>
         /// 参数的数据类型。取值范围：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
         /// </summary>
         [JsonProperty("data_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DataType { get; set; }
+
+        /// <summary>
+        /// 参数是否必选。默认为false。
+        /// </summary>
+        [JsonProperty("required", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Required { get; set; }
 
         /// <summary>
         /// 参数的枚举值列表。
@@ -84,8 +84,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class ServiceCommandPara {\n");
             sb.Append("  paraName: ").Append(ParaName).Append("\n");
-            sb.Append("  required: ").Append(Required).Append("\n");
             sb.Append("  dataType: ").Append(DataType).Append("\n");
+            sb.Append("  required: ").Append(Required).Append("\n");
             sb.Append("  enumList: ").Append(EnumList).Append("\n");
             sb.Append("  min: ").Append(Min).Append("\n");
             sb.Append("  max: ").Append(Max).Append("\n");
@@ -120,14 +120,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.ParaName.Equals(input.ParaName))
                 ) && 
                 (
-                    this.Required == input.Required ||
-                    (this.Required != null &&
-                    this.Required.Equals(input.Required))
-                ) && 
-                (
                     this.DataType == input.DataType ||
                     (this.DataType != null &&
                     this.DataType.Equals(input.DataType))
+                ) && 
+                (
+                    this.Required == input.Required ||
+                    (this.Required != null &&
+                    this.Required.Equals(input.Required))
                 ) && 
                 (
                     this.EnumList == input.EnumList ||
@@ -177,10 +177,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.ParaName != null)
                     hashCode = hashCode * 59 + this.ParaName.GetHashCode();
-                if (this.Required != null)
-                    hashCode = hashCode * 59 + this.Required.GetHashCode();
                 if (this.DataType != null)
                     hashCode = hashCode * 59 + this.DataType.GetHashCode();
+                if (this.Required != null)
+                    hashCode = hashCode * 59 + this.Required.GetHashCode();
                 if (this.EnumList != null)
                     hashCode = hashCode * 59 + this.EnumList.GetHashCode();
                 if (this.Min != null)

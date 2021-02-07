@@ -91,7 +91,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 触发器历史
         /// </summary>
         [JsonProperty("trigger_history", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TriggerHistorys> TriggerHistory { get; set; }
+        public List<TriggerHistories> TriggerHistory { get; set; }
 
         /// <summary>
         /// 触发器类型，cce、cci

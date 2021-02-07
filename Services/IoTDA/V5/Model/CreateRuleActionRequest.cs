@@ -32,6 +32,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("x-LB-Service", IsHeader = true)]
+        [JsonProperty("x-LB-Service", NullValueHandling = NullValueHandling.Ignore)]
+        public string XLBService { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public AddActionReq Body { get; set; }
@@ -46,6 +53,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("class CreateRuleActionRequest {\n");
             sb.Append("  stageAuthToken: ").Append(StageAuthToken).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  xLBService: ").Append(XLBService).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -79,6 +87,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
+                    this.XLBService == input.XLBService ||
+                    (this.XLBService != null &&
+                    this.XLBService.Equals(input.XLBService))
+                ) && 
+                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -97,6 +110,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.XLBService != null)
+                    hashCode = hashCode * 59 + this.XLBService.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

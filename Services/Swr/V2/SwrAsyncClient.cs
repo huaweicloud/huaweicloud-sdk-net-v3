@@ -29,6 +29,22 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 手动同步镜像
+        /// </summary>
+        public async Task<CreateManualImageSyncRepoResponse> CreateManualImageSyncRepoAsync(CreateManualImageSyncRepoRequest createManualImageSyncRepoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace" , createManualImageSyncRepoRequest.Namespace.ToString());
+            urlParam.Add("repository" , createManualImageSyncRepoRequest.Repository.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualImageSyncRepoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            CreateManualImageSyncRepoResponse createManualImageSyncRepoResponse = JsonUtils.DeSerializeNull<CreateManualImageSyncRepoResponse>(response);
+            createManualImageSyncRepoResponse.Body = JsonUtils.DeSerializeList<string>(response);
+            return createManualImageSyncRepoResponse;
+        }
+        
+        /// <summary>
         /// 创建组织
         /// </summary>
         public async Task<CreateNamespaceResponse> CreateNamespaceAsync(CreateNamespaceRequest createNamespaceRequest)
@@ -51,6 +67,19 @@ namespace HuaweiCloud.SDK.Swr.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNamespaceAuthRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CreateNamespaceAuthResponse>(response);
+        }
+        
+        /// <summary>
+        /// 在组织下创建镜像仓库
+        /// </summary>
+        public async Task<CreateRepoResponse> CreateRepoAsync(CreateRepoRequest createRepoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace" , createRepoRequest.Namespace.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateRepoResponse>(response);
         }
         
         /// <summary>
@@ -294,6 +323,20 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 查询镜像列表
+        /// </summary>
+        public async Task<ListReposDetailsResponse> ListReposDetailsAsync(ListReposDetailsRequest listReposDetailsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/repos",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReposDetailsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ListReposDetailsResponse listReposDetailsResponse = JsonUtils.DeSerializeNull<ListReposDetailsResponse>(response);
+            listReposDetailsResponse.Body = JsonUtils.DeSerializeList<ShowReposResp>(response);
+            return listReposDetailsResponse;
+        }
+        
+        /// <summary>
         /// 查询镜像tag列表
         /// </summary>
         public async Task<ListRepositoryTagsResponse> ListRepositoryTagsAsync(ListRepositoryTagsRequest listRepositoryTagsRequest)
@@ -337,6 +380,20 @@ namespace HuaweiCloud.SDK.Swr.V2
             ListRetentionsResponse listRetentionsResponse = JsonUtils.DeSerializeNull<ListRetentionsResponse>(response);
             listRetentionsResponse.Body = JsonUtils.DeSerializeList<Retention>(response);
             return listRetentionsResponse;
+        }
+        
+        /// <summary>
+        /// 查询共享镜像列表
+        /// </summary>
+        public async Task<ListSharedReposDetailsResponse> ListSharedReposDetailsAsync(ListSharedReposDetailsRequest listSharedReposDetailsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/shared-repositories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSharedReposDetailsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ListSharedReposDetailsResponse listSharedReposDetailsResponse = JsonUtils.DeSerializeNull<ListSharedReposDetailsResponse>(response);
+            listSharedReposDetailsResponse.Body = JsonUtils.DeSerializeList<ShowReposResp>(response);
+            return listSharedReposDetailsResponse;
         }
         
         /// <summary>
@@ -426,6 +483,22 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 获取镜像同步任务信息
+        /// </summary>
+        public async Task<ShowSyncJobResponse> ShowSyncJobAsync(ShowSyncJobRequest showSyncJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace" , showSyncJobRequest.Namespace.ToString());
+            urlParam.Add("repository" , showSyncJobRequest.Repository.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSyncJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ShowSyncJobResponse showSyncJobResponse = JsonUtils.DeSerializeNull<ShowSyncJobResponse>(response);
+            showSyncJobResponse.Body = JsonUtils.DeSerializeList<SyncJob>(response);
+            return showSyncJobResponse;
+        }
+        
+        /// <summary>
         /// 获取触发器详情
         /// </summary>
         public async Task<ShowTriggerResponse> ShowTriggerAsync(ShowTriggerRequest showTriggerRequest)
@@ -452,6 +525,33 @@ namespace HuaweiCloud.SDK.Swr.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRepositoryAuthRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowUserRepositoryAuthResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新组织权限
+        /// </summary>
+        public async Task<UpdateNamespaceAuthResponse> UpdateNamespaceAuthAsync(UpdateNamespaceAuthRequest updateNamespaceAuthRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace" , updateNamespaceAuthRequest.Namespace.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNamespaceAuthRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            return JsonUtils.DeSerializeNull<UpdateNamespaceAuthResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新镜像仓库的概要信息
+        /// </summary>
+        public async Task<UpdateRepoResponse> UpdateRepoAsync(UpdateRepoRequest updateRepoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace" , updateRepoRequest.Namespace.ToString());
+            urlParam.Add("repository" , updateRepoRequest.Repository.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            return JsonUtils.DeSerializeNull<UpdateRepoResponse>(response);
         }
         
         /// <summary>
@@ -511,6 +611,18 @@ namespace HuaweiCloud.SDK.Swr.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRepositoryAuthRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerializeNull<UpdateUserRepositoryAuthResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询所有API版本信息
+        /// </summary>
+        public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
         }
         
         /// <summary>

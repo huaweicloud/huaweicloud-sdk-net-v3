@@ -281,14 +281,14 @@ namespace HuaweiCloud.SDK.Elb.V2
         /// <summary>
         /// 查询后端云服务器列表
         /// </summary>
-        public ListMenbersResponse ListMenbers(ListMenbersRequest listMenbersRequest)
+        public ListMembersResponse ListMembers(ListMembersRequest listMembersRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , listMenbersRequest.PoolId.ToString());
+            urlParam.Add("pool_id" , listMembersRequest.PoolId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/elb/pools/{pool_id}/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMenbersRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMembersRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListMenbersResponse>(response);
+            return JsonUtils.DeSerialize<ListMembersResponse>(response);
         }
         
         /// <summary>

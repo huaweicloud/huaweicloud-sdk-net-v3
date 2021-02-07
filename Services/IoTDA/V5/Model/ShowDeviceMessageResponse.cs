@@ -28,10 +28,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 消息内容
+        /// 消息内容。 
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
-        public string Message { get; set; }
+        public Object Message { get; set; }
+
+        /// <summary>
+        /// 消息内容编码格式，取值范围none|base64,默认值none, base64格式仅支持透传。 
+        /// </summary>
+        [JsonProperty("encoding", NullValueHandling = NullValueHandling.Ignore)]
+        public string Encoding { get; set; }
+
+        /// <summary>
+        /// 有效负载格式，在消息内容编码格式为none时有效，取值范围standard|raw，默认值standard（平台封装的标准格式），取值为raw时直接将消息内容作为有效负载下发。 
+        /// </summary>
+        [JsonProperty("payload_format", NullValueHandling = NullValueHandling.Ignore)]
+        public string PayloadFormat { get; set; }
 
         /// <summary>
         /// 消息topic
@@ -68,6 +80,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  messageId: ").Append(MessageId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  encoding: ").Append(Encoding).Append("\n");
+            sb.Append("  payloadFormat: ").Append(PayloadFormat).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
@@ -109,6 +123,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Message.Equals(input.Message))
                 ) && 
                 (
+                    this.Encoding == input.Encoding ||
+                    (this.Encoding != null &&
+                    this.Encoding.Equals(input.Encoding))
+                ) && 
+                (
+                    this.PayloadFormat == input.PayloadFormat ||
+                    (this.PayloadFormat != null &&
+                    this.PayloadFormat.Equals(input.PayloadFormat))
+                ) && 
+                (
                     this.Topic == input.Topic ||
                     (this.Topic != null &&
                     this.Topic.Equals(input.Topic))
@@ -144,6 +168,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Encoding != null)
+                    hashCode = hashCode * 59 + this.Encoding.GetHashCode();
+                if (this.PayloadFormat != null)
+                    hashCode = hashCode * 59 + this.PayloadFormat.GetHashCode();
                 if (this.Topic != null)
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.Status != null)

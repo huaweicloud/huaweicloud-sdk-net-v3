@@ -1,4 +1,22 @@
-#3.0.32-rc 2021-01-30
+## 3.0.33-rc 2021-02-07
+## HuaweiCloud SDK IMS
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Interface `ListOsVersions` adjustment: change the data type of `os_bit` which is the property of response of the interface from string to integer.
+
+## HuaweiCloud SDK IoTDA
+- ### Features
+    - Support more interfaces: ListAsyncCommands, ListAsyncHistoryCommands, CreateAppCertificate, ListAppCertificates, ShowAppCertificate, UpdateAppCertificate, DeleteAppCertificate
+- ### Bug Fix
+    - None
+- ### Change
+    - SDK of interface `DeviceManagement` deprecated.(It's not supported any more in SDK, but you can also using it by customized coding using API.)
+
+
+# 3.0.32-rc 2021-01-30
 ## HuaweiCloud SDK DNS
 - ### Features
     - Support `Domain Name Service`.

@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Secret { get; set; }
 
         /// <summary>
-        /// 是否强制断开设备的连接，当前仅限长连接。
+        /// 是否强制断开设备的连接，当前仅限长连接。默认值false。
         /// </summary>
         [JsonProperty("force_disconnect", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ForceDisconnect { get; set; }

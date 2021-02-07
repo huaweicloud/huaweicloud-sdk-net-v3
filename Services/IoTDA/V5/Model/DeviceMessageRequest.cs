@@ -28,16 +28,34 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 设备执行的消息，字符串，具体格式需要应用和设备约定。 
+        /// 消息内容，支持string和json格式。 
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
-        public string Message { get; set; }
+        public Object Message { get; set; }
 
         /// <summary>
-        /// 消息下行到设备的topic, 可选， 仅适用于MQTT协议接入的设备。 用户只能填写在租户产品界面配置的topic, 否则会校验不通过。 平台给消息topic添加的前缀为$oc/devices/{device_id}/user/， 用户可以在前缀的基础上增加自定义部分， 如增加messageDown，则平台拼接前缀后完整的topic为 $oc/devices/{device_id}/user/messageDown，其中device_id以实际设备的网关id替代。 如果用户指定该topic，消息会通过该topic下行到设备，如果用户不指定， 则消息通过系统默认的topic下行到设备,系统默认的topic格式为： $oc/devices/{device_id}/sys/messages/down。 
+        /// 消息内容编码格式，取值范围none|base64,默认值none。 
+        /// </summary>
+        [JsonProperty("encoding", NullValueHandling = NullValueHandling.Ignore)]
+        public string Encoding { get; set; }
+
+        /// <summary>
+        /// 有效负载格式，在消息内容编码格式为none时有效，取值范围standard|raw，默认值standard（平台封装的标准格式），取值为raw时直接将消息内容作为有效负载下发。 
+        /// </summary>
+        [JsonProperty("payload_format", NullValueHandling = NullValueHandling.Ignore)]
+        public string PayloadFormat { get; set; }
+
+        /// <summary>
+        /// 消息下行到设备的topic, 可选， 仅适用于MQTT协议接入的设备。 用户只能填写在租户产品界面配置的topic, 否则会校验不通过。 平台给消息topic添加的前缀为$oc/devices/{device_id}/user/， 用户可以在前缀的基础上增加自定义部分， 如增加messageDown，则平台拼接前缀后完整的topic为 $oc/devices/{device_id}/user/messageDown，其中device_id以实际设备的网关id替代。 如果用户指定该topic，消息会通过该topic下行到设备，如果用户不指定， 则消息通过系统默认的topic下行到设备,系统默认的topic格式为： $oc/devices/{device_id}/sys/messages/down。此字段与topic_full_name字段只可填写一个。 
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
+
+        /// <summary>
+        /// 消息下行到设备的完整topic名称, 可选。用户需要下发用户自定义的topic给设备时，可以使用该参数指定完整的topic名称，物联网平台不校验该topic是否在平台定义，直接透传给设备。设备需要提前订阅该topic。此字段与topic字段只可填写一个。 
+        /// </summary>
+        [JsonProperty("topic_full_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string TopicFullName { get; set; }
 
 
         /// <summary>
@@ -50,7 +68,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  messageId: ").Append(MessageId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  encoding: ").Append(Encoding).Append("\n");
+            sb.Append("  payloadFormat: ").Append(PayloadFormat).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
+            sb.Append("  topicFullName: ").Append(TopicFullName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,9 +109,24 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Message.Equals(input.Message))
                 ) && 
                 (
+                    this.Encoding == input.Encoding ||
+                    (this.Encoding != null &&
+                    this.Encoding.Equals(input.Encoding))
+                ) && 
+                (
+                    this.PayloadFormat == input.PayloadFormat ||
+                    (this.PayloadFormat != null &&
+                    this.PayloadFormat.Equals(input.PayloadFormat))
+                ) && 
+                (
                     this.Topic == input.Topic ||
                     (this.Topic != null &&
                     this.Topic.Equals(input.Topic))
+                ) && 
+                (
+                    this.TopicFullName == input.TopicFullName ||
+                    (this.TopicFullName != null &&
+                    this.TopicFullName.Equals(input.TopicFullName))
                 );
         }
 
@@ -108,8 +144,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Encoding != null)
+                    hashCode = hashCode * 59 + this.Encoding.GetHashCode();
+                if (this.PayloadFormat != null)
+                    hashCode = hashCode * 59 + this.PayloadFormat.GetHashCode();
                 if (this.Topic != null)
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.TopicFullName != null)
+                    hashCode = hashCode * 59 + this.TopicFullName.GetHashCode();
                 return hashCode;
             }
         }

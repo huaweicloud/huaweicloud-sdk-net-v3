@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string BackupType { get; set; }
 
         /// <summary>
-        /// 当backup_type设置为manual时，该参数为必填。 保留天数，单位：天，取值范围：1-7。 
+        /// 当backup_type设置为auto时，该参数为必填。 保留天数，单位：天，取值范围：1-7。 
         /// </summary>
         [JsonProperty("save_days", NullValueHandling = NullValueHandling.Ignore)]
         public int? SaveDays { get; set; }

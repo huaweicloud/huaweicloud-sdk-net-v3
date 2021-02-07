@@ -21,6 +21,24 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
+        /// <summary>
+        /// 证书id，通过证书上传接口上传证书获取Id
+        /// </summary>
+        [JsonProperty("cert_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CertId { get; set; }
+
+        /// <summary>
+        /// 当sni_enable为true时，此字段需要填写，当sni_enbale为false时，此字段默认为*
+        /// </summary>
+        [JsonProperty("cn_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string CnName { get; set; }
+
+        /// <summary>
+        /// 需要https服务端和客户端都支持此功能，默认为false，设成true表明Https的客户端在发起请求时，需要携带cn_name；https服务端根据cn_name返回对应的证书；设为false可关闭此功能
+        /// </summary>
+        [JsonProperty("sni_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SniEnable { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +48,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class HttpForwarding {\n");
             sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  certId: ").Append(CertId).Append("\n");
+            sb.Append("  cnName: ").Append(CnName).Append("\n");
+            sb.Append("  sniEnable: ").Append(SniEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +76,21 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
+                ) && 
+                (
+                    this.CertId == input.CertId ||
+                    (this.CertId != null &&
+                    this.CertId.Equals(input.CertId))
+                ) && 
+                (
+                    this.CnName == input.CnName ||
+                    (this.CnName != null &&
+                    this.CnName.Equals(input.CnName))
+                ) && 
+                (
+                    this.SniEnable == input.SniEnable ||
+                    (this.SniEnable != null &&
+                    this.SniEnable.Equals(input.SniEnable))
                 );
         }
 
@@ -68,6 +104,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.CertId != null)
+                    hashCode = hashCode * 59 + this.CertId.GetHashCode();
+                if (this.CnName != null)
+                    hashCode = hashCode * 59 + this.CnName.GetHashCode();
+                if (this.SniEnable != null)
+                    hashCode = hashCode * 59 + this.SniEnable.GetHashCode();
                 return hashCode;
             }
         }

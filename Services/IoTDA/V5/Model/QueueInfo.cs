@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 队列名称，同一租户不允许生重复。
+        /// 队列名称，同一租户不允许重复。
         /// </summary>
         [JsonProperty("queue_name", NullValueHandling = NullValueHandling.Ignore)]
         public string QueueName { get; set; }

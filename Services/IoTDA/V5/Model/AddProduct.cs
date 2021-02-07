@@ -34,16 +34,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string DeviceType { get; set; }
 
         /// <summary>
-        /// 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF。
+        /// 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA。
         /// </summary>
         [JsonProperty("protocol_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtocolType { get; set; }
 
         /// <summary>
-        /// 设备上报数据的格式，取值范围：json，binary。
+        /// 设备上报数据的格式，取值范围：json，binary。默认值json。
         /// </summary>
         [JsonProperty("data_format", NullValueHandling = NullValueHandling.Ignore)]
         public string DataFormat { get; set; }
+
+        /// <summary>
+        /// 设备的服务能力列表。
+        /// </summary>
+        [JsonProperty("service_capabilities", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ServiceCapability> ServiceCapabilities { get; set; }
 
         /// <summary>
         /// 厂商名称。
@@ -64,12 +70,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 设备的服务能力列表。
-        /// </summary>
-        [JsonProperty("service_capabilities", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ServiceCapability> ServiceCapabilities { get; set; }
-
-        /// <summary>
         /// 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的产品归属到哪个资源空间下，否则创建的产品将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -88,10 +88,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  deviceType: ").Append(DeviceType).Append("\n");
             sb.Append("  protocolType: ").Append(ProtocolType).Append("\n");
             sb.Append("  dataFormat: ").Append(DataFormat).Append("\n");
+            sb.Append("  serviceCapabilities: ").Append(ServiceCapabilities).Append("\n");
             sb.Append("  manufacturerName: ").Append(ManufacturerName).Append("\n");
             sb.Append("  industry: ").Append(Industry).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  serviceCapabilities: ").Append(ServiceCapabilities).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -140,6 +140,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DataFormat.Equals(input.DataFormat))
                 ) && 
                 (
+                    this.ServiceCapabilities == input.ServiceCapabilities ||
+                    this.ServiceCapabilities != null &&
+                    input.ServiceCapabilities != null &&
+                    this.ServiceCapabilities.SequenceEqual(input.ServiceCapabilities)
+                ) && 
+                (
                     this.ManufacturerName == input.ManufacturerName ||
                     (this.ManufacturerName != null &&
                     this.ManufacturerName.Equals(input.ManufacturerName))
@@ -153,12 +159,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ServiceCapabilities == input.ServiceCapabilities ||
-                    this.ServiceCapabilities != null &&
-                    input.ServiceCapabilities != null &&
-                    this.ServiceCapabilities.SequenceEqual(input.ServiceCapabilities)
                 ) && 
                 (
                     this.AppId == input.AppId ||
@@ -185,14 +185,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.ProtocolType.GetHashCode();
                 if (this.DataFormat != null)
                     hashCode = hashCode * 59 + this.DataFormat.GetHashCode();
+                if (this.ServiceCapabilities != null)
+                    hashCode = hashCode * 59 + this.ServiceCapabilities.GetHashCode();
                 if (this.ManufacturerName != null)
                     hashCode = hashCode * 59 + this.ManufacturerName.GetHashCode();
                 if (this.Industry != null)
                     hashCode = hashCode * 59 + this.Industry.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ServiceCapabilities != null)
-                    hashCode = hashCode * 59 + this.ServiceCapabilities.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 return hashCode;

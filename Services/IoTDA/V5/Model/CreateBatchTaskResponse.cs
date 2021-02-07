@@ -28,13 +28,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string TaskName { get; set; }
 
         /// <summary>
-        /// 批量任务类型，取值范围：firmwareUpgrade，softwareUpgrade。 - softwareUpgrade: 软件升级任务 - firmwareUpgrade: 固件升级任务 
+        /// 批量任务类型，取值范围：firmwareUpgrade，softwareUpgrade，createDevices，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands。 - softwareUpgrade: 软件升级任务 - firmwareUpgrade: 固件升级任务 - createDevices: 批量创建设备任务 - deleteDevices: 批量删除设备任务 - freezeDevices: 批量冻结设备任务 - unfreezeDevices: 批量解冻设备任务 - createCommands: 批量创建同步命令任务 - createAsyncCommands: 批量创建异步命令任务 
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskType { get; set; }
 
         /// <summary>
-        /// 执行批量任务的目标，当task_type为firmwareUpgrade，softwareUpgrade时，此处填写device_id列表。
+        /// 执行批量任务的目标，当task_type为firmwareUpgrade，softwareUpgrade，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands，此处填写device_id列表。
         /// </summary>
         [JsonProperty("targets", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Targets { get; set; }
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public Dictionary<string, Object> TargetsFilter { get; set; }
 
         /// <summary>
-        /// 执行任务数据文档，JsonString格式，里面是(K,V)键值对。(当task_type 为softwareUpgrade|firmwareUpgrade，也就是软固件升级任务需要填写key为package_id，value为在平台上传的软固件附件id，id由portal软件库包管理上传并查询获得)
+        /// 执行任务数据文档，Json格式。(当task_type为softwareUpgrade|firmwareUpgrade，也就是软固件升级任务时，Json里面是(K,V)键值对，需要填写key为package_id，value为在平台上传的软固件附件id，id由portal软件库包管理上传并查询获得。当task_type为createCommands，也就是批量创建同步命令任务时，Json里面是命令相关参数，eg：“{\&quot;service_id\&quot;:\&quot;water\&quot;,\&quot;command_name\&quot;:\&quot;ON_OFF\&quot;,\&quot;paras\&quot;:{\&quot;value\&quot;:\&quot;ON\&quot;}}”,参考[设备同步命令](https://support.huaweicloud.com/api-iothub/iot_06_v5_0038.html))。当task_type为createAsyncCommands，也就是批量创建异步命令任务时，Json里面是命令相关参数，eg：“{\&quot;service_id\&quot;:\&quot;water\&quot;,\&quot;command_name\&quot;:\&quot;ON_OFF\&quot;,\&quot;paras\&quot;:{\&quot;value\&quot;:\&quot;ON\&quot;},\&quot;expire_time\&quot;:0,\&quot;send_strategy\&quot;:\&quot;immediately\&quot;}”,参考[设备异步命令](https://support.huaweicloud.com/api-iothub/iot_06_v5_0040.html))。
         /// </summary>
         [JsonProperty("document", NullValueHandling = NullValueHandling.Ignore)]
         public Object Document { get; set; }

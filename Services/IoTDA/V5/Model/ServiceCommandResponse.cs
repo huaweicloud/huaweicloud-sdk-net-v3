@@ -16,16 +16,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备命令响应的参数列表。
-        /// </summary>
-        [JsonProperty("paras", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ServiceCommandPara> Paras { get; set; }
-
-        /// <summary>
         /// 设备命令响应名称。
         /// </summary>
         [JsonProperty("response_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResponseName { get; set; }
+
+        /// <summary>
+        /// 设备命令响应的参数列表。
+        /// </summary>
+        [JsonProperty("paras", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ServiceCommandPara> Paras { get; set; }
 
 
         /// <summary>
@@ -35,8 +35,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ServiceCommandResponse {\n");
-            sb.Append("  paras: ").Append(Paras).Append("\n");
             sb.Append("  responseName: ").Append(ResponseName).Append("\n");
+            sb.Append("  paras: ").Append(Paras).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,15 +59,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
 
             return 
                 (
+                    this.ResponseName == input.ResponseName ||
+                    (this.ResponseName != null &&
+                    this.ResponseName.Equals(input.ResponseName))
+                ) && 
+                (
                     this.Paras == input.Paras ||
                     this.Paras != null &&
                     input.Paras != null &&
                     this.Paras.SequenceEqual(input.Paras)
-                ) && 
-                (
-                    this.ResponseName == input.ResponseName ||
-                    (this.ResponseName != null &&
-                    this.ResponseName.Equals(input.ResponseName))
                 );
         }
 
@@ -79,10 +79,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Paras != null)
-                    hashCode = hashCode * 59 + this.Paras.GetHashCode();
                 if (this.ResponseName != null)
                     hashCode = hashCode * 59 + this.ResponseName.GetHashCode();
+                if (this.Paras != null)
+                    hashCode = hashCode * 59 + this.Paras.GetHashCode();
                 return hashCode;
             }
         }

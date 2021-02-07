@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Elb.V2.Model
+namespace HuaweiCloud.SDK.IoTDA.V5.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class ListMenbersResponse : SdkResponse
+    public class DeleteAppCertificateResponse : SdkResponse
     {
 
         /// <summary>
-        /// 后端云服务器对象的列表
+        /// 
         /// </summary>
-        [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
-        public List<MemberResp> Members { get; set; }
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public string Body { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListMenbersResponse {\n");
-            sb.Append("  members: ").Append(Members).Append("\n");
+            sb.Append("class DeleteAppCertificateResponse {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,23 +39,22 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListMenbersResponse);
+            return this.Equals(input as DeleteAppCertificateResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListMenbersResponse input)
+        public bool Equals(DeleteAppCertificateResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Members == input.Members ||
-                    this.Members != null &&
-                    input.Members != null &&
-                    this.Members.SequenceEqual(input.Members)
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -67,8 +66,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Members != null)
-                    hashCode = hashCode * 59 + this.Members.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

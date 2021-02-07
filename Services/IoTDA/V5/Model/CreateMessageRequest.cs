@@ -25,6 +25,20 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("Stage-Auth-Token", IsHeader = true)]
+        [JsonProperty("Stage-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string StageAuthToken { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("Sp-Auth-Token", IsHeader = true)]
+        [JsonProperty("Sp-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string SpAuthToken { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
         [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
@@ -45,6 +59,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class CreateMessageRequest {\n");
             sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
+            sb.Append("  stageAuthToken: ").Append(StageAuthToken).Append("\n");
+            sb.Append("  spAuthToken: ").Append(SpAuthToken).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -74,6 +90,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DeviceId.Equals(input.DeviceId))
                 ) && 
                 (
+                    this.StageAuthToken == input.StageAuthToken ||
+                    (this.StageAuthToken != null &&
+                    this.StageAuthToken.Equals(input.StageAuthToken))
+                ) && 
+                (
+                    this.SpAuthToken == input.SpAuthToken ||
+                    (this.SpAuthToken != null &&
+                    this.SpAuthToken.Equals(input.SpAuthToken))
+                ) && 
+                (
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
@@ -95,6 +121,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.DeviceId != null)
                     hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.StageAuthToken != null)
+                    hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
+                if (this.SpAuthToken != null)
+                    hashCode = hashCode * 59 + this.SpAuthToken.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Body != null)

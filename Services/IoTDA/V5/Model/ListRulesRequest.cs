@@ -32,6 +32,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("rule_type", IsQuery = true)]
+        [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string RuleType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
@@ -60,6 +67,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("class ListRulesRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  ruleType: ").Append(RuleType).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -95,6 +103,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.AppId.Equals(input.AppId))
                 ) && 
                 (
+                    this.RuleType == input.RuleType ||
+                    (this.RuleType != null &&
+                    this.RuleType.Equals(input.RuleType))
+                ) && 
+                (
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
@@ -123,6 +136,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.RuleType != null)
+                    hashCode = hashCode * 59 + this.RuleType.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null)

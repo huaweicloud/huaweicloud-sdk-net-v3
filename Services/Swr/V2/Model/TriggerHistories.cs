@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class TriggerHistorys 
+    public class TriggerHistories 
     {
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TriggerHistorys {\n");
+            sb.Append("class TriggerHistories {\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  appType: ").Append(AppType).Append("\n");
             sb.Append("  application: ").Append(Application).Append("\n");
@@ -123,13 +123,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TriggerHistorys);
+            return this.Equals(input as TriggerHistories);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(TriggerHistorys input)
+        public bool Equals(TriggerHistories input)
         {
             if (input == null)
                 return false;

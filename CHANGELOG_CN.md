@@ -1,3 +1,21 @@
+## 3.0.33-rc 2021-02-07
+## HuaweiCloud SDK IMS
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 查询镜像支持的OS列表(ListOsVersions)接口返回体属性 `os_bit` 数据类型调整：string → int32
+
+## HuaweiCloud SDK IoTDA
+- ### 新增特性
+    - 新增支持接口：查询设备下队列中的命令(ListAsyncCommands)、查询设备下的历史命令(ListAsyncHistoryCommands)、上传应用侧CA证书(CreateAppCertificate)、查询应用侧CA证书列表(ListAppCertificates)、查询应用侧CA证书(ShowAppCertificate)、更新应用侧CA证书(UpdateAppCertificate)、删除应用侧CA证书(DeleteAppCertificate)
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 下线支持接口（接口不在支持通过SDK调用，仍可通过API直接调用）：重置设备指纹(DeviceManagement)
+
+
 ## 3.0.32-rc 2021-01-30
 ## HuaweiCloud SDK DNS
 - ### 新增特性

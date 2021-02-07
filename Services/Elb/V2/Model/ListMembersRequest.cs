@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class ListMenbersRequest 
+    public class ListMembersRequest 
     {
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListMenbersRequest {\n");
+            sb.Append("class ListMembersRequest {\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
@@ -120,13 +120,13 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListMenbersRequest);
+            return this.Equals(input as ListMembersRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListMenbersRequest input)
+        public bool Equals(ListMembersRequest input)
         {
             if (input == null)
                 return false;

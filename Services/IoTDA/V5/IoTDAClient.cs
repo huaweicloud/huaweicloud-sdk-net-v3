@@ -141,6 +141,32 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 查询设备下队列中的命令
+        /// </summary>
+        public ListAsyncCommandsResponse ListAsyncCommands(ListAsyncCommandsRequest listAsyncCommandsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id" , listAsyncCommandsRequest.DeviceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncCommandsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAsyncCommandsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询设备下的历史命令
+        /// </summary>
+        public ListAsyncHistoryCommandsResponse ListAsyncHistoryCommands(ListAsyncHistoryCommandsRequest listAsyncHistoryCommandsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id" , listAsyncHistoryCommandsRequest.DeviceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands-history",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncHistoryCommandsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAsyncHistoryCommandsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询指定id的命令
         /// </summary>
         public ShowAsyncDeviceCommandResponse ShowAsyncDeviceCommand(ShowAsyncDeviceCommandRequest showAsyncDeviceCommandRequest)
@@ -267,6 +293,72 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCertificatesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListCertificatesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 上传应用侧CA证书
+        /// </summary>
+        public CreateAppCertificateResponse CreateAppCertificate(CreateAppCertificateRequest createAppCertificateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/app-cert/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", createAppCertificateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateAppCertificateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除应用侧CA证书
+        /// </summary>
+        public DeleteAppCertificateResponse DeleteAppCertificate(DeleteAppCertificateRequest deleteAppCertificateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cert_id" , deleteAppCertificateRequest.CertId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/app-cert/{cert_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppCertificateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            DeleteAppCertificateResponse deleteAppCertificateResponse = JsonUtils.DeSerializeNull<DeleteAppCertificateResponse>(response);
+            return deleteAppCertificateResponse;
+        }
+        
+        /// <summary>
+        /// 查询应用侧CA证书列表
+        /// </summary>
+        public ListAppCertificatesResponse ListAppCertificates(ListAppCertificatesRequest listAppCertificatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/app-cert/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppCertificatesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            ListAppCertificatesResponse listAppCertificatesResponse = JsonUtils.DeSerializeNull<ListAppCertificatesResponse>(response);
+            listAppCertificatesResponse.Body = JsonUtils.DeSerializeList<CertificateRspDTO>(response);
+            return listAppCertificatesResponse;
+        }
+        
+        /// <summary>
+        /// 查询应用侧CA证书
+        /// </summary>
+        public ShowAppCertificateResponse ShowAppCertificate(ShowAppCertificateRequest showAppCertificateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cert_id" , showAppCertificateRequest.CertId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/{cert_id}/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppCertificateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowAppCertificateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新应用侧CA证书
+        /// </summary>
+        public UpdateAppCertificateResponse UpdateAppCertificate(UpdateAppCertificateRequest updateAppCertificateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cert_id" , updateAppCertificateRequest.CertId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/app-cert/{cert_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateAppCertificateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateAppCertificateResponse>(response);
         }
         
         /// <summary>

@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Core
             return jsonObject;
         }
 
+        private static readonly List<string> HttpContentHeadersList = new List<string>
+        {
+            "Allow", "Content-Disposition", "Content-Encoding", "Content-Language", "Content-Location", "Content-MD5",
+            "Content-Range", "Content-Type", "Expires", "Last-Modified"
+        };
+
         private static void SetResponseHeaders<T>(HttpResponseMessage message, T jsonObject)
         {
             const BindingFlags instanceBindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
@@ -88,10 +94,16 @@ namespace HuaweiCloud.SDK.Core
                     }
                 }
 
-                if (!string.IsNullOrEmpty(oriAttrName) && message.Headers.Contains(oriAttrName))
+                if (string.IsNullOrEmpty(oriAttrName))
                 {
-                    property.SetValue(jsonObject, message.Headers.GetValues(oriAttrName).First());
+                    continue;
                 }
+
+                var isContentHeader = HttpContentHeadersList.Contains(oriAttrName);
+                property.SetValue(jsonObject,
+                    isContentHeader
+                        ? message.Content.Headers.GetValues(oriAttrName).First()
+                        : message.Headers.GetValues(oriAttrName).First());
             }
         }
 

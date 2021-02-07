@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public VersionsDetail Version { get; set; }
+        public VersionDetail Version { get; set; }
 
 
         /// <summary>
