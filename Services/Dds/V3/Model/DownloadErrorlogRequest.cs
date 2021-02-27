@@ -7,27 +7,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Eps.v1.Model
+namespace HuaweiCloud.SDK.Dds.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class ModifyEnterpriseProjectRequest 
+    public class DownloadErrorlogRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("enterprise_project_id", IsPath = true)]
-        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EnterpriseProjectId { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public EnterpriseProject Body { get; set; }
+        public DownloadErrorlogRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -36,8 +36,8 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ModifyEnterpriseProjectRequest {\n");
-            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("class DownloadErrorlogRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -48,22 +48,22 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ModifyEnterpriseProjectRequest);
+            return this.Equals(input as DownloadErrorlogRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ModifyEnterpriseProjectRequest input)
+        public bool Equals(DownloadErrorlogRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -80,8 +80,8 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

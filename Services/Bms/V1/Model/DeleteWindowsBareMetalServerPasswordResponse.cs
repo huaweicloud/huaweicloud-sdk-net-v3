@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class WindowsBaremetalServerCleanPwdResponse : SdkResponse
+    public class DeleteWindowsBareMetalServerPasswordResponse : SdkResponse
     {
 
 

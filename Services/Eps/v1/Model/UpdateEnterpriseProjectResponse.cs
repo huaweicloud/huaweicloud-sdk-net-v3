@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class ModifyEnterpriseProjectResponse : SdkResponse
+    public class UpdateEnterpriseProjectResponse : SdkResponse
     {
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ModifyEnterpriseProjectResponse {\n");
+            sb.Append("class UpdateEnterpriseProjectResponse {\n");
             sb.Append("  enterpriseProject: ").Append(EnterpriseProject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -39,13 +39,13 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ModifyEnterpriseProjectResponse);
+            return this.Equals(input as UpdateEnterpriseProjectResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ModifyEnterpriseProjectResponse input)
+        public bool Equals(UpdateEnterpriseProjectResponse input)
         {
             if (input == null)
                 return false;

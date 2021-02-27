@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Ecs.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class DeleteAppCertificateResponse : SdkResponse
+    public class ListServerGroupsPageInfoResult 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
+        [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string NextMarker { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteAppCertificateResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class ListServerGroupsPageInfoResult {\n");
+            sb.Append("  nextMarker: ").Append(NextMarker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteAppCertificateResponse);
+            return this.Equals(input as ListServerGroupsPageInfoResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteAppCertificateResponse input)
+        public bool Equals(ListServerGroupsPageInfoResult input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.NextMarker == input.NextMarker ||
+                    (this.NextMarker != null &&
+                    this.NextMarker.Equals(input.NextMarker))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.NextMarker != null)
+                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
                 return hashCode;
             }
         }

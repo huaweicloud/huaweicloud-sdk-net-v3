@@ -89,19 +89,6 @@ namespace HuaweiCloud.SDK.Eps.v1
         }
         
         /// <summary>
-        /// 修改企业项目
-        /// </summary>
-        public ModifyEnterpriseProjectResponse ModifyEnterpriseProject(ModifyEnterpriseProjectRequest modifyEnterpriseProjectRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , modifyEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerialize<ModifyEnterpriseProjectResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询API版本号详情
         /// </summary>
         public ShowApiVersionResponse ShowApiVersion(ShowApiVersionRequest showApiVersionRequest)
@@ -150,6 +137,19 @@ namespace HuaweiCloud.SDK.Eps.v1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEnterpriseProjectRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ShowResourceBindEnterpriseProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改企业项目
+        /// </summary>
+        public UpdateEnterpriseProjectResponse UpdateEnterpriseProject(UpdateEnterpriseProjectRequest updateEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , updateEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateEnterpriseProjectResponse>(response);
         }
         
     }

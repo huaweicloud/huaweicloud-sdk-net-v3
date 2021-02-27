@@ -18,13 +18,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Stage-Auth-Token", IsHeader = true)]
-        [JsonProperty("Stage-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string StageAuthToken { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
         [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
@@ -86,7 +79,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListRuleActionsRequest {\n");
-            sb.Append("  stageAuthToken: ").Append(StageAuthToken).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  ruleId: ").Append(RuleId).Append("\n");
             sb.Append("  channel: ").Append(Channel).Append("\n");
@@ -116,11 +108,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 return false;
 
             return 
-                (
-                    this.StageAuthToken == input.StageAuthToken ||
-                    (this.StageAuthToken != null &&
-                    this.StageAuthToken.Equals(input.StageAuthToken))
-                ) && 
                 (
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
@@ -171,8 +158,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.StageAuthToken != null)
-                    hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.RuleId != null)

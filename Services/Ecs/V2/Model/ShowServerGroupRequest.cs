@@ -7,20 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Bms.V1.Model
+namespace HuaweiCloud.SDK.Ecs.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class WindowsBaremetalServerCleanPwdRequest 
+    public class ShowServerGroupRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("server_id", IsPath = true)]
-        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServerId { get; set; }
+        [SDKProperty("server_group_id", IsPath = true)]
+        [JsonProperty("server_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerGroupId { get; set; }
 
 
         /// <summary>
@@ -29,8 +29,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WindowsBaremetalServerCleanPwdRequest {\n");
-            sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("class ShowServerGroupRequest {\n");
+            sb.Append("  serverGroupId: ").Append(ServerGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -40,22 +40,22 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WindowsBaremetalServerCleanPwdRequest);
+            return this.Equals(input as ShowServerGroupRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(WindowsBaremetalServerCleanPwdRequest input)
+        public bool Equals(ShowServerGroupRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
+                    this.ServerGroupId == input.ServerGroupId ||
+                    (this.ServerGroupId != null &&
+                    this.ServerGroupId.Equals(input.ServerGroupId))
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.ServerGroupId != null)
+                    hashCode = hashCode * 59 + this.ServerGroupId.GetHashCode();
                 return hashCode;
             }
         }

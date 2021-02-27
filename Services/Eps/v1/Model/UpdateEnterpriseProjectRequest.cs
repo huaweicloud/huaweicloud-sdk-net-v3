@@ -7,19 +7,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Eps.v1.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class ListAppCertificatesResponse : SdkResponse
+    public class UpdateEnterpriseProjectRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("enterprise_project_id", IsPath = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CertificateRspDTO> Body { get; set; }
+        public EnterpriseProject Body { get; set; }
 
 
         /// <summary>
@@ -28,7 +36,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListAppCertificatesResponse {\n");
+            sb.Append("class UpdateEnterpriseProjectRequest {\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -39,23 +48,27 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListAppCertificatesResponse);
+            return this.Equals(input as UpdateEnterpriseProjectRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListAppCertificatesResponse input)
+        public bool Equals(UpdateEnterpriseProjectRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
                     this.Body == input.Body ||
-                    this.Body != null &&
-                    input.Body != null &&
-                    this.Body.SequenceEqual(input.Body)
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -67,6 +80,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

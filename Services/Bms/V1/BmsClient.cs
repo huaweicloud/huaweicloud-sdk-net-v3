@@ -88,6 +88,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
+        /// Windows裸金属服务器清除密码
+        /// </summary>
+        public DeleteWindowsBareMetalServerPasswordResponse DeleteWindowsBareMetalServerPassword(DeleteWindowsBareMetalServerPasswordRequest deleteWindowsBareMetalServerPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , deleteWindowsBareMetalServerPasswordRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWindowsBareMetalServerPasswordRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteWindowsBareMetalServerPasswordResponse>(response);
+        }
+        
+        /// <summary>
         /// 裸金属服务器卸载云磁盘
         /// </summary>
         public DetachBaremetalServerVolumeResponse DetachBaremetalServerVolume(DetachBaremetalServerVolumeRequest detachBaremetalServerVolumeRequest)
@@ -239,19 +252,6 @@ namespace HuaweiCloud.SDK.Bms.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<UpdateBaremetalServerMetadataResponse>(response);
-        }
-        
-        /// <summary>
-        /// Windows裸金属服务器清除密码
-        /// </summary>
-        public WindowsBaremetalServerCleanPwdResponse WindowsBaremetalServerCleanPwd(WindowsBaremetalServerCleanPwdRequest windowsBaremetalServerCleanPwdRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , windowsBaremetalServerCleanPwdRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", windowsBaremetalServerCleanPwdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            return JsonUtils.DeSerializeNull<WindowsBaremetalServerCleanPwdResponse>(response);
         }
         
         /// <summary>

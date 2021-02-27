@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 仓库大小 
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// 仓库是否为公共仓库，值为true或false
@@ -49,13 +49,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 仓库中镜像个数，0 ~ 9223372036854775807
         /// </summary>
         [JsonProperty("num_images", NullValueHandling = NullValueHandling.Ignore)]
-        public int? NumImages { get; set; }
+        public long? NumImages { get; set; }
 
         /// <summary>
         /// 仓库下载次数
         /// </summary>
         [JsonProperty("num_download", NullValueHandling = NullValueHandling.Ignore)]
-        public int? NumDownload { get; set; }
+        public long? NumDownload { get; set; }
 
         /// <summary>
         /// 仓库创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
@@ -121,7 +121,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 
         /// </summary>
         [JsonProperty("total_range", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalRange { get; set; }
+        public long? TotalRange { get; set; }
 
 
         /// <summary>

@@ -280,6 +280,18 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询云服务器组列表
+        /// </summary>
+        public ListServerGroupsResponse ListServerGroups(ListServerGroupsRequest listServerGroupsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-server-groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerGroupsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListServerGroupsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询云服务器网卡信息
         /// </summary>
         public ListServerInterfacesResponse ListServerInterfaces(ListServerInterfacesRequest listServerInterfacesRequest)
@@ -531,6 +543,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowServerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询云服务器组详情
+        /// </summary>
+        public ShowServerGroupResponse ShowServerGroup(ShowServerGroupRequest showServerGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_group_id" , showServerGroupRequest.ServerGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowServerGroupResponse>(response);
         }
         
         /// <summary>

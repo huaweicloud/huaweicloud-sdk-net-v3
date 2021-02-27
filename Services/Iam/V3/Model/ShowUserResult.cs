@@ -102,8 +102,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// <summary>
         /// IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
         /// </summary>
-        [JsonProperty("pwd_stength", NullValueHandling = NullValueHandling.Ignore)]
-        public string PwdStength { get; set; }
+        [JsonProperty("pwd_strength", NullValueHandling = NullValueHandling.Ignore)]
+        public string PwdStrength { get; set; }
 
         /// <summary>
         /// IAM用户是否为根用户。
@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  lastLoginTime: ").Append(LastLoginTime).Append("\n");
-            sb.Append("  pwdStength: ").Append(PwdStength).Append("\n");
+            sb.Append("  pwdStrength: ").Append(PwdStrength).Append("\n");
             sb.Append("  isDomainOwner: ").Append(IsDomainOwner).Append("\n");
             sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -241,9 +241,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.LastLoginTime.Equals(input.LastLoginTime))
                 ) && 
                 (
-                    this.PwdStength == input.PwdStength ||
-                    (this.PwdStength != null &&
-                    this.PwdStength.Equals(input.PwdStength))
+                    this.PwdStrength == input.PwdStrength ||
+                    (this.PwdStrength != null &&
+                    this.PwdStrength.Equals(input.PwdStrength))
                 ) && 
                 (
                     this.IsDomainOwner == input.IsDomainOwner ||
@@ -298,8 +298,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.LastLoginTime != null)
                     hashCode = hashCode * 59 + this.LastLoginTime.GetHashCode();
-                if (this.PwdStength != null)
-                    hashCode = hashCode * 59 + this.PwdStength.GetHashCode();
+                if (this.PwdStrength != null)
+                    hashCode = hashCode * 59 + this.PwdStrength.GetHashCode();
                 if (this.IsDomainOwner != null)
                     hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
                 if (this.AccessMode != null)

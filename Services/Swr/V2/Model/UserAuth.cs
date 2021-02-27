@@ -14,6 +14,122 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     /// </summary>
     public class UserAuth 
     {
+        /// <summary>
+        /// 用户权限，7表示管理权限，3表示编辑权限，1表示读取权限
+        /// </summary>
+        /// <value>用户权限，7表示管理权限，3表示编辑权限，1表示读取权限</value>
+        [JsonConverter(typeof(EnumClassConverter<AuthEnum>))]
+        public class AuthEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_7 for value: 7
+            /// </summary>
+            public static readonly AuthEnum NUMBER_7 = new AuthEnum(7);
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            public static readonly AuthEnum NUMBER_3 = new AuthEnum(3);
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly AuthEnum NUMBER_1 = new AuthEnum(1);
+
+            private static readonly Dictionary<long?, AuthEnum> StaticFields =
+            new Dictionary<long?, AuthEnum>()
+            {
+                { 7, NUMBER_7 },
+                { 3, NUMBER_3 },
+                { 1, NUMBER_1 },
+            };
+
+            private long? Value;
+
+            public AuthEnum(long? value)
+            {
+                Value = value;
+            }
+
+            public static AuthEnum FromValue(long? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public long? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AuthEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AuthEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(AuthEnum a, AuthEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AuthEnum a, AuthEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 用户id，需要从IAM服务获取
@@ -31,8 +147,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 用户权限，7表示管理权限，3表示编辑权限，1表示读取权限
         /// </summary>
         [JsonProperty("auth", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Auth { get; set; }
-
+        public AuthEnum Auth { get; set; }
 
         /// <summary>
         /// Get the string

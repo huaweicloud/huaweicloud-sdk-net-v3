@@ -181,6 +181,32 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 获取错误日志下载链接
+        /// </summary>
+        public DownloadErrorlogResponse DownloadErrorlog(DownloadErrorlogRequest downloadErrorlogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , downloadErrorlogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/errorlog-download",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadErrorlogRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DownloadErrorlogResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取慢日志下载链接
+        /// </summary>
+        public DownloadSlowlogResponse DownloadSlowlog(DownloadSlowlogRequest downloadSlowlogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , downloadSlowlogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-download",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowlogRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DownloadSlowlogResponse>(response);
+        }
+        
+        /// <summary>
         /// 生成审计日志下载链接
         /// </summary>
         public ListAuditlogLinksResponse ListAuditlogLinks(ListAuditlogLinksRequest listAuditlogLinksRequest)

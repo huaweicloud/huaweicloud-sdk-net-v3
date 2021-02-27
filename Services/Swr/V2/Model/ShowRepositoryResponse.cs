@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 仓库下载次数
         /// </summary>
         [JsonProperty("num_download", NullValueHandling = NullValueHandling.Ignore)]
-        public int? NumDownload { get; set; }
+        public long? NumDownload { get; set; }
 
         /// <summary>
         /// 仓库logo图片的URL，URL格式。（暂时未用）
