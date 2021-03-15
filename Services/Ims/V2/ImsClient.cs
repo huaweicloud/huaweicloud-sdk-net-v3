@@ -14,6 +14,19 @@ namespace HuaweiCloud.SDK.Ims.V2
 
         
         /// <summary>
+        /// 添加镜像标签
+        /// </summary>
+        public AddImageTagResponse AddImageTag(AddImageTagRequest addImageTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id" , addImageTagRequest.ImageId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addImageTagRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<AddImageTagResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量添加镜像成员
         /// </summary>
         public BatchAddMembersResponse BatchAddMembers(BatchAddMembersRequest batchAddMembersRequest)
@@ -23,6 +36,19 @@ namespace HuaweiCloud.SDK.Ims.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddMembersRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<BatchAddMembersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量添加删除镜像标签
+        /// </summary>
+        public BatchAddOrDeleteTagsResponse BatchAddOrDeleteTags(BatchAddOrDeleteTagsRequest batchAddOrDeleteTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id" , batchAddOrDeleteTagsRequest.ImageId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddOrDeleteTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchAddOrDeleteTagsResponse>(response);
         }
         
         /// <summary>
@@ -124,6 +150,20 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// 删除镜像标签
+        /// </summary>
+        public DeleteImageTagResponse DeleteImageTag(DeleteImageTagRequest deleteImageTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id" , deleteImageTagRequest.ImageId.ToString());
+            urlParam.Add("key" , deleteImageTagRequest.Key.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/{key}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageTagRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteImageTagResponse>(response);
+        }
+        
+        /// <summary>
         /// 导出镜像
         /// </summary>
         public ExportImageResponse ExportImage(ExportImageRequest exportImageRequest)
@@ -149,6 +189,31 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// 按标签查询镜像
+        /// </summary>
+        public ListImageByTagsResponse ListImageByTags(ListImageByTagsRequest listImageByTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/resource_instances/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listImageByTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListImageByTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询镜像标签
+        /// </summary>
+        public ListImageTagsResponse ListImageTags(ListImageTagsRequest listImageTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id" , listImageTagsRequest.ImageId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListImageTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询镜像列表
         /// </summary>
         public ListImagesResponse ListImages(ListImagesRequest listImagesRequest)
@@ -158,6 +223,18 @@ namespace HuaweiCloud.SDK.Ims.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListImagesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询租户所有镜像标签
+        /// </summary>
+        public ListImagesTagsResponse ListImagesTags(ListImagesTagsRequest listImagesTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListImagesTagsResponse>(response);
         }
         
         /// <summary>

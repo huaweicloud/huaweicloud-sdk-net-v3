@@ -36,8 +36,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// <summary>
         /// 工时日期
         /// </summary>
-        [JsonProperty("work_date", NullValueHandling = NullValueHandling.Ignore)]
-        public string WorkDate { get; set; }
+        [JsonProperty("work_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkTime { get; set; }
 
         /// <summary>
         /// 工时花费
@@ -58,10 +58,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string WorkHoursTypeName { get; set; }
 
         /// <summary>
-        /// 工作项编码
+        /// 工作项id
         /// </summary>
         [JsonProperty("issue_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string IssueId { get; set; }
+        public int? IssueId { get; set; }
 
         /// <summary>
         /// 工作项类型
@@ -98,7 +98,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
-            sb.Append("  workDate: ").Append(WorkDate).Append("\n");
+            sb.Append("  workTime: ").Append(WorkTime).Append("\n");
             sb.Append("  workHoursNum: ").Append(WorkHoursNum).Append("\n");
             sb.Append("  summary: ").Append(Summary).Append("\n");
             sb.Append("  workHoursTypeName: ").Append(WorkHoursTypeName).Append("\n");
@@ -144,9 +144,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.UserName.Equals(input.UserName))
                 ) && 
                 (
-                    this.WorkDate == input.WorkDate ||
-                    (this.WorkDate != null &&
-                    this.WorkDate.Equals(input.WorkDate))
+                    this.WorkTime == input.WorkTime ||
+                    (this.WorkTime != null &&
+                    this.WorkTime.Equals(input.WorkTime))
                 ) && 
                 (
                     this.WorkHoursNum == input.WorkHoursNum ||
@@ -204,8 +204,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.WorkDate != null)
-                    hashCode = hashCode * 59 + this.WorkDate.GetHashCode();
+                if (this.WorkTime != null)
+                    hashCode = hashCode * 59 + this.WorkTime.GetHashCode();
                 if (this.WorkHoursNum != null)
                     hashCode = hashCode * 59 + this.WorkHoursNum.GetHashCode();
                 if (this.Summary != null)

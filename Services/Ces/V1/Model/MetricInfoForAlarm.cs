@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public List<MetricsDimension> Dimensions { get; set; }
 
         /// <summary>
-        /// 创建告警规则时选择的资源分组ID，如：rg1603786526428bWbVmk4rP
+        /// 创建告警规则时选择的资源分组ID，如：rg1603786526428bWbVmk4rP；如果根据资源分组创建告警规则，则resource_group_id不能为空，且alarm_type值为RESOURCE_GROUP
         /// </summary>
         [JsonProperty("resource_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceGroupId { get; set; }

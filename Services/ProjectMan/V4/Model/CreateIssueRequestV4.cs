@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? DeveloperId { get; set; }
 
         /// <summary>
-        /// 领域id 14, &#39;性能&#39;, 15, &#39;功能&#39;, 16, &#39;可靠性&#39; 17, &#39;网络安全&#39; 18, &#39;可维护性&#39; 19, &#39;其他DFX&#39; 20, &#39;可用性&#39;
+        /// id 领域, 14 &#39;性能&#39;, 15 &#39;功能&#39;, 16 &#39;可靠性&#39; 17 &#39;网络安全&#39; 18 &#39;可维护性&#39; 19 &#39;其他DFX&#39; 20 &#39;可用性&#39;
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? DomainId { get; set; }
@@ -94,25 +94,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? ParentIssueId { get; set; }
 
         /// <summary>
-        /// 优先级   1 低   2 中   3 高
+        /// 优先级,   1 低,   2 中,   3 高,
         /// </summary>
         [JsonProperty("priority_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? PriorityId { get; set; }
 
         /// <summary>
-        /// 重要程度   10 关键   11 重要   12 一般   13 提示
+        /// 重要程度,   10 关键,   11 重要,   12 一般,   13 提示,
         /// </summary>
         [JsonProperty("severity_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? SeverityId { get; set; }
 
         /// <summary>
-        /// 状态   id 开始   1 进行中 2 已解决 3 测试中 4 已关闭 5 已解决 6
+        /// 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
         /// </summary>
         [JsonProperty("status_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? StatusId { get; set; }
 
         /// <summary>
-        /// 工作项类型, 2任务/task,3缺陷/bug,5epic,6feature,7story 父工作项类型     5 只能为 6 的父工作项类型     6 只能为 7 的父工作项类型     7 只能为 2,3的父
+        /// 工作项类型, 2任务/task,3缺陷/bug,5epic,6feature,7story;     5 只能为 6 的父工作项类型;     6 只能为 7 的父工作项类型;     7 只能为 2,3的父;
         /// </summary>
         [JsonProperty("tracker_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? TrackerId { get; set; }

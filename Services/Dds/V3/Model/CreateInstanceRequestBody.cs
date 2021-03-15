@@ -28,13 +28,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public Datastore Datastore { get; set; }
 
         /// <summary>
-        /// 区域ID，恢复到新实例时不可选。
+        /// - 区域ID - 取值：非空。
         /// </summary>
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
 
         /// <summary>
-        /// 可用区ID。
+        /// 可用区ID。非专属云用户可以选择多个AZ，创建跨AZ的集群。专属云用户暂不支持创建跨AZ的集群。取值：非空。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string SslOption { get; set; }
 
         /// <summary>
-        /// 创建新实例所在专属存储池ID，仅专属云创建实例时有效。
+        /// Dec用户专属存储ID，默认为空。仅Dec用户支持该参数。
         /// </summary>
         [JsonProperty("dss_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DssPoolId { get; set; }
@@ -110,12 +110,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         [JsonProperty("server_group_policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ServerGroupPolicies { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("restore_point", NullValueHandling = NullValueHandling.Ignore)]
-        public RestorePoint RestorePoint { get; set; }
 
 
         /// <summary>
@@ -141,7 +135,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  serverGroupPolicies: ").Append(ServerGroupPolicies).Append("\n");
-            sb.Append("  restorePoint: ").Append(RestorePoint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -244,11 +237,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.ServerGroupPolicies != null &&
                     input.ServerGroupPolicies != null &&
                     this.ServerGroupPolicies.SequenceEqual(input.ServerGroupPolicies)
-                ) && 
-                (
-                    this.RestorePoint == input.RestorePoint ||
-                    (this.RestorePoint != null &&
-                    this.RestorePoint.Equals(input.RestorePoint))
                 );
         }
 
@@ -292,8 +280,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
                 if (this.ServerGroupPolicies != null)
                     hashCode = hashCode * 59 + this.ServerGroupPolicies.GetHashCode();
-                if (this.RestorePoint != null)
-                    hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
                 return hashCode;
             }
         }

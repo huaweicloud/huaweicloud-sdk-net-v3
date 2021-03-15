@@ -90,5 +90,17 @@ namespace HuaweiCloud.SDK.Demo.V1
             return JsonUtils.DeSerialize<UploadDownloadDemoResponse>(response);
         }
         
+        /// <summary>
+        /// demo
+        /// </summary>
+        public UploadMultipartResponse UploadMultipart(UploadMultipartRequest uploadMultipartRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/upload",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadMultipartRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<UploadMultipartResponse>(response);
+        }
+        
     }
 }

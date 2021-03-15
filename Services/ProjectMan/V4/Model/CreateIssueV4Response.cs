@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Domain Domain { get; set; }
+        public CreateIssueResponseV4Domain Domain { get; set; }
 
         /// <summary>
         /// 工作项进度值
@@ -88,12 +88,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// 标题
-        /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("project", NullValueHandling = NullValueHandling.Ignore)]
@@ -103,13 +97,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("iteration", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Iteration Iteration { get; set; }
+        public IssueItemSfV4Iteration Iteration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("module", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Module Module { get; set; }
+        public IssueItemSfV4Module Module { get; set; }
 
         /// <summary>
         /// 
@@ -121,25 +115,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Priority Priority { get; set; }
+        public IssueItemSfV4Priority Priority { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("severity", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Severity Severity { get; set; }
+        public IssueItemSfV4Severity Severity { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Status Status { get; set; }
+        public IssueItemSfV4Status Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("tracker", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Tracker Tracker { get; set; }
+        public IssueItemSfV4Tracker Tracker { get; set; }
 
 
         /// <summary>
@@ -161,7 +155,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  expectedWorkHours: ").Append(ExpectedWorkHours).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  project: ").Append(Project).Append("\n");
             sb.Append("  iteration: ").Append(Iteration).Append("\n");
             sb.Append("  module: ").Append(Module).Append("\n");
@@ -254,11 +247,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
                     this.Project == input.Project ||
                     (this.Project != null &&
                     this.Project.Equals(input.Project))
@@ -332,8 +320,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.ExpectedWorkHours.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Project != null)
                     hashCode = hashCode * 59 + this.Project.GetHashCode();
                 if (this.Iteration != null)

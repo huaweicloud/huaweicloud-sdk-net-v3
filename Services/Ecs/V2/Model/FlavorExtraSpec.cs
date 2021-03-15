@@ -22,10 +22,40 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Ecsperformancetype { get; set; }
 
         /// <summary>
+        /// 主机的物理cpu数量。
+        /// </summary>
+        [JsonProperty("hw:numa_nodes", NullValueHandling = NullValueHandling.Ignore)]
+        public string HwnumaNodes { get; set; }
+
+        /// <summary>
         /// 资源类型。resource_type是为了区分云服务器的物理主机类型。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
+
+        /// <summary>
+        /// 弹性运服务器高精度时钟是否开启，开启为true，否则为false。（该字段是否返回根据云服务器规格而定）
+        /// </summary>
+        [JsonProperty("hpet_support", NullValueHandling = NullValueHandling.Ignore)]
+        public string HpetSupport { get; set; }
+
+        /// <summary>
+        /// 网卡类型，值固定为“enhanced”，表示使用增强型网络的资源创建云服务器。
+        /// </summary>
+        [JsonProperty("instance_vnic:type", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceVnictype { get; set; }
+
+        /// <summary>
+        /// 最大带宽，单位Mbps，最大值为10000。
+        /// </summary>
+        [JsonProperty("instance_vnic:instance_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? InstanceVnicinstanceBandwidth { get; set; }
+
+        /// <summary>
+        /// 最大网卡个数，最大为4。
+        /// </summary>
+        [JsonProperty("instance_vnic:max_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? InstanceVnicmaxCount { get; set; }
 
         /// <summary>
         /// 值格式为{type}:{count}:{size}:{safeFormat}，其中：  - type指磁盘类型，当前只支持hdd。 - count指本地磁盘数量，目前支持d1类型：3/6/12/24，d2类型：2/4/8/12/16/24，d3类型：2/4/8/12/16/24/28。 - size指单个磁盘容量，单位GB，目前只支持1675（实际磁盘大小为1800，格式化后可用大小为1675）。 - safeFormat指云服务器本地磁盘是否安全格式化，目前仅支持d1类型：FALSE，d2/d3类型：True。  &gt; 说明：  - 磁盘增强型特有字段。
@@ -38,6 +68,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         [JsonProperty("quota:nvme_ssd", NullValueHandling = NullValueHandling.Ignore)]
         public string QuotanvmeSsd { get; set; }
+
+        /// <summary>
+        /// 是否支持持久化，值为true。  代表云服务器访问存储的方式为持久化授权。   &gt; 说明：  - 密集存储D1型特有字段。
+        /// </summary>
+        [JsonProperty("extra_spec:io:persistent_grant", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ExtraSpeciopersistentGrant { get; set; }
 
         /// <summary>
         /// 弹性云服务器类型的代数。  - s1：通用型I代 - s2：通用型II代 - s3：通用型 - m1：内存优化型I代 - m2：内存优化型II代 - m3：内存优化型 - h1：高性能计算型I代 - h2：高性能计算型II代 - h3：高性能计算型 - hi3：超高性能计算型 - d1：密集存储型I代 - d2：密集存储型II代 - d3：磁盘增强型 - g1：GPU加速型I代 - g2：GPU加速型II代 - f1：FPGA高性能型 - f2：FPGA通用型 - c3：通用计算增强型 - e3：大内存型 - i3：超高I/O型
@@ -105,6 +141,72 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("cond:operation:charge", NullValueHandling = NullValueHandling.Ignore)]
         public string Condoperationcharge { get; set; }
 
+        /// <summary>
+        /// 关机是否收费  - 关机是否计费，默认免费： - charge - free
+        /// </summary>
+        [JsonProperty("cond:operation:charge:stop", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condoperationchargestop { get; set; }
+
+        /// <summary>
+        /// 计费类型  - 计费场景，不配置时都支持 - period，包周期 - demand，按需
+        /// </summary>
+        [JsonProperty("cond:spot:operation:az", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condspotoperationaz { get; set; }
+
+        /// <summary>
+        /// 允许的角色 匹配的用户标签（roles的op_gatexxx标签）。不设置时所有用户可见
+        /// </summary>
+        [JsonProperty("cond:operation:roles", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condoperationroles { get; set; }
+
+        /// <summary>
+        /// Flavor在竞价销售模式下的状态  - 不配置时等同abandon - normal，正常商用 - abandon，下线 - sellout，售罄 - obt，公测，未申请时提示申请（暂不支持） - private，私有，只给特定用户显示（暂不支持） - test，试用/免费（暂不支持） - promotion，推荐
+        /// </summary>
+        [JsonProperty("cond:spot:operation:status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condspotoperationstatus { get; set; }
+
+        /// <summary>
+        /// 网络约束 支持网络特性，不配置时以UI配置为准。
+        /// </summary>
+        [JsonProperty("cond:network", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condnetwork { get; set; }
+
+        /// <summary>
+        /// 存储约束  - 支持磁盘特性，不配置时以UI配置为准。 - scsi，支持scsi - localdisk，支持本地盘 - ib，支持ib
+        /// </summary>
+        [JsonProperty("cond:storage", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condstorage { get; set; }
+
+        /// <summary>
+        /// 计算约束  - true，支持在线扩容。 - false或不存在该字段，不支持在线扩容。
+        /// </summary>
+        [JsonProperty("cond:compute:live_resizable", NullValueHandling = NullValueHandling.Ignore)]
+        public string CondcomputeliveResizable { get; set; }
+
+        /// <summary>
+        /// 计算约束  - autorecovery，自动恢复特性。 - 不存在该字段，不支持自动恢复。
+        /// </summary>
+        [JsonProperty("cond:compute", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condcompute { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("info:gpu:name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Infogpuname { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("info:cpu:name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Infocpuname { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("quota:gpu", NullValueHandling = NullValueHandling.Ignore)]
+        public string Quotagpu { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -114,9 +216,15 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class FlavorExtraSpec {\n");
             sb.Append("  ecsperformancetype: ").Append(Ecsperformancetype).Append("\n");
+            sb.Append("  hwnumaNodes: ").Append(HwnumaNodes).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
+            sb.Append("  hpetSupport: ").Append(HpetSupport).Append("\n");
+            sb.Append("  instanceVnictype: ").Append(InstanceVnictype).Append("\n");
+            sb.Append("  instanceVnicinstanceBandwidth: ").Append(InstanceVnicinstanceBandwidth).Append("\n");
+            sb.Append("  instanceVnicmaxCount: ").Append(InstanceVnicmaxCount).Append("\n");
             sb.Append("  quotalocalDisk: ").Append(QuotalocalDisk).Append("\n");
             sb.Append("  quotanvmeSsd: ").Append(QuotanvmeSsd).Append("\n");
+            sb.Append("  extraSpeciopersistentGrant: ").Append(ExtraSpeciopersistentGrant).Append("\n");
             sb.Append("  ecsgeneration: ").Append(Ecsgeneration).Append("\n");
             sb.Append("  ecsvirtualizationEnvTypes: ").Append(EcsvirtualizationEnvTypes).Append("\n");
             sb.Append("  pciPassthroughenableGpu: ").Append(PciPassthroughenableGpu).Append("\n");
@@ -128,6 +236,17 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  quotaminRate: ").Append(QuotaminRate).Append("\n");
             sb.Append("  quotamaxPps: ").Append(QuotamaxPps).Append("\n");
             sb.Append("  condoperationcharge: ").Append(Condoperationcharge).Append("\n");
+            sb.Append("  condoperationchargestop: ").Append(Condoperationchargestop).Append("\n");
+            sb.Append("  condspotoperationaz: ").Append(Condspotoperationaz).Append("\n");
+            sb.Append("  condoperationroles: ").Append(Condoperationroles).Append("\n");
+            sb.Append("  condspotoperationstatus: ").Append(Condspotoperationstatus).Append("\n");
+            sb.Append("  condnetwork: ").Append(Condnetwork).Append("\n");
+            sb.Append("  condstorage: ").Append(Condstorage).Append("\n");
+            sb.Append("  condcomputeliveResizable: ").Append(CondcomputeliveResizable).Append("\n");
+            sb.Append("  condcompute: ").Append(Condcompute).Append("\n");
+            sb.Append("  infogpuname: ").Append(Infogpuname).Append("\n");
+            sb.Append("  infocpuname: ").Append(Infocpuname).Append("\n");
+            sb.Append("  quotagpu: ").Append(Quotagpu).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,9 +274,34 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Ecsperformancetype.Equals(input.Ecsperformancetype))
                 ) && 
                 (
+                    this.HwnumaNodes == input.HwnumaNodes ||
+                    (this.HwnumaNodes != null &&
+                    this.HwnumaNodes.Equals(input.HwnumaNodes))
+                ) && 
+                (
                     this.ResourceType == input.ResourceType ||
                     (this.ResourceType != null &&
                     this.ResourceType.Equals(input.ResourceType))
+                ) && 
+                (
+                    this.HpetSupport == input.HpetSupport ||
+                    (this.HpetSupport != null &&
+                    this.HpetSupport.Equals(input.HpetSupport))
+                ) && 
+                (
+                    this.InstanceVnictype == input.InstanceVnictype ||
+                    (this.InstanceVnictype != null &&
+                    this.InstanceVnictype.Equals(input.InstanceVnictype))
+                ) && 
+                (
+                    this.InstanceVnicinstanceBandwidth == input.InstanceVnicinstanceBandwidth ||
+                    (this.InstanceVnicinstanceBandwidth != null &&
+                    this.InstanceVnicinstanceBandwidth.Equals(input.InstanceVnicinstanceBandwidth))
+                ) && 
+                (
+                    this.InstanceVnicmaxCount == input.InstanceVnicmaxCount ||
+                    (this.InstanceVnicmaxCount != null &&
+                    this.InstanceVnicmaxCount.Equals(input.InstanceVnicmaxCount))
                 ) && 
                 (
                     this.QuotalocalDisk == input.QuotalocalDisk ||
@@ -168,6 +312,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.QuotanvmeSsd == input.QuotanvmeSsd ||
                     (this.QuotanvmeSsd != null &&
                     this.QuotanvmeSsd.Equals(input.QuotanvmeSsd))
+                ) && 
+                (
+                    this.ExtraSpeciopersistentGrant == input.ExtraSpeciopersistentGrant ||
+                    (this.ExtraSpeciopersistentGrant != null &&
+                    this.ExtraSpeciopersistentGrant.Equals(input.ExtraSpeciopersistentGrant))
                 ) && 
                 (
                     this.Ecsgeneration == input.Ecsgeneration ||
@@ -223,6 +372,61 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Condoperationcharge == input.Condoperationcharge ||
                     (this.Condoperationcharge != null &&
                     this.Condoperationcharge.Equals(input.Condoperationcharge))
+                ) && 
+                (
+                    this.Condoperationchargestop == input.Condoperationchargestop ||
+                    (this.Condoperationchargestop != null &&
+                    this.Condoperationchargestop.Equals(input.Condoperationchargestop))
+                ) && 
+                (
+                    this.Condspotoperationaz == input.Condspotoperationaz ||
+                    (this.Condspotoperationaz != null &&
+                    this.Condspotoperationaz.Equals(input.Condspotoperationaz))
+                ) && 
+                (
+                    this.Condoperationroles == input.Condoperationroles ||
+                    (this.Condoperationroles != null &&
+                    this.Condoperationroles.Equals(input.Condoperationroles))
+                ) && 
+                (
+                    this.Condspotoperationstatus == input.Condspotoperationstatus ||
+                    (this.Condspotoperationstatus != null &&
+                    this.Condspotoperationstatus.Equals(input.Condspotoperationstatus))
+                ) && 
+                (
+                    this.Condnetwork == input.Condnetwork ||
+                    (this.Condnetwork != null &&
+                    this.Condnetwork.Equals(input.Condnetwork))
+                ) && 
+                (
+                    this.Condstorage == input.Condstorage ||
+                    (this.Condstorage != null &&
+                    this.Condstorage.Equals(input.Condstorage))
+                ) && 
+                (
+                    this.CondcomputeliveResizable == input.CondcomputeliveResizable ||
+                    (this.CondcomputeliveResizable != null &&
+                    this.CondcomputeliveResizable.Equals(input.CondcomputeliveResizable))
+                ) && 
+                (
+                    this.Condcompute == input.Condcompute ||
+                    (this.Condcompute != null &&
+                    this.Condcompute.Equals(input.Condcompute))
+                ) && 
+                (
+                    this.Infogpuname == input.Infogpuname ||
+                    (this.Infogpuname != null &&
+                    this.Infogpuname.Equals(input.Infogpuname))
+                ) && 
+                (
+                    this.Infocpuname == input.Infocpuname ||
+                    (this.Infocpuname != null &&
+                    this.Infocpuname.Equals(input.Infocpuname))
+                ) && 
+                (
+                    this.Quotagpu == input.Quotagpu ||
+                    (this.Quotagpu != null &&
+                    this.Quotagpu.Equals(input.Quotagpu))
                 );
         }
 
@@ -236,12 +440,24 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 int hashCode = 41;
                 if (this.Ecsperformancetype != null)
                     hashCode = hashCode * 59 + this.Ecsperformancetype.GetHashCode();
+                if (this.HwnumaNodes != null)
+                    hashCode = hashCode * 59 + this.HwnumaNodes.GetHashCode();
                 if (this.ResourceType != null)
                     hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.HpetSupport != null)
+                    hashCode = hashCode * 59 + this.HpetSupport.GetHashCode();
+                if (this.InstanceVnictype != null)
+                    hashCode = hashCode * 59 + this.InstanceVnictype.GetHashCode();
+                if (this.InstanceVnicinstanceBandwidth != null)
+                    hashCode = hashCode * 59 + this.InstanceVnicinstanceBandwidth.GetHashCode();
+                if (this.InstanceVnicmaxCount != null)
+                    hashCode = hashCode * 59 + this.InstanceVnicmaxCount.GetHashCode();
                 if (this.QuotalocalDisk != null)
                     hashCode = hashCode * 59 + this.QuotalocalDisk.GetHashCode();
                 if (this.QuotanvmeSsd != null)
                     hashCode = hashCode * 59 + this.QuotanvmeSsd.GetHashCode();
+                if (this.ExtraSpeciopersistentGrant != null)
+                    hashCode = hashCode * 59 + this.ExtraSpeciopersistentGrant.GetHashCode();
                 if (this.Ecsgeneration != null)
                     hashCode = hashCode * 59 + this.Ecsgeneration.GetHashCode();
                 if (this.EcsvirtualizationEnvTypes != null)
@@ -264,6 +480,28 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.QuotamaxPps.GetHashCode();
                 if (this.Condoperationcharge != null)
                     hashCode = hashCode * 59 + this.Condoperationcharge.GetHashCode();
+                if (this.Condoperationchargestop != null)
+                    hashCode = hashCode * 59 + this.Condoperationchargestop.GetHashCode();
+                if (this.Condspotoperationaz != null)
+                    hashCode = hashCode * 59 + this.Condspotoperationaz.GetHashCode();
+                if (this.Condoperationroles != null)
+                    hashCode = hashCode * 59 + this.Condoperationroles.GetHashCode();
+                if (this.Condspotoperationstatus != null)
+                    hashCode = hashCode * 59 + this.Condspotoperationstatus.GetHashCode();
+                if (this.Condnetwork != null)
+                    hashCode = hashCode * 59 + this.Condnetwork.GetHashCode();
+                if (this.Condstorage != null)
+                    hashCode = hashCode * 59 + this.Condstorage.GetHashCode();
+                if (this.CondcomputeliveResizable != null)
+                    hashCode = hashCode * 59 + this.CondcomputeliveResizable.GetHashCode();
+                if (this.Condcompute != null)
+                    hashCode = hashCode * 59 + this.Condcompute.GetHashCode();
+                if (this.Infogpuname != null)
+                    hashCode = hashCode * 59 + this.Infogpuname.GetHashCode();
+                if (this.Infocpuname != null)
+                    hashCode = hashCode * 59 + this.Infocpuname.GetHashCode();
+                if (this.Quotagpu != null)
+                    hashCode = hashCode * 59 + this.Quotagpu.GetHashCode();
                 return hashCode;
             }
         }

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 实际工时
         /// </summary>
         [JsonProperty("actual_work_hours", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ActualWorkHours { get; set; }
+        public double? ActualWorkHours { get; set; }
 
         /// <summary>
         /// 处理人id,对应用户信息的数字id
@@ -94,19 +94,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? ParentIssueId { get; set; }
 
         /// <summary>
-        /// 优先级   1 低   2 中   3 高
+        /// 优先级,   1 低,   2 中,   3 高,
         /// </summary>
         [JsonProperty("priority_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? PriorityId { get; set; }
 
         /// <summary>
-        /// 重要程度   10 关键   11 重要   12 一般   13 提示
+        /// 重要程度,   10 关键,   11 重要,   12 一般,   13 提示,
         /// </summary>
         [JsonProperty("severity_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? SeverityId { get; set; }
 
         /// <summary>
-        /// 状态   id 开始   1 进行中 2 已解决 3 测试中 4 已关闭 5 已解决 6
+        /// 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
         /// </summary>
         [JsonProperty("status_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? StatusId { get; set; }

@@ -46,16 +46,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 偏移量
+        /// 偏移量,offset是limit的整数倍，limit&#x3D;10,offset&#x3D;0,10,20...
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string Offset { get; set; }
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 每页显示数量，每页最多显示100条
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
+        public int? Limit { get; set; }
 
 
         /// <summary>

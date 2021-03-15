@@ -218,6 +218,18 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 后端服务器全局列表
+        /// </summary>
+        public ListAllMembersResponse ListAllMembers(ListAllMembersRequest listAllMembersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllMembersRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAllMembersResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询可用区列表
         /// </summary>
         public ListAvailabilityZonesResponse ListAvailabilityZones(ListAvailabilityZonesRequest listAvailabilityZonesRequest)

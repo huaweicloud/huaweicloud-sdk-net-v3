@@ -14,7 +14,7 @@ namespace HuaweiCloud.SDK.Dds.V3
 
         
         /// <summary>
-        /// 扩容指定集群实例的节点数量
+        /// 扩容集群实例的节点数量
         /// </summary>
         public AddShardingNodeResponse AddShardingNode(AddShardingNodeRequest addShardingNodeRequest)
         {
@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 绑定节点的公网IP
+        /// 绑定弹性公网IP
         /// </summary>
         public AttachEipResponse AttachEip(AttachEipRequest attachEipRequest)
         {
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 修改实例内网IP
+        /// 修改实例内网地址
         /// </summary>
         public AttachInternalIpResponse AttachInternalIp(AttachInternalIpRequest attachInternalIpRequest)
         {
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 批量添加或删除指定实例的标签
+        /// 批量添加或删除资源标签
         /// </summary>
         public BatchTagActionResponse BatchTagAction(BatchTagActionRequest batchTagActionRequest)
         {
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 节点解绑公网IP
+        /// 解绑弹性公网IP
         /// </summary>
         public CancelEipResponse CancelEip(CancelEipRequest cancelEipRequest)
         {
@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 检查数据库用户密码
+        /// 检查数据库密码
         /// </summary>
         public CheckPasswordResponse CheckPassword(CheckPasswordRequest checkPasswordRequest)
         {
@@ -118,7 +118,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
+        /// 创建实例
         /// </summary>
         public CreateInstanceResponse CreateInstance(CreateInstanceRequest createInstanceRequest)
         {
@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 创建数据库实例的手动备份
+        /// 创建手动备份
         /// </summary>
         public CreateManualBackupResponse CreateManualBackup(CreateManualBackupRequest createManualBackupRequest)
         {
@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 删除数据库实例
+        /// 删除实例
         /// </summary>
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 删除数据库实例的手动备份
+        /// 删除手动备份
         /// </summary>
         public DeleteManualBackupResponse DeleteManualBackup(DeleteManualBackupRequest deleteManualBackupRequest)
         {
@@ -178,6 +178,19 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteManualBackupRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteManualBackupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 终结实例节点会话
+        /// </summary>
+        public DeleteSessionResponse DeleteSession(DeleteSessionRequest deleteSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("node_id" , deleteSessionRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nodes/{node_id}/session",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSessionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<DeleteSessionResponse>(response);
         }
         
         /// <summary>
@@ -207,7 +220,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 生成审计日志下载链接
+        /// 获取审计日志下载链接
         /// </summary>
         public ListAuditlogLinksResponse ListAuditlogLinks(ListAuditlogLinksRequest listAuditlogLinksRequest)
         {
@@ -233,7 +246,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 根据指定条件查询备份列表
+        /// 查询备份列表
         /// </summary>
         public ListBackupsResponse ListBackups(ListBackupsRequest listBackupsRequest)
         {
@@ -297,7 +310,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 查询指定条件下的所有实例规格信息
+        /// 查询所有实例规格信息
         /// </summary>
         public ListFlavorsResponse ListFlavors(ListFlavorsRequest listFlavorsRequest)
         {
@@ -309,7 +322,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 查询指定实例的标签信息
+        /// 查询资源标签
         /// </summary>
         public ListInstanceTagsResponse ListInstanceTags(ListInstanceTagsRequest listInstanceTagsRequest)
         {
@@ -322,7 +335,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 根据指定条件查询实例列表
+        /// 查询实例列表
         /// </summary>
         public ListInstancesResponse ListInstances(ListInstancesRequest listInstancesRequest)
         {
@@ -334,7 +347,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 根据标签查询指定的数据库实例
+        /// 查询资源实例
         /// </summary>
         public ListInstancesByTagsResponse ListInstancesByTags(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
@@ -346,7 +359,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 查询指定project ID下实例的所有标签集合
+        /// 查询项目标签
         /// </summary>
         public ListProjectTagsResponse ListProjectTags(ListProjectTagsRequest listProjectTagsRequest)
         {
@@ -397,6 +410,19 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询实例节点会话
+        /// </summary>
+        public ListSessionsResponse ListSessions(ListSessionsRequest listSessionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("node_id" , listSessionsRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nodes/{node_id}/sessions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListSessionsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询数据库慢日志
         /// </summary>
         public ListSlowLogsResponse ListSlowLogs(ListSlowLogsRequest listSlowLogsRequest)
@@ -410,7 +436,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 查询当前区域下的数据库磁盘类型
+        /// 查询数据库磁盘类型
         /// </summary>
         public ListStorageTypeResponse ListStorageType(ListStorageTypeRequest listStorageTypeRequest)
         {
@@ -435,7 +461,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 变更实例的规格
+        /// 变更实例规格
         /// </summary>
         public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
         {
@@ -448,7 +474,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 扩容实例相关的存储容量大小
+        /// 扩容实例存储容量
         /// </summary>
         public ResizeInstanceVolumeResponse ResizeInstanceVolume(ResizeInstanceVolumeRequest resizeInstanceVolumeRequest)
         {
@@ -461,7 +487,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 重启实例的数据库服务
+        /// 重启实例
         /// </summary>
         public RestartInstanceResponse RestartInstance(RestartInstanceRequest restartInstanceRequest)
         {
@@ -496,6 +522,18 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreInstanceFromCollectionRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<RestoreInstanceFromCollectionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 恢复到新实例
+        /// </summary>
+        public RestoreNewInstanceResponse RestoreNewInstance(RestoreNewInstanceRequest restoreNewInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreNewInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RestoreNewInstanceResponse>(response);
         }
         
         /// <summary>
@@ -563,7 +601,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 切换mongodb实例的SSL开关
+        /// 切换SSL开关
         /// </summary>
         public SwitchSslResponse SwitchSsl(SwitchSslRequest switchSslRequest)
         {
@@ -576,7 +614,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 副本集主备倒换
+        /// 切换副本集实例的主备节点
         /// </summary>
         public SwitchoverReplicaSetResponse SwitchoverReplicaSet(SwitchoverReplicaSetRequest switchoverReplicaSetRequest)
         {
@@ -602,7 +640,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 修改实例端口
+        /// 修改数据库端口
         /// </summary>
         public UpdateInstancePortResponse UpdateInstancePort(UpdateInstancePortRequest updateInstancePortRequest)
         {
@@ -615,7 +653,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 修改实例的安全组
+        /// 变更实例安全组
         /// </summary>
         public UpdateSecurityGroupResponse UpdateSecurityGroup(UpdateSecurityGroupRequest updateSecurityGroupRequest)
         {

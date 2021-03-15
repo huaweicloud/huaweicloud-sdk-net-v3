@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 用户在项目中的角色ID 3, 4, 5, 6, 7 , 8
+        /// 用户在项目中的角色ID -1, 3, 4, 5, 6, 7 , 8
         /// </summary>
         [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? RoleId { get; set; }

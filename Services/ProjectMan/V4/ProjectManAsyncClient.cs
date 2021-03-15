@@ -54,19 +54,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
-        /// 批量删除项目的迭代
-        /// </summary>
-        public async Task<BatchDeleteIterationsV4Response> BatchDeleteIterationsV4Async(BatchDeleteIterationsV4Request batchDeleteIterationsV4Request)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , batchDeleteIterationsV4Request.ProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIterationsV4Request);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            return JsonUtils.DeSerializeNull<BatchDeleteIterationsV4Response>(response);
-        }
-        
-        /// <summary>
         /// 批量删除项目成员
         /// </summary>
         public async Task<BatchDeleteMembersV4Response> BatchDeleteMembersV4Async(BatchDeleteMembersV4Request batchDeleteMembersV4Request)
@@ -92,19 +79,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
-        /// 创建Scrum项目迭代
-        /// </summary>
-        public async Task<CreateIterationV4Response> CreateIterationV4Async(CreateIterationV4Request createIterationV4Request)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , createIterationV4Request.ProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iteration",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createIterationV4Request);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateIterationV4Response>(response);
-        }
-        
-        /// <summary>
         /// 创建项目
         /// </summary>
         public async Task<CreateProjectV4Response> CreateProjectV4Async(CreateProjectV4Request createProjectV4Request)
@@ -114,20 +88,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProjectV4Request);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateProjectV4Response>(response);
-        }
-        
-        /// <summary>
-        /// 删除项目迭代
-        /// </summary>
-        public async Task<DeleteIterationV4Response> DeleteIterationV4Async(DeleteIterationV4Request deleteIterationV4Request)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , deleteIterationV4Request.ProjectId.ToString());
-            urlParam.Add("iteration_id" , deleteIterationV4Request.IterationId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations/{iteration_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIterationV4Request);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            return JsonUtils.DeSerializeNull<DeleteIterationV4Response>(response);
         }
         
         /// <summary>
@@ -182,19 +142,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
-        /// 获取指定项目的迭代列表
-        /// </summary>
-        public async Task<ListProjectIterationsV4Response> ListProjectIterationsV4Async(ListProjectIterationsV4Request listProjectIterationsV4Request)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , listProjectIterationsV4Request.ProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectIterationsV4Request);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ListProjectIterationsV4Response>(response);
-        }
-        
-        /// <summary>
         /// 获取指定项目的成员用户列表
         /// </summary>
         public async Task<ListProjectMembersV4Response> ListProjectMembersV4Async(ListProjectMembersV4Request listProjectMembersV4Request)
@@ -233,6 +180,45 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询缺陷密度
+        /// </summary>
+        public async Task<ShowBugDensityV2Response> ShowBugDensityV2Async(ShowBugDensityV2Request showBugDensityV2Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , showBugDensityV2Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/bug-density/query",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBugDensityV2Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ShowBugDensityV2Response>(response);
+        }
+        
+        /// <summary>
+        /// 查询人均bug
+        /// </summary>
+        public async Task<ShowBugsPerDeveloperResponse> ShowBugsPerDeveloperAsync(ShowBugsPerDeveloperRequest showBugsPerDeveloperRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , showBugsPerDeveloperRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/bugs-per-developer/query",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBugsPerDeveloperRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ShowBugsPerDeveloperResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询需求按时完成率
+        /// </summary>
+        public async Task<ShowCompletionRateResponse> ShowCompletionRateAsync(ShowCompletionRateRequest showCompletionRateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , showCompletionRateRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/completion-rate/query",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCompletionRateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ShowCompletionRateResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取当前用户信息
         /// </summary>
         public async Task<ShowCurUserInfoResponse> ShowCurUserInfoAsync(ShowCurUserInfoRequest showCurUserInfoRequest)
@@ -258,16 +244,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
-        /// 查看迭代详情
+        /// 获取项目详情
         /// </summary>
-        public async Task<ShowIterationV4Response> ShowIterationV4Async(ShowIterationV4Request showIterationV4Request)
+        public async Task<ShowProjectInfoV4Response> ShowProjectInfoV4Async(ShowProjectInfoV4Request showProjectInfoV4Request)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("iteration_id" , showIterationV4Request.IterationId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/iterations/{iteration_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIterationV4Request);
+            urlParam.Add("project_id" , showProjectInfoV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectInfoV4Request);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowIterationV4Response>(response);
+            return JsonUtils.DeSerialize<ShowProjectInfoV4Response>(response);
         }
         
         /// <summary>
@@ -281,20 +267,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSummaryV4Request);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowProjectSummaryV4Response>(response);
-        }
-        
-        /// <summary>
-        /// 更新Scrum项目迭代
-        /// </summary>
-        public async Task<UpdateIterationV4Response> UpdateIterationV4Async(UpdateIterationV4Request updateIterationV4Request)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , updateIterationV4Request.ProjectId.ToString());
-            urlParam.Add("iteration_id" , updateIterationV4Request.IterationId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations/{iteration_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIterationV4Request);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerializeNull<UpdateIterationV4Response>(response);
         }
         
         /// <summary>
@@ -349,6 +321,32 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 批量删除项目的迭代
+        /// </summary>
+        public async Task<BatchDeleteIterationsV4Response> BatchDeleteIterationsV4Async(BatchDeleteIterationsV4Request batchDeleteIterationsV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , batchDeleteIterationsV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIterationsV4Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<BatchDeleteIterationsV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 创建工作项类型自定义字段
+        /// </summary>
+        public async Task<CreateCustomfieldsResponse> CreateCustomfieldsAsync(CreateCustomfieldsRequest createCustomfieldsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , createCustomfieldsRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/custom-fields",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCustomfieldsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateCustomfieldsResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建工作项
         /// </summary>
         public async Task<CreateIssueV4Response> CreateIssueV4Async(CreateIssueV4Request createIssueV4Request)
@@ -359,6 +357,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createIssueV4Request);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateIssueV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 创建Scrum项目迭代
+        /// </summary>
+        public async Task<CreateIterationV4Response> CreateIterationV4Async(CreateIterationV4Request createIterationV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , createIterationV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iteration",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createIterationV4Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateIterationV4Response>(response);
         }
         
         /// <summary>
@@ -373,6 +384,20 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIssueV4Request);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteIssueV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 删除项目迭代
+        /// </summary>
+        public async Task<DeleteIterationV4Response> DeleteIterationV4Async(DeleteIterationV4Request deleteIterationV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , deleteIterationV4Request.ProjectId.ToString());
+            urlParam.Add("iteration_id" , deleteIterationV4Request.IterationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations/{iteration_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIterationV4Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteIterationV4Response>(response);
         }
         
         /// <summary>
@@ -431,6 +456,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 获取指定项目的迭代列表
+        /// </summary>
+        public async Task<ListProjectIterationsV4Response> ListProjectIterationsV4Async(ListProjectIterationsV4Request listProjectIterationsV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listProjectIterationsV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectIterationsV4Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListProjectIterationsV4Response>(response);
+        }
+        
+        /// <summary>
         /// 按用户查询工时（多项目）
         /// </summary>
         public async Task<ListProjectWorkHoursResponse> ListProjectWorkHoursAsync(ListProjectWorkHoursRequest listProjectWorkHoursRequest)
@@ -440,6 +478,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectWorkHoursRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListProjectWorkHoursResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取工作项完成率
+        /// </summary>
+        public async Task<ShowIssueCompletionRateResponse> ShowIssueCompletionRateAsync(ShowIssueCompletionRateRequest showIssueCompletionRateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , showIssueCompletionRateRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issue-completion-rate",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssueCompletionRateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowIssueCompletionRateResponse>(response);
         }
         
         /// <summary>
@@ -457,6 +508,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查看迭代详情
+        /// </summary>
+        public async Task<ShowIterationV4Response> ShowIterationV4Async(ShowIterationV4Request showIterationV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("iteration_id" , showIterationV4Request.IterationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/iterations/{iteration_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIterationV4Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowIterationV4Response>(response);
+        }
+        
+        /// <summary>
         /// 按用户查询工时（单项目）
         /// </summary>
         public async Task<ShowProjectWorkHoursResponse> ShowProjectWorkHoursAsync(ShowProjectWorkHoursRequest showProjectWorkHoursRequest)
@@ -467,19 +531,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectWorkHoursRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ShowProjectWorkHoursResponse>(response);
-        }
-        
-        /// <summary>
-        /// 获取工作项完成率
-        /// </summary>
-        public async Task<ShowtIssueCompletionRateResponse> ShowtIssueCompletionRateAsync(ShowtIssueCompletionRateRequest showtIssueCompletionRateRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , showtIssueCompletionRateRequest.ProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issue-completion-rate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showtIssueCompletionRateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowtIssueCompletionRateResponse>(response);
         }
         
         /// <summary>
@@ -494,6 +545,20 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIssueV4Request);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateIssueV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 更新Scrum项目迭代
+        /// </summary>
+        public async Task<UpdateIterationV4Response> UpdateIterationV4Async(UpdateIterationV4Request updateIterationV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , updateIterationV4Request.ProjectId.ToString());
+            urlParam.Add("iteration_id" , updateIterationV4Request.IterationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/iterations/{iteration_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIterationV4Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateIterationV4Response>(response);
         }
         
     }

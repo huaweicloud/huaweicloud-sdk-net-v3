@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<int?> DeveloperIds { get; set; }
 
         /// <summary>
-        /// id, 领域 14, &#39;性能&#39;, 15, &#39;功能&#39;, 16, &#39;可靠性&#39; 17, &#39;网络安全&#39; 18, &#39;可维护性&#39; 19, &#39;其他DFX&#39; 20, &#39;可用性&#39;
+        /// id, 领域, 14 &#39;性能&#39;, 15 &#39;功能&#39;, 16 &#39;可靠性&#39;, 17 &#39;网络安全&#39;, 18 &#39;可维护性&#39;, 19 &#39;其他DFX&#39;, 20 &#39;可用性&#39;,
         /// </summary>
         [JsonProperty("domain_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> DomainIds { get; set; }
@@ -58,16 +58,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? Limit { get; set; }
 
         /// <summary>
+        /// 分页索引，偏移量，offset是limit的整数倍数，limit&#x3D;10,offset&#x3D;0,10,20...
+        /// </summary>
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
         /// 模块id
         /// </summary>
         [JsonProperty("module_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> ModuleIds { get; set; }
-
-        /// <summary>
-        /// 分页索引，偏移量
-        /// </summary>
-        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Offset { get; set; }
 
         /// <summary>
         /// 优先级
@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<int?> SeverityIds { get; set; }
 
         /// <summary>
-        /// 状态   id 开始   1 进行中 2 已解决 3 测试中 4 已关闭 5 已解决 6
+        /// 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
         /// </summary>
         [JsonProperty("status_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> StatusIds { get; set; }
@@ -120,8 +120,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  doneRatios: ").Append(DoneRatios).Append("\n");
             sb.Append("  iterationIds: ").Append(IterationIds).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  moduleIds: ").Append(ModuleIds).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  moduleIds: ").Append(ModuleIds).Append("\n");
             sb.Append("  priorityIds: ").Append(PriorityIds).Append("\n");
             sb.Append("  queryType: ").Append(QueryType).Append("\n");
             sb.Append("  severityIds: ").Append(SeverityIds).Append("\n");
@@ -191,15 +191,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Limit.Equals(input.Limit))
                 ) && 
                 (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
+                ) && 
+                (
                     this.ModuleIds == input.ModuleIds ||
                     this.ModuleIds != null &&
                     input.ModuleIds != null &&
                     this.ModuleIds.SequenceEqual(input.ModuleIds)
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
                 ) && 
                 (
                     this.PriorityIds == input.PriorityIds ||
@@ -260,10 +260,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.IterationIds.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.ModuleIds != null)
-                    hashCode = hashCode * 59 + this.ModuleIds.GetHashCode();
                 if (this.Offset != null)
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.ModuleIds != null)
+                    hashCode = hashCode * 59 + this.ModuleIds.GetHashCode();
                 if (this.PriorityIds != null)
                     hashCode = hashCode * 59 + this.PriorityIds.GetHashCode();
                 if (this.QueryType != null)

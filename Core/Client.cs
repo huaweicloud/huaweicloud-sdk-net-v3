@@ -53,6 +53,9 @@ namespace HuaweiCloud.SDK.Core
             private LogLevel _logLevel = LogLevel.Information;
             private HttpHandler _httpHandler;
 
+            private const string HttpScheme = "http";
+            private const string HttpsScheme = "https";
+
             public ClientBuilder<T> WithCredential(Credentials credentials)
             {
                 this._credentials = credentials;
@@ -114,6 +117,10 @@ namespace HuaweiCloud.SDK.Core
                     this._credentials = _credentials.ProcessAuthParams(client._sdkHttpClient, _region.Id);
                 }
 
+                if (!_endPoint.StartsWith(HttpScheme))
+                {
+                    _endPoint = HttpsScheme + "://" + _endPoint;
+                }
 
                 client.WithCredential(this._credentials)
                     .WithEndPoint(this._endPoint);
@@ -167,7 +174,10 @@ namespace HuaweiCloud.SDK.Core
         private async Task<HttpResponseMessage> _async_http(string url, string method, SdkRequest sdkRequest)
         {
             var request = GetHttpRequest(url, method, sdkRequest);
-            request = await _credential.SignAuthRequest(request);
+            if (IsNullOrEmpty(request.Headers.Get("Authorization")))
+            {
+                request = await _credential.SignAuthRequest(request);
+            }
 
             var message = this._sdkHttpClient.InitHttpRequest(request);
             try
@@ -192,7 +202,10 @@ namespace HuaweiCloud.SDK.Core
         private HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
         {
             var request = GetHttpRequest(url, method, sdkRequest);
-            request = _credential.SignAuthRequest(request).Result;
+            if (IsNullOrEmpty(request.Headers.Get("Authorization")))
+            {
+                request = _credential.SignAuthRequest(request).Result;
+            }
 
             var message = this._sdkHttpClient.InitHttpRequest(request);
             try

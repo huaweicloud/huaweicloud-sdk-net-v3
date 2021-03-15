@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 偏移量
+        /// 偏移量,offset是limit的整数倍，limit&#x3D;10,offset&#x3D;0,10,20...
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }

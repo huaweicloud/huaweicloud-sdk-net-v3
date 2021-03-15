@@ -24,7 +24,7 @@ namespace HuaweiCSharpSDK
                 .WithCredential(auth)
                 .WithEndPoint(endpoint)
                 .WithHttpConfig(config).Build();
-            
+
             ListAlarms(cesClient);
             ShowAlarmByID(cesClient);
             UpdateAlarmAction(cesClient);
@@ -185,7 +185,7 @@ namespace HuaweiCSharpSDK
                 {
                     AlarmName = "ces-sdk-02",
                     AlarmDescription = "create ECS alram",
-                    Metric = new MetricInfoForAlarm
+                    Metric = new MetricForAlarm
                     {
                         Namespace = "AGT.ECS",
                         Dimensions = new List<MetricsDimension>()

@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
-        public MetricInfoForAlarm Metric { get; set; }
+        public MetricForAlarm Metric { get; set; }
 
         /// <summary>
         /// 

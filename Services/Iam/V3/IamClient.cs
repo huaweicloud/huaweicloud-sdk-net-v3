@@ -166,15 +166,28 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 获取联邦认证unscoped token(IdP initiated)
+        /// 创建OpenId Connect身份提供商配置
         /// </summary>
-        public CreateUnscopeTokenByIdpInitiatedResponse CreateUnscopeTokenByIdpInitiated(CreateUnscopeTokenByIdpInitiatedRequest createUnscopeTokenByIdpInitiatedRequest)
+        public CreateOpenIdConnectConfigResponse CreateOpenIdConnectConfig(CreateOpenIdConnectConfigRequest createOpenIdConnectConfigRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/tokens",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", createUnscopeTokenByIdpInitiatedRequest);
+            urlParam.Add("idp_id" , createOpenIdConnectConfigRequest.IdpId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOpenIdConnectConfigRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<CreateUnscopeTokenByIdpInitiatedResponse>(response);
+            return JsonUtils.DeSerialize<CreateOpenIdConnectConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取联邦认证token(OpenId Connect Id token方式)
+        /// </summary>
+        public CreateTokenWithIdTokenResponse CreateTokenWithIdToken(CreateTokenWithIdTokenRequest createTokenWithIdTokenRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AUTH/id-token/tokens",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTokenWithIdTokenRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateTokenWithIdTokenResponse>(response);
         }
         
         /// <summary>
@@ -1172,6 +1185,19 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询OpenId Connect身份提供商配置
+        /// </summary>
+        public ShowOpenIdConnectConfigResponse ShowOpenIdConnectConfig(ShowOpenIdConnectConfigRequest showOpenIdConnectConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , showOpenIdConnectConfigRequest.IdpId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOpenIdConnectConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowOpenIdConnectConfigResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询项目详情与状态
         /// </summary>
         public ShowProjectDetailsAndStatusResponse ShowProjectDetailsAndStatus(ShowProjectDetailsAndStatusRequest showProjectDetailsAndStatusRequest)
@@ -1314,6 +1340,19 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainProtectPolicyRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDomainProtectPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改OpenId Connect身份提供商配置
+        /// </summary>
+        public UpdateOpenIdConnectConfigResponse UpdateOpenIdConnectConfig(UpdateOpenIdConnectConfigRequest updateOpenIdConnectConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , updateOpenIdConnectConfigRequest.IdpId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOpenIdConnectConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateOpenIdConnectConfigResponse>(response);
         }
         
         /// <summary>

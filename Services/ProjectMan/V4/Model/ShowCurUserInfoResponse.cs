@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 创建时间
         /// </summary>
         [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
         /// <summary>
         /// 更新时间
         /// </summary>
         [JsonProperty("updated_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedTime { get; set; }
+        public long? UpdatedTime { get; set; }
 
         /// <summary>
         /// 性别
@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string Gender { get; set; }
 
         /// <summary>
-        /// 用户类型 User 云用户 Federation 联邦账号
+        /// 用户类型, User 云用户, Federation 联邦账号,
         /// </summary>
         [JsonProperty("user_type", NullValueHandling = NullValueHandling.Ignore)]
         public string UserType { get; set; }

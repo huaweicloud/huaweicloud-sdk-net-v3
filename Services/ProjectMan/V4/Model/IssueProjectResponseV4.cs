@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 {
     /// <summary>
-    /// 
+    /// 项目信息
     /// </summary>
     public class IssueProjectResponseV4 
     {

@@ -166,9 +166,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly RuntimeEnum PYTHON_2_7 = new RuntimeEnum("Python 2.7");
 
             /// <summary>
-            /// Enum _PYTHON_3_6 for value:   Python 3.6
+            /// Enum PYTHON_3_6 for value: Python 3.6
             /// </summary>
-            public static readonly RuntimeEnum _PYTHON_3_6 = new RuntimeEnum("  Python 3.6");
+            public static readonly RuntimeEnum PYTHON_3_6 = new RuntimeEnum("Python 3.6");
 
             /// <summary>
             /// Enum GO_1_8 for value: Go 1.8
@@ -204,7 +204,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "Node.js 10.16", NODE_JS_10_16 },
                 { "Node.js 12.13", NODE_JS_12_13 },
                 { "Python 2.7", PYTHON_2_7 },
-                { "  Python 3.6", _PYTHON_3_6 },
+                { "Python 3.6", PYTHON_3_6 },
                 { "Go 1.8", GO_1_8 },
                 { "C#(.NET Core 2.0)", C_NET_CORE_2_0_ },
                 { "C#(.NET Core 2.1)", C_NET_CORE_2_1_ },

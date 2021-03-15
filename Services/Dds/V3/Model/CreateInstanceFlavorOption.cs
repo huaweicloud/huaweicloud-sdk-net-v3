@@ -149,13 +149,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 节点数量。 取值：   - 集群实例下“mongos”类型的节点数量可取2~16。   - 集群实例下“shard”类型的组数量可取2~16。   - “shard”类型的组数量可取2~16，恢复到新实例不传该参数。   - “config”类型的组数量只能取1。   - “replica”类型的组数量只能取1。   - “single”类型的节点数量只能取1。
+        /// 节点数量。 取值：   - 集群实例下“mongos”类型的节点数量可取2~16。   - 集群实例下“shard”类型的组数量可取2~16。   - “shard”类型的组数量可取2~16。   - “config”类型的组数量只能取1。   - “replica”类型的组数量只能取1。   - “single”类型的节点数量只能取1。
         /// </summary>
         [JsonProperty("num", NullValueHandling = NullValueHandling.Ignore)]
         public string Num { get; set; }
 
         /// <summary>
-        /// 磁盘类型。 取值：ULTRAHIGH，表示SSD。   - 对于集群实例的shard和config节点、副本集、以及单节点实例，该参数有效。mongos节点不涉及选择磁盘，该参数无意义。   - 恢复到新实例，不传该参数。
+        /// 磁盘类型。 取值：ULTRAHIGH，表示SSD。   - 对于集群实例的shard和config节点、副本集、以及单节点实例，该参数有效。mongos节点不涉及选择磁盘，该参数无意义。
         /// </summary>
         [JsonProperty("storage", NullValueHandling = NullValueHandling.Ignore)]
         public string Storage { get; set; }

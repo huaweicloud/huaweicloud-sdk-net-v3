@@ -34,13 +34,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public IssueUser AssignedUser { get; set; }
 
         /// <summary>
-        /// 开始时间，年-月-日
+        /// 预计开始时间，年-月-日
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string BeginTime { get; set; }
 
         /// <summary>
-        /// 更新时间 年-月-日 时:分:秒
+        /// 创建时间 年-月-日 时:分:秒
         /// </summary>
         [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedTime { get; set; }
@@ -67,7 +67,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Domain Domain { get; set; }
+        public IssueItemSfV4Domain Domain { get; set; }
 
         /// <summary>
         /// 工作项进度值
@@ -76,7 +76,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? DoneRatio { get; set; }
 
         /// <summary>
-        /// 结束时间，年-月-日
+        /// 预计结束时间，年-月-日
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
@@ -96,20 +96,20 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("project", NullValueHandling = NullValueHandling.Ignore)]
+        public IssueProjectResponseV4 Project { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("iteration", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Iteration Iteration { get; set; }
+        public IssueItemSfV4Iteration Iteration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("module", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Module Module { get; set; }
-
-        /// <summary>
-        /// 标题
-        /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        public IssueItemSfV4Module Module { get; set; }
 
         /// <summary>
         /// 
@@ -121,31 +121,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Priority Priority { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("project", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueProjectResponseV4 Project { get; set; }
+        public IssueItemSfV4Priority Priority { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("severity", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Severity Severity { get; set; }
+        public IssueItemSfV4Severity Severity { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Status Status { get; set; }
+        public IssueItemSfV4Status Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("tracker", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSFV4Tracker Tracker { get; set; }
+        public IssueItemSfV4Tracker Tracker { get; set; }
 
         /// <summary>
         /// 更新时间 年-月-日 时:分:秒
@@ -174,12 +168,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  expectedWorkHours: ").Append(ExpectedWorkHours).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  project: ").Append(Project).Append("\n");
             sb.Append("  iteration: ").Append(Iteration).Append("\n");
             sb.Append("  module: ").Append(Module).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  parentIssue: ").Append(ParentIssue).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
-            sb.Append("  project: ").Append(Project).Append("\n");
             sb.Append("  severity: ").Append(Severity).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tracker: ").Append(Tracker).Append("\n");
@@ -273,6 +266,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.Project == input.Project ||
+                    (this.Project != null &&
+                    this.Project.Equals(input.Project))
+                ) && 
+                (
                     this.Iteration == input.Iteration ||
                     (this.Iteration != null &&
                     this.Iteration.Equals(input.Iteration))
@@ -283,11 +281,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Module.Equals(input.Module))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
                     this.ParentIssue == input.ParentIssue ||
                     (this.ParentIssue != null &&
                     this.ParentIssue.Equals(input.ParentIssue))
@@ -296,11 +289,6 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Priority == input.Priority ||
                     (this.Priority != null &&
                     this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
                 ) && 
                 (
                     this.Severity == input.Severity ||
@@ -358,18 +346,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.ExpectedWorkHours.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Project != null)
+                    hashCode = hashCode * 59 + this.Project.GetHashCode();
                 if (this.Iteration != null)
                     hashCode = hashCode * 59 + this.Iteration.GetHashCode();
                 if (this.Module != null)
                     hashCode = hashCode * 59 + this.Module.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ParentIssue != null)
                     hashCode = hashCode * 59 + this.ParentIssue.GetHashCode();
                 if (this.Priority != null)
                     hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
                 if (this.Severity != null)
                     hashCode = hashCode * 59 + this.Severity.GetHashCode();
                 if (this.Status != null)
