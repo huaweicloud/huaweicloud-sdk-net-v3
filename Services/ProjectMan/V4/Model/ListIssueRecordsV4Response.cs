@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 创建时间
         /// </summary>
         [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
         /// <summary>
         /// 

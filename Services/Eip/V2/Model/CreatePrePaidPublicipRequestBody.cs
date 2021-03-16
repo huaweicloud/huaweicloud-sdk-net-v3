@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("extendParam", NullValueHandling = NullValueHandling.Ignore)]
         public CreatePrePaidPublicipExtendParamOption ExtendParam { get; set; }
 
+        /// <summary>
+        /// 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。  创建弹性公网IP时，给弹性公网IP绑定企业项目ID。  不指定该参数时，默认值是 0
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  publicip: ").Append(Publicip).Append("\n");
             sb.Append("  bandwidth: ").Append(Bandwidth).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.ExtendParam == input.ExtendParam ||
                     (this.ExtendParam != null &&
                     this.ExtendParam.Equals(input.ExtendParam))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
                 if (this.ExtendParam != null)
                     hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }
