@@ -1,3 +1,14 @@
+# 3.0.37-rc 2021-03-19
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 解决 ListFlavors 接口响应体反序列化出错的问题
+- _特性变更_
+    - 无
+
 # 3.0.36-rc 2021-03-16
 
 ### HuaweiCloud SDK EIP
