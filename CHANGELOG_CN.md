@@ -1,3 +1,14 @@
+# 3.0.38-rc 2021-03-26
+
+### HuaweiCloud SDK SMN
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 将接口 `ListSlowlogStatistics` 下的 `property` 属性从必填调整为非必填
+
 # 3.0.37-rc 2021-03-19
 
 ### HuaweiCloud SDK ECS

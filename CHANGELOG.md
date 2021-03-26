@@ -1,3 +1,14 @@
+# 3.0.38-rc 2021-03-26
+
+### HuaweiCloud SDK SMN
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Change the property `protocol` in `ListMessageTemplates` from required to optional.
+
 # 3.0.37-rc 2021-03-19
 
 ### HuaweiCloud SDK ECS
