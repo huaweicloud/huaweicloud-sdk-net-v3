@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 保管库类型
+        /// 保管库资源类型id
         /// </summary>
         [JsonProperty("provider_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderId { get; set; }

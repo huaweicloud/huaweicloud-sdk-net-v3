@@ -160,6 +160,31 @@ namespace HuaweiCloud.SDK.Kms.V1
         }
         
         /// <summary>
+        /// 创建凭据
+        /// </summary>
+        public async Task<CreateSecretResponse> CreateSecretAsync(CreateSecretRequest createSecretRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateSecretResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建凭据版本
+        /// </summary>
+        public async Task<CreateSecretVersionResponse> CreateSecretVersionAsync(CreateSecretVersionRequest createSecretVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , createSecretVersionRequest.SecretId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/versions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateSecretVersionResponse>(response);
+        }
+        
+        /// <summary>
         /// 解密数据
         /// </summary>
         public async Task<DecryptDataResponse> DecryptDataAsync(DecryptDataRequest decryptDataRequest)
@@ -209,6 +234,46 @@ namespace HuaweiCloud.SDK.Kms.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteKeyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DeleteKeyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 立即删除凭据
+        /// </summary>
+        public async Task<DeleteSecretResponse> DeleteSecretAsync(DeleteSecretRequest deleteSecretRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , deleteSecretRequest.SecretId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteSecretResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建凭据的定时删除任务
+        /// </summary>
+        public async Task<DeleteSecretForScheduleResponse> DeleteSecretForScheduleAsync(DeleteSecretForScheduleRequest deleteSecretForScheduleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , deleteSecretForScheduleRequest.SecretId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/scheduled-deleted-tasks/create",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSecretForScheduleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DeleteSecretForScheduleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除凭据的版本状态
+        /// </summary>
+        public async Task<DeleteSecretStageResponse> DeleteSecretStageAsync(DeleteSecretStageRequest deleteSecretStageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , deleteSecretStageRequest.SecretId.ToString());
+            urlParam.Add("stage_name" , deleteSecretStageRequest.StageName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/stages/{stage_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretStageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteSecretStageResponse>(response);
         }
         
         /// <summary>
@@ -397,6 +462,58 @@ namespace HuaweiCloud.SDK.Kms.V1
         }
         
         /// <summary>
+        /// 查询凭据的版本状态
+        /// </summary>
+        public async Task<ListSecretStageResponse> ListSecretStageAsync(ListSecretStageRequest listSecretStageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , listSecretStageRequest.SecretId.ToString());
+            urlParam.Add("stage_name" , listSecretStageRequest.StageName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/stages/{stage_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretStageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListSecretStageResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询凭据的版本列表
+        /// </summary>
+        public async Task<ListSecretVersionsResponse> ListSecretVersionsAsync(ListSecretVersionsRequest listSecretVersionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , listSecretVersionsRequest.SecretId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/versions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretVersionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListSecretVersionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询凭据列表
+        /// </summary>
+        public async Task<ListSecretsResponse> ListSecretsAsync(ListSecretsRequest listSecretsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListSecretsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 取消凭据的定时删除任务
+        /// </summary>
+        public async Task<RestoreSecretResponse> RestoreSecretAsync(RestoreSecretRequest restoreSecretRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , restoreSecretRequest.SecretId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/scheduled-deleted-tasks/cancel",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreSecretRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RestoreSecretResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询密钥轮换状态
         /// </summary>
         public async Task<ShowKeyRotationStatusResponse> ShowKeyRotationStatusAsync(ShowKeyRotationStatusRequest showKeyRotationStatusRequest)
@@ -421,6 +538,33 @@ namespace HuaweiCloud.SDK.Kms.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowKmsTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询凭据
+        /// </summary>
+        public async Task<ShowSecretResponse> ShowSecretAsync(ShowSecretRequest showSecretRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , showSecretRequest.SecretId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowSecretResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询凭据的版本与凭据值
+        /// </summary>
+        public async Task<ShowSecretVersionResponse> ShowSecretVersionAsync(ShowSecretVersionRequest showSecretVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , showSecretVersionRequest.SecretId.ToString());
+            urlParam.Add("version_id" , showSecretVersionRequest.VersionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/versions/{version_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowSecretVersionResponse>(response);
         }
         
         /// <summary>
@@ -486,6 +630,33 @@ namespace HuaweiCloud.SDK.Kms.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyRotationIntervalRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<UpdateKeyRotationIntervalResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新凭据
+        /// </summary>
+        public async Task<UpdateSecretResponse> UpdateSecretAsync(UpdateSecretRequest updateSecretRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , updateSecretRequest.SecretId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateSecretResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新凭据的版本状态
+        /// </summary>
+        public async Task<UpdateSecretStageResponse> UpdateSecretStageAsync(UpdateSecretStageRequest updateSecretStageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id" , updateSecretStageRequest.SecretId.ToString());
+            urlParam.Add("stage_name" , updateSecretStageRequest.StageName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_id}/stages/{stage_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateSecretStageResponse>(response);
         }
         
         /// <summary>

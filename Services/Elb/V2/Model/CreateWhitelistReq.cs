@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public bool? EnableWhitelist { get; set; }
 
         /// <summary>
-        /// 白名单IP列表。可以是ip，例如192.168.10.123；也可以是一个网段，例如192.168.10.1/24；不同的值之间用逗号分隔
+        /// 白名单IP列表。可以是ip，例如192.168.10.123。也可以是一个网段，例如192.168.10.1/24。不同的值之间用逗号分隔。 不传，默认为空。
         /// </summary>
         [JsonProperty("whitelist", NullValueHandling = NullValueHandling.Ignore)]
         public string Whitelist { get; set; }

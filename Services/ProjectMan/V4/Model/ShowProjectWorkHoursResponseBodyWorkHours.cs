@@ -36,8 +36,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// <summary>
         /// 工时日期
         /// </summary>
-        [JsonProperty("work_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string WorkTime { get; set; }
+        [JsonProperty("work_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkDate { get; set; }
 
         /// <summary>
         /// 工时花费
@@ -98,7 +98,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
-            sb.Append("  workTime: ").Append(WorkTime).Append("\n");
+            sb.Append("  workDate: ").Append(WorkDate).Append("\n");
             sb.Append("  workHoursNum: ").Append(WorkHoursNum).Append("\n");
             sb.Append("  summary: ").Append(Summary).Append("\n");
             sb.Append("  workHoursTypeName: ").Append(WorkHoursTypeName).Append("\n");
@@ -144,9 +144,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.UserName.Equals(input.UserName))
                 ) && 
                 (
-                    this.WorkTime == input.WorkTime ||
-                    (this.WorkTime != null &&
-                    this.WorkTime.Equals(input.WorkTime))
+                    this.WorkDate == input.WorkDate ||
+                    (this.WorkDate != null &&
+                    this.WorkDate.Equals(input.WorkDate))
                 ) && 
                 (
                     this.WorkHoursNum == input.WorkHoursNum ||
@@ -204,8 +204,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.WorkTime != null)
-                    hashCode = hashCode * 59 + this.WorkTime.GetHashCode();
+                if (this.WorkDate != null)
+                    hashCode = hashCode * 59 + this.WorkDate.GetHashCode();
                 if (this.WorkHoursNum != null)
                     hashCode = hashCode * 59 + this.WorkHoursNum.GetHashCode();
                 if (this.Summary != null)

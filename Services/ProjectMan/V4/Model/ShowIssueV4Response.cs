@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public IssueItemSfV4Module Module { get; set; }
 
         /// <summary>
+        /// 标题
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("parent_issue", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,6 +177,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  project: ").Append(Project).Append("\n");
             sb.Append("  iteration: ").Append(Iteration).Append("\n");
             sb.Append("  module: ").Append(Module).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  parentIssue: ").Append(ParentIssue).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  severity: ").Append(Severity).Append("\n");
@@ -281,6 +288,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Module.Equals(input.Module))
                 ) && 
                 (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
                     this.ParentIssue == input.ParentIssue ||
                     (this.ParentIssue != null &&
                     this.ParentIssue.Equals(input.ParentIssue))
@@ -352,6 +364,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Iteration.GetHashCode();
                 if (this.Module != null)
                     hashCode = hashCode * 59 + this.Module.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ParentIssue != null)
                     hashCode = hashCode * 59 + this.ParentIssue.GetHashCode();
                 if (this.Priority != null)

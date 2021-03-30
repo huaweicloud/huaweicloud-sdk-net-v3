@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public int? ConnectionLimit { get; set; }
 
         /// <summary>
-        /// HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
+        /// HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时才有意义。
         /// </summary>
         [JsonProperty("http2_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Http2Enable { get; set; }

@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
+        /// <summary>
+        /// 消息时间戳。
+        /// </summary>
+        [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Timestamp { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  partition: ").Append(Partition).Append("\n");
             sb.Append("  messageOffset: ").Append(MessageOffset).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    (this.Timestamp != null &&
+                    this.Timestamp.Equals(input.Timestamp))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.MessageOffset.GetHashCode();
                 if (this.Size != null)
                     hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Timestamp != null)
+                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

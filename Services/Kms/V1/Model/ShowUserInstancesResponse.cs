@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
         /// 非默认用户主密钥个数。
         /// </summary>
         [JsonProperty("instance_num", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceNum { get; set; }
+        public int? InstanceNum { get; set; }
 
 
         /// <summary>

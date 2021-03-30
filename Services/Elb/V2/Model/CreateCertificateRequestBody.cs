@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。默认值：\&quot;0\&quot;
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
