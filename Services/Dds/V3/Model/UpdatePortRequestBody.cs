@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 新端口号。端口号有效范围为2100~9500。
+        /// 新端口号。端口号有效范围为2100~9500，27017，27018，27019。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }

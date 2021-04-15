@@ -16,6 +16,18 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
+        /// 操作记录id
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Id { get; set; }
+
+        /// <summary>
+        /// 操作记录创建时间
+        /// </summary>
+        [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CreatedTime { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
@@ -35,6 +47,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             var sb = new StringBuilder();
             sb.Append("class IssueRecordV4 {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  user: ").Append(User).Append("\n");
             sb.Append("  details: ").Append(Details).Append("\n");
             sb.Append("}\n");
@@ -59,6 +73,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.CreatedTime == input.CreatedTime ||
+                    (this.CreatedTime != null &&
+                    this.CreatedTime.Equals(input.CreatedTime))
+                ) && 
+                (
                     this.User == input.User ||
                     (this.User != null &&
                     this.User.Equals(input.User))
@@ -79,6 +103,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CreatedTime != null)
+                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 if (this.User != null)
                     hashCode = hashCode * 59 + this.User.GetHashCode();
                 if (this.Details != null)

@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// 操作记录id
+        /// 操作记录id (已废弃)
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// 创建时间 (已废弃)
         /// </summary>
         [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreatedTime { get; set; }

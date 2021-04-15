@@ -153,6 +153,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("updated_time", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedTime { get; set; }
 
+        /// <summary>
+        /// 关闭时间 年-月-日 时:分:秒
+        /// </summary>
+        [JsonProperty("closed_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClosedTime { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -184,6 +190,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tracker: ").Append(Tracker).Append("\n");
             sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
+            sb.Append("  closedTime: ").Append(ClosedTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -321,6 +328,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.UpdatedTime == input.UpdatedTime ||
                     (this.UpdatedTime != null &&
                     this.UpdatedTime.Equals(input.UpdatedTime))
+                ) && 
+                (
+                    this.ClosedTime == input.ClosedTime ||
+                    (this.ClosedTime != null &&
+                    this.ClosedTime.Equals(input.ClosedTime))
                 );
         }
 
@@ -378,6 +390,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Tracker.GetHashCode();
                 if (this.UpdatedTime != null)
                     hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
+                if (this.ClosedTime != null)
+                    hashCode = hashCode * 59 + this.ClosedTime.GetHashCode();
                 return hashCode;
             }
         }

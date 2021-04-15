@@ -1,3 +1,32 @@
+# 3.0.40-rc 2021-04-15
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 新增支持接口`DeleteDatabaseUser`、`DeleteDatabaseRole`、`ShowConnectionStatistics`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListIssuesV4`, `ListChildIssuesV4`响应体新增字段`closed_time` 、`id` 、`created_time`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 修复问题，开放vpc和子网的标签
+- _特性变更_
+  - 无
+
 # 3.0.39-rc 2021-03-30
 
 ### HuaweiCloud SDK Kafka
