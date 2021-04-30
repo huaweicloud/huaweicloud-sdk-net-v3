@@ -589,6 +589,33 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 设置集群均衡开关
+        /// </summary>
+        public SetBalancerSwitchResponse SetBalancerSwitch(SetBalancerSwitchRequest setBalancerSwitchRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , setBalancerSwitchRequest.InstanceId.ToString());
+            urlParam.Add("action" , setBalancerSwitchRequest.Action.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/balancer/{action}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBalancerSwitchRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<SetBalancerSwitchResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置集群均衡活动时间窗
+        /// </summary>
+        public SetBalancerWindowResponse SetBalancerWindow(SetBalancerWindowRequest setBalancerWindowRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , setBalancerWindowRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/balancer/active-window",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBalancerWindowRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<SetBalancerWindowResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询审计日志策略
         /// </summary>
         public ShowAuditlogPolicyResponse ShowAuditlogPolicy(ShowAuditlogPolicyRequest showAuditlogPolicyRequest)
@@ -637,6 +664,19 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectionStatisticsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowConnectionStatisticsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询集群均衡设置
+        /// </summary>
+        public ShowShardingBalancerResponse ShowShardingBalancer(ShowShardingBalancerRequest showShardingBalancerRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showShardingBalancerRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/balancer",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShardingBalancerRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowShardingBalancerResponse>(response);
         }
         
         /// <summary>

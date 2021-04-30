@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string EnterpriseId { get; set; }
 
         /// <summary>
+        /// 项目代号
+        /// </summary>
+        [JsonProperty("project_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectCode { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("creator", NullValueHandling = NullValueHandling.Ignore)]
@@ -85,6 +91,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  projectType: ").Append(ProjectType).Append("\n");
             sb.Append("  archive: ").Append(Archive).Append("\n");
             sb.Append("  enterpriseId: ").Append(EnterpriseId).Append("\n");
+            sb.Append("  projectCode: ").Append(ProjectCode).Append("\n");
             sb.Append("  creator: ").Append(Creator).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -148,6 +155,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.EnterpriseId.Equals(input.EnterpriseId))
                 ) && 
                 (
+                    this.ProjectCode == input.ProjectCode ||
+                    (this.ProjectCode != null &&
+                    this.ProjectCode.Equals(input.ProjectCode))
+                ) && 
+                (
                     this.Creator == input.Creator ||
                     (this.Creator != null &&
                     this.Creator.Equals(input.Creator))
@@ -178,6 +190,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Archive.GetHashCode();
                 if (this.EnterpriseId != null)
                     hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
+                if (this.ProjectCode != null)
+                    hashCode = hashCode * 59 + this.ProjectCode.GetHashCode();
                 if (this.Creator != null)
                     hashCode = hashCode * 59 + this.Creator.GetHashCode();
                 return hashCode;

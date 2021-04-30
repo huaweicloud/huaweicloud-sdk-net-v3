@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Dds.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class DeleteSubscriptionResponse : SdkResponse
+    public class SetBalancerSwitchResponse : SdkResponse
     {
 
         /// <summary>
-        /// 
+        /// 任务ID。
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteSubscriptionResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class SetBalancerSwitchResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteSubscriptionResponse);
+            return this.Equals(input as SetBalancerSwitchResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteSubscriptionResponse input)
+        public bool Equals(SetBalancerSwitchResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

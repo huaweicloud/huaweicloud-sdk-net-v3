@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Dds.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CreateSubscriptionRequest 
+    public class SetBalancerWindowRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Instance-Id", IsHeader = true)]
-        [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateSubReq Body { get; set; }
+        public BalancerActiveWindow Body { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateSubscriptionRequest {\n");
+            sb.Append("class SetBalancerWindowRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -48,13 +48,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateSubscriptionRequest);
+            return this.Equals(input as SetBalancerWindowRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateSubscriptionRequest input)
+        public bool Equals(SetBalancerWindowRequest input)
         {
             if (input == null)
                 return false;

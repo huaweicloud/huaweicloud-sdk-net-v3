@@ -7,27 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Dds.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class DeleteSubscriptionRequest 
+    public class ShowShardingBalancerRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Instance-Id", IsHeader = true)]
-        [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("subscription_id", IsPath = true)]
-        [JsonProperty("subscription_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SubscriptionId { get; set; }
 
 
         /// <summary>
@@ -36,9 +29,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteSubscriptionRequest {\n");
+            sb.Append("class ShowShardingBalancerRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  subscriptionId: ").Append(SubscriptionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,13 +40,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteSubscriptionRequest);
+            return this.Equals(input as ShowShardingBalancerRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteSubscriptionRequest input)
+        public bool Equals(ShowShardingBalancerRequest input)
         {
             if (input == null)
                 return false;
@@ -64,11 +56,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.SubscriptionId == input.SubscriptionId ||
-                    (this.SubscriptionId != null &&
-                    this.SubscriptionId.Equals(input.SubscriptionId))
                 );
         }
 
@@ -82,8 +69,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.SubscriptionId != null)
-                    hashCode = hashCode * 59 + this.SubscriptionId.GetHashCode();
                 return hashCode;
             }
         }

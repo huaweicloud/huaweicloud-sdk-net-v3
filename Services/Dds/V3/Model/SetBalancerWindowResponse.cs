@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Dds.V3.Model
 {
     /// <summary>
-    /// 修改订阅主题请求结构体
+    /// Response Object
     /// </summary>
-    public class UpdateSubReq 
+    public class SetBalancerWindowResponse : SdkResponse
     {
 
         /// <summary>
-        /// 订阅的回调地址，用于接收对应资源事件的通知消息，例如：https://10.10.10.10:443/callbackurltest。
+        /// 任务ID。
         /// </summary>
-        [JsonProperty("callbackurl", NullValueHandling = NullValueHandling.Ignore)]
-        public string Callbackurl { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateSubReq {\n");
-            sb.Append("  callbackurl: ").Append(Callbackurl).Append("\n");
+            sb.Append("class SetBalancerWindowResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateSubReq);
+            return this.Equals(input as SetBalancerWindowResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateSubReq input)
+        public bool Equals(SetBalancerWindowResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Callbackurl == input.Callbackurl ||
-                    (this.Callbackurl != null &&
-                    this.Callbackurl.Equals(input.Callbackurl))
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Callbackurl != null)
-                    hashCode = hashCode * 59 + this.Callbackurl.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

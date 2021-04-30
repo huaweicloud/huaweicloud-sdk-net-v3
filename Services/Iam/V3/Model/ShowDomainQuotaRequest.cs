@@ -45,6 +45,26 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             /// </summary>
             public static readonly TypeEnum POLICY = new TypeEnum("policy");
 
+            /// <summary>
+            /// Enum ASSIGMENT_GROUP_MP for value: assigment_group_mp
+            /// </summary>
+            public static readonly TypeEnum ASSIGMENT_GROUP_MP = new TypeEnum("assigment_group_mp");
+
+            /// <summary>
+            /// Enum ASSIGMENT_AGENCY_MP for value: assigment_agency_mp
+            /// </summary>
+            public static readonly TypeEnum ASSIGMENT_AGENCY_MP = new TypeEnum("assigment_agency_mp");
+
+            /// <summary>
+            /// Enum ASSIGMENT_GROUP_EP for value: assigment_group_ep
+            /// </summary>
+            public static readonly TypeEnum ASSIGMENT_GROUP_EP = new TypeEnum("assigment_group_ep");
+
+            /// <summary>
+            /// Enum ASSIGMENT_USER_EP for value: assigment_user_ep
+            /// </summary>
+            public static readonly TypeEnum ASSIGMENT_USER_EP = new TypeEnum("assigment_user_ep");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -53,6 +73,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 { "idp", IDP },
                 { "agency", AGENCY },
                 { "policy", POLICY },
+                { "assigment_group_mp", ASSIGMENT_GROUP_MP },
+                { "assigment_agency_mp", ASSIGMENT_AGENCY_MP },
+                { "assigment_group_ep", ASSIGMENT_GROUP_EP },
+                { "assigment_user_ep", ASSIGMENT_USER_EP },
             };
 
             private string Value;
