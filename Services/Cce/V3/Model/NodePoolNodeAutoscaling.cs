@@ -22,28 +22,28 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 若开启自动扩缩容，最大能扩容的节点个数，应大于等于 minNodeCount，且不超过集群规格对应的节点数量上限。
-        /// </summary>
-        [JsonProperty("maxNodeCount", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MaxNodeCount { get; set; }
-
-        /// <summary>
         /// 若开启自动扩缩容，最小能缩容的节点个数。不可大于集群规格所允许的节点上限
         /// </summary>
         [JsonProperty("minNodeCount", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinNodeCount { get; set; }
 
         /// <summary>
-        /// 节点池权重，更高的权重在扩容时拥有更高的优先级
+        /// 若开启自动扩缩容，最大能扩容的节点个数，应大于等于 minNodeCount，且不超过集群规格对应的节点数量上限。
         /// </summary>
-        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Priority { get; set; }
+        [JsonProperty("maxNodeCount", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxNodeCount { get; set; }
 
         /// <summary>
         /// 节点保留时间，单位为分钟，扩容出来的节点在这个时间内不会被缩掉
         /// </summary>
         [JsonProperty("scaleDownCooldownTime", NullValueHandling = NullValueHandling.Ignore)]
         public int? ScaleDownCooldownTime { get; set; }
+
+        /// <summary>
+        /// 节点池权重，更高的权重在扩容时拥有更高的优先级
+        /// </summary>
+        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Priority { get; set; }
 
 
         /// <summary>
@@ -54,10 +54,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class NodePoolNodeAutoscaling {\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
-            sb.Append("  maxNodeCount: ").Append(MaxNodeCount).Append("\n");
             sb.Append("  minNodeCount: ").Append(MinNodeCount).Append("\n");
-            sb.Append("  priority: ").Append(Priority).Append("\n");
+            sb.Append("  maxNodeCount: ").Append(MaxNodeCount).Append("\n");
             sb.Append("  scaleDownCooldownTime: ").Append(ScaleDownCooldownTime).Append("\n");
+            sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,24 +85,24 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Enable.Equals(input.Enable))
                 ) && 
                 (
-                    this.MaxNodeCount == input.MaxNodeCount ||
-                    (this.MaxNodeCount != null &&
-                    this.MaxNodeCount.Equals(input.MaxNodeCount))
-                ) && 
-                (
                     this.MinNodeCount == input.MinNodeCount ||
                     (this.MinNodeCount != null &&
                     this.MinNodeCount.Equals(input.MinNodeCount))
                 ) && 
                 (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
+                    this.MaxNodeCount == input.MaxNodeCount ||
+                    (this.MaxNodeCount != null &&
+                    this.MaxNodeCount.Equals(input.MaxNodeCount))
                 ) && 
                 (
                     this.ScaleDownCooldownTime == input.ScaleDownCooldownTime ||
                     (this.ScaleDownCooldownTime != null &&
                     this.ScaleDownCooldownTime.Equals(input.ScaleDownCooldownTime))
+                ) && 
+                (
+                    this.Priority == input.Priority ||
+                    (this.Priority != null &&
+                    this.Priority.Equals(input.Priority))
                 );
         }
 
@@ -116,14 +116,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.Enable != null)
                     hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.MaxNodeCount != null)
-                    hashCode = hashCode * 59 + this.MaxNodeCount.GetHashCode();
                 if (this.MinNodeCount != null)
                     hashCode = hashCode * 59 + this.MinNodeCount.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.MaxNodeCount != null)
+                    hashCode = hashCode * 59 + this.MaxNodeCount.GetHashCode();
                 if (this.ScaleDownCooldownTime != null)
                     hashCode = hashCode * 59 + this.ScaleDownCooldownTime.GetHashCode();
+                if (this.Priority != null)
+                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
+        /// 已有的弹性IP的ID列表。数量不得大于待创建节点数 &gt; 若已配置ids参数，则无需配置count和eip参数
+        /// </summary>
+        [JsonProperty("ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Ids { get; set; }
+
+        /// <summary>
         /// 要动态创建的弹性IP个数。 &gt; count参数与eip参数必须同时配置。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
@@ -27,12 +33,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("eip", NullValueHandling = NullValueHandling.Ignore)]
         public V3NodeEIPSpec Eip { get; set; }
 
-        /// <summary>
-        /// 已有的弹性IP的ID列表。数量不得大于待创建节点数 &gt; 若已配置ids参数，则无需配置count和eip参数
-        /// </summary>
-        [JsonProperty("ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Ids { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -41,9 +41,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class V3NodePublicIP {\n");
+            sb.Append("  ids: ").Append(Ids).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  eip: ").Append(Eip).Append("\n");
-            sb.Append("  ids: ").Append(Ids).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,6 +66,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
+                    this.Ids == input.Ids ||
+                    this.Ids != null &&
+                    input.Ids != null &&
+                    this.Ids.SequenceEqual(input.Ids)
+                ) && 
+                (
                     this.Count == input.Count ||
                     (this.Count != null &&
                     this.Count.Equals(input.Count))
@@ -74,12 +80,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Eip == input.Eip ||
                     (this.Eip != null &&
                     this.Eip.Equals(input.Eip))
-                ) && 
-                (
-                    this.Ids == input.Ids ||
-                    this.Ids != null &&
-                    input.Ids != null &&
-                    this.Ids.SequenceEqual(input.Ids)
                 );
         }
 
@@ -91,12 +91,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Ids != null)
+                    hashCode = hashCode * 59 + this.Ids.GetHashCode();
                 if (this.Count != null)
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.Eip != null)
                     hashCode = hashCode * 59 + this.Eip.GetHashCode();
-                if (this.Ids != null)
-                    hashCode = hashCode * 59 + this.Ids.GetHashCode();
                 return hashCode;
             }
         }

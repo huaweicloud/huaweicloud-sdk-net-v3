@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 集群证书有效时间，单位为天，非管理员用户可申请 1-30天，管理员用户可申请 1-30天或无限限制（-1）
+        /// 集群证书有效时间，单位为天，用户可申请1-10950天，若填写-1则为最大值10950天，10950天约为30年。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? Duration { get; set; }

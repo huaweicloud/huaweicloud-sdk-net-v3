@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
+        /// 网卡所在子网的ID。  
+        /// </summary>
+        [JsonProperty("subnetId", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetId { get; set; }
+
+        /// <summary>
         /// 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。
         /// </summary>
         [JsonProperty("fixedIps", NullValueHandling = NullValueHandling.Ignore)]
@@ -27,12 +33,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("ipBlock", NullValueHandling = NullValueHandling.Ignore)]
         public string IpBlock { get; set; }
 
-        /// <summary>
-        /// 网卡所在子网的ID。  
-        /// </summary>
-        [JsonProperty("subnetId", NullValueHandling = NullValueHandling.Ignore)]
-        public string SubnetId { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -41,9 +41,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class NicSpec {\n");
+            sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  fixedIps: ").Append(FixedIps).Append("\n");
             sb.Append("  ipBlock: ").Append(IpBlock).Append("\n");
-            sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,6 +66,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
+                    this.SubnetId == input.SubnetId ||
+                    (this.SubnetId != null &&
+                    this.SubnetId.Equals(input.SubnetId))
+                ) && 
+                (
                     this.FixedIps == input.FixedIps ||
                     this.FixedIps != null &&
                     input.FixedIps != null &&
@@ -75,11 +80,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.IpBlock == input.IpBlock ||
                     (this.IpBlock != null &&
                     this.IpBlock.Equals(input.IpBlock))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
                 );
         }
 
@@ -91,12 +91,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.SubnetId != null)
+                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.FixedIps != null)
                     hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
                 if (this.IpBlock != null)
                     hashCode = hashCode * 59 + this.IpBlock.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 return hashCode;
             }
         }

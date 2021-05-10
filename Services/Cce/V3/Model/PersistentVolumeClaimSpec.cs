@@ -126,16 +126,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
+        /// 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS[、SFS-Turbo](tag:hws)，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
+        /// </summary>
+        [JsonProperty("volumeID", NullValueHandling = NullValueHandling.Ignore)]
+        public string VolumeID { get; set; }
+
+        /// <summary>
+        /// 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储，详情可参见[[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html)](tag:hws)[[使用云硬盘存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0044.html)](tag:hws_hk) 。 - nfs：SFS弹性文件存储，详情可参见[[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html)](tag:hws)[[使用文件存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0111.html)](tag:hws_hk) 。 - obs：OBS对象存储，详情可参见[[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html)](tag:hws)[[使用对象存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0160.html)](tag:hws_hk) 。 [- efs：SFS Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。](tag:hws)
+        /// </summary>
+        [JsonProperty("storageType", NullValueHandling = NullValueHandling.Ignore)]
+        public string StorageType { get; set; }
+
+        /// <summary>
         /// 指定volume应该具有的访问模式，列表中仅第一个配置参数有效。 - ReadWriteOnce：该卷可以被单个节点以读/写模式挂载   &gt;集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。 - ReadOnlyMany：该卷可以被多个节点以只读模式挂载（默认） - ReadWriteMany：该卷可以被多个节点以读/写模式挂载
         /// </summary>
         [JsonProperty("accessModes", NullValueHandling = NullValueHandling.Ignore)]
         public List<AccessModesEnum> AccessModes { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceRequirements Resources { get; set; }
-
         /// <summary>
         /// PVC的StorageClass名称
         /// </summary>
@@ -143,28 +149,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string StorageClassName { get; set; }
 
         /// <summary>
-        /// 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储，详情可参见[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html) 。 - nfs：SFS弹性文件存储，详情可参见[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html) 。 - obs：OBS对象存储，详情可参见[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html) 。 - efs：SFS Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。
+        /// PVC绑定的PV名称
         /// </summary>
-        [JsonProperty("storageType", NullValueHandling = NullValueHandling.Ignore)]
-        public string StorageType { get; set; }
+        [JsonProperty("volumeName", NullValueHandling = NullValueHandling.Ignore)]
+        public string VolumeName { get; set; }
 
         /// <summary>
-        /// 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS、SFS-Turbo，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
+        /// 
         /// </summary>
-        [JsonProperty("volumeID", NullValueHandling = NullValueHandling.Ignore)]
-        public string VolumeID { get; set; }
+        [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
+        public ResourceRequirements Resources { get; set; }
 
         /// <summary>
         /// PVC指定的PV类型
         /// </summary>
         [JsonProperty("volumeMode", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeMode { get; set; }
-
-        /// <summary>
-        /// PVC绑定的PV名称
-        /// </summary>
-        [JsonProperty("volumeName", NullValueHandling = NullValueHandling.Ignore)]
-        public string VolumeName { get; set; }
 
 
         /// <summary>
@@ -174,13 +174,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PersistentVolumeClaimSpec {\n");
-            sb.Append("  accessModes: ").Append(AccessModes).Append("\n");
-            sb.Append("  resources: ").Append(Resources).Append("\n");
-            sb.Append("  storageClassName: ").Append(StorageClassName).Append("\n");
-            sb.Append("  storageType: ").Append(StorageType).Append("\n");
             sb.Append("  volumeID: ").Append(VolumeID).Append("\n");
-            sb.Append("  volumeMode: ").Append(VolumeMode).Append("\n");
+            sb.Append("  storageType: ").Append(StorageType).Append("\n");
+            sb.Append("  accessModes: ").Append(AccessModes).Append("\n");
+            sb.Append("  storageClassName: ").Append(StorageClassName).Append("\n");
             sb.Append("  volumeName: ").Append(VolumeName).Append("\n");
+            sb.Append("  resources: ").Append(Resources).Append("\n");
+            sb.Append("  volumeMode: ").Append(VolumeMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -203,20 +203,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.AccessModes == input.AccessModes ||
-                    this.AccessModes != null &&
-                    input.AccessModes != null &&
-                    this.AccessModes.SequenceEqual(input.AccessModes)
-                ) && 
-                (
-                    this.Resources == input.Resources ||
-                    (this.Resources != null &&
-                    this.Resources.Equals(input.Resources))
-                ) && 
-                (
-                    this.StorageClassName == input.StorageClassName ||
-                    (this.StorageClassName != null &&
-                    this.StorageClassName.Equals(input.StorageClassName))
+                    this.VolumeID == input.VolumeID ||
+                    (this.VolumeID != null &&
+                    this.VolumeID.Equals(input.VolumeID))
                 ) && 
                 (
                     this.StorageType == input.StorageType ||
@@ -224,19 +213,30 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.StorageType.Equals(input.StorageType))
                 ) && 
                 (
-                    this.VolumeID == input.VolumeID ||
-                    (this.VolumeID != null &&
-                    this.VolumeID.Equals(input.VolumeID))
+                    this.AccessModes == input.AccessModes ||
+                    this.AccessModes != null &&
+                    input.AccessModes != null &&
+                    this.AccessModes.SequenceEqual(input.AccessModes)
                 ) && 
                 (
-                    this.VolumeMode == input.VolumeMode ||
-                    (this.VolumeMode != null &&
-                    this.VolumeMode.Equals(input.VolumeMode))
+                    this.StorageClassName == input.StorageClassName ||
+                    (this.StorageClassName != null &&
+                    this.StorageClassName.Equals(input.StorageClassName))
                 ) && 
                 (
                     this.VolumeName == input.VolumeName ||
                     (this.VolumeName != null &&
                     this.VolumeName.Equals(input.VolumeName))
+                ) && 
+                (
+                    this.Resources == input.Resources ||
+                    (this.Resources != null &&
+                    this.Resources.Equals(input.Resources))
+                ) && 
+                (
+                    this.VolumeMode == input.VolumeMode ||
+                    (this.VolumeMode != null &&
+                    this.VolumeMode.Equals(input.VolumeMode))
                 );
         }
 
@@ -248,20 +248,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AccessModes != null)
-                    hashCode = hashCode * 59 + this.AccessModes.GetHashCode();
-                if (this.Resources != null)
-                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
-                if (this.StorageClassName != null)
-                    hashCode = hashCode * 59 + this.StorageClassName.GetHashCode();
-                if (this.StorageType != null)
-                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
                 if (this.VolumeID != null)
                     hashCode = hashCode * 59 + this.VolumeID.GetHashCode();
-                if (this.VolumeMode != null)
-                    hashCode = hashCode * 59 + this.VolumeMode.GetHashCode();
+                if (this.StorageType != null)
+                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
+                if (this.AccessModes != null)
+                    hashCode = hashCode * 59 + this.AccessModes.GetHashCode();
+                if (this.StorageClassName != null)
+                    hashCode = hashCode * 59 + this.StorageClassName.GetHashCode();
                 if (this.VolumeName != null)
                     hashCode = hashCode * 59 + this.VolumeName.GetHashCode();
+                if (this.Resources != null)
+                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.VolumeMode != null)
+                    hashCode = hashCode * 59 + this.VolumeMode.GetHashCode();
                 return hashCode;
             }
         }

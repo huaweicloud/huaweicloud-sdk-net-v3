@@ -126,10 +126,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
+        /// 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("autoscaling", NullValueHandling = NullValueHandling.Ignore)]
-        public NodePoolNodeAutoscaling Autoscaling { get; set; }
+        [JsonProperty("nodeTemplate", NullValueHandling = NullValueHandling.Ignore)]
+        public V3NodeSpec NodeTemplate { get; set; }
 
         /// <summary>
         /// 节点池初始化节点个数。
@@ -140,20 +145,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("nodeManagement", NullValueHandling = NullValueHandling.Ignore)]
-        public NodeManagement NodeManagement { get; set; }
+        [JsonProperty("autoscaling", NullValueHandling = NullValueHandling.Ignore)]
+        public NodePoolNodeAutoscaling Autoscaling { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("nodeTemplate", NullValueHandling = NullValueHandling.Ignore)]
-        public V3NodeSpec NodeTemplate { get; set; }
+        [JsonProperty("nodeManagement", NullValueHandling = NullValueHandling.Ignore)]
+        public NodeManagement NodeManagement { get; set; }
 
-        /// <summary>
-        /// 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
-        /// </summary>
-        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public TypeEnum Type { get; set; }
 
         /// <summary>
         /// Get the string
@@ -162,11 +162,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class NodePoolSpec {\n");
-            sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
-            sb.Append("  initialNodeCount: ").Append(InitialNodeCount).Append("\n");
-            sb.Append("  nodeManagement: ").Append(NodeManagement).Append("\n");
-            sb.Append("  nodeTemplate: ").Append(NodeTemplate).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  nodeTemplate: ").Append(NodeTemplate).Append("\n");
+            sb.Append("  initialNodeCount: ").Append(InitialNodeCount).Append("\n");
+            sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
+            sb.Append("  nodeManagement: ").Append(NodeManagement).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,19 +189,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.Autoscaling == input.Autoscaling ||
-                    (this.Autoscaling != null &&
-                    this.Autoscaling.Equals(input.Autoscaling))
-                ) && 
-                (
-                    this.InitialNodeCount == input.InitialNodeCount ||
-                    (this.InitialNodeCount != null &&
-                    this.InitialNodeCount.Equals(input.InitialNodeCount))
-                ) && 
-                (
-                    this.NodeManagement == input.NodeManagement ||
-                    (this.NodeManagement != null &&
-                    this.NodeManagement.Equals(input.NodeManagement))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
                     this.NodeTemplate == input.NodeTemplate ||
@@ -209,9 +199,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.NodeTemplate.Equals(input.NodeTemplate))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.InitialNodeCount == input.InitialNodeCount ||
+                    (this.InitialNodeCount != null &&
+                    this.InitialNodeCount.Equals(input.InitialNodeCount))
+                ) && 
+                (
+                    this.Autoscaling == input.Autoscaling ||
+                    (this.Autoscaling != null &&
+                    this.Autoscaling.Equals(input.Autoscaling))
+                ) && 
+                (
+                    this.NodeManagement == input.NodeManagement ||
+                    (this.NodeManagement != null &&
+                    this.NodeManagement.Equals(input.NodeManagement))
                 );
         }
 
@@ -223,16 +223,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Autoscaling != null)
-                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
-                if (this.InitialNodeCount != null)
-                    hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
-                if (this.NodeManagement != null)
-                    hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
-                if (this.NodeTemplate != null)
-                    hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.NodeTemplate != null)
+                    hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
+                if (this.InitialNodeCount != null)
+                    hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
+                if (this.Autoscaling != null)
+                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.NodeManagement != null)
+                    hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
                 return hashCode;
             }
         }

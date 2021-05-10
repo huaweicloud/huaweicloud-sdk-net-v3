@@ -18,6 +18,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("addon_template_name", IsQuery = true)]
+        [JsonProperty("addon_template_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AddonTemplateName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("cluster_id", IsQuery = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }
@@ -30,6 +37,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAddonInstancesRequest {\n");
+            sb.Append("  addonTemplateName: ").Append(AddonTemplateName).Append("\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -53,6 +61,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
+                    this.AddonTemplateName == input.AddonTemplateName ||
+                    (this.AddonTemplateName != null &&
+                    this.AddonTemplateName.Equals(input.AddonTemplateName))
+                ) && 
+                (
                     this.ClusterId == input.ClusterId ||
                     (this.ClusterId != null &&
                     this.ClusterId.Equals(input.ClusterId))
@@ -67,6 +80,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AddonTemplateName != null)
+                    hashCode = hashCode * 59 + this.AddonTemplateName.GetHashCode();
                 if (this.ClusterId != null)
                     hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 return hashCode;

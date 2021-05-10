@@ -15,21 +15,27 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
     public class EpDetail 
     {
         /// <summary>
-        /// 项目类型。prod-商用项目；poc-测试项目
+        /// 项目类型： - prod：商用项目 - poc：测试项目
         /// </summary>
-        /// <value>项目类型。prod-商用项目；poc-测试项目</value>
+        /// <value>项目类型： - prod：商用项目 - poc：测试项目</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
             /// <summary>
-            /// Enum PROD_PROC for value: prod; proc
+            /// Enum PROD for value: prod
             /// </summary>
-            public static readonly TypeEnum PROD_PROC = new TypeEnum("prod; proc");
+            public static readonly TypeEnum PROD = new TypeEnum("prod");
+
+            /// <summary>
+            /// Enum POC for value: poc
+            /// </summary>
+            public static readonly TypeEnum POC = new TypeEnum("poc");
 
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                { "prod; proc", PROD_PROC },
+                { "prod", PROD },
+                { "poc", POC },
             };
 
             private string Value;
@@ -156,7 +162,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 项目类型。prod-商用项目；poc-测试项目
+        /// 项目类型： - prod：商用项目 - poc：测试项目
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

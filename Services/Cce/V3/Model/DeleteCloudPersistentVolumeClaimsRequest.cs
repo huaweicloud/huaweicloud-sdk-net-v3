@@ -32,6 +32,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("deleteVolume", IsQuery = true)]
+        [JsonProperty("deleteVolume", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeleteVolume { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("storageType", IsQuery = true)]
+        [JsonProperty("storageType", NullValueHandling = NullValueHandling.Ignore)]
+        public string StorageType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("X-Cluster-ID", IsHeader = true)]
         [JsonProperty("X-Cluster-ID", NullValueHandling = NullValueHandling.Ignore)]
         public string XClusterID { get; set; }
@@ -46,6 +60,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class DeleteCloudPersistentVolumeClaimsRequest {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  deleteVolume: ").Append(DeleteVolume).Append("\n");
+            sb.Append("  storageType: ").Append(StorageType).Append("\n");
             sb.Append("  xClusterID: ").Append(XClusterID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -79,6 +95,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Namespace.Equals(input.Namespace))
                 ) && 
                 (
+                    this.DeleteVolume == input.DeleteVolume ||
+                    (this.DeleteVolume != null &&
+                    this.DeleteVolume.Equals(input.DeleteVolume))
+                ) && 
+                (
+                    this.StorageType == input.StorageType ||
+                    (this.StorageType != null &&
+                    this.StorageType.Equals(input.StorageType))
+                ) && 
+                (
                     this.XClusterID == input.XClusterID ||
                     (this.XClusterID != null &&
                     this.XClusterID.Equals(input.XClusterID))
@@ -97,6 +123,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Namespace != null)
                     hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.DeleteVolume != null)
+                    hashCode = hashCode * 59 + this.DeleteVolume.GetHashCode();
+                if (this.StorageType != null)
+                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
                 if (this.XClusterID != null)
                     hashCode = hashCode * 59 + this.XClusterID.GetHashCode();
                 return hashCode;

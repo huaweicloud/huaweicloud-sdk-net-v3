@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
+        /// 服务器地址。
+        /// </summary>
+        [JsonProperty("server", NullValueHandling = NullValueHandling.Ignore)]
+        public string Server { get; set; }
+
+        /// <summary>
         /// 证书授权数据。
         /// </summary>
         [JsonProperty("certificate-authority-data", NullValueHandling = NullValueHandling.Ignore)]
@@ -27,12 +33,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("insecure-skip-tls-verify", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InsecureSkipTlsVerify { get; set; }
 
-        /// <summary>
-        /// 服务器地址。
-        /// </summary>
-        [JsonProperty("server", NullValueHandling = NullValueHandling.Ignore)]
-        public string Server { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -41,9 +41,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ClusterCert {\n");
+            sb.Append("  server: ").Append(Server).Append("\n");
             sb.Append("  certificateAuthorityData: ").Append(CertificateAuthorityData).Append("\n");
             sb.Append("  insecureSkipTlsVerify: ").Append(InsecureSkipTlsVerify).Append("\n");
-            sb.Append("  server: ").Append(Server).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,6 +66,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
+                    this.Server == input.Server ||
+                    (this.Server != null &&
+                    this.Server.Equals(input.Server))
+                ) && 
+                (
                     this.CertificateAuthorityData == input.CertificateAuthorityData ||
                     (this.CertificateAuthorityData != null &&
                     this.CertificateAuthorityData.Equals(input.CertificateAuthorityData))
@@ -74,11 +79,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.InsecureSkipTlsVerify == input.InsecureSkipTlsVerify ||
                     (this.InsecureSkipTlsVerify != null &&
                     this.InsecureSkipTlsVerify.Equals(input.InsecureSkipTlsVerify))
-                ) && 
-                (
-                    this.Server == input.Server ||
-                    (this.Server != null &&
-                    this.Server.Equals(input.Server))
                 );
         }
 
@@ -90,12 +90,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Server != null)
+                    hashCode = hashCode * 59 + this.Server.GetHashCode();
                 if (this.CertificateAuthorityData != null)
                     hashCode = hashCode * 59 + this.CertificateAuthorityData.GetHashCode();
                 if (this.InsecureSkipTlsVerify != null)
                     hashCode = hashCode * 59 + this.InsecureSkipTlsVerify.GetHashCode();
-                if (this.Server != null)
-                    hashCode = hashCode * 59 + this.Server.GetHashCode();
                 return hashCode;
             }
         }

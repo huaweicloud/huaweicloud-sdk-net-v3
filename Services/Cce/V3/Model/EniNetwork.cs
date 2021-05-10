@@ -10,22 +10,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// ENI网络配置，创建集群指定使用Yangtse网络模式时必填。
+    /// ENI网络配置，创建集群指定使用云原生网络2.0网络模式时必填。
     /// </summary>
     public class EniNetwork 
     {
+
+        /// <summary>
+        /// 用于创建控制节点的subnet的IPv4网络ID(暂不支持IPv6)。获取方法如下：- 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找IPv4网络ID。- 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)](tag:hws)[[查询子网列表](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_subnet01_0003.html)](tag:hws_hk)
+        /// </summary>
+        [JsonProperty("eniSubnetId", NullValueHandling = NullValueHandling.Ignore)]
+        public string EniSubnetId { get; set; }
 
         /// <summary>
         /// ENI子网CIDR
         /// </summary>
         [JsonProperty("eniSubnetCIDR", NullValueHandling = NullValueHandling.Ignore)]
         public string EniSubnetCIDR { get; set; }
-
-        /// <summary>
-        /// eni子网ID
-        /// </summary>
-        [JsonProperty("eniSubnetId", NullValueHandling = NullValueHandling.Ignore)]
-        public string EniSubnetId { get; set; }
 
 
         /// <summary>
@@ -35,8 +35,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class EniNetwork {\n");
-            sb.Append("  eniSubnetCIDR: ").Append(EniSubnetCIDR).Append("\n");
             sb.Append("  eniSubnetId: ").Append(EniSubnetId).Append("\n");
+            sb.Append("  eniSubnetCIDR: ").Append(EniSubnetCIDR).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,14 +59,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.EniSubnetCIDR == input.EniSubnetCIDR ||
-                    (this.EniSubnetCIDR != null &&
-                    this.EniSubnetCIDR.Equals(input.EniSubnetCIDR))
-                ) && 
-                (
                     this.EniSubnetId == input.EniSubnetId ||
                     (this.EniSubnetId != null &&
                     this.EniSubnetId.Equals(input.EniSubnetId))
+                ) && 
+                (
+                    this.EniSubnetCIDR == input.EniSubnetCIDR ||
+                    (this.EniSubnetCIDR != null &&
+                    this.EniSubnetCIDR.Equals(input.EniSubnetCIDR))
                 );
         }
 
@@ -78,10 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EniSubnetCIDR != null)
-                    hashCode = hashCode * 59 + this.EniSubnetCIDR.GetHashCode();
                 if (this.EniSubnetId != null)
                     hashCode = hashCode * 59 + this.EniSubnetId.GetHashCode();
+                if (this.EniSubnetCIDR != null)
+                    hashCode = hashCode * 59 + this.EniSubnetCIDR.GetHashCode();
                 return hashCode;
             }
         }

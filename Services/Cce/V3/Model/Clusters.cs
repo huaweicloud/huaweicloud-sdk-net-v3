@@ -16,16 +16,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("cluster", NullValueHandling = NullValueHandling.Ignore)]
-        public ClusterCert Cluster { get; set; }
-
-        /// <summary>
         /// 集群名字。 - 若不存在publicIp（虚拟机弹性IP），则集群列表的集群数量为1，该字段值为“internalCluster”。 - 若存在publicIp，则集群列表的集群数量大于1，所有扩展的cluster的name的值为“externalCluster”。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cluster", NullValueHandling = NullValueHandling.Ignore)]
+        public ClusterCert Cluster { get; set; }
 
 
         /// <summary>
@@ -35,8 +35,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Clusters {\n");
-            sb.Append("  cluster: ").Append(Cluster).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  cluster: ").Append(Cluster).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,14 +59,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.Cluster == input.Cluster ||
-                    (this.Cluster != null &&
-                    this.Cluster.Equals(input.Cluster))
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Cluster == input.Cluster ||
+                    (this.Cluster != null &&
+                    this.Cluster.Equals(input.Cluster))
                 );
         }
 
@@ -78,10 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Cluster != null)
-                    hashCode = hashCode * 59 + this.Cluster.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Cluster != null)
+                    hashCode = hashCode * 59 + this.Cluster.GetHashCode();
                 return hashCode;
             }
         }

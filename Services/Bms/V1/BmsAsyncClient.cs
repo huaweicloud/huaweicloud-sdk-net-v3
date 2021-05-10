@@ -28,6 +28,32 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
+        /// 批量添加裸金属服务器标签
+        /// </summary>
+        public async Task<BatchCreateBaremetalServerTagsResponse> BatchCreateBaremetalServerTagsAsync(BatchCreateBaremetalServerTagsRequest batchCreateBaremetalServerTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , batchCreateBaremetalServerTagsRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateBaremetalServerTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchCreateBaremetalServerTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除l裸金属服务器标签
+        /// </summary>
+        public async Task<BatchDeleteBaremetalServerTagsResponse> BatchDeleteBaremetalServerTagsAsync(BatchDeleteBaremetalServerTagsRequest batchDeleteBaremetalServerTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , batchDeleteBaremetalServerTagsRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteBaremetalServerTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchDeleteBaremetalServerTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 重启裸金属服务器
         /// </summary>
         public async Task<BatchRebootBaremetalServersResponse> BatchRebootBaremetalServersAsync(BatchRebootBaremetalServersRequest batchRebootBaremetalServersRequest)
@@ -189,6 +215,19 @@ namespace HuaweiCloud.SDK.Bms.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerInterfaceAttachmentsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBaremetalServerInterfaceAttachmentsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询裸金属服务器标签
+        /// </summary>
+        public async Task<ShowBaremetalServerTagsResponse> ShowBaremetalServerTagsAsync(ShowBaremetalServerTagsRequest showBaremetalServerTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , showBaremetalServerTagsRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowBaremetalServerTagsResponse>(response);
         }
         
         /// <summary>

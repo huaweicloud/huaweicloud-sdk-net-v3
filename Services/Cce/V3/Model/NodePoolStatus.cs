@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class NodePoolStatus 
     {
         /// <summary>
-        /// 节点池状态，可为空。
+        /// 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 
         /// </summary>
-        /// <value>节点池状态，可为空。</value>
+        /// <value>节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 </value>
         [JsonConverter(typeof(EnumClassConverter<PhaseEnum>))]
         public class PhaseEnum
         {
@@ -150,16 +150,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? CurrentNode { get; set; }
 
         /// <summary>
+        /// 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 
+        /// </summary>
+        [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
+        public PhaseEnum Phase { get; set; }
+        /// <summary>
         /// 节点池删除时的 JobID
         /// </summary>
         [JsonProperty("jobId", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
-        /// <summary>
-        /// 节点池状态，可为空。
-        /// </summary>
-        [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
-        public PhaseEnum Phase { get; set; }
 
         /// <summary>
         /// Get the string
@@ -169,8 +169,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class NodePoolStatus {\n");
             sb.Append("  currentNode: ").Append(CurrentNode).Append("\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  phase: ").Append(Phase).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -198,14 +198,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.CurrentNode.Equals(input.CurrentNode))
                 ) && 
                 (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
                     this.Phase == input.Phase ||
                     (this.Phase != null &&
                     this.Phase.Equals(input.Phase))
+                ) && 
+                (
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -219,10 +219,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.CurrentNode != null)
                     hashCode = hashCode * 59 + this.CurrentNode.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.Phase != null)
                     hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

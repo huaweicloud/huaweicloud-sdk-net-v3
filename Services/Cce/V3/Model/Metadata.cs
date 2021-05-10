@@ -16,22 +16,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 插件注解，由key/value组成 - 安装：固定值为{\&quot;addon.install/type\&quot;:\&quot;install\&quot;} - 升级：固定值为{\&quot;addon.upgrade/type\&quot;:\&quot;upgrade\&quot;} 
+        /// 唯一id标识
         /// </summary>
-        [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> Annotations { get; set; }
-
-        /// <summary>
-        /// 创建时间
-        /// </summary>
-        [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreationTimestamp { get; set; }
-
-        /// <summary>
-        /// 插件标签，key/value对格式
-        /// </summary>
-        [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> Labels { get; set; }
+        [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Uid { get; set; }
 
         /// <summary>
         /// 插件名称
@@ -40,16 +28,28 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 唯一id标识
+        /// 插件标签，key/value对格式，接口保留字段，填写不会生效
         /// </summary>
-        [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Uid { get; set; }
+        [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> Labels { get; set; }
+
+        /// <summary>
+        /// 插件注解，由key/value组成 - 安装：固定值为{\&quot;addon.install/type\&quot;:\&quot;install\&quot;} - 升级：固定值为{\&quot;addon.upgrade/type\&quot;:\&quot;upgrade\&quot;} 
+        /// </summary>
+        [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> Annotations { get; set; }
 
         /// <summary>
         /// 更新时间
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdateTimestamp { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? CreationTimestamp { get; set; }
 
 
         /// <summary>
@@ -59,12 +59,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Metadata {\n");
-            sb.Append("  annotations: ").Append(Annotations).Append("\n");
-            sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
-            sb.Append("  labels: ").Append(Labels).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  uid: ").Append(Uid).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  labels: ").Append(Labels).Append("\n");
+            sb.Append("  annotations: ").Append(Annotations).Append("\n");
             sb.Append("  updateTimestamp: ").Append(UpdateTimestamp).Append("\n");
+            sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +87,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.Annotations == input.Annotations ||
-                    this.Annotations != null &&
-                    input.Annotations != null &&
-                    this.Annotations.SequenceEqual(input.Annotations)
+                    this.Uid == input.Uid ||
+                    (this.Uid != null &&
+                    this.Uid.Equals(input.Uid))
                 ) && 
                 (
-                    this.CreationTimestamp == input.CreationTimestamp ||
-                    (this.CreationTimestamp != null &&
-                    this.CreationTimestamp.Equals(input.CreationTimestamp))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
                     this.Labels == input.Labels ||
@@ -104,19 +103,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Labels.SequenceEqual(input.Labels)
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
+                    this.Annotations == input.Annotations ||
+                    this.Annotations != null &&
+                    input.Annotations != null &&
+                    this.Annotations.SequenceEqual(input.Annotations)
                 ) && 
                 (
                     this.UpdateTimestamp == input.UpdateTimestamp ||
                     (this.UpdateTimestamp != null &&
                     this.UpdateTimestamp.Equals(input.UpdateTimestamp))
+                ) && 
+                (
+                    this.CreationTimestamp == input.CreationTimestamp ||
+                    (this.CreationTimestamp != null &&
+                    this.CreationTimestamp.Equals(input.CreationTimestamp))
                 );
         }
 
@@ -128,18 +128,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Annotations != null)
-                    hashCode = hashCode * 59 + this.Annotations.GetHashCode();
-                if (this.CreationTimestamp != null)
-                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
-                if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Uid != null)
                     hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Labels != null)
+                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                if (this.Annotations != null)
+                    hashCode = hashCode * 59 + this.Annotations.GetHashCode();
                 if (this.UpdateTimestamp != null)
                     hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                if (this.CreationTimestamp != null)
+                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
                 return hashCode;
             }
         }

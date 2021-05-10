@@ -177,11 +177,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             public static readonly TypeEnum VIRTUALMACHINE = new TypeEnum("VirtualMachine");
 
             /// <summary>
-            /// Enum BAREMETAL for value: BareMetal
-            /// </summary>
-            public static readonly TypeEnum BAREMETAL = new TypeEnum("BareMetal");
-
-            /// <summary>
             /// Enum ARM64 for value: ARM64
             /// </summary>
             public static readonly TypeEnum ARM64 = new TypeEnum("ARM64");
@@ -190,7 +185,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             new Dictionary<string, TypeEnum>()
             {
                 { "VirtualMachine", VIRTUALMACHINE },
-                { "BareMetal", BAREMETAL },
                 { "ARM64", ARM64 },
             };
 

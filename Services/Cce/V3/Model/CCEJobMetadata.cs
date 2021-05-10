@@ -16,16 +16,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 作业的创建时间。
-        /// </summary>
-        [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreationTimestamp { get; set; }
-
-        /// <summary>
         /// 作业的ID。
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uid { get; set; }
+
+        /// <summary>
+        /// 作业的创建时间。
+        /// </summary>
+        [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreationTimestamp { get; set; }
 
         /// <summary>
         /// 作业的更新时间。
@@ -41,8 +41,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CCEJobMetadata {\n");
-            sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
             sb.Append("  uid: ").Append(Uid).Append("\n");
+            sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
             sb.Append("  updateTimestamp: ").Append(UpdateTimestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,14 +66,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.CreationTimestamp == input.CreationTimestamp ||
-                    (this.CreationTimestamp != null &&
-                    this.CreationTimestamp.Equals(input.CreationTimestamp))
-                ) && 
-                (
                     this.Uid == input.Uid ||
                     (this.Uid != null &&
                     this.Uid.Equals(input.Uid))
+                ) && 
+                (
+                    this.CreationTimestamp == input.CreationTimestamp ||
+                    (this.CreationTimestamp != null &&
+                    this.CreationTimestamp.Equals(input.CreationTimestamp))
                 ) && 
                 (
                     this.UpdateTimestamp == input.UpdateTimestamp ||
@@ -90,10 +90,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CreationTimestamp != null)
-                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
                 if (this.Uid != null)
                     hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.CreationTimestamp != null)
+                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
                 if (this.UpdateTimestamp != null)
                     hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
                 return hashCode;

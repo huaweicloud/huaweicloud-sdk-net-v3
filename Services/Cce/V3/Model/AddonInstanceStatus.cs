@@ -138,10 +138,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 插件实例状态
         /// </summary>
-        [JsonProperty("currentVersion", NullValueHandling = NullValueHandling.Ignore)]
-        public Versions CurrentVersion { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public StatusEnum Status { get; set; }
+        /// <summary>
+        /// 插件安装失败原因
+        /// </summary>
+        [JsonProperty("Reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string Reason { get; set; }
 
         /// <summary>
         /// 安装错误详情
@@ -150,21 +155,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// 插件安装失败原因
-        /// </summary>
-        [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
-        public string Reason { get; set; }
-
-        /// <summary>
-        /// 插件实例状态
-        /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum Status { get; set; }
-        /// <summary>
         /// 此插件版本，支持升级的集群版本
         /// </summary>
         [JsonProperty("targetVersions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> TargetVersions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("currentVersion", NullValueHandling = NullValueHandling.Ignore)]
+        public Versions CurrentVersion { get; set; }
 
 
         /// <summary>
@@ -174,11 +174,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AddonInstanceStatus {\n");
-            sb.Append("  currentVersion: ").Append(CurrentVersion).Append("\n");
-            sb.Append("  message: ").Append(Message).Append("\n");
-            sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  reason: ").Append(Reason).Append("\n");
+            sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  targetVersions: ").Append(TargetVersions).Append("\n");
+            sb.Append("  currentVersion: ").Append(CurrentVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,14 +201,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.CurrentVersion == input.CurrentVersion ||
-                    (this.CurrentVersion != null &&
-                    this.CurrentVersion.Equals(input.CurrentVersion))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 ) && 
                 (
                     this.Reason == input.Reason ||
@@ -216,15 +211,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Reason.Equals(input.Reason))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
                 ) && 
                 (
                     this.TargetVersions == input.TargetVersions ||
                     this.TargetVersions != null &&
                     input.TargetVersions != null &&
                     this.TargetVersions.SequenceEqual(input.TargetVersions)
+                ) && 
+                (
+                    this.CurrentVersion == input.CurrentVersion ||
+                    (this.CurrentVersion != null &&
+                    this.CurrentVersion.Equals(input.CurrentVersion))
                 );
         }
 
@@ -236,16 +236,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CurrentVersion != null)
-                    hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Reason != null)
-                    hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Reason != null)
+                    hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.TargetVersions != null)
                     hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
+                if (this.CurrentVersion != null)
+                    hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
                 return hashCode;
             }
         }

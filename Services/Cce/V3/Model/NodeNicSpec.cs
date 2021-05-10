@@ -16,16 +16,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 扩展网卡
-        /// </summary>
-        [JsonProperty("extNics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<NicSpec> ExtNics { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("primaryNic", NullValueHandling = NullValueHandling.Ignore)]
         public NicSpec PrimaryNic { get; set; }
+
+        /// <summary>
+        /// 扩展网卡
+        /// </summary>
+        [JsonProperty("extNics", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NicSpec> ExtNics { get; set; }
 
 
         /// <summary>
@@ -35,8 +35,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class NodeNicSpec {\n");
-            sb.Append("  extNics: ").Append(ExtNics).Append("\n");
             sb.Append("  primaryNic: ").Append(PrimaryNic).Append("\n");
+            sb.Append("  extNics: ").Append(ExtNics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,15 +59,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
+                    this.PrimaryNic == input.PrimaryNic ||
+                    (this.PrimaryNic != null &&
+                    this.PrimaryNic.Equals(input.PrimaryNic))
+                ) && 
+                (
                     this.ExtNics == input.ExtNics ||
                     this.ExtNics != null &&
                     input.ExtNics != null &&
                     this.ExtNics.SequenceEqual(input.ExtNics)
-                ) && 
-                (
-                    this.PrimaryNic == input.PrimaryNic ||
-                    (this.PrimaryNic != null &&
-                    this.PrimaryNic.Equals(input.PrimaryNic))
                 );
         }
 
@@ -79,10 +79,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ExtNics != null)
-                    hashCode = hashCode * 59 + this.ExtNics.GetHashCode();
                 if (this.PrimaryNic != null)
                     hashCode = hashCode * 59 + this.PrimaryNic.GetHashCode();
+                if (this.ExtNics != null)
+                    hashCode = hashCode * 59 + this.ExtNics.GetHashCode();
                 return hashCode;
             }
         }

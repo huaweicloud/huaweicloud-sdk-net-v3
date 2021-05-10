@@ -168,11 +168,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 节点状态。
         /// </summary>
-        [JsonProperty("deleteStatus", NullValueHandling = NullValueHandling.Ignore)]
-        public DeleteStatus DeleteStatus { get; set; }
-
+        [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
+        public PhaseEnum Phase { get; set; }
         /// <summary>
         /// 创建或删除时的任务ID。
         /// </summary>
@@ -180,10 +179,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string JobID { get; set; }
 
         /// <summary>
-        /// 节点状态。
+        /// 底层云服务器或裸金属节点ID。
         /// </summary>
-        [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
-        public PhaseEnum Phase { get; set; }
+        [JsonProperty("serverId", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerId { get; set; }
+
         /// <summary>
         /// 节点主网卡私有网段IP地址。
         /// </summary>
@@ -191,16 +191,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string PrivateIP { get; set; }
 
         /// <summary>
-        /// 节点弹性公网IP地址。
+        /// 节点弹性公网IP地址。如果ECS的数据没有实时同步，可在界面上通过“同步节点信息”手动进行更新。
         /// </summary>
         [JsonProperty("publicIP", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIP { get; set; }
 
         /// <summary>
-        /// 底层云服务器或裸金属节点ID。
+        /// 
         /// </summary>
-        [JsonProperty("serverId", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServerId { get; set; }
+        [JsonProperty("deleteStatus", NullValueHandling = NullValueHandling.Ignore)]
+        public DeleteStatus DeleteStatus { get; set; }
 
 
         /// <summary>
@@ -210,12 +210,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class V3NodeStatus {\n");
-            sb.Append("  deleteStatus: ").Append(DeleteStatus).Append("\n");
-            sb.Append("  jobID: ").Append(JobID).Append("\n");
             sb.Append("  phase: ").Append(Phase).Append("\n");
+            sb.Append("  jobID: ").Append(JobID).Append("\n");
+            sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("  privateIP: ").Append(PrivateIP).Append("\n");
             sb.Append("  publicIP: ").Append(PublicIP).Append("\n");
-            sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("  deleteStatus: ").Append(DeleteStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -238,9 +238,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.DeleteStatus == input.DeleteStatus ||
-                    (this.DeleteStatus != null &&
-                    this.DeleteStatus.Equals(input.DeleteStatus))
+                    this.Phase == input.Phase ||
+                    (this.Phase != null &&
+                    this.Phase.Equals(input.Phase))
                 ) && 
                 (
                     this.JobID == input.JobID ||
@@ -248,9 +248,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.JobID.Equals(input.JobID))
                 ) && 
                 (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
+                    this.ServerId == input.ServerId ||
+                    (this.ServerId != null &&
+                    this.ServerId.Equals(input.ServerId))
                 ) && 
                 (
                     this.PrivateIP == input.PrivateIP ||
@@ -263,9 +263,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.PublicIP.Equals(input.PublicIP))
                 ) && 
                 (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
+                    this.DeleteStatus == input.DeleteStatus ||
+                    (this.DeleteStatus != null &&
+                    this.DeleteStatus.Equals(input.DeleteStatus))
                 );
         }
 
@@ -277,18 +277,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DeleteStatus != null)
-                    hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
-                if (this.JobID != null)
-                    hashCode = hashCode * 59 + this.JobID.GetHashCode();
                 if (this.Phase != null)
                     hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.JobID != null)
+                    hashCode = hashCode * 59 + this.JobID.GetHashCode();
+                if (this.ServerId != null)
+                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.PrivateIP != null)
                     hashCode = hashCode * 59 + this.PrivateIP.GetHashCode();
                 if (this.PublicIP != null)
                     hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.DeleteStatus != null)
+                    hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
                 return hashCode;
             }
         }

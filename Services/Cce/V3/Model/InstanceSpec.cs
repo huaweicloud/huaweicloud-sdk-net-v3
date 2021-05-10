@@ -16,16 +16,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 插件模板所属类型
+        /// 集群id
         /// </summary>
-        [JsonProperty("addonTemplateLabels", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> AddonTemplateLabels { get; set; }
+        [JsonProperty("clusterID", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClusterID { get; set; }
 
         /// <summary>
-        /// 插件logo
+        /// 插件模板版本号，如1.0.0
         /// </summary>
-        [JsonProperty("addonTemplateLogo", NullValueHandling = NullValueHandling.Ignore)]
-        public string AddonTemplateLogo { get; set; }
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public string Version { get; set; }
 
         /// <summary>
         /// 插件模板名称，如coredns
@@ -40,10 +40,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string AddonTemplateType { get; set; }
 
         /// <summary>
-        /// 集群id
+        /// 插件模板logo图片的地址
         /// </summary>
-        [JsonProperty("clusterID", NullValueHandling = NullValueHandling.Ignore)]
-        public string ClusterID { get; set; }
+        [JsonProperty("addonTemplateLogo", NullValueHandling = NullValueHandling.Ignore)]
+        public string AddonTemplateLogo { get; set; }
+
+        /// <summary>
+        /// 插件模板所属类型
+        /// </summary>
+        [JsonProperty("addonTemplateLabels", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AddonTemplateLabels { get; set; }
 
         /// <summary>
         /// 插件模板描述
@@ -52,16 +58,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 插件模板安装参数（各插件不同）
+        /// 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Values { get; set; }
-
-        /// <summary>
-        /// 插件模板版本号，如1.0.0
-        /// </summary>
-        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public string Version { get; set; }
 
 
         /// <summary>
@@ -71,14 +71,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InstanceSpec {\n");
-            sb.Append("  addonTemplateLabels: ").Append(AddonTemplateLabels).Append("\n");
-            sb.Append("  addonTemplateLogo: ").Append(AddonTemplateLogo).Append("\n");
+            sb.Append("  clusterID: ").Append(ClusterID).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  addonTemplateName: ").Append(AddonTemplateName).Append("\n");
             sb.Append("  addonTemplateType: ").Append(AddonTemplateType).Append("\n");
-            sb.Append("  clusterID: ").Append(ClusterID).Append("\n");
+            sb.Append("  addonTemplateLogo: ").Append(AddonTemplateLogo).Append("\n");
+            sb.Append("  addonTemplateLabels: ").Append(AddonTemplateLabels).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  values: ").Append(Values).Append("\n");
-            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,15 +101,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.AddonTemplateLabels == input.AddonTemplateLabels ||
-                    this.AddonTemplateLabels != null &&
-                    input.AddonTemplateLabels != null &&
-                    this.AddonTemplateLabels.SequenceEqual(input.AddonTemplateLabels)
+                    this.ClusterID == input.ClusterID ||
+                    (this.ClusterID != null &&
+                    this.ClusterID.Equals(input.ClusterID))
                 ) && 
                 (
-                    this.AddonTemplateLogo == input.AddonTemplateLogo ||
-                    (this.AddonTemplateLogo != null &&
-                    this.AddonTemplateLogo.Equals(input.AddonTemplateLogo))
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
                 ) && 
                 (
                     this.AddonTemplateName == input.AddonTemplateName ||
@@ -122,9 +121,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.AddonTemplateType.Equals(input.AddonTemplateType))
                 ) && 
                 (
-                    this.ClusterID == input.ClusterID ||
-                    (this.ClusterID != null &&
-                    this.ClusterID.Equals(input.ClusterID))
+                    this.AddonTemplateLogo == input.AddonTemplateLogo ||
+                    (this.AddonTemplateLogo != null &&
+                    this.AddonTemplateLogo.Equals(input.AddonTemplateLogo))
+                ) && 
+                (
+                    this.AddonTemplateLabels == input.AddonTemplateLabels ||
+                    this.AddonTemplateLabels != null &&
+                    input.AddonTemplateLabels != null &&
+                    this.AddonTemplateLabels.SequenceEqual(input.AddonTemplateLabels)
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -136,11 +141,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Values != null &&
                     input.Values != null &&
                     this.Values.SequenceEqual(input.Values)
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
                 );
         }
 
@@ -152,22 +152,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AddonTemplateLabels != null)
-                    hashCode = hashCode * 59 + this.AddonTemplateLabels.GetHashCode();
-                if (this.AddonTemplateLogo != null)
-                    hashCode = hashCode * 59 + this.AddonTemplateLogo.GetHashCode();
+                if (this.ClusterID != null)
+                    hashCode = hashCode * 59 + this.ClusterID.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.AddonTemplateName != null)
                     hashCode = hashCode * 59 + this.AddonTemplateName.GetHashCode();
                 if (this.AddonTemplateType != null)
                     hashCode = hashCode * 59 + this.AddonTemplateType.GetHashCode();
-                if (this.ClusterID != null)
-                    hashCode = hashCode * 59 + this.ClusterID.GetHashCode();
+                if (this.AddonTemplateLogo != null)
+                    hashCode = hashCode * 59 + this.AddonTemplateLogo.GetHashCode();
+                if (this.AddonTemplateLabels != null)
+                    hashCode = hashCode * 59 + this.AddonTemplateLabels.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Values != null)
                     hashCode = hashCode * 59 + this.Values.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

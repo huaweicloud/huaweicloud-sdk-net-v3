@@ -16,10 +16,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// authenticating_proxy模式配置的x509格式CA证书(base64编码)。 最大长度：1M
+        /// authenticating_proxy模式配置的x509格式CA证书(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。 最大长度：1M
         /// </summary>
         [JsonProperty("ca", NullValueHandling = NullValueHandling.Ignore)]
         public string Ca { get; set; }
+
+        /// <summary>
+        /// authenticating_proxy模式配置的x509格式CA证书签发的客户端证书，用于kube-apiserver到扩展apiserver的认证。(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。
+        /// </summary>
+        [JsonProperty("cert", NullValueHandling = NullValueHandling.Ignore)]
+        public string Cert { get; set; }
+
+        /// <summary>
+        /// authenticating_proxy模式配置的x509格式CA证书签发的客户端证书时对应的私钥，用于kube-apiserver到扩展apiserver的认证。Kubernetes集群使用的私钥尚不支持密码加密，请使用未加密的私钥。(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。
+        /// </summary>
+        [JsonProperty("privateKey", NullValueHandling = NullValueHandling.Ignore)]
+        public string PrivateKey { get; set; }
 
 
         /// <summary>
@@ -30,6 +42,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class AuthenticatingProxy {\n");
             sb.Append("  ca: ").Append(Ca).Append("\n");
+            sb.Append("  cert: ").Append(Cert).Append("\n");
+            sb.Append("  privateKey: ").Append(PrivateKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +69,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Ca == input.Ca ||
                     (this.Ca != null &&
                     this.Ca.Equals(input.Ca))
+                ) && 
+                (
+                    this.Cert == input.Cert ||
+                    (this.Cert != null &&
+                    this.Cert.Equals(input.Cert))
+                ) && 
+                (
+                    this.PrivateKey == input.PrivateKey ||
+                    (this.PrivateKey != null &&
+                    this.PrivateKey.Equals(input.PrivateKey))
                 );
         }
 
@@ -68,6 +92,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.Ca != null)
                     hashCode = hashCode * 59 + this.Ca.GetHashCode();
+                if (this.Cert != null)
+                    hashCode = hashCode * 59 + this.Cert.GetHashCode();
+                if (this.PrivateKey != null)
+                    hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
                 return hashCode;
             }
         }

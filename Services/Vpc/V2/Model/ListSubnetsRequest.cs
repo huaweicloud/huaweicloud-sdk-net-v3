@@ -36,13 +36,6 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("scope", IsQuery = true)]
-        [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
-        public string Scope { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -54,7 +47,6 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
-            sb.Append("  scope: ").Append(Scope).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,11 +82,6 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.VpcId == input.VpcId ||
                     (this.VpcId != null &&
                     this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
                 );
         }
 
@@ -112,8 +99,6 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.VpcId != null)
                     hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
                 return hashCode;
             }
         }

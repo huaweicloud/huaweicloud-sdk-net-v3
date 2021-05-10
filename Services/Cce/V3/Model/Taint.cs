@@ -132,11 +132,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 作用效果
-        /// </summary>
-        [JsonProperty("effect", NullValueHandling = NullValueHandling.Ignore)]
-        public EffectEnum Effect { get; set; }
-        /// <summary>
         /// 键
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
@@ -148,6 +143,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
+        /// <summary>
+        /// 作用效果
+        /// </summary>
+        [JsonProperty("effect", NullValueHandling = NullValueHandling.Ignore)]
+        public EffectEnum Effect { get; set; }
 
         /// <summary>
         /// Get the string
@@ -156,9 +156,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Taint {\n");
-            sb.Append("  effect: ").Append(Effect).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  effect: ").Append(Effect).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,11 +181,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.Effect == input.Effect ||
-                    (this.Effect != null &&
-                    this.Effect.Equals(input.Effect))
-                ) && 
-                (
                     this.Key == input.Key ||
                     (this.Key != null &&
                     this.Key.Equals(input.Key))
@@ -194,6 +189,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.Effect == input.Effect ||
+                    (this.Effect != null &&
+                    this.Effect.Equals(input.Effect))
                 );
         }
 
@@ -205,12 +205,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Effect != null)
-                    hashCode = hashCode * 59 + this.Effect.GetHashCode();
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Effect != null)
+                    hashCode = hashCode * 59 + this.Effect.GetHashCode();
                 return hashCode;
             }
         }
