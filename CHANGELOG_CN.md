@@ -1,3 +1,14 @@
+# 3.0.43-rc 2021-05-14
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 解决了使用接口`NovaShowKeypair`获取秘钥，结果解析异常的问题
+- _特性变更_
+  - 无
+
 # 3.0.42-rc 2021-05-10
 
 ### HuaweiCloud SDK BMS

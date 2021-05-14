@@ -1,3 +1,14 @@
+# 3.0.43-rc 2021-05-14
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - Solve the issue of abnormal parsing result when using interface `NovaShowKeypair` to obtain the secret key.
+- _Change_
+    - None
+
 # 3.0.42-rc 2021-05-10
 
 ### HuaweiCloud SDK BMS

@@ -10,9 +10,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Moderation.V1.Model
 {
     /// <summary>
-    /// 
+    /// 反黄，暴恐，广告检测详情
     /// </summary>
-    public class ImageDetectionResultDetailPorn 
+    public class ImageDetectionResultSimpleDetail 
     {
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Moderation.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ImageDetectionResultDetailPorn {\n");
+            sb.Append("class ImageDetectionResultSimpleDetail {\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("  label: ").Append(Label).Append("\n");
             sb.Append("}\n");
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Moderation.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ImageDetectionResultDetailPorn);
+            return this.Equals(input as ImageDetectionResultSimpleDetail);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ImageDetectionResultDetailPorn input)
+        public bool Equals(ImageDetectionResultSimpleDetail input)
         {
             if (input == null)
                 return false;

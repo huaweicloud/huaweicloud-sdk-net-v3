@@ -235,6 +235,116 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
+        /// 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+        /// </summary>
+        /// <value>崩溃一致性（crash_consistent）或应用一致性（app_consistent）</value>
+        [JsonConverter(typeof(EnumClassConverter<ConsistentLevelEnum>))]
+        public class ConsistentLevelEnum
+        {
+            /// <summary>
+            /// Enum APP_CONSISTENT for value: app_consistent
+            /// </summary>
+            public static readonly ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
+
+            /// <summary>
+            /// Enum CRASH_CONSISTENT for value: crash_consistent
+            /// </summary>
+            public static readonly ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
+
+            private static readonly Dictionary<string, ConsistentLevelEnum> StaticFields =
+            new Dictionary<string, ConsistentLevelEnum>()
+            {
+                { "app_consistent", APP_CONSISTENT },
+                { "crash_consistent", CRASH_CONSISTENT },
+            };
+
+            private string Value;
+
+            public ConsistentLevelEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static ConsistentLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ConsistentLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ConsistentLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ConsistentLevelEnum a, ConsistentLevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ConsistentLevelEnum a, ConsistentLevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 对象类型
         /// </summary>
         /// <value>对象类型</value>
@@ -461,9 +571,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// 规格编码
+        /// 规格编码: 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
         /// </summary>
-        /// <value>规格编码</value>
+        /// <value>规格编码: 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal</value>
         [JsonConverter(typeof(EnumClassConverter<SpecCodeEnum>))]
         public class SpecCodeEnum
         {
@@ -716,11 +826,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("cloud_type", NullValueHandling = NullValueHandling.Ignore)]
         public CloudTypeEnum CloudType { get; set; }
         /// <summary>
-        /// [规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）](tag:hws,hws_hk,fcs_vm,ctc) [规格，默认为崩溃一致性（crash_consistent）](tag:dt,ocb,tlf,sbc)
+        /// 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
         /// </summary>
         [JsonProperty("consistent_level", NullValueHandling = NullValueHandling.Ignore)]
-        public string ConsistentLevel { get; set; }
-
+        public ConsistentLevelEnum ConsistentLevel { get; set; }
         /// <summary>
         /// 对象类型
         /// </summary>
@@ -750,7 +859,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 规格编码
+        /// 规格编码: 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
         /// </summary>
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public SpecCodeEnum SpecCode { get; set; }

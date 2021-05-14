@@ -25,19 +25,19 @@ namespace HuaweiCloud.SDK.Moderation.V1.Model
         /// 涉黄检测结果。
         /// </summary>
         [JsonProperty("porn", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ImageDetectionResultDetailPorn> Porn { get; set; }
+        public List<ImageDetectionResultSimpleDetail> Porn { get; set; }
 
         /// <summary>
         /// 涉政、暴恐检测结果。
         /// </summary>
         [JsonProperty("terrorism", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ImageDetectionResultDetailPorn> Terrorism { get; set; }
+        public List<ImageDetectionResultSimpleDetail> Terrorism { get; set; }
 
         /// <summary>
         /// 广告检测结果。
         /// </summary>
         [JsonProperty("ad", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ImageDetectionResultDetailPorn> Ad { get; set; }
+        public List<ImageDetectionResultSimpleDetail> Ad { get; set; }
 
 
         /// <summary>

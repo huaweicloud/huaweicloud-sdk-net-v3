@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 删除失败的资源ID列表
+        /// 删除失败的资源数量
         /// </summary>
         [JsonProperty("fail_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? FailCount { get; set; }

@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 密钥ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 密钥更新时间。

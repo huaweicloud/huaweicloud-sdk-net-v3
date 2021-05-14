@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class BillingCreate 
     {
         /// <summary>
-        /// [云平台，云平台，公有云或者混合云](tag:hws,hws_hk,fcs_vm,ctc) [云平台，云平台，公有云](tag:dt,ocb,tlf,sbc)
+        /// 云平台，公有云或者混合云
         /// </summary>
-        /// <value>[云平台，云平台，公有云或者混合云](tag:hws,hws_hk,fcs_vm,ctc) [云平台，云平台，公有云](tag:dt,ocb,tlf,sbc)</value>
+        /// <value>云平台，公有云或者混合云</value>
         [JsonConverter(typeof(EnumClassConverter<CloudTypeEnum>))]
         public class CloudTypeEnum
         {
@@ -119,6 +119,116 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             }
 
             public static bool operator !=(CloudTypeEnum a, CloudTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+        /// </summary>
+        /// <value>规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）</value>
+        [JsonConverter(typeof(EnumClassConverter<ConsistentLevelEnum>))]
+        public class ConsistentLevelEnum
+        {
+            /// <summary>
+            /// Enum APP_CONSISTENT for value: app_consistent
+            /// </summary>
+            public static readonly ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
+
+            /// <summary>
+            /// Enum CRASH_CONSISTENT for value: crash_consistent
+            /// </summary>
+            public static readonly ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
+
+            private static readonly Dictionary<string, ConsistentLevelEnum> StaticFields =
+            new Dictionary<string, ConsistentLevelEnum>()
+            {
+                { "app_consistent", APP_CONSISTENT },
+                { "crash_consistent", CRASH_CONSISTENT },
+            };
+
+            private string Value;
+
+            public ConsistentLevelEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static ConsistentLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ConsistentLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ConsistentLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ConsistentLevelEnum a, ConsistentLevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ConsistentLevelEnum a, ConsistentLevelEnum b)
             {
                 return !(a == b);
             }
@@ -572,16 +682,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// [云平台，云平台，公有云或者混合云](tag:hws,hws_hk,fcs_vm,ctc) [云平台，云平台，公有云](tag:dt,ocb,tlf,sbc)
+        /// 云平台，公有云或者混合云
         /// </summary>
         [JsonProperty("cloud_type", NullValueHandling = NullValueHandling.Ignore)]
         public CloudTypeEnum CloudType { get; set; }
         /// <summary>
-        /// [规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）](tag:hws,hws_hk,fcs_vm,ctc) [规格，默认为崩溃一致性（crash_consistent）](tag:dt,ocb,tlf,sbc)
+        /// 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）
         /// </summary>
         [JsonProperty("consistent_level", NullValueHandling = NullValueHandling.Ignore)]
-        public string ConsistentLevel { get; set; }
-
+        public ConsistentLevelEnum ConsistentLevel { get; set; }
         /// <summary>
         /// 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。
         /// </summary>
