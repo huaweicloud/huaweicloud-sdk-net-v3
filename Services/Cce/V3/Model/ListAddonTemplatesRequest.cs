@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 指定的模板名称，不填写则查询列表。
         /// </summary>
         [SDKProperty("addon_template_name", IsQuery = true)]
         [JsonProperty("addon_template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AddonTemplateName { get; set; }
 
         /// <summary>
-        /// 
+        /// 含义：可接受的最低升级版本  属性：隐藏参数
         /// </summary>
         [SDKProperty("base_update_addon_version", IsQuery = true)]
         [JsonProperty("base_update_addon_version", NullValueHandling = NullValueHandling.Ignore)]
         public string BaseUpdateAddonVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// 含义：查询的集群  属性：隐藏参数
         /// </summary>
         [SDKProperty("cluster_id", IsQuery = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 
+        /// 含义：是否获取最新插件  属性：隐藏参数
         /// </summary>
         [SDKProperty("newest", IsQuery = true)]
         [JsonProperty("newest", NullValueHandling = NullValueHandling.Ignore)]
         public string Newest { get; set; }
 
         /// <summary>
-        /// 
+        /// 含义：筛选的插件版本  属性：隐藏参数
         /// </summary>
         [SDKProperty("version", IsQuery = true)]
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]

@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class UpdateTriggerRequest 
     {
         /// <summary>
-        /// Defines triggerTypeCode
+        /// 触发器类型代码。
         /// </summary>
+        /// <value>触发器类型代码。</value>
         [JsonConverter(typeof(EnumClassConverter<TriggerTypeCodeEnum>))]
         public class TriggerTypeCodeEnum
         {
@@ -173,23 +174,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 函数的URN，详细解释见FunctionGraph函数模型的描述。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
 
         /// <summary>
-        /// 
+        /// 触发器类型代码。
         /// </summary>
         [SDKProperty("trigger_type_code", IsPath = true)]
         [JsonProperty("trigger_type_code", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerTypeCodeEnum TriggerTypeCode { get; set; }
         /// <summary>
-        /// 
+        /// 触发器编码。
         /// </summary>
-        [SDKProperty("triggerId", IsPath = true)]
-        [JsonProperty("triggerId", NullValueHandling = NullValueHandling.Ignore)]
+        [SDKProperty("trigger_id", IsPath = true)]
+        [JsonProperty("trigger_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TriggerId { get; set; }
 
         /// <summary>

@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 镜像ID。
         /// </summary>
         [SDKProperty("image_id", IsPath = true)]
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
         /// <summary>
-        /// 
+        /// 要删除的标签的键。
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]

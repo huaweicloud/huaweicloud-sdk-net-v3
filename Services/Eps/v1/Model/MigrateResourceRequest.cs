@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
     {
 
         /// <summary>
-        /// 
+        /// 目标企业项目ID，enterprise_project_id为0时表示迁移资源到默认资源组default。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsPath = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

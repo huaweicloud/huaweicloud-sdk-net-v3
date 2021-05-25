@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 转储任务的总个数。 
         /// </summary>
         [JsonProperty("sink_max_tasks", NullValueHandling = NullValueHandling.Ignore)]
-        public string SinkMaxTasks { get; set; }
+        public int? SinkMaxTasks { get; set; }
 
 
         /// <summary>

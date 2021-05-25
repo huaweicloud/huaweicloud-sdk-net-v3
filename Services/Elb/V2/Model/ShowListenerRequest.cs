@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 监听器id
         /// </summary>
         [SDKProperty("listener_id", IsPath = true)]
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]

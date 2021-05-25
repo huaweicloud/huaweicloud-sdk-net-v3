@@ -420,6 +420,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreateTime { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("meta_data", NullValueHandling = NullValueHandling.Ignore)]
+        public ScalingPolicyV2MetaData MetaData { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -439,6 +445,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  scalingPolicyAction: ").Append(ScalingPolicyAction).Append("\n");
             sb.Append("  coolDownTime: ").Append(CoolDownTime).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  metaData: ").Append(MetaData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -514,6 +521,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.CreateTime == input.CreateTime ||
                     (this.CreateTime != null &&
                     this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.MetaData == input.MetaData ||
+                    (this.MetaData != null &&
+                    this.MetaData.Equals(input.MetaData))
                 );
         }
 
@@ -547,6 +559,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.CoolDownTime.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.MetaData != null)
+                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
                 return hashCode;
             }
         }

@@ -15,6 +15,32 @@ namespace HuaweiCloud.SDK.As.V1
 
         
         /// <summary>
+        /// 伸缩实例生命周期回调
+        /// </summary>
+        public async Task<AttachCallbackInstanceLifeCycleHookResponse> AttachCallbackInstanceLifeCycleHookAsync(AttachCallbackInstanceLifeCycleHookRequest attachCallbackInstanceLifeCycleHookRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , attachCallbackInstanceLifeCycleHookRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachCallbackInstanceLifeCycleHookRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<AttachCallbackInstanceLifeCycleHookResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量添加实例
+        /// </summary>
+        public async Task<BatchAddScalingInstancesResponse> BatchAddScalingInstancesAsync(BatchAddScalingInstancesRequest batchAddScalingInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , batchAddScalingInstancesRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddScalingInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchAddScalingInstancesResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量删除弹性伸缩配置
         /// </summary>
         public async Task<BatchDeleteScalingConfigsResponse> BatchDeleteScalingConfigsAsync(BatchDeleteScalingConfigsRequest batchDeleteScalingConfigsRequest)
@@ -27,16 +53,104 @@ namespace HuaweiCloud.SDK.As.V1
         }
         
         /// <summary>
-        /// 伸缩实例生命周期回调
+        /// 批量删除弹性伸缩策略。
         /// </summary>
-        public async Task<CompleteLifecycleActionResponse> CompleteLifecycleActionAsync(CompleteLifecycleActionRequest completeLifecycleActionRequest)
+        public async Task<BatchDeleteScalingPoliciesResponse> BatchDeleteScalingPoliciesAsync(BatchDeleteScalingPoliciesRequest batchDeleteScalingPoliciesRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , completeLifecycleActionRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", completeLifecycleActionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerializeNull<CompleteLifecycleActionResponse>(response);
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScalingPoliciesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchDeleteScalingPoliciesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量停用弹性伸缩策略。
+        /// </summary>
+        public async Task<BatchPauseScalingPoliciesResponse> BatchPauseScalingPoliciesAsync(BatchPauseScalingPoliciesRequest batchPauseScalingPoliciesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchPauseScalingPoliciesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchPauseScalingPoliciesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量设置实例保护
+        /// </summary>
+        public async Task<BatchProtectScalingInstancesResponse> BatchProtectScalingInstancesAsync(BatchProtectScalingInstancesRequest batchProtectScalingInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , batchProtectScalingInstancesRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchProtectScalingInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchProtectScalingInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量移除实例
+        /// </summary>
+        public async Task<BatchRemoveScalingInstancesResponse> BatchRemoveScalingInstancesAsync(BatchRemoveScalingInstancesRequest batchRemoveScalingInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , batchRemoveScalingInstancesRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveScalingInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchRemoveScalingInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量启用弹性伸缩策略。
+        /// </summary>
+        public async Task<BatchResumeScalingPoliciesResponse> BatchResumeScalingPoliciesAsync(BatchResumeScalingPoliciesRequest batchResumeScalingPoliciesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResumeScalingPoliciesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchResumeScalingPoliciesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量将实例转为备用状态
+        /// </summary>
+        public async Task<BatchSetScalingInstancesStandbyResponse> BatchSetScalingInstancesStandbyAsync(BatchSetScalingInstancesStandbyRequest batchSetScalingInstancesStandbyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , batchSetScalingInstancesStandbyRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchSetScalingInstancesStandbyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchSetScalingInstancesStandbyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量取消实例保护
+        /// </summary>
+        public async Task<BatchUnprotectScalingInstancesResponse> BatchUnprotectScalingInstancesAsync(BatchUnprotectScalingInstancesRequest batchUnprotectScalingInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , batchUnprotectScalingInstancesRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnprotectScalingInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchUnprotectScalingInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量将实例移出备用状态
+        /// </summary>
+        public async Task<BatchUnsetScalingInstancesStandbyResponse> BatchUnsetScalingInstancesStandbyAsync(BatchUnsetScalingInstancesStandbyRequest batchUnsetScalingInstancesStandbyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , batchUnsetScalingInstancesStandbyRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnsetScalingInstancesStandbyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchUnsetScalingInstancesStandbyResponse>(response);
         }
         
         /// <summary>
@@ -104,15 +218,15 @@ namespace HuaweiCloud.SDK.As.V1
         /// <summary>
         /// 创建标签
         /// </summary>
-        public async Task<CreateScalingTagsResponse> CreateScalingTagsAsync(CreateScalingTagsRequest createScalingTagsRequest)
+        public async Task<CreateScalingTagInfoResponse> CreateScalingTagInfoAsync(CreateScalingTagInfoRequest createScalingTagInfoRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type" , createScalingTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id" , createScalingTagsRequest.ResourceId.ToString());
+            urlParam.Add("resource_type" , createScalingTagInfoRequest.ResourceType.ToString());
+            urlParam.Add("resource_id" , createScalingTagInfoRequest.ResourceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingTagInfoRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<CreateScalingTagsResponse>(response);
+            return JsonUtils.DeSerializeNull<CreateScalingTagInfoResponse>(response);
         }
         
         /// <summary>
@@ -198,44 +312,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// <summary>
         /// 删除标签
         /// </summary>
-        public async Task<DeleteScalingTagsResponse> DeleteScalingTagsAsync(DeleteScalingTagsRequest deleteScalingTagsRequest)
+        public async Task<DeleteScalingTagInfoResponse> DeleteScalingTagInfoAsync(DeleteScalingTagInfoRequest deleteScalingTagInfoRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type" , deleteScalingTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id" , deleteScalingTagsRequest.ResourceId.ToString());
+            urlParam.Add("resource_type" , deleteScalingTagInfoRequest.ResourceType.ToString());
+            urlParam.Add("resource_id" , deleteScalingTagInfoRequest.ResourceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScalingTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScalingTagInfoRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<DeleteScalingTagsResponse>(response);
+            return JsonUtils.DeSerializeNull<DeleteScalingTagInfoResponse>(response);
         }
         
         /// <summary>
-        /// 启用或停止弹性伸缩组
-        /// </summary>
-        public async Task<EnableOrDisableScalingGroupResponse> EnableOrDisableScalingGroupAsync(EnableOrDisableScalingGroupRequest enableOrDisableScalingGroupRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , enableOrDisableScalingGroupRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableOrDisableScalingGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<EnableOrDisableScalingGroupResponse>(response);
-        }
-        
-        /// <summary>
-        /// 批量操作弹性伸缩策略。
-        /// </summary>
-        public async Task<ExecuteScalingPoliciesResponse> ExecuteScalingPoliciesAsync(ExecuteScalingPoliciesRequest executeScalingPoliciesRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeScalingPoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<ExecuteScalingPoliciesResponse>(response);
-        }
-        
-        /// <summary>
-        /// 执行或启用或停止弹性伸缩策略。
+        /// 执行弹性伸缩策略。
         /// </summary>
         public async Task<ExecuteScalingPolicyResponse> ExecuteScalingPolicyAsync(ExecuteScalingPolicyRequest executeScalingPolicyRequest)
         {
@@ -416,6 +505,58 @@ namespace HuaweiCloud.SDK.As.V1
         }
         
         /// <summary>
+        /// 停止弹性伸缩组
+        /// </summary>
+        public async Task<PauseScalingGroupResponse> PauseScalingGroupAsync(PauseScalingGroupRequest pauseScalingGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , pauseScalingGroupRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<PauseScalingGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 停止弹性伸缩策略。
+        /// </summary>
+        public async Task<PauseScalingPolicyResponse> PauseScalingPolicyAsync(PauseScalingPolicyRequest pauseScalingPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id" , pauseScalingPolicyRequest.ScalingPolicyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingPolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<PauseScalingPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 启用弹性伸缩组
+        /// </summary>
+        public async Task<ResumeScalingGroupResponse> ResumeScalingGroupAsync(ResumeScalingGroupRequest resumeScalingGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , resumeScalingGroupRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<ResumeScalingGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 启用弹性伸缩策略。
+        /// </summary>
+        public async Task<ResumeScalingPolicyResponse> ResumeScalingPolicyAsync(ResumeScalingPolicyRequest resumeScalingPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id" , resumeScalingPolicyRequest.ScalingPolicyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingPolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<ResumeScalingPolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询生命周期挂钩详情
         /// </summary>
         public async Task<ShowLifeCycleHookResponse> ShowLifeCycleHookAsync(ShowLifeCycleHookRequest showLifeCycleHookRequest)
@@ -521,19 +662,6 @@ namespace HuaweiCloud.SDK.As.V1
         }
         
         /// <summary>
-        /// 批量操作实例
-        /// </summary>
-        public async Task<UpdateScalingGroupInstanceResponse> UpdateScalingGroupInstanceAsync(UpdateScalingGroupInstanceRequest updateScalingGroupInstanceRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , updateScalingGroupInstanceRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingGroupInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<UpdateScalingGroupInstanceResponse>(response);
-        }
-        
-        /// <summary>
         /// 修改弹性伸缩策略
         /// </summary>
         public async Task<UpdateScalingPolicyResponse> UpdateScalingPolicyAsync(UpdateScalingPolicyRequest updateScalingPolicyRequest)
@@ -544,6 +672,31 @@ namespace HuaweiCloud.SDK.As.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingPolicyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateScalingPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询弹性伸缩API所有版本信息
+        /// </summary>
+        public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询弹性伸缩API指定版本信息
+        /// </summary>
+        public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version" , showApiVersionRequest.ApiVersion.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
         }
         
         /// <summary>

@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListAllScalingV2PoliciesRequest 
     {
         /// <summary>
-        /// Defines scalingResourceType
+        /// 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
         /// </summary>
+        /// <value>伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH</value>
         [JsonConverter(typeof(EnumClassConverter<ScalingResourceTypeEnum>))]
         public class ScalingResourceTypeEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// Defines scalingPolicyType
+        /// 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
         /// </summary>
+        /// <value>策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE</value>
         [JsonConverter(typeof(EnumClassConverter<ScalingPolicyTypeEnum>))]
         public class ScalingPolicyTypeEnum
         {
@@ -239,8 +241,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// Defines sortBy
+        /// 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
         /// </summary>
+        /// <value>排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。</value>
         [JsonConverter(typeof(EnumClassConverter<SortByEnum>))]
         public class SortByEnum
         {
@@ -354,8 +357,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// Defines order
+        /// 排序顺序ASC：升序；DESC：降序
         /// </summary>
+        /// <value>排序顺序ASC：升序；DESC：降序</value>
         [JsonConverter(typeof(EnumClassConverter<OrderEnum>))]
         public class OrderEnum
         {
@@ -464,66 +468,66 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 伸缩组ID。
         /// </summary>
         [SDKProperty("scaling_resource_id", IsQuery = true)]
         [JsonProperty("scaling_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingResourceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
         /// </summary>
         [SDKProperty("scaling_resource_type", IsQuery = true)]
         [JsonProperty("scaling_resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingResourceTypeEnum ScalingResourceType { get; set; }
         /// <summary>
-        /// 
+        /// 伸缩策略名称。
         /// </summary>
         [SDKProperty("scaling_policy_name", IsQuery = true)]
         [JsonProperty("scaling_policy_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingPolicyName { get; set; }
 
         /// <summary>
-        /// 
+        /// 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
         /// </summary>
         [SDKProperty("scaling_policy_type", IsQuery = true)]
         [JsonProperty("scaling_policy_type", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingPolicyTypeEnum ScalingPolicyType { get; set; }
         /// <summary>
-        /// 
+        /// 伸缩策略ID。
         /// </summary>
         [SDKProperty("scaling_policy_id", IsQuery = true)]
         [JsonProperty("scaling_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingPolicyId { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询记录数，默认20，最大100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
         /// </summary>
         [SDKProperty("sort_by", IsQuery = true)]
         [JsonProperty("sort_by", NullValueHandling = NullValueHandling.Ignore)]
         public SortByEnum SortBy { get; set; }
         /// <summary>
-        /// 
+        /// 排序顺序ASC：升序；DESC：降序
         /// </summary>
         [SDKProperty("order", IsQuery = true)]
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }
         /// <summary>
-        /// 
+        /// 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

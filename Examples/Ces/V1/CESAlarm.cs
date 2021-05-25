@@ -9,7 +9,7 @@ namespace HuaweiCSharpSDK
 {
     public class CESAlarm
     {
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
             const string ak = "{your ak string}";
             const string sk = "{your sk string}";

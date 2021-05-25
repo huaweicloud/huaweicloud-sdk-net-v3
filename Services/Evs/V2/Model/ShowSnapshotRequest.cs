@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 快照ID。
         /// </summary>
         [SDKProperty("snapshot_id", IsPath = true)]
         [JsonProperty("snapshot_id", NullValueHandling = NullValueHandling.Ignore)]

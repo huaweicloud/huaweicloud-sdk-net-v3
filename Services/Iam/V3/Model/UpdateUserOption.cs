@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
+        /// IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
+        /// </summary>
+        [JsonProperty("access_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessMode { get; set; }
+
+        /// <summary>
         /// 新IAM用户名，长度5~32字符之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -83,6 +89,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpdateUserOption {\n");
+            sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("  email: ").Append(Email).Append("\n");
@@ -114,6 +121,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 return false;
 
             return 
+                (
+                    this.AccessMode == input.AccessMode ||
+                    (this.AccessMode != null &&
+                    this.AccessMode.Equals(input.AccessMode))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -174,6 +186,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AccessMode != null)
+                    hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Password != null)

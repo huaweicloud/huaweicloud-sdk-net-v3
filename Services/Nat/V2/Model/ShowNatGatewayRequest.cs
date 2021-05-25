@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的ID。
         /// </summary>
         [SDKProperty("nat_gateway_id", IsPath = true)]
         [JsonProperty("nat_gateway_id", NullValueHandling = NullValueHandling.Ignore)]

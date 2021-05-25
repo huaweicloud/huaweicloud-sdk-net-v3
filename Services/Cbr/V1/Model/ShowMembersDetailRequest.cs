@@ -16,63 +16,63 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 备份id
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BackupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 接受备份共享的项目id
         /// </summary>
         [SDKProperty("dest_project_id", IsQuery = true)]
         [JsonProperty("dest_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DestProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 接受的共享备份副本注册的镜像id
         /// </summary>
         [SDKProperty("image_id", IsQuery = true)]
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
         /// <summary>
-        /// 
+        /// 备份共享状态
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 目标端接受共享备份的存储库id，仅支持uuid
         /// </summary>
         [SDKProperty("vault_id", IsQuery = true)]
         [JsonProperty("vault_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VaultId { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页显示的条目数量，正整数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一次查询最后一条的id，仅支持uuid
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移值，正整数
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如&lt;key1&gt;[:&lt;direction&gt;],&lt;key2&gt;[:&lt;direction&gt;],其中direction的取值为asc (升序) 或 desc (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。
         /// </summary>
         [SDKProperty("sort", IsQuery = true)]
         [JsonProperty("sort", NullValueHandling = NullValueHandling.Ignore)]

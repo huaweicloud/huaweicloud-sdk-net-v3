@@ -279,7 +279,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 生命周期挂钩创建时间，遵循UTC时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreateTime { get; set; }
+        public string CreateTime { get; set; }
 
 
         /// <summary>

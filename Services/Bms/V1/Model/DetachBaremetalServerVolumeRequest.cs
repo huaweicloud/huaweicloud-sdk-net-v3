@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 裸金属服务器ID
         /// </summary>
         [SDKProperty("server_id", IsPath = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 裸金属服务器的云磁盘ID
         /// </summary>
         [SDKProperty("attachment_id", IsPath = true)]
         [JsonProperty("attachment_id", NullValueHandling = NullValueHandling.Ignore)]

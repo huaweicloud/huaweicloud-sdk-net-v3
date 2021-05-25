@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListScalingActivityV2LogsRequest 
     {
         /// <summary>
-        /// Defines type
+        /// 查询的伸缩活动类型（查询多类型使用逗号分隔）：NORMAL：普通伸缩活动；MANNUAL_REMOVE：从伸缩组手动移除实例；MANNUAL_DELETE：从伸缩组手动移除实例并删除实例；ELB_CHECK_DELETE：ELB检查移除并删除实例；DIFF：期望实例数与实际实例 不一致；MODIFY_ELB：LB迁移
         /// </summary>
+        /// <value>查询的伸缩活动类型（查询多类型使用逗号分隔）：NORMAL：普通伸缩活动；MANNUAL_REMOVE：从伸缩组手动移除实例；MANNUAL_DELETE：从伸缩组手动移除实例并删除实例；ELB_CHECK_DELETE：ELB检查移除并删除实例；DIFF：期望实例数与实际实例 不一致；MODIFY_ELB：LB迁移</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -154,8 +155,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中
         /// </summary>
+        /// <value>查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -270,48 +272,55 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 伸缩组ID。
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
         [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 伸缩活动日志ID
+        /// </summary>
+        [SDKProperty("log_id", IsQuery = true)]
+        [JsonProperty("log_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogId { get; set; }
+
+        /// <summary>
+        /// 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? StartTime { get; set; }
+        public string StartTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询记录数，默认20，最大100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的伸缩活动类型（查询多类型使用逗号分隔）：NORMAL：普通伸缩活动；MANNUAL_REMOVE：从伸缩组手动移除实例；MANNUAL_DELETE：从伸缩组手动移除实例并删除实例；ELB_CHECK_DELETE：ELB检查移除并删除实例；DIFF：期望实例数与实际实例 不一致；MODIFY_ELB：LB迁移
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 
+        /// 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -325,6 +334,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListScalingActivityV2LogsRequest {\n");
             sb.Append("  scalingGroupId: ").Append(ScalingGroupId).Append("\n");
+            sb.Append("  logId: ").Append(LogId).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  startNumber: ").Append(StartNumber).Append("\n");
@@ -356,6 +366,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.ScalingGroupId == input.ScalingGroupId ||
                     (this.ScalingGroupId != null &&
                     this.ScalingGroupId.Equals(input.ScalingGroupId))
+                ) && 
+                (
+                    this.LogId == input.LogId ||
+                    (this.LogId != null &&
+                    this.LogId.Equals(input.LogId))
                 ) && 
                 (
                     this.StartTime == input.StartTime ||
@@ -399,6 +414,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 int hashCode = 41;
                 if (this.ScalingGroupId != null)
                     hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                if (this.LogId != null)
+                    hashCode = hashCode * 59 + this.LogId.GetHashCode();
                 if (this.StartTime != null)
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null)

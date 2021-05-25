@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class ListNatGatewaySnatRulesRequest 
     {
         /// <summary>
-        /// Defines status
+        /// 功能说明：SNAT规则的状态。
         /// </summary>
+        /// <value>功能说明：SNAT规则的状态。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -149,84 +150,84 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 解冻/冻结状态。 取值范围： \&quot;true\&quot;：解冻 \&quot;false\&quot;：冻结
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 可以是网段或者主机格式，与network_id参数二选一。 Source_type&#x3D;0时，cidr必须是vpc子网网段的子集(不能相等）; Source_type&#x3D;1时，cidr必须指定专线侧网段。
         /// </summary>
         [SDKProperty("cidr", IsQuery = true)]
         [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string Cidr { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
         /// </summary>
         [SDKProperty("floating_ip_address", IsQuery = true)]
         [JsonProperty("floating_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string FloatingIpAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
         /// </summary>
         [SDKProperty("floating_ip_id", IsQuery = true)]
         [JsonProperty("floating_ip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FloatingIpId { get; set; }
 
         /// <summary>
-        /// 
+        /// SNAT规则的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// SNAT规则的描述，长度限制为255。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// SNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的ID。
         /// </summary>
         [SDKProperty("nat_gateway_id", IsQuery = true)]
         [JsonProperty("nat_gateway_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> NatGatewayId { get; set; }
 
         /// <summary>
-        /// 
+        /// 规则使用的网络id。与cidr参数二选一。
         /// </summary>
         [SDKProperty("network_id", IsQuery = true)]
         [JsonProperty("network_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkId { get; set; }
 
         /// <summary>
-        /// 
+        /// 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC）
         /// </summary>
         [SDKProperty("source_type", IsQuery = true)]
         [JsonProperty("source_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? SourceType { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：SNAT规则的状态。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

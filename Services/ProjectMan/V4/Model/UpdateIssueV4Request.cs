@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// 
+        /// 项目id
         /// </summary>
         [SDKProperty("project_id", IsPath = true)]
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 工作项id
         /// </summary>
         [SDKProperty("issue_id", IsPath = true)]
         [JsonProperty("issue_id", NullValueHandling = NullValueHandling.Ignore)]

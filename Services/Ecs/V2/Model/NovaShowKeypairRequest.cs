@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 密钥名称信息。
         /// </summary>
         [SDKProperty("keypair_name", IsPath = true)]
         [JsonProperty("keypair_name", NullValueHandling = NullValueHandling.Ignore)]
         public string KeypairName { get; set; }
 
         /// <summary>
-        /// 
+        /// 微版本头
         /// </summary>
         [SDKProperty("OpenStack-API-Version", IsHeader = true)]
         [JsonProperty("OpenStack-API-Version", NullValueHandling = NullValueHandling.Ignore)]

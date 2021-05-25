@@ -16,49 +16,49 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用id过滤网络ACL组
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用name过滤ACL组
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用description过滤ACL组
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用入方向的网络ACL策略ID过滤网络ACL组
         /// </summary>
         [SDKProperty("ingress_firewall_policy_id", IsQuery = true)]
         [JsonProperty("ingress_firewall_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string IngressFirewallPolicyId { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用出方向的网络ACL策略过滤查询网络ACL组
         /// </summary>
         [SDKProperty("egress_firewall_policy_id", IsQuery = true)]
         [JsonProperty("egress_firewall_policy_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("eip", NullValueHandling = NullValueHandling.Ignore)]
-        public Eip Eip { get; set; }
+        public EipInfo Eip { get; set; }
 
 
         /// <summary>

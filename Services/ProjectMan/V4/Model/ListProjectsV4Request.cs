@@ -16,49 +16,49 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// 
+        /// 偏移量 从0开始
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 条数 最小1条,最大1000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 模糊查询项目名称或描述,不支持通配符等高级查询
         /// </summary>
         [SDKProperty("search", IsQuery = true)]
         [JsonProperty("search", NullValueHandling = NullValueHandling.Ignore)]
         public string Search { get; set; }
 
         /// <summary>
-        /// 
+        /// 项目类型 scrum|xboard
         /// </summary>
         [SDKProperty("project_type", IsQuery = true)]
         [JsonProperty("project_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectType { get; set; }
 
         /// <summary>
-        /// 
+        /// 排序条件 默认创建时间降序(name|created_on)(asc|desc)
         /// </summary>
         [SDKProperty("sort", IsQuery = true)]
         [JsonProperty("sort", NullValueHandling = NullValueHandling.Ignore)]
         public string Sort { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否归档 true已归档|false未归档
         /// </summary>
         [SDKProperty("archive", IsQuery = true)]
         [JsonProperty("archive", NullValueHandling = NullValueHandling.Ignore)]
         public string Archive { get; set; }
 
         /// <summary>
-        /// 
+        /// 默认返回当前用户参与的项目列表,domain_projects租户下的所有项目列表,absent返回当前用户未参与的租户项目列表
         /// </summary>
         [SDKProperty("query_type", IsQuery = true)]
         [JsonProperty("query_type", NullValueHandling = NullValueHandling.Ignore)]

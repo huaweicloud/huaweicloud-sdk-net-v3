@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Moderation.V1.Model
     public class RunCheckTaskJobsRequest 
     {
         /// <summary>
-        /// Defines status
+        /// 图像内容审核任务处理状态如下：  - created 已创建  - running 正在处理  - finish 已完成  - failed 处理失败 
         /// </summary>
+        /// <value>图像内容审核任务处理状态如下：  - created 已创建  - running 正在处理  - finish 已完成  - failed 处理失败 </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -137,7 +138,7 @@ namespace HuaweiCloud.SDK.Moderation.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 图像内容审核任务处理状态如下：  - created 已创建  - running 正在处理  - finish 已完成  - failed 处理失败 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

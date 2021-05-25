@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 消费组信息。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Groups { get; set; }
+        public List<ShowCeshierarchyRespGroups> Groups { get; set; }
 
 
         /// <summary>

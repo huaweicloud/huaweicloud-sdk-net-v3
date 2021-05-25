@@ -16,70 +16,70 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 服务提供的资源分组功能，创建的资源分组ID，如：rg1603107497873DK4O2pXbn。
         /// </summary>
         [SDKProperty("group_id", IsQuery = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 告警规则ID。如：al1603088932912v98rGl1al。
         /// </summary>
         [SDKProperty("alarm_id", IsQuery = true)]
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// 
+        /// 告警规则名称，如alarm-test01。
         /// </summary>
         [SDKProperty("alarm_name", IsQuery = true)]
         [JsonProperty("alarm_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmName { get; set; }
 
         /// <summary>
-        /// 
+        /// 告警历史的状态，取值为ok，alarm，insufficient_data； ok为正常，alarm为告警，insufficient_data为数据不足。
         /// </summary>
         [SDKProperty("alarm_status", IsQuery = true)]
         [JsonProperty("alarm_status", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 告警历史的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
         /// </summary>
         [SDKProperty("alarm_level", IsQuery = true)]
         [JsonProperty("alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmLevel { get; set; }
 
         /// <summary>
-        /// 
+        /// 告警资源对应的命名空间，如ECS服务的资源命名空间为：SYS.ECS；各服务命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询告警历史的起始时间，UNIX时间戳，单位毫秒，如：1602501480905；from，to如果不进行赋值，则默认to是当前时间，from是当前时间减7天的时间戳。
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public string From { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询告警历史的截止时间，UNIX时间戳，单位毫秒。from必须小于等于to，如：1603106280905；from，to如果不进行赋值，则默认to是当前时间，from是当前时间减7天的时间戳。
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public string To { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页起始值，类型为integer，默认值为0。
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
         public string Start { get; set; }
 
         /// <summary>
-        /// 
+        /// 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

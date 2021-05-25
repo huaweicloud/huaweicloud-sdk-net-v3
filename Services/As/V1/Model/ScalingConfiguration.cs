@@ -45,6 +45,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreateTime { get; set; }
 
+        /// <summary>
+        /// 绑定该伸缩配置的伸缩组ID
+        /// </summary>
+        [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScalingGroupId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  scalingConfigurationName: ").Append(ScalingConfigurationName).Append("\n");
             sb.Append("  instanceConfig: ").Append(InstanceConfig).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  scalingGroupId: ").Append(ScalingGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +110,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.CreateTime == input.CreateTime ||
                     (this.CreateTime != null &&
                     this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.ScalingGroupId == input.ScalingGroupId ||
+                    (this.ScalingGroupId != null &&
+                    this.ScalingGroupId.Equals(input.ScalingGroupId))
                 );
         }
 
@@ -124,6 +136,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.InstanceConfig.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ScalingGroupId != null)
+                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
                 return hashCode;
             }
         }

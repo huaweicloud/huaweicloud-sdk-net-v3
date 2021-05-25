@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("AllQuotas", NullValueHandling = NullValueHandling.Ignore)]
-        public PolicyInstanceQuotas AllQuotas { get; set; }
+        [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
+        public PolicyInstanceQuotas Quotas { get; set; }
 
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowPolicyAndInstanceQuotaResponse {\n");
-            sb.Append("  allQuotas: ").Append(AllQuotas).Append("\n");
+            sb.Append("  quotas: ").Append(Quotas).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             return 
                 (
-                    this.AllQuotas == input.AllQuotas ||
-                    (this.AllQuotas != null &&
-                    this.AllQuotas.Equals(input.AllQuotas))
+                    this.Quotas == input.Quotas ||
+                    (this.Quotas != null &&
+                    this.Quotas.Equals(input.Quotas))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AllQuotas != null)
-                    hashCode = hashCode * 59 + this.AllQuotas.GetHashCode();
+                if (this.Quotas != null)
+                    hashCode = hashCode * 59 + this.Quotas.GetHashCode();
                 return hashCode;
             }
         }

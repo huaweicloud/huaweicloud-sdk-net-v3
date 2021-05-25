@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 作业ID
         /// </summary>
         [SDKProperty("job_id", IsPath = true)]
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -355,7 +355,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 磁盘组信息，系统盘必选，数据盘可选。
         /// </summary>
         [JsonProperty("disk", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Disk> Disk { get; set; }
+        public List<DiskInfo> Disk { get; set; }
 
         /// <summary>
         /// 登录云服务器的SSH密钥名称，与adminPass互斥，且必选一个。Windoes弹性云服务器不支持使用密钥登陆方式。
@@ -367,7 +367,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 注入文件信息。仅支持注入文本文件，最大支持注入5个文件，每个文件最大1KB。
         /// </summary>
         [JsonProperty("personality", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Personality> Personality { get; set; }
+        public List<PersonalityInfo> Personality { get; set; }
 
         /// <summary>
         /// 
@@ -385,7 +385,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public MetaData Metadata { get; set; }
+        public VmMetaData Metadata { get; set; }
 
         /// <summary>
         /// 安全组信息。使用vpc_id通过查询VPC服务安全组列表接口获取，详见《虚拟私有云API参考》的“查询安全组列表”。当伸缩配置和伸缩组同时指定安全组时，将以伸缩配置中的安全组为准；当伸缩配置和伸缩组都没有指定安全组时，将使用默认安全组。为了使用灵活性更高，推荐在伸缩配置中指定安全组。

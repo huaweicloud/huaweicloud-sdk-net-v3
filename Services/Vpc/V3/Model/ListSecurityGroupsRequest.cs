@@ -16,42 +16,42 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 功能说明：每页返回的个数 取值范围：0-2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组资源ID。可以使用该字段精确过滤安全组，支持多个ID
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组名称。可以使用该字段精确过滤满足条件的安全组，支持传入多个name过滤
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组描述新增。可以使用该字段精确过滤安全组，支持传入多个描述进行过滤
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的安全组。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 约束：若需要查询当前用户所有有权限查看企业项目绑定的安全组，请传参all_granted_eps。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 组织名称
         /// </summary>
         [SDKProperty("namespace", IsPath = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像仓库名称
         /// </summary>
         [SDKProperty("repository", IsPath = true)]
         [JsonProperty("repository", NullValueHandling = NullValueHandling.Ignore)]
         public string Repository { get; set; }
 
         /// <summary>
-        /// 
+        /// 起始索引。**注意：offset和limit参数需要配套使用** 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public string Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 返回条数。**注意：offset和limit参数需要配套使用** 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

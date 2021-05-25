@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     public class ListFlavorsRequest 
     {
         /// <summary>
-        /// Defines engineName
+        /// 数据库版本类型。取值为“DDS-Community”。
         /// </summary>
+        /// <value>数据库版本类型。取值为“DDS-Community”。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineNameEnum>))]
         public class EngineNameEnum
         {
@@ -125,14 +126,14 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 实例所在区域。
         /// </summary>
         [SDKProperty("region", IsQuery = true)]
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
 
         /// <summary>
-        /// 
+        /// 数据库版本类型。取值为“DDS-Community”。
         /// </summary>
         [SDKProperty("engine_name", IsQuery = true)]
         [JsonProperty("engine_name", NullValueHandling = NullValueHandling.Ignore)]

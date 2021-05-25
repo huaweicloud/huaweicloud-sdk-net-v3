@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 绑定MFA设备的IAM 用户ID。
         /// </summary>
         [SDKProperty("user_id", IsQuery = true)]
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserId { get; set; }
 
         /// <summary>
-        /// 
+        /// MFA设备序列号。
         /// </summary>
         [SDKProperty("serial_number", IsQuery = true)]
         [JsonProperty("serial_number", NullValueHandling = NullValueHandling.Ignore)]

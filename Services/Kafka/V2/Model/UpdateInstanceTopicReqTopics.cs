@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 老化时间，单位小时。
         /// </summary>
         [JsonProperty("retention_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string RetentionTime { get; set; }
+        public int? RetentionTime { get; set; }
 
         /// <summary>
         /// 是否同步复制。

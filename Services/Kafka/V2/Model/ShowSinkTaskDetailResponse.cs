@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 转储任务创建时间戳。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateTime { get; set; }
+        public long? CreateTime { get; set; }
 
         /// <summary>
         /// 转储任务状态。

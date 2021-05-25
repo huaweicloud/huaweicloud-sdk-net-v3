@@ -16,49 +16,49 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询中每页的白名单个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询的起始的资源id，表示上一页最后一条查询记录的白名单的id。不指定时表示查询第一页。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 白名单ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否开启访问控制开关。true：打开false：关闭
         /// </summary>
         [SDKProperty("enable_whitelist", IsQuery = true)]
         [JsonProperty("enable_whitelist", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableWhitelist { get; set; }
 
         /// <summary>
-        /// 
+        /// 白名单关联的监听器ID。
         /// </summary>
         [SDKProperty("listener_id", IsQuery = true)]
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 白名单IP的字符串。
         /// </summary>
         [SDKProperty("whitelist", IsQuery = true)]
         [JsonProperty("whitelist", NullValueHandling = NullValueHandling.Ignore)]

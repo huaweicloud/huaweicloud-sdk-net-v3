@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 节点ID。 - 如取空值，则默认查询实例下所有允许连接的节点的连接数信息。
         /// </summary>
         [SDKProperty("node_id", IsQuery = true)]
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]

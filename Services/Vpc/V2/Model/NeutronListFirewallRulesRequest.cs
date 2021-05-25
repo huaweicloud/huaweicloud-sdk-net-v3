@@ -16,49 +16,49 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用网络ACL规则ID过滤网络ACL规则
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用网络ACL规则name过滤网络ACL规则
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用网络ACL规则的description过滤网络ACL规则
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用action过滤查询网络ACL规则
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 
+        /// 使用tenant_id过滤查询网络ACL规则
         /// </summary>
         [SDKProperty("tenant_id", IsQuery = true)]
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]

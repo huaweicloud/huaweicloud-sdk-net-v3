@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 复制的备份ID
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]

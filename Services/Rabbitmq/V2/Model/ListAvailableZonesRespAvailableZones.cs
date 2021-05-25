@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool? DefaultAz { get; set; }
 
         /// <summary>
+        /// 剩余时间。
+        /// </summary>
+        [JsonProperty("remain_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? RemainTime { get; set; }
+
+        /// <summary>
         /// 是否支持IPv6。
         /// </summary>
         [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -78,6 +84,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  resourceAvailability: ").Append(ResourceAvailability).Append("\n");
             sb.Append("  defaultAz: ").Append(DefaultAz).Append("\n");
+            sb.Append("  remainTime: ").Append(RemainTime).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -136,6 +143,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     this.DefaultAz.Equals(input.DefaultAz))
                 ) && 
                 (
+                    this.RemainTime == input.RemainTime ||
+                    (this.RemainTime != null &&
+                    this.RemainTime.Equals(input.RemainTime))
+                ) && 
+                (
                     this.Ipv6Enable == input.Ipv6Enable ||
                     (this.Ipv6Enable != null &&
                     this.Ipv6Enable.Equals(input.Ipv6Enable))
@@ -164,6 +176,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     hashCode = hashCode * 59 + this.ResourceAvailability.GetHashCode();
                 if (this.DefaultAz != null)
                     hashCode = hashCode * 59 + this.DefaultAz.GetHashCode();
+                if (this.RemainTime != null)
+                    hashCode = hashCode * 59 + this.RemainTime.GetHashCode();
                 if (this.Ipv6Enable != null)
                     hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 return hashCode;

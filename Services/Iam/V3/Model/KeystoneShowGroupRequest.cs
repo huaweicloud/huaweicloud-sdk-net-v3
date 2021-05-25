@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 待查询的用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]

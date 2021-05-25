@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 语言。
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]

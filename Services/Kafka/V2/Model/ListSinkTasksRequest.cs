@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
         /// </summary>
         [SDKProperty("connector_id", IsPath = true)]
         [JsonProperty("connector_id", NullValueHandling = NullValueHandling.Ignore)]

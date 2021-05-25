@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 应填写 center::{center}|limit::{limit}|offset::{offset}|order_column::{order_column}|order_type::{order_type} ,其中{limit}为返回条数,{offset}为起始索引, {order_column}为按列排序，可设置为name、updated_time、tag_count,{order_type}为排序类型，可设置为desc（降序）、asc（升序）
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]

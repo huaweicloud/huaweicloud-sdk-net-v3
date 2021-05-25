@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// Topic的唯一的资源标识，可通过[查询主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
         /// </summary>
         [SDKProperty("topic_urn", IsPath = true)]
         [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicUrn { get; set; }
 
         /// <summary>
-        /// 
+        /// 主题策略名称。 只支持特定的策略名称，请参见[Topic属性表](https://support.huaweicloud.com/intl/zh-cn/api-smn/smn_api_a1000.html)。
         /// </summary>
         [SDKProperty("name", IsPath = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]

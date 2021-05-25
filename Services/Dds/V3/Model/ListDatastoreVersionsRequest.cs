@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     public class ListDatastoreVersionsRequest 
     {
         /// <summary>
-        /// Defines datastoreName
+        /// 数据库版本类型。取值为“DDS-Community”。
         /// </summary>
+        /// <value>数据库版本类型。取值为“DDS-Community”。</value>
         [JsonConverter(typeof(EnumClassConverter<DatastoreNameEnum>))]
         public class DatastoreNameEnum
         {
@@ -125,7 +126,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 数据库版本类型。取值为“DDS-Community”。
         /// </summary>
         [SDKProperty("datastore_name", IsPath = true)]
         [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]

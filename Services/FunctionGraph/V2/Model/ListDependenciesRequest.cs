@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class ListDependenciesRequest 
     {
         /// <summary>
-        /// Defines dependencyType
+        /// 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。
         /// </summary>
+        /// <value>依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。</value>
         [JsonConverter(typeof(EnumClassConverter<DependencyTypeEnum>))]
         public class DependencyTypeEnum
         {
@@ -130,8 +131,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         }
 
         /// <summary>
-        /// Defines runtime
+        /// 运行时语言
         /// </summary>
+        /// <value>运行时语言</value>
         [JsonConverter(typeof(EnumClassConverter<RuntimeEnum>))]
         public class RuntimeEnum
         {
@@ -300,33 +302,33 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。
         /// </summary>
         [SDKProperty("dependency_type", IsQuery = true)]
         [JsonProperty("dependency_type", NullValueHandling = NullValueHandling.Ignore)]
         public DependencyTypeEnum DependencyType { get; set; }
         /// <summary>
-        /// 
+        /// 运行时语言
         /// </summary>
         [SDKProperty("runtime", IsQuery = true)]
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
         /// <summary>
-        /// 
+        /// 依赖包名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一次查询依赖包的最后记录位置，默认为\&quot;0\&quot;。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 本次查询可获取的依赖包的最大数目，默认为\&quot;400\&quot;。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

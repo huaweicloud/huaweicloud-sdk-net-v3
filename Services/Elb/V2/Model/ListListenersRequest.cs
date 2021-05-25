@@ -16,112 +16,112 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询中每页的监听器个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器的默认后端云服务器组ID。
         /// </summary>
         [SDKProperty("default_pool_id", IsQuery = true)]
         [JsonProperty("default_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultPoolId { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器使用的服务器证书ID。
         /// </summary>
         [SDKProperty("default_tls_container_ref", IsQuery = true)]
         [JsonProperty("default_tls_container_ref", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultTlsContainerRef { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器使用的CA证书ID。
         /// </summary>
         [SDKProperty("client_ca_tls_container_ref", IsQuery = true)]
         [JsonProperty("client_ca_tls_container_ref", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientCaTlsContainerRef { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器的监听协议。取值范围：TCP、HTTP、UDP、TERMINATED_HTTPS。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器的监听端口。
         /// </summary>
         [SDKProperty("protocol_port", IsQuery = true)]
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }
 
         /// <summary>
-        /// 
+        /// 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict四种安全策略。
         /// </summary>
         [SDKProperty("tls_ciphers_policy", IsQuery = true)]
         [JsonProperty("tls_ciphers_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string TlsCiphersPolicy { get; set; }
 
         /// <summary>
-        /// 
+        /// 等待后端服务器请求超时时间，协议为HTTP， TERMINATED_HTTPS时才有意义。取值范围 1-300
         /// </summary>
         [SDKProperty("member_timeout", IsQuery = true)]
         [JsonProperty("member_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? MemberTimeout { get; set; }
 
         /// <summary>
-        /// 
+        /// 等待客户端请求超时时间，协议为HTTP， TERMINATED_HTTPS的监听器才有意义。取值范围 1-60
         /// </summary>
         [SDKProperty("client_timeout", IsQuery = true)]
         [JsonProperty("client_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? ClientTimeout { get; set; }
 
         /// <summary>
-        /// 
+        /// TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，HTTP/TERMINATED_HTTPS监听器为客户端连接空闲超时时间，取值范围为（1-300s）默认值为15s。 UDP此字段无意义
         /// </summary>
         [SDKProperty("keepalive_timeout", IsQuery = true)]
         [JsonProperty("keepalive_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? KeepaliveTimeout { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询证书所关联的监听器
         /// </summary>
         [SDKProperty("tls_container_id", IsQuery = true)]
         [JsonProperty("tls_container_id", NullValueHandling = NullValueHandling.Ignore)]

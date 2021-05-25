@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 对等连接ID
         /// </summary>
         [SDKProperty("peering_id", IsPath = true)]
         [JsonProperty("peering_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -164,7 +164,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 超时时间，遵循UTC时间，格式为：YYYY-MM-DDThh:mm:ssZZ。
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? Timeout { get; set; }
+        public string Timeout { get; set; }
 
         /// <summary>
         /// 生命周期挂钩默认回调操作。

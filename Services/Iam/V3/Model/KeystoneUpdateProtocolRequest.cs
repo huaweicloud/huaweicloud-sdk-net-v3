@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 身份提供商ID。
         /// </summary>
         [SDKProperty("idp_id", IsPath = true)]
         [JsonProperty("idp_id", NullValueHandling = NullValueHandling.Ignore)]
         public string IdpId { get; set; }
 
         /// <summary>
-        /// 
+        /// 待更新的协议ID。
         /// </summary>
         [SDKProperty("protocol_id", IsPath = true)]
         [JsonProperty("protocol_id", NullValueHandling = NullValueHandling.Ignore)]

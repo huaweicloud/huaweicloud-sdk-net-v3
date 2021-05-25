@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 异步任务ID
         /// </summary>
         [SDKProperty("job_id", IsPath = true)]
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]

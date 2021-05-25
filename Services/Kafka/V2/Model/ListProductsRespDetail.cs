@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Storage { get; set; }
 
         /// <summary>
-        /// Kafka实例的最大Topic数。
+        /// Kafka实例的分区数量。
         /// </summary>
         [JsonProperty("partition_num", NullValueHandling = NullValueHandling.Ignore)]
         public string PartitionNum { get; set; }

@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class ListOpLogsRequest 
     {
         /// <summary>
-        /// Defines operationType
+        /// 任务类型
         /// </summary>
+        /// <value>任务类型</value>
         [JsonConverter(typeof(EnumClassConverter<OperationTypeEnum>))]
         public class OperationTypeEnum
         {
@@ -160,8 +161,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 任务状态
         /// </summary>
+        /// <value>任务状态</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -294,82 +296,82 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 任务结束时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页显示的条目数量，正整数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移值，正整数
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 任务类型
         /// </summary>
         [SDKProperty("operation_type", IsQuery = true)]
         [JsonProperty("operation_type", NullValueHandling = NullValueHandling.Ignore)]
         public OperationTypeEnum OperationType { get; set; }
         /// <summary>
-        /// 
+        /// 备份提供商ID
         /// </summary>
         [SDKProperty("provider_id", IsQuery = true)]
         [JsonProperty("provider_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderId { get; set; }
 
         /// <summary>
-        /// 
+        /// 该任务操作的资源ID
         /// </summary>
         [SDKProperty("resource_id", IsQuery = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 该任务操作的资源名称
         /// </summary>
         [SDKProperty("resource_name", IsQuery = true)]
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 
+        /// 任务开始时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-01-01T12:00:00Z
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 任务状态
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 
+        /// 存储库ID,该任务操作的资源所属绑定的存储库。
         /// </summary>
         [SDKProperty("vault_id", IsQuery = true)]
         [JsonProperty("vault_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VaultId { get; set; }
 
         /// <summary>
-        /// 
+        /// 存储库名称，该任务操作资源所绑定的存储库名称。
         /// </summary>
         [SDKProperty("vault_name", IsQuery = true)]
         [JsonProperty("vault_name", NullValueHandling = NullValueHandling.Ignore)]
         public string VaultName { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

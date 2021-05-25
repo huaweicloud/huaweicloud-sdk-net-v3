@@ -253,140 +253,6 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// 健康检查的间隔时间。
-        /// </summary>
-        /// <value>健康检查的间隔时间。</value>
-        [JsonConverter(typeof(EnumClassConverter<HealthPeriodicAuditTimeEnum>))]
-        public class HealthPeriodicAuditTimeEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_0 = new HealthPeriodicAuditTimeEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_1 = new HealthPeriodicAuditTimeEnum(1);
-
-            /// <summary>
-            /// Enum NUMBER_5 for value: 5
-            /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_5 = new HealthPeriodicAuditTimeEnum(5);
-
-            /// <summary>
-            /// Enum NUMBER_15 for value: 15
-            /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_15 = new HealthPeriodicAuditTimeEnum(15);
-
-            /// <summary>
-            /// Enum NUMBER_60 for value: 60
-            /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_60 = new HealthPeriodicAuditTimeEnum(60);
-
-            /// <summary>
-            /// Enum NUMBER_180 for value: 180
-            /// </summary>
-            public static readonly HealthPeriodicAuditTimeEnum NUMBER_180 = new HealthPeriodicAuditTimeEnum(180);
-
-            private static readonly Dictionary<int?, HealthPeriodicAuditTimeEnum> StaticFields =
-            new Dictionary<int?, HealthPeriodicAuditTimeEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-                { 5, NUMBER_5 },
-                { 15, NUMBER_15 },
-                { 60, NUMBER_60 },
-                { 180, NUMBER_180 },
-            };
-
-            private int? Value;
-
-            public HealthPeriodicAuditTimeEnum(int? value)
-            {
-                Value = value;
-            }
-
-            public static HealthPeriodicAuditTimeEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as HealthPeriodicAuditTimeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(HealthPeriodicAuditTimeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(HealthPeriodicAuditTimeEnum a, HealthPeriodicAuditTimeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(HealthPeriodicAuditTimeEnum a, HealthPeriodicAuditTimeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 移除策略。
         /// </summary>
         /// <value>移除策略。</value>
@@ -590,7 +456,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 网络信息
         /// </summary>
         [JsonProperty("networks", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Networks> Networks { get; set; }
+        public List<NetworksResult> Networks { get; set; }
 
         /// <summary>
         /// 安全组信息
@@ -631,7 +497,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 健康检查的间隔时间。
         /// </summary>
         [JsonProperty("health_periodic_audit_time", NullValueHandling = NullValueHandling.Ignore)]
-        public HealthPeriodicAuditTimeEnum HealthPeriodicAuditTime { get; set; }
+        public int? HealthPeriodicAuditTime { get; set; }
+
         /// <summary>
         /// 健康状况检查宽限期。
         /// </summary>
@@ -656,6 +523,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public bool? DeletePublicip { get; set; }
 
         /// <summary>
+        /// 删除云服务器是否删除云服务器绑定的数据盘
+        /// </summary>
+        [JsonProperty("delete_volume", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeleteVolume { get; set; }
+
+        /// <summary>
         /// 该参数为预留字段
         /// </summary>
         [JsonProperty("cloud_location_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -666,6 +539,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 伸缩组活动类型
+        /// </summary>
+        [JsonProperty("activity_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActivityType { get; set; }
+
+        /// <summary>
+        /// 伸缩组扩缩容时目标AZ选择的优先级策略
+        /// </summary>
+        [JsonProperty("multi_az_priority_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public string MultiAzPriorityPolicy { get; set; }
 
 
         /// <summary>
@@ -700,8 +585,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  instanceTerminatePolicy: ").Append(InstanceTerminatePolicy).Append("\n");
             sb.Append("  notifications: ").Append(Notifications).Append("\n");
             sb.Append("  deletePublicip: ").Append(DeletePublicip).Append("\n");
+            sb.Append("  deleteVolume: ").Append(DeleteVolume).Append("\n");
             sb.Append("  cloudLocationId: ").Append(CloudLocationId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  activityType: ").Append(ActivityType).Append("\n");
+            sb.Append("  multiAzPriorityPolicy: ").Append(MultiAzPriorityPolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -854,6 +742,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.DeletePublicip.Equals(input.DeletePublicip))
                 ) && 
                 (
+                    this.DeleteVolume == input.DeleteVolume ||
+                    (this.DeleteVolume != null &&
+                    this.DeleteVolume.Equals(input.DeleteVolume))
+                ) && 
+                (
                     this.CloudLocationId == input.CloudLocationId ||
                     (this.CloudLocationId != null &&
                     this.CloudLocationId.Equals(input.CloudLocationId))
@@ -862,6 +755,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.ActivityType == input.ActivityType ||
+                    (this.ActivityType != null &&
+                    this.ActivityType.Equals(input.ActivityType))
+                ) && 
+                (
+                    this.MultiAzPriorityPolicy == input.MultiAzPriorityPolicy ||
+                    (this.MultiAzPriorityPolicy != null &&
+                    this.MultiAzPriorityPolicy.Equals(input.MultiAzPriorityPolicy))
                 );
         }
 
@@ -923,10 +826,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.Notifications.GetHashCode();
                 if (this.DeletePublicip != null)
                     hashCode = hashCode * 59 + this.DeletePublicip.GetHashCode();
+                if (this.DeleteVolume != null)
+                    hashCode = hashCode * 59 + this.DeleteVolume.GetHashCode();
                 if (this.CloudLocationId != null)
                     hashCode = hashCode * 59 + this.CloudLocationId.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ActivityType != null)
+                    hashCode = hashCode * 59 + this.ActivityType.GetHashCode();
+                if (this.MultiAzPriorityPolicy != null)
+                    hashCode = hashCode * 59 + this.MultiAzPriorityPolicy.GetHashCode();
                 return hashCode;
             }
         }

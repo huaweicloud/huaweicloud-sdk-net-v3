@@ -844,7 +844,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }
         /// <summary>
-        /// 企业项目ID。若为企业项目账号，该参数必填。
+        /// 企业项目ID。若为企业项目帐号，该参数必填。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

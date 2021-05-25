@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 取值范围(0,100]，默认值为100  用于限制结果数据条数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 用于标识结果排序方法。  取值说明，默认值为desc。  asc：升序 desc：降序
         /// </summary>
         [SDKProperty("order", IsQuery = true)]
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public string Order { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页起始值，内容为alarm_id。
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]

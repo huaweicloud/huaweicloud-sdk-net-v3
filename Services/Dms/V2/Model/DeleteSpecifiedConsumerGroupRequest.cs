@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 队列ID
         /// </summary>
         [SDKProperty("queue_id", IsPath = true)]
         [JsonProperty("queue_id", NullValueHandling = NullValueHandling.Ignore)]
         public string QueueId { get; set; }
 
         /// <summary>
-        /// 
+        /// 待删除的消费组ID
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]

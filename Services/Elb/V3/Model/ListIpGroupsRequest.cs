@@ -16,49 +16,49 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// ip地址组的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 
+        /// ip地址组的id
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// ip地址，多个用逗号分隔
         /// </summary>
         [SDKProperty("ip_list", IsQuery = true)]
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpList { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// ip地址组的名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明：必须与limit一起使用。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]

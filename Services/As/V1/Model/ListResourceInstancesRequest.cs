@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListResourceInstancesRequest 
     {
         /// <summary>
-        /// Defines resourceType
+        /// 资源类型，枚举类：SCALING_GROUP_TAG。
         /// </summary>
+        /// <value>资源类型，枚举类：SCALING_GROUP_TAG。</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -119,7 +120,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 资源类型，枚举类：SCALING_GROUP_TAG。
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -129,7 +130,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ShowTagsRequestBody Body { get; set; }
+        public QueryTagsOption Body { get; set; }
 
 
         /// <summary>

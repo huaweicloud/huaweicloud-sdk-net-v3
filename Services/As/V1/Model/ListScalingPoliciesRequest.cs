@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListScalingPoliciesRequest 
     {
         /// <summary>
-        /// Defines scalingPolicyType
+        /// 策略类型。
         /// </summary>
+        /// <value>策略类型。</value>
         [JsonConverter(typeof(EnumClassConverter<ScalingPolicyTypeEnum>))]
         public class ScalingPolicyTypeEnum
         {
@@ -131,41 +132,41 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 伸缩组ID。
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
         [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 伸缩策略名称。
         /// </summary>
         [SDKProperty("scaling_policy_name", IsQuery = true)]
         [JsonProperty("scaling_policy_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingPolicyName { get; set; }
 
         /// <summary>
-        /// 
+        /// 策略类型。
         /// </summary>
         [SDKProperty("scaling_policy_type", IsQuery = true)]
         [JsonProperty("scaling_policy_type", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingPolicyTypeEnum ScalingPolicyType { get; set; }
         /// <summary>
-        /// 
+        /// 伸缩策略ID。
         /// </summary>
         [SDKProperty("scaling_policy_id", IsQuery = true)]
         [JsonProperty("scaling_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingPolicyId { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询记录数，默认20，最大100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

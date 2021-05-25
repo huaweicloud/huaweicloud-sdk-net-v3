@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using HuaweiCloud.SDK.As.V1.Model;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Core.Auth;
 using HuaweiCloud.SDK.IoTDA.V5;

@@ -266,82 +266,82 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 项目的ID。
         /// </summary>
         [SDKProperty("tenant_id", IsQuery = true)]
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID。创建公网NAT网关实例时，关联的企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的描述，长度限制为255。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的名字，长度限制为64。 公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的状态。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的规格。 取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000 \&quot;2\&quot;：中型，SNAT最大连接数50000 \&quot;3\&quot;：大型，SNAT最大连接数200000 \&quot;4\&quot;：超大型，SNAT最大连接数1000000 
         /// </summary>
         [SDKProperty("spec", IsQuery = true)]
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public List<SpecEnum> Spec { get; set; }
         /// <summary>
-        /// 
+        /// 解冻/冻结状态。 取值范围： \&quot;true\&quot;：解冻 \&quot;false\&quot;：冻结
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关下行口（DVR的下一跳）所属的network id。
         /// </summary>
         [SDKProperty("internal_network_id", IsQuery = true)]
         [JsonProperty("internal_network_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalNetworkId { get; set; }
 
         /// <summary>
-        /// 
+        /// VPC的id。
         /// </summary>
         [SDKProperty("router_id", IsQuery = true)]
         [JsonProperty("router_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RouterId { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

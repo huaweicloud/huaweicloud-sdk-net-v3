@@ -16,91 +16,91 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 每页返回的个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照安全组规则对应的id过滤查询结果
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照安全组规则的方向过滤查询结果，支持ingress和egress进行过滤
         /// </summary>
         [SDKProperty("direction", IsQuery = true)]
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public string Direction { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照安全组规则的IP协议过滤查询结果
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照网络类型过滤查询结果，支持IPv4或者IPv6
         /// </summary>
         [SDKProperty("ethertype", IsQuery = true)]
         [JsonProperty("ethertype", NullValueHandling = NullValueHandling.Ignore)]
         public string Ethertype { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照安全组规则的描述过滤查询结果
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照与此安全组规则匹配的远端IP网段过滤查询结果
         /// </summary>
         [SDKProperty("remote_ip_prefix", IsQuery = true)]
         [JsonProperty("remote_ip_prefix", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteIpPrefix { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照与此安全组规则关联的远端安全组ID过滤查询结果
         /// </summary>
         [SDKProperty("remote_group_id", IsQuery = true)]
         [JsonProperty("remote_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照与此安全组规则所属的安全组ID过滤查询结果
         /// </summary>
         [SDKProperty("security_group_id", IsQuery = true)]
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照最大端口过滤查询结果
         /// </summary>
         [SDKProperty("port_range_max", IsQuery = true)]
         [JsonProperty("port_range_max", NullValueHandling = NullValueHandling.Ignore)]
         public string PortRangeMax { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照最小端口过滤查询结果
         /// </summary>
         [SDKProperty("port_range_min", IsQuery = true)]
         [JsonProperty("port_range_min", NullValueHandling = NullValueHandling.Ignore)]
         public string PortRangeMin { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照安全组规则所属的项目ID过滤查询结果
         /// </summary>
         [SDKProperty("tenant_id", IsQuery = true)]
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 带宽唯一标识。通过弹性公网IP详情获取，且此弹性公网IP是包周期的。
         /// </summary>
         [SDKProperty("bandwidth_id", IsPath = true)]
         [JsonProperty("bandwidth_id", NullValueHandling = NullValueHandling.Ignore)]

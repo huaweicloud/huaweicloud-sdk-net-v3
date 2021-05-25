@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 组织名称
         /// </summary>
         [SDKProperty("namespace", IsPath = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像仓库名称
         /// </summary>
         [SDKProperty("repository", IsPath = true)]
         [JsonProperty("repository", NullValueHandling = NullValueHandling.Ignore)]

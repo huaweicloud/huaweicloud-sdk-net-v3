@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 项目名称，缺省值默认为区域名称，例如：cn-north-1。 
         /// </summary>
         [SDKProperty("projectname", IsQuery = true)]
         [JsonProperty("projectname", NullValueHandling = NullValueHandling.Ignore)]

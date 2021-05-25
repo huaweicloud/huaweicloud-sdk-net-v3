@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 含义：想要筛选的插件名称  属性：隐藏参数
         /// </summary>
         [SDKProperty("addon_template_name", IsQuery = true)]
         [JsonProperty("addon_template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AddonTemplateName { get; set; }
 
         /// <summary>
-        /// 
+        /// 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
         /// </summary>
         [SDKProperty("cluster_id", IsQuery = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]

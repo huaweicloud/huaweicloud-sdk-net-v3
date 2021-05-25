@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// SNAT规则的ID。
         /// </summary>
         [SDKProperty("snat_rule_id", IsPath = true)]
         [JsonProperty("snat_rule_id", NullValueHandling = NullValueHandling.Ignore)]

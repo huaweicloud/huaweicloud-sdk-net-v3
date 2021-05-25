@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     public class ListPublicipsRequest 
     {
         /// <summary>
-        /// Defines ipVersion
+        /// IP地址版本信息  4：IPv4  6：IPv6
         /// </summary>
+        /// <value>IP地址版本信息  4：IPv4  6：IPv6</value>
         [JsonConverter(typeof(EnumClassConverter<IpVersionEnum>))]
         public class IpVersionEnum
         {
@@ -125,55 +126,55 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 取值为上一页数据的最后一条记录的id，为空时为查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：每页返回的个数  取值范围：0~intmax
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// IP地址版本信息  4：IPv4  6：IPv6
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public IpVersionEnum IpVersion { get; set; }
         /// <summary>
-        /// 
+        /// 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的弹性IP弹性公网IP。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的弹性公网IP，请传参all_granted_eps。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 绑定弹性公网IP的端口id
         /// </summary>
         [SDKProperty("port_id", IsQuery = true)]
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PortId { get; set; }
 
         /// <summary>
-        /// 
+        /// IPv4时是申请到的弹性公网IP地址，IPv6时是IPv6地址对应的IPv4地址
         /// </summary>
         [SDKProperty("public_ip_address", IsQuery = true)]
         [JsonProperty("public_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PublicIpAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 关联端口的私有IP地址
         /// </summary>
         [SDKProperty("private_ip_address", IsQuery = true)]
         [JsonProperty("private_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PrivateIpAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 弹性公网IP唯一标识
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]

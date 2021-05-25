@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 分区上次写入消息的时间。
         /// </summary>
         [JsonProperty("last_update_timestamp", NullValueHandling = NullValueHandling.Ignore)]
-        public int? LastUpdateTimestamp { get; set; }
+        public long? LastUpdateTimestamp { get; set; }
 
         /// <summary>
         /// 副本列表。

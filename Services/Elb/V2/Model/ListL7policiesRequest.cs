@@ -16,112 +16,112 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询中每页的转发策略个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询的起始的资源id，表示上一页最后一条查询记录的转发策略的id。不指定时表示查询第一页。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略的管理状态；取值范围： true/false。该字段为预留字段，暂未启用。默认为true。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略所在的监听器ID。
         /// </summary>
         [SDKProperty("listener_id", IsQuery = true)]
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略的匹配动作。 取值范围：REDIRECT_TO_POOL：将匹配的流量转发到redirect_pool_id指定的后端云服务器组上；REDIRECT_TO_LISTENER：将listener_id指定的HTTP监听器的流量重定向到redirect_listener_id指定的TERMINATED_HTTPS监听器上。
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 
+        /// 流量匹配后转发到后端云服务器组的ID。
         /// </summary>
         [SDKProperty("redirect_pool_id", IsQuery = true)]
         [JsonProperty("redirect_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RedirectPoolId { get; set; }
 
         /// <summary>
-        /// 
+        /// 流量匹配后转发到的监听器的ID。
         /// </summary>
         [SDKProperty("redirect_listener_id", IsQuery = true)]
         [JsonProperty("redirect_listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RedirectListenerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略重定向到的url。该字段为预留字段，暂未启用。
         /// </summary>
         [SDKProperty("redirect_url", IsQuery = true)]
         [JsonProperty("redirect_url", NullValueHandling = NullValueHandling.Ignore)]
         public string RedirectUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发优先级，从1递增，最高100。默认值：100；该字段为预留字段，暂未启用。
         /// </summary>
         [SDKProperty("position", IsQuery = true)]
         [JsonProperty("position", NullValueHandling = NullValueHandling.Ignore)]
         public int? Position { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发策略的配置状态，可以为ACTIVE、PENDING_CREATE 或者ERROR。默认值：ACTIVE；该字段为预留字段，暂未启用。
         /// </summary>
         [SDKProperty("provisioning_status", IsQuery = true)]
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID。  取值范围：带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若子账号查询转发策略列表时，需要指定enterprise_project_id为all_granted_eps或者具体企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否显示所有的rule信息。取值范围：false表示不显示（跟以前一样只显示ID）；true表示显示。
         /// </summary>
         [SDKProperty("display_all_rules", IsQuery = true)]
         [JsonProperty("display_all_rules", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,112 +16,112 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询中每页的负载均衡器个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的操作状态。取值范围：可以为ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。
         /// </summary>
         [SDKProperty("operating_status", IsQuery = true)]
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的配置状态。取值范围：可以为ACTIVE、PENDING_CREATE 或者ERROR。
         /// </summary>
         [SDKProperty("provisioning_status", IsQuery = true)]
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的内网IP。
         /// </summary>
         [SDKProperty("vip_address", IsQuery = true)]
         [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string VipAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器内网IP对应的端口ID。
         /// </summary>
         [SDKProperty("vip_port_id", IsQuery = true)]
         [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipPortId { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器所在的子网ID。
         /// </summary>
         [SDKProperty("vip_subnet_id", IsQuery = true)]
         [JsonProperty("vip_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipSubnetId { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器所在的虚拟私有云ID。
         /// </summary>
         [SDKProperty("vpc_id", IsQuery = true)]
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理用户指南》。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的管理状态。负载均衡器停用时不再接收流量。取值范围：true：启用负载均衡器；false：停用负载均衡器。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的后端服务器的IP地址
         /// </summary>
         [SDKProperty("member_address", IsQuery = true)]
         [JsonProperty("member_address", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的后端服务器对应的弹性云服务器ID
         /// </summary>
         [SDKProperty("member_device_id", IsQuery = true)]
         [JsonProperty("member_device_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 依赖包的ID。
         /// </summary>
         [SDKProperty("depend_id", IsPath = true)]
         [JsonProperty("depend_id", NullValueHandling = NullValueHandling.Ignore)]

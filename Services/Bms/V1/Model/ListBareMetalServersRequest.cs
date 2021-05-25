@@ -16,63 +16,63 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 裸金属服务器规格ID
         /// </summary>
         [SDKProperty("flavor", IsQuery = true)]
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
         public string Flavor { get; set; }
 
         /// <summary>
-        /// 
+        /// 裸金属服务器名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 裸金属服务器状态,只有管理员可以使用DELETED状态过滤查询已经删除的裸金属服务器。取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、REBOOT、REBUILD、SHUTOFF
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回裸金属服务器的条数，默认值是25，最大值为1000。limit为每页返回裸金属服务器详情的条数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 此接口为分页查询接口:不传offset参数，返回结果是符合条件的裸金属服务器总条数,servers列表为空。传offset参数，offset为查询页码，起始页码为1，每页查询的条数为limit值。此接口为分页查询接口，offset为查询页码（起始页码为1），返回值包括总条数和裸金属详情列表传入offset：按limit值分页（limit默认为1000），返回第offset页裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。不传入offset传入limit ：返回裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。。不传入limit：按25条分页，返回第1页裸金属服务器详情列表，总条数最大值为25，不足按实际情况返回。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 裸金属服务器标签：__type_baremetal
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
         /// <summary>
-        /// 
+        /// 批量创建裸金属服务器时，指定返回的ID，用于查询本次批量创建的裸金属服务器
         /// </summary>
         [SDKProperty("reservation_id", IsQuery = true)]
         [JsonProperty("reservation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ReservationId { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询裸金属服务器结果的详细级别，级别越高，查询到的裸金属服务器信息越多，默认为4。可使用的级别为 1，2，3，4，5
         /// </summary>
         [SDKProperty("detail", IsQuery = true)]
         [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
         public string Detail { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询绑定某个企业项目的裸金属服务器
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     public class ListResizeFlavorsRequest 
     {
         /// <summary>
-        /// Defines sortDir
+        /// 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
         /// </summary>
+        /// <value>升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序</value>
         [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
         public class SortDirEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         }
 
         /// <summary>
-        /// Defines sortKey
+        /// 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
         /// </summary>
+        /// <value>排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -258,47 +260,47 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 进行规格切换的云服务器ID，UUID格式。
         /// </summary>
         [SDKProperty("instance_uuid", IsQuery = true)]
         [JsonProperty("instance_uuid", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceUuid { get; set; }
 
         /// <summary>
-        /// 
+        /// 单页面可显示的flavor条数最大值，默认是1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 以单页最后一条flavor的ID作为分页标记。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public SortDirEnum SortDir { get; set; }
         /// <summary>
-        /// 
+        /// 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 
+        /// 进行规格切换的云服务器源规格ID。
         /// </summary>
         [SDKProperty("source_flavor_id", IsQuery = true)]
         [JsonProperty("source_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceFlavorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 进行规格切换的云服务器源规格名称。
         /// </summary>
         [SDKProperty("source_flavor_name", IsQuery = true)]
         [JsonProperty("source_flavor_name", NullValueHandling = NullValueHandling.Ignore)]

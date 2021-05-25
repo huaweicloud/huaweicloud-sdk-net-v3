@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 成员id，成员id与项目id为同一个。
         /// </summary>
         [SDKProperty("member_id", IsPath = true)]
         [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberId { get; set; }
 
         /// <summary>
-        /// 
+        /// 备份副本id
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]

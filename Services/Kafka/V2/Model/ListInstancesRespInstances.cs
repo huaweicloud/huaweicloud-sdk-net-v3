@@ -266,7 +266,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? StorageSpace { get; set; }
 
         /// <summary>
-        /// Kafka实例的最大topic数。
+        /// Kafka实例的分区数量。
         /// </summary>
         [JsonProperty("partition_num", NullValueHandling = NullValueHandling.Ignore)]
         public string PartitionNum { get; set; }
@@ -593,6 +593,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("ces_version", NullValueHandling = NullValueHandling.Ignore)]
         public string CesVersion { get; set; }
 
+        /// <summary>
+        /// 标签列表。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListInstancesRespTags> Tags { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -661,6 +667,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  diskEncrypted: ").Append(DiskEncrypted).Append("\n");
             sb.Append("  kafkaPrivateConnectAddress: ").Append(KafkaPrivateConnectAddress).Append("\n");
             sb.Append("  cesVersion: ").Append(CesVersion).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -983,6 +990,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.CesVersion == input.CesVersion ||
                     (this.CesVersion != null &&
                     this.CesVersion.Equals(input.CesVersion))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -1114,6 +1127,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.KafkaPrivateConnectAddress.GetHashCode();
                 if (this.CesVersion != null)
                     hashCode = hashCode * 59 + this.CesVersion.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

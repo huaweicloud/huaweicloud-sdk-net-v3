@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 函数的URN（Uniform Resource Name），唯一标识函数。
         /// </summary>
         [SDKProperty("func_urn", IsPath = true)]
         [JsonProperty("func_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FuncUrn { get; set; }
 
         /// <summary>
-        /// 
+        /// 获取最近多少分钟内函数执行的指标。
         /// </summary>
         [SDKProperty("period", IsPath = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]

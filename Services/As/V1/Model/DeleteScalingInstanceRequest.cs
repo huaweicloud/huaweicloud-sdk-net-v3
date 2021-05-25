@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class DeleteScalingInstanceRequest 
     {
         /// <summary>
-        /// Defines instanceDelete
+        /// 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。
         /// </summary>
+        /// <value>实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。</value>
         [JsonConverter(typeof(EnumClassConverter<InstanceDeleteEnum>))]
         public class InstanceDeleteEnum
         {
@@ -125,14 +126,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。
         /// </summary>
         [SDKProperty("instance_delete", IsQuery = true)]
         [JsonProperty("instance_delete", NullValueHandling = NullValueHandling.Ignore)]

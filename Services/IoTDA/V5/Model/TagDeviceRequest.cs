@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
         [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]

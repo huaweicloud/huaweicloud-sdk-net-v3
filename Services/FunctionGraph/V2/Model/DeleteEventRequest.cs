@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 事件ID。
         /// </summary>
         [SDKProperty("event_id", IsPath = true)]
         [JsonProperty("event_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EventId { get; set; }
 
         /// <summary>
-        /// 
+        /// 函数的URN（Uniform Resource Name），唯一标识函数。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]

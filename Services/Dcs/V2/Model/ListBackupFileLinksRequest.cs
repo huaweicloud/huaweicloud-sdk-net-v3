@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 备份记录ID。
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,91 +16,91 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询中每页的监听器个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组关联的健康检查的ID。
         /// </summary>
         [SDKProperty("healthmonitor_id", IsQuery = true)]
         [JsonProperty("healthmonitor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string HealthmonitorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组关联的负载均衡器ID。
         /// </summary>
         [SDKProperty("loadbalancer_id", IsQuery = true)]
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的后端协议。支持TCP、UDP和HTTP。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的负载均衡算法。取值范围：ROUND_ROBIN：加权轮询算法。LEAST_CONNECTIONS：加权最少连接算法。SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
         /// </summary>
         [SDKProperty("lb_algorithm", IsQuery = true)]
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public string LbAlgorithm { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组关联的后端云服务器IP。
         /// </summary>
         [SDKProperty("member_address", IsQuery = true)]
         [JsonProperty("member_address", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组关联的后端云服务器对应的弹性云服务器的ID。
         /// </summary>
         [SDKProperty("member_device_id", IsQuery = true)]
         [JsonProperty("member_device_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberDeviceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID，仅用于基于企业项目的细粒度鉴权使用；如果参数中传递了loadbalancer_id，则用该负载均衡器对应企业项目ID鉴权；如果参数中没有传递loadbalancer_id，而传递了healthmonitor_id，则使用健康检查器对应的企业项目id鉴权。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

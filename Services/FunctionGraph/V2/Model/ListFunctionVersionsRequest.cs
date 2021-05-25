@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 函数的URN，详细解释见FunctionGraph函数模型的描述。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一次查询到的最后的记录位置。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 每次查询获取的最大函数记录数量。
         /// </summary>
         [SDKProperty("maxitems", IsQuery = true)]
         [JsonProperty("maxitems", NullValueHandling = NullValueHandling.Ignore)]

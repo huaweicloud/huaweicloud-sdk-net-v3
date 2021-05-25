@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
+        /// 是否为默认策略。
+        /// </summary>
+        [JsonProperty("policiesOnly", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PoliciesOnly { get; set; }
+
+        /// <summary>
         /// topic名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +57,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("sync_message_flush", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SyncMessageFlush { get; set; }
 
+        /// <summary>
+        /// 扩展配置。
+        /// </summary>
+        [JsonProperty("external_configs", NullValueHandling = NullValueHandling.Ignore)]
+        public Object ExternalConfigs { get; set; }
+
+        /// <summary>
+        /// topic类型。
+        /// </summary>
+        [JsonProperty("topic_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TopicType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -59,12 +77,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListInstanceTopicsRespTopics {\n");
+            sb.Append("  policiesOnly: ").Append(PoliciesOnly).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  replication: ").Append(Replication).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
             sb.Append("  retentionTime: ").Append(RetentionTime).Append("\n");
             sb.Append("  syncReplication: ").Append(SyncReplication).Append("\n");
             sb.Append("  syncMessageFlush: ").Append(SyncMessageFlush).Append("\n");
+            sb.Append("  externalConfigs: ").Append(ExternalConfigs).Append("\n");
+            sb.Append("  topicType: ").Append(TopicType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,6 +107,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 return false;
 
             return 
+                (
+                    this.PoliciesOnly == input.PoliciesOnly ||
+                    (this.PoliciesOnly != null &&
+                    this.PoliciesOnly.Equals(input.PoliciesOnly))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -115,6 +141,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SyncMessageFlush == input.SyncMessageFlush ||
                     (this.SyncMessageFlush != null &&
                     this.SyncMessageFlush.Equals(input.SyncMessageFlush))
+                ) && 
+                (
+                    this.ExternalConfigs == input.ExternalConfigs ||
+                    (this.ExternalConfigs != null &&
+                    this.ExternalConfigs.Equals(input.ExternalConfigs))
+                ) && 
+                (
+                    this.TopicType == input.TopicType ||
+                    (this.TopicType != null &&
+                    this.TopicType.Equals(input.TopicType))
                 );
         }
 
@@ -126,6 +162,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.PoliciesOnly != null)
+                    hashCode = hashCode * 59 + this.PoliciesOnly.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Replication != null)
@@ -138,6 +176,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
                 if (this.SyncMessageFlush != null)
                     hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
+                if (this.ExternalConfigs != null)
+                    hashCode = hashCode * 59 + this.ExternalConfigs.GetHashCode();
+                if (this.TopicType != null)
+                    hashCode = hashCode * 59 + this.TopicType.GetHashCode();
                 return hashCode;
             }
         }

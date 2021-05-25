@@ -260,6 +260,12 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 创建队列的时间。
+        /// </summary>
+        [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Created { get; set; }
+
+        /// <summary>
         /// 队列的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -311,6 +317,12 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         [JsonProperty("kafka_topic", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaTopic { get; set; }
 
+        /// <summary>
+        /// 创建队列的时间。
+        /// </summary>
+        [JsonProperty("eff_date", NullValueHandling = NullValueHandling.Ignore)]
+        public long? EffDate { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -321,6 +333,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
             sb.Append("class ShowQueueResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  queueMode: ").Append(QueueMode).Append("\n");
             sb.Append("  reservation: ").Append(Reservation).Append("\n");
@@ -330,6 +343,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
             sb.Append("  maxConsumeCount: ").Append(MaxConsumeCount).Append("\n");
             sb.Append("  groupCount: ").Append(GroupCount).Append("\n");
             sb.Append("  kafkaTopic: ").Append(KafkaTopic).Append("\n");
+            sb.Append("  effDate: ").Append(EffDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -360,6 +374,11 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Created == input.Created ||
+                    (this.Created != null &&
+                    this.Created.Equals(input.Created))
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -405,6 +424,11 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
                     this.KafkaTopic == input.KafkaTopic ||
                     (this.KafkaTopic != null &&
                     this.KafkaTopic.Equals(input.KafkaTopic))
+                ) && 
+                (
+                    this.EffDate == input.EffDate ||
+                    (this.EffDate != null &&
+                    this.EffDate.Equals(input.EffDate))
                 );
         }
 
@@ -420,6 +444,8 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Created != null)
+                    hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.QueueMode != null)
@@ -438,6 +464,8 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
                     hashCode = hashCode * 59 + this.GroupCount.GetHashCode();
                 if (this.KafkaTopic != null)
                     hashCode = hashCode * 59 + this.KafkaTopic.GetHashCode();
+                if (this.EffDate != null)
+                    hashCode = hashCode * 59 + this.EffDate.GetHashCode();
                 return hashCode;
             }
         }

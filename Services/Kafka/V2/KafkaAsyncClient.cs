@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 批量添加或删除实例标签
         /// </summary>
-        public async Task<BatchCreateOrDeleteInstanceTagResponse> BatchCreateOrDeleteInstanceTagAsync(BatchCreateOrDeleteInstanceTagRequest batchCreateOrDeleteInstanceTagRequest)
+        public async Task<BatchCreateOrDeleteKafkaTagResponse> BatchCreateOrDeleteKafkaTagAsync(BatchCreateOrDeleteKafkaTagRequest batchCreateOrDeleteKafkaTagRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchCreateOrDeleteInstanceTagRequest.InstanceId.ToString());
+            urlParam.Add("instance_id" , batchCreateOrDeleteKafkaTagRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteInstanceTagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteKafkaTagRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<BatchCreateOrDeleteInstanceTagResponse>(response);
+            return JsonUtils.DeSerializeNull<BatchCreateOrDeleteKafkaTagResponse>(response);
         }
         
         /// <summary>
@@ -38,6 +38,19 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceTopicRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchDeleteInstanceTopicResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除用户
+        /// </summary>
+        public async Task<BatchDeleteInstanceUsersResponse> BatchDeleteInstanceUsersAsync(BatchDeleteInstanceUsersRequest batchDeleteInstanceUsersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , batchDeleteInstanceUsersRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceUsersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<BatchDeleteInstanceUsersResponse>(response);
         }
         
         /// <summary>
@@ -76,6 +89,19 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTopicRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateInstanceTopicResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建用户
+        /// </summary>
+        public async Task<CreateInstanceUserResponse> CreateInstanceUserAsync(CreateInstanceUserRequest createInstanceUserRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createInstanceUserRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceUserRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateInstanceUserResponse>(response);
         }
         
         /// <summary>
@@ -274,6 +300,20 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 重置用户密码
+        /// </summary>
+        public async Task<ResetUserPasswrodResponse> ResetUserPasswrodAsync(ResetUserPasswrodRequest resetUserPasswrodRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , resetUserPasswrodRequest.InstanceId.ToString());
+            urlParam.Add("user_name" , resetUserPasswrodRequest.UserName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetUserPasswrodRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<ResetUserPasswrodResponse>(response);
+        }
+        
+        /// <summary>
         /// 实例规格变更
         /// </summary>
         public async Task<ResizeInstanceResponse> ResizeInstanceAsync(ResizeInstanceRequest resizeInstanceRequest)
@@ -393,16 +433,16 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询实例标签
+        /// 查询消息
         /// </summary>
-        public async Task<ShowInstanceTagsResponse> ShowInstanceTagsAsync(ShowInstanceTagsRequest showInstanceTagsRequest)
+        public async Task<ShowInstanceMessagesResponse> ShowInstanceMessagesAsync(ShowInstanceMessagesRequest showInstanceMessagesRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showInstanceTagsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTagsRequest);
+            urlParam.Add("instance_id" , showInstanceMessagesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceMessagesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowInstanceTagsResponse>(response);
+            return JsonUtils.DeSerialize<ShowInstanceMessagesResponse>(response);
         }
         
         /// <summary>
@@ -417,6 +457,57 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTopicDetailRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowInstanceTopicDetailResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询用户列表
+        /// </summary>
+        public async Task<ShowInstanceUsersResponse> ShowInstanceUsersAsync(ShowInstanceUsersRequest showInstanceUsersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showInstanceUsersRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceUsersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowInstanceUsersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询项目标签
+        /// </summary>
+        public async Task<ShowKafkaProjectTagsResponse> ShowKafkaProjectTagsAsync(ShowKafkaProjectTagsRequest showKafkaProjectTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaProjectTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowKafkaProjectTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询实例标签
+        /// </summary>
+        public async Task<ShowKafkaTagsResponse> ShowKafkaTagsAsync(ShowKafkaTagsRequest showKafkaTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showKafkaTagsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowKafkaTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询topic的磁盘存储情况
+        /// </summary>
+        public async Task<ShowKafkaTopicPartitionDiskusageResponse> ShowKafkaTopicPartitionDiskusageAsync(ShowKafkaTopicPartitionDiskusageRequest showKafkaTopicPartitionDiskusageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showKafkaTopicPartitionDiskusageRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/diskusage",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicPartitionDiskusageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowKafkaTopicPartitionDiskusageResponse>(response);
         }
         
         /// <summary>
@@ -446,7 +537,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询分区最新消息的位置
+        /// 查询分区最早消息的位置
         /// </summary>
         public async Task<ShowPartitionBeginningMessageResponse> ShowPartitionBeginningMessageAsync(ShowPartitionBeginningMessageRequest showPartitionBeginningMessageRequest)
         {
@@ -461,7 +552,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询分区最早消息的位置
+        /// 查询分区最新消息的位置
         /// </summary>
         public async Task<ShowPartitionEndMessageResponse> ShowPartitionEndMessageAsync(ShowPartitionEndMessageRequest showPartitionEndMessageRequest)
         {
@@ -491,18 +582,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询项目标签
-        /// </summary>
-        public async Task<ShowProjectTagsResponse> ShowProjectTagsAsync(ShowProjectTagsRequest showProjectTagsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowProjectTagsResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询单个转储任务
         /// </summary>
         public async Task<ShowSinkTaskDetailResponse> ShowSinkTaskDetailAsync(ShowSinkTaskDetailRequest showSinkTaskDetailRequest)
@@ -514,6 +593,20 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSinkTaskDetailRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowSinkTaskDetailResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询用户权限
+        /// </summary>
+        public async Task<ShowTopicAccessPolicyResponse> ShowTopicAccessPolicyAsync(ShowTopicAccessPolicyRequest showTopicAccessPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showTopicAccessPolicyRequest.InstanceId.ToString());
+            urlParam.Add("topic_name" , showTopicAccessPolicyRequest.TopicName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicAccessPolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowTopicAccessPolicyResponse>(response);
         }
         
         /// <summary>
@@ -579,6 +672,19 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSinkTaskQuotaRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateSinkTaskQuotaResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置用户权限
+        /// </summary>
+        public async Task<UpdateTopicAccessPolicyResponse> UpdateTopicAccessPolicyAsync(UpdateTopicAccessPolicyRequest updateTopicAccessPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateTopicAccessPolicyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicAccessPolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<UpdateTopicAccessPolicyResponse>(response);
         }
         
         /// <summary>

@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 查询返回秘钥数量限制。  在微版本2.35后支持
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 从marker指定的keypair的名称的下一条数据开始查询。  在微版本2.35后支持。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 微版本头
         /// </summary>
         [SDKProperty("OpenStack-API-Version", IsHeader = true)]
         [JsonProperty("OpenStack-API-Version", NullValueHandling = NullValueHandling.Ignore)]

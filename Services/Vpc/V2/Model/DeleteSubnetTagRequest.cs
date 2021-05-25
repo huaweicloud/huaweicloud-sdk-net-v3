@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 子网ID
         /// </summary>
         [SDKProperty("subnet_id", IsPath = true)]
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：键值
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]

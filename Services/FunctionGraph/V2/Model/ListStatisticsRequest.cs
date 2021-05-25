@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class ListStatisticsRequest 
     {
         /// <summary>
-        /// Defines filter
+        /// 参数过滤器。
         /// </summary>
+        /// <value>参数过滤器。</value>
         [JsonConverter(typeof(EnumClassConverter<FilterEnum>))]
         public class FilterEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         }
 
         /// <summary>
-        /// Defines monthCode
+        /// 月度统计的维度，与filter参数monthly_statistics配合使用。 \&quot;0\&quot;:本月月度统计。 \&quot;1\&quot;:上月月度统计。 \&quot;2\&quot;:最近三个月月度统计。 \&quot;3\&quot;:最近六个月月度计。 取值超出范围时默认取\&quot;0”
         /// </summary>
+        /// <value>月度统计的维度，与filter参数monthly_statistics配合使用。 \&quot;0\&quot;:本月月度统计。 \&quot;1\&quot;:上月月度统计。 \&quot;2\&quot;:最近三个月月度统计。 \&quot;3\&quot;:最近六个月月度计。 取值超出范围时默认取\&quot;0”</value>
         [JsonConverter(typeof(EnumClassConverter<MonthCodeEnum>))]
         public class MonthCodeEnum
         {
@@ -246,20 +248,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 参数过滤器。
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
-        /// 
+        /// 时间段单位为分钟，与filter参数metric配合使用。
         /// </summary>
         [SDKProperty("period", IsQuery = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
 
         /// <summary>
-        /// 
+        /// 月度统计的维度，与filter参数monthly_statistics配合使用。 \&quot;0\&quot;:本月月度统计。 \&quot;1\&quot;:上月月度统计。 \&quot;2\&quot;:最近三个月月度统计。 \&quot;3\&quot;:最近六个月月度计。 取值超出范围时默认取\&quot;0”
         /// </summary>
         [SDKProperty("month_code", IsQuery = true)]
         [JsonProperty("month_code", NullValueHandling = NullValueHandling.Ignore)]

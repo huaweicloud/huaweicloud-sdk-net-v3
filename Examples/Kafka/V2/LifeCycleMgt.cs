@@ -41,10 +41,7 @@ namespace Examples.Kafka.V2
 
         private static void listInstance(KafkaClient client)
         {
-            var req = new ListInstancesRequest
-            {
-                Engine = ListInstancesRequest.EngineEnum.KAFKA,
-            };
+            var req = new ListInstancesRequest();
             try
             {
                 var resp = client.ListInstances(req);

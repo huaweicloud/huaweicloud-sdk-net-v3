@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 策略ID
         /// </summary>
         [SDKProperty("policy_id", IsPath = true)]
         [JsonProperty("policy_id", NullValueHandling = NullValueHandling.Ignore)]

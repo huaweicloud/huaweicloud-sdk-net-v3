@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 待修改登录保护状态信息的IAM用户ID。
         /// </summary>
         [SDKProperty("user_id", IsPath = true)]
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]

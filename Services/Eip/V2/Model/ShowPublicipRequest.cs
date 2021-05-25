@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 弹性公网IP唯一标识
         /// </summary>
         [SDKProperty("publicip_id", IsPath = true)]
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
         public long? NextMarker { get; set; }
 
+        /// <summary>
+        /// 函数版本总数
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Count { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("class ListFunctionVersionsResponse {\n");
             sb.Append("  versions: ").Append(Versions).Append("\n");
             sb.Append("  nextMarker: ").Append(NextMarker).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,6 +75,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.NextMarker == input.NextMarker ||
                     (this.NextMarker != null &&
                     this.NextMarker.Equals(input.NextMarker))
+                ) && 
+                (
+                    this.Count == input.Count ||
+                    (this.Count != null &&
+                    this.Count.Equals(input.Count))
                 );
         }
 
@@ -83,6 +95,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Versions.GetHashCode();
                 if (this.NextMarker != null)
                     hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                if (this.Count != null)
+                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

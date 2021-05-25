@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 负载均衡器所在的项目id
         /// </summary>
         [SDKProperty("loadbalancer_id", IsPath = true)]
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,77 +16,77 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 偏移量。 说明:分页查询快照时使用，与limit配合使用。假如共有30个快照，设置offset为11，limit为10，即为从第12个快照开始查询，一次最多可读取10个快照。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 返回结果个数限制，值为大于0的整数。默认值为1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 云硬盘快照名称。最大支持255个字节。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 云硬盘快照状态，具体请参见A.3 云硬盘快照状态。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 快照所属云硬盘的ID。
         /// </summary>
         [SDKProperty("volume_id", IsQuery = true)]
         [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeId { get; set; }
 
         /// <summary>
-        /// 
+        /// 快照所属云硬盘的可用区。
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 
+        /// 指定快照id进行过滤。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 专属存储的名称。
         /// </summary>
         [SDKProperty("dedicated_storage_name", IsQuery = true)]
         [JsonProperty("dedicated_storage_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageName { get; set; }
 
         /// <summary>
-        /// 
+        /// 专属存储ID。
         /// </summary>
         [SDKProperty("dedicated_storage_id", IsQuery = true)]
         [JsonProperty("dedicated_storage_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageId { get; set; }
 
         /// <summary>
-        /// 
+        /// 服务类型。仅支持EVS、DSS、DESS。
         /// </summary>
         [SDKProperty("service_type", IsQuery = true)]
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// 
+        /// 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 &gt; 说明： &gt;  &gt; 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\&quot;[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\&quot;。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

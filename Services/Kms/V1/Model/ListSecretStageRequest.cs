@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 凭据的资源标识符。
         /// </summary>
         [SDKProperty("secret_id", IsPath = true)]
         [JsonProperty("secret_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretId { get; set; }
 
         /// <summary>
-        /// 
+        /// 凭据版本状态的名称。
         /// </summary>
         [SDKProperty("stage_name", IsPath = true)]
         [JsonProperty("stage_name", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 组织名称
         /// </summary>
         [SDKProperty("namespace", IsPath = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]

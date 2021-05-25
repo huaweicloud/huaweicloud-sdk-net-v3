@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 磁盘ID。
         /// </summary>
         [SDKProperty("volume_id", IsPath = true)]
         [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]

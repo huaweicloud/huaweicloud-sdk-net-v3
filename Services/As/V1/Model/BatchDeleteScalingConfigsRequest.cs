@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchDeleteScalingConfigsRequestBody Body { get; set; }
+        public BatchDeleteScalingConfigOption Body { get; set; }
 
 
         /// <summary>

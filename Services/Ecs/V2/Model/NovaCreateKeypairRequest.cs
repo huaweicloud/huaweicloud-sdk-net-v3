@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 微版本头
         /// </summary>
         [SDKProperty("OpenStack-API-Version", IsHeader = true)]
         [JsonProperty("OpenStack-API-Version", NullValueHandling = NullValueHandling.Ignore)]

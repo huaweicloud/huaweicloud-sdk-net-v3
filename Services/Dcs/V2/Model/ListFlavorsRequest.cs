@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     public class ListFlavorsRequest 
     {
         /// <summary>
-        /// Defines cpuType
+        /// CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 
         /// </summary>
+        /// <value>CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 </value>
         [JsonConverter(typeof(EnumClassConverter<CpuTypeEnum>))]
         public class CpuTypeEnum
         {
@@ -125,41 +126,41 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 产品规格编码。
         /// </summary>
         [SDKProperty("spec_code", IsQuery = true)]
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string SpecCode { get; set; }
 
         /// <summary>
-        /// 
+        /// 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 
         /// </summary>
         [SDKProperty("cache_mode", IsQuery = true)]
         [JsonProperty("cache_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string CacheMode { get; set; }
 
         /// <summary>
-        /// 
+        /// 缓存引擎类型。取值范围如下： - Redis - Memcached 
         /// </summary>
         [SDKProperty("engine", IsQuery = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public string Engine { get; set; }
 
         /// <summary>
-        /// 
+        /// 缓存版本，当缓存引擎为Redis时，取值范围如下： - 3.0 - 4.0 - 5.0 
         /// </summary>
         [SDKProperty("engine_version", IsQuery = true)]
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 
         /// </summary>
         [SDKProperty("cpu_type", IsQuery = true)]
         [JsonProperty("cpu_type", NullValueHandling = NullValueHandling.Ignore)]
         public CpuTypeEnum CpuType { get; set; }
         /// <summary>
-        /// 
+        /// 缓存容量（G Byte）。 - Redis3.0：单机和主备类型实例取值：2、4、8、16、32、64。Proxy集群实例规格支持64、128、256、512和1024。 - Redis4.0和Redis5.0：单机和主备类型实例取值：0.125、0.25、0.5、1、2、4、8、16、32、64。Cluster集群实例规格支持24、32、48、64、96、128、192、256、384、512、768、1024。 - Memcached：单机和主备类型实例取值：2、4、8、16、32、64。 
         /// </summary>
         [SDKProperty("capacity", IsQuery = true)]
         [JsonProperty("capacity", NullValueHandling = NullValueHandling.Ignore)]

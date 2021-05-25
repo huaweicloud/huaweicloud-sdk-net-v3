@@ -16,112 +16,112 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的管理状态；该字段为预留字段，暂未启用。只支持更新为true。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组关联的健康检查的ID。
         /// </summary>
         [SDKProperty("healthmonitor_id", IsQuery = true)]
         [JsonProperty("healthmonitor_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> HealthmonitorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组所在ip_version。 取值范围：dualstack,v4,v6。
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法；当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
         /// </summary>
         [SDKProperty("lb_algorithm", IsQuery = true)]
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> LbAlgorithm { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组绑定的负载均衡器ID。
         /// </summary>
         [SDKProperty("loadbalancer_id", IsQuery = true)]
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器的IP地址。
         /// </summary>
         [SDKProperty("member_address", IsQuery = true)]
         [JsonProperty("member_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否开启删除保护，false不开启，默认为空查询全部
         /// </summary>
         [SDKProperty("member_deletion_protection_enable", IsQuery = true)]
         [JsonProperty("member_deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? MemberDeletionProtectionEnable { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器对应的弹性云服务器的ID。
         /// </summary>
         [SDKProperty("member_device_id", IsQuery = true)]
         [JsonProperty("member_device_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberDeviceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器组的后端协议。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 待解关联zone的ID。
         /// </summary>
         [SDKProperty("zone_id", IsPath = true)]
         [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]

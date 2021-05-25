@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 云服务器ID。
         /// </summary>
         [SDKProperty("server_id", IsPath = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]

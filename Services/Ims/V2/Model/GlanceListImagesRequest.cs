@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     public class GlanceListImagesRequest 
     {
         /// <summary>
-        /// Defines imagetype
+        /// 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
         /// </summary>
+        /// <value>镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared</value>
         [JsonConverter(typeof(EnumClassConverter<ImagetypeEnum>))]
         public class ImagetypeEnum
         {
@@ -130,8 +131,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines osBit
+        /// 操作系统位数，一般取值为32或者64
         /// </summary>
+        /// <value>操作系统位数，一般取值为32或者64</value>
         [JsonConverter(typeof(EnumClassConverter<OsBitEnum>))]
         public class OsBitEnum
         {
@@ -239,8 +241,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines osType
+        /// 镜像系统类型，取值为Linux，Windows，Other
         /// </summary>
+        /// <value>镜像系统类型，取值为Linux，Windows，Other</value>
         [JsonConverter(typeof(EnumClassConverter<OsTypeEnum>))]
         public class OsTypeEnum
         {
@@ -354,8 +357,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines platform
+        /// 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS
         /// </summary>
+        /// <value>镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS</value>
         [JsonConverter(typeof(EnumClassConverter<PlatformEnum>))]
         public class PlatformEnum
         {
@@ -523,8 +527,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines diskFormat
+        /// 镜像格式，目前支持vhd，zvhd、raw，qcow2。默认值是vhd
         /// </summary>
+        /// <value>镜像格式，目前支持vhd，zvhd、raw，qcow2。默认值是vhd</value>
         [JsonConverter(typeof(EnumClassConverter<DiskFormatEnum>))]
         public class DiskFormatEnum
         {
@@ -644,8 +649,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用
         /// </summary>
+        /// <value>镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -771,8 +777,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines visibility
+        /// 是否被其他租户可见，取值如下： public：公共镜像 private：私有镜像 shared：共享镜像
         /// </summary>
+        /// <value>是否被其他租户可见，取值如下： public：公共镜像 private：私有镜像 shared：共享镜像</value>
         [JsonConverter(typeof(EnumClassConverter<VisibilityEnum>))]
         public class VisibilityEnum
         {
@@ -887,217 +894,217 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
         /// </summary>
         [SDKProperty("__imagetype", IsQuery = true)]
         [JsonProperty("__imagetype", NullValueHandling = NullValueHandling.Ignore)]
         public ImagetypeEnum Imagetype { get; set; }
         /// <summary>
-        /// 
+        /// 镜像是否是受保护，取值为true/false。一般查询公共镜像时候取值为true，查询私有镜像可以不指定。
         /// </summary>
         [SDKProperty("__isregistered", IsQuery = true)]
         [JsonProperty("__isregistered", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Isregistered { get; set; }
 
         /// <summary>
-        /// 
+        /// 操作系统位数，一般取值为32或者64
         /// </summary>
         [SDKProperty("__os_bit", IsQuery = true)]
         [JsonProperty("__os_bit", NullValueHandling = NullValueHandling.Ignore)]
         public OsBitEnum OsBit { get; set; }
         /// <summary>
-        /// 
+        /// 镜像系统类型，取值为Linux，Windows，Other
         /// </summary>
         [SDKProperty("__os_type", IsQuery = true)]
         [JsonProperty("__os_type", NullValueHandling = NullValueHandling.Ignore)]
         public OsTypeEnum OsType { get; set; }
         /// <summary>
-        /// 
+        /// 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS
         /// </summary>
         [SDKProperty("__platform", IsQuery = true)]
         [JsonProperty("__platform", NullValueHandling = NullValueHandling.Ignore)]
         public PlatformEnum Platform { get; set; }
         /// <summary>
-        /// 
+        /// 表示该镜像支持密集存储。如果镜像支持密集存储性能，则值为true，否则无需增加该属性
         /// </summary>
         [SDKProperty("__support_diskintensive", IsQuery = true)]
         [JsonProperty("__support_diskintensive", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportDiskintensive { get; set; }
 
         /// <summary>
-        /// 
+        /// 表示该镜像支持高计算性能。如果镜像支持高计算性能，则值为true，否则无需增加该属性
         /// </summary>
         [SDKProperty("__support_highperformance", IsQuery = true)]
         [JsonProperty("__support_highperformance", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportHighperformance { get; set; }
 
         /// <summary>
-        /// 
+        /// 如果镜像支持KVM，取值为true，否则无需增加该属性
         /// </summary>
         [SDKProperty("__support_kvm", IsQuery = true)]
         [JsonProperty("__support_kvm", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportKvm { get; set; }
 
         /// <summary>
-        /// 
+        /// 表示该镜像是支持KVM虚拟化平台下的GPU类型,如果不支持KVM虚拟机下GPU类型，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存
         /// </summary>
         [SDKProperty("__support_kvm_gpu_type", IsQuery = true)]
         [JsonProperty("__support_kvm_gpu_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportKvmGpuType { get; set; }
 
         /// <summary>
-        /// 
+        /// 如果镜像支持KVM虚拟化下Infiniband网卡类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”属性不共存。
         /// </summary>
         [SDKProperty("__support_kvm_infiniband", IsQuery = true)]
         [JsonProperty("__support_kvm_infiniband", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportKvmInfiniband { get; set; }
 
         /// <summary>
-        /// 
+        /// 表示该镜像支持超大内存。如果镜像支持超大内存，取值为true，否则无需增加该属性
         /// </summary>
         [SDKProperty("__support_largememory", IsQuery = true)]
         [JsonProperty("__support_largememory", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportLargememory { get; set; }
 
         /// <summary>
-        /// 
+        /// 如果镜像支持XEN，取值为true，否则无需增加该属性
         /// </summary>
         [SDKProperty("__support_xen", IsQuery = true)]
         [JsonProperty("__support_xen", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportXen { get; set; }
 
         /// <summary>
-        /// 
+        /// 表示该镜像是支持XEN虚拟化平台下的GPU优化类型,如果不支持XEN虚拟化下GPU类型，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存
         /// </summary>
         [SDKProperty("__support_xen_gpu_type", IsQuery = true)]
         [JsonProperty("__support_xen_gpu_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportXenGpuType { get; set; }
 
         /// <summary>
-        /// 
+        /// 如果镜像支持XEN虚拟化下HANA类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存
         /// </summary>
         [SDKProperty("__support_xen_hana", IsQuery = true)]
         [JsonProperty("__support_xen_hana", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportXenHana { get; set; }
 
         /// <summary>
-        /// 
+        /// 容器类型
         /// </summary>
         [SDKProperty("container_format", IsQuery = true)]
         [JsonProperty("container_format", NullValueHandling = NullValueHandling.Ignore)]
         public string ContainerFormat { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像格式，目前支持vhd，zvhd、raw，qcow2。默认值是vhd
         /// </summary>
         [SDKProperty("disk_format", IsQuery = true)]
         [JsonProperty("disk_format", NullValueHandling = NullValueHandling.Ignore)]
         public DiskFormatEnum DiskFormat { get; set; }
         /// <summary>
-        /// 
+        /// 镜像ID
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 用于分页，表示查询几条镜像记录，取值为整数，默认返回25条镜像记录
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 用于分页，表示从哪个镜像开始查询，取值为镜像ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 成员状态。目前取值有accepted、rejected、pending。accepted表示已经接受共享的镜像，rejected表示已经拒绝了其他用户共享的镜像，pending表示需要确认的其他用户的共享镜像。需要在查询时，设置“visibility”参数为“shared”
         /// </summary>
         [SDKProperty("member_status", IsQuery = true)]
         [JsonProperty("member_status", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像运行需要的最小磁盘，单位为GB 。取值为40～1024GB。取值为1～1024GB。取值为40～255GB
         /// </summary>
         [SDKProperty("min_disk", IsQuery = true)]
         [JsonProperty("min_disk", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinDisk { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像运行需要的最小内存，单位为MB。参数取值依据弹性云服务器的规格限制，一般设置为0。
         /// </summary>
         [SDKProperty("min_ram", IsQuery = true)]
         [JsonProperty("min_ram", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinRam { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像属于哪个租户
         /// </summary>
         [SDKProperty("owner", IsQuery = true)]
         [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
         public string Owner { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像是否是受保护，查询公共镜像时候取值为True，查询私有镜像可以不指定。
         /// </summary>
         [SDKProperty("protected", IsQuery = true)]
         [JsonProperty("protected", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Protected { get; set; }
 
         /// <summary>
-        /// 
+        /// 用于排序，表示升序还是降序，取值为asc和desc。与sort_key一起组合使用，默认为降序desc
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public string SortDir { get; set; }
 
         /// <summary>
-        /// 
+        /// 用于排序，表示按照哪个字段排序。取值为镜像属性name，container_format，disk_format，status，id，size字段，默认为创建时间。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SortKey { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 
+        /// 标签，用户为镜像增加自定义标签后可以通过该参数过滤查询
         /// </summary>
         [SDKProperty("tag", IsQuery = true)]
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public string Tag { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否被其他租户可见，取值如下： public：公共镜像 private：私有镜像 shared：共享镜像
         /// </summary>
         [SDKProperty("visibility", IsQuery = true)]
         [JsonProperty("visibility", NullValueHandling = NullValueHandling.Ignore)]
         public VisibilityEnum Visibility { get; set; }
         /// <summary>
-        /// 
+        /// 镜像创建时间。支持按照时间点过滤查询，取值格式为“ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询创建时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： created_at&#x3D;gt:2018-10-28T10:00:00Z
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像修改时间。支持按照时间点过滤查询，取值格式为 “ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询修改时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： updated_at&#x3D;gt:2018-10-28T10:00:00Z
         /// </summary>
         [SDKProperty("updated_at", IsQuery = true)]
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]

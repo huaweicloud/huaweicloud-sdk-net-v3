@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 函数的URN（Uniform Resource Name），唯一标识函数。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]

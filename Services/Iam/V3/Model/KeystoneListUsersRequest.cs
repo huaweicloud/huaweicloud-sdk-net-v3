@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// IAM用户所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
         /// </summary>
         [SDKProperty("domain_id", IsQuery = true)]
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否启IAM用户，true为启用，false为停用，默认为true。
         /// </summary>
         [SDKProperty("enabled", IsQuery = true)]
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 
+        /// IAM用户名。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 密码过期时间，格式为：password_expires_at&#x3D;{operator}:{timestamp}。timestamp格式为：YYYY-MM-DDTHH:mm:ssZ。示例：    &#x60;&#x60;&#x60; password_expires_at&#x3D;lt:2016-12-08T22:02:00Z &#x60;&#x60;&#x60;   &gt; - operator取值范围：lt，lte，gt，gte，eq，neq。   &gt; - lt：过期时间小于timestamp。   &gt; - lte：过期时间小于等于timestamp。   &gt; - gt：过期时间大于timestamp。   &gt; - gte：过期时间大于等于timestamp。   &gt; - eq：过期时间等于timestamp。   &gt; - neq：过期时间不等于timestamp。
         /// </summary>
         [SDKProperty("password_expires_at", IsQuery = true)]
         [JsonProperty("password_expires_at", NullValueHandling = NullValueHandling.Ignore)]

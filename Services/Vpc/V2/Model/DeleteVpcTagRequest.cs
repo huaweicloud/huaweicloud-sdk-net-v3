@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在
         /// </summary>
         [SDKProperty("vpc_id", IsPath = true)]
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：标签键
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]

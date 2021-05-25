@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class DeleteClusterRequest 
     {
         /// <summary>
-        /// Defines deleteEfs
+        /// 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
+        /// <value>是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteEfsEnum>))]
         public class DeleteEfsEnum
         {
@@ -142,8 +143,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// Defines deleteEni
+        /// 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
+        /// <value>是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteEniEnum>))]
         public class DeleteEniEnum
         {
@@ -269,8 +271,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// Defines deleteEvs
+        /// 是否删除evs（云硬盘）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
+        /// <value>是否删除evs（云硬盘）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteEvsEnum>))]
         public class DeleteEvsEnum
         {
@@ -396,8 +399,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// Defines deleteNet
+        /// 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
+        /// <value>是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteNetEnum>))]
         public class DeleteNetEnum
         {
@@ -523,8 +527,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// Defines deleteObs
+        /// 是否删除obs（对象存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
+        /// <value>是否删除obs（对象存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteObsEnum>))]
         public class DeleteObsEnum
         {
@@ -650,8 +655,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// Defines deleteSfs
+        /// 是否删除sfs（文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
+        /// <value>是否删除sfs（文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteSfsEnum>))]
         public class DeleteSfsEnum
         {
@@ -778,51 +784,51 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
         /// </summary>
         [SDKProperty("cluster_id", IsPath = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 
+        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
         /// </summary>
         [SDKProperty("errorStatus", IsQuery = true)]
         [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
         [SDKProperty("delete_efs", IsQuery = true)]
         [JsonProperty("delete_efs", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteEfsEnum DeleteEfs { get; set; }
         /// <summary>
-        /// 
+        /// 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
         [SDKProperty("delete_eni", IsQuery = true)]
         [JsonProperty("delete_eni", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteEniEnum DeleteEni { get; set; }
         /// <summary>
-        /// 
+        /// 是否删除evs（云硬盘）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
         [SDKProperty("delete_evs", IsQuery = true)]
         [JsonProperty("delete_evs", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteEvsEnum DeleteEvs { get; set; }
         /// <summary>
-        /// 
+        /// 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
         [SDKProperty("delete_net", IsQuery = true)]
         [JsonProperty("delete_net", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteNetEnum DeleteNet { get; set; }
         /// <summary>
-        /// 
+        /// 是否删除obs（对象存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
         [SDKProperty("delete_obs", IsQuery = true)]
         [JsonProperty("delete_obs", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteObsEnum DeleteObs { get; set; }
         /// <summary>
-        /// 
+        /// 是否删除sfs（文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
         [SDKProperty("delete_sfs", IsQuery = true)]
         [JsonProperty("delete_sfs", NullValueHandling = NullValueHandling.Ignore)]

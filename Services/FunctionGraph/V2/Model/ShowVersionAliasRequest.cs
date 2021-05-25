@@ -16,18 +16,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 函数的URN，详细解释见FunctionGraph函数模型的描述。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
 
         /// <summary>
-        /// 
+        /// 要查询的别名名称。
         /// </summary>
-        [SDKProperty("name", IsPath = true)]
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [SDKProperty("alias_name", IsPath = true)]
+        [JsonProperty("alias_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AliasName { get; set; }
 
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowVersionAliasRequest {\n");
             sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  aliasName: ").Append(AliasName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,9 +66,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FunctionUrn.Equals(input.FunctionUrn))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.AliasName == input.AliasName ||
+                    (this.AliasName != null &&
+                    this.AliasName.Equals(input.AliasName))
                 );
         }
 
@@ -82,8 +82,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.FunctionUrn != null)
                     hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AliasName != null)
+                    hashCode = hashCode * 59 + this.AliasName.GetHashCode();
                 return hashCode;
             }
         }

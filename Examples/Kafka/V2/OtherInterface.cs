@@ -63,10 +63,7 @@ namespace Examples.Kafka.V2
 
         private static void listProducts(KafkaClient client)
         {
-            var req = new ListProductsRequest
-            {
-                Engine = ListProductsRequest.EngineEnum.KAFKA,
-            };
+            var req = new ListProductsRequest();
 
             try
             {

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 待查询的终端节点ID。
         /// </summary>
         [SDKProperty("endpoint_id", IsPath = true)]
         [JsonProperty("endpoint_id", NullValueHandling = NullValueHandling.Ignore)]

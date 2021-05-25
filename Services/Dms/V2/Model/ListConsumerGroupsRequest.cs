@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 指定的队列ID
         /// </summary>
         [SDKProperty("queue_id", IsPath = true)]
         [JsonProperty("queue_id", NullValueHandling = NullValueHandling.Ignore)]
         public string QueueId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否包含死信信息。默认值为：false
         /// </summary>
         [SDKProperty("include_deadletter", IsQuery = true)]
         [JsonProperty("include_deadletter", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IncludeDeadletter { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否查询消费组的详情，默认值为true。  配置为false时，查询的消费组列表不包含消费详情，接口响应速度快。
         /// </summary>
         [SDKProperty("include_messages_num", IsQuery = true)]
         [JsonProperty("include_messages_num", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IncludeMessagesNum { get; set; }
 
         /// <summary>
-        /// 
+        /// 设置每页显示的消费组数量。  page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
         /// </summary>
         [SDKProperty("page_size", IsQuery = true)]
         [JsonProperty("page_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// 
+        /// 设置查询消费组的页码。  page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
         /// </summary>
         [SDKProperty("current_page", IsQuery = true)]
         [JsonProperty("current_page", NullValueHandling = NullValueHandling.Ignore)]

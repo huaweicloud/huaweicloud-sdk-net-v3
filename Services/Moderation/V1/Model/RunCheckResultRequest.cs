@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Moderation.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 任务标识。
         /// </summary>
         [SDKProperty("job_id", IsQuery = true)]
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]

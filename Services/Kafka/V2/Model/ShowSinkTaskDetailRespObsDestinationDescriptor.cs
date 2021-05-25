@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 缺省值：300 单位：秒。 &gt; 使用OBS通道转储流式数据时该参数为必选配置。 
         /// </summary>
         [JsonProperty("deliver_time_interval", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeliverTimeInterval { get; set; }
+        public int? DeliverTimeInterval { get; set; }
 
         /// <summary>
-        /// 每个传输文件多大后就开始上传，单位为byte。 默认值5242880。
+        /// 每个传输文件多大后就开始上传，单位为byte。 默认值5242880。 
         /// </summary>
         [JsonProperty("obs_part_size", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObsPartSize { get; set; }
+        public long? ObsPartSize { get; set; }
 
 
         /// <summary>

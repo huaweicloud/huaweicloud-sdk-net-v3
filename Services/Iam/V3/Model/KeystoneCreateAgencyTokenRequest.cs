@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
         /// </summary>
         [SDKProperty("nocatalog", IsQuery = true)]
         [JsonProperty("nocatalog", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// Job ID
         /// </summary>
         [SDKProperty("job_id", IsPath = true)]
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]

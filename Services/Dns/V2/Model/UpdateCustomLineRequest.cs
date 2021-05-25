@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 解析线路ID。
         /// </summary>
         [SDKProperty("line_id", IsPath = true)]
         [JsonProperty("line_id", NullValueHandling = NullValueHandling.Ignore)]

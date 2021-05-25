@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 主维度ID，当前支持dcs_instance_id，dcs_memcached_instance_id。
         /// </summary>
         [SDKProperty("dim_name", IsQuery = true)]
         [JsonProperty("dim_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DimName { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移量，表示从此偏移量开始查询，offset大于等于0
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页显示的条目数量
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

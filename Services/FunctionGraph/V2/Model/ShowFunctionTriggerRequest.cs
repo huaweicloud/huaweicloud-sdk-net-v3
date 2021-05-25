@@ -173,7 +173,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 函数的URN，详细解释见FunctionGraph函数模型的描述。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
@@ -188,8 +188,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("triggerId", IsPath = true)]
-        [JsonProperty("triggerId", NullValueHandling = NullValueHandling.Ignore)]
+        [SDKProperty("trigger_id", IsPath = true)]
+        [JsonProperty("trigger_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TriggerId { get; set; }
 
 

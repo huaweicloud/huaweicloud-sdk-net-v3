@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListScalingInstancesRequest 
     {
         /// <summary>
-        /// Defines lifeCycleState
+        /// 实例在伸缩组中的生命周期状态：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
         /// </summary>
+        /// <value>实例在伸缩组中的生命周期状态：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。</value>
         [JsonConverter(typeof(EnumClassConverter<LifeCycleStateEnum>))]
         public class LifeCycleStateEnum
         {
@@ -154,8 +155,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// Defines healthStatus
+        /// 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常
         /// </summary>
+        /// <value>实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常</value>
         [JsonConverter(typeof(EnumClassConverter<HealthStatusEnum>))]
         public class HealthStatusEnum
         {
@@ -269,8 +271,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// Defines protectFromScalingDown
+        /// 实例保护状态：true：已设置实例保护。false：未设置实例保护。
         /// </summary>
+        /// <value>实例保护状态：true：已设置实例保护。false：未设置实例保护。</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectFromScalingDownEnum>))]
         public class ProtectFromScalingDownEnum
         {
@@ -379,39 +382,39 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 伸缩组ID。
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
         [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例在伸缩组中的生命周期状态：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
         /// </summary>
         [SDKProperty("life_cycle_state", IsQuery = true)]
         [JsonProperty("life_cycle_state", NullValueHandling = NullValueHandling.Ignore)]
         public LifeCycleStateEnum LifeCycleState { get; set; }
         /// <summary>
-        /// 
+        /// 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常
         /// </summary>
         [SDKProperty("health_status", IsQuery = true)]
         [JsonProperty("health_status", NullValueHandling = NullValueHandling.Ignore)]
         public HealthStatusEnum HealthStatus { get; set; }
         /// <summary>
-        /// 
+        /// 实例保护状态：true：已设置实例保护。false：未设置实例保护。
         /// </summary>
         [SDKProperty("protect_from_scaling_down", IsQuery = true)]
         [JsonProperty("protect_from_scaling_down", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectFromScalingDownEnum ProtectFromScalingDown { get; set; }
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的记录条数，默认为20。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

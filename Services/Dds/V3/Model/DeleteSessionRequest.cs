@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 节点ID。允许查询的节点如下： 集群下面的 mongos节点以及 副本集、单节点实例下面的所有节点。
         /// </summary>
         [SDKProperty("node_id", IsPath = true)]
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]

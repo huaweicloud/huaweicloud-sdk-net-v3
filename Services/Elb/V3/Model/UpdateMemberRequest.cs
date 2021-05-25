@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 后端服务器ID。
         /// </summary>
         [SDKProperty("member_id", IsPath = true)]
         [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberId { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端服务器组ID。
         /// </summary>
         [SDKProperty("pool_id", IsPath = true)]
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]

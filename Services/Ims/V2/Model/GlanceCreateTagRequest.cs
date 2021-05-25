@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 镜像id
         /// </summary>
         [SDKProperty("image_id", IsPath = true)]
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
         /// <summary>
-        /// 
+        /// 新增的tag。字符串中不能包含“&#x3D;”和“.”。
         /// </summary>
         [SDKProperty("tag", IsPath = true)]
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]

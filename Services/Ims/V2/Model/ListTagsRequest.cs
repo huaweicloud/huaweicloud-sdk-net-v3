@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     public class ListTagsRequest 
     {
         /// <summary>
-        /// Defines imagetype
+        /// 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
         /// </summary>
+        /// <value>镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared</value>
         [JsonConverter(typeof(EnumClassConverter<ImagetypeEnum>))]
         public class ImagetypeEnum
         {
@@ -130,8 +131,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
         /// </summary>
+        /// <value>镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -257,8 +259,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines osType
+        /// 镜像系统类型，取值如下：Linux,Windows,Other
         /// </summary>
+        /// <value>镜像系统类型，取值如下：Linux,Windows,Other</value>
         [JsonConverter(typeof(EnumClassConverter<OsTypeEnum>))]
         public class OsTypeEnum
         {
@@ -372,8 +375,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines memberStatus
+        /// 成员状态。目前取值有accepted、rejected、pending。
         /// </summary>
+        /// <value>成员状态。目前取值有accepted、rejected、pending。</value>
         [JsonConverter(typeof(EnumClassConverter<MemberStatusEnum>))]
         public class MemberStatusEnum
         {
@@ -487,8 +491,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines virtualEnvType
+        /// 镜像使用环境类型：FusionCompute、Ironic、DataImage。
         /// </summary>
+        /// <value>镜像使用环境类型：FusionCompute、Ironic、DataImage。</value>
         [JsonConverter(typeof(EnumClassConverter<VirtualEnvTypeEnum>))]
         public class VirtualEnvTypeEnum
         {
@@ -602,8 +607,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// Defines architecture
+        /// 镜像架构类型。取值包括：x86，arm
         /// </summary>
+        /// <value>镜像架构类型。取值包括：x86，arm</value>
         [JsonConverter(typeof(EnumClassConverter<ArchitectureEnum>))]
         public class ArchitectureEnum
         {
@@ -712,99 +718,99 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 用于分页，表示查询几条记录，取值为整数，默认为所有。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 页码，表示需要查询第几页的数据。默认值为1。
         /// </summary>
         [SDKProperty("page", IsQuery = true)]
         [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
         public int? Page { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
         /// </summary>
         [SDKProperty("__imagetype", IsQuery = true)]
         [JsonProperty("__imagetype", NullValueHandling = NullValueHandling.Ignore)]
         public ImagetypeEnum Imagetype { get; set; }
         /// <summary>
-        /// 
+        /// 镜像ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 
+        /// 镜像名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像运行需要的最小磁盘，单位为GB 。
         /// </summary>
         [SDKProperty("min_disk", IsQuery = true)]
         [JsonProperty("min_disk", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinDisk { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像平台分类。
         /// </summary>
         [SDKProperty("__platform", IsQuery = true)]
         [JsonProperty("__platform", NullValueHandling = NullValueHandling.Ignore)]
         public string Platform { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像系统类型，取值如下：Linux,Windows,Other
         /// </summary>
         [SDKProperty("__os_type", IsQuery = true)]
         [JsonProperty("__os_type", NullValueHandling = NullValueHandling.Ignore)]
         public OsTypeEnum OsType { get; set; }
         /// <summary>
-        /// 
+        /// 成员状态。目前取值有accepted、rejected、pending。
         /// </summary>
         [SDKProperty("member_status", IsQuery = true)]
         [JsonProperty("member_status", NullValueHandling = NullValueHandling.Ignore)]
         public MemberStatusEnum MemberStatus { get; set; }
         /// <summary>
-        /// 
+        /// 镜像使用环境类型：FusionCompute、Ironic、DataImage。
         /// </summary>
         [SDKProperty("virtual_env_type", IsQuery = true)]
         [JsonProperty("virtual_env_type", NullValueHandling = NullValueHandling.Ignore)]
         public VirtualEnvTypeEnum VirtualEnvType { get; set; }
         /// <summary>
-        /// 
+        /// 表示查询某个企业项目下的镜像。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像架构类型。取值包括：x86，arm
         /// </summary>
         [SDKProperty("architecture", IsQuery = true)]
         [JsonProperty("architecture", NullValueHandling = NullValueHandling.Ignore)]
         public ArchitectureEnum Architecture { get; set; }
         /// <summary>
-        /// 
+        /// 镜像创建时间。支持按照时间点过滤查询，取值格式为“操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询创建时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： created_at&#x3D;gt:2018-10-28T10:00:00Z
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像修改时间。支持按照时间点过滤查询，取值格式为“ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询修改时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： updated_at&#x3D;gt:2018-10-28T10:00:00Z
         /// </summary>
         [SDKProperty("updated_at", IsQuery = true)]
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,77 +16,77 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 后端云服务器组id
         /// </summary>
         [SDKProperty("pool_id", IsPath = true)]
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询中每页的监听器个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器的名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器对应的IP地址。
         /// </summary>
         [SDKProperty("address", IsQuery = true)]
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器后端端口的协议号。
         /// </summary>
         [SDKProperty("protocol_port", IsQuery = true)]
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器所在的子网ID。
         /// </summary>
         [SDKProperty("subnet_id", IsQuery = true)]
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器的管理状态。取值范围：true/false。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器的权重。
         /// </summary>
         [SDKProperty("weight", IsQuery = true)]
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]

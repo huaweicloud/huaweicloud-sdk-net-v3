@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 可用区，需要指定可用区（AZ）的名称或者ID或者code。
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]

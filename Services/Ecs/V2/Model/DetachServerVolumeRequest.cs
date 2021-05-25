@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     public class DetachServerVolumeRequest 
     {
         /// <summary>
-        /// Defines deleteFlag
+        /// 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
         /// </summary>
+        /// <value>是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteFlagEnum>))]
         public class DeleteFlagEnum
         {
@@ -125,21 +126,21 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 云服务器ID。
         /// </summary>
         [SDKProperty("server_id", IsPath = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 磁盘ID。
         /// </summary>
         [SDKProperty("volume_id", IsPath = true)]
         [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
         /// </summary>
         [SDKProperty("delete_flag", IsQuery = true)]
         [JsonProperty("delete_flag", NullValueHandling = NullValueHandling.Ignore)]

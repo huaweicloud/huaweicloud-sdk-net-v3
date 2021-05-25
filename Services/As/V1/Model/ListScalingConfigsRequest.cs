@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.As.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 伸缩配置名称。
         /// </summary>
         [SDKProperty("scaling_configuration_name", IsQuery = true)]
         [JsonProperty("scaling_configuration_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingConfigurationName { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像ID，同imageRef。
         /// </summary>
         [SDKProperty("image_id", IsQuery = true)]
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的记录条数，默认为20。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

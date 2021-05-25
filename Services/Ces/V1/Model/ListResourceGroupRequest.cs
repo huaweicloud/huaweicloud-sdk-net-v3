@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
         /// </summary>
         [SDKProperty("group_name", IsQuery = true)]
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源分组的ID，长度为1-128，只能包含0-9/a-z/A-Z；如：rg16063743652226ew93e64p。
         /// </summary>
         [SDKProperty("group_id", IsQuery = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页起始值，类型为integer，默认值为0。
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
         public int? Start { get; set; }
 
         /// <summary>
-        /// 
+        /// 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

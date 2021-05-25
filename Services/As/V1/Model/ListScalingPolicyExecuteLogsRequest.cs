@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListScalingPolicyExecuteLogsRequest 
     {
         /// <summary>
-        /// Defines scalingResourceType
+        /// 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH
         /// </summary>
+        /// <value>伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH</value>
         [JsonConverter(typeof(EnumClassConverter<ScalingResourceTypeEnum>))]
         public class ScalingResourceTypeEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         }
 
         /// <summary>
-        /// Defines executeType
+        /// 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。
         /// </summary>
+        /// <value>策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。</value>
         [JsonConverter(typeof(EnumClassConverter<ExecuteTypeEnum>))]
         public class ExecuteTypeEnum
         {
@@ -246,61 +248,61 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 伸缩策略ID。
         /// </summary>
         [SDKProperty("scaling_policy_id", IsPath = true)]
         [JsonProperty("scaling_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingPolicyId { get; set; }
 
         /// <summary>
-        /// 
+        /// 日志ID。
         /// </summary>
         [SDKProperty("log_id", IsQuery = true)]
         [JsonProperty("log_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogId { get; set; }
 
         /// <summary>
-        /// 
+        /// 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH
         /// </summary>
         [SDKProperty("scaling_resource_type", IsQuery = true)]
         [JsonProperty("scaling_resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingResourceTypeEnum ScalingResourceType { get; set; }
         /// <summary>
-        /// 
+        /// 伸缩资源ID。
         /// </summary>
         [SDKProperty("scaling_resource_id", IsQuery = true)]
         [JsonProperty("scaling_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingResourceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。
         /// </summary>
         [SDKProperty("execute_type", IsQuery = true)]
         [JsonProperty("execute_type", NullValueHandling = NullValueHandling.Ignore)]
         public ExecuteTypeEnum ExecuteType { get; set; }
         /// <summary>
-        /// 
+        /// 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? StartTime { get; set; }
+        public string StartTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询记录数，默认20，最大100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

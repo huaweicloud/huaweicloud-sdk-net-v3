@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// 
+        /// 迭代id
         /// </summary>
         [SDKProperty("iteration_id", IsPath = true)]
         [JsonProperty("iteration_id", NullValueHandling = NullValueHandling.Ignore)]

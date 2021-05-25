@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// <summary>
         /// 监听器ID
         /// </summary>
-        [JsonProperty("listeners_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ListenersId { get; set; }
+        [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ListenerId { get; set; }
 
         /// <summary>
         /// 后端云服务器组ID
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class LbaasListenersResult {\n");
-            sb.Append("  listenersId: ").Append(ListenersId).Append("\n");
+            sb.Append("  listenerId: ").Append(ListenerId).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
@@ -73,9 +73,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             return 
                 (
-                    this.ListenersId == input.ListenersId ||
-                    (this.ListenersId != null &&
-                    this.ListenersId.Equals(input.ListenersId))
+                    this.ListenerId == input.ListenerId ||
+                    (this.ListenerId != null &&
+                    this.ListenerId.Equals(input.ListenerId))
                 ) && 
                 (
                     this.PoolId == input.PoolId ||
@@ -102,8 +102,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ListenersId != null)
-                    hashCode = hashCode * 59 + this.ListenersId.GetHashCode();
+                if (this.ListenerId != null)
+                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
                 if (this.PoolId != null)
                     hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.ProtocolPort != null)

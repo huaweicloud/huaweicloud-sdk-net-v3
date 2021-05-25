@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 每页返回的个数。  默认值：50。 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public string Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源id，为空时为查询第一页 
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]

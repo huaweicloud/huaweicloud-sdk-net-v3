@@ -150,97 +150,97 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 解冻/冻结状态。 取值范围： \&quot;true\&quot;：解冻 \&quot;false\&quot;：冻结
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// Floatingip对外提供服务的端口号。 取值范围：0~65535。
         /// </summary>
         [SDKProperty("external_service_port", IsQuery = true)]
         [JsonProperty("external_service_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExternalServicePort { get; set; }
 
         /// <summary>
-        /// 
+        /// 弹性公网的IP地址。
         /// </summary>
         [SDKProperty("floating_ip_address", IsQuery = true)]
         [JsonProperty("floating_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string FloatingIpAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// Dnat规则的状态。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 
+        /// 弹性公网IP的id。
         /// </summary>
         [SDKProperty("floating_ip_id", IsQuery = true)]
         [JsonProperty("floating_ip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FloatingIpId { get; set; }
 
         /// <summary>
-        /// 
+        /// 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。
         /// </summary>
         [SDKProperty("internal_service_port", IsQuery = true)]
         [JsonProperty("internal_service_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? InternalServicePort { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// DNAT规则的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// DNAT规则的描述，长度限制为255。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// DNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网NAT网关实例的ID。
         /// </summary>
         [SDKProperty("nat_gateway_id", IsQuery = true)]
         [JsonProperty("nat_gateway_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> NatGatewayId { get; set; }
 
         /// <summary>
-        /// 
+        /// 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
         /// </summary>
         [SDKProperty("port_id", IsQuery = true)]
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
 
         /// <summary>
-        /// 
+        /// 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
         /// </summary>
         [SDKProperty("private_ip", IsQuery = true)]
         [JsonProperty("private_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateIp { get; set; }
 
         /// <summary>
-        /// 
+        /// 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]

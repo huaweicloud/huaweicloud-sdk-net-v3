@@ -16,119 +16,119 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 通过云硬盘ID进行分页查询。默认为查询第一页数据。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 磁盘名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 返回结果个数限制。默认值为1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 返回结果按该关键字排序，支持id，status，size，created_at等关键字，默认为“created_at”。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SortKey { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移量（偏移量为一个大于0小于磁盘总个数的整数，表示查询该偏移量后面的所有的磁盘）。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 返回结果按照降序或升序排列，默认为“desc”。 降序：desc 升序：asc
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public string SortDir { get; set; }
 
         /// <summary>
-        /// 
+        /// 云硬盘状态，取值可参考：\&quot;[云硬盘状态](https://support.huaweicloud.com/api-evs/evs_04_0040.html)\&quot;。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 云硬盘元数据。
         /// </summary>
         [SDKProperty("metadata", IsQuery = true)]
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public string Metadata { get; set; }
 
         /// <summary>
-        /// 
+        /// 可用区信息。
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否为共享云硬盘。 true：表示为共享云硬盘。 false：表示为非共享云硬盘。
         /// </summary>
         [SDKProperty("multiattach", IsQuery = true)]
         [JsonProperty("multiattach", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Multiattach { get; set; }
 
         /// <summary>
-        /// 
+        /// 服务类型，仅支持EVS、DSS、DESS。
         /// </summary>
         [SDKProperty("service_type", IsQuery = true)]
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// 
+        /// 专属存储池ID，可过滤出该专属存储池下的所有云硬盘，必须精确匹配。
         /// </summary>
         [SDKProperty("dedicated_storage_id", IsQuery = true)]
         [JsonProperty("dedicated_storage_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageId { get; set; }
 
         /// <summary>
-        /// 
+        /// 专属存储池的名字，可过滤出该专属存储池下的所有云硬盘，支持模糊匹配。
         /// </summary>
         [SDKProperty("dedicated_storage_name", IsQuery = true)]
         [JsonProperty("dedicated_storage_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedStorageName { get; set; }
 
         /// <summary>
-        /// 
+        /// 云硬盘类型id。 通过\&quot;[查询云硬盘类型列表](https://support.huaweicloud.com/api-evs/evs_04_3035.html)\&quot;可以查到，即volume_types参数说明表格中的“id”
         /// </summary>
         [SDKProperty("volume_type_id", IsQuery = true)]
         [JsonProperty("volume_type_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeTypeId { get; set; }
 
         /// <summary>
-        /// 
+        /// 云硬盘ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 云硬盘id列表，格式为ids&#x3D;[&#39;id1&#39;,&#39;id2&#39;,...,&#39;idx&#39;]，返回“ids”中有效id的云硬盘详情，无效的id会被忽略。 支持查询最多60个id对应的云硬盘详情。 如果“id”和“ids”查询参数同时存在，“id”会被忽略。
         /// </summary>
         [SDKProperty("ids", IsQuery = true)]
         [JsonProperty("ids", NullValueHandling = NullValueHandling.Ignore)]
         public string Ids { get; set; }
 
         /// <summary>
-        /// 
+        /// 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 &gt; 说明： &gt;  &gt; 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\&quot;[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\&quot;。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

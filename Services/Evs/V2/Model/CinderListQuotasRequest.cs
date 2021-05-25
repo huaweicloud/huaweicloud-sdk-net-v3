@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     public class CinderListQuotasRequest 
     {
         /// <summary>
-        /// Defines usage
+        /// 是否查询配额详细信息。当前只支持传true。
         /// </summary>
+        /// <value>是否查询配额详细信息。当前只支持传true。</value>
         [JsonConverter(typeof(EnumClassConverter<UsageEnum>))]
         public class UsageEnum
         {
@@ -119,14 +120,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 目标的项目ID。与project_id保持一致即可。
         /// </summary>
         [SDKProperty("target_project_id", IsPath = true)]
         [JsonProperty("target_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否查询配额详细信息。当前只支持传true。
         /// </summary>
         [SDKProperty("usage", IsQuery = true)]
         [JsonProperty("usage", NullValueHandling = NullValueHandling.Ignore)]

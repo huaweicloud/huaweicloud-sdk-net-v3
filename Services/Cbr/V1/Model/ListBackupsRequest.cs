@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class ListBackupsRequest 
     {
         /// <summary>
-        /// Defines imageType
+        /// 备份类型
         /// </summary>
+        /// <value>备份类型</value>
         [JsonConverter(typeof(EnumClassConverter<ImageTypeEnum>))]
         public class ImageTypeEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// Defines resourceType
+        /// 资源类型
         /// </summary>
+        /// <value>资源类型</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -233,8 +235,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 状态
         /// </summary>
+        /// <value>状态</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -378,8 +381,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// Defines ownType
+        /// 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。
         /// </summary>
+        /// <value>持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。</value>
         [JsonConverter(typeof(EnumClassConverter<OwnTypeEnum>))]
         public class OwnTypeEnum
         {
@@ -493,8 +497,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// Defines memberStatus
+        /// 共享状态
         /// </summary>
+        /// <value>共享状态</value>
         [JsonConverter(typeof(EnumClassConverter<MemberStatusEnum>))]
         public class MemberStatusEnum
         {
@@ -609,142 +614,142 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 还原点ID
         /// </summary>
         [SDKProperty("checkpoint_id", IsQuery = true)]
         [JsonProperty("checkpoint_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckpointId { get; set; }
 
         /// <summary>
-        /// 
+        /// 专属云
         /// </summary>
         [SDKProperty("dec", IsQuery = true)]
         [JsonProperty("dec", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Dec { get; set; }
 
         /// <summary>
-        /// 
+        /// 备份产生时间范围的结束时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 备份类型
         /// </summary>
         [SDKProperty("image_type", IsQuery = true)]
         [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
         public ImageTypeEnum ImageType { get; set; }
         /// <summary>
-        /// 
+        /// 每页显示的条目数量，正整数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一次查询最后一条的id
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移值，正整数
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 支持按az来过滤
         /// </summary>
         [SDKProperty("resource_az", IsQuery = true)]
         [JsonProperty("resource_az", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceAz { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源ID
         /// </summary>
         [SDKProperty("resource_id", IsQuery = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源名称
         /// </summary>
         [SDKProperty("resource_name", IsQuery = true)]
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源类型
         /// </summary>
         [SDKProperty("resource_type", IsQuery = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
-        /// 
+        /// sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如&lt;key1&gt;[:&lt;direction&gt;],&lt;key2&gt;[:&lt;direction&gt;],其中direction的取值为asc (升序) 或 desc (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。key取值范围:[created_at，updated_at，name，status，protected_at，id]
         /// </summary>
         [SDKProperty("sort", IsQuery = true)]
         [JsonProperty("sort", NullValueHandling = NullValueHandling.Ignore)]
         public string Sort { get; set; }
 
         /// <summary>
-        /// 
+        /// 备份产生时间范围的开始时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 状态
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 
+        /// 存储库ID
         /// </summary>
         [SDKProperty("vault_id", IsQuery = true)]
         [JsonProperty("vault_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VaultId { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。
         /// </summary>
         [SDKProperty("own_type", IsQuery = true)]
         [JsonProperty("own_type", NullValueHandling = NullValueHandling.Ignore)]
         public OwnTypeEnum OwnType { get; set; }
         /// <summary>
-        /// 
+        /// 共享状态
         /// </summary>
         [SDKProperty("member_status", IsQuery = true)]
         [JsonProperty("member_status", NullValueHandling = NullValueHandling.Ignore)]
         public MemberStatusEnum MemberStatus { get; set; }
         /// <summary>
-        /// 
+        /// 父备份ID
         /// </summary>
         [SDKProperty("parent_id", IsQuery = true)]
         [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentId { get; set; }
 
         /// <summary>
-        /// 
+        /// 根据存储库使用率过滤备份，取值范围 [1, 100]，含1和100。例如，used_percent&#x3D;80，表示筛选所属存储库使用率大于等于80%的所有备份。
         /// </summary>
         [SDKProperty("used_percent", IsQuery = true)]
         [JsonProperty("used_percent", NullValueHandling = NullValueHandling.Ignore)]

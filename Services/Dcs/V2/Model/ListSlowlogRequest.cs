@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     public class ListSlowlogRequest 
     {
         /// <summary>
-        /// Defines sortKey
+        /// 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
         /// </summary>
+        /// <value>返回结果按该关键字排序，支持start_time，duration，默认为“start_time”</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         }
 
         /// <summary>
-        /// Defines sortDir
+        /// 降序或升序（分别对应desc和asc，默认为“desc”）
         /// </summary>
+        /// <value>降序或升序（分别对应desc和asc，默认为“desc”）</value>
         [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
         public class SortDirEnum
         {
@@ -234,47 +236,47 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移量，表示从此偏移量开始查询， offset大于等于0
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页显示的条目数量。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 
+        /// 降序或升序（分别对应desc和asc，默认为“desc”）
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public SortDirEnum SortDir { get; set; }
         /// <summary>
-        /// 
+        /// 查询开始时间，时间为UTC时间的Unix时间戳。如：1598803200000。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询结束时间，时间为UTC时间的Unix时间戳。如：1599494399000。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]

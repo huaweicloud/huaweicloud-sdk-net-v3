@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 白名单的id
         /// </summary>
         [SDKProperty("whitelist_id", IsPath = true)]
         [JsonProperty("whitelist_id", NullValueHandling = NullValueHandling.Ignore)]

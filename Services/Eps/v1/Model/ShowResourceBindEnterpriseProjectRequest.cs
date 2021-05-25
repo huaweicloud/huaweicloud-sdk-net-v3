@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
     {
 
         /// <summary>
-        /// 
+        /// 企业项目ID
         /// </summary>
         [SDKProperty("enterprise_project_id", IsPath = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

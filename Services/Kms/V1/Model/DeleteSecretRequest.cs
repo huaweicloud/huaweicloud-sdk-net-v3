@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 凭据的资源标识符。
         /// </summary>
         [SDKProperty("secret_id", IsPath = true)]
         [JsonProperty("secret_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -31,13 +31,19 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 磁盘组信息。
         /// </summary>
         [JsonProperty("disk", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Disk> Disk { get; set; }
+        public List<DiskResult> Disk { get; set; }
 
         /// <summary>
         /// 登录云服务器的SSH密钥名称。
         /// </summary>
         [JsonProperty("key_name", NullValueHandling = NullValueHandling.Ignore)]
         public string KeyName { get; set; }
+
+        /// <summary>
+        /// 登录云服务器的SSH密钥指纹。
+        /// </summary>
+        [JsonProperty("key_fingerprint", NullValueHandling = NullValueHandling.Ignore)]
+        public string KeyFingerprint { get; set; }
 
         /// <summary>
         /// 该参数为预留字段。
@@ -61,13 +67,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("personality", NullValueHandling = NullValueHandling.Ignore)]
-        public Personality Personality { get; set; }
+        public PersonalityResult Personality { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
-        public PublicIp PublicIp { get; set; }
+        public PublicipResult PublicIp { get; set; }
 
         /// <summary>
         /// cloud-init用户数据，base64格式编码。
@@ -79,7 +85,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public MetaData Metadata { get; set; }
+        public VmMetaData Metadata { get; set; }
 
         /// <summary>
         /// 安全组信息。
@@ -105,6 +111,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("dedicated_host_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedHostId { get; set; }
 
+        /// <summary>
+        /// 云服务器的计费模式，可以选择竞价计费或按需计费。
+        /// </summary>
+        [JsonProperty("market_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string MarketType { get; set; }
+
+        /// <summary>
+        /// 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。
+        /// </summary>
+        [JsonProperty("multi_flavor_priority_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public string MultiFlavorPriorityPolicy { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -117,6 +135,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  imageRef: ").Append(ImageRef).Append("\n");
             sb.Append("  disk: ").Append(Disk).Append("\n");
             sb.Append("  keyName: ").Append(KeyName).Append("\n");
+            sb.Append("  keyFingerprint: ").Append(KeyFingerprint).Append("\n");
             sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  adminPass: ").Append(AdminPass).Append("\n");
@@ -128,6 +147,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  serverGroupId: ").Append(ServerGroupId).Append("\n");
             sb.Append("  tenancy: ").Append(Tenancy).Append("\n");
             sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
+            sb.Append("  marketType: ").Append(MarketType).Append("\n");
+            sb.Append("  multiFlavorPriorityPolicy: ").Append(MultiFlavorPriorityPolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -169,6 +190,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.KeyName == input.KeyName ||
                     (this.KeyName != null &&
                     this.KeyName.Equals(input.KeyName))
+                ) && 
+                (
+                    this.KeyFingerprint == input.KeyFingerprint ||
+                    (this.KeyFingerprint != null &&
+                    this.KeyFingerprint.Equals(input.KeyFingerprint))
                 ) && 
                 (
                     this.InstanceName == input.InstanceName ||
@@ -225,6 +251,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.DedicatedHostId == input.DedicatedHostId ||
                     (this.DedicatedHostId != null &&
                     this.DedicatedHostId.Equals(input.DedicatedHostId))
+                ) && 
+                (
+                    this.MarketType == input.MarketType ||
+                    (this.MarketType != null &&
+                    this.MarketType.Equals(input.MarketType))
+                ) && 
+                (
+                    this.MultiFlavorPriorityPolicy == input.MultiFlavorPriorityPolicy ||
+                    (this.MultiFlavorPriorityPolicy != null &&
+                    this.MultiFlavorPriorityPolicy.Equals(input.MultiFlavorPriorityPolicy))
                 );
         }
 
@@ -244,6 +280,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.Disk.GetHashCode();
                 if (this.KeyName != null)
                     hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.KeyFingerprint != null)
+                    hashCode = hashCode * 59 + this.KeyFingerprint.GetHashCode();
                 if (this.InstanceName != null)
                     hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 if (this.InstanceId != null)
@@ -266,6 +304,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
                 if (this.DedicatedHostId != null)
                     hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
+                if (this.MarketType != null)
+                    hashCode = hashCode * 59 + this.MarketType.GetHashCode();
+                if (this.MultiFlavorPriorityPolicy != null)
+                    hashCode = hashCode * 59 + this.MultiFlavorPriorityPolicy.GetHashCode();
                 return hashCode;
             }
         }

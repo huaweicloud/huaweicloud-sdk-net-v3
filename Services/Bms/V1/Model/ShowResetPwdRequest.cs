@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 裸金属服务器ID。可以从裸金属服务器控制台查询，或者通过调用7.3.4-查询裸金属服务器列表（OpenStack原生）API获取。
         /// </summary>
         [SDKProperty("server_id", IsPath = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]

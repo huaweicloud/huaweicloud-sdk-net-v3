@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 监听器ID
         /// </summary>
         [SDKProperty("listener_id", IsPath = true)]
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerId { get; set; }
 
         /// <summary>
-        /// 
+        /// 待删除标签的key值。
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 待查询的区域ID。可以使用[查询区域列表](https://support.huaweicloud.com/api-iam/iam_05_0001.html)接口获取，控制台获取方法请参见：[获取区域ID](https://console.huaweicloud.com/iam/?agencyId&#x3D;d15f57bd355d4514bd9618bd648dd432®ion&#x3D;cn-east-2&amp;locale&#x3D;zh-cn#/iam/projects)
         /// </summary>
         [SDKProperty("region_id", IsPath = true)]
         [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]

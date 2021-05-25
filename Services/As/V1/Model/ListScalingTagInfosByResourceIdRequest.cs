@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListScalingTagInfosByResourceIdRequest 
     {
         /// <summary>
-        /// Defines resourceType
+        /// 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
         /// </summary>
+        /// <value>资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -119,13 +120,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
-        /// 
+        /// 资源ID。
         /// </summary>
         [SDKProperty("resource_id", IsPath = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]

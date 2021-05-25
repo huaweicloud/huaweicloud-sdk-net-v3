@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 角色名称。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、中划线、下划线和点。
         /// </summary>
         [SDKProperty("role_name", IsQuery = true)]
         [JsonProperty("role_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RoleName { get; set; }
 
         /// <summary>
-        /// 
+        /// 数据库名称，默认为admin。 - 长度为1~64位，可以包含大写字母（A~Z）、小写字母（a~z）、数字（0~9）、下划线。
         /// </summary>
         [SDKProperty("db_name", IsQuery = true)]
         [JsonProperty("db_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DbName { get; set; }
 
         /// <summary>
-        /// 
+        /// 索引位置偏移量。 取值大于或等于0。不传该参数时，查询偏移量默认为0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询实例个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

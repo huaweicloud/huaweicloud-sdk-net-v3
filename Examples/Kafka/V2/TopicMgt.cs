@@ -64,7 +64,7 @@ namespace Examples.Kafka.V2
                 InstanceId = instanceId,
                 Body = new CreateInstanceTopicReq
                 {
-                    Name = "topic-test",
+                    Id = "topic-test",
                 }
             };
             try

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 指定的队列ID。
         /// </summary>
         [SDKProperty("queue_id", IsPath = true)]
         [JsonProperty("queue_id", NullValueHandling = NullValueHandling.Ignore)]

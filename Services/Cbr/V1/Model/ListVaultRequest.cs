@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class ListVaultRequest 
     {
         /// <summary>
-        /// Defines cloudType
+        /// 云类型
         /// </summary>
+        /// <value>云类型</value>
         [JsonConverter(typeof(EnumClassConverter<CloudTypeEnum>))]
         public class CloudTypeEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// Defines protectType
+        /// 保护类型
         /// </summary>
+        /// <value>保护类型</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectTypeEnum>))]
         public class ProtectTypeEnum
         {
@@ -234,75 +236,75 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 每页显示条目数，正整数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 存储库名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移值,正整数
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 云类型
         /// </summary>
         [SDKProperty("cloud_type", IsQuery = true)]
         [JsonProperty("cloud_type", NullValueHandling = NullValueHandling.Ignore)]
         public CloudTypeEnum CloudType { get; set; }
         /// <summary>
-        /// 
+        /// 保护类型
         /// </summary>
         [SDKProperty("protect_type", IsQuery = true)]
         [JsonProperty("protect_type", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectTypeEnum ProtectType { get; set; }
         /// <summary>
-        /// 
+        /// 资源类型
         /// </summary>
         [SDKProperty("object_type", IsQuery = true)]
         [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectType { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 存储库ID
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 策略ID
         /// </summary>
         [SDKProperty("policy_id", IsQuery = true)]
         [JsonProperty("policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PolicyId { get; set; }
 
         /// <summary>
-        /// 
+        /// 状态
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源id
         /// </summary>
         [SDKProperty("resource_ids", IsQuery = true)]
         [JsonProperty("resource_ids", NullValueHandling = NullValueHandling.Ignore)]

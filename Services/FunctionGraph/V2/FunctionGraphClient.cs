@@ -130,14 +130,27 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 删除函数异步配置信息。
+        /// </summary>
+        public DeleteFunctionAsyncInvokeConfigResponse DeleteFunctionAsyncInvokeConfig(DeleteFunctionAsyncInvokeConfigRequest deleteFunctionAsyncInvokeConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , deleteFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionAsyncInvokeConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteFunctionAsyncInvokeConfigResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除函数版本别名。
         /// </summary>
         public DeleteVersionAliasResponse DeleteVersionAlias(DeleteVersionAliasRequest deleteVersionAliasRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("function_urn" , deleteVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("name" , deleteVersionAliasRequest.Name.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}",urlParam);
+            urlParam.Add("alias_name" , deleteVersionAliasRequest.AliasName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVersionAliasRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteVersionAliasResponse>(response);
@@ -179,6 +192,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListEventsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取函数异步配置列表
+        /// </summary>
+        public ListFunctionAsyncInvokeConfigResponse ListFunctionAsyncInvokeConfig(ListFunctionAsyncInvokeConfigRequest listFunctionAsyncInvokeConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , listFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionAsyncInvokeConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionAsyncInvokeConfigResponse>(response);
         }
         
         /// <summary>
@@ -287,6 +313,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取函数异步配置信息。
+        /// </summary>
+        public ShowFunctionAsyncInvokeConfigResponse ShowFunctionAsyncInvokeConfig(ShowFunctionAsyncInvokeConfigRequest showFunctionAsyncInvokeConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , showFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionAsyncInvokeConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowFunctionAsyncInvokeConfigResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定函数代码。
         /// </summary>
         public ShowFunctionCodeResponse ShowFunctionCode(ShowFunctionCodeRequest showFunctionCodeRequest)
@@ -319,8 +358,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("function_urn" , showVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("name" , showVersionAliasRequest.Name.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}",urlParam);
+            urlParam.Add("alias_name" , showVersionAliasRequest.AliasName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionAliasRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVersionAliasResponse>(response);
@@ -351,6 +390,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEventRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateEventResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置函数异步配置信息。
+        /// </summary>
+        public UpdateFunctionAsyncInvokeConfigResponse UpdateFunctionAsyncInvokeConfig(UpdateFunctionAsyncInvokeConfigRequest updateFunctionAsyncInvokeConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , updateFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionAsyncInvokeConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateFunctionAsyncInvokeConfigResponse>(response);
         }
         
         /// <summary>
@@ -399,8 +451,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("function_urn" , updateVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("name" , updateVersionAliasRequest.Name.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}",urlParam);
+            urlParam.Add("alias_name" , updateVersionAliasRequest.AliasName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVersionAliasRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateVersionAliasResponse>(response);
@@ -440,8 +492,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("function_urn" , deleteFunctionTriggerRequest.FunctionUrn.ToString());
             urlParam.Add("trigger_type_code" , deleteFunctionTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("triggerId" , deleteFunctionTriggerRequest.TriggerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}",urlParam);
+            urlParam.Add("trigger_id" , deleteFunctionTriggerRequest.TriggerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionTriggerRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteFunctionTriggerResponse>(response);
@@ -470,8 +522,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("function_urn" , showFunctionTriggerRequest.FunctionUrn.ToString());
             urlParam.Add("trigger_type_code" , showFunctionTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("triggerId" , showFunctionTriggerRequest.TriggerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}",urlParam);
+            urlParam.Add("trigger_id" , showFunctionTriggerRequest.TriggerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionTriggerRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowFunctionTriggerResponse>(response);
@@ -485,8 +537,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("function_urn" , updateTriggerRequest.FunctionUrn.ToString());
             urlParam.Add("trigger_type_code" , updateTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("triggerId" , updateTriggerRequest.TriggerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}",urlParam);
+            urlParam.Add("trigger_id" , updateTriggerRequest.TriggerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateTriggerResponse>(response);

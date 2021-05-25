@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。  
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源id。  
         /// </summary>
         [SDKProperty("resource_id", IsPath = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 标签key。  标签key不能为空或者空字符串。
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]

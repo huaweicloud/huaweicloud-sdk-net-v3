@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 待查询的指定AK。
         /// </summary>
         [SDKProperty("access_key", IsPath = true)]
         [JsonProperty("access_key", NullValueHandling = NullValueHandling.Ignore)]

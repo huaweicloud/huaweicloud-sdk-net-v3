@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class ListPoliciesRequest 
     {
         /// <summary>
-        /// Defines operationType
+        /// 策略类型：备份（backup）、复制(replication)
         /// </summary>
+        /// <value>策略类型：备份（backup）、复制(replication)</value>
         [JsonConverter(typeof(EnumClassConverter<OperationTypeEnum>))]
         public class OperationTypeEnum
         {
@@ -125,13 +126,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 策略类型：备份（backup）、复制(replication)
         /// </summary>
         [SDKProperty("operation_type", IsQuery = true)]
         [JsonProperty("operation_type", NullValueHandling = NullValueHandling.Ignore)]
         public OperationTypeEnum OperationType { get; set; }
         /// <summary>
-        /// 
+        /// 存储库ID
         /// </summary>
         [SDKProperty("vault_id", IsQuery = true)]
         [JsonProperty("vault_id", NullValueHandling = NullValueHandling.Ignore)]

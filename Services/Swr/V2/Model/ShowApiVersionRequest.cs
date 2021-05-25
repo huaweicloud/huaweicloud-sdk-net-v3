@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// API版本号。
         /// </summary>
         [SDKProperty("api_version", IsPath = true)]
         [JsonProperty("api_version", NullValueHandling = NullValueHandling.Ignore)]

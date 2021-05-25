@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     public class NovaListServersDetailsRequest 
     {
         /// <summary>
-        /// Defines sortKey
+        /// 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。
         /// </summary>
+        /// <value>查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -178,8 +179,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 云服务器状态。   取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。
         /// </summary>
+        /// <value>云服务器状态。   取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -360,89 +362,89 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 云服务器上次更新状态的时间戳信息。时间戳为UTC格式。
         /// </summary>
         [SDKProperty("changes-since", IsQuery = true)]
         [JsonProperty("changes-since", NullValueHandling = NullValueHandling.Ignore)]
         public string ChangesSince { get; set; }
 
         /// <summary>
-        /// 
+        /// 云服务器规格ID。
         /// </summary>
         [SDKProperty("flavor", IsQuery = true)]
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
         public string Flavor { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像ID  在使用image作为条件过滤时，不能同时支持其他过滤条件和分页条件。如果同时指定image及其他条件，则以image条件为准；当条件不含image时，接口功能不受限制。
         /// </summary>
         [SDKProperty("image", IsQuery = true)]
         [JsonProperty("image", NullValueHandling = NullValueHandling.Ignore)]
         public string Image { get; set; }
 
         /// <summary>
-        /// 
+        /// IPv4地址过滤结果，匹配规则为模糊匹配。
         /// </summary>
         [SDKProperty("ip", IsQuery = true)]
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询返回云服务器数量限制。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 从marker指定的云服务器ID的下一条数据开始查询。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 云服务器名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询tag字段中不包含该值的云服务器，值为标签的Key。  &gt; 说明： &gt;  &gt; 系统近期对标签功能进行了升级。如果之前添加的Tag为“Key.Value”的形式，则查询的时候需要使用“Key”来查询。 &gt;  &gt; 例如：之前添加的tag为“a.b”,则升级后，查询时需使用“not-tags&#x3D;a”。
         /// </summary>
         [SDKProperty("not-tags", IsQuery = true)]
         [JsonProperty("not-tags", NullValueHandling = NullValueHandling.Ignore)]
         public string NotTags { get; set; }
 
         /// <summary>
-        /// 
+        /// 批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。
         /// </summary>
         [SDKProperty("reservation_id", IsQuery = true)]
         [JsonProperty("reservation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ReservationId { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 
+        /// 云服务器状态。   取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 
+        /// 查询tag字段中包含该值的云服务器。
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
         /// <summary>
-        /// 
+        /// 微版本头
         /// </summary>
         [SDKProperty("OpenStack-API-Version", IsHeader = true)]
         [JsonProperty("OpenStack-API-Version", NullValueHandling = NullValueHandling.Ignore)]

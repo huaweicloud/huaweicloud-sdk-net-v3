@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// floatingip的ID
         /// </summary>
         [SDKProperty("floatingip_id", IsPath = true)]
         [JsonProperty("floatingip_id", NullValueHandling = NullValueHandling.Ignore)]

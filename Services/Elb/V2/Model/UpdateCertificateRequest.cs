@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// SSL证书ID
         /// </summary>
         [SDKProperty("certificate_id", IsPath = true)]
         [JsonProperty("certificate_id", NullValueHandling = NullValueHandling.Ignore)]

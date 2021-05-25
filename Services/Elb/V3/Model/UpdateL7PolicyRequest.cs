@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 转发策略ID
         /// </summary>
         [SDKProperty("l7policy_id", IsPath = true)]
         [JsonProperty("l7policy_id", NullValueHandling = NullValueHandling.Ignore)]

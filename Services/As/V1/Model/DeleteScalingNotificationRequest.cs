@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 伸缩组标识。
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
         [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// SMN服务中Topic的唯一的资源标识。
         /// </summary>
         [SDKProperty("topic_urn", IsPath = true)]
         [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]

@@ -10,16 +10,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.As.V1.Model
 {
     /// <summary>
-    /// 用户自定义键值对
+    /// 创建磁盘的元数据
     /// </summary>
     public class MetaData 
     {
 
         /// <summary>
-        /// 用户自定义数据总长度不大于512字节。用户自定义键不能是空串，不能包含符号.，以及不能以符号$开头。说明：Windows弹性云服务器Administrator用户的密码。示例：键（固定）：admin_pass值：cloud.1234创建密码方式鉴权的Windows弹性云服务器时为必选字段。
+        /// metadata中的表示加密功能的字段，0代表不加密，1代表加密。  该字段不存在时，云硬盘默认为不加密。
         /// </summary>
-        [JsonProperty("customize_key", NullValueHandling = NullValueHandling.Ignore)]
-        public string CustomizeKey { get; set; }
+        [JsonProperty("__system__encrypted", NullValueHandling = NullValueHandling.Ignore)]
+        public string SystemEncrypted { get; set; }
+
+        /// <summary>
+        /// 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。
+        /// </summary>
+        [JsonProperty("__system__cmkid", NullValueHandling = NullValueHandling.Ignore)]
+        public string SystemCmkid { get; set; }
 
 
         /// <summary>
@@ -29,7 +35,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MetaData {\n");
-            sb.Append("  customizeKey: ").Append(CustomizeKey).Append("\n");
+            sb.Append("  systemEncrypted: ").Append(SystemEncrypted).Append("\n");
+            sb.Append("  systemCmkid: ").Append(SystemCmkid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,9 +59,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             return 
                 (
-                    this.CustomizeKey == input.CustomizeKey ||
-                    (this.CustomizeKey != null &&
-                    this.CustomizeKey.Equals(input.CustomizeKey))
+                    this.SystemEncrypted == input.SystemEncrypted ||
+                    (this.SystemEncrypted != null &&
+                    this.SystemEncrypted.Equals(input.SystemEncrypted))
+                ) && 
+                (
+                    this.SystemCmkid == input.SystemCmkid ||
+                    (this.SystemCmkid != null &&
+                    this.SystemCmkid.Equals(input.SystemCmkid))
                 );
         }
 
@@ -66,8 +78,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CustomizeKey != null)
-                    hashCode = hashCode * 59 + this.CustomizeKey.GetHashCode();
+                if (this.SystemEncrypted != null)
+                    hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
+                if (this.SystemCmkid != null)
+                    hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
                 return hashCode;
             }
         }

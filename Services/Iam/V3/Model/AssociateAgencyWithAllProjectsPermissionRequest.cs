@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 委托ID，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
         /// </summary>
         [SDKProperty("agency_id", IsPath = true)]
         [JsonProperty("agency_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyId { get; set; }
 
         /// <summary>
-        /// 
+        /// 账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
         /// </summary>
         [SDKProperty("domain_id", IsPath = true)]
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 
+        /// 权限ID，获取方式请参见：[获取权限名、权限ID](https://support.huaweicloud.com/api-iam/iam_10_0001.html)。
         /// </summary>
         [SDKProperty("role_id", IsPath = true)]
         [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]

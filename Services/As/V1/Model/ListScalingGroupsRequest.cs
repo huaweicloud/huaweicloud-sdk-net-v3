@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ListScalingGroupsRequest 
     {
         /// <summary>
-        /// Defines scalingGroupStatus
+        /// 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。
         /// </summary>
+        /// <value>伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。</value>
         [JsonConverter(typeof(EnumClassConverter<ScalingGroupStatusEnum>))]
         public class ScalingGroupStatusEnum
         {
@@ -137,38 +138,45 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 伸缩组名称
         /// </summary>
         [SDKProperty("scaling_group_name", IsQuery = true)]
         [JsonProperty("scaling_group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupName { get; set; }
 
         /// <summary>
-        /// 
+        /// 伸缩配置ID，通过查询弹性伸缩配置列表接口获取，详见查询弹性伸缩配置列表。
         /// </summary>
         [SDKProperty("scaling_configuration_id", IsQuery = true)]
         [JsonProperty("scaling_configuration_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingConfigurationId { get; set; }
 
         /// <summary>
-        /// 
+        /// 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。
         /// </summary>
         [SDKProperty("scaling_group_status", IsQuery = true)]
         [JsonProperty("scaling_group_status", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingGroupStatusEnum ScalingGroupStatus { get; set; }
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的记录条数，默认为20。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
         /// <summary>
@@ -183,6 +191,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  scalingGroupStatus: ").Append(ScalingGroupStatus).Append("\n");
             sb.Append("  startNumber: ").Append(StartNumber).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -228,6 +237,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -249,6 +263,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

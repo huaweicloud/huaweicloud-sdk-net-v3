@@ -16,91 +16,91 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 策略ID。
         /// </summary>
         [SDKProperty("l7policy_id", IsPath = true)]
         [JsonProperty("l7policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7policyId { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
         /// </summary>
         [SDKProperty("compare_type", IsQuery = true)]
         [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> CompareType { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发规则ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
         /// </summary>
         [SDKProperty("invert", IsQuery = true)]
         [JsonProperty("invert", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Invert { get; set; }
 
         /// <summary>
-        /// 
+        /// 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
         /// </summary>
         [SDKProperty("key", IsQuery = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Key { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
         /// </summary>
         [SDKProperty("provisioning_status", IsQuery = true)]
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 一个l7policy下创建的l7rule的type不能重复。 匹配内容：可以为HOST_NAME，PATH。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 
+        /// 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、^-%#&amp;$.*+?,&#x3D;!:| /()[]{}，且必须以\&quot;/\&quot;开头。
         /// </summary>
         [SDKProperty("value", IsQuery = true)]
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]

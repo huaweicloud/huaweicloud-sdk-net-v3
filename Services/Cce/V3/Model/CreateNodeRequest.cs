@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class CreateNodeRequest 
     {
         /// <summary>
-        /// Defines nodepoolScaleUp
+        /// 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
         /// </summary>
+        /// <value>标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数</value>
         [JsonConverter(typeof(EnumClassConverter<NodepoolScaleUpEnum>))]
         public class NodepoolScaleUpEnum
         {
@@ -119,14 +120,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
         /// </summary>
         [SDKProperty("cluster_id", IsPath = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 
+        /// 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
         /// </summary>
         [SDKProperty("nodepoolScaleUp", IsQuery = true)]
         [JsonProperty("nodepoolScaleUp", NullValueHandling = NullValueHandling.Ignore)]

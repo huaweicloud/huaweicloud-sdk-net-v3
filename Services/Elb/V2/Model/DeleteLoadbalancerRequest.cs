@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 负载均衡器id
         /// </summary>
         [SDKProperty("loadbalancer_id", IsPath = true)]
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 
+        /// （不再支持）级联删除负载均衡器
         /// </summary>
         [SDKProperty("cascade", IsQuery = true)]
         [JsonProperty("cascade", NullValueHandling = NullValueHandling.Ignore)]

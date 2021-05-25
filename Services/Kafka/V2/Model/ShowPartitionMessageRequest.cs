@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// Topic名称。
         /// </summary>
         [SDKProperty("topic", IsPath = true)]
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 
+        /// 分区编号。
         /// </summary>
         [SDKProperty("partition", IsPath = true)]
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
 
         /// <summary>
-        /// 
+        /// 消息位置。
         /// </summary>
         [SDKProperty("message_offset", IsQuery = true)]
         [JsonProperty("message_offset", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 密钥名称。
         /// </summary>
         [SDKProperty("keypair_name", IsPath = true)]
         [JsonProperty("keypair_name", NullValueHandling = NullValueHandling.Ignore)]

@@ -268,7 +268,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 返回码，仅当record_type为API时有效
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// 消息，仅当record_type为MEG时有效

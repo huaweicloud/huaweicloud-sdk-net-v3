@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
         [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 设备组ID，用于唯一标识一个设备组，在创建设备组时由物联网平台分配。
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 操作类型，支持添加设备和删除设备。 - addDevice: 添加设备。添加已注册的设备到指定的设备组中。 - removeDevice: 删除设备。从指定的设备组中删除设备，只是解除了设备和设备组的关系，该设备在平台仍然存在。 
         /// </summary>
         [SDKProperty("action_id", IsQuery = true)]
         [JsonProperty("action_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ActionId { get; set; }
 
         /// <summary>
-        /// 
+        /// 设备ID，用于唯一标识一个设备。在注册设备时直接指定，或者由物联网平台分配获得。由物联网平台分配时，生成规则为\&quot;product_id\&quot; + \&quot;_\&quot; + \&quot;node_id\&quot;拼接而成。
         /// </summary>
         [SDKProperty("device_id", IsQuery = true)]
         [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]

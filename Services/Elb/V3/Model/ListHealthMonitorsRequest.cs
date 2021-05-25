@@ -16,119 +16,119 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 健康检查的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 健康检查间隔。
         /// </summary>
         [SDKProperty("delay", IsQuery = true)]
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Delay { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：健康检查测试member健康状态时，发送的http请求的域名。仅当type为HTTP时生效。使用说明：默认为空，表示使用负载均衡器的vip作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。
         /// </summary>
         [SDKProperty("domain_name", IsQuery = true)]
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DomainName { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 期望HTTP响应状态码，指定下列值：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
         /// </summary>
         [SDKProperty("expected_codes", IsQuery = true)]
         [JsonProperty("expected_codes", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ExpectedCodes { get; set; }
 
         /// <summary>
-        /// 
+        /// HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
         /// </summary>
         [SDKProperty("http_method", IsQuery = true)]
         [JsonProperty("http_method", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> HttpMethod { get; set; }
 
         /// <summary>
-        /// 
+        /// 健康检查ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 最大重试次数。
         /// </summary>
         [SDKProperty("max_retries", IsQuery = true)]
         [JsonProperty("max_retries", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> MaxRetries { get; set; }
 
         /// <summary>
-        /// 
+        /// 健康检查连续成功多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE，取值范围[1，10]。
         /// </summary>
         [SDKProperty("max_retries_down", IsQuery = true)]
         [JsonProperty("max_retries_down", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> MaxRetriesDown { get; set; }
 
         /// <summary>
-        /// 
+        /// 健康检查端口号。
         /// </summary>
         [SDKProperty("monitor_port", IsQuery = true)]
         [JsonProperty("monitor_port", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> MonitorPort { get; set; }
 
         /// <summary>
-        /// 
+        /// 健康检查名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 健康检查的超时时间。建议该值小于delay的值。
         /// </summary>
         [SDKProperty("timeout", IsQuery = true)]
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 
+        /// 健康检查类型。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：健康检查测试member健康时发送的http请求路径。默认为“/”。使用说明：以“/”开头。仅当type为HTTP时生效。
         /// </summary>
         [SDKProperty("url_path", IsQuery = true)]
         [JsonProperty("url_path", NullValueHandling = NullValueHandling.Ignore)]

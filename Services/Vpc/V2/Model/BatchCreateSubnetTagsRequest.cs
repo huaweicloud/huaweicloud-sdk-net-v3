@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 子网ID
         /// </summary>
         [SDKProperty("subnet_id", IsPath = true)]
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]

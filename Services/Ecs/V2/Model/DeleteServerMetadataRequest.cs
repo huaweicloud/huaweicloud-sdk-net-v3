@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 待删除的云服务器metadata键值
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 
+        /// 云服务器ID。
         /// </summary>
         [SDKProperty("server_id", IsPath = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]

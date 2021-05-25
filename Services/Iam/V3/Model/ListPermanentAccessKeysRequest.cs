@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 待查询的IAM用户ID。
         /// </summary>
         [SDKProperty("user_id", IsQuery = true)]
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]

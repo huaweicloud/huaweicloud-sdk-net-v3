@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 每页返回的个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源id，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照vpc_id过滤查询  企业项目细粒度授权场景下，该字段必传
         /// </summary>
         [SDKProperty("vpc_id", IsQuery = true)]
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]

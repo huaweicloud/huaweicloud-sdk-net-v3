@@ -16,210 +16,210 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 负载均衡器的管理状态。只支持设定为true。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 可用区。 注： 可用AZ的查询方式可用通过调用nova接口查询 /v2/{project_id}/os-availability-zone
         /// </summary>
         [SDKProperty("availability_zone_list", IsQuery = true)]
         [JsonProperty("availability_zone_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 
+        /// 预留资源账单信息，默认为空表示按需计费， 非空为包周期。admin权限才能更新此字段。
         /// </summary>
         [SDKProperty("billing_info", IsQuery = true)]
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> BillingInfo { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否开启删除保护，false不开启，默认为空都查询
         /// </summary>
         [SDKProperty("deletion_protection_enable", IsQuery = true)]
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网ELB实例绑定EIP。 示例如下：  \&quot;eips\&quot;: [             {                 \&quot;eip_id\&quot;: \&quot;a6ded276-c88a-4c58-95e0-5b6d1d2297b3\&quot;,                 \&quot;eip_address\&quot;: \&quot;2001:db8:a583:86:cf24:5cc5:8117:6eaa\&quot;,                 \&quot;ip_version\&quot;: 6             }         ] 查询时指定：eips&#x3D;eip_id&#x3D;XXXX
         /// </summary>
         [SDKProperty("eips", IsQuery = true)]
         [JsonProperty("eips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Eips { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 共享型：false 性能保障型：true
         /// </summary>
         [SDKProperty("guaranteed", IsQuery = true)]
         [JsonProperty("guaranteed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Guaranteed { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// IP版本信息。 取值范围：4和6 4：IPv4 6：IPv6
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> IpVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// 双栈实例对应v6的ip地址。
         /// </summary>
         [SDKProperty("ipv6_vip_address", IsQuery = true)]
         [JsonProperty("ipv6_vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6VipAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 双栈实例对应v6的端口。
         /// </summary>
         [SDKProperty("ipv6_vip_port_id", IsQuery = true)]
         [JsonProperty("ipv6_vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6VipPortId { get; set; }
 
         /// <summary>
-        /// 
+        /// 双栈实例对应v6的网络id 。 说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空。
         /// </summary>
         [SDKProperty("ipv6_vip_virsubnet_id", IsQuery = true)]
         [JsonProperty("ipv6_vip_virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6VipVirsubnetId { get; set; }
 
         /// <summary>
-        /// 
+        /// 四层Flavor， 按需计费不填， 包周期由用户设置。
         /// </summary>
         [SDKProperty("l4_flavor_id", IsQuery = true)]
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> L4FlavorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 预留弹性flavor。
         /// </summary>
         [SDKProperty("l4_scale_flavor_id", IsQuery = true)]
         [JsonProperty("l4_scale_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 七层Flavor， 按需计费不填， 包周期由用户设置。
         /// </summary>
         [SDKProperty("l7_flavor_id", IsQuery = true)]
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> L7FlavorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 预留弹性flavor。
         /// </summary>
         [SDKProperty("l7_scale_flavor_id", IsQuery = true)]
         [JsonProperty("l7_scale_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> L7ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器的IP地址。
         /// </summary>
         [SDKProperty("member_address", IsQuery = true)]
         [JsonProperty("member_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 后端云服务器对应的弹性云服务器的ID。
         /// </summary>
         [SDKProperty("member_device_id", IsQuery = true)]
         [JsonProperty("member_device_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberDeviceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 说明 该字段为预留字段，暂未启用。
         /// </summary>
         [SDKProperty("operating_status", IsQuery = true)]
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> OperatingStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的配置状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。 说明 该字段为预留字段，暂未启用。
         /// </summary>
         [SDKProperty("provisioning_status", IsQuery = true)]
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 公网IP 示例如下：  \&quot;publicips\&quot;: [             {                 \&quot;publicip_id\&quot;: \&quot;a6ded276-c88a-4c58-95e0-5b6d1d2297b3\&quot;,                 \&quot;publicip_address\&quot;: \&quot;2001:db8:a583:86:cf24:5cc5:8117:6eaa\&quot;,                 \&quot;publicip_ip_version\&quot;: 6             }         ] 查询时指定：publicips&#x3D;publicip_id&#x3D;XXXX,YYYY
         /// </summary>
         [SDKProperty("publicips", IsQuery = true)]
         [JsonProperty("publicips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Publicips { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器的虚拟IP。
         /// </summary>
         [SDKProperty("vip_address", IsQuery = true)]
         [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> VipAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器虚拟IP对应的端口ID。
         /// </summary>
         [SDKProperty("vip_port_id", IsQuery = true)]
         [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> VipPortId { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器所在的子网ID，仅支持内网类型。 说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空。
         /// </summary>
         [SDKProperty("vip_subnet_cidr_id", IsQuery = true)]
         [JsonProperty("vip_subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> VipSubnetCidrId { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例对应的vpc属性。 若无，则从vip_subnet_cidr_id获取。  说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空。
         /// </summary>
         [SDKProperty("vpc_id", IsQuery = true)]
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]

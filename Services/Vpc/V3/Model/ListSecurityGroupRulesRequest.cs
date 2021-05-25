@@ -16,63 +16,63 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 功能说明：每页返回个数 取值范围：0-2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组规则ID，支持多个ID过滤
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组规则所属安全组ID，支持多个ID过滤
         /// </summary>
         [SDKProperty("security_group_id", IsQuery = true)]
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组规则协议，支持多条过滤
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Protocol { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组规则的描述，支持多个描述同时过滤
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：远端安全组ID，支持多ID过滤
         /// </summary>
         [SDKProperty("remote_group_id", IsQuery = true)]
         [JsonProperty("remote_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RemoteGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组规则方向
         /// </summary>
         [SDKProperty("direction", IsQuery = true)]
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public string Direction { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：安全组规则生效策略
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]

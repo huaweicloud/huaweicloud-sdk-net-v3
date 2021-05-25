@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateScalingPolicyRequestBody Body { get; set; }
+        public CreateScalingPolicyOption Body { get; set; }
 
 
         /// <summary>

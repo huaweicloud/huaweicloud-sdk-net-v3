@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     public class ListPortsRequest 
     {
         /// <summary>
-        /// Defines deviceOwner
+        /// 按照device_owner过滤查询
         /// </summary>
+        /// <value>按照device_owner过滤查询</value>
         [JsonConverter(typeof(EnumClassConverter<DeviceOwnerEnum>))]
         public class DeviceOwnerEnum
         {
@@ -136,8 +137,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
         /// </summary>
+        /// <value>功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -252,82 +254,82 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 功能说明：按照name过滤查询  取值范围：最大长度不超过255
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照port_id过滤查询
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照admin_state_up进行过滤
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照network_id过滤查询
         /// </summary>
         [SDKProperty("network_id", IsQuery = true)]
         [JsonProperty("network_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkId { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照mac_address过滤查询
         /// </summary>
         [SDKProperty("mac_address", IsQuery = true)]
         [JsonProperty("mac_address", NullValueHandling = NullValueHandling.Ignore)]
         public string MacAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照device_id过滤查询
         /// </summary>
         [SDKProperty("device_id", IsQuery = true)]
         [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照device_owner过滤查询
         /// </summary>
         [SDKProperty("device_owner", IsQuery = true)]
         [JsonProperty("device_owner", NullValueHandling = NullValueHandling.Ignore)]
         public DeviceOwnerEnum DeviceOwner { get; set; }
         /// <summary>
-        /// 
+        /// 功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 
+        /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照fixed_ips&#x3D;ip_address或者fixed_ips&#x3D;subnet_id过滤查询
         /// </summary>
         [SDKProperty("fixed_ips", IsQuery = true)]
         [JsonProperty("fixed_ips", NullValueHandling = NullValueHandling.Ignore)]
         public string FixedIps { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：企业项目ID，用于基于企业项目的权限管理。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

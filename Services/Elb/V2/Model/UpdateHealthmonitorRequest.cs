@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 健康检查id
         /// </summary>
         [SDKProperty("healthmonitor_id", IsPath = true)]
         [JsonProperty("healthmonitor_id", NullValueHandling = NullValueHandling.Ignore)]

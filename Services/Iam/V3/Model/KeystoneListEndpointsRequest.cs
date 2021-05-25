@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     public class KeystoneListEndpointsRequest 
     {
         /// <summary>
-        /// Defines Interface
+        /// 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
         /// </summary>
+        /// <value>终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。</value>
         [JsonConverter(typeof(EnumClassConverter<InterfaceEnum>))]
         public class InterfaceEnum
         {
@@ -131,13 +132,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
         /// </summary>
         [SDKProperty("interface", IsQuery = true)]
         [JsonProperty("interface", NullValueHandling = NullValueHandling.Ignore)]
         public InterfaceEnum Interface { get; set; }
         /// <summary>
-        /// 
+        /// 服务ID。
         /// </summary>
         [SDKProperty("service_id", IsQuery = true)]
         [JsonProperty("service_id", NullValueHandling = NullValueHandling.Ignore)]

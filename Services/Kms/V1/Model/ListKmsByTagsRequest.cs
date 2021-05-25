@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 资源实例
         /// </summary>
         [SDKProperty("resource_instances", IsPath = true)]
         [JsonProperty("resource_instances", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceInstances { get; set; }
 
         /// <summary>
-        /// 
+        /// API版本号
         /// </summary>
         [SDKProperty("version_id", IsPath = true)]
         [JsonProperty("version_id", NullValueHandling = NullValueHandling.Ignore)]

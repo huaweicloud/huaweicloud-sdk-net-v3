@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 存储库ID
         /// </summary>
         [SDKProperty("vault_id", IsPath = true)]
         [JsonProperty("vault_id", NullValueHandling = NullValueHandling.Ignore)]

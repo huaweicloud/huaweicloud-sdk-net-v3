@@ -16,63 +16,63 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsQuery = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。 
         /// </summary>
         [SDKProperty("include_failure", IsQuery = true)]
         [JsonProperty("include_failure", NullValueHandling = NullValueHandling.Ignore)]
         public string IncludeFailure { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移量，表示从此偏移量开始查询， offset大于等于0
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页显示条数，最小值为1，最大值为1000，若不设置该参数，则为10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。 
         /// </summary>
         [SDKProperty("name_equal", IsQuery = true)]
         [JsonProperty("name_equal", NullValueHandling = NullValueHandling.Ignore)]
         public string NameEqual { get; set; }
 
         /// <summary>
-        /// 
+        /// 根据实例标签键值对进行查询。{key}表示标签键，{value}表示标签值。  如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。 
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
         /// <summary>
-        /// 
+        /// 连接缓存实例的IP地址。
         /// </summary>
         [SDKProperty("ip", IsQuery = true)]
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]

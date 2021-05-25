@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 身份提供商ID。
         /// </summary>
         [SDKProperty("X-Idp-Id", IsHeader = true)]
         [JsonProperty("X-Idp-Id", NullValueHandling = NullValueHandling.Ignore)]

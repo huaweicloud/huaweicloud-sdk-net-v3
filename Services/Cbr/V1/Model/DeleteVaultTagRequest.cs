@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 不能为空或空字符串，不检查长度和字符集，去掉key前后的空格后检查，去掉key前后的空格后使用。 即使底层存在非法的tag也要能删。
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源id
         /// </summary>
         [SDKProperty("vault_id", IsPath = true)]
         [JsonProperty("vault_id", NullValueHandling = NullValueHandling.Ignore)]

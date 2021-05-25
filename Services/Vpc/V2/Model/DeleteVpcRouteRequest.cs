@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 路由ID
         /// </summary>
         [SDKProperty("route_id", IsPath = true)]
         [JsonProperty("route_id", NullValueHandling = NullValueHandling.Ignore)]

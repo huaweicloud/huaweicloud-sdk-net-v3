@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 课堂ID
         /// </summary>
         [SDKProperty("classroom_id", IsPath = true)]
         [JsonProperty("classroom_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 组织名称
         /// </summary>
         [SDKProperty("namespace", IsPath = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像仓库名称。小写字母或数字开头，后面跟小写字母、数字、小数点、斜杠、下划线或中划线（其中下划线最多允许连续两个，小数点、斜杠、下划线、中划线不能直接相连），小写字母或数字结尾，1-128个字符。
         /// </summary>
         [SDKProperty("repository", IsPath = true)]
         [JsonProperty("repository", NullValueHandling = NullValueHandling.Ignore)]

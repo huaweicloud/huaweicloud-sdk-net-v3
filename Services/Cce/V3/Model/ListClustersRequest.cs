@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class ListClustersRequest 
     {
         /// <summary>
-        /// Defines status
+        /// 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - Empty：集群无任何资源
         /// </summary>
+        /// <value>集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - Empty：集群无任何资源</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -166,8 +167,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// Defines type
+        /// 集群类型： - VirtualMachine：CCE集群 - ARM64：鲲鹏集群
         /// </summary>
+        /// <value>集群类型： - VirtualMachine：CCE集群 - ARM64：鲲鹏集群</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -276,33 +278,33 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
         /// </summary>
         [SDKProperty("errorStatus", IsQuery = true)]
         [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询集群详细信息。若设置为true，获取集群下节点总数(totalNodesNumber)、正常节点数(activeNodesNumber)、CPU总量(totalNodesCPU)、内存总量(totalNodesMemory)、已安装插件列表(installedAddonInstances)，已安装插件列表中包含名称(addonTemplateName)、版本号(version)、插件的状态信息(status)，放入到annotation中。
         /// </summary>
         [SDKProperty("detail", IsQuery = true)]
         [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
         public string Detail { get; set; }
 
         /// <summary>
-        /// 
+        /// 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - Empty：集群无任何资源
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 
+        /// 集群类型： - VirtualMachine：CCE集群 - ARM64：鲲鹏集群
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 
+        /// 集群版本过滤
         /// </summary>
         [SDKProperty("version", IsQuery = true)]
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]

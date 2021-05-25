@@ -178,18 +178,6 @@ namespace HuaweiCloud.SDK.Dms.V2
         }
         
         /// <summary>
-        /// 查询项目标签
-        /// </summary>
-        public async Task<ShowProjectTagsResponse> ShowProjectTagsAsync(ShowProjectTagsRequest showProjectTagsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queue/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowProjectTagsResponse>(response);
-        }
-        
-        /// <summary>
         /// 查看指定队列
         /// </summary>
         public async Task<ShowQueueResponse> ShowQueueAsync(ShowQueueRequest showQueueRequest)
@@ -200,6 +188,18 @@ namespace HuaweiCloud.SDK.Dms.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowQueueResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询项目标签
+        /// </summary>
+        public async Task<ShowQueueProjectTagsResponse> ShowQueueProjectTagsAsync(ShowQueueProjectTagsRequest showQueueProjectTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/queue/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueProjectTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowQueueProjectTagsResponse>(response);
         }
         
         /// <summary>

@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线以及数字。
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
         /// <summary>
         /// 副本数，配置数据的可靠性。 取值范围：1-3。
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SyncMessageFlush { get; set; }
 
         /// <summary>
-        /// topic分区数，设置消费的并发数。 取值范围：1-20。
+        /// topic分区数，设置消费的并发数。 取值范围：1-50。
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateInstanceTopicReq {\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  replication: ").Append(Replication).Append("\n");
             sb.Append("  syncMessageFlush: ").Append(SyncMessageFlush).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
@@ -87,9 +87,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
                     this.Replication == input.Replication ||
@@ -126,8 +126,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Replication != null)
                     hashCode = hashCode * 59 + this.Replication.GetHashCode();
                 if (this.SyncMessageFlush != null)

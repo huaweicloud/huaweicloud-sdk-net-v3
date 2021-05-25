@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 功能描述：LB需要部署的AZ列表 约束：若查询创建一个LB所需预占IP数时，该参数为必选
         /// </summary>
         [SDKProperty("availability_zone_id", IsQuery = true)]
         [JsonProperty("availability_zone_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZoneId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否启用跨VPC后端转发
         /// </summary>
         [SDKProperty("ip_target_enable", IsQuery = true)]
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器网络类型，枚举值4，6
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// 七层Flavor的ID。如果欲创建7层规格的弹性负载均衡实例，则该参数为必选
         /// </summary>
         [SDKProperty("l7_flavor_id", IsQuery = true)]
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 负载均衡器ID。当查询创建第一个七层监听器所需预占的ip数时，该参数为必选。
         /// </summary>
         [SDKProperty("loadbalancer_id", IsQuery = true)]
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]

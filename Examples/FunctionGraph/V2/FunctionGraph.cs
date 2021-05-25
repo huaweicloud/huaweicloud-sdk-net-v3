@@ -517,7 +517,7 @@ namespace Examples.FunctionGraph.V2
             UpdateVersionAliasRequest req = new UpdateVersionAliasRequest
             {
                 FunctionUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:function:CsharpSdkTest:csharpSdkTest:latest",
-                Name = "a1",
+                AliasName = "a1",
                 Body = new UpdateVersionAliasRequestBody
                 {
                     Version = "latest",
@@ -559,7 +559,7 @@ namespace Examples.FunctionGraph.V2
             DeleteVersionAliasRequest req = new DeleteVersionAliasRequest
             {
                 FunctionUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:function:CsharpSdkTest:csharpSdkTest:latest",
-                Name = "a1",
+                AliasName = "a1",
             };
             try
             {
@@ -592,7 +592,7 @@ namespace Examples.FunctionGraph.V2
             ShowVersionAliasRequest req = new ShowVersionAliasRequest
             {
                 FunctionUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:function:CsharpSdkTest:csharpSdkTest:latest",
-                Name = "a1",
+                AliasName = "a1",
             };
             try
             {

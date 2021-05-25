@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 权限ID，获取方式请参见：[获取权限名、权限ID](https://support.huaweicloud.com/api-iam/iam_10_0001.html)。
         /// </summary>
         [SDKProperty("role_id", IsPath = true)]
         [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]

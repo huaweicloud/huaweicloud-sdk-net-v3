@@ -40,10 +40,7 @@ namespace Examples.Rabbitmq.V2
         
         private static void listInstance(RabbitmqClient client)
         {
-            var req = new ListInstancesDetailsRequest
-            {
-                Engine = ListInstancesDetailsRequest.EngineEnum.RABBITMQ,
-            };
+            var req = new ListInstancesDetailsRequest();
             try
             {
                 var resp = client.ListInstancesDetails(req);

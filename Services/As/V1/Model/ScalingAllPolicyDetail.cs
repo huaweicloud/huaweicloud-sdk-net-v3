@@ -424,7 +424,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("meta_data", NullValueHandling = NullValueHandling.Ignore)]
-        public MeteData MetaData { get; set; }
+        public ScalingPolicyV2MetaData MetaData { get; set; }
 
 
         /// <summary>

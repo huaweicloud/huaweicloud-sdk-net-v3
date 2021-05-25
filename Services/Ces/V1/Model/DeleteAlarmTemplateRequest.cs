@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 需要删除的自定义告警模板ID。
         /// </summary>
         [SDKProperty("template_id", IsPath = true)]
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]

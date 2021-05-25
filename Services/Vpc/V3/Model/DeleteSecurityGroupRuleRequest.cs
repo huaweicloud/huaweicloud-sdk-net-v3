@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 安全组规则ID
         /// </summary>
         [SDKProperty("security_group_rule_id", IsPath = true)]
         [JsonProperty("security_group_rule_id", NullValueHandling = NullValueHandling.Ignore)]

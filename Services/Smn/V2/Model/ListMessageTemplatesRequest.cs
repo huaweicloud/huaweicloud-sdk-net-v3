@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 偏移量，偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 模板的名称。  只能包含大写字母、小写字母、数字、-和_，且必须由大写字母、小写字母或数字开头，长度在1到64个字符之间。
         /// </summary>
         [SDKProperty("message_template_name", IsQuery = true)]
         [JsonProperty("message_template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageTemplateName { get; set; }
 
         /// <summary>
-        /// 
+        /// 模板支持的协议类型。  目前支持的协议包括：  “email”：邮件传输协议。 “default” “sms”：短信传输协议。 “functionstage”：FunctionGraph（函数）传输协议。 “functiongraph”：FunctionGraph（工作流）传输协议。 “dms”：DMS传输协议。 “http”、“https”：HTTP/HTTPS传输协议。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]

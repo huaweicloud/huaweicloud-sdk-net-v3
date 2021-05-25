@@ -364,6 +364,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("ipv6_connect_addresses", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6ConnectAddresses { get; set; }
 
+        /// <summary>
+        /// 标签列表。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListInstancesRespTags> Tags { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -412,6 +418,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  ipv6ConnectAddresses: ").Append(Ipv6ConnectAddresses).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -634,6 +641,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     this.Ipv6ConnectAddresses != null &&
                     input.Ipv6ConnectAddresses != null &&
                     this.Ipv6ConnectAddresses.SequenceEqual(input.Ipv6ConnectAddresses)
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -725,6 +738,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.Ipv6ConnectAddresses != null)
                     hashCode = hashCode * 59 + this.Ipv6ConnectAddresses.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

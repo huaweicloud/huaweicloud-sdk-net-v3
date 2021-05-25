@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 任务ID
         /// </summary>
         [SDKProperty("task_id", IsPath = true)]
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]

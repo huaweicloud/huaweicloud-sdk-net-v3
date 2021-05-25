@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 带宽唯一标识  约束： 当前仅支持删除共享带宽
         /// </summary>
         [SDKProperty("bandwidth_id", IsPath = true)]
         [JsonProperty("bandwidth_id", NullValueHandling = NullValueHandling.Ignore)]

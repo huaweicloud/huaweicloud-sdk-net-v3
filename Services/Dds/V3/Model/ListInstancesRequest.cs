@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     public class ListInstancesRequest 
     {
         /// <summary>
-        /// Defines mode
+        /// 实例类型。 - 取值为“Sharding”，表示集群实例。 - 取值为“ReplicaSet”，表示副本集实例。 - 取值为“Single”，表示单节点实例。
         /// </summary>
+        /// <value>实例类型。 - 取值为“Sharding”，表示集群实例。 - 取值为“ReplicaSet”，表示副本集实例。 - 取值为“Single”，表示单节点实例。</value>
         [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
         public class ModeEnum
         {
@@ -130,8 +131,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         }
 
         /// <summary>
-        /// Defines datastoreType
+        /// 数据库版本类型。取值为“DDS-Community”。
         /// </summary>
+        /// <value>数据库版本类型。取值为“DDS-Community”。</value>
         [JsonConverter(typeof(EnumClassConverter<DatastoreTypeEnum>))]
         public class DatastoreTypeEnum
         {
@@ -240,54 +242,54 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
 
         /// <summary>
-        /// 
+        /// 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例名称。 如果name以“*”起始，表示按照“*”后面的值模糊匹配，否则，按照实际填写的name精确匹配查询。 - “*”为系统保留字符，不能只传入该字符。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例类型。 - 取值为“Sharding”，表示集群实例。 - 取值为“ReplicaSet”，表示副本集实例。 - 取值为“Single”，表示单节点实例。
         /// </summary>
         [SDKProperty("mode", IsQuery = true)]
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }
         /// <summary>
-        /// 
+        /// 数据库版本类型。取值为“DDS-Community”。
         /// </summary>
         [SDKProperty("datastore_type", IsQuery = true)]
         [JsonProperty("datastore_type", NullValueHandling = NullValueHandling.Ignore)]
         public DatastoreTypeEnum DatastoreType { get; set; }
         /// <summary>
-        /// 
+        /// 虚拟私有云ID。可登录虚拟私有云控制台界面，获取DDS实例所在虚拟私有云的ID。
         /// </summary>
         [SDKProperty("vpc_id", IsQuery = true)]
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 
+        /// 子网的网络ID。可登录虚拟私有云控制台界面，获取DDS实例所在虚拟私有云下子网的网络ID。
         /// </summary>
         [SDKProperty("subnet_id", IsQuery = true)]
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 
+        /// 索引位置偏移量，表示从指定project ID下最新的实例创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的实例信息。 取值大于或等于0。不传该参数时，查询偏移量默认为0，表示从最新的实例创建时间对应的实例开始查询。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询实例个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

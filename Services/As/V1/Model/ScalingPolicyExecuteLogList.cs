@@ -499,7 +499,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 策略执行时间，遵循UTC时间。
         /// </summary>
         [JsonProperty("execute_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? ExecuteTime { get; set; }
+        public string ExecuteTime { get; set; }
 
         /// <summary>
         /// 策略执行日志ID。
@@ -510,8 +510,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// <summary>
         /// 租户id。
         /// </summary>
-        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectId { get; set; }
+        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TenantId { get; set; }
 
         /// <summary>
         /// 伸缩策略ID。
@@ -546,7 +546,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 操作限制。当scaling_resource_type为BANDWIDTH时，且operation不为SET时，limit_value生效，单位为Mbit/s。此时，当operation为ADD时，limit_value表示最高带宽限制；当operation为REDUCE时，limit_value表示最低带宽限制。
         /// </summary>
         [JsonProperty("limit_value", NullValueHandling = NullValueHandling.Ignore)]
-        public int? LimitValue { get; set; }
+        public string LimitValue { get; set; }
 
         /// <summary>
         /// 策略执行任务类型。ADD：添加。REMOVE：减少。SET：设置为
@@ -563,7 +563,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("meta_data", NullValueHandling = NullValueHandling.Ignore)]
-        public MetaData MetaData { get; set; }
+        public EipMetaData MetaData { get; set; }
 
 
         /// <summary>
@@ -578,7 +578,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  executeType: ").Append(ExecuteType).Append("\n");
             sb.Append("  executeTime: ").Append(ExecuteTime).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  scalingPolicyId: ").Append(ScalingPolicyId).Append("\n");
             sb.Append("  scalingResourceType: ").Append(ScalingResourceType).Append("\n");
             sb.Append("  scalingResourceId: ").Append(ScalingResourceId).Append("\n");
@@ -635,9 +635,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
+                    this.TenantId == input.TenantId ||
+                    (this.TenantId != null &&
+                    this.TenantId.Equals(input.TenantId))
                 ) && 
                 (
                     this.ScalingPolicyId == input.ScalingPolicyId ||
@@ -705,8 +705,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.ExecuteTime.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.TenantId != null)
+                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.ScalingPolicyId != null)
                     hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
                 if (this.ScalingResourceType != null)

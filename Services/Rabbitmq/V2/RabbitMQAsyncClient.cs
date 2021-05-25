@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         /// <summary>
         /// 批量添加或删除实例标签
         /// </summary>
-        public async Task<BatchCreateOrDeleteInstanceTagResponse> BatchCreateOrDeleteInstanceTagAsync(BatchCreateOrDeleteInstanceTagRequest batchCreateOrDeleteInstanceTagRequest)
+        public async Task<BatchCreateOrDeleteRabbitMqTagResponse> BatchCreateOrDeleteRabbitMqTagAsync(BatchCreateOrDeleteRabbitMqTagRequest batchCreateOrDeleteRabbitMqTagRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchCreateOrDeleteInstanceTagRequest.InstanceId.ToString());
+            urlParam.Add("instance_id" , batchCreateOrDeleteRabbitMqTagRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteInstanceTagRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteRabbitMqTagRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<BatchCreateOrDeleteInstanceTagResponse>(response);
+            return JsonUtils.DeSerializeNull<BatchCreateOrDeleteRabbitMqTagResponse>(response);
         }
         
         /// <summary>
@@ -181,7 +181,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
-        /// 查询指定实例成功
+        /// 查询指定实例
         /// </summary>
         public async Task<ShowInstanceResponse> ShowInstanceAsync(ShowInstanceRequest showInstanceRequest)
         {
@@ -207,19 +207,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
-        /// 查询实例标签
-        /// </summary>
-        public async Task<ShowInstanceTagsResponse> ShowInstanceTagsAsync(ShowInstanceTagsRequest showInstanceTagsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showInstanceTagsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/{instance_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowInstanceTagsResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询维护时间窗时间段
         /// </summary>
         public async Task<ShowMaintainWindowsResponse> ShowMaintainWindowsAsync(ShowMaintainWindowsRequest showMaintainWindowsRequest)
@@ -234,13 +221,26 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         /// <summary>
         /// 查询项目标签
         /// </summary>
-        public async Task<ShowProjectTagsResponse> ShowProjectTagsAsync(ShowProjectTagsRequest showProjectTagsRequest)
+        public async Task<ShowRabbitMqProjectTagsResponse> ShowRabbitMqProjectTagsAsync(ShowRabbitMqProjectTagsRequest showRabbitMqProjectTagsRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTagsRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRabbitMqProjectTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowProjectTagsResponse>(response);
+            return JsonUtils.DeSerialize<ShowRabbitMqProjectTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询实例标签
+        /// </summary>
+        public async Task<ShowRabbitMqTagsResponse> ShowRabbitMqTagsAsync(ShowRabbitMqTagsRequest showRabbitMqTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showRabbitMqTagsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/{instance_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRabbitMqTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowRabbitMqTagsResponse>(response);
         }
         
         /// <summary>

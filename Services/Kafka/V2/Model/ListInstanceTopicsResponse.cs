@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// topic总数。
         /// </summary>
-        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Count { get; set; }
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Total { get; set; }
 
         /// <summary>
         /// 分页查询的大小。
@@ -28,7 +28,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// Topic列表。
+        /// 剩余分区数。
+        /// </summary>
+        [JsonProperty("remain_partitions", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RemainPartitions { get; set; }
+
+        /// <summary>
+        /// 分区总数。
+        /// </summary>
+        [JsonProperty("max_partitions", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxPartitions { get; set; }
+
+        /// <summary>
+        /// topic列表。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListInstanceTopicsRespTopics> Topics { get; set; }
@@ -41,8 +53,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListInstanceTopicsResponse {\n");
-            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  remainPartitions: ").Append(RemainPartitions).Append("\n");
+            sb.Append("  maxPartitions: ").Append(MaxPartitions).Append("\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,14 +80,24 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             return 
                 (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
+                    this.Total == input.Total ||
+                    (this.Total != null &&
+                    this.Total.Equals(input.Total))
                 ) && 
                 (
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
+                ) && 
+                (
+                    this.RemainPartitions == input.RemainPartitions ||
+                    (this.RemainPartitions != null &&
+                    this.RemainPartitions.Equals(input.RemainPartitions))
+                ) && 
+                (
+                    this.MaxPartitions == input.MaxPartitions ||
+                    (this.MaxPartitions != null &&
+                    this.MaxPartitions.Equals(input.MaxPartitions))
                 ) && 
                 (
                     this.Topics == input.Topics ||
@@ -91,10 +115,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Total != null)
+                    hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Size != null)
                     hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.RemainPartitions != null)
+                    hashCode = hashCode * 59 + this.RemainPartitions.GetHashCode();
+                if (this.MaxPartitions != null)
+                    hashCode = hashCode * 59 + this.MaxPartitions.GetHashCode();
                 if (this.Topics != null)
                     hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 return hashCode;

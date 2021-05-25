@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.As.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 伸缩组ID。
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
         [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? StartTime { get; set; }
+        public string StartTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的起始行号，默认为0。
         /// </summary>
         [SDKProperty("start_number", IsQuery = true)]
         [JsonProperty("start_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询记录数，默认20，最大100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

@@ -232,6 +232,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("lb_unbind_failed_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<ModifyLb> LbUnbindFailedList { get; set; }
 
+        /// <summary>
+        /// 伸缩组活动类型
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -257,6 +263,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  lbBindFailedList: ").Append(LbBindFailedList).Append("\n");
             sb.Append("  lbUnbindSuccessList: ").Append(LbUnbindSuccessList).Append("\n");
             sb.Append("  lbUnbindFailedList: ").Append(LbUnbindFailedList).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -371,6 +378,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.LbUnbindFailedList != null &&
                     input.LbUnbindFailedList != null &&
                     this.LbUnbindFailedList.SequenceEqual(input.LbUnbindFailedList)
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -416,6 +428,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.LbUnbindSuccessList.GetHashCode();
                 if (this.LbUnbindFailedList != null)
                     hashCode = hashCode * 59 + this.LbUnbindFailedList.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

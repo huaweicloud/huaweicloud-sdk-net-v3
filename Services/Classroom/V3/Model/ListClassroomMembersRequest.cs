@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 课堂ID
         /// </summary>
         [SDKProperty("classroom_id", IsPath = true)]
         [JsonProperty("classroom_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClassroomId { get; set; }
 
         /// <summary>
-        /// 
+        /// 信息记录的起始编号
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页包含的信息记录数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照条件搜索学生，搜索字段会同时匹配姓名，学号，用户名，班级
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]

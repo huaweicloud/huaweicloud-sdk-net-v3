@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 后端云服务器组id
         /// </summary>
         [SDKProperty("pool_id", IsPath = true)]
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]

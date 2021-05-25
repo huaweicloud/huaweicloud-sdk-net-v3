@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("target_type", NullValueHandling = NullValueHandling.Ignore)]
         public TargetTypeEnum TargetType { get; set; }
         /// <summary>
-        /// 待重启对象的ID。 - 重启集群实例下的节点时，对于mongos节点，取值为mongos节点ID，对于shard和config组，取值为shard和config组ID。 - 重启整个实例时，取值为实例ID。
+        /// 待重启对象的ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 重启集群实例下的节点时，对于mongos节点，取值为mongos节点ID，对于shard和config组，取值为shard和config组ID。 - 重启整个实例时，取值为实例ID。
         /// </summary>
         [JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetId { get; set; }

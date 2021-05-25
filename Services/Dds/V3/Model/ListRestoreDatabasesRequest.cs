@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 语言。
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public string XLanguage { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 恢复时间点。UNIX时间戳格式，单位是毫秒，时区是UTC。
         /// </summary>
         [SDKProperty("restore_time", IsQuery = true)]
         [JsonProperty("restore_time", NullValueHandling = NullValueHandling.Ignore)]
         public string RestoreTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 索引位置偏移量。取值大于或等于0。不传该参数时，查询偏移量默认为0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询个数上限值。取值范围：1~100。不传该参数时，默认查询前100条信息。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

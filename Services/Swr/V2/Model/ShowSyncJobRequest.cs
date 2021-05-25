@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 组织名称
         /// </summary>
         [SDKProperty("namespace", IsPath = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像仓库名称
         /// </summary>
         [SDKProperty("repository", IsPath = true)]
         [JsonProperty("repository", NullValueHandling = NullValueHandling.Ignore)]
         public string Repository { get; set; }
 
         /// <summary>
-        /// 
+        /// 应填写 limit::{limit}|offset::{offset}|order::{order} ,其中{limit}为返回条数,{offset}为起始索引,{order}为排序类型，可设置为desc（降序）、asc（升序）
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]

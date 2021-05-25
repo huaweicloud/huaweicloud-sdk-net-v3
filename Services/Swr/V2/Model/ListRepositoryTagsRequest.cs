@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     public class ListRepositoryTagsRequest 
     {
         /// <summary>
-        /// Defines orderType
+        /// 排序类型，可设置为desc（降序）、asc（升序） 
         /// </summary>
+        /// <value>排序类型，可设置为desc（降序）、asc（升序） </value>
         [JsonConverter(typeof(EnumClassConverter<OrderTypeEnum>))]
         public class OrderTypeEnum
         {
@@ -125,48 +126,48 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 组织名称
         /// </summary>
         [SDKProperty("namespace", IsPath = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 
+        /// 镜像仓库名称
         /// </summary>
         [SDKProperty("repository", IsPath = true)]
         [JsonProperty("repository", NullValueHandling = NullValueHandling.Ignore)]
         public string Repository { get; set; }
 
         /// <summary>
-        /// 
+        /// 起始索引。**注意：offset和limit参数需要配套使用** 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public string Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 返回条数。**注意：offset和limit参数需要配套使用* 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public string Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 按列排序，可设置为updated_at（按更新时间排序） 
         /// </summary>
         [SDKProperty("order_column", IsQuery = true)]
         [JsonProperty("order_column", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderColumn { get; set; }
 
         /// <summary>
-        /// 
+        /// 排序类型，可设置为desc（降序）、asc（升序） 
         /// </summary>
         [SDKProperty("order_type", IsQuery = true)]
         [JsonProperty("order_type", NullValueHandling = NullValueHandling.Ignore)]
         public OrderTypeEnum OrderType { get; set; }
         /// <summary>
-        /// 
+        /// 镜像版本名
         /// </summary>
         [SDKProperty("tag", IsQuery = true)]
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]

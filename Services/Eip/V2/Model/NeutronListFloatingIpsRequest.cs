@@ -16,70 +16,70 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 每页显示的条目数量。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public string Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// False/True，是否设置分页的顺序。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 
+        /// 浮动IP的id。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 浮动IP地址。
         /// </summary>
         [SDKProperty("floating_ip_address", IsQuery = true)]
         [JsonProperty("floating_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string FloatingIpAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 所属路由器id。
         /// </summary>
         [SDKProperty("router_id", IsQuery = true)]
         [JsonProperty("router_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RouterId { get; set; }
 
         /// <summary>
-        /// 
+        /// 端口id。
         /// </summary>
         [SDKProperty("port_id", IsQuery = true)]
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
 
         /// <summary>
-        /// 
+        /// 关联端口的私有IP地址。
         /// </summary>
         [SDKProperty("fixed_ip_address", IsQuery = true)]
         [JsonProperty("fixed_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string FixedIpAddress { get; set; }
 
         /// <summary>
-        /// 
+        /// 项目ID。
         /// </summary>
         [SDKProperty("tenant_id", IsQuery = true)]
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }
 
         /// <summary>
-        /// 
+        /// 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external&#x3D;True或GET /v2.0/networks?name&#x3D;{floating_network}或neutron net-external-list方式查询
         /// </summary>
         [SDKProperty("floating_network_id", IsQuery = true)]
         [JsonProperty("floating_network_id", NullValueHandling = NullValueHandling.Ignore)]

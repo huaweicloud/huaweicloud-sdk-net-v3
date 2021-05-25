@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 弹性公网IP的id
         /// </summary>
         [SDKProperty("publicip_id", IsPath = true)]
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }
 
         /// <summary>
-        /// 
+        /// 标签的键
         /// </summary>
         [SDKProperty("key", IsPath = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]

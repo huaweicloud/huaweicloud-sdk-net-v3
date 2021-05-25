@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 伸缩组标识。
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
         [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 生命周期挂钩标识。
         /// </summary>
         [SDKProperty("lifecycle_hook_name", IsPath = true)]
         [JsonProperty("lifecycle_hook_name", NullValueHandling = NullValueHandling.Ignore)]

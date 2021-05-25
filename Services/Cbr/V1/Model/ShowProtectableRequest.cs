@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class ShowProtectableRequest 
     {
         /// <summary>
-        /// Defines protectableType
+        /// 可保护性类型
         /// </summary>
+        /// <value>可保护性类型</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectableTypeEnum>))]
         public class ProtectableTypeEnum
         {
@@ -125,14 +126,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 资源ID
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 可保护性类型
         /// </summary>
         [SDKProperty("protectable_type", IsPath = true)]
         [JsonProperty("protectable_type", NullValueHandling = NullValueHandling.Ignore)]

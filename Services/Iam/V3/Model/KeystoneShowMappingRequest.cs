@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 待查询的映射ID。
         /// </summary>
         [SDKProperty("id", IsPath = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]

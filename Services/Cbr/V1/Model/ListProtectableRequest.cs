@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class ListProtectableRequest 
     {
         /// <summary>
-        /// Defines protectableType
+        /// 对象类型
         /// </summary>
+        /// <value>对象类型</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectableTypeEnum>))]
         public class ProtectableTypeEnum
         {
@@ -125,55 +126,55 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 每页显示的条目数量，每页最多支持50条
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 上一次查询最后一条的ID
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 按名称过滤
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 偏移值
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 对象类型
         /// </summary>
         [SDKProperty("protectable_type", IsPath = true)]
         [JsonProperty("protectable_type", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectableTypeEnum ProtectableType { get; set; }
         /// <summary>
-        /// 
+        /// 资源的状态，如available，error 等
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 根据资源id过滤
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 根据该id过滤属于该服务器的所有磁盘，支持企业多项目的用户才能传入此参数
         /// </summary>
         [SDKProperty("server_id", IsQuery = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]

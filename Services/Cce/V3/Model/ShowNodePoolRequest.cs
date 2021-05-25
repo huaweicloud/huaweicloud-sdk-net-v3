@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
         /// </summary>
         [SDKProperty("cluster_id", IsPath = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 
+        /// 节点池ID
         /// </summary>
         [SDKProperty("nodepool_id", IsPath = true)]
         [JsonProperty("nodepool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodepoolId { get; set; }
 
         /// <summary>
-        /// 
+        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
         /// </summary>
         [SDKProperty("errorStatus", IsQuery = true)]
         [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 分页查询时数据的页数，查询值最小为1。需要与per_page同时存在。
         /// </summary>
         [SDKProperty("page", IsQuery = true)]
         [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
         public int? Page { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询时每页的数据个数，取值范围为[1,300]。需要与page同时存在。
         /// </summary>
         [SDKProperty("per_page", IsQuery = true)]
         [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]

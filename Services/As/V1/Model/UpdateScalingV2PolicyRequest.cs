@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 伸缩策略ID。
         /// </summary>
         [SDKProperty("scaling_policy_id", IsPath = true)]
         [JsonProperty("scaling_policy_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateScalingV2PolicyRequestBody Body { get; set; }
+        public UpdateScalingV2PolicyOption Body { get; set; }
 
 
         /// <summary>

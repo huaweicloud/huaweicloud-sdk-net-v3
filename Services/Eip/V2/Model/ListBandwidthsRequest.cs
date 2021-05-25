@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     public class ListBandwidthsRequest 
     {
         /// <summary>
-        /// Defines shareType
+        /// 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
         /// </summary>
+        /// <value>功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽</value>
         [JsonConverter(typeof(EnumClassConverter<ShareTypeEnum>))]
         public class ShareTypeEnum
         {
@@ -125,28 +126,28 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 取值为上一页数据的最后一条记录的id，为空时为查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：每页返回的个数  取值范围：0~intmax
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的虚拟私有云。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的虚拟私有云，请传参all_granted_eps。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
         /// </summary>
         [SDKProperty("share_type", IsQuery = true)]
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 作业ID。
         /// </summary>
         [SDKProperty("job_id", IsPath = true)]
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 
+        /// 作业来源于课堂或课程。 取值范围： classroom:课堂作业 course:课程作业
         /// </summary>
         [SDKProperty("source_from", IsQuery = true)]
         [JsonProperty("source_from", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceFrom { get; set; }
 
         /// <summary>
-        /// 
+        /// 课堂ID或者课程ID。
         /// </summary>
         [SDKProperty("source_id", IsQuery = true)]
         [JsonProperty("source_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 信息记录的起始编号
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页包含的信息记录数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

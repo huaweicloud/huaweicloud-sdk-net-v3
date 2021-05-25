@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 是否返回创建失败的实例数。   - 当参数值为“true”时，返回的统计包括创建失败的实例数。   - 参数值为“false”或者其他值，返回的统计不包括创建失败的实例数。 
         /// </summary>
         [SDKProperty("include_failure", IsQuery = true)]
         [JsonProperty("include_failure", NullValueHandling = NullValueHandling.Ignore)]

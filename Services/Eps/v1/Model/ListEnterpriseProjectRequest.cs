@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
     public class ListEnterpriseProjectRequest 
     {
         /// <summary>
-        /// Defines sortDir
+        /// 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序
         /// </summary>
+        /// <value>降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序</value>
         [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
         public class SortDirEnum
         {
@@ -124,8 +125,9 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         }
 
         /// <summary>
-        /// Defines sortKey
+        /// 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）
         /// </summary>
+        /// <value>返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -234,47 +236,47 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
 
 
         /// <summary>
-        /// 
+        /// 企业项目ID，0表示默认企业项目
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询记录数默认为1000，limit最多为1000, 最小值为1
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 企业项目名称，支持模糊搜索
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 索引位置，从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public SortDirEnum SortDir { get; set; }
         /// <summary>
-        /// 
+        /// 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 
+        /// 企业项目状态。 1- -启用，2- -停用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

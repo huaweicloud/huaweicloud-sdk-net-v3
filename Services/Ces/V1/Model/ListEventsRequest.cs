@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class ListEventsRequest 
     {
         /// <summary>
-        /// Defines eventType
+        /// 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
         /// </summary>
+        /// <value>事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。</value>
         [JsonConverter(typeof(EnumClassConverter<EventTypeEnum>))]
         public class EventTypeEnum
         {
@@ -125,41 +126,41 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
         /// </summary>
         [SDKProperty("event_type", IsQuery = true)]
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public EventTypeEnum EventType { get; set; }
         /// <summary>
-        /// 
+        /// 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
         /// </summary>
         [SDKProperty("event_name", IsQuery = true)]
         [JsonProperty("event_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EventName { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public long? From { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public long? To { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页起始值，类型为integer，默认值为0。
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
         public int? Start { get; set; }
 
         /// <summary>
-        /// 
+        /// 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

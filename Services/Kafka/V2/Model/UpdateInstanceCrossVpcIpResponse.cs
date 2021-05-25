@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 修改跨VPC访问结果。
         /// </summary>
         [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
-        public string Success { get; set; }
+        public bool? Success { get; set; }
 
         /// <summary>
         /// 修改broker跨VPC访问的结果列表。

@@ -55,10 +55,7 @@ namespace Examples.Rabbitmq.V2
 
         private static void listProducts(RabbitmqClient client)
         {
-            var req = new ListProductsRequest
-            {
-                Engine = ListProductsRequest.EngineEnum.RABBITMQ,
-            };
+            var req = new ListProductsRequest();
 
             try
             {

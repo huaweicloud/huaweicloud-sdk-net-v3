@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("scaling_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public ScalingPolicyDetail ScalingPolicy { get; set; }
+        public ScalingV1PolicyDetail ScalingPolicy { get; set; }
 
 
         /// <summary>

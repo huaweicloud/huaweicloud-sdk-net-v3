@@ -16,35 +16,35 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 解析线路ID。
         /// </summary>
         [SDKProperty("line_id", IsQuery = true)]
         [JsonProperty("line_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LineId { get; set; }
 
         /// <summary>
-        /// 
+        /// 解析线路名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页返回的资源个数。取值范围为0~100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否查询详细信息。  取值范围：  true：是，查询详细信息。 false：否，不查询详细信息。 默认为true。
         /// </summary>
         [SDKProperty("show_detail", IsQuery = true)]
         [JsonProperty("show_detail", NullValueHandling = NullValueHandling.Ignore)]

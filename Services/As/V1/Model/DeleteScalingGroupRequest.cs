@@ -15,26 +15,27 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class DeleteScalingGroupRequest 
     {
         /// <summary>
-        /// Defines forceDelete
+        /// 是否强制删除伸缩组。默认为no；可选值为yes或no。
         /// </summary>
+        /// <value>是否强制删除伸缩组。默认为no；可选值为yes或no。</value>
         [JsonConverter(typeof(EnumClassConverter<ForceDeleteEnum>))]
         public class ForceDeleteEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
+            /// Enum YES for value: yes
             /// </summary>
-            public static readonly ForceDeleteEnum TRUE = new ForceDeleteEnum("true");
+            public static readonly ForceDeleteEnum YES = new ForceDeleteEnum("yes");
 
             /// <summary>
-            /// Enum FALSE for value: false
+            /// Enum NO for value: no
             /// </summary>
-            public static readonly ForceDeleteEnum FALSE = new ForceDeleteEnum("false");
+            public static readonly ForceDeleteEnum NO = new ForceDeleteEnum("no");
 
             private static readonly Dictionary<string, ForceDeleteEnum> StaticFields =
             new Dictionary<string, ForceDeleteEnum>()
             {
-                { "true", TRUE },
-                { "false", FALSE },
+                { "yes", YES },
+                { "no", NO },
             };
 
             private string Value;
@@ -125,14 +126,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 伸缩组ID。
         /// </summary>
         [SDKProperty("scaling_group_id", IsPath = true)]
         [JsonProperty("scaling_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否强制删除伸缩组。默认为no；可选值为yes或no。
         /// </summary>
         [SDKProperty("force_delete", IsQuery = true)]
         [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
     {
 
         /// <summary>
-        /// 
+        /// 版本ID（版本号），如v1.0。
         /// </summary>
         [SDKProperty("api_version", IsPath = true)]
         [JsonProperty("api_version", NullValueHandling = NullValueHandling.Ignore)]

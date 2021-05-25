@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 镜像id
         /// </summary>
         [SDKProperty("image_id", IsPath = true)]
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
         /// <summary>
-        /// 
+        /// 成员id
         /// </summary>
         [SDKProperty("member_id", IsPath = true)]
         [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]

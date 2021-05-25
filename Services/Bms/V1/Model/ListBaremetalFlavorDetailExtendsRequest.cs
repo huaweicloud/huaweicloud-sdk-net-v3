@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 可用区，需要指定可用区（AZ）的名称。请参考地区和终端节点获取。
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]

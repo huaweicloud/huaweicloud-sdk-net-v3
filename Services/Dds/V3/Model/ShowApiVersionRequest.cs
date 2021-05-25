@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// API版本
         /// </summary>
         [SDKProperty("version", IsPath = true)]
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]

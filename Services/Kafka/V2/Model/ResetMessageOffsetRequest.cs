@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 消费组名称。
         /// </summary>
         [SDKProperty("group", IsPath = true)]
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]

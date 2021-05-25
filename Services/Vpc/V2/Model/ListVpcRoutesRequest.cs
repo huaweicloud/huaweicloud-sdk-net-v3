@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     public class ListVpcRoutesRequest 
     {
         /// <summary>
-        /// Defines type
+        /// 功能说明：按照路由类型过滤查询  取值范围：peering
         /// </summary>
+        /// <value>功能说明：按照路由类型过滤查询  取值范围：peering</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -119,48 +120,48 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
 
         /// <summary>
-        /// 
+        /// 每页返回的个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照routes_id过滤查询
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 功能说明：按照路由类型过滤查询  取值范围：peering
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 
+        /// 按照vpc_id过滤查询
         /// </summary>
         [SDKProperty("vpc_id", IsQuery = true)]
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照路由目的地址CIDR过滤查询
         /// </summary>
         [SDKProperty("destination", IsQuery = true)]
         [JsonProperty("destination", NullValueHandling = NullValueHandling.Ignore)]
         public string Destination { get; set; }
 
         /// <summary>
-        /// 
+        /// 按照项目ID过滤查询
         /// </summary>
         [SDKProperty("tenant_id", IsQuery = true)]
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]

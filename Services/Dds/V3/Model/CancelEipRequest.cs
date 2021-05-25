@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 节点ID。
         /// </summary>
         [SDKProperty("node_id", IsPath = true)]
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 待查询版本号。当前仅支持v2。
         /// </summary>
         [SDKProperty("api_version", IsPath = true)]
         [JsonProperty("api_version", NullValueHandling = NullValueHandling.Ignore)]

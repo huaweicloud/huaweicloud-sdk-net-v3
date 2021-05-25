@@ -16,28 +16,28 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// 
+        /// 项目id
         /// </summary>
         [SDKProperty("project_id", IsPath = true)]
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 工作项id
         /// </summary>
         [SDKProperty("issue_id", IsPath = true)]
         [JsonProperty("issue_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? IssueId { get; set; }
 
         /// <summary>
-        /// 
+        /// 分页索引，偏移量
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页显示的条数,最大显示100条
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

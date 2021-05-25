@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class ListMetricsRequest 
     {
         /// <summary>
-        /// Defines order
+        /// 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
         /// </summary>
+        /// <value>用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序</value>
         [JsonConverter(typeof(EnumClassConverter<OrderEnum>))]
         public class OrderEnum
         {
@@ -125,55 +126,55 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("dim.0", IsQuery = true)]
         [JsonProperty("dim.0", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim0 { get; set; }
 
         /// <summary>
-        /// 
+        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：dim.1&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("dim.1", IsQuery = true)]
         [JsonProperty("dim.1", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim1 { get; set; }
 
         /// <summary>
-        /// 
+        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：dim.2&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("dim.2", IsQuery = true)]
         [JsonProperty("dim.2", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim2 { get; set; }
 
         /// <summary>
-        /// 
+        /// 取值范围(0,1000]，默认值为1000。  用于限制结果数据条数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("metric_name", IsQuery = true)]
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 
+        /// 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 
+        /// 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
         /// </summary>
         [SDKProperty("order", IsQuery = true)]
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }
         /// <summary>
-        /// 
+        /// 分页起始值，格式为：namespace.metric_name.key:value 例如：start&#x3D;SYS.ECS.cpu_util.instance_id:d9112af5-6913-4f3b-bd0a-3f96711e004d
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]

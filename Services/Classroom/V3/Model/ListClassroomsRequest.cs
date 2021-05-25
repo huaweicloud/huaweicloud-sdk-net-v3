@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 信息记录的起始编号
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 
+        /// 每页包含的信息记录数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询的课堂类别，默认查询所有的课堂。 取值范围： create：只查询当前用户创建的课堂。 attend：只查询当前用户加入的课堂。 all：查询当前用户所有的课堂。
         /// </summary>
         [SDKProperty("query_type", IsQuery = true)]
         [JsonProperty("query_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 网络ACL防火墙组ID
         /// </summary>
         [SDKProperty("firewall_group_id", IsPath = true)]
         [JsonProperty("firewall_group_id", NullValueHandling = NullValueHandling.Ignore)]

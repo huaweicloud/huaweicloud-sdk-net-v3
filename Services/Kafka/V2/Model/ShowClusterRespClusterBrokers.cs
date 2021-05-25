@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// broker注册时间，为unix时间戳格式。
         /// </summary>
         [JsonProperty("register_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string RegisterTime { get; set; }
+        public long? RegisterTime { get; set; }
 
         /// <summary>
         /// Kafka实例节点的连通性是否正常。

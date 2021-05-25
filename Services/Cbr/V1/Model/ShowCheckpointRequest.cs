@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 还原点ID
         /// </summary>
         [SDKProperty("checkpoint_id", IsPath = true)]
         [JsonProperty("checkpoint_id", NullValueHandling = NullValueHandling.Ignore)]

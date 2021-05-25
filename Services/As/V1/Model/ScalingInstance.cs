@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("failed_details", NullValueHandling = NullValueHandling.Ignore)]
         public string FailedDetails { get; set; }
 
+        /// <summary>
+        /// 实例配置信息。
+        /// </summary>
+        [JsonProperty("instance_config", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceConfig { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  failedReason: ").Append(FailedReason).Append("\n");
             sb.Append("  failedDetails: ").Append(FailedDetails).Append("\n");
+            sb.Append("  instanceConfig: ").Append(InstanceConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.FailedDetails == input.FailedDetails ||
                     (this.FailedDetails != null &&
                     this.FailedDetails.Equals(input.FailedDetails))
+                ) && 
+                (
+                    this.InstanceConfig == input.InstanceConfig ||
+                    (this.InstanceConfig != null &&
+                    this.InstanceConfig.Equals(input.InstanceConfig))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
                 if (this.FailedDetails != null)
                     hashCode = hashCode * 59 + this.FailedDetails.GetHashCode();
+                if (this.InstanceConfig != null)
+                    hashCode = hashCode * 59 + this.InstanceConfig.GetHashCode();
                 return hashCode;
             }
         }

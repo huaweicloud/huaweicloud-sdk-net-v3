@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 辅助弹性网卡的唯一标识
         /// </summary>
         [SDKProperty("sub_network_interface_id", IsPath = true)]
         [JsonProperty("sub_network_interface_id", NullValueHandling = NullValueHandling.Ignore)]

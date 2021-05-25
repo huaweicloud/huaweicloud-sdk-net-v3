@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 租户的区域信息。
         /// </summary>
         [SDKProperty("region", IsPath = true)]
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
 
         /// <summary>
-        /// 
+        /// 弹性IP的ID。
         /// </summary>
         [SDKProperty("floatingip_id", IsPath = true)]
         [JsonProperty("floatingip_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 任务ID
         /// </summary>
         [SDKProperty("operation_log_id", IsPath = true)]
         [JsonProperty("operation_log_id", NullValueHandling = NullValueHandling.Ignore)]

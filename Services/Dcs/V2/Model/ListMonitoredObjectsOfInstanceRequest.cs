@@ -16,14 +16,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 主维度对象ID，与DCS实例列表中实例ID相同。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 主维度ID，当前支持子维度的主维度ID的有dcs_instance_id。
         /// </summary>
         [SDKProperty("dim_name", IsQuery = true)]
         [JsonProperty("dim_name", NullValueHandling = NullValueHandling.Ignore)]
