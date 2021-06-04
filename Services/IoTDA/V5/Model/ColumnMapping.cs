@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 数据库的列名
+        /// **参数说明**：数据库的列名
         /// </summary>
         [JsonProperty("column_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ColumnName { get; set; }
 
         /// <summary>
-        /// 流转数据的属性名
+        /// **参数说明**：流转数据的属性名
         /// </summary>
         [JsonProperty("json_key", NullValueHandling = NullValueHandling.Ignore)]
         public string JsonKey { get; set; }

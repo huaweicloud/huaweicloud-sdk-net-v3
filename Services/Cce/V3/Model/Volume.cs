@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class V3Volume 
+    public class Volume 
     {
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class V3Volume {\n");
+            sb.Append("class Volume {\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  volumetype: ").Append(Volumetype).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
@@ -81,13 +81,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as V3Volume);
+            return this.Equals(input as Volume);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(V3Volume input)
+        public bool Equals(Volume input)
         {
             if (input == null)
                 return false;

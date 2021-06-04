@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// IoTA服务对应的数据源Id
+        /// **参数说明**：IoTA服务对应的数据源Id。
         /// </summary>
         [JsonProperty("data_source_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DataSourceId { get; set; }
 
         /// <summary>
-        /// IoTA服务对应的projectId信息
+        /// **参数说明**：IoTA服务对应的projectId信息。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }

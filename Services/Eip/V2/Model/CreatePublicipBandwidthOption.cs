@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     public class CreatePublicipBandwidthOption 
     {
         /// <summary>
-        /// 功能说明：按流量计费还是按带宽计费。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。
+        /// 功能说明：按流量计费还是按带宽计费。 取值范围：bandwidth，traffic。  不填或为空时默认是bandwidth。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。
         /// </summary>
-        /// <value>功能说明：按流量计费还是按带宽计费。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。</value>
+        /// <value>功能说明：按流量计费还是按带宽计费。 取值范围：bandwidth，traffic。  不填或为空时默认是bandwidth。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -236,7 +236,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
 
 
         /// <summary>
-        /// 功能说明：按流量计费还是按带宽计费。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。
+        /// 功能说明：按流量计费还是按带宽计费。 取值范围：bandwidth，traffic。  不填或为空时默认是bandwidth。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }

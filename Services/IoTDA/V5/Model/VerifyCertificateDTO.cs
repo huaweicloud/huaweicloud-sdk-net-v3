@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 验证证书的内容信息。
+        /// **参数说明**：验证证书的内容信息。
         /// </summary>
         [JsonProperty("verify_content", NullValueHandling = NullValueHandling.Ignore)]
         public string VerifyContent { get; set; }

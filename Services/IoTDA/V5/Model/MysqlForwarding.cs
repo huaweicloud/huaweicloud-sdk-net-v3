@@ -22,31 +22,31 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public NetAddress Address { get; set; }
 
         /// <summary>
-        /// 连接MYSQL数据库的库名
+        /// **参数说明**：连接MYSQL数据库的库名。 **取值范围**：长度不超过64，只允许字母、数字、下划线（_）、连接符（-）的组合。
         /// </summary>
         [JsonProperty("db_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DbName { get; set; }
 
         /// <summary>
-        /// 连接MYSQL数据库的用户名
+        /// **参数说明**：连接MYSQL数据库的用户名
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 连接MYSQL数据库的密码
+        /// **参数说明**：连接MYSQL数据库的密码
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
         /// <summary>
-        /// MYSQL数据库的表名
+        /// **参数说明**：MYSQL数据库的表名
         /// </summary>
         [JsonProperty("table_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TableName { get; set; }
 
         /// <summary>
-        /// MYSQL数据库的列和流转数据的对应关系列表。
+        /// **参数说明**：MYSQL数据库的列和流转数据的对应关系列表。
         /// </summary>
         [JsonProperty("column_mappings", NullValueHandling = NullValueHandling.Ignore)]
         public List<ColumnMapping> ColumnMappings { get; set; }

@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 函数的URN（Uniform Resource Name），唯一标识函数。
+        /// **参数说明**：函数的URN（Uniform Resource Name），唯一标识函数。
         /// </summary>
         [JsonProperty("func_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FuncUrn { get; set; }
 
         /// <summary>
-        /// 函数名称。
+        /// **参数说明**：函数名称。
         /// </summary>
         [JsonProperty("func_name", NullValueHandling = NullValueHandling.Ignore)]
         public string FuncName { get; set; }

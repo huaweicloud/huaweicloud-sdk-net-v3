@@ -29,6 +29,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("maxitems", NullValueHandling = NullValueHandling.Ignore)]
         public string Maxitems { get; set; }
 
+        /// <summary>
+        /// 应用名称。
+        /// </summary>
+        [SDKProperty("package_name", IsQuery = true)]
+        [JsonProperty("package_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PackageName { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("class ListFunctionsRequest {\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  maxitems: ").Append(Maxitems).Append("\n");
+            sb.Append("  packageName: ").Append(PackageName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +77,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Maxitems == input.Maxitems ||
                     (this.Maxitems != null &&
                     this.Maxitems.Equals(input.Maxitems))
+                ) && 
+                (
+                    this.PackageName == input.PackageName ||
+                    (this.PackageName != null &&
+                    this.PackageName.Equals(input.PackageName))
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Maxitems != null)
                     hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
+                if (this.PackageName != null)
+                    hashCode = hashCode * 59 + this.PackageName.GetHashCode();
                 return hashCode;
             }
         }

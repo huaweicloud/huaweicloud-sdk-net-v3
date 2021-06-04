@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备执行的属性，Json格式，里面是一个个健值对，如果serviceId不为空，每个健都是profile中属性的参数名（paraName）;如果serviceId为空则由用户自定义属性格式。设属性令示例：[{\&quot;service_id\&quot;: \&quot;Temperature\&quot;,\&quot;properties\&quot;: {\&quot;value\&quot;: 57}},{\&quot;service_id\&quot;: \&quot;Battery\&quot;,\&quot;properties\&quot;: {\&quot;level\&quot;: 80}}]，具体格式需要应用和设备约定。 
+        /// **参数说明**：设备执行的属性，Json格式，里面是一个个健值对，如果serviceId不为空，每个健都是profile中属性的参数名（paraName）;如果serviceId为空则由用户自定义属性格式。设属性令示例：[{\&quot;service_id\&quot;: \&quot;Temperature\&quot;,\&quot;properties\&quot;: {\&quot;value\&quot;: 57}},{\&quot;service_id\&quot;: \&quot;Battery\&quot;,\&quot;properties\&quot;: {\&quot;level\&quot;: 80}}]，具体格式需要应用和设备约定。
         /// </summary>
         [JsonProperty("services", NullValueHandling = NullValueHandling.Ignore)]
         public Object Services { get; set; }

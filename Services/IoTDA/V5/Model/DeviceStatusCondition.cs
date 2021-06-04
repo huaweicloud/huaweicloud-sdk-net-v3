@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 状态列表，设备状态条件携带该参数。
+        /// **参数说明**：状态列表，设备状态条件携带该参数。
         /// </summary>
         [JsonProperty("status_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> StatusList { get; set; }

@@ -16,19 +16,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 规则触发的开始时间，使用UTC时区，格式：yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;。
+        /// **参数说明**：规则触发的开始时间，使用UTC时区，格式：yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 规则触发的重复时间间隔，单位为秒。
+        /// **参数说明**：规则触发的重复时间间隔，单位为秒。
         /// </summary>
         [JsonProperty("repeat_interval", NullValueHandling = NullValueHandling.Ignore)]
         public int? RepeatInterval { get; set; }
 
         /// <summary>
-        /// 规则触发的重复次数。
+        /// **参数说明**：规则触发的重复次数。
         /// </summary>
         [JsonProperty("repeat_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? RepeatCount { get; set; }

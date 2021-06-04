@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 告警名称。
+        /// **参数说明**：告警名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警状态。 - fault：上报告警。 - recovery：恢复告警。 
+        /// **参数说明**：告警状态。 **取值范围**： - fault：上报告警。 - recovery：恢复告警。
         /// </summary>
         [JsonProperty("alarm_status", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmStatus { get; set; }
 
         /// <summary>
-        /// 告警级别,取值范围：warning（警告）、minor（一般）、major（严重）和critical（致命）。
+        /// **参数说明**：告警级别。 **取值范围**： - warning：警告。 - minor：一般。 - major：严重。 - critical：致命。
         /// </summary>
         [JsonProperty("severity", NullValueHandling = NullValueHandling.Ignore)]
         public string Severity { get; set; }
 
         /// <summary>
-        /// 告警的描述信息。
+        /// **参数说明**：告警的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

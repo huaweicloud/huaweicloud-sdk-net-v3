@@ -7,25 +7,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class ListAsyncCommandsResponse : SdkResponse
+    public class ResizeInstanceResponse : SdkResponse
     {
 
         /// <summary>
-        /// 设备命令列表。
+        /// 任务ID，仅按需实例时会返回该参数。
         /// </summary>
-        [JsonProperty("commands", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AsyncDeviceCommand> Commands { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
         /// <summary>
-        /// 
+        /// 订单ID，仅创建包年包月实例时返回该参数。
         /// </summary>
-        [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
-        public Page Page { get; set; }
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
 
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListAsyncCommandsResponse {\n");
-            sb.Append("  commands: ").Append(Commands).Append("\n");
-            sb.Append("  page: ").Append(Page).Append("\n");
+            sb.Append("class ResizeInstanceResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,28 +46,27 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListAsyncCommandsResponse);
+            return this.Equals(input as ResizeInstanceResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListAsyncCommandsResponse input)
+        public bool Equals(ResizeInstanceResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Commands == input.Commands ||
-                    this.Commands != null &&
-                    input.Commands != null &&
-                    this.Commands.SequenceEqual(input.Commands)
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 ) && 
                 (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -79,10 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Commands != null)
-                    hashCode = hashCode * 59 + this.Commands.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

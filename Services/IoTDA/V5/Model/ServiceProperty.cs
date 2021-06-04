@@ -16,73 +16,73 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备属性名称。
+        /// **参数说明**：设备属性名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合。
         /// </summary>
         [JsonProperty("property_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PropertyName { get; set; }
 
         /// <summary>
-        /// 设备属性的数据类型。取值范围：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
+        /// **参数说明**：设备属性的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
         /// </summary>
         [JsonProperty("data_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DataType { get; set; }
 
         /// <summary>
-        /// 设备属性是否必选。默认为false。
+        /// **参数说明**：设备属性是否必选。默认为false。
         /// </summary>
         [JsonProperty("required", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Required { get; set; }
 
         /// <summary>
-        /// 设备属性的枚举值列表。
+        /// **参数说明**：设备属性的枚举值列表。
         /// </summary>
         [JsonProperty("enum_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnumList { get; set; }
 
         /// <summary>
-        /// 设备属性的最小值。
+        /// **参数说明**：设备属性的最小值。 **取值范围**：长度1-16。
         /// </summary>
         [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
         public string Min { get; set; }
 
         /// <summary>
-        /// 设备属性的最大值。
+        /// **参数说明**：设备属性的最大值。 **取值范围**：长度1-16。
         /// </summary>
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
         public string Max { get; set; }
 
         /// <summary>
-        /// 设备属性的最大长度。
+        /// **参数说明**：设备属性的最大长度。
         /// </summary>
         [JsonProperty("max_length", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxLength { get; set; }
 
         /// <summary>
-        /// 设备属性的步长。
+        /// **参数说明**：设备属性的步长。
         /// </summary>
         [JsonProperty("step", NullValueHandling = NullValueHandling.Ignore)]
         public double? Step { get; set; }
 
         /// <summary>
-        /// 设备属性的单位。
+        /// **参数说明**：设备属性的单位。 **取值范围**：长度不超过16。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }
 
         /// <summary>
-        /// 设备属性的访问模式。取值范围：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件 
+        /// **参数说明**：设备属性的访问模式。 **取值范围**：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件
         /// </summary>
         [JsonProperty("method", NullValueHandling = NullValueHandling.Ignore)]
         public string Method { get; set; }
 
         /// <summary>
-        /// 设备属性的描述。
+        /// **参数说明**：设备属性的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?&#39;#().,;&amp;%@!- ，、：；。/等字符的组合。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
+        /// **参数说明**：设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
         /// </summary>
         [JsonProperty("default_value", NullValueHandling = NullValueHandling.Ignore)]
         public Object DefaultValue { get; set; }

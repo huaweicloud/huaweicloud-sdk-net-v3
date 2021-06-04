@@ -81,6 +81,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("freezed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Freezed { get; set; }
 
+        /// <summary>
+        /// 调用接口所属instanceId
+        /// </summary>
+        [JsonProperty("request_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestInstanceId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -100,6 +106,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  currentInstanceId: ").Append(CurrentInstanceId).Append("\n");
             sb.Append("  serviceName: ").Append(ServiceName).Append("\n");
             sb.Append("  freezed: ").Append(Freezed).Append("\n");
+            sb.Append("  requestInstanceId: ").Append(RequestInstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -175,6 +182,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Freezed == input.Freezed ||
                     (this.Freezed != null &&
                     this.Freezed.Equals(input.Freezed))
+                ) && 
+                (
+                    this.RequestInstanceId == input.RequestInstanceId ||
+                    (this.RequestInstanceId != null &&
+                    this.RequestInstanceId.Equals(input.RequestInstanceId))
                 );
         }
 
@@ -208,6 +220,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
                 if (this.Freezed != null)
                     hashCode = hashCode * 59 + this.Freezed.GetHashCode();
+                if (this.RequestInstanceId != null)
+                    hashCode = hashCode * 59 + this.RequestInstanceId.GetHashCode();
                 return hashCode;
             }
         }

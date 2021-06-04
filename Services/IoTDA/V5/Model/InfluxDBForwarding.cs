@@ -22,31 +22,31 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public NetAddress Address { get; set; }
 
         /// <summary>
-        /// 连接InfluxDB数据库的库名,不存在会自动创建
+        /// **参数说明**：连接InfluxDB数据库的库名,不存在会自动创建
         /// </summary>
         [JsonProperty("db_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DbName { get; set; }
 
         /// <summary>
-        /// 连接InfluxDB数据库的用户名
+        /// **参数说明**：连接InfluxDB数据库的用户名
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 连接InfluxDB数据库的密码
+        /// **参数说明**：连接InfluxDB数据库的密码
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
         /// <summary>
-        /// InfluxDB数据库的measurement,不存在会自动创建
+        /// **参数说明**：InfluxDB数据库的measurement,不存在会自动创建
         /// </summary>
         [JsonProperty("measurement", NullValueHandling = NullValueHandling.Ignore)]
         public string Measurement { get; set; }
 
         /// <summary>
-        /// InfluxDB数据库和流转数据的对应关系列表。
+        /// **参数说明**：InfluxDB数据库和流转数据的对应关系列表。
         /// </summary>
         [JsonProperty("column_mappings", NullValueHandling = NullValueHandling.Ignore)]
         public List<ColumnMapping> ColumnMappings { get; set; }

@@ -16,19 +16,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 服务的对应IP
+        /// **参数说明**：服务的对应IP
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }
 
         /// <summary>
-        /// 服务对应端口
+        /// **参数说明**：服务对应端口
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }
 
         /// <summary>
-        /// 服务对应的域名
+        /// **参数说明**：服务对应的域名
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }

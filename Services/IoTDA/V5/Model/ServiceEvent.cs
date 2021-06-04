@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备事件类型。
+        /// **参数说明**：设备事件类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合。
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EventType { get; set; }
 
         /// <summary>
-        /// 设备事件的参数列表。
+        /// **参数说明**：设备事件的参数列表。
         /// </summary>
         [JsonProperty("paras", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceCommandPara> Paras { get; set; }

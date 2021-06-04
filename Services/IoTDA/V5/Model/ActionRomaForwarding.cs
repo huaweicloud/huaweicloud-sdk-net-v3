@@ -16,19 +16,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// ROMA Connect服务对应的region区域
+        /// **参数说明**：ROMA Connect服务对应的region区域。
         /// </summary>
         [JsonProperty("region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionName { get; set; }
 
         /// <summary>
-        /// ROMA Connect服务对应的projectId信息
+        /// **参数说明**：ROMA Connect服务对应的projectId信息。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// ROMA Connect服务对应参数类型
+        /// **参数说明**：ROMA Connect服务对应参数类型。
         /// </summary>
         [JsonProperty("roma_push_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RomaPushType { get; set; }

@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 规则的条件列表，单个规则最多支持设置10个条件。
+        /// **参数说明**：规则的条件列表，单个规则最多支持设置10个条件。
         /// </summary>
         [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
         public List<RuleCondition> Conditions { get; set; }
 
         /// <summary>
-        /// 规则条件列表中多个条件之间的逻辑关系，默认值：and。 - and：逻辑且。 - or：逻辑或。 
+        /// **参数说明**：规则条件列表中多个条件之间的逻辑关系，默认值：and。 **取值范围**： - and：逻辑且。 - or：逻辑或。
         /// </summary>
         [JsonProperty("logic", NullValueHandling = NullValueHandling.Ignore)]
         public string Logic { get; set; }

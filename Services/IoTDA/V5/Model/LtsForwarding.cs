@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 用于接收日志的日志组Id，通过调用LTS服务创建日志组接口获取(https://support.huaweicloud.com/api-lts/lts_api_0012.html)。
+        /// **参数说明**：用于接收日志的日志组Id，通过调用LTS服务创建日志组接口获取(https://support.huaweicloud.com/api-lts/lts_api_0012.html)。
         /// </summary>
         [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogGroupId { get; set; }
 
         /// <summary>
-        /// 用于接收日志的日志流Id，通过调用LTS服务创建日志流接口获取(https://support.huaweicloud.com/api-lts/lts_api_0016.html)。
+        /// **参数说明**：用于接收日志的日志流Id，通过调用LTS服务创建日志流接口获取(https://support.huaweicloud.com/api-lts/lts_api_0016.html)。
         /// </summary>
         [JsonProperty("log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamId { get; set; }

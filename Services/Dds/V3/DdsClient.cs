@@ -693,6 +693,18 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询配额
+        /// </summary>
+        public ShowQuotasResponse ShowQuotas(ShowQuotasRequest showQuotasRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询集群均衡设置
         /// </summary>
         public ShowShardingBalancerResponse ShowShardingBalancer(ShowShardingBalancerRequest showShardingBalancerRequest)

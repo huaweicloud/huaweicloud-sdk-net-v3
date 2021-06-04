@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 转发roma消息对应的地址列表
+        /// **参数说明**：转发roma消息对应的地址列表
         /// </summary>
         [JsonProperty("addresses", NullValueHandling = NullValueHandling.Ignore)]
         public List<NetAddress> Addresses { get; set; }
 
         /// <summary>
-        /// 转发roma消息关联的topic信息。
+        /// **参数说明**：转发roma消息关联的topic信息。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 转发roma关联的用户名信息。
+        /// **参数说明**：转发roma关联的用户名信息。
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 转发roma关联的密码信息。
+        /// **参数说明**：转发roma关联的密码信息。
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }

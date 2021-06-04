@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 指标单位
+        /// 指标单位。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 指标维度列表
+        /// 指标维度列表。
         /// </summary>
         [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
         public List<MetricsDimension> Dimensions { get; set; }

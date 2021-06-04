@@ -141,32 +141,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
-        /// 查询设备下队列中的命令
-        /// </summary>
-        public ListAsyncCommandsResponse ListAsyncCommands(ListAsyncCommandsRequest listAsyncCommandsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("device_id" , listAsyncCommandsRequest.DeviceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncCommandsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListAsyncCommandsResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询设备下的历史命令
-        /// </summary>
-        public ListAsyncHistoryCommandsResponse ListAsyncHistoryCommands(ListAsyncHistoryCommandsRequest listAsyncHistoryCommandsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("device_id" , listAsyncHistoryCommandsRequest.DeviceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands-history",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncHistoryCommandsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListAsyncHistoryCommandsResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询指定id的命令
         /// </summary>
         public ShowAsyncDeviceCommandResponse ShowAsyncDeviceCommand(ShowAsyncDeviceCommandRequest showAsyncDeviceCommandRequest)

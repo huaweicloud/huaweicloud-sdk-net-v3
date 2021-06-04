@@ -43,13 +43,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("rootVolume", NullValueHandling = NullValueHandling.Ignore)]
-        public V3Volume RootVolume { get; set; }
+        public Volume RootVolume { get; set; }
 
         /// <summary>
         /// 节点的数据盘参数（目前已支持通过控制台为CCE节点添加第二块数据盘）。  针对专属云节点，参数解释与rootVolume一致
         /// </summary>
         [JsonProperty("dataVolumes", NullValueHandling = NullValueHandling.Ignore)]
-        public List<V3Volume> DataVolumes { get; set; }
+        public List<Volume> DataVolumes { get; set; }
 
         /// <summary>
         /// 
@@ -124,10 +124,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Runtime Runtime { get; set; }
 
         /// <summary>
-        /// 创建节点时的扩展参数，可选参数如下： - chargingMode: 节点的计费模式。按需计费，取值为“0”，若不填，则默认为“0”。 - ecs:performancetype：云服务器规格的分类。裸金属节点无该字段。 - orderID: 订单ID，节点付费类型为自动付费包周期类型时，响应中会返回此字段。 - productID: 产品ID。 - maxPods: 节点最大允许创建的实例数(Pod)，该数量包含系统默认实例，取值范围为16~256。   该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。 - periodType:   订购周期类型，取值范围：     - month：月     - year：年   &gt; billingMode为2（自动付费包周期）时生效，且为必选。 - periodNum:   订购周期数，取值范围：     - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。     - periodType&#x3D;year（周期类型为年）时，取值为1。   &gt; billingMode为2时生效，且为必选。 - isAutoRenew:   是否自动续订     - “true”：自动续订     - “false”：不自动续订   &gt; billingMode为2时生效，且为必选。 - isAutoPay:   是否自动扣款     - “true”：自动扣款     - “false”：不自动扣款   &gt; billingMode为2时生效，不填写此参数时默认会自动扣款。 - DockerLVMConfigOverride:   Docker数据盘配置项。默认配置示例如下：   &#x60;&#x60;&#x60;   \&quot;DockerLVMConfigOverride\&quot;:\&quot;dockerThinpool&#x3D;vgpaas/90%VG;kubernetesLV&#x3D;vgpaas/10%VG;diskType&#x3D;evs;lvType&#x3D;linear\&quot;   &#x60;&#x60;&#x60;   包含如下字段：     - userLV：用户空间的大小，示例格式：vgpaas/20%VG     - userPath：用户空间挂载路径，示例格式：/home/wqt-test     - diskType：磁盘类型，目前只有evs、hdd和ssd三种格式     - lvType：逻辑卷的类型，目前支持linear和striped两种，示例格式：striped     - dockerThinpool：Docker盘的空间大小，示例格式：vgpaas/60%VG     - kubernetesLV：Kubelet空间大小，示例格式：vgpaas/20%VG - dockerBaseSize:   Device mapper模式下，节点上Docker单容器的可用磁盘空间大小，OverlayFS模式(CCE Turbo集群中CentOS 7.6和Ubuntu 18.04节点，以及混合集群中Ubuntu 18.04节点)下不支持此字段。Device mapper模式下建议dockerBaseSize配置不超过80G，设置过大时可能会导致docker初始化时间过长而启动失败，若对容器磁盘大小有特殊要求，可考虑使用挂载外部或本地存储方式代替。 - init-node-password: 节点初始密码 - offloadNode: 是否为CCE Turbo集群节点 - publicKey: 节点的公钥。 - alpha.cce/preInstall:   安装前执行脚本   &gt; 输入的值需要经过Base64编码，方法为echo -n \&quot;待编码内容\&quot; | base64。 - alpha.cce/postInstall:   安装后执行脚本   &gt; 输入的值需要经过Base64编码，方法为echo -n \&quot;待编码内容\&quot; | base64。 - alpha.cce/NodeImageID: 如果创建裸金属节点，需要使用自定义镜像时用此参数。 - nicMultiqueue:   - 弹性网卡队列数配置，默认配置示例如下：   &#x60;&#x60;&#x60;   \&quot;[{\\\&quot;queue\\\&quot;:4}]\&quot;   &#x60;&#x60;&#x60;   包含如下字段：     - queue: 弹性网卡队列数。   - 仅在turbo集群的BMS节点时，该字段才可配置。   - 当前支持可配置队列数以及弹性网卡数：{\&quot;1\&quot;:128, \&quot;2\&quot;:92, \&quot;4\&quot;:92, \&quot;8\&quot;:32, \&quot;16\&quot;:16, \&quot;28\&quot;:9}, 既1弹性网卡队列可绑定128张弹性网卡，2队列弹性网卡可绑定92张，以此类推。   - 弹性网卡队列数越多，性能越强，但可绑定弹性网卡数越少，请根据您的需求进行配置（创建后不可修改）。 - nicThreshold:   - 弹性网卡预绑定比例配置，默认配置示例如下：   &#x60;&#x60;&#x60;   \&quot;0.3:0.6\&quot;   &#x60;&#x60;&#x60;     - 第一位小数：预绑定低水位，弹性网卡预绑定的最低比例（最小预绑定弹性网卡数 &#x3D; ⌊节点的总弹性网卡数 * 预绑定低水位⌋）     - 第二位小数：预绑定高水位，弹性网卡预绑定的最高比例（最大预绑定弹性网卡数 &#x3D; ⌊节点的总弹性网卡数 * 预绑定高水位⌋）     - BMS节点上绑定的弹性网卡数：Pod正在使用的弹性网卡数 + 最小预绑定弹性网卡数 &lt; BMS节点上绑定的弹性网卡数 &lt; Pod正在使用的弹性网卡数 + 最大预绑定弹性网卡数     - BMS节点上当预绑定弹性网卡数 &lt; 最小预绑定弹性网卡数时：会绑定弹性网卡，使得预绑定弹性网卡数 &#x3D; 最小预绑定弹性网卡数     - BMS节点上当预绑定弹性网卡数 &gt; 最大预绑定弹性网卡数时：会定时解绑弹性网卡（约2分钟一次），直到预绑定弹性网卡数 &#x3D; 最大预绑定弹性网卡数     - 取值范围：[0.0, 1.0]; 一位小数; 低水位 &lt;&#x3D; 高水位   - 仅在turbo集群的BMS节点时，该字段才可配置。   - 弹性网卡预绑定能加快工作负载的创建，但会占用IP，请根据您的需求进行配置。 
+        /// 
         /// </summary>
         [JsonProperty("extendParam", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, Object> ExtendParam { get; set; }
+        public NodeExtendParam ExtendParam { get; set; }
 
 
         /// <summary>
@@ -273,9 +273,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 ) && 
                 (
                     this.ExtendParam == input.ExtendParam ||
-                    this.ExtendParam != null &&
-                    input.ExtendParam != null &&
-                    this.ExtendParam.SequenceEqual(input.ExtendParam)
+                    (this.ExtendParam != null &&
+                    this.ExtendParam.Equals(input.ExtendParam))
                 );
         }
 

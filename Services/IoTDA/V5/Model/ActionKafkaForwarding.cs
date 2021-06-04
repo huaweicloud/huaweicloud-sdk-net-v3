@@ -16,43 +16,43 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 转发kafka消息对应的region区域
+        /// **参数说明**：转发kafka消息对应的region区域
         /// </summary>
         [JsonProperty("region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionName { get; set; }
 
         /// <summary>
-        /// 转发kafka消息对应的projectId信息
+        /// **参数说明**：转发kafka消息对应的projectId信息
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 转发kafka消息对应的地址列表
+        /// **参数说明**：转发kafka消息对应的地址列表
         /// </summary>
         [JsonProperty("kafka_addresses", NullValueHandling = NullValueHandling.Ignore)]
         public List<NetAddress> KafkaAddresses { get; set; }
 
         /// <summary>
-        /// 转发kafka消息关联的topic信息。
+        /// **参数说明**：转发kafka消息关联的topic信息。
         /// </summary>
         [JsonProperty("kafka_topic", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaTopic { get; set; }
 
         /// <summary>
-        /// 转发kafka关联的用户名信息。
+        /// **参数说明**：转发kafka关联的用户名信息。
         /// </summary>
         [JsonProperty("kafka_username", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaUsername { get; set; }
 
         /// <summary>
-        /// 转发kafka关联的密码信息。
+        /// **参数说明**：转发kafka关联的密码信息。
         /// </summary>
         [JsonProperty("kafka_password", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaPassword { get; set; }
 
         /// <summary>
-        /// 转发kafka关联的鉴权机制。 类型说明： PAAS：非SASL鉴权。 PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。 
+        /// **参数说明**：转发kafka关联的鉴权机制。 **取值范围**： - PAAS：非SASL鉴权。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。
         /// </summary>
         [JsonProperty("kafka_mechanism", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaMechanism { get; set; }

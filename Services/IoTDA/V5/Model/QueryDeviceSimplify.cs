@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string DeviceId { get; set; }
 
         /// <summary>
-        /// 设备标识码，通常使用IMEI、MAC地址或Serial No作为nodeId。
+        /// 设备标识码，通常使用IMEI、MAC地址或Serial No作为node_id。
         /// </summary>
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeId { get; set; }
@@ -74,6 +74,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         [JsonProperty("sw_version", NullValueHandling = NullValueHandling.Ignore)]
         public string SwVersion { get; set; }
+
+        /// <summary>
+        /// 设备的sdk信息。
+        /// </summary>
+        [JsonProperty("device_sdk_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeviceSdkVersion { get; set; }
 
         /// <summary>
         /// 设备关联的产品ID，用于唯一标识一个产品模型。
@@ -117,6 +123,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  fwVersion: ").Append(FwVersion).Append("\n");
             sb.Append("  swVersion: ").Append(SwVersion).Append("\n");
+            sb.Append("  deviceSdkVersion: ").Append(DeviceSdkVersion).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  productName: ").Append(ProductName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -193,6 +200,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.SwVersion.Equals(input.SwVersion))
                 ) && 
                 (
+                    this.DeviceSdkVersion == input.DeviceSdkVersion ||
+                    (this.DeviceSdkVersion != null &&
+                    this.DeviceSdkVersion.Equals(input.DeviceSdkVersion))
+                ) && 
+                (
                     this.ProductId == input.ProductId ||
                     (this.ProductId != null &&
                     this.ProductId.Equals(input.ProductId))
@@ -243,6 +255,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.FwVersion.GetHashCode();
                 if (this.SwVersion != null)
                     hashCode = hashCode * 59 + this.SwVersion.GetHashCode();
+                if (this.DeviceSdkVersion != null)
+                    hashCode = hashCode * 59 + this.DeviceSdkVersion.GetHashCode();
                 if (this.ProductId != null)
                     hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.ProductName != null)

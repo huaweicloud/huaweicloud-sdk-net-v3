@@ -16,43 +16,43 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备的服务ID。
+        /// **参数说明**：设备的服务ID。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-$等字符的组合。
         /// </summary>
         [JsonProperty("service_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceId { get; set; }
 
         /// <summary>
-        /// 设备的服务类型。
+        /// **参数说明**：设备的服务类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-$等字符的组合。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// 设备服务支持的属性列表。
+        /// **参数说明**：设备服务支持的属性列表
         /// </summary>
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceProperty> Properties { get; set; }
 
         /// <summary>
-        /// 设备服务支持的命令列表。
+        /// **参数说明**：设备服务支持的命令列表。
         /// </summary>
         [JsonProperty("commands", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceCommand> Commands { get; set; }
 
         /// <summary>
-        /// 设备服务支持的事件列表。
+        /// **参数说明**：设备服务支持的事件列表。
         /// </summary>
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceEvent> Events { get; set; }
 
         /// <summary>
-        /// 设备服务的描述信息。
+        /// **参数说明**：设备服务的描述信息。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?&#39;#().,;&amp;%@!- ，、：；。/等字符的组合。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 指定设备服务是否必选。Master（主服务）, Mandatory（必选服务）, Optional（可选服务），目前本字段为非功能性字段，仅起到标识作用。默认为Optional（可选服务）。
+        /// **参数说明**：指定设备服务是否必选。目前本字段为非功能性字段，仅起到标识作用。 **取值范围**： - Master：主服务 - Mandatory：必选服务 - Optional：可选服务 默认值为Optional。
         /// </summary>
         [JsonProperty("option", NullValueHandling = NullValueHandling.Ignore)]
         public string Option { get; set; }

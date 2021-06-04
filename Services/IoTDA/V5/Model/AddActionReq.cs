@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 规则触发条件ID，用于唯一标识一条规则触发条件，在创建规则时由物联网平台分配获得。
+        /// **参数说明**：规则触发条件ID，用于唯一标识一条规则触发条件，在创建规则时由物联网平台分配获得。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
         /// </summary>
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。 
+        /// **参数说明**：规则动作的类型。 **取值范围**： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。
         /// </summary>
         [JsonProperty("channel", NullValueHandling = NullValueHandling.Ignore)]
         public string Channel { get; set; }
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public ChannelDetail ChannelDetail { get; set; }
 
         /// <summary>
-        /// 是否支持批量接收推送消息。
+        /// **参数说明**：是否支持批量接收推送消息。
         /// </summary>
         [JsonProperty("batch", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Batch { get; set; }

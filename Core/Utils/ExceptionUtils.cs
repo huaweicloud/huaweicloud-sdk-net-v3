@@ -107,6 +107,13 @@ namespace HuaweiCloud.SDK.Core
             foreach (var item in exception)
             {
                 var jValue = JObject.Parse(item.Value.ToString());
+                var errorCode = jValue["error_code"];
+                var errorMsg = jValue["error_msg"];
+                if (errorCode != null && errorMsg != null)
+                {
+                    return new SdkError(errorCode.ToString(), errorMsg.ToString());
+                }
+
                 var message = jValue["message"];
                 var code = jValue["code"];
                 if (message != null && code != null)

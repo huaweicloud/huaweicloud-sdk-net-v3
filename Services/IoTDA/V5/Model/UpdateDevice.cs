@@ -16,19 +16,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备名称。
+        /// **参数说明**：设备名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合
         /// </summary>
         [JsonProperty("device_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceName { get; set; }
 
         /// <summary>
-        /// 设备的描述信息。
+        /// **参数说明**：设备的描述信息。 **取值范围**：长度不超过2048，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 设备扩展信息。用户可以自定义任何想要的扩展信息，修改子设备信息时不会下发给网关。
+        /// **参数说明**：设备扩展信息。用户可以自定义任何想要的扩展信息，修改子设备信息时不会下发给网关。
         /// </summary>
         [JsonProperty("extension_info", NullValueHandling = NullValueHandling.Ignore)]
         public Object ExtensionInfo { get; set; }

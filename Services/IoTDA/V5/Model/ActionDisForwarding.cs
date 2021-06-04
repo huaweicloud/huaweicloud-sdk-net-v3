@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// DIS服务对应的region区域
+        /// **参数说明**：DIS服务对应的region区域。
         /// </summary>
         [JsonProperty("region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionName { get; set; }
 
         /// <summary>
-        /// DIS服务对应的projectId信息
+        /// **参数说明**：DIS服务对应的projectId信息。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// DIS服务对应的通道名称，和通道ID参数中至少一个不为空，和通道ID参数都存在时，以通道ID参数值为准。通过调用DIS服务 [查询通道列表](https://support.huaweicloud.com/api-dis/dis_02_0024.html)接口获取。
+        /// **参数说明**：DIS服务对应的通道名称，和通道ID参数中至少一个不为空，和通道ID参数都存在时，以通道ID参数值为准。通过调用DIS服务 [查询通道列表](https://support.huaweicloud.com/api-dis/dis_02_0024.html)接口获取。
         /// </summary>
         [JsonProperty("stream_name", NullValueHandling = NullValueHandling.Ignore)]
         public string StreamName { get; set; }
 
         /// <summary>
-        /// DIS服务对应的通道ID，和通道名称参数中至少一个不为空，和通道名称参数都存在时，以本参数值为准。通过调用DIS服务 [查询通道详情](https://support.huaweicloud.com/api-dis/dis_02_0025.html)接口获取。
+        /// **参数说明**：DIS服务对应的通道ID，和通道名称参数中至少一个不为空，和通道名称参数都存在时，以本参数值为准。通过调用DIS服务 [查询通道详情](https://support.huaweicloud.com/api-dis/dis_02_0025.html)接口获取。
         /// </summary>
         [JsonProperty("stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StreamId { get; set; }

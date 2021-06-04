@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 要查询的资源类型，当前支持设备（device）。
+        /// **参数说明**：要查询的资源类型，当前支持设备（device）。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 标签列表，支持按照标签key和value组合查询，传入的多个标签之间是或的关系。
+        /// **参数说明**：标签列表，支持按照标签key和value组合查询，传入的多个标签之间是或的关系。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagV5DTO> Tags { get; set; }

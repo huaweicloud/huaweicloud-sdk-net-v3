@@ -109,12 +109,21 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
+            var akWithName = Ak + regionId;
+            var projectId = AuthCache.GetAuth(akWithName);
+            if (!string.IsNullOrEmpty(projectId))
+            {
+                ProjectId = projectId;
+                return this;
+            }
+
             IamEndpoint = IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
             var request = IamService.GetKeystoneListProjectsRequest(IamEndpoint, regionId);
             request = SignAuthRequest(request).Result;
             try
             {
                 ProjectId = IamService.KeystoneListProjects(client, request);
+                AuthCache.PutAuth(akWithName, ProjectId);
                 return this;
             }
             catch (ServiceResponseException e)

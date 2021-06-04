@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// DIS服务对应的region区域
+        /// **参数说明**：DIS服务对应的region区域
         /// </summary>
         [JsonProperty("region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionName { get; set; }
 
         /// <summary>
-        /// DIS服务对应的projectId信息
+        /// **参数说明**：DIS服务对应的projectId信息
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// DIS服务对应的通道名称，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
+        /// **参数说明**：DIS服务对应的通道名称，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
         /// </summary>
         [JsonProperty("stream_name", NullValueHandling = NullValueHandling.Ignore)]
         public string StreamName { get; set; }
 
         /// <summary>
-        /// DIS服务对应的通道ID，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
+        /// **参数说明**：DIS服务对应的通道ID，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
         /// </summary>
         [JsonProperty("stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StreamId { get; set; }

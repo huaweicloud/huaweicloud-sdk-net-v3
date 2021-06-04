@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 用于接收满足规则条件数据的amqp queue。
+        /// **参数说明**：用于接收满足规则条件数据的amqp queue。
         /// </summary>
         [JsonProperty("queue_name", NullValueHandling = NullValueHandling.Ignore)]
         public string QueueName { get; set; }

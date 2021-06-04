@@ -16,43 +16,43 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// 聚合周期内指标数据的最大值。
         /// </summary>
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
         public double? Max { get; set; }
 
         /// <summary>
-        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// 聚合周期内指标数据的最小值。
         /// </summary>
         [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
         public double? Min { get; set; }
 
         /// <summary>
-        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// 聚合周期内指标数据的平均值。
         /// </summary>
         [JsonProperty("average", NullValueHandling = NullValueHandling.Ignore)]
         public double? Average { get; set; }
 
         /// <summary>
-        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// 聚合周期内指标数据的求和值。
         /// </summary>
         [JsonProperty("sum", NullValueHandling = NullValueHandling.Ignore)]
         public double? Sum { get; set; }
 
         /// <summary>
-        /// 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+        /// 聚合周期内指标数据的方差。
         /// </summary>
         [JsonProperty("variance", NullValueHandling = NullValueHandling.Ignore)]
         public double? Variance { get; set; }
 
         /// <summary>
-        /// 指标采集时间。
+        /// 指标采集时间，UNIX时间戳，单位毫秒。
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? Timestamp { get; set; }
 
         /// <summary>
-        /// 指标单位
+        /// 指标单位。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }

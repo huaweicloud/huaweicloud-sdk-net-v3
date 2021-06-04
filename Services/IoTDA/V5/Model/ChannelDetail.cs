@@ -99,6 +99,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("mrs_kafka_forwarding", NullValueHandling = NullValueHandling.Ignore)]
         public MrsKafkaForwarding MrsKafkaForwarding { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("pulsar_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public PulsarForwarding PulsarForwarding { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -121,6 +127,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  influxdbForwarding: ").Append(InfluxdbForwarding).Append("\n");
             sb.Append("  functiongraphForwarding: ").Append(FunctiongraphForwarding).Append("\n");
             sb.Append("  mrsKafkaForwarding: ").Append(MrsKafkaForwarding).Append("\n");
+            sb.Append("  pulsarForwarding: ").Append(PulsarForwarding).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -211,6 +218,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.MrsKafkaForwarding == input.MrsKafkaForwarding ||
                     (this.MrsKafkaForwarding != null &&
                     this.MrsKafkaForwarding.Equals(input.MrsKafkaForwarding))
+                ) && 
+                (
+                    this.PulsarForwarding == input.PulsarForwarding ||
+                    (this.PulsarForwarding != null &&
+                    this.PulsarForwarding.Equals(input.PulsarForwarding))
                 );
         }
 
@@ -250,6 +262,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.FunctiongraphForwarding.GetHashCode();
                 if (this.MrsKafkaForwarding != null)
                     hashCode = hashCode * 59 + this.MrsKafkaForwarding.GetHashCode();
+                if (this.PulsarForwarding != null)
+                    hashCode = hashCode * 59 + this.PulsarForwarding.GetHashCode();
                 return hashCode;
             }
         }

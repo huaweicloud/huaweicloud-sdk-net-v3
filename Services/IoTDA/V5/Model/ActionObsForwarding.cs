@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// OBS服务对应的region区域
+        /// **参数说明**：OBS服务对应的region区域。
         /// </summary>
         [JsonProperty("region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionName { get; set; }
 
         /// <summary>
-        /// OBS服务对应的projectId信息
+        /// **参数说明**：OBS服务对应的projectId信息。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// OBS服务对应的桶名称
+        /// **参数说明**：OBS服务对应的桶名称。
         /// </summary>
         [JsonProperty("bucket_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BucketName { get; set; }
 
         /// <summary>
-        /// OBS服务对应桶的区域
+        /// **参数说明**：OBS服务对应桶的区域。
         /// </summary>
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public string Location { get; set; }

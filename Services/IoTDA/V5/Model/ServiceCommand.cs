@@ -16,19 +16,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备命令名称。
+        /// **参数说明**：设备命令名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合。
         /// </summary>
         [JsonProperty("command_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CommandName { get; set; }
 
         /// <summary>
-        /// 设备命令的参数列表。
+        /// **参数说明**：设备命令的参数列表。
         /// </summary>
         [JsonProperty("paras", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceCommandPara> Paras { get; set; }
 
         /// <summary>
-        /// 设备命令的响应列表。
+        /// **参数说明**：设备命令的响应列表。
         /// </summary>
         [JsonProperty("responses", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceCommandResponse> Responses { get; set; }

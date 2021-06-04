@@ -16,16 +16,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 转发kafka消息对应的地址列表
+        /// **参数说明**：转发kafka消息对应的地址列表
         /// </summary>
         [JsonProperty("addresses", NullValueHandling = NullValueHandling.Ignore)]
         public List<NetAddress> Addresses { get; set; }
 
         /// <summary>
-        /// 转发kafka消息关联的topic信息。
+        /// **参数说明**：转发kafka消息关联的topic信息。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
+
+        /// <summary>
+        /// 是否Kerberos认证，默认为false。
+        /// </summary>
+        [JsonProperty("kerberos_authentication", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? KerberosAuthentication { get; set; }
 
 
         /// <summary>
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("class MrsKafkaForwarding {\n");
             sb.Append("  addresses: ").Append(Addresses).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
+            sb.Append("  kerberosAuthentication: ").Append(KerberosAuthentication).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,6 +75,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Topic == input.Topic ||
                     (this.Topic != null &&
                     this.Topic.Equals(input.Topic))
+                ) && 
+                (
+                    this.KerberosAuthentication == input.KerberosAuthentication ||
+                    (this.KerberosAuthentication != null &&
+                    this.KerberosAuthentication.Equals(input.KerberosAuthentication))
                 );
         }
 
@@ -83,6 +95,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Addresses.GetHashCode();
                 if (this.Topic != null)
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.KerberosAuthentication != null)
+                    hashCode = hashCode * 59 + this.KerberosAuthentication.GetHashCode();
                 return hashCode;
             }
         }

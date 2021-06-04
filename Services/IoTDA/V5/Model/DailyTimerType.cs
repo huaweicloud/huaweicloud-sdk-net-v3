@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 规则触发的时间，格式：HH:MM。
+        /// **参数说明**：规则触发的时间，格式：HH:MM。
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
         public string Time { get; set; }
 
         /// <summary>
-        /// 星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。
+        /// **参数说明**：星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。 **取值范围**：只允许数字和逗号的组合，数字不小于1不大于7，数量不超过7个，以逗号隔开
         /// </summary>
         [JsonProperty("days_of_week", NullValueHandling = NullValueHandling.Ignore)]
         public string DaysOfWeek { get; set; }

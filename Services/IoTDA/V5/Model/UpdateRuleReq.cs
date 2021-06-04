@@ -16,31 +16,31 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 用户自定义的规则名称。
+        /// **参数说明**：用户自定义的规则名称。
         /// </summary>
         [JsonProperty("rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleName { get; set; }
 
         /// <summary>
-        /// 用户自定义的规则描述。
+        /// **参数说明**：用户自定义的规则描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 用户自定义sql select语句，最大长度500，更新sql时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
+        /// **参数说明**：用户自定义sql select语句，最大长度500，更新sql时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
         /// </summary>
         [JsonProperty("select", NullValueHandling = NullValueHandling.Ignore)]
         public string Select { get; set; }
 
         /// <summary>
-        /// 用户自定义sql where语句，最大长度500，更新操作时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
+        /// **参数说明**：用户自定义sql where语句，最大长度500，更新操作时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
         /// </summary>
         [JsonProperty("where", NullValueHandling = NullValueHandling.Ignore)]
         public string Where { get; set; }
 
         /// <summary>
-        /// 修改规则条件的状态是否为激活。
+        /// **参数说明**：修改规则条件的状态是否为激活。
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Active { get; set; }

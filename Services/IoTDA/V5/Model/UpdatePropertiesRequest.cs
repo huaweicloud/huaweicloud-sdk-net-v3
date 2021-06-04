@@ -16,21 +16,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。
+        /// **参数说明**：下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
         /// </summary>
         [SDKProperty("device_id", IsPath = true)]
         [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceId { get; set; }
 
         /// <summary>
-        /// Stage用户的Token, 仅提供给IoStage服务使用
-        /// </summary>
-        [SDKProperty("Stage-Auth-Token", IsHeader = true)]
-        [JsonProperty("Stage-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string StageAuthToken { get; set; }
-
-        /// <summary>
-        /// 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+        /// **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
         [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,7 +45,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class UpdatePropertiesRequest {\n");
             sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
-            sb.Append("  stageAuthToken: ").Append(StageAuthToken).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -82,11 +74,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DeviceId.Equals(input.DeviceId))
                 ) && 
                 (
-                    this.StageAuthToken == input.StageAuthToken ||
-                    (this.StageAuthToken != null &&
-                    this.StageAuthToken.Equals(input.StageAuthToken))
-                ) && 
-                (
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
@@ -108,8 +95,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.DeviceId != null)
                     hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.StageAuthToken != null)
-                    hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Body != null)

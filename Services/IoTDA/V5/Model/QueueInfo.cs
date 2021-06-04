@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 队列名称，同一租户不允许重复。
+        /// **参数说明**：队列名称，同一租户不允许重复。 **取值范围**：长度不低于8不超过128，只允许字母、数字、下划线（_）、连接符（-）、间隔号（.）、冒号（:）的组合。
         /// </summary>
         [JsonProperty("queue_name", NullValueHandling = NullValueHandling.Ignore)]
         public string QueueName { get; set; }

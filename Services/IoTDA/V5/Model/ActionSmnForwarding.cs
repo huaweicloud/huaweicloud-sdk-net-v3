@@ -16,37 +16,37 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// SMN服务对应的region区域
+        /// **参数说明**：SMN服务对应的region区域。
         /// </summary>
         [JsonProperty("region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionName { get; set; }
 
         /// <summary>
-        /// SMN服务对应的projectId信息
+        /// **参数说明**：SMN服务对应的projectId信息。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// SMN服务对应的主题名称
+        /// **参数说明**：SMN服务对应的主题名称。
         /// </summary>
         [JsonProperty("theme_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ThemeName { get; set; }
 
         /// <summary>
-        /// SMN服务对应的topic的主题URN
+        /// **参数说明**：SMN服务对应的topic的主题URN。
         /// </summary>
         [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicUrn { get; set; }
 
         /// <summary>
-        /// 短信或邮件的内容。
+        /// **参数说明**：短信或邮件的内容。。
         /// </summary>
         [JsonProperty("message_content", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageContent { get; set; }
 
         /// <summary>
-        /// 短信或邮件的主题。
+        /// **参数说明**：短信或邮件的主题。。
         /// </summary>
         [JsonProperty("message_title", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageTitle { get; set; }

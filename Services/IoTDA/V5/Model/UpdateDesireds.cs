@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备影子期望值构体。
+        /// **参数说明**：设备影子期望值构体。
         /// </summary>
         [JsonProperty("shadow", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdateDesired> Shadow { get; set; }

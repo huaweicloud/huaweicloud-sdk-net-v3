@@ -16,61 +16,61 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 参数的名称。
+        /// **参数说明**：参数的名称。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合。
         /// </summary>
         [JsonProperty("para_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ParaName { get; set; }
 
         /// <summary>
-        /// 参数的数据类型。取值范围：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
+        /// **参数说明**：参数的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
         /// </summary>
         [JsonProperty("data_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DataType { get; set; }
 
         /// <summary>
-        /// 参数是否必选。默认为false。
+        /// **参数说明**：参数是否必选。默认为false。
         /// </summary>
         [JsonProperty("required", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Required { get; set; }
 
         /// <summary>
-        /// 参数的枚举值列表。
+        /// **参数说明**：参数的枚举值列表。
         /// </summary>
         [JsonProperty("enum_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnumList { get; set; }
 
         /// <summary>
-        /// 参数的最小值。
+        /// **参数说明**：参数的最小值。 **取值范围**：长度1-16。
         /// </summary>
         [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
         public string Min { get; set; }
 
         /// <summary>
-        /// 参数的最大值。
+        /// **参数说明**：参数的最大值。 **取值范围**：长度1-16。
         /// </summary>
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
         public string Max { get; set; }
 
         /// <summary>
-        /// 参数的最大长度。
+        /// **参数说明**：参数的最大长度。
         /// </summary>
         [JsonProperty("max_length", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxLength { get; set; }
 
         /// <summary>
-        /// 参数的步长。
+        /// **参数说明**：参数的步长。
         /// </summary>
         [JsonProperty("step", NullValueHandling = NullValueHandling.Ignore)]
         public double? Step { get; set; }
 
         /// <summary>
-        /// 参数的单位。
+        /// **参数说明**：参数的单位。 **取值范围**：长度不超过16。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }
 
         /// <summary>
-        /// 参数的描述。
+        /// **参数说明**：参数的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?&#39;#().,;&amp;%@!- ，、：；。/等字符的组合。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

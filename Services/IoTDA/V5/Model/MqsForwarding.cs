@@ -16,31 +16,31 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// MQS服务的URL
+        /// **参数说明**：MQS服务的URL
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
         /// <summary>
-        /// 用于登录MQS的用户名
+        /// **参数说明**：用于登录MQS的用户名
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 用于登录MQS的密码
+        /// **参数说明**：用于登录MQS的密码
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
         /// <summary>
-        /// 订阅的MQS主题
+        /// **参数说明**：订阅的MQS主题
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 是否加密传输
+        /// **参数说明**：是否加密传输
         /// </summary>
         [JsonProperty("encrypt_transport", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EncryptTransport { get; set; }
