@@ -76,9 +76,13 @@ namespace HuaweiCloud.SDK.Core
                 {
                     sb.Append(BuildQueryListParameter(sdkPropertyAttribute.PropertyName, list));
                 }
-                else if(value is IDictionary dictionary)
+                else if (value is IDictionary dictionary)
                 {
                     sb.Append(BuildQueryDictionaryParameter(sdkPropertyAttribute.PropertyName, dictionary));
+                }
+                else if (value is bool boolean)
+                {
+                    sb.Append(BuildQueryBooleanParameter(sdkPropertyAttribute.PropertyName, boolean));
                 }
                 else
                 {
@@ -99,6 +103,12 @@ namespace HuaweiCloud.SDK.Core
         {
             var sb = new StringBuilder();
             return sb.Append(key).Append("=").Append(Convert.ToString(value)).Append("&");
+        }
+
+        private static StringBuilder BuildQueryBooleanParameter(string key, bool boolean)
+        {
+            var sb = new StringBuilder();
+            return sb.Append(key).Append("=").Append(Convert.ToString(boolean).ToLower()).Append("&");
         }
 
         private static StringBuilder BuildQueryListParameter(string key, IList list)

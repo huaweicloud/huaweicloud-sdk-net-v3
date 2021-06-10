@@ -7,20 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Smn.V2.Model
+namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CancelSubscriptionRequest 
+    public class ImportFunctionRequest 
     {
 
         /// <summary>
-        /// 订阅者的唯一的资源标识，可通过[查询订阅者列表](https://support.huaweicloud.com/api-smn/ListSubscriptions.html)获取该标识。
+        /// 
         /// </summary>
-        [SDKProperty("subscription_urn", IsPath = true)]
-        [JsonProperty("subscription_urn", NullValueHandling = NullValueHandling.Ignore)]
-        public string SubscriptionUrn { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public ImportFunctionRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -29,8 +29,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CancelSubscriptionRequest {\n");
-            sb.Append("  subscriptionUrn: ").Append(SubscriptionUrn).Append("\n");
+            sb.Append("class ImportFunctionRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -40,22 +40,22 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CancelSubscriptionRequest);
+            return this.Equals(input as ImportFunctionRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CancelSubscriptionRequest input)
+        public bool Equals(ImportFunctionRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.SubscriptionUrn == input.SubscriptionUrn ||
-                    (this.SubscriptionUrn != null &&
-                    this.SubscriptionUrn.Equals(input.SubscriptionUrn))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SubscriptionUrn != null)
-                    hashCode = hashCode * 59 + this.SubscriptionUrn.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

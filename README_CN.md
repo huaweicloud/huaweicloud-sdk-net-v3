@@ -21,7 +21,6 @@
   ，您需要确认已在 [华为云控制台](https://console.huaweicloud.com/console/?locale=zh-cn&region=cn-north-4#/home) 开通当前服务。
 
 - 华为云 .Net SDK 适用于：
-    - **.NET Framework 4.5** 及其以上版本
     - **.NET Standard 2.0** 及其以上版本
     - **C# 4.0** 及其以上版本
 

@@ -21,7 +21,6 @@ This document introduces how to obtain and use Huawei Cloud .Net SDK.
   service in [Huawei Cloud console](https://console.huaweicloud.com/?locale=en-us) if needed.
 
 - The .NET SDK requires：
-    - **.NET Framework 4.5** or above
     - **.NET Standard 2.0** or above
     - **C# 4.0** or above
 

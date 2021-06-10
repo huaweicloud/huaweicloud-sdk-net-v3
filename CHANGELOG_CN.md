@@ -1,3 +1,18 @@
+# 3.0.47 2021-06-10
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+    - 新增支持接口
+        - `ImportFunction`
+        - `ExportFunction`
+        - `AsyncInvokeReservedFunction`
+        - `DeleteReservedInstanceById`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
 # 3.0.46 2021-06-04
 
 ### HuaweiCloud SDK CCE

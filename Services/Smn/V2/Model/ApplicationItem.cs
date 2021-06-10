@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string Platform { get; set; }
 
         /// <summary>
-        /// 创建application的时间时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+        /// 创建application的时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }

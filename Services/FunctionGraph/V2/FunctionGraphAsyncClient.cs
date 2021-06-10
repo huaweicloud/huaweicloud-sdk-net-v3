@@ -28,6 +28,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 函数异步执行并返回预留实例ID。
+        /// </summary>
+        public async Task<AsyncInvokeReservedFunctionResponse> AsyncInvokeReservedFunctionAsync(AsyncInvokeReservedFunctionRequest asyncInvokeReservedFunctionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , asyncInvokeReservedFunctionRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", asyncInvokeReservedFunctionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<AsyncInvokeReservedFunctionResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建依赖包
         /// </summary>
         public async Task<CreateDependencyResponse> CreateDependencyAsync(CreateDependencyRequest createDependencyRequest)
@@ -144,6 +157,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 根据预留实例ID删除对应预留实例
+        /// </summary>
+        public async Task<DeleteReservedInstanceByIdResponse> DeleteReservedInstanceByIdAsync(DeleteReservedInstanceByIdRequest deleteReservedInstanceByIdRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , deleteReservedInstanceByIdRequest.FunctionUrn.ToString());
+            urlParam.Add("instance_id" , deleteReservedInstanceByIdRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances/{instance_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReservedInstanceByIdRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteReservedInstanceByIdResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除函数版本别名。
         /// </summary>
         public async Task<DeleteVersionAliasResponse> DeleteVersionAliasAsync(DeleteVersionAliasRequest deleteVersionAliasRequest)
@@ -155,6 +182,30 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVersionAliasRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteVersionAliasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 导出函数。
+        /// </summary>
+        public async Task<ExportFunctionResponse> ExportFunctionAsync(ExportFunctionRequest exportFunctionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/export",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportFunctionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<ExportFunctionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 导入函数。
+        /// </summary>
+        public async Task<ImportFunctionResponse> ImportFunctionAsync(ImportFunctionRequest importFunctionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/import",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", importFunctionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ImportFunctionResponse>(response);
         }
         
         /// <summary>

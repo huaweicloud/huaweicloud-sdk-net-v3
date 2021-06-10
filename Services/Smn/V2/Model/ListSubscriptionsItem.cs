@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string TopicUrn { get; set; }
 
         /// <summary>
-        /// 不同协议对应不同的endpoint（接受消息的接入点）。目前支持的协议包括：  “email”：邮件传输协议，endpoint为邮箱地址。  “sms”：短信传输协议，endpoint为手机号码。  “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。  “functiongraph”：FunctionGraph（工作流）传输协议，endpoint为由一组函数编排成的工作流。  “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。
+        /// 不同协议对应不同的endpoint（接受消息的接入点）。目前支持的协议包括：  \&quot;default\&quot;: 默认协议。  “email”：邮件传输协议，endpoint为邮箱地址。  “sms”：短信传输协议，endpoint为手机号码。  “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。  “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
