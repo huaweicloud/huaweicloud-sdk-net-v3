@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
+namespace HuaweiCloud.SDK.Bms.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class ShowMaintainWindowsResponse : SdkResponse
+    public class ServerOsSchedulerHints 
     {
 
         /// <summary>
-        /// 支持的维护时间窗列表。
+        /// 反亲和性组信息。  UUID格式。
         /// </summary>
-        [JsonProperty("maintain_windows", NullValueHandling = NullValueHandling.Ignore)]
-        public List<MaintainWindowsEntity> MaintainWindows { get; set; }
+        [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Group { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowMaintainWindowsResponse {\n");
-            sb.Append("  maintainWindows: ").Append(MaintainWindows).Append("\n");
+            sb.Append("class ServerOsSchedulerHints {\n");
+            sb.Append("  group: ").Append(Group).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,23 +39,23 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowMaintainWindowsResponse);
+            return this.Equals(input as ServerOsSchedulerHints);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowMaintainWindowsResponse input)
+        public bool Equals(ServerOsSchedulerHints input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.MaintainWindows == input.MaintainWindows ||
-                    this.MaintainWindows != null &&
-                    input.MaintainWindows != null &&
-                    this.MaintainWindows.SequenceEqual(input.MaintainWindows)
+                    this.Group == input.Group ||
+                    this.Group != null &&
+                    input.Group != null &&
+                    this.Group.SequenceEqual(input.Group)
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MaintainWindows != null)
-                    hashCode = hashCode * 59 + this.MaintainWindows.GetHashCode();
+                if (this.Group != null)
+                    hashCode = hashCode * 59 + this.Group.GetHashCode();
                 return hashCode;
             }
         }

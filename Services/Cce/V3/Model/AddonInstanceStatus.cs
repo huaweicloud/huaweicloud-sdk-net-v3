@@ -22,9 +22,24 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public class StatusEnum
         {
             /// <summary>
+            /// Enum RUNNING for value: running
+            /// </summary>
+            public static readonly StatusEnum RUNNING = new StatusEnum("running");
+
+            /// <summary>
+            /// Enum ABNORMAL for value: abnormal
+            /// </summary>
+            public static readonly StatusEnum ABNORMAL = new StatusEnum("abnormal");
+
+            /// <summary>
             /// Enum INSTALLING for value: installing
             /// </summary>
             public static readonly StatusEnum INSTALLING = new StatusEnum("installing");
+
+            /// <summary>
+            /// Enum INSTALLFAILED for value: installFailed
+            /// </summary>
+            public static readonly StatusEnum INSTALLFAILED = new StatusEnum("installFailed");
 
             /// <summary>
             /// Enum UPGRADING for value: upgrading
@@ -32,22 +47,49 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             public static readonly StatusEnum UPGRADING = new StatusEnum("upgrading");
 
             /// <summary>
-            /// Enum FAILED for value: failed
+            /// Enum UPGRADEFAILED for value: upgradeFailed
             /// </summary>
-            public static readonly StatusEnum FAILED = new StatusEnum("failed");
+            public static readonly StatusEnum UPGRADEFAILED = new StatusEnum("upgradeFailed");
 
             /// <summary>
-            /// Enum RUNNING for value: running
+            /// Enum DELETING for value: deleting
             /// </summary>
-            public static readonly StatusEnum RUNNING = new StatusEnum("running");
+            public static readonly StatusEnum DELETING = new StatusEnum("deleting");
+
+            /// <summary>
+            /// Enum DELETESUCCESS for value: deleteSuccess
+            /// </summary>
+            public static readonly StatusEnum DELETESUCCESS = new StatusEnum("deleteSuccess");
+
+            /// <summary>
+            /// Enum DELETEFAILED for value: deleteFailed
+            /// </summary>
+            public static readonly StatusEnum DELETEFAILED = new StatusEnum("deleteFailed");
+
+            /// <summary>
+            /// Enum AVAILABLE for value: available
+            /// </summary>
+            public static readonly StatusEnum AVAILABLE = new StatusEnum("available");
+
+            /// <summary>
+            /// Enum ROLLBACKING for value: rollbacking
+            /// </summary>
+            public static readonly StatusEnum ROLLBACKING = new StatusEnum("rollbacking");
 
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                { "installing", INSTALLING },
-                { "upgrading", UPGRADING },
-                { "failed", FAILED },
                 { "running", RUNNING },
+                { "abnormal", ABNORMAL },
+                { "installing", INSTALLING },
+                { "installFailed", INSTALLFAILED },
+                { "upgrading", UPGRADING },
+                { "upgradeFailed", UPGRADEFAILED },
+                { "deleting", DELETING },
+                { "deleteSuccess", DELETESUCCESS },
+                { "deleteFailed", DELETEFAILED },
+                { "available", AVAILABLE },
+                { "rollbacking", ROLLBACKING },
             };
 
             private string Value;

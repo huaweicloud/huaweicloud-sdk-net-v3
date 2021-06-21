@@ -1,3 +1,41 @@
+# 3.0.48 2021-06-21
+
+### HuaweiCloud SDK BMS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ChangeBaremetalServerName`新增响应参数`server_tags`、`enterprise_project_id`、`group`
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - [Issue 22](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/22): 修正接口`ListAddonInstances`的响应参数`status`可选值
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ShowGroups`的响应参数`partitions`类型调整： `array[string]` -> `array[integer]`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 修复编译失败的问题
+- _特性变更_
+    - 无
+
 # 3.0.47 2021-06-10
 
 ### HuaweiCloud SDK FunctionGraph

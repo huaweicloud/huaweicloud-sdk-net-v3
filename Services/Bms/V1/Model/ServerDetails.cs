@@ -802,10 +802,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public string HostId { get; set; }
 
         /// <summary>
-        /// 裸金属服务器的网络属性。详情请参见表3 addresses数据结构说明。
+        /// 
         /// </summary>
         [JsonProperty("addresses", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, List<AddressInfo>> Addresses { get; set; }
+        public Addresses Addresses { get; set; }
 
         /// <summary>
         /// 裸金属服务器使用的密钥对名称
@@ -1127,9 +1127,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 ) && 
                 (
                     this.Addresses == input.Addresses ||
-                    this.Addresses != null &&
-                    input.Addresses != null &&
-                    this.Addresses.SequenceEqual(input.Addresses)
+                    (this.Addresses != null &&
+                    this.Addresses.Equals(input.Addresses))
                 ) && 
                 (
                     this.KeyName == input.KeyName ||

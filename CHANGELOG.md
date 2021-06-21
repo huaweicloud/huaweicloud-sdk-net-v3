@@ -1,3 +1,41 @@
+# 3.0.48 2021-06-21
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add response parameters `server_tags`,`enterprise_project_id`,`group` to interface `ChangeBaremetalServerName`.
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+    - None
+- _Bug Fix_
+    - [Issue 22](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/22): Modify the optional value of response parameter `status` of interface `ListAddonInstances`.
+- _Change_
+    - None
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the type of response parameter `partitions` of interface `ShowGroups`: `array[string]` -> `array[integer]`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+    - None
+- _Bug Fix_
+    - Fix the issue of compilation failure.
+- _Change_
+    - None
+
 # 3.0.47 2021-06-10
 
 ### HuaweiCloud SDK FunctionGraph

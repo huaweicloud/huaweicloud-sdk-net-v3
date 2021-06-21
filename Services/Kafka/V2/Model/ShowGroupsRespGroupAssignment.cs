@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 分区列表。
         /// </summary>
         [JsonProperty("partitions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Partitions { get; set; }
+        public List<int?> Partitions { get; set; }
 
 
         /// <summary>

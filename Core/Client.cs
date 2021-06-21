@@ -141,7 +141,6 @@ namespace HuaweiCloud.SDK.Core
         private Client WithCredential(Credentials credentials)
         {
             this._credential = credentials ?? throw new ArgumentNullException(CredentialsNull);
-            this._httpConfig = HttpConfig.GetDefaultConfig();
             return this;
         }
 
@@ -179,7 +178,7 @@ namespace HuaweiCloud.SDK.Core
                 request = await _credential.SignAuthRequest(request);
             }
 
-            var message = this._sdkHttpClient.InitHttpRequest(request);
+            var message = this._sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
             try
             {
                 var response = await this._sdkHttpClient.DoHttpRequest(message);
@@ -207,7 +206,7 @@ namespace HuaweiCloud.SDK.Core
                 request = _credential.SignAuthRequest(request).Result;
             }
 
-            var message = this._sdkHttpClient.InitHttpRequest(request);
+            var message = this._sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
             try
             {
                 var response = this._sdkHttpClient.DoHttpRequest(message).Result;

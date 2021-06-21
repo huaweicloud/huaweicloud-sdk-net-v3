@@ -27,6 +27,8 @@ namespace HuaweiCloud.SDK.Core
 
         public bool IgnoreSslVerification = false;
 
+        public bool IgnoreBodyForGetRequest = false;
+
         public string ProxyUsername { get; set; }
 
         public string ProxyPassword { get; set; }
@@ -51,6 +53,12 @@ namespace HuaweiCloud.SDK.Core
         public HttpConfig WithIgnoreSslVerification(bool ignore)
         {
             this.IgnoreSslVerification = ignore;
+            return this;
+        }
+
+        public HttpConfig WithIgnoreBodyForGetRequest(bool ignore)
+        {
+            this.IgnoreBodyForGetRequest = ignore;
             return this;
         }
 

@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public static string KeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
-            var message = client.InitHttpRequest(request);
+            var message = client.InitHttpRequest(request, true);
             try
             {
                 var response = client.DoHttpRequest(message).Result;
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public static string KeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
-            var message = client.InitHttpRequest(request);
+            var message = client.InitHttpRequest(request, true);
             try
             {
                 var response = client.DoHttpRequest(message).Result;

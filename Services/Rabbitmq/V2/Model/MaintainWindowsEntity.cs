@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ShowMaintainWindowsRespMaintainWindows 
+    public class MaintainWindowsEntity 
     {
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowMaintainWindowsRespMaintainWindows {\n");
+            sb.Append("class MaintainWindowsEntity {\n");
             sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  end: ").Append(End).Append("\n");
             sb.Append("  begin: ").Append(Begin).Append("\n");
@@ -60,13 +60,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowMaintainWindowsRespMaintainWindows);
+            return this.Equals(input as MaintainWindowsEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowMaintainWindowsRespMaintainWindows input)
+        public bool Equals(MaintainWindowsEntity input)
         {
             if (input == null)
                 return false;
