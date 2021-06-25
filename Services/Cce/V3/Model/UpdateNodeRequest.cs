@@ -30,13 +30,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string NodeId { get; set; }
 
         /// <summary>
-        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-        /// </summary>
-        [SDKProperty("errorStatus", IsQuery = true)]
-        [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorStatus { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -53,7 +46,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class UpdateNodeRequest {\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  nodeId: ").Append(NodeId).Append("\n");
-            sb.Append("  errorStatus: ").Append(ErrorStatus).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -87,11 +79,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.NodeId.Equals(input.NodeId))
                 ) && 
                 (
-                    this.ErrorStatus == input.ErrorStatus ||
-                    (this.ErrorStatus != null &&
-                    this.ErrorStatus.Equals(input.ErrorStatus))
-                ) && 
-                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -110,8 +97,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.NodeId != null)
                     hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.ErrorStatus != null)
-                    hashCode = hashCode * 59 + this.ErrorStatus.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -7,34 +7,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cce.V3.Model
+namespace HuaweiCloud.SDK.Bms.V1.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class UpdateNodePoolRequest 
+    public class ChangeBaremetalServerOsRequest 
     {
 
         /// <summary>
-        /// 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
+        /// 裸金属服务器ID
         /// </summary>
-        [SDKProperty("cluster_id", IsPath = true)]
-        [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ClusterId { get; set; }
-
-        /// <summary>
-        /// 节点池ID
-        /// </summary>
-        [SDKProperty("nodepool_id", IsPath = true)]
-        [JsonProperty("nodepool_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string NodepoolId { get; set; }
+        [SDKProperty("server_id", IsPath = true)]
+        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public NodePool Body { get; set; }
+        public OSChangeReq Body { get; set; }
 
 
         /// <summary>
@@ -43,9 +36,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateNodePoolRequest {\n");
-            sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
-            sb.Append("  nodepoolId: ").Append(NodepoolId).Append("\n");
+            sb.Append("class ChangeBaremetalServerOsRequest {\n");
+            sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -56,27 +48,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateNodePoolRequest);
+            return this.Equals(input as ChangeBaremetalServerOsRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateNodePoolRequest input)
+        public bool Equals(ChangeBaremetalServerOsRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.NodepoolId == input.NodepoolId ||
-                    (this.NodepoolId != null &&
-                    this.NodepoolId.Equals(input.NodepoolId))
+                    this.ServerId == input.ServerId ||
+                    (this.ServerId != null &&
+                    this.ServerId.Equals(input.ServerId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -93,10 +80,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.NodepoolId != null)
-                    hashCode = hashCode * 59 + this.NodepoolId.GetHashCode();
+                if (this.ServerId != null)
+                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Bms.V1.Model
 {
     /// <summary>
-    /// 创建资源空间结构体。
+    /// Response Object
     /// </summary>
-    public class AddApplication 
+    public class ChangeBaremetalServerOsResponse : SdkResponse
     {
 
         /// <summary>
-        /// **参数说明**：资源空间名称。 **取值范围**：长度不超过64，只允许字母、数字、下划线（_）、连接符（-）的组合。
+        /// 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询
         /// </summary>
-        [JsonProperty("app_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string AppName { get; set; }
+        [JsonProperty("jobId", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AddApplication {\n");
-            sb.Append("  appName: ").Append(AppName).Append("\n");
+            sb.Append("class ChangeBaremetalServerOsResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddApplication);
+            return this.Equals(input as ChangeBaremetalServerOsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AddApplication input)
+        public bool Equals(ChangeBaremetalServerOsResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

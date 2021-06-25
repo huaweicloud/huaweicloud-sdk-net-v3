@@ -39,54 +39,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("default_app", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DefaultApp { get; set; }
 
-        /// <summary>
-        /// app的类型，标准版：Junior | 高级版：Normal
-        /// </summary>
-        [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string AppType { get; set; }
-
-        /// <summary>
-        /// 用户名。
-        /// </summary>
-        [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
-        public string Username { get; set; }
-
-        /// <summary>
-        /// app与用户的授权关系时，响应为：all | bind | edit | query ，其中bind权限类似于ALL权限，属于子用户权限。
-        /// </summary>
-        [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
-        public string Permission { get; set; }
-
-        /// <summary>
-        /// 迁移前实例ID。
-        /// </summary>
-        [JsonProperty("last_instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string LastInstanceId { get; set; }
-
-        /// <summary>
-        /// 当前实例ID。
-        /// </summary>
-        [JsonProperty("current_instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CurrentInstanceId { get; set; }
-
-        /// <summary>
-        /// 对接的服务名
-        /// </summary>
-        [JsonProperty("service_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServiceName { get; set; }
-
-        /// <summary>
-        /// 是否冻结
-        /// </summary>
-        [JsonProperty("freezed", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Freezed { get; set; }
-
-        /// <summary>
-        /// 调用接口所属instanceId
-        /// </summary>
-        [JsonProperty("request_instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RequestInstanceId { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -99,14 +51,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appName: ").Append(AppName).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  defaultApp: ").Append(DefaultApp).Append("\n");
-            sb.Append("  appType: ").Append(AppType).Append("\n");
-            sb.Append("  username: ").Append(Username).Append("\n");
-            sb.Append("  permission: ").Append(Permission).Append("\n");
-            sb.Append("  lastInstanceId: ").Append(LastInstanceId).Append("\n");
-            sb.Append("  currentInstanceId: ").Append(CurrentInstanceId).Append("\n");
-            sb.Append("  serviceName: ").Append(ServiceName).Append("\n");
-            sb.Append("  freezed: ").Append(Freezed).Append("\n");
-            sb.Append("  requestInstanceId: ").Append(RequestInstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,46 +91,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DefaultApp == input.DefaultApp ||
                     (this.DefaultApp != null &&
                     this.DefaultApp.Equals(input.DefaultApp))
-                ) && 
-                (
-                    this.AppType == input.AppType ||
-                    (this.AppType != null &&
-                    this.AppType.Equals(input.AppType))
-                ) && 
-                (
-                    this.Username == input.Username ||
-                    (this.Username != null &&
-                    this.Username.Equals(input.Username))
-                ) && 
-                (
-                    this.Permission == input.Permission ||
-                    (this.Permission != null &&
-                    this.Permission.Equals(input.Permission))
-                ) && 
-                (
-                    this.LastInstanceId == input.LastInstanceId ||
-                    (this.LastInstanceId != null &&
-                    this.LastInstanceId.Equals(input.LastInstanceId))
-                ) && 
-                (
-                    this.CurrentInstanceId == input.CurrentInstanceId ||
-                    (this.CurrentInstanceId != null &&
-                    this.CurrentInstanceId.Equals(input.CurrentInstanceId))
-                ) && 
-                (
-                    this.ServiceName == input.ServiceName ||
-                    (this.ServiceName != null &&
-                    this.ServiceName.Equals(input.ServiceName))
-                ) && 
-                (
-                    this.Freezed == input.Freezed ||
-                    (this.Freezed != null &&
-                    this.Freezed.Equals(input.Freezed))
-                ) && 
-                (
-                    this.RequestInstanceId == input.RequestInstanceId ||
-                    (this.RequestInstanceId != null &&
-                    this.RequestInstanceId.Equals(input.RequestInstanceId))
                 );
         }
 
@@ -206,22 +110,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.DefaultApp != null)
                     hashCode = hashCode * 59 + this.DefaultApp.GetHashCode();
-                if (this.AppType != null)
-                    hashCode = hashCode * 59 + this.AppType.GetHashCode();
-                if (this.Username != null)
-                    hashCode = hashCode * 59 + this.Username.GetHashCode();
-                if (this.Permission != null)
-                    hashCode = hashCode * 59 + this.Permission.GetHashCode();
-                if (this.LastInstanceId != null)
-                    hashCode = hashCode * 59 + this.LastInstanceId.GetHashCode();
-                if (this.CurrentInstanceId != null)
-                    hashCode = hashCode * 59 + this.CurrentInstanceId.GetHashCode();
-                if (this.ServiceName != null)
-                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
-                if (this.Freezed != null)
-                    hashCode = hashCode * 59 + this.Freezed.GetHashCode();
-                if (this.RequestInstanceId != null)
-                    hashCode = hashCode * 59 + this.RequestInstanceId.GetHashCode();
                 return hashCode;
             }
         }

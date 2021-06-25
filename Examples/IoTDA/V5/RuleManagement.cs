@@ -109,10 +109,6 @@ namespace Examples.IoTDA.V5
                        new RuleAction()
                        {
                            Type = "IoTA_FORWARDING",
-                           Addition = new List<string>()
-                           {
-                               "88cce89f943646cfbda057aed55c4841"
-                           },
                            IotaForwarding = new ActionIoTAForwarding()
                            {
                                ProjectId = "88cce89f943646cfbda057aed55c4841",
@@ -185,10 +181,6 @@ namespace Examples.IoTDA.V5
                        new RuleAction()
                        {
                            Type = "IoTA_FORWARDING",
-                           Addition = new List<string>()
-                           {
-                               "88cce89f943646cfbda057aed55c4841"
-                           },
                            IotaForwarding = new ActionIoTAForwarding()
                            {
                                ProjectId = "88cce89f943646cfbda057aed55c4841",

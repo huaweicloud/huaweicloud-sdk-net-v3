@@ -99,6 +99,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("extra_specs", NullValueHandling = NullValueHandling.Ignore)]
         public FlavorExtraSpec ExtraSpecs { get; set; }
 
+        /// <summary>
+        /// 预留属性。
+        /// </summary>
+        [JsonProperty("instance_quota", NullValueHandling = NullValueHandling.Ignore)]
+        public Object InstanceQuota { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -121,6 +127,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  osFlavorAccessisPublic: ").Append(OsFlavorAccessisPublic).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  extraSpecs: ").Append(ExtraSpecs).Append("\n");
+            sb.Append("  instanceQuota: ").Append(InstanceQuota).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,6 +219,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.ExtraSpecs == input.ExtraSpecs ||
                     (this.ExtraSpecs != null &&
                     this.ExtraSpecs.Equals(input.ExtraSpecs))
+                ) && 
+                (
+                    this.InstanceQuota == input.InstanceQuota ||
+                    (this.InstanceQuota != null &&
+                    this.InstanceQuota.Equals(input.InstanceQuota))
                 );
         }
 
@@ -251,6 +263,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.ExtraSpecs != null)
                     hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
+                if (this.InstanceQuota != null)
+                    hashCode = hashCode * 59 + this.InstanceQuota.GetHashCode();
                 return hashCode;
             }
         }

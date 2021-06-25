@@ -45,12 +45,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("channel_detail", NullValueHandling = NullValueHandling.Ignore)]
         public ChannelDetail ChannelDetail { get; set; }
 
-        /// <summary>
-        /// 是否支持批量接收推送消息。
-        /// </summary>
-        [JsonProperty("batch", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Batch { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -64,7 +58,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  channel: ").Append(Channel).Append("\n");
             sb.Append("  channelDetail: ").Append(ChannelDetail).Append("\n");
-            sb.Append("  batch: ").Append(Batch).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,11 +103,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.ChannelDetail == input.ChannelDetail ||
                     (this.ChannelDetail != null &&
                     this.ChannelDetail.Equals(input.ChannelDetail))
-                ) && 
-                (
-                    this.Batch == input.Batch ||
-                    (this.Batch != null &&
-                    this.Batch.Equals(input.Batch))
                 );
         }
 
@@ -136,8 +124,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Channel.GetHashCode();
                 if (this.ChannelDetail != null)
                     hashCode = hashCode * 59 + this.ChannelDetail.GetHashCode();
-                if (this.Batch != null)
-                    hashCode = hashCode * 59 + this.Batch.GetHashCode();
                 return hashCode;
             }
         }

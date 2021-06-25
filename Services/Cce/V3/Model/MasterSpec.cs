@@ -21,18 +21,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("availabilityZone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
-        /// <summary>
-        /// 规格
-        /// </summary>
-        [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
-        public string Flavor { get; set; }
-
-        /// <summary>
-        /// 故障域。 1. 指定该字段需要当前系统已开启故障域特性，否则校验失败。 2. 仅单az场景支持且必须显式指定az。
-        /// </summary>
-        [JsonProperty("faultDomain", NullValueHandling = NullValueHandling.Ignore)]
-        public string FaultDomain { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -42,8 +30,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class MasterSpec {\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
-            sb.Append("  flavor: ").Append(Flavor).Append("\n");
-            sb.Append("  faultDomain: ").Append(FaultDomain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,16 +55,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.AvailabilityZone == input.AvailabilityZone ||
                     (this.AvailabilityZone != null &&
                     this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.FaultDomain == input.FaultDomain ||
-                    (this.FaultDomain != null &&
-                    this.FaultDomain.Equals(input.FaultDomain))
                 );
         }
 
@@ -92,10 +68,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.AvailabilityZone != null)
                     hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.FaultDomain != null)
-                    hashCode = hashCode * 59 + this.FaultDomain.GetHashCode();
                 return hashCode;
             }
         }

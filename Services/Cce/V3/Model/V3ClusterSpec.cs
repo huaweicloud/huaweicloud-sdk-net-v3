@@ -265,12 +265,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool? Ipv6enable { get; set; }
 
         /// <summary>
-        /// CCE Turbo集群(公测)
-        /// </summary>
-        [JsonProperty("offloadCluster", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? OffloadCluster { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("hostNetwork", NullValueHandling = NullValueHandling.Ignore)]
@@ -354,7 +348,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  ipv6enable: ").Append(Ipv6enable).Append("\n");
-            sb.Append("  offloadCluster: ").Append(OffloadCluster).Append("\n");
             sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
             sb.Append("  containerNetwork: ").Append(ContainerNetwork).Append("\n");
             sb.Append("  eniNetwork: ").Append(EniNetwork).Append("\n");
@@ -412,11 +405,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Ipv6enable == input.Ipv6enable ||
                     (this.Ipv6enable != null &&
                     this.Ipv6enable.Equals(input.Ipv6enable))
-                ) && 
-                (
-                    this.OffloadCluster == input.OffloadCluster ||
-                    (this.OffloadCluster != null &&
-                    this.OffloadCluster.Equals(input.OffloadCluster))
                 ) && 
                 (
                     this.HostNetwork == input.HostNetwork ||
@@ -500,8 +488,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Ipv6enable != null)
                     hashCode = hashCode * 59 + this.Ipv6enable.GetHashCode();
-                if (this.OffloadCluster != null)
-                    hashCode = hashCode * 59 + this.OffloadCluster.GetHashCode();
                 if (this.HostNetwork != null)
                     hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
                 if (this.ContainerNetwork != null)

@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Bms.V1.Model
 {
     /// <summary>
-    /// 创建资源空间结构体。
+    /// 切换裸金属服务器操作系统接口请求结构体
     /// </summary>
-    public class AddApplication 
+    public class OSChangeReq 
     {
 
         /// <summary>
-        /// **参数说明**：资源空间名称。 **取值范围**：长度不超过64，只允许字母、数字、下划线（_）、连接符（-）的组合。
+        /// 
         /// </summary>
-        [JsonProperty("app_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string AppName { get; set; }
+        [JsonProperty("os-change", NullValueHandling = NullValueHandling.Ignore)]
+        public OsChange OsChange { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AddApplication {\n");
-            sb.Append("  appName: ").Append(AppName).Append("\n");
+            sb.Append("class OSChangeReq {\n");
+            sb.Append("  osChange: ").Append(OsChange).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddApplication);
+            return this.Equals(input as OSChangeReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AddApplication input)
+        public bool Equals(OSChangeReq input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
+                    this.OsChange == input.OsChange ||
+                    (this.OsChange != null &&
+                    this.OsChange.Equals(input.OsChange))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.OsChange != null)
+                    hashCode = hashCode * 59 + this.OsChange.GetHashCode();
                 return hashCode;
             }
         }

@@ -791,13 +791,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-        /// </summary>
-        [SDKProperty("errorStatus", IsQuery = true)]
-        [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorStatus { get; set; }
-
-        /// <summary>
         /// 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
         /// </summary>
         [SDKProperty("delete_efs", IsQuery = true)]
@@ -842,7 +835,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class DeleteClusterRequest {\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
-            sb.Append("  errorStatus: ").Append(ErrorStatus).Append("\n");
             sb.Append("  deleteEfs: ").Append(DeleteEfs).Append("\n");
             sb.Append("  deleteEni: ").Append(DeleteEni).Append("\n");
             sb.Append("  deleteEvs: ").Append(DeleteEvs).Append("\n");
@@ -874,11 +866,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.ClusterId == input.ClusterId ||
                     (this.ClusterId != null &&
                     this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.ErrorStatus == input.ErrorStatus ||
-                    (this.ErrorStatus != null &&
-                    this.ErrorStatus.Equals(input.ErrorStatus))
                 ) && 
                 (
                     this.DeleteEfs == input.DeleteEfs ||
@@ -922,8 +909,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.ClusterId != null)
                     hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.ErrorStatus != null)
-                    hashCode = hashCode * 59 + this.ErrorStatus.GetHashCode();
                 if (this.DeleteEfs != null)
                     hashCode = hashCode * 59 + this.DeleteEfs.GetHashCode();
                 if (this.DeleteEni != null)

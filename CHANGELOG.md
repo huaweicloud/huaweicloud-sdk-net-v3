@@ -1,3 +1,23 @@
+# 3.0.49 2021-06-25
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+    - Support interface `ChangeBaremetalServerOs`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the name of reponse parameter of interface `ChangeBaremetalServerName`: `server_tags`->`sys_tags`.
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add request parameters`permission_type`,`display_name`,`catalog`,`type` of interface `KeystoneListPermissions`.
+
 # 3.0.48 2021-06-21
 
 ### HuaweiCloud SDK BMS

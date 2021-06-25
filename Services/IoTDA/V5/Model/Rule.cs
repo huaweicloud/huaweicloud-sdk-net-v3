@@ -57,12 +57,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
-        /// <summary>
-        /// **参数说明**：归属边缘侧节点设备ID列表。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
-        /// </summary>
-        [JsonProperty("edge_node_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> EdgeNodeIds { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -78,7 +72,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  ruleType: ").Append(RuleType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
-            sb.Append("  edgeNodeIds: ").Append(EdgeNodeIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,12 +128,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.AppId == input.AppId ||
                     (this.AppId != null &&
                     this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.EdgeNodeIds == input.EdgeNodeIds ||
-                    this.EdgeNodeIds != null &&
-                    input.EdgeNodeIds != null &&
-                    this.EdgeNodeIds.SequenceEqual(input.EdgeNodeIds)
                 );
         }
 
@@ -166,8 +153,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.EdgeNodeIds != null)
-                    hashCode = hashCode * 59 + this.EdgeNodeIds.GetHashCode();
                 return hashCode;
             }
         }

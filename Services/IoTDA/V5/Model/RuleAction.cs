@@ -22,12 +22,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// **参数说明**：附加信息，在默认规则执行结果中附加额外内容，仅设备属性和消息类型数据转发规则支持。 **取值范围**：PRODUCT_ID
-        /// </summary>
-        [JsonProperty("addition", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Addition { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("smn_forwarding", NullValueHandling = NullValueHandling.Ignore)]
@@ -84,7 +78,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class RuleAction {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
-            sb.Append("  addition: ").Append(Addition).Append("\n");
             sb.Append("  smnForwarding: ").Append(SmnForwarding).Append("\n");
             sb.Append("  deviceAlarm: ").Append(DeviceAlarm).Append("\n");
             sb.Append("  deviceCommand: ").Append(DeviceCommand).Append("\n");
@@ -118,12 +111,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Addition == input.Addition ||
-                    this.Addition != null &&
-                    input.Addition != null &&
-                    this.Addition.SequenceEqual(input.Addition)
                 ) && 
                 (
                     this.SmnForwarding == input.SmnForwarding ||
@@ -177,8 +164,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Addition != null)
-                    hashCode = hashCode * 59 + this.Addition.GetHashCode();
                 if (this.SmnForwarding != null)
                     hashCode = hashCode * 59 + this.SmnForwarding.GetHashCode();
                 if (this.DeviceAlarm != null)

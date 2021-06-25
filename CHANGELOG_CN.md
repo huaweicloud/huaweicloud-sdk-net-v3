@@ -1,3 +1,23 @@
+# 3.0.49 2021-06-25
+
+### HuaweiCloud SDK BMS
+
+- _新增特性_
+    - 支持接口`ChangeBaremetalServerOs`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ChangeBaremetalServerName`的响应参数名称调整：`server_tags`->`sys_tags`
+
+### HuaweiCloud SDK IAM
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`KeystoneListPermissions`新增请求参数`permission_type`、`display_name`、`catalog`、`type`
+
 # 3.0.48 2021-06-21
 
 ### HuaweiCloud SDK BMS

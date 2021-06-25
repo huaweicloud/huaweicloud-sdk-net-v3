@@ -29,13 +29,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("nodepool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodepoolId { get; set; }
 
-        /// <summary>
-        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-        /// </summary>
-        [SDKProperty("errorStatus", IsQuery = true)]
-        [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorStatus { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -46,7 +39,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class DeleteNodePoolRequest {\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  nodepoolId: ").Append(NodepoolId).Append("\n");
-            sb.Append("  errorStatus: ").Append(ErrorStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,11 +69,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.NodepoolId == input.NodepoolId ||
                     (this.NodepoolId != null &&
                     this.NodepoolId.Equals(input.NodepoolId))
-                ) && 
-                (
-                    this.ErrorStatus == input.ErrorStatus ||
-                    (this.ErrorStatus != null &&
-                    this.ErrorStatus.Equals(input.ErrorStatus))
                 );
         }
 
@@ -97,8 +84,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.NodepoolId != null)
                     hashCode = hashCode * 59 + this.NodepoolId.GetHashCode();
-                if (this.ErrorStatus != null)
-                    hashCode = hashCode * 59 + this.ErrorStatus.GetHashCode();
                 return hashCode;
             }
         }

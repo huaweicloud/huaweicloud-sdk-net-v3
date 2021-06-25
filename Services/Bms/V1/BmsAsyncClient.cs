@@ -103,6 +103,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
+        /// 
+        /// </summary>
+        public async Task<ChangeBaremetalServerOsResponse> ChangeBaremetalServerOsAsync(ChangeBaremetalServerOsRequest changeBaremetalServerOsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , changeBaremetalServerOsRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/changeos",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBaremetalServerOsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ChangeBaremetalServerOsResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建裸金属服务器
         /// </summary>
         public async Task<CreateBareMetalServersResponse> CreateBareMetalServersAsync(CreateBareMetalServersRequest createBareMetalServersRequest)

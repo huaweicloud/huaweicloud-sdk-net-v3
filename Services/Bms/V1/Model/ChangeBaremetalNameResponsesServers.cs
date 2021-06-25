@@ -1026,8 +1026,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// <summary>
         /// 裸金属服务器的系统标签
         /// </summary>
-        [JsonProperty("server_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SystemTags> ServerTags { get; set; }
+        [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SystemTags> SysTags { get; set; }
 
         /// <summary>
         /// enterprise_project_id。
@@ -1091,7 +1091,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("  oSEXTSRVATTRuserData: ").Append(OSEXTSRVATTRuserData).Append("\n");
             sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
-            sb.Append("  serverTags: ").Append(ServerTags).Append("\n");
+            sb.Append("  sysTags: ").Append(SysTags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  osschedulerHints: ").Append(OsschedulerHints).Append("\n");
             sb.Append("}\n");
@@ -1330,10 +1330,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
-                    this.ServerTags == input.ServerTags ||
-                    this.ServerTags != null &&
-                    input.ServerTags != null &&
-                    this.ServerTags.SequenceEqual(input.ServerTags)
+                    this.SysTags == input.SysTags ||
+                    this.SysTags != null &&
+                    input.SysTags != null &&
+                    this.SysTags.SequenceEqual(input.SysTags)
                 ) && 
                 (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
@@ -1439,8 +1439,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.ServerTags != null)
-                    hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
+                if (this.SysTags != null)
+                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.OsschedulerHints != null)

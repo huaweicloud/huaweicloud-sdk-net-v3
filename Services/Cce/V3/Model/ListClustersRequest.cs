@@ -278,13 +278,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-        /// </summary>
-        [SDKProperty("errorStatus", IsQuery = true)]
-        [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorStatus { get; set; }
-
-        /// <summary>
         /// 查询集群详细信息。若设置为true，获取集群下节点总数(totalNodesNumber)、正常节点数(activeNodesNumber)、CPU总量(totalNodesCPU)、内存总量(totalNodesMemory)、已安装插件列表(installedAddonInstances)，已安装插件列表中包含名称(addonTemplateName)、版本号(version)、插件的状态信息(status)，放入到annotation中。
         /// </summary>
         [SDKProperty("detail", IsQuery = true)]
@@ -318,7 +311,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListClustersRequest {\n");
-            sb.Append("  errorStatus: ").Append(ErrorStatus).Append("\n");
             sb.Append("  detail: ").Append(Detail).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -344,11 +336,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 return false;
 
             return 
-                (
-                    this.ErrorStatus == input.ErrorStatus ||
-                    (this.ErrorStatus != null &&
-                    this.ErrorStatus.Equals(input.ErrorStatus))
-                ) && 
                 (
                     this.Detail == input.Detail ||
                     (this.Detail != null &&
@@ -379,8 +366,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ErrorStatus != null)
-                    hashCode = hashCode * 59 + this.ErrorStatus.GetHashCode();
                 if (this.Detail != null)
                     hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 if (this.Status != null)

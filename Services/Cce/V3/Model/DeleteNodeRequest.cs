@@ -134,13 +134,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string NodeId { get; set; }
 
         /// <summary>
-        /// 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-        /// </summary>
-        [SDKProperty("errorStatus", IsQuery = true)]
-        [JsonProperty("errorStatus", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorStatus { get; set; }
-
-        /// <summary>
         /// 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
         /// </summary>
         [SDKProperty("nodepoolScaleDown", IsQuery = true)]
@@ -156,7 +149,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class DeleteNodeRequest {\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  nodeId: ").Append(NodeId).Append("\n");
-            sb.Append("  errorStatus: ").Append(ErrorStatus).Append("\n");
             sb.Append("  nodepoolScaleDown: ").Append(NodepoolScaleDown).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -190,11 +182,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.NodeId.Equals(input.NodeId))
                 ) && 
                 (
-                    this.ErrorStatus == input.ErrorStatus ||
-                    (this.ErrorStatus != null &&
-                    this.ErrorStatus.Equals(input.ErrorStatus))
-                ) && 
-                (
                     this.NodepoolScaleDown == input.NodepoolScaleDown ||
                     (this.NodepoolScaleDown != null &&
                     this.NodepoolScaleDown.Equals(input.NodepoolScaleDown))
@@ -213,8 +200,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.NodeId != null)
                     hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.ErrorStatus != null)
-                    hashCode = hashCode * 59 + this.ErrorStatus.GetHashCode();
                 if (this.NodepoolScaleDown != null)
                     hashCode = hashCode * 59 + this.NodepoolScaleDown.GetHashCode();
                 return hashCode;

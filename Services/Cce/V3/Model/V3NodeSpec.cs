@@ -94,12 +94,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string EcsGroupId { get; set; }
 
         /// <summary>
-        /// 云服务器故障域，将节点创建在指定故障域下。\\n &gt;必须同时指定故障域策略的云服务器ID，且需要开启故障域特性开关 
-        /// </summary>
-        [JsonProperty("faultDomain", NullValueHandling = NullValueHandling.Ignore)]
-        public string FaultDomain { get; set; }
-
-        /// <summary>
         /// 指定DeH主机的ID，将节点调度到自己的DeH上。\\n&gt;创建节点池添加节点时不支持该参数。 
         /// </summary>
         [JsonProperty("dedicatedHostId", NullValueHandling = NullValueHandling.Ignore)]
@@ -150,7 +144,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  taints: ").Append(Taints).Append("\n");
             sb.Append("  k8sTags: ").Append(K8sTags).Append("\n");
             sb.Append("  ecsGroupId: ").Append(EcsGroupId).Append("\n");
-            sb.Append("  faultDomain: ").Append(FaultDomain).Append("\n");
             sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
             sb.Append("  offloadNode: ").Append(OffloadNode).Append("\n");
             sb.Append("  userTags: ").Append(UserTags).Append("\n");
@@ -246,11 +239,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.EcsGroupId.Equals(input.EcsGroupId))
                 ) && 
                 (
-                    this.FaultDomain == input.FaultDomain ||
-                    (this.FaultDomain != null &&
-                    this.FaultDomain.Equals(input.FaultDomain))
-                ) && 
-                (
                     this.DedicatedHostId == input.DedicatedHostId ||
                     (this.DedicatedHostId != null &&
                     this.DedicatedHostId.Equals(input.DedicatedHostId))
@@ -312,8 +300,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
                 if (this.EcsGroupId != null)
                     hashCode = hashCode * 59 + this.EcsGroupId.GetHashCode();
-                if (this.FaultDomain != null)
-                    hashCode = hashCode * 59 + this.FaultDomain.GetHashCode();
                 if (this.DedicatedHostId != null)
                     hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
                 if (this.OffloadNode != null)
