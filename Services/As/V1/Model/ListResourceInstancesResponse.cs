@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 分页位置标识。
         /// </summary>
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Marker { get; set; }
+        public string Marker { get; set; }
 
 
         /// <summary>

@@ -142,14 +142,14 @@ namespace HuaweiCloud.SDK.As.V1
         /// <summary>
         /// 批量将实例移出备用状态
         /// </summary>
-        public BatchUnsetScalingInstancesStandbyResponse BatchUnsetScalingInstancesStandby(BatchUnsetScalingInstancesStandbyRequest batchUnsetScalingInstancesStandbyRequest)
+        public BatchUnsetScalingInstancesStantbyResponse BatchUnsetScalingInstancesStantby(BatchUnsetScalingInstancesStantbyRequest batchUnsetScalingInstancesStantbyRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , batchUnsetScalingInstancesStandbyRequest.ScalingGroupId.ToString());
+            urlParam.Add("scaling_group_id" , batchUnsetScalingInstancesStantbyRequest.ScalingGroupId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnsetScalingInstancesStandbyRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnsetScalingInstancesStantbyRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerializeNull<BatchUnsetScalingInstancesStandbyResponse>(response);
+            return JsonUtils.DeSerializeNull<BatchUnsetScalingInstancesStantbyResponse>(response);
         }
         
         /// <summary>

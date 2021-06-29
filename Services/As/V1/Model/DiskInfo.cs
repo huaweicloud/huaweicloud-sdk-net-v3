@@ -254,7 +254,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 磁盘大小，容量单位为GB。系统盘输入大小范围为40~32768，且不小于镜像中系统盘的最小(min_disk属性)值。数据盘输入大小范围为10~32768。
+        /// 磁盘大小，容量单位为GB。系统盘输入最大为32768，且不小于镜像中系统盘的最小(min_disk属性)值。数据盘输入大小范围为10~32768。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }

@@ -64,10 +64,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string AdminPass { get; set; }
 
         /// <summary>
-        /// 
+        /// 个人信息
         /// </summary>
         [JsonProperty("personality", NullValueHandling = NullValueHandling.Ignore)]
-        public PersonalityResult Personality { get; set; }
+        public List<PersonalityResult> Personality { get; set; }
 
         /// <summary>
         /// 
@@ -213,8 +213,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 ) && 
                 (
                     this.Personality == input.Personality ||
-                    (this.Personality != null &&
-                    this.Personality.Equals(input.Personality))
+                    this.Personality != null &&
+                    input.Personality != null &&
+                    this.Personality.SequenceEqual(input.Personality)
                 ) && 
                 (
                     this.PublicIp == input.PublicIp ||

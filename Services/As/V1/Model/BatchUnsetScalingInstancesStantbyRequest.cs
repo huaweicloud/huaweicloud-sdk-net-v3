@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class BatchUnsetScalingInstancesStandbyRequest 
+    public class BatchUnsetScalingInstancesStantbyRequest 
     {
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchUnsetScalingInstancesStandbyRequest {\n");
+            sb.Append("class BatchUnsetScalingInstancesStantbyRequest {\n");
             sb.Append("  scalingGroupId: ").Append(ScalingGroupId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -48,13 +48,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchUnsetScalingInstancesStandbyRequest);
+            return this.Equals(input as BatchUnsetScalingInstancesStantbyRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchUnsetScalingInstancesStandbyRequest input)
+        public bool Equals(BatchUnsetScalingInstancesStantbyRequest input)
         {
             if (input == null)
                 return false;

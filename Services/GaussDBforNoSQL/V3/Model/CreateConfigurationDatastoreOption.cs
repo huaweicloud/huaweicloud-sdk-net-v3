@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// <summary>
         /// 数据库部署模式，GaussDB(for Mongo)该参数必选。 - GaussDB(for Mongo) 集群实例取值为\&quot;Sharding\&quot;。 - GaussDB(for Mongo) 副本集实例取值为\&quot;ReplicaSet\&quot;。
         /// </summary>
-        [JsonProperty("storage_engine", NullValueHandling = NullValueHandling.Ignore)]
-        public string StorageEngine { get; set; }
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
 
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("class CreateConfigurationDatastoreOption {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
-            sb.Append("  storageEngine: ").Append(StorageEngine).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,9 +76,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.Version.Equals(input.Version))
                 ) && 
                 (
-                    this.StorageEngine == input.StorageEngine ||
-                    (this.StorageEngine != null &&
-                    this.StorageEngine.Equals(input.StorageEngine))
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
                 );
         }
 
@@ -94,8 +94,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.StorageEngine != null)
-                    hashCode = hashCode * 59 + this.StorageEngine.GetHashCode();
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 return hashCode;
             }
         }

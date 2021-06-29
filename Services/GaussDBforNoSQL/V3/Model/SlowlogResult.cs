@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 节点名称。
+        /// 执行时间。
         /// </summary>
-        [JsonProperty("node_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string NodeName { get; set; }
+        [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
+        public string Time { get; set; }
 
         /// <summary>
         /// 所属数据库。
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SlowlogResult {\n");
-            sb.Append("  nodeName: ").Append(NodeName).Append("\n");
+            sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  database: ").Append(Database).Append("\n");
             sb.Append("  querySample: ").Append(QuerySample).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -80,9 +80,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 
             return 
                 (
-                    this.NodeName == input.NodeName ||
-                    (this.NodeName != null &&
-                    this.NodeName.Equals(input.NodeName))
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
                 ) && 
                 (
                     this.Database == input.Database ||
@@ -114,8 +114,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NodeName != null)
-                    hashCode = hashCode * 59 + this.NodeName.GetHashCode();
+                if (this.Time != null)
+                    hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.Database != null)
                     hashCode = hashCode * 59 + this.Database.GetHashCode();
                 if (this.QuerySample != null)

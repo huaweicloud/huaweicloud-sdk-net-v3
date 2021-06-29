@@ -266,13 +266,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 项目的ID。
-        /// </summary>
-        [SDKProperty("tenant_id", IsQuery = true)]
-        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TenantId { get; set; }
-
-        /// <summary>
         /// 公网NAT网关实例的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
@@ -355,7 +348,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListNatGatewaysRequest {\n");
-            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -388,11 +380,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 return false;
 
             return 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -460,8 +447,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.EnterpriseProjectId != null)

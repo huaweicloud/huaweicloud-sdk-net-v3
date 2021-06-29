@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class BatchUnsetScalingInstancesStandbyResponse : SdkResponse
+    public class BatchUnsetScalingInstancesStantbyResponse : SdkResponse
     {
 
 

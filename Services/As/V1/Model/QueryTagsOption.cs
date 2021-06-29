@@ -175,8 +175,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// <summary>
         /// 模糊搜索字段。
         /// </summary>
-        [JsonProperty("matchs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Matches> Matchs { get; set; }
+        [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Matches> Matches { get; set; }
 
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
-            sb.Append("  matchs: ").Append(Matchs).Append("\n");
+            sb.Append("  matches: ").Append(Matches).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -261,10 +261,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.Offset.Equals(input.Offset))
                 ) && 
                 (
-                    this.Matchs == input.Matchs ||
-                    this.Matchs != null &&
-                    input.Matchs != null &&
-                    this.Matchs.SequenceEqual(input.Matchs)
+                    this.Matches == input.Matches ||
+                    this.Matches != null &&
+                    input.Matches != null &&
+                    this.Matches.SequenceEqual(input.Matches)
                 );
         }
 
@@ -292,8 +292,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Offset != null)
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Matchs != null)
-                    hashCode = hashCode * 59 + this.Matchs.GetHashCode();
+                if (this.Matches != null)
+                    hashCode = hashCode * 59 + this.Matches.GetHashCode();
                 return hashCode;
             }
         }
