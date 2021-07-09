@@ -271,122 +271,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         }
 
         /// <summary>
-        /// 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
-        /// </summary>
-        /// <value>扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”</value>
-        [JsonConverter(typeof(EnumClassConverter<OSEXTSTSpowerStateEnum>))]
-        public class OSEXTSTSpowerStateEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly OSEXTSTSpowerStateEnum NUMBER_0 = new OSEXTSTSpowerStateEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly OSEXTSTSpowerStateEnum NUMBER_1 = new OSEXTSTSpowerStateEnum(1);
-
-            /// <summary>
-            /// Enum NUMBER_4 for value: 4
-            /// </summary>
-            public static readonly OSEXTSTSpowerStateEnum NUMBER_4 = new OSEXTSTSpowerStateEnum(4);
-
-            private static readonly Dictionary<int?, OSEXTSTSpowerStateEnum> StaticFields =
-            new Dictionary<int?, OSEXTSTSpowerStateEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-                { 4, NUMBER_4 },
-            };
-
-            private int? Value;
-
-            public OSEXTSTSpowerStateEnum(int? value)
-            {
-                Value = value;
-            }
-
-            public static OSEXTSTSpowerStateEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as OSEXTSTSpowerStateEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(OSEXTSTSpowerStateEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(OSEXTSTSpowerStateEnum a, OSEXTSTSpowerStateEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(OSEXTSTSpowerStateEnum a, OSEXTSTSpowerStateEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
         /// </summary>
         /// <value>扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中</value>
@@ -899,7 +783,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
         /// </summary>
         [JsonProperty("OS-EXT-STS:power_state", NullValueHandling = NullValueHandling.Ignore)]
-        public OSEXTSTSpowerStateEnum OSEXTSTSpowerState { get; set; }
+        public int? OSEXTSTSpowerState { get; set; }
+
         /// <summary>
         /// 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
         /// </summary>

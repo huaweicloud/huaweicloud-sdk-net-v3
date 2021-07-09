@@ -88,6 +88,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public bool? AutoExpand { get; set; }
 
         /// <summary>
+        /// 存储库smn消息通知开关
+        /// </summary>
+        [JsonProperty("smn_notify", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SmnNotify { get; set; }
+
+        /// <summary>
+        /// 存储库容量阈值，已用容量占总容量达到此百分比即发送相关通知
+        /// </summary>
+        [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Threshold { get; set; }
+
+        /// <summary>
         /// 用户id
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -119,6 +131,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  autoBind: ").Append(AutoBind).Append("\n");
             sb.Append("  bindRules: ").Append(BindRules).Append("\n");
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
+            sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
+            sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
@@ -205,6 +219,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.AutoExpand.Equals(input.AutoExpand))
                 ) && 
                 (
+                    this.SmnNotify == input.SmnNotify ||
+                    (this.SmnNotify != null &&
+                    this.SmnNotify.Equals(input.SmnNotify))
+                ) && 
+                (
+                    this.Threshold == input.Threshold ||
+                    (this.Threshold != null &&
+                    this.Threshold.Equals(input.Threshold))
+                ) && 
+                (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
                     this.UserId.Equals(input.UserId))
@@ -248,6 +272,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.BindRules.GetHashCode();
                 if (this.AutoExpand != null)
                     hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
+                if (this.SmnNotify != null)
+                    hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
+                if (this.Threshold != null)
+                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.CreatedAt != null)

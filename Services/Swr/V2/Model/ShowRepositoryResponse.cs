@@ -111,6 +111,18 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public string Updated { get; set; }
 
+        /// <summary>
+        /// 账号ID
+        /// </summary>
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// 镜像排序优先级
+        /// </summary>
+        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Priority { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -135,6 +147,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  internalPath: ").Append(InternalPath).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +249,16 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     this.Updated == input.Updated ||
                     (this.Updated != null &&
                     this.Updated.Equals(input.Updated))
+                ) && 
+                (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                ) && 
+                (
+                    this.Priority == input.Priority ||
+                    (this.Priority != null &&
+                    this.Priority.Equals(input.Priority))
                 );
         }
 
@@ -278,6 +302,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Updated != null)
                     hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Priority != null)
+                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

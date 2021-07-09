@@ -22,10 +22,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询公网Zone的列表响应。
         /// </summary>
         [JsonProperty("zones", NullValueHandling = NullValueHandling.Ignore)]
-        public string Zones { get; set; }
+        public List<PublicZoneResp> Zones { get; set; }
 
         /// <summary>
         /// 
@@ -72,8 +72,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 ) && 
                 (
                     this.Zones == input.Zones ||
-                    (this.Zones != null &&
-                    this.Zones.Equals(input.Zones))
+                    this.Zones != null &&
+                    input.Zones != null &&
+                    this.Zones.SequenceEqual(input.Zones)
                 ) && 
                 (
                     this.Metadata == input.Metadata ||

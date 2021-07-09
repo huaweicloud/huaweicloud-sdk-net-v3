@@ -1,3 +1,92 @@
+# 3.0.51 2021-07-09
+
+### HuaweiCloud SDK BMS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 修复接口`ListBareMetalServers`的响应参数`addresses`数据结构定义错误的问题
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListProtectable`新增响应参数`smn_notify`、`threshold`
+    - 接口`AssociateVaultPolicy`新增请求参数`add_policy_ids`和响应参数`without_any_tag`、`smn_notify`、`threshold`
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+    - 支持接口`RemoveNode`、`MigrateNode`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`DeleteCluster`新增请求参数`tobedeleted`
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreatePublicZone`的响应参数`masters`、`zones`类型调整：`string`->`array`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreateSharedBandwidth`、`ListBandwidths`新增响应参数`publicip_border_group`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`GlanceCreateImageMetadata`新增响应参数`__root_origin`、`checksum`、`size`
+    - 接口`GlanceAddImageMember`移除请求参数`deleted`、`deleted_at`,新增以下请求参数：
+        - `__lazyloading`
+        - `__os_feature_list`
+        - `__root_origin`
+        - `__sequence_num`
+        - `__support_agent_list`
+        - `__system__cmkid`
+        - `active_at`
+        - `hw_vif_multiqueue_enabled`
+        - `max_ram`
+        - `__image_location`
+        - `__is_config_init`
+        - `__account_code`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListRules`新增响应参数`edge_node_ids`、`last_update_time`
+
+### HuaweiCloud SDK SWR
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ShowRepository`新增响应参数`domain_id`、`priority`
+    - 接口`CreateRetention`新增响应参数`template`
+
 # 3.0.50 2021-06-29
 
 ### HuaweiCloud SDK CCE

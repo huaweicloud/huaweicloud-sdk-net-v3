@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 认证信息
         /// </summary>
         [JsonProperty("auths", NullValueHandling = NullValueHandling.Ignore)]
-        public Certification Auths { get; set; }
+        public Dictionary<string, AuthInfo> Auths { get; set; }
 
 
         /// <summary>
@@ -53,8 +53,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             return 
                 (
                     this.Auths == input.Auths ||
-                    (this.Auths != null &&
-                    this.Auths.Equals(input.Auths))
+                    this.Auths != null &&
+                    input.Auths != null &&
+                    this.Auths.SequenceEqual(input.Auths)
                 );
         }
 

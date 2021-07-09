@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
         /// </summary>
-        /// <value>是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
+        /// <value>是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteEniEnum>))]
         public class DeleteEniEnum
         {
@@ -399,9 +399,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
         /// </summary>
-        /// <value>是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
+        /// <value>是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteNetEnum>))]
         public class DeleteNetEnum
         {
@@ -782,6 +782,110 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             }
         }
 
+        /// <summary>
+        /// 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
+        /// </summary>
+        /// <value>是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)</value>
+        [JsonConverter(typeof(EnumClassConverter<TobedeletedEnum>))]
+        public class TobedeletedEnum
+        {
+            /// <summary>
+            /// Enum TRUE for value: true
+            /// </summary>
+            public static readonly TobedeletedEnum TRUE = new TobedeletedEnum("true");
+
+            private static readonly Dictionary<string, TobedeletedEnum> StaticFields =
+            new Dictionary<string, TobedeletedEnum>()
+            {
+                { "true", TRUE },
+            };
+
+            private string Value;
+
+            public TobedeletedEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static TobedeletedEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TobedeletedEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TobedeletedEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(TobedeletedEnum a, TobedeletedEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TobedeletedEnum a, TobedeletedEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
@@ -797,7 +901,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("delete_efs", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteEfsEnum DeleteEfs { get; set; }
         /// <summary>
-        /// 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
         /// </summary>
         [SDKProperty("delete_eni", IsQuery = true)]
         [JsonProperty("delete_eni", NullValueHandling = NullValueHandling.Ignore)]
@@ -809,7 +913,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("delete_evs", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteEvsEnum DeleteEvs { get; set; }
         /// <summary>
-        /// 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
         /// </summary>
         [SDKProperty("delete_net", IsQuery = true)]
         [JsonProperty("delete_net", NullValueHandling = NullValueHandling.Ignore)]
@@ -826,6 +930,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [SDKProperty("delete_sfs", IsQuery = true)]
         [JsonProperty("delete_sfs", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteSfsEnum DeleteSfs { get; set; }
+        /// <summary>
+        /// 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
+        /// </summary>
+        [SDKProperty("tobedeleted", IsQuery = true)]
+        [JsonProperty("tobedeleted", NullValueHandling = NullValueHandling.Ignore)]
+        public TobedeletedEnum Tobedeleted { get; set; }
 
         /// <summary>
         /// Get the string
@@ -841,6 +951,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  deleteNet: ").Append(DeleteNet).Append("\n");
             sb.Append("  deleteObs: ").Append(DeleteObs).Append("\n");
             sb.Append("  deleteSfs: ").Append(DeleteSfs).Append("\n");
+            sb.Append("  tobedeleted: ").Append(Tobedeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -896,6 +1007,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.DeleteSfs == input.DeleteSfs ||
                     (this.DeleteSfs != null &&
                     this.DeleteSfs.Equals(input.DeleteSfs))
+                ) && 
+                (
+                    this.Tobedeleted == input.Tobedeleted ||
+                    (this.Tobedeleted != null &&
+                    this.Tobedeleted.Equals(input.Tobedeleted))
                 );
         }
 
@@ -921,6 +1037,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.DeleteObs.GetHashCode();
                 if (this.DeleteSfs != null)
                     hashCode = hashCode * 59 + this.DeleteSfs.GetHashCode();
+                if (this.Tobedeleted != null)
+                    hashCode = hashCode * 59 + this.Tobedeleted.GetHashCode();
                 return hashCode;
             }
         }

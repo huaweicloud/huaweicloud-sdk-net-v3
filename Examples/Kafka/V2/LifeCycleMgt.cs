@@ -75,7 +75,6 @@ namespace Examples.Kafka.V2
                     EngineVersion = CreatePostPaidInstanceReq.EngineVersionEnum._1_1_0,
                     KafkaManagerUser = managerUser,
                     KafkaManagerPassword = managerPasswd,
-                    PartitionNum = CreatePostPaidInstanceReq.PartitionNumEnum.NUMBER_300,
                     ProductId = "00300-30308-0--0",
                     SecurityGroupId = sgId,
                     Specification = CreatePostPaidInstanceReq.SpecificationEnum._100MB,

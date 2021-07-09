@@ -24,8 +24,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("resouce_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public QueryImageByTagsResourceDetail ResouceDetail { get; set; }
+        [JsonProperty("resource_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public QueryImageByTagsResourceDetail ResourceDetail { get; set; }
 
         /// <summary>
         /// 镜像的标签列表
@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowImageByTagsResource {\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
-            sb.Append("  resouceDetail: ").Append(ResouceDetail).Append("\n");
+            sb.Append("  resourceDetail: ").Append(ResourceDetail).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("}\n");
@@ -78,9 +78,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.ResourceId.Equals(input.ResourceId))
                 ) && 
                 (
-                    this.ResouceDetail == input.ResouceDetail ||
-                    (this.ResouceDetail != null &&
-                    this.ResouceDetail.Equals(input.ResouceDetail))
+                    this.ResourceDetail == input.ResourceDetail ||
+                    (this.ResourceDetail != null &&
+                    this.ResourceDetail.Equals(input.ResourceDetail))
                 ) && 
                 (
                     this.Tags == input.Tags ||
@@ -105,8 +105,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 int hashCode = 41;
                 if (this.ResourceId != null)
                     hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResouceDetail != null)
-                    hashCode = hashCode * 59 + this.ResouceDetail.GetHashCode();
+                if (this.ResourceDetail != null)
+                    hashCode = hashCode * 59 + this.ResourceDetail.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ResourceName != null)

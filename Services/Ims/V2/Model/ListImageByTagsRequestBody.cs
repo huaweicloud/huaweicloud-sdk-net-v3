@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagKeyValue> Matches { get; set; }
 
+        /// <summary>
+        /// 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略tag、not_tags、tags_any、not_tags_any字段。
+        /// </summary>
+        [JsonProperty("without_any_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithoutAnyTag { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -188,6 +194,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  matches: ").Append(Matches).Append("\n");
+            sb.Append("  withoutAnyTag: ").Append(WithoutAnyTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -253,6 +260,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.Matches != null &&
                     input.Matches != null &&
                     this.Matches.SequenceEqual(input.Matches)
+                ) && 
+                (
+                    this.WithoutAnyTag == input.WithoutAnyTag ||
+                    (this.WithoutAnyTag != null &&
+                    this.WithoutAnyTag.Equals(input.WithoutAnyTag))
                 );
         }
 
@@ -280,6 +292,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Matches != null)
                     hashCode = hashCode * 59 + this.Matches.GetHashCode();
+                if (this.WithoutAnyTag != null)
+                    hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
                 return hashCode;
             }
         }

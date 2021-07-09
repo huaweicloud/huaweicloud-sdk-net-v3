@@ -31,19 +31,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public CCEJobMetadata Metadata { get; set; }
+        public JobMetadata Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
-        public CCEJobSpec Spec { get; set; }
+        public JobSpec Spec { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public CCEJobStatus Status { get; set; }
+        public JobStatus Status { get; set; }
 
 
         /// <summary>

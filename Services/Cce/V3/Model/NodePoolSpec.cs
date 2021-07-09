@@ -134,7 +134,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("nodeTemplate", NullValueHandling = NullValueHandling.Ignore)]
-        public V3NodeSpec NodeTemplate { get; set; }
+        public NodeSpec NodeTemplate { get; set; }
 
         /// <summary>
         /// 节点池初始化节点个数。

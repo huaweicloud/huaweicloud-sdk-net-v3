@@ -22,10 +22,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string DestinationVaultId { get; set; }
 
         /// <summary>
-        /// 策略ID
+        /// 策略ID。policy_id字段与add_policy_ids字段在一次请求中有且只有一个。
         /// </summary>
         [JsonProperty("policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PolicyId { get; set; }
+
+        /// <summary>
+        /// 多策略场景下，绑定新策略的id列表。policy_id字段与add_policy_ids字段在一次请求中有且只有一个。
+        /// </summary>
+        [JsonProperty("add_policy_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AddPolicyIds { get; set; }
 
 
         /// <summary>
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("class VaultAssociate {\n");
             sb.Append("  destinationVaultId: ").Append(DestinationVaultId).Append("\n");
             sb.Append("  policyId: ").Append(PolicyId).Append("\n");
+            sb.Append("  addPolicyIds: ").Append(AddPolicyIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.PolicyId == input.PolicyId ||
                     (this.PolicyId != null &&
                     this.PolicyId.Equals(input.PolicyId))
+                ) && 
+                (
+                    this.AddPolicyIds == input.AddPolicyIds ||
+                    this.AddPolicyIds != null &&
+                    input.AddPolicyIds != null &&
+                    this.AddPolicyIds.SequenceEqual(input.AddPolicyIds)
                 );
         }
 
@@ -82,6 +95,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
                 if (this.PolicyId != null)
                     hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                if (this.AddPolicyIds != null)
+                    hashCode = hashCode * 59 + this.AddPolicyIds.GetHashCode();
                 return hashCode;
             }
         }

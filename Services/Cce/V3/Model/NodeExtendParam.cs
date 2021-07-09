@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 云服务器规格的分类。裸金属节点无该字段。
+        /// 云服务器规格的分类。响应中会返回此字段。
         /// </summary>
         [JsonProperty("ecs:performancetype", NullValueHandling = NullValueHandling.Ignore)]
         public string Ecsperformancetype { get; set; }
@@ -76,12 +76,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? DockerBaseSize { get; set; }
 
         /// <summary>
-        /// 是否为CCE Turbo集群节点。
-        /// </summary>
-        [JsonProperty("offloadNode", NullValueHandling = NullValueHandling.Ignore)]
-        public string OffloadNode { get; set; }
-
-        /// <summary>
         /// 节点的公钥。
         /// </summary>
         [JsonProperty("publicKey", NullValueHandling = NullValueHandling.Ignore)]
@@ -135,7 +129,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("  dockerLVMConfigOverride: ").Append(DockerLVMConfigOverride).Append("\n");
             sb.Append("  dockerBaseSize: ").Append(DockerBaseSize).Append("\n");
-            sb.Append("  offloadNode: ").Append(OffloadNode).Append("\n");
             sb.Append("  publicKey: ").Append(PublicKey).Append("\n");
             sb.Append("  alphaCcePreInstall: ").Append(AlphaCcePreInstall).Append("\n");
             sb.Append("  alphaCcePostInstall: ").Append(AlphaCcePostInstall).Append("\n");
@@ -214,11 +207,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.DockerBaseSize.Equals(input.DockerBaseSize))
                 ) && 
                 (
-                    this.OffloadNode == input.OffloadNode ||
-                    (this.OffloadNode != null &&
-                    this.OffloadNode.Equals(input.OffloadNode))
-                ) && 
-                (
                     this.PublicKey == input.PublicKey ||
                     (this.PublicKey != null &&
                     this.PublicKey.Equals(input.PublicKey))
@@ -278,8 +266,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.DockerLVMConfigOverride.GetHashCode();
                 if (this.DockerBaseSize != null)
                     hashCode = hashCode * 59 + this.DockerBaseSize.GetHashCode();
-                if (this.OffloadNode != null)
-                    hashCode = hashCode * 59 + this.OffloadNode.GetHashCode();
                 if (this.PublicKey != null)
                     hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
                 if (this.AlphaCcePreInstall != null)

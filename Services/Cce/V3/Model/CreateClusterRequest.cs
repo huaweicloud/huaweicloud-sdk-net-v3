@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public V3Cluster Body { get; set; }
+        public Cluster Body { get; set; }
 
 
         /// <summary>

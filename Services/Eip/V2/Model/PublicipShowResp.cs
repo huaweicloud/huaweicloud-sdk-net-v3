@@ -504,6 +504,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public IpVersionEnum IpVersion { get; set; }
+        /// <summary>
+        /// 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域才会返回此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：publicip只能绑定该字段相同的资源
+        /// </summary>
+        [JsonProperty("publicip_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicipBorderGroup { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -528,6 +534,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  publicIpv6Address: ").Append(PublicIpv6Address).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
+            sb.Append("  publicipBorderGroup: ").Append(PublicipBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -628,6 +635,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.IpVersion == input.IpVersion ||
                     (this.IpVersion != null &&
                     this.IpVersion.Equals(input.IpVersion))
+                ) && 
+                (
+                    this.PublicipBorderGroup == input.PublicipBorderGroup ||
+                    (this.PublicipBorderGroup != null &&
+                    this.PublicipBorderGroup.Equals(input.PublicipBorderGroup))
                 );
         }
 
@@ -671,6 +683,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.PublicIpv6Address.GetHashCode();
                 if (this.IpVersion != null)
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.PublicipBorderGroup != null)
+                    hashCode = hashCode * 59 + this.PublicipBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

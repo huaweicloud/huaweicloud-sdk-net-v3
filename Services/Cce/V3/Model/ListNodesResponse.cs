@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 节点对象列表，包含了当前集群下所有节点的详细信息。可通过items.metadata.name下的值来找到对应的节点。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
-        public List<V3Node> Items { get; set; }
+        public List<Node> Items { get; set; }
 
 
         /// <summary>

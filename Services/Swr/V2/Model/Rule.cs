@@ -126,7 +126,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
 
 
         /// <summary>
-        /// template是date_rule时，设置params[\&quot;days\&quot;] template是tag_rule时，设置params[\&quot;num\&quot;] 
+        /// 回收类型，date_rule、tag_rule
+        /// </summary>
+        [JsonProperty("template", NullValueHandling = NullValueHandling.Ignore)]
+        public TemplateEnum Template { get; set; }
+        /// <summary>
+        /// template是date_rule时，设置params为{\&quot;days\&quot;: \&quot;xxx\&quot;} template是tag_rule时，设置params为{\&quot;num\&quot;: \&quot;xxx\&quot;} 
         /// </summary>
         [JsonProperty("params", NullValueHandling = NullValueHandling.Ignore)]
         public Object Params { get; set; }
@@ -137,11 +142,6 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("tag_selectors", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagSelector> TagSelectors { get; set; }
 
-        /// <summary>
-        /// 回收类型，date_rule、tag_rule
-        /// </summary>
-        [JsonProperty("template", NullValueHandling = NullValueHandling.Ignore)]
-        public TemplateEnum Template { get; set; }
 
         /// <summary>
         /// Get the string
@@ -150,9 +150,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Rule {\n");
+            sb.Append("  template: ").Append(Template).Append("\n");
             sb.Append("  Params: ").Append(Params).Append("\n");
             sb.Append("  tagSelectors: ").Append(TagSelectors).Append("\n");
-            sb.Append("  template: ").Append(Template).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -175,6 +175,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
 
             return 
                 (
+                    this.Template == input.Template ||
+                    (this.Template != null &&
+                    this.Template.Equals(input.Template))
+                ) && 
+                (
                     this.Params == input.Params ||
                     (this.Params != null &&
                     this.Params.Equals(input.Params))
@@ -184,11 +189,6 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     this.TagSelectors != null &&
                     input.TagSelectors != null &&
                     this.TagSelectors.SequenceEqual(input.TagSelectors)
-                ) && 
-                (
-                    this.Template == input.Template ||
-                    (this.Template != null &&
-                    this.Template.Equals(input.Template))
                 );
         }
 
@@ -200,12 +200,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Template != null)
+                    hashCode = hashCode * 59 + this.Template.GetHashCode();
                 if (this.Params != null)
                     hashCode = hashCode * 59 + this.Params.GetHashCode();
                 if (this.TagSelectors != null)
                     hashCode = hashCode * 59 + this.TagSelectors.GetHashCode();
-                if (this.Template != null)
-                    hashCode = hashCode * 59 + this.Template.GetHashCode();
                 return hashCode;
             }
         }

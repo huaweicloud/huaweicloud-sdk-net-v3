@@ -1820,18 +1820,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 是否是删除的镜像，取值为true或者false。
-        /// </summary>
-        [JsonProperty("deleted", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Deleted { get; set; }
-
-        /// <summary>
-        /// 删除时间。格式为UTC时间
-        /// </summary>
-        [JsonProperty("deleted_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeletedAt { get; set; }
-
-        /// <summary>
         /// 镜像的格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
         /// </summary>
         [JsonProperty("disk_format", NullValueHandling = NullValueHandling.Ignore)]
@@ -1955,6 +1943,78 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         [JsonProperty("__is_offshelved", NullValueHandling = NullValueHandling.Ignore)]
         public IsOffshelvedEnum IsOffshelved { get; set; }
+        /// <summary>
+        /// 镜像是否支持延迟加载。取值为“True”或“False”。
+        /// </summary>
+        [JsonProperty("__lazyloading", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Lazyloading { get; set; }
+
+        /// <summary>
+        /// 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。
+        /// </summary>
+        [JsonProperty("__os_feature_list", NullValueHandling = NullValueHandling.Ignore)]
+        public string OsFeatureList { get; set; }
+
+        /// <summary>
+        /// 表示当前镜像来源是从外部导入。取值：file。
+        /// </summary>
+        [JsonProperty("__root_origin", NullValueHandling = NullValueHandling.Ignore)]
+        public string RootOrigin { get; set; }
+
+        /// <summary>
+        /// 目前暂时不用
+        /// </summary>
+        [JsonProperty("__sequence_num", NullValueHandling = NullValueHandling.Ignore)]
+        public string SequenceNum { get; set; }
+
+        /// <summary>
+        /// 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
+        /// </summary>
+        [JsonProperty("__support_agent_list", NullValueHandling = NullValueHandling.Ignore)]
+        public string SupportAgentList { get; set; }
+
+        /// <summary>
+        /// 加密镜像所使用的密钥ID。
+        /// </summary>
+        [JsonProperty("__system__cmkid", NullValueHandling = NullValueHandling.Ignore)]
+        public string SystemCmkid { get; set; }
+
+        /// <summary>
+        /// 镜像状态变为正常的时间。
+        /// </summary>
+        [JsonProperty("active_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActiveAt { get; set; }
+
+        /// <summary>
+        /// 镜像是否支持网卡多队列。取值为true或者false。
+        /// </summary>
+        [JsonProperty("hw_vif_multiqueue_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public string HwVifMultiqueueEnabled { get; set; }
+
+        /// <summary>
+        /// 镜像支持的最大内存，单位为MB。取值可以参考云服务器规格限制，一般不设置。
+        /// </summary>
+        [JsonProperty("max_ram", NullValueHandling = NullValueHandling.Ignore)]
+        public string MaxRam { get; set; }
+
+        /// <summary>
+        /// 镜像的存储位置。
+        /// </summary>
+        [JsonProperty("__image_location", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageLocation { get; set; }
+
+        /// <summary>
+        /// 是否完成了初始化配置。取值为true或false
+        /// </summary>
+        [JsonProperty("__is_config_init", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsConfigInit { get; set; }
+
+        /// <summary>
+        /// 收费镜像标识。
+        /// </summary>
+        [JsonProperty("__account_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccountCode { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -1988,8 +2048,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  checksum: ").Append(Checksum).Append("\n");
             sb.Append("  containerFormat: ").Append(ContainerFormat).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  deleted: ").Append(Deleted).Append("\n");
-            sb.Append("  deletedAt: ").Append(DeletedAt).Append("\n");
             sb.Append("  diskFormat: ").Append(DiskFormat).Append("\n");
             sb.Append("  file: ").Append(File).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
@@ -2012,6 +2070,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  hwFirmwareType: ").Append(HwFirmwareType).Append("\n");
             sb.Append("  supportArm: ").Append(SupportArm).Append("\n");
             sb.Append("  isOffshelved: ").Append(IsOffshelved).Append("\n");
+            sb.Append("  lazyloading: ").Append(Lazyloading).Append("\n");
+            sb.Append("  osFeatureList: ").Append(OsFeatureList).Append("\n");
+            sb.Append("  rootOrigin: ").Append(RootOrigin).Append("\n");
+            sb.Append("  sequenceNum: ").Append(SequenceNum).Append("\n");
+            sb.Append("  supportAgentList: ").Append(SupportAgentList).Append("\n");
+            sb.Append("  systemCmkid: ").Append(SystemCmkid).Append("\n");
+            sb.Append("  activeAt: ").Append(ActiveAt).Append("\n");
+            sb.Append("  hwVifMultiqueueEnabled: ").Append(HwVifMultiqueueEnabled).Append("\n");
+            sb.Append("  maxRam: ").Append(MaxRam).Append("\n");
+            sb.Append("  imageLocation: ").Append(ImageLocation).Append("\n");
+            sb.Append("  isConfigInit: ").Append(IsConfigInit).Append("\n");
+            sb.Append("  accountCode: ").Append(AccountCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2159,16 +2229,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                ) && 
-                (
-                    this.DeletedAt == input.DeletedAt ||
-                    (this.DeletedAt != null &&
-                    this.DeletedAt.Equals(input.DeletedAt))
-                ) && 
-                (
                     this.DiskFormat == input.DiskFormat ||
                     (this.DiskFormat != null &&
                     this.DiskFormat.Equals(input.DiskFormat))
@@ -2278,6 +2338,66 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.IsOffshelved == input.IsOffshelved ||
                     (this.IsOffshelved != null &&
                     this.IsOffshelved.Equals(input.IsOffshelved))
+                ) && 
+                (
+                    this.Lazyloading == input.Lazyloading ||
+                    (this.Lazyloading != null &&
+                    this.Lazyloading.Equals(input.Lazyloading))
+                ) && 
+                (
+                    this.OsFeatureList == input.OsFeatureList ||
+                    (this.OsFeatureList != null &&
+                    this.OsFeatureList.Equals(input.OsFeatureList))
+                ) && 
+                (
+                    this.RootOrigin == input.RootOrigin ||
+                    (this.RootOrigin != null &&
+                    this.RootOrigin.Equals(input.RootOrigin))
+                ) && 
+                (
+                    this.SequenceNum == input.SequenceNum ||
+                    (this.SequenceNum != null &&
+                    this.SequenceNum.Equals(input.SequenceNum))
+                ) && 
+                (
+                    this.SupportAgentList == input.SupportAgentList ||
+                    (this.SupportAgentList != null &&
+                    this.SupportAgentList.Equals(input.SupportAgentList))
+                ) && 
+                (
+                    this.SystemCmkid == input.SystemCmkid ||
+                    (this.SystemCmkid != null &&
+                    this.SystemCmkid.Equals(input.SystemCmkid))
+                ) && 
+                (
+                    this.ActiveAt == input.ActiveAt ||
+                    (this.ActiveAt != null &&
+                    this.ActiveAt.Equals(input.ActiveAt))
+                ) && 
+                (
+                    this.HwVifMultiqueueEnabled == input.HwVifMultiqueueEnabled ||
+                    (this.HwVifMultiqueueEnabled != null &&
+                    this.HwVifMultiqueueEnabled.Equals(input.HwVifMultiqueueEnabled))
+                ) && 
+                (
+                    this.MaxRam == input.MaxRam ||
+                    (this.MaxRam != null &&
+                    this.MaxRam.Equals(input.MaxRam))
+                ) && 
+                (
+                    this.ImageLocation == input.ImageLocation ||
+                    (this.ImageLocation != null &&
+                    this.ImageLocation.Equals(input.ImageLocation))
+                ) && 
+                (
+                    this.IsConfigInit == input.IsConfigInit ||
+                    (this.IsConfigInit != null &&
+                    this.IsConfigInit.Equals(input.IsConfigInit))
+                ) && 
+                (
+                    this.AccountCode == input.AccountCode ||
+                    (this.AccountCode != null &&
+                    this.AccountCode.Equals(input.AccountCode))
                 );
         }
 
@@ -2339,10 +2459,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Deleted != null)
-                    hashCode = hashCode * 59 + this.Deleted.GetHashCode();
-                if (this.DeletedAt != null)
-                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.DiskFormat != null)
                     hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
                 if (this.File != null)
@@ -2387,6 +2503,30 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.SupportArm.GetHashCode();
                 if (this.IsOffshelved != null)
                     hashCode = hashCode * 59 + this.IsOffshelved.GetHashCode();
+                if (this.Lazyloading != null)
+                    hashCode = hashCode * 59 + this.Lazyloading.GetHashCode();
+                if (this.OsFeatureList != null)
+                    hashCode = hashCode * 59 + this.OsFeatureList.GetHashCode();
+                if (this.RootOrigin != null)
+                    hashCode = hashCode * 59 + this.RootOrigin.GetHashCode();
+                if (this.SequenceNum != null)
+                    hashCode = hashCode * 59 + this.SequenceNum.GetHashCode();
+                if (this.SupportAgentList != null)
+                    hashCode = hashCode * 59 + this.SupportAgentList.GetHashCode();
+                if (this.SystemCmkid != null)
+                    hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
+                if (this.ActiveAt != null)
+                    hashCode = hashCode * 59 + this.ActiveAt.GetHashCode();
+                if (this.HwVifMultiqueueEnabled != null)
+                    hashCode = hashCode * 59 + this.HwVifMultiqueueEnabled.GetHashCode();
+                if (this.MaxRam != null)
+                    hashCode = hashCode * 59 + this.MaxRam.GetHashCode();
+                if (this.ImageLocation != null)
+                    hashCode = hashCode * 59 + this.ImageLocation.GetHashCode();
+                if (this.IsConfigInit != null)
+                    hashCode = hashCode * 59 + this.IsConfigInit.GetHashCode();
+                if (this.AccountCode != null)
+                    hashCode = hashCode * 59 + this.AccountCode.GetHashCode();
                 return hashCode;
             }
         }

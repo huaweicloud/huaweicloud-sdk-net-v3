@@ -45,6 +45,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("auto_expand", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoExpand { get; set; }
 
+        /// <summary>
+        /// 发送smn通知开关
+        /// </summary>
+        [JsonProperty("smn_notify", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SmnNotify { get; set; }
+
+        /// <summary>
+        /// 存储库容量阈值，存储库已用容量和总容量的百分比超过该值，若smn_notify为开，将发送相关通知。
+        /// </summary>
+        [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Threshold { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +70,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  autoBind: ").Append(AutoBind).Append("\n");
             sb.Append("  bindRules: ").Append(BindRules).Append("\n");
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
+            sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
+            sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +117,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.AutoExpand == input.AutoExpand ||
                     (this.AutoExpand != null &&
                     this.AutoExpand.Equals(input.AutoExpand))
+                ) && 
+                (
+                    this.SmnNotify == input.SmnNotify ||
+                    (this.SmnNotify != null &&
+                    this.SmnNotify.Equals(input.SmnNotify))
+                ) && 
+                (
+                    this.Threshold == input.Threshold ||
+                    (this.Threshold != null &&
+                    this.Threshold.Equals(input.Threshold))
                 );
         }
 
@@ -124,6 +148,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.BindRules.GetHashCode();
                 if (this.AutoExpand != null)
                     hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
+                if (this.SmnNotify != null)
+                    hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
+                if (this.Threshold != null)
+                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 return hashCode;
             }
         }

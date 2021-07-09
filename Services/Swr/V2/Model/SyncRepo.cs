@@ -72,8 +72,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// <summary>
         /// 自动同步
         /// </summary>
-        [JsonProperty("synAuto", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? SynAuto { get; set; }
+        [JsonProperty("syncAuto", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SyncAuto { get; set; }
 
         /// <summary>
         /// 更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
@@ -98,7 +98,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  remoteNamespace: ").Append(RemoteNamespace).Append("\n");
             sb.Append("  remoteRegionId: ").Append(RemoteRegionId).Append("\n");
             sb.Append("  repoName: ").Append(RepoName).Append("\n");
-            sb.Append("  synAuto: ").Append(SynAuto).Append("\n");
+            sb.Append("  syncAuto: ").Append(SyncAuto).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -167,9 +167,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     this.RepoName.Equals(input.RepoName))
                 ) && 
                 (
-                    this.SynAuto == input.SynAuto ||
-                    (this.SynAuto != null &&
-                    this.SynAuto.Equals(input.SynAuto))
+                    this.SyncAuto == input.SyncAuto ||
+                    (this.SyncAuto != null &&
+                    this.SyncAuto.Equals(input.SyncAuto))
                 ) && 
                 (
                     this.UpdatedAt == input.UpdatedAt ||
@@ -204,8 +204,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
                 if (this.RepoName != null)
                     hashCode = hashCode * 59 + this.RepoName.GetHashCode();
-                if (this.SynAuto != null)
-                    hashCode = hashCode * 59 + this.SynAuto.GetHashCode();
+                if (this.SyncAuto != null)
+                    hashCode = hashCode * 59 + this.SyncAuto.GetHashCode();
                 if (this.UpdatedAt != null)
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;

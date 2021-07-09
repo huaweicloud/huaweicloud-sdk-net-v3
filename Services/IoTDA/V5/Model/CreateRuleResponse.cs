@@ -63,6 +63,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
+        /// <summary>
+        /// 归属边缘侧节点设备ID列表。
+        /// </summary>
+        [JsonProperty("edge_node_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EdgeNodeIds { get; set; }
+
+        /// <summary>
+        /// 规则最后更新时间，使用UTC时区，格式：yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;。
+        /// </summary>
+        [JsonProperty("last_update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastUpdateTime { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -79,6 +91,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  ruleType: ").Append(RuleType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  edgeNodeIds: ").Append(EdgeNodeIds).Append("\n");
+            sb.Append("  lastUpdateTime: ").Append(LastUpdateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,6 +154,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.AppId == input.AppId ||
                     (this.AppId != null &&
                     this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.EdgeNodeIds == input.EdgeNodeIds ||
+                    this.EdgeNodeIds != null &&
+                    input.EdgeNodeIds != null &&
+                    this.EdgeNodeIds.SequenceEqual(input.EdgeNodeIds)
+                ) && 
+                (
+                    this.LastUpdateTime == input.LastUpdateTime ||
+                    (this.LastUpdateTime != null &&
+                    this.LastUpdateTime.Equals(input.LastUpdateTime))
                 );
         }
 
@@ -167,6 +192,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.EdgeNodeIds != null)
+                    hashCode = hashCode * 59 + this.EdgeNodeIds.GetHashCode();
+                if (this.LastUpdateTime != null)
+                    hashCode = hashCode * 59 + this.LastUpdateTime.GetHashCode();
                 return hashCode;
             }
         }

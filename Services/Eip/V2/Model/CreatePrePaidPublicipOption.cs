@@ -14,116 +14,6 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     /// </summary>
     public class CreatePrePaidPublicipOption 
     {
-        /// <summary>
-        /// 功能说明：弹性公网IP的版本  取值范围：4、6，分别表示创建ipv4和ipv6  约束：必须是系统具体支持的类型  不填或空字符串时，默认创建ipv4
-        /// </summary>
-        /// <value>功能说明：弹性公网IP的版本  取值范围：4、6，分别表示创建ipv4和ipv6  约束：必须是系统具体支持的类型  不填或空字符串时，默认创建ipv4</value>
-        [JsonConverter(typeof(EnumClassConverter<IpVersionEnum>))]
-        public class IpVersionEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_4 for value: 4
-            /// </summary>
-            public static readonly IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
-
-            /// <summary>
-            /// Enum NUMBER_6 for value: 6
-            /// </summary>
-            public static readonly IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
-
-            private static readonly Dictionary<int?, IpVersionEnum> StaticFields =
-            new Dictionary<int?, IpVersionEnum>()
-            {
-                { 4, NUMBER_4 },
-                { 6, NUMBER_6 },
-            };
-
-            private int? Value;
-
-            public IpVersionEnum(int? value)
-            {
-                Value = value;
-            }
-
-            public static IpVersionEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as IpVersionEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(IpVersionEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(IpVersionEnum a, IpVersionEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(IpVersionEnum a, IpVersionEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 功能说明：弹性公网IP的类型  取值范围：5_telcom（电信），5_union（联通），5_bgp（全动态BGP），5_sbgp（静态BGP），5_ipv6  东北-大连：5_telcom、5_union  华南-广州：5_bgp、5_sbgp  华东-上海二：5_bgp、5_sbgp  华北-北京一：5_bgp、5_sbgp、5_ipv6  亚太-香港：5_bgp  亚太-曼谷：5_bgp  亚太-新加坡：5_bgp  非洲-约翰内斯堡：5_bgp  西南-贵阳一：5_bgp、5_sbgp  华北-北京四：5_bgp、5_sbgp  约束：必须是系统具体支持的类型publicip_id为IPv4端口，所以\&quot;publicip_type\&quot;字段未给定时，默认为5_bgp。
@@ -135,7 +25,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// 功能说明：弹性公网IP的版本  取值范围：4、6，分别表示创建ipv4和ipv6  约束：必须是系统具体支持的类型  不填或空字符串时，默认创建ipv4
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
-        public IpVersionEnum IpVersion { get; set; }
+        public int? IpVersion { get; set; }
+
 
         /// <summary>
         /// Get the string

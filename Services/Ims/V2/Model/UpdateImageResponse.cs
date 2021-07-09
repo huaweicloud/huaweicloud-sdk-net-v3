@@ -241,116 +241,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
-        /// </summary>
-        /// <value>是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。</value>
-        [JsonConverter(typeof(EnumClassConverter<IsConfigInitEnum>))]
-        public class IsConfigInitEnum
-        {
-            /// <summary>
-            /// Enum TRUE for value: true
-            /// </summary>
-            public static readonly IsConfigInitEnum TRUE = new IsConfigInitEnum("true");
-
-            /// <summary>
-            /// Enum FALSE for value: false
-            /// </summary>
-            public static readonly IsConfigInitEnum FALSE = new IsConfigInitEnum("false");
-
-            private static readonly Dictionary<string, IsConfigInitEnum> StaticFields =
-            new Dictionary<string, IsConfigInitEnum>()
-            {
-                { "true", TRUE },
-                { "false", FALSE },
-            };
-
-            private string Value;
-
-            public IsConfigInitEnum(string value)
-            {
-                Value = value;
-            }
-
-            public static IsConfigInitEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as IsConfigInitEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(IsConfigInitEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(IsConfigInitEnum a, IsConfigInitEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(IsConfigInitEnum a, IsConfigInitEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 是否是注册过的镜像，取值为“true”或者“false”
         /// </summary>
         /// <value>是否是注册过的镜像，取值为“true”或者“false”</value>
@@ -1211,116 +1101,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// 镜像架构类型。取值包括： x86 arm
-        /// </summary>
-        /// <value>镜像架构类型。取值包括： x86 arm</value>
-        [JsonConverter(typeof(EnumClassConverter<ArchitectureEnum>))]
-        public class ArchitectureEnum
-        {
-            /// <summary>
-            /// Enum X86 for value: x86
-            /// </summary>
-            public static readonly ArchitectureEnum X86 = new ArchitectureEnum("x86");
-
-            /// <summary>
-            /// Enum ARM for value: arm
-            /// </summary>
-            public static readonly ArchitectureEnum ARM = new ArchitectureEnum("arm");
-
-            private static readonly Dictionary<string, ArchitectureEnum> StaticFields =
-            new Dictionary<string, ArchitectureEnum>()
-            {
-                { "x86", X86 },
-                { "arm", ARM },
-            };
-
-            private string Value;
-
-            public ArchitectureEnum(string value)
-            {
-                Value = value;
-            }
-
-            public static ArchitectureEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ArchitectureEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ArchitectureEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(ArchitectureEnum a, ArchitectureEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ArchitectureEnum a, ArchitectureEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\&quot;true\&quot;或者\&quot;false\&quot;。 如果取值为\&quot;true\&quot;，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
         /// </summary>
         /// <value>表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\&quot;true\&quot;或者\&quot;false\&quot;。 如果取值为\&quot;true\&quot;，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。</value>
@@ -1670,12 +1450,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 镜像的存储位置
-        /// </summary>
-        [JsonProperty("__image_location", NullValueHandling = NullValueHandling.Ignore)]
-        public string ImageLocation { get; set; }
-
-        /// <summary>
         /// 镜像文件的大小，单位为字节
         /// </summary>
         [JsonProperty("__image_size", NullValueHandling = NullValueHandling.Ignore)]
@@ -1691,11 +1465,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         [JsonProperty("__imagetype", NullValueHandling = NullValueHandling.Ignore)]
         public ImagetypeEnum Imagetype { get; set; }
-        /// <summary>
-        /// 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
-        /// </summary>
-        [JsonProperty("__is_config_init", NullValueHandling = NullValueHandling.Ignore)]
-        public IsConfigInitEnum IsConfigInit { get; set; }
         /// <summary>
         /// 是否是注册过的镜像，取值为“true”或者“false”
         /// </summary>
@@ -1918,11 +1687,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("visibility", NullValueHandling = NullValueHandling.Ignore)]
         public VisibilityEnum Visibility { get; set; }
         /// <summary>
-        /// 镜像架构类型。取值包括： x86 arm
-        /// </summary>
-        [JsonProperty("architecture", NullValueHandling = NullValueHandling.Ignore)]
-        public ArchitectureEnum Architecture { get; set; }
-        /// <summary>
         /// 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\&quot;true\&quot;或者\&quot;false\&quot;。 如果取值为\&quot;true\&quot;，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
         /// </summary>
         [JsonProperty("__support_fc_inject", NullValueHandling = NullValueHandling.Ignore)]
@@ -1967,6 +1731,42 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("hw_vif_multiqueue_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public string HwVifMultiqueueEnabled { get; set; }
 
+        /// <summary>
+        /// 表示当前市场镜像是否下架。true：已下架 false：未下架
+        /// </summary>
+        [JsonProperty("__is_offshelved", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsOffshelved { get; set; }
+
+        /// <summary>
+        /// 镜像是否支持延迟加载。取值为“True”或“False”。
+        /// </summary>
+        [JsonProperty("__lazyloading", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Lazyloading { get; set; }
+
+        /// <summary>
+        /// 表示当前镜像来源是从外部导入。取值：file。
+        /// </summary>
+        [JsonProperty("__root_origin", NullValueHandling = NullValueHandling.Ignore)]
+        public string RootOrigin { get; set; }
+
+        /// <summary>
+        /// 表示当前镜像对应云服务器的系统盘插槽位置。目前暂时不用
+        /// </summary>
+        [JsonProperty("__sequence_num", NullValueHandling = NullValueHandling.Ignore)]
+        public string SequenceNum { get; set; }
+
+        /// <summary>
+        /// 镜像状态变为正常的时间。
+        /// </summary>
+        [JsonProperty("active_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActiveAt { get; set; }
+
+        /// <summary>
+        /// 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
+        /// </summary>
+        [JsonProperty("__support_agent_list", NullValueHandling = NullValueHandling.Ignore)]
+        public string SupportAgentList { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -1978,11 +1778,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("  dataOrigin: ").Append(DataOrigin).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  imageLocation: ").Append(ImageLocation).Append("\n");
             sb.Append("  imageSize: ").Append(ImageSize).Append("\n");
             sb.Append("  imageSourceType: ").Append(ImageSourceType).Append("\n");
             sb.Append("  imagetype: ").Append(Imagetype).Append("\n");
-            sb.Append("  isConfigInit: ").Append(IsConfigInit).Append("\n");
             sb.Append("  isregistered: ").Append(Isregistered).Append("\n");
             sb.Append("  originalimagename: ").Append(Originalimagename).Append("\n");
             sb.Append("  osBit: ").Append(OsBit).Append("\n");
@@ -2021,7 +1819,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  virtualEnvType: ").Append(VirtualEnvType).Append("\n");
             sb.Append("  virtualSize: ").Append(VirtualSize).Append("\n");
             sb.Append("  visibility: ").Append(Visibility).Append("\n");
-            sb.Append("  architecture: ").Append(Architecture).Append("\n");
             sb.Append("  supportFcInject: ").Append(SupportFcInject).Append("\n");
             sb.Append("  hwFirmwareType: ").Append(HwFirmwareType).Append("\n");
             sb.Append("  supportArm: ").Append(SupportArm).Append("\n");
@@ -2030,6 +1827,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  osFeatureList: ").Append(OsFeatureList).Append("\n");
             sb.Append("  accountCode: ").Append(AccountCode).Append("\n");
             sb.Append("  hwVifMultiqueueEnabled: ").Append(HwVifMultiqueueEnabled).Append("\n");
+            sb.Append("  isOffshelved: ").Append(IsOffshelved).Append("\n");
+            sb.Append("  lazyloading: ").Append(Lazyloading).Append("\n");
+            sb.Append("  rootOrigin: ").Append(RootOrigin).Append("\n");
+            sb.Append("  sequenceNum: ").Append(SequenceNum).Append("\n");
+            sb.Append("  activeAt: ").Append(ActiveAt).Append("\n");
+            sb.Append("  supportAgentList: ").Append(SupportAgentList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2067,11 +1870,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.ImageLocation == input.ImageLocation ||
-                    (this.ImageLocation != null &&
-                    this.ImageLocation.Equals(input.ImageLocation))
-                ) && 
-                (
                     this.ImageSize == input.ImageSize ||
                     (this.ImageSize != null &&
                     this.ImageSize.Equals(input.ImageSize))
@@ -2085,11 +1883,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.Imagetype == input.Imagetype ||
                     (this.Imagetype != null &&
                     this.Imagetype.Equals(input.Imagetype))
-                ) && 
-                (
-                    this.IsConfigInit == input.IsConfigInit ||
-                    (this.IsConfigInit != null &&
-                    this.IsConfigInit.Equals(input.IsConfigInit))
                 ) && 
                 (
                     this.Isregistered == input.Isregistered ||
@@ -2283,11 +2076,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.Visibility.Equals(input.Visibility))
                 ) && 
                 (
-                    this.Architecture == input.Architecture ||
-                    (this.Architecture != null &&
-                    this.Architecture.Equals(input.Architecture))
-                ) && 
-                (
                     this.SupportFcInject == input.SupportFcInject ||
                     (this.SupportFcInject != null &&
                     this.SupportFcInject.Equals(input.SupportFcInject))
@@ -2326,6 +2114,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.HwVifMultiqueueEnabled == input.HwVifMultiqueueEnabled ||
                     (this.HwVifMultiqueueEnabled != null &&
                     this.HwVifMultiqueueEnabled.Equals(input.HwVifMultiqueueEnabled))
+                ) && 
+                (
+                    this.IsOffshelved == input.IsOffshelved ||
+                    (this.IsOffshelved != null &&
+                    this.IsOffshelved.Equals(input.IsOffshelved))
+                ) && 
+                (
+                    this.Lazyloading == input.Lazyloading ||
+                    (this.Lazyloading != null &&
+                    this.Lazyloading.Equals(input.Lazyloading))
+                ) && 
+                (
+                    this.RootOrigin == input.RootOrigin ||
+                    (this.RootOrigin != null &&
+                    this.RootOrigin.Equals(input.RootOrigin))
+                ) && 
+                (
+                    this.SequenceNum == input.SequenceNum ||
+                    (this.SequenceNum != null &&
+                    this.SequenceNum.Equals(input.SequenceNum))
+                ) && 
+                (
+                    this.ActiveAt == input.ActiveAt ||
+                    (this.ActiveAt != null &&
+                    this.ActiveAt.Equals(input.ActiveAt))
+                ) && 
+                (
+                    this.SupportAgentList == input.SupportAgentList ||
+                    (this.SupportAgentList != null &&
+                    this.SupportAgentList.Equals(input.SupportAgentList))
                 );
         }
 
@@ -2343,16 +2161,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.DataOrigin.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ImageLocation != null)
-                    hashCode = hashCode * 59 + this.ImageLocation.GetHashCode();
                 if (this.ImageSize != null)
                     hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
                 if (this.ImageSourceType != null)
                     hashCode = hashCode * 59 + this.ImageSourceType.GetHashCode();
                 if (this.Imagetype != null)
                     hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
-                if (this.IsConfigInit != null)
-                    hashCode = hashCode * 59 + this.IsConfigInit.GetHashCode();
                 if (this.Isregistered != null)
                     hashCode = hashCode * 59 + this.Isregistered.GetHashCode();
                 if (this.Originalimagename != null)
@@ -2429,8 +2243,6 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.VirtualSize.GetHashCode();
                 if (this.Visibility != null)
                     hashCode = hashCode * 59 + this.Visibility.GetHashCode();
-                if (this.Architecture != null)
-                    hashCode = hashCode * 59 + this.Architecture.GetHashCode();
                 if (this.SupportFcInject != null)
                     hashCode = hashCode * 59 + this.SupportFcInject.GetHashCode();
                 if (this.HwFirmwareType != null)
@@ -2447,6 +2259,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.AccountCode.GetHashCode();
                 if (this.HwVifMultiqueueEnabled != null)
                     hashCode = hashCode * 59 + this.HwVifMultiqueueEnabled.GetHashCode();
+                if (this.IsOffshelved != null)
+                    hashCode = hashCode * 59 + this.IsOffshelved.GetHashCode();
+                if (this.Lazyloading != null)
+                    hashCode = hashCode * 59 + this.Lazyloading.GetHashCode();
+                if (this.RootOrigin != null)
+                    hashCode = hashCode * 59 + this.RootOrigin.GetHashCode();
+                if (this.SequenceNum != null)
+                    hashCode = hashCode * 59 + this.SequenceNum.GetHashCode();
+                if (this.ActiveAt != null)
+                    hashCode = hashCode * 59 + this.ActiveAt.GetHashCode();
+                if (this.SupportAgentList != null)
+                    hashCode = hashCode * 59 + this.SupportAgentList.GetHashCode();
                 return hashCode;
             }
         }

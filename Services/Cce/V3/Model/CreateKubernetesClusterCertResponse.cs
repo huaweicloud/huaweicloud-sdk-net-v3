@@ -57,6 +57,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("current-context", NullValueHandling = NullValueHandling.Ignore)]
         public string CurrentContext { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("Port-ID", IsHeader = true)]
+        [JsonProperty("Port-ID", NullValueHandling = NullValueHandling.Ignore)]
+        public string PortID { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -72,6 +79,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  users: ").Append(Users).Append("\n");
             sb.Append("  contexts: ").Append(Contexts).Append("\n");
             sb.Append("  currentContext: ").Append(CurrentContext).Append("\n");
+            sb.Append("  portID: ").Append(PortID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -130,6 +138,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.CurrentContext == input.CurrentContext ||
                     (this.CurrentContext != null &&
                     this.CurrentContext.Equals(input.CurrentContext))
+                ) && 
+                (
+                    this.PortID == input.PortID ||
+                    (this.PortID != null &&
+                    this.PortID.Equals(input.PortID))
                 );
         }
 
@@ -155,6 +168,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Contexts.GetHashCode();
                 if (this.CurrentContext != null)
                     hashCode = hashCode * 59 + this.CurrentContext.GetHashCode();
+                if (this.PortID != null)
+                    hashCode = hashCode * 59 + this.PortID.GetHashCode();
                 return hashCode;
             }
         }

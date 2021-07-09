@@ -130,122 +130,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             }
         }
 
-        /// <summary>
-        /// 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
-        /// </summary>
-        /// <value>规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。</value>
-        [JsonConverter(typeof(EnumClassConverter<NewStorageSpaceEnum>))]
-        public class NewStorageSpaceEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_300 for value: 300
-            /// </summary>
-            public static readonly NewStorageSpaceEnum NUMBER_300 = new NewStorageSpaceEnum(300);
-
-            /// <summary>
-            /// Enum NUMBER_500 for value: 500
-            /// </summary>
-            public static readonly NewStorageSpaceEnum NUMBER_500 = new NewStorageSpaceEnum(500);
-
-            /// <summary>
-            /// Enum NUMBER_700 for value: 700
-            /// </summary>
-            public static readonly NewStorageSpaceEnum NUMBER_700 = new NewStorageSpaceEnum(700);
-
-            private static readonly Dictionary<int?, NewStorageSpaceEnum> StaticFields =
-            new Dictionary<int?, NewStorageSpaceEnum>()
-            {
-                { 300, NUMBER_300 },
-                { 500, NUMBER_500 },
-                { 700, NUMBER_700 },
-            };
-
-            private int? Value;
-
-            public NewStorageSpaceEnum(int? value)
-            {
-                Value = value;
-            }
-
-            public static NewStorageSpaceEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as NewStorageSpaceEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(NewStorageSpaceEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(NewStorageSpaceEnum a, NewStorageSpaceEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(NewStorageSpaceEnum a, NewStorageSpaceEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
@@ -256,7 +140,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
         /// </summary>
         [JsonProperty("new_storage_space", NullValueHandling = NullValueHandling.Ignore)]
-        public NewStorageSpaceEnum NewStorageSpace { get; set; }
+        public int? NewStorageSpace { get; set; }
+
 
         /// <summary>
         /// Get the string

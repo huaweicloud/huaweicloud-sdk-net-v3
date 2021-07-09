@@ -764,6 +764,24 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
         public Object Properties { get; set; }
 
+        /// <summary>
+        /// 表示当前镜像来源是从外部导入。取值：file
+        /// </summary>
+        [JsonProperty("__root_origin", NullValueHandling = NullValueHandling.Ignore)]
+        public string RootOrigin { get; set; }
+
+        /// <summary>
+        /// 镜像文件md5值。
+        /// </summary>
+        [JsonProperty("checksum", NullValueHandling = NullValueHandling.Ignore)]
+        public string Checksum { get; set; }
+
+        /// <summary>
+        /// 目前暂时不使用。
+        /// </summary>
+        [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Size { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -799,6 +817,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  owner: ").Append(Owner).Append("\n");
             sb.Append("  virtualSize: ").Append(VirtualSize).Append("\n");
             sb.Append("  properties: ").Append(Properties).Append("\n");
+            sb.Append("  rootOrigin: ").Append(RootOrigin).Append("\n");
+            sb.Append("  checksum: ").Append(Checksum).Append("\n");
+            sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -955,6 +976,21 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.Properties == input.Properties ||
                     (this.Properties != null &&
                     this.Properties.Equals(input.Properties))
+                ) && 
+                (
+                    this.RootOrigin == input.RootOrigin ||
+                    (this.RootOrigin != null &&
+                    this.RootOrigin.Equals(input.RootOrigin))
+                ) && 
+                (
+                    this.Checksum == input.Checksum ||
+                    (this.Checksum != null &&
+                    this.Checksum.Equals(input.Checksum))
+                ) && 
+                (
+                    this.Size == input.Size ||
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 );
         }
 
@@ -1020,6 +1056,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.VirtualSize.GetHashCode();
                 if (this.Properties != null)
                     hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.RootOrigin != null)
+                    hashCode = hashCode * 59 + this.RootOrigin.GetHashCode();
+                if (this.Checksum != null)
+                    hashCode = hashCode * 59 + this.Checksum.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
-        public V3ClusterSpec Spec { get; set; }
+        public ClusterSpec Spec { get; set; }
 
         /// <summary>
         /// 

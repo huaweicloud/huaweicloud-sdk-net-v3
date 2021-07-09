@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public V3NodeCreateRequest Body { get; set; }
+        public NodeCreateRequest Body { get; set; }
 
 
         /// <summary>

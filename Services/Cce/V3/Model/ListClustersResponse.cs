@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 集群对象列表，包含了当前项目下所有集群的详细信息。您可通过items.metadata.name下的值来找到对应的集群。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
-        public List<V3Cluster> Items { get; set; }
+        public List<Cluster> Items { get; set; }
 
 
         /// <summary>

@@ -31,13 +31,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public ShowClusterMetadata Metadata { get; set; }
+        public ClusterMetadata Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
-        public V3ClusterSpec Spec { get; set; }
+        public ClusterSpec Spec { get; set; }
 
         /// <summary>
         /// 

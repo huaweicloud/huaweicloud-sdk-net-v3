@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         [JsonProperty("file_format", NullValueHandling = NullValueHandling.Ignore)]
         public FileFormatEnum FileFormat { get; set; }
+        /// <summary>
+        /// 是否使用快速导出，取值为true或者false。 说明：若使用快速导出，则无法指定file_format参数。
+        /// </summary>
+        [JsonProperty("is_quick_export", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsQuickExport { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -158,6 +164,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("class ExportImageRequestBody {\n");
             sb.Append("  bucketUrl: ").Append(BucketUrl).Append("\n");
             sb.Append("  fileFormat: ").Append(FileFormat).Append("\n");
+            sb.Append("  isQuickExport: ").Append(IsQuickExport).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,6 +195,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.FileFormat == input.FileFormat ||
                     (this.FileFormat != null &&
                     this.FileFormat.Equals(input.FileFormat))
+                ) && 
+                (
+                    this.IsQuickExport == input.IsQuickExport ||
+                    (this.IsQuickExport != null &&
+                    this.IsQuickExport.Equals(input.IsQuickExport))
                 );
         }
 
@@ -203,6 +215,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.BucketUrl.GetHashCode();
                 if (this.FileFormat != null)
                     hashCode = hashCode * 59 + this.FileFormat.GetHashCode();
+                if (this.IsQuickExport != null)
+                    hashCode = hashCode * 59 + this.IsQuickExport.GetHashCode();
                 return hashCode;
             }
         }

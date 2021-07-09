@@ -108,12 +108,7 @@ namespace Examples.IoTDA.V5
                    {
                        new RuleAction()
                        {
-                           Type = "IoTA_FORWARDING",
-                           IotaForwarding = new ActionIoTAForwarding()
-                           {
-                               ProjectId = "88cce89f943646cfbda057aed55c4841",
-                               RegionName = "cn-north-7"
-                           }
+                           Type = "IoTA_FORWARDING"
                        }
                    },
                    ConditionGroup = new ConditionGroup()
@@ -180,12 +175,7 @@ namespace Examples.IoTDA.V5
                    {
                        new RuleAction()
                        {
-                           Type = "IoTA_FORWARDING",
-                           IotaForwarding = new ActionIoTAForwarding()
-                           {
-                               ProjectId = "88cce89f943646cfbda057aed55c4841",
-                               RegionName = "update"
-                           },
+                           Type = "IoTA_FORWARDING"
                        }
                    },
                    ConditionGroup = new ConditionGroup()

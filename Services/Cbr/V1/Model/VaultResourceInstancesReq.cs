@@ -236,6 +236,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
+        /// 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略 “tags”、“tags_any”、“not_tags”、“not_tags_any”字段。
+        /// </summary>
+        [JsonProperty("without_any_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithoutAnyTag { get; set; }
+
+        /// <summary>
         /// 包含标签。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。  tags中多个key之间是“与”的关系。  结果返回包含所有标签的资源列表，key之间是与的关系，key-value结构中value是或的关系。  无过滤条件时返回全量数据。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -307,6 +313,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class VaultResourceInstancesReq {\n");
+            sb.Append("  withoutAnyTag: ").Append(WithoutAnyTag).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  tagsAny: ").Append(TagsAny).Append("\n");
             sb.Append("  notTags: ").Append(NotTags).Append("\n");
@@ -339,6 +346,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 return false;
 
             return 
+                (
+                    this.WithoutAnyTag == input.WithoutAnyTag ||
+                    (this.WithoutAnyTag != null &&
+                    this.WithoutAnyTag.Equals(input.WithoutAnyTag))
+                ) && 
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
@@ -410,6 +422,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.WithoutAnyTag != null)
+                    hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.TagsAny != null)

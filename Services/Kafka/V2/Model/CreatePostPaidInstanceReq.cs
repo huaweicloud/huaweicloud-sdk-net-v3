@@ -351,122 +351,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
-        /// </summary>
-        /// <value>Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800</value>
-        [JsonConverter(typeof(EnumClassConverter<PartitionNumEnum>))]
-        public class PartitionNumEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_300 for value: 300
-            /// </summary>
-            public static readonly PartitionNumEnum NUMBER_300 = new PartitionNumEnum(300);
-
-            /// <summary>
-            /// Enum NUMBER_900 for value: 900
-            /// </summary>
-            public static readonly PartitionNumEnum NUMBER_900 = new PartitionNumEnum(900);
-
-            /// <summary>
-            /// Enum NUMBER_1800 for value: 1800
-            /// </summary>
-            public static readonly PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
-
-            private static readonly Dictionary<int?, PartitionNumEnum> StaticFields =
-            new Dictionary<int?, PartitionNumEnum>()
-            {
-                { 300, NUMBER_300 },
-                { 900, NUMBER_900 },
-                { 1800, NUMBER_1800 },
-            };
-
-            private int? Value;
-
-            public PartitionNumEnum(int? value)
-            {
-                Value = value;
-            }
-
-            public static PartitionNumEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as PartitionNumEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(PartitionNumEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(PartitionNumEnum a, PartitionNumEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(PartitionNumEnum a, PartitionNumEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
         /// </summary>
         /// <value>磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。</value>
@@ -730,7 +614,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
         /// </summary>
         [JsonProperty("partition_num", NullValueHandling = NullValueHandling.Ignore)]
-        public PartitionNumEnum PartitionNum { get; set; }
+        public int? PartitionNum { get; set; }
+
         /// <summary>
         /// 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
         /// </summary>

@@ -37,13 +37,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
-        public V3NodeSpec Spec { get; set; }
+        public NodeSpec Spec { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public V3NodeStatus Status { get; set; }
+        public NodeStatus Status { get; set; }
 
 
         /// <summary>
