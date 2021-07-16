@@ -340,13 +340,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 云服务器的规格ID。最多支持选择10个规格，多个规格ID以逗号分隔。云服务器的ID通过查询弹性云服务器规格详情和扩展信息列表接口获取，详情请参考查询云服务器规格详情和扩展信息列表。
+        /// 云服务器的规格ID。最多支持选择10个规格，多个规格ID以逗号分隔。云服务器的ID通过查询弹性云服务器规格详情和扩展信息列表接口获取，详情请参考 [查询云服务器规格详情和扩展信息列表](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212656.html)。
         /// </summary>
         [JsonProperty("flavorRef", NullValueHandling = NullValueHandling.Ignore)]
         public string FlavorRef { get; set; }
 
         /// <summary>
-        /// 镜像ID，同image_id，通过查询镜像服务镜像列表接口获取，详见《镜像服务API参考》的“查询镜像列表”。
+        /// 镜像ID，同image_id，指定创建实例时选择的镜像资源。通过查询镜像服务镜像列表接口获取，请参考[查询镜像列表](https://support.huaweicloud.com/api-ims/ims_03_0602.html)。
         /// </summary>
         [JsonProperty("imageRef", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageRef { get; set; }
@@ -358,7 +358,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public List<DiskInfo> Disk { get; set; }
 
         /// <summary>
-        /// 登录云服务器的SSH密钥名称，与adminPass互斥，且必选一个。Windoes弹性云服务器不支持使用密钥登陆方式。
+        /// 登录云服务器的SSH密钥名称。  获取密钥对方式请参考[创建及导入SSH密钥对](https://support.huaweicloud.com/api-dew/CreateKeypair.html)。  说明： 当key_name与user_data同时指定时，user_data只做用户数据注入。
         /// </summary>
         [JsonProperty("key_name", NullValueHandling = NullValueHandling.Ignore)]
         public string KeyName { get; set; }

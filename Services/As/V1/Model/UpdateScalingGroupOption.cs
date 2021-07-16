@@ -348,7 +348,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public bool? DeletePublicip { get; set; }
 
         /// <summary>
-        ///  配置删除云服务器时是否删除云服务器绑定的数据盘。取值为true或false，默认为false。  true：删除云服务器时，会同时删除绑定在云服务器上的数据盘。当数据盘的计费方式为包年包月时，不会被删除。 false：删除务器时，仅云服解绑定在云服务器上的数据盘，不删除数据盘。
+        /// 配置删除云服务器时是否删除云服务器绑定的数据盘。取值为true或false，默认为false。  true：删除云服务器时，会同时删除绑定在云服务器上的数据盘。当数据盘的计费方式为包年包月时，不会被删除。 false：删除务器时，仅云服解绑定在云服务器上的数据盘，不删除数据盘。
         /// </summary>
         [JsonProperty("delete_volume", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeleteVolume { get; set; }
@@ -364,6 +364,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         [JsonProperty("multi_az_priority_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string MultiAzPriorityPolicy { get; set; }
+
+        /// <summary>
+        /// 伸缩组描述信息(0-256个字符)
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
 
 
         /// <summary>
@@ -393,6 +399,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  deleteVolume: ").Append(DeleteVolume).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  multiAzPriorityPolicy: ").Append(MultiAzPriorityPolicy).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -518,6 +525,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.MultiAzPriorityPolicy == input.MultiAzPriorityPolicy ||
                     (this.MultiAzPriorityPolicy != null &&
                     this.MultiAzPriorityPolicy.Equals(input.MultiAzPriorityPolicy))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -569,6 +581,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.MultiAzPriorityPolicy != null)
                     hashCode = hashCode * 59 + this.MultiAzPriorityPolicy.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

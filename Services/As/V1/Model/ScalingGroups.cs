@@ -552,6 +552,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("multi_az_priority_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string MultiAzPriorityPolicy { get; set; }
 
+        /// <summary>
+        /// 伸缩组描述信息
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -590,6 +596,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  activityType: ").Append(ActivityType).Append("\n");
             sb.Append("  multiAzPriorityPolicy: ").Append(MultiAzPriorityPolicy).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -765,6 +772,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.MultiAzPriorityPolicy == input.MultiAzPriorityPolicy ||
                     (this.MultiAzPriorityPolicy != null &&
                     this.MultiAzPriorityPolicy.Equals(input.MultiAzPriorityPolicy))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -836,6 +848,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.ActivityType.GetHashCode();
                 if (this.MultiAzPriorityPolicy != null)
                     hashCode = hashCode * 59 + this.MultiAzPriorityPolicy.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

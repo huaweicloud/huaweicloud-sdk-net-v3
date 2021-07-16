@@ -357,9 +357,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS
+        /// 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS
         /// </summary>
-        /// <value>镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS</value>
+        /// <value>镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS</value>
         [JsonConverter(typeof(EnumClassConverter<PlatformEnum>))]
         public class PlatformEnum
         {
@@ -419,9 +419,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             public static readonly PlatformEnum COREOS = new PlatformEnum("CoreOS");
 
             /// <summary>
-            /// Enum EULEOS for value: EuleOS
+            /// Enum EULEROS for value: EulerOS
             /// </summary>
-            public static readonly PlatformEnum EULEOS = new PlatformEnum("EuleOS");
+            public static readonly PlatformEnum EULEROS = new PlatformEnum("EulerOS");
 
             private static readonly Dictionary<string, PlatformEnum> StaticFields =
             new Dictionary<string, PlatformEnum>()
@@ -437,7 +437,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 { "Fedora", FEDORA },
                 { "Other", OTHER },
                 { "CoreOS", COREOS },
-                { "EuleOS", EULEOS },
+                { "EulerOS", EULEROS },
             };
 
             private string Value;
@@ -919,7 +919,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("__os_type", NullValueHandling = NullValueHandling.Ignore)]
         public OsTypeEnum OsType { get; set; }
         /// <summary>
-        /// 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS
+        /// 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS
         /// </summary>
         [SDKProperty("__platform", IsQuery = true)]
         [JsonProperty("__platform", NullValueHandling = NullValueHandling.Ignore)]

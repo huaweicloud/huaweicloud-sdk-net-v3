@@ -529,9 +529,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             public static readonly PlatformEnum COREOS = new PlatformEnum("CoreOS");
 
             /// <summary>
-            /// Enum EULEOS for value: EuleOS
+            /// Enum EULEROS for value: EulerOS
             /// </summary>
-            public static readonly PlatformEnum EULEOS = new PlatformEnum("EuleOS");
+            public static readonly PlatformEnum EULEROS = new PlatformEnum("EulerOS");
 
             private static readonly Dictionary<string, PlatformEnum> StaticFields =
             new Dictionary<string, PlatformEnum>()
@@ -547,7 +547,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 { "Fedora", FEDORA },
                 { "Other", OTHER },
                 { "CoreOS", COREOS },
-                { "EuleOS", EULEOS },
+                { "EulerOS", EULEROS },
             };
 
             private string Value;

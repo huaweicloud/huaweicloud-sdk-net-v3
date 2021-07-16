@@ -213,6 +213,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 实例描述备注
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 实例CPU类型，通常为x86_64或aarch64
+        /// </summary>
+        [JsonProperty("cpu_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string CpuType { get; set; }
+
+        /// <summary>
+        /// 有资源的可用区编码。
+        /// </summary>
+        [JsonProperty("az_codes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AzCodes { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -254,6 +272,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  cpuType: ").Append(CpuType).Append("\n");
+            sb.Append("  azCodes: ").Append(AzCodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -440,6 +461,22 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.CpuType == input.CpuType ||
+                    (this.CpuType != null &&
+                    this.CpuType.Equals(input.CpuType))
+                ) && 
+                (
+                    this.AzCodes == input.AzCodes ||
+                    this.AzCodes != null &&
+                    input.AzCodes != null &&
+                    this.AzCodes.SequenceEqual(input.AzCodes)
                 );
         }
 
@@ -517,6 +554,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CpuType != null)
+                    hashCode = hashCode * 59 + this.CpuType.GetHashCode();
+                if (this.AzCodes != null)
+                    hashCode = hashCode * 59 + this.AzCodes.GetHashCode();
                 return hashCode;
             }
         }

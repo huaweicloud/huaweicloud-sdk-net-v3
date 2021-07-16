@@ -426,6 +426,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("meta_data", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingPolicyV2MetaData MetaData { get; set; }
 
+        /// <summary>
+        /// 伸缩策略描述（1-256个字符）
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -446,6 +452,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  coolDownTime: ").Append(CoolDownTime).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  metaData: ").Append(MetaData).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -526,6 +533,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.MetaData == input.MetaData ||
                     (this.MetaData != null &&
                     this.MetaData.Equals(input.MetaData))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -561,6 +573,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.MetaData != null)
                     hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

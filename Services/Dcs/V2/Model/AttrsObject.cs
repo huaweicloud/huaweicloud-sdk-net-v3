@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
-        /// 缓存容量。
+        /// 缓存容量（G Byte）。
         /// </summary>
         [JsonProperty("capacity", NullValueHandling = NullValueHandling.Ignore)]
         public string Capacity { get; set; }

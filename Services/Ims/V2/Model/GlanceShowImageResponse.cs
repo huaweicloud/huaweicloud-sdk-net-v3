@@ -1944,10 +1944,10 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("__is_offshelved", NullValueHandling = NullValueHandling.Ignore)]
         public IsOffshelvedEnum IsOffshelved { get; set; }
         /// <summary>
-        /// 镜像是否支持延迟加载。取值为“True”或“False”。
+        /// 镜像是否支持延迟加载。取值为True或False。
         /// </summary>
         [JsonProperty("__lazyloading", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Lazyloading { get; set; }
+        public string Lazyloading { get; set; }
 
         /// <summary>
         /// 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。

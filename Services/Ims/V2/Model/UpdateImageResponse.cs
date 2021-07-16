@@ -1741,7 +1741,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 镜像是否支持延迟加载。取值为“True”或“False”。
         /// </summary>
         [JsonProperty("__lazyloading", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Lazyloading { get; set; }
+        public string Lazyloading { get; set; }
 
         /// <summary>
         /// 表示当前镜像来源是从外部导入。取值：file。

@@ -23,11 +23,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。 
+        /// 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
         /// </summary>
         [SDKProperty("include_failure", IsQuery = true)]
         [JsonProperty("include_failure", NullValueHandling = NullValueHandling.Ignore)]
         public string IncludeFailure { get; set; }
+
+        /// <summary>
+        /// 是否返回已删除的实例数。 当参数值为“true”时，返回已删除的实例数。参数值为“false”或者其他值，不返回已删除的实例数。
+        /// </summary>
+        [SDKProperty("include_delete", IsQuery = true)]
+        [JsonProperty("include_delete", NullValueHandling = NullValueHandling.Ignore)]
+        public string IncludeDelete { get; set; }
 
         /// <summary>
         /// 实例名称。
@@ -58,7 +65,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。 
+        /// 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
         /// </summary>
         [SDKProperty("name_equal", IsQuery = true)]
         [JsonProperty("name_equal", NullValueHandling = NullValueHandling.Ignore)]
@@ -88,6 +95,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("class ListInstancesRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  includeFailure: ").Append(IncludeFailure).Append("\n");
+            sb.Append("  includeDelete: ").Append(IncludeDelete).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
@@ -125,6 +133,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.IncludeFailure == input.IncludeFailure ||
                     (this.IncludeFailure != null &&
                     this.IncludeFailure.Equals(input.IncludeFailure))
+                ) && 
+                (
+                    this.IncludeDelete == input.IncludeDelete ||
+                    (this.IncludeDelete != null &&
+                    this.IncludeDelete.Equals(input.IncludeDelete))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -175,6 +188,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.IncludeFailure != null)
                     hashCode = hashCode * 59 + this.IncludeFailure.GetHashCode();
+                if (this.IncludeDelete != null)
+                    hashCode = hashCode * 59 + this.IncludeDelete.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Offset != null)

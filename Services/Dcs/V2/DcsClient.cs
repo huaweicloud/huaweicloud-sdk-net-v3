@@ -78,6 +78,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 创建实例诊断任务
+        /// </summary>
+        public CreateDiagnosisTaskResponse CreateDiagnosisTask(CreateDiagnosisTaskRequest createDiagnosisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createDiagnosisTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/diagnosis",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDiagnosisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateDiagnosisTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建热key分析任务
         /// </summary>
         public CreateHotkeyScanTaskResponse CreateHotkeyScanTask(CreateHotkeyScanTaskRequest createHotkeyScanTaskRequest)
@@ -112,6 +125,33 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMigrationTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateMigrationTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 采集Redis运行日志
+        /// </summary>
+        public CreateRedislogResponse CreateRedislog(CreateRedislogRequest createRedislogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createRedislogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/redislog",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRedislogRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateRedislogResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取日志下载链接
+        /// </summary>
+        public CreateRedislogDownloadLinkResponse CreateRedislogDownloadLink(CreateRedislogDownloadLinkRequest createRedislogDownloadLinkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createRedislogDownloadLinkRequest.InstanceId.ToString());
+            urlParam.Add("id" , createRedislogDownloadLinkRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/redislog/{id}/links",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRedislogDownloadLinkRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateRedislogDownloadLinkResponse>(response);
         }
         
         /// <summary>
@@ -289,6 +329,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询实例诊断任务列表
+        /// </summary>
+        public ListDiagnosisTasksResponse ListDiagnosisTasks(ListDiagnosisTasksRequest listDiagnosisTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listDiagnosisTasksRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/diagnosis",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDiagnosisTasksRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListDiagnosisTasksResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询产品规格
         /// </summary>
         public ListFlavorsResponse ListFlavors(ListFlavorsRequest listFlavorsRequest)
@@ -400,6 +453,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询Redis运行日志列表
+        /// </summary>
+        public ListRedislogResponse ListRedislog(ListRedislogRequest listRedislogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRedislogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/redislog",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRedislogRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRedislogResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询实例恢复记录
         /// </summary>
         public ListRestoreRecordsResponse ListRestoreRecords(ListRestoreRecordsRequest listRestoreRecordsRequest)
@@ -447,6 +513,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsOfTenantRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListTagsOfTenantResponse>(response);
+        }
+        
+        /// <summary>
+        /// 变更实例规格
+        /// </summary>
+        public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , resizeInstanceRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/resize",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<ResizeInstanceResponse>(response);
         }
         
         /// <summary>
@@ -499,6 +578,19 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBigkeyScanTaskDetailsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowBigkeyScanTaskDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定诊断报告
+        /// </summary>
+        public ShowDiagnosisTaskDetailsResponse ShowDiagnosisTaskDetails(ShowDiagnosisTaskDetailsRequest showDiagnosisTaskDetailsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("report_id" , showDiagnosisTaskDetailsRequest.ReportId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/diagnosis/{report_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisTaskDetailsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowDiagnosisTaskDetailsResponse>(response);
         }
         
         /// <summary>

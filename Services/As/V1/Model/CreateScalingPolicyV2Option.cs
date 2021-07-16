@@ -287,6 +287,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("cool_down_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? CoolDownTime { get; set; }
 
+        /// <summary>
+        /// 伸缩策略描述（1-256个字符）
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -303,6 +309,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  scheduledPolicy: ").Append(ScheduledPolicy).Append("\n");
             sb.Append("  scalingPolicyAction: ").Append(ScalingPolicyAction).Append("\n");
             sb.Append("  coolDownTime: ").Append(CoolDownTime).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -363,6 +370,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.CoolDownTime == input.CoolDownTime ||
                     (this.CoolDownTime != null &&
                     this.CoolDownTime.Equals(input.CoolDownTime))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -390,6 +402,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.ScalingPolicyAction.GetHashCode();
                 if (this.CoolDownTime != null)
                     hashCode = hashCode * 59 + this.CoolDownTime.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string CloudResourceTypeCode { get; set; }
 
         /// <summary>
-        /// 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 
+        /// 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 - ha_rw_split： 表示读写分离实例 
         /// </summary>
         [JsonProperty("cache_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string CacheMode { get; set; }
