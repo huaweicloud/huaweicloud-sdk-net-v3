@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string SecurityGroupId { get; set; }
 
         /// <summary>
+        /// 数据库访问端口。 取值范围：2100~9500，以及27017、27018、27019。 不传该参数时，创建实例的访问端口默认为8635。
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public string Port { get; set; }
+
+        /// <summary>
         /// 数据库密码。 取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_&#x3D;+?的组合。 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
@@ -126,6 +132,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
@@ -190,6 +197,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.SecurityGroupId == input.SecurityGroupId ||
                     (this.SecurityGroupId != null &&
                     this.SecurityGroupId.Equals(input.SecurityGroupId))
+                ) && 
+                (
+                    this.Port == input.Port ||
+                    (this.Port != null &&
+                    this.Port.Equals(input.Port))
                 ) && 
                 (
                     this.Password == input.Password ||
@@ -262,6 +274,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.SecurityGroupId != null)
                     hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.Port != null)
+                    hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.Password != null)
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
                 if (this.DiskEncryptionId != null)

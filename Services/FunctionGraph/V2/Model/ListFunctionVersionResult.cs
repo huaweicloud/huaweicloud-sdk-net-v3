@@ -444,18 +444,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public DateTime? LastModified { get; set; }
 
         /// <summary>
-        /// 函数最后一次更新utc时间。
-        /// </summary>
-        [JsonProperty("last_modified_utc", NullValueHandling = NullValueHandling.Ignore)]
-        public long? LastModifiedUtc { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("func_code", NullValueHandling = NullValueHandling.Ignore)]
-        public FuncCode FuncCode { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("func_vpc", NullValueHandling = NullValueHandling.Ignore)]
@@ -547,8 +535,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  versionDescription: ").Append(VersionDescription).Append("\n");
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
-            sb.Append("  lastModifiedUtc: ").Append(LastModifiedUtc).Append("\n");
-            sb.Append("  funcCode: ").Append(FuncCode).Append("\n");
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
             sb.Append("  concurrency: ").Append(Concurrency).Append("\n");
@@ -701,16 +687,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.LastModified.Equals(input.LastModified))
                 ) && 
                 (
-                    this.LastModifiedUtc == input.LastModifiedUtc ||
-                    (this.LastModifiedUtc != null &&
-                    this.LastModifiedUtc.Equals(input.LastModifiedUtc))
-                ) && 
-                (
-                    this.FuncCode == input.FuncCode ||
-                    (this.FuncCode != null &&
-                    this.FuncCode.Equals(input.FuncCode))
-                ) && 
-                (
                     this.FuncVpc == input.FuncVpc ||
                     (this.FuncVpc != null &&
                     this.FuncVpc.Equals(input.FuncVpc))
@@ -820,10 +796,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
                 if (this.LastModified != null)
                     hashCode = hashCode * 59 + this.LastModified.GetHashCode();
-                if (this.LastModifiedUtc != null)
-                    hashCode = hashCode * 59 + this.LastModifiedUtc.GetHashCode();
-                if (this.FuncCode != null)
-                    hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
                 if (this.FuncVpc != null)
                     hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
                 if (this.MountConfig != null)

@@ -1,3 +1,41 @@
+# 3.0.53 2021-07-26
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the request parameter `dcs_cluster_proxy2_node` to the interface `UpdateConfigurations`.
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+    - Support the interface `UpdateClientNetwork`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Change the request parameters `start_time`,`stop_time` from `optional` to `required` of the interface `SetBalancerWindow`.
+    - Add the request parameter `port` and response parameter `port` to the interface `CreateInstance`.
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+    - Support the interface `EnableLtsLogs`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameters `concurrent_num`,`id`,`encrypted_user_data`.
+    - Add the response parameters `func_vpc_id`,`encrypted_user_data`,`long_time`,`log_group_id`,`log_stream_id`,`type` to the interface `ListFunctions`, and remove the response parameters `version_description`,`last_modified_utc`,`dependencies` of this interface.
+    - Remove the request parameter `name`,`last_modified`,`alias_urn` of the interface `UpdateVersionAlias`.
+    - Add the response parameters `encrypted_user_data`,`long_time`,`log_group_id`,`log_stream_id`,`type` of the interface `ShowFunctionConfig`, and remove the response parameters `version_description`,`concurrency` of this interface.
+    - Add the response parameters `encrypted_user_data`,`long_time`,`log_group_id`,`log_stream_id`,`type` to the interface `ListFunctionVersions`, and remove the response parameters `version_description`,`concurrency`,`depend_list`.
+    - Add the response parameters `encrypted_user_data`,`long_time`,`log_group_id`,`log_stream_id`,`type` to the interface `ListFunctionVersions`, remove the response parameters `last_modified_utc`,`concurrency`.
+    - Modify the type of the request parameter `size` of the interface `UpdateTrigger`: `string`->`integer`
+    - Modify the type of the response parameter `size` of the interface `ShowDependency`: `string`->`integer`
+    - Modify the type of the response parameter `size` of the interface `UpdateDependency`: `string`->`integer`
+
 # 3.0.52 2021-07-16
 
 ### HuaweiCloud SDK AS

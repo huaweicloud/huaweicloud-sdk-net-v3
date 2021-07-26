@@ -1,3 +1,41 @@
+# 3.0.53 2021-07-26
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`UpdateConfigurations`新增请求参数`dcs_cluster_proxy2_node`
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+    - 支持接口`UpdateClientNetwork`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`SetBalancerWindow`的请求参数`start_time`、`stop_time`改为非必填
+    - 接口`CreateInstance`新增请求参数`port`，新增响应参数`port`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+    - 支持接口`EnableLtsLogs`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ShowFunctionCode`新增响应参数`concurrent_num`、`id`、`encrypted_user_data`
+    - 接口`ListFunctions`新增响应参数`func_vpc_id`、`encrypted_user_data`、`long_time`、`log_group_id`、`log_stream_id`、`type`，移除响应参数`version_description`、`last_modified_utc`、`dependencies`
+    - 接口`UpdateVersionAlias`移除请求参数`name`、`last_modified`、`alias_urn`
+    - 接口`ShowFunctionConfig`新增响应参数`encrypted_user_data`、`long_time`、`log_group_id`、`log_stream_id`、`type`，移除响应参数`version_description`、`concurrency`
+    - 接口`UpdateFunctionConfig`移除请求参数`version_description`、`concurrency`、`depend_list`，新增请求参数`encrypted_user_data`、`long_time`、`log_group_id`、`log_stream_id`、`type`
+    - 接口`ListFunctionVersions`移除响应参数`last_modified_utc`、`concurrency`，新增响应参数`encrypted_user_data`、`long_time`、`log_group_id`、`log_stream_id`、`type`
+    - 接口`UpdateTrigger`的请求参数`size`类型调整： `string`->`integer`
+    - 接口`ShowDependency`的响应参数`size`类型调整： `string`->`integer`
+    - 接口`UpdateDependency`的响应参数`size`类型调整： `string`->`integer`
+
 # 3.0.52 2021-07-16
 
 ### HuaweiCloud SDK AS

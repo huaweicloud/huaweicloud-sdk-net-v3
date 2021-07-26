@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
+        /// 依赖包id。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 依赖包属主的domainId。
         /// </summary>
         [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
@@ -71,6 +77,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Dependency {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  owner: ").Append(Owner).Append("\n");
             sb.Append("  link: ").Append(Link).Append("\n");
             sb.Append("  runtime: ").Append(Runtime).Append("\n");
@@ -100,6 +107,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Owner == input.Owner ||
                     (this.Owner != null &&
@@ -150,6 +162,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Owner != null)
                     hashCode = hashCode * 59 + this.Owner.GetHashCode();
                 if (this.Link != null)

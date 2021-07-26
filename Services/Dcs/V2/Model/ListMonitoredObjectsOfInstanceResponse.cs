@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<ProxyNodeMonitoredObject> DcsClusterProxyNode { get; set; }
 
         /// <summary>
+        /// Redis 4.0和5.0的Proxy集群时才存在，表示集群Proxy节点维度的监控对象列表。字段名称与children的子维度对象名称相同。 
+        /// </summary>
+        [JsonProperty("dcs_cluster_proxy2_node", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Proxy2NodeMonitoredObject> DcsClusterProxy2Node { get; set; }
+
+        /// <summary>
         /// 主维度监控对象的总数。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +70,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  instances: ").Append(Instances).Append("\n");
             sb.Append("  dcsClusterRedisNode: ").Append(DcsClusterRedisNode).Append("\n");
             sb.Append("  dcsClusterProxyNode: ").Append(DcsClusterProxyNode).Append("\n");
+            sb.Append("  dcsClusterProxy2Node: ").Append(DcsClusterProxy2Node).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -117,6 +124,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.DcsClusterProxyNode.SequenceEqual(input.DcsClusterProxyNode)
                 ) && 
                 (
+                    this.DcsClusterProxy2Node == input.DcsClusterProxy2Node ||
+                    this.DcsClusterProxy2Node != null &&
+                    input.DcsClusterProxy2Node != null &&
+                    this.DcsClusterProxy2Node.SequenceEqual(input.DcsClusterProxy2Node)
+                ) && 
+                (
                     this.Total == input.Total ||
                     (this.Total != null &&
                     this.Total.Equals(input.Total))
@@ -141,6 +154,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.DcsClusterRedisNode.GetHashCode();
                 if (this.DcsClusterProxyNode != null)
                     hashCode = hashCode * 59 + this.DcsClusterProxyNode.GetHashCode();
+                if (this.DcsClusterProxy2Node != null)
+                    hashCode = hashCode * 59 + this.DcsClusterProxy2Node.GetHashCode();
                 if (this.Total != null)
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;

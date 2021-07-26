@@ -396,6 +396,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string UserData { get; set; }
 
         /// <summary>
+        /// 用户自定义的name/value信息，用于需要加密的配置。
+        /// </summary>
+        [JsonProperty("encrypted_user_data", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncryptedUserData { get; set; }
+
+        /// <summary>
         /// 函数代码SHA512 hash值，用于判断函数是否变化。
         /// </summary>
         [JsonProperty("digest", NullValueHandling = NullValueHandling.Ignore)]
@@ -432,12 +438,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 函数版本描述。
-        /// </summary>
-        [JsonProperty("version_description", NullValueHandling = NullValueHandling.Ignore)]
-        public string VersionDescription { get; set; }
-
-        /// <summary>
         /// 函数最后一次更新时间。
         /// </summary>
         [JsonProperty("last_modified", NullValueHandling = NullValueHandling.Ignore)]
@@ -456,12 +456,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public MountConfig MountConfig { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("concurrency", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Concurrency { get; set; }
-
-        /// <summary>
         /// 依赖id列表
         /// </summary>
         [JsonProperty("depend_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -478,12 +472,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [JsonProperty("extend_config", NullValueHandling = NullValueHandling.Ignore)]
         public string ExtendConfig { get; set; }
-
-        /// <summary>
-        /// 函数依赖代码包列表。
-        /// </summary>
-        [JsonProperty("dependencies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dependency> Dependencies { get; set; }
 
         /// <summary>
         /// 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
@@ -527,21 +515,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
             sb.Append("  codeSize: ").Append(CodeSize).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
+            sb.Append("  encryptedUserData: ").Append(EncryptedUserData).Append("\n");
             sb.Append("  digest: ").Append(Digest).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  imageName: ").Append(ImageName).Append("\n");
             sb.Append("  xrole: ").Append(Xrole).Append("\n");
             sb.Append("  appXrole: ").Append(AppXrole).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  versionDescription: ").Append(VersionDescription).Append("\n");
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
-            sb.Append("  concurrency: ").Append(Concurrency).Append("\n");
             sb.Append("  dependList: ").Append(DependList).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
             sb.Append("  extendConfig: ").Append(ExtendConfig).Append("\n");
-            sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -647,6 +633,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.UserData.Equals(input.UserData))
                 ) && 
                 (
+                    this.EncryptedUserData == input.EncryptedUserData ||
+                    (this.EncryptedUserData != null &&
+                    this.EncryptedUserData.Equals(input.EncryptedUserData))
+                ) && 
+                (
                     this.Digest == input.Digest ||
                     (this.Digest != null &&
                     this.Digest.Equals(input.Digest))
@@ -677,11 +668,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.VersionDescription == input.VersionDescription ||
-                    (this.VersionDescription != null &&
-                    this.VersionDescription.Equals(input.VersionDescription))
-                ) && 
-                (
                     this.LastModified == input.LastModified ||
                     (this.LastModified != null &&
                     this.LastModified.Equals(input.LastModified))
@@ -695,11 +681,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.MountConfig == input.MountConfig ||
                     (this.MountConfig != null &&
                     this.MountConfig.Equals(input.MountConfig))
-                ) && 
-                (
-                    this.Concurrency == input.Concurrency ||
-                    (this.Concurrency != null &&
-                    this.Concurrency.Equals(input.Concurrency))
                 ) && 
                 (
                     this.DependList == input.DependList ||
@@ -716,12 +697,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.ExtendConfig == input.ExtendConfig ||
                     (this.ExtendConfig != null &&
                     this.ExtendConfig.Equals(input.ExtendConfig))
-                ) && 
-                (
-                    this.Dependencies == input.Dependencies ||
-                    this.Dependencies != null &&
-                    input.Dependencies != null &&
-                    this.Dependencies.SequenceEqual(input.Dependencies)
                 ) && 
                 (
                     this.InitializerHandler == input.InitializerHandler ||
@@ -780,6 +755,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.CodeSize.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.EncryptedUserData != null)
+                    hashCode = hashCode * 59 + this.EncryptedUserData.GetHashCode();
                 if (this.Digest != null)
                     hashCode = hashCode * 59 + this.Digest.GetHashCode();
                 if (this.Version != null)
@@ -792,24 +769,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.AppXrole.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.VersionDescription != null)
-                    hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
                 if (this.LastModified != null)
                     hashCode = hashCode * 59 + this.LastModified.GetHashCode();
                 if (this.FuncVpc != null)
                     hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
                 if (this.MountConfig != null)
                     hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
-                if (this.Concurrency != null)
-                    hashCode = hashCode * 59 + this.Concurrency.GetHashCode();
                 if (this.DependList != null)
                     hashCode = hashCode * 59 + this.DependList.GetHashCode();
                 if (this.StrategyConfig != null)
                     hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
                 if (this.ExtendConfig != null)
                     hashCode = hashCode * 59 + this.ExtendConfig.GetHashCode();
-                if (this.Dependencies != null)
-                    hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 if (this.InitializerHandler != null)
                     hashCode = hashCode * 59 + this.InitializerHandler.GetHashCode();
                 if (this.InitializerTimeout != null)

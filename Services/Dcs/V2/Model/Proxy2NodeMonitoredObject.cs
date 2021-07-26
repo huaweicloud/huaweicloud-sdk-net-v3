@@ -10,9 +10,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
-    /// Redis 3.0 proxy集群中proxy节点监控对象结构
+    /// Redis 4.0 和 5.0 proxy集群中proxy节点监控对象结构
     /// </summary>
-    public class ProxyNodeMonitoredObject 
+    public class Proxy2NodeMonitoredObject 
     {
 
         /// <summary>
@@ -28,10 +28,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 维度dcs_cluster_proxy_node 的测量对象的ID。
+        /// 维度dcs_cluster_proxy2_node 的测量对象的ID。
         /// </summary>
-        [JsonProperty("dcs_cluster_proxy_node", NullValueHandling = NullValueHandling.Ignore)]
-        public string DcsClusterProxyNode { get; set; }
+        [JsonProperty("dcs_cluster_proxy2_node", NullValueHandling = NullValueHandling.Ignore)]
+        public string DcsClusterProxy2Node { get; set; }
 
         /// <summary>
         /// 测量对象状态，即节点状态。
@@ -46,10 +46,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProxyNodeMonitoredObject {\n");
+            sb.Append("class Proxy2NodeMonitoredObject {\n");
             sb.Append("  dcsInstanceId: ").Append(DcsInstanceId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  dcsClusterProxyNode: ").Append(DcsClusterProxyNode).Append("\n");
+            sb.Append("  dcsClusterProxy2Node: ").Append(DcsClusterProxy2Node).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -60,13 +60,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ProxyNodeMonitoredObject);
+            return this.Equals(input as Proxy2NodeMonitoredObject);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ProxyNodeMonitoredObject input)
+        public bool Equals(Proxy2NodeMonitoredObject input)
         {
             if (input == null)
                 return false;
@@ -83,9 +83,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.DcsClusterProxyNode == input.DcsClusterProxyNode ||
-                    (this.DcsClusterProxyNode != null &&
-                    this.DcsClusterProxyNode.Equals(input.DcsClusterProxyNode))
+                    this.DcsClusterProxy2Node == input.DcsClusterProxy2Node ||
+                    (this.DcsClusterProxy2Node != null &&
+                    this.DcsClusterProxy2Node.Equals(input.DcsClusterProxy2Node))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -106,8 +106,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.DcsClusterProxyNode != null)
-                    hashCode = hashCode * 59 + this.DcsClusterProxyNode.GetHashCode();
+                if (this.DcsClusterProxy2Node != null)
+                    hashCode = hashCode * 59 + this.DcsClusterProxy2Node.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;

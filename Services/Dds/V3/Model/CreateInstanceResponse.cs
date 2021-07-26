@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string SecurityGroupId { get; set; }
 
         /// <summary>
+        /// 数据库访问端口。
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Port { get; set; }
+
+        /// <summary>
         /// 磁盘加密的密钥ID，与请求参数相同。
         /// </summary>
         [JsonProperty("disk_encryption_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -141,6 +147,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
@@ -221,6 +228,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.SecurityGroupId.Equals(input.SecurityGroupId))
                 ) && 
                 (
+                    this.Port == input.Port ||
+                    (this.Port != null &&
+                    this.Port.Equals(input.Port))
+                ) && 
+                (
                     this.DiskEncryptionId == input.DiskEncryptionId ||
                     (this.DiskEncryptionId != null &&
                     this.DiskEncryptionId.Equals(input.DiskEncryptionId))
@@ -291,6 +303,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.SecurityGroupId != null)
                     hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.Port != null)
+                    hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.DiskEncryptionId != null)
                     hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
                 if (this.Mode != null)

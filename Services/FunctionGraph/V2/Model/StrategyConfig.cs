@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("concurrency", NullValueHandling = NullValueHandling.Ignore)]
         public int? Concurrency { get; set; }
 
+        /// <summary>
+        /// 函数并发数
+        /// </summary>
+        [JsonProperty("concurrent_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ConcurrentNum { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class StrategyConfig {\n");
             sb.Append("  concurrency: ").Append(Concurrency).Append("\n");
+            sb.Append("  concurrentNum: ").Append(ConcurrentNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +62,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Concurrency == input.Concurrency ||
                     (this.Concurrency != null &&
                     this.Concurrency.Equals(input.Concurrency))
+                ) && 
+                (
+                    this.ConcurrentNum == input.ConcurrentNum ||
+                    (this.ConcurrentNum != null &&
+                    this.ConcurrentNum.Equals(input.ConcurrentNum))
                 );
         }
 
@@ -68,6 +80,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.Concurrency != null)
                     hashCode = hashCode * 59 + this.Concurrency.GetHashCode();
+                if (this.ConcurrentNum != null)
+                    hashCode = hashCode * 59 + this.ConcurrentNum.GetHashCode();
                 return hashCode;
             }
         }

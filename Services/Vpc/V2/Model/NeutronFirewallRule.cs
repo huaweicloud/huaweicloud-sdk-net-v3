@@ -167,6 +167,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public bool? Enabled { get; set; }
 
         /// <summary>
+        /// 功能说明：是否支持跨租户共享 取值范围：true/false
+        /// </summary>
+        [JsonProperty("public", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Public { get; set; }
+
+        /// <summary>
         /// 功能说明：目的地址或者CIDR。
         /// </summary>
         [JsonProperty("destination_ip_address", NullValueHandling = NullValueHandling.Ignore)]
@@ -217,6 +223,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
+            sb.Append("  Public: ").Append(Public).Append("\n");
             sb.Append("  destinationIpAddress: ").Append(DestinationIpAddress).Append("\n");
             sb.Append("  destinationPort: ").Append(DestinationPort).Append("\n");
             sb.Append("  sourceIpAddress: ").Append(SourceIpAddress).Append("\n");
@@ -280,6 +287,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.Enabled.Equals(input.Enabled))
                 ) && 
                 (
+                    this.Public == input.Public ||
+                    (this.Public != null &&
+                    this.Public.Equals(input.Public))
+                ) && 
+                (
                     this.DestinationIpAddress == input.DestinationIpAddress ||
                     (this.DestinationIpAddress != null &&
                     this.DestinationIpAddress.Equals(input.DestinationIpAddress))
@@ -333,6 +345,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.Enabled != null)
                     hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Public != null)
+                    hashCode = hashCode * 59 + this.Public.GetHashCode();
                 if (this.DestinationIpAddress != null)
                     hashCode = hashCode * 59 + this.DestinationIpAddress.GetHashCode();
                 if (this.DestinationPort != null)

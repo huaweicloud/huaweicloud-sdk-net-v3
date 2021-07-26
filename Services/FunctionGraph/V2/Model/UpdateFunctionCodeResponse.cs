@@ -366,12 +366,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public FuncCode FuncCode { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("concurrency", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Concurrency { get; set; }
-
-        /// <summary>
         /// 依赖id列表
         /// </summary>
         [JsonProperty("depend_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -408,7 +402,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  digest: ").Append(Digest).Append("\n");
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("  funcCode: ").Append(FuncCode).Append("\n");
-            sb.Append("  concurrency: ").Append(Concurrency).Append("\n");
             sb.Append("  dependList: ").Append(DependList).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
             sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
@@ -489,11 +482,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FuncCode.Equals(input.FuncCode))
                 ) && 
                 (
-                    this.Concurrency == input.Concurrency ||
-                    (this.Concurrency != null &&
-                    this.Concurrency.Equals(input.Concurrency))
-                ) && 
-                (
                     this.DependList == input.DependList ||
                     this.DependList != null &&
                     input.DependList != null &&
@@ -542,8 +530,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.LastModified.GetHashCode();
                 if (this.FuncCode != null)
                     hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
-                if (this.Concurrency != null)
-                    hashCode = hashCode * 59 + this.Concurrency.GetHashCode();
                 if (this.DependList != null)
                     hashCode = hashCode * 59 + this.DependList.GetHashCode();
                 if (this.StrategyConfig != null)

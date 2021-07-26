@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 依赖包大小。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public string Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// 依赖包名。
