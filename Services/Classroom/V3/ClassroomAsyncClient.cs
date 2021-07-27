@@ -15,6 +15,44 @@ namespace HuaweiCloud.SDK.Classroom.V3
 
         
         /// <summary>
+        /// 下发判题任务
+        /// </summary>
+        public async Task<ApplyJudgementResponse> ApplyJudgementAsync(ApplyJudgementRequest applyJudgementRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/enablement/judgements",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyJudgementRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ApplyJudgementResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取判题结果详情
+        /// </summary>
+        public async Task<ShowJudgementDetailResponse> ShowJudgementDetailAsync(ShowJudgementDetailRequest showJudgementDetailRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("judgement_id" , showJudgementDetailRequest.JudgementId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/enablement/judgements/{judgement_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJudgementDetailRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowJudgementDetailResponse>(response);
+        }
+        
+        /// <summary>
+        /// 下载判题结果文件
+        /// </summary>
+        public async Task<ShowJudgementFileResponse> ShowJudgementFileAsync(ShowJudgementFileRequest showJudgementFileRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("file_id" , showJudgementFileRequest.FileId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/enablement/judgement/files/{file_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJudgementFileRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowJudgementFileResponse>(response);
+        }
+        
+        /// <summary>
         /// 根据课堂ID获取指定课堂的课堂成员列表
         /// </summary>
         public async Task<ListClassroomMembersResponse> ListClassroomMembersAsync(ListClassroomMembersRequest listClassroomMembersRequest)
