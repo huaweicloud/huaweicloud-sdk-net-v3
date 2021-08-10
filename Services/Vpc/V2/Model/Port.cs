@@ -348,10 +348,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string DnsName { get; set; }
 
         /// <summary>
-        /// 功能说明：vif的详细信息，  \&quot;ovs_hybrid_plug\&quot;: 是否为ovs/bridge混合模式 约束：管理员权限，普通租户不可指定
+        /// 
         /// </summary>
         [JsonProperty("binding:vif_details", NullValueHandling = NullValueHandling.Ignore)]
-        public Object BindingvifDetails { get; set; }
+        public BindingVifDetails BindingvifDetails { get; set; }
 
         /// <summary>
         /// 功能说明：提供用户设置自定义信息(扩展属性)

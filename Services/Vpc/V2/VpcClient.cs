@@ -27,6 +27,19 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 子网关联路由表
+        /// </summary>
+        public AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest associateRouteTableRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("routetable_id" , associateRouteTableRequest.RoutetableId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateRouteTableRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AssociateRouteTableResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量创建子网资源标签
         /// </summary>
         public BatchCreateSubnetTagsResponse BatchCreateSubnetTags(BatchCreateSubnetTagsRequest batchCreateSubnetTagsRequest)
@@ -62,6 +75,18 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPortRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreatePortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建路由表
+        /// </summary>
+        public CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest createRouteTableRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRouteTableRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateRouteTableResponse>(response);
         }
         
         /// <summary>
@@ -139,6 +164,19 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 删除路由表
+        /// </summary>
+        public DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest deleteRouteTableRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("routetable_id" , deleteRouteTableRequest.RoutetableId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRouteTableRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteRouteTableResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除安全组
         /// </summary>
         public DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest deleteSecurityGroupRequest)
@@ -206,6 +244,19 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 子网解关联路由表
+        /// </summary>
+        public DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest disassociateRouteTableRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("routetable_id" , disassociateRouteTableRequest.RoutetableId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateRouteTableRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DisassociateRouteTableResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询端口列表
         /// </summary>
         public ListPortsResponse ListPorts(ListPortsRequest listPortsRequest)
@@ -215,6 +266,18 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListPortsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询路由表列表
+        /// </summary>
+        public ListRouteTablesResponse ListRouteTables(ListRouteTablesRequest listRouteTablesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRouteTablesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRouteTablesResponse>(response);
         }
         
         /// <summary>
@@ -328,6 +391,19 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 查询路由表
+        /// </summary>
+        public ShowRouteTableResponse ShowRouteTable(ShowRouteTableRequest showRouteTableRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("routetable_id" , showRouteTableRequest.RoutetableId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRouteTableRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowRouteTableResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询安全组
         /// </summary>
         public ShowSecurityGroupResponse ShowSecurityGroup(ShowSecurityGroupRequest showSecurityGroupRequest)
@@ -403,6 +479,19 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePortRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新路由表
+        /// </summary>
+        public UpdateRouteTableResponse UpdateRouteTable(UpdateRouteTableRequest updateRouteTableRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("routetable_id" , updateRouteTableRequest.RoutetableId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRouteTableRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateRouteTableResponse>(response);
         }
         
         /// <summary>

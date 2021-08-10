@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<NeutronSecurityGroup> SecurityGroups { get; set; }
 
+        /// <summary>
+        /// 分页信息
+        /// </summary>
+        [JsonProperty("security_groups_links", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NeutronPageLink> SecurityGroupsLinks { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             var sb = new StringBuilder();
             sb.Append("class NeutronListSecurityGroupsResponse {\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
+            sb.Append("  securityGroupsLinks: ").Append(SecurityGroupsLinks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.SecurityGroups != null &&
                     input.SecurityGroups != null &&
                     this.SecurityGroups.SequenceEqual(input.SecurityGroups)
+                ) && 
+                (
+                    this.SecurityGroupsLinks == input.SecurityGroupsLinks ||
+                    this.SecurityGroupsLinks != null &&
+                    input.SecurityGroupsLinks != null &&
+                    this.SecurityGroupsLinks.SequenceEqual(input.SecurityGroupsLinks)
                 );
         }
 
@@ -69,6 +82,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 int hashCode = 41;
                 if (this.SecurityGroups != null)
                     hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.SecurityGroupsLinks != null)
+                    hashCode = hashCode * 59 + this.SecurityGroupsLinks.GetHashCode();
                 return hashCode;
             }
         }

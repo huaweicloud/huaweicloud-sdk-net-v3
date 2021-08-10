@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
+        /// 身份提供商类型。当前支持virtual_user_sso和iam_user_sso两种。当返回为空字符串或者null时，默认为缺省类型virtual_user_sso类型。
+        /// </summary>
+        [JsonProperty("sso_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string SsoType { get; set; }
+
+        /// <summary>
         /// 身份提供商ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class IdentityprovidersResult {\n");
+            sb.Append("  ssoType: ").Append(SsoType).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 return false;
 
             return 
+                (
+                    this.SsoType == input.SsoType ||
+                    (this.SsoType != null &&
+                    this.SsoType.Equals(input.SsoType))
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -115,6 +127,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.SsoType != null)
+                    hashCode = hashCode * 59 + this.SsoType.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Description != null)

@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             try
             {
                 var response = client.DoHttpRequest(message).Result;
-                if ((int) response.StatusCode >= 400)
+                if ((int)response.StatusCode >= 400)
                 {
                     throw ExceptionUtils.GetException(response);
                 }
@@ -92,7 +92,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                 // TODO support create new project id here
                 if (data?.Projects == null || data.Projects?.Count == 0)
                 {
-                    throw new ArgumentException("Failed to get project id.");
+                    throw new ArgumentException("No project id found, please specify project_id manually when initializing the credentials.");
                 }
 
                 if (data.Projects.Count == 1)
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                 }
 
                 throw new ArgumentException(
-                    "Multiple project ids have been returned, please specify one when initializing credentials.");
+                    "Multiple project ids have been returned, please specify one when initializing the credentials.");
             }
             catch (AggregateException aggregateException)
             {
@@ -130,7 +130,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             try
             {
                 var response = client.DoHttpRequest(message).Result;
-                if ((int) response.StatusCode >= 400)
+                if ((int)response.StatusCode >= 400)
                 {
                     throw ExceptionUtils.GetException(response);
                 }
@@ -141,7 +141,10 @@ namespace HuaweiCloud.SDK.Core.Auth
                     return data.Domains[0].Id;
                 }
 
-                throw new ArgumentException("Failed to get domain id.");
+                throw new ArgumentException("No domain id found, please select one of the following solutions:\n\t" +
+                                            "1. Manually specify domain_id when initializing the credentials.\n\t" +
+                                            "2. Use the domain account to grant the current account permissions of the IAM service.\n\t" +
+                                            "3. Use AK/SK of the domain account.");
             }
             catch (AggregateException aggregateException)
             {

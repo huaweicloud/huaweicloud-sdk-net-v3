@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("sync_message_flush", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SyncMessageFlush { get; set; }
 
+        /// <summary>
+        /// 分区数。
+        /// </summary>
+        [JsonProperty("new_partition_numbers", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NewPartitionNumbers { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  retentionTime: ").Append(RetentionTime).Append("\n");
             sb.Append("  syncReplication: ").Append(SyncReplication).Append("\n");
             sb.Append("  syncMessageFlush: ").Append(SyncMessageFlush).Append("\n");
+            sb.Append("  newPartitionNumbers: ").Append(NewPartitionNumbers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SyncMessageFlush == input.SyncMessageFlush ||
                     (this.SyncMessageFlush != null &&
                     this.SyncMessageFlush.Equals(input.SyncMessageFlush))
+                ) && 
+                (
+                    this.NewPartitionNumbers == input.NewPartitionNumbers ||
+                    (this.NewPartitionNumbers != null &&
+                    this.NewPartitionNumbers.Equals(input.NewPartitionNumbers))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
                 if (this.SyncMessageFlush != null)
                     hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
+                if (this.NewPartitionNumbers != null)
+                    hashCode = hashCode * 59 + this.NewPartitionNumbers.GetHashCode();
                 return hashCode;
             }
         }

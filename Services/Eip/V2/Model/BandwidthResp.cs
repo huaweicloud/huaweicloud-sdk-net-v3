@@ -447,8 +447,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// <summary>
         /// 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域才会返回此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：publicip只能绑定该字段相同的资源
         /// </summary>
-        [JsonProperty("publicip_border_group", NullValueHandling = NullValueHandling.Ignore)]
-        public string PublicipBorderGroup { get; set; }
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicBorderGroup { get; set; }
 
 
         /// <summary>
@@ -474,7 +474,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  bandwidthRules: ").Append(BandwidthRules).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  publicipBorderGroup: ").Append(PublicipBorderGroup).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -579,9 +579,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.PublicipBorderGroup == input.PublicipBorderGroup ||
-                    (this.PublicipBorderGroup != null &&
-                    this.PublicipBorderGroup.Equals(input.PublicipBorderGroup))
+                    this.PublicBorderGroup == input.PublicBorderGroup ||
+                    (this.PublicBorderGroup != null &&
+                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
                 );
         }
 
@@ -625,8 +625,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.PublicipBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicipBorderGroup.GetHashCode();
+                if (this.PublicBorderGroup != null)
+                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

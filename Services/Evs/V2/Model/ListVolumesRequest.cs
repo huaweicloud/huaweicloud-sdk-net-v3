@@ -134,6 +134,13 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 云服务器id
+        /// </summary>
+        [SDKProperty("server_id", IsQuery = true)]
+        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -159,6 +166,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  ids: ").Append(Ids).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -264,6 +272,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.ServerId == input.ServerId ||
+                    (this.ServerId != null &&
+                    this.ServerId.Equals(input.ServerId))
                 );
         }
 
@@ -309,6 +322,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.Ids.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ServerId != null)
+                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 return hashCode;
             }
         }

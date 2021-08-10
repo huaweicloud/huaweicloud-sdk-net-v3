@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vod", "Vod.csproj", "{3172c815-5fea-43e0-9589-8ab6f4af2866}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3172c815-5fea-43e0-9589-8ab6f4af2866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3172c815-5fea-43e0-9589-8ab6f4af2866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3172c815-5fea-43e0-9589-8ab6f4af2866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3172c815-5fea-43e0-9589-8ab6f4af2866}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

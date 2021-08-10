@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 消息时间戳。
+        /// 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? Timestamp { get; set; }

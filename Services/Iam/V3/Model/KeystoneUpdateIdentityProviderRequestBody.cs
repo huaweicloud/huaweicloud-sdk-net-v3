@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("identity_provider", NullValueHandling = NullValueHandling.Ignore)]
-        public IdentityproviderOption IdentityProvider { get; set; }
+        public UpdateIdentityproviderOption IdentityProvider { get; set; }
 
 
         /// <summary>

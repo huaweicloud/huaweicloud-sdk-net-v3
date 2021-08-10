@@ -1,3 +1,98 @@
+# 3.0.55 2021-08-10
+
+### HuaweiCloud SDK AS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the request parameters `key` and `value` of the interface `ListResourceInstances` as required parameters.
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the name of the response parameter of the interfaces `ListBandwidths` and `ShowPublicip`: `publicip_border_group` -> `public_border_group`
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the request parameter `server_id` to the interface `ListVolumes`.
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Remove the response parameter `order_id` from the interface `CreateDeployment`.
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the request parameter `value` of the interface `UpdateImage` as a required parameter.
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the request parameter `new_partition_numbers` to the interface `UpdateInstanceTopic`.
+
+### HuaweiCloud SDK SWR
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the following response parameters to the interface `ShowAccessDomain`:
+        - `namespace`
+        - `repository`
+        - `access_domain`
+        - `permit`
+        - `deadline`
+        - `description`
+        - `creator_id`
+        - `creator_name`
+        - `created`
+        - `updated`
+        - `status`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+    - Support the service `Video on Demand`.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the request parameter `enable_dhcp` to the interface `NeutronListSubnets`.
+    - Add the response parameter `security_groups_links` to the interface `NeutronListSecurityGroups`.
+
 # 3.0.54 2021-07-27
 
 ### HuaweiCloud SDK Classroom
