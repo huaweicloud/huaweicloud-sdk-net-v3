@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public Dictionary<string, Object> VolumeImageMetadata { get; set; }
 
         /// <summary>
-        /// 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”和“SATA”四种。 “SSD”为超高IO云硬盘 “GPSSD”为通用型云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
+        /// 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
         /// </summary>
         [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeType { get; set; }
@@ -213,6 +213,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 云硬盘序列号。 只有SCSI类型的非双活卷才会返回该字段，用于与虚拟机中的盘做对应关系。
+        /// </summary>
+        [JsonProperty("serial_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string SerialNumber { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -254,6 +260,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  wwn: ").Append(Wwn).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  serialNumber: ").Append(SerialNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -443,6 +450,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.SerialNumber == input.SerialNumber ||
+                    (this.SerialNumber != null &&
+                    this.SerialNumber.Equals(input.SerialNumber))
                 );
         }
 
@@ -520,6 +532,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.Wwn.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.SerialNumber != null)
+                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
                 return hashCode;
             }
         }

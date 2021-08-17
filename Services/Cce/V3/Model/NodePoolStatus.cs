@@ -144,10 +144,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 当前节点池中节点数量
+        /// 当前节点池中所有节点数量（不含删除中的节点）。
         /// </summary>
         [JsonProperty("currentNode", NullValueHandling = NullValueHandling.Ignore)]
         public int? CurrentNode { get; set; }
+
+        /// <summary>
+        /// 当前节点池中处于创建流程中的节点数量。
+        /// </summary>
+        [JsonProperty("creatingNode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CreatingNode { get; set; }
+
+        /// <summary>
+        /// 当前节点池中删除中或者删除失败的节点数量。
+        /// </summary>
+        [JsonProperty("deletingNode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DeletingNode { get; set; }
 
         /// <summary>
         /// 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 
@@ -155,10 +167,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public PhaseEnum Phase { get; set; }
         /// <summary>
-        /// 节点池删除时的 JobID
+        /// 对节点池执行操作时的 JobID。
         /// </summary>
         [JsonProperty("jobId", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
+
+        /// <summary>
+        /// 节点池每次扩容的动作结果记录，用于确定节点池是否还能继续扩容。
+        /// </summary>
+        [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NodePoolCondition> Conditions { get; set; }
 
 
         /// <summary>
@@ -169,8 +187,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class NodePoolStatus {\n");
             sb.Append("  currentNode: ").Append(CurrentNode).Append("\n");
+            sb.Append("  creatingNode: ").Append(CreatingNode).Append("\n");
+            sb.Append("  deletingNode: ").Append(DeletingNode).Append("\n");
             sb.Append("  phase: ").Append(Phase).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  conditions: ").Append(Conditions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -198,6 +219,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.CurrentNode.Equals(input.CurrentNode))
                 ) && 
                 (
+                    this.CreatingNode == input.CreatingNode ||
+                    (this.CreatingNode != null &&
+                    this.CreatingNode.Equals(input.CreatingNode))
+                ) && 
+                (
+                    this.DeletingNode == input.DeletingNode ||
+                    (this.DeletingNode != null &&
+                    this.DeletingNode.Equals(input.DeletingNode))
+                ) && 
+                (
                     this.Phase == input.Phase ||
                     (this.Phase != null &&
                     this.Phase.Equals(input.Phase))
@@ -206,6 +237,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
+                ) && 
+                (
+                    this.Conditions == input.Conditions ||
+                    this.Conditions != null &&
+                    input.Conditions != null &&
+                    this.Conditions.SequenceEqual(input.Conditions)
                 );
         }
 
@@ -219,10 +256,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.CurrentNode != null)
                     hashCode = hashCode * 59 + this.CurrentNode.GetHashCode();
+                if (this.CreatingNode != null)
+                    hashCode = hashCode * 59 + this.CreatingNode.GetHashCode();
+                if (this.DeletingNode != null)
+                    hashCode = hashCode * 59 + this.DeletingNode.GetHashCode();
                 if (this.Phase != null)
                     hashCode = hashCode * 59 + this.Phase.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Conditions != null)
+                    hashCode = hashCode * 59 + this.Conditions.GetHashCode();
                 return hashCode;
             }
         }

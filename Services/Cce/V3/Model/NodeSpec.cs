@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodeNicSpec NodeNicSpec { get; set; }
 
         /// <summary>
-        /// 批量创建时节点的个数，必须为大于等于1，小于等于最大限额的正整数。作用于节点池时该项允许为0
+        /// 批量创建时节点的个数，必须为大于等于1，小于等于最大限额的正整数。作用于节点池时该项可以不填写。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

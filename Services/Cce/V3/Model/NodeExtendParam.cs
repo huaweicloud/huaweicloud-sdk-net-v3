@@ -111,6 +111,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("nicThreshold", NullValueHandling = NullValueHandling.Ignore)]
         public string NicThreshold { get; set; }
 
+        /// <summary>
+        /// 节点所属的企业项目id。 
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 节点的计费模式。已废弃，请使用NodeSpec中的billingMode字段。 
+        /// </summary>
+        [JsonProperty("chargingMode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ChargingMode { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -135,6 +147,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  alphaCceNodeImageID: ").Append(AlphaCceNodeImageID).Append("\n");
             sb.Append("  nicMultiqueue: ").Append(NicMultiqueue).Append("\n");
             sb.Append("  nicThreshold: ").Append(NicThreshold).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +249,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.NicThreshold == input.NicThreshold ||
                     (this.NicThreshold != null &&
                     this.NicThreshold.Equals(input.NicThreshold))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.ChargingMode == input.ChargingMode ||
+                    (this.ChargingMode != null &&
+                    this.ChargingMode.Equals(input.ChargingMode))
                 );
         }
 
@@ -278,6 +302,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.NicMultiqueue.GetHashCode();
                 if (this.NicThreshold != null)
                     hashCode = hashCode * 59 + this.NicThreshold.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ChargingMode != null)
+                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 return hashCode;
             }
         }

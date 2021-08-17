@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string KubernetesIoCpuManagerPolicy { get; set; }
 
         /// <summary>
+        /// 订单ID，集群付费类型为自动付费包周期类型时，响应中会返回此字段。
+        /// </summary>
+        [JsonProperty("orderID", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderID { get; set; }
+
+        /// <summary>
         /// - month：月 - year：年 &gt; billingMode为1（包周期）时生效，且为必选。 
         /// </summary>
         [JsonProperty("periodType", NullValueHandling = NullValueHandling.Ignore)]
@@ -93,6 +99,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("isAutoPay", NullValueHandling = NullValueHandling.Ignore)]
         public string IsAutoPay { get; set; }
 
+        /// <summary>
+        /// 记录集群通过何种升级方式升级到当前版本。 
+        /// </summary>
+        [JsonProperty("upgradefrom", NullValueHandling = NullValueHandling.Ignore)]
+        public string Upgradefrom { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -110,10 +122,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  decMasterFlavor: ").Append(DecMasterFlavor).Append("\n");
             sb.Append("  dockerUmaskMode: ").Append(DockerUmaskMode).Append("\n");
             sb.Append("  kubernetesIoCpuManagerPolicy: ").Append(KubernetesIoCpuManagerPolicy).Append("\n");
+            sb.Append("  orderID: ").Append(OrderID).Append("\n");
             sb.Append("  periodType: ").Append(PeriodType).Append("\n");
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("  isAutoRenew: ").Append(IsAutoRenew).Append("\n");
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
+            sb.Append("  upgradefrom: ").Append(Upgradefrom).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +195,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.KubernetesIoCpuManagerPolicy.Equals(input.KubernetesIoCpuManagerPolicy))
                 ) && 
                 (
+                    this.OrderID == input.OrderID ||
+                    (this.OrderID != null &&
+                    this.OrderID.Equals(input.OrderID))
+                ) && 
+                (
                     this.PeriodType == input.PeriodType ||
                     (this.PeriodType != null &&
                     this.PeriodType.Equals(input.PeriodType))
@@ -199,6 +218,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.IsAutoPay == input.IsAutoPay ||
                     (this.IsAutoPay != null &&
                     this.IsAutoPay.Equals(input.IsAutoPay))
+                ) && 
+                (
+                    this.Upgradefrom == input.Upgradefrom ||
+                    (this.Upgradefrom != null &&
+                    this.Upgradefrom.Equals(input.Upgradefrom))
                 );
         }
 
@@ -228,6 +252,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.DockerUmaskMode.GetHashCode();
                 if (this.KubernetesIoCpuManagerPolicy != null)
                     hashCode = hashCode * 59 + this.KubernetesIoCpuManagerPolicy.GetHashCode();
+                if (this.OrderID != null)
+                    hashCode = hashCode * 59 + this.OrderID.GetHashCode();
                 if (this.PeriodType != null)
                     hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
                 if (this.PeriodNum != null)
@@ -236,6 +262,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
                 if (this.IsAutoPay != null)
                     hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.Upgradefrom != null)
+                    hashCode = hashCode * 59 + this.Upgradefrom.GetHashCode();
                 return hashCode;
             }
         }

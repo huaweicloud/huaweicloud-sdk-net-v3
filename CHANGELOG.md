@@ -1,3 +1,41 @@
+# 3.0.56 2021-08-17
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the following response parameters to the interface `ListNodePools`:
+        - `annotations`
+        - `updateTimestamp`
+        - `creationTimestamp`
+        - `creatingNode`
+        - `deletingNode`
+        - `conditions`
+        - `enterprise_project_id`
+    - Add the response parameters `orderID` and `upgradefrom` to the interface `ListClusters`.
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameter `ecs:instance_architecture` to the interface `ListServerResizeFlavors`.
+    - Add the request parameters `tenancy` and `dedicated_host_id` to the interface `NovaCreateServers`.
+
+### HuaweiCloud SDK ELB
+
+- _Features_
+    - None
+- _Bug Fix_
+    - Fix the problem of abnormal creation of LB.
+- _Change_
+    - None
+
 # 3.0.55 2021-08-10
 
 ### HuaweiCloud SDK AS

@@ -1,3 +1,41 @@
+# 3.0.56 2021-08-17
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListNodePools`新增以下响应参数：
+        - `annotations`
+        - `updateTimestamp`
+        - `creationTimestamp`
+        - `creatingNode`
+        - `deletingNode`
+        - `conditions`
+        - `enterprise_project_id`
+    - 接口`ListClusters`新增响应参数`orderID`和`upgradefrom`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListServerResizeFlavors`新增响应参数`ecs:instance_architecture`
+    - 接口`NovaCreateServers`新增请求参数`tenancy`和`dedicated_host_id`
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 修复创建LB异常的问题
+- _特性变更_
+    - 无
+
 # 3.0.55 2021-08-10
 
 ### HuaweiCloud SDK AS

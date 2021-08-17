@@ -207,6 +207,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("quota:gpu", NullValueHandling = NullValueHandling.Ignore)]
         public string Quotagpu { get; set; }
 
+        /// <summary>
+        /// 该规格对应的CPU架构，且仅鲲鹏实例架构规格返回该字段  - 取值为arm64表示CPU架构为鲲鹏计算。
+        /// </summary>
+        [JsonProperty("ecs:instance_architecture", NullValueHandling = NullValueHandling.Ignore)]
+        public string EcsinstanceArchitecture { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -247,6 +253,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  infogpuname: ").Append(Infogpuname).Append("\n");
             sb.Append("  infocpuname: ").Append(Infocpuname).Append("\n");
             sb.Append("  quotagpu: ").Append(Quotagpu).Append("\n");
+            sb.Append("  ecsinstanceArchitecture: ").Append(EcsinstanceArchitecture).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -427,6 +434,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Quotagpu == input.Quotagpu ||
                     (this.Quotagpu != null &&
                     this.Quotagpu.Equals(input.Quotagpu))
+                ) && 
+                (
+                    this.EcsinstanceArchitecture == input.EcsinstanceArchitecture ||
+                    (this.EcsinstanceArchitecture != null &&
+                    this.EcsinstanceArchitecture.Equals(input.EcsinstanceArchitecture))
                 );
         }
 
@@ -502,6 +514,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Infocpuname.GetHashCode();
                 if (this.Quotagpu != null)
                     hashCode = hashCode * 59 + this.Quotagpu.GetHashCode();
+                if (this.EcsinstanceArchitecture != null)
+                    hashCode = hashCode * 59 + this.EcsinstanceArchitecture.GetHashCode();
                 return hashCode;
             }
         }

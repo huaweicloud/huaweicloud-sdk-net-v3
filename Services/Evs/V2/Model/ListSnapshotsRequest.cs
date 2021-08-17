@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 指定快照id进行过滤。
+        /// 指定快照id进行过滤。可以传入多个id过滤查询，格式：id&#x3D;id1&amp;id&#x3D;id2&amp;id&#x3D;id3
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]

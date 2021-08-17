@@ -45,6 +45,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("build_near_host_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string BuildNearHostIp { get; set; }
 
+        /// <summary>
+        /// 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。 值为： shared 或dedicated。 shared：表示共享池。 dedicated:表示专属主机。 创建与查询此值均有效。
+        /// </summary>
+        [JsonProperty("tenancy", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tenancy { get; set; }
+
+        /// <summary>
+        /// 专属主机ID。 此属性仅在tenancy值为dedicated时有效。 不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。 创建与查询此值均有效。
+        /// </summary>
+        [JsonProperty("dedicated_host_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DedicatedHostId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +70,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  sameHost: ").Append(SameHost).Append("\n");
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
             sb.Append("  buildNearHostIp: ").Append(BuildNearHostIp).Append("\n");
+            sb.Append("  tenancy: ").Append(Tenancy).Append("\n");
+            sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +119,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.BuildNearHostIp == input.BuildNearHostIp ||
                     (this.BuildNearHostIp != null &&
                     this.BuildNearHostIp.Equals(input.BuildNearHostIp))
+                ) && 
+                (
+                    this.Tenancy == input.Tenancy ||
+                    (this.Tenancy != null &&
+                    this.Tenancy.Equals(input.Tenancy))
+                ) && 
+                (
+                    this.DedicatedHostId == input.DedicatedHostId ||
+                    (this.DedicatedHostId != null &&
+                    this.DedicatedHostId.Equals(input.DedicatedHostId))
                 );
         }
 
@@ -126,6 +150,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Cidr.GetHashCode();
                 if (this.BuildNearHostIp != null)
                     hashCode = hashCode * 59 + this.BuildNearHostIp.GetHashCode();
+                if (this.Tenancy != null)
+                    hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
+                if (this.DedicatedHostId != null)
+                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
                 return hashCode;
             }
         }

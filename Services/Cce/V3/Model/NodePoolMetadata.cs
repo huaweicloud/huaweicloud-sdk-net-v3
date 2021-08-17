@@ -27,6 +27,24 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uid { get; set; }
 
+        /// <summary>
+        /// 节点池的注解，以key value对表示。 
+        /// </summary>
+        [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> Annotations { get; set; }
+
+        /// <summary>
+        /// 更新时间
+        /// </summary>
+        [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdateTimestamp { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreationTimestamp { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +55,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class NodePoolMetadata {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  uid: ").Append(Uid).Append("\n");
+            sb.Append("  annotations: ").Append(Annotations).Append("\n");
+            sb.Append("  updateTimestamp: ").Append(UpdateTimestamp).Append("\n");
+            sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +88,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Uid == input.Uid ||
                     (this.Uid != null &&
                     this.Uid.Equals(input.Uid))
+                ) && 
+                (
+                    this.Annotations == input.Annotations ||
+                    this.Annotations != null &&
+                    input.Annotations != null &&
+                    this.Annotations.SequenceEqual(input.Annotations)
+                ) && 
+                (
+                    this.UpdateTimestamp == input.UpdateTimestamp ||
+                    (this.UpdateTimestamp != null &&
+                    this.UpdateTimestamp.Equals(input.UpdateTimestamp))
+                ) && 
+                (
+                    this.CreationTimestamp == input.CreationTimestamp ||
+                    (this.CreationTimestamp != null &&
+                    this.CreationTimestamp.Equals(input.CreationTimestamp))
                 );
         }
 
@@ -82,6 +119,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Uid != null)
                     hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Annotations != null)
+                    hashCode = hashCode * 59 + this.Annotations.GetHashCode();
+                if (this.UpdateTimestamp != null)
+                    hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                if (this.CreationTimestamp != null)
+                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
                 return hashCode;
             }
         }

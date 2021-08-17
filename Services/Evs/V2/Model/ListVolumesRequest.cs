@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 云服务器id
+        /// 云服务器id。
         /// </summary>
         [SDKProperty("server_id", IsQuery = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
