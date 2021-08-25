@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 功能说明：路由对象，参见route字段说明  约束：每个路由表最大关联200条路由
         /// </summary>
         [JsonProperty("routes", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Route> Routes { get; set; }
+        public List<RouteTableRoute> Routes { get; set; }
 
         /// <summary>
         /// 路由表所在的虚拟私有云ID

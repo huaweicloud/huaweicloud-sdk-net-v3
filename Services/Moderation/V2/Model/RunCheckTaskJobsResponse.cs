@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public List<CheckTaskJobsItemsBody> Result { get; set; }
 
+        /// <summary>
+        /// 符合查询条件的总任务数量。 
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
             var sb = new StringBuilder();
             sb.Append("class RunCheckTaskJobsResponse {\n");
             sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +63,11 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     this.Result != null &&
                     input.Result != null &&
                     this.Result.SequenceEqual(input.Result)
+                ) && 
+                (
+                    this.Count == input.Count ||
+                    (this.Count != null &&
+                    this.Count.Equals(input.Count))
                 );
         }
 
@@ -69,6 +81,8 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                 int hashCode = 41;
                 if (this.Result != null)
                     hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Count != null)
+                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

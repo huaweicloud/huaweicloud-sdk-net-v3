@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 实例备注。
+        /// </summary>
+        [JsonProperty("remark", NullValueHandling = NullValueHandling.Ignore)]
+        public string Remark { get; set; }
+
+        /// <summary>
         /// 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -169,6 +175,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("class QueryInstanceResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  remark: ").Append(Remark).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
@@ -221,6 +228,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Remark == input.Remark ||
+                    (this.Remark != null &&
+                    this.Remark.Equals(input.Remark))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -348,6 +360,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Remark != null)
+                    hashCode = hashCode * 59 + this.Remark.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Port != null)

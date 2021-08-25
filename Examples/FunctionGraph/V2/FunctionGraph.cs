@@ -1000,8 +1000,7 @@ namespace Examples.FunctionGraph.V2
             ListStatisticsRequest req = new ListStatisticsRequest
             {
                 Period = "15",
-                MonthCode = ListStatisticsRequest.MonthCodeEnum._0,
-                Filter = ListStatisticsRequest.FilterEnum.METRIC
+                Filter = ListStatisticsRequest.FilterEnum.MONITOR_DATA
             };
             try
             {

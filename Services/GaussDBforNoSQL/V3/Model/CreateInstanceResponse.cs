@@ -100,6 +100,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 专属资源ID，只有创建在专属资源上的实例才会返回该字段。
+        /// </summary>
+        [JsonProperty("dedicated_resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DedicatedResourceId { get; set; }
+
+        /// <summary>
         /// SSL开关选项，与请求参数相同。
         /// </summary>
         [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
@@ -145,6 +151,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
@@ -242,6 +249,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.DedicatedResourceId == input.DedicatedResourceId ||
+                    (this.DedicatedResourceId != null &&
+                    this.DedicatedResourceId.Equals(input.DedicatedResourceId))
+                ) && 
+                (
                     this.SslOption == input.SslOption ||
                     (this.SslOption != null &&
                     this.SslOption.Equals(input.SslOption))
@@ -299,6 +311,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DedicatedResourceId != null)
+                    hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.SslOption != null)
                     hashCode = hashCode * 59 + this.SslOption.GetHashCode();
                 if (this.JobId != null)

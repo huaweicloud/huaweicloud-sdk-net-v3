@@ -350,6 +350,18 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询数据库规格
+        /// </summary>
+        public async Task<ListFlavorInfosResponse> ListFlavorInfosAsync(ListFlavorInfosRequest listFlavorInfosRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/flavors",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorInfosRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListFlavorInfosResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询所有实例规格信息
         /// </summary>
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
@@ -561,7 +573,7 @@ namespace HuaweiCloud.SDK.Dds.V3
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recovery",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreInstanceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<RestoreInstanceResponse>(response);
+            return JsonUtils.DeSerialize<RestoreInstanceResponse>(response);
         }
         
         /// <summary>
@@ -574,7 +586,7 @@ namespace HuaweiCloud.SDK.Dds.V3
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore/collections",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreInstanceFromCollectionRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<RestoreInstanceFromCollectionResponse>(response);
+            return JsonUtils.DeSerialize<RestoreInstanceFromCollectionResponse>(response);
         }
         
         /// <summary>
@@ -694,6 +706,18 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 获取DDS任务中心指定ID的任务信息。
+        /// </summary>
+        public async Task<ShowJobDetailResponse> ShowJobDetailAsync(ShowJobDetailRequest showJobDetailRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobDetailRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowJobDetailResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询配额
         /// </summary>
         public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
@@ -716,6 +740,20 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShardingBalancerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowShardingBalancerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置慢日志明文开关
+        /// </summary>
+        public async Task<SwitchSlowlogDesensitizationResponse> SwitchSlowlogDesensitizationAsync(SwitchSlowlogDesensitizationRequest switchSlowlogDesensitizationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchSlowlogDesensitizationRequest.InstanceId.ToString());
+            urlParam.Add("status" , switchSlowlogDesensitizationRequest.Status.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization/{status}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSlowlogDesensitizationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<SwitchSlowlogDesensitizationResponse>(response);
         }
         
         /// <summary>
@@ -781,6 +819,19 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstancePortRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateInstancePortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改实例备注
+        /// </summary>
+        public async Task<UpdateInstanceRemarkResponse> UpdateInstanceRemarkAsync(UpdateInstanceRemarkRequest updateInstanceRemarkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateInstanceRemarkRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/remark",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRemarkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceRemarkResponse>(response);
         }
         
         /// <summary>

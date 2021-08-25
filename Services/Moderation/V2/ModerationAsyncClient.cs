@@ -39,7 +39,7 @@ namespace HuaweiCloud.SDK.Moderation.V2
         }
         
         /// <summary>
-        /// 图像内容检测（批量）
+        /// 图像内容审核（批量）
         /// </summary>
         public async Task<RunImageBatchModerationResponse> RunImageBatchModerationAsync(RunImageBatchModerationRequest runImageBatchModerationRequest)
         {
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Moderation.V2
         }
         
         /// <summary>
-        /// 图像内容检测
+        /// 图像内容审核
         /// </summary>
         public async Task<RunImageModerationResponse> RunImageModerationAsync(RunImageModerationRequest runImageModerationRequest)
         {
@@ -75,7 +75,7 @@ namespace HuaweiCloud.SDK.Moderation.V2
         }
         
         /// <summary>
-        /// 文本内容检测
+        /// 文本内容审核
         /// </summary>
         public async Task<RunTextModerationResponse> RunTextModerationAsync(RunTextModerationRequest runTextModerationRequest)
         {

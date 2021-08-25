@@ -138,12 +138,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
-        /// </summary>
-        [JsonProperty("handler", NullValueHandling = NullValueHandling.Ignore)]
-        public string Handler { get; set; }
-
-        /// <summary>
         /// 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
         /// </summary>
         [JsonProperty("code_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -172,12 +166,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("depend_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DependList { get; set; }
 
-        /// <summary>
-        /// 函数依赖代码包列表。
-        /// </summary>
-        [JsonProperty("dependencies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dependency> Dependencies { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -186,13 +174,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpdateFunctionCodeRequestBody {\n");
-            sb.Append("  handler: ").Append(Handler).Append("\n");
             sb.Append("  codeType: ").Append(CodeType).Append("\n");
             sb.Append("  codeUrl: ").Append(CodeUrl).Append("\n");
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
             sb.Append("  funcCode: ").Append(FuncCode).Append("\n");
             sb.Append("  dependList: ").Append(DependList).Append("\n");
-            sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -214,11 +200,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
-                (
-                    this.Handler == input.Handler ||
-                    (this.Handler != null &&
-                    this.Handler.Equals(input.Handler))
-                ) && 
                 (
                     this.CodeType == input.CodeType ||
                     (this.CodeType != null &&
@@ -244,12 +225,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.DependList != null &&
                     input.DependList != null &&
                     this.DependList.SequenceEqual(input.DependList)
-                ) && 
-                (
-                    this.Dependencies == input.Dependencies ||
-                    this.Dependencies != null &&
-                    input.Dependencies != null &&
-                    this.Dependencies.SequenceEqual(input.Dependencies)
                 );
         }
 
@@ -261,8 +236,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Handler != null)
-                    hashCode = hashCode * 59 + this.Handler.GetHashCode();
                 if (this.CodeType != null)
                     hashCode = hashCode * 59 + this.CodeType.GetHashCode();
                 if (this.CodeUrl != null)
@@ -273,8 +246,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
                 if (this.DependList != null)
                     hashCode = hashCode * 59 + this.DependList.GetHashCode();
-                if (this.Dependencies != null)
-                    hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
+        /// 手动备份的异步任务ID。
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
+        /// <summary>
         /// 手动备份ID。
         /// </summary>
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -29,6 +35,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateManualBackupResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -52,6 +59,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             return 
                 (
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
+                ) && 
+                (
                     this.BackupId == input.BackupId ||
                     (this.BackupId != null &&
                     this.BackupId.Equals(input.BackupId))
@@ -66,6 +78,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.BackupId != null)
                     hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 return hashCode;

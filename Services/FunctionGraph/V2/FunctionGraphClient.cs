@@ -201,9 +201,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ExportFunctionResponse ExportFunction(ExportFunctionRequest exportFunctionRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/export",urlParam);
+            urlParam.Add("function_urn" , exportFunctionRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/export",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportFunctionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerializeNull<ExportFunctionResponse>(response);
         }
         

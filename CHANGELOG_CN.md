@@ -1,3 +1,86 @@
+# 3.0.57 2021-08-25
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+    - 支持以下接口：
+        - `ShowJobDetail`
+        - `SwitchSlowlogDesensitization`
+        - `ListFlavorInfos`
+        - `UpdateInstanceRemark`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`RestoreInstance`、`CreateManualBackup`、`RestoreInstanceFromCollection`新增响应参数`job_id`
+    - 接口`ListInstances`新增响应参数`remark`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListServerInterfaces`新增以下响应参数:
+        - `delete_on_termination`
+        - `driver_mode`
+        - `min_rate`
+        - `multiqueue_num`
+        - `pci_address`
+    - 接口`ListServersDetails`新增响应参数`cpu_options`和`hypervisor`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`BatchCreateSharedBandwidths`新增请求参数和响应参数`public_border_group`
+    - 接口`AddPublicipsIntoSharedBandwidth`新增响应参数`public_border_group`
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口名调整： `AuthorizeFaceRecognitionService` -> `ShowSubscribes`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ExportFunction`的新增请求参数`function_urn`和`type`
+    - 接口`ListStatistics`的请求参数`filter`可选值修改为`monitor_data`、`monthly_report`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+    - 支持以下接口
+        - `ListDedicatedResources`
+        - `ListFlavorInfos`
+        - `ListConfigurationTemplates`
+        - `ListInstancesByResourceTags`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreateInstance`新增请求参数`dedicated_resource_id`
+    - 接口`ListInstances`新增响应参数`dedicated_resource_id`
+
+### HuaweiCloud SDK ImageSearch
+
+- _新增特性_
+    - 支持图像搜索服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
 # 3.0.56 2021-08-17
 
 ### HuaweiCloud SDK CCE

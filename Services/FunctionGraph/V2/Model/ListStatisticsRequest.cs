@@ -22,20 +22,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public class FilterEnum
         {
             /// <summary>
-            /// Enum MONTHLY_STATISTICS for value: monthly_statistics
+            /// Enum MONITOR_DATA for value: monitor_data
             /// </summary>
-            public static readonly FilterEnum MONTHLY_STATISTICS = new FilterEnum("monthly_statistics");
+            public static readonly FilterEnum MONITOR_DATA = new FilterEnum("monitor_data");
 
             /// <summary>
-            /// Enum METRIC for value: metric
+            /// Enum MONTHLY_REPORT for value: monthly_report
             /// </summary>
-            public static readonly FilterEnum METRIC = new FilterEnum("metric");
+            public static readonly FilterEnum MONTHLY_REPORT = new FilterEnum("monthly_report");
 
             private static readonly Dictionary<string, FilterEnum> StaticFields =
             new Dictionary<string, FilterEnum>()
             {
-                { "monthly_statistics", MONTHLY_STATISTICS },
-                { "metric", METRIC },
+                { "monitor_data", MONITOR_DATA },
+                { "monthly_report", MONTHLY_REPORT },
             };
 
             private string Value;
@@ -124,128 +124,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             }
         }
 
-        /// <summary>
-        /// 月度统计的维度，与filter参数monthly_statistics配合使用。 \&quot;0\&quot;:本月月度统计。 \&quot;1\&quot;:上月月度统计。 \&quot;2\&quot;:最近三个月月度统计。 \&quot;3\&quot;:最近六个月月度计。 取值超出范围时默认取\&quot;0”
-        /// </summary>
-        /// <value>月度统计的维度，与filter参数monthly_statistics配合使用。 \&quot;0\&quot;:本月月度统计。 \&quot;1\&quot;:上月月度统计。 \&quot;2\&quot;:最近三个月月度统计。 \&quot;3\&quot;:最近六个月月度计。 取值超出范围时默认取\&quot;0”</value>
-        [JsonConverter(typeof(EnumClassConverter<MonthCodeEnum>))]
-        public class MonthCodeEnum
-        {
-            /// <summary>
-            /// Enum _0 for value: 0
-            /// </summary>
-            public static readonly MonthCodeEnum _0 = new MonthCodeEnum("0");
-
-            /// <summary>
-            /// Enum _1 for value: 1
-            /// </summary>
-            public static readonly MonthCodeEnum _1 = new MonthCodeEnum("1");
-
-            /// <summary>
-            /// Enum _2 for value: 2
-            /// </summary>
-            public static readonly MonthCodeEnum _2 = new MonthCodeEnum("2");
-
-            /// <summary>
-            /// Enum _3 for value: 3
-            /// </summary>
-            public static readonly MonthCodeEnum _3 = new MonthCodeEnum("3");
-
-            private static readonly Dictionary<string, MonthCodeEnum> StaticFields =
-            new Dictionary<string, MonthCodeEnum>()
-            {
-                { "0", _0 },
-                { "1", _1 },
-                { "2", _2 },
-                { "3", _3 },
-            };
-
-            private string Value;
-
-            public MonthCodeEnum(string value)
-            {
-                Value = value;
-            }
-
-            public static MonthCodeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as MonthCodeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(MonthCodeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(MonthCodeEnum a, MonthCodeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(MonthCodeEnum a, MonthCodeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 参数过滤器。
@@ -260,12 +138,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
 
-        /// <summary>
-        /// 月度统计的维度，与filter参数monthly_statistics配合使用。 \&quot;0\&quot;:本月月度统计。 \&quot;1\&quot;:上月月度统计。 \&quot;2\&quot;:最近三个月月度统计。 \&quot;3\&quot;:最近六个月月度计。 取值超出范围时默认取\&quot;0”
-        /// </summary>
-        [SDKProperty("month_code", IsQuery = true)]
-        [JsonProperty("month_code", NullValueHandling = NullValueHandling.Ignore)]
-        public MonthCodeEnum MonthCode { get; set; }
 
         /// <summary>
         /// Get the string
@@ -276,7 +148,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("class ListStatisticsRequest {\n");
             sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("  period: ").Append(Period).Append("\n");
-            sb.Append("  monthCode: ").Append(MonthCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -307,11 +178,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Period == input.Period ||
                     (this.Period != null &&
                     this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.MonthCode == input.MonthCode ||
-                    (this.MonthCode != null &&
-                    this.MonthCode.Equals(input.MonthCode))
                 );
         }
 
@@ -327,8 +193,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 if (this.Period != null)
                     hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.MonthCode != null)
-                    hashCode = hashCode * 59 + this.MonthCode.GetHashCode();
                 return hashCode;
             }
         }

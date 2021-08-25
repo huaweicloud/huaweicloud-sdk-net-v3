@@ -45,6 +45,36 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("port_state", NullValueHandling = NullValueHandling.Ignore)]
         public string PortState { get; set; }
 
+        /// <summary>
+        /// 卸载网卡时，是否删除网卡。
+        /// </summary>
+        [JsonProperty("delete_on_termination", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeleteOnTermination { get; set; }
+
+        /// <summary>
+        /// 从guest os中，网卡的驱动类型。可选值为virtio和hinic，默认为virtio
+        /// </summary>
+        [JsonProperty("driver_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string DriverMode { get; set; }
+
+        /// <summary>
+        /// 网卡带宽下限。
+        /// </summary>
+        [JsonProperty("min_rate", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinRate { get; set; }
+
+        /// <summary>
+        /// 网卡多队列个数。
+        /// </summary>
+        [JsonProperty("multiqueue_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MultiqueueNum { get; set; }
+
+        /// <summary>
+        /// 弹性网卡在Linux GuestOS里的BDF号
+        /// </summary>
+        [JsonProperty("pci_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string PciAddress { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +88,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  netId: ").Append(NetId).Append("\n");
             sb.Append("  portId: ").Append(PortId).Append("\n");
             sb.Append("  portState: ").Append(PortState).Append("\n");
+            sb.Append("  deleteOnTermination: ").Append(DeleteOnTermination).Append("\n");
+            sb.Append("  driverMode: ").Append(DriverMode).Append("\n");
+            sb.Append("  minRate: ").Append(MinRate).Append("\n");
+            sb.Append("  multiqueueNum: ").Append(MultiqueueNum).Append("\n");
+            sb.Append("  pciAddress: ").Append(PciAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,6 +139,31 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.PortState == input.PortState ||
                     (this.PortState != null &&
                     this.PortState.Equals(input.PortState))
+                ) && 
+                (
+                    this.DeleteOnTermination == input.DeleteOnTermination ||
+                    (this.DeleteOnTermination != null &&
+                    this.DeleteOnTermination.Equals(input.DeleteOnTermination))
+                ) && 
+                (
+                    this.DriverMode == input.DriverMode ||
+                    (this.DriverMode != null &&
+                    this.DriverMode.Equals(input.DriverMode))
+                ) && 
+                (
+                    this.MinRate == input.MinRate ||
+                    (this.MinRate != null &&
+                    this.MinRate.Equals(input.MinRate))
+                ) && 
+                (
+                    this.MultiqueueNum == input.MultiqueueNum ||
+                    (this.MultiqueueNum != null &&
+                    this.MultiqueueNum.Equals(input.MultiqueueNum))
+                ) && 
+                (
+                    this.PciAddress == input.PciAddress ||
+                    (this.PciAddress != null &&
+                    this.PciAddress.Equals(input.PciAddress))
                 );
         }
 
@@ -125,6 +185,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.PortId.GetHashCode();
                 if (this.PortState != null)
                     hashCode = hashCode * 59 + this.PortState.GetHashCode();
+                if (this.DeleteOnTermination != null)
+                    hashCode = hashCode * 59 + this.DeleteOnTermination.GetHashCode();
+                if (this.DriverMode != null)
+                    hashCode = hashCode * 59 + this.DriverMode.GetHashCode();
+                if (this.MinRate != null)
+                    hashCode = hashCode * 59 + this.MinRate.GetHashCode();
+                if (this.MultiqueueNum != null)
+                    hashCode = hashCode * 59 + this.MultiqueueNum.GetHashCode();
+                if (this.PciAddress != null)
+                    hashCode = hashCode * 59 + this.PciAddress.GetHashCode();
                 return hashCode;
             }
         }

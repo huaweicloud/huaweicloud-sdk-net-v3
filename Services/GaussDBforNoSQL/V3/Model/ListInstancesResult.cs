@@ -130,6 +130,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 专属资源ID，只有数据库实例属于专属资源池才会返回该参数。
+        /// </summary>
+        [JsonProperty("dedicated_resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DedicatedResourceId { get; set; }
+
+        /// <summary>
         /// 时区。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
@@ -168,6 +174,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  maintenanceWindow: ").Append(MaintenanceWindow).Append("\n");
             sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
             sb.Append("}\n");
@@ -288,6 +295,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.DedicatedResourceId == input.DedicatedResourceId ||
+                    (this.DedicatedResourceId != null &&
+                    this.DedicatedResourceId.Equals(input.DedicatedResourceId))
+                ) && 
+                (
                     this.TimeZone == input.TimeZone ||
                     (this.TimeZone != null &&
                     this.TimeZone.Equals(input.TimeZone))
@@ -346,6 +358,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DedicatedResourceId != null)
+                    hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.TimeZone != null)
                     hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.Actions != null)

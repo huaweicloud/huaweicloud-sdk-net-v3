@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 专属资源ID，只有开通专属资源池后才可以下发此参数。
+        /// </summary>
+        [JsonProperty("dedicated_resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DedicatedResourceId { get; set; }
+
+        /// <summary>
         /// SSL开关选项。 取值： - 取“0”，表示DDS实例默认不启用SSL连接。 - 取“1”，表示DDS实例默认启用SSL连接。 - 不传该参数时，默认不启用SSL连接。
         /// </summary>
         [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
@@ -126,6 +132,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  configurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("}\n");
@@ -216,6 +223,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.DedicatedResourceId == input.DedicatedResourceId ||
+                    (this.DedicatedResourceId != null &&
+                    this.DedicatedResourceId.Equals(input.DedicatedResourceId))
+                ) && 
+                (
                     this.SslOption == input.SslOption ||
                     (this.SslOption != null &&
                     this.SslOption.Equals(input.SslOption))
@@ -261,6 +273,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DedicatedResourceId != null)
+                    hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.SslOption != null)
                     hashCode = hashCode * 59 + this.SslOption.GetHashCode();
                 if (this.ChargeInfo != null)

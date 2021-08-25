@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 使用量
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Value { get; set; }
+        public float? Value { get; set; }
 
 
         /// <summary>

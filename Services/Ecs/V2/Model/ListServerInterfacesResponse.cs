@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("attachableQuantity", NullValueHandling = NullValueHandling.Ignore)]
+        public InterfaceAttachableQuantity AttachableQuantity { get; set; }
+
+        /// <summary>
         /// 云服务器网卡信息列表
         /// </summary>
         [JsonProperty("interfaceAttachments", NullValueHandling = NullValueHandling.Ignore)]
@@ -29,6 +35,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListServerInterfacesResponse {\n");
+            sb.Append("  attachableQuantity: ").Append(AttachableQuantity).Append("\n");
             sb.Append("  interfaceAttachments: ").Append(InterfaceAttachments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -52,6 +59,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             return 
                 (
+                    this.AttachableQuantity == input.AttachableQuantity ||
+                    (this.AttachableQuantity != null &&
+                    this.AttachableQuantity.Equals(input.AttachableQuantity))
+                ) && 
+                (
                     this.InterfaceAttachments == input.InterfaceAttachments ||
                     this.InterfaceAttachments != null &&
                     input.InterfaceAttachments != null &&
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AttachableQuantity != null)
+                    hashCode = hashCode * 59 + this.AttachableQuantity.GetHashCode();
                 if (this.InterfaceAttachments != null)
                     hashCode = hashCode * 59 + this.InterfaceAttachments.GetHashCode();
                 return hashCode;

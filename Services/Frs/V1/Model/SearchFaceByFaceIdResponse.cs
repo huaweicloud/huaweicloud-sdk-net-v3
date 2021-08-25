@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Frs.V1.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class SearchFaceByFaceIdResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// 查找的人脸集合，详见[SearchFace](zh-cn_topic_0106912071.xml)。 调用失败时无此字段。
+        /// </summary>
+        [JsonProperty("faces", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SearchFace> Faces { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class SearchFaceByFaceIdResponse {\n");
+            sb.Append("  faces: ").Append(Faces).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as SearchFaceByFaceIdResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(SearchFaceByFaceIdResponse input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Faces == input.Faces ||
+                    this.Faces != null &&
+                    input.Faces != null &&
+                    this.Faces.SequenceEqual(input.Faces)
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Faces != null)
+                    hashCode = hashCode * 59 + this.Faces.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

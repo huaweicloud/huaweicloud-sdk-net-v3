@@ -15,6 +15,61 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     public class RestoreInstanceFromCollectionResponse : SdkResponse
     {
 
+        /// <summary>
+        /// 库表级恢复的异步任务ID。
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class RestoreInstanceFromCollectionResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as RestoreInstanceFromCollectionResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(RestoreInstanceFromCollectionResponse input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                return hashCode;
+            }
+        }
     }
 }
