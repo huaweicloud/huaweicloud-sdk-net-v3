@@ -1,3 +1,30 @@
+# 3.0.58 2021-08-31
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+    - Support the following interfaces:
+        - `DetectLiveByUrl`
+        - `DetectLiveFaceByUrl`
+        - `DetectLiveByFile`
+        - `DetectLiveFaceByFile`
+        - `DetectLiveByBase64`
+        - `DetectLiveFaceByBase64`
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK SMN
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the request parameters `enterprise_project_id`, `name` and `fuzzy_name` to the interface `ListTopics`.
+    - Add the request parameters `protocol`, `status` and `endpoint` to the interface `ListSubscriptions`.
+
 # 3.0.57 2021-08-25
 
 ### HuaweiCloud SDK DDS

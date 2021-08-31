@@ -1,3 +1,30 @@
+# 3.0.58 2021-08-31
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+    - 支持以下接口:
+        - `DetectLiveByUrl`
+        - `DetectLiveFaceByUrl`
+        - `DetectLiveByFile`
+        - `DetectLiveFaceByFile`
+        - `DetectLiveByBase64`
+        - `DetectLiveFaceByBase64`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK SMN
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListTopics`新增请求参数`enterprise_project_id`、`name`、`fuzzy_name`
+    - 接口`ListSubscriptions`新增请求参数`protocol`、`status`、`endpoint`
+
 # 3.0.57 2021-08-25
 
 ### HuaweiCloud SDK DDS

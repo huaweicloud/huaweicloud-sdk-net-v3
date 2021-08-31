@@ -190,6 +190,78 @@ namespace HuaweiCloud.SDK.Frs.V2
         }
         
         /// <summary>
+        /// 动作活体检测
+        /// </summary>
+        public async Task<DetectLiveByBase64Response> DetectLiveByBase64Async(DetectLiveByBase64Request detectLiveByBase64Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveByBase64Response>(response);
+        }
+        
+        /// <summary>
+        /// 动作活体检测
+        /// </summary>
+        public async Task<DetectLiveByFileResponse> DetectLiveByFileAsync(DetectLiveByFileRequest detectLiveByFileRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveByFileResponse>(response);
+        }
+        
+        /// <summary>
+        /// 动作活体检测
+        /// </summary>
+        public async Task<DetectLiveByUrlResponse> DetectLiveByUrlAsync(DetectLiveByUrlRequest detectLiveByUrlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveByUrlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 静默活体检测
+        /// </summary>
+        public async Task<DetectLiveFaceByBase64Response> DetectLiveFaceByBase64Async(DetectLiveFaceByBase64Request detectLiveFaceByBase64Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByBase64Request);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveFaceByBase64Response>(response);
+        }
+        
+        /// <summary>
+        /// 静默活体检测
+        /// </summary>
+        public async Task<DetectLiveFaceByFileResponse> DetectLiveFaceByFileAsync(DetectLiveFaceByFileRequest detectLiveFaceByFileRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveFaceByFileRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveFaceByFileResponse>(response);
+        }
+        
+        /// <summary>
+        /// 静默活体检测
+        /// </summary>
+        public async Task<DetectLiveFaceByUrlResponse> DetectLiveFaceByUrlAsync(DetectLiveFaceByUrlRequest detectLiveFaceByUrlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByUrlRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveFaceByUrlResponse>(response);
+        }
+        
+        /// <summary>
         /// 人脸搜索
         /// </summary>
         public async Task<SearchFaceByBase64Response> SearchFaceByBase64Async(SearchFaceByBase64Request searchFaceByBase64Request)

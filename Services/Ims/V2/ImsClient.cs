@@ -502,7 +502,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("image_id" , glanceUpdateImageRequest.ImageId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceUpdateImageRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/openstack-images-v2.1-json-patch", glanceUpdateImageRequest);
             HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
             return JsonUtils.DeSerialize<GlanceUpdateImageResponse>(response);
         }

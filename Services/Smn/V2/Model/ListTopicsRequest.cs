@@ -29,6 +29,27 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 企业项目id, 默认企业项目id为0
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 检索的主题名称，完全匹配
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 检索的主题名称，模糊匹配，按照startwith模式进行匹配
+        /// </summary>
+        [SDKProperty("fuzzy_name", IsQuery = true)]
+        [JsonProperty("fuzzy_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FuzzyName { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -39,6 +60,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("class ListTopicsRequest {\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  fuzzyName: ").Append(FuzzyName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +93,21 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.FuzzyName == input.FuzzyName ||
+                    (this.FuzzyName != null &&
+                    this.FuzzyName.Equals(input.FuzzyName))
                 );
         }
 
@@ -84,6 +123,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.FuzzyName != null)
+                    hashCode = hashCode * 59 + this.FuzzyName.GetHashCode();
                 return hashCode;
             }
         }

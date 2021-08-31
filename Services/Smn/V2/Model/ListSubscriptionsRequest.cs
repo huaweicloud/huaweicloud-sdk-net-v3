@@ -29,6 +29,27 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 协议名称, 枚举值：http,https,sms,email,functionstage,dms,application
+        /// </summary>
+        [SDKProperty("protocol", IsQuery = true)]
+        [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public string Protocol { get; set; }
+
+        /// <summary>
+        /// 状态：0-未确认，1-已确认，2-不需要确认，3-已取消确认，4-已经删除
+        /// </summary>
+        [SDKProperty("status", IsQuery = true)]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Status { get; set; }
+
+        /// <summary>
+        /// 订阅终端
+        /// </summary>
+        [SDKProperty("endpoint", IsQuery = true)]
+        [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
+        public string Endpoint { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -39,6 +60,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("class ListSubscriptionsRequest {\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  protocol: ").Append(Protocol).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  endpoint: ").Append(Endpoint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +93,21 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Protocol == input.Protocol ||
+                    (this.Protocol != null &&
+                    this.Protocol.Equals(input.Protocol))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Endpoint == input.Endpoint ||
+                    (this.Endpoint != null &&
+                    this.Endpoint.Equals(input.Endpoint))
                 );
         }
 
@@ -84,6 +123,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Protocol != null)
+                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Endpoint != null)
+                    hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
                 return hashCode;
             }
         }

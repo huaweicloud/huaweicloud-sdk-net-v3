@@ -1,0 +1,145 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Ocr.V1.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class BankcardResult 
+    {
+
+        /// <summary>
+        /// 发卡行。 
+        /// </summary>
+        [JsonProperty("bank_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string BankName { get; set; }
+
+        /// <summary>
+        /// 银行卡号。 
+        /// </summary>
+        [JsonProperty("card_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string CardNumber { get; set; }
+
+        /// <summary>
+        /// 有效期开始日期。 
+        /// </summary>
+        [JsonProperty("issue_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string IssueDate { get; set; }
+
+        /// <summary>
+        /// 有效期截止日期。 
+        /// </summary>
+        [JsonProperty("expiry_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExpiryDate { get; set; }
+
+        /// <summary>
+        /// 银行卡类别，如：储蓄卡，信用卡。 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
+        /// </summary>
+        [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Confidence { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class BankcardResult {\n");
+            sb.Append("  bankName: ").Append(BankName).Append("\n");
+            sb.Append("  cardNumber: ").Append(CardNumber).Append("\n");
+            sb.Append("  issueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  expiryDate: ").Append(ExpiryDate).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  confidence: ").Append(Confidence).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as BankcardResult);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(BankcardResult input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.BankName == input.BankName ||
+                    (this.BankName != null &&
+                    this.BankName.Equals(input.BankName))
+                ) && 
+                (
+                    this.CardNumber == input.CardNumber ||
+                    (this.CardNumber != null &&
+                    this.CardNumber.Equals(input.CardNumber))
+                ) && 
+                (
+                    this.IssueDate == input.IssueDate ||
+                    (this.IssueDate != null &&
+                    this.IssueDate.Equals(input.IssueDate))
+                ) && 
+                (
+                    this.ExpiryDate == input.ExpiryDate ||
+                    (this.ExpiryDate != null &&
+                    this.ExpiryDate.Equals(input.ExpiryDate))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Confidence == input.Confidence ||
+                    (this.Confidence != null &&
+                    this.Confidence.Equals(input.Confidence))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.BankName != null)
+                    hashCode = hashCode * 59 + this.BankName.GetHashCode();
+                if (this.CardNumber != null)
+                    hashCode = hashCode * 59 + this.CardNumber.GetHashCode();
+                if (this.IssueDate != null)
+                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.ExpiryDate != null)
+                    hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Confidence != null)
+                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}
