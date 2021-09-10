@@ -14,6 +14,19 @@ namespace HuaweiCloud.SDK.Cce.V3
 
         
         /// <summary>
+        /// 纳管节点
+        /// </summary>
+        public AddNodeResponse AddNode(AddNodeRequest addNodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , addNodeRequest.ClusterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/add",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addNodeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AddNodeResponse>(response);
+        }
+        
+        /// <summary>
         /// 集群唤醒
         /// </summary>
         public AwakeClusterResponse AwakeCluster(AwakeClusterRequest awakeClusterRequest)
@@ -271,6 +284,19 @@ namespace HuaweiCloud.SDK.Cce.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeNodeRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<RemoveNodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 重置节点
+        /// </summary>
+        public ResetNodeResponse ResetNode(ResetNodeRequest resetNodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , resetNodeRequest.ClusterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/reset",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetNodeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ResetNodeResponse>(response);
         }
         
         /// <summary>

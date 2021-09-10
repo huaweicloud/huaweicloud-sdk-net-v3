@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 任务执行状态。
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
+        /// <summary>
         /// 任务创建时间，格式为yyyy-mm-ddThh:mm:ssZ。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +57,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("instance", NullValueHandling = NullValueHandling.Ignore)]
         public JobInstanceInfo Instance { get; set; }
 
+        /// <summary>
+        /// 任务执行失败时的错误信息。
+        /// </summary>
+        [JsonProperty("fail_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string FailReason { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -61,10 +73,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("class JobDetail {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  ended: ").Append(Ended).Append("\n");
             sb.Append("  progress: ").Append(Progress).Append("\n");
             sb.Append("  instance: ").Append(Instance).Append("\n");
+            sb.Append("  failReason: ").Append(FailReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +111,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
                     this.Created == input.Created ||
                     (this.Created != null &&
                     this.Created.Equals(input.Created))
@@ -115,6 +134,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Instance == input.Instance ||
                     (this.Instance != null &&
                     this.Instance.Equals(input.Instance))
+                ) && 
+                (
+                    this.FailReason == input.FailReason ||
+                    (this.FailReason != null &&
+                    this.FailReason.Equals(input.FailReason))
                 );
         }
 
@@ -130,6 +154,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Created != null)
                     hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Ended != null)
@@ -138,6 +164,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Progress.GetHashCode();
                 if (this.Instance != null)
                     hashCode = hashCode * 59 + this.Instance.GetHashCode();
+                if (this.FailReason != null)
+                    hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 return hashCode;
             }
         }

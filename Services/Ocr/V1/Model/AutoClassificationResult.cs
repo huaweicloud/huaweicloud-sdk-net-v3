@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 指示各对应票证的识别状态。  
+        /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Status { get; set; }
+        public AutoClassificationResultStatus Status { get; set; }
 
         /// <summary>
         /// 对应票证具体结构化识别的结果。 
@@ -39,12 +39,6 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<int?>> Location { get; set; }
 
-        /// <summary>
-        /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。          
-        /// </summary>
-        [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Confidence { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -57,7 +51,6 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  content: ").Append(Content).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
-            sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,11 +92,6 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Location != null &&
                     input.Location != null &&
                     this.Location.SequenceEqual(input.Location)
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
                 );
         }
 
@@ -123,8 +111,6 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Location != null)
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

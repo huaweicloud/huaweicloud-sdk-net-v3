@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("side", NullValueHandling = NullValueHandling.Ignore)]
         public string Side { get; set; }
 
+        /// <summary>
+        /// 返回校验身份证号等信息的开关，默认false，可选值如下所示：  - true：返回校验信息  - false：不反回校验信息 
+        /// </summary>
+        [JsonProperty("return_verification", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnVerification { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  image: ").Append(Image).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  side: ").Append(Side).Append("\n");
+            sb.Append("  returnVerification: ").Append(ReturnVerification).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Side == input.Side ||
                     (this.Side != null &&
                     this.Side.Equals(input.Side))
+                ) && 
+                (
+                    this.ReturnVerification == input.ReturnVerification ||
+                    (this.ReturnVerification != null &&
+                    this.ReturnVerification.Equals(input.ReturnVerification))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.Side != null)
                     hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.ReturnVerification != null)
+                    hashCode = hashCode * 59 + this.ReturnVerification.GetHashCode();
                 return hashCode;
             }
         }

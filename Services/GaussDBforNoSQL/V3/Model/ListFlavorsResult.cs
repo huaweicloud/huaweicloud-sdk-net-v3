@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string SpecCode { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailabilityZone { get; set; }
+
+        /// <summary>
         /// 规格在可用区内的状态，包含以下状态：   - normal，在售。   - unsupported，暂不支持该规格。   - sellout，售罄。
         /// </summary>
         [JsonProperty("az_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +70,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
             sb.Append("  ram: ").Append(Ram).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  azStatus: ").Append(AzStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -112,6 +119,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.SpecCode.Equals(input.SpecCode))
                 ) && 
                 (
+                    this.AvailabilityZone == input.AvailabilityZone ||
+                    this.AvailabilityZone != null &&
+                    input.AvailabilityZone != null &&
+                    this.AvailabilityZone.SequenceEqual(input.AvailabilityZone)
+                ) && 
+                (
                     this.AzStatus == input.AzStatus ||
                     (this.AzStatus != null &&
                     this.AzStatus.Equals(input.AzStatus))
@@ -136,6 +149,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Ram.GetHashCode();
                 if (this.SpecCode != null)
                     hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.AvailabilityZone != null)
+                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.AzStatus != null)
                     hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
                 return hashCode;

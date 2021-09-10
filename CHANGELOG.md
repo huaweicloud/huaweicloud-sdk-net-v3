@@ -1,3 +1,41 @@
+# 3.0.59 2021-09-10
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+    - Support the interfaces `AddNode` and `ResetNode`.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameters `status` and `fail_reason` to the interface `ShowJobDetail`.
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Set the request parameter `size` of the interface `CreateVolume` to `required`.
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+    - Support the interface `RecognizeInvoiceVerification`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the optional request parameter `return_verification` to the interface `RecognizeIdCard`.
+
 # 3.0.58 2021-08-31
 
 ### HuaweiCloud SDK FRS

@@ -69,6 +69,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("valid_to", NullValueHandling = NullValueHandling.Ignore)]
         public string ValidTo { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("verification_result", NullValueHandling = NullValueHandling.Ignore)]
+        public IdcardVerificationResult VerificationResult { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -86,6 +92,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  issue: ").Append(Issue).Append("\n");
             sb.Append("  validFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  validTo: ").Append(ValidTo).Append("\n");
+            sb.Append("  verificationResult: ").Append(VerificationResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +158,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ValidTo == input.ValidTo ||
                     (this.ValidTo != null &&
                     this.ValidTo.Equals(input.ValidTo))
+                ) && 
+                (
+                    this.VerificationResult == input.VerificationResult ||
+                    (this.VerificationResult != null &&
+                    this.VerificationResult.Equals(input.VerificationResult))
                 );
         }
 
@@ -180,6 +192,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
                 if (this.ValidTo != null)
                     hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
+                if (this.VerificationResult != null)
+                    hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
                 return hashCode;
             }
         }

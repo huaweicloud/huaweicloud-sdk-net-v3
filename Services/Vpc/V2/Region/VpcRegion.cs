@@ -14,6 +14,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public static readonly Region CN_SOUTH_1 = new Region("cn-south-1", "https://vpc.cn-south-1.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2", "https://vpc.cn-southwest-2.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_2 = new Region("ap-southeast-2", "https://vpc.ap-southeast-2.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_9 = new Region("cn-north-9", "https://vpc.cn-north-9.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://vpc.ap-southeast-1.myhwclouds.com");
         public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3", "https://vpc.ap-southeast-3.myhuaweicloud.com");
         
@@ -27,6 +28,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
                 { "cn-south-1", CN_SOUTH_1 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
+                { "cn-north-9", CN_NORTH_9 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "ap-southeast-3", AP_SOUTHEAST_3 },
         };
