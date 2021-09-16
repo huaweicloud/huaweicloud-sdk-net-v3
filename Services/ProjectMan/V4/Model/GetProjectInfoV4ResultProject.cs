@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 是否归档
         /// </summary>
         [JsonProperty("archive", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Archive { get; set; }
+        public int? Archive { get; set; }
 
         /// <summary>
         /// 企业项目id

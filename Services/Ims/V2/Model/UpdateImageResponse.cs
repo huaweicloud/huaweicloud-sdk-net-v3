@@ -1767,6 +1767,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("__support_agent_list", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportAgentList { get; set; }
 
+        /// <summary>
+        /// 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+        /// </summary>
+        [JsonProperty("__support_amd", NullValueHandling = NullValueHandling.Ignore)]
+        public string SupportAmd { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -1833,6 +1839,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  sequenceNum: ").Append(SequenceNum).Append("\n");
             sb.Append("  activeAt: ").Append(ActiveAt).Append("\n");
             sb.Append("  supportAgentList: ").Append(SupportAgentList).Append("\n");
+            sb.Append("  supportAmd: ").Append(SupportAmd).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2144,6 +2151,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.SupportAgentList == input.SupportAgentList ||
                     (this.SupportAgentList != null &&
                     this.SupportAgentList.Equals(input.SupportAgentList))
+                ) && 
+                (
+                    this.SupportAmd == input.SupportAmd ||
+                    (this.SupportAmd != null &&
+                    this.SupportAmd.Equals(input.SupportAmd))
                 );
         }
 
@@ -2271,6 +2283,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.ActiveAt.GetHashCode();
                 if (this.SupportAgentList != null)
                     hashCode = hashCode * 59 + this.SupportAgentList.GetHashCode();
+                if (this.SupportAmd != null)
+                    hashCode = hashCode * 59 + this.SupportAmd.GetHashCode();
                 return hashCode;
             }
         }

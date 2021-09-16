@@ -7,34 +7,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.ProjectMan.V4.Model
+namespace HuaweiCloud.SDK.Kms.V1.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class UpdateIterationV4Request 
+    public class ShowPublicKeyRequest 
     {
 
         /// <summary>
-        /// 项目id
+        /// API版本号
         /// </summary>
-        [SDKProperty("project_id", IsPath = true)]
-        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectId { get; set; }
-
-        /// <summary>
-        /// 迭代id
-        /// </summary>
-        [SDKProperty("iteration_id", IsPath = true)]
-        [JsonProperty("iteration_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? IterationId { get; set; }
+        [SDKProperty("version_id", IsPath = true)]
+        [JsonProperty("version_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VersionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateIterationRequestV4 Body { get; set; }
+        public OperateKeyRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -43,9 +36,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateIterationV4Request {\n");
-            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  iterationId: ").Append(IterationId).Append("\n");
+            sb.Append("class ShowPublicKeyRequest {\n");
+            sb.Append("  versionId: ").Append(VersionId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -56,27 +48,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateIterationV4Request);
+            return this.Equals(input as ShowPublicKeyRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateIterationV4Request input)
+        public bool Equals(ShowPublicKeyRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
+                    this.VersionId == input.VersionId ||
+                    (this.VersionId != null &&
+                    this.VersionId.Equals(input.VersionId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -93,10 +80,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.IterationId != null)
-                    hashCode = hashCode * 59 + this.IterationId.GetHashCode();
+                if (this.VersionId != null)
+                    hashCode = hashCode * 59 + this.VersionId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

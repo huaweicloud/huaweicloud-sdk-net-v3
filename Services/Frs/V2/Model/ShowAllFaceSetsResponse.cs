@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
     {
 
         /// <summary>
-        /// 人脸库信息集合，详见[FaceSetInfo](zh-cn_topic_0106912072.xml)。 调用失败时无此字段。
+        /// 人脸库信息集合，详见[FaceSetInfo](https://support.huaweicloud.com/api-face/face_02_0020.html)。 调用失败时无此字段。
         /// </summary>
         [JsonProperty("face_sets_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<FaceSetInfo> FaceSetsInfo { get; set; }

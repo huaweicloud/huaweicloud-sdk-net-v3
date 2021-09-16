@@ -34,13 +34,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// 支持字段排序，参考[sort语法](zh-cn_topic_0130807047.xml)。
+        /// 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
         /// </summary>
         [JsonProperty("sort", NullValueHandling = NullValueHandling.Ignore)]
         public string Sort { get; set; }
 
         /// <summary>
-        /// 过滤条件，参考[filter语法](zh-cn_topic_0130807048.xml)。
+        /// 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }

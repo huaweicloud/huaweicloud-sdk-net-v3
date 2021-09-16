@@ -540,6 +540,19 @@ namespace HuaweiCloud.SDK.Kms.V1
         }
         
         /// <summary>
+        /// 查询公钥信息
+        /// </summary>
+        public ShowPublicKeyResponse ShowPublicKey(ShowPublicKeyRequest showPublicKeyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("version_id" , showPublicKeyRequest.VersionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/get-publickey",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showPublicKeyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ShowPublicKeyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询凭据
         /// </summary>
         public ShowSecretResponse ShowSecret(ShowSecretRequest showSecretRequest)
@@ -590,6 +603,19 @@ namespace HuaweiCloud.SDK.Kms.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserQuotasRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowUserQuotasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 签名数据
+        /// </summary>
+        public SignResponse Sign(SignRequest signRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("version_id" , signRequest.VersionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/sign",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", signRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<SignResponse>(response);
         }
         
         /// <summary>
@@ -656,6 +682,19 @@ namespace HuaweiCloud.SDK.Kms.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateSecretStageResponse>(response);
+        }
+        
+        /// <summary>
+        /// 验证签名
+        /// </summary>
+        public ValidateSignatureResponse ValidateSignature(ValidateSignatureRequest validateSignatureRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("version_id" , validateSignatureRequest.VersionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{version_id}/{project_id}/kms/verify",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", validateSignatureRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ValidateSignatureResponse>(response);
         }
         
         /// <summary>

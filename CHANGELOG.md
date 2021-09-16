@@ -1,3 +1,42 @@
+# 3.0.60 2021-09-16
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameter `platformVersion` to the interface `ShowCluster`.
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the optional request parameter `__support_amd` to the interface `CreateDataImage`.
+    - Add the response parameter `__support_amd` to the interface `ListImages`.
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+    - Support the interfaces `ShowPublicKey` and `Sign`.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+    - Support the interface `RecognizeInvoiceVerification`.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
 # 3.0.59 2021-09-10
 
 ### HuaweiCloud SDK CCE

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
     {
 
         /// <summary>
-        /// 过滤条件，参考[filter语法](zh-cn_topic_0130807048.xml)。
+        /// 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }

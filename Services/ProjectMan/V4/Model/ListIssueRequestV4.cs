@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<int?> SeverityIds { get; set; }
 
         /// <summary>
-        /// 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
+        /// 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
         /// </summary>
         [JsonProperty("status_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> StatusIds { get; set; }

@@ -87,6 +87,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("updated_time", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedTime { get; set; }
 
+        /// <summary>
+        /// 迭代的状态,0 未开始，1 进行中，2 结束
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -107,6 +113,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  progress: ").Append(Progress).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,6 +195,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.UpdatedTime == input.UpdatedTime ||
                     (this.UpdatedTime != null &&
                     this.UpdatedTime.Equals(input.UpdatedTime))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 );
         }
 
@@ -223,6 +235,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.UpdatedTime != null)
                     hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

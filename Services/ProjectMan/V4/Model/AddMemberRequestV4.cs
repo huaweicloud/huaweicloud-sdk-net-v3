@@ -16,13 +16,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
+        /// 租户名称（跨租户添加用户时，填写正确的租户名称，可将未授权的租户主动授权，将用户添加为项目成员）
+        /// </summary>
+        [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainName { get; set; }
+
+        /// <summary>
         /// 租户id
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 用户在项目中的角色ID -1, 3, 4, 5, 6, 7 , 8
+        /// &#39;用户在项目中的角色ID&#39; 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者, 9 运维经理
         /// </summary>
         [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? RoleId { get; set; }
@@ -41,6 +47,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AddMemberRequestV4 {\n");
+            sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  roleId: ").Append(RoleId).Append("\n");
             sb.Append("  userId: ").Append(UserId).Append("\n");
@@ -66,6 +73,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 
             return 
                 (
+                    this.DomainName == input.DomainName ||
+                    (this.DomainName != null &&
+                    this.DomainName.Equals(input.DomainName))
+                ) && 
+                (
                     this.DomainId == input.DomainId ||
                     (this.DomainId != null &&
                     this.DomainId.Equals(input.DomainId))
@@ -90,6 +102,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DomainName != null)
+                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.DomainId != null)
                     hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.RoleId != null)
