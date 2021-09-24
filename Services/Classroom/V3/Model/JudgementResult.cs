@@ -33,6 +33,24 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
+        /// <summary>
+        /// 用例形式输出的用例总个数
+        /// </summary>
+        [JsonProperty("case_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CaseCount { get; set; }
+
+        /// <summary>
+        /// 用例形式输出的已执行用例的个数
+        /// </summary>
+        [JsonProperty("executed_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ExecutedCount { get; set; }
+
+        /// <summary>
+        /// 用例形式输出的已执行用例的结果
+        /// </summary>
+        [JsonProperty("testcases", NullValueHandling = NullValueHandling.Ignore)]
+        public List<JudgementCaseResult> Testcases { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +62,9 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
             sb.Append("  output: ").Append(Output).Append("\n");
             sb.Append("  fileId: ").Append(FileId).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
+            sb.Append("  caseCount: ").Append(CaseCount).Append("\n");
+            sb.Append("  executedCount: ").Append(ExecutedCount).Append("\n");
+            sb.Append("  testcases: ").Append(Testcases).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +100,22 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
                     this.ImageId == input.ImageId ||
                     (this.ImageId != null &&
                     this.ImageId.Equals(input.ImageId))
+                ) && 
+                (
+                    this.CaseCount == input.CaseCount ||
+                    (this.CaseCount != null &&
+                    this.CaseCount.Equals(input.CaseCount))
+                ) && 
+                (
+                    this.ExecutedCount == input.ExecutedCount ||
+                    (this.ExecutedCount != null &&
+                    this.ExecutedCount.Equals(input.ExecutedCount))
+                ) && 
+                (
+                    this.Testcases == input.Testcases ||
+                    this.Testcases != null &&
+                    input.Testcases != null &&
+                    this.Testcases.SequenceEqual(input.Testcases)
                 );
         }
 
@@ -96,6 +133,12 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
                     hashCode = hashCode * 59 + this.FileId.GetHashCode();
                 if (this.ImageId != null)
                     hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.CaseCount != null)
+                    hashCode = hashCode * 59 + this.CaseCount.GetHashCode();
+                if (this.ExecutedCount != null)
+                    hashCode = hashCode * 59 + this.ExecutedCount.GetHashCode();
+                if (this.Testcases != null)
+                    hashCode = hashCode * 59 + this.Testcases.GetHashCode();
                 return hashCode;
             }
         }

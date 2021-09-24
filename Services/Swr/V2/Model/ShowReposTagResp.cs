@@ -99,6 +99,24 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("deleted", NullValueHandling = NullValueHandling.Ignore)]
         public string Deleted { get; set; }
 
+        /// <summary>
+        /// 帐号ID
+        /// </summary>
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// 镜像是否被扫描过
+        /// </summary>
+        [JsonProperty("scanned", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Scanned { get; set; }
+
+        /// <summary>
+        /// 0：manifest类型；1：manifest list类型
+        /// </summary>
+        [JsonProperty("tag_type", NullValueHandling = NullValueHandling.Ignore)]
+        public long? TagType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -121,6 +139,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("  deleted: ").Append(Deleted).Append("\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  scanned: ").Append(Scanned).Append("\n");
+            sb.Append("  tagType: ").Append(TagType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -211,6 +232,21 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     this.Deleted == input.Deleted ||
                     (this.Deleted != null &&
                     this.Deleted.Equals(input.Deleted))
+                ) && 
+                (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                ) && 
+                (
+                    this.Scanned == input.Scanned ||
+                    (this.Scanned != null &&
+                    this.Scanned.Equals(input.Scanned))
+                ) && 
+                (
+                    this.TagType == input.TagType ||
+                    (this.TagType != null &&
+                    this.TagType.Equals(input.TagType))
                 );
         }
 
@@ -250,6 +286,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 if (this.Deleted != null)
                     hashCode = hashCode * 59 + this.Deleted.GetHashCode();
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Scanned != null)
+                    hashCode = hashCode * 59 + this.Scanned.GetHashCode();
+                if (this.TagType != null)
+                    hashCode = hashCode * 59 + this.TagType.GetHashCode();
                 return hashCode;
             }
         }

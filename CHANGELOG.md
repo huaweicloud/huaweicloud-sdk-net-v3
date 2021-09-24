@@ -1,3 +1,41 @@
+# 3.0.61 2021-09-24
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+    - Support the interface `ShowQuotas`.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK Classroom
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the optional request parameter `testcases` to the interface `ApplyJudgement`.
+
+### HuaweiCloud SDK IVS
+
+- _Features_
+    - Support the service `Identity Verification Solution`.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK SWR
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameters `domain_id`, `scanned` and `tag_type` to the interface `ListRepositoryTags`.
+
 # 3.0.60 2021-09-16
 
 ### HuaweiCloud SDK CCE

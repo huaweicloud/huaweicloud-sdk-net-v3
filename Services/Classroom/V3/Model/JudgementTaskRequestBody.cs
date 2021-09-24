@@ -241,9 +241,9 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         }
 
         /// <summary>
-        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）
+        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）
         /// </summary>
-        /// <value>结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）</value>
+        /// <value>结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）</value>
         [JsonConverter(typeof(EnumClassConverter<OutputTypeEnum>))]
         public class OutputTypeEnum
         {
@@ -262,12 +262,24 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
             /// </summary>
             public static readonly OutputTypeEnum IMGOUT = new OutputTypeEnum("imgout");
 
+            /// <summary>
+            /// Enum CASEOUT for value: caseout
+            /// </summary>
+            public static readonly OutputTypeEnum CASEOUT = new OutputTypeEnum("caseout");
+
+            /// <summary>
+            /// Enum JUDGEOUT for value: judgeout
+            /// </summary>
+            public static readonly OutputTypeEnum JUDGEOUT = new OutputTypeEnum("judgeout");
+
             private static readonly Dictionary<string, OutputTypeEnum> StaticFields =
             new Dictionary<string, OutputTypeEnum>()
             {
                 { "sysout", SYSOUT },
                 { "fileout", FILEOUT },
                 { "imgout", IMGOUT },
+                { "caseout", CASEOUT },
+                { "judgeout", JUDGEOUT },
             };
 
             private string Value;
@@ -392,10 +404,16 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）
+        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）
         /// </summary>
         [JsonProperty("output_type", NullValueHandling = NullValueHandling.Ignore)]
         public OutputTypeEnum OutputType { get; set; }
+        /// <summary>
+        /// 当判题结果类型是caseout和judgeout类型才需要传的字段，表示用例数据
+        /// </summary>
+        [JsonProperty("testcases", NullValueHandling = NullValueHandling.Ignore)]
+        public List<JudgementCaseInfo> Testcases { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -411,6 +429,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
             sb.Append("  runtimeType: ").Append(RuntimeType).Append("\n");
             sb.Append("  timeout: ").Append(Timeout).Append("\n");
             sb.Append("  outputType: ").Append(OutputType).Append("\n");
+            sb.Append("  testcases: ").Append(Testcases).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -466,6 +485,12 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
                     this.OutputType == input.OutputType ||
                     (this.OutputType != null &&
                     this.OutputType.Equals(input.OutputType))
+                ) && 
+                (
+                    this.Testcases == input.Testcases ||
+                    this.Testcases != null &&
+                    input.Testcases != null &&
+                    this.Testcases.SequenceEqual(input.Testcases)
                 );
         }
 
@@ -491,6 +516,8 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
                     hashCode = hashCode * 59 + this.Timeout.GetHashCode();
                 if (this.OutputType != null)
                     hashCode = hashCode * 59 + this.OutputType.GetHashCode();
+                if (this.Testcases != null)
+                    hashCode = hashCode * 59 + this.Testcases.GetHashCode();
                 return hashCode;
             }
         }
