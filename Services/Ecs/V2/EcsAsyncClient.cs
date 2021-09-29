@@ -28,6 +28,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 云服务器网卡配置虚拟IP地址
+        /// </summary>
+        public async Task<AssociateServerVirtualIpResponse> AssociateServerVirtualIpAsync(AssociateServerVirtualIpRequest associateServerVirtualIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("nic_id" , associateServerVirtualIpRequest.NicId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/nics/{nic_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateServerVirtualIpRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<AssociateServerVirtualIpResponse>(response);
+        }
+        
+        /// <summary>
         /// 弹性云服务器挂载磁盘
         /// </summary>
         public async Task<AttachServerVolumeResponse> AttachServerVolumeAsync(AttachServerVolumeRequest attachServerVolumeRequest)
@@ -51,6 +64,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddServerNicsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchAddServerNicsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量挂载指定共享盘
+        /// </summary>
+        public async Task<BatchAttachSharableVolumesResponse> BatchAttachSharableVolumesAsync(BatchAttachSharableVolumesRequest batchAttachSharableVolumesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id" , batchAttachSharableVolumesRequest.VolumeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/batchaction/attachvolumes/{volume_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAttachSharableVolumesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<BatchAttachSharableVolumesResponse>(response);
         }
         
         /// <summary>
@@ -105,6 +131,18 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 批量重置弹性云服务器密码
+        /// </summary>
+        public async Task<BatchResetServersPasswordResponse> BatchResetServersPasswordAsync(BatchResetServersPasswordRequest batchResetServersPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-reset-passwords",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResetServersPasswordRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<BatchResetServersPasswordResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量启动云服务器
         /// </summary>
         public async Task<BatchStartServersResponse> BatchStartServersAsync(BatchStartServersRequest batchStartServersRequest)
@@ -129,6 +167,18 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 批量修改弹性云服务器
+        /// </summary>
+        public async Task<BatchUpdateServersNameResponse> BatchUpdateServersNameAsync(BatchUpdateServersNameRequest batchUpdateServersNameRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/server-name",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateServersNameRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<BatchUpdateServersNameResponse>(response);
+        }
+        
+        /// <summary>
         /// 切换弹性云服务器操作系统(安装Cloud init)
         /// </summary>
         public async Task<ChangeServerOsWithCloudInitResponse> ChangeServerOsWithCloudInitAsync(ChangeServerOsWithCloudInitRequest changeServerOsWithCloudInitRequest)
@@ -139,6 +189,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeServerOsWithCloudInitRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ChangeServerOsWithCloudInitResponse>(response);
+        }
+        
+        /// <summary>
+        /// 切换弹性云服务器操作系统(未安装Cloud init)
+        /// </summary>
+        public async Task<ChangeServerOsWithoutCloudInitResponse> ChangeServerOsWithoutCloudInitAsync(ChangeServerOsWithoutCloudInitRequest changeServerOsWithoutCloudInitRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , changeServerOsWithoutCloudInitRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/changeos",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeServerOsWithoutCloudInitRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ChangeServerOsWithoutCloudInitResponse>(response);
         }
         
         /// <summary>
@@ -218,6 +281,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 云服务器清除密码(企业项目)
+        /// </summary>
+        public async Task<DeleteServerPasswordResponse> DeleteServerPasswordAsync(DeleteServerPasswordRequest deleteServerPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , deleteServerPasswordRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-server-password",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServerPasswordRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteServerPasswordResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除云服务器
         /// </summary>
         public async Task<DeleteServersResponse> DeleteServersAsync(DeleteServersRequest deleteServersRequest)
@@ -241,6 +317,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachServerVolumeRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DetachServerVolumeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 云服务器网卡解绑虚拟IP地址
+        /// </summary>
+        public async Task<DisassociateServerVirtualIpResponse> DisassociateServerVirtualIpAsync(DisassociateServerVirtualIpRequest disassociateServerVirtualIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("nic_id" , disassociateServerVirtualIpRequest.NicId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/nics/{nic_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateServerVirtualIpRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<DisassociateServerVirtualIpResponse>(response);
         }
         
         /// <summary>
@@ -306,6 +395,18 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询项目标签
+        /// </summary>
+        public async Task<ListServerTagsResponse> ListServerTagsAsync(ListServerTagsRequest listServerTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListServerTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询云服务器详情列表
         /// </summary>
         public async Task<ListServersDetailsResponse> ListServersDetailsAsync(ListServersDetailsRequest listServersDetailsRequest)
@@ -315,6 +416,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServersDetailsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListServersDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 冷迁移云服务器
+        /// </summary>
+        public async Task<MigrateServerResponse> MigrateServerAsync(MigrateServerRequest migrateServerRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , migrateServerRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/migrate",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateServerRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<MigrateServerResponse>(response);
         }
         
         /// <summary>
@@ -469,6 +583,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 管理云服务器自动恢复动作
+        /// </summary>
+        public async Task<RegisterServerAutoRecoveryResponse> RegisterServerAutoRecoveryAsync(RegisterServerAutoRecoveryRequest registerServerAutoRecoveryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , registerServerAutoRecoveryRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/autorecovery",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerServerAutoRecoveryRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<RegisterServerAutoRecoveryResponse>(response);
+        }
+        
+        /// <summary>
         /// 重装弹性云服务器操作系统(安装Cloud-init)
         /// </summary>
         public async Task<ReinstallServerWithCloudInitResponse> ReinstallServerWithCloudInitAsync(ReinstallServerWithCloudInitRequest reinstallServerWithCloudInitRequest)
@@ -479,6 +606,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", reinstallServerWithCloudInitRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ReinstallServerWithCloudInitResponse>(response);
+        }
+        
+        /// <summary>
+        /// 重装弹性云服务器操作系统(未安装Cloud init)
+        /// </summary>
+        public async Task<ReinstallServerWithoutCloudInitResponse> ReinstallServerWithoutCloudInitAsync(ReinstallServerWithoutCloudInitRequest reinstallServerWithoutCloudInitRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , reinstallServerWithoutCloudInitRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/reinstallos",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", reinstallServerWithoutCloudInitRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ReinstallServerWithoutCloudInitResponse>(response);
         }
         
         /// <summary>
@@ -547,6 +687,33 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询云服务器是否配置了自动恢复动作
+        /// </summary>
+        public async Task<ShowServerAutoRecoveryResponse> ShowServerAutoRecoveryAsync(ShowServerAutoRecoveryRequest showServerAutoRecoveryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , showServerAutoRecoveryRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/autorecovery",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerAutoRecoveryRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowServerAutoRecoveryResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询弹性云服务器单个磁盘信息
+        /// </summary>
+        public async Task<ShowServerBlockDeviceResponse> ShowServerBlockDeviceAsync(ShowServerBlockDeviceRequest showServerBlockDeviceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , showServerBlockDeviceRequest.ServerId.ToString());
+            urlParam.Add("volume_id" , showServerBlockDeviceRequest.VolumeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/block_device/{volume_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerBlockDeviceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowServerBlockDeviceResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询云服务器组详情
         /// </summary>
         public async Task<ShowServerGroupResponse> ShowServerGroupAsync(ShowServerGroupRequest showServerGroupRequest)
@@ -569,6 +736,19 @@ namespace HuaweiCloud.SDK.Ecs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerLimitsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowServerLimitsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 云服务器获取密码(企业项目)
+        /// </summary>
+        public async Task<ShowServerPasswordResponse> ShowServerPasswordAsync(ShowServerPasswordRequest showServerPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , showServerPasswordRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-server-password",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerPasswordRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowServerPasswordResponse>(response);
         }
         
         /// <summary>

@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("spot_duration_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? SpotDurationCount { get; set; }
 
+        /// <summary>
+        /// 云备份策略和云备份存储库详情，取值包含备份策略ID和云备份存储库ID。
+        /// </summary>
+        [JsonProperty("CB_CSBS_BACKUP", NullValueHandling = NullValueHandling.Ignore)]
+        public string CbCsbsBackup { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -196,6 +202,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  spotDurationHours: ").Append(SpotDurationHours).Append("\n");
             sb.Append("  interruptionPolicy: ").Append(InterruptionPolicy).Append("\n");
             sb.Append("  spotDurationCount: ").Append(SpotDurationCount).Append("\n");
+            sb.Append("  cbCsbsBackup: ").Append(CbCsbsBackup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -266,6 +273,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.SpotDurationCount == input.SpotDurationCount ||
                     (this.SpotDurationCount != null &&
                     this.SpotDurationCount.Equals(input.SpotDurationCount))
+                ) && 
+                (
+                    this.CbCsbsBackup == input.CbCsbsBackup ||
+                    (this.CbCsbsBackup != null &&
+                    this.CbCsbsBackup.Equals(input.CbCsbsBackup))
                 );
         }
 
@@ -297,6 +309,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
                 if (this.SpotDurationCount != null)
                     hashCode = hashCode * 59 + this.SpotDurationCount.GetHashCode();
+                if (this.CbCsbsBackup != null)
+                    hashCode = hashCode * 59 + this.CbCsbsBackup.GetHashCode();
                 return hashCode;
             }
         }

@@ -34,14 +34,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
+        public int? Limit { get; set; }
 
         /// <summary>
         /// 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string Offset { get; set; }
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 解析线路ID。

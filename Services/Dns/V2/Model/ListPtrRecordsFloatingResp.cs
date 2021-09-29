@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
+        /// 资源标签。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Tag> Tags { get; set; }
+
+        /// <summary>
         /// 反向解析关联的企业项目ID，长度不超过36个字符。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -85,6 +91,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -148,6 +155,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Links.Equals(input.Links))
                 ) && 
                 (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
@@ -178,6 +191,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Links != null)
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;

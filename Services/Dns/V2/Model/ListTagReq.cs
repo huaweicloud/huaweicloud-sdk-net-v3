@@ -25,19 +25,19 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
         /// </summary>
         [JsonProperty("tags_any", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> TagsAny { get; set; }
+        public List<TagValues> TagsAny { get; set; }
 
         /// <summary>
         /// 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
         /// </summary>
         [JsonProperty("not_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> NotTags { get; set; }
+        public List<TagValues> NotTags { get; set; }
 
         /// <summary>
         /// 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
         /// </summary>
         [JsonProperty("not_tags_any", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> NotTagsAny { get; set; }
+        public List<TagValues> NotTagsAny { get; set; }
 
         /// <summary>
         /// 每页返回的资源个数。  取值范围：1~1000  参数取值说明：  如果action为filter时，默认为1000。 如果action为count时，无此参数。

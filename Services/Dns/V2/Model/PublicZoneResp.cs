@@ -100,6 +100,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
+        /// 资源标签。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Tag> Tags { get; set; }
+
+        /// <summary>
         /// 主从模式中，从DNS服务器用以获取DNS信息。
         /// </summary>
         [JsonProperty("masters", NullValueHandling = NullValueHandling.Ignore)]
@@ -139,6 +145,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  masters: ").Append(Masters).Append("\n");
             sb.Append("  routers: ").Append(Routers).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -234,6 +241,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Links.Equals(input.Links))
                 ) && 
                 (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
                     this.Masters == input.Masters ||
                     this.Masters != null &&
                     input.Masters != null &&
@@ -288,6 +301,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.Links != null)
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Masters != null)
                     hashCode = hashCode * 59 + this.Masters.GetHashCode();
                 if (this.Routers != null)

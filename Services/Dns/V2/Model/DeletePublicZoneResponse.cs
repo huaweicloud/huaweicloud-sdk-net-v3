@@ -97,13 +97,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 主从模式中，从DNS服务器用以获取DNS信息
         /// </summary>
         [JsonProperty("masters", NullValueHandling = NullValueHandling.Ignore)]
-        public string Masters { get; set; }
+        public List<string> Masters { get; set; }
 
         /// <summary>
-        /// 指向当前资源或者其他资源的链接。当查询需要分页时，需要包含一个next链接指向下一页
+        /// 
         /// </summary>
         [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PageLink> Links { get; set; }
+        public PageLink Links { get; set; }
 
 
         /// <summary>
@@ -216,14 +216,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 ) && 
                 (
                     this.Masters == input.Masters ||
-                    (this.Masters != null &&
-                    this.Masters.Equals(input.Masters))
+                    this.Masters != null &&
+                    input.Masters != null &&
+                    this.Masters.SequenceEqual(input.Masters)
                 ) && 
                 (
                     this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
+                    (this.Links != null &&
+                    this.Links.Equals(input.Links))
                 );
         }
 

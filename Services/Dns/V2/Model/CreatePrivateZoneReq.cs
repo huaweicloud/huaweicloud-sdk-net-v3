@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
-        public string Ttl { get; set; }
+        public int? Ttl { get; set; }
 
         /// <summary>
         /// 

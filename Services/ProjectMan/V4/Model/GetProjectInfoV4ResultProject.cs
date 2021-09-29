@@ -37,13 +37,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 项目创建时间
         /// </summary>
         [JsonProperty("created_on", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CreatedOn { get; set; }
+        public long? CreatedOn { get; set; }
 
         /// <summary>
         /// 项目更新时间
         /// </summary>
         [JsonProperty("updated_on", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? UpdatedOn { get; set; }
+        public long? UpdatedOn { get; set; }
 
         /// <summary>
         /// 项目类型

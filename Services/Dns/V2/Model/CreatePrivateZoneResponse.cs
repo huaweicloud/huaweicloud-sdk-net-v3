@@ -103,7 +103,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 主从模式中，从DNS服务器用以获取DNS信息。
         /// </summary>
         [JsonProperty("masters", NullValueHandling = NullValueHandling.Ignore)]
-        public string Masters { get; set; }
+        public List<string> Masters { get; set; }
 
         /// <summary>
         /// 
@@ -228,8 +228,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 ) && 
                 (
                     this.Masters == input.Masters ||
-                    (this.Masters != null &&
-                    this.Masters.Equals(input.Masters))
+                    this.Masters != null &&
+                    input.Masters != null &&
+                    this.Masters.SequenceEqual(input.Masters)
                 ) && 
                 (
                     this.Router == input.Router ||

@@ -39,6 +39,18 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("operation", NullValueHandling = NullValueHandling.Ignore)]
         public string Operation { get; set; }
 
+        /// <summary>
+        /// 操作记录的id
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Id { get; set; }
+
+        /// <summary>
+        /// 操作的字段
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +63,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  oldValue: ").Append(OldValue).Append("\n");
             sb.Append("  newValue: ").Append(NewValue).Append("\n");
             sb.Append("  operation: ").Append(Operation).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +105,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Operation == input.Operation ||
                     (this.Operation != null &&
                     this.Operation.Equals(input.Operation))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -110,6 +134,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.NewValue.GetHashCode();
                 if (this.Operation != null)
                     hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

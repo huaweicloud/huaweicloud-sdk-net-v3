@@ -1,3 +1,49 @@
+# 3.0.62 2021-09-29
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListTag`的响应参数`resource_detail`类型调整： `string` -> `object`
+    - 接口`CreatePrivateZone`、`UpdatePublicZone`、`DeletePublicZone`的响应参数`masters`类型调整： `string` -> `array`
+    - 接口`CreatePrivateZone`和`UpdatePublicZone`的请求参数`ttl`类型调整： `string` -> `integer`
+    - 接口`ListRecordSets`、`ListRecordSetsWithLine`、`ListRecordSetsByZone`的请求参数`limit`和`offset`类型调整: `string` -> `integer`
+    - 接口`CreatePrivateZone`、`ListRecordSetsByZone`、`ShowRecordSetWithLine`、`ListPtrRecords`、`ListPublicZones`新增响应参数`tags`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+    - 支持以下接口:
+        - `ListServerTags`
+        - `BatchAttachSharableVolumes`
+        - `ShowServerAutoRecovery`
+        - `BatchResetServersPassword`
+        - `ReinstallServerWithoutCloudInit`
+        - `ChangeServerOsWithoutCloudInit`
+        - `BatchUpdateServersName`
+        - `ShowServerPassword`
+        - `AssociateServerVirtualIp`
+        - `MigrateServer`
+        - `ShowServerBlockDevice`
+        - `DisassociateServerVirtualIp`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListIssueRecordsV4`新增响应参数`id`和`name`
+    - 接口`ListProjectIterationsV4`新增响应参数`status`
+
 # 3.0.61 2021-09-24
 
 ### HuaweiCloud SDK CCE

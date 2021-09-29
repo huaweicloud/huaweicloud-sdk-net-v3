@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 资源详情。资源对象，用于扩展，默认为空。
         /// </summary>
         [JsonProperty("resource_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceDetail { get; set; }
+        public Object ResourceDetail { get; set; }
 
         /// <summary>
         /// 标签列表，没有标签默认为空数组。

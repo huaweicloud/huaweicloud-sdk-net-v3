@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
-        /// 时间段单位为分钟，与filter参数metric配合使用。
+        /// 时间段单位为分钟，与filter参数配合使用。
         /// </summary>
         [SDKProperty("period", IsQuery = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]

@@ -1,3 +1,49 @@
+# 3.0.62 2021-09-29
+
+### HuaweiCloud SDK DNS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the type of the response parameter `resource_detail` of the interface `ListTag`: `string` -> `object`
+    - Modify the type of the response parameter `masters` of the interfaces `CreatePrivateZone`,`UpdatePublicZone` and `DeletePublicZone`: `string` -> `array`
+    - Modify the type of the request parameter `ttl` of the interfaces `CreatePrivateZone` and `UpdatePublicZone`: `string` -> `integer`
+    - Modify the type of the request parameters `limit` and `offset` of the interfaces `ListRecordSets`,`ListRecordSetsWithLine` and `ListRecordSetsByZone`: `string` -> `integer`
+    - Add the response parameter `tags` to the interfaces `CreatePrivateZone`,`ListRecordSetsByZone`,`ShowRecordSetWithLine`,`ListPtrRecords` and `ListPublicZones`.
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+    - Support the following interfaces:
+        - `ListServerTags`
+        - `BatchAttachSharableVolumes`
+        - `ShowServerAutoRecovery`
+        - `BatchResetServersPassword`
+        - `ReinstallServerWithoutCloudInit`
+        - `ChangeServerOsWithoutCloudInit`
+        - `BatchUpdateServersName`
+        - `ShowServerPassword`
+        - `AssociateServerVirtualIp`
+        - `MigrateServer`
+        - `ShowServerBlockDevice`
+        - `DisassociateServerVirtualIp`
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameters `id` and `name` to the interface `ListIssueRecordsV4`.
+    - Add the response parameter `status` to the interface `ListProjectIterationsV4`.
+
 # 3.0.61 2021-09-24
 
 ### HuaweiCloud SDK CCE
