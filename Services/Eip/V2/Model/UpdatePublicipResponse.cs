@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// 
         /// </summary>
         [JsonProperty("publicip", NullValueHandling = NullValueHandling.Ignore)]
-        public PublicipShowResp Publicip { get; set; }
+        public PublicipUpdateResp Publicip { get; set; }
 
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 权限实体。
     /// </summary>
-    public class UpdateTopicAccessPolicyReqTopics 
+    public class AccessPolicyTopicEntity 
     {
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 权限列表。
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UpdateTopicAccessPolicyReqPolicies> Policies { get; set; }
+        public List<AccessPolicyEntity> Policies { get; set; }
 
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateTopicAccessPolicyReqTopics {\n");
+            sb.Append("class AccessPolicyTopicEntity {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
             sb.Append("}\n");
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateTopicAccessPolicyReqTopics);
+            return this.Equals(input as AccessPolicyTopicEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateTopicAccessPolicyReqTopics input)
+        public bool Equals(AccessPolicyTopicEntity input)
         {
             if (input == null)
                 return false;

@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public class ShowProjectTagsRespTags 
+    public class TagEntity 
     {
 
         /// <summary>
@@ -24,8 +24,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 值。每个值最大长度43个unicode字符。  value不能为空，可以空字符串。  不能包含下列字符：非打印字符ASCII(0-31), “&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”。
         /// </summary>
-        [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Values { get; set; }
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
 
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowProjectTagsRespTags {\n");
+            sb.Append("class TagEntity {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
-            sb.Append("  values: ").Append(Values).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowProjectTagsRespTags);
+            return this.Equals(input as TagEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowProjectTagsRespTags input)
+        public bool Equals(TagEntity input)
         {
             if (input == null)
                 return false;
@@ -64,10 +64,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Key.Equals(input.Key))
                 ) && 
                 (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 );
         }
 
@@ -81,8 +80,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                if (this.Value != null)
+                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

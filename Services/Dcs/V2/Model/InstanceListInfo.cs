@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string CapacityMinor { get; set; }
 
         /// <summary>
+        /// 订单ID，仅在创建包周期实例时返回。按需实例时此值为null
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        /// <summary>
         /// 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss。
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
@@ -252,6 +258,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  publicipAddress: ").Append(PublicipAddress).Append("\n");
             sb.Append("  capacity: ").Append(Capacity).Append("\n");
             sb.Append("  capacityMinor: ").Append(CapacityMinor).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  maintainBegin: ").Append(MaintainBegin).Append("\n");
             sb.Append("  maintainEnd: ").Append(MaintainEnd).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
@@ -360,6 +367,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.CapacityMinor == input.CapacityMinor ||
                     (this.CapacityMinor != null &&
                     this.CapacityMinor.Equals(input.CapacityMinor))
+                ) && 
+                (
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 ) && 
                 (
                     this.MaintainBegin == input.MaintainBegin ||
@@ -514,6 +526,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Capacity.GetHashCode();
                 if (this.CapacityMinor != null)
                     hashCode = hashCode * 59 + this.CapacityMinor.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.MaintainBegin != null)
                     hashCode = hashCode * 59 + this.MaintainBegin.GetHashCode();
                 if (this.MaintainEnd != null)

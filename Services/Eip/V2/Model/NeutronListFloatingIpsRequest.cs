@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
+        public int? Limit { get; set; }
 
         /// <summary>
         /// 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400

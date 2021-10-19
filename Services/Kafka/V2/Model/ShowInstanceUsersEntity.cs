@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ShowInstanceUsersRespUsers 
+    public class ShowInstanceUsersEntity 
     {
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowInstanceUsersRespUsers {\n");
+            sb.Append("class ShowInstanceUsersEntity {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  role: ").Append(Role).Append("\n");
             sb.Append("  defaultApp: ").Append(DefaultApp).Append("\n");
@@ -60,13 +60,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowInstanceUsersRespUsers);
+            return this.Equals(input as ShowInstanceUsersEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowInstanceUsersRespUsers input)
+        public bool Equals(ShowInstanceUsersEntity input)
         {
             if (input == null)
                 return false;

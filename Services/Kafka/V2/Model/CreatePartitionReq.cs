@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 期望调整分区后的数量，必须大于当前分区数量，小于等于50。
+        /// 期望调整分区后的数量，必须大于当前分区数量，小于等于100。
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }

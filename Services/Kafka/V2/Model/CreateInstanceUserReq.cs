@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 用户密码。 密码不能和用户名相同。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（&#x60;~!@#$%^&amp;*()-_&#x3D;+\\|[{}]:&#39;\&quot;,&lt;.&gt;/?）
+        /// 用户密码。  密码不能和用户名相同。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（&#x60;~!@#$%^&amp;*()-_&#x3D;+\\|[{}]:&#39;\&quot;,&lt;.&gt;/?）
         /// </summary>
         [JsonProperty("user_passwd", NullValueHandling = NullValueHandling.Ignore)]
         public string UserPasswd { get; set; }

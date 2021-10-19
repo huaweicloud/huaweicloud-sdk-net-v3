@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ShowInstanceMessagesRespMessages 
+    public class MessagesEntity 
     {
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowInstanceMessagesRespMessages {\n");
+            sb.Append("class MessagesEntity {\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
@@ -109,13 +109,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowInstanceMessagesRespMessages);
+            return this.Equals(input as MessagesEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowInstanceMessagesRespMessages input)
+        public bool Equals(MessagesEntity input)
         {
             if (input == null)
                 return false;

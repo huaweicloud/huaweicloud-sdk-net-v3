@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// 插件信息列表。
         /// </summary>
         [JsonProperty("plugins", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListPluginsRespPlugins> Plugins { get; set; }
+        public List<PluginEntity> Plugins { get; set; }
 
 
         /// <summary>

@@ -37,14 +37,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? Asc { get; set; }
 
         /// <summary>
-        /// 开始时间。Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
+        /// 开始时间。  Unix毫秒时间戳。  查询消息偏移量时，为必选参数。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间。Unix毫秒时间戳。 查询消息偏移量时，为必选参数。
+        /// 结束时间。  Unix毫秒时间戳。  查询消息偏移量时，为必选参数。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -72,14 +72,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? Download { get; set; }
 
         /// <summary>
-        /// 消息偏移量。 **查询消息内容时，为必选参数。** 若start_time、end_time参数不为空，该参数无效。
+        /// 消息偏移量。  **查询消息内容时，为必选参数。**  若start_time、end_time参数不为空，该参数无效。
         /// </summary>
         [SDKProperty("message_offset", IsQuery = true)]
         [JsonProperty("message_offset", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageOffset { get; set; }
 
         /// <summary>
-        /// 分区。 **查询消息内容时，为必选参数。** 若start_time、end_time参数不为空，该参数无效。
+        /// 分区。  **查询消息内容时，为必选参数。**  若start_time、end_time参数不为空，该参数无效。
         /// </summary>
         [SDKProperty("partition", IsQuery = true)]
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]

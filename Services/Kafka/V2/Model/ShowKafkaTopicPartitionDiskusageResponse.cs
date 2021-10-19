@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// Broker列表。
         /// </summary>
         [JsonProperty("broker_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowKafkaTopicPartitionDiskusageRespBrokerList> BrokerList { get; set; }
+        public List<DiskusageEntity> BrokerList { get; set; }
 
 
         /// <summary>

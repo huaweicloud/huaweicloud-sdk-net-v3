@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 消息列表。
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowPartitionMessageRespMessage> Message { get; set; }
+        public List<ShowPartitionMessageEntity> Message { get; set; }
 
 
         /// <summary>

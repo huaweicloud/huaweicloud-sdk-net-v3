@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 实例列表
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListInstancesRespInstances> Instances { get; set; }
+        public List<ShowInstanceResp> Instances { get; set; }
 
         /// <summary>
         /// 实例数量。

@@ -136,6 +136,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("files", NullValueHandling = NullValueHandling.Ignore)]
         public List<Files> Files { get; set; }
 
+        /// <summary>
+        /// 备份记录ID，数据来源为备份记录时必须填写
+        /// </summary>
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -147,6 +153,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  fileSource: ").Append(FileSource).Append("\n");
             sb.Append("  bucketName: ").Append(BucketName).Append("\n");
             sb.Append("  files: ").Append(Files).Append("\n");
+            sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,6 +190,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Files != null &&
                     input.Files != null &&
                     this.Files.SequenceEqual(input.Files)
+                ) && 
+                (
+                    this.BackupId == input.BackupId ||
+                    (this.BackupId != null &&
+                    this.BackupId.Equals(input.BackupId))
                 );
         }
 
@@ -200,6 +212,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.BucketName.GetHashCode();
                 if (this.Files != null)
                     hashCode = hashCode * 59 + this.Files.GetHashCode();
+                if (this.BackupId != null)
+                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 return hashCode;
             }
         }

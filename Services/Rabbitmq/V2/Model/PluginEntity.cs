@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     /// <summary>
     /// 插件信息。
     /// </summary>
-    public class ListPluginsRespPlugins 
+    public class PluginEntity 
     {
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListPluginsRespPlugins {\n");
+            sb.Append("class PluginEntity {\n");
             sb.Append("  running: ").Append(Running).Append("\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -60,13 +60,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListPluginsRespPlugins);
+            return this.Equals(input as PluginEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListPluginsRespPlugins input)
+        public bool Equals(PluginEntity input)
         {
             if (input == null)
                 return false;

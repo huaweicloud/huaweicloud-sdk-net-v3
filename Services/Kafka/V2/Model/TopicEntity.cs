@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ListInstanceTopicsRespTopics 
+    public class TopicEntity 
     {
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListInstanceTopicsRespTopics {\n");
+            sb.Append("class TopicEntity {\n");
             sb.Append("  policiesOnly: ").Append(PoliciesOnly).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  replication: ").Append(Replication).Append("\n");
@@ -95,13 +95,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListInstanceTopicsRespTopics);
+            return this.Equals(input as TopicEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListInstanceTopicsRespTopics input)
+        public bool Equals(TopicEntity input)
         {
             if (input == null)
                 return false;

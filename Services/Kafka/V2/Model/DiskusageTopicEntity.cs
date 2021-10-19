@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ShowKafkaTopicPartitionDiskusageRespTopicList 
+    public class DiskusageTopicEntity 
     {
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowKafkaTopicPartitionDiskusageRespTopicList {\n");
+            sb.Append("class DiskusageTopicEntity {\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  topicName: ").Append(TopicName).Append("\n");
             sb.Append("  topicPartition: ").Append(TopicPartition).Append("\n");
@@ -60,13 +60,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowKafkaTopicPartitionDiskusageRespTopicList);
+            return this.Equals(input as DiskusageTopicEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowKafkaTopicPartitionDiskusageRespTopicList input)
+        public bool Equals(DiskusageTopicEntity input)
         {
             if (input == null)
                 return false;

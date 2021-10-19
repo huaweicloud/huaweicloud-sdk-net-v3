@@ -167,10 +167,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<DiagnosisDimension> DiagnosisDimensionList { get; set; }
 
         /// <summary>
-        /// 命令耗时统计列表
+        /// 
         /// </summary>
         [JsonProperty("command_time_taken_list", NullValueHandling = NullValueHandling.Ignore)]
-        public Object CommandTimeTakenList { get; set; }
+        public CommandTimeTakenList CommandTimeTakenList { get; set; }
 
 
         /// <summary>

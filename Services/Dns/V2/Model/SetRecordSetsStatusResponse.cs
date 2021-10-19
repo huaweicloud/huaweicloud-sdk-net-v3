@@ -100,12 +100,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
-        /// 资源标签。
-        /// </summary>
-        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Tag> Tags { get; set; }
-
-        /// <summary>
         /// 解析线路ID。
         /// </summary>
         [JsonProperty("line", NullValueHandling = NullValueHandling.Ignore)]
@@ -151,7 +145,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
-            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  line: ").Append(Line).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  healthCheckId: ").Append(HealthCheckId).Append("\n");
@@ -249,12 +242,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Links.Equals(input.Links))
                 ) && 
                 (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
                     this.Line == input.Line ||
                     (this.Line != null &&
                     this.Line.Equals(input.Line))
@@ -312,8 +299,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Links != null)
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Line != null)
                     hashCode = hashCode * 59 + this.Line.GetHashCode();
                 if (this.Weight != null)

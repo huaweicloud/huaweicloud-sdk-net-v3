@@ -51,6 +51,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("obs_destination_descriptor", NullValueHandling = NullValueHandling.Ignore)]
         public ShowSinkTaskDetailRespObsDestinationDescriptor ObsDestinationDescriptor { get; set; }
 
+        /// <summary>
+        /// topic信息。
+        /// </summary>
+        [JsonProperty("topics_info", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ShowSinkTaskDetailRespTopicsInfo> TopicsInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
             sb.Append("  obsDestinationDescriptor: ").Append(ObsDestinationDescriptor).Append("\n");
+            sb.Append("  topicsInfo: ").Append(TopicsInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.ObsDestinationDescriptor == input.ObsDestinationDescriptor ||
                     (this.ObsDestinationDescriptor != null &&
                     this.ObsDestinationDescriptor.Equals(input.ObsDestinationDescriptor))
+                ) && 
+                (
+                    this.TopicsInfo == input.TopicsInfo ||
+                    this.TopicsInfo != null &&
+                    input.TopicsInfo != null &&
+                    this.TopicsInfo.SequenceEqual(input.TopicsInfo)
                 );
         }
 
@@ -138,6 +151,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 if (this.ObsDestinationDescriptor != null)
                     hashCode = hashCode * 59 + this.ObsDestinationDescriptor.GetHashCode();
+                if (this.TopicsInfo != null)
+                    hashCode = hashCode * 59 + this.TopicsInfo.GetHashCode();
                 return hashCode;
             }
         }

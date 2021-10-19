@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
+namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public class ShowProjectTagsRespTags 
+    public class TagMultyValueEntity 
     {
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowProjectTagsRespTags {\n");
+            sb.Append("class TagMultyValueEntity {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  values: ").Append(Values).Append("\n");
             sb.Append("}\n");
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowProjectTagsRespTags);
+            return this.Equals(input as TagMultyValueEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowProjectTagsRespTags input)
+        public bool Equals(TagMultyValueEntity input)
         {
             if (input == null)
                 return false;

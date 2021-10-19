@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ShowKafkaTopicPartitionDiskusageRespBrokerList 
+    public class DiskusageEntity 
     {
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// topic磁盘容量使用列表。
         /// </summary>
         [JsonProperty("topic_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowKafkaTopicPartitionDiskusageRespTopicList> TopicList { get; set; }
+        public List<DiskusageTopicEntity> TopicList { get; set; }
 
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowKafkaTopicPartitionDiskusageRespBrokerList {\n");
+            sb.Append("class DiskusageEntity {\n");
             sb.Append("  brokerName: ").Append(BrokerName).Append("\n");
             sb.Append("  dataDiskSize: ").Append(DataDiskSize).Append("\n");
             sb.Append("  dataDiskUse: ").Append(DataDiskUse).Append("\n");
@@ -81,13 +81,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowKafkaTopicPartitionDiskusageRespBrokerList);
+            return this.Equals(input as DiskusageEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowKafkaTopicPartitionDiskusageRespBrokerList input)
+        public bool Equals(DiskusageEntity input)
         {
             if (input == null)
                 return false;

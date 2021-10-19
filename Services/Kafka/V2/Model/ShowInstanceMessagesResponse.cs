@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 消息列表。
         /// </summary>
         [JsonProperty("messages", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowInstanceMessagesRespMessages> Messages { get; set; }
+        public List<MessagesEntity> Messages { get; set; }
 
         /// <summary>
         /// 消息总条数。

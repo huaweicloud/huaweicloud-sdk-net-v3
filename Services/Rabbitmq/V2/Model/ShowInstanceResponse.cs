@@ -368,7 +368,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListInstancesRespTags> Tags { get; set; }
+        public List<TagEntity> Tags { get; set; }
 
 
         /// <summary>

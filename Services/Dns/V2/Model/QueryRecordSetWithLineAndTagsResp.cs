@@ -10,9 +10,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class DeleteRecordSetResponse : SdkResponse
+    public class QueryRecordSetWithLineAndTagsResp 
     {
 
         /// <summary>
@@ -66,14 +66,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// <summary>
         /// 创建时间。
         /// </summary>
-        [JsonProperty("create_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateAt { get; set; }
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// 更新时间。
         /// </summary>
-        [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdateAt { get; set; }
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdatedAt { get; set; }
 
         /// <summary>
         /// 资源状态。
@@ -99,6 +99,36 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
         public PageLink Links { get; set; }
 
+        /// <summary>
+        /// 资源标签。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Tag> Tags { get; set; }
+
+        /// <summary>
+        /// 解析线路ID。
+        /// </summary>
+        [JsonProperty("line", NullValueHandling = NullValueHandling.Ignore)]
+        public string Line { get; set; }
+
+        /// <summary>
+        /// 解析记录的权重。
+        /// </summary>
+        [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Weight { get; set; }
+
+        /// <summary>
+        /// 健康检查ID。
+        /// </summary>
+        [JsonProperty("health_check_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string HealthCheckId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("alias_target", NullValueHandling = NullValueHandling.Ignore)]
+        public AliasTarget AliasTarget { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -106,7 +136,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteRecordSetResponse {\n");
+            sb.Append("class QueryRecordSetWithLineAndTagsResp {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -115,12 +145,17 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  ttl: ").Append(Ttl).Append("\n");
             sb.Append("  records: ").Append(Records).Append("\n");
-            sb.Append("  createAt: ").Append(CreateAt).Append("\n");
-            sb.Append("  updateAt: ").Append(UpdateAt).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  line: ").Append(Line).Append("\n");
+            sb.Append("  weight: ").Append(Weight).Append("\n");
+            sb.Append("  healthCheckId: ").Append(HealthCheckId).Append("\n");
+            sb.Append("  aliasTarget: ").Append(AliasTarget).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -130,13 +165,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteRecordSetResponse);
+            return this.Equals(input as QueryRecordSetWithLineAndTagsResp);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteRecordSetResponse input)
+        public bool Equals(QueryRecordSetWithLineAndTagsResp input)
         {
             if (input == null)
                 return false;
@@ -184,14 +219,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Records.SequenceEqual(input.Records)
                 ) && 
                 (
-                    this.CreateAt == input.CreateAt ||
-                    (this.CreateAt != null &&
-                    this.CreateAt.Equals(input.CreateAt))
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.UpdateAt == input.UpdateAt ||
-                    (this.UpdateAt != null &&
-                    this.UpdateAt.Equals(input.UpdateAt))
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -212,6 +247,32 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Links == input.Links ||
                     (this.Links != null &&
                     this.Links.Equals(input.Links))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.Line == input.Line ||
+                    (this.Line != null &&
+                    this.Line.Equals(input.Line))
+                ) && 
+                (
+                    this.Weight == input.Weight ||
+                    (this.Weight != null &&
+                    this.Weight.Equals(input.Weight))
+                ) && 
+                (
+                    this.HealthCheckId == input.HealthCheckId ||
+                    (this.HealthCheckId != null &&
+                    this.HealthCheckId.Equals(input.HealthCheckId))
+                ) && 
+                (
+                    this.AliasTarget == input.AliasTarget ||
+                    (this.AliasTarget != null &&
+                    this.AliasTarget.Equals(input.AliasTarget))
                 );
         }
 
@@ -239,10 +300,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Ttl.GetHashCode();
                 if (this.Records != null)
                     hashCode = hashCode * 59 + this.Records.GetHashCode();
-                if (this.CreateAt != null)
-                    hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
-                if (this.UpdateAt != null)
-                    hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null)
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Default != null)
@@ -251,6 +312,16 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Links != null)
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Line != null)
+                    hashCode = hashCode * 59 + this.Line.GetHashCode();
+                if (this.Weight != null)
+                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.HealthCheckId != null)
+                    hashCode = hashCode * 59 + this.HealthCheckId.GetHashCode();
+                if (this.AliasTarget != null)
+                    hashCode = hashCode * 59 + this.AliasTarget.GetHashCode();
                 return hashCode;
             }
         }

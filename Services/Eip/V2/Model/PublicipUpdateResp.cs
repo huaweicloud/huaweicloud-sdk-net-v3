@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
     /// <summary>
     /// 弹性公网IP列表返回体
     /// </summary>
-    public class PublicipShowResp 
+    public class PublicipUpdateResp 
     {
         /// <summary>
         /// 表示共享带宽或者独享带宽  取值范围：PER，WHOLE。  WHOLE表示共享带宽  PER表示独享带宽  约束：其中IPv6暂不支持WHOLE类型带宽。
@@ -504,18 +504,6 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public IpVersionEnum IpVersion { get; set; }
-        /// <summary>
-        /// 功能说明：表示中心站点资源或者边缘站点资源 取值范围： center、边缘站点名称 约束：publicip只能绑定该字段相同的资源
-        /// </summary>
-        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
-        public string PublicBorderGroup { get; set; }
-
-        /// <summary>
-        /// 功能说明：表示此publicip可以加入的共享带宽类型列表，如果为空列表，则表示该           publicip不能加入任何共享带宽 约束：publicip只能加入到有该带宽类型的共享带宽中
-        /// </summary>
-        [JsonProperty("allow_share_bandwidth_types", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> AllowShareBandwidthTypes { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -523,7 +511,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PublicipShowResp {\n");
+            sb.Append("class PublicipUpdateResp {\n");
             sb.Append("  bandwidthId: ").Append(BandwidthId).Append("\n");
             sb.Append("  bandwidthName: ").Append(BandwidthName).Append("\n");
             sb.Append("  bandwidthShareType: ").Append(BandwidthShareType).Append("\n");
@@ -540,8 +528,6 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  publicIpv6Address: ").Append(PublicIpv6Address).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
-            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
-            sb.Append("  allowShareBandwidthTypes: ").Append(AllowShareBandwidthTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -551,13 +537,13 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PublicipShowResp);
+            return this.Equals(input as PublicipUpdateResp);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(PublicipShowResp input)
+        public bool Equals(PublicipUpdateResp input)
         {
             if (input == null)
                 return false;
@@ -642,17 +628,6 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.IpVersion == input.IpVersion ||
                     (this.IpVersion != null &&
                     this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.AllowShareBandwidthTypes == input.AllowShareBandwidthTypes ||
-                    this.AllowShareBandwidthTypes != null &&
-                    input.AllowShareBandwidthTypes != null &&
-                    this.AllowShareBandwidthTypes.SequenceEqual(input.AllowShareBandwidthTypes)
                 );
         }
 
@@ -696,10 +671,6 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.PublicIpv6Address.GetHashCode();
                 if (this.IpVersion != null)
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.AllowShareBandwidthTypes != null)
-                    hashCode = hashCode * 59 + this.AllowShareBandwidthTypes.GetHashCode();
                 return hashCode;
             }
         }

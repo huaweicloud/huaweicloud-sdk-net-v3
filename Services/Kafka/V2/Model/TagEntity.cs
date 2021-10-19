@@ -7,22 +7,22 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
+namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 标签。
+    /// 
     /// </summary>
-    public class ListInstancesRespTags 
+    public class TagEntity 
     {
 
         /// <summary>
-        /// 标签的键。
+        /// 键。最大长度36个unicode字符。  key不能为空，不能为空字符串。  不能包含下列字符：非打印字符ASCII(0-31)，“&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签的值。
+        /// 值。每个值最大长度43个unicode字符。  value不能为空，可以空字符串。  不能包含下列字符：非打印字符ASCII(0-31), “&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListInstancesRespTags {\n");
+            sb.Append("class TagEntity {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListInstancesRespTags);
+            return this.Equals(input as TagEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListInstancesRespTags input)
+        public bool Equals(TagEntity input)
         {
             if (input == null)
                 return false;

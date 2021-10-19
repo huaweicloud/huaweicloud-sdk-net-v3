@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// topic列表。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UpdateTopicAccessPolicyReqTopics> Topics { get; set; }
+        public List<AccessPolicyTopicEntity> Topics { get; set; }
 
 
         /// <summary>

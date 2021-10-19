@@ -10,9 +10,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 
+    /// 权限实体。
     /// </summary>
-    public class ShowTopicAccessPolicyRespPolicies 
+    public class AccessPolicyEntity 
     {
         /// <summary>
         /// 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
@@ -132,13 +132,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
 
         /// <summary>
-        /// 是否为创建topic时所选择的用户。
-        /// </summary>
-        [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Owner { get; set; }
-
-        /// <summary>
-        /// 用户名。
+        /// 用户名称。
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
@@ -155,8 +149,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowTopicAccessPolicyRespPolicies {\n");
-            sb.Append("  owner: ").Append(Owner).Append("\n");
+            sb.Append("class AccessPolicyEntity {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  accessPolicy: ").Append(AccessPolicy).Append("\n");
             sb.Append("}\n");
@@ -168,23 +161,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowTopicAccessPolicyRespPolicies);
+            return this.Equals(input as AccessPolicyEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowTopicAccessPolicyRespPolicies input)
+        public bool Equals(AccessPolicyEntity input)
         {
             if (input == null)
                 return false;
 
             return 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
                 (
                     this.UserName == input.UserName ||
                     (this.UserName != null &&
@@ -205,8 +193,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.AccessPolicy != null)

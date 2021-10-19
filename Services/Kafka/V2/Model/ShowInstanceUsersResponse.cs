@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 用户列表。
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowInstanceUsersRespUsers> Users { get; set; }
+        public List<ShowInstanceUsersEntity> Users { get; set; }
 
 
         /// <summary>

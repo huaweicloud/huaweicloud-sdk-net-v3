@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SyncMessageFlush { get; set; }
 
         /// <summary>
-        /// topic分区数，设置消费的并发数。 取值范围：1-50。
+        /// topic分区数，设置消费的并发数。 取值范围：1-100。
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }

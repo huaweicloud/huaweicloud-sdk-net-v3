@@ -385,16 +385,40 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("migration_method", NullValueHandling = NullValueHandling.Ignore)]
         public MigrationMethodEnum MigrationMethod { get; set; }
         /// <summary>
+        /// 数据源，格式为ip:port或者桶名。
+        /// </summary>
+        [JsonProperty("data_source", NullValueHandling = NullValueHandling.Ignore)]
+        public string DataSource { get; set; }
+
+        /// <summary>
+        /// 源实例名称，若自建redis则为空。
+        /// </summary>
+        [JsonProperty("source_instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceInstanceName { get; set; }
+
+        /// <summary>
+        /// 源实例ID，若自建redis则为空。
+        /// </summary>
+        [JsonProperty("source_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceInstanceId { get; set; }
+
+        /// <summary>
+        /// 目标redis地址，格式为ip:port。
+        /// </summary>
+        [JsonProperty("target_instance_addrs", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetInstanceAddrs { get; set; }
+
+        /// <summary>
         /// 目标实例名称。
         /// </summary>
         [JsonProperty("target_instance_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetInstanceName { get; set; }
 
         /// <summary>
-        /// 数据源，格式为ip:port或者桶名。
+        /// 目标实例ID。
         /// </summary>
-        [JsonProperty("data_source", NullValueHandling = NullValueHandling.Ignore)]
-        public string DataSource { get; set; }
+        [JsonProperty("target_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetInstanceId { get; set; }
 
         /// <summary>
         /// 迁移任务创建时间
@@ -415,8 +439,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  migrationType: ").Append(MigrationType).Append("\n");
             sb.Append("  migrationMethod: ").Append(MigrationMethod).Append("\n");
-            sb.Append("  targetInstanceName: ").Append(TargetInstanceName).Append("\n");
             sb.Append("  dataSource: ").Append(DataSource).Append("\n");
+            sb.Append("  sourceInstanceName: ").Append(SourceInstanceName).Append("\n");
+            sb.Append("  sourceInstanceId: ").Append(SourceInstanceId).Append("\n");
+            sb.Append("  targetInstanceAddrs: ").Append(TargetInstanceAddrs).Append("\n");
+            sb.Append("  targetInstanceName: ").Append(TargetInstanceName).Append("\n");
+            sb.Append("  targetInstanceId: ").Append(TargetInstanceId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -465,14 +493,34 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.MigrationMethod.Equals(input.MigrationMethod))
                 ) && 
                 (
+                    this.DataSource == input.DataSource ||
+                    (this.DataSource != null &&
+                    this.DataSource.Equals(input.DataSource))
+                ) && 
+                (
+                    this.SourceInstanceName == input.SourceInstanceName ||
+                    (this.SourceInstanceName != null &&
+                    this.SourceInstanceName.Equals(input.SourceInstanceName))
+                ) && 
+                (
+                    this.SourceInstanceId == input.SourceInstanceId ||
+                    (this.SourceInstanceId != null &&
+                    this.SourceInstanceId.Equals(input.SourceInstanceId))
+                ) && 
+                (
+                    this.TargetInstanceAddrs == input.TargetInstanceAddrs ||
+                    (this.TargetInstanceAddrs != null &&
+                    this.TargetInstanceAddrs.Equals(input.TargetInstanceAddrs))
+                ) && 
+                (
                     this.TargetInstanceName == input.TargetInstanceName ||
                     (this.TargetInstanceName != null &&
                     this.TargetInstanceName.Equals(input.TargetInstanceName))
                 ) && 
                 (
-                    this.DataSource == input.DataSource ||
-                    (this.DataSource != null &&
-                    this.DataSource.Equals(input.DataSource))
+                    this.TargetInstanceId == input.TargetInstanceId ||
+                    (this.TargetInstanceId != null &&
+                    this.TargetInstanceId.Equals(input.TargetInstanceId))
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
@@ -499,10 +547,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.MigrationType.GetHashCode();
                 if (this.MigrationMethod != null)
                     hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
-                if (this.TargetInstanceName != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceName.GetHashCode();
                 if (this.DataSource != null)
                     hashCode = hashCode * 59 + this.DataSource.GetHashCode();
+                if (this.SourceInstanceName != null)
+                    hashCode = hashCode * 59 + this.SourceInstanceName.GetHashCode();
+                if (this.SourceInstanceId != null)
+                    hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
+                if (this.TargetInstanceAddrs != null)
+                    hashCode = hashCode * 59 + this.TargetInstanceAddrs.GetHashCode();
+                if (this.TargetInstanceName != null)
+                    hashCode = hashCode * 59 + this.TargetInstanceName.GetHashCode();
+                if (this.TargetInstanceId != null)
+                    hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 return hashCode;

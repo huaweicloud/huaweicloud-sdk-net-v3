@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// topic列表。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListInstanceTopicsRespTopics> Topics { get; set; }
+        public List<TopicEntity> Topics { get; set; }
 
 
         /// <summary>

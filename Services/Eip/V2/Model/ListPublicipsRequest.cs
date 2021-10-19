@@ -180,6 +180,13 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
+        /// <summary>
+        /// 共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。
+        /// </summary>
+        [SDKProperty("allow_share_bandwidth_type_any", IsQuery = true)]
+        [JsonProperty("allow_share_bandwidth_type_any", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AllowShareBandwidthTypeAny { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -196,6 +203,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  publicIpAddress: ").Append(PublicIpAddress).Append("\n");
             sb.Append("  privateIpAddress: ").Append(PrivateIpAddress).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  allowShareBandwidthTypeAny: ").Append(AllowShareBandwidthTypeAny).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -260,6 +268,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.Id != null &&
                     input.Id != null &&
                     this.Id.SequenceEqual(input.Id)
+                ) && 
+                (
+                    this.AllowShareBandwidthTypeAny == input.AllowShareBandwidthTypeAny ||
+                    this.AllowShareBandwidthTypeAny != null &&
+                    input.AllowShareBandwidthTypeAny != null &&
+                    this.AllowShareBandwidthTypeAny.SequenceEqual(input.AllowShareBandwidthTypeAny)
                 );
         }
 
@@ -287,6 +301,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.AllowShareBandwidthTypeAny != null)
+                    hashCode = hashCode * 59 + this.AllowShareBandwidthTypeAny.GetHashCode();
                 return hashCode;
             }
         }

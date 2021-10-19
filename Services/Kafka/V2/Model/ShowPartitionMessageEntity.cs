@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 消息体。
     /// </summary>
-    public class ShowPartitionMessageRespMessage 
+    public class ShowPartitionMessageEntity 
     {
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowPartitionMessageRespMessage {\n");
+            sb.Append("class ShowPartitionMessageEntity {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
@@ -81,13 +81,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowPartitionMessageRespMessage);
+            return this.Equals(input as ShowPartitionMessageEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowPartitionMessageRespMessage input)
+        public bool Equals(ShowPartitionMessageEntity input)
         {
             if (input == null)
                 return false;

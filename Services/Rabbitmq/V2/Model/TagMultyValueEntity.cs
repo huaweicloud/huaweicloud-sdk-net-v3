@@ -7,25 +7,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// 标签。
+    /// 
     /// </summary>
-    public class ListInstancesRespTags 
+    public class TagMultyValueEntity 
     {
 
         /// <summary>
-        /// 标签的键。
+        /// 键。最大长度36个unicode字符。  key不能为空，不能为空字符串。  不能包含下列字符：非打印字符ASCII(0-31)，“&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签的值。
+        /// 值。每个值最大长度43个unicode字符。  value不能为空，可以空字符串。  不能包含下列字符：非打印字符ASCII(0-31), “&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”。
         /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
+        [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Values { get; set; }
 
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListInstancesRespTags {\n");
+            sb.Append("class TagMultyValueEntity {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
-            sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  values: ").Append(Values).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListInstancesRespTags);
+            return this.Equals(input as TagMultyValueEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListInstancesRespTags input)
+        public bool Equals(TagMultyValueEntity input)
         {
             if (input == null)
                 return false;
@@ -64,9 +64,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Key.Equals(input.Key))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.Values == input.Values ||
+                    this.Values != null &&
+                    input.Values != null &&
+                    this.Values.SequenceEqual(input.Values)
                 );
         }
 
@@ -80,8 +81,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Values != null)
+                    hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

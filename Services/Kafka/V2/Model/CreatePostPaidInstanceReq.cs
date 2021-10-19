@@ -695,7 +695,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? PublicBandwidth { get; set; }
 
         /// <summary>
-        /// 实例绑定的弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+        /// 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
         /// </summary>
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }
@@ -738,7 +738,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreatePostPaidInstanceReqTags> Tags { get; set; }
+        public List<TagEntity> Tags { get; set; }
 
 
         /// <summary>
