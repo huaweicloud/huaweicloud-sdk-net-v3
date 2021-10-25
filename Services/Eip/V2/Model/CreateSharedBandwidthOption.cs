@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
 
+        /// <summary>
+        /// 功能说明：指定带宽类型创建，默认中心站点为share，边缘站点为edgeshare 取值范围： 查询当前租户可见的带宽类型列表获取
+        /// </summary>
+        [JsonProperty("bandwidth_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BandwidthType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -167,6 +173,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  bandwidthType: ").Append(BandwidthType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,6 +219,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.PublicBorderGroup == input.PublicBorderGroup ||
                     (this.PublicBorderGroup != null &&
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.BandwidthType == input.BandwidthType ||
+                    (this.BandwidthType != null &&
+                    this.BandwidthType.Equals(input.BandwidthType))
                 );
         }
 
@@ -233,6 +245,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.BandwidthType != null)
+                    hashCode = hashCode * 59 + this.BandwidthType.GetHashCode();
                 return hashCode;
             }
         }

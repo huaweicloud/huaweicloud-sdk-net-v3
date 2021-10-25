@@ -74,6 +74,18 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 财务报表识别
+        /// </summary>
+        public RecognizeFinancialStatementResponse RecognizeFinancialStatement(RecognizeFinancialStatementRequest recognizeFinancialStatementRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/financial-statement",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeFinancialStatementRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeFinancialStatementResponse>(response);
+        }
+        
+        /// <summary>
         /// 飞机行程单识别
         /// </summary>
         public RecognizeFlightItineraryResponse RecognizeFlightItinerary(RecognizeFlightItineraryRequest recognizeFlightItineraryRequest)
@@ -134,6 +146,18 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 保险单识别
+        /// </summary>
+        public RecognizeInsurancePolicyResponse RecognizeInsurancePolicy(RecognizeInsurancePolicyRequest recognizeInsurancePolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/insurance-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeInsurancePolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeInsurancePolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 发票验真
         /// </summary>
         public RecognizeInvoiceVerificationResponse RecognizeInvoiceVerification(RecognizeInvoiceVerificationRequest recognizeInvoiceVerificationRequest)
@@ -179,6 +203,18 @@ namespace HuaweiCloud.SDK.Ocr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePassportRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RecognizePassportResponse>(response);
+        }
+        
+        /// <summary>
+        /// 从业资格证识别
+        /// </summary>
+        public RecognizeQualificationCertificateResponse RecognizeQualificationCertificate(RecognizeQualificationCertificateRequest recognizeQualificationCertificateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-qualification-certificate",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeQualificationCertificateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeQualificationCertificateResponse>(response);
         }
         
         /// <summary>

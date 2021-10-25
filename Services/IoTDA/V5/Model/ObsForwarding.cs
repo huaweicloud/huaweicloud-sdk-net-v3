@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public string Location { get; set; }
 
+        /// <summary>
+        /// **参数说明**：OBS服务中存储通道文件的自定义目录,多级目录可用(/)进行分隔，不可以斜杠(/)开头或结尾，不能包含两个以上相邻的斜杠(/) **取值范围**: 英文字母(a-zA-Z)、数字(0-9)、下划线(_)、中划线(-)、斜杠(/)和大括号({})，最大字符长度256个字符。其中大括号只能用于对应模板参数。 **模板参数**:   - \\{YYYY\\} 年   - \\{MM\\} 月   - \\{DD\\} 日   - \\{HH\\} 小时   例如:自定义目录结构为\\{YYYY\\}/\\{MM\\}/\\{DD\\}/\\{HH\\},则会在转发数据时，根据当前时间往对应的目录结构2021&gt;08&gt;11&gt;09下生成对应的数据。 
+        /// </summary>
+        [JsonProperty("file_path", NullValueHandling = NullValueHandling.Ignore)]
+        public string FilePath { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  bucketName: ").Append(BucketName).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
+            sb.Append("  filePath: ").Append(FilePath).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Location == input.Location ||
                     (this.Location != null &&
                     this.Location.Equals(input.Location))
+                ) && 
+                (
+                    this.FilePath == input.FilePath ||
+                    (this.FilePath != null &&
+                    this.FilePath.Equals(input.FilePath))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.BucketName.GetHashCode();
                 if (this.Location != null)
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.FilePath != null)
+                    hashCode = hashCode * 59 + this.FilePath.GetHashCode();
                 return hashCode;
             }
         }

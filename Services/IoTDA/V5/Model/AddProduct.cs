@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string DataFormat { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备的服务能力列表。
+        /// **参数说明**：设备的服务能力列表。 **取值范围**：数组长度大小不超过500，内容大小不超过500k。
         /// </summary>
         [JsonProperty("service_capabilities", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceCapability> ServiceCapabilities { get; set; }

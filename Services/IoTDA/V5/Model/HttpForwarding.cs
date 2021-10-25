@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string CertId { get; set; }
 
         /// <summary>
-        /// **参数说明**：当sni_enable为true时，此字段需要填写，内容为将要请求的服务端证书的域名,举例:www.example.com:8443;当sni_enbale为false时，此字段默认不填写。
+        /// **参数说明**：当sni_enable为true时，此字段需要填写，内容为将要请求的服务端证书的域名,举例:domain:8443;当sni_enbale为false时，此字段默认不填写。
         /// </summary>
         [JsonProperty("cn_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CnName { get; set; }

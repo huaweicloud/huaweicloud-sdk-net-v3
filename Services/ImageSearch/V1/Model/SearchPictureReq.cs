@@ -48,32 +48,14 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
         /// <summary>
         /// 是否用图片中指定区域（参数box）进行搜索。默认为false，该参数目前仅对某些特定模型有效，其他模型暂不支持目标检测。 - true：用图片中指定区域（参数box）进行搜索。 - false：用全图进行搜索。
         /// </summary>
-        [JsonProperty("isCrop", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("is_crop", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsCrop { get; set; }
 
         /// <summary>
-        /// 区域中x坐标的最小值，单位：像素。
+        /// 
         /// </summary>
-        [JsonProperty("x", NullValueHandling = NullValueHandling.Ignore)]
-        public int? X { get; set; }
-
-        /// <summary>
-        /// 区域中y坐标的最小值，单位：像素。
-        /// </summary>
-        [JsonProperty("y", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Y { get; set; }
-
-        /// <summary>
-        /// 区域的宽度，单位：像素。
-        /// </summary>
-        [JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Width { get; set; }
-
-        /// <summary>
-        /// 区域的高度，单位：像素。
-        /// </summary>
-        [JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Height { get; set; }
+        [JsonProperty("box", NullValueHandling = NullValueHandling.Ignore)]
+        public SearchBoxDetail Box { get; set; }
 
 
         /// <summary>
@@ -89,10 +71,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  isCrop: ").Append(IsCrop).Append("\n");
-            sb.Append("  x: ").Append(X).Append("\n");
-            sb.Append("  y: ").Append(Y).Append("\n");
-            sb.Append("  width: ").Append(Width).Append("\n");
-            sb.Append("  height: ").Append(Height).Append("\n");
+            sb.Append("  box: ").Append(Box).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,24 +124,9 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
                     this.IsCrop.Equals(input.IsCrop))
                 ) && 
                 (
-                    this.X == input.X ||
-                    (this.X != null &&
-                    this.X.Equals(input.X))
-                ) && 
-                (
-                    this.Y == input.Y ||
-                    (this.Y != null &&
-                    this.Y.Equals(input.Y))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
+                    this.Box == input.Box ||
+                    (this.Box != null &&
+                    this.Box.Equals(input.Box))
                 );
         }
 
@@ -186,14 +150,8 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.IsCrop != null)
                     hashCode = hashCode * 59 + this.IsCrop.GetHashCode();
-                if (this.X != null)
-                    hashCode = hashCode * 59 + this.X.GetHashCode();
-                if (this.Y != null)
-                    hashCode = hashCode * 59 + this.Y.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.Box != null)
+                    hashCode = hashCode * 59 + this.Box.GetHashCode();
                 return hashCode;
             }
         }

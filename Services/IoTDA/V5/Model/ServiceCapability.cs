@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：设备的服务ID。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-$等字符的组合。
+        /// **参数说明**：设备的服务ID。注：产品内不允许重复。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-$等字符的组合。
         /// </summary>
         [JsonProperty("service_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceId { get; set; }
@@ -28,19 +28,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备服务支持的属性列表
+        /// **参数说明**：设备服务支持的属性列表。 **取值范围**：数组长度大小不超过500。
         /// </summary>
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceProperty> Properties { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备服务支持的命令列表。
+        /// **参数说明**：设备服务支持的命令列表。 **取值范围**：数组长度大小不超过500。
         /// </summary>
         [JsonProperty("commands", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceCommand> Commands { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备服务支持的事件列表。
+        /// **参数说明**：设备服务支持的事件列表。 **取值范围**：数组长度大小不超过500。
         /// </summary>
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceEvent> Events { get; set; }

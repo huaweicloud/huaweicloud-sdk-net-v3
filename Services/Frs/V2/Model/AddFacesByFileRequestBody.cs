@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("external_fields", NullValueHandling = NullValueHandling.Ignore)]
         public string ExternalFields { get; set; }
 
+        /// <summary>
+        /// 是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false: 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。
+        /// </summary>
+        [JsonProperty("single", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Single { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             sb.Append("  imageFile: ").Append(ImageFile).Append("\n");
             sb.Append("  externalImageId: ").Append(ExternalImageId).Append("\n");
             sb.Append("  externalFields: ").Append(ExternalFields).Append("\n");
+            sb.Append("  single: ").Append(Single).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.ExternalFields == input.ExternalFields ||
                     (this.ExternalFields != null &&
                     this.ExternalFields.Equals(input.ExternalFields))
+                ) && 
+                (
+                    this.Single == input.Single ||
+                    (this.Single != null &&
+                    this.Single.Equals(input.Single))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     hashCode = hashCode * 59 + this.ExternalImageId.GetHashCode();
                 if (this.ExternalFields != null)
                     hashCode = hashCode * 59 + this.ExternalFields.GetHashCode();
+                if (this.Single != null)
+                    hashCode = hashCode * 59 + this.Single.GetHashCode();
                 return hashCode;
             }
         }

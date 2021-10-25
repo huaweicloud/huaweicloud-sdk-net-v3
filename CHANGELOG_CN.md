@@ -1,3 +1,79 @@
+# 3.0.65 2021-10-25
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+    - 支持接口`ShowDomainQuota`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreateSharedBandwidth`新增请求参数`bandwidth_type`
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`AddFacesByFile`、`AddFacesByBase64`、`AddFacesByUrl`新增请求参数`single`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreateInstance`的请求参数和响应参数`num`、`size`类型调整： `integer` -> `string`
+
+### HuaweiCloud SDK ImageSearch
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`RunSearchPicture`的请求参数名称调整: `isCrop` -> `is_crop`
+    - 接口`RunSearchPicture`新增请求参数`box`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ShowJob`新增响应参数`current_task`、`image_name`、`process_percent`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListDevices`新增请求参数`status`
+    - 接口`CreateRuleAction`新增请求参数`file_path`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+    - 新增接口`RecognizeInsurancePolicy`、`RecognizeFinancialStatement`、`RecognizeQualificationCertificate`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
 # 3.0.64 2021-10-19
 
 ### HuaweiCloud SDK EIP
