@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// user详细信息
+    /// user详细信息。
     /// </summary>
     public class OsFederationInfo 
     {
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public ProtocolIdInfo Protocol { get; set; }
 
         /// <summary>
-        /// 用户组信息
+        /// 用户组信息。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<Object> Groups { get; set; }

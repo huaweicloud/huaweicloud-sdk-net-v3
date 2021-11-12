@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// <summary>
         /// 总记录数。
         /// </summary>
-        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalCount { get; set; }
+        [JsonProperty("total_record", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalRecord { get; set; }
 
         /// <summary>
         /// 审计日志具体信息。
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAuditlogsResponse {\n");
-            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("  totalRecord: ").Append(TotalRecord).Append("\n");
             sb.Append("  auditLogs: ").Append(AuditLogs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -59,9 +59,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
             return 
                 (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
+                    this.TotalRecord == input.TotalRecord ||
+                    (this.TotalRecord != null &&
+                    this.TotalRecord.Equals(input.TotalRecord))
                 ) && 
                 (
                     this.AuditLogs == input.AuditLogs ||
@@ -79,8 +79,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.TotalRecord != null)
+                    hashCode = hashCode * 59 + this.TotalRecord.GetHashCode();
                 if (this.AuditLogs != null)
                     hashCode = hashCode * 59 + this.AuditLogs.GetHashCode();
                 return hashCode;

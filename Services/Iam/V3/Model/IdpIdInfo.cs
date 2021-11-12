@@ -10,13 +10,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// 身份提供商信息
+    /// 身份提供商信息。
     /// </summary>
     public class IdpIdInfo 
     {
 
         /// <summary>
-        /// 身份提供商id
+        /// 身份提供商id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

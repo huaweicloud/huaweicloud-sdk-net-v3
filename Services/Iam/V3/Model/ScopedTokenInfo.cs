@@ -10,25 +10,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// token详细信息
+    /// token详细信息。
     /// </summary>
     public class ScopedTokenInfo 
     {
 
         /// <summary>
-        /// 过期时间
+        /// 过期时间。
         /// </summary>
         [JsonProperty("expires_at", NullValueHandling = NullValueHandling.Ignore)]
         public string ExpiresAt { get; set; }
 
         /// <summary>
-        /// 获取token的方式，联邦用户默认为mapped
+        /// 获取token的方式，联邦用户默认为mapped。
         /// </summary>
         [JsonProperty("methods", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Methods { get; set; }
 
         /// <summary>
-        /// 生成时间
+        /// 生成时间。
         /// </summary>
         [JsonProperty("issued_at", NullValueHandling = NullValueHandling.Ignore)]
         public string IssuedAt { get; set; }
@@ -52,10 +52,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public ProjectInfo Project { get; set; }
 
         /// <summary>
-        /// roles信息
+        /// roles信息。
         /// </summary>
         [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnscopedTokenInfoRoles> Roles { get; set; }
+        public List<ScopedTokenInfoRoles> Roles { get; set; }
 
         /// <summary>
         /// catalog信息

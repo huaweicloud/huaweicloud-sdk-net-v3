@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
 
         /// <summary>
-        /// 授权项，指对资源的具体操作权限，不超过100个。   &gt; - 格式为：服务名:资源类型:操作，例：vpc:ports:create。   &gt; - 服务名为产品名称，例如ecs、evs和vpc等，服务名仅支持小写。 资源类型和操作没有大小写，要求支持通配符号*，无需罗列全部授权项。   &gt; - 当自定义策略为委托自定义策略时，该字段值为：&#x60;&#x60;&#x60; \&quot;Action\&quot;: [\&quot;iam:agencies:assume\&quot;]&#x60;&#x60;&#x60;。
+        /// 授权项，指对资源的具体操作权限，不超过100个。 &gt; - 格式为：服务名:资源类型:操作，例：vpc:ports:create。 &gt; - 服务名为产品名称，例如ecs、evs和vpc等，服务名仅支持小写。 资源类型和操作没有大小写，要求支持通配符号*，无需罗列全部授权项。 &gt; - 当自定义策略为委托自定义策略时，该字段值为：&#x60;&#x60;&#x60; \&quot;Action\&quot;: [\&quot;iam:agencies:assume\&quot;]&#x60;&#x60;&#x60;。
         /// </summary>
         [JsonProperty("Action", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Action { get; set; }
@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public Object Condition { get; set; }
 
         /// <summary>
-        /// 资源。数组长度不超过10，每个字符串长度不超过128，规则如下：   &gt; - 可填 * 的五段式：&lt;service-name&gt;:&lt;region&gt;:&lt;account-id&gt;:&lt;resource-type&gt;:&lt;resource-path&gt;，例：\&quot;obs:*:*:bucket:*\&quot;。   &gt; - region字段为*或用户可访问的region。service必须存在且resource属于对应service。   &gt; - 当该自定义策略为委托自定义策略时，该字段类型为Object，值为：&#x60;&#x60;&#x60;\&quot;Resource\&quot;: {\&quot;uri\&quot;: [\&quot;/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\&quot;]}&#x60;&#x60;&#x60;。
+        /// 资源。数组长度不超过10，每个字符串长度不超过128，规则如下： &gt; - 可填 * 的五段式：&lt;service-name&gt;:&lt;region&gt;:&lt;account-id&gt;:&lt;resource-type&gt;:&lt;resource-path&gt;，例：\&quot;obs:*:*:bucket:*\&quot;。 &gt; - region字段为*或用户可访问的region。service必须存在且resource属于对应service。 &gt; - 当该自定义策略为委托自定义策略时，该字段类型为Object，值为：&#x60;&#x60;&#x60;\&quot;Resource\&quot;: {\&quot;uri\&quot;: [\&quot;/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\&quot;]}&#x60;&#x60;&#x60;。
         /// </summary>
         [JsonProperty("Resource", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Resource { get; set; }

@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class DeleteReservedInstanceByIdRequest 
+    public class UpdateTracingRequest 
     {
 
         /// <summary>
@@ -23,11 +23,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string FunctionUrn { get; set; }
 
         /// <summary>
-        /// 预留实例id。
+        /// 
         /// </summary>
-        [SDKProperty("instance_id", IsPath = true)]
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateTracingRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteReservedInstanceByIdRequest {\n");
+            sb.Append("class UpdateTracingRequest {\n");
             sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,13 +48,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteReservedInstanceByIdRequest);
+            return this.Equals(input as UpdateTracingRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteReservedInstanceByIdRequest input)
+        public bool Equals(UpdateTracingRequest input)
         {
             if (input == null)
                 return false;
@@ -66,9 +66,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FunctionUrn.Equals(input.FunctionUrn))
                 ) && 
                 (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -82,8 +82,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.FunctionUrn != null)
                     hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

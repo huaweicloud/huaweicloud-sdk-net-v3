@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public List<PolicyStatement> Statement { get; set; }
 
         /// <summary>
-        /// 权限版本号。   &gt; - 1.0：系统预置的角色。以服务为粒度，提供有限的服务相关角色用于授权。   &gt; - 1.1：策略。IAM最新提供的一种细粒度授权的能力，可以精确到具体服务的操作、资源以及请求条件等。
+        /// 权限版本号。 &gt; - 1.0：系统预置的角色。以服务为粒度，提供有限的服务相关角色用于授权。 &gt; - 1.1：策略。IAM最新提供的一种细粒度授权的能力，可以精确到具体服务的操作、资源以及请求条件等。
         /// </summary>
         [JsonProperty("Version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }

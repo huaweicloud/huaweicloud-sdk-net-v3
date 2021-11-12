@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。   
+        /// 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。 
         /// </summary>
         [JsonProperty("local", NullValueHandling = NullValueHandling.Ignore)]
         public List<Dictionary<string, RulesLocalAdditional>> Local { get; set; }

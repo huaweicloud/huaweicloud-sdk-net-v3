@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// 权限的显示模式。   &gt; - AX表示在domain层显示。   &gt; - XA表示在project层显示。   &gt; - AA表示在domain和project层均显示。   &gt; - XX表示在domain和project层均不显示。   &gt; - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
+        /// 权限的显示模式。 &gt; - AX表示在domain层显示。 &gt; - XA表示在project层显示。 &gt; - AA表示在domain和project层均显示。 &gt; - XX表示在domain和project层均不显示。 &gt; - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

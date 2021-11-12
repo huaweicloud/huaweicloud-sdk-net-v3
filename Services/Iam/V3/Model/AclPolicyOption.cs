@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public List<AllowAddressNetmasksOption> AllowAddressNetmasks { get; set; }
 
         /// <summary>
-        /// 允许访问的IP地址区间
+        /// 允许访问的IP地址区间。
         /// </summary>
         [JsonProperty("allow_ip_ranges", NullValueHandling = NullValueHandling.Ignore)]
         public List<AllowIpRangesOption> AllowIpRanges { get; set; }

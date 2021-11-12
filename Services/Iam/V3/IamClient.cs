@@ -59,6 +59,36 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 基于用户组为企业项目授权
+        /// </summary>
+        public AssociateRoleToGroupOnEnterpriseProjectResponse AssociateRoleToGroupOnEnterpriseProject(AssociateRoleToGroupOnEnterpriseProjectRequest associateRoleToGroupOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , associateRoleToGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("group_id" , associateRoleToGroupOnEnterpriseProjectRequest.GroupId.ToString());
+            urlParam.Add("role_id" , associateRoleToGroupOnEnterpriseProjectRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRoleToGroupOnEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<AssociateRoleToGroupOnEnterpriseProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 基于用户为企业项目授权
+        /// </summary>
+        public AssociateRoleToUserOnEnterpriseProjectResponse AssociateRoleToUserOnEnterpriseProject(AssociateRoleToUserOnEnterpriseProjectRequest associateRoleToUserOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , associateRoleToUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("user_id" , associateRoleToUserOnEnterpriseProjectRequest.UserId.ToString());
+            urlParam.Add("role_id" , associateRoleToUserOnEnterpriseProjectRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRoleToUserOnEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<AssociateRoleToUserOnEnterpriseProjectResponse>(response);
+        }
+        
+        /// <summary>
         /// 检查委托下是否具有所有项目服务权限
         /// </summary>
         public CheckAllProjectsPermissionForAgencyResponse CheckAllProjectsPermissionForAgency(CheckAllProjectsPermissionForAgencyRequest checkAllProjectsPermissionForAgencyRequest)
@@ -188,6 +218,20 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTokenWithIdTokenRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateTokenWithIdTokenResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取联邦认证unscoped token(OpenId Connect Id token方式)
+        /// </summary>
+        public CreateUnscopedTokenWithIdTokenResponse CreateUnscopedTokenWithIdToken(CreateUnscopedTokenWithIdTokenRequest createUnscopedTokenWithIdTokenRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("idp_id" , createUnscopedTokenWithIdTokenRequest.IdpId.ToString());
+            urlParam.Add("protocol_id" , createUnscopedTokenWithIdTokenRequest.ProtocolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/auth",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUnscopedTokenWithIdTokenRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateUnscopedTokenWithIdTokenResponse>(response);
         }
         
         /// <summary>
@@ -525,6 +569,18 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListEndpointsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<KeystoneListEndpointsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询联邦用户可以访问的账号列表
+        /// </summary>
+        public KeystoneListFederationDomainsResponse KeystoneListFederationDomains(KeystoneListFederationDomainsRequest keystoneListFederationDomainsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/domains",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListFederationDomainsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<KeystoneListFederationDomainsResponse>(response);
         }
         
         /// <summary>
@@ -1008,6 +1064,45 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询用户组关联的企业项目
+        /// </summary>
+        public ListEnterpriseProjectsForGroupResponse ListEnterpriseProjectsForGroup(ListEnterpriseProjectsForGroupRequest listEnterpriseProjectsForGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id" , listEnterpriseProjectsForGroupRequest.GroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/groups/{group_id}/enterprise-projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectsForGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListEnterpriseProjectsForGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询用户关联的企业项目
+        /// </summary>
+        public ListEnterpriseProjectsForUserResponse ListEnterpriseProjectsForUser(ListEnterpriseProjectsForUserRequest listEnterpriseProjectsForUserRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("user_id" , listEnterpriseProjectsForUserRequest.UserId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/users/{user_id}/enterprise-projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectsForUserRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListEnterpriseProjectsForUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询企业项目关联的用户组
+        /// </summary>
+        public ListGroupsForEnterpriseProjectResponse ListGroupsForEnterpriseProject(ListGroupsForEnterpriseProjectRequest listGroupsForEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , listGroupsForEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupsForEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListGroupsForEnterpriseProjectResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询项目服务中的委托权限
         /// </summary>
         public ListProjectPermissionsForAgencyResponse ListProjectPermissionsForAgency(ListProjectPermissionsForAgencyRequest listProjectPermissionsForAgencyRequest)
@@ -1019,6 +1114,47 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectPermissionsForAgencyRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListProjectPermissionsForAgencyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询企业项目已关联用户组的权限
+        /// </summary>
+        public ListRolesForGroupOnEnterpriseProjectResponse ListRolesForGroupOnEnterpriseProject(ListRolesForGroupOnEnterpriseProjectRequest listRolesForGroupOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , listRolesForGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("group_id" , listRolesForGroupOnEnterpriseProjectRequest.GroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRolesForGroupOnEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRolesForGroupOnEnterpriseProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询企业项目直接关联用户的权限
+        /// </summary>
+        public ListRolesForUserOnEnterpriseProjectResponse ListRolesForUserOnEnterpriseProject(ListRolesForUserOnEnterpriseProjectRequest listRolesForUserOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , listRolesForUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("user_id" , listRolesForUserOnEnterpriseProjectRequest.UserId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRolesForUserOnEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRolesForUserOnEnterpriseProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询企业项目直接关联用户
+        /// </summary>
+        public ListUsersForEnterpriseProjectResponse ListUsersForEnterpriseProject(ListUsersForEnterpriseProjectRequest listUsersForEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , listUsersForEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersForEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListUsersForEnterpriseProjectResponse>(response);
         }
         
         /// <summary>
@@ -1064,6 +1200,36 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeProjectPermissionFromAgencyRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<RemoveProjectPermissionFromAgencyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除企业项目关联用户组的权限
+        /// </summary>
+        public RevokeRoleFromGroupOnEnterpriseProjectResponse RevokeRoleFromGroupOnEnterpriseProject(RevokeRoleFromGroupOnEnterpriseProjectRequest revokeRoleFromGroupOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , revokeRoleFromGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("group_id" , revokeRoleFromGroupOnEnterpriseProjectRequest.GroupId.ToString());
+            urlParam.Add("role_id" , revokeRoleFromGroupOnEnterpriseProjectRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRoleFromGroupOnEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<RevokeRoleFromGroupOnEnterpriseProjectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除企业项目直接关联用户的权限
+        /// </summary>
+        public RevokeRoleFromUserOnEnterpriseProjectResponse RevokeRoleFromUserOnEnterpriseProject(RevokeRoleFromUserOnEnterpriseProjectRequest revokeRoleFromUserOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id" , revokeRoleFromUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            urlParam.Add("user_id" , revokeRoleFromUserOnEnterpriseProjectRequest.UserId.ToString());
+            urlParam.Add("role_id" , revokeRoleFromUserOnEnterpriseProjectRequest.RoleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRoleFromUserOnEnterpriseProjectRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<RevokeRoleFromUserOnEnterpriseProjectResponse>(response);
         }
         
         /// <summary>

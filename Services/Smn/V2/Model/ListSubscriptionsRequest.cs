@@ -30,21 +30,21 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 协议名称, 枚举值：http,https,sms,email,functionstage,dms,application
+        /// 协议名称， 枚举值：http、https、sms、email、functionstage、dms、application。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 状态：0-未确认，1-已确认，2-不需要确认，3-已取消确认，4-已经删除
+        /// 状态。 0：未确认 1：已确认 2：不需要确认 3：已取消确认 4：已经删除。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
         /// <summary>
-        /// 订阅终端
+        /// 订阅终端。
         /// </summary>
         [SDKProperty("endpoint", IsQuery = true)]
         [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]

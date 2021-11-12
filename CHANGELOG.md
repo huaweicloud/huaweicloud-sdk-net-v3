@@ -1,3 +1,60 @@
+# 3.0.66 2021-11-12
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the request parameter `customSan` to the interface `UpdateNode`.
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the name of the response parameter of the interface `ListAuditLogs`: `total_count` -> `total_record`.
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameter `results` to the interface `ShowJob`.
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameter `confidence` to the interface `RecognizeGeneralTable`.
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+    - Support the interface `CreateSystemIssueV4`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the response parameter `sequence` to the interface `ListIrs`.
+    - Add the request parameter `status_id` to the interface `BatchUpdateIrs`.
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+    - Support interfaces(V3): `AddVpcExtendCidr`、`RemoveVpcExtendCidr`、`ListVpcs`、`ShowVpc`
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
 # 3.0.65 2021-10-25
 
 ### HuaweiCloud SDK DNS

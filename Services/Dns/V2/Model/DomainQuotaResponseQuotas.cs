@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 资源类型。
         /// </summary>
         [JsonProperty("quota_key", NullValueHandling = NullValueHandling.Ignore)]
         public string QuotaKey { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源配额的最大值。
         /// </summary>
         [JsonProperty("quota_limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? QuotaLimit { get; set; }
 
         /// <summary>
-        /// 
+        /// 配额已使用数量。
         /// </summary>
         [JsonProperty("used", NullValueHandling = NullValueHandling.Ignore)]
         public int? Used { get; set; }
 
         /// <summary>
-        /// 
+        /// 配额统计单位，取固定值“count”。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }

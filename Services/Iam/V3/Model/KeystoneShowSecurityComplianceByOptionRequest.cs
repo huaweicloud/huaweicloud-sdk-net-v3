@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     public class KeystoneShowSecurityComplianceByOptionRequest 
     {
         /// <summary>
-        /// 查询条件。该字段内容为：password_regex或password_regex_description。    password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
+        /// 查询条件。该字段内容为：password_regex或password_regex_description。  password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
         /// </summary>
-        /// <value>查询条件。该字段内容为：password_regex或password_regex_description。    password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。</value>
+        /// <value>查询条件。该字段内容为：password_regex或password_regex_description。  password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。</value>
         [JsonConverter(typeof(EnumClassConverter<OptionEnum>))]
         public class OptionEnum
         {
@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 查询条件。该字段内容为：password_regex或password_regex_description。    password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
+        /// 查询条件。该字段内容为：password_regex或password_regex_description。  password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
         /// </summary>
         [SDKProperty("option", IsPath = true)]
         [JsonProperty("option", NullValueHandling = NullValueHandling.Ignore)]

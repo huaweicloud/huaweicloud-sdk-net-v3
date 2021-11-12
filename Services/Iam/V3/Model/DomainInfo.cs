@@ -10,19 +10,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// domain信息
+    /// domain信息。
     /// </summary>
     public class DomainInfo 
     {
 
         /// <summary>
-        /// 租户id
+        /// 租户id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 租户name
+        /// 租户name。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

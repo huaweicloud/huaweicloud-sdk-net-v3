@@ -572,22 +572,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public MountConfig MountConfig { get; set; }
 
         /// <summary>
-        /// 依赖id列表
-        /// </summary>
-        [JsonProperty("depend_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> DependList { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("strategy_config", NullValueHandling = NullValueHandling.Ignore)]
         public StrategyConfig StrategyConfig { get; set; }
-
-        /// <summary>
-        /// 函数扩展配置。
-        /// </summary>
-        [JsonProperty("extend_config", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExtendConfig { get; set; }
 
         /// <summary>
         /// 函数依赖代码包列表。
@@ -636,6 +624,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 是否允许动态内存配置
+        /// </summary>
+        [JsonProperty("enable_dynamic_memory", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableDynamicMemory { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("function_async_config", NullValueHandling = NullValueHandling.Ignore)]
+        public FunctionAsyncConfig FunctionAsyncConfig { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -671,9 +671,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
-            sb.Append("  dependList: ").Append(DependList).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
-            sb.Append("  extendConfig: ").Append(ExtendConfig).Append("\n");
             sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
@@ -682,6 +680,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
+            sb.Append("  functionAsyncConfig: ").Append(FunctionAsyncConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -839,20 +839,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.MountConfig.Equals(input.MountConfig))
                 ) && 
                 (
-                    this.DependList == input.DependList ||
-                    this.DependList != null &&
-                    input.DependList != null &&
-                    this.DependList.SequenceEqual(input.DependList)
-                ) && 
-                (
                     this.StrategyConfig == input.StrategyConfig ||
                     (this.StrategyConfig != null &&
                     this.StrategyConfig.Equals(input.StrategyConfig))
-                ) && 
-                (
-                    this.ExtendConfig == input.ExtendConfig ||
-                    (this.ExtendConfig != null &&
-                    this.ExtendConfig.Equals(input.ExtendConfig))
                 ) && 
                 (
                     this.Dependencies == input.Dependencies ||
@@ -894,6 +883,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.EnableDynamicMemory == input.EnableDynamicMemory ||
+                    (this.EnableDynamicMemory != null &&
+                    this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
+                ) && 
+                (
+                    this.FunctionAsyncConfig == input.FunctionAsyncConfig ||
+                    (this.FunctionAsyncConfig != null &&
+                    this.FunctionAsyncConfig.Equals(input.FunctionAsyncConfig))
                 );
         }
 
@@ -959,12 +958,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
                 if (this.MountConfig != null)
                     hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
-                if (this.DependList != null)
-                    hashCode = hashCode * 59 + this.DependList.GetHashCode();
                 if (this.StrategyConfig != null)
                     hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
-                if (this.ExtendConfig != null)
-                    hashCode = hashCode * 59 + this.ExtendConfig.GetHashCode();
                 if (this.Dependencies != null)
                     hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 if (this.InitializerHandler != null)
@@ -981,6 +976,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.EnableDynamicMemory != null)
+                    hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
+                if (this.FunctionAsyncConfig != null)
+                    hashCode = hashCode * 59 + this.FunctionAsyncConfig.GetHashCode();
                 return hashCode;
             }
         }

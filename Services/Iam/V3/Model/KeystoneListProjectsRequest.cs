@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 如果查询自己创建的项目，则此处应填为所属区域的项目ID。    如果查询的是系统内置项目，如cn-north-4，则此处应填为账号ID。    获取项目ID和账号ID，请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+        /// 如果查询自己创建的项目，则此处应填为所属区域的项目ID。  如果查询的是系统内置项目，如cn-north-4，则此处应填为账号ID。  获取项目ID和账号ID，请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
         /// </summary>
         [SDKProperty("parent_id", IsQuery = true)]
         [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]

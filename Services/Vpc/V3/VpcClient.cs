@@ -137,6 +137,18 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 迁移辅助弹性网卡
+        /// </summary>
+        public MigrateSubNetworkInterfaceResponse MigrateSubNetworkInterface(MigrateSubNetworkInterfaceRequest migrateSubNetworkInterfaceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/migrate",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateSubNetworkInterfaceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<MigrateSubNetworkInterfaceResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询安全组
         /// </summary>
         public ShowSecurityGroupResponse ShowSecurityGroup(ShowSecurityGroupRequest showSecurityGroupRequest)
@@ -211,6 +223,171 @@ namespace HuaweiCloud.SDK.Vpc.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubNetworkInterfaceRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateSubNetworkInterfaceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建地址组
+        /// </summary>
+        public CreateAddressGroupResponse CreateAddressGroup(CreateAddressGroupRequest createAddressGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAddressGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateAddressGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除地址组
+        /// </summary>
+        public DeleteAddressGroupResponse DeleteAddressGroup(DeleteAddressGroupRequest deleteAddressGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("address_group_id" , deleteAddressGroupRequest.AddressGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddressGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteAddressGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 强制删除地址组
+        /// </summary>
+        public DeleteIpAddressGroupForceResponse DeleteIpAddressGroupForce(DeleteIpAddressGroupForceRequest deleteIpAddressGroupForceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("address_group_id" , deleteIpAddressGroupForceRequest.AddressGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}/force",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpAddressGroupForceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteIpAddressGroupForceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询地址组列表
+        /// </summary>
+        public ListAddressGroupResponse ListAddressGroup(ListAddressGroupRequest listAddressGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddressGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAddressGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询地址组
+        /// </summary>
+        public ShowAddressGroupResponse ShowAddressGroup(ShowAddressGroupRequest showAddressGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("address_group_id" , showAddressGroupRequest.AddressGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAddressGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowAddressGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新地址组
+        /// </summary>
+        public UpdateAddressGroupResponse UpdateAddressGroup(UpdateAddressGroupRequest updateAddressGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("address_group_id" , updateAddressGroupRequest.AddressGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddressGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateAddressGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 添加VPC扩展网段
+        /// </summary>
+        public AddVpcExtendCidrResponse AddVpcExtendCidr(AddVpcExtendCidrRequest addVpcExtendCidrRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_id" , addVpcExtendCidrRequest.VpcId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}/add-extend-cidr",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addVpcExtendCidrRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<AddVpcExtendCidrResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建VPC
+        /// </summary>
+        public CreateVpcResponse CreateVpc(CreateVpcRequest createVpcRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVpcRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVpcResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除VPC
+        /// </summary>
+        public DeleteVpcResponse DeleteVpc(DeleteVpcRequest deleteVpcRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_id" , deleteVpcRequest.VpcId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteVpcResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询VPC列表
+        /// </summary>
+        public ListVpcsResponse ListVpcs(ListVpcsRequest listVpcsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListVpcsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 移除VPC扩展网段
+        /// </summary>
+        public RemoveVpcExtendCidrResponse RemoveVpcExtendCidr(RemoveVpcExtendCidrRequest removeVpcExtendCidrRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_id" , removeVpcExtendCidrRequest.VpcId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}/remove-extend-cidr",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeVpcExtendCidrRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<RemoveVpcExtendCidrResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询VPC详情
+        /// </summary>
+        public ShowVpcResponse ShowVpc(ShowVpcRequest showVpcRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_id" , showVpcRequest.VpcId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVpcResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新VPC
+        /// </summary>
+        public UpdateVpcResponse UpdateVpc(UpdateVpcRequest updateVpcRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_id" , updateVpcRequest.VpcId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVpcRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateVpcResponse>(response);
         }
         
     }

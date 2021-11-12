@@ -372,6 +372,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 细粒度权限用户创建工作项
+        /// </summary>
+        public CreateSystemIssueV4Response CreateSystemIssueV4(CreateSystemIssueV4Request createSystemIssueV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , createSystemIssueV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/system/issue",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSystemIssueV4Request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateSystemIssueV4Response>(response);
+        }
+        
+        /// <summary>
         /// 删除工作项
         /// </summary>
         public DeleteIssueV4Response DeleteIssueV4(DeleteIssueV4Request deleteIssueV4Request)
@@ -558,6 +571,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIterationV4Request);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateIterationV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 上传图片
+        /// </summary>
+        public UploadIssueImgResponse UploadIssueImg(UploadIssueImgRequest uploadIssueImgRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , uploadIssueImgRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/img",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadIssueImgRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<UploadIssueImgResponse>(response);
         }
         
     }

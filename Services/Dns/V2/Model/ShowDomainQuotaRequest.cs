@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 账号ID。
+        /// 租户ID。
         /// </summary>
         [SDKProperty("domain_id", IsQuery = true)]
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]

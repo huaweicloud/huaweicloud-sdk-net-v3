@@ -572,12 +572,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public StrategyConfig StrategyConfig { get; set; }
 
         /// <summary>
-        /// 函数扩展配置。
-        /// </summary>
-        [JsonProperty("extend_config", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExtendConfig { get; set; }
-
-        /// <summary>
         /// 函数依赖代码包列表。
         /// </summary>
         [JsonProperty("dependencies", NullValueHandling = NullValueHandling.Ignore)]
@@ -624,6 +618,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 是否启动动态内存配置
+        /// </summary>
+        [JsonProperty("enable_dynamic_memory", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableDynamicMemory { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -659,7 +659,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
-            sb.Append("  extendConfig: ").Append(ExtendConfig).Append("\n");
             sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
@@ -668,6 +667,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -825,11 +825,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.StrategyConfig.Equals(input.StrategyConfig))
                 ) && 
                 (
-                    this.ExtendConfig == input.ExtendConfig ||
-                    (this.ExtendConfig != null &&
-                    this.ExtendConfig.Equals(input.ExtendConfig))
-                ) && 
-                (
                     this.Dependencies == input.Dependencies ||
                     this.Dependencies != null &&
                     input.Dependencies != null &&
@@ -869,6 +864,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.EnableDynamicMemory == input.EnableDynamicMemory ||
+                    (this.EnableDynamicMemory != null &&
+                    this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
                 );
         }
 
@@ -934,8 +934,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
                 if (this.StrategyConfig != null)
                     hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
-                if (this.ExtendConfig != null)
-                    hashCode = hashCode * 59 + this.ExtendConfig.GetHashCode();
                 if (this.Dependencies != null)
                     hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 if (this.InitializerHandler != null)
@@ -952,6 +950,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.EnableDynamicMemory != null)
+                    hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
                 return hashCode;
             }
         }

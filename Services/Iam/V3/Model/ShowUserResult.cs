@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string LastLoginTime { get; set; }
 
         /// <summary>
-        /// IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
+        /// IAM用户密码强度。结果为Low/Middle/High/None，分别表示密码强度低/中/高/无。
         /// </summary>
         [JsonProperty("pwd_strength", NullValueHandling = NullValueHandling.Ignore)]
         public string PwdStrength { get; set; }

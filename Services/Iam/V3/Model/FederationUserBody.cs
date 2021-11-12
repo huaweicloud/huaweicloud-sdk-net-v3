@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// 联邦用户信息
+    /// 联邦用户信息。
     /// </summary>
     public class FederationUserBody 
     {
@@ -28,13 +28,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public DomainInfo Domain { get; set; }
 
         /// <summary>
-        /// user id
+        /// user id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// user name
+        /// user name。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

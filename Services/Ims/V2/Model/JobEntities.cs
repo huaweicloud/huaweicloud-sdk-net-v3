@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("process_percent", NullValueHandling = NullValueHandling.Ignore)]
         public double? ProcessPercent { get; set; }
 
+        /// <summary>
+        /// 批量任务执行结果
+        /// </summary>
+        [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
+        public List<JobEntitiesResult> Results { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  currentTask: ").Append(CurrentTask).Append("\n");
             sb.Append("  imageName: ").Append(ImageName).Append("\n");
             sb.Append("  processPercent: ").Append(ProcessPercent).Append("\n");
+            sb.Append("  results: ").Append(Results).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.ProcessPercent == input.ProcessPercent ||
                     (this.ProcessPercent != null &&
                     this.ProcessPercent.Equals(input.ProcessPercent))
+                ) && 
+                (
+                    this.Results == input.Results ||
+                    this.Results != null &&
+                    input.Results != null &&
+                    this.Results.SequenceEqual(input.Results)
                 );
         }
 
@@ -110,6 +123,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.ImageName.GetHashCode();
                 if (this.ProcessPercent != null)
                     hashCode = hashCode * 59 + this.ProcessPercent.GetHashCode();
+                if (this.Results != null)
+                    hashCode = hashCode * 59 + this.Results.GetHashCode();
                 return hashCode;
             }
         }

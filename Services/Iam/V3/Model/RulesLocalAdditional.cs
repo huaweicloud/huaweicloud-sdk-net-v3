@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// user：联邦用户在本系统中的用户名称。   &#x60;&#x60;&#x60; \&quot;user\&quot;:{\&quot;name\&quot;:\&quot;{0}\&quot;} &#x60;&#x60;&#x60;    group：联邦用户在本系统中所属用户组。   &#x60;&#x60;&#x60; \&quot;group\&quot;:{\&quot;name\&quot;:\&quot;0cd5e9\&quot;} &#x60;&#x60;&#x60;
+        /// user：联邦用户在本系统中的用户名称。 &#x60;&#x60;&#x60; \&quot;user\&quot;:{\&quot;name\&quot;:\&quot;{0}\&quot;} &#x60;&#x60;&#x60;  group：联邦用户在本系统中所属用户组。 &#x60;&#x60;&#x60; \&quot;group\&quot;:{\&quot;name\&quot;:\&quot;0cd5e9\&quot;} &#x60;&#x60;&#x60;
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

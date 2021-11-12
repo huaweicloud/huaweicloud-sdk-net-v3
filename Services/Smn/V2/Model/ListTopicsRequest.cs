@@ -30,21 +30,21 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 企业项目id, 默认企业项目id为0
+        /// 企业项目id，默认企业项目id为0。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 检索的主题名称，完全匹配
+        /// 检索的主题名称，完全匹配。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 检索的主题名称，模糊匹配，按照startwith模式进行匹配
+        /// 检索的主题名称，模糊匹配，按照startwith模式进行匹配。
         /// </summary>
         [SDKProperty("fuzzy_name", IsQuery = true)]
         [JsonProperty("fuzzy_name", NullValueHandling = NullValueHandling.Ignore)]

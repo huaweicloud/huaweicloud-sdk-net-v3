@@ -156,20 +156,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 根据预留实例ID删除对应预留实例
-        /// </summary>
-        public DeleteReservedInstanceByIdResponse DeleteReservedInstanceById(DeleteReservedInstanceByIdRequest deleteReservedInstanceByIdRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , deleteReservedInstanceByIdRequest.FunctionUrn.ToString());
-            urlParam.Add("instance_id" , deleteReservedInstanceByIdRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReservedInstanceByIdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            return JsonUtils.DeSerializeNull<DeleteReservedInstanceByIdResponse>(response);
-        }
-        
-        /// <summary>
         /// 删除函数版本别名。
         /// </summary>
         public DeleteVersionAliasResponse DeleteVersionAlias(DeleteVersionAliasRequest deleteVersionAliasRequest)
@@ -429,6 +415,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取函数调用链配置
+        /// </summary>
+        public ShowTracingResponse ShowTracing(ShowTracingRequest showTracingRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , showTracingRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/tracing",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTracingRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowTracingResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取函数版本的指定别名信息。
         /// </summary>
         public ShowVersionAliasResponse ShowVersionAlias(ShowVersionAliasRequest showVersionAliasRequest)
@@ -519,6 +518,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionReservedInstancesRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateFunctionReservedInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改函数调用链配置
+        /// </summary>
+        public UpdateTracingResponse UpdateTracing(UpdateTracingRequest updateTracingRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , updateTracingRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/tracing",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTracingRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateTracingResponse>(response);
         }
         
         /// <summary>

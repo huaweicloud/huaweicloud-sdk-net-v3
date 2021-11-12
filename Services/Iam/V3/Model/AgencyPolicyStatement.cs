@@ -230,7 +230,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
 
         /// <summary>
-        /// 授权项，指对资源的具体操作权限。   &gt; - 当自定义策略为委托自定义策略时，该字段值为：&#x60;&#x60;&#x60; \&quot;Action\&quot;: [\&quot;iam:agencies:assume\&quot;]&#x60;&#x60;&#x60;。
+        /// 授权项，指对资源的具体操作权限。 &gt; - 当自定义策略为委托自定义策略时，该字段值为：&#x60;&#x60;&#x60; \&quot;Action\&quot;: [\&quot;iam:agencies:assume\&quot;]&#x60;&#x60;&#x60;。
         /// </summary>
         [JsonProperty("Action", NullValueHandling = NullValueHandling.Ignore)]
         public List<ActionEnum> Action { get; set; }

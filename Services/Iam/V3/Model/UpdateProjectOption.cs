@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     public class UpdateProjectOption 
     {
         /// <summary>
-        /// 项目的状态信息，参数的值为\&quot;suspended\&quot;或\&quot;normal\&quot;。   - status值为\&quot;suspended\&quot;时，会将项目设置为冻结状态。   - status值为\&quot;normal\&quot;时，会将项目设置为正常（解冻）状态。
+        /// 项目的状态信息，参数的值为\&quot;suspended\&quot;或\&quot;normal\&quot;。 - status值为\&quot;suspended\&quot;时，会将项目设置为冻结状态。 - status值为\&quot;normal\&quot;时，会将项目设置为正常（解冻）状态。
         /// </summary>
-        /// <value>项目的状态信息，参数的值为\&quot;suspended\&quot;或\&quot;normal\&quot;。   - status值为\&quot;suspended\&quot;时，会将项目设置为冻结状态。   - status值为\&quot;normal\&quot;时，会将项目设置为正常（解冻）状态。</value>
+        /// <value>项目的状态信息，参数的值为\&quot;suspended\&quot;或\&quot;normal\&quot;。 - status值为\&quot;suspended\&quot;时，会将项目设置为冻结状态。 - status值为\&quot;normal\&quot;时，会将项目设置为正常（解冻）状态。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
 
 
         /// <summary>
-        /// 项目的状态信息，参数的值为\&quot;suspended\&quot;或\&quot;normal\&quot;。   - status值为\&quot;suspended\&quot;时，会将项目设置为冻结状态。   - status值为\&quot;normal\&quot;时，会将项目设置为正常（解冻）状态。
+        /// 项目的状态信息，参数的值为\&quot;suspended\&quot;或\&quot;normal\&quot;。 - status值为\&quot;suspended\&quot;时，会将项目设置为冻结状态。 - status值为\&quot;normal\&quot;时，会将项目设置为正常（解冻）状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

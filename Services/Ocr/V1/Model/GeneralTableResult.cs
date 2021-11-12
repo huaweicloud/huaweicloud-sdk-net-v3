@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("words_region_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<WordsRegionList> WordsRegionList { get; set; }
 
+        /// <summary>
+        /// 表格图像转换为excel的base64编码，图像中的文字和表格按位置写入excel。对返回的excel编码可用base64.b64decode解码并保存为.xlsx文件。 
+        /// </summary>
+        [JsonProperty("excel", NullValueHandling = NullValueHandling.Ignore)]
+        public string Excel { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class GeneralTableResult {\n");
             sb.Append("  wordsRegionCount: ").Append(WordsRegionCount).Append("\n");
             sb.Append("  wordsRegionList: ").Append(WordsRegionList).Append("\n");
+            sb.Append("  excel: ").Append(Excel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,6 +75,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.WordsRegionList != null &&
                     input.WordsRegionList != null &&
                     this.WordsRegionList.SequenceEqual(input.WordsRegionList)
+                ) && 
+                (
+                    this.Excel == input.Excel ||
+                    (this.Excel != null &&
+                    this.Excel.Equals(input.Excel))
                 );
         }
 
@@ -83,6 +95,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.WordsRegionCount.GetHashCode();
                 if (this.WordsRegionList != null)
                     hashCode = hashCode * 59 + this.WordsRegionList.GetHashCode();
+                if (this.Excel != null)
+                    hashCode = hashCode * 59 + this.Excel.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 登录提示信息，取值范围[0,240]。
+        /// 账号在该值设置的有效期内未使用，则被停用。
         /// </summary>
         [JsonProperty("account_validity_period", NullValueHandling = NullValueHandling.Ignore)]
         public int? AccountValidityPeriod { get; set; }

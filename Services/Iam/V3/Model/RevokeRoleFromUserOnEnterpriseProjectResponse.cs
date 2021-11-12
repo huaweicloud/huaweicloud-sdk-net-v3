@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class DeleteReservedInstanceByIdResponse : SdkResponse
+    public class RevokeRoleFromUserOnEnterpriseProjectResponse : SdkResponse
     {
 
 

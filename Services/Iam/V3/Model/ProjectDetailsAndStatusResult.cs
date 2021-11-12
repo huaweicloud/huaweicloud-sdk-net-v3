@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public bool? IsDomain { get; set; }
 
         /// <summary>
-        /// 如果查询自己创建的项目，则此处返回所属区域的项目ID。    如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。  
+        /// 如果查询自己创建的项目，则此处返回所属区域的项目ID。  如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。
         /// </summary>
         [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentId { get; set; }

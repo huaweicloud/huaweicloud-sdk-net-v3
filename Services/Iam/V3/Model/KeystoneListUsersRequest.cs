@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 密码过期时间，格式为：password_expires_at&#x3D;{operator}:{timestamp}。timestamp格式为：YYYY-MM-DDTHH:mm:ssZ。示例：    &#x60;&#x60;&#x60; password_expires_at&#x3D;lt:2016-12-08T22:02:00Z &#x60;&#x60;&#x60;   &gt; - operator取值范围：lt，lte，gt，gte，eq，neq。   &gt; - lt：过期时间小于timestamp。   &gt; - lte：过期时间小于等于timestamp。   &gt; - gt：过期时间大于timestamp。   &gt; - gte：过期时间大于等于timestamp。   &gt; - eq：过期时间等于timestamp。   &gt; - neq：过期时间不等于timestamp。
+        /// 密码过期时间，格式为：password_expires_at&#x3D;{operator}:{timestamp}。timestamp格式为：YYYY-MM-DDTHH:mm:ssZ。示例：  &#x60;&#x60;&#x60; password_expires_at&#x3D;lt:2016-12-08T22:02:00Z &#x60;&#x60;&#x60; &gt; - operator取值范围：lt，lte，gt，gte，eq，neq。 &gt; - lt：过期时间小于timestamp。 &gt; - lte：过期时间小于等于timestamp。 &gt; - gt：过期时间大于timestamp。 &gt; - gte：过期时间大于等于timestamp。 &gt; - eq：过期时间等于timestamp。 &gt; - neq：过期时间不等于timestamp。
         /// </summary>
         [SDKProperty("password_expires_at", IsQuery = true)]
         [JsonProperty("password_expires_at", NullValueHandling = NullValueHandling.Ignore)]
