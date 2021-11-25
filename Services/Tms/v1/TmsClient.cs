@@ -75,6 +75,18 @@ namespace HuaweiCloud.SDK.Tms.v1
         }
         
         /// <summary>
+        /// 查询标签配额
+        /// </summary>
+        public ShowTagQuotaResponse ShowTagQuota(ShowTagQuotaRequest showTagQuotaRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/tms/quotas",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagQuotaRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowTagQuotaResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改预定义标签
         /// </summary>
         public UpdatePredefineTagsResponse UpdatePredefineTags(UpdatePredefineTagsRequest updatePredefineTagsRequest)

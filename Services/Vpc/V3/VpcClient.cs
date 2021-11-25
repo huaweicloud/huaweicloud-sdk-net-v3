@@ -231,7 +231,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public CreateAddressGroupResponse CreateAddressGroup(CreateAddressGroupRequest createAddressGroupRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAddressGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateAddressGroupResponse>(response);
@@ -244,7 +244,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("address_group_id" , deleteAddressGroupRequest.AddressGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddressGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteAddressGroupResponse>(response);
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("address_group_id" , deleteIpAddressGroupForceRequest.AddressGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}/force",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}/force",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpAddressGroupForceRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteIpAddressGroupForceResponse>(response);
@@ -269,7 +269,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public ListAddressGroupResponse ListAddressGroup(ListAddressGroupRequest listAddressGroupRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddressGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListAddressGroupResponse>(response);
@@ -282,7 +282,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("address_group_id" , showAddressGroupRequest.AddressGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAddressGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowAddressGroupResponse>(response);
@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("address_group_id" , updateAddressGroupRequest.AddressGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address_groups/{address_group_id}",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddressGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateAddressGroupResponse>(response);

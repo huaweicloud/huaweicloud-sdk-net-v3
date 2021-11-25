@@ -359,6 +359,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+        /// </summary>
+        [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string Alias { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -377,6 +383,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  publicIpv6Address: ").Append(PublicIpv6Address).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  alias: ").Append(Alias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -447,6 +454,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Alias == input.Alias ||
+                    (this.Alias != null &&
+                    this.Alias.Equals(input.Alias))
                 );
         }
 
@@ -478,6 +490,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Alias != null)
+                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
                 return hashCode;
             }
         }

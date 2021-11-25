@@ -241,9 +241,9 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         }
 
         /// <summary>
-        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）
+        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回）
         /// </summary>
-        /// <value>结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）</value>
+        /// <value>结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回）</value>
         [JsonConverter(typeof(EnumClassConverter<OutputTypeEnum>))]
         public class OutputTypeEnum
         {
@@ -404,7 +404,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（输出评判返回）
+        /// 结果返回类型：sysout（标准输出）、fileout（以文件形式输出）、imgout（以图片形式输出）、caseout（用例运行返回）、judgeout（用例对比返回）
         /// </summary>
         [JsonProperty("output_type", NullValueHandling = NullValueHandling.Ignore)]
         public OutputTypeEnum OutputType { get; set; }

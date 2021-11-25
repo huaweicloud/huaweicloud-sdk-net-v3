@@ -165,6 +165,18 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Actions { get; set; }
 
+        /// <summary>
+        /// 订单ID，仅包周期场景返回。
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 标签列表。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagResponse> Tags { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -198,6 +210,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -345,6 +359,17 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Actions != null &&
                     input.Actions != null &&
                     this.Actions.SequenceEqual(input.Actions)
+                ) && 
+                (
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -406,6 +431,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
                 if (this.Actions != null)
                     hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

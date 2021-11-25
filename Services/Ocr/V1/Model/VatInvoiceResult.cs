@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票 
+        /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - roll：增值税普通发票（卷票） 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

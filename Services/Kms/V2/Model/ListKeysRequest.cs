@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ocr.V1.Model
+namespace HuaweiCloud.SDK.Kms.V2.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class ExtractedData 
+    public class ListKeysRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("math_info", NullValueHandling = NullValueHandling.Ignore)]
-        public MathInfo MathInfo { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public ListKeysRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ExtractedData {\n");
-            sb.Append("  mathInfo: ").Append(MathInfo).Append("\n");
+            sb.Append("class ListKeysRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +40,22 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ExtractedData);
+            return this.Equals(input as ListKeysRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ExtractedData input)
+        public bool Equals(ListKeysRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.MathInfo == input.MathInfo ||
-                    (this.MathInfo != null &&
-                    this.MathInfo.Equals(input.MathInfo))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MathInfo != null)
-                    hashCode = hashCode * 59 + this.MathInfo.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

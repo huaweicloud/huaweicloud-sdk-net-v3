@@ -1,3 +1,61 @@
+# 3.0.67 2021-11-25
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ShowCluster`新增响应参数`platformVersion`
+    - 接口`ListClusters`的请求参数`status`新增枚举值`RollingBack`和`RollbackFailed`
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreateInstance`、`ListInstances`新增请求参数`tags`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreatePrePaidPublicip`、`CreatePublicip`新增请求和响应参数`alias`
+    - 接口`ShowPublicip`、`UpdatePublicip`新增响应参数`alias`
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+    - 支持V2版本的接口
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`RecognizeHandwriting`移除响应参数`extracted_data`
+
+### HuaweiCloud SDK TMS
+
+- _新增特性_
+    - 支持接口`ShowTagQuota`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
 # 3.0.66 2021-11-12
 
 ### HuaweiCloud SDK CCE

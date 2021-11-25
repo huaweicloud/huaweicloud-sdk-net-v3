@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
         /// 导入参数到期时间，时间戳，即从1970年1月1日至该时间的总秒数。
         /// </summary>
         [JsonProperty("expiration_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpirationTime { get; set; }
+        public long? ExpirationTime { get; set; }
 
         /// <summary>
         /// 加密密钥材料的公钥，base64格式。

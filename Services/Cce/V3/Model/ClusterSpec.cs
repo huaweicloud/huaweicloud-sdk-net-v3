@@ -368,6 +368,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Version { get; set; }
 
         /// <summary>
+        /// CCE集群平台版本号，仅供查看，不支持创建指定，集群创建时自动选择对应集群版本的最新平台版本。
+        /// </summary>
+        [JsonProperty("platformVersion", NullValueHandling = NullValueHandling.Ignore)]
+        public string PlatformVersion { get; set; }
+
+        /// <summary>
         /// 集群描述，对于集群使用目的的描述，可根据实际情况自定义，默认为空。集群创建成功后可通过接口[[更新指定的集群](https://support.huaweicloud.com/api-cce/cce_02_0240.html)](tag:hws)[[更新指定的集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0240.html)](tag:hws_hk)来做出修改，也可在CCE控制台中对应集群的“集群详情”下的“描述”处进行修改。仅支持utf-8编码。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -462,6 +468,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  platformVersion: ").Append(PlatformVersion).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  ipv6enable: ").Append(Ipv6enable).Append("\n");
             sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
@@ -516,6 +523,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.PlatformVersion == input.PlatformVersion ||
+                    (this.PlatformVersion != null &&
+                    this.PlatformVersion.Equals(input.PlatformVersion))
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -607,6 +619,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.PlatformVersion != null)
+                    hashCode = hashCode * 59 + this.PlatformVersion.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Ipv6enable != null)

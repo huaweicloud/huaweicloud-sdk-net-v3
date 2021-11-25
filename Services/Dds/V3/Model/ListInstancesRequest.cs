@@ -295,6 +295,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 根据实例标签键值对进行查询。{key}表示标签键，{value}表示标签值，最多包含20组。key不可以为空或重复，value可以为空。如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。
+        /// </summary>
+        [SDKProperty("tags", IsQuery = true)]
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tags { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -311,6 +318,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -371,6 +379,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    (this.Tags != null &&
+                    this.Tags.Equals(input.Tags))
                 );
         }
 
@@ -398,6 +411,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

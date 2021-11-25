@@ -28,10 +28,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public InsurancePolicyDetail BeneficiaryType { get; set; }
 
         /// <summary>
-        /// 受益顺序。 
+        /// 
         /// </summary>
         [JsonProperty("beneficiary_order", NullValueHandling = NullValueHandling.Ignore)]
-        public Object BeneficiaryOrder { get; set; }
+        public InsurancePolicyDetail BeneficiaryOrder { get; set; }
 
         /// <summary>
         /// 

@@ -129,6 +129,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
+        /// <summary>
+        /// 标签列表，与请求参数相同。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagWithKeyValue> Tags { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -156,6 +162,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -272,6 +279,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -321,6 +334,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

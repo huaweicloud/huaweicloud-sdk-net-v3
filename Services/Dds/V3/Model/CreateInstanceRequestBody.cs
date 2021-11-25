@@ -117,6 +117,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("server_group_policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ServerGroupPolicies { get; set; }
 
+        /// <summary>
+        /// 标签列表。单个实例总标签数上限20个。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagWithKeyValue> Tags { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -142,6 +148,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  serverGroupPolicies: ").Append(ServerGroupPolicies).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -249,6 +256,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.ServerGroupPolicies != null &&
                     input.ServerGroupPolicies != null &&
                     this.ServerGroupPolicies.SequenceEqual(input.ServerGroupPolicies)
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -294,6 +307,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
                 if (this.ServerGroupPolicies != null)
                     hashCode = hashCode * 59 + this.ServerGroupPolicies.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }
