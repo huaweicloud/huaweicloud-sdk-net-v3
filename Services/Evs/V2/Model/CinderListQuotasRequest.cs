@@ -22,14 +22,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public class UsageEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
+            /// Enum TRUE for value: True
             /// </summary>
-            public static readonly UsageEnum TRUE = new UsageEnum("true");
+            public static readonly UsageEnum TRUE = new UsageEnum("True");
 
             private static readonly Dictionary<string, UsageEnum> StaticFields =
             new Dictionary<string, UsageEnum>()
             {
-                { "true", TRUE },
+                { "True", TRUE },
             };
 
             private string Value;

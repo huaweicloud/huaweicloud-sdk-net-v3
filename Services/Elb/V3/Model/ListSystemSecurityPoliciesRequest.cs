@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class ShowQuotaDefaultsRequest 
+    public class ListSystemSecurityPoliciesRequest 
     {
 
 

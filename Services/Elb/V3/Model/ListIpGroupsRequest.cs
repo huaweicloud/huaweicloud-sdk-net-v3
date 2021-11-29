@@ -16,25 +16,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// ip地址组的描述信息。
+        /// 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
-        [SDKProperty("description", IsQuery = true)]
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Description { get; set; }
-
-        /// <summary>
-        /// ip地址组的id
-        /// </summary>
-        [SDKProperty("id", IsQuery = true)]
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Id { get; set; }
-
-        /// <summary>
-        /// ip地址，多个用逗号分隔
-        /// </summary>
-        [SDKProperty("ip_list", IsQuery = true)]
-        [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> IpList { get; set; }
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
 
         /// <summary>
         /// 每页返回的个数。
@@ -44,25 +30,39 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明： - 必须与limit一起使用。
         /// </summary>
-        [SDKProperty("marker", IsQuery = true)]
-        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string Marker { get; set; }
+        [SDKProperty("page_reverse", IsQuery = true)]
+        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// ip地址组的名称
+        /// IP地址组的ID。
+        /// </summary>
+        [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Id { get; set; }
+
+        /// <summary>
+        /// IP地址组的名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明：必须与limit一起使用。
+        /// IP地址组的描述信息。
         /// </summary>
-        [SDKProperty("page_reverse", IsQuery = true)]
-        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? PageReverse { get; set; }
+        [SDKProperty("description", IsQuery = true)]
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Description { get; set; }
+
+        /// <summary>
+        /// IP地址，多个用逗号分隔。
+        /// </summary>
+        [SDKProperty("ip_list", IsQuery = true)]
+        [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> IpList { get; set; }
 
 
         /// <summary>
@@ -72,13 +72,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListIpGroupsRequest {\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  ipList: ").Append(IpList).Append("\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  ipList: ").Append(IpList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,10 +101,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
             return 
                 (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.PageReverse == input.PageReverse ||
+                    (this.PageReverse != null &&
+                    this.PageReverse.Equals(input.PageReverse))
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -113,31 +122,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Id.SequenceEqual(input.Id)
                 ) && 
                 (
-                    this.IpList == input.IpList ||
-                    this.IpList != null &&
-                    input.IpList != null &&
-                    this.IpList.SequenceEqual(input.IpList)
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
                     this.Name == input.Name ||
                     this.Name != null &&
                     input.Name != null &&
                     this.Name.SequenceEqual(input.Name)
                 ) && 
                 (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
+                    this.Description == input.Description ||
+                    this.Description != null &&
+                    input.Description != null &&
+                    this.Description.SequenceEqual(input.Description)
+                ) && 
+                (
+                    this.IpList == input.IpList ||
+                    this.IpList != null &&
+                    input.IpList != null &&
+                    this.IpList.SequenceEqual(input.IpList)
                 );
         }
 
@@ -149,20 +149,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IpList != null)
-                    hashCode = hashCode * 59 + this.IpList.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null)
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.PageReverse != null)
                     hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IpList != null)
+                    hashCode = hashCode * 59 + this.IpList.GetHashCode();
                 return hashCode;
             }
         }

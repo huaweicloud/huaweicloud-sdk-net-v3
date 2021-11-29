@@ -14,19 +14,134 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     /// </summary>
     public class UpdatePoolSessionPersistenceOption 
     {
+        /// <summary>
+        /// 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
+        /// </summary>
+        /// <value>描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum SOURCE_IP for value: SOURCE_IP
+            /// </summary>
+            public static readonly TypeEnum SOURCE_IP = new TypeEnum("SOURCE_IP");
+
+            /// <summary>
+            /// Enum HTTP_COOKIE for value: HTTP_COOKIE
+            /// </summary>
+            public static readonly TypeEnum HTTP_COOKIE = new TypeEnum("HTTP_COOKIE");
+
+            /// <summary>
+            /// Enum APP_COOKIE for value: APP_COOKIE
+            /// </summary>
+            public static readonly TypeEnum APP_COOKIE = new TypeEnum("APP_COOKIE");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "SOURCE_IP", SOURCE_IP },
+                { "HTTP_COOKIE", HTTP_COOKIE },
+                { "APP_COOKIE", APP_COOKIE },
+            };
+
+            private string Value;
+
+            public TypeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// cookie名称。 只有当type为APP_COOKIE时才支持。 格式要求：仅支持字母数字-_. 
+        /// cookie名称。  格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  使用说明： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。
         /// </summary>
         [JsonProperty("cookie_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CookieName { get; set; }
 
         /// <summary>
-        /// 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。   约束：   1、当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效；   2、当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。  
+        /// 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; set; }
-
+        public TypeEnum Type { get; set; }
         /// <summary>
         /// 会话保持的时间。当type为APP_COOKIE时不生效。 适用范围：如果pool的protocol为TCP、UDP和QUIC则范围为[1,60]（分钟），默认值1；如果pool的protocol为HTTP和HTTPS则范围为[1,1440]（分钟），默认值1440。
         /// </summary>

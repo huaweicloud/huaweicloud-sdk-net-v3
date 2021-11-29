@@ -10,31 +10,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// lb状态树的监听器状态信息
+    /// LB状态树的监听器状态信息
     /// </summary>
     public class LoadBalancerStatusListener 
     {
 
         /// <summary>
-        /// 负载均衡器下监听器的名称。
+        /// 监听器的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// provisioning状态。 可以为ACTIVE、PENDING_CREATE 或者ERROR。
+        /// 监听器的配置状态。取值： - ACTIVE：使用中。
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 挂载在监听器下的后端主机组。
+        /// 监听器下的后端主机组操作状态。
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusPool> Pools { get; set; }
 
         /// <summary>
-        /// 7层转发策略
+        /// 监听器下的7层转发策略操作状态。
         /// </summary>
         [JsonProperty("l7policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusPolicy> L7policies { get; set; }
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。说明：该字段为预留字段，暂未启用，默认为ONLINE。
+        /// 监听器的操作状态。取值：  - ONLINE：创建时默认状态，表示监听器正常运行。  - DEGRADED：   -该监听器下存在l7policy或l7rule的Provisioning_status&#x3D;ERROR时返回这个状态。   -状态树该监听器下存在member的operating_status&#x3D;OFFLINE。 - DISABLED：负载均衡器或监听器的admin_state_up&#x3D;false。 使用说明：  - DEGRADED和DISABLED状态仅在当前接口返回，查询监听器详情等其他接口返回字段operating_status不存在这两个状态值。
         /// </summary>
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }

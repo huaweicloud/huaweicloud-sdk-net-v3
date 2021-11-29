@@ -45,6 +45,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("alias_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string AliasUrn { get; set; }
 
+        /// <summary>
+        /// 灰度版本信息
+        /// </summary>
+        [JsonProperty("additional_version_weights", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, long?> AdditionalVersionWeights { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("  aliasUrn: ").Append(AliasUrn).Append("\n");
+            sb.Append("  additionalVersionWeights: ").Append(AdditionalVersionWeights).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +110,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.AliasUrn == input.AliasUrn ||
                     (this.AliasUrn != null &&
                     this.AliasUrn.Equals(input.AliasUrn))
+                ) && 
+                (
+                    this.AdditionalVersionWeights == input.AdditionalVersionWeights ||
+                    this.AdditionalVersionWeights != null &&
+                    input.AdditionalVersionWeights != null &&
+                    this.AdditionalVersionWeights.SequenceEqual(input.AdditionalVersionWeights)
                 );
         }
 
@@ -124,6 +137,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.LastModified.GetHashCode();
                 if (this.AliasUrn != null)
                     hashCode = hashCode * 59 + this.AliasUrn.GetHashCode();
+                if (this.AdditionalVersionWeights != null)
+                    hashCode = hashCode * 59 + this.AdditionalVersionWeights.GetHashCode();
                 return hashCode;
             }
         }

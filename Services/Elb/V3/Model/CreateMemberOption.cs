@@ -10,19 +10,123 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// 创建后端服务器请求参数
     /// </summary>
     public class CreateMemberOption 
     {
+        /// <summary>
+        /// 后端云服务器所在的项目ID。
+        /// </summary>
+        /// <value>后端云服务器所在的项目ID。</value>
+        [JsonConverter(typeof(EnumClassConverter<ProjectIdEnum>))]
+        public class ProjectIdEnum
+        {
+            /// <summary>
+            /// Enum _0_9A_FA_F_32_ for value: [0-9a-fA-F]{32}
+            /// </summary>
+            public static readonly ProjectIdEnum _0_9A_FA_F_32_ = new ProjectIdEnum("[0-9a-fA-F]{32}");
+
+            private static readonly Dictionary<string, ProjectIdEnum> StaticFields =
+            new Dictionary<string, ProjectIdEnum>()
+            {
+                { "[0-9a-fA-F]{32}", _0_9A_FA_F_32_ },
+            };
+
+            private string Value;
+
+            public ProjectIdEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static ProjectIdEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ProjectIdEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ProjectIdEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ProjectIdEnum a, ProjectIdEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ProjectIdEnum a, ProjectIdEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 后端云服务器的对应的IP地址，这个IP必须在subnet_cidr_id字段的子网网段中。例如：192.168.3.11。只能指定为主网卡的IP。 subnet_cidr_id为空代表添加跨VPC后端，此时address必须为ipv4地址
+        /// 后端服务器对应的IP地址。 使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。 - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。 [不支持IPv6，请勿设置为IPv6地址。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
 
         /// <summary>
-        /// 后端云服务器的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+        /// 后端云服务器的管理状态。取值：true、false。  虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
@@ -37,22 +141,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// 后端云服务器所在的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectId { get; set; }
-
+        public ProjectIdEnum ProjectId { get; set; }
         /// <summary>
-        /// 后端端口和协议号
+        /// 后端服务器业务端口号。
         /// </summary>
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }
 
         /// <summary>
-        /// 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。只支持指定IPv4的子网ID。暂不支持IPv6。 可以不填，表示添加跨VPC后端，此时address必须为ipv4地址，pool的协议必须为TCP/HTTP/HTTPS，pool所属的LB的跨VPC后端转发能力必须打开
+        /// 后端云服务器所在的子网ID，可以是子网的IPv4子网ID或IPv6子网ID。 使用说明： - 该子网和关联的负载均衡器的子网必须在同一VPC下。  - 若所属LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。 [不支持IPv6，请勿设置为IPv6子网ID。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetCidrId { get; set; }
 
         /// <summary>
-        /// 后端云服务器的权重，请求按权重在同一后端云服务器组下的后端云服务器间分发。权重为0的后端不再接受新的请求。当后端云服务器所在的后端云服务器组的lb_algorithm的取值为SOURCE_IP时，该字段无效。
+        /// 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明： - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
         /// </summary>
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }

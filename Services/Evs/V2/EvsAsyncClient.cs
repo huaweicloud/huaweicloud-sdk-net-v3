@@ -41,19 +41,6 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
-        /// 将云硬盘导出为镜像
-        /// </summary>
-        public async Task<CinderExportToImageResponse> CinderExportToImageAsync(CinderExportToImageRequest cinderExportToImageRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , cinderExportToImageRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/volumes/{volume_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderExportToImageRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CinderExportToImageResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询所有的可用分区信息
         /// </summary>
         public async Task<CinderListAvailabilityZonesResponse> CinderListAvailabilityZonesAsync(CinderListAvailabilityZonesRequest cinderListAvailabilityZonesRequest)

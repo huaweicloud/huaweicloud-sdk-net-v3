@@ -10,49 +10,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 创建lb实例，支持创建或者绑定ipv4弹性公网和ipv6弹性公网
+    /// 创建负载均衡器参数。
     /// </summary>
     public class CreateLoadBalancerOption 
     {
 
         /// <summary>
-        /// 负载均衡器名称。
+        /// 负载均衡器的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 负载均衡器功能说明。
+        /// 负载均衡器的描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 负载均衡器的虚拟IP。 1.传入vip_address时必须传入vip_subnet_cidr_id 2.不传入vip_address，自动分配虚拟IP 3.传入vip_address，需要保证该ip地址在子网中未被占用
+        /// 负载均衡器的IPv4虚拟IP。该地址必须包含在所在子网的IPv4网段内，且未被占用。  使用说明： - 传入vip_address时必须传入vip_subnet_cidr_id。 - 不传入vip_address，但传入vip_subnet_cidr_id，则自动分配IPv4虚拟IP。 - 不传入vip_address，且不传vip_subnet_cidr_id，则不分配虚拟IP，vip_address&#x3D;null。
         /// </summary>
         [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string VipAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在的子网ID。 说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+        /// 负载均衡器所在子网的IPv4子网ID。若需要创建带IPv4虚拟IP的LB，该字段必须传入。 可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_subnet_id得到。 使用说明： - vpc_id, vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 若同时传入vpc_id和vip_subnet_cidr_id，则vip_subnet_cidr_id对应的子网必须属于vpc_id对应的VPC。
         /// </summary>
         [JsonProperty("vip_subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipSubnetCidrId { get; set; }
 
         /// <summary>
-        /// 双栈实例对应v6的网络id 。注：默认为空，只有开启IPv6时才会传入。  说明：vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+        /// 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。  [不支持IPv6，请勿使用](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipVirsubnetId { get; set; }
 
         /// <summary>
-        /// 负载均衡器的生产者名称。只支持vlb。
+        /// 负载均衡器的生产者名称。固定为vlb。
         /// </summary>
         [JsonProperty("provider", NullValueHandling = NullValueHandling.Ignore)]
         public string Provider { get; set; }
 
         /// <summary>
-        /// 四层Flavor。
+        /// 四层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:otc,otc_test,dt,dt_test) [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
@@ -64,49 +64,49 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 共享型：false 保障型：true，当前只支持true。
+        /// 是否独享型负载均衡器。取值： - true：独享型。 - false：共享型。  当前只支持设置为true，设置为false会返回400 Bad Request 。默认：true。
         /// </summary>
         [JsonProperty("guaranteed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Guaranteed { get; set; }
 
         /// <summary>
-        /// 实例对应的vpc属性。 说明：vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+        /// 负载均衡器所在的VPC ID。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/vpcs 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 可用区列表。默认指定所有可利用的AZ。 注： 可用AZ的查询方式可用通过调用nova接口查询 /v2/{project_id}/os-availability-zone
+        /// 可用区列表。可通过GET https&amp;#58;//{ELB_Endponit}/v3/{project_id}/elb/availability-zones接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。
         /// </summary>
         [JsonProperty("availability_zone_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 企业项目ID。
+        /// 负载均衡器所属的企业项目ID。不能传入\&quot;\&quot;、\&quot;0\&quot;或不存在的企业项目ID，创建时不传则资源属于default企业项目，默认返回\&quot;0\&quot;。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 负载均衡的标签列表。示例如下：\&quot;tags\&quot;:[{\&quot;key\&quot;:\&quot;aaaa\&quot;,\&quot;value\&quot;:\&quot;mmmaaaaa\&quot;}]
+        /// 负载均衡的标签列表。示例：\&quot;tags\&quot;:[{\&quot;key\&quot;:\&quot;my_tag\&quot;,\&quot;value\&quot;:\&quot;my_tag_value\&quot;}]
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 负载均衡器的管理状态。说明：负载均衡器的管理状态。只支持设定为true。
+        /// 负载均衡器的管理状态。只能设置为true。默认：true。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 七层Flavor。 
+        /// 七层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:otc,otc_test,dt,dt_test) [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
 
         /// <summary>
-        /// 预留资源账单信息。
+        /// 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费。 包周期计费billing_info字段的格式为：order_id&amp;#58;product_id&amp;#58;region_id&amp;#58;project_id，如： CS2107161019CDJZZ&amp;#58;OFFI569702121789763584&amp;#58;eu-de&amp;#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： - admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }
@@ -118,7 +118,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public BandwidthRef Ipv6Bandwidth { get; set; }
 
         /// <summary>
-        /// 公网EIP的ID，目前只支持一个
+        /// 负载均衡器绑定的公网IP ID。只支持绑定数组中的第一个EIP，其他将被忽略。
         /// </summary>
         [JsonProperty("publicip_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PublicipIds { get; set; }
@@ -130,22 +130,34 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public CreateLoadBalancerPublicIpOption Publicip { get; set; }
 
         /// <summary>
-        /// 下联面网络id列表 若该字段不指定，在loadbalancer所属的VPC中任意选一个网络id，优选双栈网络
+        /// 下联面子网的网络ID列表。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets  响应参数中的id得到。 若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 下联面子网必须属于该LB所在的VPC。
         /// </summary>
         [JsonProperty("elb_virsubnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElbVirsubnetIds { get; set; }
 
         /// <summary>
-        /// 是否启用跨VPC后端转发
+        /// 是否启用跨VPC后端转发。取值：true 表示开启，false 表示不开启。默认：false不开启。仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护，默认不开启
+        /// 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 &gt; 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("prepaid_options", NullValueHandling = NullValueHandling.Ignore)]
+        public PrepaidCreateOption PrepaidOptions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("autoscaling", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateLoadbalancerAutoscalingOption Autoscaling { get; set; }
 
 
         /// <summary>
@@ -177,6 +189,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  elbVirsubnetIds: ").Append(ElbVirsubnetIds).Append("\n");
             sb.Append("  ipTargetEnable: ").Append(IpTargetEnable).Append("\n");
             sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
+            sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
+            sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -311,6 +325,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.DeletionProtectionEnable == input.DeletionProtectionEnable ||
                     (this.DeletionProtectionEnable != null &&
                     this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))
+                ) && 
+                (
+                    this.PrepaidOptions == input.PrepaidOptions ||
+                    (this.PrepaidOptions != null &&
+                    this.PrepaidOptions.Equals(input.PrepaidOptions))
+                ) && 
+                (
+                    this.Autoscaling == input.Autoscaling ||
+                    (this.Autoscaling != null &&
+                    this.Autoscaling.Equals(input.Autoscaling))
                 );
         }
 
@@ -366,6 +390,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
                 if (this.DeletionProtectionEnable != null)
                     hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
+                if (this.PrepaidOptions != null)
+                    hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
+                if (this.Autoscaling != null)
+                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 return hashCode;
             }
         }

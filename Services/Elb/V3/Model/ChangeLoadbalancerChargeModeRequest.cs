@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Evs.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// This is a auto create Body Object
+    /// Request Object
     /// </summary>
-    public class CinderExportToImageRequestBody 
+    public class ChangeLoadbalancerChargeModeRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("os-volume_upload_image", NullValueHandling = NullValueHandling.Ignore)]
-        public CinderExportToImageOption OsVolumeUploadImage { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public ChangeLoadbalancerChargeModeRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CinderExportToImageRequestBody {\n");
-            sb.Append("  osVolumeUploadImage: ").Append(OsVolumeUploadImage).Append("\n");
+            sb.Append("class ChangeLoadbalancerChargeModeRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +40,22 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CinderExportToImageRequestBody);
+            return this.Equals(input as ChangeLoadbalancerChargeModeRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CinderExportToImageRequestBody input)
+        public bool Equals(ChangeLoadbalancerChargeModeRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OsVolumeUploadImage == input.OsVolumeUploadImage ||
-                    (this.OsVolumeUploadImage != null &&
-                    this.OsVolumeUploadImage.Equals(input.OsVolumeUploadImage))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OsVolumeUploadImage != null)
-                    hashCode = hashCode * 59 + this.OsVolumeUploadImage.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

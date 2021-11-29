@@ -10,37 +10,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 创建IP地址组请求参数对象
+    /// 创建IP地址组请求参数。
     /// </summary>
     public class CreateIpGroupOption 
     {
 
         /// <summary>
-        /// IP地址组的租户id
+        /// IP地址组所在的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// IP地址组的描述信息
+        /// IP地址组的描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// IP地址组的名称
+        /// IP地址组的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// IP地址组中包含的ip或网段列表。[]表示任意ip。
+        /// IP地址组中包含的IP或网段列表。[]表示任意IP。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateIpGroupIpOption> IpList { get; set; }
 
         /// <summary>
-        /// 企业项目id
+        /// IP地址组所在的企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

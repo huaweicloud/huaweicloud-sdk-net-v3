@@ -10,19 +10,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// ip地址组中的包含的ip 信息对象
+    /// IP地址更新参数。
     /// </summary>
     public class UpadateIpGroupIpOption 
     {
 
         /// <summary>
-        /// ip地址组中的包含的ip。 支持ipv4、ipv6的ip
+        /// IP地址。支持IPv4、IPv6。  [不支持IPv6，请勿设置为IPv6地址。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }
 
         /// <summary>
-        /// IP地址组中ip的备注信息
+        /// 备注信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

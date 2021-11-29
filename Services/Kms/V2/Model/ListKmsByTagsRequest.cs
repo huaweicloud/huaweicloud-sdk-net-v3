@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
     {
 
         /// <summary>
-        /// 资源实例，默认值为resource_instances
+        /// 资源实例，固定值为resource_instances
         /// </summary>
         [SDKProperty("resource_instances", IsPath = true)]
         [JsonProperty("resource_instances", NullValueHandling = NullValueHandling.Ignore)]

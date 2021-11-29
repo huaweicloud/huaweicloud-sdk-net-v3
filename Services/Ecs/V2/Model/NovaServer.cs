@@ -1028,6 +1028,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
         public int? Progress { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("os:scheduler_hints", NullValueHandling = NullValueHandling.Ignore)]
+        public NovaServerSchedulerHints OsschedulerHints { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -1078,6 +1084,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  accessIPv6: ").Append(AccessIPv6).Append("\n");
             sb.Append("  configDrive: ").Append(ConfigDrive).Append("\n");
             sb.Append("  progress: ").Append(Progress).Append("\n");
+            sb.Append("  osschedulerHints: ").Append(OsschedulerHints).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1314,6 +1321,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Progress == input.Progress ||
                     (this.Progress != null &&
                     this.Progress.Equals(input.Progress))
+                ) && 
+                (
+                    this.OsschedulerHints == input.OsschedulerHints ||
+                    (this.OsschedulerHints != null &&
+                    this.OsschedulerHints.Equals(input.OsschedulerHints))
                 );
         }
 
@@ -1409,6 +1421,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.ConfigDrive.GetHashCode();
                 if (this.Progress != null)
                     hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.OsschedulerHints != null)
+                    hashCode = hashCode * 59 + this.OsschedulerHints.GetHashCode();
                 return hashCode;
             }
         }

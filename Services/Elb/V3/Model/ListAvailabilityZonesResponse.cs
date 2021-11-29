@@ -16,16 +16,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 可用区列表。  &gt; 获取可用区集合列表后，在（如创建LB时）设置可用区，选择的多个可用区必须同时在同一个集合中。
-        /// </summary>
-        [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
-        public List<List<AvailabilityZone>> AvailabilityZones { get; set; }
-
-        /// <summary>
         /// 请求ID。  注：自动生成。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
+
+        /// <summary>
+        /// 返回创建LB时可使用的可用区集合列表。
+        /// </summary>
+        [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
+        public List<List<AvailabilityZone>> AvailabilityZones { get; set; }
 
 
         /// <summary>
@@ -35,8 +35,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAvailabilityZonesResponse {\n");
-            sb.Append("  availabilityZones: ").Append(AvailabilityZones).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
+            sb.Append("  availabilityZones: ").Append(AvailabilityZones).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,15 +59,15 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
             return 
                 (
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
+                ) && 
+                (
                     this.AvailabilityZones == input.AvailabilityZones ||
                     this.AvailabilityZones != null &&
                     input.AvailabilityZones != null &&
                     this.AvailabilityZones.SequenceEqual(input.AvailabilityZones)
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
                 );
         }
 
@@ -79,10 +79,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AvailabilityZones != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZones.GetHashCode();
                 if (this.RequestId != null)
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.AvailabilityZones != null)
+                    hashCode = hashCode * 59 + this.AvailabilityZones.GetHashCode();
                 return hashCode;
             }
         }

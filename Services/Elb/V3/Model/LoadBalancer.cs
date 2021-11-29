@@ -10,142 +10,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 创建loadbalancer的消息返回体
+    /// 负载均衡器的详细信息。
     /// </summary>
     public class LoadBalancer 
     {
         /// <summary>
-        /// 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
+        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
         /// </summary>
-        /// <value>功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。</value>
-        [JsonConverter(typeof(EnumClassConverter<OperatingStatusEnum>))]
-        public class OperatingStatusEnum
-        {
-            /// <summary>
-            /// Enum ONLINE for value: ONLINE
-            /// </summary>
-            public static readonly OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
-
-            /// <summary>
-            /// Enum OFFLINE for value: OFFLINE
-            /// </summary>
-            public static readonly OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
-
-            /// <summary>
-            /// Enum DEGRADED for value: DEGRADED
-            /// </summary>
-            public static readonly OperatingStatusEnum DEGRADED = new OperatingStatusEnum("DEGRADED");
-
-            /// <summary>
-            /// Enum DISABLED for value: DISABLED
-            /// </summary>
-            public static readonly OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
-
-            /// <summary>
-            /// Enum NO_MONITOR for value: NO_MONITOR
-            /// </summary>
-            public static readonly OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
-
-            private static readonly Dictionary<string, OperatingStatusEnum> StaticFields =
-            new Dictionary<string, OperatingStatusEnum>()
-            {
-                { "ONLINE", ONLINE },
-                { "OFFLINE", OFFLINE },
-                { "DEGRADED", DEGRADED },
-                { "DISABLED", DISABLED },
-                { "NO_MONITOR", NO_MONITOR },
-            };
-
-            private string Value;
-
-            public OperatingStatusEnum(string value)
-            {
-                Value = value;
-            }
-
-            public static OperatingStatusEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as OperatingStatusEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(OperatingStatusEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(OperatingStatusEnum a, OperatingStatusEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(OperatingStatusEnum a, OperatingStatusEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 功能描述：下联面子网类型
-        /// </summary>
-        /// <value>功能描述：下联面子网类型</value>
+        /// <value>下联面子网类型 - ipv4：ipv4 - dualstack：双栈</value>
         [JsonConverter(typeof(EnumClassConverter<ElbVirsubnetTypeEnum>))]
         public class ElbVirsubnetTypeEnum
         {
@@ -254,203 +126,204 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 功能描述：负载均衡器ID。
+        /// 负载均衡器ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器描述信息。
+        /// 负载均衡器描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器的配置状态。 取值范围：ACTIVE、PENDING_CREATE 或者ERROR。 约束：该字段为预留字段，暂未启用，默认为ACTIVE。
+        /// 负载均衡器的配置状态。取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器的管理状态。 约束：只支持设定为true。
+        /// 负载均衡器的管理状态。固定为true。
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器的生产者名称。 约束：只支持vlb。
+        /// 负载均衡器的生产者名称。固定为vlb。
         /// </summary>
         [JsonProperty("provider", NullValueHandling = NullValueHandling.Ignore)]
         public string Provider { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器关联的后端云服务器组ID的列表。
+        /// 负载均衡器直接关联的后端云服务器组的ID列表。
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
         public List<PoolRef> Pools { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器关联的监听器ID的列表。
+        /// 负载均衡器关联的监听器的ID列表。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListenerRef> Listeners { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
+        /// 负载均衡器的操作状态。取值： - ONLINE：在线。
         /// </summary>
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
-        public OperatingStatusEnum OperatingStatus { get; set; }
-        /// <summary>
-        /// 功能描述：负载均衡器的虚拟IP。
-        /// </summary>
-        [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string VipAddress { get; set; }
+        public string OperatingStatus { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器所在的子网ID。 约束：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
-        /// </summary>
-        [JsonProperty("vip_subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string VipSubnetCidrId { get; set; }
-
-        /// <summary>
-        /// 功能描述：负载均衡器的负载均衡器名称。
+        /// 负载均衡器的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在的项目ID。
+        /// 负载均衡器所属的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 负载均衡器虚拟IP对应的端口ID。
+        /// 负载均衡器所在子网的IPv4子网ID。
+        /// </summary>
+        [JsonProperty("vip_subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VipSubnetCidrId { get; set; }
+
+        /// <summary>
+        /// 负载均衡器的IPv4虚拟IP地址。
+        /// </summary>
+        [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string VipAddress { get; set; }
+
+        /// <summary>
+        /// 负载均衡器的IPv4对应的port ID。
         /// </summary>
         [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipPortId { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡的标签列表。
+        /// 负载均衡的标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器的创建时间。
+        /// 负载均衡器的创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 功能描述：负载均衡器的更新时间。
+        /// 负载均衡器的更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 功能描述：是否是性能保障性实例 取值范围：共享型：false；性能保障型：true
+        /// 是否独享型LB，取值： - false：共享型。 - true：独享型。
         /// </summary>
         [JsonProperty("guaranteed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Guaranteed { get; set; }
 
         /// <summary>
-        /// 功能描述：实例对应的vpc属性。若无，则从vip_subnet_cidr_id获取。  约束：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+        /// 负载均衡器所在VPC ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 功能描述：公网ELB实例绑定EIP信息。
+        /// 负载均衡器绑定的EIP。只支持绑定一个EIP。  注：该字段与publicips一致。
         /// </summary>
         [JsonProperty("eips", NullValueHandling = NullValueHandling.Ignore)]
         public List<EipInfo> Eips { get; set; }
 
         /// <summary>
-        /// 功能描述：双栈实例对应v6的ip地址。 
+        /// 双栈类型负载均衡器的IPv6地址。  [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipAddress { get; set; }
 
         /// <summary>
-        /// 功能描述：双栈实例对应v6的网络id 。 约束： 1、默认为空，只有开启IPv6时才会传入。 2、vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+        /// 双栈类型负载均衡器所在子网的IPv6网络ID。  [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipVirsubnetId { get; set; }
 
         /// <summary>
-        /// 功能描述：IPv6的VIP端口id。
+        /// 双栈类型负载均衡器的IPv6对应的port ID。  [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipPortId { get; set; }
 
         /// <summary>
-        /// 功能描述：可用区列表。默认指定所有可利用的AZ。可调用nova接口（/v2/{project_id}/os-availability-zone）查询可用AZ
+        /// 负载均衡器所在的可用区列表。
         /// </summary>
         [JsonProperty("availability_zone_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 功能描述：企业项目ID
+        /// 企业项目ID。创建时不传则返回\&quot;0\&quot;，表示资源属于default企业项目。  注：\&quot;0\&quot;并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:otcc,otc_test)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 功能描述：四层Flavor。
+        /// 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费， 包周期计费billing_info字段的格式为：order_id&amp;#58;product_id&amp;#58;region_id&amp;#58;project_id，如： CS2107161019CDJZZ&amp;#58;OFFI569702121789763584&amp;#58;eu-de&amp;#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： - admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
+        /// </summary>
+        [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string BillingInfo { get; set; }
+
+        /// <summary>
+        /// 四层Flavor ID。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
 
         /// <summary>
-        /// 功能描述：预留L4 弹性flavor。
+        /// 四层弹性Flavor ID。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("l4_scale_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 功能描述：七层Flavor。
+        /// 七层Flavor ID。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso)
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
 
         /// <summary>
-        /// 功能描述：预留弹性flavor。 
+        /// 七层弹性Flavor ID。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("l7_scale_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 功能描述：弹性公网EIP信息
+        /// 负载均衡器绑定的公网IP。只支持绑定一个公网IP。  注：该字段与eips一致。
         /// </summary>
         [JsonProperty("publicips", NullValueHandling = NullValueHandling.Ignore)]
         public List<PublicIpInfo> Publicips { get; set; }
 
         /// <summary>
-        /// 功能描述：下联面子网ID  loadbalancer使用的下联面端口会动态的从这些网络中占用IP
+        /// 下联面子网网络ID列表。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 [若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 下联面子网必须属于该LB所在的VPC。
         /// </summary>
         [JsonProperty("elb_virsubnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElbVirsubnetIds { get; set; }
 
         /// <summary>
-        /// 功能描述：下联面子网类型
+        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
         /// </summary>
         [JsonProperty("elb_virsubnet_type", NullValueHandling = NullValueHandling.Ignore)]
         public ElbVirsubnetTypeEnum ElbVirsubnetType { get; set; }
         /// <summary>
-        /// 是否启用跨VPC后端转发
+        /// 是否启用跨VPC后端转发。取值： - true：开启、 - false：不开启。  仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护
-        /// </summary>
-        [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? DeletionProtectionEnable { get; set; }
-
-        /// <summary>
-        /// 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔 POLICE：公安冻结场景。 ILLEGAL：违规冻结场景。 VERIFY：客户未实名认证冻结场景。 PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 ARREAR：欠费冻结场景。
+        /// 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - RTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
         [JsonProperty("frozen_scene", NullValueHandling = NullValueHandling.Ignore)]
         public string FrozenScene { get; set; }
@@ -460,6 +333,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("ipv6_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public BandwidthRef Ipv6Bandwidth { get; set; }
+
+        /// <summary>
+        /// 是否开启删除保护，取值： - false：不开启。 - true：开启。 &gt;退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。
+        /// </summary>
+        [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeletionProtectionEnable { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("autoscaling", NullValueHandling = NullValueHandling.Ignore)]
+        public AutoscalingRef Autoscaling { get; set; }
 
 
         /// <summary>
@@ -477,10 +362,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  pools: ").Append(Pools).Append("\n");
             sb.Append("  listeners: ").Append(Listeners).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
-            sb.Append("  vipAddress: ").Append(VipAddress).Append("\n");
-            sb.Append("  vipSubnetCidrId: ").Append(VipSubnetCidrId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  vipSubnetCidrId: ").Append(VipSubnetCidrId).Append("\n");
+            sb.Append("  vipAddress: ").Append(VipAddress).Append("\n");
             sb.Append("  vipPortId: ").Append(VipPortId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
@@ -493,6 +378,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  ipv6VipPortId: ").Append(Ipv6VipPortId).Append("\n");
             sb.Append("  availabilityZoneList: ").Append(AvailabilityZoneList).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  billingInfo: ").Append(BillingInfo).Append("\n");
             sb.Append("  l4FlavorId: ").Append(L4FlavorId).Append("\n");
             sb.Append("  l4ScaleFlavorId: ").Append(L4ScaleFlavorId).Append("\n");
             sb.Append("  l7FlavorId: ").Append(L7FlavorId).Append("\n");
@@ -501,9 +387,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  elbVirsubnetIds: ").Append(ElbVirsubnetIds).Append("\n");
             sb.Append("  elbVirsubnetType: ").Append(ElbVirsubnetType).Append("\n");
             sb.Append("  ipTargetEnable: ").Append(IpTargetEnable).Append("\n");
-            sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
             sb.Append("  frozenScene: ").Append(FrozenScene).Append("\n");
             sb.Append("  ipv6Bandwidth: ").Append(Ipv6Bandwidth).Append("\n");
+            sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
+            sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -568,16 +455,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.OperatingStatus.Equals(input.OperatingStatus))
                 ) && 
                 (
-                    this.VipAddress == input.VipAddress ||
-                    (this.VipAddress != null &&
-                    this.VipAddress.Equals(input.VipAddress))
-                ) && 
-                (
-                    this.VipSubnetCidrId == input.VipSubnetCidrId ||
-                    (this.VipSubnetCidrId != null &&
-                    this.VipSubnetCidrId.Equals(input.VipSubnetCidrId))
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -586,6 +463,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.VipSubnetCidrId == input.VipSubnetCidrId ||
+                    (this.VipSubnetCidrId != null &&
+                    this.VipSubnetCidrId.Equals(input.VipSubnetCidrId))
+                ) && 
+                (
+                    this.VipAddress == input.VipAddress ||
+                    (this.VipAddress != null &&
+                    this.VipAddress.Equals(input.VipAddress))
                 ) && 
                 (
                     this.VipPortId == input.VipPortId ||
@@ -651,6 +538,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.BillingInfo == input.BillingInfo ||
+                    (this.BillingInfo != null &&
+                    this.BillingInfo.Equals(input.BillingInfo))
+                ) && 
+                (
                     this.L4FlavorId == input.L4FlavorId ||
                     (this.L4FlavorId != null &&
                     this.L4FlavorId.Equals(input.L4FlavorId))
@@ -693,11 +585,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.IpTargetEnable.Equals(input.IpTargetEnable))
                 ) && 
                 (
-                    this.DeletionProtectionEnable == input.DeletionProtectionEnable ||
-                    (this.DeletionProtectionEnable != null &&
-                    this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))
-                ) && 
-                (
                     this.FrozenScene == input.FrozenScene ||
                     (this.FrozenScene != null &&
                     this.FrozenScene.Equals(input.FrozenScene))
@@ -706,6 +593,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Ipv6Bandwidth == input.Ipv6Bandwidth ||
                     (this.Ipv6Bandwidth != null &&
                     this.Ipv6Bandwidth.Equals(input.Ipv6Bandwidth))
+                ) && 
+                (
+                    this.DeletionProtectionEnable == input.DeletionProtectionEnable ||
+                    (this.DeletionProtectionEnable != null &&
+                    this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))
+                ) && 
+                (
+                    this.Autoscaling == input.Autoscaling ||
+                    (this.Autoscaling != null &&
+                    this.Autoscaling.Equals(input.Autoscaling))
                 );
         }
 
@@ -733,14 +630,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Listeners.GetHashCode();
                 if (this.OperatingStatus != null)
                     hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
-                if (this.VipAddress != null)
-                    hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
-                if (this.VipSubnetCidrId != null)
-                    hashCode = hashCode * 59 + this.VipSubnetCidrId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.VipSubnetCidrId != null)
+                    hashCode = hashCode * 59 + this.VipSubnetCidrId.GetHashCode();
+                if (this.VipAddress != null)
+                    hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
                 if (this.VipPortId != null)
                     hashCode = hashCode * 59 + this.VipPortId.GetHashCode();
                 if (this.Tags != null)
@@ -765,6 +662,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.BillingInfo != null)
+                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
                 if (this.L4FlavorId != null)
                     hashCode = hashCode * 59 + this.L4FlavorId.GetHashCode();
                 if (this.L4ScaleFlavorId != null)
@@ -781,12 +680,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ElbVirsubnetType.GetHashCode();
                 if (this.IpTargetEnable != null)
                     hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
-                if (this.DeletionProtectionEnable != null)
-                    hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
                 if (this.FrozenScene != null)
                     hashCode = hashCode * 59 + this.FrozenScene.GetHashCode();
                 if (this.Ipv6Bandwidth != null)
                     hashCode = hashCode * 59 + this.Ipv6Bandwidth.GetHashCode();
+                if (this.DeletionProtectionEnable != null)
+                    hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
+                if (this.Autoscaling != null)
+                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 return hashCode;
             }
         }

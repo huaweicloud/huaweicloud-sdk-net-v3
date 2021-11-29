@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// HTTPS协议使用的证书内容。 取值范围：PEM编码格式。
+        /// 证书的内容。PEM编码格式。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string Certificate { get; set; }
 
         /// <summary>
-        /// SSL证书的描述。
+        /// 证书的描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// SSL证书的名称。
+        /// 证书的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的私钥。仅type为server时有效。type为server时必选。 取值范围：PEM编码格式。
+        /// 服务器证书的私钥。PEM编码格式。  当type为client时，该参数被忽略，不影响证书的创建和使用。且若不符合格式，不报错但会被设置为空。  当type为server时，该字段必须符合格式要求，且私钥必须是有效的。
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }
@@ -44,6 +44,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }
+
+        /// <summary>
+        /// HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  使用说明： - 仅type为server_sm时有效。
+        /// </summary>
+        [JsonProperty("enc_certificate", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncCertificate { get; set; }
+
+        /// <summary>
+        /// HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  使用说明： - 仅type为server_sm时有效。
+        /// </summary>
+        [JsonProperty("enc_private_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncPrivateKey { get; set; }
 
 
         /// <summary>
@@ -58,6 +70,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  privateKey: ").Append(PrivateKey).Append("\n");
             sb.Append("  domain: ").Append(Domain).Append("\n");
+            sb.Append("  encCertificate: ").Append(EncCertificate).Append("\n");
+            sb.Append("  encPrivateKey: ").Append(EncPrivateKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +117,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Domain == input.Domain ||
                     (this.Domain != null &&
                     this.Domain.Equals(input.Domain))
+                ) && 
+                (
+                    this.EncCertificate == input.EncCertificate ||
+                    (this.EncCertificate != null &&
+                    this.EncCertificate.Equals(input.EncCertificate))
+                ) && 
+                (
+                    this.EncPrivateKey == input.EncPrivateKey ||
+                    (this.EncPrivateKey != null &&
+                    this.EncPrivateKey.Equals(input.EncPrivateKey))
                 );
         }
 
@@ -124,6 +148,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
                 if (this.Domain != null)
                     hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.EncCertificate != null)
+                    hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
+                if (this.EncPrivateKey != null)
+                    hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
                 return hashCode;
             }
         }

@@ -10,31 +10,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// lb状态树的主机组健康检查器状态信息
+    /// LB状态树的后端服务器组健康检查器状态信息。
     /// </summary>
     public class LoadBalancerStatusHealthMonitor 
     {
 
         /// <summary>
-        /// 类型，可以为TCP、UDP_CONNECT或HTTP。
+        /// 协议类型。取值：TCP、UDP_CONNECT、HTTP、HTTPS。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 健康检查ID。
+        /// 健康检查器ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 健康检查名称。
+        /// 健康检查器名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。默认为ACTIVE。
+        /// 健康检查器的配置状态。取值：ACTIVE表示使用中。
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }

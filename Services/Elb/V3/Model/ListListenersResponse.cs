@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public PageInfo PageInfo { get; set; }
 
         /// <summary>
-        /// listener的列表。
+        /// Listener的列表。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
         public List<Listener> Listeners { get; set; }

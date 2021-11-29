@@ -14,6 +14,30 @@ namespace HuaweiCloud.SDK.Elb.V3
 
         
         /// <summary>
+        /// 批量更新转发策略优先级
+        /// </summary>
+        public BatchUpdatePoliciesPriorityResponse BatchUpdatePoliciesPriority(BatchUpdatePoliciesPriorityRequest batchUpdatePoliciesPriorityRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/batch-update-priority",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdatePoliciesPriorityRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchUpdatePoliciesPriorityResponse>(response);
+        }
+        
+        /// <summary>
+        /// 负载均衡器计费模式变更
+        /// </summary>
+        public ChangeLoadbalancerChargeModeResponse ChangeLoadbalancerChargeMode(ChangeLoadbalancerChargeModeRequest changeLoadbalancerChargeModeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/change-charge-mode",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeLoadbalancerChargeModeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ChangeLoadbalancerChargeModeResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建证书
         /// </summary>
         public CreateCertificateResponse CreateCertificate(CreateCertificateRequest createCertificateRequest)
@@ -112,6 +136,18 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 创建自定义安全策略
+        /// </summary>
+        public CreateSecurityPolicyResponse CreateSecurityPolicy(CreateSecurityPolicyRequest createSecurityPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateSecurityPolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除证书
         /// </summary>
         public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest deleteCertificateRequest)
@@ -196,8 +232,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public DeleteMemberResponse DeleteMember(DeleteMemberRequest deleteMemberRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_id" , deleteMemberRequest.MemberId.ToString());
             urlParam.Add("pool_id" , deleteMemberRequest.PoolId.ToString());
+            urlParam.Add("member_id" , deleteMemberRequest.MemberId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
@@ -215,6 +251,19 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePoolResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除自定义安全策略
+        /// </summary>
+        public DeleteSecurityPolicyResponse DeleteSecurityPolicy(DeleteSecurityPolicyRequest deleteSecurityPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id" , deleteSecurityPolicyRequest.SecurityPolicyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteSecurityPolicyResponse>(response);
         }
         
         /// <summary>
@@ -352,6 +401,42 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 查询配额使用详情
+        /// </summary>
+        public ListQuotaDetailsResponse ListQuotaDetails(ListQuotaDetailsRequest listQuotaDetailsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas/details",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotaDetailsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListQuotaDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询自定义安全策略列表
+        /// </summary>
+        public ListSecurityPoliciesResponse ListSecurityPolicies(ListSecurityPoliciesRequest listSecurityPoliciesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityPoliciesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListSecurityPoliciesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询系统安全策略列表
+        /// </summary>
+        public ListSystemSecurityPoliciesResponse ListSystemSecurityPolicies(ListSystemSecurityPoliciesRequest listSystemSecurityPoliciesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/system-security-policies",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSystemSecurityPoliciesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListSystemSecurityPoliciesResponse>(response);
+        }
+        
+        /// <summary>
         /// 证书详情
         /// </summary>
         public ShowCertificateResponse ShowCertificate(ShowCertificateRequest showCertificateRequest)
@@ -462,8 +547,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public ShowMemberResponse ShowMember(ShowMemberRequest showMemberRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_id" , showMemberRequest.MemberId.ToString());
             urlParam.Add("pool_id" , showMemberRequest.PoolId.ToString());
+            urlParam.Add("member_id" , showMemberRequest.MemberId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
@@ -484,7 +569,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 查询配额详情
+        /// 查询配额
         /// </summary>
         public ShowQuotaResponse ShowQuota(ShowQuotaRequest showQuotaRequest)
         {
@@ -496,15 +581,16 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 查询默认配额
+        /// 查询自定义安全策略详情
         /// </summary>
-        public ShowQuotaDefaultsResponse ShowQuotaDefaults(ShowQuotaDefaultsRequest showQuotaDefaultsRequest)
+        public ShowSecurityPolicyResponse ShowSecurityPolicy(ShowSecurityPolicyRequest showSecurityPolicyRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas/defaults",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaDefaultsRequest);
+            urlParam.Add("security_policy_id" , showSecurityPolicyRequest.SecurityPolicyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityPolicyRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowQuotaDefaultsResponse>(response);
+            return JsonUtils.DeSerialize<ShowSecurityPolicyResponse>(response);
         }
         
         /// <summary>
@@ -614,6 +700,44 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 更新自定义安全策略
+        /// </summary>
+        public UpdateSecurityPolicyResponse UpdateSecurityPolicy(UpdateSecurityPolicyRequest updateSecurityPolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id" , updateSecurityPolicyRequest.SecurityPolicyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecurityPolicyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateSecurityPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询API版本列表信息
+        /// </summary>
+        public ListApiVersionsResponse ListApiVersions(ListApiVersionsRequest listApiVersionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/versions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除IP地址组的IP列表项
+        /// </summary>
+        public BatchDeleteIpListResponse BatchDeleteIpList(BatchDeleteIpListRequest batchDeleteIpListRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id" , batchDeleteIpListRequest.IpgroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/batch-delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpListRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchDeleteIpListResponse>(response);
+        }
+        
+        /// <summary>
         /// 计算预占IP数
         /// </summary>
         public CountPreoccupyIpNumResponse CountPreoccupyIpNum(CountPreoccupyIpNumRequest countPreoccupyIpNumRequest)
@@ -686,6 +810,19 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateIpGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新IP地址组的IP列表项
+        /// </summary>
+        public UpdateIpListResponse UpdateIpList(UpdateIpListRequest updateIpListRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id" , updateIpListRequest.IpgroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/create-or-update",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpListRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<UpdateIpListResponse>(response);
         }
         
     }

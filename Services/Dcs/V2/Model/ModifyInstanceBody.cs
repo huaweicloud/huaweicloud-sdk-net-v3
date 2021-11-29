@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 修改Redis实例的访问端口。端口范围为1~65535的任意数字。 修改后，Redis实例的所有连接将会中断，业务需要重新连接Redis的新端口。 只有Redis4.0和Redis5.0支持修改端口号，Redis3.0[和Memcached](tag:hc,hk,ocb,sbc,tm,ctc,cmc)实例不支持。 
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Port { get; set; }
+
+        /// <summary>
         /// &#39;维护时间窗开始时间，为UTC时间，格式为HH:mm:ss。&#39; - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。 
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
@@ -61,6 +67,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("class ModifyInstanceBody {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  maintainBegin: ").Append(MaintainBegin).Append("\n");
             sb.Append("  maintainEnd: ").Append(MaintainEnd).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
@@ -97,6 +104,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.Port == input.Port ||
+                    (this.Port != null &&
+                    this.Port.Equals(input.Port))
+                ) && 
+                (
                     this.MaintainBegin == input.MaintainBegin ||
                     (this.MaintainBegin != null &&
                     this.MaintainBegin.Equals(input.MaintainBegin))
@@ -130,6 +142,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Port != null)
+                    hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.MaintainBegin != null)
                     hashCode = hashCode * 59 + this.MaintainBegin.GetHashCode();
                 if (this.MaintainEnd != null)

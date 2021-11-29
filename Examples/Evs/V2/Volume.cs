@@ -30,7 +30,6 @@ namespace Examples.Evs.V2
             UpdateVolume(evsClient);
             DeleteVolume(evsClient);
             CinderListVolumeTypes(evsClient);
-            CinderExportToImage(evsClient);
             CinderListQuotas(evsClient);
             CinderListAvailabilityZones(evsClient);
         }
@@ -173,46 +172,6 @@ namespace Examples.Evs.V2
             {
                 CinderListVolumeTypesResponse resp = client.CinderListVolumeTypes(req);
                 Console.WriteLine(resp.VolumeTypes);
-                Console.WriteLine(resp.HttpStatusCode);
-            }
-            catch (RequestTimeoutException requestTimeoutException)
-            {
-                Console.WriteLine(requestTimeoutException.ErrorMessage);
-            }
-            catch (ServiceResponseException clientRequestException)
-            {
-                Console.WriteLine(clientRequestException.HttpStatusCode);
-                Console.WriteLine(clientRequestException.ErrorCode);
-                Console.WriteLine(clientRequestException.ErrorMsg);
-            }
-            catch (ConnectionException connectionException)
-            {
-                Console.WriteLine(connectionException.ErrorMessage);
-            }
-        }
-
-        private static void CinderExportToImage(EvsClient client)
-        {
-            CinderExportToImageRequest req = new CinderExportToImageRequest()
-            {
-                VolumeId = "1bebb541-5601-450f-a87a-55f9a3c8327b",
-                Body = new CinderExportToImageRequestBody
-                {
-                    OsVolumeUploadImage = new CinderExportToImageOption
-                    {
-                        DiskFormat = CinderExportToImageOption.DiskFormatEnum.VHD,
-                        Force = false,
-                        ImageName = "test",
-                        OsType = CinderExportToImageOption.OsTypeEnum.LINUX,
-                        ContainerFormat = CinderExportToImageOption.ContainerFormatEnum.BARE
-                    }
-                }
-            };
-
-            try
-            {
-                CinderExportToImageResponse resp = client.CinderExportToImage(req);
-                Console.WriteLine(resp.OsVolumeUploadImage);
                 Console.WriteLine(resp.HttpStatusCode);
             }
             catch (RequestTimeoutException requestTimeoutException)

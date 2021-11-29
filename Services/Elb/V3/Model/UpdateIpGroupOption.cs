@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// IP地址组中包含的ip列表。
+        /// IP地址组中包含的IP列表。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpadateIpGroupIpOption> IpList { get; set; }

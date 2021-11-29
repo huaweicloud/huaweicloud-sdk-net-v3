@@ -7,27 +7,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Evs.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CinderExportToImageRequest 
+    public class UpdateIpListRequest 
     {
 
         /// <summary>
-        /// 云硬盘ID。
+        /// IP地址组ID。
         /// </summary>
-        [SDKProperty("volume_id", IsPath = true)]
-        [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string VolumeId { get; set; }
+        [SDKProperty("ipgroup_id", IsPath = true)]
+        [JsonProperty("ipgroup_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpgroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CinderExportToImageRequestBody Body { get; set; }
+        public UpdateIpListRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -36,8 +36,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CinderExportToImageRequest {\n");
-            sb.Append("  volumeId: ").Append(VolumeId).Append("\n");
+            sb.Append("class UpdateIpListRequest {\n");
+            sb.Append("  ipgroupId: ").Append(IpgroupId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -48,22 +48,22 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CinderExportToImageRequest);
+            return this.Equals(input as UpdateIpListRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CinderExportToImageRequest input)
+        public bool Equals(UpdateIpListRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
+                    this.IpgroupId == input.IpgroupId ||
+                    (this.IpgroupId != null &&
+                    this.IpgroupId.Equals(input.IpgroupId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -80,8 +80,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                if (this.IpgroupId != null)
+                    hashCode = hashCode * 59 + this.IpgroupId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

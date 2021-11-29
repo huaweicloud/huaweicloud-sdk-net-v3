@@ -16,22 +16,28 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
+        /// 转发规则的管理状态，默认为true。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
+        /// 转发规则的匹配方式。  - type为HOST_NAME时仅支持EQUAL_TO，支持通配符*。 - type为PATH时可以为Perl类型的REGEX，STARTS_WITH，EQUAL_TO。 - type为METHOD、SOURCE_IP时，仅支持EQUAL_TO。 - type为HEADER、QUERY_STRING，仅支持EQUAL_TO，支持通配符*、？。
         /// </summary>
         [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CompareType { get; set; }
 
         /// <summary>
-        /// 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
+        /// 匹配项的名称，比如转发规则匹配类型是请求头匹配，则key表示请求头参数的名称。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
+
+        /// <summary>
+        /// 匹配项的值，比如转发规则匹配类型是域名匹配，则value表示域名的值。仅当conditions空时该字段生效。 当type为HOST_NAME时，字符串只能包含英文字母、数字、“-”、“.”或“*”，必须以字母、数字或“*”开头。若域名中包含“*”，则“*”只能出现在开头且必须以*.开始。当*开头时表示通配0~任一个字符。 当type为PATH时，当转发规则的compare_type为STARTS_WITH、EQUAL_TO时，字符串只能包含英文字母、数字、_~&#39;;@^-%#&amp;$.*+?,&#x3D;!&amp;#58;|/()[]{}，且必须以\&quot;/\&quot;开头。 当type为METHOD、SOURCE_IP、HEADER,QUERY_STRING时，该字段无意义，使用conditions来指定key/value。
+        /// </summary>
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
 
         /// <summary>
         /// 转发规则所在的项目ID。
@@ -40,22 +46,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 一个l7policy下创建的l7rule的type不能重复。 匹配内容：可以为HOST_NAME，PATH
+        /// 转发规则类别。取值： - HOST_NAME：匹配域名 - PATH：匹配请求路径 - METHOD：匹配请求方法 - HEADER：匹配请求头 - QUERY_STRING：匹配请求查询参数 - SOURCE_IP：匹配请求源IP地址 使用说明： - 一个l7policy下创建的l7rule的HOST_NAME，PATH，METHOD，SOURCE_IP不能重复。HEADER、QUERY_STRING支持重复的rule配置。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 匹配内容的值。不能包含空格。当type为HOST_NAME时，取值范围：String (100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String (128)。当转发规则的compare_type为STARTS_WITH、EQUAL_TO时，字符串只能包含英文字母、数字、_~&#39;;@^-%#&amp;$.*+?,&#x3D;!:| /()[]{}，且必须以\&quot;/\&quot;开头。
-        /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
-
-        /// <summary>
-        /// 是否反向匹配；取值范围：true/false。默认值：false；该字段为预留字段，暂未启用。
+        /// 是否反向匹配。取值：true、false，默认false。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("invert", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Invert { get; set; }
+
+        /// <summary>
+        /// 转发规则的匹配条件。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效。 配置了conditions后，字段key、字段value的值无意义。 若指定了conditons，该rule的条件数为conditons列表长度。 列表中key必须相同，value不允许重复。 [ 不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// </summary>
+        [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateRuleCondition> Conditions { get; set; }
 
 
         /// <summary>
@@ -68,10 +74,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  compareType: ").Append(CompareType).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
-            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  invert: ").Append(Invert).Append("\n");
+            sb.Append("  conditions: ").Append(Conditions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,6 +116,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Key.Equals(input.Key))
                 ) && 
                 (
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
+                ) && 
+                (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
@@ -119,14 +131,15 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
                     this.Invert == input.Invert ||
                     (this.Invert != null &&
                     this.Invert.Equals(input.Invert))
+                ) && 
+                (
+                    this.Conditions == input.Conditions ||
+                    this.Conditions != null &&
+                    input.Conditions != null &&
+                    this.Conditions.SequenceEqual(input.Conditions)
                 );
         }
 
@@ -144,14 +157,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.CompareType.GetHashCode();
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Value != null)
+                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.Invert != null)
                     hashCode = hashCode * 59 + this.Invert.GetHashCode();
+                if (this.Conditions != null)
+                    hashCode = hashCode * 59 + this.Conditions.GetHashCode();
                 return hashCode;
             }
         }

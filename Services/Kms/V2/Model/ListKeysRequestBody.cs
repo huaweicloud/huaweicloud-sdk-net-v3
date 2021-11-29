@@ -191,6 +191,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("key_spec", NullValueHandling = NullValueHandling.Ignore)]
         public KeySpecEnum KeySpec { get; set; }
         /// <summary>
+        /// 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件. - 取值为“all” - 取值为“0” - 满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
         /// </summary>
         [JsonProperty("sequence", NullValueHandling = NullValueHandling.Ignore)]
@@ -208,6 +214,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  keyState: ").Append(KeyState).Append("\n");
             sb.Append("  keySpec: ").Append(KeySpec).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sequence: ").Append(Sequence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -251,6 +258,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.KeySpec.Equals(input.KeySpec))
                 ) && 
                 (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
                     this.Sequence == input.Sequence ||
                     (this.Sequence != null &&
                     this.Sequence.Equals(input.Sequence))
@@ -273,6 +285,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.KeyState.GetHashCode();
                 if (this.KeySpec != null)
                     hashCode = hashCode * 59 + this.KeySpec.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Sequence != null)
                     hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 return hashCode;

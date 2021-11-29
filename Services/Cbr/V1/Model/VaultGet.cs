@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 资源
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<VaultResourceIntancesResp> Resources { get; set; }
+        public List<CheckpointResourceResp> Resources { get; set; }
 
         /// <summary>
         /// 标签

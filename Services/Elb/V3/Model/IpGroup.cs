@@ -10,13 +10,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 查询IP地址组返回对象
+    /// IP地址组信息。
     /// </summary>
     public class IpGroup 
     {
 
         /// <summary>
-        /// IP地址组的创建时间
+        /// IP地址组的创建时间。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
@@ -28,19 +28,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// IP地址组的id。
+        /// IP地址组的ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// IP地址组中包含的ip或网段列表。[]表示任意ip。
+        /// IP地址组中包含的IP或网段列表。[]表示任意IP。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpInfo> IpList { get; set; }
 
         /// <summary>
-        /// 与IP地址组关联的监听器的id列表。
+        /// 与IP地址组关联的监听器的ID列表。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListenerRef> Listeners { get; set; }
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// IP地址组的项目id。
+        /// IP地址组的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }

@@ -10,37 +10,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// lb状态树的策略状态信息
+    /// LB状态树的转发策略状态信息
     /// </summary>
     public class LoadBalancerStatusPolicy 
     {
 
         /// <summary>
-        /// 匹配动作。 支持REDIRECT_TO_POOL和REDIRECT_TO_LISTENER。
+        /// 匹配后动作。取值： - REDIRECT_TO_POOL：转发到后端服务器组。 - REDIRECT_TO_LISTENER：转发到监听器。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 策略ID。
+        /// 转发策略ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。默认为ACTIVE。
+        /// 转发策略的配置状态。取值： - ACTIVE：使用中，默认值。 - ERROR：表示当前策略与同一监听器下的其他策略存在相同的规则配置。
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 策略名称。
+        /// 转发策略名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 规则。
+        /// 转发规则状态信息。
         /// </summary>
         [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusL7Rule> Rules { get; set; }

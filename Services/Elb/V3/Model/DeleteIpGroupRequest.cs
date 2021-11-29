@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 待更新的IP地址组的id
+        /// IP地址组的ID。
         /// </summary>
         [SDKProperty("ipgroup_id", IsPath = true)]
         [JsonProperty("ipgroup_id", NullValueHandling = NullValueHandling.Ignore)]

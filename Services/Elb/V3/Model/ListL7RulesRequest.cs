@@ -23,48 +23,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string L7policyId { get; set; }
 
         /// <summary>
-        /// 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
-        /// </summary>
-        [SDKProperty("admin_state_up", IsQuery = true)]
-        [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? AdminStateUp { get; set; }
-
-        /// <summary>
-        /// 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
-        /// </summary>
-        [SDKProperty("compare_type", IsQuery = true)]
-        [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> CompareType { get; set; }
-
-        /// <summary>
-        /// 企业项目ID。
-        /// </summary>
-        [SDKProperty("enterprise_project_id", IsQuery = true)]
-        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> EnterpriseProjectId { get; set; }
-
-        /// <summary>
-        /// 转发规则ID。
-        /// </summary>
-        [SDKProperty("id", IsQuery = true)]
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Id { get; set; }
-
-        /// <summary>
-        /// 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
-        /// </summary>
-        [SDKProperty("invert", IsQuery = true)]
-        [JsonProperty("invert", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Invert { get; set; }
-
-        /// <summary>
-        /// 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
-        /// </summary>
-        [SDKProperty("key", IsQuery = true)]
-        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Key { get; set; }
-
-        /// <summary>
         /// 每页返回的个数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -79,32 +37,74 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
+        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明： - 必须与limit一起使用。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+        /// 转发规则ID。  支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Id { get; set; }
+
+        /// <summary>
+        /// 转发规则的匹配方式。  type为HOST_NAME时可以为EQUAL_TO。  type为PATH时可以为Perl类型的REGEX， STARTS_WITH，EQUAL_TO。  支持多值查询，查询条件格式：*compare_type&#x3D;xxx&amp;compare_type&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("compare_type", IsQuery = true)]
+        [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CompareType { get; set; }
+
+        /// <summary>
+        /// 转发规则的配置状态。取值：ACTIVE 表示正常。  支持多值查询，查询条件格式：*provisioning_status&#x3D;xxx&amp;provisioning_status&#x3D;xxx*。
         /// </summary>
         [SDKProperty("provisioning_status", IsQuery = true)]
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 一个l7policy下创建的l7rule的type不能重复。 匹配内容：可以为HOST_NAME，PATH。
+        /// 是否反向匹配。固定为false。该字段能更新但不会生效。
+        /// </summary>
+        [SDKProperty("invert", IsQuery = true)]
+        [JsonProperty("invert", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Invert { get; set; }
+
+        /// <summary>
+        /// 转发规则的管理状态，默认为true。  不支持该字段，请勿使用。
+        /// </summary>
+        [SDKProperty("admin_state_up", IsQuery = true)]
+        [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AdminStateUp { get; set; }
+
+        /// <summary>
+        /// 匹配内容的值。  支持多值查询，查询条件格式：*value&#x3D;xxx&amp;value&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("value", IsQuery = true)]
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Value { get; set; }
+
+        /// <summary>
+        /// 匹配内容的键值，用于标识规则。  支持多值查询，查询条件格式：*key&#x3D;xxx&amp;key&#x3D;xxx*。  不支持该字段，请勿使用。
+        /// </summary>
+        [SDKProperty("key", IsQuery = true)]
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Key { get; set; }
+
+        /// <summary>
+        /// 匹配类别，可以为HOST_NAME，PATH。  一个l7policy下创建的l7rule的type不能重复。  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、^-%#&amp;$.*+?,&#x3D;!:| /()[]{}，且必须以\&quot;/\&quot;开头。
+        /// 企业项目ID。不传时查询default企业项目\&quot;0\&quot;下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
         /// </summary>
-        [SDKProperty("value", IsQuery = true)]
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Value { get; set; }
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EnterpriseProjectId { get; set; }
 
 
         /// <summary>
@@ -115,18 +115,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListL7RulesRequest {\n");
             sb.Append("  l7policyId: ").Append(L7policyId).Append("\n");
-            sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
-            sb.Append("  compareType: ").Append(CompareType).Append("\n");
-            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  invert: ").Append(Invert).Append("\n");
-            sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  compareType: ").Append(CompareType).Append("\n");
             sb.Append("  provisioningStatus: ").Append(ProvisioningStatus).Append("\n");
-            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  invert: ").Append(Invert).Append("\n");
+            sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,40 +154,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.L7policyId.Equals(input.L7policyId))
                 ) && 
                 (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.CompareType == input.CompareType ||
-                    this.CompareType != null &&
-                    input.CompareType != null &&
-                    this.CompareType.SequenceEqual(input.CompareType)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Invert == input.Invert ||
-                    (this.Invert != null &&
-                    this.Invert.Equals(input.Invert))
-                ) && 
-                (
-                    this.Key == input.Key ||
-                    this.Key != null &&
-                    input.Key != null &&
-                    this.Key.SequenceEqual(input.Key)
-                ) && 
-                (
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
@@ -203,10 +169,44 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.PageReverse.Equals(input.PageReverse))
                 ) && 
                 (
+                    this.Id == input.Id ||
+                    this.Id != null &&
+                    input.Id != null &&
+                    this.Id.SequenceEqual(input.Id)
+                ) && 
+                (
+                    this.CompareType == input.CompareType ||
+                    this.CompareType != null &&
+                    input.CompareType != null &&
+                    this.CompareType.SequenceEqual(input.CompareType)
+                ) && 
+                (
                     this.ProvisioningStatus == input.ProvisioningStatus ||
                     this.ProvisioningStatus != null &&
                     input.ProvisioningStatus != null &&
                     this.ProvisioningStatus.SequenceEqual(input.ProvisioningStatus)
+                ) && 
+                (
+                    this.Invert == input.Invert ||
+                    (this.Invert != null &&
+                    this.Invert.Equals(input.Invert))
+                ) && 
+                (
+                    this.AdminStateUp == input.AdminStateUp ||
+                    (this.AdminStateUp != null &&
+                    this.AdminStateUp.Equals(input.AdminStateUp))
+                ) && 
+                (
+                    this.Value == input.Value ||
+                    this.Value != null &&
+                    input.Value != null &&
+                    this.Value.SequenceEqual(input.Value)
+                ) && 
+                (
+                    this.Key == input.Key ||
+                    this.Key != null &&
+                    input.Key != null &&
+                    this.Key.SequenceEqual(input.Key)
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -215,10 +215,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Type.SequenceEqual(input.Type)
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    this.Value != null &&
-                    input.Value != null &&
-                    this.Value.SequenceEqual(input.Value)
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    this.EnterpriseProjectId != null &&
+                    input.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
                 );
         }
 
@@ -232,30 +232,30 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 int hashCode = 41;
                 if (this.L7policyId != null)
                     hashCode = hashCode * 59 + this.L7policyId.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.CompareType != null)
-                    hashCode = hashCode * 59 + this.CompareType.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Invert != null)
-                    hashCode = hashCode * 59 + this.Invert.GetHashCode();
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null)
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.PageReverse != null)
                     hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CompareType != null)
+                    hashCode = hashCode * 59 + this.CompareType.GetHashCode();
                 if (this.ProvisioningStatus != null)
                     hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Invert != null)
+                    hashCode = hashCode * 59 + this.Invert.GetHashCode();
+                if (this.AdminStateUp != null)
+                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Key != null)
+                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

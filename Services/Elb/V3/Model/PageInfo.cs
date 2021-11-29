@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 翻页信息
+    /// 分页信息
     /// </summary>
     public class PageInfo 
     {

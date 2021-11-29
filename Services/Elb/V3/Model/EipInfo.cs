@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("eip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string EipAddress { get; set; }
 
+        /// <summary>
+        /// IP版本号，取值：4表示IPv4,6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:otc,otc_test,dt,dt_test)
+        /// </summary>
+        [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IpVersion { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("class EipInfo {\n");
             sb.Append("  eipId: ").Append(EipId).Append("\n");
             sb.Append("  eipAddress: ").Append(EipAddress).Append("\n");
+            sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.EipAddress == input.EipAddress ||
                     (this.EipAddress != null &&
                     this.EipAddress.Equals(input.EipAddress))
+                ) && 
+                (
+                    this.IpVersion == input.IpVersion ||
+                    (this.IpVersion != null &&
+                    this.IpVersion.Equals(input.IpVersion))
                 );
         }
 
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.EipId.GetHashCode();
                 if (this.EipAddress != null)
                     hashCode = hashCode * 59 + this.EipAddress.GetHashCode();
+                if (this.IpVersion != null)
+                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 return hashCode;
             }
         }

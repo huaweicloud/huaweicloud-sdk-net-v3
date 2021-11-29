@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 负载均衡器规格信息
+    /// 负载均衡器规格信息。
     /// </summary>
     public class Flavor 
     {
@@ -40,22 +40,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? Shared { get; set; }
 
         /// <summary>
-        /// 项目ID
+        /// 项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// L4和L7 分别表示四层和七层flavor。查询支持按type过滤
+        /// L4和L7 分别表示四层和七层flavor。查询支持按type过滤。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// availability_zone_ids字段，标志ELB对应L7-flavor在对应可用区是否可以售卖。 若该字段为[]代表该flavor不可售卖；若该字段为[\&quot;ALL\&quot;]，代表所有可用区可售卖；若仅部分可用区可售卖则返回[\&quot;cn-north-1a\&quot;,\&quot;cn-north-1b\&quot;]。 可通过/v3/{project_id}/elb/availability-zones接口查询所有可售卖的可用区接口。
+        /// 是否售罄。
         /// </summary>
-        [JsonProperty("availability_zone_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> AvailabilityZoneIds { get; set; }
+        [JsonProperty("flavor_sold_out", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? FlavorSoldOut { get; set; }
 
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  shared: ").Append(Shared).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
-            sb.Append("  availabilityZoneIds: ").Append(AvailabilityZoneIds).Append("\n");
+            sb.Append("  flavorSoldOut: ").Append(FlavorSoldOut).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,10 +124,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.AvailabilityZoneIds == input.AvailabilityZoneIds ||
-                    this.AvailabilityZoneIds != null &&
-                    input.AvailabilityZoneIds != null &&
-                    this.AvailabilityZoneIds.SequenceEqual(input.AvailabilityZoneIds)
+                    this.FlavorSoldOut == input.FlavorSoldOut ||
+                    (this.FlavorSoldOut != null &&
+                    this.FlavorSoldOut.Equals(input.FlavorSoldOut))
                 );
         }
 
@@ -151,8 +150,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.AvailabilityZoneIds != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneIds.GetHashCode();
+                if (this.FlavorSoldOut != null)
+                    hashCode = hashCode * 59 + this.FlavorSoldOut.GetHashCode();
                 return hashCode;
             }
         }

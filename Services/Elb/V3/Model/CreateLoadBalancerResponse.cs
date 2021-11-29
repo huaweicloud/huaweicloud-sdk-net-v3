@@ -22,6 +22,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public LoadBalancer Loadbalancer { get; set; }
 
         /// <summary>
+        /// 负载均衡器的id（包周期场景返回该字段）
+        /// </summary>
+        [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LoadbalancerId { get; set; }
+
+        /// <summary>
+        /// 订单号（包周期场景返回该字段）
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        /// <summary>
         /// 请求ID。  注：自动生成 。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -36,6 +48,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class CreateLoadBalancerResponse {\n");
             sb.Append("  loadbalancer: ").Append(Loadbalancer).Append("\n");
+            sb.Append("  loadbalancerId: ").Append(LoadbalancerId).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -64,6 +78,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Loadbalancer.Equals(input.Loadbalancer))
                 ) && 
                 (
+                    this.LoadbalancerId == input.LoadbalancerId ||
+                    (this.LoadbalancerId != null &&
+                    this.LoadbalancerId.Equals(input.LoadbalancerId))
+                ) && 
+                (
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
+                ) && 
+                (
                     this.RequestId == input.RequestId ||
                     (this.RequestId != null &&
                     this.RequestId.Equals(input.RequestId))
@@ -80,6 +104,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 int hashCode = 41;
                 if (this.Loadbalancer != null)
                     hashCode = hashCode * 59 + this.Loadbalancer.GetHashCode();
+                if (this.LoadbalancerId != null)
+                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.RequestId != null)
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;

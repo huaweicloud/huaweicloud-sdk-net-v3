@@ -388,6 +388,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string CheckpointId { get; set; }
 
         /// <summary>
+        /// 备份提供商ID，用于区分备份对象。当前取值包含：0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
+        /// </summary>
+        [JsonProperty("provider_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProviderId { get; set; }
+
+        /// <summary>
         /// 创建时间，例如:\&quot;2020-02-05T10:38:34.209782\&quot;
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
@@ -513,6 +519,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             var sb = new StringBuilder();
             sb.Append("class BackupResp {\n");
             sb.Append("  checkpointId: ").Append(CheckpointId).Append("\n");
+            sb.Append("  providerId: ").Append(ProviderId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  expiredAt: ").Append(ExpiredAt).Append("\n");
@@ -558,6 +565,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.CheckpointId == input.CheckpointId ||
                     (this.CheckpointId != null &&
                     this.CheckpointId.Equals(input.CheckpointId))
+                ) && 
+                (
+                    this.ProviderId == input.ProviderId ||
+                    (this.ProviderId != null &&
+                    this.ProviderId.Equals(input.ProviderId))
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
@@ -672,6 +684,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 int hashCode = 41;
                 if (this.CheckpointId != null)
                     hashCode = hashCode * 59 + this.CheckpointId.GetHashCode();
+                if (this.ProviderId != null)
+                    hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.Description != null)
