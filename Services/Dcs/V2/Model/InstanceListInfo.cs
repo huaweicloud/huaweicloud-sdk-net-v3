@@ -190,6 +190,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string DomainName { get; set; }
 
         /// <summary>
+        /// 实例的只读域名，只有主备实例有该字段。
+        /// </summary>
+        [JsonProperty("readonly_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReadonlyDomainName { get; set; }
+
+        /// <summary>
         /// 实例名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -274,6 +280,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
+            sb.Append("  readonlyDomainName: ").Append(ReadonlyDomainName).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -449,6 +456,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.DomainName.Equals(input.DomainName))
                 ) && 
                 (
+                    this.ReadonlyDomainName == input.ReadonlyDomainName ||
+                    (this.ReadonlyDomainName != null &&
+                    this.ReadonlyDomainName.Equals(input.ReadonlyDomainName))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -558,6 +570,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.DomainName != null)
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.ReadonlyDomainName != null)
+                    hashCode = hashCode * 59 + this.ReadonlyDomainName.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.SpecCode != null)

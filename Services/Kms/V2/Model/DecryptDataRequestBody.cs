@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
 
         /// <summary>
-        /// 被加密数据密文。取值为加密数据结果中的cipher_text的值，满足正则匹配“^[0-9a-zA-Z+/&#x3D;]{188,5648}$”。
+        /// 被加密数据密文。取值为加密数据结果中的cipher_text的值，满足正则匹配“^[0-9a-zA-Z+/&#x3D;]{128,5648}$”。
         /// </summary>
         [JsonProperty("cipher_text", NullValueHandling = NullValueHandling.Ignore)]
         public string CipherText { get; set; }

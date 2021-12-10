@@ -7,25 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Frs.V2.Model
+namespace HuaweiCloud.SDK.Swr.V2.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class Point 
+    public class ListQuotasResponse : SdkResponse
     {
 
         /// <summary>
-        /// 坐标横轴数值。
+        /// 配额列表
         /// </summary>
-        [JsonProperty("x", NullValueHandling = NullValueHandling.Ignore)]
-        public double? X { get; set; }
-
-        /// <summary>
-        /// 坐标纵轴数值。
-        /// </summary>
-        [JsonProperty("y", NullValueHandling = NullValueHandling.Ignore)]
-        public double? Y { get; set; }
+        [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ShowQuota> Quotas { get; set; }
 
 
         /// <summary>
@@ -34,9 +28,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Point {\n");
-            sb.Append("  x: ").Append(X).Append("\n");
-            sb.Append("  y: ").Append(Y).Append("\n");
+            sb.Append("class ListQuotasResponse {\n");
+            sb.Append("  quotas: ").Append(Quotas).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,27 +39,23 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Point);
+            return this.Equals(input as ListQuotasResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(Point input)
+        public bool Equals(ListQuotasResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.X == input.X ||
-                    (this.X != null &&
-                    this.X.Equals(input.X))
-                ) && 
-                (
-                    this.Y == input.Y ||
-                    (this.Y != null &&
-                    this.Y.Equals(input.Y))
+                    this.Quotas == input.Quotas ||
+                    this.Quotas != null &&
+                    input.Quotas != null &&
+                    this.Quotas.SequenceEqual(input.Quotas)
                 );
         }
 
@@ -78,10 +67,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.X != null)
-                    hashCode = hashCode * 59 + this.X.GetHashCode();
-                if (this.Y != null)
-                    hashCode = hashCode * 59 + this.Y.GetHashCode();
+                if (this.Quotas != null)
+                    hashCode = hashCode * 59 + this.Quotas.GetHashCode();
                 return hashCode;
             }
         }

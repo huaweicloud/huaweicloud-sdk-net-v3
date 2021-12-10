@@ -208,6 +208,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string DomainName { get; set; }
 
         /// <summary>
+        /// 实例的只读域名，只有主备实例有该字段。
+        /// </summary>
+        [JsonProperty("readonly_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReadonlyDomainName { get; set; }
+
+        /// <summary>
         /// Redis缓存实例是否开启公网访问功能。 - true：开启 - false：不开启 
         /// </summary>
         [JsonProperty("enable_publicip", NullValueHandling = NullValueHandling.Ignore)]
@@ -295,6 +301,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
+            sb.Append("  readonlyDomainName: ").Append(ReadonlyDomainName).Append("\n");
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("  publicipAddress: ").Append(PublicipAddress).Append("\n");
@@ -486,6 +493,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.DomainName.Equals(input.DomainName))
                 ) && 
                 (
+                    this.ReadonlyDomainName == input.ReadonlyDomainName ||
+                    (this.ReadonlyDomainName != null &&
+                    this.ReadonlyDomainName.Equals(input.ReadonlyDomainName))
+                ) && 
+                (
                     this.EnablePublicip == input.EnablePublicip ||
                     (this.EnablePublicip != null &&
                     this.EnablePublicip.Equals(input.EnablePublicip))
@@ -599,6 +611,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.DomainName != null)
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.ReadonlyDomainName != null)
+                    hashCode = hashCode * 59 + this.ReadonlyDomainName.GetHashCode();
                 if (this.EnablePublicip != null)
                     hashCode = hashCode * 59 + this.EnablePublicip.GetHashCode();
                 if (this.PublicipId != null)

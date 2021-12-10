@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 创建共享账号
+        /// 创建共享帐号
         /// </summary>
         public CreateRepoDomainsResponse CreateRepoDomains(CreateRepoDomainsRequest createRepoDomainsRequest)
         {
@@ -204,7 +204,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 删除共享账号
+        /// 删除共享帐号
         /// </summary>
         public DeleteRepoDomainsResponse DeleteRepoDomains(DeleteRepoDomainsRequest deleteRepoDomainsRequest)
         {
@@ -306,7 +306,19 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 获取共享账号列表
+        /// 获取配额信息
+        /// </summary>
+        public ListQuotasResponse ListQuotas(ListQuotasRequest listQuotasRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/manage/projects/{project_id}/quotas",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotasRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListQuotasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取共享帐号列表
         /// </summary>
         public ListRepoDomainsResponse ListRepoDomains(ListRepoDomainsRequest listRepoDomainsRequest)
         {
@@ -322,7 +334,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 查询镜像列表
+        /// 查询镜像仓库列表
         /// </summary>
         public ListReposDetailsResponse ListReposDetails(ListReposDetailsRequest listReposDetailsRequest)
         {
@@ -412,7 +424,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 判断共享账号是否存在
+        /// 判断共享帐号是否存在
         /// </summary>
         public ShowAccessDomainResponse ShowAccessDomain(ShowAccessDomainRequest showAccessDomainRequest)
         {
@@ -453,7 +465,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 查询镜像概要信息
+        /// 查询镜像仓库概要信息
         /// </summary>
         public ShowRepositoryResponse ShowRepository(ShowRepositoryRequest showRepositoryRequest)
         {
@@ -554,7 +566,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 更新共享账号
+        /// 更新共享帐号
         /// </summary>
         public UpdateRepoDomainsResponse UpdateRepoDomains(UpdateRepoDomainsRequest updateRepoDomainsRequest)
         {

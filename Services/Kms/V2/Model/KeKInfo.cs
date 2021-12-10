@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kms.V2.Model
 {
     /// <summary>
-    /// 
+    /// 密钥详细信息。
     /// </summary>
     public class KeKInfo 
     {

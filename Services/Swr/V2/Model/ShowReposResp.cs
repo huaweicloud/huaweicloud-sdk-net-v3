@@ -118,7 +118,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public bool? Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 总记录条数
         /// </summary>
         [JsonProperty("total_range", NullValueHandling = NullValueHandling.Ignore)]
         public long? TotalRange { get; set; }

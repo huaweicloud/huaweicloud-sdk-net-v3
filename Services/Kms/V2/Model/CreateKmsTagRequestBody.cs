@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kms.V2.Model
 {
     /// <summary>
-    /// 
+    /// 创建KMS资源标签请求体。
     /// </summary>
     public class CreateKmsTagRequestBody 
     {

@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dds.V3.Model
+namespace HuaweiCloud.SDK.As.V1.Model
 {
     /// <summary>
-    /// 
+    /// 是否开启源/目的检查开关。
     /// </summary>
-    public class UpdateNameRequestBody 
+    public class AllowedAddressPair 
     {
 
         /// <summary>
-        /// 新实例名称。用于表示实例的名称，允许和已有名称重复。取值范围：长度为4~64位，必须以字母开头（A~Z或a~z），区分大小写，可以包含字母、数字（0~9）、中划线（-）或者下划线（_），不能包含其他特殊字符。
+        /// 是否开启源/目的检查开关。  默认是开启，不允许置空。  关闭：1.1.1.1/0 开启：除“1.1.1.1/0”以外的其余值均按开启处理
         /// </summary>
-        [JsonProperty("new_instance_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string NewInstanceName { get; set; }
+        [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpAddress { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateNameRequestBody {\n");
-            sb.Append("  newInstanceName: ").Append(NewInstanceName).Append("\n");
+            sb.Append("class AllowedAddressPair {\n");
+            sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateNameRequestBody);
+            return this.Equals(input as AllowedAddressPair);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateNameRequestBody input)
+        public bool Equals(AllowedAddressPair input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.NewInstanceName == input.NewInstanceName ||
-                    (this.NewInstanceName != null &&
-                    this.NewInstanceName.Equals(input.NewInstanceName))
+                    this.IpAddress == input.IpAddress ||
+                    (this.IpAddress != null &&
+                    this.IpAddress.Equals(input.IpAddress))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NewInstanceName != null)
-                    hashCode = hashCode * 59 + this.NewInstanceName.GetHashCode();
+                if (this.IpAddress != null)
+                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
                 return hashCode;
             }
         }

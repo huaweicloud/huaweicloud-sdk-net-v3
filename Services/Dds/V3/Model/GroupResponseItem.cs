@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 组名组名称。节点类型为shard和config时，该参数有效。
+        /// 组名称。节点类型为shard和config时，该参数有效。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

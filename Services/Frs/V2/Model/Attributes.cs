@@ -28,52 +28,16 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public string Glass { get; set; }
 
         /// <summary>
-        /// 性别： • male：男 • female：女 • unknown：未知
-        /// </summary>
-        [JsonProperty("gender", NullValueHandling = NullValueHandling.Ignore)]
-        public string Gender { get; set; }
-
-        /// <summary>
-        /// 围绕Y轴旋转，偏航角，范围[-180,180]。
-        /// </summary>
-        [JsonProperty("yaw_angle", NullValueHandling = NullValueHandling.Ignore)]
-        public double? YawAngle { get; set; }
-
-        /// <summary>
-        /// 围绕Z轴旋转，翻滚角，范围[-180,180]。
-        /// </summary>
-        [JsonProperty("roll_angle", NullValueHandling = NullValueHandling.Ignore)]
-        public double? RollAngle { get; set; }
-
-        /// <summary>
-        /// 围绕X轴旋转，俯仰角，范围[-180,180]。
-        /// </summary>
-        [JsonProperty("pitch_angle", NullValueHandling = NullValueHandling.Ignore)]
-        public double? PitchAngle { get; set; }
-
-        /// <summary>
         /// 是否戴帽子： • yes：戴帽子 • none：未戴帽子 • unknown：未知
         /// </summary>
         [JsonProperty("hat", NullValueHandling = NullValueHandling.Ignore)]
         public string Hat { get; set; }
 
         /// <summary>
-        /// 人脸轮廓坐标值。
-        /// </summary>
-        [JsonProperty("headpose", NullValueHandling = NullValueHandling.Ignore)]
-        public List<double?> Headpose { get; set; }
-
-        /// <summary>
         /// 年龄。
         /// </summary>
         [JsonProperty("age", NullValueHandling = NullValueHandling.Ignore)]
         public int? Age { get; set; }
-
-        /// <summary>
-        /// 笑脸。
-        /// </summary>
-        [JsonProperty("smile", NullValueHandling = NullValueHandling.Ignore)]
-        public string Smile { get; set; }
 
         /// <summary>
         /// 是否戴口罩： • yes：戴口罩 • none：未戴口罩 • unknown：未知
@@ -86,18 +50,6 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         [JsonProperty("beard", NullValueHandling = NullValueHandling.Ignore)]
         public string Beard { get; set; }
-
-        /// <summary>
-        /// 肤色： • brown：棕 • yellow：黄 • white：白 • black：黑 • unknown：未知
-        /// </summary>
-        [JsonProperty("skin", NullValueHandling = NullValueHandling.Ignore)]
-        public string Skin { get; set; }
-
-        /// <summary>
-        /// 民族： • han：汉族 • other：其他 • unknown：未知
-        /// </summary>
-        [JsonProperty("ethnic", NullValueHandling = NullValueHandling.Ignore)]
-        public string Ethnic { get; set; }
 
         /// <summary>
         /// 图片类型： • idcard：证件照 • monitor：摄像头监控 • internet photo：网络图片
@@ -139,18 +91,10 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             sb.Append("class Attributes {\n");
             sb.Append("  dress: ").Append(Dress).Append("\n");
             sb.Append("  glass: ").Append(Glass).Append("\n");
-            sb.Append("  gender: ").Append(Gender).Append("\n");
-            sb.Append("  yawAngle: ").Append(YawAngle).Append("\n");
-            sb.Append("  rollAngle: ").Append(RollAngle).Append("\n");
-            sb.Append("  pitchAngle: ").Append(PitchAngle).Append("\n");
             sb.Append("  hat: ").Append(Hat).Append("\n");
-            sb.Append("  headpose: ").Append(Headpose).Append("\n");
             sb.Append("  age: ").Append(Age).Append("\n");
-            sb.Append("  smile: ").Append(Smile).Append("\n");
             sb.Append("  mask: ").Append(Mask).Append("\n");
             sb.Append("  beard: ").Append(Beard).Append("\n");
-            sb.Append("  skin: ").Append(Skin).Append("\n");
-            sb.Append("  ethnic: ").Append(Ethnic).Append("\n");
             sb.Append("  phototype: ").Append(Phototype).Append("\n");
             sb.Append("  quality: ").Append(Quality).Append("\n");
             sb.Append("  hair: ").Append(Hair).Append("\n");
@@ -188,45 +132,14 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.Glass.Equals(input.Glass))
                 ) && 
                 (
-                    this.Gender == input.Gender ||
-                    (this.Gender != null &&
-                    this.Gender.Equals(input.Gender))
-                ) && 
-                (
-                    this.YawAngle == input.YawAngle ||
-                    (this.YawAngle != null &&
-                    this.YawAngle.Equals(input.YawAngle))
-                ) && 
-                (
-                    this.RollAngle == input.RollAngle ||
-                    (this.RollAngle != null &&
-                    this.RollAngle.Equals(input.RollAngle))
-                ) && 
-                (
-                    this.PitchAngle == input.PitchAngle ||
-                    (this.PitchAngle != null &&
-                    this.PitchAngle.Equals(input.PitchAngle))
-                ) && 
-                (
                     this.Hat == input.Hat ||
                     (this.Hat != null &&
                     this.Hat.Equals(input.Hat))
                 ) && 
                 (
-                    this.Headpose == input.Headpose ||
-                    this.Headpose != null &&
-                    input.Headpose != null &&
-                    this.Headpose.SequenceEqual(input.Headpose)
-                ) && 
-                (
                     this.Age == input.Age ||
                     (this.Age != null &&
                     this.Age.Equals(input.Age))
-                ) && 
-                (
-                    this.Smile == input.Smile ||
-                    (this.Smile != null &&
-                    this.Smile.Equals(input.Smile))
                 ) && 
                 (
                     this.Mask == input.Mask ||
@@ -237,16 +150,6 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.Beard == input.Beard ||
                     (this.Beard != null &&
                     this.Beard.Equals(input.Beard))
-                ) && 
-                (
-                    this.Skin == input.Skin ||
-                    (this.Skin != null &&
-                    this.Skin.Equals(input.Skin))
-                ) && 
-                (
-                    this.Ethnic == input.Ethnic ||
-                    (this.Ethnic != null &&
-                    this.Ethnic.Equals(input.Ethnic))
                 ) && 
                 (
                     this.Phototype == input.Phototype ||
@@ -287,30 +190,14 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     hashCode = hashCode * 59 + this.Dress.GetHashCode();
                 if (this.Glass != null)
                     hashCode = hashCode * 59 + this.Glass.GetHashCode();
-                if (this.Gender != null)
-                    hashCode = hashCode * 59 + this.Gender.GetHashCode();
-                if (this.YawAngle != null)
-                    hashCode = hashCode * 59 + this.YawAngle.GetHashCode();
-                if (this.RollAngle != null)
-                    hashCode = hashCode * 59 + this.RollAngle.GetHashCode();
-                if (this.PitchAngle != null)
-                    hashCode = hashCode * 59 + this.PitchAngle.GetHashCode();
                 if (this.Hat != null)
                     hashCode = hashCode * 59 + this.Hat.GetHashCode();
-                if (this.Headpose != null)
-                    hashCode = hashCode * 59 + this.Headpose.GetHashCode();
                 if (this.Age != null)
                     hashCode = hashCode * 59 + this.Age.GetHashCode();
-                if (this.Smile != null)
-                    hashCode = hashCode * 59 + this.Smile.GetHashCode();
                 if (this.Mask != null)
                     hashCode = hashCode * 59 + this.Mask.GetHashCode();
                 if (this.Beard != null)
                     hashCode = hashCode * 59 + this.Beard.GetHashCode();
-                if (this.Skin != null)
-                    hashCode = hashCode * 59 + this.Skin.GetHashCode();
-                if (this.Ethnic != null)
-                    hashCode = hashCode * 59 + this.Ethnic.GetHashCode();
                 if (this.Phototype != null)
                     hashCode = hashCode * 59 + this.Phototype.GetHashCode();
                 if (this.Quality != null)

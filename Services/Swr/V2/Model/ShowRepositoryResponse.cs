@@ -112,7 +112,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Updated { get; set; }
 
         /// <summary>
-        /// 账号ID
+        /// 帐号ID
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }

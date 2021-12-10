@@ -28,10 +28,16 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string ImportToken { get; set; }
 
         /// <summary>
-        /// 加密后的密钥材料，base64格式，满足正则匹配“^[0-9a-zA-Z+/&#x3D;]{344,360}$”。
+        /// 加密后的对称密钥材料，base64格式，满足正则匹配“^[0-9a-zA-Z+/&#x3D;]{344,360}$”。若导入非对称密钥，则该参数为用于加密私钥的临时中间密钥。
         /// </summary>
         [JsonProperty("encrypted_key_material", NullValueHandling = NullValueHandling.Ignore)]
         public string EncryptedKeyMaterial { get; set; }
+
+        /// <summary>
+        /// 使用临时中间密钥加密后的私钥，导入非对称密钥需要该参数，base64格式，满足正则匹配“^[0-9a-zA-Z+/&#x3D;]{200,6144}$”。
+        /// </summary>
+        [JsonProperty("encrypted_privatekey", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncryptedPrivatekey { get; set; }
 
         /// <summary>
         /// 密钥材料到期时间，时间戳，即从1970年1月1日至该时间的总秒数，KMS会在该时间的24小时内删除密钥材料。 例如：1550291833
@@ -56,6 +62,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  keyId: ").Append(KeyId).Append("\n");
             sb.Append("  importToken: ").Append(ImportToken).Append("\n");
             sb.Append("  encryptedKeyMaterial: ").Append(EncryptedKeyMaterial).Append("\n");
+            sb.Append("  encryptedPrivatekey: ").Append(EncryptedPrivatekey).Append("\n");
             sb.Append("  expirationTime: ").Append(ExpirationTime).Append("\n");
             sb.Append("  sequence: ").Append(Sequence).Append("\n");
             sb.Append("}\n");
@@ -95,6 +102,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.EncryptedKeyMaterial.Equals(input.EncryptedKeyMaterial))
                 ) && 
                 (
+                    this.EncryptedPrivatekey == input.EncryptedPrivatekey ||
+                    (this.EncryptedPrivatekey != null &&
+                    this.EncryptedPrivatekey.Equals(input.EncryptedPrivatekey))
+                ) && 
+                (
                     this.ExpirationTime == input.ExpirationTime ||
                     (this.ExpirationTime != null &&
                     this.ExpirationTime.Equals(input.ExpirationTime))
@@ -120,6 +132,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.ImportToken.GetHashCode();
                 if (this.EncryptedKeyMaterial != null)
                     hashCode = hashCode * 59 + this.EncryptedKeyMaterial.GetHashCode();
+                if (this.EncryptedPrivatekey != null)
+                    hashCode = hashCode * 59 + this.EncryptedPrivatekey.GetHashCode();
                 if (this.ExpirationTime != null)
                     hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
                 if (this.Sequence != null)

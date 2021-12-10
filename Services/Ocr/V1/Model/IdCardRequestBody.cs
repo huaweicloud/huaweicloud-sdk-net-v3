@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Side { get; set; }
 
         /// <summary>
-        /// 返回校验身份证号等信息的开关，默认false，可选值如下所示：  - true：返回校验信息  - false：不反回校验信息 
+        /// 返回校验身份证号等信息的开关，默认false，可选值如下所示：  - true：返回校验信息  - false：不返回校验信息 
         /// </summary>
         [JsonProperty("return_verification", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnVerification { get; set; }

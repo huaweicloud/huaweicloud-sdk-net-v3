@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("ipv6_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public Ipv6Bandwidth Ipv6Bandwidth { get; set; }
 
+        /// <summary>
+        /// 是否开启源/目的检查开关。
+        /// </summary>
+        [JsonProperty("allowed_address_pairs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AllowedAddressPair> AllowedAddressPairs { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  ipv6Bandwidth: ").Append(Ipv6Bandwidth).Append("\n");
+            sb.Append("  allowedAddressPairs: ").Append(AllowedAddressPairs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.Ipv6Bandwidth == input.Ipv6Bandwidth ||
                     (this.Ipv6Bandwidth != null &&
                     this.Ipv6Bandwidth.Equals(input.Ipv6Bandwidth))
+                ) && 
+                (
+                    this.AllowedAddressPairs == input.AllowedAddressPairs ||
+                    this.AllowedAddressPairs != null &&
+                    input.AllowedAddressPairs != null &&
+                    this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs)
                 );
         }
 
@@ -96,6 +109,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.Ipv6Bandwidth != null)
                     hashCode = hashCode * 59 + this.Ipv6Bandwidth.GetHashCode();
+                if (this.AllowedAddressPairs != null)
+                    hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
                 return hashCode;
             }
         }

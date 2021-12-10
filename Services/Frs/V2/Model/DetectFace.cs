@@ -27,12 +27,6 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("attributes", NullValueHandling = NullValueHandling.Ignore)]
         public Attributes Attributes { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("landmark", NullValueHandling = NullValueHandling.Ignore)]
-        public Landmark Landmark { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -43,7 +37,6 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             sb.Append("class DetectFace {\n");
             sb.Append("  boundingBox: ").Append(BoundingBox).Append("\n");
             sb.Append("  attributes: ").Append(Attributes).Append("\n");
-            sb.Append("  landmark: ").Append(Landmark).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,11 +67,6 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.Attributes == input.Attributes ||
                     (this.Attributes != null &&
                     this.Attributes.Equals(input.Attributes))
-                ) && 
-                (
-                    this.Landmark == input.Landmark ||
-                    (this.Landmark != null &&
-                    this.Landmark.Equals(input.Landmark))
                 );
         }
 
@@ -94,8 +82,6 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     hashCode = hashCode * 59 + this.BoundingBox.GetHashCode();
                 if (this.Attributes != null)
                     hashCode = hashCode * 59 + this.Attributes.GetHashCode();
-                if (this.Landmark != null)
-                    hashCode = hashCode * 59 + this.Landmark.GetHashCode();
                 return hashCode;
             }
         }

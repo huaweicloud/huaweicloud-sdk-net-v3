@@ -1,3 +1,65 @@
+# 3.0.69 2021-12-10
+
+### HuaweiCloud SDK AS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `allowed_address_pairs` to the interface `ListScalingGroups`
+  - Add the request parameter `allowed_address_pairs` to the interface `CreateScalingGroup`
+  - Add the request parameter `allowed_address_pairs` to the interface `UpdateScalingGroup`
+  - Add the response parameter `allowed_address_pairs` to the interface `ShowScalingGroup`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `readonly_domain_name` to the interface `ListInstances`
+  - Add the response parameter `readonly_domain_name` to the interface `ShowInstance`
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the response parameters `landmark`, `gender`, `yaw_angle`, `roll_angle`, `pitch_angle`, `headpose`, `smile`, `skin`, `ethnic` from the interface `DetectFaceByFile`
+  - Remove the response parameters `landmark`, `gender`, `yaw_angle`, `roll_angle`, `pitch_angle`, `headpose`, `smile`, `skin`, `ethnic` from the interface `DetectFaceByUrl`
+  - Remove the response parameters `landmark`, `gender`, `yaw_angle`, `roll_angle`, `pitch_angle`, `headpose`, `smile`, `skin`, `ethnic` from the interface `DetectFaceByBase64`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `region` changed to required of the interface `ListFlavors`
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `encrypted_privatekey` to the interface `ImportKeyMaterial`
+
+### HuaweiCloud SDK SWR
+
+- _Features_
+  - Support the interface `ListQuotas`
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the name `UpdateNamespaceAuthReq` -> `UpdateNamespaceAuthRequestBody` of the request body of the interface `UpdateNamespaceAuth`
+
 # 3.0.68 2021-11-29
 
 ### HuaweiCloud SDK CBR

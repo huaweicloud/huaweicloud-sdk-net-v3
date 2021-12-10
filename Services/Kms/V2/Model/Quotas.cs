@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kms.V2.Model
 {
     /// <summary>
-    /// 
+    /// 配额详情。
     /// </summary>
     public class Quotas 
     {
