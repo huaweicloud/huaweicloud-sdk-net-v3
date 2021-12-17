@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 聚合周期内指标数据的方差。
         /// </summary>
         [JsonProperty("variance", NullValueHandling = NullValueHandling.Ignore)]
-        public string Variance { get; set; }
+        public double? Variance { get; set; }
 
         /// <summary>
         /// 指标采集时间，UNIX时间戳，单位毫秒。

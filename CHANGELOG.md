@@ -1,3 +1,53 @@
+# 3.0.70 2021-12-17
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the interface `ShowVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListEvents`:
+    - Modify the type `string` -> `int32` of the response parameter `event_count`
+    - Modify the type `string` -> `int64` of the response parameter `latest_occur_time`
+  - Modify the type `string` -> `double` of the response parameter `variance` of the interface `BatchListMetricData`
+  - Modify the type `string` -> `int32` of the response parameter `type_statistics` of the interface `ListResourceGroup`
+  - Changes of the interface `ListEventDetail`:
+    - Modify the type `string` -> `array` of the response parameter `event_users`
+    - Modify the type `string` -> `array` of the response parameter `event_sources`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the following interfaces：
+    - `RecognizeThailandIdcard`
+    - `RecognizeMyanmarIdcard`
+    - `RecognizeMyanmarDriverLicense`
+    - `RecognizeChileIdCard`
+    - `RecognizeThailandLicensePlate`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - Support the `Voice Interaction Service`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.69 2021-12-10
 
 ### HuaweiCloud SDK AS

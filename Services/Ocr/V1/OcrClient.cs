@@ -62,6 +62,18 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 智利身份证识别
+        /// </summary>
+        public RecognizeChileIdCardResponse RecognizeChileIdCard(RecognizeChileIdCardRequest recognizeChileIdCardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/chile-id-card",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeChileIdCardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeChileIdCardResponse>(response);
+        }
+        
+        /// <summary>
         /// 驾驶证识别
         /// </summary>
         public RecognizeDriverLicenseResponse RecognizeDriverLicense(RecognizeDriverLicenseRequest recognizeDriverLicenseRequest)
@@ -194,6 +206,30 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 缅文驾驶证识别
+        /// </summary>
+        public RecognizeMyanmarDriverLicenseResponse RecognizeMyanmarDriverLicense(RecognizeMyanmarDriverLicenseRequest recognizeMyanmarDriverLicenseRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-driver-license",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMyanmarDriverLicenseRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeMyanmarDriverLicenseResponse>(response);
+        }
+        
+        /// <summary>
+        /// 缅文身份证识别
+        /// </summary>
+        public RecognizeMyanmarIdcardResponse RecognizeMyanmarIdcard(RecognizeMyanmarIdcardRequest recognizeMyanmarIdcardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-id-card",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMyanmarIdcardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeMyanmarIdcardResponse>(response);
+        }
+        
+        /// <summary>
         /// 护照识别
         /// </summary>
         public RecognizePassportResponse RecognizePassport(RecognizePassportRequest recognizePassportRequest)
@@ -239,6 +275,30 @@ namespace HuaweiCloud.SDK.Ocr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTaxiInvoiceRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RecognizeTaxiInvoiceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 泰文身份证识别
+        /// </summary>
+        public RecognizeThailandIdcardResponse RecognizeThailandIdcard(RecognizeThailandIdcardRequest recognizeThailandIdcardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-id-card",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeThailandIdcardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeThailandIdcardResponse>(response);
+        }
+        
+        /// <summary>
+        /// 泰国车牌识别
+        /// </summary>
+        public RecognizeThailandLicensePlateResponse RecognizeThailandLicensePlate(RecognizeThailandLicensePlateRequest recognizeThailandLicensePlateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-license-plate",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeThailandLicensePlateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeThailandLicensePlateResponse>(response);
         }
         
         /// <summary>

@@ -1,3 +1,53 @@
+# 3.0.70 2021-12-17
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 支持接口`ShowVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListEvents`:
+    - 响应参数`event_count`类型调整 `string` -> `int32`
+    - 响应参数`latest_occur_time`类型调整 `string` -> `int64`
+  - 接口`BatchListMetricData`响应参数`variance`类型调整 `string` -> `double`
+  - 接口`ListResourceGroup`响应参数`type_statistics`类型调整 `string` -> `int32`
+  - 接口`ListEventDetail`:
+    - 响应参数`event_users`类型调整 `string` -> `array`
+    - 响应参数`event_sources`类型调整 `string` -> `array`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持以下接口：
+    - `RecognizeThailandIdcard`
+    - `RecognizeMyanmarIdcard`
+    - `RecognizeMyanmarDriverLicense`
+    - `RecognizeChileIdCard`
+    - `RecognizeThailandLicensePlate`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 支持语音交互服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.69 2021-12-10
 
 ### HuaweiCloud SDK AS
