@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? InSync { get; set; }
 
         /// <summary>
-        /// 该副本当前日志大小。
+        /// 该副本当前日志大小。单位：Byte。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }

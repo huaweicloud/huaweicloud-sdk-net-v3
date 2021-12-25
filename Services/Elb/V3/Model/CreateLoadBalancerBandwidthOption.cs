@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class CreateLoadBalancerBandwidthOption 
     {
         /// <summary>
-        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:otc,otc_test,dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
+        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
         /// </summary>
-        /// <value>计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:otc,otc_test,dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。</value>
+        /// <value>计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -248,7 +248,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hc,hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:otc,otc_test,dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
+        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }

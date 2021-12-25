@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 后端云服务器组的管理状态，只支持更新为true。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 后端云服务器组的管理状态，只支持更新为true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }

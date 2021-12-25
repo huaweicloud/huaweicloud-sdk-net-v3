@@ -69,6 +69,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("members_per_pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? MembersPerPool { get; set; }
 
+        /// <summary>
+        /// IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// </summary>
+        [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Ipgroup { get; set; }
+
+        /// <summary>
+        /// 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// </summary>
+        [JsonProperty("security_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SecurityPolicy { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -86,6 +98,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  healthmonitor: ").Append(Healthmonitor).Append("\n");
             sb.Append("  member: ").Append(Member).Append("\n");
             sb.Append("  membersPerPool: ").Append(MembersPerPool).Append("\n");
+            sb.Append("  ipgroup: ").Append(Ipgroup).Append("\n");
+            sb.Append("  securityPolicy: ").Append(SecurityPolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +165,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MembersPerPool == input.MembersPerPool ||
                     (this.MembersPerPool != null &&
                     this.MembersPerPool.Equals(input.MembersPerPool))
+                ) && 
+                (
+                    this.Ipgroup == input.Ipgroup ||
+                    (this.Ipgroup != null &&
+                    this.Ipgroup.Equals(input.Ipgroup))
+                ) && 
+                (
+                    this.SecurityPolicy == input.SecurityPolicy ||
+                    (this.SecurityPolicy != null &&
+                    this.SecurityPolicy.Equals(input.SecurityPolicy))
                 );
         }
 
@@ -180,6 +204,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Member.GetHashCode();
                 if (this.MembersPerPool != null)
                     hashCode = hashCode * 59 + this.MembersPerPool.GetHashCode();
+                if (this.Ipgroup != null)
+                    hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
+                if (this.SecurityPolicy != null)
+                    hashCode = hashCode * 59 + this.SecurityPolicy.GetHashCode();
                 return hashCode;
             }
         }

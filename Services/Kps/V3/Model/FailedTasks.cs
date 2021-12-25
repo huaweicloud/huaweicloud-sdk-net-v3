@@ -146,7 +146,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// 任务时间
         /// </summary>
         [JsonProperty("task_time", NullValueHandling = NullValueHandling.Ignore)]
-        public long? TaskTime { get; set; }
+        public string TaskTime { get; set; }
 
         /// <summary>
         /// 任务失败错误码

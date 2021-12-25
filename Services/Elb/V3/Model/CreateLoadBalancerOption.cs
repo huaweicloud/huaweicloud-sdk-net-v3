@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string VipSubnetCidrId { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。  [不支持IPv6，请勿使用](tag:otc,otc_test,dt,dt_test)
+        /// 双栈类型负载均衡器所在子网的IPv6网络ID。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - vpc_id，vip_subnet_cidr_id，ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。 - 需要对应的子网开启IPv6。  [不支持IPv6，请勿使用](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipVirsubnetId { get; set; }
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Provider { get; set; }
 
         /// <summary>
-        /// 四层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:otc,otc_test,dt,dt_test) [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
+        /// 四层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:dt,dt_test) [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 负载均衡器所属的企业项目ID。不能传入\&quot;\&quot;、\&quot;0\&quot;或不存在的企业项目ID，创建时不传则资源属于default企业项目，默认返回\&quot;0\&quot;。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 负载均衡器所属的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -94,19 +94,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 负载均衡器的管理状态。只能设置为true。默认：true。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 负载均衡器的管理状态。只能设置为true。默认：true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:otc,otc_test,dt,dt_test) [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hc,hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
+        /// 七层Flavor ID。[创建负载均衡器时l4_flavor_id和l7_flavor_id不能都不传](tag:dt,dt_test) [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso) 注意：当l4_flavor_id和l7_flavor_id都不传的时，会选择默认flavor。
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
 
         /// <summary>
-        /// 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费。 包周期计费billing_info字段的格式为：order_id&amp;#58;product_id&amp;#58;region_id&amp;#58;project_id，如： CS2107161019CDJZZ&amp;#58;OFFI569702121789763584&amp;#58;eu-de&amp;#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： - admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
+        /// 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费。 包周期计费billing_info字段的格式为：order_id&amp;#58;product_id&amp;#58;region_id&amp;#58;project_id，如： CS2107161019CDJZZ&amp;#58;OFFI569702121789763584&amp;#58;eu-de&amp;#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： - admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }
@@ -130,19 +130,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public CreateLoadBalancerPublicIpOption Publicip { get; set; }
 
         /// <summary>
-        /// 下联面子网的网络ID列表。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets  响应参数中的id得到。 若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 下联面子网必须属于该LB所在的VPC。
+        /// 下联面子网的网络ID列表。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。  - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。  - 下联面子网必须属于该LB所在的VPC。  - 不支持边缘云子网。
         /// </summary>
         [JsonProperty("elb_virsubnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElbVirsubnetIds { get; set; }
 
         /// <summary>
-        /// 是否启用跨VPC后端转发。取值：true 表示开启，false 表示不开启。默认：false不开启。仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 是否启用跨VPC后端转发。取值： - true：开启。 - false：不开启。  仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 &gt; 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用](tag:otc,otc_test,dt,dt_test)
+        /// 是否开启删除保护。取值：false不开启，true开启。默认false不开启。 &gt; 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }

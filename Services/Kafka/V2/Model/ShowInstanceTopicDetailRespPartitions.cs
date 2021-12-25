@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Lso { get; set; }
 
         /// <summary>
-        /// 分区上次写入消息的时间。
+        /// 分区上次写入消息的时间。  格式为Unix时间戳。  单位：毫秒。
         /// </summary>
         [JsonProperty("last_update_timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? LastUpdateTimestamp { get; set; }

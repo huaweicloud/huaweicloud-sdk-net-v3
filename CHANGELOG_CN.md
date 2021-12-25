@@ -1,3 +1,46 @@
+# 3.0.71 2021-12-25
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CopyInstance`新增请求参数 `backup_format`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`NovaListServerActions`移除响应参数`updated_at`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePostPaidInstance`请求参数`partition_num`改为非必填
+  - 接口`RestartManager`新增响应参数 `result`、`instance_id`
+  - 接口`ListProducts`:
+    - 新增响应参数 `hourly`、`honthly`
+    - 移除响应参数 `Hourly`、`Monthly`
+
+### HuaweiCloud SDK KPS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListFailedTask`响应参数`task_time`类型调整 `int64` -> `string`
+  - 接口`ListRunningTask`响应参数`task_time`类型调整 `int64` -> `string`
+
 # 3.0.70 2021-12-17
 
 ### HuaweiCloud SDK CCE

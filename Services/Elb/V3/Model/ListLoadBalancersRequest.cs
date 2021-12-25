@@ -114,21 +114,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> VipSubnetCidrId { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id&#x3D;xxx&amp;ipv6_vip_port_id&#x3D;xxx*。   [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id&#x3D;xxx&amp;ipv6_vip_port_id&#x3D;xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ipv6_vip_port_id", IsQuery = true)]
         [JsonProperty("ipv6_vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6VipPortId { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address&#x3D;xxx&amp;ipv6_vip_address&#x3D;xxx*。   [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address&#x3D;xxx&amp;ipv6_vip_address&#x3D;xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ipv6_vip_address", IsQuery = true)]
         [JsonProperty("ipv6_vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6VipAddress { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id&#x3D;xxx&amp;ipv6_vip_virsubnet_id&#x3D;xxx*。   [不支持IPv6，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id&#x3D;xxx&amp;ipv6_vip_virsubnet_id&#x3D;xxx*。   [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ipv6_vip_virsubnet_id", IsQuery = true)]
         [JsonProperty("ipv6_vip_virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -184,7 +184,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> L7ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 资源账单信息。admin权限才能更新此字段。  支持多值查询，查询条件格式：*billing_info&#x3D;xxx&amp;billing_info&#x3D;xxx*。   [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 资源账单信息。admin权限才能更新此字段。  支持多值查询，查询条件格式：*billing_info&#x3D;xxx&amp;billing_info&#x3D;xxx*。   [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("billing_info", IsQuery = true)]
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -205,14 +205,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> MemberAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡器所属的企业项目ID。 查询时若不传，则查询default企业项目下的资源，鉴权按照default企业项目鉴权。如果传值，则必须传已存在的企业项目ID（不可为\&quot;0\&quot;）或传all_granted_eps表示查询所有企业项目。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。 [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 负载均衡器所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// IP版本信息。 取值：4代表IPv4，6代表IPv6。  支持多值查询，查询条件格式：*ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。   [不支持IPv6，请勿设置为6。](tag:otc,otc_test,dt,dt_test)
+        /// IP版本信息。 取值：4代表IPv4，6代表IPv6。  支持多值查询，查询条件格式：*ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。   [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]

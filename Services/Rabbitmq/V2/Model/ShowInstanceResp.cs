@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public int? Port { get; set; }
 
         /// <summary>
-        /// 实例的状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-rabbitmq/rabbitmq-api-180514012.html)。
+        /// 实例的状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

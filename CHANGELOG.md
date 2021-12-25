@@ -1,3 +1,46 @@
+# 3.0.71 2021-12-25
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `backup_format` to the interface `CopyInstance`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the response parameter `updated_at` from the interface `NovaListServerActions`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `partition_num` changed to not required of the interface `CreatePostPaidInstance`
+  - Add the response parameters `result`, `instance_id` to the interface `RestartManager`
+  - Changes of the interface `ListProducts`:
+    - Add the response parameters `hourly`, `honthly`
+    - Remove the response parameters `Hourly`, `Monthly`
+
+### HuaweiCloud SDK KPS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `int64` -> `string` of the response parameter `task_time` of the interface `ListFailedTask`
+  - Modify the type `int64` -> `string` of the response parameter `task_time` of the interface `ListRunningTask`
+
 # 3.0.70 2021-12-17
 
 ### HuaweiCloud SDK CCE

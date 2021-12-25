@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 监控指标名称。请参考[支持的监控指标](https://support.huaweicloud.com/usermanual-kafka/kafka-ug-180413002.html)。
+        /// 监控指标名称。
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Metrics { get; set; }

@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class PrepaidCreateOption 
     {
         /// <summary>
-        /// 订购周期类型，当前支持包月和包年： month：月； year：年；
+        /// 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
         /// </summary>
-        /// <value>订购周期类型，当前支持包月和包年： month：月； year：年；</value>
+        /// <value>订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -126,12 +126,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 订购周期类型，当前支持包月和包年： month：月； year：年；
+        /// 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 订购周期数，取值会随运营策略变化。 period_type为month时，为[1,9]， period_type为year时，为[1,3]
+        /// 订购周期数，仅在change_mode为delay时有效。取值： - period_type为month时，为[1,9]，默认1。 - period_type为year时，为[1,3]，默认1。
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }

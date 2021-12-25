@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class ResizeInstanceReq 
     {
         /// <summary>
-        /// 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
+        /// 规格变更后的规格ID。
         /// </summary>
-        /// <value>规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。</value>
+        /// <value>规格变更后的规格ID。</value>
         [JsonConverter(typeof(EnumClassConverter<NewSpecCodeEnum>))]
         public class NewSpecCodeEnum
         {
@@ -132,12 +132,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
 
         /// <summary>
-        /// 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
+        /// 规格变更后的规格ID。
         /// </summary>
         [JsonProperty("new_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public NewSpecCodeEnum NewSpecCode { get; set; }
         /// <summary>
-        /// 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
+        /// 规格变更后的消息存储空间，单位：GB。
         /// </summary>
         [JsonProperty("new_storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? NewStorageSpace { get; set; }

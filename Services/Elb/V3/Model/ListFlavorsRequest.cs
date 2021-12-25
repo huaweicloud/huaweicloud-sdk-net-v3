@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 是否查询公共规格。true表示公共规格，所有租户可见。false表示私有规格，为当前租户所有。
+        /// 是否查询公共规格。取值： - true表示公共规格，所有租户可见。 - false表示私有规格，为当前租户所有。
         /// </summary>
         [SDKProperty("shared", IsQuery = true)]
         [JsonProperty("shared", NullValueHandling = NullValueHandling.Ignore)]

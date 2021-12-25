@@ -351,6 +351,122 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
+        /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
+        /// </summary>
+        /// <value>Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800</value>
+        [JsonConverter(typeof(EnumClassConverter<PartitionNumEnum>))]
+        public class PartitionNumEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_300 for value: 300
+            /// </summary>
+            public static readonly PartitionNumEnum NUMBER_300 = new PartitionNumEnum(300);
+
+            /// <summary>
+            /// Enum NUMBER_900 for value: 900
+            /// </summary>
+            public static readonly PartitionNumEnum NUMBER_900 = new PartitionNumEnum(900);
+
+            /// <summary>
+            /// Enum NUMBER_1800 for value: 1800
+            /// </summary>
+            public static readonly PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
+
+            private static readonly Dictionary<int?, PartitionNumEnum> StaticFields =
+            new Dictionary<int?, PartitionNumEnum>()
+            {
+                { 300, NUMBER_300 },
+                { 900, NUMBER_900 },
+                { 1800, NUMBER_1800 },
+            };
+
+            private int? Value;
+
+            public PartitionNumEnum(int? value)
+            {
+                Value = value;
+            }
+
+            public static PartitionNumEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PartitionNumEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PartitionNumEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(PartitionNumEnum a, PartitionNumEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PartitionNumEnum a, PartitionNumEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
         /// </summary>
         /// <value>磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。</value>
@@ -461,9 +577,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。如何选择磁盘类型请参考[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
         /// </summary>
-        /// <value>存储IO规格。如何选择磁盘类型请参考[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。</value>
+        /// <value>存储IO规格。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
@@ -614,8 +730,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
         /// </summary>
         [JsonProperty("partition_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PartitionNum { get; set; }
-
+        public PartitionNumEnum PartitionNum { get; set; }
         /// <summary>
         /// 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
         /// </summary>
@@ -629,31 +744,31 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 虚拟私有云ID。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。
+        /// 虚拟私有云ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 指定实例所属的安全组。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0002.html)。
+        /// 指定实例所属的安全组。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 子网信息。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
+        /// 子网信息。  获取方法如下：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空，详情请参考[查询可用区信息](https://support.huaweicloud.com/api-kafka/ListAvailableZones.html)查询得到。在查询时，请注意查看该可用区是否有资源。  创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
+        /// 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。 创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品标识。  获取方法，请参考查询[产品规格列表](https://support.huaweicloud.com/api-kafka/ListProducts.html)。
+        /// 产品标识。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
@@ -671,13 +786,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string KafkaManagerPassword { get; set; }
 
         /// <summary>
-        /// 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-kafka/ShowMaintainWindows.html)获取。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
+        /// 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainBegin { get; set; }
 
         /// <summary>
-        /// 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-kafka/ShowMaintainWindows.html)获取。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
+        /// 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
         /// </summary>
         [JsonProperty("maintain_end", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainEnd { get; set; }
@@ -724,7 +839,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? EnableAutoTopic { get; set; }
 
         /// <summary>
-        /// 存储IO规格。如何选择磁盘类型请参考[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }

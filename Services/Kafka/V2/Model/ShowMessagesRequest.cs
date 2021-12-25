@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询的页码，默认值为1。
+        /// 偏移量，表示从此偏移量开始查询， offset大于等于0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]

@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> SubnetCidrId { get; set; }
 
         /// <summary>
-        /// 后端云服务器的对应的IP地址，这个IP必须在subnet_cidr_id字段的子网网段中。例如：192.168.3.11。只能指定为主网卡的IP。 支持多值查询，查询条件格式：*address&#x3D;xxx&amp;address&#x3D;xxx*。
+        /// 后端云服务器的对应的IP地址。 支持多值查询，查询条件格式：*address&#x3D;xxx&amp;address&#x3D;xxx*。
         /// </summary>
         [SDKProperty("address", IsQuery = true)]
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
@@ -93,7 +93,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> OperatingStatus { get; set; }
 
         /// <summary>
-        /// 企业项目ID。不传时查询default企业项目\&quot;0\&quot;下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:otc,otc_test,dt,dt_test)
+        /// 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

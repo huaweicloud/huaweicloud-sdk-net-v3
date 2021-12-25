@@ -335,7 +335,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartManagerRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerializeNull<RestartManagerResponse>(response);
+            return JsonUtils.DeSerialize<RestartManagerResponse>(response);
         }
         
         /// <summary>

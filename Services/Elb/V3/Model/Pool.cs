@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public SessionPersistence SessionPersistence { get; set; }
 
         /// <summary>
-        /// 后端云服务器组支持的IP版本。取值： - 共享型LB下的pool：固定为v4； - 独享型LB下的pool：dualstack、v4。当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。当协议为HTTP/HTTPS时，ip_version为v4。 [不支持IPv6，只会返回v4。](tag:otc,otc_test,dt,dt_test)
+        /// 后端云服务器组支持的IP版本。取值： - 共享型LB下的pool：固定为v4； - 独享型LB下的pool：dualstack、v4。当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。当协议为HTTP/HTTPS时，ip_version为v4。 [不支持IPv6，只会返回v4。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public string IpVersion { get; set; }

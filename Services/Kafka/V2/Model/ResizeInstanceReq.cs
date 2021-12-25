@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 规格变更后的规格ID。 若只扩展磁盘大小，则规格ID保持和原实例不变。 规格ID请参考[查询实例的扩容规格列表](https://support.huaweicloud.com/api-kafka/ShowInstanceExtendProductInfo.html)接口。
+        /// 规格变更后的规格ID。 若只扩展磁盘大小，则规格ID保持和原实例不变。
         /// </summary>
         [JsonProperty("new_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string NewSpecCode { get; set; }
 
         /// <summary>
-        /// 规格变更后的消息存储空间，单位：GB。 若扩展实例基准带宽，则new_storage_space不能低于基准带宽规定的最小磁盘大小。 磁盘空间大小请参考[查询实例的扩容规格列表](https://support.huaweicloud.com/api-kafka/ShowInstanceExtendProductInfo.html)接口。
+        /// 规格变更后的消息存储空间，单位：GB。 若扩展实例基准带宽，则new_storage_space不能低于基准带宽规定的最小磁盘大小。
         /// </summary>
         [JsonProperty("new_storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? NewStorageSpace { get; set; }

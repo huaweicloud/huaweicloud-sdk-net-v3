@@ -18,14 +18,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 表示按需付费的产品列表。
         /// </summary>
-        [JsonProperty("Hourly", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("hourly", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListProductsRespHourly> Hourly { get; set; }
 
         /// <summary>
         /// 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Kafka实例。
         /// </summary>
-        [JsonProperty("Monthly", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListProductsRespHourly> Monthly { get; set; }
+        [JsonProperty("honthly", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListProductsRespHourly> Honthly { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListProductsResponse {\n");
             sb.Append("  hourly: ").Append(Hourly).Append("\n");
-            sb.Append("  monthly: ").Append(Monthly).Append("\n");
+            sb.Append("  honthly: ").Append(Honthly).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -65,10 +65,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Hourly.SequenceEqual(input.Hourly)
                 ) && 
                 (
-                    this.Monthly == input.Monthly ||
-                    this.Monthly != null &&
-                    input.Monthly != null &&
-                    this.Monthly.SequenceEqual(input.Monthly)
+                    this.Honthly == input.Honthly ||
+                    this.Honthly != null &&
+                    input.Honthly != null &&
+                    this.Honthly.SequenceEqual(input.Honthly)
                 );
         }
 
@@ -82,8 +82,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.Hourly != null)
                     hashCode = hashCode * 59 + this.Hourly.GetHashCode();
-                if (this.Monthly != null)
-                    hashCode = hashCode * 59 + this.Monthly.GetHashCode();
+                if (this.Honthly != null)
+                    hashCode = hashCode * 59 + this.Honthly.GetHashCode();
                 return hashCode;
             }
         }
