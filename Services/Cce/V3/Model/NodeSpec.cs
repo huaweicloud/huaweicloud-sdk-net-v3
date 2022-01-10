@@ -76,7 +76,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? Count { get; set; }
 
         /// <summary>
-        /// 节点的计费模式：取值为 0（按需付费）、1（包周期）、2（自动付费包周期）
+        /// 节点的计费模式：取值为 0（按需付费）、1（包周期）、2（已废弃：自动付费包周期）
         /// </summary>
         [JsonProperty("billingMode", NullValueHandling = NullValueHandling.Ignore)]
         public int? BillingMode { get; set; }
@@ -106,7 +106,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string DedicatedHostId { get; set; }
 
         /// <summary>
-        /// 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限最少为5个。
+        /// 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为5个。
         /// </summary>
         [JsonProperty("userTags", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserTag> UserTags { get; set; }

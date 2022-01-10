@@ -385,6 +385,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("migration_method", NullValueHandling = NullValueHandling.Ignore)]
         public MigrationMethodEnum MigrationMethod { get; set; }
         /// <summary>
+        /// 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
+        /// </summary>
+        [JsonProperty("ecs_tenant_private_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string EcsTenantPrivateIp { get; set; }
+
+        /// <summary>
         /// 数据源，格式为ip:port或者桶名。
         /// </summary>
         [JsonProperty("data_source", NullValueHandling = NullValueHandling.Ignore)]
@@ -439,6 +445,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  migrationType: ").Append(MigrationType).Append("\n");
             sb.Append("  migrationMethod: ").Append(MigrationMethod).Append("\n");
+            sb.Append("  ecsTenantPrivateIp: ").Append(EcsTenantPrivateIp).Append("\n");
             sb.Append("  dataSource: ").Append(DataSource).Append("\n");
             sb.Append("  sourceInstanceName: ").Append(SourceInstanceName).Append("\n");
             sb.Append("  sourceInstanceId: ").Append(SourceInstanceId).Append("\n");
@@ -491,6 +498,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.MigrationMethod == input.MigrationMethod ||
                     (this.MigrationMethod != null &&
                     this.MigrationMethod.Equals(input.MigrationMethod))
+                ) && 
+                (
+                    this.EcsTenantPrivateIp == input.EcsTenantPrivateIp ||
+                    (this.EcsTenantPrivateIp != null &&
+                    this.EcsTenantPrivateIp.Equals(input.EcsTenantPrivateIp))
                 ) && 
                 (
                     this.DataSource == input.DataSource ||
@@ -547,6 +559,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.MigrationType.GetHashCode();
                 if (this.MigrationMethod != null)
                     hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
+                if (this.EcsTenantPrivateIp != null)
+                    hashCode = hashCode * 59 + this.EcsTenantPrivateIp.GetHashCode();
                 if (this.DataSource != null)
                     hashCode = hashCode * 59 + this.DataSource.GetHashCode();
                 if (this.SourceInstanceName != null)

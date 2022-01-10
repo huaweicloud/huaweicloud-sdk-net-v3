@@ -147,6 +147,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Actions { get; set; }
 
+        /// <summary>
+        /// 负载均衡ip，只有存在负载均衡ip才会返回该参数。
+        /// </summary>
+        [JsonProperty("lb_ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string LbIpAddress { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -177,6 +183,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
+            sb.Append("  lbIpAddress: ").Append(LbIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -309,6 +316,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.Actions != null &&
                     input.Actions != null &&
                     this.Actions.SequenceEqual(input.Actions)
+                ) && 
+                (
+                    this.LbIpAddress == input.LbIpAddress ||
+                    (this.LbIpAddress != null &&
+                    this.LbIpAddress.Equals(input.LbIpAddress))
                 );
         }
 
@@ -364,6 +376,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.Actions != null)
                     hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.LbIpAddress != null)
+                    hashCode = hashCode * 59 + this.LbIpAddress.GetHashCode();
                 return hashCode;
             }
         }

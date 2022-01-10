@@ -16,25 +16,25 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 作业的类型，例：“CreateCluster”- 创建集群。
+        /// 任务的类型，例：“CreateCluster”- 创建集群。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 作业所在的集群的ID。
+        /// 任务所在的集群的ID。
         /// </summary>
         [JsonProperty("clusterUID", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterUID { get; set; }
 
         /// <summary>
-        /// 作业操作的资源ID。
+        /// 任务操作的资源ID。
         /// </summary>
         [JsonProperty("resourceID", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceID { get; set; }
 
         /// <summary>
-        /// 作业操作的资源名称。
+        /// 任务操作的资源名称。
         /// </summary>
         [JsonProperty("resourceName", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Dictionary<string, string> ExtendParam { get; set; }
 
         /// <summary>
-        /// 子作业的列表。  - 包含了所有子作业的详细信息 - 在创建集群、节点等场景下，通常会由多个子作业共同组成创建作业，在子作业都完成后，作业才会完成 
+        /// 子任务的列表。  - 包含了所有子任务的详细信息 - 在创建集群、节点等场景下，通常会由多个子任务共同组成创建任务，在子任务都完成后，任务才会完成 
         /// </summary>
         [JsonProperty("subJobs", NullValueHandling = NullValueHandling.Ignore)]
         public List<Job> SubJobs { get; set; }

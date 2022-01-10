@@ -501,6 +501,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("migration_method", NullValueHandling = NullValueHandling.Ignore)]
         public MigrationMethodEnum MigrationMethod { get; set; }
         /// <summary>
+        /// 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
+        /// </summary>
+        [JsonProperty("ecs_tenant_private_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string EcsTenantPrivateIp { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("backup_files", NullValueHandling = NullValueHandling.Ignore)]
@@ -549,6 +555,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  migrationType: ").Append(MigrationType).Append("\n");
             sb.Append("  migrationMethod: ").Append(MigrationMethod).Append("\n");
+            sb.Append("  ecsTenantPrivateIp: ").Append(EcsTenantPrivateIp).Append("\n");
             sb.Append("  backupFiles: ").Append(BackupFiles).Append("\n");
             sb.Append("  networkType: ").Append(NetworkType).Append("\n");
             sb.Append("  sourceInstance: ").Append(SourceInstance).Append("\n");
@@ -607,6 +614,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.MigrationMethod.Equals(input.MigrationMethod))
                 ) && 
                 (
+                    this.EcsTenantPrivateIp == input.EcsTenantPrivateIp ||
+                    (this.EcsTenantPrivateIp != null &&
+                    this.EcsTenantPrivateIp.Equals(input.EcsTenantPrivateIp))
+                ) && 
+                (
                     this.BackupFiles == input.BackupFiles ||
                     (this.BackupFiles != null &&
                     this.BackupFiles.Equals(input.BackupFiles))
@@ -658,6 +670,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.MigrationType.GetHashCode();
                 if (this.MigrationMethod != null)
                     hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
+                if (this.EcsTenantPrivateIp != null)
+                    hashCode = hashCode * 59 + this.EcsTenantPrivateIp.GetHashCode();
                 if (this.BackupFiles != null)
                     hashCode = hashCode * 59 + this.BackupFiles.GetHashCode();
                 if (this.NetworkType != null)

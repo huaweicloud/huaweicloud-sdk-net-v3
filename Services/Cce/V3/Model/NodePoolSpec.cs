@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodeSpec NodeTemplate { get; set; }
 
         /// <summary>
-        /// 节点池初始化节点个数。
+        /// 节点池初始化节点个数。查询时为节点池目标节点数量。
         /// </summary>
         [JsonProperty("initialNodeCount", NullValueHandling = NullValueHandling.Ignore)]
         public int? InitialNodeCount { get; set; }
@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("nodeManagement", NullValueHandling = NullValueHandling.Ignore)]
         public NodeManagement NodeManagement { get; set; }
 
+        /// <summary>
+        /// 1.21版本集群节点池支持绑定安全组，最多五个。
+        /// </summary>
+        [JsonProperty("podSecurityGroups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Object> PodSecurityGroups { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -167,6 +173,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  initialNodeCount: ").Append(InitialNodeCount).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  nodeManagement: ").Append(NodeManagement).Append("\n");
+            sb.Append("  podSecurityGroups: ").Append(PodSecurityGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,6 +219,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.NodeManagement == input.NodeManagement ||
                     (this.NodeManagement != null &&
                     this.NodeManagement.Equals(input.NodeManagement))
+                ) && 
+                (
+                    this.PodSecurityGroups == input.PodSecurityGroups ||
+                    this.PodSecurityGroups != null &&
+                    input.PodSecurityGroups != null &&
+                    this.PodSecurityGroups.SequenceEqual(input.PodSecurityGroups)
                 );
         }
 
@@ -233,6 +246,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 if (this.NodeManagement != null)
                     hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
+                if (this.PodSecurityGroups != null)
+                    hashCode = hashCode * 59 + this.PodSecurityGroups.GetHashCode();
                 return hashCode;
             }
         }

@@ -380,6 +380,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 集群的API Server服务端证书中的自定义SAN（Subject Alternative Name）字段，遵从SSL标准X509定义的格式规范。  1. 不允许出现同名重复。 2. 格式符合IP和域名格式。  example: SAN 1: DNS Name&#x3D;example.com SAN 2: DNS Name&#x3D;www.example.com SAN 3: DNS Name&#x3D;example.net SAN 4: IP Address&#x3D;93.184.216.34
+        /// </summary>
+        [JsonProperty("customSan", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CustomSan { get; set; }
+
+        /// <summary>
         /// 集群是否使用IPv6模式，1.15版本及以上支持。
         /// </summary>
         [JsonProperty("ipv6enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -470,6 +476,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  platformVersion: ").Append(PlatformVersion).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  customSan: ").Append(CustomSan).Append("\n");
             sb.Append("  ipv6enable: ").Append(Ipv6enable).Append("\n");
             sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
             sb.Append("  containerNetwork: ").Append(ContainerNetwork).Append("\n");
@@ -533,6 +540,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.CustomSan == input.CustomSan ||
+                    this.CustomSan != null &&
+                    input.CustomSan != null &&
+                    this.CustomSan.SequenceEqual(input.CustomSan)
                 ) && 
                 (
                     this.Ipv6enable == input.Ipv6enable ||
@@ -623,6 +636,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.PlatformVersion.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CustomSan != null)
+                    hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
                 if (this.Ipv6enable != null)
                     hashCode = hashCode * 59 + this.Ipv6enable.GetHashCode();
                 if (this.HostNetwork != null)

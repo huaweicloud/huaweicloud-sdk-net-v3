@@ -367,6 +367,18 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 查询CCE服务下的资源配额。
+        /// </summary>
+        public ShowQuotasResponse ShowQuotas(ShowQuotasRequest showQuotasRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/quotas",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新AddonInstance
         /// </summary>
         public UpdateAddonInstanceResponse UpdateAddonInstance(UpdateAddonInstanceRequest updateAddonInstanceRequest)

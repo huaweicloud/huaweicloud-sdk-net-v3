@@ -137,10 +137,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }
         /// <summary>
-        /// 容器网络网段，建议使用网段10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19，如存在网段冲突，将自动重新选择。   当节点最大实例数为默认值110时，当前容器网段至少支持582个节点，此参数在集群创建后不可更改，请谨慎选择。
+        /// 容器网络网段，建议使用网段10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19，如存在网段冲突，将会报错。   此参数在集群创建后不可更改，请谨慎选择。（已废弃，如填写cidrs将忽略该cidr）
         /// </summary>
         [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string Cidr { get; set; }
+
+        /// <summary>
+        /// 容器网络网段列表。1.21及新版本集群使用cidrs字段，当集群网络类型为vpc-router类型时，支持多个容器网段；1.21之前版本若使用cidrs字段，则取值cidrs数组中的第一个cidr元素作为容器网络网段地址。  此参数在集群创建后不可更改，请谨慎选择。
+        /// </summary>
+        [JsonProperty("cidrs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ContainerCIDR> Cidrs { get; set; }
 
 
         /// <summary>
@@ -152,6 +158,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class ContainerNetwork {\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
+            sb.Append("  cidrs: ").Append(Cidrs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -182,6 +189,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Cidr == input.Cidr ||
                     (this.Cidr != null &&
                     this.Cidr.Equals(input.Cidr))
+                ) && 
+                (
+                    this.Cidrs == input.Cidrs ||
+                    this.Cidrs != null &&
+                    input.Cidrs != null &&
+                    this.Cidrs.SequenceEqual(input.Cidrs)
                 );
         }
 
@@ -197,6 +210,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Cidr != null)
                     hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.Cidrs != null)
+                    hashCode = hashCode * 59 + this.Cidrs.GetHashCode();
                 return hashCode;
             }
         }

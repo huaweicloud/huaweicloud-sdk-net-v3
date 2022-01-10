@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)3.4版本支持集群类型，取值为“Sharding”   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。
+        /// 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }

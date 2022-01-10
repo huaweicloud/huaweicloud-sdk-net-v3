@@ -40,25 +40,25 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? MaxPods { get; set; }
 
         /// <summary>
-        /// 订购周期类型，取值范围： - month：月 - year：年 &gt; billingMode为2（自动付费包周期）时生效，且为必选。 
+        /// - month：月 - year：年 &gt; billingMode为1（包周期）或2（已废弃：自动付费包周期）时生效，且为必选。 
         /// </summary>
         [JsonProperty("periodType", NullValueHandling = NullValueHandling.Ignore)]
         public string PeriodType { get; set; }
 
         /// <summary>
-        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1。 &gt; billingMode为2时生效，且为必选。 
+        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1。 &gt; billingMode为1或2（已废弃）时生效，且为必选。 
         /// </summary>
         [JsonProperty("periodNum", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 是否自动续订 - “true”：自动续订 - “false”：不自动续订 &gt; billingMode为2时生效，且为必选。 
+        /// 是否自动续订 - “true”：自动续订 - “false”：不自动续订 &gt; billingMode为1或2（已废弃）时生效，不填写此参数时默认不会自动续费。 
         /// </summary>
         [JsonProperty("isAutoRenew", NullValueHandling = NullValueHandling.Ignore)]
         public string IsAutoRenew { get; set; }
 
         /// <summary>
-        /// 是否自动扣款 - “true”：自动扣款 - “false”：不自动扣款 &gt; billingMode为2时生效，不填写此参数时默认会自动扣款。 
+        /// 是否自动扣款 - “true”：自动扣款 - “false”：不自动扣款 &gt; billingMode为1或2（已废弃）时生效，billingMode为1时不填写此参数时默认不会自动扣款。（已废弃：billingMode为2时不填写此参数时默认会自动扣款） 
         /// </summary>
         [JsonProperty("isAutoPay", NullValueHandling = NullValueHandling.Ignore)]
         public string IsAutoPay { get; set; }

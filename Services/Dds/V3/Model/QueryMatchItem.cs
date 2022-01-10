@@ -131,7 +131,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public KeyEnum Key { get; set; }
         /// <summary>
-        /// 待匹配的实例名称或实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+        /// 待匹配的实例名称或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

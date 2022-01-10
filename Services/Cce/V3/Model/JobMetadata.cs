@@ -16,19 +16,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 作业的ID。
+        /// 任务的ID。
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uid { get; set; }
 
         /// <summary>
-        /// 作业的创建时间。
+        /// 任务的创建时间。
         /// </summary>
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string CreationTimestamp { get; set; }
 
         /// <summary>
-        /// 作业的更新时间。
+        /// 任务的更新时间。
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTimestamp { get; set; }

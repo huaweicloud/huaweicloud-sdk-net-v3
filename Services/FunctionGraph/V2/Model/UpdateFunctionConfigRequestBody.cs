@@ -274,6 +274,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+        /// </summary>
+        [JsonProperty("is_stateful_function", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsStatefulFunction { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -298,6 +304,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -398,6 +405,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.IsStatefulFunction == input.IsStatefulFunction ||
+                    (this.IsStatefulFunction != null &&
+                    this.IsStatefulFunction.Equals(input.IsStatefulFunction))
                 );
         }
 
@@ -441,6 +453,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.InitializerTimeout.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.IsStatefulFunction != null)
+                    hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
                 return hashCode;
             }
         }

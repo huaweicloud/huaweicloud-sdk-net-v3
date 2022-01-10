@@ -624,6 +624,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enable_dynamic_memory", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableDynamicMemory { get; set; }
 
+        /// <summary>
+        /// 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+        /// </summary>
+        [JsonProperty("is_stateful_function", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsStatefulFunction { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -668,6 +674,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
+            sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -869,6 +876,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EnableDynamicMemory == input.EnableDynamicMemory ||
                     (this.EnableDynamicMemory != null &&
                     this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
+                ) && 
+                (
+                    this.IsStatefulFunction == input.IsStatefulFunction ||
+                    (this.IsStatefulFunction != null &&
+                    this.IsStatefulFunction.Equals(input.IsStatefulFunction))
                 );
         }
 
@@ -952,6 +964,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.EnableDynamicMemory != null)
                     hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
+                if (this.IsStatefulFunction != null)
+                    hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
                 return hashCode;
             }
         }

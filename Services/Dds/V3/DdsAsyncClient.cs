@@ -387,7 +387,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 查询实例列表
+        /// 查询实例列表和详情
         /// </summary>
         public async Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest listInstancesRequest)
         {

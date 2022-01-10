@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         [JsonProperty("keypairs", NullValueHandling = NullValueHandling.Ignore)]
         public List<Keypairs> Keypairs { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
+        public PageInfo PageInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListKeypairsResponse {\n");
             sb.Append("  keypairs: ").Append(Keypairs).Append("\n");
+            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +63,11 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                     this.Keypairs != null &&
                     input.Keypairs != null &&
                     this.Keypairs.SequenceEqual(input.Keypairs)
+                ) && 
+                (
+                    this.PageInfo == input.PageInfo ||
+                    (this.PageInfo != null &&
+                    this.PageInfo.Equals(input.PageInfo))
                 );
         }
 
@@ -69,6 +81,8 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                 int hashCode = 41;
                 if (this.Keypairs != null)
                     hashCode = hashCode * 59 + this.Keypairs.GetHashCode();
+                if (this.PageInfo != null)
+                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

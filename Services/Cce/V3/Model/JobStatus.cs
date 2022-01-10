@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 作业的状态，有如下四种状态：  - JobPhaseInitializing JobPhase &#x3D; \&quot;Initializing\&quot; - JobPhaseRunning JobPhase &#x3D; \&quot;Running\&quot; - JobPhaseFailed JobPhase &#x3D; \&quot;Failed\&quot; - JobPhaseSuccess JobPhase &#x3D; \&quot;Success\&quot;
+        /// 任务的状态，有如下四种状态：  - JobPhaseInitializing JobPhase &#x3D; \&quot;Initializing\&quot; - JobPhaseRunning JobPhase &#x3D; \&quot;Running\&quot; - JobPhaseFailed JobPhase &#x3D; \&quot;Failed\&quot; - JobPhaseSuccess JobPhase &#x3D; \&quot;Success\&quot;
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public string Phase { get; set; }
 
         /// <summary>
-        /// 作业变为当前状态的原因
+        /// 任务变为当前状态的原因
         /// </summary>
         [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
         public string Reason { get; set; }
