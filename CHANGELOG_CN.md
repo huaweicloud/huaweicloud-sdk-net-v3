@@ -1,3 +1,23 @@
+# 3.0.73 2022-01-17
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 修复接口`CreateNodePool`的请求体结构错误的问题
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 支持接口`ListFunctionAsyncInvocations`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.72 2022-01-10
 
 ### HuaweiCloud SDK CCE

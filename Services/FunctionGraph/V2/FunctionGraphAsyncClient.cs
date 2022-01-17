@@ -246,6 +246,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取函数异步调用请求列表
+        /// </summary>
+        public async Task<ListFunctionAsyncInvocationsResponse> ListFunctionAsyncInvocationsAsync(ListFunctionAsyncInvocationsRequest listFunctionAsyncInvocationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , listFunctionAsyncInvocationsRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionAsyncInvocationsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionAsyncInvocationsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取函数异步配置列表
         /// </summary>
         public async Task<ListFunctionAsyncInvokeConfigResponse> ListFunctionAsyncInvokeConfigAsync(ListFunctionAsyncInvokeConfigRequest listFunctionAsyncInvokeConfigRequest)

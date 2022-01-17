@@ -158,7 +158,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 1.21版本集群节点池支持绑定安全组，最多五个。
         /// </summary>
         [JsonProperty("podSecurityGroups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> PodSecurityGroups { get; set; }
+        public List<SecurityID> PodSecurityGroups { get; set; }
 
 
         /// <summary>

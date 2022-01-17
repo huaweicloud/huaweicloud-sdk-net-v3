@@ -7,20 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Smn.V2.Model
+namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// 
     /// </summary>
-    public class ListApplicationAttributesRequest 
+    public class SecurityID 
     {
 
         /// <summary>
-        /// Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/ListApplications.html)获取该标识。
+        /// 安全组ID。
         /// </summary>
-        [SDKProperty("application_urn", IsPath = true)]
-        [JsonProperty("application_urn", NullValueHandling = NullValueHandling.Ignore)]
-        public string ApplicationUrn { get; set; }
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
 
         /// <summary>
@@ -29,8 +28,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListApplicationAttributesRequest {\n");
-            sb.Append("  applicationUrn: ").Append(ApplicationUrn).Append("\n");
+            sb.Append("class SecurityID {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -40,22 +39,22 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListApplicationAttributesRequest);
+            return this.Equals(input as SecurityID);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListApplicationAttributesRequest input)
+        public bool Equals(SecurityID input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ApplicationUrn == input.ApplicationUrn ||
-                    (this.ApplicationUrn != null &&
-                    this.ApplicationUrn.Equals(input.ApplicationUrn))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -67,8 +66,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ApplicationUrn != null)
-                    hashCode = hashCode * 59 + this.ApplicationUrn.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

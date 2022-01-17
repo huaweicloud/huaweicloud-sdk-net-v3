@@ -1,3 +1,23 @@
+# 3.0.73 2022-01-17
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Fix the problem that the request body structure of the interface `CreateNodePool` is incorrect
+- _Change_
+  - None
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - Support the interface `ListFunctionAsyncInvocations`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.72 2022-01-10
 
 ### HuaweiCloud SDK CCE

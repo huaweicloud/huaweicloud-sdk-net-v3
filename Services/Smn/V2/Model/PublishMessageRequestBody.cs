@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string MessageStructure { get; set; }
 
         /// <summary>
-        /// 消息模板名称，可通过[查询消息模板列表](https://support.huaweicloud.com/api-smn/smn_api_53004.html)获取名称。  说明： 三种消息发送方式:  message  message_structure  message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure &gt; message_template_name &gt; message。
+        /// 消息模板名称，可通过[查询消息模板列表](https://support.huaweicloud.com/api-smn/ListMessageTemplates.html)获取名称。  说明： 三种消息发送方式:  message  message_structure  message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure &gt; message_template_name &gt; message。
         /// </summary>
         [JsonProperty("message_template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageTemplateName { get; set; }

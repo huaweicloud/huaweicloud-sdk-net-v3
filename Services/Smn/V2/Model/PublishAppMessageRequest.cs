@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// Endpoint的唯一资源标识，可通过[查询Application的Endpoint列表](https://support.huaweicloud.com/api-smn/smn_api_58004.html)获取该标识
+        /// Endpoint的唯一资源标识，可通过[查询Application的Endpoint列表](https://support.huaweicloud.com/api-smn/ListApplicationEndpoints.html)获取该标识
         /// </summary>
         [SDKProperty("endpoint_urn", IsPath = true)]
         [JsonProperty("endpoint_urn", NullValueHandling = NullValueHandling.Ignore)]

@@ -7,20 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Smn.V2.Model
+namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class ListApplicationAttributesRequest 
+    public class ListFunctionAsyncInvocationsResponse : SdkResponse
     {
 
         /// <summary>
-        /// Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/ListApplications.html)获取该标识。
+        /// 异步调用记录列表。
         /// </summary>
-        [SDKProperty("application_urn", IsPath = true)]
-        [JsonProperty("application_urn", NullValueHandling = NullValueHandling.Ignore)]
-        public string ApplicationUrn { get; set; }
+        [JsonProperty("invocations", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListFunctionAsyncInvocationsResult> Invocations { get; set; }
 
 
         /// <summary>
@@ -29,8 +28,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListApplicationAttributesRequest {\n");
-            sb.Append("  applicationUrn: ").Append(ApplicationUrn).Append("\n");
+            sb.Append("class ListFunctionAsyncInvocationsResponse {\n");
+            sb.Append("  invocations: ").Append(Invocations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -40,22 +39,23 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListApplicationAttributesRequest);
+            return this.Equals(input as ListFunctionAsyncInvocationsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListApplicationAttributesRequest input)
+        public bool Equals(ListFunctionAsyncInvocationsResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ApplicationUrn == input.ApplicationUrn ||
-                    (this.ApplicationUrn != null &&
-                    this.ApplicationUrn.Equals(input.ApplicationUrn))
+                    this.Invocations == input.Invocations ||
+                    this.Invocations != null &&
+                    input.Invocations != null &&
+                    this.Invocations.SequenceEqual(input.Invocations)
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ApplicationUrn != null)
-                    hashCode = hashCode * 59 + this.ApplicationUrn.GetHashCode();
+                if (this.Invocations != null)
+                    hashCode = hashCode * 59 + this.Invocations.GetHashCode();
                 return hashCode;
             }
         }
