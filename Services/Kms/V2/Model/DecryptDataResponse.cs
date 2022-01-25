@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("plain_text", NullValueHandling = NullValueHandling.Ignore)]
         public string PlainText { get; set; }
 
+        /// <summary>
+        /// 明文的Base64值，在非对称加密场景下，若加密的明文中含有不可见字符，则解密结果以该值为准。
+        /// </summary>
+        [JsonProperty("plain_text_base64", NullValueHandling = NullValueHandling.Ignore)]
+        public string PlainTextBase64 { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("class DecryptDataResponse {\n");
             sb.Append("  keyId: ").Append(KeyId).Append("\n");
             sb.Append("  plainText: ").Append(PlainText).Append("\n");
+            sb.Append("  plainTextBase64: ").Append(PlainTextBase64).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.PlainText == input.PlainText ||
                     (this.PlainText != null &&
                     this.PlainText.Equals(input.PlainText))
+                ) && 
+                (
+                    this.PlainTextBase64 == input.PlainTextBase64 ||
+                    (this.PlainTextBase64 != null &&
+                    this.PlainTextBase64.Equals(input.PlainTextBase64))
                 );
         }
 
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.KeyId.GetHashCode();
                 if (this.PlainText != null)
                     hashCode = hashCode * 59 + this.PlainText.GetHashCode();
+                if (this.PlainTextBase64 != null)
+                    hashCode = hashCode * 59 + this.PlainTextBase64.GetHashCode();
                 return hashCode;
             }
         }

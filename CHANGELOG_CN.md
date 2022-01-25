@@ -1,3 +1,45 @@
+# 3.0.74 2022-01-25
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+  - 支持接口`ListAlarmHistories`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IAM
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateLoginToken`新增响应参数`session_user_id`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 支持接口`ListEngineProducts`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListInstances`新增响应参数 `dr_enable`
+  - 接口`ShowInstance`新增响应参数 `dr_enable`
+  - 接口`ListProducts`:
+    - 新增响应参数 `Hourly`、`Monthly`
+    - 移除响应参数 `hourly`、`honthly`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 支持接口`ListEngineProducts`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.73 2022-01-17
 
 ### HuaweiCloud SDK CCE

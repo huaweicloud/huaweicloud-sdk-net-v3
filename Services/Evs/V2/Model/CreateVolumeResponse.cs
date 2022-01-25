@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 待创建的磁盘ID列表。
+        /// 待创建的云硬盘ID列表，在请求体的metadata字段中指定create_for_volume_id为true时才返回该参数。
         /// </summary>
         [JsonProperty("volume_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> VolumeIds { get; set; }

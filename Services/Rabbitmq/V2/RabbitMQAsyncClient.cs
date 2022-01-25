@@ -104,6 +104,19 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
+        /// 查询产品规格列表
+        /// </summary>
+        public async Task<ListEngineProductsResponse> ListEngineProductsAsync(ListEngineProductsRequest listEngineProductsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , listEngineProductsRequest.Engine.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListEngineProductsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询所有实例列表
         /// </summary>
         public async Task<ListInstancesDetailsResponse> ListInstancesDetailsAsync(ListInstancesDetailsRequest listInstancesDetailsRequest)

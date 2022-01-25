@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string SessionId { get; set; }
 
         /// <summary>
+        /// 自定义代理用户ID。
+        /// </summary>
+        [JsonProperty("session_user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SessionUserId { get; set; }
+
+        /// <summary>
         /// 自定义代理用户名。 &gt; - [通过委托获取临时访问密钥和securitytoken](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;CreateTemporaryAccessKeyByAgency)且请求体中填写session_user.name参数时，会返回该字段。该字段的值即为session_user.name所填写的值。
         /// </summary>
         [JsonProperty("session_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -77,6 +83,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  sessionId: ").Append(SessionId).Append("\n");
+            sb.Append("  sessionUserId: ").Append(SessionUserId).Append("\n");
             sb.Append("  sessionName: ").Append(SessionName).Append("\n");
             sb.Append("  assumedBy: ").Append(AssumedBy).Append("\n");
             sb.Append("}\n");
@@ -131,6 +138,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.SessionId.Equals(input.SessionId))
                 ) && 
                 (
+                    this.SessionUserId == input.SessionUserId ||
+                    (this.SessionUserId != null &&
+                    this.SessionUserId.Equals(input.SessionUserId))
+                ) && 
+                (
                     this.SessionName == input.SessionName ||
                     (this.SessionName != null &&
                     this.SessionName.Equals(input.SessionName))
@@ -162,6 +174,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.SessionId != null)
                     hashCode = hashCode * 59 + this.SessionId.GetHashCode();
+                if (this.SessionUserId != null)
+                    hashCode = hashCode * 59 + this.SessionUserId.GetHashCode();
                 if (this.SessionName != null)
                     hashCode = hashCode * 59 + this.SessionName.GetHashCode();
                 if (this.AssumedBy != null)

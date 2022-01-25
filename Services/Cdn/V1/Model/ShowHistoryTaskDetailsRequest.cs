@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 刷新预热任务的创建时间。不传参默认为查询3天内的任务。最长可查询15天内数据。
+        /// 刷新预热任务的创建时间。不传参默认为查询7天内的任务。最长可查询15天内数据。
         /// </summary>
         [SDKProperty("create_time", IsQuery = true)]
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]

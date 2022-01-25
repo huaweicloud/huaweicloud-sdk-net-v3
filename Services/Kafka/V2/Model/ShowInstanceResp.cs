@@ -599,6 +599,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagEntity> Tags { get; set; }
 
+        /// <summary>
+        /// 是否为容灾实例。
+        /// </summary>
+        [JsonProperty("dr_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DrEnable { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -668,6 +674,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  kafkaPrivateConnectAddress: ").Append(KafkaPrivateConnectAddress).Append("\n");
             sb.Append("  cesVersion: ").Append(CesVersion).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  drEnable: ").Append(DrEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -996,6 +1003,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.DrEnable == input.DrEnable ||
+                    (this.DrEnable != null &&
+                    this.DrEnable.Equals(input.DrEnable))
                 );
         }
 
@@ -1129,6 +1141,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.CesVersion.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.DrEnable != null)
+                    hashCode = hashCode * 59 + this.DrEnable.GetHashCode();
                 return hashCode;
             }
         }

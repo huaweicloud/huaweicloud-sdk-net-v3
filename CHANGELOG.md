@@ -1,3 +1,45 @@
+# 3.0.74 2022-01-25
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - Support the interface `ListAlarmHistories`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `session_user_id` to the interface `CreateLoginToken`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - Support the interface `ListEngineProducts`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `dr_enable` to the interface `ListInstances`
+  - Add the response parameter `dr_enable` to the interface `ShowInstance`
+  - Changes of the interface `ListProducts`:
+    - Add the response parameters `Hourly`, `Monthly`
+    - Remove the response parameters `hourly`, `honthly`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+  - Support the interface `ListEngineProducts`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+  
 # 3.0.73 2022-01-17
 
 ### HuaweiCloud SDK CCE
