@@ -165,7 +165,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 大小，单位GB
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public string Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 资源状态

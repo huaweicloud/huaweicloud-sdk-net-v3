@@ -34,10 +34,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<string> SelectorNames { get; set; }
 
         /// <summary>
-        /// 
+        /// group中空间配置的详细管理。
         /// </summary>
         [JsonProperty("virtualSpaces", NullValueHandling = NullValueHandling.Ignore)]
-        public VirtualSpace VirtualSpaces { get; set; }
+        public List<VirtualSpace> VirtualSpaces { get; set; }
 
 
         /// <summary>
@@ -90,8 +90,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 ) && 
                 (
                     this.VirtualSpaces == input.VirtualSpaces ||
-                    (this.VirtualSpaces != null &&
-                    this.VirtualSpaces.Equals(input.VirtualSpaces))
+                    this.VirtualSpaces != null &&
+                    input.VirtualSpaces != null &&
+                    this.VirtualSpaces.SequenceEqual(input.VirtualSpaces)
                 );
         }
 

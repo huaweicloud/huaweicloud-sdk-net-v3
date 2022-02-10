@@ -58,14 +58,14 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 通过时间筛选traces的起始时间(不包括传入时间)，UTC时间
+        /// 通过时间筛选traces的起始时间(不包括传入时间) 例如：2022-02-10T10:05:46+08:00
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public string From { get; set; }
 
         /// <summary>
-        /// 通过时间筛选traces的终止时间(不包括传入时间)，UTC时间
+        /// 通过时间筛选traces的终止时间(不包括传入时间) 例如：2022-02-10T10:05:47+08:00
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]

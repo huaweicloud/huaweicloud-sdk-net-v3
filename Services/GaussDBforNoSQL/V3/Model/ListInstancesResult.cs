@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// 数据库端口。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Port { get; set; }
+        public string Port { get; set; }
 
         /// <summary>
         /// 实例类型。与请求参数相同。

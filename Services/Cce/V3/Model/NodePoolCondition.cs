@@ -10,19 +10,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 节点池每次扩容的动作结果记录，用于确定节点池是否还能继续扩容。
+    /// 节点池详细状态。
     /// </summary>
     public class NodePoolCondition 
     {
 
         /// <summary>
-        /// Condition类型。
+        /// Condition类型，当前支持类型如下 - \&quot;Scalable\&quot;：节点池实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池非预期扩容失败，影响节点池可扩容状态。 - \&quot;LockedByOrder\&quot;：包周期节点池被订单锁定，此时Reason为待支付订单ID。 - \&quot;Error\&quot;：节点池错误，通常由于删除失败触发。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Condition当前状态。
+        /// Condition当前状态，取值如下 - \&quot;True\&quot; - \&quot;False\&quot; 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// 
+    /// Response body of resource
     /// </summary>
     public class ResourceResp 
     {

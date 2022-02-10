@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 是否可备份
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public string Result { get; set; }
+        public bool? Result { get; set; }
 
         /// <summary>
         /// 

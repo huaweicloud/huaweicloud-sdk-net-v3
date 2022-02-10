@@ -62,6 +62,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
 
             /// <summary>
+            /// Enum GO1_X for value: Go1.x
+            /// </summary>
+            public static readonly RuntimeEnum GO1_X = new RuntimeEnum("Go1.x");
+
+            /// <summary>
             /// Enum C_NET_CORE_2_0_ for value: C#(.NET Core 2.0)
             /// </summary>
             public static readonly RuntimeEnum C_NET_CORE_2_0_ = new RuntimeEnum("C#(.NET Core 2.0)");
@@ -92,6 +97,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "Python2.7", PYTHON2_7 },
                 { "Python3.6", PYTHON3_6 },
                 { "Go1.8", GO1_8 },
+                { "Go1.x", GO1_X },
                 { "C#(.NET Core 2.0)", C_NET_CORE_2_0_ },
                 { "C#(.NET Core 2.1)", C_NET_CORE_2_1_ },
                 { "C#(.NET Core 3.1)", C_NET_CORE_3_1_ },
