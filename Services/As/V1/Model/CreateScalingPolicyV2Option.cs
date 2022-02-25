@@ -248,7 +248,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string ScalingPolicyName { get; set; }
 
         /// <summary>
-        /// 伸缩资源ID，伸缩组唯一标识或带宽唯一标识。如果scaling_resource_type为SCALING_GROUP，对应伸缩组唯一标识。如果scaling_resource_type为BANDWIDTH，对应带宽唯一标识。
+        /// 伸缩资源ID，伸缩组唯一标识或带宽唯一标识。如果scaling_resource_type为SCALING_GROUP，对应伸缩组唯一标识。如果scaling_resource_type为BANDWIDTH，对应带宽唯一标识。 说明： - 弹性伸缩不支持对包年包月的带宽进行调整。
         /// </summary>
         [JsonProperty("scaling_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScalingResourceId { get; set; }

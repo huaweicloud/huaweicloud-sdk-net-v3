@@ -51,6 +51,18 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
+        /// <summary>
+        /// 迭代更新时间，长整型时间戳
+        /// </summary>
+        [JsonProperty("updated_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? UpdatedTime { get; set; }
+
+        /// <summary>
+        /// 迭代是否已经删除，false, 未删除， true已经删除
+        /// </summary>
+        [JsonProperty("deleted", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Deleted { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -65,6 +77,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
+            sb.Append("  deleted: ").Append(Deleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +129,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.UpdatedTime == input.UpdatedTime ||
+                    (this.UpdatedTime != null &&
+                    this.UpdatedTime.Equals(input.UpdatedTime))
+                ) && 
+                (
+                    this.Deleted == input.Deleted ||
+                    (this.Deleted != null &&
+                    this.Deleted.Equals(input.Deleted))
                 );
         }
 
@@ -138,6 +162,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.UpdatedTime != null)
+                    hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
+                if (this.Deleted != null)
+                    hashCode = hashCode * 59 + this.Deleted.GetHashCode();
                 return hashCode;
             }
         }

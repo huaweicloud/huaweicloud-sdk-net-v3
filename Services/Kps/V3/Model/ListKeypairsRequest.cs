@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     {
 
         /// <summary>
-        /// 每页返回的个数。  默认值：50。 
+        /// 每页返回的个数。 默认值：50。 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

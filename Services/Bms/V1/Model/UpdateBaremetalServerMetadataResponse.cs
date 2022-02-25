@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public KeyValue Metadata { get; set; }
+        public Dictionary<string, string> Metadata { get; set; }
 
 
         /// <summary>
@@ -53,8 +53,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             return 
                 (
                     this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
                 );
         }
 

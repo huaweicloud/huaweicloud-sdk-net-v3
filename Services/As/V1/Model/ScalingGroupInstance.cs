@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ScalingGroupInstance 
     {
         /// <summary>
-        /// 实例在伸缩组中的实力状态周期：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
+        /// 实例在伸缩组中的生命周期状态：  - INSERVICE：已启用 - PENDING：正在加入伸缩组 - PENDING_WAIT：等待（正在加入伸缩组） - REMOVING：正在移出伸缩组 - REMOVING_WAIT：等待（正在移出伸缩组） - STANDBY：已备用 - ENTERING_STANDBY：进入备用状态
         /// </summary>
-        /// <value>实例在伸缩组中的实力状态周期：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。</value>
+        /// <value>实例在伸缩组中的生命周期状态：  - INSERVICE：已启用 - PENDING：正在加入伸缩组 - PENDING_WAIT：等待（正在加入伸缩组） - REMOVING：正在移出伸缩组 - REMOVING_WAIT：等待（正在移出伸缩组） - STANDBY：已备用 - ENTERING_STANDBY：进入备用状态</value>
         [JsonConverter(typeof(EnumClassConverter<LifeCycleStateEnum>))]
         public class LifeCycleStateEnum
         {
@@ -284,7 +284,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string ScalingGroupName { get; set; }
 
         /// <summary>
-        /// 实例在伸缩组中的实力状态周期：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
+        /// 实例在伸缩组中的生命周期状态：  - INSERVICE：已启用 - PENDING：正在加入伸缩组 - PENDING_WAIT：等待（正在加入伸缩组） - REMOVING：正在移出伸缩组 - REMOVING_WAIT：等待（正在移出伸缩组） - STANDBY：已备用 - ENTERING_STANDBY：进入备用状态
         /// </summary>
         [JsonProperty("life_cycle_state", NullValueHandling = NullValueHandling.Ignore)]
         public LifeCycleStateEnum LifeCycleState { get; set; }

@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     public class Encryption 
     {
         /// <summary>
-        /// 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。
+        /// 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。
         /// </summary>
-        /// <value>取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。</value>
+        /// <value>取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
 
 
         /// <summary>
-        /// 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。
+        /// 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。若局点没有kms服务，请填“default”。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

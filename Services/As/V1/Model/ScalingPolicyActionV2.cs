@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class ScalingPolicyActionV2 
     {
         /// <summary>
-        /// 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为
+        /// 操作选项，默认为ADD。 当scaling_resource_type为SCALING_GROUP，支持如下操作： - ADD：增加 - REMOVE/REDUCE：减少 - SET：设置为 当scaling_resource_type为BANDWIDTH，支持如下操作： - ADD：增加 - REDUCE：减少 - SET：设置为
         /// </summary>
-        /// <value>操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为</value>
+        /// <value>操作选项，默认为ADD。 当scaling_resource_type为SCALING_GROUP，支持如下操作： - ADD：增加 - REMOVE/REDUCE：减少 - SET：设置为 当scaling_resource_type为BANDWIDTH，支持如下操作： - ADD：增加 - REDUCE：减少 - SET：设置为</value>
         [JsonConverter(typeof(EnumClassConverter<OperationEnum>))]
         public class OperationEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为
+        /// 操作选项，默认为ADD。 当scaling_resource_type为SCALING_GROUP，支持如下操作： - ADD：增加 - REMOVE/REDUCE：减少 - SET：设置为 当scaling_resource_type为BANDWIDTH，支持如下操作： - ADD：增加 - REDUCE：减少 - SET：设置为
         /// </summary>
         [JsonProperty("operation", NullValueHandling = NullValueHandling.Ignore)]
         public OperationEnum Operation { get; set; }

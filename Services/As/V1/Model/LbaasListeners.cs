@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public int? ProtocolPort { get; set; }
 
         /// <summary>
-        /// 权重，指后端云服务器经分发得到的请求数量比例，取值范围[0,1]。
+        /// 权重，指后端云服务器经分发得到的请求数量的比例，取值范围[0, 100]。
         /// </summary>
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }

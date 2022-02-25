@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class CreateDependencyRequestBody 
     {
         /// <summary>
-        /// 运行时语言。
+        /// 运行时语言，Java11、Nodejs14:、Python3:在type为v2时支持。
         /// </summary>
-        /// <value>运行时语言。</value>
+        /// <value>运行时语言，Java11、Nodejs14:、Python3:在type为v2时支持。</value>
         [JsonConverter(typeof(EnumClassConverter<RuntimeEnum>))]
         public class RuntimeEnum
         {
@@ -25,6 +25,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// Enum JAVA8 for value: Java8
             /// </summary>
             public static readonly RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
+
+            /// <summary>
+            /// Enum JAVA11 for value: Java11
+            /// </summary>
+            public static readonly RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
 
             /// <summary>
             /// Enum NODE_JS6_10 for value: Node.js6.10
@@ -47,6 +52,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly RuntimeEnum NODE_JS12_13 = new RuntimeEnum("Node.js12.13");
 
             /// <summary>
+            /// Enum NODE_JS14_18 for value: Node.js14.18
+            /// </summary>
+            public static readonly RuntimeEnum NODE_JS14_18 = new RuntimeEnum("Node.js14.18");
+
+            /// <summary>
             /// Enum PYTHON2_7 for value: Python2.7
             /// </summary>
             public static readonly RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
@@ -55,6 +65,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// Enum PYTHON3_6 for value: Python3.6
             /// </summary>
             public static readonly RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
+
+            /// <summary>
+            /// Enum PYTHON3_9 for value: Python3.9
+            /// </summary>
+            public static readonly RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
             /// <summary>
             /// Enum GO1_8 for value: Go1.8
@@ -90,12 +105,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             new Dictionary<string, RuntimeEnum>()
             {
                 { "Java8", JAVA8 },
+                { "Java11", JAVA11 },
                 { "Node.js6.10", NODE_JS6_10 },
                 { "Node.js8.10", NODE_JS8_10 },
                 { "Node.js10.16", NODE_JS10_16 },
                 { "Node.js12.13", NODE_JS12_13 },
+                { "Node.js14.18", NODE_JS14_18 },
                 { "Python2.7", PYTHON2_7 },
                 { "Python3.6", PYTHON3_6 },
+                { "Python3.9", PYTHON3_9 },
                 { "Go1.8", GO1_8 },
                 { "Go1.x", GO1_X },
                 { "C#(.NET Core 2.0)", C_NET_CORE_2_0_ },
@@ -210,7 +228,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string DependType { get; set; }
 
         /// <summary>
-        /// 运行时语言。
+        /// 运行时语言，Java11、Nodejs14:、Python3:在type为v2时支持。
         /// </summary>
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }

@@ -66,6 +66,18 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 更新子用户昵称
+        /// </summary>
+        public BatchUpdateChildNickNamesResponse BatchUpdateChildNickNames(BatchUpdateChildNickNamesRequest batchUpdateChildNickNamesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v4/domain/child-users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateChildNickNamesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<BatchUpdateChildNickNamesResponse>(response);
+        }
+        
+        /// <summary>
         /// 检查项目名称是否存在
         /// </summary>
         public CheckProjectNameV4Response CheckProjectNameV4(CheckProjectNameV4Request checkProjectNameV4Request)
@@ -465,6 +477,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssuesV4Request);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ListIssuesV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 查看迭代历史记录
+        /// </summary>
+        public ListIterationHistoriesResponse ListIterationHistories(ListIterationHistoriesRequest listIterationHistoriesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("iteration_id" , listIterationHistoriesRequest.IterationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/iterations/{iteration_id}/histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIterationHistoriesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListIterationHistoriesResponse>(response);
         }
         
         /// <summary>

@@ -16,74 +16,60 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 查询类型，可选location_summary,location_detail  location_summary：查询汇总数据 location_detail：查询数据详情 
+        /// - 动作名称，可选summary、detail。 - summary：查询汇总数据 - detail：查询数据详情。
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 查询起始时间戳， 时间戳应设置需为整5分钟或整小时时刻点，设置方式如下  interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) interval大于等于3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) 
+        /// - 查询起始时间戳，时间戳应设置需为整5分钟，设置方式如下： - interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) - interval为3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) - interval为86400时，start_time设置为东8区零点时刻点，如：1631203200000(对应2021-09-10 00:00:00)
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 查询结束时间戳， 时间戳应设置需为整5分钟或整小时时刻点，设置方式如下  interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-11 10:15:00) interval大于等于3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) 
+        /// - 查询结束时间戳，时间戳应设置需为整5分钟，设置方式如下： - interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-10 11:15:00) - interval为3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) - interval为86400时，end_time设置为东8区零点时刻点，如：1631376000000(对应2021-09-12 00:00:00)
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 查询时间间隔，单位为秒，可设置值300(5分钟),3600(1小时),14400(4小时)等
-        /// </summary>
-        [SDKProperty("interval", IsQuery = true)]
-        [JsonProperty("interval", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Interval { get; set; }
-
-        /// <summary>
-        /// 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com，all表示查询名下全部域名
+        /// 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com，all表示查询名下全部域名。
         /// </summary>
         [SDKProperty("domain_name", IsQuery = true)]
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 网络资源消耗： - bw（带宽） - flux（流量）  HTTP状态码（组合指标）： - status_code_2xx（状态码详情2xx） - status_code_3xx（状态码详情3xx） - status_code_4xx（状态码详情4xx） - status_code_5xx（状态码详情5xx）
+        /// - 网络资源消耗：   - bw（带宽）   - flux（流量）   - bs_bw（回源带宽）   - bs_flux（回源流量） - 访问情况：   - req_num（请求总数）   - hit_num（请求命中次数）   - bs_num（回源总数）   - bs_fail_num（回源失败数）   - hit_flux（命中流量） - HTTP状态码（组合指标）：   - http_code_2xx（状态码汇总2xx）   - http_code_3xx（状态码汇总3xx）   - http_code_4xx（状态码汇总4xx）   - http_code_5xx（状态码汇总5xx）   - bs_http_code_2xx（回源状态码汇总2xx）   - bs_http_code_3xx（回源状态码汇总3xx）   - bs_http_code_4xx（回源状态码汇总4xx）   - bs_http_code_5xx（回源状态码汇总5xx）   - status_code_2xx（状态码详情2xx）   - status_code_3xx（状态码详情3xx）   - status_code_4xx（状态码详情4xx）   - status_code_5xx（状态码详情5xx）   - bs_status_code_2xx（回源状态码详情2xx）   - bs_status_code_3xx（回源状态码详情3xx）   - bs_status_code_4xx（回源状态码详情4xx）   - bs_status_code_5xx（回源状态码详情5xx）   - status_code和bs_status_code不能一起查询
         /// </summary>
         [SDKProperty("stat_type", IsQuery = true)]
         [JsonProperty("stat_type", NullValueHandling = NullValueHandling.Ignore)]
         public string StatType { get; set; }
 
         /// <summary>
-        /// 数据分组方式，多个以英文逗号分隔，可选domain,country,district,isp，默认不分组
+        /// 查询时间间隔，单位为秒，可设置值300(5分钟),3600(1小时),86400(1天)等。
+        /// </summary>
+        [SDKProperty("interval", IsQuery = true)]
+        [JsonProperty("interval", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Interval { get; set; }
+
+        /// <summary>
+        /// 数据分组方式，可选domain，默认不分组。
         /// </summary>
         [SDKProperty("group_by", IsQuery = true)]
         [JsonProperty("group_by", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupBy { get; set; }
 
         /// <summary>
-        /// 需要过滤的国家编码，多个以英文逗号分隔，all表示全部
+        /// 服务区域：mainland_china（默认）、outside_mainland_china，当查询回源类指标时该参数无效。
         /// </summary>
-        [SDKProperty("country", IsQuery = true)]
-        [JsonProperty("country", NullValueHandling = NullValueHandling.Ignore)]
-        public string Country { get; set; }
-
-        /// <summary>
-        /// 需要过滤的地区编码，多个以英文逗号分隔，all表示全部，仅仅country字段为cn时设置才合法
-        /// </summary>
-        [SDKProperty("district", IsQuery = true)]
-        [JsonProperty("district", NullValueHandling = NullValueHandling.Ignore)]
-        public string District { get; set; }
-
-        /// <summary>
-        /// 需要过滤的运营商编码，多个以英文逗号分隔，all表示全部
-        /// </summary>
-        [SDKProperty("isp", IsQuery = true)]
-        [JsonProperty("isp", NullValueHandling = NullValueHandling.Ignore)]
-        public string Isp { get; set; }
+        [SDKProperty("service_area", IsQuery = true)]
+        [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServiceArea { get; set; }
 
         /// <summary>
         /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
@@ -103,13 +89,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
-            sb.Append("  interval: ").Append(Interval).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  statType: ").Append(StatType).Append("\n");
+            sb.Append("  interval: ").Append(Interval).Append("\n");
             sb.Append("  groupBy: ").Append(GroupBy).Append("\n");
-            sb.Append("  country: ").Append(Country).Append("\n");
-            sb.Append("  district: ").Append(District).Append("\n");
-            sb.Append("  isp: ").Append(Isp).Append("\n");
+            sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -148,11 +132,6 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.EndTime.Equals(input.EndTime))
                 ) && 
                 (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
-                ) && 
-                (
                     this.DomainName == input.DomainName ||
                     (this.DomainName != null &&
                     this.DomainName.Equals(input.DomainName))
@@ -163,24 +142,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.StatType.Equals(input.StatType))
                 ) && 
                 (
+                    this.Interval == input.Interval ||
+                    (this.Interval != null &&
+                    this.Interval.Equals(input.Interval))
+                ) && 
+                (
                     this.GroupBy == input.GroupBy ||
                     (this.GroupBy != null &&
                     this.GroupBy.Equals(input.GroupBy))
                 ) && 
                 (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
-                ) && 
-                (
-                    this.District == input.District ||
-                    (this.District != null &&
-                    this.District.Equals(input.District))
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    (this.Isp != null &&
-                    this.Isp.Equals(input.Isp))
+                    this.ServiceArea == input.ServiceArea ||
+                    (this.ServiceArea != null &&
+                    this.ServiceArea.Equals(input.ServiceArea))
                 ) && 
                 (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
@@ -203,20 +177,16 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null)
                     hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Interval != null)
-                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
                 if (this.DomainName != null)
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.StatType != null)
                     hashCode = hashCode * 59 + this.StatType.GetHashCode();
+                if (this.Interval != null)
+                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
                 if (this.GroupBy != null)
                     hashCode = hashCode * 59 + this.GroupBy.GetHashCode();
-                if (this.Country != null)
-                    hashCode = hashCode * 59 + this.Country.GetHashCode();
-                if (this.District != null)
-                    hashCode = hashCode * 59 + this.District.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                if (this.ServiceArea != null)
+                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;

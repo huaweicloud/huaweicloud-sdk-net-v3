@@ -10,16 +10,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Bms.V1.Model
 {
     /// <summary>
-    /// metadata数据结构说明
+    /// This is a auto create Body Object
     /// </summary>
-    public class KeyValue 
+    public class UpdateBaremetalServerMetadataReq 
     {
 
         /// <summary>
-        /// 键。最大长度255个Unicode字符，不能为空。可以为大写字母（A-Z）、小写字母（a-z）、数字（0-9）、中划线（-）、下划线（_）、冒号（:）和小数点（.）。
+        /// 用户自定义metadata键值对。  结构体允许为空，取值为空时不更新数据。
         /// </summary>
-        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
-        public string Key { get; set; }
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> Metadata { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class KeyValue {\n");
-            sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("class UpdateBaremetalServerMetadataReq {\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,23 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as KeyValue);
+            return this.Equals(input as UpdateBaremetalServerMetadataReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(KeyValue input)
+        public bool Equals(UpdateBaremetalServerMetadataReq input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Metadata != null)
+                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

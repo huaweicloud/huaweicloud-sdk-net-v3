@@ -527,11 +527,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }
         /// <summary>
-        /// 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表。
+        /// 企业项目ID。  当scaling_resource_type指定为：SCALING_GROUP 传入all_granted_eps时：  华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组对应的伸缩策略。 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组对应的伸缩策略。 说明： 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表。  当scaling_resource_type指定为：BANDWIDTH 传入all_granted_eps时:  华为云帐号和拥有全局权限的IAM用户可以查询该用户所有带宽对应的伸缩策略。 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的带宽对应的伸缩策略，带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。 不指定scaling_resource_type 当传入all_granted_eps时：  华为云帐号和拥有全局权限的IAM用户可以查询该用户所有的伸缩组和带宽对应的伸缩策略。 授予部分企业项目的IAM用户，可以查询该用户所有授权企业项目下的伸缩组和带宽对应的伸缩策略。 说明： 如果授予部分企业项目的IAM用户拥有超过100个企业项目，则只能返回有权限的前100个企业项目对应伸缩组的伸缩策略列表；带宽在all_granted_eps场景下返回策略请参见[《EIP接口参口》查询带宽列表](https://support.huaweicloud.com/api-eip/eip_apiBandwidth_0002.html)。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 告警ID，即告警规则的ID。
+        /// </summary>
+        [SDKProperty("alarm_id", IsQuery = true)]
+        [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmId { get; set; }
 
 
         /// <summary>
@@ -551,6 +558,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  sortBy: ").Append(SortBy).Append("\n");
             sb.Append("  order: ").Append(Order).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  alarmId: ").Append(AlarmId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -621,6 +629,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.AlarmId == input.AlarmId ||
+                    (this.AlarmId != null &&
+                    this.AlarmId.Equals(input.AlarmId))
                 );
         }
 
@@ -652,6 +665,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.Order.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.AlarmId != null)
+                    hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
                 return hashCode;
             }
         }

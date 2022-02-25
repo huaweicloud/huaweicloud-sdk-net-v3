@@ -511,7 +511,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("instance_terminate_policy", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceTerminatePolicyEnum InstanceTerminatePolicy { get; set; }
         /// <summary>
-        /// 通知方式：EMAIL为发送邮件通知。
+        /// 通知方式：  EMAIL为发送邮件通知。  该通知方式已经被废除，建议给弹性伸缩组配置通知功能。请参考[通知](https://support.huaweicloud.com/api-as/as_06_0800.html)。
         /// </summary>
         [JsonProperty("notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Notifications { get; set; }

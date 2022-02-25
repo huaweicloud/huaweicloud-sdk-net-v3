@@ -118,7 +118,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string MarketType { get; set; }
 
         /// <summary>
-        /// 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。
+        /// 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。  PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。 COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。
         /// </summary>
         [JsonProperty("multi_flavor_priority_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string MultiFlavorPriorityPolicy { get; set; }

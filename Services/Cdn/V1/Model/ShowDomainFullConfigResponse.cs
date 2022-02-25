@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Bms.V1.Model
+namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 更新裸金属服务器元数据
+    /// Response Object
     /// </summary>
-    public class MetaData 
+    public class ShowDomainFullConfigResponse : SdkResponse
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public KeyValue Metadata { get; set; }
+        [JsonProperty("configs", NullValueHandling = NullValueHandling.Ignore)]
+        public ConfigsGetBody Configs { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MetaData {\n");
-            sb.Append("  _metadata: ").Append(Metadata).Append("\n");
+            sb.Append("class ShowDomainFullConfigResponse {\n");
+            sb.Append("  configs: ").Append(Configs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MetaData);
+            return this.Equals(input as ShowDomainFullConfigResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(MetaData input)
+        public bool Equals(ShowDomainFullConfigResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
+                    this.Configs == input.Configs ||
+                    (this.Configs != null &&
+                    this.Configs.Equals(input.Configs))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Configs != null)
+                    hashCode = hashCode * 59 + this.Configs.GetHashCode();
                 return hashCode;
             }
         }

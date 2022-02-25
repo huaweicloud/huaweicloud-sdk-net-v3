@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     {
 
         /// <summary>
-        /// 支持当前云硬盘类型的可用区列表。
+        /// 支持当前云硬盘类型的可用区列表，列表的元素以逗号分隔。
         /// </summary>
         [JsonProperty("RESKEY:availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public string RESKEYavailabilityZones { get; set; }
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 当前云硬盘类型已售罄的可用区列表。
+        /// 当前云硬盘类型已售罄的可用区列表，列表的元素以逗号分隔。
         /// </summary>
         [JsonProperty("os-vendor-extended:sold_out_availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public string OsVendorExtendedsoldOutAvailabilityZones { get; set; }

@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string ScalingPolicyName { get; set; }
 
         /// <summary>
-        /// 策略类型。
+        /// 策略类型：  - 告警策略：ALARM - 定时策略：SCHEDULED - 周期策略：RECURRENCE
         /// </summary>
         [SDKProperty("scaling_policy_type", IsQuery = true)]
         [JsonProperty("scaling_policy_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
         public int? Max { get; set; }
 
+        /// <summary>
+        /// 配额下限。
+        /// </summary>
+        [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Min { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -178,6 +184,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  used: ").Append(Used).Append("\n");
             sb.Append("  quota: ").Append(Quota).Append("\n");
             sb.Append("  max: ").Append(Max).Append("\n");
+            sb.Append("  min: ").Append(Min).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -218,6 +225,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.Max == input.Max ||
                     (this.Max != null &&
                     this.Max.Equals(input.Max))
+                ) && 
+                (
+                    this.Min == input.Min ||
+                    (this.Min != null &&
+                    this.Min.Equals(input.Min))
                 );
         }
 
@@ -237,6 +249,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.Quota.GetHashCode();
                 if (this.Max != null)
                     hashCode = hashCode * 59 + this.Max.GetHashCode();
+                if (this.Min != null)
+                    hashCode = hashCode * 59 + this.Min.GetHashCode();
                 return hashCode;
             }
         }

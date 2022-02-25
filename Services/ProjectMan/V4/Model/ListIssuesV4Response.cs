@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 工作项列表
         /// </summary>
         [JsonProperty("issues", NullValueHandling = NullValueHandling.Ignore)]
-        public List<IssueResponseV4> Issues { get; set; }
+        public List<ListIssueItemResponse> Issues { get; set; }
 
         /// <summary>
         /// 总数

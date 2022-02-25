@@ -159,6 +159,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("closed_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ClosedTime { get; set; }
 
+        /// <summary>
+        /// 工作项描述
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
+        public IssueOrder Order { get; set; }
+
+        /// <summary>
+        /// 附近列表
+        /// </summary>
+        [JsonProperty("accessories", NullValueHandling = NullValueHandling.Ignore)]
+        public List<IssueAccessory> Accessories { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -191,6 +209,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  tracker: ").Append(Tracker).Append("\n");
             sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
             sb.Append("  closedTime: ").Append(ClosedTime).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  order: ").Append(Order).Append("\n");
+            sb.Append("  accessories: ").Append(Accessories).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -333,6 +354,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.ClosedTime == input.ClosedTime ||
                     (this.ClosedTime != null &&
                     this.ClosedTime.Equals(input.ClosedTime))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Order == input.Order ||
+                    (this.Order != null &&
+                    this.Order.Equals(input.Order))
+                ) && 
+                (
+                    this.Accessories == input.Accessories ||
+                    this.Accessories != null &&
+                    input.Accessories != null &&
+                    this.Accessories.SequenceEqual(input.Accessories)
                 );
         }
 
@@ -392,6 +429,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
                 if (this.ClosedTime != null)
                     hashCode = hashCode * 59 + this.ClosedTime.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Order != null)
+                    hashCode = hashCode * 59 + this.Order.GetHashCode();
+                if (this.Accessories != null)
+                    hashCode = hashCode * 59 + this.Accessories.GetHashCode();
                 return hashCode;
             }
         }

@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("url_auth", NullValueHandling = NullValueHandling.Ignore)]
         public UrlAuth UrlAuth { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("https", NullValueHandling = NullValueHandling.Ignore)]
+        public HttpPutBody Https { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  originRequestHeader: ").Append(OriginRequestHeader).Append("\n");
             sb.Append("  httpResponseHeader: ").Append(HttpResponseHeader).Append("\n");
             sb.Append("  urlAuth: ").Append(UrlAuth).Append("\n");
+            sb.Append("  https: ").Append(Https).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.UrlAuth == input.UrlAuth ||
                     (this.UrlAuth != null &&
                     this.UrlAuth.Equals(input.UrlAuth))
+                ) && 
+                (
+                    this.Https == input.Https ||
+                    (this.Https != null &&
+                    this.Https.Equals(input.Https))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.HttpResponseHeader.GetHashCode();
                 if (this.UrlAuth != null)
                     hashCode = hashCode * 59 + this.UrlAuth.GetHashCode();
+                if (this.Https != null)
+                    hashCode = hashCode * 59 + this.Https.GetHashCode();
                 return hashCode;
             }
         }

@@ -14,6 +14,32 @@ namespace HuaweiCloud.SDK.Elb.V3
 
         
         /// <summary>
+        /// 批量创建后端服务器
+        /// </summary>
+        public BatchCreateMembersResponse BatchCreateMembers(BatchCreateMembersRequest batchCreateMembersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id" , batchCreateMembersRequest.PoolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-add",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateMembersRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchCreateMembersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除后端服务器
+        /// </summary>
+        public BatchDeleteMembersResponse BatchDeleteMembers(BatchDeleteMembersRequest batchDeleteMembersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id" , batchDeleteMembersRequest.PoolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchDeleteMembersResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量更新转发策略优先级
         /// </summary>
         public BatchUpdatePoliciesPriorityResponse BatchUpdatePoliciesPriority(BatchUpdatePoliciesPriorityRequest batchUpdatePoliciesPriorityRequest)

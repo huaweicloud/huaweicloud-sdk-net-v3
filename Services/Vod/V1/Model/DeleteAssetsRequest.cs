@@ -36,6 +36,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("asset_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssetId { get; set; }
 
+        /// <summary>
+        /// 删除类型，当值为origin时只删除源文件，保留转码后文件。
+        /// </summary>
+        [SDKProperty("delete_type", IsQuery = true)]
+        [JsonProperty("delete_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeleteType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -47,6 +54,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  authorization: ").Append(Authorization).Append("\n");
             sb.Append("  xSdkDate: ").Append(XSdkDate).Append("\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
+            sb.Append("  deleteType: ").Append(DeleteType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +91,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.AssetId != null &&
                     input.AssetId != null &&
                     this.AssetId.SequenceEqual(input.AssetId)
+                ) && 
+                (
+                    this.DeleteType == input.DeleteType ||
+                    (this.DeleteType != null &&
+                    this.DeleteType.Equals(input.DeleteType))
                 );
         }
 
@@ -100,6 +113,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
                 if (this.AssetId != null)
                     hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.DeleteType != null)
+                    hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
                 return hashCode;
             }
         }

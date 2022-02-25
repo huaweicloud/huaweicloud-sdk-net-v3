@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public MetaData Body { get; set; }
+        public UpdateBaremetalServerMetadataReq Body { get; set; }
 
 
         /// <summary>

@@ -105,6 +105,18 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("tracker_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> TrackerIds { get; set; }
 
+        /// <summary>
+        /// true 查询的工作项包含已经逻辑删除的，false 查询的工作项不包含已经删除的
+        /// </summary>
+        [JsonProperty("include_deleted", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IncludeDeleted { get; set; }
+
+        /// <summary>
+        /// 根据工作项的更新时间查询工作项，(查询的起始时间,查询的结束时间)
+        /// </summary>
+        [JsonProperty("updated_time_interval", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdatedTimeInterval { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -128,6 +140,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  statusIds: ").Append(StatusIds).Append("\n");
             sb.Append("  storyPointIds: ").Append(StoryPointIds).Append("\n");
             sb.Append("  trackerIds: ").Append(TrackerIds).Append("\n");
+            sb.Append("  includeDeleted: ").Append(IncludeDeleted).Append("\n");
+            sb.Append("  updatedTimeInterval: ").Append(UpdatedTimeInterval).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +249,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.TrackerIds != null &&
                     input.TrackerIds != null &&
                     this.TrackerIds.SequenceEqual(input.TrackerIds)
+                ) && 
+                (
+                    this.IncludeDeleted == input.IncludeDeleted ||
+                    (this.IncludeDeleted != null &&
+                    this.IncludeDeleted.Equals(input.IncludeDeleted))
+                ) && 
+                (
+                    this.UpdatedTimeInterval == input.UpdatedTimeInterval ||
+                    (this.UpdatedTimeInterval != null &&
+                    this.UpdatedTimeInterval.Equals(input.UpdatedTimeInterval))
                 );
         }
 
@@ -276,6 +300,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.StoryPointIds.GetHashCode();
                 if (this.TrackerIds != null)
                     hashCode = hashCode * 59 + this.TrackerIds.GetHashCode();
+                if (this.IncludeDeleted != null)
+                    hashCode = hashCode * 59 + this.IncludeDeleted.GetHashCode();
+                if (this.UpdatedTimeInterval != null)
+                    hashCode = hashCode * 59 + this.UpdatedTimeInterval.GetHashCode();
                 return hashCode;
             }
         }

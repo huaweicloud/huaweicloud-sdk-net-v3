@@ -153,6 +153,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         }
         
         /// <summary>
+        /// 查询域名配置接口
+        /// </summary>
+        public async Task<ShowDomainFullConfigResponse> ShowDomainFullConfigAsync(ShowDomainFullConfigRequest showDomainFullConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name" , showDomainFullConfigRequest.DomainName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1.1/cdn/configuration/domains/{domain_name}/configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainFullConfigRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainFullConfigResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量查询域名的统计明细-按域名单独返回
         /// </summary>
         public async Task<ShowDomainItemDetailsResponse> ShowDomainItemDetailsAsync(ShowDomainItemDetailsRequest showDomainItemDetailsRequest)
@@ -177,7 +190,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         }
         
         /// <summary>
-        /// 查询区域运营商统计数据
+        /// 查询域名统计数据-区域运营商
+        /// </summary>
+        public async Task<ShowDomainLocationStatsResponse> ShowDomainLocationStatsAsync(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-location-stats",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainLocationStatsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainLocationStatsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询域名统计数据-非区域运营商
         /// </summary>
         public async Task<ShowDomainStatsResponse> ShowDomainStatsAsync(ShowDomainStatsRequest showDomainStatsRequest)
         {

@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public ScalingPolicyActionV1 ScalingPolicyAction { get; set; }
 
         /// <summary>
-        /// 冷却时间，取值范围0-86400，默认为900，单位是秒。
+        /// 冷却时间，取值范围0-86400，默认为300，单位是秒。
         /// </summary>
         [JsonProperty("cool_down_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? CoolDownTime { get; set; }

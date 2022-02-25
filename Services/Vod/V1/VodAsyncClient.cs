@@ -257,6 +257,18 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询域名播放日志
+        /// </summary>
+        public async Task<ListDomainLogsResponse> ListDomainLogsAsync(ListDomainLogsRequest listDomainLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/vod/cdn/logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainLogsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListDomainLogsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询转码模板组列表
         /// </summary>
         public async Task<ListTemplateGroupResponse> ListTemplateGroupAsync(ListTemplateGroupRequest listTemplateGroupRequest)

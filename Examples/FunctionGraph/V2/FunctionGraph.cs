@@ -230,7 +230,7 @@ namespace Examples.FunctionGraph.V2
                     Handler = "index.handler",
                     MemorySize = 128,
                     Timeout = 3,
-                    Runtime = CreateFunctionRequestBody.RuntimeEnum.NODE_JS_6_10,
+                    Runtime = CreateFunctionRequestBody.RuntimeEnum.NODE_JS6_10,
                     Package = "CsharpSdkTest",
                     CodeType = CreateFunctionRequestBody.CodeTypeEnum.INLINE,
                     CodeFilename = "index.zip",
@@ -356,7 +356,7 @@ namespace Examples.FunctionGraph.V2
                     Handler = "index.handler",
                     MemorySize =  512,
                     Timeout =  30,
-                    Runtime = UpdateFunctionConfigRequestBody.RuntimeEnum.NODE_JS_6_10,
+                    Runtime = UpdateFunctionConfigRequestBody.RuntimeEnum.NODE_JS6_10,
                 }
             };
             try

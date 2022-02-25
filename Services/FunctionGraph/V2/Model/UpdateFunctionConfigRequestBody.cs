@@ -15,56 +15,71 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class UpdateFunctionConfigRequestBody 
     {
         /// <summary>
-        /// FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。
+        /// FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 Java11、Nodejs14.18、Python3.9在type为v2时支持
         /// </summary>
-        /// <value>FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。</value>
+        /// <value>FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 Java11、Nodejs14.18、Python3.9在type为v2时支持</value>
         [JsonConverter(typeof(EnumClassConverter<RuntimeEnum>))]
         public class RuntimeEnum
         {
             /// <summary>
-            /// Enum JAVA_8 for value: Java 8
+            /// Enum JAVA8 for value: Java8
             /// </summary>
-            public static readonly RuntimeEnum JAVA_8 = new RuntimeEnum("Java 8");
+            public static readonly RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
 
             /// <summary>
-            /// Enum NODE_JS_6_10 for value: Node.js 6.10
+            /// Enum JAVA11 for value: Java11
             /// </summary>
-            public static readonly RuntimeEnum NODE_JS_6_10 = new RuntimeEnum("Node.js 6.10");
+            public static readonly RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
 
             /// <summary>
-            /// Enum NODE_JS_8_10 for value: Node.js 8.10
+            /// Enum NODE_JS6_10 for value: Node.js6.10
             /// </summary>
-            public static readonly RuntimeEnum NODE_JS_8_10 = new RuntimeEnum("Node.js 8.10");
+            public static readonly RuntimeEnum NODE_JS6_10 = new RuntimeEnum("Node.js6.10");
 
             /// <summary>
-            /// Enum NODE_JS_10_16 for value: Node.js 10.16
+            /// Enum NODE_JS8_10 for value: Node.js8.10
             /// </summary>
-            public static readonly RuntimeEnum NODE_JS_10_16 = new RuntimeEnum("Node.js 10.16");
+            public static readonly RuntimeEnum NODE_JS8_10 = new RuntimeEnum("Node.js8.10");
 
             /// <summary>
-            /// Enum NODE_JS_12_13 for value: Node.js 12.13
+            /// Enum NODE_JS10_16 for value: Node.js10.16
             /// </summary>
-            public static readonly RuntimeEnum NODE_JS_12_13 = new RuntimeEnum("Node.js 12.13");
+            public static readonly RuntimeEnum NODE_JS10_16 = new RuntimeEnum("Node.js10.16");
 
             /// <summary>
-            /// Enum PYTHON_2_7 for value: Python 2.7
+            /// Enum NODE_JS12_13 for value: Node.js12.13
             /// </summary>
-            public static readonly RuntimeEnum PYTHON_2_7 = new RuntimeEnum("Python 2.7");
+            public static readonly RuntimeEnum NODE_JS12_13 = new RuntimeEnum("Node.js12.13");
 
             /// <summary>
-            /// Enum PYTHON_3_6 for value: Python 3.6
+            /// Enum NODE_JS14_18 for value: Node.js14.18
             /// </summary>
-            public static readonly RuntimeEnum PYTHON_3_6 = new RuntimeEnum("Python 3.6");
+            public static readonly RuntimeEnum NODE_JS14_18 = new RuntimeEnum("Node.js14.18");
 
             /// <summary>
-            /// Enum GO_1_8 for value: Go 1.8
+            /// Enum PYTHON2_7 for value: Python2.7
             /// </summary>
-            public static readonly RuntimeEnum GO_1_8 = new RuntimeEnum("Go 1.8");
+            public static readonly RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
 
             /// <summary>
-            /// Enum GO_1_X for value: Go 1.x
+            /// Enum PYTHON3_6 for value: Python3.6
             /// </summary>
-            public static readonly RuntimeEnum GO_1_X = new RuntimeEnum("Go 1.x");
+            public static readonly RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
+
+            /// <summary>
+            /// Enum PYTHON3_9 for value: Python3.9
+            /// </summary>
+            public static readonly RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
+
+            /// <summary>
+            /// Enum GO1_8 for value: Go1.8
+            /// </summary>
+            public static readonly RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
+
+            /// <summary>
+            /// Enum GO1_X for value: Go1.x
+            /// </summary>
+            public static readonly RuntimeEnum GO1_X = new RuntimeEnum("Go1.x");
 
             /// <summary>
             /// Enum C_NET_CORE_2_0_ for value: C#(.NET Core 2.0)
@@ -82,26 +97,29 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly RuntimeEnum C_NET_CORE_3_1_ = new RuntimeEnum("C#(.NET Core 3.1)");
 
             /// <summary>
-            /// Enum PHP_7_3 for value: PHP 7.3
+            /// Enum PHP7_3 for value: PHP7.3
             /// </summary>
-            public static readonly RuntimeEnum PHP_7_3 = new RuntimeEnum("PHP 7.3");
+            public static readonly RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
 
             private static readonly Dictionary<string, RuntimeEnum> StaticFields =
             new Dictionary<string, RuntimeEnum>()
             {
-                { "Java 8", JAVA_8 },
-                { "Node.js 6.10", NODE_JS_6_10 },
-                { "Node.js 8.10", NODE_JS_8_10 },
-                { "Node.js 10.16", NODE_JS_10_16 },
-                { "Node.js 12.13", NODE_JS_12_13 },
-                { "Python 2.7", PYTHON_2_7 },
-                { "Python 3.6", PYTHON_3_6 },
-                { "Go 1.8", GO_1_8 },
-                { "Go 1.x", GO_1_X },
+                { "Java8", JAVA8 },
+                { "Java11", JAVA11 },
+                { "Node.js6.10", NODE_JS6_10 },
+                { "Node.js8.10", NODE_JS8_10 },
+                { "Node.js10.16", NODE_JS10_16 },
+                { "Node.js12.13", NODE_JS12_13 },
+                { "Node.js14.18", NODE_JS14_18 },
+                { "Python2.7", PYTHON2_7 },
+                { "Python3.6", PYTHON3_6 },
+                { "Python3.9", PYTHON3_9 },
+                { "Go1.8", GO1_8 },
+                { "Go1.x", GO1_X },
                 { "C#(.NET Core 2.0)", C_NET_CORE_2_0_ },
                 { "C#(.NET Core 2.1)", C_NET_CORE_2_1_ },
                 { "C#(.NET Core 3.1)", C_NET_CORE_3_1_ },
-                { "PHP 7.3", PHP_7_3 },
+                { "PHP7.3", PHP7_3 },
             };
 
             private string Value;
@@ -198,7 +216,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string FuncName { get; set; }
 
         /// <summary>
-        /// FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。
+        /// FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 Java11、Nodejs14.18、Python3.9在type为v2时支持
         /// </summary>
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
