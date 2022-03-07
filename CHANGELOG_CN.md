@@ -1,3 +1,50 @@
+# 3.0.77 2022-03-07
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 支持接口`UpdateClusterEip`、`ShowClusterEndpoints`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+  - 支持以下接口 (V2)：
+    - `ListAlarms`
+    - `CreateAlarm`
+    - `DeleteAlarm`
+    - `UpdateAlarmAction`
+    - `ListAlarmResources`
+    - `DeleteAlarmResources`
+    - `AddAlarmResources`
+    - `AddResourceGroupsResourcesBatch`
+    - `DeleteResourceGroupsResourcesBatch`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePrePaidPublicip`的请求参数`ip_version`类型变更： `integer` -> `enum`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShrinkInstanceNode`新增响应参数 `order_id`
+
 # 3.0.76 2022-02-25
 
 ### HuaweiCloud SDK AS

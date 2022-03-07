@@ -201,7 +201,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         }
         
         /// <summary>
-        /// 查询域名统计数据-非区域运营商
+        /// 查询域名统计数据
         /// </summary>
         public ShowDomainStatsResponse ShowDomainStats(ShowDomainStatsRequest showDomainStatsRequest)
         {

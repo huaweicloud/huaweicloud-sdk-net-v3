@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ConfirmDeadLettersMessagesReqMessage 
+    public class ConfirmMessageEntity 
     {
         /// <summary>
         /// 客户端处理数据的状态。 取值为“success”或者“fail”。
@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConfirmDeadLettersMessagesReqMessage {\n");
+            sb.Append("class ConfirmMessageEntity {\n");
             sb.Append("  handler: ").Append(Handler).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
@@ -155,13 +155,13 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConfirmDeadLettersMessagesReqMessage);
+            return this.Equals(input as ConfirmMessageEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ConfirmDeadLettersMessagesReqMessage input)
+        public bool Equals(ConfirmMessageEntity input)
         {
             if (input == null)
                 return false;

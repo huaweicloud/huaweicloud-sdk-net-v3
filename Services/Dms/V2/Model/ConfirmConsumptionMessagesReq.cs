@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         /// 确认消息数组。
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ConfirmDeadLettersMessagesReqMessage> Message { get; set; }
+        public List<ConfirmMessageEntity> Message { get; set; }
 
 
         /// <summary>

@@ -1,3 +1,50 @@
+# 3.0.77 2022-03-07
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the interfaces `UpdateClusterEip`, `ShowClusterEndpoints`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - Support the following interfaces (V2)：
+    - `ListAlarms`
+    - `CreateAlarm`
+    - `DeleteAlarm`
+    - `UpdateAlarmAction`
+    - `ListAlarmResources`
+    - `DeleteAlarmResources`
+    - `AddAlarmResources`
+    - `AddResourceGroupsResourcesBatch`
+    - `DeleteResourceGroupsResourcesBatch`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type of the request parameter `ip_version` of the interface `CreatePrePaidPublicip`: `integer` -> `enum`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `order_id` to the interface `ShrinkInstanceNode`
+
 # 3.0.76 2022-02-25
 
 ### HuaweiCloud SDK AS
