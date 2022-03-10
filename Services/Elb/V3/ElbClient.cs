@@ -137,6 +137,18 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 创建云日志
+        /// </summary>
+        public CreateLogtankResponse CreateLogtank(CreateLogtankRequest createLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateLogtankResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建后端服务器
         /// </summary>
         public CreateMemberResponse CreateMember(CreateMemberRequest createMemberRequest)
@@ -250,6 +262,19 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLoadBalancerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除云日志
+        /// </summary>
+        public DeleteLogtankResponse DeleteLogtank(DeleteLogtankRequest deleteLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id" , deleteLogtankRequest.LogtankId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteLogtankResponse>(response);
         }
         
         /// <summary>
@@ -399,6 +424,18 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadBalancersRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListLoadBalancersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 云日志列表
+        /// </summary>
+        public ListLogtanksResponse ListLogtanks(ListLogtanksRequest listLogtanksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogtanksRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListLogtanksResponse>(response);
         }
         
         /// <summary>
@@ -568,6 +605,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 云日志配置详情
+        /// </summary>
+        public ShowLogtankResponse ShowLogtank(ShowLogtankRequest showLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id" , showLogtankRequest.LogtankId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowLogtankResponse>(response);
+        }
+        
+        /// <summary>
         /// 后端服务器详情
         /// </summary>
         public ShowMemberResponse ShowMember(ShowMemberRequest showMemberRequest)
@@ -696,6 +746,19 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoadBalancerRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateLoadBalancerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新云日志
+        /// </summary>
+        public UpdateLogtankResponse UpdateLogtank(UpdateLogtankRequest updateLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id" , updateLogtankRequest.LogtankId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateLogtankResponse>(response);
         }
         
         /// <summary>

@@ -40,10 +40,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Bandwidth { get; set; }
 
         /// <summary>
-        /// flavor对应的lcu数量。
+        /// 当前flavor对应的lcu数量。LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。
         /// </summary>
         [JsonProperty("lcu", NullValueHandling = NullValueHandling.Ignore)]
         public int? Lcu { get; set; }
+
+        /// <summary>
+        /// https新建连接数。
+        /// </summary>
+        [JsonProperty("https_cps", NullValueHandling = NullValueHandling.Ignore)]
+        public int? HttpsCps { get; set; }
 
 
         /// <summary>
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  qps: ").Append(Qps).Append("\n");
             sb.Append("  bandwidth: ").Append(Bandwidth).Append("\n");
             sb.Append("  lcu: ").Append(Lcu).Append("\n");
+            sb.Append("  httpsCps: ").Append(HttpsCps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +110,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Lcu == input.Lcu ||
                     (this.Lcu != null &&
                     this.Lcu.Equals(input.Lcu))
+                ) && 
+                (
+                    this.HttpsCps == input.HttpsCps ||
+                    (this.HttpsCps != null &&
+                    this.HttpsCps.Equals(input.HttpsCps))
                 );
         }
 
@@ -124,6 +136,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
                 if (this.Lcu != null)
                     hashCode = hashCode * 59 + this.Lcu.GetHashCode();
+                if (this.HttpsCps != null)
+                    hashCode = hashCode * 59 + this.HttpsCps.GetHashCode();
                 return hashCode;
             }
         }

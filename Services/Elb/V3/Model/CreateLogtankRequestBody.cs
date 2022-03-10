@@ -7,20 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// 创建云日志请求体
     /// </summary>
-    public class CreateAlarmRequest 
+    public class CreateLogtankRequestBody 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public PostAlarmsReqV2 Body { get; set; }
+        [JsonProperty("logtank", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateLogtankOption Logtank { get; set; }
 
 
         /// <summary>
@@ -29,8 +28,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateAlarmRequest {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class CreateLogtankRequestBody {\n");
+            sb.Append("  logtank: ").Append(Logtank).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -40,22 +39,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateAlarmRequest);
+            return this.Equals(input as CreateLogtankRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateAlarmRequest input)
+        public bool Equals(CreateLogtankRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.Logtank == input.Logtank ||
+                    (this.Logtank != null &&
+                    this.Logtank.Equals(input.Logtank))
                 );
         }
 
@@ -67,8 +66,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.Logtank != null)
+                    hashCode = hashCode * 59 + this.Logtank.GetHashCode();
                 return hashCode;
             }
         }

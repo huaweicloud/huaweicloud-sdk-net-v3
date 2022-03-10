@@ -1,3 +1,46 @@
+# 3.0.78 2022-03-10
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DeleteAddonInstance`请求参数`cluster_id`改为非必填
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowTopUrl`移除请求参数 `X-Auth-Token`
+  - 接口`ShowDomainLocationStats`移除请求参数 `X-Auth-Token`
+  - 接口`ShowDomainItemDetails`移除请求参数 `X-Auth-Token`
+  - 接口`ShowDomainStats`移除请求参数 `X-Auth-Token`
+  - 接口`ShowDomainItemLocationDetails`移除请求参数 `X-Auth-Token`
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListLogtanks`
+    - `CreateLogtank`
+    - `ShowLogtank`
+    - `UpdateLogtank`
+    - `DeleteLogtank`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListFlavors`新增响应参数 `https_cps`
+  - 接口`ShowFlavor`新增响应参数 `https_cps`
+  - 接口`ListLoadBalancers`请求参数`X-Auth-Token`改为非必填
+  - 接口`CreateLoadBalancer`请求参数`X-Auth-Token`改为非必填
+  - 接口`UpdateIpList`请求参数`X-Auth-Token`改为非必填
+  - 接口`BatchDeleteIpList`请求参数`X-Auth-Token`改为非必填
+
 # 3.0.77 2022-03-07
 
 ### HuaweiCloud SDK CCE

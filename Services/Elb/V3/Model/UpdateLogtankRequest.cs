@@ -7,27 +7,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class AddResourceGroupsResourcesBatchRequest 
+    public class UpdateLogtankRequest 
     {
 
         /// <summary>
-        /// 当前资源所在分组信息，以rg开头，后跟22位由字母或数字组成的字符串
+        /// 云日志ID。
         /// </summary>
-        [SDKProperty("group_id", IsPath = true)]
-        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string GroupId { get; set; }
+        [SDKProperty("logtank_id", IsPath = true)]
+        [JsonProperty("logtank_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogtankId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourcesReq Body { get; set; }
+        public UpdateLogtankRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -36,8 +36,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AddResourceGroupsResourcesBatchRequest {\n");
-            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("class UpdateLogtankRequest {\n");
+            sb.Append("  logtankId: ").Append(LogtankId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -48,22 +48,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddResourceGroupsResourcesBatchRequest);
+            return this.Equals(input as UpdateLogtankRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AddResourceGroupsResourcesBatchRequest input)
+        public bool Equals(UpdateLogtankRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
+                    this.LogtankId == input.LogtankId ||
+                    (this.LogtankId != null &&
+                    this.LogtankId.Equals(input.LogtankId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -80,8 +80,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.LogtankId != null)
+                    hashCode = hashCode * 59 + this.LogtankId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 告警的id以al开头，包含22个数字或字母
+    /// Response Object
     /// </summary>
-    public class AlarmID 
+    public class DeleteLogtankResponse : SdkResponse
     {
 
 

@@ -10,14 +10,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 固定返回页面的配置。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段，传入会报错。 [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [不支持该字段，请勿使用。](tag:dt,dt_test)
+    /// 固定返回页面的配置。当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。共享型负载均衡器下的转发策略不支持该字段，传入会报错。  [当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [不支持该字段，请勿使用。](tag:dt,dt_test)
     /// </summary>
     public class UpdateFixtedResponseConfig 
     {
         /// <summary>
-        /// 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json application/json
+        /// 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
         /// </summary>
-        /// <value>返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json application/json</value>
+        /// <value>返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json</value>
         [JsonConverter(typeof(EnumClassConverter<ContentTypeEnum>))]
         public class ContentTypeEnum
         {
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string StatusCode { get; set; }
 
         /// <summary>
-        /// 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json application/json
+        /// 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
         /// </summary>
         [JsonProperty("content_type", NullValueHandling = NullValueHandling.Ignore)]
         public ContentTypeEnum ContentType { get; set; }

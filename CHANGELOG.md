@@ -1,3 +1,46 @@
+# 3.0.78 2022-03-10
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `cluster_id` changed to not required of the interface `DeleteAddonInstance`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the request parameter `X-Auth-Token` from the interface `ShowTopUrl`
+  - Remove the request parameter `X-Auth-Token` from the interface `ShowDomainLocationStats`
+  - Remove the request parameter `X-Auth-Token` from the interface `ShowDomainItemDetails`
+  - Remove the request parameter `X-Auth-Token` from the interface `ShowDomainStats`
+  - Remove the request parameter `X-Auth-Token` from the interface `ShowDomainItemLocationDetails`
+
+### HuaweiCloud SDK ELB
+
+- _Features_
+  - Support the following interfaces：
+    - `ListLogtanks`
+    - `CreateLogtank`
+    - `ShowLogtank`
+    - `UpdateLogtank`
+    - `DeleteLogtank`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `https_cps` to the interface `ListFlavors`
+  - Add the response parameter `https_cps` to the interface `ShowFlavor`
+  - The request parameter `X-Auth-Token` changed to not required of the interface `ListLoadBalancers`
+  - The request parameter `X-Auth-Token` changed to not required of the interface `CreateLoadBalancer`
+  - The request parameter `X-Auth-Token` changed to not required of the interface `UpdateIpList`
+  - The request parameter `X-Auth-Token` changed to not required of the interface `BatchDeleteIpList`
+
 # 3.0.77 2022-03-07
 
 ### HuaweiCloud SDK CCE

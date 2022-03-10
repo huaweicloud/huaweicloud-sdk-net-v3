@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<int?> MonitorPort { get; set; }
 
         /// <summary>
-        /// 发送健康检查请求的域名。  取值：以数字或字母开头，只能包含数字、字母、’-’、’.’。  支持多值查询，查询条件格式：**domain_name&#x3D;xxx&amp;domain_name&#x3D;xxx**。
+        /// 发送健康检查请求的域名。  取值：以数字或字母开头，只能包含数字、字母、&#39;-&#39;、&#39;.&#39;。  支持多值查询，查询条件格式：**domain_name&#x3D;xxx&amp;domain_name&#x3D;xxx**。
         /// </summary>
         [SDKProperty("domain_name", IsQuery = true)]
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> ExpectedCodes { get; set; }
 
         /// <summary>
-        /// 健康检查测试member健康时发送的http请求路径。默认为“/”。  使用说明： - 以“/”开头。仅当type为HTTP时生效。  支持多值查询，查询条件格式：***url_path&#x3D;xxx&amp;url_path&#x3D;xxx***。
+        /// 健康检查测试member健康时发送的http请求路径。默认为\&quot;/\&quot;。  使用说明： - 以\&quot;/\&quot;开头。仅当type为HTTP时生效。  支持多值查询，查询条件格式：***url_path&#x3D;xxx&amp;url_path&#x3D;xxx***。
         /// </summary>
         [SDKProperty("url_path", IsQuery = true)]
         [JsonProperty("url_path", NullValueHandling = NullValueHandling.Ignore)]
@@ -128,7 +128,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> HttpMethod { get; set; }
 
         /// <summary>
-        /// 企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

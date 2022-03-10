@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class ModelNamespace 
+    public class CreateLogtankRequest 
     {
 
         /// <summary>
-        /// 指标的命名空间指标命名空间，例如弹性云服务器命名空间(格式为service.item；service和item必须是字符串，以字母开头，可包含0-9/a-z/A-Z/_；长度范围[3,32]。)
+        /// 
         /// </summary>
-        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
-        public string Namespace { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateLogtankRequestBody Body { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ModelNamespace {\n");
-            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("class CreateLogtankRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +40,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ModelNamespace);
+            return this.Equals(input as CreateLogtankRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ModelNamespace input)
+        public bool Equals(CreateLogtankRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

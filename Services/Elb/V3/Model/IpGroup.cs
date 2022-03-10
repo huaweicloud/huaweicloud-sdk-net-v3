@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// IP地址组的更新时间。
+        /// IP地址组的描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

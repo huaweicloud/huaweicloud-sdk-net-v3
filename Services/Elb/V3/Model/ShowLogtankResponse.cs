@@ -7,27 +7,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class UpdateAlarmActionRequest 
+    public class ShowLogtankResponse : SdkResponse
     {
 
         /// <summary>
-        /// Alarm实例ID
+        /// 请求ID。  注：自动生成 。
         /// </summary>
-        [SDKProperty("alarm_id", IsPath = true)]
-        [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string AlarmId { get; set; }
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public PutAlarmActionsReq Body { get; set; }
+        [JsonProperty("logtank", NullValueHandling = NullValueHandling.Ignore)]
+        public Logtank Logtank { get; set; }
 
 
         /// <summary>
@@ -36,9 +34,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateAlarmActionRequest {\n");
-            sb.Append("  alarmId: ").Append(AlarmId).Append("\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class ShowLogtankResponse {\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
+            sb.Append("  logtank: ").Append(Logtank).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,27 +46,27 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateAlarmActionRequest);
+            return this.Equals(input as ShowLogtankResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateAlarmActionRequest input)
+        public bool Equals(ShowLogtankResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.AlarmId == input.AlarmId ||
-                    (this.AlarmId != null &&
-                    this.AlarmId.Equals(input.AlarmId))
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
                 ) && 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.Logtank == input.Logtank ||
+                    (this.Logtank != null &&
+                    this.Logtank.Equals(input.Logtank))
                 );
         }
 
@@ -80,10 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AlarmId != null)
-                    hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.RequestId != null)
+                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.Logtank != null)
+                    hashCode = hashCode * 59 + this.Logtank.GetHashCode();
                 return hashCode;
             }
         }

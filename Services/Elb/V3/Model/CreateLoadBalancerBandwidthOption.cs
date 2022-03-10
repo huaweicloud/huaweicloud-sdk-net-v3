@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class CreateLoadBalancerBandwidthOption 
     {
         /// <summary>
-        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
+        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：   - 当id字段为null时，charge_mode是必须的。
         /// </summary>
-        /// <value>计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。</value>
+        /// <value>计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：   - 当id字段为null时，charge_mode是必须的。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -248,7 +248,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test) 使用说明： - 当id字段为null时，charge_mode是必须的。
+        /// 计费模式。 [取值范围：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：   - 当id字段为null时，charge_mode是必须的。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
@@ -258,7 +258,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]
         public ShareTypeEnum ShareType { get; set; }
         /// <summary>
-        /// 预留资源账单信息，默认为空表示按需计费， 非空为包周期。admin权限才能更新此字段
+        /// 预留资源账单信息，默认为空表示按需计费，非空为包周期。 不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }

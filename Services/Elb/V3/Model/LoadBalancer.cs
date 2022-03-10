@@ -198,7 +198,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string VipAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡器的IPv4对应的port ID。
+        /// 负载均衡器的IPv4对应的port ID。[创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipPortId { get; set; }
@@ -264,19 +264,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 企业项目ID。  [不支持该字段，请勿使用](tag:dt,dt_test)
+        /// 企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 资源账单信息，取值： - 空：按需计费。 - 非空：包周期计费， 包周期计费billing_info字段的格式为：order_id&amp;#58;product_id&amp;#58;region_id&amp;#58;project_id，如： CS2107161019CDJZZ&amp;#58;OFFI569702121789763584&amp;#58;eu-de&amp;#58;057ef081eb00d2732fd1c01a9be75e6f 使用说明： - admin权限才能更新此字段。 [不支持该字段，请勿使用](tag:dt,dt_test)
-        /// </summary>
-        [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
-        public string BillingInfo { get; set; }
-
-        /// <summary>
-        /// 四层Flavor ID。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+        /// 四层Flavor ID。  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
@@ -288,7 +282,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
+        /// 七层Flavor ID。  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
@@ -306,7 +300,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<PublicIpInfo> Publicips { get; set; }
 
         /// <summary>
-        /// 下联面子网的网络ID列表。可以通过GET https&amp;#58;//{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。 使用说明： - 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。 - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。 - 下联面子网必须属于该LB所在的VPC。 - 不支持边缘云子网。
+        /// 下联面子网的网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： - 若不指定该字段，则会在当前负载均衡器所在子网作为下联面子网。  - 若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。  - 下联面子网必须属于该LB所在的VPC。  - 不支持边缘云子网。
         /// </summary>
         [JsonProperty("elb_virsubnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElbVirsubnetIds { get; set; }
@@ -317,7 +311,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("elb_virsubnet_type", NullValueHandling = NullValueHandling.Ignore)]
         public ElbVirsubnetTypeEnum ElbVirsubnetType { get; set; }
         /// <summary>
-        /// 是否启用跨VPC后端转发。取值： - true：开启。 - false：不开启。  仅独享型负载均衡器支持该特性。  开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 是否启用跨VPC后端转发。开启跨VPC后端转发后，后端服务器组支持添加其他VPC、其他公有云、云下数据中心的服务器。取值： - true：开启。 - false：不开启。 [仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
@@ -335,7 +329,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public BandwidthRef Ipv6Bandwidth { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护，取值： - false：不开启。 - true：开启。 &gt;退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。
+        /// 是否开启删除保护，取值： - false：不开启。 - true：开启。  仅当前局点启用删除保护特性后才会返回该字段。  &gt;退场时需要先关闭所有资源的删除保护开关。
         /// </summary>
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }
@@ -378,7 +372,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  ipv6VipPortId: ").Append(Ipv6VipPortId).Append("\n");
             sb.Append("  availabilityZoneList: ").Append(AvailabilityZoneList).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  billingInfo: ").Append(BillingInfo).Append("\n");
             sb.Append("  l4FlavorId: ").Append(L4FlavorId).Append("\n");
             sb.Append("  l4ScaleFlavorId: ").Append(L4ScaleFlavorId).Append("\n");
             sb.Append("  l7FlavorId: ").Append(L7FlavorId).Append("\n");
@@ -538,11 +531,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
-                    this.BillingInfo == input.BillingInfo ||
-                    (this.BillingInfo != null &&
-                    this.BillingInfo.Equals(input.BillingInfo))
-                ) && 
-                (
                     this.L4FlavorId == input.L4FlavorId ||
                     (this.L4FlavorId != null &&
                     this.L4FlavorId.Equals(input.L4FlavorId))
@@ -662,8 +650,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.BillingInfo != null)
-                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
                 if (this.L4FlavorId != null)
                     hashCode = hashCode * 59 + this.L4FlavorId.GetHashCode();
                 if (this.L4ScaleFlavorId != null)

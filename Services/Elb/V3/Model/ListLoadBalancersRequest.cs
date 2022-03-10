@@ -135,21 +135,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Ipv6VipVirsubnetId { get; set; }
 
         /// <summary>
-        /// 负载均衡器绑定的EIP ID。示例如下： \&quot;eips\&quot;&amp;#58; [             {                 \&quot;eip_id\&quot;&amp;#58; \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,                 \&quot;eip_address\&quot;&amp;#58; \&quot;88.88.14.122\&quot;,                 \&quot;ip_version\&quot;&amp;#58; 4             }         ]  支持多值查询，查询条件格式： - eip_id作为查询条件：*eips&#x3D;eip_id&#x3D;xxx&amp;eips&#x3D;eip_id&#x3D;xxx*。 - eip_address作为查询条件：*eips&#x3D;eip_address&#x3D;xxx&amp;eips&#x3D;eip_address&#x3D;xxx*。 - ip_version作为查询条件：*eips&#x3D;ip_version&#x3D;xxx&amp;eips&#x3D;ip_version&#x3D;xxx*。  注：该字段与publicips字段一致。
+        /// 负载均衡器绑定的EIP ID。示例如下： \&quot;eips\&quot;: [             {                 \&quot;eip_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,                 \&quot;eip_address\&quot;: \&quot;88.88.14.122\&quot;,                 \&quot;ip_version\&quot;: 4             }         ]  支持多值查询，查询条件格式： - eip_id作为查询条件：*eips&#x3D;eip_id&#x3D;xxx&amp;eips&#x3D;eip_id&#x3D;xxx*。 - eip_address作为查询条件：*eips&#x3D;eip_address&#x3D;xxx&amp;eips&#x3D;eip_address&#x3D;xxx*。 - ip_version作为查询条件：*eips&#x3D;ip_version&#x3D;xxx&amp;eips&#x3D;ip_version&#x3D;xxx*。  注：该字段与publicips字段一致。
         /// </summary>
         [SDKProperty("eips", IsQuery = true)]
         [JsonProperty("eips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Eips { get; set; }
 
         /// <summary>
-        /// 负载均衡器绑定的公网IP。示例如下： \&quot;publicips\&quot;&amp;#58; [                 {                     \&quot;publicip_id\&quot;&amp;#58; \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,                     \&quot;publicip_address\&quot;&amp;#58; \&quot;88.88.14.122\&quot;,                     \&quot;ip_version\&quot;&amp;#58; 4                 }             ]  支持多值查询，查询条件格式： - publicip_id作为查询条件：*publicips&#x3D;publicip_id&#x3D;xxx&amp;publicips&#x3D;publicip_id&#x3D;xxx*。 - publicip_address作为查询条件：*publicips&#x3D;publicip_address&#x3D;xxx&amp;publicips&#x3D;publicip_address&#x3D;xxx*。 - ip_version作为查询条件：*publicips&#x3D;ip_version&#x3D;xxx&amp;publicips&#x3D;ip_version&#x3D;xxx*。 注：该字段与eips字段一致。
+        /// 负载均衡器绑定的公网IP。示例如下：  \&quot;publicips\&quot;: [                 {                     \&quot;publicip_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,                     \&quot;publicip_address\&quot;: \&quot;88.88.14.122\&quot;,                     \&quot;ip_version\&quot;: 4                 }             ]  支持多值查询，查询条件格式： - publicip_id作为查询条件：*publicips&#x3D;publicip_id&#x3D;xxx&amp;publicips&#x3D;publicip_id&#x3D;xxx*。 - publicip_address作为查询条件：*publicips&#x3D;publicip_address&#x3D;xxx&amp;publicips&#x3D;publicip_address&#x3D;xxx*。 - ip_version作为查询条件：*publicips&#x3D;ip_version&#x3D;xxx&amp;publicips&#x3D;ip_version&#x3D;xxx*。  注：该字段与eips字段一致。
         /// </summary>
         [SDKProperty("publicips", IsQuery = true)]
         [JsonProperty("publicips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Publicips { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在可用区列表。 支持多值查询，查询条件格式：*availability_zone_list&#x3D;xxx&amp;availability_zone_list&#x3D;xxx*。
+        /// 负载均衡器所在可用区列表。  支持多值查询，查询条件格式：*availability_zone_list&#x3D;xxx&amp;availability_zone_list&#x3D;xxx*。
         /// </summary>
         [SDKProperty("availability_zone_list", IsQuery = true)]
         [JsonProperty("availability_zone_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -205,7 +205,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> MemberAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡器所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。 [不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 负载均衡器所属的企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

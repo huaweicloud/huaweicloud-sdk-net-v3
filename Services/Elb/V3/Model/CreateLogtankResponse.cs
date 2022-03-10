@@ -7,25 +7,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class ResourcesRg 
+    public class CreateLogtankResponse : SdkResponse
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
-        public ModelNamespace Namespace { get; set; }
+        [JsonProperty("logtank", NullValueHandling = NullValueHandling.Ignore)]
+        public Logtank Logtank { get; set; }
 
         /// <summary>
-        /// 资源实例的维度信息
+        /// 请求ID。  注：自动生成 。
         /// </summary>
-        [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dimension> Dimensions { get; set; }
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
 
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ResourcesRg {\n");
-            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
-            sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
+            sb.Append("class CreateLogtankResponse {\n");
+            sb.Append("  logtank: ").Append(Logtank).Append("\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,28 +46,27 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ResourcesRg);
+            return this.Equals(input as CreateLogtankResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ResourcesRg input)
+        public bool Equals(CreateLogtankResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
+                    this.Logtank == input.Logtank ||
+                    (this.Logtank != null &&
+                    this.Logtank.Equals(input.Logtank))
                 ) && 
                 (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
                 );
         }
 
@@ -79,10 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                if (this.Logtank != null)
+                    hashCode = hashCode * 59 + this.Logtank.GetHashCode();
+                if (this.RequestId != null)
+                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

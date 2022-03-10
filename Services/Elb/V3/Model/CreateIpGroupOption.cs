@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<CreateIpGroupIpOption> IpList { get; set; }
 
         /// <summary>
-        /// IP地址组所在的企业项目ID。
+        /// IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
