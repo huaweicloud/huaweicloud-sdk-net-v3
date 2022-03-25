@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// key为要匹配的字段，value为匹配的值。  如果value为空字符串则精确匹配，否则模糊匹配。
         /// </summary>
         [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Tag> Matches { get; set; }
+        public List<Match> Matches { get; set; }
 
 
         /// <summary>

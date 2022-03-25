@@ -303,6 +303,31 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// 查询版本列表（OpenStack原生）
+        /// </summary>
+        public async Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest listVersionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListVersionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询版本列表（OpenStack原生）
+        /// </summary>
+        public async Task<ShowVersionResponse> ShowVersionAsync(ShowVersionRequest showVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("version" , showVersionRequest.Version.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{version}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowVersionResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询job状态
         /// </summary>
         public async Task<ShowJobResponse> ShowJobAsync(ShowJobRequest showJobRequest)

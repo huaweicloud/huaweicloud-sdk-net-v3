@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     public class CreateDataImageRequestBody 
     {
         /// <summary>
-        /// 操作系统类型。只能是Windows、Linux二者之一，值区分大小写。
+        /// 操作系统类型。只能是Windows、Linux二者之一，默认Linux。
         /// </summary>
-        /// <value>操作系统类型。只能是Windows、Linux二者之一，值区分大小写。</value>
+        /// <value>操作系统类型。只能是Windows、Linux二者之一，默认Linux。</value>
         [JsonConverter(typeof(EnumClassConverter<OsTypeEnum>))]
         public class OsTypeEnum
         {
@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 操作系统类型。只能是Windows、Linux二者之一，值区分大小写。
+        /// 操作系统类型。只能是Windows、Linux二者之一，默认Linux。
         /// </summary>
         [JsonProperty("os_type", NullValueHandling = NullValueHandling.Ignore)]
         public OsTypeEnum OsType { get; set; }

@@ -93,6 +93,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("record", NullValueHandling = NullValueHandling.Ignore)]
         public string Record { get; set; }
 
+        /// <summary>
+        /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+        /// </summary>
+        [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
+        public Object TextLocation { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -114,6 +120,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  issuingAuthority: ").Append(IssuingAuthority).Append("\n");
             sb.Append("  fileNumber: ").Append(FileNumber).Append("\n");
             sb.Append("  record: ").Append(Record).Append("\n");
+            sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,6 +206,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Record == input.Record ||
                     (this.Record != null &&
                     this.Record.Equals(input.Record))
+                ) && 
+                (
+                    this.TextLocation == input.TextLocation ||
+                    (this.TextLocation != null &&
+                    this.TextLocation.Equals(input.TextLocation))
                 );
         }
 
@@ -236,6 +248,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
                 if (this.Record != null)
                     hashCode = hashCode * 59 + this.Record.GetHashCode();
+                if (this.TextLocation != null)
+                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("return_verification", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnVerification { get; set; }
 
+        /// <summary>
+        /// 识别到的文字块的区域位置信息。可选值包括：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
+        /// </summary>
+        [JsonProperty("return_text_location", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnTextLocation { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  side: ").Append(Side).Append("\n");
             sb.Append("  returnVerification: ").Append(ReturnVerification).Append("\n");
+            sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnVerification == input.ReturnVerification ||
                     (this.ReturnVerification != null &&
                     this.ReturnVerification.Equals(input.ReturnVerification))
+                ) && 
+                (
+                    this.ReturnTextLocation == input.ReturnTextLocation ||
+                    (this.ReturnTextLocation != null &&
+                    this.ReturnTextLocation.Equals(input.ReturnTextLocation))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Side.GetHashCode();
                 if (this.ReturnVerification != null)
                     hashCode = hashCode * 59 + this.ReturnVerification.GetHashCode();
+                if (this.ReturnTextLocation != null)
+                    hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
                 return hashCode;
             }
         }

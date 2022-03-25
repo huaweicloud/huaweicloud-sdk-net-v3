@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 删弹性云服务器时是否一并删除该磁盘。  - true：是 - false：否
+        /// 删弹性云服务器时是否一并删除该磁盘。  - true：是 - false：否 微版本2.3及以上版本支持。
         /// </summary>
         [JsonProperty("delete_on_termination", NullValueHandling = NullValueHandling.Ignore)]
         public string DeleteOnTermination { get; set; }

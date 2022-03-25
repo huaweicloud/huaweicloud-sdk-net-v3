@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("advanced_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdvancedMode { get; set; }
 
+        /// <summary>
+        /// 识别到的文字块的区域位置信息。可选值包括：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
+        /// </summary>
+        [JsonProperty("return_text_location", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnTextLocation { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  image: ").Append(Image).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  advancedMode: ").Append(AdvancedMode).Append("\n");
+            sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.AdvancedMode == input.AdvancedMode ||
                     (this.AdvancedMode != null &&
                     this.AdvancedMode.Equals(input.AdvancedMode))
+                ) && 
+                (
+                    this.ReturnTextLocation == input.ReturnTextLocation ||
+                    (this.ReturnTextLocation != null &&
+                    this.ReturnTextLocation.Equals(input.ReturnTextLocation))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.AdvancedMode != null)
                     hashCode = hashCode * 59 + this.AdvancedMode.GetHashCode();
+                if (this.ReturnTextLocation != null)
+                    hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
                 return hashCode;
             }
         }

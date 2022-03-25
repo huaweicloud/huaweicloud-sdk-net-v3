@@ -241,9 +241,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。
+        /// 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
         /// </summary>
-        /// <value>操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。</value>
+        /// <value>操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。</value>
         [JsonConverter(typeof(EnumClassConverter<OsTypeEnum>))]
         public class OsTypeEnum
         {
@@ -404,7 +404,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("architecture", NullValueHandling = NullValueHandling.Ignore)]
         public ArchitectureEnum Architecture { get; set; }
         /// <summary>
-        /// 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。
+        /// 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
         /// </summary>
         [JsonProperty("os_type", NullValueHandling = NullValueHandling.Ignore)]
         public OsTypeEnum OsType { get; set; }

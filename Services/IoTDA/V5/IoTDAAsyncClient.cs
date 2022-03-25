@@ -440,6 +440,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 重置设备指纹
+        /// </summary>
+        public async Task<ResetFingerprintResponse> ResetFingerprintAsync(ResetFingerprintRequest resetFingerprintRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id" , resetFingerprintRequest.DeviceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/reset-fingerprint",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetFingerprintRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ResetFingerprintResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询设备
         /// </summary>
         public async Task<ShowDeviceResponse> ShowDeviceAsync(ShowDeviceRequest showDeviceRequest)

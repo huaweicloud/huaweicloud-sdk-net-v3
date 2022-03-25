@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string ValidFrom { get; set; }
 
         /// <summary>
-        /// 有效结束日期。   &gt; 说明：  - 身份证识别只支持中国大陆汉族身份证识别。 
+        /// 有效结束日期。   &gt; 说明：  - 身份证识别支持中华人民共和国居民身份证识别。 
         /// </summary>
         [JsonProperty("valid_to", NullValueHandling = NullValueHandling.Ignore)]
         public string ValidTo { get; set; }
@@ -74,6 +74,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         [JsonProperty("verification_result", NullValueHandling = NullValueHandling.Ignore)]
         public IdcardVerificationResult VerificationResult { get; set; }
+
+        /// <summary>
+        /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+        /// </summary>
+        [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
+        public Object TextLocation { get; set; }
 
 
         /// <summary>
@@ -93,6 +99,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  validFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  validTo: ").Append(ValidTo).Append("\n");
             sb.Append("  verificationResult: ").Append(VerificationResult).Append("\n");
+            sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +170,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.VerificationResult == input.VerificationResult ||
                     (this.VerificationResult != null &&
                     this.VerificationResult.Equals(input.VerificationResult))
+                ) && 
+                (
+                    this.TextLocation == input.TextLocation ||
+                    (this.TextLocation != null &&
+                    this.TextLocation.Equals(input.TextLocation))
                 );
         }
 
@@ -194,6 +206,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
                 if (this.VerificationResult != null)
                     hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
+                if (this.TextLocation != null)
+                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

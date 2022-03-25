@@ -13,6 +13,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         public static readonly Region CN_EAST_2 = new Region("cn-east-2", "https://elb.cn-east-2.myhuaweicloud.com");
         public static readonly Region CN_EAST_3 = new Region("cn-east-3", "https://elb.cn-east-3.myhuaweicloud.com");
         public static readonly Region CN_SOUTH_1 = new Region("cn-south-1", "https://elb.cn-south-1.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_2 = new Region("cn-south-2", "https://elb.cn-south-2.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2", "https://elb.cn-southwest-2.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_2 = new Region("ap-southeast-2", "https://elb.ap-southeast-2.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://elb.ap-southeast-1.myhuaweicloud.com");
@@ -27,6 +28,7 @@ namespace HuaweiCloud.SDK.Elb.V2
                 { "cn-east-2", CN_EAST_2 },
                 { "cn-east-3", CN_EAST_3 },
                 { "cn-south-1", CN_SOUTH_1 },
+                { "cn-south-2", CN_SOUTH_2 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
