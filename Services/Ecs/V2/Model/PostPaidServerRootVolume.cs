@@ -51,6 +51,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly VolumetypeEnum UH_L1 = new VolumetypeEnum("uh-l1");
 
+            /// <summary>
+            /// Enum ESSD for value: ESSD
+            /// </summary>
+            public static readonly VolumetypeEnum ESSD = new VolumetypeEnum("ESSD");
+
             private static readonly Dictionary<string, VolumetypeEnum> StaticFields =
             new Dictionary<string, VolumetypeEnum>()
             {
@@ -60,6 +65,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 { "GPSSD", GPSSD },
                 { "co-p1", CO_P1 },
                 { "uh-l1", UH_L1 },
+                { "ESSD", ESSD },
             };
 
             private string Value;

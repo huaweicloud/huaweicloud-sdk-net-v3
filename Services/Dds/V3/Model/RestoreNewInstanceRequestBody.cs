@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 可用区ID。
+        /// 可用区ID，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }

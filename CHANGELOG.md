@@ -1,3 +1,14 @@
+# 3.0.80 2022-03-31
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the interface `BatchShowNodesInformation`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.79 2022-03-25
 
 ### HuaweiCloud SDK CDN

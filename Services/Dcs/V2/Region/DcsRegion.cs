@@ -19,6 +19,8 @@ namespace HuaweiCloud.SDK.Dcs.V2
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://dcs.ap-southeast-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3", "https://dcs.ap-southeast-3.myhuaweicloud.com");
         public static readonly Region RU_NORTHWEST_2 = new Region("ru-northwest-2", "https://dcs.ru-northwest-2.myhuaweicloud.com");
+        public static readonly Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://dcs.sa-brazil-1.myhuaweicloud.com");
+        public static readonly Region LA_NORTH_2 = new Region("la-north-2", "https://dcs.la-north-2.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -35,6 +37,8 @@ namespace HuaweiCloud.SDK.Dcs.V2
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "ap-southeast-3", AP_SOUTHEAST_3 },
                 { "ru-northwest-2", RU_NORTHWEST_2 },
+                { "sa-brazil-1", SA_BRAZIL_1 },
+                { "la-north-2", LA_NORTH_2 },
         };
 
         public static Region ValueOf(string regionId)

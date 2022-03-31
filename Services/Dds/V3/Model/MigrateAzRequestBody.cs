@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 迁移到的目标单az或者多az。
+        /// 迁移到的目标单az或者多az，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
         /// </summary>
         [JsonProperty("target_azs", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetAzs { get; set; }
