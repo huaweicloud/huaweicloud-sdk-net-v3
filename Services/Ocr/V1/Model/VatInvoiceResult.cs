@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Code { get; set; }
 
         /// <summary>
+        /// 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。 
+        /// </summary>
+        [JsonProperty("print_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string PrintCode { get; set; }
+
+        /// <summary>
         /// 机器编号。 当“advanced_mode”设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("machine_number", NullValueHandling = NullValueHandling.Ignore)]
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  attribution: ").Append(Attribution).Append("\n");
             sb.Append("  supervisionSeal: ").Append(SupervisionSeal).Append("\n");
             sb.Append("  code: ").Append(Code).Append("\n");
+            sb.Append("  printCode: ").Append(PrintCode).Append("\n");
             sb.Append("  machineNumber: ").Append(MachineNumber).Append("\n");
             sb.Append("  printNumber: ").Append(PrintNumber).Append("\n");
             sb.Append("  checkCode: ").Append(CheckCode).Append("\n");
@@ -286,6 +293,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
+                ) && 
+                (
+                    this.PrintCode == input.PrintCode ||
+                    (this.PrintCode != null &&
+                    this.PrintCode.Equals(input.PrintCode))
                 ) && 
                 (
                     this.MachineNumber == input.MachineNumber ||
@@ -439,6 +451,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.SupervisionSeal.GetHashCode();
                 if (this.Code != null)
                     hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.PrintCode != null)
+                    hashCode = hashCode * 59 + this.PrintCode.GetHashCode();
                 if (this.MachineNumber != null)
                     hashCode = hashCode * 59 + this.MachineNumber.GetHashCode();
                 if (this.PrintNumber != null)

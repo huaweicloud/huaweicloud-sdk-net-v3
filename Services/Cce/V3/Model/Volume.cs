@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Volumetype { get; set; }
 
         /// <summary>
-        /// 磁盘扩展参数，取值请参见[[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212668.html)](tag:hws)[[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0020212668.html)](tag:hws_hk)中“extendparam”参数的描述。
+        /// 磁盘扩展参数，取值请参见创建云服务器中“extendparam”参数的描述。 [链接请参见[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212668.html)](tag:hws) [链接请参见[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0020212668.html)](tag:hws_hk)
         /// </summary>
         [JsonProperty("extendParam", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> ExtendParam { get; set; }

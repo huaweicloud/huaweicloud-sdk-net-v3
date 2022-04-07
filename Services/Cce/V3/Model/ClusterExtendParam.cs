@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 集群控制节点可用区配置。CCE支持的可用区请参考[[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws)[[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk)获取。   - multi_az：多可用区，可选。仅使用高可用集群时才可以配置多可用区。   - 专属云计算池可用区：用于指定专属云可用区部署集群控制节点。   如果需配置专属CCE集群，该字段为必选。例如“华北四-可用区一”取值为：cn-north-4a。更多信息请参见[[什么是专属计算集群？](https://support.huaweicloud.com/productdesc-dcc/zh-cn_topic_0016310838.html)](tag:hws)[[什么是专属计算集群？](https://support.huaweicloud.com/intl/zh-cn/productdesc-dcc/zh-cn_topic_0016310838.html)](tag:hws_hk) 
+        /// 集群控制节点可用区配置。 [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk)    - multi_az：多可用区，可选。仅使用高可用集群时才可以配置多可用区。 - 专属云计算池可用区：用于指定专属云可用区部署集群控制节点。如果需配置专属CCE集群，该字段为必选。 
         /// </summary>
         [JsonProperty("clusterAZ", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterAZ { get; set; }
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string DssMasterVolumes { get; set; }
 
         /// <summary>
-        /// 集群所属的企业项目ID。 &gt;   - 需要开通企业项目功能后才可配置企业项目，详情请参见[[如何进入企业管理页面](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0108763975.html)](tag:hws)[[如何进入企业管理页面](https://support.huaweicloud.com/intl/zh-cn/usermanual-em/zh-cn_topic_0108763975.html)](tag:hws_hk)。 &gt;   - 集群所属的企业项目与集群下所关联的其他云服务资源所属的企业项目必须保持一致。 
+        /// 集群所属的企业项目ID。 &gt;   - 需要开通企业项目功能后才可配置企业项目。 &gt;   - 集群所属的企业项目与集群下所关联的其他云服务资源所属的企业项目必须保持一致。 
         /// </summary>
         [JsonProperty("enterpriseProjectId", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterExternalIP { get; set; }
 
         /// <summary>
-        /// 容器网络固定IP池掩码位数，仅vpc-router网络支持。  该参数决定节点可分配容器IP数量，与创建节点时设置的maxPods参数共同决定节点最多可以创建多少个Pod， [具体请参见[节点最多可以创建多少Pod](https://support.huaweicloud.com/usermanual-cce/cce_01_0348.html)](tag:hws) [具体请参见[节点最多可以创建多少Pod](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0348.html)](tag:hws_hk)。   整数字符传取值范围: 24 ~ 28 
+        /// 容器网络固定IP池掩码位数，仅vpc-router网络支持。  该参数决定节点可分配容器IP数量，与创建节点时设置的maxPods参数共同决定节点最多可以创建多少个Pod， 具体请参见[节点最多可以创建多少Pod](maxPods.xml)。   整数字符传取值范围: 24 ~ 28 
         /// </summary>
         [JsonProperty("alpha.cce/fixPoolMask", NullValueHandling = NullValueHandling.Ignore)]
         public string AlphaCceFixPoolMask { get; set; }
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string PeriodType { get; set; }
 
         /// <summary>
-        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1。 &gt; billingMode为1时生效，且为必选。 
+        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1-3。 &gt; billingMode为1时生效，且为必选。 
         /// </summary>
         [JsonProperty("periodNum", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }

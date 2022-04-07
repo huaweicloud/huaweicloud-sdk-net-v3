@@ -1,3 +1,36 @@
+# 3.0.81 2022-04-07
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the request parameters `kind`, `apiVersion`, `status` from the interface `UpdateNodePool`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeWaybillElectronic`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `print_code` to the interface `RecognizeVatInvoice`
+  - Changes of the interface `RecognizeVehicleLicense`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Changes of the interface `RecognizeTaxiInvoice`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Add the response parameters `type`, `accumulated_scores`, `status`, `generation_date`, `current_time` to the interface `RecognizeDriverLicense`
+  - Changes of the interface `RecognizeTrainTicket`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Changes of the interface `RecognizeBankcard`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+
 # 3.0.80 2022-03-31
 
 ### HuaweiCloud SDK DCS

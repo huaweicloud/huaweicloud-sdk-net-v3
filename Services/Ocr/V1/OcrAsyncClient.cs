@@ -363,6 +363,18 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 电子面单识别
+        /// </summary>
+        public async Task<RecognizeWaybillElectronicResponse> RecognizeWaybillElectronicAsync(RecognizeWaybillElectronicRequest recognizeWaybillElectronicRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/waybill-electronic",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeWaybillElectronicRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeWaybillElectronicResponse>(response);
+        }
+        
+        /// <summary>
         /// 网络图片识别
         /// </summary>
         public async Task<RecognizeWebImageResponse> RecognizeWebImageAsync(RecognizeWebImageRequest recognizeWebImageRequest)

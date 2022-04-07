@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
+        /// 驾驶证类型。 normal：纸质驾驶证 electronic：电子驾驶证 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        /// <summary>
         /// 驾驶证号。 
         /// </summary>
         [JsonProperty("number", NullValueHandling = NullValueHandling.Ignore)]
@@ -94,7 +100,31 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Record { get; set; }
 
         /// <summary>
-        /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+        /// 累积记分。 
+        /// </summary>
+        [JsonProperty("accumulated_scores", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccumulatedScores { get; set; }
+
+        /// <summary>
+        /// 状态。
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DriverLicenseResultStatus> Status { get; set; }
+
+        /// <summary>
+        /// 生成时间。 
+        /// </summary>
+        [JsonProperty("generation_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string GenerationDate { get; set; }
+
+        /// <summary>
+        /// 当前时间。 
+        /// </summary>
+        [JsonProperty("current_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CurrentTime { get; set; }
+
+        /// <summary>
+        /// 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
         /// </summary>
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }
@@ -107,6 +137,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DriverLicenseResult {\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  number: ").Append(Number).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  sex: ").Append(Sex).Append("\n");
@@ -120,6 +151,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  issuingAuthority: ").Append(IssuingAuthority).Append("\n");
             sb.Append("  fileNumber: ").Append(FileNumber).Append("\n");
             sb.Append("  record: ").Append(Record).Append("\n");
+            sb.Append("  accumulatedScores: ").Append(AccumulatedScores).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  generationDate: ").Append(GenerationDate).Append("\n");
+            sb.Append("  currentTime: ").Append(CurrentTime).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -142,6 +177,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 return false;
 
             return 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
                 (
                     this.Number == input.Number ||
                     (this.Number != null &&
@@ -208,6 +248,27 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Record.Equals(input.Record))
                 ) && 
                 (
+                    this.AccumulatedScores == input.AccumulatedScores ||
+                    (this.AccumulatedScores != null &&
+                    this.AccumulatedScores.Equals(input.AccumulatedScores))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    this.Status != null &&
+                    input.Status != null &&
+                    this.Status.SequenceEqual(input.Status)
+                ) && 
+                (
+                    this.GenerationDate == input.GenerationDate ||
+                    (this.GenerationDate != null &&
+                    this.GenerationDate.Equals(input.GenerationDate))
+                ) && 
+                (
+                    this.CurrentTime == input.CurrentTime ||
+                    (this.CurrentTime != null &&
+                    this.CurrentTime.Equals(input.CurrentTime))
+                ) && 
+                (
                     this.TextLocation == input.TextLocation ||
                     (this.TextLocation != null &&
                     this.TextLocation.Equals(input.TextLocation))
@@ -222,6 +283,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Number != null)
                     hashCode = hashCode * 59 + this.Number.GetHashCode();
                 if (this.Name != null)
@@ -248,6 +311,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
                 if (this.Record != null)
                     hashCode = hashCode * 59 + this.Record.GetHashCode();
+                if (this.AccumulatedScores != null)
+                    hashCode = hashCode * 59 + this.AccumulatedScores.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.GenerationDate != null)
+                    hashCode = hashCode * 59 + this.GenerationDate.GetHashCode();
+                if (this.CurrentTime != null)
+                    hashCode = hashCode * 59 + this.CurrentTime.GetHashCode();
                 if (this.TextLocation != null)
                     hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;

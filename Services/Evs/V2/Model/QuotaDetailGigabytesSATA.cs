@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// SATA云硬盘类型预留的容量大小，单位为GB，键值对，包含：reserved（预留）、allocated（预留）、limit（最大）和in_use（已使用）。
+    /// SATA云硬盘类型预留的容量大小，单位为GB，键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。
     /// </summary>
     public class QuotaDetailGigabytesSATA 
     {
@@ -33,12 +33,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("reserved", NullValueHandling = NullValueHandling.Ignore)]
         public int? Reserved { get; set; }
 
-        /// <summary>
-        /// 预留属性。
-        /// </summary>
-        [JsonProperty("allocated", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Allocated { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -50,7 +44,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  inUse: ").Append(InUse).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  reserved: ").Append(Reserved).Append("\n");
-            sb.Append("  allocated: ").Append(Allocated).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,11 +79,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.Reserved == input.Reserved ||
                     (this.Reserved != null &&
                     this.Reserved.Equals(input.Reserved))
-                ) && 
-                (
-                    this.Allocated == input.Allocated ||
-                    (this.Allocated != null &&
-                    this.Allocated.Equals(input.Allocated))
                 );
         }
 
@@ -108,8 +96,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Reserved != null)
                     hashCode = hashCode * 59 + this.Reserved.GetHashCode();
-                if (this.Allocated != null)
-                    hashCode = hashCode * 59 + this.Allocated.GetHashCode();
                 return hashCode;
             }
         }
