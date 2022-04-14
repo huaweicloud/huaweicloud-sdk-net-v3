@@ -22,31 +22,31 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public Billing Billing { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 存储库自定义描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 保管库id
+        /// 存储库ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 保管库名称
+        /// 存储库名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 项目id
+        /// 项目ID
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// 存储库资源类型id
         /// </summary>
         [JsonProperty("provider_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderId { get; set; }
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public List<TagsResp> Tags { get; set; }
 
         /// <summary>
-        /// 企业项目id
+        /// 企业项目id，默认为‘0’。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -80,6 +80,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [JsonProperty("bind_rules", NullValueHandling = NullValueHandling.Ignore)]
         public VaultBindRules BindRules { get; set; }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// 创建时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// 是否开启存储库自动扩容能力（只支持按需存储库）。
@@ -98,18 +110,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? Threshold { get; set; }
-
-        /// <summary>
-        /// 用户id
-        /// </summary>
-        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string UserId { get; set; }
-
-        /// <summary>
-        /// 创建时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
-        /// </summary>
-        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
 
         /// <summary>
         /// 更新时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
@@ -142,11 +142,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  autoBind: ").Append(AutoBind).Append("\n");
             sb.Append("  bindRules: ").Append(BindRules).Append("\n");
+            sb.Append("  userId: ").Append(UserId).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
             sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
-            sb.Append("  userId: ").Append(UserId).Append("\n");
-            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
@@ -228,6 +228,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.BindRules.Equals(input.BindRules))
                 ) && 
                 (
+                    this.UserId == input.UserId ||
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
+                ) && 
+                (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
                     this.AutoExpand == input.AutoExpand ||
                     (this.AutoExpand != null &&
                     this.AutoExpand.Equals(input.AutoExpand))
@@ -241,16 +251,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Threshold == input.Threshold ||
                     (this.Threshold != null &&
                     this.Threshold.Equals(input.Threshold))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
                     this.UpdatedAt == input.UpdatedAt ||
@@ -294,16 +294,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.AutoBind.GetHashCode();
                 if (this.BindRules != null)
                     hashCode = hashCode * 59 + this.BindRules.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.AutoExpand != null)
                     hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
                 if (this.SmnNotify != null)
                     hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.Threshold != null)
                     hashCode = hashCode * 59 + this.Threshold.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.Version != null)

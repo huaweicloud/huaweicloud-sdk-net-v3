@@ -27,6 +27,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
+        /// <summary>
+        /// 偏移量，表示从此偏移量开始查询
+        /// </summary>
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// 每页显示的条目数量
+        /// </summary>
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +49,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("class ListBackupsResponse {\n");
             sb.Append("  backups: ").Append(Backups).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,6 +82,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Count == input.Count ||
                     (this.Count != null &&
                     this.Count.Equals(input.Count))
+                ) && 
+                (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
                 );
         }
 
@@ -83,6 +107,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.Backups.GetHashCode();
                 if (this.Count != null)
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

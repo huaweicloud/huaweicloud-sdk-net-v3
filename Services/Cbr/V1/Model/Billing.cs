@@ -681,9 +681,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// 保管库状态
+        /// 存储库状态
         /// </summary>
-        /// <value>保管库状态</value>
+        /// <value>存储库状态</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -810,7 +810,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
 
         /// <summary>
-        /// 已分配容量，单位MB
+        /// 已分配容量，单位GB
         /// </summary>
         [JsonProperty("allocated", NullValueHandling = NullValueHandling.Ignore)]
         public int? Allocated { get; set; }
@@ -864,7 +864,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public SpecCodeEnum SpecCode { get; set; }
         /// <summary>
-        /// 保管库状态
+        /// 存储库状态
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -885,6 +885,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [JsonProperty("frozen_scene", NullValueHandling = NullValueHandling.Ignore)]
         public string FrozenScene { get; set; }
+
+        /// <summary>
+        /// 存储库多az属性
+        /// </summary>
+        [JsonProperty("is_multi_az", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsMultiAz { get; set; }
 
 
         /// <summary>
@@ -908,6 +914,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  storageUnit: ").Append(StorageUnit).Append("\n");
             sb.Append("  used: ").Append(Used).Append("\n");
             sb.Append("  frozenScene: ").Append(FrozenScene).Append("\n");
+            sb.Append("  isMultiAz: ").Append(IsMultiAz).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -998,6 +1005,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.FrozenScene == input.FrozenScene ||
                     (this.FrozenScene != null &&
                     this.FrozenScene.Equals(input.FrozenScene))
+                ) && 
+                (
+                    this.IsMultiAz == input.IsMultiAz ||
+                    (this.IsMultiAz != null &&
+                    this.IsMultiAz.Equals(input.IsMultiAz))
                 );
         }
 
@@ -1037,6 +1049,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.Used.GetHashCode();
                 if (this.FrozenScene != null)
                     hashCode = hashCode * 59 + this.FrozenScene.GetHashCode();
+                if (this.IsMultiAz != null)
+                    hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
                 return hashCode;
             }
         }

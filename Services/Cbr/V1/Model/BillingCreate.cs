@@ -571,9 +571,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// 创建类型，按年(year)或者按月(month)
+        /// 创建类型，charging_mode为pre_paid必填，按年(year)或者按月(month)
         /// </summary>
-        /// <value>创建类型，按年(year)或者按月(month)</value>
+        /// <value>创建类型，charging_mode为pre_paid必填，按年(year)或者按月(month)</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -713,12 +713,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargingModeEnum ChargingMode { get; set; }
         /// <summary>
-        /// 创建类型，按年(year)或者按月(month)
+        /// 创建类型，charging_mode为pre_paid必填，按年(year)或者按月(month)
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 创建类型的数量
+        /// 创建类型的数量，charging_mode为pre_paid必填
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
@@ -747,6 +747,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("extra_info", NullValueHandling = NullValueHandling.Ignore)]
         public BillbingCreateExtraInfo ExtraInfo { get; set; }
 
+        /// <summary>
+        /// 存储库多az属性，默认为false
+        /// </summary>
+        [JsonProperty("is_multi_az", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsMultiAz { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -767,6 +773,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("  consoleUrl: ").Append(ConsoleUrl).Append("\n");
             sb.Append("  extraInfo: ").Append(ExtraInfo).Append("\n");
+            sb.Append("  isMultiAz: ").Append(IsMultiAz).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -847,6 +854,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.ExtraInfo == input.ExtraInfo ||
                     (this.ExtraInfo != null &&
                     this.ExtraInfo.Equals(input.ExtraInfo))
+                ) && 
+                (
+                    this.IsMultiAz == input.IsMultiAz ||
+                    (this.IsMultiAz != null &&
+                    this.IsMultiAz.Equals(input.IsMultiAz))
                 );
         }
 
@@ -882,6 +894,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.ConsoleUrl.GetHashCode();
                 if (this.ExtraInfo != null)
                     hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
+                if (this.IsMultiAz != null)
+                    hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
                 return hashCode;
             }
         }

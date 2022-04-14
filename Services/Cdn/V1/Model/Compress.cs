@@ -7,25 +7,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 指标维度
+    /// 智能压缩。
     /// </summary>
-    public class MetricDimension 
+    public class Compress 
     {
 
         /// <summary>
-        /// 
+        /// 智能压缩开关（on：开启，off：关闭）。
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 智能压缩类型（gzip：gzip压缩，br：br压缩）。
         /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
 
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MetricDimension {\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("class Compress {\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,27 +46,27 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MetricDimension);
+            return this.Equals(input as Compress);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(MetricDimension input)
+        public bool Equals(Compress input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -78,10 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

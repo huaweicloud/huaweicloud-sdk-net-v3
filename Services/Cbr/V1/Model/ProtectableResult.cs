@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("vault", NullValueHandling = NullValueHandling.Ignore)]
         public VaultGet Vault { get; set; }
 
+        /// <summary>
+        /// 资源不可备份的原因信息，当资源可保护性检验失败时才有该字段。
+        /// </summary>
+        [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
+        public string Message { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  vault: ").Append(Vault).Append("\n");
+            sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Vault == input.Vault ||
                     (this.Vault != null &&
                     this.Vault.Equals(input.Vault))
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.Vault != null)
                     hashCode = hashCode * 59 + this.Vault.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }

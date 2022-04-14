@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// 证书来源。1：代表华为云托管证书；0：表示自有证书。 默认值0。当证书开启时必返回该字段。
         /// </summary>
         [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
-        public string CertificateSource { get; set; }
+        public int? CertificateSource { get; set; }
 
         /// <summary>
         /// 是否使用HTTP2.0。（on：是，off：否）

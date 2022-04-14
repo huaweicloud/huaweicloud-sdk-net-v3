@@ -46,10 +46,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public List<string> Resources { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源详情
         /// </summary>
         [JsonProperty("resource_details", NullValueHandling = NullValueHandling.Ignore)]
         public List<Resource> ResourceDetails { get; set; }
+
+        /// <summary>
+        /// 自动备份时的策略id
+        /// </summary>
+        [JsonProperty("policy_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PolicyId { get; set; }
 
 
         /// <summary>
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  resources: ").Append(Resources).Append("\n");
             sb.Append("  resourceDetails: ").Append(ResourceDetails).Append("\n");
+            sb.Append("  policyId: ").Append(PolicyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.ResourceDetails != null &&
                     input.ResourceDetails != null &&
                     this.ResourceDetails.SequenceEqual(input.ResourceDetails)
+                ) && 
+                (
+                    this.PolicyId == input.PolicyId ||
+                    (this.PolicyId != null &&
+                    this.PolicyId.Equals(input.PolicyId))
                 );
         }
 
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.Resources.GetHashCode();
                 if (this.ResourceDetails != null)
                     hashCode = hashCode * 59 + this.ResourceDetails.GetHashCode();
+                if (this.PolicyId != null)
+                    hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
                 return hashCode;
             }
         }

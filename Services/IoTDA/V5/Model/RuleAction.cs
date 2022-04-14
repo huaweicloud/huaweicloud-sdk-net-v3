@@ -39,6 +39,36 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("device_command", NullValueHandling = NullValueHandling.Ignore)]
         public ActionDeviceCommand DeviceCommand { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("dis_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionDisForwarding DisForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("obs_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionObsForwarding ObsForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("roma_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionRomaForwarding RomaForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("iota_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionIoTAForwarding IotaForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("kafka_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionKafkaForwarding KafkaForwarding { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +81,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  smnForwarding: ").Append(SmnForwarding).Append("\n");
             sb.Append("  deviceAlarm: ").Append(DeviceAlarm).Append("\n");
             sb.Append("  deviceCommand: ").Append(DeviceCommand).Append("\n");
+            sb.Append("  disForwarding: ").Append(DisForwarding).Append("\n");
+            sb.Append("  obsForwarding: ").Append(ObsForwarding).Append("\n");
+            sb.Append("  romaForwarding: ").Append(RomaForwarding).Append("\n");
+            sb.Append("  iotaForwarding: ").Append(IotaForwarding).Append("\n");
+            sb.Append("  kafkaForwarding: ").Append(KafkaForwarding).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +126,31 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DeviceCommand == input.DeviceCommand ||
                     (this.DeviceCommand != null &&
                     this.DeviceCommand.Equals(input.DeviceCommand))
+                ) && 
+                (
+                    this.DisForwarding == input.DisForwarding ||
+                    (this.DisForwarding != null &&
+                    this.DisForwarding.Equals(input.DisForwarding))
+                ) && 
+                (
+                    this.ObsForwarding == input.ObsForwarding ||
+                    (this.ObsForwarding != null &&
+                    this.ObsForwarding.Equals(input.ObsForwarding))
+                ) && 
+                (
+                    this.RomaForwarding == input.RomaForwarding ||
+                    (this.RomaForwarding != null &&
+                    this.RomaForwarding.Equals(input.RomaForwarding))
+                ) && 
+                (
+                    this.IotaForwarding == input.IotaForwarding ||
+                    (this.IotaForwarding != null &&
+                    this.IotaForwarding.Equals(input.IotaForwarding))
+                ) && 
+                (
+                    this.KafkaForwarding == input.KafkaForwarding ||
+                    (this.KafkaForwarding != null &&
+                    this.KafkaForwarding.Equals(input.KafkaForwarding))
                 );
         }
 
@@ -110,6 +170,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.DeviceAlarm.GetHashCode();
                 if (this.DeviceCommand != null)
                     hashCode = hashCode * 59 + this.DeviceCommand.GetHashCode();
+                if (this.DisForwarding != null)
+                    hashCode = hashCode * 59 + this.DisForwarding.GetHashCode();
+                if (this.ObsForwarding != null)
+                    hashCode = hashCode * 59 + this.ObsForwarding.GetHashCode();
+                if (this.RomaForwarding != null)
+                    hashCode = hashCode * 59 + this.RomaForwarding.GetHashCode();
+                if (this.IotaForwarding != null)
+                    hashCode = hashCode * 59 + this.IotaForwarding.GetHashCode();
+                if (this.KafkaForwarding != null)
+                    hashCode = hashCode * 59 + this.KafkaForwarding.GetHashCode();
                 return hashCode;
             }
         }

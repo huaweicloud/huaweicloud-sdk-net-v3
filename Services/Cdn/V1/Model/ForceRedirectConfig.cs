@@ -7,25 +7,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// 强制跳转。
     /// </summary>
-    public class ListAlarmsResponse : SdkResponse
+    public class ForceRedirectConfig 
     {
 
         /// <summary>
-        /// 告警详情
+        /// 强制跳转开关（on：打开，off：关闭）。
         /// </summary>
-        [JsonProperty("alarms", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListAlarmResponseBodyAlarms> Alarms { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
 
         /// <summary>
-        /// 告警列表总数
+        /// 强制跳转类型（http：强制跳转HTTP，https：强制跳转HTTPS）。
         /// </summary>
-        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Count { get; set; }
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
 
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListAlarmsResponse {\n");
-            sb.Append("  alarms: ").Append(Alarms).Append("\n");
-            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("class ForceRedirectConfig {\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -46,28 +46,27 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListAlarmsResponse);
+            return this.Equals(input as ForceRedirectConfig);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListAlarmsResponse input)
+        public bool Equals(ForceRedirectConfig input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Alarms == input.Alarms ||
-                    this.Alarms != null &&
-                    input.Alarms != null &&
-                    this.Alarms.SequenceEqual(input.Alarms)
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -79,10 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Alarms != null)
-                    hashCode = hashCode * 59 + this.Alarms.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

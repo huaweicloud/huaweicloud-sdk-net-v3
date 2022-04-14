@@ -180,10 +180,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string DestinationVaultId { get; set; }
 
         /// <summary>
-        /// 复制附加信息
+        /// 
         /// </summary>
         [JsonProperty("extra_info", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExtraInfo { get; set; }
+        public ReplicationRecordsExtraInfo ExtraInfo { get; set; }
 
         /// <summary>
         /// 复制记录ID

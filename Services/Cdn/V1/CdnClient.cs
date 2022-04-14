@@ -152,7 +152,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         }
         
         /// <summary>
-        /// 查询域名配置接口
+        /// 查询域名全量配置
         /// </summary>
         public ShowDomainFullConfigResponse ShowDomainFullConfig(ShowDomainFullConfigRequest showDomainFullConfigRequest)
         {
@@ -364,7 +364,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         }
         
         /// <summary>
-        /// 修改域名全量配置接口
+        /// 修改域名全量配置
         /// </summary>
         public UpdateDomainFullConfigResponse UpdateDomainFullConfig(UpdateDomainFullConfigRequest updateDomainFullConfigRequest)
         {

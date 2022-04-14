@@ -1,3 +1,53 @@
+# 3.0.82 2022-04-14
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `sources`, `origin_protocol`, `force_redirect`, `compress` to the interface `UpdateDomainFullConfig`
+  - Changes of the interface `ShowDomainFullConfig`:
+    - Add the response parameters `sources`, `origin_protocol`, `force_redirect`, `compress`
+    - Modify the type `string` -> `int32` of the response parameter `certificate_source`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `rename_commands` to the interface `UpdateInstance`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `ip_eq` to the interface `ListServersDetails`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `encrypted_user_data` to the interface `UpdateFunctionConfig`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - Support the interface `RunModerationAudio`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.81 2022-04-07
 
 ### HuaweiCloud SDK CCE

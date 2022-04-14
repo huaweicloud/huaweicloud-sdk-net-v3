@@ -9,7 +9,10 @@ namespace HuaweiCloud.SDK.Cce.V3
         public static readonly Region CN_NORTH_1 = new Region("cn-north-1", "https://cce.cn-north-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_2 = new Region("cn-north-2", "https://cce.cn-north-2.myhuaweicloud.com");
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4", "https://cce.cn-north-4.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_9 = new Region("cn-north-9", "https://cce.cn-north-9.myhuaweicloud.com");
         public static readonly Region CN_SOUTH_1 = new Region("cn-south-1", "https://cce.cn-south-1.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_2 = new Region("cn-south-2", "https://cce.cn-south-2.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4", "https://cce.cn-south-4.myhuaweicloud.com");
         public static readonly Region CN_EAST_2 = new Region("cn-east-2", "https://cce.cn-east-2.myhuaweicloud.com");
         public static readonly Region CN_EAST_3 = new Region("cn-east-3", "https://cce.cn-east-3.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2", "https://cce.cn-southwest-2.myhuaweicloud.com");
@@ -23,7 +26,10 @@ namespace HuaweiCloud.SDK.Cce.V3
                 { "cn-north-1", CN_NORTH_1 },
                 { "cn-north-2", CN_NORTH_2 },
                 { "cn-north-4", CN_NORTH_4 },
+                { "cn-north-9", CN_NORTH_9 },
                 { "cn-south-1", CN_SOUTH_1 },
+                { "cn-south-2", CN_SOUTH_2 },
+                { "cn-south-4", CN_SOUTH_4 },
                 { "cn-east-2", CN_EAST_2 },
                 { "cn-east-3", CN_EAST_3 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },

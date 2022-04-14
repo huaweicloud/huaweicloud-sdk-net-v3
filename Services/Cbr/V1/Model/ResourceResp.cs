@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// Response body of resource
+    /// 资源详情
     /// </summary>
     public class ResourceResp 
     {
@@ -190,6 +190,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("backup_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? BackupCount { get; set; }
 
+        /// <summary>
+        /// 是否跟随存储库自动备份策略进行备份
+        /// </summary>
+        [JsonProperty("auto_protect", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AutoProtect { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -206,6 +212,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  backupSize: ").Append(BackupSize).Append("\n");
             sb.Append("  backupCount: ").Append(BackupCount).Append("\n");
+            sb.Append("  autoProtect: ").Append(AutoProtect).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -266,6 +273,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.BackupCount == input.BackupCount ||
                     (this.BackupCount != null &&
                     this.BackupCount.Equals(input.BackupCount))
+                ) && 
+                (
+                    this.AutoProtect == input.AutoProtect ||
+                    (this.AutoProtect != null &&
+                    this.AutoProtect.Equals(input.AutoProtect))
                 );
         }
 
@@ -293,6 +305,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.BackupSize.GetHashCode();
                 if (this.BackupCount != null)
                     hashCode = hashCode * 59 + this.BackupCount.GetHashCode();
+                if (this.AutoProtect != null)
+                    hashCode = hashCode * 59 + this.AutoProtect.GetHashCode();
                 return hashCode;
             }
         }

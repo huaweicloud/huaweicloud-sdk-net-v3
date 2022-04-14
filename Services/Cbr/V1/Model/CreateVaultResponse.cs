@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("vault", NullValueHandling = NullValueHandling.Ignore)]
-        public Vault Vault { get; set; }
+        public VaultCreateResource Vault { get; set; }
 
 
         /// <summary>

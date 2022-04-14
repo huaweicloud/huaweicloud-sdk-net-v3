@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class CheckpointResourceResp 
     {
         /// <summary>
-        /// 保护状态
+        /// 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。
         /// </summary>
-        /// <value>保护状态</value>
+        /// <value>保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectStatusEnum>))]
         public class ProtectStatusEnum
         {
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 保护状态
+        /// 保护状态。available（可用），error（错误），protecting（备份中），restoring（恢复中），removing（删除中）。
         /// </summary>
         [JsonProperty("protect_status", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectStatusEnum ProtectStatus { get; set; }
@@ -173,7 +173,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ResourceSize { get; set; }
 
         /// <summary>
-        /// 
+        /// 待备份资源的类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Native::Server, OS::Sfs::Turbo
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

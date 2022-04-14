@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string BackupId { get; set; }
 
         /// <summary>
-        /// 成员id
+        /// 成员id，为接收方的project_id
         /// </summary>
         [SDKProperty("member_id", IsPath = true)]
         [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]

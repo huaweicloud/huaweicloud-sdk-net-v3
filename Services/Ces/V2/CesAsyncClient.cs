@@ -26,17 +26,5 @@ namespace HuaweiCloud.SDK.Ces.V2
             return JsonUtils.DeSerialize<ListAlarmHistoriesResponse>(response);
         }
         
-        /// <summary>
-        /// 查询告警列表
-        /// </summary>
-        public async Task<ListAlarmsResponse> ListAlarmsAsync(ListAlarmsRequest listAlarmsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarms",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ListAlarmsResponse>(response);
-        }
-        
     }
 }

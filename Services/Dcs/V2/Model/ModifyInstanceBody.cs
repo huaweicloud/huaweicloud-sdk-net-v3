@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public int? Port { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("rename_commands", NullValueHandling = NullValueHandling.Ignore)]
+        public RenameCommandResp RenameCommands { get; set; }
+
+        /// <summary>
         /// &#39;维护时间窗开始时间，为UTC时间，格式为HH:mm:ss。&#39; - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。 
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
@@ -68,6 +74,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  renameCommands: ").Append(RenameCommands).Append("\n");
             sb.Append("  maintainBegin: ").Append(MaintainBegin).Append("\n");
             sb.Append("  maintainEnd: ").Append(MaintainEnd).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
@@ -109,6 +116,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Port.Equals(input.Port))
                 ) && 
                 (
+                    this.RenameCommands == input.RenameCommands ||
+                    (this.RenameCommands != null &&
+                    this.RenameCommands.Equals(input.RenameCommands))
+                ) && 
+                (
                     this.MaintainBegin == input.MaintainBegin ||
                     (this.MaintainBegin != null &&
                     this.MaintainBegin.Equals(input.MaintainBegin))
@@ -144,6 +156,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Port != null)
                     hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.RenameCommands != null)
+                    hashCode = hashCode * 59 + this.RenameCommands.GetHashCode();
                 if (this.MaintainBegin != null)
                     hashCode = hashCode * 59 + this.MaintainBegin.GetHashCode();
                 if (this.MaintainEnd != null)

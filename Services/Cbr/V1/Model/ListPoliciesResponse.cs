@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public List<Policy> Policies { get; set; }
 
         /// <summary>
-        /// 
+        /// 策略总数
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

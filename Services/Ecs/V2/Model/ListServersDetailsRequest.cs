@@ -85,6 +85,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
+        /// <summary>
+        /// IPv4地址过滤结果，匹配规则为精确匹配。
+        /// </summary>
+        [SDKProperty("ip_eq", IsQuery = true)]
+        [JsonProperty("ip_eq", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpEq { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -103,6 +110,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  reservationId: ").Append(ReservationId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  ipEq: ").Append(IpEq).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -173,6 +181,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Tags == input.Tags ||
                     (this.Tags != null &&
                     this.Tags.Equals(input.Tags))
+                ) && 
+                (
+                    this.IpEq == input.IpEq ||
+                    (this.IpEq != null &&
+                    this.IpEq.Equals(input.IpEq))
                 );
         }
 
@@ -204,6 +217,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.IpEq != null)
+                    hashCode = hashCode * 59 + this.IpEq.GetHashCode();
                 return hashCode;
             }
         }

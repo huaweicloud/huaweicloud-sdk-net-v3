@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Key { get; set; }
 
         /// <summary>
-        /// 值。 添加标签时value值必选，删除标签时value值可选。 value最大长度为43个字符。 value可以为空字符串。 value前后的空格会被丢弃。 value不能包含非打印字符ASCII(0-31)，“&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”。 value只能由中文，字母，数字，“-”，“_”，“.”组成。 
+        /// 值。  添加标签时value值必选，删除标签时value值可选。  value最大长度为43个字符。  value可以为空字符串。  value前后的空格会被丢弃。  value不能包含非打印字符ASCII(0-31)，“&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”。 value只能由中文，字母，数字，“-”，“_”，“.”组成。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// IP地址列表，以“，”分割，最多20个。
+        /// IP地址列表，以“,”分割，最多20个。
         /// </summary>
         [SDKProperty("ips", IsQuery = true)]
         [JsonProperty("ips", NullValueHandling = NullValueHandling.Ignore)]

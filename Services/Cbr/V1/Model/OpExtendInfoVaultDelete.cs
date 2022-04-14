@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 删除失败的资源数量
+        /// 本次任务删除失败的资源数量
         /// </summary>
         [JsonProperty("fail_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? FailCount { get; set; }
 
         /// <summary>
-        /// 删除的备份数量
+        /// 本次任务删除的备份总数
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }

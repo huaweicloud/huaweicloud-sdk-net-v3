@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class CheckpointCreate 
     {
         /// <summary>
-        /// 状态
+        /// 状态:available,deleting,protecting,deleted,error-deleting,error
         /// </summary>
-        /// <value>状态</value>
+        /// <value>状态:available,deleting,protecting,deleted,error-deleting,error</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -32,14 +32,19 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             public static readonly StatusEnum DELETING = new StatusEnum("deleting");
 
             /// <summary>
-            /// Enum CREATING for value: creating
+            /// Enum PROTECTING for value: protecting
             /// </summary>
-            public static readonly StatusEnum CREATING = new StatusEnum("creating");
+            public static readonly StatusEnum PROTECTING = new StatusEnum("protecting");
 
             /// <summary>
-            /// Enum RESTORING for value: restoring
+            /// Enum DELETED for value: deleted
             /// </summary>
-            public static readonly StatusEnum RESTORING = new StatusEnum("restoring");
+            public static readonly StatusEnum DELETED = new StatusEnum("deleted");
+
+            /// <summary>
+            /// Enum ERROR_DELETING for value: error-deleting
+            /// </summary>
+            public static readonly StatusEnum ERROR_DELETING = new StatusEnum("error-deleting");
 
             /// <summary>
             /// Enum ERROR for value: error
@@ -51,8 +56,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             {
                 { "available", AVAILABLE },
                 { "deleting", DELETING },
-                { "creating", CREATING },
-                { "restoring", RESTORING },
+                { "protecting", PROTECTING },
+                { "deleted", DELETED },
+                { "error-deleting", ERROR_DELETING },
                 { "error", ERROR },
             };
 
@@ -162,7 +168,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 状态
+        /// 状态:available,deleting,protecting,deleted,error-deleting,error
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

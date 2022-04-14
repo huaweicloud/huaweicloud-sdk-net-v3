@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 回源请求头配置
+        /// 回源请求头配置。
         /// </summary>
         [JsonProperty("origin_request_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<OriginRequestHeader> OriginRequestHeader { get; set; }
 
         /// <summary>
-        /// http header配置
+        /// http header配置。
         /// </summary>
         [JsonProperty("http_response_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpResponseHeader> HttpResponseHeader { get; set; }
@@ -39,6 +39,30 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("https", NullValueHandling = NullValueHandling.Ignore)]
         public HttpGetBody Https { get; set; }
 
+        /// <summary>
+        /// 源站配置。
+        /// </summary>
+        [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SourcesConfig> Sources { get; set; }
+
+        /// <summary>
+        /// 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
+        /// </summary>
+        [JsonProperty("origin_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginProtocol { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("force_redirect", NullValueHandling = NullValueHandling.Ignore)]
+        public ForceRedirectConfig ForceRedirect { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("compress", NullValueHandling = NullValueHandling.Ignore)]
+        public Compress Compress { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +75,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  httpResponseHeader: ").Append(HttpResponseHeader).Append("\n");
             sb.Append("  urlAuth: ").Append(UrlAuth).Append("\n");
             sb.Append("  https: ").Append(Https).Append("\n");
+            sb.Append("  sources: ").Append(Sources).Append("\n");
+            sb.Append("  originProtocol: ").Append(OriginProtocol).Append("\n");
+            sb.Append("  forceRedirect: ").Append(ForceRedirect).Append("\n");
+            sb.Append("  compress: ").Append(Compress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +121,27 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Https == input.Https ||
                     (this.Https != null &&
                     this.Https.Equals(input.Https))
+                ) && 
+                (
+                    this.Sources == input.Sources ||
+                    this.Sources != null &&
+                    input.Sources != null &&
+                    this.Sources.SequenceEqual(input.Sources)
+                ) && 
+                (
+                    this.OriginProtocol == input.OriginProtocol ||
+                    (this.OriginProtocol != null &&
+                    this.OriginProtocol.Equals(input.OriginProtocol))
+                ) && 
+                (
+                    this.ForceRedirect == input.ForceRedirect ||
+                    (this.ForceRedirect != null &&
+                    this.ForceRedirect.Equals(input.ForceRedirect))
+                ) && 
+                (
+                    this.Compress == input.Compress ||
+                    (this.Compress != null &&
+                    this.Compress.Equals(input.Compress))
                 );
         }
 
@@ -112,6 +161,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.UrlAuth.GetHashCode();
                 if (this.Https != null)
                     hashCode = hashCode * 59 + this.Https.GetHashCode();
+                if (this.Sources != null)
+                    hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                if (this.OriginProtocol != null)
+                    hashCode = hashCode * 59 + this.OriginProtocol.GetHashCode();
+                if (this.ForceRedirect != null)
+                    hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
+                if (this.Compress != null)
+                    hashCode = hashCode * 59 + this.Compress.GetHashCode();
                 return hashCode;
             }
         }

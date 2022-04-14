@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Key { get; set; }
 
         /// <summary>
-        /// 值。  目前仅会用到企业项目ID，其中默 认的企业项目ID为“0”。
+        /// 值。  目前仅会用到企业项目ID，其中默认的企业项目ID为“0”。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

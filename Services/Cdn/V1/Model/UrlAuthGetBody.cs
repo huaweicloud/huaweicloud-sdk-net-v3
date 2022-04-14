@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// A/B/C类防盗链开关（\&quot;off\&quot;/\&quot;on\&quot;）。
+        /// A/B/C类防盗链开关（on：开启，off：关闭）。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

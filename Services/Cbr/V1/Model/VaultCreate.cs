@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 绑定的备份资源，未在创建时绑定资源填[]
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceResp> Resources { get; set; }
+        public List<ResourceCreate> Resources { get; set; }
 
         /// <summary>
         /// 标签列表 tags不允许为空列表。 tags中最多包含10个key。 tags中key不允许重复。

@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 备份提供商ID，用于区分备份对象.
+        /// 资源类型id
         /// </summary>
         [JsonProperty("provider_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderId { get; set; }

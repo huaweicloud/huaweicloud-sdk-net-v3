@@ -63,6 +63,18 @@ namespace HuaweiCloud.SDK.Moderation.V2
         }
         
         /// <summary>
+        /// 语音内容审核
+        /// </summary>
+        public async Task<RunModerationAudioResponse> RunModerationAudioAsync(RunModerationAudioRequest runModerationAudioRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/voice",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runModerationAudioRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RunModerationAudioResponse>(response);
+        }
+        
+        /// <summary>
         /// 任务提交
         /// </summary>
         public async Task<RunTaskSumbitResponse> RunTaskSumbitAsync(RunTaskSumbitRequest runTaskSumbitRequest)

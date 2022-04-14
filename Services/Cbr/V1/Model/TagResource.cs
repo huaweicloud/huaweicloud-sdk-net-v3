@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 仅op_service权限才可以可以获取此字段：  目前只包含一个resource_tag 结构体。  key：_sys_enterprise_project_id  value：企业项目id，0表示默认企业项目  非op_service场景不能返回此字段。
+        /// 仅op_service权限才可以获取此字段：  目前只包含一个resource_tag 结构体。  key：_sys_enterprise_project_id  value：企业项目id，0表示默认企业项目  非op_service场景不能返回此字段。
         /// </summary>
         [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<SysTag> SysTags { get; set; }

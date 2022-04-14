@@ -245,6 +245,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string UserData { get; set; }
 
         /// <summary>
+        /// 用户自定义的name/value信息，用于需要加密的配置。
+        /// </summary>
+        [JsonProperty("encrypted_user_data", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncryptedUserData { get; set; }
+
+        /// <summary>
         /// 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
         /// </summary>
         [JsonProperty("xrole", NullValueHandling = NullValueHandling.Ignore)]
@@ -324,6 +330,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  handler: ").Append(Handler).Append("\n");
             sb.Append("  memorySize: ").Append(MemorySize).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
+            sb.Append("  encryptedUserData: ").Append(EncryptedUserData).Append("\n");
             sb.Append("  xrole: ").Append(Xrole).Append("\n");
             sb.Append("  appXrole: ").Append(AppXrole).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -385,6 +392,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.UserData == input.UserData ||
                     (this.UserData != null &&
                     this.UserData.Equals(input.UserData))
+                ) && 
+                (
+                    this.EncryptedUserData == input.EncryptedUserData ||
+                    (this.EncryptedUserData != null &&
+                    this.EncryptedUserData.Equals(input.EncryptedUserData))
                 ) && 
                 (
                     this.Xrole == input.Xrole ||
@@ -463,6 +475,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.EncryptedUserData != null)
+                    hashCode = hashCode * 59 + this.EncryptedUserData.GetHashCode();
                 if (this.Xrole != null)
                     hashCode = hashCode * 59 + this.Xrole.GetHashCode();
                 if (this.AppXrole != null)

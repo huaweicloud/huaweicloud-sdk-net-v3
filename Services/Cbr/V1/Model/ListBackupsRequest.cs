@@ -235,9 +235,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// 状态
+        /// 状态。 调用API时，支持通过传多个status值进行过滤。例如：status&#x3D;available&amp;status&#x3D;error
         /// </summary>
-        /// <value>状态</value>
+        /// <value>状态。 调用API时，支持通过传多个status值进行过滤。例如：status&#x3D;available&amp;status&#x3D;error</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -509,21 +509,21 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             public static readonly MemberStatusEnum PENDING = new MemberStatusEnum("pending");
 
             /// <summary>
-            /// Enum ACCEPT for value: accept
+            /// Enum ACCEPTED for value: accepted
             /// </summary>
-            public static readonly MemberStatusEnum ACCEPT = new MemberStatusEnum("accept");
+            public static readonly MemberStatusEnum ACCEPTED = new MemberStatusEnum("accepted");
 
             /// <summary>
-            /// Enum REJECT for value: reject
+            /// Enum REJECTED for value: rejected
             /// </summary>
-            public static readonly MemberStatusEnum REJECT = new MemberStatusEnum("reject");
+            public static readonly MemberStatusEnum REJECTED = new MemberStatusEnum("rejected");
 
             private static readonly Dictionary<string, MemberStatusEnum> StaticFields =
             new Dictionary<string, MemberStatusEnum>()
             {
                 { "pending", PENDING },
-                { "accept", ACCEPT },
-                { "reject", REJECT },
+                { "accepted", ACCEPTED },
+                { "rejected", REJECTED },
             };
 
             private string Value;
@@ -710,7 +710,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 状态
+        /// 状态。 调用API时，支持通过传多个status值进行过滤。例如：status&#x3D;available&amp;status&#x3D;error
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -755,6 +755,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("used_percent", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedPercent { get; set; }
 
+        /// <summary>
+        /// 是否返回复制记录
+        /// </summary>
+        [SDKProperty("show_replication", IsQuery = true)]
+        [JsonProperty("show_replication", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ShowReplication { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -784,6 +791,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  memberStatus: ").Append(MemberStatus).Append("\n");
             sb.Append("  parentId: ").Append(ParentId).Append("\n");
             sb.Append("  usedPercent: ").Append(UsedPercent).Append("\n");
+            sb.Append("  showReplication: ").Append(ShowReplication).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -909,6 +917,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.UsedPercent == input.UsedPercent ||
                     (this.UsedPercent != null &&
                     this.UsedPercent.Equals(input.UsedPercent))
+                ) && 
+                (
+                    this.ShowReplication == input.ShowReplication ||
+                    (this.ShowReplication != null &&
+                    this.ShowReplication.Equals(input.ShowReplication))
                 );
         }
 
@@ -962,6 +975,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.UsedPercent != null)
                     hashCode = hashCode * 59 + this.UsedPercent.GetHashCode();
+                if (this.ShowReplication != null)
+                    hashCode = hashCode * 59 + this.ShowReplication.GetHashCode();
                 return hashCode;
             }
         }
