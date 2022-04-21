@@ -39,18 +39,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("daily_timer_condition", NullValueHandling = NullValueHandling.Ignore)]
         public DailyTimerType DailyTimerCondition { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("device_message_condition", NullValueHandling = NullValueHandling.Ignore)]
-        public DeviceMessageCondition DeviceMessageCondition { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("device_status_condition", NullValueHandling = NullValueHandling.Ignore)]
-        public DeviceStatusCondition DeviceStatusCondition { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -63,8 +51,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  devicePropertyCondition: ").Append(DevicePropertyCondition).Append("\n");
             sb.Append("  simpleTimerCondition: ").Append(SimpleTimerCondition).Append("\n");
             sb.Append("  dailyTimerCondition: ").Append(DailyTimerCondition).Append("\n");
-            sb.Append("  deviceMessageCondition: ").Append(DeviceMessageCondition).Append("\n");
-            sb.Append("  deviceStatusCondition: ").Append(DeviceStatusCondition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,16 +91,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DailyTimerCondition == input.DailyTimerCondition ||
                     (this.DailyTimerCondition != null &&
                     this.DailyTimerCondition.Equals(input.DailyTimerCondition))
-                ) && 
-                (
-                    this.DeviceMessageCondition == input.DeviceMessageCondition ||
-                    (this.DeviceMessageCondition != null &&
-                    this.DeviceMessageCondition.Equals(input.DeviceMessageCondition))
-                ) && 
-                (
-                    this.DeviceStatusCondition == input.DeviceStatusCondition ||
-                    (this.DeviceStatusCondition != null &&
-                    this.DeviceStatusCondition.Equals(input.DeviceStatusCondition))
                 );
         }
 
@@ -134,10 +110,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.SimpleTimerCondition.GetHashCode();
                 if (this.DailyTimerCondition != null)
                     hashCode = hashCode * 59 + this.DailyTimerCondition.GetHashCode();
-                if (this.DeviceMessageCondition != null)
-                    hashCode = hashCode * 59 + this.DeviceMessageCondition.GetHashCode();
-                if (this.DeviceStatusCondition != null)
-                    hashCode = hashCode * 59 + this.DeviceStatusCondition.GetHashCode();
                 return hashCode;
             }
         }

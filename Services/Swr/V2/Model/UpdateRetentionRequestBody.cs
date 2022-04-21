@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 算法
+        /// 老化规则匹配策略，固定为\&quot;or\&quot; 
         /// </summary>
         [JsonProperty("algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public string Algorithm { get; set; }

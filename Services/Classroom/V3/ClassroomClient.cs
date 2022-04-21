@@ -15,6 +15,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 下发判题任务
+        ///
+        /// 下发判题任务，根据回调地址、代码来源、源代码文本、语言类型、超时时长、输出类型，触发后台代码编译运行和判题
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ApplyJudgementResponse ApplyJudgement(ApplyJudgementRequest applyJudgementRequest)
         {
@@ -27,6 +32,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 获取判题结果详情
+        ///
+        /// 根据判题任务ID获取判题结果详情
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowJudgementDetailResponse ShowJudgementDetail(ShowJudgementDetailRequest showJudgementDetailRequest)
         {
@@ -40,6 +50,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 下载判题结果文件
+        ///
+        /// 根据文件id或图片id下载输出结果文件
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowJudgementFileResponse ShowJudgementFile(ShowJudgementFileRequest showJudgementFileRequest)
         {
@@ -53,6 +68,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 根据课堂ID获取指定课堂的课堂成员列表
+        ///
+        /// 根据课堂ID获取指定课堂的课堂成员列表，支持分页，搜索字段默认同时匹配姓名，学号，用户名，班级。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListClassroomMembersResponse ListClassroomMembers(ListClassroomMembersRequest listClassroomMembersRequest)
         {
@@ -66,6 +86,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 获取当前用户的课堂列表
+        ///
+        /// 获取当前用户的课堂列表，课堂课表分为我创建的课堂，我加入的课堂以及所有课堂，支持分页查询。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListClassroomsResponse ListClassrooms(ListClassroomsRequest listClassroomsRequest)
         {
@@ -78,6 +103,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 根据课堂ID获取指定课堂的详细信息
+        ///
+        /// 根据课堂ID获取指定课堂的详细信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowClassroomDetailResponse ShowClassroomDetail(ShowClassroomDetailRequest showClassroomDetailRequest)
         {
@@ -91,6 +121,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 查询课堂下指定成员的作业信息
+        ///
+        /// 查询课堂下指定成员的作业信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListClassroomMemberJobsResponse ListClassroomMemberJobs(ListClassroomMemberJobsRequest listClassroomMemberJobsRequest)
         {
@@ -104,6 +139,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 查询指定课堂下的作业列表信息
+        ///
+        /// 查询指定课堂下的作业列表信息，支持分页查询。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListJobsResponse ListJobs(ListJobsRequest listJobsRequest)
         {
@@ -116,6 +156,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 查询学生函数习题提交记录信息
+        ///
+        /// 查询学生指定作业的习题提交记录信息(针对函数习题)
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListMemberJobRecordsResponse ListMemberJobRecords(ListMemberJobRecordsRequest listMemberJobRecordsRequest)
         {
@@ -130,6 +175,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 根据作业ID，查询指定作业的信息
+        ///
+        /// 根据作业ID，查询指定作业的信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowJobDetailResponse ShowJobDetail(ShowJobDetailRequest showJobDetailRequest)
         {
@@ -143,6 +193,11 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         /// <summary>
         /// 查询指定作业下的习题信息
+        ///
+        /// 查询指定作业下的习题信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowJobExercisesResponse ShowJobExercises(ShowJobExercisesRequest showJobExercisesRequest)
         {

@@ -15,6 +15,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 创建镜像自动同步任务
+        ///
+        /// 创建镜像自动同步任务
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateImageSyncRepoResponse CreateImageSyncRepo(CreateImageSyncRepoRequest createImageSyncRepoRequest)
         {
@@ -29,6 +34,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 手动同步镜像
+        ///
+        /// 手动同步镜像
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateManualImageSyncRepoResponse CreateManualImageSyncRepo(CreateManualImageSyncRepoRequest createManualImageSyncRepoRequest)
         {
@@ -45,6 +55,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 创建组织
+        ///
+        /// 创建组织
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest createNamespaceRequest)
         {
@@ -57,6 +72,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 创建组织权限
+        ///
+        /// 创建组织权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateNamespaceAuthResponse CreateNamespaceAuth(CreateNamespaceAuthRequest createNamespaceAuthRequest)
         {
@@ -70,6 +90,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 在组织下创建镜像仓库
+        ///
+        /// 在组织下创建镜像仓库。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateRepoResponse CreateRepo(CreateRepoRequest createRepoRequest)
         {
@@ -83,6 +108,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 创建共享帐号
+        ///
+        /// 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateRepoDomainsResponse CreateRepoDomains(CreateRepoDomainsRequest createRepoDomainsRequest)
         {
@@ -97,6 +127,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 创建镜像老化规则
+        ///
+        /// 创建镜像老化规则
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateRetentionResponse CreateRetention(CreateRetentionRequest createRetentionRequest)
         {
@@ -111,6 +146,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 生成临时登录指令
+        ///
+        /// 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成临时登录指令。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateSecretResponse CreateSecret(CreateSecretRequest createSecretRequest)
         {
@@ -123,6 +163,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 创建触发器
+        ///
+        /// 创建触发器
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateTriggerResponse CreateTrigger(CreateTriggerRequest createTriggerRequest)
         {
@@ -137,6 +182,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 创建镜像权限
+        ///
+        /// 创建镜像权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateUserRepositoryAuthResponse CreateUserRepositoryAuth(CreateUserRepositoryAuthRequest createUserRepositoryAuthRequest)
         {
@@ -151,6 +201,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除镜像自动同步任务
+        ///
+        /// 删除镜像自动同步任务
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteImageSyncRepoResponse DeleteImageSyncRepo(DeleteImageSyncRepoRequest deleteImageSyncRepoRequest)
         {
@@ -165,6 +220,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除组织权限
+        ///
+        /// 删除组织权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteNamespaceAuthResponse DeleteNamespaceAuth(DeleteNamespaceAuthRequest deleteNamespaceAuthRequest)
         {
@@ -178,6 +238,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除组织
+        ///
+        /// 删除组织
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteNamespacesResponse DeleteNamespaces(DeleteNamespacesRequest deleteNamespacesRequest)
         {
@@ -191,6 +256,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除组织下的镜像仓库
+        ///
+        /// 删除组织下的镜像仓库。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteRepoResponse DeleteRepo(DeleteRepoRequest deleteRepoRequest)
         {
@@ -205,6 +275,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除共享帐号
+        ///
+        /// 删除共享帐号
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteRepoDomainsResponse DeleteRepoDomains(DeleteRepoDomainsRequest deleteRepoDomainsRequest)
         {
@@ -220,6 +295,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除指定tag的镜像
+        ///
+        /// 删除镜像仓库中指定tag的镜像
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteRepoTagResponse DeleteRepoTag(DeleteRepoTagRequest deleteRepoTagRequest)
         {
@@ -235,6 +315,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除镜像老化规则
+        ///
+        /// 删除镜像老化规则
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteRetentionResponse DeleteRetention(DeleteRetentionRequest deleteRetentionRequest)
         {
@@ -250,6 +335,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除触发器
+        ///
+        /// 删除触发器
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest deleteTriggerRequest)
         {
@@ -265,6 +355,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 删除镜像权限
+        ///
+        /// 删除镜像权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteUserRepositoryAuthResponse DeleteUserRepositoryAuth(DeleteUserRepositoryAuthRequest deleteUserRepositoryAuthRequest)
         {
@@ -278,7 +373,12 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 获取镜像自动同步任务信息
+        ///
         /// 获取镜像自动同步任务列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListImageAutoSyncReposDetailsResponse ListImageAutoSyncReposDetails(ListImageAutoSyncReposDetailsRequest listImageAutoSyncReposDetailsRequest)
         {
@@ -295,6 +395,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询组织列表
+        ///
+        /// 查询组织列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListNamespacesResponse ListNamespaces(ListNamespacesRequest listNamespacesRequest)
         {
@@ -307,6 +412,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取配额信息
+        ///
+        /// 获取配额信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListQuotasResponse ListQuotas(ListQuotasRequest listQuotasRequest)
         {
@@ -319,6 +429,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取共享帐号列表
+        ///
+        /// 获取共享帐号列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListRepoDomainsResponse ListRepoDomains(ListRepoDomainsRequest listRepoDomainsRequest)
         {
@@ -335,6 +450,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询镜像仓库列表
+        ///
+        /// 查询镜像仓库列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListReposDetailsResponse ListReposDetails(ListReposDetailsRequest listReposDetailsRequest)
         {
@@ -349,6 +469,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询镜像tag列表
+        ///
+        /// 查询镜像tag列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListRepositoryTagsResponse ListRepositoryTags(ListRepositoryTagsRequest listRepositoryTagsRequest)
         {
@@ -365,6 +490,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取镜像老化记录
+        ///
+        /// 获取镜像老化记录
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListRetentionHistoriesResponse ListRetentionHistories(ListRetentionHistoriesRequest listRetentionHistoriesRequest)
         {
@@ -379,6 +509,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取镜像老化规则列表
+        ///
+        /// 获取镜像老化规则列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListRetentionsResponse ListRetentions(ListRetentionsRequest listRetentionsRequest)
         {
@@ -395,6 +530,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询共享镜像列表
+        ///
+        /// 查询共享镜像列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListSharedReposDetailsResponse ListSharedReposDetails(ListSharedReposDetailsRequest listSharedReposDetailsRequest)
         {
@@ -409,6 +549,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取镜像仓库下的触发器列表
+        ///
+        /// 获取镜像仓库下的触发器列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListTriggersDetailsResponse ListTriggersDetails(ListTriggersDetailsRequest listTriggersDetailsRequest)
         {
@@ -425,6 +570,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 判断共享帐号是否存在
+        ///
+        /// 判断共享租户是否存在
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowAccessDomainResponse ShowAccessDomain(ShowAccessDomainRequest showAccessDomainRequest)
         {
@@ -440,6 +590,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取组织详情
+        ///
+        /// 获取组织详情
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowNamespaceResponse ShowNamespace(ShowNamespaceRequest showNamespaceRequest)
         {
@@ -453,6 +608,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询组织权限
+        ///
+        /// 查询组织权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowNamespaceAuthResponse ShowNamespaceAuth(ShowNamespaceAuthRequest showNamespaceAuthRequest)
         {
@@ -466,6 +626,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询镜像仓库概要信息
+        ///
+        /// 查询镜像仓库概要信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowRepositoryResponse ShowRepository(ShowRepositoryRequest showRepositoryRequest)
         {
@@ -480,6 +645,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取镜像老化规则记录
+        ///
+        /// 获取镜像老化规则记录
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowRetentionResponse ShowRetention(ShowRetentionRequest showRetentionRequest)
         {
@@ -495,6 +665,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取镜像同步任务信息
+        ///
+        /// 获取镜像同步任务信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowSyncJobResponse ShowSyncJob(ShowSyncJobRequest showSyncJobRequest)
         {
@@ -511,6 +686,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 获取触发器详情
+        ///
+        /// 获取触发器详情
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowTriggerResponse ShowTrigger(ShowTriggerRequest showTriggerRequest)
         {
@@ -526,6 +706,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询镜像权限
+        ///
+        /// 查询镜像权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowUserRepositoryAuthResponse ShowUserRepositoryAuth(ShowUserRepositoryAuthRequest showUserRepositoryAuthRequest)
         {
@@ -540,6 +725,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 更新组织权限
+        ///
+        /// 更新组织权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateNamespaceAuthResponse UpdateNamespaceAuth(UpdateNamespaceAuthRequest updateNamespaceAuthRequest)
         {
@@ -553,6 +743,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 更新镜像仓库的概要信息
+        ///
+        /// 更新租户命名空间下的镜像概要信息，包括镜像类型、是否公有、描述信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateRepoResponse UpdateRepo(UpdateRepoRequest updateRepoRequest)
         {
@@ -567,6 +762,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 更新共享帐号
+        ///
+        /// 更新共享帐号
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateRepoDomainsResponse UpdateRepoDomains(UpdateRepoDomainsRequest updateRepoDomainsRequest)
         {
@@ -582,6 +782,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 修改镜像老化规则
+        ///
+        /// 修改镜像老化规则
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateRetentionResponse UpdateRetention(UpdateRetentionRequest updateRetentionRequest)
         {
@@ -597,6 +802,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 更新触发器配置
+        ///
+        /// 更新触发器配置
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest updateTriggerRequest)
         {
@@ -612,6 +822,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 更新镜像权限
+        ///
+        /// 更新镜像权限
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateUserRepositoryAuthResponse UpdateUserRepositoryAuth(UpdateUserRepositoryAuthRequest updateUserRepositoryAuthRequest)
         {
@@ -626,6 +841,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询所有API版本信息
+        ///
+        /// 查询所有API版本信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListApiVersionsResponse ListApiVersions(ListApiVersionsRequest listApiVersionsRequest)
         {
@@ -638,6 +858,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         
         /// <summary>
         /// 查询指定API版本信息
+        ///
+        /// 查询指定API版本信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowApiVersionResponse ShowApiVersion(ShowApiVersionRequest showApiVersionRequest)
         {

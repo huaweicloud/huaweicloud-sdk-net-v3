@@ -15,6 +15,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 批量添加或删除实例标签
+        ///
+        /// 批量添加或删除实例标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchCreateOrDeleteRabbitMqTagResponse BatchCreateOrDeleteRabbitMqTag(BatchCreateOrDeleteRabbitMqTagRequest batchCreateOrDeleteRabbitMqTagRequest)
         {
@@ -28,6 +33,15 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 批量重启或删除实例
+        ///
+        /// 批量重启或删除实例。
+        /// 
+        /// 在实例重启过程中，客户端的生产与消费消息等请求会被拒绝。
+        /// 
+        /// 实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchRestartOrDeleteInstancesResponse BatchRestartOrDeleteInstances(BatchRestartOrDeleteInstancesRequest batchRestartOrDeleteInstancesRequest)
         {
@@ -40,6 +54,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 创建实例(按需)
+        ///
+        /// 创建实例，该接口创建的实例为按需计费的方式。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreatePostPaidInstanceResponse CreatePostPaidInstance(CreatePostPaidInstanceRequest createPostPaidInstanceRequest)
         {
@@ -52,6 +71,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 删除后台任务管理中的指定记录
+        ///
+        /// 删除后台任务管理中的指定记录。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteBackgroundTaskResponse DeleteBackgroundTask(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
@@ -66,6 +90,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 删除指定的实例
+        ///
+        /// 删除指定的实例，释放该实例的所有资源。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
@@ -79,6 +108,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询可用区信息
+        ///
+        /// 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest)
         {
@@ -91,6 +125,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询实例的后台任务列表
+        ///
+        /// 查询实例的后台任务列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListBackgroundTasksResponse ListBackgroundTasks(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
@@ -104,6 +143,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询产品规格列表
+        ///
+        /// 查询产品规格列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListEngineProductsResponse ListEngineProducts(ListEngineProductsRequest listEngineProductsRequest)
         {
@@ -117,6 +161,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询所有实例列表
+        ///
+        /// 查询租户的实例列表，支持按照条件查询。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListInstancesDetailsResponse ListInstancesDetails(ListInstancesDetailsRequest listInstancesDetailsRequest)
         {
@@ -129,6 +178,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询插件列表
+        ///
+        /// 查询插件列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListPluginsResponse ListPlugins(ListPluginsRequest listPluginsRequest)
         {
@@ -142,6 +196,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询产品规格列表
+        ///
+        /// 在创建实例时，需要配置订购的产品ID（即product_id），可通过该接口查询产品规格。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListProductsResponse ListProducts(ListProductsRequest listProductsRequest)
         {
@@ -154,6 +213,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 重置密码
+        ///
+        /// 重置密码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResetPasswordResponse ResetPassword(ResetPasswordRequest resetPasswordRequest)
         {
@@ -167,6 +231,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 实例规格变更
+        ///
+        /// 实例规格变更。
+        /// 
+        /// [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
         {
@@ -180,6 +251,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询后台任务管理中的指定记录
+        ///
+        /// 查询后台任务管理中的指定记录。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowBackgroundTaskResponse ShowBackgroundTask(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
@@ -194,6 +270,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询指定实例
+        ///
+        /// 查询指定实例的详细信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
         {
@@ -207,6 +288,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询可扩容规格列表
+        ///
+        /// 查询可扩容规格列表。
+        /// 
+        /// RabbtiMQ只支持只增加节点数的扩容方式。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceExtendProductInfoResponse ShowInstanceExtendProductInfo(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
@@ -220,6 +308,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询维护时间窗时间段
+        ///
+        /// 查询维护时间窗开始时间和结束时间。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowMaintainWindowsResponse ShowMaintainWindows(ShowMaintainWindowsRequest showMaintainWindowsRequest)
         {
@@ -232,6 +325,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询项目标签
+        ///
+        /// 查询项目标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowRabbitMqProjectTagsResponse ShowRabbitMqProjectTags(ShowRabbitMqProjectTagsRequest showRabbitMqProjectTagsRequest)
         {
@@ -244,6 +342,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 查询实例标签
+        ///
+        /// 查询实例标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowRabbitMqTagsResponse ShowRabbitMqTags(ShowRabbitMqTagsRequest showRabbitMqTagsRequest)
         {
@@ -257,6 +360,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 修改实例信息
+        ///
+        /// 修改实例的名称和描述信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest updateInstanceRequest)
         {
@@ -270,6 +378,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         
         /// <summary>
         /// 开启或关闭插件
+        ///
+        /// 开启或关闭插件。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdatePluginsResponse UpdatePlugins(UpdatePluginsRequest updatePluginsRequest)
         {

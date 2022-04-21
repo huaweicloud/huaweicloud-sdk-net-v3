@@ -15,6 +15,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 批量添加或删除实例标签
+        ///
+        /// 批量添加或删除实例标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchCreateOrDeleteKafkaTagResponse BatchCreateOrDeleteKafkaTag(BatchCreateOrDeleteKafkaTagRequest batchCreateOrDeleteKafkaTagRequest)
         {
@@ -28,6 +33,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// Kafka实例批量删除Topic
+        ///
+        /// 该接口用于向Kafka实例批量删除Topic。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchDeleteInstanceTopicResponse BatchDeleteInstanceTopic(BatchDeleteInstanceTopicRequest batchDeleteInstanceTopicRequest)
         {
@@ -41,6 +51,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 批量删除用户
+        ///
+        /// 批量删除Kafka实例的用户
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchDeleteInstanceUsersResponse BatchDeleteInstanceUsers(BatchDeleteInstanceUsersRequest batchDeleteInstanceUsersRequest)
         {
@@ -54,6 +69,15 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 批量重启或删除实例
+        ///
+        /// 批量重启或删除实例。
+        /// 
+        /// 在实例重启过程中，客户端的生产与消费消息等请求会被拒绝。
+        /// 
+        /// 实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchRestartOrDeleteInstancesResponse BatchRestartOrDeleteInstances(BatchRestartOrDeleteInstancesRequest batchRestartOrDeleteInstancesRequest)
         {
@@ -66,6 +90,13 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 创建实例的转储节点
+        ///
+        /// 创建实例的转储节点。
+        /// 
+        /// **当前通过调用API，只支持按需实例创建转储节点。**
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateConnectorResponse CreateConnector(CreateConnectorRequest createConnectorRequest)
         {
@@ -79,6 +110,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// Kafka实例创建Topic
+        ///
+        /// 该接口用于向Kafka实例创建Topic。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateInstanceTopicResponse CreateInstanceTopic(CreateInstanceTopicRequest createInstanceTopicRequest)
         {
@@ -92,6 +128,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 创建用户
+        ///
+        /// 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateInstanceUserResponse CreateInstanceUser(CreateInstanceUserRequest createInstanceUserRequest)
         {
@@ -105,6 +146,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 新增Kafka实例指定Topic分区
+        ///
+        /// 新增Kafka实例指定Topic分区。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreatePartitionResponse CreatePartition(CreatePartitionRequest createPartitionRequest)
         {
@@ -119,6 +165,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 创建实例（按需）
+        ///
+        /// 创建实例，该接口创建的实例为按需计费的方式。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreatePostPaidInstanceResponse CreatePostPaidInstance(CreatePostPaidInstanceRequest createPostPaidInstanceRequest)
         {
@@ -131,6 +182,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 创建转储任务
+        ///
+        /// 创建转储任务。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateSinkTaskResponse CreateSinkTask(CreateSinkTaskRequest createSinkTaskRequest)
         {
@@ -144,6 +200,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 删除后台任务管理中的指定记录
+        ///
+        /// 删除后台任务管理中的指定记录。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteBackgroundTaskResponse DeleteBackgroundTask(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
@@ -158,6 +219,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 删除指定的实例
+        ///
+        /// 删除指定的实例，释放该实例的所有资源。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
@@ -171,6 +237,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 删除单个转储任务
+        ///
+        /// 删除单个转储任务。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteSinkTaskResponse DeleteSinkTask(DeleteSinkTaskRequest deleteSinkTaskRequest)
         {
@@ -185,6 +256,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询可用区信息
+        ///
+        /// 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest)
         {
@@ -197,6 +273,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询实例的后台任务列表
+        ///
+        /// 查询实例的后台任务列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListBackgroundTasksResponse ListBackgroundTasks(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
@@ -210,6 +291,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询产品规格列表
+        ///
+        /// 查询产品规格列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListEngineProductsResponse ListEngineProducts(ListEngineProductsRequest listEngineProductsRequest)
         {
@@ -223,6 +309,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// Kafka实例查询Topic
+        ///
+        /// 该接口用于查询指定Kafka实例的Topic详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListInstanceTopicsResponse ListInstanceTopics(ListInstanceTopicsRequest listInstanceTopicsRequest)
         {
@@ -236,6 +327,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询所有实例列表
+        ///
+        /// 查询租户的实例列表，支持按照条件查询。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListInstancesResponse ListInstances(ListInstancesRequest listInstancesRequest)
         {
@@ -248,6 +344,17 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询产品规格列表
+        ///
+        /// 在创建kafka实例时，需要配置订购的产品ID（即product_id），可通过该接口查询产品规格。
+        /// 
+        /// 例如，要订购按需计费、基准带宽为100MB的kafka实例，可从接口响应消息中，查找Hourly的消息体，然后找到bandwidth为100MB的记录对应的product_id，该product_id的值即是创建上述kafka实例时需要配置的产品ID。
+        /// 
+        /// 同时，unavailable_zones字段表示资源不足的可用区列表，如果为空，则表示所有可用区都有资源，如果不为空，则表示字段值的可用区没有资源。所以必须确保您购买的资源所在的可用区有资源，不在该字段列表内。
+        /// 
+        /// 例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListProductsResponse ListProducts(ListProductsRequest listProductsRequest)
         {
@@ -260,6 +367,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询转储任务列表
+        ///
+        /// 查询转储任务列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListSinkTasksResponse ListSinkTasks(ListSinkTasksRequest listSinkTasksRequest)
         {
@@ -273,6 +385,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 重置Manager密码
+        ///
+        /// 重置Manager密码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResetManagerPasswordResponse ResetManagerPassword(ResetManagerPasswordRequest resetManagerPasswordRequest)
         {
@@ -286,6 +403,13 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 重置消费组消费进度到指定位置
+        ///
+        /// Kafka实例不支持在线重置消费进度。在执行重置消费进度之前，必须停止被重置消费组客户端。
+        /// 
+        /// &gt; 在停止被重置消费组客户端后，需要经过ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间（默认10000毫秒），服务端才认为消费组客户端真正下线。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResetMessageOffsetResponse ResetMessageOffset(ResetMessageOffsetRequest resetMessageOffsetRequest)
         {
@@ -300,6 +424,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 重置密码
+        ///
+        /// 重置密码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResetPasswordResponse ResetPassword(ResetPasswordRequest resetPasswordRequest)
         {
@@ -313,6 +442,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 重置用户密码
+        ///
+        /// 重置用户密码
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResetUserPasswrodResponse ResetUserPasswrod(ResetUserPasswrodRequest resetUserPasswrodRequest)
         {
@@ -327,6 +461,13 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 实例规格变更
+        ///
+        /// 实例规格变更。
+        /// 
+        /// **当前通过调用API，只支持按需实例进行实例规格变更。**
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
         {
@@ -340,6 +481,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 重启Manager
+        ///
+        /// 重启Manager。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public RestartManagerResponse RestartManager(RestartManagerRequest restartManagerRequest)
         {
@@ -353,6 +499,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询后台任务管理中的指定记录
+        ///
+        /// 查询后台任务管理中的指定记录。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowBackgroundTaskResponse ShowBackgroundTask(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
@@ -367,6 +518,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询实例在CES的监控层级关系
+        ///
+        /// 查询实例在CES的监控层级关系。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowCesHierarchyResponse ShowCesHierarchy(ShowCesHierarchyRequest showCesHierarchyRequest)
         {
@@ -380,6 +536,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询Kafka集群元数据信息
+        ///
+        /// 查询Kafka集群元数据信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowClusterResponse ShowCluster(ShowClusterRequest showClusterRequest)
         {
@@ -393,6 +554,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询Kafka实例的协调器信息
+        ///
+        /// 查询Kafka实例的协调器信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowCoordinatorsResponse ShowCoordinators(ShowCoordinatorsRequest showCoordinatorsRequest)
         {
@@ -406,6 +572,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询消费组信息
+        ///
+        /// 查询消费组信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowGroupsResponse ShowGroups(ShowGroupsRequest showGroupsRequest)
         {
@@ -420,6 +591,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询指定实例
+        ///
+        /// 查询指定实例的详细信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
         {
@@ -433,6 +609,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询实例的扩容规格列表
+        ///
+        /// 查询实例的扩容规格列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceExtendProductInfoResponse ShowInstanceExtendProductInfo(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
@@ -446,6 +627,12 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询消息
+        ///
+        /// 查询消息的偏移量和消息内容。
+        /// 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceMessagesResponse ShowInstanceMessages(ShowInstanceMessagesRequest showInstanceMessagesRequest)
         {
@@ -459,6 +646,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询Kafka实例Topic详细信息
+        ///
+        /// 查询Kafka实例Topic详细信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceTopicDetailResponse ShowInstanceTopicDetail(ShowInstanceTopicDetailRequest showInstanceTopicDetailRequest)
         {
@@ -473,6 +665,13 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询用户列表
+        ///
+        /// 查询用户列表。
+        /// 
+        /// Kafka实例开启SASL功能时，才支持多用户管理的功能。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceUsersResponse ShowInstanceUsers(ShowInstanceUsersRequest showInstanceUsersRequest)
         {
@@ -486,6 +685,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询项目标签
+        ///
+        /// 查询项目标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowKafkaProjectTagsResponse ShowKafkaProjectTags(ShowKafkaProjectTagsRequest showKafkaProjectTagsRequest)
         {
@@ -498,6 +702,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询实例标签
+        ///
+        /// 查询实例标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowKafkaTagsResponse ShowKafkaTags(ShowKafkaTagsRequest showKafkaTagsRequest)
         {
@@ -511,6 +720,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询topic的磁盘存储情况
+        ///
+        /// 查询topic在Broker上磁盘占用情况。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowKafkaTopicPartitionDiskusageResponse ShowKafkaTopicPartitionDiskusage(ShowKafkaTopicPartitionDiskusageRequest showKafkaTopicPartitionDiskusageRequest)
         {
@@ -524,6 +738,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询维护时间窗时间段
+        ///
+        /// 查询维护时间窗开始时间和结束时间。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowMaintainWindowsResponse ShowMaintainWindows(ShowMaintainWindowsRequest showMaintainWindowsRequest)
         {
@@ -536,6 +755,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询分区指定时间段的消息
+        ///
+        /// 查询分区指定时间段的消息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowMessagesResponse ShowMessages(ShowMessagesRequest showMessagesRequest)
         {
@@ -550,6 +774,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询分区最早消息的位置
+        ///
+        /// 查询分区最早消息的位置。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowPartitionBeginningMessageResponse ShowPartitionBeginningMessage(ShowPartitionBeginningMessageRequest showPartitionBeginningMessageRequest)
         {
@@ -565,6 +794,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询分区最新消息的位置
+        ///
+        /// 查询分区最新消息的位置。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowPartitionEndMessageResponse ShowPartitionEndMessage(ShowPartitionEndMessageRequest showPartitionEndMessageRequest)
         {
@@ -580,6 +814,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询分区指定偏移量的消息
+        ///
+        /// 查询分区指定偏移量的消息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowPartitionMessageResponse ShowPartitionMessage(ShowPartitionMessageRequest showPartitionMessageRequest)
         {
@@ -595,6 +834,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询单个转储任务
+        ///
+        /// 查询单个转储任务。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowSinkTaskDetailResponse ShowSinkTaskDetail(ShowSinkTaskDetailRequest showSinkTaskDetailRequest)
         {
@@ -609,6 +853,13 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 查询用户权限
+        ///
+        /// 查询用户权限。
+        /// 
+        /// Kafka实例开启SASL功能时，才支持多用户管理的功能。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowTopicAccessPolicyResponse ShowTopicAccessPolicy(ShowTopicAccessPolicyRequest showTopicAccessPolicyRequest)
         {
@@ -623,6 +874,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 修改实例信息
+        ///
+        /// 修改实例的名称和描述信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest updateInstanceRequest)
         {
@@ -636,6 +892,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 开启或关闭实例自动创建topic功能
+        ///
+        /// 开启或关闭实例自动创建topic功能。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceAutoCreateTopicResponse UpdateInstanceAutoCreateTopic(UpdateInstanceAutoCreateTopicRequest updateInstanceAutoCreateTopicRequest)
         {
@@ -649,6 +910,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 修改实例跨VPC访问的内网IP
+        ///
+        /// 修改实例跨VPC访问的内网IP。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceCrossVpcIpResponse UpdateInstanceCrossVpcIp(UpdateInstanceCrossVpcIpRequest updateInstanceCrossVpcIpRequest)
         {
@@ -662,6 +928,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 修改Kafka实例Topic
+        ///
+        /// 修改Kafka实例Topic
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceTopicResponse UpdateInstanceTopic(UpdateInstanceTopicRequest updateInstanceTopicRequest)
         {
@@ -675,6 +946,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 修改转储任务的配额
+        ///
+        /// 修改转储任务的配额。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateSinkTaskQuotaResponse UpdateSinkTaskQuota(UpdateSinkTaskQuotaRequest updateSinkTaskQuotaRequest)
         {
@@ -688,6 +964,13 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 设置用户权限
+        ///
+        /// 设置用户权限。
+        /// 
+        /// Kafka实例开启SASL功能时，才支持多用户管理的功能。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateTopicAccessPolicyResponse UpdateTopicAccessPolicy(UpdateTopicAccessPolicyRequest updateTopicAccessPolicyRequest)
         {
@@ -701,6 +984,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         /// <summary>
         /// 修改Kafka实例Topic分区的副本
+        ///
+        /// 修改Kafka实例Topic分区的副本。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateTopicReplicaResponse UpdateTopicReplica(UpdateTopicReplicaRequest updateTopicReplicaRequest)
         {

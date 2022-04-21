@@ -16,6 +16,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 异步执行函数。
+        ///
+        /// 异步执行函数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<AsyncInvokeFunctionResponse> AsyncInvokeFunctionAsync(AsyncInvokeFunctionRequest asyncInvokeFunctionRequest)
         {
@@ -29,6 +34,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 函数异步执行并返回预留实例ID。
+        ///
+        /// 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，
+        /// 可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<AsyncInvokeReservedFunctionResponse> AsyncInvokeReservedFunctionAsync(AsyncInvokeReservedFunctionRequest asyncInvokeReservedFunctionRequest)
         {
@@ -42,6 +53,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 创建依赖包
+        ///
+        /// 创建依赖包。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateDependencyResponse> CreateDependencyAsync(CreateDependencyRequest createDependencyRequest)
         {
@@ -54,6 +70,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 创建测试事件
+        ///
+        /// 创建测试事件。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateEventResponse> CreateEventAsync(CreateEventRequest createEventRequest)
         {
@@ -67,6 +88,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 创建函数。
+        ///
+        /// 创建指定的函数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest createFunctionRequest)
         {
@@ -79,6 +105,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 发布函数版本。
+        ///
+        /// 发布函数版本。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateFunctionVersionResponse> CreateFunctionVersionAsync(CreateFunctionVersionRequest createFunctionVersionRequest)
         {
@@ -92,6 +123,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 创建函数版本别名。
+        ///
+        /// 创建函数灰度版本别名。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateVersionAliasResponse> CreateVersionAliasAsync(CreateVersionAliasRequest createVersionAliasRequest)
         {
@@ -105,6 +141,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除依赖包
+        ///
+        /// 删除指定的依赖包。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteDependencyResponse> DeleteDependencyAsync(DeleteDependencyRequest deleteDependencyRequest)
         {
@@ -118,6 +159,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除测试事件
+        ///
+        /// 删除测试事件。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteEventResponse> DeleteEventAsync(DeleteEventRequest deleteEventRequest)
         {
@@ -132,6 +178,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除函数/版本。
+        ///
+        /// 删除指定的函数或者特定的版本（不允许删除latest版本）。
+        /// 
+        /// 如果URN中包含函数版本或者别名，则删除特定的函数版本或者别名指向的版本以及该版本关联的trigger。
+        /// 如果URN中不包含版本或者别名，则删除整个函数，包含所有版本以及别名，触发器。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest)
         {
@@ -145,6 +199,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除函数异步配置信息。
+        ///
+        /// 删除函数异步配置信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteFunctionAsyncInvokeConfigResponse> DeleteFunctionAsyncInvokeConfigAsync(DeleteFunctionAsyncInvokeConfigRequest deleteFunctionAsyncInvokeConfigRequest)
         {
@@ -158,6 +217,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除函数版本别名。
+        ///
+        /// 删除函数版本别名。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteVersionAliasResponse> DeleteVersionAliasAsync(DeleteVersionAliasRequest deleteVersionAliasRequest)
         {
@@ -172,6 +236,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 开通lts日志上报功能。
+        ///
+        /// 开通lts日志上报功能。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<EnableLtsLogsResponse> EnableLtsLogsAsync(EnableLtsLogsRequest enableLtsLogsRequest)
         {
@@ -184,6 +253,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 导出函数。
+        ///
+        /// 导出函数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ExportFunctionResponse> ExportFunctionAsync(ExportFunctionRequest exportFunctionRequest)
         {
@@ -197,6 +271,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 导入函数。
+        ///
+        /// 导入函数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ImportFunctionResponse> ImportFunctionAsync(ImportFunctionRequest importFunctionRequest)
         {
@@ -209,6 +288,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 同步执行函数。
+        ///
+        /// 同步调用指的是客户端请求需要明确等到响应结果，也就是说这样的请求必须得调用到用户的函数，并且等到调用完成才返回。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<InvokeFunctionResponse> InvokeFunctionAsync(InvokeFunctionRequest invokeFunctionRequest)
         {
@@ -222,6 +306,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取依赖包列表
+        ///
+        /// 获取依赖包列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListDependenciesResponse> ListDependenciesAsync(ListDependenciesRequest listDependenciesRequest)
         {
@@ -234,6 +323,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取测试事件列表
+        ///
+        /// 获取指定函数的测试事件列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListEventsResponse> ListEventsAsync(ListEventsRequest listEventsRequest)
         {
@@ -247,6 +341,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数异步调用请求列表
+        ///
+        /// 获取函数异步调用请求列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFunctionAsyncInvocationsResponse> ListFunctionAsyncInvocationsAsync(ListFunctionAsyncInvocationsRequest listFunctionAsyncInvocationsRequest)
         {
@@ -260,6 +359,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数异步配置列表
+        ///
+        /// 获取函数异步配置列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFunctionAsyncInvokeConfigResponse> ListFunctionAsyncInvokeConfigAsync(ListFunctionAsyncInvokeConfigRequest listFunctionAsyncInvokeConfigRequest)
         {
@@ -273,6 +377,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定时间段的函数运行指标
+        ///
+        /// 获取指定时间段的函数运行指标。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFunctionStatisticsResponse> ListFunctionStatisticsAsync(ListFunctionStatisticsRequest listFunctionStatisticsRequest)
         {
@@ -287,6 +396,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数的版本列表。
+        ///
+        /// 获取指定函数的版本列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFunctionVersionsResponse> ListFunctionVersionsAsync(ListFunctionVersionsRequest listFunctionVersionsRequest)
         {
@@ -300,6 +414,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数列表
+        ///
+        /// 获取函数列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest listFunctionsRequest)
         {
@@ -312,6 +431,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 查询租户配额
+        ///
+        /// 查询租户配额
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListQuotasResponse> ListQuotasAsync(ListQuotasRequest listQuotasRequest)
         {
@@ -324,6 +448,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 租户函数统计信息
+        ///
+        /// 租户函数统计信息。
+        /// 
+        /// 返回三类的统计信息，函数格式和大小使用情况包括配额和使用量，流量报告。
+        /// 通过查询参数filter可以进行过滤，查询参数period可以指定返回的时间段。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListStatisticsResponse> ListStatisticsAsync(ListStatisticsRequest listStatisticsRequest)
         {
@@ -336,6 +468,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数所有版本别名列表。
+        ///
+        /// 获取函数版本别名列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListVersionAliasesResponse> ListVersionAliasesAsync(ListVersionAliasesRequest listVersionAliasesRequest)
         {
@@ -351,6 +488,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定依赖包
+        ///
+        /// 获取指定依赖包。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowDependencyResponse> ShowDependencyAsync(ShowDependencyRequest showDependencyRequest)
         {
@@ -364,6 +506,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取测试事件详细信息
+        ///
+        /// 获取测试事件详细信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowEventResponse> ShowEventAsync(ShowEventRequest showEventRequest)
         {
@@ -378,6 +525,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数异步配置信息。
+        ///
+        /// 获取函数异步配置信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowFunctionAsyncInvokeConfigResponse> ShowFunctionAsyncInvokeConfigAsync(ShowFunctionAsyncInvokeConfigRequest showFunctionAsyncInvokeConfigRequest)
         {
@@ -391,6 +543,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数代码。
+        ///
+        /// 获取指定函数的代码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowFunctionCodeResponse> ShowFunctionCodeAsync(ShowFunctionCodeRequest showFunctionCodeRequest)
         {
@@ -404,6 +561,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数的metadata。
+        ///
+        /// 获取指定函数的metadata。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowFunctionConfigResponse> ShowFunctionConfigAsync(ShowFunctionConfigRequest showFunctionConfigRequest)
         {
@@ -417,6 +579,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数的lts日志组日志流配置。
+        ///
+        /// 获取指定函数的lts日志组日志流配置。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowLtsLogDetailsResponse> ShowLtsLogDetailsAsync(ShowLtsLogDetailsRequest showLtsLogDetailsRequest)
         {
@@ -430,6 +597,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数调用链配置
+        ///
+        /// 获取函数调用链配置
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowTracingResponse> ShowTracingAsync(ShowTracingRequest showTracingRequest)
         {
@@ -443,6 +615,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数版本的指定别名信息。
+        ///
+        /// 获取函数指定的版本别名信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowVersionAliasResponse> ShowVersionAliasAsync(ShowVersionAliasRequest showVersionAliasRequest)
         {
@@ -457,6 +634,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 更新依赖包指定依赖包
+        ///
+        /// 更新依赖包指定依赖包。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateDependencyResponse> UpdateDependencyAsync(UpdateDependencyRequest updateDependencyRequest)
         {
@@ -470,6 +652,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 更新测试事件
+        ///
+        /// 更新测试事件。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateEventResponse> UpdateEventAsync(UpdateEventRequest updateEventRequest)
         {
@@ -484,6 +671,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 设置函数异步配置信息。
+        ///
+        /// 设置函数异步配置信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateFunctionAsyncInvokeConfigResponse> UpdateFunctionAsyncInvokeConfigAsync(UpdateFunctionAsyncInvokeConfigRequest updateFunctionAsyncInvokeConfigRequest)
         {
@@ -497,6 +689,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 修改函数代码。
+        ///
+        /// 修改指定的函数的代码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest updateFunctionCodeRequest)
         {
@@ -510,6 +707,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 修改函数的metadata信息。
+        ///
+        /// 修改指定的函数的metadata信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateFunctionConfigResponse> UpdateFunctionConfigAsync(UpdateFunctionConfigRequest updateFunctionConfigRequest)
         {
@@ -523,6 +725,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 更新函数预留实例个数
+        ///
+        /// 为函数绑定预留实例
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateFunctionReservedInstancesResponse> UpdateFunctionReservedInstancesAsync(UpdateFunctionReservedInstancesRequest updateFunctionReservedInstancesRequest)
         {
@@ -536,6 +743,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 修改函数调用链配置
+        ///
+        /// 修改函数调用链配置,开通/修改传入aksk，关闭aksk传空
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateTracingResponse> UpdateTracingAsync(UpdateTracingRequest updateTracingRequest)
         {
@@ -549,6 +761,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 修改函数版本别名信息。
+        ///
+        /// 修改函数版本别名信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateVersionAliasResponse> UpdateVersionAliasAsync(UpdateVersionAliasRequest updateVersionAliasRequest)
         {
@@ -563,6 +780,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除指定函数的所有触发器。
+        ///
+        /// 删除指定函数所有触发器设置。
+        /// 
+        /// 在提供函数版本且非latest的情况下，删除对应函数版本的触发器。
+        /// 在提供函数别名的情况下，删除对应函数别名的触发器。
+        /// 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteFunctionTriggersResponse> BatchDeleteFunctionTriggersAsync(BatchDeleteFunctionTriggersRequest batchDeleteFunctionTriggersRequest)
         {
@@ -576,6 +802,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 创建触发器。
+        ///
+        /// 创建触发器。
+        /// 
+        /// - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
+        /// - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
+        /// - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateFunctionTriggerResponse> CreateFunctionTriggerAsync(CreateFunctionTriggerRequest createFunctionTriggerRequest)
         {
@@ -589,6 +824,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除触发器。
+        ///
+        /// 删除触发器。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteFunctionTriggerResponse> DeleteFunctionTriggerAsync(DeleteFunctionTriggerRequest deleteFunctionTriggerRequest)
         {
@@ -604,6 +844,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数的所有触发器。
+        ///
+        /// 获取指定函数的所有触发器设置。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFunctionTriggersResponse> ListFunctionTriggersAsync(ListFunctionTriggersRequest listFunctionTriggersRequest)
         {
@@ -619,6 +864,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定触发器的信息。
+        ///
+        /// 获取特定触发器的信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowFunctionTriggerResponse> ShowFunctionTriggerAsync(ShowFunctionTriggerRequest showFunctionTriggerRequest)
         {
@@ -634,6 +884,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 更新触发器
+        ///
+        /// 更新触发器
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateTriggerResponse> UpdateTriggerAsync(UpdateTriggerRequest updateTriggerRequest)
         {
@@ -649,6 +904,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 删除工作流列表
+        ///
+        /// 删除工作流列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteWorkflowsResponse> BatchDeleteWorkflowsAsync(BatchDeleteWorkflowsRequest batchDeleteWorkflowsRequest)
         {
@@ -661,6 +921,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 创建工作流列表
+        ///
+        /// 创建工作流列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest createWorkflowRequest)
         {
@@ -673,6 +938,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数流执行实例列表
+        ///
+        /// 获取指定函数流执行实例列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListWorkflowExecutionsResponse> ListWorkflowExecutionsAsync(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest)
         {
@@ -686,6 +956,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 查询工作流列表
+        ///
+        /// 查询工作流列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest listWorkflowsRequest)
         {
@@ -698,6 +973,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 重试工作流
+        ///
+        /// 重试工作流
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<RetryWorkFlowResponse> RetryWorkFlowAsync(RetryWorkFlowRequest retryWorkFlowRequest)
         {
@@ -712,6 +992,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取函数流指标
+        ///
+        /// 获取函数流指标
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowTenantMetricResponse> ShowTenantMetricAsync(ShowTenantMetricRequest showTenantMetricRequest)
         {
@@ -724,6 +1009,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数流实例
+        ///
+        /// 获取指定函数流实例
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowWorkFlowResponse> ShowWorkFlowAsync(ShowWorkFlowRequest showWorkFlowRequest)
         {
@@ -737,6 +1027,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定工作流指标
+        ///
+        /// 获取指定工作流指标
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowWorkFlowMetricResponse> ShowWorkFlowMetricAsync(ShowWorkFlowMetricRequest showWorkFlowMetricRequest)
         {
@@ -750,6 +1045,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 获取指定函数流执行实例
+        ///
+        /// 获取指定函数流执行实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowWorkflowExecutionResponse> ShowWorkflowExecutionAsync(ShowWorkflowExecutionRequest showWorkflowExecutionRequest)
         {
@@ -764,6 +1064,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 开始执行函数流
+        ///
+        /// 开始执行函数流
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<StartWorkflowExecutionResponse> StartWorkflowExecutionAsync(StartWorkflowExecutionRequest startWorkflowExecutionRequest)
         {
@@ -777,6 +1082,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 停止工作流
+        ///
+        /// 停止工作流
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<StopWorkFlowResponse> StopWorkFlowAsync(StopWorkFlowRequest stopWorkFlowRequest)
         {
@@ -791,6 +1101,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         
         /// <summary>
         /// 修改指定函数流实例
+        ///
+        /// 修改指定函数流实例
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateWorkFlowResponse> UpdateWorkFlowAsync(UpdateWorkFlowRequest updateWorkFlowRequest)
         {

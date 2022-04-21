@@ -15,6 +15,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 批量创建DNAT规则
+        ///
+        /// 批量创建DNAT规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchCreateNatGatewayDnatRulesResponse BatchCreateNatGatewayDnatRules(BatchCreateNatGatewayDnatRulesRequest batchCreateNatGatewayDnatRulesRequest)
         {
@@ -27,6 +32,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 创建DNAT规则
+        ///
+        /// 创建DNAT规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateNatGatewayDnatRuleResponse CreateNatGatewayDnatRule(CreateNatGatewayDnatRuleRequest createNatGatewayDnatRuleRequest)
         {
@@ -39,6 +49,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 删除DNAT规则
+        ///
+        /// 删除指定的DNAT规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteNatGatewayDnatRuleResponse DeleteNatGatewayDnatRule(DeleteNatGatewayDnatRuleRequest deleteNatGatewayDnatRuleRequest)
         {
@@ -53,6 +68,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 查询DNAT规则列表
+        ///
+        /// 查询DNAT规则列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListNatGatewayDnatRulesResponse ListNatGatewayDnatRules(ListNatGatewayDnatRulesRequest listNatGatewayDnatRulesRequest)
         {
@@ -65,6 +85,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 查询指定的DNAT规则详情
+        ///
+        /// 查询指定的DNAT规则详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowNatGatewayDnatRuleResponse ShowNatGatewayDnatRule(ShowNatGatewayDnatRuleRequest showNatGatewayDnatRuleRequest)
         {
@@ -78,6 +103,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 更新DNAT规则
+        ///
+        /// 更新指定的DNAT规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateNatGatewayDnatRuleResponse UpdateNatGatewayDnatRule(UpdateNatGatewayDnatRuleRequest updateNatGatewayDnatRuleRequest)
         {
@@ -91,6 +121,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 创建公网NAT网关
+        ///
+        /// 创建公网NAT网关实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest createNatGatewayRequest)
         {
@@ -103,6 +138,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 删除公网NAT网关
+        ///
+        /// 删除公网NAT网关实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest deleteNatGatewayRequest)
         {
@@ -116,6 +156,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 查询公网NAT网关列表
+        ///
+        /// 查询公网NAT网关实例列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListNatGatewaysResponse ListNatGateways(ListNatGatewaysRequest listNatGatewaysRequest)
         {
@@ -128,6 +173,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 查询指定的公网NAT网关详情
+        ///
+        /// 查询指定的公网NAT网关实例详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowNatGatewayResponse ShowNatGateway(ShowNatGatewayRequest showNatGatewayRequest)
         {
@@ -141,6 +191,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 更新公网NAT网关
+        ///
+        /// 更新公网NAT网关实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateNatGatewayResponse UpdateNatGateway(UpdateNatGatewayRequest updateNatGatewayRequest)
         {
@@ -154,6 +209,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 创建SNAT规则
+        ///
+        /// 创建SNAT规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateNatGatewaySnatRuleResponse CreateNatGatewaySnatRule(CreateNatGatewaySnatRuleRequest createNatGatewaySnatRuleRequest)
         {
@@ -166,6 +226,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 删除SNAT规则
+        ///
+        /// 删除指定的SNAT规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteNatGatewaySnatRuleResponse DeleteNatGatewaySnatRule(DeleteNatGatewaySnatRuleRequest deleteNatGatewaySnatRuleRequest)
         {
@@ -180,6 +245,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 查询SNAT规则列表
+        ///
+        /// 查询SNAT规则列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListNatGatewaySnatRulesResponse ListNatGatewaySnatRules(ListNatGatewaySnatRulesRequest listNatGatewaySnatRulesRequest)
         {
@@ -192,6 +262,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 查询指定的SNAT规则详情
+        ///
+        /// 查询指定的SNAT规则详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowNatGatewaySnatRuleResponse ShowNatGatewaySnatRule(ShowNatGatewaySnatRuleRequest showNatGatewaySnatRuleRequest)
         {
@@ -205,6 +280,11 @@ namespace HuaweiCloud.SDK.Nat.V2
         
         /// <summary>
         /// 更新SNAT规则
+        ///
+        /// 更新指定的SNAT规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateNatGatewaySnatRuleResponse UpdateNatGatewaySnatRule(UpdateNatGatewaySnatRuleRequest updateNatGatewaySnatRuleRequest)
         {

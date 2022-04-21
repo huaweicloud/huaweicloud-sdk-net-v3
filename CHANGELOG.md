@@ -1,3 +1,26 @@
+# 3.0.83 2022-04-21
+
+### HuaweiCloud SDK AS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `iam_agency_name` to the interface `CreateScalingGroup`
+  - Add the response parameter `iam_agency_name` to the interface `ListScalingGroups`
+  - Add the request parameter `iam_agency_name` to the interface `UpdateScalingGroup`
+  - Add the response parameter `iam_agency_name` to the interface `ShowScalingGroup`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `domain_name_info` to the interface `ShowInstance`
+
 # 3.0.82 2022-04-14
 
 ### HuaweiCloud SDK CDN

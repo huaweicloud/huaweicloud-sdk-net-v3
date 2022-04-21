@@ -15,6 +15,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 应用参数模板
+        ///
+        /// 将参数模板应用到实例，可以指定一个或多个实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ApplyConfigurationResponse ApplyConfiguration(ApplyConfigurationRequest applyConfigurationRequest)
         {
@@ -28,6 +33,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 批量添加或删除资源标签
+        ///
+        /// 批量添加或删除指定数据库实例的标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public BatchTagActionResponse BatchTagAction(BatchTagActionRequest batchTagActionRequest)
         {
@@ -41,6 +51,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 创建参数模板
+        ///
+        /// 创建参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateConfigurationResponse CreateConfiguration(CreateConfigurationRequest createConfigurationRequest)
         {
@@ -53,6 +68,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 创建实例
+        ///
+        /// 创建数据库实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateInstanceResponse CreateInstance(CreateInstanceRequest createInstanceRequest)
         {
@@ -65,6 +85,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 删除参数模板
+        ///
+        /// 删除指定参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest deleteConfigurationRequest)
         {
@@ -78,6 +103,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 删除实例
+        ///
+        /// 删除数据库实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
@@ -91,6 +121,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 扩容指定集群实例的节点数量
+        ///
+        /// 扩容指定集群实例的节点数量。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ExpandInstanceNodeResponse ExpandInstanceNode(ExpandInstanceNodeRequest expandInstanceNodeRequest)
         {
@@ -104,6 +139,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 获取参数模板列表
+        ///
+        /// 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListConfigurationTemplatesResponse ListConfigurationTemplates(ListConfigurationTemplatesRequest listConfigurationTemplatesRequest)
         {
@@ -116,6 +156,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 获取参数模板列表
+        ///
+        /// 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest listConfigurationsRequest)
         {
@@ -128,6 +173,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询指定实例类型的数据库版本信息
+        ///
+        /// 查询指定实例类型的数据库版本信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListDatastoresResponse ListDatastores(ListDatastoresRequest listDatastoresRequest)
         {
@@ -141,6 +191,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询专属资源列表
+        ///
+        /// 查询专属资源列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListDedicatedResourcesResponse ListDedicatedResources(ListDedicatedResourcesRequest listDedicatedResourcesRequest)
         {
@@ -153,6 +208,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询数据库规格
+        ///
+        /// 查询指定条件下的实例规格信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListFlavorInfosResponse ListFlavorInfos(ListFlavorInfosRequest listFlavorInfosRequest)
         {
@@ -165,6 +225,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询指定条件下的所有实例规格信息
+        ///
+        /// 查询指定条件下的所有实例规格信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListFlavorsResponse ListFlavors(ListFlavorsRequest listFlavorsRequest)
         {
@@ -177,6 +242,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询资源标签
+        ///
+        /// 查询指定实例的标签信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListInstanceTagsResponse ListInstanceTags(ListInstanceTagsRequest listInstanceTagsRequest)
         {
@@ -190,6 +260,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询实例列表和详情
+        ///
+        /// 根据指定条件查询数据库实例列表和详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListInstancesResponse ListInstances(ListInstancesRequest listInstancesRequest)
         {
@@ -202,6 +277,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询资源实例
+        ///
+        /// 根据标签查询指定的数据库实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListInstancesByResourceTagsResponse ListInstancesByResourceTags(ListInstancesByResourceTagsRequest listInstancesByResourceTagsRequest)
         {
@@ -214,6 +294,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询资源实例
+        ///
+        /// 根据标签查询指定的数据库实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListInstancesByTagsResponse ListInstancesByTags(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
@@ -226,6 +311,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询数据库慢日志
+        ///
+        /// 查询数据库慢日志信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListSlowLogsResponse ListSlowLogs(ListSlowLogsRequest listSlowLogsRequest)
         {
@@ -239,6 +329,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 修改实例的管理员密码
+        ///
+        /// 修改实例的管理员密码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResetPasswordResponse ResetPassword(ResetPasswordRequest resetPasswordRequest)
         {
@@ -252,6 +347,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 变更实例规格
+        ///
+        /// 变更实例的规格。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
         {
@@ -265,6 +365,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 扩容实例存储容量
+        ///
+        /// 扩容实例的存储容量大小。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResizeInstanceVolumeResponse ResizeInstanceVolume(ResizeInstanceVolumeRequest resizeInstanceVolumeRequest)
         {
@@ -278,6 +383,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 设置自动备份策略
+        ///
+        /// 设置自动备份策略。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public SetBackupPolicyResponse SetBackupPolicy(SetBackupPolicyRequest setBackupPolicyRequest)
         {
@@ -291,6 +401,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询自动备份策略
+        ///
+        /// 查询自动备份策略。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowBackupPolicyResponse ShowBackupPolicy(ShowBackupPolicyRequest showBackupPolicyRequest)
         {
@@ -304,6 +419,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 获取指定参数模板的参数
+        ///
+        /// 获取指定参数模板的详细信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowConfigurationDetailResponse ShowConfigurationDetail(ShowConfigurationDetailRequest showConfigurationDetailRequest)
         {
@@ -317,6 +437,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 获取指定实例的参数模板
+        ///
+        /// 获取指定实例的参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowInstanceConfigurationResponse ShowInstanceConfiguration(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
         {
@@ -330,6 +455,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询配额
+        ///
+        /// 查询单租户在GaussDBforNoSQL服务下的资源配额。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowQuotasResponse ShowQuotas(ShowQuotasRequest showQuotasRequest)
         {
@@ -342,6 +472,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 缩容指定集群实例的节点数量
+        ///
+        /// 缩容指定集群实例的节点数量。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShrinkInstanceNodeResponse ShrinkInstanceNode(ShrinkInstanceNodeRequest shrinkInstanceNodeRequest)
         {
@@ -355,6 +490,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 修改参数模板参数
+        ///
+        /// 修改参数模板参数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest updateConfigurationRequest)
         {
@@ -368,6 +508,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 修改指定实例的参数
+        ///
+        /// 修改指定实例的参数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceConfigurationResponse UpdateInstanceConfiguration(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
         {
@@ -381,6 +526,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 修改实例名称
+        ///
+        /// 修改实例名称
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceNameResponse UpdateInstanceName(UpdateInstanceNameRequest updateInstanceNameRequest)
         {
@@ -394,6 +544,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 变更实例安全组
+        ///
+        /// 变更实例关联的安全组
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateSecurityGroupResponse UpdateSecurityGroup(UpdateSecurityGroupRequest updateSecurityGroupRequest)
         {
@@ -407,6 +562,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询当前支持的API版本信息列表
+        ///
+        /// 查询当前支持的API版本信息列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListApiVersionResponse ListApiVersion(ListApiVersionRequest listApiVersionRequest)
         {
@@ -419,6 +579,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         
         /// <summary>
         /// 查询指定API版本信息
+        ///
+        /// 查询指定API版本信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowApiVersionResponse ShowApiVersion(ShowApiVersionRequest showApiVersionRequest)
         {

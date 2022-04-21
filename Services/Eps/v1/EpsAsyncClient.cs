@@ -16,6 +16,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 创建企业项目
+        ///
+        /// 创建企业项目。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateEnterpriseProjectResponse> CreateEnterpriseProjectAsync(CreateEnterpriseProjectRequest createEnterpriseProjectRequest)
         {
@@ -28,6 +33,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 停用企业项目
+        ///
+        /// 停用企业项目。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DisableEnterpriseProjectResponse> DisableEnterpriseProjectAsync(DisableEnterpriseProjectRequest disableEnterpriseProjectRequest)
         {
@@ -41,6 +51,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 启用企业项目
+        ///
+        /// 启用企业项目。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<EnableEnterpriseProjectResponse> EnableEnterpriseProjectAsync(EnableEnterpriseProjectRequest enableEnterpriseProjectRequest)
         {
@@ -54,6 +69,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 查询API版本列表
+        ///
+        /// 查询企业项目的API版本列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
         {
@@ -66,6 +86,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 查询企业项目列表
+        ///
+        /// 查询当前用户已授权的企业项目列表，用户可以使用企业项目绑定资源。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListEnterpriseProjectResponse> ListEnterpriseProjectAsync(ListEnterpriseProjectRequest listEnterpriseProjectRequest)
         {
@@ -78,6 +103,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 迁移资源
+        ///
+        /// 迁移资源到目标企业项目。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<MigrateResourceResponse> MigrateResourceAsync(MigrateResourceRequest migrateResourceRequest)
         {
@@ -91,6 +121,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 查询API版本号详情
+        ///
+        /// 查询指定的企业项目API版本号详情
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
         {
@@ -104,6 +139,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 查询企业项目详情
+        ///
+        /// 查询企业项目详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowEnterpriseProjectResponse> ShowEnterpriseProjectAsync(ShowEnterpriseProjectRequest showEnterpriseProjectRequest)
         {
@@ -117,6 +157,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 查询企业项目配额
+        ///
+        /// 查询企业项目的配额信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowEnterpriseProjectQuotaResponse> ShowEnterpriseProjectQuotaAsync(ShowEnterpriseProjectQuotaRequest showEnterpriseProjectQuotaRequest)
         {
@@ -129,6 +174,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 查询企业项目绑定的资源列表
+        ///
+        /// 查询企业项目下绑定的资源详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowResourceBindEnterpriseProjectResponse> ShowResourceBindEnterpriseProjectAsync(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
         {
@@ -142,6 +192,11 @@ namespace HuaweiCloud.SDK.Eps.v1
         
         /// <summary>
         /// 修改企业项目
+        ///
+        /// 修改企业项目。当前仅支持修改名称和描述。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateEnterpriseProjectResponse> UpdateEnterpriseProjectAsync(UpdateEnterpriseProjectRequest updateEnterpriseProjectRequest)
         {

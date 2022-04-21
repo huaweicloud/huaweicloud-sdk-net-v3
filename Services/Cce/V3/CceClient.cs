@@ -15,6 +15,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 纳管节点
+        ///
+        /// 该API用于在指定集群下纳管节点。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public AddNodeResponse AddNode(AddNodeRequest addNodeRequest)
         {
@@ -28,6 +34,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 集群唤醒
+        ///
+        /// 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public AwakeClusterResponse AwakeCluster(AwakeClusterRequest awakeClusterRequest)
         {
@@ -41,6 +52,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 创建AddonInstance
+        ///
+        /// 根据提供的插件模板，安装插件实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateAddonInstanceResponse CreateAddonInstance(CreateAddonInstanceRequest createAddonInstanceRequest)
         {
@@ -53,6 +69,13 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 创建PVC
+        ///
+        /// 该API用于在指定的Namespace下通过云存储服务中的云存储（EVS、SFS、OBS）去创建PVC（PersistentVolumeClaim）。
+        /// 
+        /// &gt;存储管理的URL格式为：https://{clusterid}.Endpoint/uri。其中{clusterid}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateCloudPersistentVolumeClaimsResponse CreateCloudPersistentVolumeClaims(CreateCloudPersistentVolumeClaimsRequest createCloudPersistentVolumeClaimsRequest)
         {
@@ -66,6 +89,14 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 创建集群
+        ///
+        /// 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[创建节点](cce_02_0242.xml)添加节点。
+        /// 
+        /// &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// &gt;   - 调用该接口创建集群时，默认不安装ICAgent，若需安装ICAgent，可在请求Body参数的annotations中加入\&quot;cluster.install.addons.external/install\&quot;: \&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateClusterResponse CreateCluster(CreateClusterRequest createClusterRequest)
         {
@@ -78,6 +109,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取集群证书
+        ///
+        /// 该API用于获取指定集群的证书信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateKubernetesClusterCertResponse CreateKubernetesClusterCert(CreateKubernetesClusterCertRequest createKubernetesClusterCertRequest)
         {
@@ -91,6 +127,13 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 创建节点
+        ///
+        /// 该API用于在指定集群下创建节点。
+        /// &gt; - 若无集群，请先[创建集群](cce_02_0236.xml)。
+        /// &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateNodeResponse CreateNode(CreateNodeRequest createNodeRequest)
         {
@@ -104,6 +147,15 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 创建节点池
+        ///
+        /// 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。1.21版本的集群创建节点池时支持绑定安全组，每个节点池最多绑定五个安全组。更新节点池的安全组后，只针对新创的pod生效，建议驱逐节点上原有的pod。
+        /// 
+        /// &gt; 若无集群，请先[创建集群](cce_02_0236.xml)。
+        /// 
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public CreateNodePoolResponse CreateNodePool(CreateNodePoolRequest createNodePoolRequest)
         {
@@ -117,6 +169,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 删除AddonInstance
+        ///
+        /// 删除插件实例的功能。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteAddonInstanceResponse DeleteAddonInstance(DeleteAddonInstanceRequest deleteAddonInstanceRequest)
         {
@@ -131,6 +188,13 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 删除PVC
+        ///
+        /// 该API用于删除指定Namespace下的PVC（PersistentVolumeClaim）对象，并可以选择保留后端的云存储。
+        /// 
+        /// &gt;存储管理的URL格式为：https://{clusterid}.Endpoint/uri。其中{clusterid}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteCloudPersistentVolumeClaimsResponse DeleteCloudPersistentVolumeClaims(DeleteCloudPersistentVolumeClaimsRequest deleteCloudPersistentVolumeClaimsRequest)
         {
@@ -145,6 +209,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 删除集群
+        ///
+        /// 该API用于删除一个指定的集群。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteClusterResponse DeleteCluster(DeleteClusterRequest deleteClusterRequest)
         {
@@ -158,6 +228,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 删除节点
+        ///
+        /// 该API用于删除指定的节点。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteNodeResponse DeleteNode(DeleteNodeRequest deleteNodeRequest)
         {
@@ -172,6 +248,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 删除节点池
+        ///
+        /// 该API用于删除指定的节点池。
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public DeleteNodePoolResponse DeleteNodePool(DeleteNodePoolRequest deleteNodePoolRequest)
         {
@@ -186,6 +268,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 集群休眠
+        ///
+        /// 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public HibernateClusterResponse HibernateCluster(HibernateClusterRequest hibernateClusterRequest)
         {
@@ -199,6 +286,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取AddonInstance列表
+        ///
+        /// 获取集群所有已安装插件实例
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListAddonInstancesResponse ListAddonInstances(ListAddonInstancesRequest listAddonInstancesRequest)
         {
@@ -211,6 +303,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 查询AddonTemplates列表
+        ///
+        /// 插件模板查询接口，查询插件信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListAddonTemplatesResponse ListAddonTemplates(ListAddonTemplatesRequest listAddonTemplatesRequest)
         {
@@ -223,6 +320,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取指定项目下的集群
+        ///
+        /// 该API用于获取指定项目下所有集群的详细信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListClustersResponse ListClusters(ListClustersRequest listClustersRequest)
         {
@@ -235,6 +337,13 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取集群下所有节点池
+        ///
+        /// 该API用于获取集群下所有节点池。
+        /// &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// &gt; - nodepool是集群中具有相同配置的节点实例的子集。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListNodePoolsResponse ListNodePools(ListNodePoolsRequest listNodePoolsRequest)
         {
@@ -248,6 +357,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取集群下所有节点
+        ///
+        /// 该API用于通过集群ID获取指定集群下所有节点的详细信息。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ListNodesResponse ListNodes(ListNodesRequest listNodesRequest)
         {
@@ -261,6 +376,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 节点迁移
+        ///
+        /// 该API用于在指定集群下迁移节点到另一集群。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public MigrateNodeResponse MigrateNode(MigrateNodeRequest migrateNodeRequest)
         {
@@ -275,6 +396,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 节点移除
+        ///
+        /// 该API用于在指定集群下移除节点。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public RemoveNodeResponse RemoveNode(RemoveNodeRequest removeNodeRequest)
         {
@@ -288,6 +415,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 重置节点
+        ///
+        /// 该API用于在指定集群下重置节点。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ResetNodeResponse ResetNode(ResetNodeRequest resetNodeRequest)
         {
@@ -301,6 +434,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取AddonInstance详情
+        ///
+        /// 获取插件实例详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowAddonInstanceResponse ShowAddonInstance(ShowAddonInstanceRequest showAddonInstanceRequest)
         {
@@ -314,6 +452,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取指定的集群
+        ///
+        /// 该API用于获取指定集群的详细信息。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowClusterResponse ShowCluster(ShowClusterRequest showClusterRequest)
         {
@@ -327,6 +471,15 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取任务信息
+        ///
+        /// 该API用于获取任务信息。通过某一任务请求下发后返回的jobID来查询指定任务的进度。
+        /// &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// &gt; - 该接口通常使用场景为：
+        /// &gt;   - 创建、删除集群时，查询相应任务的进度。
+        /// &gt;   - 创建、删除节点时，查询相应任务的进度。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowJobResponse ShowJob(ShowJobRequest showJobRequest)
         {
@@ -340,6 +493,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取指定的节点
+        ///
+        /// 该API用于通过节点ID获取指定节点的详细信息。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowNodeResponse ShowNode(ShowNodeRequest showNodeRequest)
         {
@@ -354,6 +513,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 获取指定的节点池
+        ///
+        /// 该API用于获取指定节点池的详细信息。
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowNodePoolResponse ShowNodePool(ShowNodePoolRequest showNodePoolRequest)
         {
@@ -368,6 +533,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 查询CCE服务下的资源配额。
+        ///
+        /// 该API用于查询CCE服务下的资源配额。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public ShowQuotasResponse ShowQuotas(ShowQuotasRequest showQuotasRequest)
         {
@@ -380,6 +550,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 更新AddonInstance
+        ///
+        /// 更新插件实例的功能。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateAddonInstanceResponse UpdateAddonInstance(UpdateAddonInstanceRequest updateAddonInstanceRequest)
         {
@@ -393,6 +568,12 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 更新指定的集群
+        ///
+        /// 该API用于更新指定的集群。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateClusterResponse UpdateCluster(UpdateClusterRequest updateClusterRequest)
         {
@@ -406,6 +587,13 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 更新指定的节点
+        ///
+        /// 该API用于更新指定的节点。
+        /// &gt; - 当前仅支持更新metadata下的name字段，即节点的名字。
+        /// &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateNodeResponse UpdateNode(UpdateNodeRequest updateNodeRequest)
         {
@@ -420,6 +608,16 @@ namespace HuaweiCloud.SDK.Cce.V3
         
         /// <summary>
         /// 更新指定节点池
+        ///
+        /// 该API用于更新指定的节点池。仅支持集群在处于可用、扩容、缩容状态时调用。
+        /// 
+        /// &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// 
+        /// &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，
+        /// taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public UpdateNodePoolResponse UpdateNodePool(UpdateNodePoolRequest updateNodePoolRequest)
         {

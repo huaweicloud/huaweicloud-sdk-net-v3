@@ -481,6 +481,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("multi_az_priority_policy", NullValueHandling = NullValueHandling.Ignore)]
         public MultiAzPriorityPolicyEnum MultiAzPriorityPolicy { get; set; }
         /// <summary>
+        /// 委托的名称委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为弹性云服务器提供访问云服务的临时凭证。
+        /// </summary>
+        [JsonProperty("iam_agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string IamAgencyName { get; set; }
+
+        /// <summary>
         /// 伸缩组描述信息(0-256个字符)
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -515,6 +521,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  deleteVolume: ").Append(DeleteVolume).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  multiAzPriorityPolicy: ").Append(MultiAzPriorityPolicy).Append("\n");
+            sb.Append("  iamAgencyName: ").Append(IamAgencyName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -648,6 +655,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.MultiAzPriorityPolicy.Equals(input.MultiAzPriorityPolicy))
                 ) && 
                 (
+                    this.IamAgencyName == input.IamAgencyName ||
+                    (this.IamAgencyName != null &&
+                    this.IamAgencyName.Equals(input.IamAgencyName))
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -704,6 +716,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.MultiAzPriorityPolicy != null)
                     hashCode = hashCode * 59 + this.MultiAzPriorityPolicy.GetHashCode();
+                if (this.IamAgencyName != null)
+                    hashCode = hashCode * 59 + this.IamAgencyName.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;

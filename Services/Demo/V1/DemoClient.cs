@@ -15,6 +15,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// CreateDemoResource Test
         /// </summary>
         public CreateDemoResourceResponse CreateDemoResource(CreateDemoResourceRequest createDemoResourceRequest)
         {
@@ -27,6 +29,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// DeleteDemoResource Test
         /// </summary>
         public DeleteDemoResourceResponse DeleteDemoResource(DeleteDemoResourceRequest deleteDemoResourceRequest)
         {
@@ -40,6 +44,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// ListDemoArray Test
         /// </summary>
         public ListDemoArrayResponse ListDemoArray(ListDemoArrayRequest listDemoArrayRequest)
         {
@@ -54,6 +60,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// ListDemoMap Test
         /// </summary>
         public ListDemoMapResponse ListDemoMap(ListDemoMapRequest listDemoMapRequest)
         {
@@ -68,6 +76,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// ListDemoResources Test
         /// </summary>
         public ListDemoResourcesResponse ListDemoResources(ListDemoResourcesRequest listDemoResourcesRequest)
         {
@@ -80,6 +90,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// Upload download demo
         /// </summary>
         public UploadDownloadDemoResponse UploadDownloadDemo(UploadDownloadDemoRequest uploadDownloadDemoRequest)
         {
@@ -92,6 +104,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// Upload Multipart demo
         /// </summary>
         public UploadMultipartResponse UploadMultipart(UploadMultipartRequest uploadMultipartRequest)
         {

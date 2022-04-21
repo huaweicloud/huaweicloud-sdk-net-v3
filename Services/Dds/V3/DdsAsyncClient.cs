@@ -16,6 +16,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 扩容集群实例的节点数量
+        ///
+        /// 扩容指定集群实例的节点数量。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<AddShardingNodeResponse> AddShardingNodeAsync(AddShardingNodeRequest addShardingNodeRequest)
         {
@@ -29,6 +34,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 绑定弹性公网IP
+        ///
+        /// 为实例下的节点绑定弹性公网IP。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<AttachEipResponse> AttachEipAsync(AttachEipRequest attachEipRequest)
         {
@@ -42,6 +52,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 修改实例内网地址
+        ///
+        /// 修改实例的内网地址
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<AttachInternalIpResponse> AttachInternalIpAsync(AttachInternalIpRequest attachInternalIpRequest)
         {
@@ -55,6 +70,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 批量添加或删除资源标签
+        ///
+        /// 批量添加或删除指定实例的标签。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<BatchTagActionResponse> BatchTagActionAsync(BatchTagActionRequest batchTagActionRequest)
         {
@@ -68,6 +88,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 解绑弹性公网IP
+        ///
+        /// 解绑实例下节点已经绑定的弹性公网IP。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CancelEipResponse> CancelEipAsync(CancelEipRequest cancelEipRequest)
         {
@@ -81,6 +106,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 检查数据库密码
+        ///
+        /// 检查数据库密码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CheckPasswordResponse> CheckPasswordAsync(CheckPasswordRequest checkPasswordRequest)
         {
@@ -94,6 +124,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 创建数据库角色
+        ///
+        /// 创建数据库角色。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateDatabaseRoleResponse> CreateDatabaseRoleAsync(CreateDatabaseRoleRequest createDatabaseRoleRequest)
         {
@@ -107,6 +142,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 创建数据库用户
+        ///
+        /// 创建数据库用户。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateDatabaseUserResponse> CreateDatabaseUserAsync(CreateDatabaseUserRequest createDatabaseUserRequest)
         {
@@ -120,6 +160,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 创建实例
+        ///
+        /// 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest)
         {
@@ -132,6 +177,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 打开集群的Shard/Config IP开关
+        ///
+        /// 打开集群的Shard/Config IP开关
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateIpResponse> CreateIpAsync(CreateIpRequest createIpRequest)
         {
@@ -145,6 +195,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 创建手动备份
+        ///
+        /// 创建数据库实例的手动备份。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<CreateManualBackupResponse> CreateManualBackupAsync(CreateManualBackupRequest createManualBackupRequest)
         {
@@ -157,6 +212,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 删除数据库角色
+        ///
+        /// 删除数据库角色。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteDatabaseRoleResponse> DeleteDatabaseRoleAsync(DeleteDatabaseRoleRequest deleteDatabaseRoleRequest)
         {
@@ -170,6 +230,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 删除数据库用户
+        ///
+        /// 删除数据库用户。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteDatabaseUserResponse> DeleteDatabaseUserAsync(DeleteDatabaseUserRequest deleteDatabaseUserRequest)
         {
@@ -183,6 +248,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 删除实例
+        ///
+        /// 删除数据库实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest)
         {
@@ -196,6 +266,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 删除手动备份
+        ///
+        /// 删除数据库实例的手动备份。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteManualBackupResponse> DeleteManualBackupAsync(DeleteManualBackupRequest deleteManualBackupRequest)
         {
@@ -209,6 +284,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 终结实例节点会话
+        ///
+        /// 终结实例节点会话。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest deleteSessionRequest)
         {
@@ -222,6 +302,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取错误日志下载链接
+        ///
+        /// 获取错误日志下载链接。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DownloadErrorlogResponse> DownloadErrorlogAsync(DownloadErrorlogRequest downloadErrorlogRequest)
         {
@@ -235,6 +320,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取慢日志下载链接
+        ///
+        /// 获取慢日志下载链接。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DownloadSlowlogResponse> DownloadSlowlogAsync(DownloadSlowlogRequest downloadSlowlogRequest)
         {
@@ -248,6 +338,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取审计日志下载链接
+        ///
+        /// 获取审计日志下载链接。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListAuditlogLinksResponse> ListAuditlogLinksAsync(ListAuditlogLinksRequest listAuditlogLinksRequest)
         {
@@ -261,6 +356,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取审计日志列表
+        ///
+        /// 获取审计日志列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListAuditlogsResponse> ListAuditlogsAsync(ListAuditlogsRequest listAuditlogsRequest)
         {
@@ -274,6 +374,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询实例可迁移到的可用区
+        ///
+        /// 查询实例可迁移到的可用区。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListAz2MigrateResponse> ListAz2MigrateAsync(ListAz2MigrateRequest listAz2MigrateRequest)
         {
@@ -287,6 +392,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询备份列表
+        ///
+        /// 根据指定条件查询备份列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest listBackupsRequest)
         {
@@ -299,6 +409,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询数据库角色列表
+        ///
+        /// 查询数据库角色列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListDatabaseRolesResponse> ListDatabaseRolesAsync(ListDatabaseRolesRequest listDatabaseRolesRequest)
         {
@@ -312,6 +427,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询数据库用户列表
+        ///
+        /// 查询数据库用户列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListDatabaseUsersResponse> ListDatabaseUsersAsync(ListDatabaseUsersRequest listDatabaseUsersRequest)
         {
@@ -325,6 +445,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询数据库版本信息
+        ///
+        /// 查询指定实例类型的数据库版本信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListDatastoreVersionsResponse> ListDatastoreVersionsAsync(ListDatastoreVersionsRequest listDatastoreVersionsRequest)
         {
@@ -338,6 +463,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询数据库错误日志
+        ///
+        /// 查询数据库错误信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListErrorLogsResponse> ListErrorLogsAsync(ListErrorLogsRequest listErrorLogsRequest)
         {
@@ -351,6 +481,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询数据库规格
+        ///
+        /// 查询指定条件下的实例规格信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFlavorInfosResponse> ListFlavorInfosAsync(ListFlavorInfosRequest listFlavorInfosRequest)
         {
@@ -363,6 +498,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询所有实例规格信息
+        ///
+        /// 查询指定条件下的所有实例规格信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
@@ -375,6 +515,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询资源标签
+        ///
+        /// 查询指定实例的标签信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListInstanceTagsResponse> ListInstanceTagsAsync(ListInstanceTagsRequest listInstanceTagsRequest)
         {
@@ -388,6 +533,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询实例列表和详情
+        ///
+        /// 根据指定条件查询实例列表和详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest listInstancesRequest)
         {
@@ -400,6 +550,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询资源实例
+        ///
+        /// 根据标签查询指定的数据库实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListInstancesByTagsResponse> ListInstancesByTagsAsync(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
@@ -412,6 +567,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询项目标签
+        ///
+        /// 查询指定project ID下实例的所有标签集合。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectTagsResponse> ListProjectTagsAsync(ListProjectTagsRequest listProjectTagsRequest)
         {
@@ -424,6 +584,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取可恢复的数据库集合列表
+        ///
+        /// 获取可恢复的数据库集合列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListRestoreCollectionsResponse> ListRestoreCollectionsAsync(ListRestoreCollectionsRequest listRestoreCollectionsRequest)
         {
@@ -437,6 +602,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取可恢复的数据库列表
+        ///
+        /// 获取可恢复的数据库列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListRestoreDatabasesResponse> ListRestoreDatabasesAsync(ListRestoreDatabasesRequest listRestoreDatabasesRequest)
         {
@@ -450,6 +620,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询可恢复的时间段
+        ///
+        /// 查询实例的可恢复时间段。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListRestoreTimesResponse> ListRestoreTimesAsync(ListRestoreTimesRequest listRestoreTimesRequest)
         {
@@ -463,6 +638,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询实例节点会话
+        ///
+        /// 查询实例节点会话。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest listSessionsRequest)
         {
@@ -476,6 +656,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询数据库慢日志
+        ///
+        /// 查询数据库慢日志信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListSlowLogsResponse> ListSlowLogsAsync(ListSlowLogsRequest listSlowLogsRequest)
         {
@@ -489,6 +674,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询数据库磁盘类型
+        ///
+        /// 查询当前区域下的数据库磁盘类型。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListStorageTypeResponse> ListStorageTypeAsync(ListStorageTypeRequest listStorageTypeRequest)
         {
@@ -501,6 +691,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 实例可用区迁移
+        ///
+        /// 实例可用区迁移。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<MigrateAzResponse> MigrateAzAsync(MigrateAzRequest migrateAzRequest)
         {
@@ -514,6 +709,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 修改数据库用户密码
+        ///
+        /// 修改数据库用户密码。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest resetPasswordRequest)
         {
@@ -527,6 +727,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 变更实例规格
+        ///
+        /// 变更实例的规格。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ResizeInstanceResponse> ResizeInstanceAsync(ResizeInstanceRequest resizeInstanceRequest)
         {
@@ -540,6 +745,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 扩容实例存储容量
+        ///
+        /// 扩容实例相关的存储容量大小。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ResizeInstanceVolumeResponse> ResizeInstanceVolumeAsync(ResizeInstanceVolumeRequest resizeInstanceVolumeRequest)
         {
@@ -553,6 +763,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 重启实例
+        ///
+        /// 重启实例的数据库服务。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<RestartInstanceResponse> RestartInstanceAsync(RestartInstanceRequest restartInstanceRequest)
         {
@@ -566,6 +781,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 恢复到当前实例
+        ///
+        /// 恢复到当前实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<RestoreInstanceResponse> RestoreInstanceAsync(RestoreInstanceRequest restoreInstanceRequest)
         {
@@ -578,6 +798,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 库表级时间点恢复
+        ///
+        /// 库表级时间点恢复。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<RestoreInstanceFromCollectionResponse> RestoreInstanceFromCollectionAsync(RestoreInstanceFromCollectionRequest restoreInstanceFromCollectionRequest)
         {
@@ -591,6 +816,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 恢复到新实例
+        ///
+        /// 根据备份恢复新实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<RestoreNewInstanceResponse> RestoreNewInstanceAsync(RestoreNewInstanceRequest restoreNewInstanceRequest)
         {
@@ -603,6 +833,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 设置审计日志策略
+        ///
+        /// 设置审计日志策略。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<SetAuditlogPolicyResponse> SetAuditlogPolicyAsync(SetAuditlogPolicyRequest setAuditlogPolicyRequest)
         {
@@ -616,6 +851,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 设置自动备份策略
+        ///
+        /// 设置自动备份策略。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<SetBackupPolicyResponse> SetBackupPolicyAsync(SetBackupPolicyRequest setBackupPolicyRequest)
         {
@@ -629,6 +869,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 设置集群均衡开关
+        ///
+        /// 设置集群均衡开关。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<SetBalancerSwitchResponse> SetBalancerSwitchAsync(SetBalancerSwitchRequest setBalancerSwitchRequest)
         {
@@ -643,6 +888,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 设置集群均衡活动时间窗
+        ///
+        /// 设置集群均衡活动时间窗。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<SetBalancerWindowResponse> SetBalancerWindowAsync(SetBalancerWindowRequest setBalancerWindowRequest)
         {
@@ -656,6 +906,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询审计日志策略
+        ///
+        /// 查询审计日志策略。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowAuditlogPolicyResponse> ShowAuditlogPolicyAsync(ShowAuditlogPolicyRequest showAuditlogPolicyRequest)
         {
@@ -669,6 +924,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取备份下载链接
+        ///
+        /// 获取备份下载链接。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowBackupDownloadLinkResponse> ShowBackupDownloadLinkAsync(ShowBackupDownloadLinkRequest showBackupDownloadLinkRequest)
         {
@@ -681,6 +941,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询自动备份策略
+        ///
+        /// 查询自动备份策略。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowBackupPolicyResponse> ShowBackupPolicyAsync(ShowBackupPolicyRequest showBackupPolicyRequest)
         {
@@ -694,6 +959,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询实例连接数统计信息
+        ///
+        /// 查询客户端IP访问至DDS数据库实例的连接数统计信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowConnectionStatisticsResponse> ShowConnectionStatisticsAsync(ShowConnectionStatisticsRequest showConnectionStatisticsRequest)
         {
@@ -707,6 +977,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 获取DDS任务中心指定ID的任务信息。
+        ///
+        /// 获取DDS任务中心指定ID的任务信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowJobDetailResponse> ShowJobDetailAsync(ShowJobDetailRequest showJobDetailRequest)
         {
@@ -719,6 +994,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询配额
+        ///
+        /// 查询单租户在DDS服务下的资源配额，包括单节点实例配额、副本集实例配额、集群实例配额等。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
         {
@@ -731,6 +1011,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询集群均衡设置
+        ///
+        /// 查询集群均衡设置。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowShardingBalancerResponse> ShowShardingBalancerAsync(ShowShardingBalancerRequest showShardingBalancerRequest)
         {
@@ -744,6 +1029,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 设置慢日志明文开关
+        ///
+        /// 设置实例的慢日志明文开关。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<SwitchSlowlogDesensitizationResponse> SwitchSlowlogDesensitizationAsync(SwitchSlowlogDesensitizationRequest switchSlowlogDesensitizationRequest)
         {
@@ -758,6 +1048,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 切换SSL开关
+        ///
+        /// 切换实例的SSL开关
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<SwitchSslResponse> SwitchSslAsync(SwitchSslRequest switchSslRequest)
         {
@@ -771,6 +1066,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 切换副本集实例的主备节点
+        ///
+        /// 切换副本集实例下的主备节点
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<SwitchoverReplicaSetResponse> SwitchoverReplicaSetAsync(SwitchoverReplicaSetRequest switchoverReplicaSetRequest)
         {
@@ -784,6 +1084,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 副本集跨网段访问配置。
+        ///
+        /// 副本集跨网段访问配置。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateClientNetworkResponse> UpdateClientNetworkAsync(UpdateClientNetworkRequest updateClientNetworkRequest)
         {
@@ -797,6 +1102,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 修改实例名称
+        ///
+        /// 修改实例名称
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateInstanceNameResponse> UpdateInstanceNameAsync(UpdateInstanceNameRequest updateInstanceNameRequest)
         {
@@ -810,6 +1120,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 修改数据库端口
+        ///
+        /// 修改数据库实例的端口。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateInstancePortResponse> UpdateInstancePortAsync(UpdateInstancePortRequest updateInstancePortRequest)
         {
@@ -823,6 +1138,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 修改实例备注
+        ///
+        /// 修改实例备注。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateInstanceRemarkResponse> UpdateInstanceRemarkAsync(UpdateInstanceRemarkRequest updateInstanceRemarkRequest)
         {
@@ -836,6 +1156,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 变更实例安全组
+        ///
+        /// 变更实例关联的安全组
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateSecurityGroupResponse> UpdateSecurityGroupAsync(UpdateSecurityGroupRequest updateSecurityGroupRequest)
         {
@@ -849,6 +1174,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询当前支持的API版本信息列表
+        ///
+        /// 查询当前支持的API版本信息列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListApiVersionResponse> ListApiVersionAsync(ListApiVersionRequest listApiVersionRequest)
         {
@@ -861,6 +1191,11 @@ namespace HuaweiCloud.SDK.Dds.V3
         
         /// <summary>
         /// 查询指定API版本信息
+        ///
+        /// 查询指定API版本信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
         {

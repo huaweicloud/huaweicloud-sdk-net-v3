@@ -121,7 +121,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 
         /// </summary>
         [JsonProperty("instance_backup_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public BackupPolicy InstanceBackupPolicy { get; set; }
+        public InstanceBackupPolicy InstanceBackupPolicy { get; set; }
 
         /// <summary>
         /// 实例所在的可用区。返回“可用区Code”
@@ -261,6 +261,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("backend_addrs", NullValueHandling = NullValueHandling.Ignore)]
         public string BackendAddrs { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("domain_name_info", NullValueHandling = NullValueHandling.Ignore)]
+        public DomainNameInfo DomainNameInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -310,6 +316,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  serviceTaskId: ").Append(ServiceTaskId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  backendAddrs: ").Append(BackendAddrs).Append("\n");
+            sb.Append("  domainNameInfo: ").Append(DomainNameInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -536,6 +543,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.BackendAddrs == input.BackendAddrs ||
                     (this.BackendAddrs != null &&
                     this.BackendAddrs.Equals(input.BackendAddrs))
+                ) && 
+                (
+                    this.DomainNameInfo == input.DomainNameInfo ||
+                    (this.DomainNameInfo != null &&
+                    this.DomainNameInfo.Equals(input.DomainNameInfo))
                 );
         }
 
@@ -629,6 +641,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.BackendAddrs != null)
                     hashCode = hashCode * 59 + this.BackendAddrs.GetHashCode();
+                if (this.DomainNameInfo != null)
+                    hashCode = hashCode * 59 + this.DomainNameInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,6 +16,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// CreateDemoResource Test
         /// </summary>
         public async Task<CreateDemoResourceResponse> CreateDemoResourceAsync(CreateDemoResourceRequest createDemoResourceRequest)
         {
@@ -28,6 +30,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// DeleteDemoResource Test
         /// </summary>
         public async Task<DeleteDemoResourceResponse> DeleteDemoResourceAsync(DeleteDemoResourceRequest deleteDemoResourceRequest)
         {
@@ -41,6 +45,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// ListDemoArray Test
         /// </summary>
         public async Task<ListDemoArrayResponse> ListDemoArrayAsync(ListDemoArrayRequest listDemoArrayRequest)
         {
@@ -55,6 +61,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// ListDemoMap Test
         /// </summary>
         public async Task<ListDemoMapResponse> ListDemoMapAsync(ListDemoMapRequest listDemoMapRequest)
         {
@@ -69,6 +77,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// ListDemoResources Test
         /// </summary>
         public async Task<ListDemoResourcesResponse> ListDemoResourcesAsync(ListDemoResourcesRequest listDemoResourcesRequest)
         {
@@ -81,6 +91,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// Upload download demo
         /// </summary>
         public async Task<UploadDownloadDemoResponse> UploadDownloadDemoAsync(UploadDownloadDemoRequest uploadDownloadDemoRequest)
         {
@@ -93,6 +105,8 @@ namespace HuaweiCloud.SDK.Demo.V1
         
         /// <summary>
         /// demo
+        ///
+        /// Upload Multipart demo
         /// </summary>
         public async Task<UploadMultipartResponse> UploadMultipartAsync(UploadMultipartRequest uploadMultipartRequest)
         {

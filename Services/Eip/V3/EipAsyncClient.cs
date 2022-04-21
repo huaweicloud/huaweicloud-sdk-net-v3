@@ -16,6 +16,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 查询公共池列表
+        ///
+        /// 查询公共池列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListCommonPoolsResponse> ListCommonPoolsAsync(ListCommonPoolsRequest listCommonPoolsRequest)
         {
@@ -28,6 +33,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 查询公共池分组列表
+        ///
+        /// 查询公共池分组列表，包含名称和位置信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListPublicBorderGroupsResponse> ListPublicBorderGroupsAsync(ListPublicBorderGroupsRequest listPublicBorderGroupsRequest)
         {
@@ -40,6 +50,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 查询指定租户下的共享带宽类型列表
+        ///
+        /// 查询指定租户下的共享带宽类型列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListShareBandwidthTypesResponse> ListShareBandwidthTypesAsync(ListShareBandwidthTypesRequest listShareBandwidthTypesRequest)
         {
@@ -52,6 +67,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 绑定弹性公网IP
+        ///
+        /// 绑定弹性公网IP
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<AssociatePublicipsResponse> AssociatePublicipsAsync(AssociatePublicipsRequest associatePublicipsRequest)
         {
@@ -65,6 +85,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 解绑弹性公网IP
+        ///
+        /// 解绑弹性公网IP
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<DisassociatePublicipsResponse> DisassociatePublicipsAsync(DisassociatePublicipsRequest disassociatePublicipsRequest)
         {
@@ -78,6 +103,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 查询公网IP池列表
+        ///
+        /// 全量查询公网IP池列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListPublicipPoolResponse> ListPublicipPoolAsync(ListPublicipPoolRequest listPublicipPoolRequest)
         {
@@ -90,6 +120,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 全量查询弹性公网IP列表
+        ///
+        /// 查询弹性公网IP列表信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListPublicipsResponse> ListPublicipsAsync(ListPublicipsRequest listPublicipsRequest)
         {
@@ -102,6 +137,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 查询弹性公网IP详情
+        ///
+        /// 查询弹性公网IP详情
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPublicipResponse> ShowPublicipAsync(ShowPublicipRequest showPublicipRequest)
         {
@@ -115,6 +155,11 @@ namespace HuaweiCloud.SDK.Eip.V3
         
         /// <summary>
         /// 查询公网IP池详情
+        ///
+        /// 查询公网IP池详情
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPublicipPoolResponse> ShowPublicipPoolAsync(ShowPublicipPoolRequest showPublicipPoolRequest)
         {

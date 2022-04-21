@@ -1,3 +1,26 @@
+# 3.0.83 2022-04-21
+
+### HuaweiCloud SDK AS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateScalingGroup`新增请求参数 `iam_agency_name`
+  - 接口`ListScalingGroups`新增响应参数 `iam_agency_name`
+  - 接口`UpdateScalingGroup`新增请求参数 `iam_agency_name`
+  - 接口`ShowScalingGroup`新增响应参数 `iam_agency_name`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowInstance`新增响应参数 `domain_name_info`
+
 # 3.0.82 2022-04-14
 
 ### HuaweiCloud SDK CDN

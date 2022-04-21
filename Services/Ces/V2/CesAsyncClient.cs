@@ -16,6 +16,11 @@ namespace HuaweiCloud.SDK.Ces.V2
         
         /// <summary>
         /// 查询告警历史
+        ///
+        /// 查询告警历史列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
         public async Task<ListAlarmHistoriesResponse> ListAlarmHistoriesAsync(ListAlarmHistoriesRequest listAlarmHistoriesRequest)
         {
