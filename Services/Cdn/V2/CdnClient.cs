@@ -9,7 +9,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
     {
         public static ClientBuilder<CdnClient> NewBuilder()
         {
-            return new ClientBuilder<CdnClient>();
+            return new ClientBuilder<CdnClient>("GlobalCredentials");
         }
 
         

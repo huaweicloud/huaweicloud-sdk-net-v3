@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("destination_config", NullValueHandling = NullValueHandling.Ignore)]
         public FuncAsyncDestinationConfig DestinationConfig { get; set; }
 
+        /// <summary>
+        /// 开启异步调用状态持久化
+        /// </summary>
+        [JsonProperty("enable_async_status_log", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAsyncStatusLog { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  maxAsyncEventAgeInSeconds: ").Append(MaxAsyncEventAgeInSeconds).Append("\n");
             sb.Append("  maxAsyncRetryAttempts: ").Append(MaxAsyncRetryAttempts).Append("\n");
             sb.Append("  destinationConfig: ").Append(DestinationConfig).Append("\n");
+            sb.Append("  enableAsyncStatusLog: ").Append(EnableAsyncStatusLog).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.DestinationConfig == input.DestinationConfig ||
                     (this.DestinationConfig != null &&
                     this.DestinationConfig.Equals(input.DestinationConfig))
+                ) && 
+                (
+                    this.EnableAsyncStatusLog == input.EnableAsyncStatusLog ||
+                    (this.EnableAsyncStatusLog != null &&
+                    this.EnableAsyncStatusLog.Equals(input.EnableAsyncStatusLog))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MaxAsyncRetryAttempts.GetHashCode();
                 if (this.DestinationConfig != null)
                     hashCode = hashCode * 59 + this.DestinationConfig.GetHashCode();
+                if (this.EnableAsyncStatusLog != null)
+                    hashCode = hashCode * 59 + this.EnableAsyncStatusLog.GetHashCode();
                 return hashCode;
             }
         }

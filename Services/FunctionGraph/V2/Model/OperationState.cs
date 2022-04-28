@@ -31,11 +31,17 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly TypeEnum SLEEP = new TypeEnum("Sleep");
 
+            /// <summary>
+            /// Enum END for value: End
+            /// </summary>
+            public static readonly TypeEnum END = new TypeEnum("End");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "Operation", OPERATION },
                 { "Sleep", SLEEP },
+                { "End", END },
             };
 
             private string Value;

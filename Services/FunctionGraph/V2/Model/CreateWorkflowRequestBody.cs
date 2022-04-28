@@ -14,6 +14,116 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     /// </summary>
     public class CreateWorkflowRequestBody 
     {
+        /// <summary>
+        /// 工作流模式，当前支持两种模式 NORMAL: 标准模式，普通模式面向普通的业务场景，支持长时间任务，支持执行历史持久化和查询，只支持异步调用 EXPRESS: 快速模式，快速模式面向业务执行时长较短，需要极致性能的场景，只支持流程执行时长低于5分钟的场景，不支持执行历史持久化，支持同步和异步调用 默认为标准模式
+        /// </summary>
+        /// <value>工作流模式，当前支持两种模式 NORMAL: 标准模式，普通模式面向普通的业务场景，支持长时间任务，支持执行历史持久化和查询，只支持异步调用 EXPRESS: 快速模式，快速模式面向业务执行时长较短，需要极致性能的场景，只支持流程执行时长低于5分钟的场景，不支持执行历史持久化，支持同步和异步调用 默认为标准模式</value>
+        [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
+        public class ModeEnum
+        {
+            /// <summary>
+            /// Enum NORMAL for value: NORMAL
+            /// </summary>
+            public static readonly ModeEnum NORMAL = new ModeEnum("NORMAL");
+
+            /// <summary>
+            /// Enum EXPRESS for value: EXPRESS
+            /// </summary>
+            public static readonly ModeEnum EXPRESS = new ModeEnum("EXPRESS");
+
+            private static readonly Dictionary<string, ModeEnum> StaticFields =
+            new Dictionary<string, ModeEnum>()
+            {
+                { "NORMAL", NORMAL },
+                { "EXPRESS", EXPRESS },
+            };
+
+            private string Value;
+
+            public ModeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static ModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ModeEnum a, ModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ModeEnum a, ModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 流程定义名称
@@ -64,6 +174,17 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public List<Retry> Retries { get; set; }
 
         /// <summary>
+        /// 工作流模式，当前支持两种模式 NORMAL: 标准模式，普通模式面向普通的业务场景，支持长时间任务，支持执行历史持久化和查询，只支持异步调用 EXPRESS: 快速模式，快速模式面向业务执行时长较短，需要极致性能的场景，只支持流程执行时长低于5分钟的场景，不支持执行历史持久化，支持同步和异步调用 默认为标准模式
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public ModeEnum Mode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("express_config", NullValueHandling = NullValueHandling.Ignore)]
+        public ExpressConfig ExpressConfig { get; set; }
+
+        /// <summary>
         /// 企业项目ID，在企业用户创建函数时必填。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -85,6 +206,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  states: ").Append(States).Append("\n");
             sb.Append("  constants: ").Append(Constants).Append("\n");
             sb.Append("  retries: ").Append(Retries).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  expressConfig: ").Append(ExpressConfig).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -152,6 +275,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Retries.SequenceEqual(input.Retries)
                 ) && 
                 (
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
+                ) && 
+                (
+                    this.ExpressConfig == input.ExpressConfig ||
+                    (this.ExpressConfig != null &&
+                    this.ExpressConfig.Equals(input.ExpressConfig))
+                ) && 
+                (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
@@ -182,6 +315,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Constants.GetHashCode();
                 if (this.Retries != null)
                     hashCode = hashCode * 59 + this.Retries.GetHashCode();
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.ExpressConfig != null)
+                    hashCode = hashCode * 59 + this.ExpressConfig.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;

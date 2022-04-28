@@ -51,6 +51,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("last_modified", NullValueHandling = NullValueHandling.Ignore)]
         public string LastModified { get; set; }
 
+        /// <summary>
+        /// 开启异步调用状态持久化
+        /// </summary>
+        [JsonProperty("enable_async_status_log", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAsyncStatusLog { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  destinationConfig: ").Append(DestinationConfig).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
+            sb.Append("  enableAsyncStatusLog: ").Append(EnableAsyncStatusLog).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.LastModified == input.LastModified ||
                     (this.LastModified != null &&
                     this.LastModified.Equals(input.LastModified))
+                ) && 
+                (
+                    this.EnableAsyncStatusLog == input.EnableAsyncStatusLog ||
+                    (this.EnableAsyncStatusLog != null &&
+                    this.EnableAsyncStatusLog.Equals(input.EnableAsyncStatusLog))
                 );
         }
 
@@ -138,6 +150,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 if (this.LastModified != null)
                     hashCode = hashCode * 59 + this.LastModified.GetHashCode();
+                if (this.EnableAsyncStatusLog != null)
+                    hashCode = hashCode * 59 + this.EnableAsyncStatusLog.GetHashCode();
                 return hashCode;
             }
         }

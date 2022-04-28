@@ -1,3 +1,50 @@
+# 3.0.84 2022-04-28
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - Support the interfaces `CancelAsyncInvocation`, `StartSyncWorkflowExecution`
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListFunctionStatistics`:
+    - Modify the type `int32` -> `int64` of the response parameter `timestamp`
+    - Modify the type `int32` -> `double` of the response parameter `value`
+  - Changes of the interface `ListStatistics`:
+    - Modify the type `int32` -> `int64` of the response parameter `timestamp`
+    - Modify the type `int32` -> `double` of the response parameter `value`
+  - Add the response parameter `enable_async_status_log` to the interface `ListFunctionAsyncInvokeConfig`
+  - Add the response parameter `enable_async_status_log` to the interface `ShowFunctionAsyncInvokeConfig`
+  - Changes of the interface `UpdateFunctionAsyncInvokeConfig`:
+    - Add the request parameter `enable_async_status_log`
+    - Add the response parameter `enable_async_status_log`
+  - Changes of the interface `CreateWorkflow`:
+    - Add the request parameters `mode`, `express_config`
+    - Add the enum values `End` to the request parameter `type`
+  - Changes of the interface `ShowWorkFlow`:
+    - Add the response parameters `mode`, `express_config`
+    - Add the enum values `End` to the response parameter `type`
+  - Changes of the interface `UpdateWorkFlow`:
+    - Add the request parameters `mode`, `express_config`
+    - Add the enum values `End` to the request parameter `type`
+  - Changes of the interface `ShowTenantMetric`:
+    - Add the request parameters `start_time`, `end_time`
+    - Modify the type `int32` -> `int64` of the response parameter `timestamp`
+    - Modify the type `int32` -> `double` of the response parameter `value`
+  - Changes of the interface `ShowWorkFlowMetric`:
+    - Add the request parameters `start_time`, `end_time`
+    - Modify the type `int32` -> `int64` of the response parameter `timestamp`
+    - Modify the type `int32` -> `double` of the response parameter `value`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Fix the problem that the response body's type of the interface `RecognizeMyanmarDriverLicense` is incorrect.
+- _Change_
+  - None
+
 # 3.0.83 2022-04-21
 
 ### HuaweiCloud SDK AS

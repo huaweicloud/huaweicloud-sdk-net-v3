@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("eip", NullValueHandling = NullValueHandling.Ignore)]
         public PostPaidServerEip Eip { get; set; }
 
+        /// <summary>
+        /// 弹性公网IP随实例释放策略。  true：弹性公网IP随实例释放。 false：弹性公网IP不随实例释放。 默认值：false。
+        /// </summary>
+        [JsonProperty("delete_on_termination", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeleteOnTermination { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("class PostPaidServerPublicip {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  eip: ").Append(Eip).Append("\n");
+            sb.Append("  deleteOnTermination: ").Append(DeleteOnTermination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Eip == input.Eip ||
                     (this.Eip != null &&
                     this.Eip.Equals(input.Eip))
+                ) && 
+                (
+                    this.DeleteOnTermination == input.DeleteOnTermination ||
+                    (this.DeleteOnTermination != null &&
+                    this.DeleteOnTermination.Equals(input.DeleteOnTermination))
                 );
         }
 
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Eip != null)
                     hashCode = hashCode * 59 + this.Eip.GetHashCode();
+                if (this.DeleteOnTermination != null)
+                    hashCode = hashCode * 59 + this.DeleteOnTermination.GetHashCode();
                 return hashCode;
             }
         }

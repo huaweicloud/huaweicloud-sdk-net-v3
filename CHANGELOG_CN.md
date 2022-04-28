@@ -1,3 +1,50 @@
+# 3.0.84 2022-04-28
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 支持接口`CancelAsyncInvocation`、`StartSyncWorkflowExecution`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListFunctionStatistics`:
+    - 响应参数`timestamp`类型调整 `int32` -> `int64`
+    - 响应参数`value`类型调整 `int32` -> `double`
+  - 接口`ListStatistics`:
+    - 响应参数`timestamp`类型调整 `int32` -> `int64`
+    - 响应参数`value`类型调整 `int32` -> `double`
+  - 接口`ListFunctionAsyncInvokeConfig`新增响应参数 `enable_async_status_log`
+  - 接口`ShowFunctionAsyncInvokeConfig`新增响应参数 `enable_async_status_log`
+  - 接口`UpdateFunctionAsyncInvokeConfig`:
+    - 新增请求参数 `enable_async_status_log`
+    - 新增响应参数 `enable_async_status_log`
+  - 接口`CreateWorkflow`:
+    - 新增请求参数 `mode`、`express_config`
+    - 请求参数`type`新增枚举值`End`
+  - 接口`ShowWorkFlow`:
+    - 新增响应参数 `mode`、`express_config`
+    - 响应参数`type`新增枚举值`End`
+  - 接口`UpdateWorkFlow`:
+    - 新增请求参数 `mode`、`express_config`
+    - 请求参数`type`新增枚举值`End`
+  - 接口`ShowTenantMetric`:
+    - 新增请求参数 `start_time`、`end_time`
+    - 响应参数`timestamp`类型调整 `int32` -> `int64`
+    - 响应参数`value`类型调整 `int32` -> `double`
+  - 接口`ShowWorkFlowMetric`:
+    - 新增请求参数 `start_time`、`end_time`
+    - 响应参数`timestamp`类型调整 `int32` -> `int64`
+    - 响应参数`value`类型调整 `int32` -> `double`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 修复接口`RecognizeMyanmarDriverLicense`的响应体类型错误的问题
+- _特性变更_
+  - 无
+
 # 3.0.83 2022-04-21
 
 ### HuaweiCloud SDK AS

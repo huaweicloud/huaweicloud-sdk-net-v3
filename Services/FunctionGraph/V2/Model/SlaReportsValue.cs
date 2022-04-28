@@ -19,13 +19,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 时间戳
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Timestamp { get; set; }
+        public long? Timestamp { get; set; }
 
         /// <summary>
         /// 值
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Value { get; set; }
+        public double? Value { get; set; }
 
 
         /// <summary>

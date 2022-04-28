@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// 状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DriverLicenseResultStatus> Status { get; set; }
+        public List<string> Status { get; set; }
 
         /// <summary>
         /// 生成时间。 
