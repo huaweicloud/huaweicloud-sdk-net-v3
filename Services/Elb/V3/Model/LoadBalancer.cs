@@ -270,6 +270,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 资源账单信息。 [取值： - 空：按需计费。  - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584:eu-de:057ef081eb00d2732fd1c01a9be75e6f  使用说明：  - admin权限才能更新此字段。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42)  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+        /// </summary>
+        [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string BillingInfo { get; set; }
+
+        /// <summary>
         /// 四层Flavor ID。  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hws,hcso)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -372,6 +378,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  ipv6VipPortId: ").Append(Ipv6VipPortId).Append("\n");
             sb.Append("  availabilityZoneList: ").Append(AvailabilityZoneList).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  billingInfo: ").Append(BillingInfo).Append("\n");
             sb.Append("  l4FlavorId: ").Append(L4FlavorId).Append("\n");
             sb.Append("  l4ScaleFlavorId: ").Append(L4ScaleFlavorId).Append("\n");
             sb.Append("  l7FlavorId: ").Append(L7FlavorId).Append("\n");
@@ -531,6 +538,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.BillingInfo == input.BillingInfo ||
+                    (this.BillingInfo != null &&
+                    this.BillingInfo.Equals(input.BillingInfo))
+                ) && 
+                (
                     this.L4FlavorId == input.L4FlavorId ||
                     (this.L4FlavorId != null &&
                     this.L4FlavorId.Equals(input.L4FlavorId))
@@ -650,6 +662,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.BillingInfo != null)
+                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
                 if (this.L4FlavorId != null)
                     hashCode = hashCode * 59 + this.L4FlavorId.GetHashCode();
                 if (this.L4ScaleFlavorId != null)
