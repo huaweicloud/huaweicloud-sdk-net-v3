@@ -232,6 +232,23 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
+        public DetectFaceByBase64IntlResponse DetectFaceByBase64Intl(DetectFaceByBase64IntlRequest detectFaceByBase64IntlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByBase64IntlRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetectFaceByBase64IntlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 人脸检测
+        ///
+        /// 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
         public DetectFaceByFileResponse DetectFaceByFile(DetectFaceByFileRequest detectFaceByFileRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
@@ -249,6 +266,23 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
+        public DetectFaceByFileIntlResponse DetectFaceByFileIntl(DetectFaceByFileIntlRequest detectFaceByFileIntlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectFaceByFileIntlRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetectFaceByFileIntlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 人脸检测
+        ///
+        /// 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
         public DetectFaceByUrlResponse DetectFaceByUrl(DetectFaceByUrlRequest detectFaceByUrlRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
@@ -256,6 +290,23 @@ namespace HuaweiCloud.SDK.Frs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<DetectFaceByUrlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 人脸检测
+        ///
+        /// 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DetectFaceByUrlIntlResponse DetectFaceByUrlIntl(DetectFaceByUrlIntlRequest detectFaceByUrlIntlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlIntlRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetectFaceByUrlIntlResponse>(response);
         }
         
         /// <summary>
@@ -283,6 +334,23 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
+        public DetectLiveByBase64IntlResponse DetectLiveByBase64Intl(DetectLiveByBase64IntlRequest detectLiveByBase64IntlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64IntlRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveByBase64IntlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 动作活体检测
+        ///
+        /// 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
         public DetectLiveByFileResponse DetectLiveByFile(DetectLiveByFileRequest detectLiveByFileRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
@@ -300,6 +368,23 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
+        public DetectLiveByFileIntlResponse DetectLiveByFileIntl(DetectLiveByFileIntlRequest detectLiveByFileIntlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileIntlRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveByFileIntlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 动作活体检测
+        ///
+        /// 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
         public DetectLiveByUrlResponse DetectLiveByUrl(DetectLiveByUrlRequest detectLiveByUrlRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
@@ -307,6 +392,23 @@ namespace HuaweiCloud.SDK.Frs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<DetectLiveByUrlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 动作活体检测
+        ///
+        /// 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DetectLiveByUrlIntlResponse DetectLiveByUrlIntl(DetectLiveByUrlIntlRequest detectLiveByUrlIntlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlIntlRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetectLiveByUrlIntlResponse>(response);
         }
         
         /// <summary>

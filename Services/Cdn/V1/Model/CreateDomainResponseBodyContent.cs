@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 域名业务类型：-web：网站加速；-download：文件下载加速；-video：点播加速；-wholeSite：全站加速。
+        /// 域名业务类型:-web:网站加速；-download:文件下载加速；-video:点播加速；-wholeSite:全站加速。
         /// </summary>
         [JsonProperty("business_type", NullValueHandling = NullValueHandling.Ignore)]
         public string BusinessType { get; set; }

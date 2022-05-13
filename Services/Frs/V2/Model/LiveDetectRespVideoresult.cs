@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Frs.V2.Model
 {
     /// <summary>
-    /// 活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/api-face/face_02_0010.html)。 调用失败时无此字段。
+    /// [活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/api-face/face_02_0010.html)。 调用失败时无此字段。](tag:hc) [活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/intl/zh-cn/api-face/face_02_0010.html)。 调用失败时无此字段。](tag:hk)
     /// </summary>
     public class LiveDetectRespVideoresult 
     {

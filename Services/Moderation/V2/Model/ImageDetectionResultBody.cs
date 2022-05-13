@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         [JsonProperty("category_suggestions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> CategorySuggestions { get; set; }
 
+        /// <summary>
+        /// 文本结果
+        /// </summary>
+        [JsonProperty("ocr_text", NullValueHandling = NullValueHandling.Ignore)]
+        public string OcrText { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
             sb.Append("  detail: ").Append(Detail).Append("\n");
             sb.Append("  suggestion: ").Append(Suggestion).Append("\n");
             sb.Append("  categorySuggestions: ").Append(CategorySuggestions).Append("\n");
+            sb.Append("  ocrText: ").Append(OcrText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,6 +87,11 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     this.CategorySuggestions != null &&
                     input.CategorySuggestions != null &&
                     this.CategorySuggestions.SequenceEqual(input.CategorySuggestions)
+                ) && 
+                (
+                    this.OcrText == input.OcrText ||
+                    (this.OcrText != null &&
+                    this.OcrText.Equals(input.OcrText))
                 );
         }
 
@@ -97,6 +109,8 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
                 if (this.CategorySuggestions != null)
                     hashCode = hashCode * 59 + this.CategorySuggestions.GetHashCode();
+                if (this.OcrText != null)
+                    hashCode = hashCode * 59 + this.OcrText.GetHashCode();
                 return hashCode;
             }
         }

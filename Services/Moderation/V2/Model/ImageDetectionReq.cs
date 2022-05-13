@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public float? Threshold { get; set; }
 
+        /// <summary>
+        /// 是否返回ocr识别结果，默认为false。
+        /// </summary>
+        [JsonProperty("show_ocr_text", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ShowOcrText { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -199,6 +205,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
             sb.Append("  adGlossaries: ").Append(AdGlossaries).Append("\n");
             sb.Append("  adCategories: ").Append(AdCategories).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
+            sb.Append("  showOcrText: ").Append(ShowOcrText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -257,6 +264,11 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     this.Threshold == input.Threshold ||
                     (this.Threshold != null &&
                     this.Threshold.Equals(input.Threshold))
+                ) && 
+                (
+                    this.ShowOcrText == input.ShowOcrText ||
+                    (this.ShowOcrText != null &&
+                    this.ShowOcrText.Equals(input.ShowOcrText))
                 );
         }
 
@@ -282,6 +294,8 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     hashCode = hashCode * 59 + this.AdCategories.GetHashCode();
                 if (this.Threshold != null)
                     hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.ShowOcrText != null)
+                    hashCode = hashCode * 59 + this.ShowOcrText.GetHashCode();
                 return hashCode;
             }
         }

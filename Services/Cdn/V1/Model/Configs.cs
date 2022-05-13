@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 回源请求头配置。
+        /// 回源请求头配置
         /// </summary>
         [JsonProperty("origin_request_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<OriginRequestHeader> OriginRequestHeader { get; set; }
 
         /// <summary>
-        /// http header配置。
+        /// http header配置
         /// </summary>
         [JsonProperty("http_response_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpResponseHeader> HttpResponseHeader { get; set; }

@@ -1,3 +1,58 @@
+# 3.0.86 2022-05-12
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+  - 支持以下接口：
+    - `DetectLiveByUrlIntl`
+    - `DetectLiveByFileIntl`
+    - `DetectLiveByBase64Intl`
+    - `DetectFaceByFileIntl`
+    - `DetectFaceByUrlIntl`
+    - `DetectFaceByBase64Intl`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IAM
+
+- _新增特性_
+  - 支持接口`ShowDomainRoleAssignments`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RunImageModeration`:
+    - 新增请求参数 `show_ocr_text`
+    - 新增响应参数 `ocr_text`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeHealthCode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 支持分布式消息服务RocketMQ版
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.85 2022-05-05
 
 ### HuaweiCloud SDK Moderation

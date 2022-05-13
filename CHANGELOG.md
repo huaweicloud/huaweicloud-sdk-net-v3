@@ -1,3 +1,58 @@
+# 3.0.86 2022-05-12
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - Support the following interfaces：
+    - `DetectLiveByUrlIntl`
+    - `DetectLiveByFileIntl`
+    - `DetectLiveByBase64Intl`
+    - `DetectFaceByFileIntl`
+    - `DetectFaceByUrlIntl`
+    - `DetectFaceByBase64Intl`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+  - Support the interface `ShowDomainRoleAssignments`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RunImageModeration`:
+    - Add the request parameter `show_ocr_text`
+    - Add the response parameter `ocr_text`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeHealthCode`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - Support the service `RocketMQ`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.85 2022-05-05
 
 ### HuaweiCloud SDK Moderation
