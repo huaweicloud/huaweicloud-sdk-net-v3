@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
     public class UploadMetaDataByUrl 
     {
         /// <summary>
-        /// 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
+        /// 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、M3U8 - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
         /// </summary>
-        /// <value>上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。</value>
+        /// <value>上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、M3U8 - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。</value>
         [JsonConverter(typeof(EnumClassConverter<VideoTypeEnum>))]
         public class VideoTypeEnum
         {
@@ -161,6 +161,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             /// </summary>
             public static readonly VideoTypeEnum MP2 = new VideoTypeEnum("MP2");
 
+            /// <summary>
+            /// Enum M3U8 for value: M3U8
+            /// </summary>
+            public static readonly VideoTypeEnum M3U8 = new VideoTypeEnum("M3U8");
+
             private static readonly Dictionary<string, VideoTypeEnum> StaticFields =
             new Dictionary<string, VideoTypeEnum>()
             {
@@ -192,6 +197,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "M4R", M4R },
                 { "WV", WV },
                 { "MP2", MP2 },
+                { "M3U8", M3U8 },
             };
 
             private string Value;
@@ -282,7 +288,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
 
         /// <summary>
-        /// 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
+        /// 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、M3U8 - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
         /// </summary>
         [JsonProperty("video_type", NullValueHandling = NullValueHandling.Ignore)]
         public VideoTypeEnum VideoType { get; set; }

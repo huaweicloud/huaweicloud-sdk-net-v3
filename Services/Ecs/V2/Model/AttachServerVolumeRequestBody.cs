@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("volumeAttachment", NullValueHandling = NullValueHandling.Ignore)]
         public AttachServerVolumeOption VolumeAttachment { get; set; }
 
+        /// <summary>
+        /// 是否只预检此次请求。  true：发送检查请求，不会挂载磁盘。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应结果。 false：发送正常请求，通过检查后并且进行挂载磁盘请求。 默认值：false
+        /// </summary>
+        [JsonProperty("dry_run", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DryRun { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class AttachServerVolumeRequestBody {\n");
             sb.Append("  volumeAttachment: ").Append(VolumeAttachment).Append("\n");
+            sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +62,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.VolumeAttachment == input.VolumeAttachment ||
                     (this.VolumeAttachment != null &&
                     this.VolumeAttachment.Equals(input.VolumeAttachment))
+                ) && 
+                (
+                    this.DryRun == input.DryRun ||
+                    (this.DryRun != null &&
+                    this.DryRun.Equals(input.DryRun))
                 );
         }
 
@@ -68,6 +80,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 int hashCode = 41;
                 if (this.VolumeAttachment != null)
                     hashCode = hashCode * 59 + this.VolumeAttachment.GetHashCode();
+                if (this.DryRun != null)
+                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

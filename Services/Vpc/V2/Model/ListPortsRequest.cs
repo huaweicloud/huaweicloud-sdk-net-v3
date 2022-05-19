@@ -27,9 +27,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             public static readonly DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
 
             /// <summary>
-            /// Enum NETWORK_VIP_PORT for value: network:VIP_PORT
+            /// Enum NEUTRON_VIP_PORT for value: neutron:VIP_PORT
             /// </summary>
-            public static readonly DeviceOwnerEnum NETWORK_VIP_PORT = new DeviceOwnerEnum("network:VIP_PORT");
+            public static readonly DeviceOwnerEnum NEUTRON_VIP_PORT = new DeviceOwnerEnum("neutron:VIP_PORT");
 
             /// <summary>
             /// Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: network:router_interface_distributed
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             new Dictionary<string, DeviceOwnerEnum>()
             {
                 { "network:dhcp", NETWORK_DHCP },
-                { "network:VIP_PORT", NETWORK_VIP_PORT },
+                { "neutron:VIP_PORT", NEUTRON_VIP_PORT },
                 { "network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED },
                 { "network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT },
             };

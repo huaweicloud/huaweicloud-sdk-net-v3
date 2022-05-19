@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string VideoUrl { get; set; }
 
         /// <summary>
+        /// 原视频文件的OBS临时访问地址,仅媒资详情接口生效
+        /// </summary>
+        [JsonProperty("sign_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string SignUrl { get; set; }
+
+        /// <summary>
         /// 封面信息。
         /// </summary>
         [JsonProperty("cover_info_array", NullValueHandling = NullValueHandling.Ignore)]
@@ -124,6 +130,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  metaData: ").Append(MetaData).Append("\n");
             sb.Append("  videoUrl: ").Append(VideoUrl).Append("\n");
+            sb.Append("  signUrl: ").Append(SignUrl).Append("\n");
             sb.Append("  coverInfoArray: ").Append(CoverInfoArray).Append("\n");
             sb.Append("  subtitleInfo: ").Append(SubtitleInfo).Append("\n");
             sb.Append("  sourcePath: ").Append(SourcePath).Append("\n");
@@ -205,6 +212,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.VideoUrl.Equals(input.VideoUrl))
                 ) && 
                 (
+                    this.SignUrl == input.SignUrl ||
+                    (this.SignUrl != null &&
+                    this.SignUrl.Equals(input.SignUrl))
+                ) && 
+                (
                     this.CoverInfoArray == input.CoverInfoArray ||
                     this.CoverInfoArray != null &&
                     input.CoverInfoArray != null &&
@@ -258,6 +270,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     hashCode = hashCode * 59 + this.MetaData.GetHashCode();
                 if (this.VideoUrl != null)
                     hashCode = hashCode * 59 + this.VideoUrl.GetHashCode();
+                if (this.SignUrl != null)
+                    hashCode = hashCode * 59 + this.SignUrl.GetHashCode();
                 if (this.CoverInfoArray != null)
                     hashCode = hashCode * 59 + this.CoverInfoArray.GetHashCode();
                 if (this.SubtitleInfo != null)

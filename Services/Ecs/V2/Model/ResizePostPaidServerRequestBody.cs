@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("resize", NullValueHandling = NullValueHandling.Ignore)]
         public ResizePostPaidServerOption Resize { get; set; }
 
+        /// <summary>
+        /// 是否只预检此次请求。  true：发送检查请求，不会变更云服务器规格。检查项包括是否填写了必需参数、请求格式等。  如果检查不通过，则返回对应错误。 如果检查通过，则返回202状态码。 false：发送正常请求，通过检查后并且执行变更云服务器规格请求。
+        /// </summary>
+        [JsonProperty("dry_run", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DryRun { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ResizePostPaidServerRequestBody {\n");
             sb.Append("  resize: ").Append(Resize).Append("\n");
+            sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +62,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Resize == input.Resize ||
                     (this.Resize != null &&
                     this.Resize.Equals(input.Resize))
+                ) && 
+                (
+                    this.DryRun == input.DryRun ||
+                    (this.DryRun != null &&
+                    this.DryRun.Equals(input.DryRun))
                 );
         }
 
@@ -68,6 +80,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 int hashCode = 41;
                 if (this.Resize != null)
                     hashCode = hashCode * 59 + this.Resize.GetHashCode();
+                if (this.DryRun != null)
+                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

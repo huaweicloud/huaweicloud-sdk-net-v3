@@ -42,8 +42,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// <summary>
         /// 吨(座)位。 
         /// </summary>
-        [JsonProperty("vehicle_weight", NullValueHandling = NullValueHandling.Ignore)]
-        public string VehicleWeight { get; set; }
+        [JsonProperty("maximum_capacity", NullValueHandling = NullValueHandling.Ignore)]
+        public string MaximumCapacity { get; set; }
 
         /// <summary>
         /// 车辆尺寸。 
@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  licenseNumber: ").Append(LicenseNumber).Append("\n");
             sb.Append("  vehicleNumber: ").Append(VehicleNumber).Append("\n");
             sb.Append("  vehicleType: ").Append(VehicleType).Append("\n");
-            sb.Append("  vehicleWeight: ").Append(VehicleWeight).Append("\n");
+            sb.Append("  maximumCapacity: ").Append(MaximumCapacity).Append("\n");
             sb.Append("  vehicleSize: ").Append(VehicleSize).Append("\n");
             sb.Append("  issuingAuthority: ").Append(IssuingAuthority).Append("\n");
             sb.Append("  issueDate: ").Append(IssueDate).Append("\n");
@@ -156,9 +156,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.VehicleType.Equals(input.VehicleType))
                 ) && 
                 (
-                    this.VehicleWeight == input.VehicleWeight ||
-                    (this.VehicleWeight != null &&
-                    this.VehicleWeight.Equals(input.VehicleWeight))
+                    this.MaximumCapacity == input.MaximumCapacity ||
+                    (this.MaximumCapacity != null &&
+                    this.MaximumCapacity.Equals(input.MaximumCapacity))
                 ) && 
                 (
                     this.VehicleSize == input.VehicleSize ||
@@ -218,8 +218,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.VehicleNumber.GetHashCode();
                 if (this.VehicleType != null)
                     hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
-                if (this.VehicleWeight != null)
-                    hashCode = hashCode * 59 + this.VehicleWeight.GetHashCode();
+                if (this.MaximumCapacity != null)
+                    hashCode = hashCode * 59 + this.MaximumCapacity.GetHashCode();
                 if (this.VehicleSize != null)
                     hashCode = hashCode * 59 + this.VehicleSize.GetHashCode();
                 if (this.IssuingAuthority != null)

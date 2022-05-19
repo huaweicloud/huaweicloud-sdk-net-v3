@@ -119,9 +119,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         }
 
         /// <summary>
-        /// 字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
+        /// 字幕语言类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
         /// </summary>
-        /// <value>字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。</value>
+        /// <value>字幕语言类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。</value>
         [JsonConverter(typeof(EnumClassConverter<LanguageEnum>))]
         public class LanguageEnum
         {
@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
+        /// 字幕语言类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public LanguageEnum Language { get; set; }

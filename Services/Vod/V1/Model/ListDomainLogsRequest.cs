@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 查询日期，yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
+        /// 查询开始时间，格式为yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
         /// </summary>
         [SDKProperty("query_date", IsQuery = true)]
         [JsonProperty("query_date", NullValueHandling = NullValueHandling.Ignore)]
