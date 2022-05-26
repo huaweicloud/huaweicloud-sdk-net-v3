@@ -24,8 +24,8 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
         /// <summary>
         /// 签名验证合法性，“true”表示验证签名合法，“false”表示验证签名非法。
         /// </summary>
-        [JsonProperty("signature_vaild", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? SignatureVaild { get; set; }
+        [JsonProperty("signature_valid", NullValueHandling = NullValueHandling.Ignore)]
+        public string SignatureValid { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ValidateSignatureResponse {\n");
             sb.Append("  keyId: ").Append(KeyId).Append("\n");
-            sb.Append("  signatureVaild: ").Append(SignatureVaild).Append("\n");
+            sb.Append("  signatureValid: ").Append(SignatureValid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -64,9 +64,9 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
                     this.KeyId.Equals(input.KeyId))
                 ) && 
                 (
-                    this.SignatureVaild == input.SignatureVaild ||
-                    (this.SignatureVaild != null &&
-                    this.SignatureVaild.Equals(input.SignatureVaild))
+                    this.SignatureValid == input.SignatureValid ||
+                    (this.SignatureValid != null &&
+                    this.SignatureValid.Equals(input.SignatureValid))
                 );
         }
 
@@ -80,8 +80,8 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
                 int hashCode = 41;
                 if (this.KeyId != null)
                     hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.SignatureVaild != null)
-                    hashCode = hashCode * 59 + this.SignatureVaild.GetHashCode();
+                if (this.SignatureValid != null)
+                    hashCode = hashCode * 59 + this.SignatureValid.GetHashCode();
                 return hashCode;
             }
         }

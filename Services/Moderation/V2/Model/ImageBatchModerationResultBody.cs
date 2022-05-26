@@ -39,6 +39,24 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         [JsonProperty("category_suggestions", NullValueHandling = NullValueHandling.Ignore)]
         public Object CategorySuggestions { get; set; }
 
+        /// <summary>
+        /// ocr识别结果。
+        /// </summary>
+        [JsonProperty("ocr_text", NullValueHandling = NullValueHandling.Ignore)]
+        public string OcrText { get; set; }
+
+        /// <summary>
+        /// 图像审核失败时错误码
+        /// </summary>
+        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorCode { get; set; }
+
+        /// <summary>
+        /// 图像审核失败时错误信息
+        /// </summary>
+        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorMsg { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +69,9 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
             sb.Append("  suggestion: ").Append(Suggestion).Append("\n");
             sb.Append("  detail: ").Append(Detail).Append("\n");
             sb.Append("  categorySuggestions: ").Append(CategorySuggestions).Append("\n");
+            sb.Append("  ocrText: ").Append(OcrText).Append("\n");
+            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
+            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +112,21 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     this.CategorySuggestions == input.CategorySuggestions ||
                     (this.CategorySuggestions != null &&
                     this.CategorySuggestions.Equals(input.CategorySuggestions))
+                ) && 
+                (
+                    this.OcrText == input.OcrText ||
+                    (this.OcrText != null &&
+                    this.OcrText.Equals(input.OcrText))
+                ) && 
+                (
+                    this.ErrorCode == input.ErrorCode ||
+                    (this.ErrorCode != null &&
+                    this.ErrorCode.Equals(input.ErrorCode))
+                ) && 
+                (
+                    this.ErrorMsg == input.ErrorMsg ||
+                    (this.ErrorMsg != null &&
+                    this.ErrorMsg.Equals(input.ErrorMsg))
                 );
         }
 
@@ -110,6 +146,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 if (this.CategorySuggestions != null)
                     hashCode = hashCode * 59 + this.CategorySuggestions.GetHashCode();
+                if (this.OcrText != null)
+                    hashCode = hashCode * 59 + this.OcrText.GetHashCode();
+                if (this.ErrorCode != null)
+                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null)
+                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

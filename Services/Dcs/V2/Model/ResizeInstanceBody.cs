@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("node_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> NodeList { get; set; }
 
+        /// <summary>
+        /// 是否立即变更。默认值为true。 - true: 立即变更 - false: 可维护时间窗内进行变更 
+        /// </summary>
+        [JsonProperty("execute_immediately", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ExecuteImmediately { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -181,6 +187,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  changeType: ").Append(ChangeType).Append("\n");
             sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
             sb.Append("  nodeList: ").Append(NodeList).Append("\n");
+            sb.Append("  executeImmediately: ").Append(ExecuteImmediately).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -239,6 +246,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.NodeList != null &&
                     input.NodeList != null &&
                     this.NodeList.SequenceEqual(input.NodeList)
+                ) && 
+                (
+                    this.ExecuteImmediately == input.ExecuteImmediately ||
+                    (this.ExecuteImmediately != null &&
+                    this.ExecuteImmediately.Equals(input.ExecuteImmediately))
                 );
         }
 
@@ -264,6 +276,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
                 if (this.NodeList != null)
                     hashCode = hashCode * 59 + this.NodeList.GetHashCode();
+                if (this.ExecuteImmediately != null)
+                    hashCode = hashCode * 59 + this.ExecuteImmediately.GetHashCode();
                 return hashCode;
             }
         }

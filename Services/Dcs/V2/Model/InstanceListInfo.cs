@@ -243,6 +243,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("az_codes", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AzCodes { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("features", NullValueHandling = NullValueHandling.Ignore)]
+        public Features Features { get; set; }
+
+        /// <summary>
+        /// 实例子状态。
+        /// </summary>
+        [JsonProperty("sub_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubStatus { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -289,6 +301,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  cpuType: ").Append(CpuType).Append("\n");
             sb.Append("  azCodes: ").Append(AzCodes).Append("\n");
+            sb.Append("  features: ").Append(Features).Append("\n");
+            sb.Append("  subStatus: ").Append(SubStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -501,6 +515,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.AzCodes != null &&
                     input.AzCodes != null &&
                     this.AzCodes.SequenceEqual(input.AzCodes)
+                ) && 
+                (
+                    this.Features == input.Features ||
+                    (this.Features != null &&
+                    this.Features.Equals(input.Features))
+                ) && 
+                (
+                    this.SubStatus == input.SubStatus ||
+                    (this.SubStatus != null &&
+                    this.SubStatus.Equals(input.SubStatus))
                 );
         }
 
@@ -588,6 +612,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.CpuType.GetHashCode();
                 if (this.AzCodes != null)
                     hashCode = hashCode * 59 + this.AzCodes.GetHashCode();
+                if (this.Features != null)
+                    hashCode = hashCode * 59 + this.Features.GetHashCode();
+                if (this.SubStatus != null)
+                    hashCode = hashCode * 59 + this.SubStatus.GetHashCode();
                 return hashCode;
             }
         }

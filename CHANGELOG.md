@@ -1,3 +1,49 @@
+# 3.0.88 2022-05-26
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `features`, `sub_status` to the interface `ListInstances`
+  - Add the response parameters `features`, `transparent_client_ip_enable`, `sub_status` to the interface `ShowInstance`
+  - Add the request parameter `execute_immediately` to the interface `ResizeInstance`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `volume_type`, `hw:passthrough` to the interface `AttachServerVolume`
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ValidateSignature`:
+    - Add the response parameter `signature_valid`
+    - Remove the response parameter `signature_vaild`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `ocr_text`, `error_code`, `error_msg` to the interface `RunCheckResult`
+  - Changes of the interface `RunImageBatchModeration`:
+    - Add the request parameters `moderation_rule`, `ad_categories`, `show_ocr_text`
+    - Add the response parameters `ocr_text`, `error_code`, `error_msg`
+  - Add the request parameters `moderation_rule`, `ad_categories`, `show_ocr_text` to the interface `RunTaskSumbit`
+
 # 3.0.87 2022-05-19
 
 ### HuaweiCloud SDK ECS
@@ -42,7 +88,7 @@
 ### HuaweiCloud SDK FRS
 
 - _Features_
-  - Support the following interfaces：
+  - Support the following interfaces:
     - `DetectLiveByUrlIntl`
     - `DetectLiveByFileIntl`
     - `DetectLiveByBase64Intl`
@@ -303,7 +349,7 @@
 ### HuaweiCloud SDK FunctionGraph
 
 - _Features_
-  - Support the following interfaces：
+  - Support the following interfaces:
     - `ListWorkflows`
     - `CreateWorkflow`
     - `BatchDeleteWorkflows`
@@ -383,7 +429,7 @@
 ### HuaweiCloud SDK ELB
 
 - _Features_
-  - Support the following interfaces：
+  - Support the following interfaces:
     - `ListLogtanks`
     - `CreateLogtank`
     - `ShowLogtank`
@@ -413,7 +459,7 @@
 ### HuaweiCloud SDK CES
 
 - _Features_
-  - Support the following interfaces (V2)：
+  - Support the following interfaces (V2):
     - `ListAlarms`
     - `CreateAlarm`
     - `DeleteAlarm`
@@ -875,7 +921,7 @@
 ### HuaweiCloud SDK OCR
 
 - _Features_
-  - Support the following interfaces：
+  - Support the following interfaces:
     - `RecognizeThailandIdcard`
     - `RecognizeMyanmarIdcard`
     - `RecognizeMyanmarDriverLicense`

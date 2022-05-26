@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             }
             catch (AggregateException aggregateException)
             {
-                throw new ConnectionException(aggregateException.Message);
+                throw new ConnectionException(ExceptionUtils.GetMessageFromAggregateException(aggregateException));
             }
         }
 
@@ -148,7 +148,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             }
             catch (AggregateException aggregateException)
             {
-                throw new ConnectionException(aggregateException.Message);
+                throw new ConnectionException(ExceptionUtils.GetMessageFromAggregateException(aggregateException));
             }
         }
     }

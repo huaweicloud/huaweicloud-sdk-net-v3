@@ -142,6 +142,24 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         /// </summary>
         [JsonProperty("categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<CategoriesEnum> Categories { get; set; }
+        /// <summary>
+        /// 图像审核规则名称，默认使用default规则。 审核规则的创建和使用请参见[配置审核规则](https://support.huaweicloud.com/api-moderation/moderation_03_0063.html)。 
+        /// </summary>
+        [JsonProperty("moderation_rule", NullValueHandling = NullValueHandling.Ignore)]
+        public string ModerationRule { get; set; }
+
+        /// <summary>
+        /// 图文审核检测场景。当categories包含ad时，该参数生效。  当前支持的场景有系统场景和用户自定义场景: - 系统场景为：   - qr_code：二维码   - politics：涉政   - porn：涉黄   - ad：广告   - abuse：辱骂   - contraband：违禁品 - 用户自定义场景为：自定义黑名单词库。  自定义词库的创建和使用请参见[配置自定义词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html)。 
+        /// </summary>
+        [JsonProperty("ad_categories", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AdCategories { get; set; }
+
+        /// <summary>
+        /// 是否返回ocr识别的结果。
+        /// </summary>
+        [JsonProperty("show_ocr_text", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ShowOcrText { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -152,6 +170,9 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
             sb.Append("class TaskSumbitReq {\n");
             sb.Append("  urls: ").Append(Urls).Append("\n");
             sb.Append("  categories: ").Append(Categories).Append("\n");
+            sb.Append("  moderationRule: ").Append(ModerationRule).Append("\n");
+            sb.Append("  adCategories: ").Append(AdCategories).Append("\n");
+            sb.Append("  showOcrText: ").Append(ShowOcrText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -184,6 +205,22 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     this.Categories != null &&
                     input.Categories != null &&
                     this.Categories.SequenceEqual(input.Categories)
+                ) && 
+                (
+                    this.ModerationRule == input.ModerationRule ||
+                    (this.ModerationRule != null &&
+                    this.ModerationRule.Equals(input.ModerationRule))
+                ) && 
+                (
+                    this.AdCategories == input.AdCategories ||
+                    this.AdCategories != null &&
+                    input.AdCategories != null &&
+                    this.AdCategories.SequenceEqual(input.AdCategories)
+                ) && 
+                (
+                    this.ShowOcrText == input.ShowOcrText ||
+                    (this.ShowOcrText != null &&
+                    this.ShowOcrText.Equals(input.ShowOcrText))
                 );
         }
 
@@ -199,6 +236,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     hashCode = hashCode * 59 + this.Urls.GetHashCode();
                 if (this.Categories != null)
                     hashCode = hashCode * 59 + this.Categories.GetHashCode();
+                if (this.ModerationRule != null)
+                    hashCode = hashCode * 59 + this.ModerationRule.GetHashCode();
+                if (this.AdCategories != null)
+                    hashCode = hashCode * 59 + this.AdCategories.GetHashCode();
+                if (this.ShowOcrText != null)
+                    hashCode = hashCode * 59 + this.ShowOcrText.GetHashCode();
                 return hashCode;
             }
         }

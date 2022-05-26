@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using static System.String;
@@ -32,6 +33,17 @@ namespace HuaweiCloud.SDK.Core
     public static class ExceptionUtils
     {
         private const string XRequestId = "X-Request-Id";
+
+        public static string GetMessageFromAggregateException(AggregateException aggregateException)
+        {
+            var messages = new StringBuilder();
+            messages.AppendLine(aggregateException.Message);
+            foreach (var innerException in aggregateException.InnerExceptions)
+            {
+                messages.AppendLine(innerException.Message);
+            }
+            return messages.ToString();
+        }
 
         public static ServiceResponseException GetException(HttpResponseMessage responseMessage)
         {

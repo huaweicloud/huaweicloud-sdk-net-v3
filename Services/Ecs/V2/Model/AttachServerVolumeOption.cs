@@ -27,6 +27,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("volumeId", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeId { get; set; }
 
+        /// <summary>
+        /// 云硬盘类型。  该字段于dry_run为true并且volumeId不存在时有效且为必选字段。
+        /// </summary>
+        [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string VolumeType { get; set; }
+
+        /// <summary>
+        /// - true: 表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令 - false: 表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，VBD只能支持简单的SCSI读写命令。 该字段于dry_run为true并且volumeId不存在时有效且为必选字段。
+        /// </summary>
+        [JsonProperty("hw:passthrough", NullValueHandling = NullValueHandling.Ignore)]
+        public string Hwpassthrough { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +49,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("class AttachServerVolumeOption {\n");
             sb.Append("  device: ").Append(Device).Append("\n");
             sb.Append("  volumeId: ").Append(VolumeId).Append("\n");
+            sb.Append("  volumeType: ").Append(VolumeType).Append("\n");
+            sb.Append("  hwpassthrough: ").Append(Hwpassthrough).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +81,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.VolumeId == input.VolumeId ||
                     (this.VolumeId != null &&
                     this.VolumeId.Equals(input.VolumeId))
+                ) && 
+                (
+                    this.VolumeType == input.VolumeType ||
+                    (this.VolumeType != null &&
+                    this.VolumeType.Equals(input.VolumeType))
+                ) && 
+                (
+                    this.Hwpassthrough == input.Hwpassthrough ||
+                    (this.Hwpassthrough != null &&
+                    this.Hwpassthrough.Equals(input.Hwpassthrough))
                 );
         }
 
@@ -82,6 +106,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Device.GetHashCode();
                 if (this.VolumeId != null)
                     hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                if (this.VolumeType != null)
+                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.Hwpassthrough != null)
+                    hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
                 return hashCode;
             }
         }

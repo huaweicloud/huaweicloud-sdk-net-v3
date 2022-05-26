@@ -264,8 +264,26 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("features", NullValueHandling = NullValueHandling.Ignore)]
+        public Features Features { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("domain_name_info", NullValueHandling = NullValueHandling.Ignore)]
         public DomainNameInfo DomainNameInfo { get; set; }
+
+        /// <summary>
+        /// 是否开启客户端ip透传。
+        /// </summary>
+        [JsonProperty("transparent_client_ip_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? TransparentClientIpEnable { get; set; }
+
+        /// <summary>
+        /// 实例子状态。
+        /// </summary>
+        [JsonProperty("sub_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubStatus { get; set; }
 
 
         /// <summary>
@@ -316,7 +334,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  serviceTaskId: ").Append(ServiceTaskId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  backendAddrs: ").Append(BackendAddrs).Append("\n");
+            sb.Append("  features: ").Append(Features).Append("\n");
             sb.Append("  domainNameInfo: ").Append(DomainNameInfo).Append("\n");
+            sb.Append("  transparentClientIpEnable: ").Append(TransparentClientIpEnable).Append("\n");
+            sb.Append("  subStatus: ").Append(SubStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -545,9 +566,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.BackendAddrs.Equals(input.BackendAddrs))
                 ) && 
                 (
+                    this.Features == input.Features ||
+                    (this.Features != null &&
+                    this.Features.Equals(input.Features))
+                ) && 
+                (
                     this.DomainNameInfo == input.DomainNameInfo ||
                     (this.DomainNameInfo != null &&
                     this.DomainNameInfo.Equals(input.DomainNameInfo))
+                ) && 
+                (
+                    this.TransparentClientIpEnable == input.TransparentClientIpEnable ||
+                    (this.TransparentClientIpEnable != null &&
+                    this.TransparentClientIpEnable.Equals(input.TransparentClientIpEnable))
+                ) && 
+                (
+                    this.SubStatus == input.SubStatus ||
+                    (this.SubStatus != null &&
+                    this.SubStatus.Equals(input.SubStatus))
                 );
         }
 
@@ -641,8 +677,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.BackendAddrs != null)
                     hashCode = hashCode * 59 + this.BackendAddrs.GetHashCode();
+                if (this.Features != null)
+                    hashCode = hashCode * 59 + this.Features.GetHashCode();
                 if (this.DomainNameInfo != null)
                     hashCode = hashCode * 59 + this.DomainNameInfo.GetHashCode();
+                if (this.TransparentClientIpEnable != null)
+                    hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
+                if (this.SubStatus != null)
+                    hashCode = hashCode * 59 + this.SubStatus.GetHashCode();
                 return hashCode;
             }
         }
