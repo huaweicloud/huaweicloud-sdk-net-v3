@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 {
     /// <summary>
-    /// 工作项类型
+    /// 工作项类型， 2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story
     /// </summary>
     public class IssueItemSfV4Tracker 
     {

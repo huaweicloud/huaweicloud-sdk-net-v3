@@ -243,6 +243,42 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询看板项目下工作项的状态历史记录
+        ///
+        /// 分页查询看板项目下工作项的状态历史记录
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListWorkitemStatusRecordsV4Response ListWorkitemStatusRecordsV4(ListWorkitemStatusRecordsV4Request listWorkitemStatusRecordsV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listWorkitemStatusRecordsV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/work-items/status-records",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkitemStatusRecordsV4Request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListWorkitemStatusRecordsV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 查询看板项目下的工作项
+        ///
+        /// 查询看板项目下的工作项
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListWorkitemsResponse ListWorkitems(ListWorkitemsRequest listWorkitemsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listWorkitemsRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/work-items",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkitemsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListWorkitemsResponse>(response);
+        }
+        
+        /// <summary>
         /// 主动退出项目
         ///
         /// 项目成员主动退出项目，项目创建者不能退出
@@ -383,6 +419,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSummaryV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowProjectSummaryV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 查询看板项目的工作项流转配置
+        ///
+        /// 查询看板项目的工作项流转配置
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowWorkItemWrokflowConfigResponse ShowWorkItemWrokflowConfig(ShowWorkItemWrokflowConfigRequest showWorkItemWrokflowConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , showWorkItemWrokflowConfigRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/work-items/workflow/config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkItemWrokflowConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowWorkItemWrokflowConfigResponse>(response);
         }
         
         /// <summary>
@@ -585,6 +639,63 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询当前工作项已经关联的工作项
+        ///
+        /// 查询当前工作项已经关联的工作项
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListAssociatedIssuesResponse ListAssociatedIssues(ListAssociatedIssuesRequest listAssociatedIssuesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listAssociatedIssuesRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , listAssociatedIssuesRequest.IssueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/associated-issues",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociatedIssuesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAssociatedIssuesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询关联Wiki
+        ///
+        /// 查询关联Wiki
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListAssociatedTestCasesResponse ListAssociatedTestCases(ListAssociatedTestCasesRequest listAssociatedTestCasesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listAssociatedTestCasesRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , listAssociatedTestCasesRequest.IssueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/associate-test-cases",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociatedTestCasesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAssociatedTestCasesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询当前工作项已经关联的关联Wiki
+        ///
+        /// 查询当前工作项已经关联的关联Wiki
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListAssociatedWikisResponse ListAssociatedWikis(ListAssociatedWikisRequest listAssociatedWikisRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listAssociatedWikisRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , listAssociatedWikisRequest.IssueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/associated-wikis",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociatedWikisRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAssociatedWikisResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取子工作项
         ///
         /// 获取子工作项
@@ -601,6 +712,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChildIssuesV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListChildIssuesV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+        ///
+        /// 查询当前工作项已经关联的代码提交记录 / 分支创建记录
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListIssueAssociatedCommitsResponse ListIssueAssociatedCommits(ListIssueAssociatedCommitsRequest listIssueAssociatedCommitsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listIssueAssociatedCommitsRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , listIssueAssociatedCommitsRequest.IssueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/associated-commits",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueAssociatedCommitsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListIssueAssociatedCommitsResponse>(response);
         }
         
         /// <summary>
@@ -623,6 +753,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询Scrum工作项自定义字段
+        ///
+        /// 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListIssueCustomFieldsResponse ListIssueCustomFields(ListIssueCustomFieldsRequest listIssueCustomFieldsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listIssueCustomFieldsRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/custom-fields",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueCustomFieldsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListIssueCustomFieldsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取工作项历史记录
         ///
         /// 获取工作项历史记录
@@ -639,6 +787,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueRecordsV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListIssueRecordsV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 查询项目的工作项
+        ///
+        /// 工作项类型id, 分页参数，创建时间查询项目的工作项
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListIssuesSfV4Response ListIssuesSfV4(ListIssuesSfV4Request listIssuesSfV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listIssuesSfV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssuesSfV4Request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListIssuesSfV4Response>(response);
         }
         
         /// <summary>
@@ -675,6 +841,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIterationHistoriesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListIterationHistoriesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询项目下所有工作项的历史记录
+        ///
+        /// 查询项目下所有工作项的历史记录
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListProjectIssuesRecordsV4Response ListProjectIssuesRecordsV4(ListProjectIssuesRecordsV4Request listProjectIssuesRecordsV4Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listProjectIssuesRecordsV4Request.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/records",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectIssuesRecordsV4Request);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListProjectIssuesRecordsV4Response>(response);
         }
         
         /// <summary>
@@ -747,6 +931,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssueV4Request);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowIssueV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 查询Scrum的工作项流转配置
+        ///
+        /// 查询Scrum的工作项流转配置
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowIssuesWrokFlowConfigResponse ShowIssuesWrokFlowConfig(ShowIssuesWrokFlowConfigRequest showIssuesWrokFlowConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , showIssuesWrokFlowConfigRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/workflow/config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssuesWrokFlowConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowIssuesWrokFlowConfigResponse>(response);
         }
         
         /// <summary>

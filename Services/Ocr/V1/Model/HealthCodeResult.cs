@@ -34,10 +34,22 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Color { get; set; }
 
         /// <summary>
-        /// 各个字段的置信度 
+        /// 各个字段的置信度。 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
         public Object Confidence { get; set; }
+
+        /// <summary>
+        /// 代表检测识别出来的文字块数目。 
+        /// </summary>
+        [JsonProperty("words_block_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? WordsBlockCount { get; set; }
+
+        /// <summary>
+        /// 识别文字块列表，输出顺序从左到右，从上到下。 
+        /// </summary>
+        [JsonProperty("words_block_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<HealthCodeWordsBlockList> WordsBlockList { get; set; }
 
 
         /// <summary>
@@ -51,6 +63,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  color: ").Append(Color).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
+            sb.Append("  wordsBlockCount: ").Append(WordsBlockCount).Append("\n");
+            sb.Append("  wordsBlockList: ").Append(WordsBlockList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +105,17 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Confidence == input.Confidence ||
                     (this.Confidence != null &&
                     this.Confidence.Equals(input.Confidence))
+                ) && 
+                (
+                    this.WordsBlockCount == input.WordsBlockCount ||
+                    (this.WordsBlockCount != null &&
+                    this.WordsBlockCount.Equals(input.WordsBlockCount))
+                ) && 
+                (
+                    this.WordsBlockList == input.WordsBlockList ||
+                    this.WordsBlockList != null &&
+                    input.WordsBlockList != null &&
+                    this.WordsBlockList.SequenceEqual(input.WordsBlockList)
                 );
         }
 
@@ -110,6 +135,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Color.GetHashCode();
                 if (this.Confidence != null)
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.WordsBlockCount != null)
+                    hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
+                if (this.WordsBlockList != null)
+                    hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
                 return hashCode;
             }
         }

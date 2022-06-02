@@ -40,10 +40,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string TestResult { get; set; }
 
         /// <summary>
-        /// 各个字段的置信度 
+        /// 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
-        public float? Confidence { get; set; }
+        public PcrTestRecordConfidence Confidence { get; set; }
 
         /// <summary>
         /// 代表检测识别出来的文字块数目。 

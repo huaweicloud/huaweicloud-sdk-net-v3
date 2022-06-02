@@ -106,16 +106,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? SeverityId { get; set; }
 
         /// <summary>
-        /// 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
+        /// 状态   id, 新建   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
         /// </summary>
         [JsonProperty("status_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? StatusId { get; set; }
 
         /// <summary>
-        /// 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+        /// 工作项类型,2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story
         /// </summary>
         [JsonProperty("tracker_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? TrackerId { get; set; }
+
+        /// <summary>
+        /// 用户自定义字段
+        /// </summary>
+        [JsonProperty("new_custom_fields", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NewCustomField> NewCustomFields { get; set; }
 
 
         /// <summary>
@@ -142,6 +148,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  severityId: ").Append(SeverityId).Append("\n");
             sb.Append("  statusId: ").Append(StatusId).Append("\n");
             sb.Append("  trackerId: ").Append(TrackerId).Append("\n");
+            sb.Append("  newCustomFields: ").Append(NewCustomFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -247,6 +254,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.TrackerId == input.TrackerId ||
                     (this.TrackerId != null &&
                     this.TrackerId.Equals(input.TrackerId))
+                ) && 
+                (
+                    this.NewCustomFields == input.NewCustomFields ||
+                    this.NewCustomFields != null &&
+                    input.NewCustomFields != null &&
+                    this.NewCustomFields.SequenceEqual(input.NewCustomFields)
                 );
         }
 
@@ -292,6 +305,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.StatusId.GetHashCode();
                 if (this.TrackerId != null)
                     hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
+                if (this.NewCustomFields != null)
+                    hashCode = hashCode * 59 + this.NewCustomFields.GetHashCode();
                 return hashCode;
             }
         }

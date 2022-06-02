@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// 详情数据对象。
         /// </summary>
         [JsonProperty("top_url_summary", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dictionary<string, Object>> TopUrlSummary { get; set; }
+        public List<TopUrlSummary> TopUrlSummary { get; set; }
 
 
         /// <summary>

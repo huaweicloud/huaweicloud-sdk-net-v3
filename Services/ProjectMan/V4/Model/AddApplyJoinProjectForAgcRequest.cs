@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// devcloud的项目id
+        /// devcloud项目的32位id
         /// </summary>
         [SDKProperty("project_id", IsPath = true)]
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]

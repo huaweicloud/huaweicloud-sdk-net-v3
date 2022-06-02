@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<int?> SeverityIds { get; set; }
 
         /// <summary>
-        /// 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
+        /// 状态   id, 新建   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已拒绝 6,
         /// </summary>
         [JsonProperty("status_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> StatusIds { get; set; }
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<int?> StoryPointIds { get; set; }
 
         /// <summary>
-        /// 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+        /// 工作项类型,2任务/Task,3缺陷/Bug,5Epic,6Feature,7Story
         /// </summary>
         [JsonProperty("tracker_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> TrackerIds { get; set; }
@@ -116,6 +116,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         [JsonProperty("updated_time_interval", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedTimeInterval { get; set; }
+
+        /// <summary>
+        /// 自定义字段
+        /// </summary>
+        [JsonProperty("custom_fields", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListIssueRequestV4CustomFields> CustomFields { get; set; }
 
 
         /// <summary>
@@ -142,6 +148,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  trackerIds: ").Append(TrackerIds).Append("\n");
             sb.Append("  includeDeleted: ").Append(IncludeDeleted).Append("\n");
             sb.Append("  updatedTimeInterval: ").Append(UpdatedTimeInterval).Append("\n");
+            sb.Append("  customFields: ").Append(CustomFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,6 +266,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.UpdatedTimeInterval == input.UpdatedTimeInterval ||
                     (this.UpdatedTimeInterval != null &&
                     this.UpdatedTimeInterval.Equals(input.UpdatedTimeInterval))
+                ) && 
+                (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
                 );
         }
 
@@ -304,6 +317,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.IncludeDeleted.GetHashCode();
                 if (this.UpdatedTimeInterval != null)
                     hashCode = hashCode * 59 + this.UpdatedTimeInterval.GetHashCode();
+                if (this.CustomFields != null)
+                    hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
                 return hashCode;
             }
         }

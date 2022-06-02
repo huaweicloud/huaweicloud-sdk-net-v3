@@ -126,6 +126,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
 
         /// <summary>
+        /// 缓存实例ID，根据该字段可查询出实例可变更的规格
+        /// </summary>
+        [SDKProperty("instance_id", IsQuery = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
         /// 产品规格编码。
         /// </summary>
         [SDKProperty("spec_code", IsQuery = true)]
@@ -174,6 +181,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListFlavorsRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  cacheMode: ").Append(CacheMode).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
@@ -201,6 +209,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 return false;
 
             return 
+                (
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
+                ) && 
                 (
                     this.SpecCode == input.SpecCode ||
                     (this.SpecCode != null &&
@@ -241,6 +254,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.SpecCode != null)
                     hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 if (this.CacheMode != null)

@@ -197,10 +197,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// SNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
+        /// SNAT规则的创建时间，格式是yyyy-mm-dd hh:mm:ss.SSSSSS。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// 规则使用的网络id。与cidr参数二选一。

@@ -52,10 +52,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public IssueUser Creator { get; set; }
 
         /// <summary>
-        /// 自定义属性值
+        /// 自定义属性值,不建议使用，建议参考new_custom_fields字段
         /// </summary>
         [JsonProperty("custom_fields", NullValueHandling = NullValueHandling.Ignore)]
         public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
+        /// 自定义属性值
+        /// </summary>
+        [JsonProperty("new_custom_fields", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NewCustomField> NewCustomFields { get; set; }
 
         /// <summary>
         /// 
@@ -145,7 +151,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("tracker", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueItemSfV4Tracker Tracker { get; set; }
+        public CreateIssueResponseV4Tracker Tracker { get; set; }
 
         /// <summary>
         /// 更新时间 年-月-日 时:分:秒
@@ -192,6 +198,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  creator: ").Append(Creator).Append("\n");
             sb.Append("  customFields: ").Append(CustomFields).Append("\n");
+            sb.Append("  newCustomFields: ").Append(NewCustomFields).Append("\n");
             sb.Append("  developer: ").Append(Developer).Append("\n");
             sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  doneRatio: ").Append(DoneRatio).Append("\n");
@@ -269,6 +276,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.CustomFields != null &&
                     input.CustomFields != null &&
                     this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
+                    this.NewCustomFields == input.NewCustomFields ||
+                    this.NewCustomFields != null &&
+                    input.NewCustomFields != null &&
+                    this.NewCustomFields.SequenceEqual(input.NewCustomFields)
                 ) && 
                 (
                     this.Developer == input.Developer ||
@@ -395,6 +408,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Creator.GetHashCode();
                 if (this.CustomFields != null)
                     hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
+                if (this.NewCustomFields != null)
+                    hashCode = hashCode * 59 + this.NewCustomFields.GetHashCode();
                 if (this.Developer != null)
                     hashCode = hashCode * 59 + this.Developer.GetHashCode();
                 if (this.Domain != null)

@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
+        /// <summary>
+        /// 自定义属性名
+        /// </summary>
+        [JsonProperty("new_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string NewName { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("class CustomField {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  newName: ").Append(NewName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.NewName == input.NewName ||
+                    (this.NewName != null &&
+                    this.NewName.Equals(input.NewName))
                 );
         }
 
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.NewName != null)
+                    hashCode = hashCode * 59 + this.NewName.GetHashCode();
                 return hashCode;
             }
         }
