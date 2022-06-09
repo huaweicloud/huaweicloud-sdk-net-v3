@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("error_message", NullValueHandling = NullValueHandling.Ignore)]
         public Object ErrorMessage { get; set; }
 
+        /// <summary>
+        /// 流程节点请求ID
+        /// </summary>
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -192,6 +198,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -242,6 +249,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.ErrorMessage == input.ErrorMessage ||
                     (this.ErrorMessage != null &&
                     this.ErrorMessage.Equals(input.ErrorMessage))
+                ) && 
+                (
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
                 );
         }
 
@@ -265,6 +277,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.ErrorMessage != null)
                     hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                if (this.RequestId != null)
+                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

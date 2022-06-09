@@ -14,6 +14,122 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     /// </summary>
     public class ListFunctionStatisticsRequest 
     {
+        /// <summary>
+        /// 获取最近多少分钟内函数执行的指标。
+        /// </summary>
+        /// <value>获取最近多少分钟内函数执行的指标。</value>
+        [JsonConverter(typeof(EnumClassConverter<PeriodEnum>))]
+        public class PeriodEnum
+        {
+            /// <summary>
+            /// Enum _5 for value: 5
+            /// </summary>
+            public static readonly PeriodEnum _5 = new PeriodEnum("5");
+
+            /// <summary>
+            /// Enum _15 for value: 15
+            /// </summary>
+            public static readonly PeriodEnum _15 = new PeriodEnum("15");
+
+            /// <summary>
+            /// Enum _60 for value: 60
+            /// </summary>
+            public static readonly PeriodEnum _60 = new PeriodEnum("60");
+
+            private static readonly Dictionary<string, PeriodEnum> StaticFields =
+            new Dictionary<string, PeriodEnum>()
+            {
+                { "5", _5 },
+                { "15", _15 },
+                { "60", _60 },
+            };
+
+            private string Value;
+
+            public PeriodEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static PeriodEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PeriodEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PeriodEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(PeriodEnum a, PeriodEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PeriodEnum a, PeriodEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 函数的URN（Uniform Resource Name），唯一标识函数。
@@ -27,8 +143,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [SDKProperty("period", IsPath = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
-        public string Period { get; set; }
-
+        public PeriodEnum Period { get; set; }
 
         /// <summary>
         /// Get the string

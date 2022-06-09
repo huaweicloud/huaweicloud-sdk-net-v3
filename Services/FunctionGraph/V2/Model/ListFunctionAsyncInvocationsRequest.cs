@@ -165,6 +165,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Limit { get; set; }
 
         /// <summary>
+        /// 本次查询起始位置，默认值0
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
         /// 本次查询指定的异步调用状态，支持5种状态，如果不指定，则查询所有状态的调用记录 WAIT: 等待 RUNNING: 执行中 SUCCESS: 执行成功 FAIL: 执行失败 DISCARD: 请求丢弃
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
@@ -195,6 +202,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  queryBeginTime: ").Append(QueryBeginTime).Append("\n");
             sb.Append("  queryEndTime: ").Append(QueryEndTime).Append("\n");
@@ -235,6 +243,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Limit.Equals(input.Limit))
                 ) && 
                 (
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -265,6 +278,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.QueryBeginTime != null)

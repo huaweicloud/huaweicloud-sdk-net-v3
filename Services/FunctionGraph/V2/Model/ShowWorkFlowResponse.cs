@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string CreatedBy { get; set; }
 
         /// <summary>
+        /// 快速函数流日志组ID，仅快速模式函数流且日志级别不为NONE时
+        /// </summary>
+        [JsonProperty("lts_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LtsGroupId { get; set; }
+
+        /// <summary>
+        /// 快速函数流日志流ID，仅快速模式函数流且日志级别不为NONE时返回。
+        /// </summary>
+        [JsonProperty("lts_stream_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LtsStreamId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("definition", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +76,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
             sb.Append("  createdBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  ltsGroupId: ").Append(LtsGroupId).Append("\n");
+            sb.Append("  ltsStreamId: ").Append(LtsStreamId).Append("\n");
             sb.Append("  definition: ").Append(Definition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -112,6 +126,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.CreatedBy.Equals(input.CreatedBy))
                 ) && 
                 (
+                    this.LtsGroupId == input.LtsGroupId ||
+                    (this.LtsGroupId != null &&
+                    this.LtsGroupId.Equals(input.LtsGroupId))
+                ) && 
+                (
+                    this.LtsStreamId == input.LtsStreamId ||
+                    (this.LtsStreamId != null &&
+                    this.LtsStreamId.Equals(input.LtsStreamId))
+                ) && 
+                (
                     this.Definition == input.Definition ||
                     (this.Definition != null &&
                     this.Definition.Equals(input.Definition))
@@ -136,6 +160,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
                 if (this.CreatedBy != null)
                     hashCode = hashCode * 59 + this.CreatedBy.GetHashCode();
+                if (this.LtsGroupId != null)
+                    hashCode = hashCode * 59 + this.LtsGroupId.GetHashCode();
+                if (this.LtsStreamId != null)
+                    hashCode = hashCode * 59 + this.LtsStreamId.GetHashCode();
                 if (this.Definition != null)
                     hashCode = hashCode * 59 + this.Definition.GetHashCode();
                 return hashCode;

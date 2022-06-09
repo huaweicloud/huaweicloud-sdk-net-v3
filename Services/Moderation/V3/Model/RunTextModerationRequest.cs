@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.Moderation.V3.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class UpdateEventRequestBody 
+    public class RunTextModerationRequest 
     {
 
         /// <summary>
-        /// 测试事件content,为json字符串
+        /// 
         /// </summary>
-        [JsonProperty("content", NullValueHandling = NullValueHandling.Ignore)]
-        public string Content { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public TextDetectionReq Body { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateEventRequestBody {\n");
-            sb.Append("  content: ").Append(Content).Append("\n");
+            sb.Append("class RunTextModerationRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +40,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateEventRequestBody);
+            return this.Equals(input as RunTextModerationRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateEventRequestBody input)
+        public bool Equals(RunTextModerationRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

@@ -22,6 +22,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string NodeId { get; set; }
 
         /// <summary>
+        /// 流程节点名称
+        /// </summary>
+        [JsonProperty("node_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeName { get; set; }
+
+        /// <summary>
+        /// 流程节点执行ID
+        /// </summary>
+        [JsonProperty("execution_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExecutionId { get; set; }
+
+        /// <summary>
         /// 节点执行记录
         /// </summary>
         [JsonProperty("executions", NullValueHandling = NullValueHandling.Ignore)]
@@ -36,6 +48,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class NodeExecutionDetail {\n");
             sb.Append("  nodeId: ").Append(NodeId).Append("\n");
+            sb.Append("  nodeName: ").Append(NodeName).Append("\n");
+            sb.Append("  executionId: ").Append(ExecutionId).Append("\n");
             sb.Append("  executions: ").Append(Executions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -64,6 +78,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.NodeId.Equals(input.NodeId))
                 ) && 
                 (
+                    this.NodeName == input.NodeName ||
+                    (this.NodeName != null &&
+                    this.NodeName.Equals(input.NodeName))
+                ) && 
+                (
+                    this.ExecutionId == input.ExecutionId ||
+                    (this.ExecutionId != null &&
+                    this.ExecutionId.Equals(input.ExecutionId))
+                ) && 
+                (
                     this.Executions == input.Executions ||
                     this.Executions != null &&
                     input.Executions != null &&
@@ -81,6 +105,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.NodeId != null)
                     hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.NodeName != null)
+                    hashCode = hashCode * 59 + this.NodeName.GetHashCode();
+                if (this.ExecutionId != null)
+                    hashCode = hashCode * 59 + this.ExecutionId.GetHashCode();
                 if (this.Executions != null)
                     hashCode = hashCode * 59 + this.Executions.GetHashCode();
                 return hashCode;

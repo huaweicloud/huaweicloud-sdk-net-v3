@@ -966,7 +966,7 @@ namespace Examples.FunctionGraph.V2
             ListFunctionStatisticsRequest req = new ListFunctionStatisticsRequest
             {
                 FuncUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:nction:CsharpSdkTest:csharpSdkTest",
-                Period = "15"
+                Period = ListFunctionStatisticsRequest.PeriodEnum._15
             };
             try
             {
@@ -999,7 +999,7 @@ namespace Examples.FunctionGraph.V2
         {
             ListStatisticsRequest req = new ListStatisticsRequest
             {
-                Period = "15",
+                Period = "5",
                 Filter = ListStatisticsRequest.FilterEnum.MONITOR_DATA
             };
             try

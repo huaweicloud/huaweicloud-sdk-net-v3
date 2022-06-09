@@ -124,6 +124,128 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             }
         }
 
+        /// <summary>
+        /// 月度统计的维度，filter参数取值为monthly_report时才生效。 - \&quot;0\&quot;:表示统计本月。 - \&quot;1\&quot;:表示统计上月。 - \&quot;2\&quot;:表示统计最近三个月。 - \&quot;3\&quot;:表示统计最近六个月。 - 当取值不在以上范围时，默认取\&quot;0”。
+        /// </summary>
+        /// <value>月度统计的维度，filter参数取值为monthly_report时才生效。 - \&quot;0\&quot;:表示统计本月。 - \&quot;1\&quot;:表示统计上月。 - \&quot;2\&quot;:表示统计最近三个月。 - \&quot;3\&quot;:表示统计最近六个月。 - 当取值不在以上范围时，默认取\&quot;0”。</value>
+        [JsonConverter(typeof(EnumClassConverter<OptionEnum>))]
+        public class OptionEnum
+        {
+            /// <summary>
+            /// Enum _0 for value: 0
+            /// </summary>
+            public static readonly OptionEnum _0 = new OptionEnum("0");
+
+            /// <summary>
+            /// Enum _1 for value: 1
+            /// </summary>
+            public static readonly OptionEnum _1 = new OptionEnum("1");
+
+            /// <summary>
+            /// Enum _2 for value: 2
+            /// </summary>
+            public static readonly OptionEnum _2 = new OptionEnum("2");
+
+            /// <summary>
+            /// Enum _3 for value: 3
+            /// </summary>
+            public static readonly OptionEnum _3 = new OptionEnum("3");
+
+            private static readonly Dictionary<string, OptionEnum> StaticFields =
+            new Dictionary<string, OptionEnum>()
+            {
+                { "0", _0 },
+                { "1", _1 },
+                { "2", _2 },
+                { "3", _3 },
+            };
+
+            private string Value;
+
+            public OptionEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static OptionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as OptionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(OptionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(OptionEnum a, OptionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(OptionEnum a, OptionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 参数过滤器。
@@ -138,6 +260,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
 
+        /// <summary>
+        /// 月度统计的维度，filter参数取值为monthly_report时才生效。 - \&quot;0\&quot;:表示统计本月。 - \&quot;1\&quot;:表示统计上月。 - \&quot;2\&quot;:表示统计最近三个月。 - \&quot;3\&quot;:表示统计最近六个月。 - 当取值不在以上范围时，默认取\&quot;0”。
+        /// </summary>
+        [SDKProperty("option", IsQuery = true)]
+        [JsonProperty("option", NullValueHandling = NullValueHandling.Ignore)]
+        public OptionEnum Option { get; set; }
 
         /// <summary>
         /// Get the string
@@ -148,6 +276,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("class ListStatisticsRequest {\n");
             sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("  period: ").Append(Period).Append("\n");
+            sb.Append("  option: ").Append(Option).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -178,6 +307,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Period == input.Period ||
                     (this.Period != null &&
                     this.Period.Equals(input.Period))
+                ) && 
+                (
+                    this.Option == input.Option ||
+                    (this.Option != null &&
+                    this.Option.Equals(input.Option))
                 );
         }
 
@@ -193,6 +327,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 if (this.Period != null)
                     hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.Option != null)
+                    hashCode = hashCode * 59 + this.Option.GetHashCode();
                 return hashCode;
             }
         }
