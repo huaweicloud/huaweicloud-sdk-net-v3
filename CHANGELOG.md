@@ -1,3 +1,29 @@
+# 3.0.92 2022-06-23
+
+### HuaweiCloud SDK ELB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListQuotaDetails`:
+    - Add the request parameter `quota_key`
+    - Remove the request parameter `type`
+  - Changes of the interface `ListListeners`:
+    - Add the request parameters `loadbalancer_id`, `connection_limit`, `admin_state_up`, `http2_enable`, `enterprise_project_id`
+    - Remove the request parameters `member_timeout`, `client_timeout`, `keepalive_timeout`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `subnet_id` to the interface `ListInstances`
+  - Add the request parameter `subnet_id` to the interface `ExpandInstanceNode`
+
 # 3.0.91 2022-06-19
 
 ### HuaweiCloud SDK OCR

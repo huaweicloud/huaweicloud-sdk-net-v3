@@ -16,11 +16,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 资源类型，取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。
+        /// 资源类型，取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。 支持多值查询，查询条件格式：quota_key&#x3D;xxx&amp;quota_key&#x3D;xxx。
         /// </summary>
-        [SDKProperty("type", IsQuery = true)]
-        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; set; }
+        [SDKProperty("quota_key", IsQuery = true)]
+        [JsonProperty("quota_key", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> QuotaKey { get; set; }
 
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListQuotaDetailsRequest {\n");
-            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  quotaKey: ").Append(QuotaKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -53,9 +53,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
             return 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.QuotaKey == input.QuotaKey ||
+                    this.QuotaKey != null &&
+                    input.QuotaKey != null &&
+                    this.QuotaKey.SequenceEqual(input.QuotaKey)
                 );
         }
 
@@ -67,8 +68,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.QuotaKey != null)
+                    hashCode = hashCode * 59 + this.QuotaKey.GetHashCode();
                 return hashCode;
             }
         }

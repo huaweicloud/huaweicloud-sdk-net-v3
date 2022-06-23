@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/data/fuxi_ci_workspace/62ae6816712970647c8cb839/Core/Core.csproj": {}
+    "/data/fuxi_ci_workspace/62b42b1f2ac6b50deacb4d6d/Core/Core.csproj": {}
   },
   "projects": {
-    "/data/fuxi_ci_workspace/62ae6816712970647c8cb839/Core/Core.csproj": {
+    "/data/fuxi_ci_workspace/62b42b1f2ac6b50deacb4d6d/Core/Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/data/fuxi_ci_workspace/62ae6816712970647c8cb839/Core/Core.csproj",
+        "projectUniqueName": "/data/fuxi_ci_workspace/62b42b1f2ac6b50deacb4d6d/Core/Core.csproj",
         "projectName": "HuaweiCloud.SDK.Core",
-        "projectPath": "/data/fuxi_ci_workspace/62ae6816712970647c8cb839/Core/Core.csproj",
+        "projectPath": "/data/fuxi_ci_workspace/62b42b1f2ac6b50deacb4d6d/Core/Core.csproj",
         "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/data/fuxi_ci_workspace/62ae6816712970647c8cb839/Core/obj/",
+        "outputPath": "/data/fuxi_ci_workspace/62b42b1f2ac6b50deacb4d6d/Core/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/dotnet/sdk/NuGetFallbackFolder"
@@ -23,7 +23,7 @@
           "netstandard2.0"
         ],
         "sources": {
-          "/data/fuxi_ci_workspace/62ae6816712970647c8cb839/package": {}
+          "/data/fuxi_ci_workspace/62b42b1f2ac6b50deacb4d6d/package": {}
         },
         "frameworks": {
           "netstandard2.0": {

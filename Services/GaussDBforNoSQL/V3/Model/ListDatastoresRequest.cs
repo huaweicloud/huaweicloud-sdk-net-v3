@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 数据库类型。 - GaussDB(for Cassandra)数据库实例，取值为“cassandra”。 - GaussDB(for Mongo)数据库实例，取值为“mongodb”。 - GaussDB(for Influx)数据库实例，取值为“influxdb”。
+        /// 数据库类型。   - GaussDB(for Cassandra)数据库实例，取值为“cassandra”。   - GaussDB(for Mongo)数据库实例，取值为“mongodb”。   - GaussDB(for Influx)数据库实例，取值为“influxdb”。   - GaussDB(for Redis)数据库实例，取值为“redis”。
         /// </summary>
         [SDKProperty("datastore_name", IsPath = true)]
         [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]

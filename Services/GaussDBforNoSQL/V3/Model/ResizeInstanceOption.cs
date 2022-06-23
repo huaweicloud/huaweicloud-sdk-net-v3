@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 变更至新规格的资源规格编码。获取方法请参见查询所有实例规格信息中响应参数“flavors.spec_code”的值。
+        /// 变更至新规格的资源规格编码。获取方法请参见查询数据库规格中响应参数“flavors.spec_code”的值。
         /// </summary>
         [JsonProperty("target_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetSpecCode { get; set; }

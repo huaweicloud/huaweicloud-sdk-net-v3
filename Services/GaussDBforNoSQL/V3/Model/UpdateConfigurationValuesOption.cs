@@ -10,19 +10,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
-    /// 
+    /// 参数值对象，用户基于默认参数模板自定义的参数值。为空时不修改参数值。
     /// </summary>
-    public class BatchTagActionTagOption 
+    public class UpdateConfigurationValuesOption 
     {
 
         /// <summary>
-        /// 标签键。最大长度36个unicode字符，不能为null或者空字符串，不能为空格，校验和使用之前会自动过滤掉前后空格。 字符集：0-9，A-Z，a-z，“_”，“-”，中文。
+        /// Parameter name 示例：\&quot;concurrent_reads\&quot;:\&quot;64\&quot;中，key值为“concurrent_reads”。 - key不为空时，value也不可为空。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值。最大长度43个unicode字符，可以为空字符串，不能为空格，校验和使用之前会自动过滤掉前后空格。 字符集：0-9，A-Z，a-z，“_”，“.”，“-”，中文。 - “action”值为“create”时，该参数必选。 - “action”值为“delete”时，该参数可选。 说明: 删除标签时，如果value有值，则按照key/value匹配删除；如果value没有值，则按照key删除。
+        /// Parameter value 示例：\&quot;concurrent_reads\&quot;:\&quot;64\&quot;，value值为“64”。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchTagActionTagOption {\n");
+            sb.Append("class UpdateConfigurationValuesOption {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchTagActionTagOption);
+            return this.Equals(input as UpdateConfigurationValuesOption);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchTagActionTagOption input)
+        public bool Equals(UpdateConfigurationValuesOption input)
         {
             if (input == null)
                 return false;

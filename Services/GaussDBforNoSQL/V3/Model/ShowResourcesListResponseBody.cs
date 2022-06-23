@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 资源列表对象。
+        /// 资源列表对象
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowResourcesDetailResponseBody> Resources { get; set; }

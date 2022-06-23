@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Role { get; set; }
 
         /// <summary>
+        /// 节点所在的子网的ID。
+        /// </summary>
+        [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetId { get; set; }
+
+        /// <summary>
         /// 节点内网IP。在弹性云服务器创建成功后参数值存在，否则，值为\&quot;\&quot;。
         /// </summary>
         [JsonProperty("private_ip", NullValueHandling = NullValueHandling.Ignore)]
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  role: ").Append(Role).Append("\n");
+            sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  privateIp: ").Append(PrivateIp).Append("\n");
             sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
@@ -128,6 +135,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.Role.Equals(input.Role))
                 ) && 
                 (
+                    this.SubnetId == input.SubnetId ||
+                    (this.SubnetId != null &&
+                    this.SubnetId.Equals(input.SubnetId))
+                ) && 
+                (
                     this.PrivateIp == input.PrivateIp ||
                     (this.PrivateIp != null &&
                     this.PrivateIp.Equals(input.PrivateIp))
@@ -170,6 +182,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Role != null)
                     hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.SubnetId != null)
+                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.PrivateIp != null)
                     hashCode = hashCode * 59 + this.PrivateIp.GetHashCode();
                 if (this.PublicIp != null)

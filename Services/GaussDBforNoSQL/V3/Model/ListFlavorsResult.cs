@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string SpecCode { get; set; }
 
         /// <summary>
-        /// 
+        /// 支持该规格的可用区ID。   - 该字段已废弃，请不要使用。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZone { get; set; }

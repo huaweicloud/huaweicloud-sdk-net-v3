@@ -22,13 +22,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持3.4、4.0版本，取值为\&quot;3.4\&quot;或\&quot;4.0\&quot;。 - GaussDB(for Influx)实例支持1.7版本，取值\&quot;1.7\&quot;。
+        /// 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持4.0版本，取值为\&quot;4.0\&quot;。 - GaussDB(for Influx)实例支持1.7版本，取值\&quot;1.7\&quot;。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 数据库部署模式，GaussDB(for Mongo)该参数必选。 - GaussDB(for Mongo) 集群实例取值为\&quot;Sharding\&quot;。 - GaussDB(for Mongo) 副本集实例取值为\&quot;ReplicaSet\&quot;。
+        /// 数据库部署模式，GaussDB(for Mongo)该参数必选。 - GaussDB(for Mongo) 副本集实例取值为\&quot;ReplicaSet\&quot;。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }

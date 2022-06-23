@@ -58,6 +58,27 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 监听器所在的负载均衡器ID。
+        /// </summary>
+        [SDKProperty("loadbalancer_id", IsQuery = true)]
+        [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LoadbalancerId { get; set; }
+
+        /// <summary>
+        /// 监听器的最大连接数。
+        /// </summary>
+        [SDKProperty("connection_limit", IsQuery = true)]
+        [JsonProperty("connection_limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ConnectionLimit { get; set; }
+
+        /// <summary>
+        /// 监听器的管理状态。该字段为预留字段，暂未启用。默认为true。
+        /// </summary>
+        [SDKProperty("admin_state_up", IsQuery = true)]
+        [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AdminStateUp { get; set; }
+
+        /// <summary>
         /// 监听器的默认后端云服务器组ID。
         /// </summary>
         [SDKProperty("default_pool_id", IsQuery = true)]
@@ -100,32 +121,25 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string TlsCiphersPolicy { get; set; }
 
         /// <summary>
-        /// 等待后端服务器请求超时时间，协议为HTTP， TERMINATED_HTTPS时才有意义。取值范围 1-300
-        /// </summary>
-        [SDKProperty("member_timeout", IsQuery = true)]
-        [JsonProperty("member_timeout", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MemberTimeout { get; set; }
-
-        /// <summary>
-        /// 等待客户端请求超时时间，协议为HTTP， TERMINATED_HTTPS的监听器才有意义。取值范围 1-60
-        /// </summary>
-        [SDKProperty("client_timeout", IsQuery = true)]
-        [JsonProperty("client_timeout", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ClientTimeout { get; set; }
-
-        /// <summary>
-        /// TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，HTTP/TERMINATED_HTTPS监听器为客户端连接空闲超时时间，取值范围为（1-300s）默认值为15s。 UDP此字段无意义
-        /// </summary>
-        [SDKProperty("keepalive_timeout", IsQuery = true)]
-        [JsonProperty("keepalive_timeout", NullValueHandling = NullValueHandling.Ignore)]
-        public int? KeepaliveTimeout { get; set; }
-
-        /// <summary>
         /// 查询证书所关联的监听器
         /// </summary>
         [SDKProperty("tls_container_id", IsQuery = true)]
         [JsonProperty("tls_container_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TlsContainerId { get; set; }
+
+        /// <summary>
+        /// HTTP2功能的开启状态。取值范围：true/false。true：开启。false：关闭。
+        /// </summary>
+        [SDKProperty("http2_enable", IsQuery = true)]
+        [JsonProperty("http2_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Http2Enable { get; set; }
+
+        /// <summary>
+        /// 企业项目ID，仅用于基于企业项目的细粒度鉴权使用。 - 如果参数传递default_pool_id，则以pool对应的企业项目ID鉴权。 - 如果default_pool_id和enterprise_project_id都没有传递 ，则进行细粒度鉴权 ，必须在用户
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
         /// <summary>
@@ -141,16 +155,18 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  loadbalancerId: ").Append(LoadbalancerId).Append("\n");
+            sb.Append("  connectionLimit: ").Append(ConnectionLimit).Append("\n");
+            sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  defaultPoolId: ").Append(DefaultPoolId).Append("\n");
             sb.Append("  defaultTlsContainerRef: ").Append(DefaultTlsContainerRef).Append("\n");
             sb.Append("  clientCaTlsContainerRef: ").Append(ClientCaTlsContainerRef).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
             sb.Append("  tlsCiphersPolicy: ").Append(TlsCiphersPolicy).Append("\n");
-            sb.Append("  memberTimeout: ").Append(MemberTimeout).Append("\n");
-            sb.Append("  clientTimeout: ").Append(ClientTimeout).Append("\n");
-            sb.Append("  keepaliveTimeout: ").Append(KeepaliveTimeout).Append("\n");
             sb.Append("  tlsContainerId: ").Append(TlsContainerId).Append("\n");
+            sb.Append("  http2Enable: ").Append(Http2Enable).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -203,6 +219,21 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.LoadbalancerId == input.LoadbalancerId ||
+                    (this.LoadbalancerId != null &&
+                    this.LoadbalancerId.Equals(input.LoadbalancerId))
+                ) && 
+                (
+                    this.ConnectionLimit == input.ConnectionLimit ||
+                    (this.ConnectionLimit != null &&
+                    this.ConnectionLimit.Equals(input.ConnectionLimit))
+                ) && 
+                (
+                    this.AdminStateUp == input.AdminStateUp ||
+                    (this.AdminStateUp != null &&
+                    this.AdminStateUp.Equals(input.AdminStateUp))
+                ) && 
+                (
                     this.DefaultPoolId == input.DefaultPoolId ||
                     (this.DefaultPoolId != null &&
                     this.DefaultPoolId.Equals(input.DefaultPoolId))
@@ -233,24 +264,19 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.TlsCiphersPolicy.Equals(input.TlsCiphersPolicy))
                 ) && 
                 (
-                    this.MemberTimeout == input.MemberTimeout ||
-                    (this.MemberTimeout != null &&
-                    this.MemberTimeout.Equals(input.MemberTimeout))
-                ) && 
-                (
-                    this.ClientTimeout == input.ClientTimeout ||
-                    (this.ClientTimeout != null &&
-                    this.ClientTimeout.Equals(input.ClientTimeout))
-                ) && 
-                (
-                    this.KeepaliveTimeout == input.KeepaliveTimeout ||
-                    (this.KeepaliveTimeout != null &&
-                    this.KeepaliveTimeout.Equals(input.KeepaliveTimeout))
-                ) && 
-                (
                     this.TlsContainerId == input.TlsContainerId ||
                     (this.TlsContainerId != null &&
                     this.TlsContainerId.Equals(input.TlsContainerId))
+                ) && 
+                (
+                    this.Http2Enable == input.Http2Enable ||
+                    (this.Http2Enable != null &&
+                    this.Http2Enable.Equals(input.Http2Enable))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -274,6 +300,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.LoadbalancerId != null)
+                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                if (this.ConnectionLimit != null)
+                    hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
+                if (this.AdminStateUp != null)
+                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 if (this.DefaultPoolId != null)
                     hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
                 if (this.DefaultTlsContainerRef != null)
@@ -286,14 +318,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
                 if (this.TlsCiphersPolicy != null)
                     hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
-                if (this.MemberTimeout != null)
-                    hashCode = hashCode * 59 + this.MemberTimeout.GetHashCode();
-                if (this.ClientTimeout != null)
-                    hashCode = hashCode * 59 + this.ClientTimeout.GetHashCode();
-                if (this.KeepaliveTimeout != null)
-                    hashCode = hashCode * 59 + this.KeepaliveTimeout.GetHashCode();
                 if (this.TlsContainerId != null)
                     hashCode = hashCode * 59 + this.TlsContainerId.GetHashCode();
+                if (this.Http2Enable != null)
+                    hashCode = hashCode * 59 + this.Http2Enable.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

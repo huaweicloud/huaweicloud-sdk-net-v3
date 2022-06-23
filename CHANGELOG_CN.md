@@ -1,3 +1,29 @@
+# 3.0.92 2022-06-23
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListQuotaDetails`:
+    - 新增请求参数 `quota_key`
+    - 移除请求参数 `type`
+  - 接口`ListListeners`:
+    - 新增请求参数 `loadbalancer_id`、`connection_limit`、`admin_state_up`、`http2_enable`、`enterprise_project_id`
+    - 移除请求参数 `member_timeout`、`client_timeout`、`keepalive_timeout`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListInstances`新增响应参数 `subnet_id`
+  - 接口`ExpandInstanceNode`新增请求参数 `subnet_id`
+
 # 3.0.91 2022-06-19
 
 ### HuaweiCloud SDK OCR

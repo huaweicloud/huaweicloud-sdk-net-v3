@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 当前配额值。
+        /// 当前配额值。 取值为0时，表示不限制当前配额值。
         /// </summary>
         [JsonProperty("quota", NullValueHandling = NullValueHandling.Ignore)]
         public int? Quota { get; set; }
