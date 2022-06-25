@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("volume", NullValueHandling = NullValueHandling.Ignore)]
         public AddShardingNodeVolumeOption Volume { get; set; }
 
+        /// <summary>
+        /// 扩容包年包月实例的节点数量时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
+        /// </summary>
+        [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAutoPay { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -160,6 +166,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  num: ").Append(Num).Append("\n");
             sb.Append("  volume: ").Append(Volume).Append("\n");
+            sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -200,6 +207,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Volume == input.Volume ||
                     (this.Volume != null &&
                     this.Volume.Equals(input.Volume))
+                ) && 
+                (
+                    this.IsAutoPay == input.IsAutoPay ||
+                    (this.IsAutoPay != null &&
+                    this.IsAutoPay.Equals(input.IsAutoPay))
                 );
         }
 
@@ -219,6 +231,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Num.GetHashCode();
                 if (this.Volume != null)
                     hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.IsAutoPay != null)
+                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

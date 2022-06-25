@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
+        /// <summary>
+        /// 订单ID，仅变更包年包月实例的规格时返回该参数。
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ResizeInstanceResponse {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +62,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
+                ) && 
+                (
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -68,6 +80,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 int hashCode = 41;
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

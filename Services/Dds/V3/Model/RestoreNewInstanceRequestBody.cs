@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string DiskEncryptionId { get; set; }
 
         /// <summary>
+        /// 参数组配置信息。
+        /// </summary>
+        [JsonProperty("configurations", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RestoreNewInstanceConfigurationsOption> Configurations { get; set; }
+
+        /// <summary>
         /// 实例规格详情。
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
@@ -99,6 +105,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("restore_point", NullValueHandling = NullValueHandling.Ignore)]
         public RestorePoint RestorePoint { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("charge_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ChargeInfoOption ChargeInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -114,6 +126,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
+            sb.Append("  configurations: ").Append(Configurations).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -121,6 +134,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  serverGroupPolicies: ").Append(ServerGroupPolicies).Append("\n");
             sb.Append("  restorePoint: ").Append(RestorePoint).Append("\n");
+            sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -178,6 +192,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.DiskEncryptionId.Equals(input.DiskEncryptionId))
                 ) && 
                 (
+                    this.Configurations == input.Configurations ||
+                    this.Configurations != null &&
+                    input.Configurations != null &&
+                    this.Configurations.SequenceEqual(input.Configurations)
+                ) && 
+                (
                     this.Flavor == input.Flavor ||
                     this.Flavor != null &&
                     input.Flavor != null &&
@@ -213,6 +233,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.RestorePoint == input.RestorePoint ||
                     (this.RestorePoint != null &&
                     this.RestorePoint.Equals(input.RestorePoint))
+                ) && 
+                (
+                    this.ChargeInfo == input.ChargeInfo ||
+                    (this.ChargeInfo != null &&
+                    this.ChargeInfo.Equals(input.ChargeInfo))
                 );
         }
 
@@ -238,6 +263,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
                 if (this.DiskEncryptionId != null)
                     hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
+                if (this.Configurations != null)
+                    hashCode = hashCode * 59 + this.Configurations.GetHashCode();
                 if (this.Flavor != null)
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.BackupStrategy != null)
@@ -252,6 +279,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.ServerGroupPolicies.GetHashCode();
                 if (this.RestorePoint != null)
                     hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
+                if (this.ChargeInfo != null)
+                    hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
                 return hashCode;
             }
         }

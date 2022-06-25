@@ -1,3 +1,32 @@
+# 3.0.93 2022-06-25
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowEntityConfiguration`
+    - `UpdateEntityConfiguration`
+    - `ShowConfigurationParameter`
+    - `UpdateConfigurationParameter`
+    - `DeleteConfiguration`
+    - `ListConfigurations`
+    - `CreateConfiguration`
+    - `SwitchConfiguration`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateInstance`新增请求参数 `configurations`、`charge_info`
+  - 接口`ResizeInstanceVolume`:
+    - 新增请求参数 `is_auto_pay`
+    - 新增响应参数 `order_id`
+  - 接口`AddShardingNode`:
+    - 新增请求参数 `is_auto_pay`
+    - 新增响应参数 `order_id`
+  - 接口`ResizeInstance`:
+    - 新增请求参数 `is_auto_pay`
+    - 新增响应参数 `order_id`
+  - 接口`RestoreNewInstance`新增请求参数 `configurations`、`charge_info`
+
 # 3.0.92 2022-06-23
 
 ### HuaweiCloud SDK ELB

@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Mode { get; set; }
 
         /// <summary>
+        /// 参数组配置信息。
+        /// </summary>
+        [JsonProperty("configurations", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RestoreNewInstanceConfigurationsOption> Configurations { get; set; }
+
+        /// <summary>
         /// 实例规格详情，与请求参数相同。
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
@@ -123,6 +129,18 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
+        /// <summary>
+        /// 创建实例的订单ID，仅创建包年包月实例时返回该参数。
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("charge_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ChargeInfoResult ChargeInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -143,12 +161,15 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
             sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  configurations: ").Append(Configurations).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -231,6 +252,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Mode.Equals(input.Mode))
                 ) && 
                 (
+                    this.Configurations == input.Configurations ||
+                    this.Configurations != null &&
+                    input.Configurations != null &&
+                    this.Configurations.SequenceEqual(input.Configurations)
+                ) && 
+                (
                     this.Flavor == input.Flavor ||
                     this.Flavor != null &&
                     input.Flavor != null &&
@@ -260,6 +287,16 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
+                ) && 
+                (
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
+                ) && 
+                (
+                    this.ChargeInfo == input.ChargeInfo ||
+                    (this.ChargeInfo != null &&
+                    this.ChargeInfo.Equals(input.ChargeInfo))
                 );
         }
 
@@ -295,6 +332,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
                 if (this.Mode != null)
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Configurations != null)
+                    hashCode = hashCode * 59 + this.Configurations.GetHashCode();
                 if (this.Flavor != null)
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.BackupStrategy != null)
@@ -307,6 +346,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.ChargeInfo != null)
+                    hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
                 return hashCode;
             }
         }

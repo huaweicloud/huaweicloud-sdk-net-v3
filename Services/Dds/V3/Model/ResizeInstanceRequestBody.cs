@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("resize", NullValueHandling = NullValueHandling.Ignore)]
         public ResizeInstanceOption Resize { get; set; }
 
+        /// <summary>
+        /// 变更包年包月实例规格时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - 对于降低规格场景，该字段无效。 - 对于扩大规格场景：   - true，表示自动从账户中支付。   - false，表示手动从账户中支付，默认为该方式。
+        /// </summary>
+        [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAutoPay { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ResizeInstanceRequestBody {\n");
             sb.Append("  resize: ").Append(Resize).Append("\n");
+            sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +62,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Resize == input.Resize ||
                     (this.Resize != null &&
                     this.Resize.Equals(input.Resize))
+                ) && 
+                (
+                    this.IsAutoPay == input.IsAutoPay ||
+                    (this.IsAutoPay != null &&
+                    this.IsAutoPay.Equals(input.IsAutoPay))
                 );
         }
 
@@ -68,6 +80,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 int hashCode = 41;
                 if (this.Resize != null)
                     hashCode = hashCode * 59 + this.Resize.GetHashCode();
+                if (this.IsAutoPay != null)
+                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

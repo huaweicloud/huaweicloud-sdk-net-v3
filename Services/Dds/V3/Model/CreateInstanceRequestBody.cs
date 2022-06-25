@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Mode { get; set; }
 
         /// <summary>
+        /// 参数组配置信息。
+        /// </summary>
+        [JsonProperty("configurations", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateInstanceConfigurationsOption> Configurations { get; set; }
+
+        /// <summary>
         /// 实例规格详情。
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
@@ -123,6 +129,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagWithKeyValue> Tags { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("charge_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ChargeInfoOption ChargeInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -142,6 +154,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  configurations: ").Append(Configurations).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -149,6 +162,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  dssPoolId: ").Append(DssPoolId).Append("\n");
             sb.Append("  serverGroupPolicies: ").Append(ServerGroupPolicies).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -226,6 +240,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Mode.Equals(input.Mode))
                 ) && 
                 (
+                    this.Configurations == input.Configurations ||
+                    this.Configurations != null &&
+                    input.Configurations != null &&
+                    this.Configurations.SequenceEqual(input.Configurations)
+                ) && 
+                (
                     this.Flavor == input.Flavor ||
                     this.Flavor != null &&
                     input.Flavor != null &&
@@ -262,6 +282,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.ChargeInfo == input.ChargeInfo ||
+                    (this.ChargeInfo != null &&
+                    this.ChargeInfo.Equals(input.ChargeInfo))
                 );
         }
 
@@ -295,6 +320,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
                 if (this.Mode != null)
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Configurations != null)
+                    hashCode = hashCode * 59 + this.Configurations.GetHashCode();
                 if (this.Flavor != null)
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.BackupStrategy != null)
@@ -309,6 +336,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.ServerGroupPolicies.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.ChargeInfo != null)
+                    hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
                 return hashCode;
             }
         }

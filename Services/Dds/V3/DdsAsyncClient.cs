@@ -123,6 +123,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 创建参数模板
+        ///
+        /// 创建参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateConfigurationResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建数据库角色
         ///
         /// 创建数据库角色。
@@ -208,6 +225,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualBackupRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateManualBackupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除参数模板
+        ///
+        /// 删除参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteConfigurationResponse> DeleteConfigurationAsync(DeleteConfigurationRequest deleteConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , deleteConfigurationRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteConfigurationResponse>(response);
         }
         
         /// <summary>
@@ -405,6 +440,23 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListBackupsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取参数模板列表
+        ///
+        /// 获取参数模板列表，包括DDS数据库的所有默认参数模板和用户创建的参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListConfigurationsResponse>(response);
         }
         
         /// <summary>
@@ -958,6 +1010,24 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 获取参数模板的详情
+        ///
+        /// 获取参数模板的详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowConfigurationParameterResponse> ShowConfigurationParameterAsync(ShowConfigurationParameterRequest showConfigurationParameterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , showConfigurationParameterRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationParameterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowConfigurationParameterResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询实例连接数统计信息
         ///
         /// 查询客户端IP访问至DDS数据库实例的连接数统计信息。
@@ -973,6 +1043,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectionStatisticsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowConnectionStatisticsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取指定实例的参数信息
+        ///
+        /// 获取指定实例的参数，可以是实例，组，节点的参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowEntityConfigurationResponse> ShowEntityConfigurationAsync(ShowEntityConfigurationRequest showEntityConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showEntityConfigurationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEntityConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowEntityConfigurationResponse>(response);
         }
         
         /// <summary>
@@ -1025,6 +1113,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShardingBalancerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowShardingBalancerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 应用参数模板
+        ///
+        /// 指定实例变更参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchConfigurationResponse> SwitchConfigurationAsync(SwitchConfigurationRequest switchConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , switchConfigurationRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<SwitchConfigurationResponse>(response);
         }
         
         /// <summary>
@@ -1098,6 +1204,42 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClientNetworkRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<UpdateClientNetworkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改参数模板
+        ///
+        /// 修改指定参数模板的参数信息，包括名称、描述、指定参数的值。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateConfigurationParameterResponse> UpdateConfigurationParameterAsync(UpdateConfigurationParameterRequest updateConfigurationParameterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , updateConfigurationParameterRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConfigurationParameterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateConfigurationParameterResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改指定实例的参数
+        ///
+        /// 修改指定实例的参数，可以是实例，组，节点的参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateEntityConfigurationResponse> UpdateEntityConfigurationAsync(UpdateEntityConfigurationRequest updateEntityConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateEntityConfigurationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEntityConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateEntityConfigurationResponse>(response);
         }
         
         /// <summary>
