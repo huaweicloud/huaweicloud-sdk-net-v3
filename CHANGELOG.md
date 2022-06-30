@@ -1,3 +1,60 @@
+# 3.0.94 2022-06-30
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `cache_url_parameter_filter` to the interface `ShowDomainFullConfig`
+  - Add the request parameter `cache_url_parameter_filter` to the interface `UpdateDomainFullConfig`
+
+### HuaweiCloud SDK DNS
+
+- _Features_
+  - Support the interfaces `CreateRecordSetWithBatchLines`, `BatchUpdateRecordSetWithLine`, `BatchDeleteRecordSetWithLine`
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `records` changed to not required of the interface `CreateRecordSetWithLine`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - Support the interface `UpdateFunctionMaxInstanceConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `lb_port` to the interface `ListInstances`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interfaces `RecognizeHkIdCard`, `RecognizeCambodianIdCard`, `RecognizeExitEntryPermit`, `RecognizeMainlandTravelPermit`
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `int32` -> `float` of the response parameter `direction` of the interface `RecognizeGeneralText`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - Support the interfaces `CreateProjectModule`, `ListProjectModules`, `UpdateProjectModule`, `DeleteProjectModule`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.93 2022-06-25
 
 ### HuaweiCloud SDK DDS

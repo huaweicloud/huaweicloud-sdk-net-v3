@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 自定义属性值
         /// </summary>
         [JsonProperty("new_custom_fields", NullValueHandling = NullValueHandling.Ignore)]
-        public List<NewCustomField> NewCustomFields { get; set; }
+        public List<IssueDetailCustomField> NewCustomFields { get; set; }
 
         /// <summary>
         /// 

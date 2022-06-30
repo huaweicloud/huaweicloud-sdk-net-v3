@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 359]。当detect_direction为false时，该字段值为 -1。 
+        /// 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 360)。当detect_direction为false时，该字段值为 -1。 
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Direction { get; set; }
+        public float? Direction { get; set; }
 
         /// <summary>
         /// 识别文字块数目。 

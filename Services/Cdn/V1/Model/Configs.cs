@@ -63,6 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("compress", NullValueHandling = NullValueHandling.Ignore)]
         public Compress Compress { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cache_url_parameter_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public CacheUrlParameterFilter CacheUrlParameterFilter { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -79,6 +85,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  originProtocol: ").Append(OriginProtocol).Append("\n");
             sb.Append("  forceRedirect: ").Append(ForceRedirect).Append("\n");
             sb.Append("  compress: ").Append(Compress).Append("\n");
+            sb.Append("  cacheUrlParameterFilter: ").Append(CacheUrlParameterFilter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -142,6 +149,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Compress == input.Compress ||
                     (this.Compress != null &&
                     this.Compress.Equals(input.Compress))
+                ) && 
+                (
+                    this.CacheUrlParameterFilter == input.CacheUrlParameterFilter ||
+                    (this.CacheUrlParameterFilter != null &&
+                    this.CacheUrlParameterFilter.Equals(input.CacheUrlParameterFilter))
                 );
         }
 
@@ -169,6 +181,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
                 if (this.Compress != null)
                     hashCode = hashCode * 59 + this.Compress.GetHashCode();
+                if (this.CacheUrlParameterFilter != null)
+                    hashCode = hashCode * 59 + this.CacheUrlParameterFilter.GetHashCode();
                 return hashCode;
             }
         }

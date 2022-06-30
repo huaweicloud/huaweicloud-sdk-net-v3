@@ -1,3 +1,60 @@
+# 3.0.94 2022-06-30
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowDomainFullConfig`新增响应参数 `cache_url_parameter_filter`
+  - 接口`UpdateDomainFullConfig`新增请求参数 `cache_url_parameter_filter`
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 支持接口`CreateRecordSetWithBatchLines`、`BatchUpdateRecordSetWithLine`、`BatchDeleteRecordSetWithLine`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateRecordSetWithLine`请求参数`records`改为非必填
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 支持接口`UpdateFunctionMaxInstanceConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListInstances`新增响应参数 `lb_port`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeHkIdCard`、`RecognizeCambodianIdCard`、`RecognizeExitEntryPermit`、`RecognizeMainlandTravelPermit`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeGeneralText`响应参数`direction`类型调整 `int32` -> `float`
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 支持接口`CreateProjectModule`、`ListProjectModules`、`UpdateProjectModule`、`DeleteProjectModule`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.93 2022-06-25
 
 ### HuaweiCloud SDK DDS

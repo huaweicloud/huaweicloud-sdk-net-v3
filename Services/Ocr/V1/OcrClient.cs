@@ -94,6 +94,23 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 柬文身份证识别
+        ///
+        /// 识别柬文身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public RecognizeCambodianIdCardResponse RecognizeCambodianIdCard(RecognizeCambodianIdCardRequest recognizeCambodianIdCardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/cambodian-idcard",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeCambodianIdCardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeCambodianIdCardResponse>(response);
+        }
+        
+        /// <summary>
         /// 智利身份证识别
         ///
         /// 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
@@ -129,6 +146,23 @@ namespace HuaweiCloud.SDK.Ocr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeDriverLicenseRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RecognizeDriverLicenseResponse>(response);
+        }
+        
+        /// <summary>
+        /// 往来港澳台通行证识别
+        ///
+        /// 识别往来港澳台证件图片中的文字内容，并将识别的结构化结果返回给用户。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public RecognizeExitEntryPermitResponse RecognizeExitEntryPermit(RecognizeExitEntryPermitRequest recognizeExitEntryPermitRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/exit-entry-permit",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeExitEntryPermitRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeExitEntryPermitResponse>(response);
         }
         
         /// <summary>
@@ -238,6 +272,23 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 香港身份证识别
+        ///
+        /// 识别香港身份证中的文字内容，并将识别的结果返回给用户。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public RecognizeHkIdCardResponse RecognizeHkIdCard(RecognizeHkIdCardRequest recognizeHkIdCardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/hk-id-card",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHkIdCardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeHkIdCardResponse>(response);
+        }
+        
+        /// <summary>
         /// 身份证识别
         ///
         /// 识别身份证图片中的文字内容，并将识别的结果返回给用户。
@@ -343,6 +394,23 @@ namespace HuaweiCloud.SDK.Ocr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeLicensePlateRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RecognizeLicensePlateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 港澳台居民来往内地通行证识别
+        ///
+        /// 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public RecognizeMainlandTravelPermitResponse RecognizeMainlandTravelPermit(RecognizeMainlandTravelPermitRequest recognizeMainlandTravelPermitRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mainland-travel-permit",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMainlandTravelPermitRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeMainlandTravelPermitResponse>(response);
         }
         
         /// <summary>

@@ -148,10 +148,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public List<string> Actions { get; set; }
 
         /// <summary>
-        /// 负载均衡ip，只有存在负载均衡ip才会返回该参数。
+        /// 负载均衡ip，只有存在负载均衡ip，才会返回该参数。
         /// </summary>
         [JsonProperty("lb_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string LbIpAddress { get; set; }
+
+        /// <summary>
+        /// 负载均衡端口，只有存在负载均衡ip，才会返回该参数。
+        /// </summary>
+        [JsonProperty("lb_port", NullValueHandling = NullValueHandling.Ignore)]
+        public string LbPort { get; set; }
 
 
         /// <summary>
@@ -184,6 +190,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
             sb.Append("  lbIpAddress: ").Append(LbIpAddress).Append("\n");
+            sb.Append("  lbPort: ").Append(LbPort).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -321,6 +328,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.LbIpAddress == input.LbIpAddress ||
                     (this.LbIpAddress != null &&
                     this.LbIpAddress.Equals(input.LbIpAddress))
+                ) && 
+                (
+                    this.LbPort == input.LbPort ||
+                    (this.LbPort != null &&
+                    this.LbPort.Equals(input.LbPort))
                 );
         }
 
@@ -378,6 +390,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Actions.GetHashCode();
                 if (this.LbIpAddress != null)
                     hashCode = hashCode * 59 + this.LbIpAddress.GetHashCode();
+                if (this.LbPort != null)
+                    hashCode = hashCode * 59 + this.LbPort.GetHashCode();
                 return hashCode;
             }
         }

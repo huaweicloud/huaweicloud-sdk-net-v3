@@ -583,6 +583,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 创建项目的模块
+        ///
+        /// 查询项目的模块列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateProjectModuleResponse CreateProjectModule(CreateProjectModuleRequest createProjectModuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , createProjectModuleRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/module",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProjectModuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateProjectModuleResponse>(response);
+        }
+        
+        /// <summary>
         /// 细粒度权限用户创建工作项
         ///
         /// 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
@@ -636,6 +654,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIterationV4Request);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteIterationV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 删除项目的模块
+        ///
+        /// 删除项目的模块
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DeleteProjectModuleResponse DeleteProjectModule(DeleteProjectModuleRequest deleteProjectModuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , deleteProjectModuleRequest.ProjectId.ToString());
+            urlParam.Add("module_id" , deleteProjectModuleRequest.ModuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/modules/{module_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProjectModuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteProjectModuleResponse>(response);
         }
         
         /// <summary>
@@ -880,6 +917,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询项目的模块列表
+        ///
+        /// 查询项目的模块列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListProjectModulesResponse ListProjectModules(ListProjectModulesRequest listProjectModulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listProjectModulesRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/modules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectModulesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListProjectModulesResponse>(response);
+        }
+        
+        /// <summary>
         /// 按用户查询工时（多项目）
         ///
         /// 按用户查询工时（多项目）
@@ -934,9 +989,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
-        /// 查询Scrum的工作项流转配置
+        /// 查询Scrum项目的工作项流转配置
         ///
-        /// 查询Scrum的工作项流转配置
+        /// 查询Scrum项目的工作项流转配置
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -1023,6 +1078,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIterationV4Request);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateIterationV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 更新项目的模块
+        ///
+        /// 更新项目的模块
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UpdateProjectModuleResponse UpdateProjectModule(UpdateProjectModuleRequest updateProjectModuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , updateProjectModuleRequest.ProjectId.ToString());
+            urlParam.Add("module_id" , updateProjectModuleRequest.ModuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/modules/{module_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectModuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateProjectModuleResponse>(response);
         }
         
         /// <summary>

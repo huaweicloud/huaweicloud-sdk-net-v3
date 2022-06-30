@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string NickName { get; set; }
 
         /// <summary>
+        /// 用户id
+        /// </summary>
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserId { get; set; }
+
+        /// <summary>
         /// 用户名
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -97,6 +103,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("class ShowProjectWorkHoursResponseBodyWorkHours {\n");
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
             sb.Append("  nickName: ").Append(NickName).Append("\n");
+            sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  workDate: ").Append(WorkDate).Append("\n");
             sb.Append("  workHoursNum: ").Append(WorkHoursNum).Append("\n");
@@ -137,6 +144,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.NickName == input.NickName ||
                     (this.NickName != null &&
                     this.NickName.Equals(input.NickName))
+                ) && 
+                (
+                    this.UserId == input.UserId ||
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
                 ) && 
                 (
                     this.UserName == input.UserName ||
@@ -202,6 +214,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
                 if (this.NickName != null)
                     hashCode = hashCode * 59 + this.NickName.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.WorkDate != null)

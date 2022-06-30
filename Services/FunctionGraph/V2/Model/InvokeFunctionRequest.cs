@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string XCffLogType { get; set; }
 
         /// <summary>
-        /// 返回体格式，取值v0,v1。
+        /// 返回体格式，取值v0,v1。 v0:默认返回文本格式 v1:默认返回json格式，sdk需要使用此值。
         /// </summary>
         [SDKProperty("X-CFF-Request-Version", IsHeader = true)]
         [JsonProperty("X-CFF-Request-Version", NullValueHandling = NullValueHandling.Ignore)]
