@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class CreateCertificateOption 
     {
         /// <summary>
-        /// SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server
+        /// SSL证书的类型。分为服务器证书(server)、CA证书(client)。 默认值：server
         /// </summary>
-        /// <value>SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server</value>
+        /// <value>SSL证书的类型。分为服务器证书(server)、CA证书(client)。 默认值：server</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的证书内容。 如果type为server_sm时，该字段填写SM签名证书内容。 取值范围：PEM编码格式。
+        /// HTTPS协议使用的证书内容。 取值范围：PEM编码格式。 最大长度65536字符。 支持证书链，最大11层(含证书和证书链)。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string Certificate { get; set; }
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的私钥。仅type为server或server_sm时有效。type为server或server_sm时必选。 如果type为server_sm时，该字段填写SM签名证书的私钥。 取值范围：PEM编码格式。
+        /// HTTPS协议使用的私钥。当type为server时有效且必选。 取值范围：PEM编码格式。 最大长度8192字符。
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }
@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// SSL证书的类型。分为服务器证书(server)、CA证书(client)和服务器SM双证书(server_sm)。 默认值：server
+        /// SSL证书的类型。分为服务器证书(server)、CA证书(client)。 默认值：server
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -177,18 +177,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
-
-        /// <summary>
-        /// HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  使用说明： - 仅type为server_sm时有效且必选。
-        /// </summary>
-        [JsonProperty("enc_certificate", NullValueHandling = NullValueHandling.Ignore)]
-        public string EncCertificate { get; set; }
-
-        /// <summary>
-        /// HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。  使用说明： - 仅type为server_sm时有效且必选。
-        /// </summary>
-        [JsonProperty("enc_private_key", NullValueHandling = NullValueHandling.Ignore)]
-        public string EncPrivateKey { get; set; }
 
 
         /// <summary>
@@ -207,8 +195,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  encCertificate: ").Append(EncCertificate).Append("\n");
-            sb.Append("  encPrivateKey: ").Append(EncPrivateKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -274,16 +260,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.EncCertificate == input.EncCertificate ||
-                    (this.EncCertificate != null &&
-                    this.EncCertificate.Equals(input.EncCertificate))
-                ) && 
-                (
-                    this.EncPrivateKey == input.EncPrivateKey ||
-                    (this.EncPrivateKey != null &&
-                    this.EncPrivateKey.Equals(input.EncPrivateKey))
                 );
         }
 
@@ -313,10 +289,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.EncCertificate != null)
-                    hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
-                if (this.EncPrivateKey != null)
-                    hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
                 return hashCode;
             }
         }

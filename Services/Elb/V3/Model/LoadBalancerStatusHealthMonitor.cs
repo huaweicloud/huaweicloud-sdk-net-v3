@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 协议类型。取值：TCP、UDP_CONNECT、HTTP、HTTPS。
+        /// 协议类型。取值：TCP、UDP_CONNECT或HTTP。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

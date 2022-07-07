@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
+        /// 是否反向查询，取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
@@ -86,21 +86,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Protocol { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的负载均衡算法。  取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。
+        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。
         /// </summary>
         [SDKProperty("lb_algorithm", IsQuery = true)]
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> LbAlgorithm { get; set; }
 
         /// <summary>
-        /// 企业项目ID。  支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// 企业项目ID。不传时查询default企业项目\&quot;0\&quot;下的资源，鉴权按照default企业项目鉴权；如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。   支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。   [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 后端云服务器组支持的IP版本。取值： [- 共享型LB下的pool：固定为v4； - 独享型LB下的pool：dualstack、v4。当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。当协议为HTTP/HTTPS时，ip_version为v4。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [- dualstack: 当该pool的协议为TCP/UDP/QUIC时，ip_version为dualstack，表示双栈。 - v4: 当该pool的协议为HTTP/HTTPS时，ip_version为v4。](tag:hcso_dt) 支持多值查询，查询条件格式：*ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。
+        /// 后端云服务器组支持的IP版本。  支持多值查询，查询条件格式：*ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
@@ -141,6 +141,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("member_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberInstanceId { get; set; }
 
+        /// <summary>
+        /// 后端云服务器组关联的虚拟私有云的ID。
+        /// </summary>
+        [SDKProperty("vpc_id", IsQuery = true)]
+        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> VpcId { get; set; }
+
+        /// <summary>
+        /// 后端服务器组的类型。   取值：  - instance：允许任意类型的后端，type指定为该类型时，vpc_id是必选字段。  - ip：只能添加跨VPC后端，type指定为该类型时，vpc_id不允许指定。  - 空字符串（\&quot;\&quot;）：允许任意类型的后端
+        /// </summary>
+        [SDKProperty("type", IsQuery = true)]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Type { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -167,6 +181,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  memberDeletionProtectionEnable: ").Append(MemberDeletionProtectionEnable).Append("\n");
             sb.Append("  listenerId: ").Append(ListenerId).Append("\n");
             sb.Append("  memberInstanceId: ").Append(MemberInstanceId).Append("\n");
+            sb.Append("  vpcId: ").Append(VpcId).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -290,6 +306,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MemberInstanceId != null &&
                     input.MemberInstanceId != null &&
                     this.MemberInstanceId.SequenceEqual(input.MemberInstanceId)
+                ) && 
+                (
+                    this.VpcId == input.VpcId ||
+                    this.VpcId != null &&
+                    input.VpcId != null &&
+                    this.VpcId.SequenceEqual(input.VpcId)
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type != null &&
+                    input.Type != null &&
+                    this.Type.SequenceEqual(input.Type)
                 );
         }
 
@@ -337,6 +365,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
                 if (this.MemberInstanceId != null)
                     hashCode = hashCode * 59 + this.MemberInstanceId.GetHashCode();
+                if (this.VpcId != null)
+                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

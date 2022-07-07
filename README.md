@@ -13,7 +13,7 @@ This document introduces how to obtain and use Huawei Cloud .Net SDK.
 
 ## Requirements
 
-- To use Huawei Cloud .Net SDK, you must have Huawei Cloud account as well as the Access Key and Secret key of the
+- To use Huawei Cloud .Net SDK, you must have Huawei Cloud account as well as the Access Key (AK) and Secret key (SK) of the
   Huawei Cloud account. You can create an Access Key in the Huawei Cloud console. For more information,
   see [My Credentials](https://support.huaweicloud.com/en-us/usermanual-ca/en-us_topic_0046606340.html).
 
@@ -55,8 +55,10 @@ Install-Package HuaweiCloud.SDK.Vpc
 using System;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Core.Auth;
+// Import the specified {Service}, take Vpc as an example
 using HuaweiCloud.SDK.Vpc.V2;
 using HuaweiCloud.SDK.Vpc.V2.Model;
+// Import the namespace for logging
 using Microsoft.Extensions.Logging;
 
 namespace ConsoleApp1
@@ -110,6 +112,10 @@ namespace ConsoleApp1
 }
 ```
 
+## Online Debugging
+
+[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
+
 ## Changelog
 
 Detailed changes for each released version are documented in
@@ -118,18 +124,18 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
 ## User Manual [:top:](#huawei-cloud-net-software-development-kit-net-sdk)
 
 * [1. Client Configuration](#1-client-configuration-top)
-    * [1.1  Default Configuration](#11-default-configuration-top)
-    * [1.2  Network Proxy](#12-network-proxy-top)
-    * [1.3  Connection](#13-connection-top)
-    * [1.4  SSL Certification](#14-ssl-certification-top)
+    * [1.1 Default Configuration](#11-default-configuration-top)
+    * [1.2 Network Proxy](#12-network-proxy-top)
+    * [1.3 Timeout Configuration](#13-timeout-configuration-top)
+    * [1.4 SSL Certification](#14-ssl-certification-top)
 * [2. Credentials Configuration](#2-credentials-configuration-top)
-    * [2.1  Use Permanent AK&SK](#21-use-permanent-aksk-top)
-    * [2.2  Use Temporary AK&SK](#22-use-temporary-aksk-top)
+    * [2.1 Use Permanent AK&SK](#21-use-permanent-aksk-top)
+    * [2.2 Use Temporary AK&SK](#22-use-temporary-aksk-top)
 * [3. Client Initialization](#3-client-initialization-top)
-    * [3.1  Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
-    * [3.2  Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
+    * [3.1 Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
+    * [3.2 Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
 * [4. Send Requests and Handle Responses](#4-send-requests-and-handle-responses-top)
-    * [4.1  Exceptions](#41-exceptions-top)
+    * [4.1 Exceptions](#41-exceptions-top)
 * [5. Use Asynchronous Client](#5-use-asynchronous-client-top)
 * [6. Troubleshooting](#6-troubleshooting-top)
     * [6.1 Access Log](#61-access-log-top)
@@ -167,16 +173,17 @@ config.ProxyUsername = "test";
 config.ProxyPassword = "test";
 ```
 
-#### 1.3 Connection [:top:](#user-manual-top)
+#### 1.3 Timeout Configuration [:top:](#user-manual-top)
 
 ``` csharp
+// The default timeout is 120 seconds, which can be adjusted as needed
 config.Timeout = 120;
 ```
 
 #### 1.4 SSL Certification [:top:](#user-manual-top)
 
 ``` csharp
-// Skip ssl certifaction checking while using https protocal if needed
+// Skip SSL certifaction checking while using https protocal if needed
 config.IgnoreSslVerification = true;
 ```
 
@@ -186,8 +193,9 @@ There are two types of Huawei Cloud services, `regional` services and `global` s
 
 Global services contain IAM, TMS, EPS.
 
-For `regional` services' authentication, projectId is required to initialize BasicCredentials. For `global` services'
-authentication, domainId is required to initialize GlobalCredentials.
+For `regional` services' authentication, projectId is required to initialize BasicCredentials. 
+
+For `global` services' authentication, domainId is required to initialize GlobalCredentials.
 
 **Parameter description**:
 
@@ -220,14 +228,14 @@ Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
 
 #### 2.2 Use Temporary AK&SK [:top:](#user-manual-top)
 
-It's required to obtain temporary access key, security key and security token first, which could be obtained through
-permanent access key and security key or through an agency.
+It's required to obtain temporary AK&SK and security token first, which could be obtained through
+permanent AK&SK or through an agency.
 
-Obtaining a temporary access key token through permanent access key and security key, you could refer to
+- Obtaining a temporary access key and security token through token, you could refer to
 document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0002.html . The API mentioned in the document above
 corresponds to the method of `CreateTemporaryAccessKeyByToken` in IAM SDK.
 
-Obtaining a temporary access key and security token through an agency, you could refer to
+- Obtaining a temporary access key and security token through an agency, you could refer to
 document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0101.html . The API mentioned in the document above
 corresponds to the method of `CreateTemporaryAccessKeyByAgency` in IAM SDK.
 

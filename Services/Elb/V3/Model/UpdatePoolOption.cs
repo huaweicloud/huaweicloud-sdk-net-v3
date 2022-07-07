@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 后端云服务器组的管理状态，只支持更新为true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 后端云服务器组的管理状态，只支持更新为true。 [ 不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的负载均衡算法。  取值： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
+        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
         /// </summary>
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public string LbAlgorithm { get; set; }
@@ -57,6 +57,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("member_deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? MemberDeletionProtectionEnable { get; set; }
 
+        /// <summary>
+        /// 后端云服务器组关联的虚拟私有云的ID。  只有vpc_id为空时允许更新。
+        /// </summary>
+        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VpcId { get; set; }
+
+        /// <summary>
+        /// 后端服务器组的类型。   取值：  - instance：允许任意类型的后端，type指定为该类型时，vpc_id是必选字段。  - ip：只能添加跨VPC后端，type指定为该类型时，vpc_id不允许指定。  - 空字符串（\&quot;\&quot;）：允许任意类型的后端   使用说明：  - 只有type为空时允许更新，不允许从非空更新为空。
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -72,6 +84,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  sessionPersistence: ").Append(SessionPersistence).Append("\n");
             sb.Append("  slowStart: ").Append(SlowStart).Append("\n");
             sb.Append("  memberDeletionProtectionEnable: ").Append(MemberDeletionProtectionEnable).Append("\n");
+            sb.Append("  vpcId: ").Append(VpcId).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,6 +141,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MemberDeletionProtectionEnable == input.MemberDeletionProtectionEnable ||
                     (this.MemberDeletionProtectionEnable != null &&
                     this.MemberDeletionProtectionEnable.Equals(input.MemberDeletionProtectionEnable))
+                ) && 
+                (
+                    this.VpcId == input.VpcId ||
+                    (this.VpcId != null &&
+                    this.VpcId.Equals(input.VpcId))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -152,6 +176,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.SlowStart.GetHashCode();
                 if (this.MemberDeletionProtectionEnable != null)
                     hashCode = hashCode * 59 + this.MemberDeletionProtectionEnable.GetHashCode();
+                if (this.VpcId != null)
+                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 分页查询结果中第一条记录的ID
+        /// 分页查询结果中第一条记录的ID。通常用于配合page_reverse&#x3D;true查询上一页。
         /// </summary>
         [JsonProperty("previous_marker", NullValueHandling = NullValueHandling.Ignore)]
         public string PreviousMarker { get; set; }
 
         /// <summary>
-        /// 分页查询结果中最后一条记录的ID。
+        /// 分页查询结果中最后一条记录的ID。通常用于查询下一页。
         /// </summary>
         [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
         public string NextMarker { get; set; }

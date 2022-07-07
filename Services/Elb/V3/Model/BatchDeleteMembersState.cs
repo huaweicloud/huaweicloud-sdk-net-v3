@@ -12,11 +12,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     /// <summary>
     /// 批量创建后端服务器响应结果
     /// </summary>
-    public class BatchDeleteMemberState 
+    public class BatchDeleteMembersState 
     {
 
         /// <summary>
-        /// 后端服务器ID。
+        /// 后端服务器ID。 &gt;说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchDeleteMemberState {\n");
+            sb.Append("class BatchDeleteMembersState {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  retStatus: ").Append(RetStatus).Append("\n");
             sb.Append("}\n");
@@ -46,13 +46,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchDeleteMemberState);
+            return this.Equals(input as BatchDeleteMembersState);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchDeleteMemberState input)
+        public bool Equals(BatchDeleteMembersState input)
         {
             if (input == null)
                 return false;

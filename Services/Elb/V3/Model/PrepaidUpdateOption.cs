@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class PrepaidUpdateOption 
     {
         /// <summary>
-        /// 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。
+        /// 规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。
         /// </summary>
-        /// <value>规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。</value>
+        /// <value>规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。</value>
         [JsonConverter(typeof(EnumClassConverter<ChangeModeEnum>))]
         public class ChangeModeEnum
         {
@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+        /// 订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；
         /// </summary>
-        /// <value>订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。</value>
+        /// <value>订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -242,18 +242,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AutoPay { get; set; }
 
         /// <summary>
-        /// 规格变更类型。取值： - immediate：即时变更（默认），规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。
+        /// 规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。
         /// </summary>
         [JsonProperty("change_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChangeModeEnum ChangeMode { get; set; }
         /// <summary>
-        /// 订购周期数，仅在change_mode为delay时有效。取值： - period_type为month时，为[1,9]，默认1。 - period_type为year时，为[1,3]，默认1。
+        /// 云服务引导URL。 订购订单支付完成后，支付成功的页面嵌入该url的内容。 console传，用户侧api文档不可见该字段。
+        /// </summary>
+        [JsonProperty("cloud_service_console_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string CloudServiceConsoleUrl { get; set; }
+
+        /// <summary>
+        /// 订购周期数（默认1），取值会随运营策略变化。（仅在change_mode为delay时生效） period_type为month时，为[1,9]， period_type为year时，为[1,3]
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+        /// 订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
@@ -267,6 +273,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("class PrepaidUpdateOption {\n");
             sb.Append("  autoPay: ").Append(AutoPay).Append("\n");
             sb.Append("  changeMode: ").Append(ChangeMode).Append("\n");
+            sb.Append("  cloudServiceConsoleUrl: ").Append(CloudServiceConsoleUrl).Append("\n");
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("  periodType: ").Append(PeriodType).Append("\n");
             sb.Append("}\n");
@@ -301,6 +308,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ChangeMode.Equals(input.ChangeMode))
                 ) && 
                 (
+                    this.CloudServiceConsoleUrl == input.CloudServiceConsoleUrl ||
+                    (this.CloudServiceConsoleUrl != null &&
+                    this.CloudServiceConsoleUrl.Equals(input.CloudServiceConsoleUrl))
+                ) && 
+                (
                     this.PeriodNum == input.PeriodNum ||
                     (this.PeriodNum != null &&
                     this.PeriodNum.Equals(input.PeriodNum))
@@ -324,6 +336,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.AutoPay.GetHashCode();
                 if (this.ChangeMode != null)
                     hashCode = hashCode * 59 + this.ChangeMode.GetHashCode();
+                if (this.CloudServiceConsoleUrl != null)
+                    hashCode = hashCode * 59 + this.CloudServiceConsoleUrl.GetHashCode();
                 if (this.PeriodNum != null)
                     hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 if (this.PeriodType != null)

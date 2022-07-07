@@ -409,13 +409,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string Height { get; set; }
 
         /// <summary>
-        /// 水印开始时间。
+        /// 水印开始时间，与\&quot;timeline_duration\&quot;配合使用。 取值范围:[0, END)。\&quot;END\&quot;表示视频结束时间。 单位:秒。 
         /// </summary>
         [JsonProperty("timeline_start", NullValueHandling = NullValueHandling.Ignore)]
         public string TimelineStart { get; set; }
 
         /// <summary>
-        /// 水印持续时间。
+        /// 水印持续时间，与\&quot;timeline_start\&quot;配合使用。 取值范围:(0,END-开始时间]。\&quot;END\&quot;表示视频结束时间。 单位:秒。 默认:END。 
         /// </summary>
         [JsonProperty("timeline_duration", NullValueHandling = NullValueHandling.Ignore)]
         public string TimelineDuration { get; set; }

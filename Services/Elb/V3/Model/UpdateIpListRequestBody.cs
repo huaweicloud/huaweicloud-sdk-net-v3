@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// 
         /// </summary>
         [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateIpGroupIpListOption Ipgroup { get; set; }
+        public UpdateIpListOption Ipgroup { get; set; }
 
 
         /// <summary>

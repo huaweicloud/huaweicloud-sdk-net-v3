@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     /// <summary>
     /// 更新IP地址组IP列表请求参数。
     /// </summary>
-    public class UpdateIpGroupIpListOption 
+    public class UpdateIpListOption 
     {
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateIpGroupIpListOption {\n");
+            sb.Append("class UpdateIpListOption {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  ipList: ").Append(IpList).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateIpGroupIpListOption);
+            return this.Equals(input as UpdateIpListOption);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateIpGroupIpListOption input)
+        public bool Equals(UpdateIpListOption input)
         {
             if (input == null)
                 return false;

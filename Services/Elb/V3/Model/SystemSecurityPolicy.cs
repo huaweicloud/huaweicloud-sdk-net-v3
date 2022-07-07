@@ -25,13 +25,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// 系统安全策略的TLS协议列表。
         /// </summary>
         [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Protocols { get; set; }
+        public string Protocols { get; set; }
 
         /// <summary>
         /// 系统安全策略的加密套件列表。
         /// </summary>
         [JsonProperty("ciphers", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Ciphers { get; set; }
+        public string Ciphers { get; set; }
 
         /// <summary>
         /// 项目id。
@@ -79,15 +79,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 ) && 
                 (
                     this.Protocols == input.Protocols ||
-                    this.Protocols != null &&
-                    input.Protocols != null &&
-                    this.Protocols.SequenceEqual(input.Protocols)
+                    (this.Protocols != null &&
+                    this.Protocols.Equals(input.Protocols))
                 ) && 
                 (
                     this.Ciphers == input.Ciphers ||
-                    this.Ciphers != null &&
-                    input.Ciphers != null &&
-                    this.Ciphers.SequenceEqual(input.Ciphers)
+                    (this.Ciphers != null &&
+                    this.Ciphers.Equals(input.Ciphers))
                 ) && 
                 (
                     this.ProjectId == input.ProjectId ||

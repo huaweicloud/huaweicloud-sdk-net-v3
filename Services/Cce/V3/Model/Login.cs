@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 选择密钥对方式登录时的密钥对名称。密钥对和密码登录方式二者必选其一。
+        /// 选择密钥对方式登录时的密钥对名称。
         /// </summary>
         [JsonProperty("sshKey", NullValueHandling = NullValueHandling.Ignore)]
         public string SshKey { get; set; }

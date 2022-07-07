@@ -191,6 +191,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string PrivateIP { get; set; }
 
         /// <summary>
+        /// 节点主网卡私有网段IPv6地址。
+        /// </summary>
+        [JsonProperty("privateIPv6IP", NullValueHandling = NullValueHandling.Ignore)]
+        public string PrivateIPv6IP { get; set; }
+
+        /// <summary>
         /// 节点弹性公网IP地址。如果ECS的数据没有实时同步，可在界面上通过“同步节点信息”手动进行更新。
         /// </summary>
         [JsonProperty("publicIP", NullValueHandling = NullValueHandling.Ignore)]
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  jobID: ").Append(JobID).Append("\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("  privateIP: ").Append(PrivateIP).Append("\n");
+            sb.Append("  privateIPv6IP: ").Append(PrivateIPv6IP).Append("\n");
             sb.Append("  publicIP: ").Append(PublicIP).Append("\n");
             sb.Append("  deleteStatus: ").Append(DeleteStatus).Append("\n");
             sb.Append("}\n");
@@ -258,6 +265,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.PrivateIP.Equals(input.PrivateIP))
                 ) && 
                 (
+                    this.PrivateIPv6IP == input.PrivateIPv6IP ||
+                    (this.PrivateIPv6IP != null &&
+                    this.PrivateIPv6IP.Equals(input.PrivateIPv6IP))
+                ) && 
+                (
                     this.PublicIP == input.PublicIP ||
                     (this.PublicIP != null &&
                     this.PublicIP.Equals(input.PublicIP))
@@ -285,6 +297,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.PrivateIP != null)
                     hashCode = hashCode * 59 + this.PrivateIP.GetHashCode();
+                if (this.PrivateIPv6IP != null)
+                    hashCode = hashCode * 59 + this.PrivateIPv6IP.GetHashCode();
                 if (this.PublicIP != null)
                     hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
                 if (this.DeleteStatus != null)

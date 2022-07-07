@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? ProtocolPort { get; set; }
 
         /// <summary>
-        /// 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。  当所在LB未开启跨VPC后端，该参数必填。 当所在LB开启跨VPC后端，该参数非必填，表示添加跨VPC后端，此时address必须为ipv4地址，pool的协议必须为TCP/HTTP/HTTPS，pool所属的LB的跨VPC后端转发能力必须打开。
+        /// 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。   当所在LB未开启跨VPC后端，该参数必填。  当所在LB开启跨VPC后端，该参数非必填，表示添加跨VPC后端，此时address必须为ipv4地址，pool的协议必须为TCP/HTTP/HTTPS，pool所属的LB的跨VPC后端转发能力必须打开。
         /// </summary>
         [JsonProperty("subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetCidrId { get; set; }

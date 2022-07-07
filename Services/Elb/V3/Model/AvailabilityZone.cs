@@ -28,10 +28,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string State { get; set; }
 
         /// <summary>
-        /// 未售罄的LB规格类别。取值： - L4：表示网络型LB未售罄。 - L7：表示应用型LB未售罄。
+        /// 未售罄的LB规格类别。取值：L4 表示网络型LB未售罄；L7 表示应用型LB未售罄。
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Protocol { get; set; }
+
+        /// <summary>
+        /// 可用区组，如：center
+        /// </summary>
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// 范围编码，0表示center，21表示homezone
+        /// </summary>
+        [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Category { get; set; }
 
 
         /// <summary>
@@ -44,6 +56,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  code: ").Append(Code).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  category: ").Append(Category).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,6 +94,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Protocol != null &&
                     input.Protocol != null &&
                     this.Protocol.SequenceEqual(input.Protocol)
+                ) && 
+                (
+                    this.PublicBorderGroup == input.PublicBorderGroup ||
+                    (this.PublicBorderGroup != null &&
+                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.Category == input.Category ||
+                    (this.Category != null &&
+                    this.Category.Equals(input.Category))
                 );
         }
 
@@ -97,6 +121,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.Protocol != null)
                     hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.PublicBorderGroup != null)
+                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Category != null)
+                    hashCode = hashCode * 59 + this.Category.GetHashCode();
                 return hashCode;
             }
         }

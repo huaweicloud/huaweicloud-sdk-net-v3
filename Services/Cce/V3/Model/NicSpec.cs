@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 网卡所在子网的ID。  
+        /// 网卡所在子网的ID。主网卡创建时若未指定subnetId,将使用集群子网。拓展网卡创建时必须指定subnetId。  
         /// </summary>
         [JsonProperty("subnetId", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<string> FixedIps { get; set; }
 
         /// <summary>
-        /// IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
+        /// 主网卡的IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
         /// </summary>
         [JsonProperty("ipBlock", NullValueHandling = NullValueHandling.Ignore)]
         public string IpBlock { get; set; }

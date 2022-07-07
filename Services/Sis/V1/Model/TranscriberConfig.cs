@@ -193,6 +193,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             /// </summary>
             public static readonly PropertyEnum CHINESE_8K_INSURANCE = new PropertyEnum("chinese_8k_insurance");
 
+            /// <summary>
+            /// Enum CHINESE_16K_MEDIA for value: chinese_16k_media
+            /// </summary>
+            public static readonly PropertyEnum CHINESE_16K_MEDIA = new PropertyEnum("chinese_16k_media");
+
             private static readonly Dictionary<string, PropertyEnum> StaticFields =
             new Dictionary<string, PropertyEnum>()
             {
@@ -200,6 +205,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 { "chinese_16k_conversation", CHINESE_16K_CONVERSATION },
                 { "chinese_8k_bank", CHINESE_8K_BANK },
                 { "chinese_8k_insurance", CHINESE_8K_INSURANCE },
+                { "chinese_16k_media", CHINESE_16K_MEDIA },
             };
 
             private string Value;

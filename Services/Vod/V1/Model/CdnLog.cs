@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public long? Size { get; set; }
 
         /// <summary>
-        /// 日志下载链接。
+        /// 日志下载链接,日志文件[参数说明](https://support.huaweicloud.com/usermanual-cdn/zh-cn_topic_0073337424.html)。
         /// </summary>
         [JsonProperty("link", NullValueHandling = NullValueHandling.Ignore)]
         public string Link { get; set; }

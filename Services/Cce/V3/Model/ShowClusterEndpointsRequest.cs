@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Elb.V3.Model
+namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// This is a auto create Body Object
+    /// Request Object
     /// </summary>
-    public class BatchDeleteMemberRequestBody 
+    public class ShowClusterEndpointsRequest 
     {
 
         /// <summary>
-        /// 批量删除后端服务器请求body。
+        /// 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
-        [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
-        public List<BatchDeleteMembersOption> Members { get; set; }
+        [SDKProperty("cluster_id", IsPath = true)]
+        [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClusterId { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchDeleteMemberRequestBody {\n");
-            sb.Append("  members: ").Append(Members).Append("\n");
+            sb.Append("class ShowClusterEndpointsRequest {\n");
+            sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,23 +40,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchDeleteMemberRequestBody);
+            return this.Equals(input as ShowClusterEndpointsRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchDeleteMemberRequestBody input)
+        public bool Equals(ShowClusterEndpointsRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Members == input.Members ||
-                    this.Members != null &&
-                    input.Members != null &&
-                    this.Members.SequenceEqual(input.Members)
+                    this.ClusterId == input.ClusterId ||
+                    (this.ClusterId != null &&
+                    this.ClusterId.Equals(input.ClusterId))
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Members != null)
-                    hashCode = hashCode * 59 + this.Members.GetHashCode();
+                if (this.ClusterId != null)
+                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,0 +1,226 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Cce.V3.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class MasterEIPRequestSpec 
+    {
+        /// <summary>
+        /// 绑定或解绑动作
+        /// </summary>
+        /// <value>绑定或解绑动作</value>
+        [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
+        public class ActionEnum
+        {
+            /// <summary>
+            /// Enum BIND for value: bind
+            /// </summary>
+            public static readonly ActionEnum BIND = new ActionEnum("bind");
+
+            /// <summary>
+            /// Enum UNBIND for value: unbind
+            /// </summary>
+            public static readonly ActionEnum UNBIND = new ActionEnum("unbind");
+
+            private static readonly Dictionary<string, ActionEnum> StaticFields =
+            new Dictionary<string, ActionEnum>()
+            {
+                { "bind", BIND },
+                { "unbind", UNBIND },
+            };
+
+            private string Value;
+
+            public ActionEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static ActionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ActionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ActionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ActionEnum a, ActionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ActionEnum a, ActionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 绑定或解绑动作
+        /// </summary>
+        [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionEnum Action { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
+        public MasterEIPRequestSpecSpec Spec { get; set; }
+
+        /// <summary>
+        /// 带宽
+        /// </summary>
+        [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public string Bandwidth { get; set; }
+
+        /// <summary>
+        /// 弹性网卡IP
+        /// </summary>
+        [JsonProperty("elasticIp", NullValueHandling = NullValueHandling.Ignore)]
+        public string ElasticIp { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class MasterEIPRequestSpec {\n");
+            sb.Append("  action: ").Append(Action).Append("\n");
+            sb.Append("  spec: ").Append(Spec).Append("\n");
+            sb.Append("  bandwidth: ").Append(Bandwidth).Append("\n");
+            sb.Append("  elasticIp: ").Append(ElasticIp).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as MasterEIPRequestSpec);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(MasterEIPRequestSpec input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Action == input.Action ||
+                    (this.Action != null &&
+                    this.Action.Equals(input.Action))
+                ) && 
+                (
+                    this.Spec == input.Spec ||
+                    (this.Spec != null &&
+                    this.Spec.Equals(input.Spec))
+                ) && 
+                (
+                    this.Bandwidth == input.Bandwidth ||
+                    (this.Bandwidth != null &&
+                    this.Bandwidth.Equals(input.Bandwidth))
+                ) && 
+                (
+                    this.ElasticIp == input.ElasticIp ||
+                    (this.ElasticIp != null &&
+                    this.ElasticIp.Equals(input.ElasticIp))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Action != null)
+                    hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Spec != null)
+                    hashCode = hashCode * 59 + this.Spec.GetHashCode();
+                if (this.Bandwidth != null)
+                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.ElasticIp != null)
+                    hashCode = hashCode * 59 + this.ElasticIp.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

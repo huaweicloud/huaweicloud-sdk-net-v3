@@ -28,19 +28,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
+        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。   使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。
         /// </summary>
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public string LbAlgorithm { get; set; }
 
         /// <summary>
-        /// 后端云服务器组关联的监听器的ID。  使用说明： - listener_id和loadbalancer_id至少指定一个。
+        /// 后端云服务器组关联的监听器的ID。   使用说明：listener_id，loadbalancer_id，type至少指定一个。共享型实例只能使用指定loadbalancer_id或指定listener_id的后端服务器组。
         /// </summary>
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerId { get; set; }
 
         /// <summary>
-        /// 后端云服务器组关联的负载均衡器ID。  使用说明： - listener_id和loadbalancer_id中至少指定一个。
+        /// 后端云服务器组关联的负载均衡器ID。   使用说明：listener_id，loadbalancer_id，type中至少指定一个。共享型实例只能使用指定loadbalancer_id或指定listener_id的后端服务器组。
         /// </summary>
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
+        /// 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。   使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
@@ -81,6 +81,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("member_deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? MemberDeletionProtectionEnable { get; set; }
 
+        /// <summary>
+        /// 后端云服务器组关联的虚拟私有云的ID。   使用说明： - 只能挂载到该虚拟私有云下。 - 只能添加该虚拟私有云下的后端服务器或跨VPC的后端服务器。 - type必须指定为instance。   没有指定vpc_id的约束： - 后续添加后端服务器时，vpc_id由后端服务器所在的虚拟私有云确定。
+        /// </summary>
+        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VpcId { get; set; }
+
+        /// <summary>
+        /// 后端服务器组的类型。  取值： - instance：允许任意类型的后端，type指定为该类型时，vpc_id是必选字段。 - ip：只能添加跨VPC后端，type指定为该类型时，vpc_id不允许指定。  使用说明： - 不传表示允许任意类型的后端，并返回type为空字符串。 - listener_id，loadbalancer_id，type至少指定一个。共享型实例只能使用指定loadbalancer_id或指定listener_id的后端服务器组。
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -100,6 +112,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  sessionPersistence: ").Append(SessionPersistence).Append("\n");
             sb.Append("  slowStart: ").Append(SlowStart).Append("\n");
             sb.Append("  memberDeletionProtectionEnable: ").Append(MemberDeletionProtectionEnable).Append("\n");
+            sb.Append("  vpcId: ").Append(VpcId).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -175,6 +189,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MemberDeletionProtectionEnable == input.MemberDeletionProtectionEnable ||
                     (this.MemberDeletionProtectionEnable != null &&
                     this.MemberDeletionProtectionEnable.Equals(input.MemberDeletionProtectionEnable))
+                ) && 
+                (
+                    this.VpcId == input.VpcId ||
+                    (this.VpcId != null &&
+                    this.VpcId.Equals(input.VpcId))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -208,6 +232,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.SlowStart.GetHashCode();
                 if (this.MemberDeletionProtectionEnable != null)
                     hashCode = hashCode * 59 + this.MemberDeletionProtectionEnable.GetHashCode();
+                if (this.VpcId != null)
+                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

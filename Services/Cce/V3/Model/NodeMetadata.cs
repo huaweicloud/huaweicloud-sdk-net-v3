@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
-        /// CCE自有节点注解，非Kubernetes原生annotations，格式为key/value键值对。   示例：  &#x60;&#x60;&#x60;  \&quot;annotations\&quot;: {   \&quot;key1\&quot; : \&quot;value1\&quot;,   \&quot;key2\&quot; : \&quot;value2\&quot; }  &#x60;&#x60;&#x60;   &gt; Annotations不用于标识和选择对象。Annotations中的元数据可以是small 或large，structured 或unstructured，并且可以包括标签不允许使用的字符。 
+        /// CCE自有节点注解，非Kubernetes原生annotations，格式为key/value键值对。   示例：  &#x60;&#x60;&#x60;  \&quot;annotations\&quot;: {   \&quot;key1\&quot; : \&quot;value1\&quot;,   \&quot;key2\&quot; : \&quot;value2\&quot; }  &#x60;&#x60;&#x60;   &gt; Annotations不用于标识和选择对象。Annotations中的元数据可以是small 或large，structured或unstructured，并且可以包括标签不允许使用的字符。 
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Annotations { get; set; }

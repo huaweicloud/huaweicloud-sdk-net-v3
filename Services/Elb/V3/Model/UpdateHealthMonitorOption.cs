@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class UpdateHealthMonitorOption 
     {
         /// <summary>
-        /// HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。 使用说明：  - 仅当type为HTTP时生效。 不支持该字段，请勿使用。
+        /// HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。   使用说明：当type为HTTP/HTTPS时生效。   不支持该字段，请勿使用。
         /// </summary>
-        /// <value>HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。 使用说明：  - 仅当type为HTTP时生效。 不支持该字段，请勿使用。</value>
+        /// <value>HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。   使用说明：当type为HTTP/HTTPS时生效。   不支持该字段，请勿使用。</value>
         [JsonConverter(typeof(EnumClassConverter<HttpMethodEnum>))]
         public class HttpMethodEnum
         {
@@ -174,25 +174,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 健康检查间隔。取值：1-50s。
+        /// 健康检查间隔。健康检查间隔。取值：1-50s。
         /// </summary>
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
         public int? Delay { get; set; }
 
         /// <summary>
-        /// 发送健康检查请求的域名。 取值：以数字或字母开头，只能包含数字、字母、&#39;-&#39;、&#39;.&#39;。不能传空，但可传null或不传，表示使用负载均衡器的vip作为http请求的目的地址。 使用说明：  - 仅当type为HTTP时生效。
+        /// 发送健康检查请求的域名。   取值：以数字或字母开头，只能包含数字、字母、’-’、’.’。不能传空，但可传null或不传，表示使用负载均衡器的vip作为http请求的目的地址。   使用说明：当type为HTTP/HTTPS时生效。
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 期望响应状态码。支持多种取值格式： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。
+        /// 期望响应状态码。取值：   - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。    默认值：200。   仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。
         /// </summary>
         [JsonProperty("expected_codes", NullValueHandling = NullValueHandling.Ignore)]
         public string ExpectedCodes { get; set; }
 
         /// <summary>
-        /// HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。 使用说明：  - 仅当type为HTTP时生效。 不支持该字段，请勿使用。
+        /// HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。   使用说明：当type为HTTP/HTTPS时生效。   不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("http_method", NullValueHandling = NullValueHandling.Ignore)]
         public HttpMethodEnum HttpMethod { get; set; }
@@ -227,7 +227,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 健康检查请求的请求路径。以\&quot;/\&quot;开头，默认为\&quot;/\&quot;。  使用说明： - 仅当type为HTTP时生效。
+        /// 健康检查请求的请求路径。以\&quot;/\&quot;开头，默认为\&quot;/\&quot;。  使用说明：当type为HTTP/HTTPS时生效。
         /// </summary>
         [JsonProperty("url_path", NullValueHandling = NullValueHandling.Ignore)]
         public string UrlPath { get; set; }

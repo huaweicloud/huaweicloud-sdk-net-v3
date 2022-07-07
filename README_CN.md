@@ -8,7 +8,7 @@
 
 欢迎使用华为云 .Net SDK 。
 
-华为云 .Net SDK 让您无需关心请求细节即可快速使用弹性云服务器、虚拟私有云等多个华为云服务。
+华为云 .Net SDK 让您无需关心请求细节即可快速使用弹性云服务器（ECS）、虚拟私有云（VPC）等多个华为云服务。
 
 这里将向您介绍如何获取并使用华为云 .Net SDK 。
 
@@ -126,7 +126,7 @@ namespace ConsoleApp1
     * [1.2 网络代理](#12-网络代理-top)
     * [1.3 超时配置](#13-超时配置-top)
     * [1.4 SSL 配置](#14-ssl-配置-top)
-* [2. 客户端认证信息](#2-客户端认证信息-top)
+* [2. 认证信息配置](#2-认证信息配置-top)
     * [2.1 使用永久 AK 和 SK](#21-使用永久-ak-和-sk-top)
     * [2.2 使用临时 AK 和 SK](#22-使用临时-ak-和-sk-top)
 * [3. 客户端初始化](#3-客户端初始化-top)
@@ -192,7 +192,9 @@ config.IgnoreSslVerification = true;
 
 Global 级服务有 IAM、TMS、EPS。
 
-Region 级服务使用 BasicCredentials 初始化，需要提供 projectId 。Global 级服务使用 GlobalCredentials 初始化，需要提供 domainId 。
+Region 级服务使用 BasicCredentials 初始化，需要提供 projectId 。
+
+Global 级服务使用 GlobalCredentials 初始化，需要提供 domainId 。
 
 **认证参数说明**：
 
@@ -253,7 +255,7 @@ String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
 Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // 初始化指定云服务的客户端 {Service}Client，以初始化 Region 级服务 VPC 的 VpcClient 为例
-var vpcClient = VpcClient.NewBuilder()
+VpcClient vpcClient = VpcClient.NewBuilder()
     .WithCredential(basicCredentials)
     .WithEndPoint(endpoint)
     .WithHttpConfig(config)

@@ -201,6 +201,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             public static readonly PropertyEnum CHINESE_16K_GENERAL = new PropertyEnum("chinese_16k_general");
 
             /// <summary>
+            /// Enum CHINESE_16K_TRAVEL for value: chinese_16k_travel
+            /// </summary>
+            public static readonly PropertyEnum CHINESE_16K_TRAVEL = new PropertyEnum("chinese_16k_travel");
+
+            /// <summary>
             /// Enum SICHUAN_16K_COMMON for value: sichuan_16k_common
             /// </summary>
             public static readonly PropertyEnum SICHUAN_16K_COMMON = new PropertyEnum("sichuan_16k_common");
@@ -221,6 +226,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 { "chinese_8k_common", CHINESE_8K_COMMON },
                 { "chinese_16k_common", CHINESE_16K_COMMON },
                 { "chinese_16k_general", CHINESE_16K_GENERAL },
+                { "chinese_16k_travel", CHINESE_16K_TRAVEL },
                 { "sichuan_16k_common", SICHUAN_16K_COMMON },
                 { "cantonese_16k_common", CANTONESE_16K_COMMON },
                 { "shanghai_16k_common", SHANGHAI_16K_COMMON },

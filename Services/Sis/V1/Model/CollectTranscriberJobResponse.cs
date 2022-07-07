@@ -45,6 +45,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         [JsonProperty("segments", NullValueHandling = NullValueHandling.Ignore)]
         public List<Segment> Segments { get; set; }
 
+        /// <summary>
+        /// 音频时长，单位ms
+        /// </summary>
+        [JsonProperty("audio_duration", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AudioDuration { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  finishTime: ").Append(FinishTime).Append("\n");
             sb.Append("  segments: ").Append(Segments).Append("\n");
+            sb.Append("  audioDuration: ").Append(AudioDuration).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,6 +111,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                     this.Segments != null &&
                     input.Segments != null &&
                     this.Segments.SequenceEqual(input.Segments)
+                ) && 
+                (
+                    this.AudioDuration == input.AudioDuration ||
+                    (this.AudioDuration != null &&
+                    this.AudioDuration.Equals(input.AudioDuration))
                 );
         }
 
@@ -125,6 +137,8 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                     hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
                 if (this.Segments != null)
                     hashCode = hashCode * 59 + this.Segments.GetHashCode();
+                if (this.AudioDuration != null)
+                    hashCode = hashCode * 59 + this.AudioDuration.GetHashCode();
                 return hashCode;
             }
         }

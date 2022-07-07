@@ -16,7 +16,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - roll：增值税普通发票（卷票） 
+        /// 增值税发票标题 
+        /// </summary>
+        [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic：增值税电子专用发票  - toll：增值税电子普通发票（通行费）  - roll：增值税普通发票（卷票） 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -46,7 +52,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Code { get; set; }
 
         /// <summary>
-        /// 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。 
+        /// 机打代码。当“advanced_mode”设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("print_code", NullValueHandling = NullValueHandling.Ignore)]
         public string PrintCode { get; set; }
@@ -215,6 +221,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class VatInvoiceResult {\n");
+            sb.Append("  title: ").Append(Title).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  serialNumber: ").Append(SerialNumber).Append("\n");
             sb.Append("  attribution: ").Append(Attribution).Append("\n");
@@ -268,6 +275,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 return false;
 
             return 
+                (
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
+                ) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
@@ -441,6 +453,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Title != null)
+                    hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.SerialNumber != null)

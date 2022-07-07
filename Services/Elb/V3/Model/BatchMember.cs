@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 后端服务器ID。
+        /// 后端服务器ID。 &gt;说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。  若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。  使用说明： - 该子网和关联的负载均衡器的子网必须在同一VPC下。 [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
+        /// 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。   若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。   使用说明：  - 该子网和关联的负载均衡器的子网必须在同一VPC下。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetCidrId { get; set; }
@@ -52,13 +52,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? ProtocolPort { get; set; }
 
         /// <summary>
-        /// 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。 取值：0-100，默认1。 使用说明：  - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
+        /// 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。  取值：0-100，默认1。  使用说明：   - 若所在pool的lb_algorithm取值为SOURCE_IP，该字段无效。
         /// </summary>
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }
 
         /// <summary>
-        /// 后端服务器对应的IP地址。 使用说明：  - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。  - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。 [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+        /// 后端服务器对应的IP地址。  使用说明：  - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。  - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡IP。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
@@ -68,6 +68,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }
+
+        /// <summary>
+        /// 后端云服务器监听器粒度的的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_stauts为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MemberStatus> Status { get; set; }
 
         /// <summary>
         /// 后端云服务器的类型。取值： - ip：跨VPC的member。 - instance：关联到ECS的member。
@@ -110,6 +116,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  address: ").Append(Address).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  memberType: ").Append(MemberType).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  portId: ").Append(PortId).Append("\n");
@@ -181,6 +188,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.OperatingStatus.Equals(input.OperatingStatus))
                 ) && 
                 (
+                    this.Status == input.Status ||
+                    this.Status != null &&
+                    input.Status != null &&
+                    this.Status.SequenceEqual(input.Status)
+                ) && 
+                (
                     this.MemberType == input.MemberType ||
                     (this.MemberType != null &&
                     this.MemberType.Equals(input.MemberType))
@@ -228,6 +241,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.OperatingStatus != null)
                     hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.MemberType != null)
                     hashCode = hashCode * 59 + this.MemberType.GetHashCode();
                 if (this.InstanceId != null)

@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NicSpec PrimaryNic { get; set; }
 
         /// <summary>
-        /// 扩展网卡
+        /// 扩展网卡 &gt;创建节点池添加节点时不支持该参数。
         /// </summary>
         [JsonProperty("extNics", NullValueHandling = NullValueHandling.Ignore)]
         public List<NicSpec> ExtNics { get; set; }

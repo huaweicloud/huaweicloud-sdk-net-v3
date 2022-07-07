@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// Condition类型，当前支持类型如下 - \&quot;Scalable\&quot;：节点池实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池非预期扩容失败，影响节点池可扩容状态。 - \&quot;LockedByOrder\&quot;：包周期节点池被订单锁定，此时Reason为待支付订单ID。 - \&quot;Error\&quot;：节点池错误，通常由于删除失败触发。 
+        /// Condition类型，当前支持类型如下 - \&quot;Scalable\&quot;：节点池实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池非预期扩容失败，影响节点池可扩容状态。 [- \&quot;LockedByOrder\&quot;：包周期节点池被订单锁定，此时Reason为待支付订单ID。](tag:hws,hws_hk) - \&quot;Error\&quot;：节点池错误，通常由于删除失败触发。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

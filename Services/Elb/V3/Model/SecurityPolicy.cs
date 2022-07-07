@@ -40,10 +40,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 自定义安全策略关联的监听器。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
-        public ListenerRef Listeners { get; set; }
+        public List<ListenerRef> Listeners { get; set; }
 
         /// <summary>
         /// 自定义安全策略的TLS协议列表。
@@ -129,8 +129,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 ) && 
                 (
                     this.Listeners == input.Listeners ||
-                    (this.Listeners != null &&
-                    this.Listeners.Equals(input.Listeners))
+                    this.Listeners != null &&
+                    input.Listeners != null &&
+                    this.Listeners.SequenceEqual(input.Listeners)
                 ) && 
                 (
                     this.Protocols == input.Protocols ||

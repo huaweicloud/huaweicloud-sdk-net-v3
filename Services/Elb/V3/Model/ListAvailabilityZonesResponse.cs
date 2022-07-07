@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 返回创建LB时可使用的可用区集合列表。
+        /// 返回创建LB时可使用的可用区集合列表。如：[[az1,az2],[az2,az3]] , 则在创建LB时，只能从其中的一个子列表中选择一个或多个可用区，不能跨列表选择。在上述例子中，不能选择az1和az3。
         /// </summary>
         [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<AvailabilityZone>> AvailabilityZones { get; set; }

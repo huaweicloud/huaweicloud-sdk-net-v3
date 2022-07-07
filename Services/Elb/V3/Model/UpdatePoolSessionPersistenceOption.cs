@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class UpdatePoolSessionPersistenceOption 
     {
         /// <summary>
-        /// 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
+        /// 会话保持类型。  取值范围：SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时。如果是独享型负载均衡器的pool，则type只能为HTTP_COOKIE，其他取值会话保持失效。如果是共享型负载均衡器的pool，则type可以为HTTP_COOKIE和APP_COOKIE，其他取值会话保持失效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时。type只能为HTTP_COOKIE，其他取值会话保持失效。](tag:hcso_dt)
         /// </summary>
-        /// <value>描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。</value>
+        /// <value>会话保持类型。  取值范围：SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时。如果是独享型负载均衡器的pool，则type只能为HTTP_COOKIE，其他取值会话保持失效。如果是共享型负载均衡器的pool，则type可以为HTTP_COOKIE和APP_COOKIE，其他取值会话保持失效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时。type只能为HTTP_COOKIE，其他取值会话保持失效。](tag:hcso_dt)</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// cookie名称。  [格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  使用说明： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test) [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// cookie名称。  格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  [使用说明：  - 只有当type为APP_COOKIE时才有效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("cookie_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CookieName { get; set; }
 
         /// <summary>
-        /// 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。  使用说明： - 当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
+        /// 会话保持类型。  取值范围：SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时。如果是独享型负载均衡器的pool，则type只能为HTTP_COOKIE，其他取值会话保持失效。如果是共享型负载均衡器的pool，则type可以为HTTP_COOKIE和APP_COOKIE，其他取值会话保持失效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [使用说明： - 当pool的protocol为TCP、UDP，无论type取值如何，都会被忽略，会话保持只按SOURCE_IP生效； - 当pool的protocol为HTTP、HTTPS时。type只能为HTTP_COOKIE，其他取值会话保持失效。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

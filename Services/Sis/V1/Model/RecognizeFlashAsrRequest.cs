@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
     public class RecognizeFlashAsrRequest 
     {
         /// <summary>
-        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
+        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_conversation
         /// </summary>
-        /// <value>所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common</value>
+        /// <value>所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_conversation</value>
         [JsonConverter(typeof(EnumClassConverter<PropertyEnum>))]
         public class PropertyEnum
         {
@@ -27,15 +27,15 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             public static readonly PropertyEnum CHINESE_8K_COMMON = new PropertyEnum("chinese_8k_common");
 
             /// <summary>
-            /// Enum CHINESE_16K_COMMON for value: chinese_16k_common
+            /// Enum CHINESE_16K_CONVERSATION for value: chinese_16k_conversation
             /// </summary>
-            public static readonly PropertyEnum CHINESE_16K_COMMON = new PropertyEnum("chinese_16k_common");
+            public static readonly PropertyEnum CHINESE_16K_CONVERSATION = new PropertyEnum("chinese_16k_conversation");
 
             private static readonly Dictionary<string, PropertyEnum> StaticFields =
             new Dictionary<string, PropertyEnum>()
             {
                 { "chinese_8k_common", CHINESE_8K_COMMON },
-                { "chinese_16k_common", CHINESE_16K_COMMON },
+                { "chinese_16k_conversation", CHINESE_16K_CONVERSATION },
             };
 
             private string Value;
@@ -694,7 +694,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
 
 
         /// <summary>
-        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_common
+        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。 采样率需要与音频采样率保持一致。 当前支持如下模型特征串： chinese_8k_common chinese_16k_conversation
         /// </summary>
         [SDKProperty("property", IsQuery = true)]
         [JsonProperty("property", NullValueHandling = NullValueHandling.Ignore)]

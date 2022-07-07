@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Elb.V3.Model
+namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// This is a auto create Response Object
+    /// 
     /// </summary>
-    public class BatchDeleteIpListRequestBody 
+    public class MasterEIPRequest 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchDeleteIpListOption Ipgroup { get; set; }
+        [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
+        public MasterEIPRequestSpec Spec { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchDeleteIpListRequestBody {\n");
-            sb.Append("  ipgroup: ").Append(Ipgroup).Append("\n");
+            sb.Append("class MasterEIPRequest {\n");
+            sb.Append("  spec: ").Append(Spec).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchDeleteIpListRequestBody);
+            return this.Equals(input as MasterEIPRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchDeleteIpListRequestBody input)
+        public bool Equals(MasterEIPRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Ipgroup == input.Ipgroup ||
-                    (this.Ipgroup != null &&
-                    this.Ipgroup.Equals(input.Ipgroup))
+                    this.Spec == input.Spec ||
+                    (this.Spec != null &&
+                    this.Spec.Equals(input.Spec))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Ipgroup != null)
-                    hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
+                if (this.Spec != null)
+                    hashCode = hashCode * 59 + this.Spec.GetHashCode();
                 return hashCode;
             }
         }

@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string IpgroupId { get; set; }
 
         /// <summary>
-        /// 访问控制组的状态。 True:开启访问控制； False：关闭访问控制； 开启访问控制的监听器，允许直接删除。
+        /// 访问控制组的状态。 True:开启访问控制； Flase：关闭访问控制； 开启访问控制的监听器，允许直接删除。
         /// </summary>
         [JsonProperty("enable_ipgroup", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableIpgroup { get; set; }

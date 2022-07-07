@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// 后端服务器对象列表。
         /// </summary>
         [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
-        public List<BatchDeleteMemberState> Members { get; set; }
+        public List<BatchDeleteMembersState> Members { get; set; }
 
 
         /// <summary>

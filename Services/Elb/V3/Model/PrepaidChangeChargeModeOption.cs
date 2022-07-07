@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class PrepaidChangeChargeModeOption 
     {
         /// <summary>
-        /// 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+        /// 订购周期类型，当前支持包月和包年： month：月（默认）； year：年；
         /// </summary>
-        /// <value>订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。</value>
+        /// <value>订购周期类型，当前支持包月和包年： month：月（默认）； year：年；</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -132,24 +132,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? IncludePublicip { get; set; }
 
         /// <summary>
-        /// 订购周期类型，仅在change_mode为delay时有效。取值： - month：月（默认）。 - year：年。
+        /// 订购周期类型，当前支持包月和包年： month：月（默认）； year：年；
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 订购周期数，仅在change_mode为delay时有效。取值： - period_type为month时，为[1,9]，默认1。 - period_type为year时，为[1,3]，默认1。
+        /// 订购周期数（默认1），取值会随运营策略变化。 period_type为month时，为[1,9]， period_type为year时，为[1,3]
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 是否自动续订。取值： - true：自动续订 - false：不自动续订（默认）
+        /// 是否自动续订； true：自动续订 false：不自动续订（默认）
         /// </summary>
         [JsonProperty("auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoRenew { get; set; }
 
         /// <summary>
-        /// 下单订购后，是否自动从客户的账户中支付。取值： - true：自动支付； - false：不自动支付（默认）。  自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。
+        /// 下单订购后，是否自动从客户的账户中支付； true：自动支付； false：不自动支付（默认）。 自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。
         /// </summary>
         [JsonProperty("auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoPay { get; set; }
