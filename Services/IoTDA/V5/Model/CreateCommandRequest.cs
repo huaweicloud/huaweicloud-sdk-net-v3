@@ -23,13 +23,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string DeviceId { get; set; }
 
         /// <summary>
-        /// Sp用户Token。通过调用IoBPS服务获取SP用户Token
-        /// </summary>
-        [SDKProperty("Sp-Auth-Token", IsHeader = true)]
-        [JsonProperty("Sp-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpAuthToken { get; set; }
-
-        /// <summary>
         /// **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
@@ -52,7 +45,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class CreateCommandRequest {\n");
             sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
-            sb.Append("  spAuthToken: ").Append(SpAuthToken).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -82,11 +74,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DeviceId.Equals(input.DeviceId))
                 ) && 
                 (
-                    this.SpAuthToken == input.SpAuthToken ||
-                    (this.SpAuthToken != null &&
-                    this.SpAuthToken.Equals(input.SpAuthToken))
-                ) && 
-                (
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
@@ -108,8 +95,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.DeviceId != null)
                     hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.SpAuthToken != null)
-                    hashCode = hashCode * 59 + this.SpAuthToken.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Body != null)

@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Frs.V2.Model
+namespace HuaweiCloud.SDK.Image.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// 调用成功时为图片标签内容。  调用失败时无此字段。
     /// </summary>
-    public class SearchFaceByFileResponse : SdkResponse
+    public class ImageMediaTaggingResponseResult 
     {
 
         /// <summary>
-        /// [查找的人脸集合，详见[SearchFace](https://support.huaweicloud.com/api-face/face_02_0019.html)。调用失败时无此字段。](tag:hc) [查找的人脸集合，详见[SearchFace](https://support.huaweicloud.com/intl/zh-cn/api-face/face_02_0019.html)。调用失败时无此字段。](tag:hk)
+        /// 标签列表集合。
         /// </summary>
-        [JsonProperty("faces", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SearchFace> Faces { get; set; }
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ImageMediaTaggingItemBody> Tags { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SearchFaceByFileResponse {\n");
-            sb.Append("  faces: ").Append(Faces).Append("\n");
+            sb.Append("class ImageMediaTaggingResponseResult {\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,23 +39,23 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SearchFaceByFileResponse);
+            return this.Equals(input as ImageMediaTaggingResponseResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SearchFaceByFileResponse input)
+        public bool Equals(ImageMediaTaggingResponseResult input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Faces == input.Faces ||
-                    this.Faces != null &&
-                    input.Faces != null &&
-                    this.Faces.SequenceEqual(input.Faces)
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Faces != null)
-                    hashCode = hashCode * 59 + this.Faces.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

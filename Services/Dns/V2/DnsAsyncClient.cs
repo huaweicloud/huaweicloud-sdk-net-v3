@@ -742,9 +742,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 在Private Zone上解关联VPC
+        /// 在内网Zone上解关联VPC
         ///
-        /// 在Private Zone上解关联VPC
+        /// 在内网Zone上解关联VPC
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -812,9 +812,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询内网Zone的名称服务器
+        /// 查询单个内网Zone的名称服务器
         ///
-        /// 查询内网Zone的名称服务器
+        /// 查询单个内网Zone的名称服务器
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -866,9 +866,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 修改单个Zone
+        /// 修改单个内网Zone
         ///
-        /// 修改单个Zone
+        /// 修改单个内网Zone
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -884,9 +884,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 修改单个Zone
+        /// 修改单个公网Zone
         ///
-        /// 修改单个Zone
+        /// 修改单个公网Zone
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.

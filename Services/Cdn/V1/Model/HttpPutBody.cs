@@ -51,6 +51,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("http2_status", NullValueHandling = NullValueHandling.Ignore)]
         public string Http2Status { get; set; }
 
+        /// <summary>
+        /// 传输层安全性协议。目前支持TLSv1.0/1.1/1.2/1.3四个版本的协议。默认全部开启，不可全部关闭，只可开启连续或单个版本号。多版本开启时，使用逗号拼接传输，例：TLSv1.1,TLSv1.2。
+        /// </summary>
+        [JsonProperty("tls_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string TlsVersion { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  privateKey: ").Append(PrivateKey).Append("\n");
             sb.Append("  certificateSource: ").Append(CertificateSource).Append("\n");
             sb.Append("  http2Status: ").Append(Http2Status).Append("\n");
+            sb.Append("  tlsVersion: ").Append(TlsVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Http2Status == input.Http2Status ||
                     (this.Http2Status != null &&
                     this.Http2Status.Equals(input.Http2Status))
+                ) && 
+                (
+                    this.TlsVersion == input.TlsVersion ||
+                    (this.TlsVersion != null &&
+                    this.TlsVersion.Equals(input.TlsVersion))
                 );
         }
 
@@ -138,6 +150,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
                 if (this.Http2Status != null)
                     hashCode = hashCode * 59 + this.Http2Status.GetHashCode();
+                if (this.TlsVersion != null)
+                    hashCode = hashCode * 59 + this.TlsVersion.GetHashCode();
                 return hashCode;
             }
         }

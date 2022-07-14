@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string RemoteGroupId { get; set; }
 
         /// <summary>
+        /// 功能说明：远端IP地址组ID 约束：和remote_ip_prefix，remote_group_id互斥
+        /// </summary>
+        [JsonProperty("remote_address_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RemoteAddressGroupId { get; set; }
+
+        /// <summary>
         /// 安全组所属项目ID
         /// </summary>
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -99,6 +105,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  portRangeMax: ").Append(PortRangeMax).Append("\n");
             sb.Append("  remoteIpPrefix: ").Append(RemoteIpPrefix).Append("\n");
             sb.Append("  remoteGroupId: ").Append(RemoteGroupId).Append("\n");
+            sb.Append("  remoteAddressGroupId: ").Append(RemoteAddressGroupId).Append("\n");
             sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -172,6 +179,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.RemoteGroupId.Equals(input.RemoteGroupId))
                 ) && 
                 (
+                    this.RemoteAddressGroupId == input.RemoteAddressGroupId ||
+                    (this.RemoteAddressGroupId != null &&
+                    this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))
+                ) && 
+                (
                     this.TenantId == input.TenantId ||
                     (this.TenantId != null &&
                     this.TenantId.Equals(input.TenantId))
@@ -206,6 +218,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
                 if (this.RemoteGroupId != null)
                     hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
+                if (this.RemoteAddressGroupId != null)
+                    hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
                 if (this.TenantId != null)
                     hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 return hashCode;

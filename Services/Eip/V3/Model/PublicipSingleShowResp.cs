@@ -695,7 +695,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// 默认不显示。用户标签
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TagsInfo> Tags { get; set; }
+        public List<string> Tags { get; set; }
 
         /// <summary>
         /// 默认不显示。记录实例的更上一层归属。例如associate_instance_type为PORT，此字段记录PORT的device_id和device_owner信息。仅有限场景记录。

@@ -285,6 +285,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("sub_status", NullValueHandling = NullValueHandling.Ignore)]
         public string SubStatus { get; set; }
 
+        /// <summary>
+        /// 实例标签键值。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
+        /// <summary>
+        /// 实例CPU类型，通常为x86_64或aarch64
+        /// </summary>
+        [JsonProperty("cpu_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string CpuType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -338,6 +350,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  domainNameInfo: ").Append(DomainNameInfo).Append("\n");
             sb.Append("  transparentClientIpEnable: ").Append(TransparentClientIpEnable).Append("\n");
             sb.Append("  subStatus: ").Append(SubStatus).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  cpuType: ").Append(CpuType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -584,6 +598,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.SubStatus == input.SubStatus ||
                     (this.SubStatus != null &&
                     this.SubStatus.Equals(input.SubStatus))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.CpuType == input.CpuType ||
+                    (this.CpuType != null &&
+                    this.CpuType.Equals(input.CpuType))
                 );
         }
 
@@ -685,6 +710,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
                 if (this.SubStatus != null)
                     hashCode = hashCode * 59 + this.SubStatus.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.CpuType != null)
+                    hashCode = hashCode * 59 + this.CpuType.GetHashCode();
                 return hashCode;
             }
         }

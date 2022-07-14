@@ -45,12 +45,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("file_path", NullValueHandling = NullValueHandling.Ignore)]
         public string FilePath { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("file_mapping", NullValueHandling = NullValueHandling.Ignore)]
-        public FileMapping FileMapping { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -64,7 +58,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  bucketName: ").Append(BucketName).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
             sb.Append("  filePath: ").Append(FilePath).Append("\n");
-            sb.Append("  fileMapping: ").Append(FileMapping).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,11 +103,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.FilePath == input.FilePath ||
                     (this.FilePath != null &&
                     this.FilePath.Equals(input.FilePath))
-                ) && 
-                (
-                    this.FileMapping == input.FileMapping ||
-                    (this.FileMapping != null &&
-                    this.FileMapping.Equals(input.FileMapping))
                 );
         }
 
@@ -136,8 +124,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
                 if (this.FilePath != null)
                     hashCode = hashCode * 59 + this.FilePath.GetHashCode();
-                if (this.FileMapping != null)
-                    hashCode = hashCode * 59 + this.FileMapping.GetHashCode();
                 return hashCode;
             }
         }

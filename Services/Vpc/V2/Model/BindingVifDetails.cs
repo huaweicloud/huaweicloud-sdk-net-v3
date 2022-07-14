@@ -21,6 +21,18 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("primary_interface", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PrimaryInterface { get; set; }
 
+        /// <summary>
+        /// 功能说明：表示该网络服务提供端口过滤特性，如安全组和反MAC/IP欺骗。
+        /// </summary>
+        [JsonProperty("port_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PortFilter { get; set; }
+
+        /// <summary>
+        /// 用于通知像nova这样的API消费者，应该使用OVS的混合插入策略。
+        /// </summary>
+        [JsonProperty("ovs_hybrid_plug", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? OvsHybridPlug { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +42,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             var sb = new StringBuilder();
             sb.Append("class BindingVifDetails {\n");
             sb.Append("  primaryInterface: ").Append(PrimaryInterface).Append("\n");
+            sb.Append("  portFilter: ").Append(PortFilter).Append("\n");
+            sb.Append("  ovsHybridPlug: ").Append(OvsHybridPlug).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +69,16 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.PrimaryInterface == input.PrimaryInterface ||
                     (this.PrimaryInterface != null &&
                     this.PrimaryInterface.Equals(input.PrimaryInterface))
+                ) && 
+                (
+                    this.PortFilter == input.PortFilter ||
+                    (this.PortFilter != null &&
+                    this.PortFilter.Equals(input.PortFilter))
+                ) && 
+                (
+                    this.OvsHybridPlug == input.OvsHybridPlug ||
+                    (this.OvsHybridPlug != null &&
+                    this.OvsHybridPlug.Equals(input.OvsHybridPlug))
                 );
         }
 
@@ -68,6 +92,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 int hashCode = 41;
                 if (this.PrimaryInterface != null)
                     hashCode = hashCode * 59 + this.PrimaryInterface.GetHashCode();
+                if (this.PortFilter != null)
+                    hashCode = hashCode * 59 + this.PortFilter.GetHashCode();
+                if (this.OvsHybridPlug != null)
+                    hashCode = hashCode * 59 + this.OvsHybridPlug.GetHashCode();
                 return hashCode;
             }
         }

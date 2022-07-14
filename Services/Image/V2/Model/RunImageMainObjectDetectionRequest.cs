@@ -7,19 +7,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.IoTDA.V5.Model
+namespace HuaweiCloud.SDK.Image.V2.Model
 {
     /// <summary>
-    /// OBS文件中的列和流转数据的对应关系。
+    /// Request Object
     /// </summary>
-    public class FileMapping 
+    public class RunImageMainObjectDetectionRequest 
     {
 
         /// <summary>
-        /// **参数说明**：csv文件格式转换列表。当file_type为csv时，必填。
+        /// 
         /// </summary>
-        [JsonProperty("csv_mappings", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CsvMappings> CsvMappings { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public ImageMainObjectDetectionReq Body { get; set; }
 
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class FileMapping {\n");
-            sb.Append("  csvMappings: ").Append(CsvMappings).Append("\n");
+            sb.Append("class RunImageMainObjectDetectionRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,23 +40,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FileMapping);
+            return this.Equals(input as RunImageMainObjectDetectionRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(FileMapping input)
+        public bool Equals(RunImageMainObjectDetectionRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.CsvMappings == input.CsvMappings ||
-                    this.CsvMappings != null &&
-                    input.CsvMappings != null &&
-                    this.CsvMappings.SequenceEqual(input.CsvMappings)
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CsvMappings != null)
-                    hashCode = hashCode * 59 + this.CsvMappings.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

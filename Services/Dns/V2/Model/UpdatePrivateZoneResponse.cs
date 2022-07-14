@@ -106,7 +106,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<string> Masters { get; set; }
 
         /// <summary>
-        ///   Private zone关联的Router(VPC)信息
+        /// 内网Zone关联的Router(VPC)信息
         /// </summary>
         [JsonProperty("routers", NullValueHandling = NullValueHandling.Ignore)]
         public List<RouterWithStatus> Routers { get; set; }
