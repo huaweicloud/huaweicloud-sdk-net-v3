@@ -30,56 +30,56 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警规则状态
+        /// 告警规则状态, ok为正常，alarm为告警，invalid为已失效
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 告警规则等级
+        /// 告警级别, 1为紧急，2为重要，3为次要，4为提示
         /// </summary>
         [SDKProperty("level", IsQuery = true)]
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public int? Level { get; set; }
 
         /// <summary>
-        /// 服务的命名空间
+        /// 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 告警资源ID，多维度情况使用逗号分隔
+        /// 告警资源ID，多维度情况按字母升序排列并使用逗号分隔
         /// </summary>
         [SDKProperty("resource_id", IsQuery = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 通过时间筛选traces的起始时间(不包括传入时间) 例如：2022-02-10T10:05:46+08:00
+        /// 查询告警记录的起始时间，例如：2022-02-10T10:05:46+08:00
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public string From { get; set; }
 
         /// <summary>
-        /// 通过时间筛选traces的终止时间(不包括传入时间) 例如：2022-02-10T10:05:47+08:00
+        /// 查询告警记录的截止时间，例如：2022-02-10T10:05:47+08:00
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public string To { get; set; }
 
         /// <summary>
-        /// 偏移量
+        /// 分页偏移量
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 希望的查询的数据量
+        /// 分页大小
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

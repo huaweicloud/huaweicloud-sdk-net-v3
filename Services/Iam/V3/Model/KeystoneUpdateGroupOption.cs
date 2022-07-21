@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 用户组名，长度小于等于64字节。name与description至少填写一个。
+        /// 用户组名，长度小于等于128字符。name与description至少填写一个。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

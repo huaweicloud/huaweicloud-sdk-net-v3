@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string StatType { get; set; }
 
         /// <summary>
-        /// 查询时间间隔，单位为秒，可设置值300(5分钟),3600(1小时),86400(1天)等。
+        /// - 查询时间间隔，单位：秒，取值说明： - 300(5分钟)：最大查询跨度2天 - 3600(1小时)：最大查询跨度7天 - 86400(1天)：最大查询跨度31天 - 如果不传，默认取对应时间跨度的最小间隔。
         /// </summary>
         [SDKProperty("interval", IsQuery = true)]
         [JsonProperty("interval", NullValueHandling = NullValueHandling.Ignore)]
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string ServiceArea { get; set; }
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\&quot;all\&quot;表示所有项目。注意：当使用子账号调用接口时，该参数必传。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

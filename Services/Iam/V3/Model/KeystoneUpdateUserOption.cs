@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// IAM用户新用户名，长度5~32之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
+        /// 新IAM用户名，长度1~64之间，只能包含如下字符：大小写字母、空格、数字或特殊字符（-_.）且不能以数字开头
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

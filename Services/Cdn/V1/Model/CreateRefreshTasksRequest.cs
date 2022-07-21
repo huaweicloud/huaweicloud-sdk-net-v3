@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+        /// 当用户开启企业项目功能时，该参数生效，表示在当前企业项目下添加缓存刷新任务，\&quot;all\&quot;代表所有项目。注意：当使用子账号调用接口时，该参数必传。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

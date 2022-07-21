@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -38,7 +39,7 @@ namespace HuaweiCloud.SDK.Core
                 return DeSerializeStream<T>(message);
             }
 
-            var body = message.Content.ReadAsStringAsync().Result;
+            var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
             var jsonObject = SetResponseBody<T>(body);
 
             SetAdditionalAttrs(message, jsonObject, body);
@@ -142,19 +143,19 @@ namespace HuaweiCloud.SDK.Core
             var t = Activator.CreateInstance<T>();
             t.HttpStatusCode = (int) message.StatusCode;
             t.HttpHeaders = message.Headers.ToString();
-            t.HttpBody = message.Content.ReadAsStringAsync().Result;
+            t.HttpBody = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
             return t;
         }
 
         public static List<T> DeSerializeList<T>(HttpResponseMessage message)
         {
-            var body = message.Content.ReadAsStringAsync().Result;
+            var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
             return JArray.Parse(body).ToObject<List<T>>(JsonSerializer.CreateDefault(GetJsonSettings()));
         }
 
         public static Dictionary<TK, TV> DeSerializeMap<TK, TV>(HttpResponseMessage message)
         {
-            var body = message.Content.ReadAsStringAsync().Result;
+            var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
             return JArray.Parse(body).ToObject<Dictionary<TK, TV>>(JsonSerializer.CreateDefault(GetJsonSettings()));
         }
 

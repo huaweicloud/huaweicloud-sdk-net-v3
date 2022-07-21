@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Core
             {
                 HttpStatusCode = (int) responseMessage.StatusCode,
                 HttpHeaders = responseMessage.Headers.ToString(),
-                HttpBody = responseMessage.Content.ReadAsStringAsync().Result
+                HttpBody = Encoding.UTF8.GetString(responseMessage.Content.ReadAsByteArrayAsync().Result)
             };
 
             var requestId = "";

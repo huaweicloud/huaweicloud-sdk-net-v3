@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<AlarmHistoryItemV2> AlarmHistories { get; set; }
 
         /// <summary>
-        /// 告警历史列表总数
+        /// 告警记录列表总数
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

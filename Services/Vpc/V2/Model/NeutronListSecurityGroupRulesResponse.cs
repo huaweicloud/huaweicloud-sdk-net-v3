@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("security_group_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<NeutronSecurityGroupRule> SecurityGroupRules { get; set; }
 
+        /// <summary>
+        /// 分页信息
+        /// </summary>
+        [JsonProperty("security_group_rules_links", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NeutronPageLink> SecurityGroupRulesLinks { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +36,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             var sb = new StringBuilder();
             sb.Append("class NeutronListSecurityGroupRulesResponse {\n");
             sb.Append("  securityGroupRules: ").Append(SecurityGroupRules).Append("\n");
+            sb.Append("  securityGroupRulesLinks: ").Append(SecurityGroupRulesLinks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.SecurityGroupRules != null &&
                     input.SecurityGroupRules != null &&
                     this.SecurityGroupRules.SequenceEqual(input.SecurityGroupRules)
+                ) && 
+                (
+                    this.SecurityGroupRulesLinks == input.SecurityGroupRulesLinks ||
+                    this.SecurityGroupRulesLinks != null &&
+                    input.SecurityGroupRulesLinks != null &&
+                    this.SecurityGroupRulesLinks.SequenceEqual(input.SecurityGroupRulesLinks)
                 );
         }
 
@@ -69,6 +82,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 int hashCode = 41;
                 if (this.SecurityGroupRules != null)
                     hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
+                if (this.SecurityGroupRulesLinks != null)
+                    hashCode = hashCode * 59 + this.SecurityGroupRulesLinks.GetHashCode();
                 return hashCode;
             }
         }

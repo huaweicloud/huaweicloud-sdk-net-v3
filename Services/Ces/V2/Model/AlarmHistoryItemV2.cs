@@ -10,13 +10,361 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警历史详细信息
+    /// 告警记录详细信息
     /// </summary>
     public class AlarmHistoryItemV2 
     {
+        /// <summary>
+        /// 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
+        /// </summary>
+        /// <value>告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。</value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum OK for value: ok
+            /// </summary>
+            public static readonly StatusEnum OK = new StatusEnum("ok");
+
+            /// <summary>
+            /// Enum ALARM for value: alarm
+            /// </summary>
+            public static readonly StatusEnum ALARM = new StatusEnum("alarm");
+
+            /// <summary>
+            /// Enum INVALID for value: invalid
+            /// </summary>
+            public static readonly StatusEnum INVALID = new StatusEnum("invalid");
+
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                { "ok", OK },
+                { "alarm", ALARM },
+                { "invalid", INVALID },
+            };
+
+            private string Value;
+
+            public StatusEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static StatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
 
         /// <summary>
-        /// 告警历史ID
+        /// 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+        /// </summary>
+        /// <value>告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。</value>
+        [JsonConverter(typeof(EnumClassConverter<LevelEnum>))]
+        public class LevelEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly LevelEnum NUMBER_1 = new LevelEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            public static readonly LevelEnum NUMBER_2 = new LevelEnum(2);
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            public static readonly LevelEnum NUMBER_3 = new LevelEnum(3);
+
+            /// <summary>
+            /// Enum NUMBER_4 for value: 4
+            /// </summary>
+            public static readonly LevelEnum NUMBER_4 = new LevelEnum(4);
+
+            private static readonly Dictionary<int?, LevelEnum> StaticFields =
+            new Dictionary<int?, LevelEnum>()
+            {
+                { 1, NUMBER_1 },
+                { 2, NUMBER_2 },
+                { 3, NUMBER_3 },
+                { 4, NUMBER_4 },
+            };
+
+            private int? Value;
+
+            public LevelEnum(int? value)
+            {
+                Value = value;
+            }
+
+            public static LevelEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as LevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(LevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(LevelEnum a, LevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(LevelEnum a, LevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
+        /// </summary>
+        /// <value>告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum EVENT_SYS for value: EVENT.SYS
+            /// </summary>
+            public static readonly TypeEnum EVENT_SYS = new TypeEnum("EVENT.SYS");
+
+            /// <summary>
+            /// Enum EVENT_CUSTOM for value: EVENT.CUSTOM
+            /// </summary>
+            public static readonly TypeEnum EVENT_CUSTOM = new TypeEnum("EVENT.CUSTOM");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "EVENT.SYS", EVENT_SYS },
+                { "EVENT.CUSTOM", EVENT_CUSTOM },
+            };
+
+            private string Value;
+
+            public TypeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 告警记录ID
         /// </summary>
         [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordId { get; set; }
@@ -34,23 +382,20 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警历史的状态，取值为ok，alarm，insufficient_data； ok为正常，alarm为告警，insufficient_data数据不足。
+        /// 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
+        public StatusEnum Status { get; set; }
         /// <summary>
-        /// 告警历史的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+        /// 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Level { get; set; }
-
+        public LevelEnum Level { get; set; }
         /// <summary>
         /// 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; set; }
-
+        public TypeEnum Type { get; set; }
         /// <summary>
         /// 是否发送通知，值为true或者false。
         /// </summary>
@@ -88,22 +433,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public AdditionalInfo AdditionalInfo { get; set; }
 
         /// <summary>
-        /// 告警触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notificationList：告警状态发生变化时，被通知对象的列表。
+        /// 告警触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。
         /// </summary>
         [JsonProperty("alarm_actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SMNAction> AlarmActions { get; set; }
+        public List<Notification> AlarmActions { get; set; }
 
         /// <summary>
-        /// 告警恢复触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
+        /// 告警恢复触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。
         /// </summary>
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SMNAction> OkActions { get; set; }
+        public List<Notification> OkActions { get; set; }
 
         /// <summary>
-        /// 计算出该条告警历史的资源监控数据上报时间和监控数值。
+        /// 计算出该条告警记录的资源监控数据上报时间和监控数值。
         /// </summary>
-        [JsonProperty("data_points", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> DataPoints { get; set; }
+        [JsonProperty("datapoints", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DataPointInfo> Datapoints { get; set; }
 
 
         /// <summary>
@@ -127,7 +472,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  additionalInfo: ").Append(AdditionalInfo).Append("\n");
             sb.Append("  alarmActions: ").Append(AlarmActions).Append("\n");
             sb.Append("  okActions: ").Append(OkActions).Append("\n");
-            sb.Append("  dataPoints: ").Append(DataPoints).Append("\n");
+            sb.Append("  datapoints: ").Append(Datapoints).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -222,10 +567,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.OkActions.SequenceEqual(input.OkActions)
                 ) && 
                 (
-                    this.DataPoints == input.DataPoints ||
-                    this.DataPoints != null &&
-                    input.DataPoints != null &&
-                    this.DataPoints.SequenceEqual(input.DataPoints)
+                    this.Datapoints == input.Datapoints ||
+                    this.Datapoints != null &&
+                    input.Datapoints != null &&
+                    this.Datapoints.SequenceEqual(input.Datapoints)
                 );
         }
 
@@ -265,8 +610,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
                 if (this.OkActions != null)
                     hashCode = hashCode * 59 + this.OkActions.GetHashCode();
-                if (this.DataPoints != null)
-                    hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
+                if (this.Datapoints != null)
+                    hashCode = hashCode * 59 + this.Datapoints.GetHashCode();
                 return hashCode;
             }
         }

@@ -14,15 +14,306 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class AlarmCondition 
     {
+        /// <summary>
+        /// 指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)， 300代表指标按5分钟聚合周期为一个数据点参与告警计算。
+        /// </summary>
+        /// <value>指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)， 300代表指标按5分钟聚合周期为一个数据点参与告警计算。</value>
+        [JsonConverter(typeof(EnumClassConverter<PeriodEnum>))]
+        public class PeriodEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_0 = new PeriodEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_1 = new PeriodEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_300 for value: 300
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_300 = new PeriodEnum(300);
+
+            /// <summary>
+            /// Enum NUMBER_1200 for value: 1200
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_1200 = new PeriodEnum(1200);
+
+            /// <summary>
+            /// Enum NUMBER_3600 for value: 3600
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_3600 = new PeriodEnum(3600);
+
+            /// <summary>
+            /// Enum NUMBER_14400 for value: 14400
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_14400 = new PeriodEnum(14400);
+
+            /// <summary>
+            /// Enum NUMBER_86400 for value: 86400
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_86400 = new PeriodEnum(86400);
+
+            private static readonly Dictionary<int?, PeriodEnum> StaticFields =
+            new Dictionary<int?, PeriodEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 1, NUMBER_1 },
+                { 300, NUMBER_300 },
+                { 1200, NUMBER_1200 },
+                { 3600, NUMBER_3600 },
+                { 14400, NUMBER_14400 },
+                { 86400, NUMBER_86400 },
+            };
+
+            private int? Value;
+
+            public PeriodEnum(int? value)
+            {
+                Value = value;
+            }
+
+            public static PeriodEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PeriodEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PeriodEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(PeriodEnum a, PeriodEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PeriodEnum a, PeriodEnum b)
+            {
+                return !(a == b);
+            }
+        }
 
         /// <summary>
-        /// 告警条件判断周期，单位为秒，支持的值为1，300，1200，3600，14400，86400。说明：当period设置为1时，表示以原始的指标数据判断告警。当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为0。
+        /// 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次；
+        /// </summary>
+        /// <value>告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次；</value>
+        [JsonConverter(typeof(EnumClassConverter<SuppressDurationEnum>))]
+        public class SuppressDurationEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_0 = new SuppressDurationEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_300 for value: 300
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_300 = new SuppressDurationEnum(300);
+
+            /// <summary>
+            /// Enum NUMBER_600 for value: 600
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_600 = new SuppressDurationEnum(600);
+
+            /// <summary>
+            /// Enum NUMBER_900 for value: 900
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_900 = new SuppressDurationEnum(900);
+
+            /// <summary>
+            /// Enum NUMBER_1800 for value: 1800
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_1800 = new SuppressDurationEnum(1800);
+
+            /// <summary>
+            /// Enum NUMBER_3600 for value: 3600
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_3600 = new SuppressDurationEnum(3600);
+
+            /// <summary>
+            /// Enum NUMBER_10800 for value: 10800
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_10800 = new SuppressDurationEnum(10800);
+
+            /// <summary>
+            /// Enum NUMBER_21600 for value: 21600
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_21600 = new SuppressDurationEnum(21600);
+
+            /// <summary>
+            /// Enum NUMBER_43200 for value: 43200
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_43200 = new SuppressDurationEnum(43200);
+
+            private static readonly Dictionary<int?, SuppressDurationEnum> StaticFields =
+            new Dictionary<int?, SuppressDurationEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 300, NUMBER_300 },
+                { 600, NUMBER_600 },
+                { 900, NUMBER_900 },
+                { 1800, NUMBER_1800 },
+                { 3600, NUMBER_3600 },
+                { 10800, NUMBER_10800 },
+                { 21600, NUMBER_21600 },
+                { 43200, NUMBER_43200 },
+            };
+
+            private int? Value;
+
+            public SuppressDurationEnum(int? value)
+            {
+                Value = value;
+            }
+
+            public static SuppressDurationEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SuppressDurationEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SuppressDurationEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(SuppressDurationEnum a, SuppressDurationEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SuppressDurationEnum a, SuppressDurationEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)， 300代表指标按5分钟聚合周期为一个数据点参与告警计算。
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Period { get; set; }
-
+        public PeriodEnum Period { get; set; }
         /// <summary>
-        /// 聚合方式
+        /// 聚合方式, 支持的值为(average|min|max|sum)
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }
@@ -37,7 +328,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 告警阈值，取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Value { get; set; }
+        public double? Value { get; set; }
 
         /// <summary>
         /// 数据的单位，最大长度为32位。
@@ -52,11 +343,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Count { get; set; }
 
         /// <summary>
-        /// 发送告警的周期，值可为0, 300, 600, 900, 1800, 3600, 10800, 21600, 43200, 86400；0表示只告警一次，300表示每5分钟告警一次，600表示每10分钟告警一次，900表示每15分钟告警一次，1800表示每30分钟告警一次，3600表示每1小时告警一次，10800表示每3小时告警一次，21600表示每6小时告警一次，43200表示每12小时告警一次，86400表示每1天告警一次。
+        /// 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次；
         /// </summary>
         [JsonProperty("suppress_duration", NullValueHandling = NullValueHandling.Ignore)]
-        public int? SuppressDuration { get; set; }
-
+        public SuppressDurationEnum SuppressDuration { get; set; }
 
         /// <summary>
         /// Get the string

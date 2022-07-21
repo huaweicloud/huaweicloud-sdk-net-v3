@@ -10,25 +10,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警历史额外字段，仅针对事件监控告警场景所产生的告警历史信息。
+    /// 告警记录额外字段，仅针对事件监控告警场景所产生的告警记录信息。
     /// </summary>
     public class AdditionalInfo 
     {
 
         /// <summary>
-        /// 该条告警历史对应的资源ID；如：22d98f6c-16d2-4c2d-b424-50e79d82838f。
+        /// 该条告警记录对应的资源ID；如：22d98f6c-16d2-4c2d-b424-50e79d82838f。
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 该条告警历史对应的资源名称；如：ECS-Test01。
+        /// 该条告警记录对应的资源名称；如：ECS-Test01。
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 该条告警历史对应的事件监控ID，资源所产生的事件；如：ev16031292300990kKN8p17J。
+        /// 该条告警记录对应的事件监控ID，资源所产生的事件；如：ev16031292300990kKN8p17J。
         /// </summary>
         [JsonProperty("event_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EventId { get; set; }

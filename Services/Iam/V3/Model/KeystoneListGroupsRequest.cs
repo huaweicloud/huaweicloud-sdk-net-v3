@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 用户组名，长度小于等于64字节，获取方式请参见：[获取用户组名](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+        /// 用户组名，长度小于等于128字符，获取方式请参见：[获取用户组名](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
