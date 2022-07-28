@@ -420,6 +420,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("sequence", NullValueHandling = NullValueHandling.Ignore)]
         public string Sequence { get; set; }
 
+        /// <summary>
+        /// 密钥库ID，默认使用KMS默认密钥库
+        /// </summary>
+        [JsonProperty("keystore_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KeystoreId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -435,6 +441,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  origin: ").Append(Origin).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sequence: ").Append(Sequence).Append("\n");
+            sb.Append("  keystoreId: ").Append(KeystoreId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -490,6 +497,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.Sequence == input.Sequence ||
                     (this.Sequence != null &&
                     this.Sequence.Equals(input.Sequence))
+                ) && 
+                (
+                    this.KeystoreId == input.KeystoreId ||
+                    (this.KeystoreId != null &&
+                    this.KeystoreId.Equals(input.KeystoreId))
                 );
         }
 
@@ -515,6 +527,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Sequence != null)
                     hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                if (this.KeystoreId != null)
+                    hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
                 return hashCode;
             }
         }

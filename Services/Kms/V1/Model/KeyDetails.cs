@@ -474,6 +474,18 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
         [JsonProperty("sys_enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SysEnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 密钥库ID
+        /// </summary>
+        [JsonProperty("keystore_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KeystoreId { get; set; }
+
+        /// <summary>
+        /// 密钥在加密机中的标签
+        /// </summary>
+        [JsonProperty("key_label", NullValueHandling = NullValueHandling.Ignore)]
+        public string KeyLabel { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -498,6 +510,8 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
             sb.Append("  origin: ").Append(Origin).Append("\n");
             sb.Append("  keyRotationEnabled: ").Append(KeyRotationEnabled).Append("\n");
             sb.Append("  sysEnterpriseProjectId: ").Append(SysEnterpriseProjectId).Append("\n");
+            sb.Append("  keystoreId: ").Append(KeystoreId).Append("\n");
+            sb.Append("  keyLabel: ").Append(KeyLabel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -598,6 +612,16 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
                     this.SysEnterpriseProjectId == input.SysEnterpriseProjectId ||
                     (this.SysEnterpriseProjectId != null &&
                     this.SysEnterpriseProjectId.Equals(input.SysEnterpriseProjectId))
+                ) && 
+                (
+                    this.KeystoreId == input.KeystoreId ||
+                    (this.KeystoreId != null &&
+                    this.KeystoreId.Equals(input.KeystoreId))
+                ) && 
+                (
+                    this.KeyLabel == input.KeyLabel ||
+                    (this.KeyLabel != null &&
+                    this.KeyLabel.Equals(input.KeyLabel))
                 );
         }
 
@@ -641,6 +665,10 @@ namespace HuaweiCloud.SDK.Kms.V1.Model
                     hashCode = hashCode * 59 + this.KeyRotationEnabled.GetHashCode();
                 if (this.SysEnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.SysEnterpriseProjectId.GetHashCode();
+                if (this.KeystoreId != null)
+                    hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
+                if (this.KeyLabel != null)
+                    hashCode = hashCode * 59 + this.KeyLabel.GetHashCode();
                 return hashCode;
             }
         }

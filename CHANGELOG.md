@@ -1,3 +1,38 @@
+# 3.0.98 2022-07-28
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interfaces `ShowDedicatedResourceInfo`, `SetGaussMySqlProxyWeight`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `proxy`, `master_node`, `readonly_nodes` to the interface `ShowGaussMySqlProxy`
+  - Add the response parameter `proxy_list` to the interface `ShowGaussMySqlProxyList`
+  - Add the response parameter `proxy_flavor_groups` to the interface `ShowGaussMySqlProxyFlavors`
+  - Changes of the interface `ShowGaussMySqlBackupList`:
+    - Add the enum values `BUILDING`, `COMPLETED`, `FAILED`, `AVAILABLE` to the response parameter `status`
+    - Add the enum values `auto`, `manual` to the response parameter `type`
+    - Add the enum values `0`, `1`, `2` to the response parameter `backup_level`
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - Support the following interfaces：
+    - `ListKeyStores`
+    - `CreateKeyStore`
+    - `ShowKeyStore`
+    - `DeleteKeyStore`
+    - `EnableKeyStore`
+    - `DisableKeyStore`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `keystore_id` to the interface `CreateKey`
+  - Add the response parameters `keystore_id`, `key_label` to the interface `ListKeys`
+  - Add the response parameters `keystore_id`, `key_label` to the interface `ListKeyDetail`
+  - Add the response parameters `keystore_id`, `key_label` to the interface `ListKmsByTags`
+
 # 3.0.97 2022-07-21
 
 ### HuaweiCloud SDK Core

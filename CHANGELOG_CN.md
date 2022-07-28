@@ -1,3 +1,38 @@
+# 3.0.98 2022-07-28
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`ShowDedicatedResourceInfo`、`SetGaussMySqlProxyWeight`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowGaussMySqlProxy`新增响应参数 `proxy`、`master_node`、`readonly_nodes`
+  - 接口`ShowGaussMySqlProxyList`新增响应参数 `proxy_list`
+  - 接口`ShowGaussMySqlProxyFlavors`新增响应参数 `proxy_flavor_groups`
+  - 接口`ShowGaussMySqlBackupList`:
+    - 响应参数`status`新增枚举值`BUILDING`、`COMPLETED`、`FAILED`、`AVAILABLE`
+    - 响应参数`type`新增枚举值`auto`、`manual`
+    - 响应参数`backup_level`新增枚举值`0`、`1`、`2`
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListKeyStores`
+    - `CreateKeyStore`
+    - `ShowKeyStore`
+    - `DeleteKeyStore`
+    - `EnableKeyStore`
+    - `DisableKeyStore`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateKey`新增请求参数 `keystore_id`
+  - 接口`ListKeys`新增响应参数 `keystore_id`、`key_label`
+  - 接口`ListKeyDetail`新增响应参数 `keystore_id`、`key_label`
+  - 接口`ListKmsByTags`新增响应参数 `keystore_id`、`key_label`
+
 # 3.0.97 2022-07-21
 
 ### HuaweiCloud SDK Core
