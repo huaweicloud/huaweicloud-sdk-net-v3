@@ -529,6 +529,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 取消领域与项目的关联关系
+        ///
+        /// 取消领域与项目的关联关系
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CancelProjectDomainResponse CancelProjectDomain(CancelProjectDomainRequest cancelProjectDomainRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , cancelProjectDomainRequest.ProjectId.ToString());
+            urlParam.Add("domain_id" , cancelProjectDomainRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/domains/{domain_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelProjectDomainRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<CancelProjectDomainResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建工作项类型自定义字段
         ///
         /// 创建工作项类型自定义字段
@@ -580,6 +599,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createIterationV4Request);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateIterationV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 创建项目的领域
+        ///
+        /// 查询项目的领域列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateProjectDomainResponse CreateProjectDomain(CreateProjectDomainRequest createProjectDomainRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , createProjectDomainRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/domain",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProjectDomainRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateProjectDomainResponse>(response);
         }
         
         /// <summary>
@@ -881,6 +918,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询项目的领域列表
+        ///
+        /// 查询项目的领域列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListProjectDomainsResponse ListProjectDomains(ListProjectDomainsRequest listProjectDomainsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listProjectDomainsRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/domains",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectDomainsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListProjectDomainsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询项目下所有工作项的历史记录
         ///
         /// 查询项目下所有工作项的历史记录
@@ -1078,6 +1133,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIterationV4Request);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateIterationV4Response>(response);
+        }
+        
+        /// <summary>
+        /// 更新项目的领域
+        ///
+        /// 更新项目的领域
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UpdateProjectDomainResponse UpdateProjectDomain(UpdateProjectDomainRequest updateProjectDomainRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , updateProjectDomainRequest.ProjectId.ToString());
+            urlParam.Add("domain_id" , updateProjectDomainRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/domains/{domain_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectDomainRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateProjectDomainResponse>(response);
         }
         
         /// <summary>

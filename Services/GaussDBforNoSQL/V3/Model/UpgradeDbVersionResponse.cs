@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class DeleteInstanceResponse : SdkResponse
+    public class UpgradeDbVersionResponse : SdkResponse
     {
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteInstanceResponse {\n");
+            sb.Append("class UpgradeDbVersionResponse {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -39,13 +39,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteInstanceResponse);
+            return this.Equals(input as UpgradeDbVersionResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteInstanceResponse input)
+        public bool Equals(UpgradeDbVersionResponse input)
         {
             if (input == null)
                 return false;

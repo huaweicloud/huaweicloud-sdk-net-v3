@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public string Image { get; set; }
 
         /// <summary>
-        /// 与image二选一  图片的URL路径，目前支持：  - 公网HTTP/HTTPS URL  - 华为云OBS提供的URL，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权。详请参见[[配置OBS服务的访问权限](https://support.huaweicloud.com/api-moderation/moderation_03_0020.html)](tag:hc)[[配置OBS服务的访问权限](https://support.huaweicloud.com/intl/zh-cn/api-moderation/moderation_03_0020.html)](tag:hk)。  &gt; - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 &gt; - 请保证被检测图片所在的存储服务稳定可靠，建议您使用华为云OBS存储。 &gt; - lmage不支持跨区域OBS，OBS的区域需要和服务保持一致。 
+        /// 与image二选一  图片的URL路径，目前支持：  - 公网HTTP/HTTPS URL  - 华为云OBS提供的URL，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权。详请参见[[配置OBS服务的访问权限](https://support.huaweicloud.com/api-image/image_03_0037.html)](tag:hc)[[配置OBS服务的访问权限](https://support.huaweicloud.com/api-image/image_03_0037.html)](tag:hk)。  &gt; - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 &gt; - 请保证被检测图片所在的存储服务稳定可靠，建议您使用华为云OBS存储。 &gt; - lmage不支持跨区域OBS，OBS的区域需要和服务保持一致。 
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
@@ -45,12 +45,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
-        /// <summary>
-        /// 用户自定义标签列表
-        /// </summary>
-        [JsonProperty("custom_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> CustomTags { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -64,7 +58,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  customTags: ").Append(CustomTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,12 +103,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.CustomTags == input.CustomTags ||
-                    this.CustomTags != null &&
-                    input.CustomTags != null &&
-                    this.CustomTags.SequenceEqual(input.CustomTags)
                 );
         }
 
@@ -137,8 +124,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
                     hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.CustomTags != null)
-                    hashCode = hashCode * 59 + this.CustomTags.GetHashCode();
                 return hashCode;
             }
         }

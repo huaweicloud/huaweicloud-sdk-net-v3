@@ -1,3 +1,41 @@
+# 3.0.99 2022-08-02
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the interface `UpgradeDbVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `patch_available` to the interface `ListInstances`
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the request parameter `language` from the interface `RunImageDescription`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - Support the interfaces `CreateProjectDomain`, `ListProjectDomains`, `UpdateProjectDomain`, `CancelProjectDomain`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `auto` to the request parameter `audio_format` to the interface `RecognizeShortAudio`
+
 # 3.0.98 2022-07-28
 
 ### HuaweiCloud SDK GaussDB

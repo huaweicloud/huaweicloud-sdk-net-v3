@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
+namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class DeleteInstanceResponse : SdkResponse
+    public class CreateProjectDomainRequestBody 
     {
 
         /// <summary>
-        /// 任务ID。
+        /// 领域名称
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainName { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteInstanceResponse {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("class CreateProjectDomainRequestBody {\n");
+            sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteInstanceResponse);
+            return this.Equals(input as CreateProjectDomainRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteInstanceResponse input)
+        public bool Equals(CreateProjectDomainRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
+                    this.DomainName == input.DomainName ||
+                    (this.DomainName != null &&
+                    this.DomainName.Equals(input.DomainName))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.DomainName != null)
+                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 return hashCode;
             }
         }

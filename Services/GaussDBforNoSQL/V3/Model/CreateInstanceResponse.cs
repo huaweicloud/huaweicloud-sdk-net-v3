@@ -112,7 +112,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string SslOption { get; set; }
 
         /// <summary>
-        /// 创建实例的工作流ID, 仅创建按需实例时会返回该参数。
+        /// 创建实例的任务ID, 仅创建按需实例时会返回该参数。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
