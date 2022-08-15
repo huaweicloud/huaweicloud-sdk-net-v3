@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 
         /// </summary>
         [JsonProperty("recordsets", NullValueHandling = NullValueHandling.Ignore)]
-        public List<QueryRecordSetWithLineAndTagsResp> Recordsets { get; set; }
+        public List<QueryRecordSetWithLineResp> Recordsets { get; set; }
 
         /// <summary>
         /// 

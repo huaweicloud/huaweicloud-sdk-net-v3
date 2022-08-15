@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 参数值对象，用户基于默认参数模板自定义的参数值。为空时不修改参数值。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateInstanceConfigurationValuesOption Values { get; set; }
+        public Dictionary<string, string> Values { get; set; }
 
 
         /// <summary>
@@ -53,8 +53,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             return 
                 (
                     this.Values == input.Values ||
-                    (this.Values != null &&
-                    this.Values.Equals(input.Values))
+                    this.Values != null &&
+                    input.Values != null &&
+                    this.Values.SequenceEqual(input.Values)
                 );
         }
 

@@ -254,6 +254,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string EngineVersion { get; set; }
 
         /// <summary>
+        /// 实例描述。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
         /// 实例规格。
         /// </summary>
         [JsonProperty("specification", NullValueHandling = NullValueHandling.Ignore)]
@@ -290,7 +296,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Port { get; set; }
 
         /// <summary>
-        /// 实例的状态。
+        /// 实例的状态。 [详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。](tag:hws)[详细状态说明见[实例状态说明](https://support.huaweicloud.com/intl/zh-cn/api-kafka/kafka-api-180514012.html)。](tag:hws_hk)
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -344,6 +350,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 实例访问用户名。
+        /// </summary>
+        [JsonProperty("access_user", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessUser { get; set; }
+
+        /// <summary>
         /// 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -368,7 +380,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? EnablePublicip { get; set; }
 
         /// <summary>
-        /// Kafka实例的KafkaManager连接地址。
+        /// Kafka实例的Kafka Manager连接地址。
         /// </summary>
         [JsonProperty("management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string ManagementConnectAddress { get; set; }
@@ -378,6 +390,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SslEnable { get; set; }
+
+        /// <summary>
+        /// 是否开启双向认证。
+        /// </summary>
+        [JsonProperty("ssl_two_way_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SslTwoWayEnable { get; set; }
+
+        /// <summary>
+        /// 是否能够证书替换。
+        /// </summary>
+        [JsonProperty("cert_replaced", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CertReplaced { get; set; }
 
         /// <summary>
         /// 企业项目ID。
@@ -486,7 +510,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string KafkaPublicStatus { get; set; }
 
         /// <summary>
-        /// 公网带宽。
+        /// kafka公网访问带宽。
         /// </summary>
         [JsonProperty("public_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? PublicBandwidth { get; set; }
@@ -522,7 +546,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> Ipv6ConnectAddresses { get; set; }
 
         /// <summary>
-        /// 是否开启转储。
+        /// 是否开启转储。新规格产品暂不支持开启转储。
         /// </summary>
         [JsonProperty("connector_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConnectorEnable { get; set; }
@@ -544,6 +568,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("rest_connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string RestConnectAddress { get; set; }
+
+        /// <summary>
+        /// kafka公网访问带宽。待删除版本。
+        /// </summary>
+        [JsonProperty("public_boundwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PublicBoundwidth { get; set; }
 
         /// <summary>
         /// 是否开启消息查询功能。
@@ -570,6 +600,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? TraceEnable { get; set; }
 
         /// <summary>
+        /// 是否开启代理。
+        /// </summary>
+        [JsonProperty("agent_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AgentEnable { get; set; }
+
+        /// <summary>
         /// 租户侧连接地址。
         /// </summary>
         [JsonProperty("pod_connect_address", NullValueHandling = NullValueHandling.Ignore)]
@@ -594,6 +630,30 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string CesVersion { get; set; }
 
         /// <summary>
+        /// 区分实例什么时候开启的公网访问：true,actived,closed,false。
+        /// </summary>
+        [JsonProperty("public_access_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicAccessEnabled { get; set; }
+
+        /// <summary>
+        /// 节点数。
+        /// </summary>
+        [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NodeNum { get; set; }
+
+        /// <summary>
+        /// 是否启用新规格计费。
+        /// </summary>
+        [JsonProperty("new_spec_billing_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? NewSpecBillingEnable { get; set; }
+
+        /// <summary>
+        /// 节点数量。
+        /// </summary>
+        [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BrokerNum { get; set; }
+
+        /// <summary>
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -616,6 +676,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  specification: ").Append(Specification).Append("\n");
             sb.Append("  storageSpace: ").Append(StorageSpace).Append("\n");
             sb.Append("  partitionNum: ").Append(PartitionNum).Append("\n");
@@ -631,12 +692,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  accessUser: ").Append(AccessUser).Append("\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  maintainBegin: ").Append(MaintainBegin).Append("\n");
             sb.Append("  maintainEnd: ").Append(MaintainEnd).Append("\n");
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  managementConnectAddress: ").Append(ManagementConnectAddress).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
+            sb.Append("  sslTwoWayEnable: ").Append(SslTwoWayEnable).Append("\n");
+            sb.Append("  certReplaced: ").Append(CertReplaced).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  isLogicalVolume: ").Append(IsLogicalVolume).Append("\n");
             sb.Append("  extendTimes: ").Append(ExtendTimes).Append("\n");
@@ -665,14 +729,20 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  connectorId: ").Append(ConnectorId).Append("\n");
             sb.Append("  restEnable: ").Append(RestEnable).Append("\n");
             sb.Append("  restConnectAddress: ").Append(RestConnectAddress).Append("\n");
+            sb.Append("  publicBoundwidth: ").Append(PublicBoundwidth).Append("\n");
             sb.Append("  messageQueryInstEnable: ").Append(MessageQueryInstEnable).Append("\n");
             sb.Append("  vpcClientPlain: ").Append(VpcClientPlain).Append("\n");
             sb.Append("  supportFeatures: ").Append(SupportFeatures).Append("\n");
             sb.Append("  traceEnable: ").Append(TraceEnable).Append("\n");
+            sb.Append("  agentEnable: ").Append(AgentEnable).Append("\n");
             sb.Append("  podConnectAddress: ").Append(PodConnectAddress).Append("\n");
             sb.Append("  diskEncrypted: ").Append(DiskEncrypted).Append("\n");
             sb.Append("  kafkaPrivateConnectAddress: ").Append(KafkaPrivateConnectAddress).Append("\n");
             sb.Append("  cesVersion: ").Append(CesVersion).Append("\n");
+            sb.Append("  publicAccessEnabled: ").Append(PublicAccessEnabled).Append("\n");
+            sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
+            sb.Append("  newSpecBillingEnable: ").Append(NewSpecBillingEnable).Append("\n");
+            sb.Append("  brokerNum: ").Append(BrokerNum).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  drEnable: ").Append(DrEnable).Append("\n");
             sb.Append("}\n");
@@ -710,6 +780,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.EngineVersion == input.EngineVersion ||
                     (this.EngineVersion != null &&
                     this.EngineVersion.Equals(input.EngineVersion))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 ) && 
                 (
                     this.Specification == input.Specification ||
@@ -787,6 +862,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.UserName.Equals(input.UserName))
                 ) && 
                 (
+                    this.AccessUser == input.AccessUser ||
+                    (this.AccessUser != null &&
+                    this.AccessUser.Equals(input.AccessUser))
+                ) && 
+                (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
@@ -815,6 +895,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SslEnable == input.SslEnable ||
                     (this.SslEnable != null &&
                     this.SslEnable.Equals(input.SslEnable))
+                ) && 
+                (
+                    this.SslTwoWayEnable == input.SslTwoWayEnable ||
+                    (this.SslTwoWayEnable != null &&
+                    this.SslTwoWayEnable.Equals(input.SslTwoWayEnable))
+                ) && 
+                (
+                    this.CertReplaced == input.CertReplaced ||
+                    (this.CertReplaced != null &&
+                    this.CertReplaced.Equals(input.CertReplaced))
                 ) && 
                 (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
@@ -959,6 +1049,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.RestConnectAddress.Equals(input.RestConnectAddress))
                 ) && 
                 (
+                    this.PublicBoundwidth == input.PublicBoundwidth ||
+                    (this.PublicBoundwidth != null &&
+                    this.PublicBoundwidth.Equals(input.PublicBoundwidth))
+                ) && 
+                (
                     this.MessageQueryInstEnable == input.MessageQueryInstEnable ||
                     (this.MessageQueryInstEnable != null &&
                     this.MessageQueryInstEnable.Equals(input.MessageQueryInstEnable))
@@ -979,6 +1074,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.TraceEnable.Equals(input.TraceEnable))
                 ) && 
                 (
+                    this.AgentEnable == input.AgentEnable ||
+                    (this.AgentEnable != null &&
+                    this.AgentEnable.Equals(input.AgentEnable))
+                ) && 
+                (
                     this.PodConnectAddress == input.PodConnectAddress ||
                     (this.PodConnectAddress != null &&
                     this.PodConnectAddress.Equals(input.PodConnectAddress))
@@ -997,6 +1097,26 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.CesVersion == input.CesVersion ||
                     (this.CesVersion != null &&
                     this.CesVersion.Equals(input.CesVersion))
+                ) && 
+                (
+                    this.PublicAccessEnabled == input.PublicAccessEnabled ||
+                    (this.PublicAccessEnabled != null &&
+                    this.PublicAccessEnabled.Equals(input.PublicAccessEnabled))
+                ) && 
+                (
+                    this.NodeNum == input.NodeNum ||
+                    (this.NodeNum != null &&
+                    this.NodeNum.Equals(input.NodeNum))
+                ) && 
+                (
+                    this.NewSpecBillingEnable == input.NewSpecBillingEnable ||
+                    (this.NewSpecBillingEnable != null &&
+                    this.NewSpecBillingEnable.Equals(input.NewSpecBillingEnable))
+                ) && 
+                (
+                    this.BrokerNum == input.BrokerNum ||
+                    (this.BrokerNum != null &&
+                    this.BrokerNum.Equals(input.BrokerNum))
                 ) && 
                 (
                     this.Tags == input.Tags ||
@@ -1025,6 +1145,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.EngineVersion != null)
                     hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Specification != null)
                     hashCode = hashCode * 59 + this.Specification.GetHashCode();
                 if (this.StorageSpace != null)
@@ -1055,6 +1177,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.AccessUser != null)
+                    hashCode = hashCode * 59 + this.AccessUser.GetHashCode();
                 if (this.OrderId != null)
                     hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.MaintainBegin != null)
@@ -1067,6 +1191,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.ManagementConnectAddress.GetHashCode();
                 if (this.SslEnable != null)
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.SslTwoWayEnable != null)
+                    hashCode = hashCode * 59 + this.SslTwoWayEnable.GetHashCode();
+                if (this.CertReplaced != null)
+                    hashCode = hashCode * 59 + this.CertReplaced.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.IsLogicalVolume != null)
@@ -1123,6 +1251,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.RestEnable.GetHashCode();
                 if (this.RestConnectAddress != null)
                     hashCode = hashCode * 59 + this.RestConnectAddress.GetHashCode();
+                if (this.PublicBoundwidth != null)
+                    hashCode = hashCode * 59 + this.PublicBoundwidth.GetHashCode();
                 if (this.MessageQueryInstEnable != null)
                     hashCode = hashCode * 59 + this.MessageQueryInstEnable.GetHashCode();
                 if (this.VpcClientPlain != null)
@@ -1131,6 +1261,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SupportFeatures.GetHashCode();
                 if (this.TraceEnable != null)
                     hashCode = hashCode * 59 + this.TraceEnable.GetHashCode();
+                if (this.AgentEnable != null)
+                    hashCode = hashCode * 59 + this.AgentEnable.GetHashCode();
                 if (this.PodConnectAddress != null)
                     hashCode = hashCode * 59 + this.PodConnectAddress.GetHashCode();
                 if (this.DiskEncrypted != null)
@@ -1139,6 +1271,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.KafkaPrivateConnectAddress.GetHashCode();
                 if (this.CesVersion != null)
                     hashCode = hashCode * 59 + this.CesVersion.GetHashCode();
+                if (this.PublicAccessEnabled != null)
+                    hashCode = hashCode * 59 + this.PublicAccessEnabled.GetHashCode();
+                if (this.NodeNum != null)
+                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.NewSpecBillingEnable != null)
+                    hashCode = hashCode * 59 + this.NewSpecBillingEnable.GetHashCode();
+                if (this.BrokerNum != null)
+                    hashCode = hashCode * 59 + this.BrokerNum.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.DrEnable != null)

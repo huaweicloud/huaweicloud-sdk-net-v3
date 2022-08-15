@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public long? Id { get; set; }
 
         /// <summary>
-        /// 命名空间编号
+        /// 组织编号
         /// </summary>
         [JsonProperty("ns_id", NullValueHandling = NullValueHandling.Ignore)]
         public long? NsId { get; set; }

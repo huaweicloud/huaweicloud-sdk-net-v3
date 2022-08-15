@@ -22,6 +22,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
+        /// <summary>
+        /// 应填写namespace::{namespace}|mode::{mode}。其中{namespace}是组织名称，{mode}如果不设置，查看有权限的组织列表；设置为visible，查看可见的组织列表（部分组织：仓库有权限，组织没有权限）。
+        /// </summary>
+        [SDKProperty("filter", IsQuery = true)]
+        [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
+        public string Filter { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -31,6 +38,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListNamespacesRequest {\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +64,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     this.Namespace == input.Namespace ||
                     (this.Namespace != null &&
                     this.Namespace.Equals(input.Namespace))
+                ) && 
+                (
+                    this.Filter == input.Filter ||
+                    (this.Filter != null &&
+                    this.Filter.Equals(input.Filter))
                 );
         }
 
@@ -69,6 +82,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 int hashCode = 41;
                 if (this.Namespace != null)
                     hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Filter != null)
+                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 return hashCode;
             }
         }

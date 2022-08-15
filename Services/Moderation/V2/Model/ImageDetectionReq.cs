@@ -167,12 +167,6 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         [JsonProperty("categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<CategoriesEnum> Categories { get; set; }
         /// <summary>
-        /// 检测场景: ad场景自定义词库，配置方式同文本审核自定义词库配置方式 
-        /// </summary>
-        [JsonProperty("ad_glossaries", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> AdGlossaries { get; set; }
-
-        /// <summary>
         /// 图文审核检测场景。当categories包含ad时，该参数生效。 当前支持的场景有系统场景和用户自定义场景： - 系统场景为：   - qr_code：二维码   - politics：涉政   - porn：涉黄   - ad：广告   - abuse：辱骂   - contraband：违禁品 - 用户自定义场景为：自定义黑名单词库。   &gt; 自定义词库的创建和使用请参见[配置自定义词库](https://support.huaweicloud.com/api-moderation/moderation_03_0020.html)。 
         /// </summary>
         [JsonProperty("ad_categories", NullValueHandling = NullValueHandling.Ignore)]
@@ -202,7 +196,6 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
             sb.Append("  image: ").Append(Image).Append("\n");
             sb.Append("  moderationRule: ").Append(ModerationRule).Append("\n");
             sb.Append("  categories: ").Append(Categories).Append("\n");
-            sb.Append("  adGlossaries: ").Append(AdGlossaries).Append("\n");
             sb.Append("  adCategories: ").Append(AdCategories).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  showOcrText: ").Append(ShowOcrText).Append("\n");
@@ -249,12 +242,6 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     this.Categories.SequenceEqual(input.Categories)
                 ) && 
                 (
-                    this.AdGlossaries == input.AdGlossaries ||
-                    this.AdGlossaries != null &&
-                    input.AdGlossaries != null &&
-                    this.AdGlossaries.SequenceEqual(input.AdGlossaries)
-                ) && 
-                (
                     this.AdCategories == input.AdCategories ||
                     this.AdCategories != null &&
                     input.AdCategories != null &&
@@ -288,8 +275,6 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     hashCode = hashCode * 59 + this.ModerationRule.GetHashCode();
                 if (this.Categories != null)
                     hashCode = hashCode * 59 + this.Categories.GetHashCode();
-                if (this.AdGlossaries != null)
-                    hashCode = hashCode * 59 + this.AdGlossaries.GetHashCode();
                 if (this.AdCategories != null)
                     hashCode = hashCode * 59 + this.AdCategories.GetHashCode();
                 if (this.Threshold != null)

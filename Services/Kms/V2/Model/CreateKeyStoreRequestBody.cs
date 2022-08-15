@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string KeystoreAlias { get; set; }
 
         /// <summary>
-        /// DHSM集群Id，集群当前未创建专属密钥库。
+        /// DHSM集群Id，要求集群当前未创建专属密钥库。
         /// </summary>
         [JsonProperty("hsm_cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string HsmClusterId { get; set; }

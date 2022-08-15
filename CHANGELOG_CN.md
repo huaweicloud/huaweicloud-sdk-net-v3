@@ -1,3 +1,72 @@
+# 3.0.100 2022-08-11
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 支持接口`ShowUrlTaskInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowDomainFullConfig`新增响应参数 `ipv6_accelerate`
+  - 接口`UpdateDomainFullConfig`新增请求参数 `ipv6_accelerate`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePostPaidInstance`:
+    - 新增请求参数 `broker_num`
+    - 请求参数`specification`新增枚举值`c6.2u4g.cluster`、`c6.4u8g.cluster`、`c6.8u16g.cluster`、`c6.12u24g.cluster`、`c6.16u32g.cluster`
+    - 请求参数`partition_num`新增枚举值`250`、`500`、`1000`、`1500`、`2000`
+    - 请求参数`storage_spec_code`新增枚举值`dms.physical.storage.high.v2`、`dms.physical.storage.ultra.v2`
+    - 请求参数`specification`改为非必填
+  - 接口`ListInstances`新增响应参数 `description`、`access_user`、`ssl_two_way_enable`、`cert_replaced`、`public_boundwidth`、`agent_enable`、`public_access_enabled`、`node_num`、`new_spec_billing_enable`、`broker_num`
+  - 接口`ShowInstance`新增响应参数 `description`、`access_user`、`ssl_two_way_enable`、`cert_replaced`、`public_boundwidth`、`agent_enable`、`public_access_enabled`、`node_num`、`new_spec_billing_enable`、`broker_num`
+  - 接口`ShowInstanceExtendProductInfo`请求参数`engine`改为非必填
+  - 接口`ShowPartitionBeginningMessage`:
+    - 新增响应参数 `offset`
+    - 移除响应参数 `message_offset`
+  - 接口`ShowPartitionEndMessage`:
+    - 新增响应参数 `offset`
+    - 移除响应参数 `message_offset`
+  - 接口`ListEngineProducts`新增响应参数 `product_alias`
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 支持接口`RunCreateAudioModerationJob`、`RunQueryAudioModerationJob`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RunImageModeration`移除请求参数 `ad_glossaries`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeMacaoIdCard`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SWR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListNamespaces`新增请求参数 `filter`
+  - 接口`ListReposDetails`新增请求参数 `limit`、`offset`、`order_column`、`order_type`
+  - 接口`ListRepositoryTags`新增请求参数 `filter`
+  - 接口`ListSharedReposDetails`新增请求参数 `namespace`、`name`、`center`、`limit`、`offset`、`order_column`、`order_type`
+  - 接口`ListRetentionHistories`:
+    - 新增请求参数 `filter`
+    - 移除请求参数 `offset`、`limit`
+
 # 3.0.99 2022-08-02
 
 ### HuaweiCloud SDK GaussDBforNoSQL

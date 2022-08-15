@@ -63,6 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("max_tps_per_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxTpsPerBroker { get; set; }
 
+        /// <summary>
+        /// product_id的别名。
+        /// </summary>
+        [JsonProperty("product_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductAlias { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -79,6 +85,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  maxBandwidthPerBroker: ").Append(MaxBandwidthPerBroker).Append("\n");
             sb.Append("  minStoragePerNode: ").Append(MinStoragePerNode).Append("\n");
             sb.Append("  maxTpsPerBroker: ").Append(MaxTpsPerBroker).Append("\n");
+            sb.Append("  productAlias: ").Append(ProductAlias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.MaxTpsPerBroker == input.MaxTpsPerBroker ||
                     (this.MaxTpsPerBroker != null &&
                     this.MaxTpsPerBroker.Equals(input.MaxTpsPerBroker))
+                ) && 
+                (
+                    this.ProductAlias == input.ProductAlias ||
+                    (this.ProductAlias != null &&
+                    this.ProductAlias.Equals(input.ProductAlias))
                 );
         }
 
@@ -166,6 +178,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.MinStoragePerNode.GetHashCode();
                 if (this.MaxTpsPerBroker != null)
                     hashCode = hashCode * 59 + this.MaxTpsPerBroker.GetHashCode();
+                if (this.ProductAlias != null)
+                    hashCode = hashCode * 59 + this.ProductAlias.GetHashCode();
                 return hashCode;
             }
         }

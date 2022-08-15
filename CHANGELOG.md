@@ -1,3 +1,72 @@
+# 3.0.100 2022-08-11
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the interface `ShowUrlTaskInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `ipv6_accelerate` to the interface `ShowDomainFullConfig`
+  - Add the request parameter `ipv6_accelerate` to the interface `UpdateDomainFullConfig`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `CreatePostPaidInstance`:
+    - Add the request parameter `broker_num`
+    - Add the enum values `c6.2u4g.cluster`, `c6.4u8g.cluster`, `c6.8u16g.cluster`, `c6.12u24g.cluster`, `c6.16u32g.cluster` to the request parameter `specification`
+    - Add the enum values `250`, `500`, `1000`, `1500`, `2000` to the request parameter `partition_num`
+    - Add the enum values `dms.physical.storage.high.v2`, `dms.physical.storage.ultra.v2` to the request parameter `storage_spec_code`
+    - The request parameter `specification` changed to not required
+  - Add the response parameters `description`, `access_user`, `ssl_two_way_enable`, `cert_replaced`, `public_boundwidth`, `agent_enable`, `public_access_enabled`, `node_num`, `new_spec_billing_enable`, `broker_num` to the interface `ListInstances`
+  - Add the response parameters `description`, `access_user`, `ssl_two_way_enable`, `cert_replaced`, `public_boundwidth`, `agent_enable`, `public_access_enabled`, `node_num`, `new_spec_billing_enable`, `broker_num` to the interface `ShowInstance`
+  - The request parameter `engine` changed to not required of the interface `ShowInstanceExtendProductInfo`
+  - Changes of the interface `ShowPartitionBeginningMessage`:
+    - Add the response parameter `offset`
+    - Remove the response parameter `message_offset`
+  - Changes of the interface `ShowPartitionEndMessage`:
+    - Add the response parameter `offset`
+    - Remove the response parameter `message_offset`
+  - Add the response parameter `product_alias` to the interface `ListEngineProducts`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - Support the interfaces `RunCreateAudioModerationJob`, `RunQueryAudioModerationJob`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the request parameter `ad_glossaries` from the interface `RunImageModeration`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeMacaoIdCard`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SWR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `filter` to the interface `ListNamespaces`
+  - Add the request parameters `limit`, `offset`, `order_column`, `order_type` to the interface `ListReposDetails`
+  - Add the request parameter `filter` to the interface `ListRepositoryTags`
+  - Add the request parameters `namespace`, `name`, `center`, `limit`, `offset`, `order_column`, `order_type` to the interface `ListSharedReposDetails`
+  - Changes of the interface `ListRetentionHistories`:
+    - Add the request parameter `filter`
+    - Remove the request parameters `offset`, `limit`
+
 # 3.0.99 2022-08-02
 
 ### HuaweiCloud SDK GaussDBforNoSQL

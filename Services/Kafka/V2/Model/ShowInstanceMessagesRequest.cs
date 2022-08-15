@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// topic名称。
+        /// Topic名称。  Topic名称必现以字母开头且只支持大小写字母、中横线、下划线以及数字。
         /// </summary>
         [SDKProperty("topic", IsQuery = true)]
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 分页大小。
+        /// 分页大小。取值范围为0~50。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

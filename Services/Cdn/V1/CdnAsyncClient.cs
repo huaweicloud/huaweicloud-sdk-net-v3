@@ -506,6 +506,23 @@ namespace HuaweiCloud.SDK.Cdn.V1
         }
         
         /// <summary>
+        /// 查询刷新预热URL记录
+        ///
+        /// 查询刷新预热URL记录。如需此接口，请提交工单开通
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowUrlTaskInfoResponse> ShowUrlTaskInfoAsync(ShowUrlTaskInfoRequest showUrlTaskInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/contentgateway/url-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlTaskInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowUrlTaskInfoResponse>(response);
+        }
+        
+        /// <summary>
         /// 设置IP黑白名单
         ///
         /// 设置域名的IP黑白名单。

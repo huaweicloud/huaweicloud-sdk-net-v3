@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 操作结果。 - &#39;success: 操作成功&#39; - &#39;failed: 操作失败&#39; 
+        /// 操作结果。   - success: 操作成功   - failed: 操作失败 
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public string Result { get; set; }

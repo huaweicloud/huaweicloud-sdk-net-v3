@@ -270,7 +270,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ObsBucketName { get; set; }
 
         /// <summary>
-        /// 存储在obs的路径，默认可以不填。 取值范围：英文字母、数字、下划线和斜杠，最大长度为50个字符。 默认配置为空。 
+        /// 存储在obs的路径，默认可以不填。 取值范围：英文字母、数字、下划线、中划线和斜杠，最大长度为64个字符。 默认配置为空。 
         /// </summary>
         [JsonProperty("obs_path", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsPath { get; set; }

@@ -69,6 +69,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("cache_url_parameter_filter", NullValueHandling = NullValueHandling.Ignore)]
         public CacheUrlParameterFilter CacheUrlParameterFilter { get; set; }
 
+        /// <summary>
+        /// ipv6设置（1：打开；0：关闭）
+        /// </summary>
+        [JsonProperty("ipv6_accelerate", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Ipv6Accelerate { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -86,6 +92,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  forceRedirect: ").Append(ForceRedirect).Append("\n");
             sb.Append("  compress: ").Append(Compress).Append("\n");
             sb.Append("  cacheUrlParameterFilter: ").Append(CacheUrlParameterFilter).Append("\n");
+            sb.Append("  ipv6Accelerate: ").Append(Ipv6Accelerate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,6 +161,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.CacheUrlParameterFilter == input.CacheUrlParameterFilter ||
                     (this.CacheUrlParameterFilter != null &&
                     this.CacheUrlParameterFilter.Equals(input.CacheUrlParameterFilter))
+                ) && 
+                (
+                    this.Ipv6Accelerate == input.Ipv6Accelerate ||
+                    (this.Ipv6Accelerate != null &&
+                    this.Ipv6Accelerate.Equals(input.Ipv6Accelerate))
                 );
         }
 
@@ -183,6 +195,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.Compress.GetHashCode();
                 if (this.CacheUrlParameterFilter != null)
                     hashCode = hashCode * 59 + this.CacheUrlParameterFilter.GetHashCode();
+                if (this.Ipv6Accelerate != null)
+                    hashCode = hashCode * 59 + this.Ipv6Accelerate.GetHashCode();
                 return hashCode;
             }
         }

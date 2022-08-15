@@ -21,6 +21,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowReposTagResp> Body { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("Content-Range", IsHeader = true)]
+        [JsonProperty("Content-Range", NullValueHandling = NullValueHandling.Ignore)]
+        public string ContentRange { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +37,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListRepositoryTagsResponse {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  contentRange: ").Append(ContentRange).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +64,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     this.Body != null &&
                     input.Body != null &&
                     this.Body.SequenceEqual(input.Body)
+                ) && 
+                (
+                    this.ContentRange == input.ContentRange ||
+                    (this.ContentRange != null &&
+                    this.ContentRange.Equals(input.ContentRange))
                 );
         }
 
@@ -69,6 +82,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 int hashCode = 41;
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.ContentRange != null)
+                    hashCode = hashCode * 59 + this.ContentRange.GetHashCode();
                 return hashCode;
             }
         }

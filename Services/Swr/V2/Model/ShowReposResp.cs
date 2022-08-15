@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 租户的命名空间名称
+        /// 租户的组织名称
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }

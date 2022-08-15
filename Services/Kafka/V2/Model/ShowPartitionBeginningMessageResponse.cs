@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 最新消息位置。
         /// </summary>
-        [JsonProperty("message_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MessageOffset { get; set; }
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("class ShowPartitionBeginningMessageResponse {\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
-            sb.Append("  messageOffset: ").Append(MessageOffset).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -83,9 +83,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Partition.Equals(input.Partition))
                 ) && 
                 (
-                    this.MessageOffset == input.MessageOffset ||
-                    (this.MessageOffset != null &&
-                    this.MessageOffset.Equals(input.MessageOffset))
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
                 ) && 
                 (
                     this.Timestamp == input.Timestamp ||
@@ -106,8 +106,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.Partition != null)
                     hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.MessageOffset != null)
-                    hashCode = hashCode * 59 + this.MessageOffset.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Timestamp != null)
                     hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;

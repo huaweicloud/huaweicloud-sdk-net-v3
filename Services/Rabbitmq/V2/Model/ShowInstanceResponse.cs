@@ -15,6 +15,128 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class ShowInstanceResponse : SdkResponse
     {
         /// <summary>
+        /// 代理个数。
+        /// </summary>
+        /// <value>代理个数。</value>
+        [JsonConverter(typeof(EnumClassConverter<BrokerNumEnum>))]
+        public class BrokerNumEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_1 = new BrokerNumEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_3 = new BrokerNumEnum(3);
+
+            /// <summary>
+            /// Enum NUMBER_5 for value: 5
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_5 = new BrokerNumEnum(5);
+
+            /// <summary>
+            /// Enum NUMBER_7 for value: 7
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_7 = new BrokerNumEnum(7);
+
+            private static readonly Dictionary<int?, BrokerNumEnum> StaticFields =
+            new Dictionary<int?, BrokerNumEnum>()
+            {
+                { 1, NUMBER_1 },
+                { 3, NUMBER_3 },
+                { 5, NUMBER_5 },
+                { 7, NUMBER_7 },
+            };
+
+            private int? Value;
+
+            public BrokerNumEnum(int? value)
+            {
+                Value = value;
+            }
+
+            public static BrokerNumEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as BrokerNumEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(BrokerNumEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(BrokerNumEnum a, BrokerNumEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(BrokerNumEnum a, BrokerNumEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 实例类型：集群，cluster。
         /// </summary>
         /// <value>实例类型：集群，cluster。</value>
@@ -125,6 +247,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
 
+        /// <summary>
+        /// 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+        /// </summary>
+        [JsonProperty("access_user", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessUser { get; set; }
+
+        /// <summary>
+        /// 代理个数。
+        /// </summary>
+        [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
+        public BrokerNumEnum BrokerNum { get; set; }
         /// <summary>
         /// 实例名称。
         /// </summary>
@@ -378,6 +511,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowInstanceResponse {\n");
+            sb.Append("  accessUser: ").Append(AccessUser).Append("\n");
+            sb.Append("  brokerNum: ").Append(BrokerNum).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
@@ -440,6 +575,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 return false;
 
             return 
+                (
+                    this.AccessUser == input.AccessUser ||
+                    (this.AccessUser != null &&
+                    this.AccessUser.Equals(input.AccessUser))
+                ) && 
+                (
+                    this.BrokerNum == input.BrokerNum ||
+                    (this.BrokerNum != null &&
+                    this.BrokerNum.Equals(input.BrokerNum))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -658,6 +803,10 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AccessUser != null)
+                    hashCode = hashCode * 59 + this.AccessUser.GetHashCode();
+                if (this.BrokerNum != null)
+                    hashCode = hashCode * 59 + this.BrokerNum.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Engine != null)

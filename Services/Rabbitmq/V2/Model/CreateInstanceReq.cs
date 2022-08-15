@@ -223,33 +223,161 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra
+        /// 代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7
         /// </summary>
-        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra</value>
+        /// <value>代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7</value>
+        [JsonConverter(typeof(EnumClassConverter<BrokerNumEnum>))]
+        public class BrokerNumEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_1 = new BrokerNumEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_3 = new BrokerNumEnum(3);
+
+            /// <summary>
+            /// Enum NUMBER_5 for value: 5
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_5 = new BrokerNumEnum(5);
+
+            /// <summary>
+            /// Enum NUMBER_7 for value: 7
+            /// </summary>
+            public static readonly BrokerNumEnum NUMBER_7 = new BrokerNumEnum(7);
+
+            private static readonly Dictionary<int?, BrokerNumEnum> StaticFields =
+            new Dictionary<int?, BrokerNumEnum>()
+            {
+                { 1, NUMBER_1 },
+                { 3, NUMBER_3 },
+                { 5, NUMBER_5 },
+                { 7, NUMBER_7 },
+            };
+
+            private int? Value;
+
+            public BrokerNumEnum(int? value)
+            {
+                Value = value;
+            }
+
+            public static BrokerNumEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as BrokerNumEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(BrokerNumEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(BrokerNumEnum a, BrokerNumEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(BrokerNumEnum a, BrokerNumEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
+        /// </summary>
+        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
             /// <summary>
-            /// Enum DMS_PHYSICAL_STORAGE_NORMAL for value: dms.physical.storage.normal
+            /// Enum DMS_PHYSICAL_STORAGE_HIGH_V2 for value: dms.physical.storage.high.v2
             /// </summary>
-            public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_NORMAL = new StorageSpecCodeEnum("dms.physical.storage.normal");
+            public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH_V2 = new StorageSpecCodeEnum("dms.physical.storage.high.v2");
 
             /// <summary>
-            /// Enum DMS_PHYSICAL_STORAGE_HIGH for value: dms.physical.storage.high
+            /// Enum DMS_PHYSICAL_STORAGE_ULTRA_V2 for value: dms.physical.storage.ultra.v2
             /// </summary>
-            public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH = new StorageSpecCodeEnum("dms.physical.storage.high");
+            public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA_V2 = new StorageSpecCodeEnum("dms.physical.storage.ultra.v2");
 
             /// <summary>
-            /// Enum DMS_PHYSICAL_STORAGE_ULTRA for value: dms.physical.storage.ultra
+            /// Enum DMS_PHYSICAL_STORAGE_HIGH_DSS_V2 for value: dms.physical.storage.high.dss.v2
             /// </summary>
-            public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA = new StorageSpecCodeEnum("dms.physical.storage.ultra");
+            public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH_DSS_V2 = new StorageSpecCodeEnum("dms.physical.storage.high.dss.v2");
+
+            /// <summary>
+            /// Enum DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2 for value: dms.physical.storage.ultra.dss.v2
+            /// </summary>
+            public static readonly StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2 = new StorageSpecCodeEnum("dms.physical.storage.ultra.dss.v2");
 
             private static readonly Dictionary<string, StorageSpecCodeEnum> StaticFields =
             new Dictionary<string, StorageSpecCodeEnum>()
             {
-                { "dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL },
-                { "dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH },
-                { "dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA },
+                { "dms.physical.storage.high.v2", DMS_PHYSICAL_STORAGE_HIGH_V2 },
+                { "dms.physical.storage.ultra.v2", DMS_PHYSICAL_STORAGE_ULTRA_V2 },
+                { "dms.physical.storage.high.dss.v2", DMS_PHYSICAL_STORAGE_HIGH_DSS_V2 },
+                { "dms.physical.storage.ultra.dss.v2", DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2 },
             };
 
             private string Value;
@@ -404,11 +532,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品标识。
+        /// 产品标识。  产品ID可以从**查询产品规格列表**接口查询。  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
 
+        /// <summary>
+        /// 代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7
+        /// </summary>
+        [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
+        public BrokerNumEnum BrokerNum { get; set; }
         /// <summary>
         /// 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
         /// </summary>
@@ -440,7 +573,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }
@@ -476,6 +609,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
+            sb.Append("  brokerNum: ").Append(BrokerNum).Append("\n");
             sb.Append("  maintainBegin: ").Append(MaintainBegin).Append("\n");
             sb.Append("  maintainEnd: ").Append(MaintainEnd).Append("\n");
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
@@ -567,6 +701,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     this.ProductId.Equals(input.ProductId))
                 ) && 
                 (
+                    this.BrokerNum == input.BrokerNum ||
+                    (this.BrokerNum != null &&
+                    this.BrokerNum.Equals(input.BrokerNum))
+                ) && 
+                (
                     this.MaintainBegin == input.MaintainBegin ||
                     (this.MaintainBegin != null &&
                     this.MaintainBegin.Equals(input.MaintainBegin))
@@ -641,6 +780,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
                 if (this.ProductId != null)
                     hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.BrokerNum != null)
+                    hashCode = hashCode * 59 + this.BrokerNum.GetHashCode();
                 if (this.MaintainBegin != null)
                     hashCode = hashCode * 59 + this.MaintainBegin.GetHashCode();
                 if (this.MaintainEnd != null)

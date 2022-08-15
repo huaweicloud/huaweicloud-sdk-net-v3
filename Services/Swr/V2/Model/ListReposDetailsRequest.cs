@@ -37,7 +37,35 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Category { get; set; }
 
         /// <summary>
-        /// 注意：至少要传递一个filter参数。其中{center}为self或thirdparty，自己的镜像或第三方镜像，默认值为self。{namespace}为组织名称，模糊匹配。 {name}为镜像仓库名称，模糊匹配。{category}为镜像仓库分类，可设置为app_server、linux、framework_app、database、lang、other、windows、arm。 {limit}为返回条数,{offset}为起始索引，注意：offset和limit参数需要配套使用。{order_column}为按列排序，可设置为name、updated_time、tag_count,{order_type}为排序类型， 可设置为desc（降序）、asc（升序），注意：order_column和order_type参数需要配套使用。
+        /// 返回条数。注意：offset和limit参数需要配套使用。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Limit { get; set; }
+
+        /// <summary>
+        /// 起始索引。注意：offset和limit参数需要配套使用。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public string Offset { get; set; }
+
+        /// <summary>
+        /// 按列排序，可设置为updated_at（按更新时间排序）。注意：order_column和order_type参数需要配套使用。
+        /// </summary>
+        [SDKProperty("order_column", IsQuery = true)]
+        [JsonProperty("order_column", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderColumn { get; set; }
+
+        /// <summary>
+        /// 排序类型，可设置为desc（降序）、asc（升序）。注意：order_column和order_type参数需要配套使用。
+        /// </summary>
+        [SDKProperty("order_type", IsQuery = true)]
+        [JsonProperty("order_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderType { get; set; }
+
+        /// <summary>
+        /// 注意：至少要传递一个filter参数。其中{namespace}为组织名称，模糊匹配。 {name}为镜像仓库名称，模糊匹配。{category}为镜像仓库分类，可设置为app_server、linux、framework_app、database、lang、other、windows、arm。 {limit}为返回条数,{offset}为起始索引，注意：offset和limit参数需要配套使用。{order_column}为按列排序，可设置为name、updated_time、tag_count,{order_type}为排序类型， 可设置为desc（降序）、asc（升序），注意：order_column和order_type参数需要配套使用。
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
@@ -54,6 +82,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  category: ").Append(Category).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  orderColumn: ").Append(OrderColumn).Append("\n");
+            sb.Append("  orderType: ").Append(OrderType).Append("\n");
             sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -92,6 +124,26 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     this.Category.Equals(input.Category))
                 ) && 
                 (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
+                ) && 
+                (
+                    this.OrderColumn == input.OrderColumn ||
+                    (this.OrderColumn != null &&
+                    this.OrderColumn.Equals(input.OrderColumn))
+                ) && 
+                (
+                    this.OrderType == input.OrderType ||
+                    (this.OrderType != null &&
+                    this.OrderType.Equals(input.OrderType))
+                ) && 
+                (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
@@ -112,6 +164,14 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Category != null)
                     hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.OrderColumn != null)
+                    hashCode = hashCode * 59 + this.OrderColumn.GetHashCode();
+                if (this.OrderType != null)
+                    hashCode = hashCode * 59 + this.OrderType.GetHashCode();
                 if (this.Filter != null)
                     hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 return hashCode;

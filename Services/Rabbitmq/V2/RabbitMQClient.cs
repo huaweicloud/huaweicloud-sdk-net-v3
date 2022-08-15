@@ -70,6 +70,24 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
+        /// 创建实例(按需)
+        ///
+        /// 创建实例，该接口创建的实例为按需计费的方式。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreatePostPaidInstanceByEngineResponse CreatePostPaidInstanceByEngine(CreatePostPaidInstanceByEngineRequest createPostPaidInstanceByEngineRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , createPostPaidInstanceByEngineRequest.Engine.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceByEngineRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreatePostPaidInstanceByEngineResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除后台任务管理中的指定记录
         ///
         /// 删除后台任务管理中的指定记录。

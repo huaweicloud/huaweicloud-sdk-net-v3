@@ -397,6 +397,23 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 澳门身份证识别
+        ///
+        /// 识别澳门身份证图片中的文字内容，并将识别的结果返回给用户。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public RecognizeMacaoIdCardResponse RecognizeMacaoIdCard(RecognizeMacaoIdCardRequest recognizeMacaoIdCardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/macao-id-card",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMacaoIdCardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeMacaoIdCardResponse>(response);
+        }
+        
+        /// <summary>
         /// 港澳台居民来往内地通行证识别
         ///
         /// 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。

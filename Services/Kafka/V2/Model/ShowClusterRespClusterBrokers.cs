@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Port { get; set; }
 
         /// <summary>
-        /// 节点id。
+        /// 节点ID。
         /// </summary>
         [JsonProperty("broker_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BrokerId { get; set; }
