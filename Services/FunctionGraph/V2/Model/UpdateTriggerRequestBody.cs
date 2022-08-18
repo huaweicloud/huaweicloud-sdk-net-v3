@@ -27,15 +27,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
 
             /// <summary>
-            /// Enum DISABLED for value: DISABLED
+            /// Enum DISABLE for value: DISABLE
             /// </summary>
-            public static readonly TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
+            public static readonly TriggerStatusEnum DISABLE = new TriggerStatusEnum("DISABLE");
 
             private static readonly Dictionary<string, TriggerStatusEnum> StaticFields =
             new Dictionary<string, TriggerStatusEnum>()
             {
                 { "ACTIVE", ACTIVE },
-                { "DISABLED", DISABLED },
+                { "DISABLE", DISABLE },
             };
 
             private string Value;

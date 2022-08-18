@@ -29,6 +29,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("execution_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecutionId { get; set; }
 
+        /// <summary>
+        /// 获取函数流执行详情完整输出值
+        /// </summary>
+        [SDKProperty("X-Get-Workflow-Full-History-Data", IsHeader = true)]
+        [JsonProperty("X-Get-Workflow-Full-History-Data", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? XGetWorkflowFullHistoryData { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("class ShowWorkflowExecutionRequest {\n");
             sb.Append("  workflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("  executionId: ").Append(ExecutionId).Append("\n");
+            sb.Append("  xGetWorkflowFullHistoryData: ").Append(XGetWorkflowFullHistoryData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +77,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.ExecutionId == input.ExecutionId ||
                     (this.ExecutionId != null &&
                     this.ExecutionId.Equals(input.ExecutionId))
+                ) && 
+                (
+                    this.XGetWorkflowFullHistoryData == input.XGetWorkflowFullHistoryData ||
+                    (this.XGetWorkflowFullHistoryData != null &&
+                    this.XGetWorkflowFullHistoryData.Equals(input.XGetWorkflowFullHistoryData))
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
                 if (this.ExecutionId != null)
                     hashCode = hashCode * 59 + this.ExecutionId.GetHashCode();
+                if (this.XGetWorkflowFullHistoryData != null)
+                    hashCode = hashCode * 59 + this.XGetWorkflowFullHistoryData.GetHashCode();
                 return hashCode;
             }
         }

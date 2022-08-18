@@ -241,6 +241,40 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 创建转码模板组集合
+        ///
+        /// 创建转码模板组集合
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateTemplateGroupCollectionResponse CreateTemplateGroupCollection(CreateTemplateGroupCollectionRequest createTemplateGroupCollectionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateGroupCollectionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateTemplateGroupCollectionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建自定义转码模板
+        ///
+        /// 创建自定义转码模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateTranscodeTemplateResponse CreateTranscodeTemplate(CreateTranscodeTemplateRequest createTranscodeTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTranscodeTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateTranscodeTemplateResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建水印模板
         ///
         /// 创建水印模板。
@@ -306,6 +340,40 @@ namespace HuaweiCloud.SDK.Vod.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteTemplateGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除转码模板组集合
+        ///
+        /// 删除转码模板组集合
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DeleteTemplateGroupCollectionResponse DeleteTemplateGroupCollection(DeleteTemplateGroupCollectionRequest deleteTemplateGroupCollectionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupCollectionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTemplateGroupCollectionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除自定义模板
+        ///
+        /// 删除自定义模板
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DeleteTranscodeTemplateResponse DeleteTranscodeTemplate(DeleteTranscodeTemplateRequest deleteTranscodeTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTranscodeTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTranscodeTemplateResponse>(response);
         }
         
         /// <summary>
@@ -396,6 +464,23 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询自定义模板组集合
+        ///
+        /// 查询转码模板组集合
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListTemplateGroupCollectionResponse ListTemplateGroupCollection(ListTemplateGroupCollectionRequest listTemplateGroupCollectionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupCollectionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListTemplateGroupCollectionResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询TopN媒资信息
         ///
         /// 查询指定域名在指定日期播放次数排名Top 100的媒资统计数据。
@@ -410,6 +495,23 @@ namespace HuaweiCloud.SDK.Vod.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopStatisticsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListTopStatisticsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询转码模板列表
+        ///
+        /// 查询转码模板列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListTranscodeTemplateResponse ListTranscodeTemplate(ListTranscodeTemplateRequest listTranscodeTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListTranscodeTemplateResponse>(response);
         }
         
         /// <summary>
@@ -711,6 +813,40 @@ namespace HuaweiCloud.SDK.Vod.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateTemplateGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改转码模板组集合
+        ///
+        /// 修改转码模板组结合
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UpdateTemplateGroupCollectionResponse UpdateTemplateGroupCollection(UpdateTemplateGroupCollectionRequest updateTemplateGroupCollectionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupCollectionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateTemplateGroupCollectionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改转码模板
+        ///
+        /// 修改转码模板
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UpdateTranscodeTemplateResponse UpdateTranscodeTemplate(UpdateTranscodeTemplateRequest updateTranscodeTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTranscodeTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateTranscodeTemplateResponse>(response);
         }
         
         /// <summary>

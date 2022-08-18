@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 函数工作流ID
+        /// 函数流定义ID
         /// </summary>
         [SDKProperty("workflow_id", IsPath = true)]
         [JsonProperty("workflow_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public StartSyncWorkflowExecutionRequestBody Body { get; set; }
+        public FlowExecuteBody Body { get; set; }
 
 
         /// <summary>

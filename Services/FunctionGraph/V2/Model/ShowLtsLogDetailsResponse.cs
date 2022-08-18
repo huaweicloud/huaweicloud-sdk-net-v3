@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
+        /// 日志组名称
+        /// </summary>
+        [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupName { get; set; }
+
+        /// <summary>
         /// 日志组id
         /// </summary>
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -41,6 +47,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowLtsLogDetailsResponse {\n");
+            sb.Append("  groupName: ").Append(GroupName).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  streamId: ").Append(StreamId).Append("\n");
             sb.Append("  streamName: ").Append(StreamName).Append("\n");
@@ -66,6 +73,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
+                    this.GroupName == input.GroupName ||
+                    (this.GroupName != null &&
+                    this.GroupName.Equals(input.GroupName))
+                ) && 
+                (
                     this.GroupId == input.GroupId ||
                     (this.GroupId != null &&
                     this.GroupId.Equals(input.GroupId))
@@ -90,6 +102,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.GroupName != null)
+                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
                 if (this.GroupId != null)
                     hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.StreamId != null)

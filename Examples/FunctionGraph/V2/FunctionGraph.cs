@@ -966,7 +966,7 @@ namespace Examples.FunctionGraph.V2
             ListFunctionStatisticsRequest req = new ListFunctionStatisticsRequest
             {
                 FuncUrn = "urn:fss:cn-north-7:46b6f338fc3445b8846c71dfb1fbd9e8:nction:CsharpSdkTest:csharpSdkTest",
-                Period = ListFunctionStatisticsRequest.PeriodEnum._15
+                Period = "15"
             };
             try
             {

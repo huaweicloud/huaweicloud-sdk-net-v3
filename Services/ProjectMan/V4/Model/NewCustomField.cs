@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string CustomField { get; set; }
 
         /// <summary>
+        /// 自定义字段名称
+        /// </summary>
+        [JsonProperty("field_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FieldName { get; set; }
+
+        /// <summary>
         /// 自定义属性对应的值，多个值以英文逗号区分开
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
@@ -36,6 +42,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             var sb = new StringBuilder();
             sb.Append("class NewCustomField {\n");
             sb.Append("  customField: ").Append(CustomField).Append("\n");
+            sb.Append("  fieldName: ").Append(FieldName).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -64,6 +71,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.CustomField.Equals(input.CustomField))
                 ) && 
                 (
+                    this.FieldName == input.FieldName ||
+                    (this.FieldName != null &&
+                    this.FieldName.Equals(input.FieldName))
+                ) && 
+                (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
@@ -80,6 +92,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                 int hashCode = 41;
                 if (this.CustomField != null)
                     hashCode = hashCode * 59 + this.CustomField.GetHashCode();
+                if (this.FieldName != null)
+                    hashCode = hashCode * 59 + this.FieldName.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;

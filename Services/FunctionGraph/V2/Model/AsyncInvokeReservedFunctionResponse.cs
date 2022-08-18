@@ -21,6 +21,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("Content-Type", IsHeader = true)]
+        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ContentType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -30,6 +37,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class AsyncInvokeReservedFunctionResponse {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,6 +63,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
+                ) && 
+                (
+                    this.ContentType == input.ContentType ||
+                    (this.ContentType != null &&
+                    this.ContentType.Equals(input.ContentType))
                 );
         }
 
@@ -68,6 +81,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.ContentType != null)
+                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 return hashCode;
             }
         }

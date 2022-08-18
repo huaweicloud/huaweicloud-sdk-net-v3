@@ -16,18 +16,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 事件ID。
-        /// </summary>
-        [SDKProperty("event_id", IsPath = true)]
-        [JsonProperty("event_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EventId { get; set; }
-
-        /// <summary>
-        /// 函数的URN（Uniform Resource Name），唯一标识函数。
+        /// 函数的URN，详细解释见FunctionGraph函数模型的描述。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
+
+        /// <summary>
+        /// 测试事件ID
+        /// </summary>
+        [SDKProperty("event_id", IsPath = true)]
+        [JsonProperty("event_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EventId { get; set; }
 
 
         /// <summary>
@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteEventRequest {\n");
-            sb.Append("  eventId: ").Append(EventId).Append("\n");
             sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
+            sb.Append("  eventId: ").Append(EventId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,14 +61,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
-                    this.EventId == input.EventId ||
-                    (this.EventId != null &&
-                    this.EventId.Equals(input.EventId))
-                ) && 
-                (
                     this.FunctionUrn == input.FunctionUrn ||
                     (this.FunctionUrn != null &&
                     this.FunctionUrn.Equals(input.FunctionUrn))
+                ) && 
+                (
+                    this.EventId == input.EventId ||
+                    (this.EventId != null &&
+                    this.EventId.Equals(input.EventId))
                 );
         }
 
@@ -80,10 +80,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EventId != null)
-                    hashCode = hashCode * 59 + this.EventId.GetHashCode();
                 if (this.FunctionUrn != null)
                     hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                if (this.EventId != null)
+                    hashCode = hashCode * 59 + this.EventId.GetHashCode();
                 return hashCode;
             }
         }

@@ -45,6 +45,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("return_text_location", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnTextLocation { get; set; }
 
+        /// <summary>
+        /// 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否经过翻拍  - false：不返回身份证图像是否经过翻拍 
+        /// </summary>
+        [JsonProperty("detect_reproduce", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectReproduce { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  side: ").Append(Side).Append("\n");
             sb.Append("  returnVerification: ").Append(ReturnVerification).Append("\n");
             sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
+            sb.Append("  detectReproduce: ").Append(DetectReproduce).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +110,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnTextLocation == input.ReturnTextLocation ||
                     (this.ReturnTextLocation != null &&
                     this.ReturnTextLocation.Equals(input.ReturnTextLocation))
+                ) && 
+                (
+                    this.DetectReproduce == input.DetectReproduce ||
+                    (this.DetectReproduce != null &&
+                    this.DetectReproduce.Equals(input.DetectReproduce))
                 );
         }
 
@@ -124,6 +136,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ReturnVerification.GetHashCode();
                 if (this.ReturnTextLocation != null)
                     hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
+                if (this.DetectReproduce != null)
+                    hashCode = hashCode * 59 + this.DetectReproduce.GetHashCode();
                 return hashCode;
             }
         }

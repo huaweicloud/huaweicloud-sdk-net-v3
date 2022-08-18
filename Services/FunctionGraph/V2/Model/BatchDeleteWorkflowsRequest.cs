@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchDeleteWorkflowsRequestBody Body { get; set; }
+        public WorkflowDeleteBody Body { get; set; }
 
 
         /// <summary>

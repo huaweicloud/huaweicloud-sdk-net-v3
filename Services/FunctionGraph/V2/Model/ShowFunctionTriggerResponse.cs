@@ -71,6 +71,36 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
 
+            /// <summary>
+            /// Enum RABBITMQ for value: RABBITMQ
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum RABBITMQ = new TriggerTypeCodeEnum("RABBITMQ");
+
+            /// <summary>
+            /// Enum DEDICATEDGATEWAY for value: DEDICATEDGATEWAY
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum DEDICATEDGATEWAY = new TriggerTypeCodeEnum("DEDICATEDGATEWAY");
+
+            /// <summary>
+            /// Enum OPENSOURCEKAFKA for value: OPENSOURCEKAFKA
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum OPENSOURCEKAFKA = new TriggerTypeCodeEnum("OPENSOURCEKAFKA");
+
+            /// <summary>
+            /// Enum APIC for value: APIC
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum APIC = new TriggerTypeCodeEnum("APIC");
+
+            /// <summary>
+            /// Enum GAUSSMONGO for value: GAUSSMONGO
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum GAUSSMONGO = new TriggerTypeCodeEnum("GAUSSMONGO");
+
+            /// <summary>
+            /// Enum EVENTGRID for value: EVENTGRID
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum EVENTGRID = new TriggerTypeCodeEnum("EVENTGRID");
+
             private static readonly Dictionary<string, TriggerTypeCodeEnum> StaticFields =
             new Dictionary<string, TriggerTypeCodeEnum>()
             {
@@ -84,6 +114,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "OBS", OBS },
                 { "SMN", SMN },
                 { "KAFKA", KAFKA },
+                { "RABBITMQ", RABBITMQ },
+                { "DEDICATEDGATEWAY", DEDICATEDGATEWAY },
+                { "OPENSOURCEKAFKA", OPENSOURCEKAFKA },
+                { "APIC", APIC },
+                { "GAUSSMONGO", GAUSSMONGO },
+                { "EVENTGRID", EVENTGRID },
             };
 
             private string Value;
@@ -173,9 +209,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         }
 
         /// <summary>
-        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。
+        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。
         /// </summary>
-        /// <value>\&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。</value>
+        /// <value>\&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。</value>
         [JsonConverter(typeof(EnumClassConverter<TriggerStatusEnum>))]
         public class TriggerStatusEnum
         {
@@ -185,15 +221,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
 
             /// <summary>
-            /// Enum DISABLED for value: DISABLED
+            /// Enum DISABLE for value: DISABLE
             /// </summary>
-            public static readonly TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
+            public static readonly TriggerStatusEnum DISABLE = new TriggerStatusEnum("DISABLE");
 
             private static readonly Dictionary<string, TriggerStatusEnum> StaticFields =
             new Dictionary<string, TriggerStatusEnum>()
             {
                 { "ACTIVE", ACTIVE },
-                { "DISABLED", DISABLED },
+                { "DISABLE", DISABLE },
             };
 
             private string Value;
@@ -295,7 +331,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("trigger_type_code", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerTypeCodeEnum TriggerTypeCode { get; set; }
         /// <summary>
-        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLED: 禁用状态。
+        /// \&quot;触发器状态\&quot;  - ACTIVE: 启用状态。 - DISABLE: 禁用状态。
         /// </summary>
         [JsonProperty("trigger_status", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerStatusEnum TriggerStatus { get; set; }

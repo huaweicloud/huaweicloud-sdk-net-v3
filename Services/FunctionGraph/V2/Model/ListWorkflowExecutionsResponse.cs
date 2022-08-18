@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 流程执行信息列表
         /// </summary>
         [JsonProperty("executions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListWorkflowExecutionResult> Executions { get; set; }
+        public List<FlowExecutionBrief> Executions { get; set; }
 
 
         /// <summary>

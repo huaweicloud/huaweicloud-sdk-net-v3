@@ -15,6 +15,116 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class OperationState 
     {
         /// <summary>
+        /// Action执行模式，支持串行，并行两种模式，默认串行
+        /// </summary>
+        /// <value>Action执行模式，支持串行，并行两种模式，默认串行</value>
+        [JsonConverter(typeof(EnumClassConverter<ActionModeEnum>))]
+        public class ActionModeEnum
+        {
+            /// <summary>
+            /// Enum SEQUENTIAL for value: sequential
+            /// </summary>
+            public static readonly ActionModeEnum SEQUENTIAL = new ActionModeEnum("sequential");
+
+            /// <summary>
+            /// Enum PARALLEL for value: parallel
+            /// </summary>
+            public static readonly ActionModeEnum PARALLEL = new ActionModeEnum("parallel");
+
+            private static readonly Dictionary<string, ActionModeEnum> StaticFields =
+            new Dictionary<string, ActionModeEnum>()
+            {
+                { "sequential", SEQUENTIAL },
+                { "parallel", PARALLEL },
+            };
+
+            private string Value;
+
+            public ActionModeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static ActionModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ActionModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ActionModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ActionModeEnum a, ActionModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ActionModeEnum a, ActionModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 节点类型
         /// </summary>
         /// <value>节点类型</value>
@@ -130,119 +240,26 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             }
         }
 
+
         /// <summary>
         /// Action执行模式，支持串行，并行两种模式，默认串行
         /// </summary>
-        /// <value>Action执行模式，支持串行，并行两种模式，默认串行</value>
-        [JsonConverter(typeof(EnumClassConverter<ActionModeEnum>))]
-        public class ActionModeEnum
-        {
-            /// <summary>
-            /// Enum SEQUENTIAL for value: sequential
-            /// </summary>
-            public static readonly ActionModeEnum SEQUENTIAL = new ActionModeEnum("sequential");
-
-            /// <summary>
-            /// Enum PARALLEL for value: parallel
-            /// </summary>
-            public static readonly ActionModeEnum PARALLEL = new ActionModeEnum("parallel");
-
-            private static readonly Dictionary<string, ActionModeEnum> StaticFields =
-            new Dictionary<string, ActionModeEnum>()
-            {
-                { "sequential", SEQUENTIAL },
-                { "parallel", PARALLEL },
-            };
-
-            private string Value;
-
-            public ActionModeEnum(string value)
-            {
-                Value = value;
-            }
-
-            public static ActionModeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ActionModeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ActionModeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(ActionModeEnum a, ActionModeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ActionModeEnum a, ActionModeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
+        [JsonProperty("action_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionModeEnum ActionMode { get; set; }
+        /// <summary>
+        /// 节点中要执行的操作列表
+        /// </summary>
+        [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Action> Actions { get; set; }
 
         /// <summary>
-        /// 节点ID，需要在当前工作流中唯一
+        /// 错误处理策略
+        /// </summary>
+        [JsonProperty("on_errors", NullValueHandling = NullValueHandling.Ignore)]
+        public List<OnError> OnErrors { get; set; }
+
+        /// <summary>
+        /// 节点ID，需要在当前函数流中唯一
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -277,21 +294,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public StateDataFilter StateDataFilter { get; set; }
 
         /// <summary>
-        /// Action执行模式，支持串行，并行两种模式，默认串行
+        /// 时间等待节点等待时间（秒）,节点类型为Sleep时为必填，节点类型不为Sleep时无效
         /// </summary>
-        [JsonProperty("action_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public ActionModeEnum ActionMode { get; set; }
-        /// <summary>
-        /// 节点中要执行的操作列表
-        /// </summary>
-        [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Action> Actions { get; set; }
-
-        /// <summary>
-        /// 错误处理策略
-        /// </summary>
-        [JsonProperty("on_errors", NullValueHandling = NullValueHandling.Ignore)]
-        public List<OnError> OnErrors { get; set; }
+        [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Duration { get; set; }
 
 
         /// <summary>
@@ -301,15 +307,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OperationState {\n");
+            sb.Append("  actionMode: ").Append(ActionMode).Append("\n");
+            sb.Append("  actions: ").Append(Actions).Append("\n");
+            sb.Append("  onErrors: ").Append(OnErrors).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  end: ").Append(End).Append("\n");
             sb.Append("  transition: ").Append(Transition).Append("\n");
             sb.Append("  stateDataFilter: ").Append(StateDataFilter).Append("\n");
-            sb.Append("  actionMode: ").Append(ActionMode).Append("\n");
-            sb.Append("  actions: ").Append(Actions).Append("\n");
-            sb.Append("  onErrors: ").Append(OnErrors).Append("\n");
+            sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -331,6 +338,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
+                (
+                    this.ActionMode == input.ActionMode ||
+                    (this.ActionMode != null &&
+                    this.ActionMode.Equals(input.ActionMode))
+                ) && 
+                (
+                    this.Actions == input.Actions ||
+                    this.Actions != null &&
+                    input.Actions != null &&
+                    this.Actions.SequenceEqual(input.Actions)
+                ) && 
+                (
+                    this.OnErrors == input.OnErrors ||
+                    this.OnErrors != null &&
+                    input.OnErrors != null &&
+                    this.OnErrors.SequenceEqual(input.OnErrors)
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -362,21 +386,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.StateDataFilter.Equals(input.StateDataFilter))
                 ) && 
                 (
-                    this.ActionMode == input.ActionMode ||
-                    (this.ActionMode != null &&
-                    this.ActionMode.Equals(input.ActionMode))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    this.Actions != null &&
-                    input.Actions != null &&
-                    this.Actions.SequenceEqual(input.Actions)
-                ) && 
-                (
-                    this.OnErrors == input.OnErrors ||
-                    this.OnErrors != null &&
-                    input.OnErrors != null &&
-                    this.OnErrors.SequenceEqual(input.OnErrors)
+                    this.Duration == input.Duration ||
+                    (this.Duration != null &&
+                    this.Duration.Equals(input.Duration))
                 );
         }
 
@@ -388,6 +400,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ActionMode != null)
+                    hashCode = hashCode * 59 + this.ActionMode.GetHashCode();
+                if (this.Actions != null)
+                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.OnErrors != null)
+                    hashCode = hashCode * 59 + this.OnErrors.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
@@ -400,12 +418,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Transition.GetHashCode();
                 if (this.StateDataFilter != null)
                     hashCode = hashCode * 59 + this.StateDataFilter.GetHashCode();
-                if (this.ActionMode != null)
-                    hashCode = hashCode * 59 + this.ActionMode.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.OnErrors != null)
-                    hashCode = hashCode * 59 + this.OnErrors.GetHashCode();
+                if (this.Duration != null)
+                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 return hashCode;
             }
         }

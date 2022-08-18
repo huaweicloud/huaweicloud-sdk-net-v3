@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 灰度版本信息
         /// </summary>
         [JsonProperty("additional_version_weights", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, int?> AdditionalVersionWeights { get; set; }
+        public Dictionary<string, long?> AdditionalVersionWeights { get; set; }
 
 
         /// <summary>

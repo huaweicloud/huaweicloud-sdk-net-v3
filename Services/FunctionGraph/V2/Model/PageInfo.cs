@@ -10,25 +10,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// 分页结构体。
+    /// 
     /// </summary>
     public class PageInfo 
     {
 
         /// <summary>
-        /// 返回下一页查询地址。
+        /// 下一次读取位置
         /// </summary>
         [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
         public long? NextMarker { get; set; }
 
         /// <summary>
-        /// 返回前一页查询地址。
+        /// 上一次读取位置
         /// </summary>
         [JsonProperty("previous_marker", NullValueHandling = NullValueHandling.Ignore)]
         public long? PreviousMarker { get; set; }
 
         /// <summary>
-        /// 本页返回条目数量。
+        /// 当前页总数
         /// </summary>
         [JsonProperty("current_count", NullValueHandling = NullValueHandling.Ignore)]
         public long? CurrentCount { get; set; }

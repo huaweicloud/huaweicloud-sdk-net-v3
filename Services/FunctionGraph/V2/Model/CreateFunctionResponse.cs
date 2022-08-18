@@ -521,6 +521,30 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 是否启动动态内存配置
+        /// </summary>
+        [JsonProperty("enable_dynamic_memory", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableDynamicMemory { get; set; }
+
+        /// <summary>
+        /// 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+        /// </summary>
+        [JsonProperty("is_stateful_function", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsStatefulFunction { get; set; }
+
+        /// <summary>
+        /// 是否允许在请求头中添加鉴权信息
+        /// </summary>
+        [JsonProperty("enable_auth_in_header", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAuthInHeader { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("custom_image", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomImage CustomImage { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -561,6 +585,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
+            sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
+            sb.Append("  enableAuthInHeader: ").Append(EnableAuthInHeader).Append("\n");
+            sb.Append("  customImage: ").Append(CustomImage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -742,6 +770,26 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.EnableDynamicMemory == input.EnableDynamicMemory ||
+                    (this.EnableDynamicMemory != null &&
+                    this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
+                ) && 
+                (
+                    this.IsStatefulFunction == input.IsStatefulFunction ||
+                    (this.IsStatefulFunction != null &&
+                    this.IsStatefulFunction.Equals(input.IsStatefulFunction))
+                ) && 
+                (
+                    this.EnableAuthInHeader == input.EnableAuthInHeader ||
+                    (this.EnableAuthInHeader != null &&
+                    this.EnableAuthInHeader.Equals(input.EnableAuthInHeader))
+                ) && 
+                (
+                    this.CustomImage == input.CustomImage ||
+                    (this.CustomImage != null &&
+                    this.CustomImage.Equals(input.CustomImage))
                 );
         }
 
@@ -817,6 +865,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.InitializerTimeout.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnableDynamicMemory != null)
+                    hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
+                if (this.IsStatefulFunction != null)
+                    hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
+                if (this.EnableAuthInHeader != null)
+                    hashCode = hashCode * 59 + this.EnableAuthInHeader.GetHashCode();
+                if (this.CustomImage != null)
+                    hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
                 return hashCode;
             }
         }

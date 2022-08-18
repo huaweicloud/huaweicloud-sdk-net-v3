@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("file_code", NullValueHandling = NullValueHandling.Ignore)]
         public string FileCode { get; set; }
 
+        /// <summary>
+        /// 应用名称，默认为default
+        /// </summary>
+        [JsonProperty("package", NullValueHandling = NullValueHandling.Ignore)]
+        public string Package { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  fileName: ").Append(FileName).Append("\n");
             sb.Append("  fileType: ").Append(FileType).Append("\n");
             sb.Append("  fileCode: ").Append(FileCode).Append("\n");
+            sb.Append("  package: ").Append(Package).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FileCode == input.FileCode ||
                     (this.FileCode != null &&
                     this.FileCode.Equals(input.FileCode))
+                ) && 
+                (
+                    this.Package == input.Package ||
+                    (this.Package != null &&
+                    this.Package.Equals(input.Package))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.FileType.GetHashCode();
                 if (this.FileCode != null)
                     hashCode = hashCode * 59 + this.FileCode.GetHashCode();
+                if (this.Package != null)
+                    hashCode = hashCode * 59 + this.Package.GetHashCode();
                 return hashCode;
             }
         }

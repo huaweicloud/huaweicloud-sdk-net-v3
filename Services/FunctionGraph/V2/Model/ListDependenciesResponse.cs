@@ -16,22 +16,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 依赖包总数。
-        /// </summary>
-        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Count { get; set; }
-
-        /// <summary>
-        /// 依赖包列表。
+        /// 依赖包列表
         /// </summary>
         [JsonProperty("dependencies", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListDependenciesResult> Dependencies { get; set; }
 
         /// <summary>
-        /// 下次读取位置。
+        /// 下次读取位置
         /// </summary>
         [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
         public long? NextMarker { get; set; }
+
+        /// <summary>
+        /// 依赖包总数
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Count { get; set; }
 
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListDependenciesResponse {\n");
-            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("  nextMarker: ").Append(NextMarker).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,11 +66,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
                     this.Dependencies == input.Dependencies ||
                     this.Dependencies != null &&
                     input.Dependencies != null &&
@@ -80,6 +75,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.NextMarker == input.NextMarker ||
                     (this.NextMarker != null &&
                     this.NextMarker.Equals(input.NextMarker))
+                ) && 
+                (
+                    this.Count == input.Count ||
+                    (this.Count != null &&
+                    this.Count.Equals(input.Count))
                 );
         }
 
@@ -91,12 +91,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.Dependencies != null)
                     hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 if (this.NextMarker != null)
                     hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                if (this.Count != null)
+                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

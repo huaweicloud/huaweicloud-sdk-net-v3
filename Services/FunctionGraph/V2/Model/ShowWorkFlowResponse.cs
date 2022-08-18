@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 唯一标识ID，流程URN
+        /// 函数工作流URN, 格式为： urn:fss:&lt;region_id&gt;:&lt;project_id&gt;:workflow:\\&lt;package\\&gt;:&lt;workflow_name&gt;:\\&lt;version\\&gt; 注意： package当前只支持default version当前只支持latest
         /// </summary>
         [JsonProperty("workflow_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string WorkflowUrn { get; set; }
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 
         /// </summary>
         [JsonProperty("definition", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateWorkflowRequestBody Definition { get; set; }
+        public WorkflowCreateBody Definition { get; set; }
 
 
         /// <summary>

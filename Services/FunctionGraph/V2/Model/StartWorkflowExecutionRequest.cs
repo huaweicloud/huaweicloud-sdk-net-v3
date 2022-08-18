@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 函数工作流ID
+        /// 函数流定义ID
         /// </summary>
         [SDKProperty("workflow_id", IsPath = true)]
         [JsonProperty("workflow_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -37,11 +37,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string XWorkflowRunID { get; set; }
 
         /// <summary>
+        /// Combines the output of the previous node with the input of the next node into an input.
+        /// </summary>
+        [SDKProperty("X-WorkflowRun-MergeFnParameters", IsHeader = true)]
+        [JsonProperty("X-WorkflowRun-MergeFnParameters", NullValueHandling = NullValueHandling.Ignore)]
+        public string XWorkflowRunMergeFnParameters { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public StartWorkflowExecutionRequestBody Body { get; set; }
+        public FlowExecuteBody Body { get; set; }
 
 
         /// <summary>
@@ -54,6 +61,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  workflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("  xCreateTime: ").Append(XCreateTime).Append("\n");
             sb.Append("  xWorkflowRunID: ").Append(XWorkflowRunID).Append("\n");
+            sb.Append("  xWorkflowRunMergeFnParameters: ").Append(XWorkflowRunMergeFnParameters).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -92,6 +100,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.XWorkflowRunID.Equals(input.XWorkflowRunID))
                 ) && 
                 (
+                    this.XWorkflowRunMergeFnParameters == input.XWorkflowRunMergeFnParameters ||
+                    (this.XWorkflowRunMergeFnParameters != null &&
+                    this.XWorkflowRunMergeFnParameters.Equals(input.XWorkflowRunMergeFnParameters))
+                ) && 
+                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -112,6 +125,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.XCreateTime.GetHashCode();
                 if (this.XWorkflowRunID != null)
                     hashCode = hashCode * 59 + this.XWorkflowRunID.GetHashCode();
+                if (this.XWorkflowRunMergeFnParameters != null)
+                    hashCode = hashCode * 59 + this.XWorkflowRunMergeFnParameters.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

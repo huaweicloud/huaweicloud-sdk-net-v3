@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 0：函数被禁用;-1：函数被启用。
+        /// 单函数最大实例数，v1取值0和-1，v2取值-1到1000
         /// </summary>
         [JsonProperty("concurrency", NullValueHandling = NullValueHandling.Ignore)]
         public int? Concurrency { get; set; }
 
         /// <summary>
-        /// 函数并发数
+        /// 单实例最大并发数，v2版本才支持，取值-1到200000
         /// </summary>
         [JsonProperty("concurrent_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConcurrentNum { get; set; }

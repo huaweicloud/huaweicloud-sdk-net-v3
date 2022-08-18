@@ -15,8 +15,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class ShowFunctionTriggerRequest 
     {
         /// <summary>
-        /// Defines triggerTypeCode
+        /// 触发器类型代码。
         /// </summary>
+        /// <value>触发器类型代码。</value>
         [JsonConverter(typeof(EnumClassConverter<TriggerTypeCodeEnum>))]
         public class TriggerTypeCodeEnum
         {
@@ -70,6 +71,36 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
 
+            /// <summary>
+            /// Enum RABBITMQ for value: RABBITMQ
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum RABBITMQ = new TriggerTypeCodeEnum("RABBITMQ");
+
+            /// <summary>
+            /// Enum DEDICATEDGATEWAY for value: DEDICATEDGATEWAY
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum DEDICATEDGATEWAY = new TriggerTypeCodeEnum("DEDICATEDGATEWAY");
+
+            /// <summary>
+            /// Enum OPENSOURCEKAFKA for value: OPENSOURCEKAFKA
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum OPENSOURCEKAFKA = new TriggerTypeCodeEnum("OPENSOURCEKAFKA");
+
+            /// <summary>
+            /// Enum APIC for value: APIC
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum APIC = new TriggerTypeCodeEnum("APIC");
+
+            /// <summary>
+            /// Enum GAUSSMONGO for value: GAUSSMONGO
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum GAUSSMONGO = new TriggerTypeCodeEnum("GAUSSMONGO");
+
+            /// <summary>
+            /// Enum EVENTGRID for value: EVENTGRID
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum EVENTGRID = new TriggerTypeCodeEnum("EVENTGRID");
+
             private static readonly Dictionary<string, TriggerTypeCodeEnum> StaticFields =
             new Dictionary<string, TriggerTypeCodeEnum>()
             {
@@ -83,6 +114,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "OBS", OBS },
                 { "SMN", SMN },
                 { "KAFKA", KAFKA },
+                { "RABBITMQ", RABBITMQ },
+                { "DEDICATEDGATEWAY", DEDICATEDGATEWAY },
+                { "OPENSOURCEKAFKA", OPENSOURCEKAFKA },
+                { "APIC", APIC },
+                { "GAUSSMONGO", GAUSSMONGO },
+                { "EVENTGRID", EVENTGRID },
             };
 
             private string Value;
@@ -180,13 +217,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string FunctionUrn { get; set; }
 
         /// <summary>
-        /// 
+        /// 触发器类型代码。
         /// </summary>
         [SDKProperty("trigger_type_code", IsPath = true)]
         [JsonProperty("trigger_type_code", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerTypeCodeEnum TriggerTypeCode { get; set; }
         /// <summary>
-        /// 
+        /// 触发器编码。
         /// </summary>
         [SDKProperty("trigger_id", IsPath = true)]
         [JsonProperty("trigger_id", NullValueHandling = NullValueHandling.Ignore)]

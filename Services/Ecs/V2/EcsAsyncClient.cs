@@ -624,6 +624,23 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 按标签查询云服务器列表
+        ///
+        /// 使用标签过滤弹性云服务器，并返回云服务器使用的所有标签和资源列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListServersByTagResponse> ListServersByTagAsync(ListServersByTagRequest listServersByTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/resource_instances/action",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listServersByTagRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ListServersByTagResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询云服务器详情列表
         ///
         /// 根据用户请求条件从数据库筛选、查询所有的弹性云服务器，并关联相关表获取到弹性云服务器的详细信息。

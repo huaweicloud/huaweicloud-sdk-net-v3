@@ -19,13 +19,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 用户ID(-1~65534的非0整数)
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? UserId { get; set; }
+        public string UserId { get; set; }
 
         /// <summary>
         /// 用户组ID(-1~65534的非0整数)
         /// </summary>
         [JsonProperty("user_group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? UserGroupId { get; set; }
+        public string UserGroupId { get; set; }
 
 
         /// <summary>

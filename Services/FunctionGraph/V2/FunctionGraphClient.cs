@@ -14,7 +14,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
 
         
         /// <summary>
-        /// 异步执行函数。
+        /// 异步执行函数
         ///
         /// 异步执行函数。
         /// 
@@ -32,10 +32,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 函数异步执行并返回预留实例ID。
+        /// 函数异步执行并返回预留实例ID
         ///
-        /// 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，
-        /// 可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+        /// 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -51,7 +50,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除指定函数的所有触发器。
+        /// 删除指定函数的所有触发器
         ///
         /// 删除指定函数所有触发器设置。
         /// 
@@ -73,9 +72,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除工作流列表
+        /// 删除函数流
         ///
-        /// 删除工作流列表
+        /// 删除函数流
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -110,7 +109,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 创建依赖包
         ///
-        /// 创建依赖包。
+        /// 创建依赖包
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -127,7 +126,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 创建测试事件
         ///
-        /// 创建测试事件。
+        /// 创建测试事件
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -143,7 +142,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 创建函数。
+        /// 创建函数
         ///
         /// 创建指定的函数。
         /// 
@@ -160,12 +159,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 创建触发器。
+        /// 创建触发器
         ///
         /// 创建触发器。
         /// 
         /// - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。
-        /// - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。
+        /// - DDS和KAFKA触发器创建时默认为DISABLE状态，其他触发器默认为ACTIVE状态。
         /// - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
         /// 
         /// 详细说明请参考华为云API Explorer。
@@ -182,7 +181,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 发布函数版本。
+        /// 发布函数版本
         ///
         /// 发布函数版本。
         /// 
@@ -200,7 +199,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 创建函数版本别名。
+        /// 创建函数版本别名
         ///
         /// 创建函数灰度版本别名。
         /// 
@@ -218,9 +217,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 创建工作流列表
+        /// 创建函数流
         ///
-        /// 创建工作流列表
+        /// 创建函数流
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -235,9 +234,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除依赖包
+        /// 删除指定的依赖包
         ///
-        /// 删除指定的依赖包。
+        /// 删除指定的依赖包
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -253,9 +252,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除测试事件
+        /// 删除指定测试事件
         ///
-        /// 删除测试事件。
+        /// 删除指定测试事件
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -263,8 +262,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteEventResponse DeleteEvent(DeleteEventRequest deleteEventRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_id" , deleteEventRequest.EventId.ToString());
             urlParam.Add("function_urn" , deleteEventRequest.FunctionUrn.ToString());
+            urlParam.Add("event_id" , deleteEventRequest.EventId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEventRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
@@ -272,7 +271,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除函数/版本。
+        /// 删除函数/版本
         ///
         /// 删除指定的函数或者特定的版本（不允许删除latest版本）。
         /// 
@@ -293,7 +292,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除函数异步配置信息。
+        /// 删除函数异步配置信息
         ///
         /// 删除函数异步配置信息。
         /// 
@@ -311,7 +310,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除触发器。
+        /// 删除触发器
         ///
         /// 删除触发器。
         /// 
@@ -331,7 +330,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 删除函数版本别名。
+        /// 删除函数版本别名
         ///
         /// 删除函数版本别名。
         /// 
@@ -350,7 +349,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 开通lts日志上报功能。
+        /// 开通lts日志上报功能
         ///
         /// 开通lts日志上报功能。
         /// 
@@ -367,9 +366,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 导出函数。
+        /// 导出函数
         ///
-        /// 导出函数。
+        /// 导出函数
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -385,9 +384,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 导入函数。
+        /// 导入函数
         ///
-        /// 导入函数。
+        /// 导入函数
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -402,7 +401,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 同步执行函数。
+        /// 同步执行函数
         ///
         /// 同步调用指的是客户端请求需要明确等到响应结果，也就是说这样的请求必须得调用到用户的函数，并且等到调用完成才返回。
         /// 
@@ -420,9 +419,27 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取函数异步调用请求列表
+        ///
+        /// 获取函数异步调用请求列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListAsyncInvocationsResponse ListAsyncInvocations(ListAsyncInvocationsRequest listAsyncInvocationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , listAsyncInvocationsRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncInvocationsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAsyncInvocationsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取依赖包列表
         ///
-        /// 获取依赖包列表。
+        /// 获取依赖包列表
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -437,9 +454,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取测试事件列表
+        /// 获取指定函数的测试事件列表
         ///
-        /// 获取指定函数的测试事件列表。
+        /// 获取指定函数的测试事件列表
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -455,27 +472,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取函数异步调用请求列表
-        ///
-        /// 获取函数异步调用请求列表
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public ListFunctionAsyncInvocationsResponse ListFunctionAsyncInvocations(ListFunctionAsyncInvocationsRequest listFunctionAsyncInvocationsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , listFunctionAsyncInvocationsRequest.FunctionUrn.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionAsyncInvocationsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListFunctionAsyncInvocationsResponse>(response);
-        }
-        
-        /// <summary>
         /// 获取函数异步配置列表
         ///
-        /// 获取函数异步配置列表。
+        /// 获取指定函数所有版本的异步配置列表。。
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -510,7 +509,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定函数的所有触发器。
+        /// 获取指定函数的所有触发器
         ///
         /// 获取指定函数的所有触发器设置。
         /// 
@@ -530,7 +529,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定函数的版本列表。
+        /// 获取指定函数的版本列表
         ///
         /// 获取指定函数的版本列表。
         /// 
@@ -602,7 +601,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定函数所有版本别名列表。
+        /// 获取指定函数所有版本别名列表
         ///
         /// 获取函数版本别名列表。
         /// 
@@ -619,6 +618,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             ListVersionAliasesResponse listVersionAliasesResponse = JsonUtils.DeSerializeNull<ListVersionAliasesResponse>(response);
             listVersionAliasesResponse.Body = JsonUtils.DeSerializeList<ListVersionAliasResult>(response);
             return listVersionAliasesResponse;
+        }
+        
+        /// <summary>
+        /// 查询函数流
+        ///
+        /// 查询函数流
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListWorkflowResponse ListWorkflow(ListWorkflowRequest listWorkflowRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListWorkflowResponse>(response);
         }
         
         /// <summary>
@@ -640,26 +656,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 查询工作流列表
+        /// 重试函数流
         ///
-        /// 查询工作流列表
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest listWorkflowsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListWorkflowsResponse>(response);
-        }
-        
-        /// <summary>
-        /// 重试工作流
-        ///
-        /// 重试工作流
+        /// 重试函数流
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -678,25 +677,25 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 获取指定依赖包
         ///
-        /// 获取指定依赖包。
+        /// 获取指定依赖包
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
-        public ShowDependencyResponse ShowDependency(ShowDependencyRequest showDependencyRequest)
+        public ShowDependcyResponse ShowDependcy(ShowDependcyRequest showDependcyRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id" , showDependencyRequest.DependId.ToString());
+            urlParam.Add("depend_id" , showDependcyRequest.DependId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependencyRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependcyRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowDependencyResponse>(response);
+            return JsonUtils.DeSerialize<ShowDependcyResponse>(response);
         }
         
         /// <summary>
         /// 获取测试事件详细信息
         ///
-        /// 获取测试事件详细信息。
+        /// 获取测试事件详细信息
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -704,8 +703,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowEventResponse ShowEvent(ShowEventRequest showEventRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_id" , showEventRequest.EventId.ToString());
             urlParam.Add("function_urn" , showEventRequest.FunctionUrn.ToString());
+            urlParam.Add("event_id" , showEventRequest.EventId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEventRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
@@ -713,9 +712,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取函数异步配置信息。
+        /// 获取函数异步配置信息
         ///
-        /// 获取函数异步配置信息。
+        /// 获取指定函数某一版本的异步配置信息。
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -731,7 +730,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定函数代码。
+        /// 获取指定函数代码
         ///
         /// 获取指定函数的代码。
         /// 
@@ -749,7 +748,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取函数的metadata。
+        /// 获取函数的metadata
         ///
         /// 获取指定函数的metadata。
         /// 
@@ -767,7 +766,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定触发器的信息。
+        /// 获取指定触发器的信息
         ///
         /// 获取特定触发器的信息。
         /// 
@@ -787,7 +786,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定函数的lts日志组日志流配置。
+        /// 获取指定函数的lts日志组日志流配置
         ///
         /// 获取指定函数的lts日志组日志流配置。
         /// 
@@ -840,7 +839,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取函数版本的指定别名信息。
+        /// 获取函数版本的指定别名信息
         ///
         /// 获取函数指定的版本别名信息。
         /// 
@@ -859,9 +858,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定函数流实例
+        /// 获取指定函数流实例的元数据
         ///
-        /// 获取指定函数流实例
+        /// 获取指定函数流实例的元数据
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -877,9 +876,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定工作流指标
+        /// 获取指定函数流指标
         ///
-        /// 获取指定工作流指标
+        /// 获取指定函数流指标
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -916,7 +915,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 同步执行函数流
         ///
-        /// 同步执行函数流
+        /// 以同步执行方式启动函数流（仅快速模式函数流支持）
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -934,7 +933,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 开始执行函数流
         ///
-        /// 开始执行函数流
+        /// 以异步执行方式启动函数流
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -950,9 +949,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 停止工作流
+        /// 停止函数流
         ///
-        /// 停止工作流
+        /// 停止函数流
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -969,27 +968,27 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 更新依赖包指定依赖包
+        /// 更新指定依赖包
         ///
-        /// 更新依赖包指定依赖包。
+        /// 更新指定依赖包
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
-        public UpdateDependencyResponse UpdateDependency(UpdateDependencyRequest updateDependencyRequest)
+        public UpdateDependcyResponse UpdateDependcy(UpdateDependcyRequest updateDependcyRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id" , updateDependencyRequest.DependId.ToString());
+            urlParam.Add("depend_id" , updateDependcyRequest.DependId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDependencyRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDependcyRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerialize<UpdateDependencyResponse>(response);
+            return JsonUtils.DeSerialize<UpdateDependcyResponse>(response);
         }
         
         /// <summary>
-        /// 更新测试事件
+        /// 更新测试事件详细信息
         ///
-        /// 更新测试事件。
+        /// 更新测试事件详细信息
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -997,8 +996,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateEventResponse UpdateEvent(UpdateEventRequest updateEventRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_id" , updateEventRequest.EventId.ToString());
             urlParam.Add("function_urn" , updateEventRequest.FunctionUrn.ToString());
+            urlParam.Add("event_id" , updateEventRequest.EventId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEventRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
@@ -1006,7 +1005,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 设置函数异步配置信息。
+        /// 设置函数异步配置信息
         ///
         /// 设置函数异步配置信息。
         /// 
@@ -1024,7 +1023,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 修改函数代码。
+        /// 修改函数代码
         ///
         /// 修改指定的函数的代码。
         /// 
@@ -1042,7 +1041,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 修改函数的metadata信息。
+        /// 修改函数的metadata信息
         ///
         /// 修改指定的函数的metadata信息。
         /// 
@@ -1078,21 +1077,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 更新函数预留实例个数
+        /// 修改函数预留实例数量
         ///
-        /// 为函数绑定预留实例
+        /// 修改函数预留实例数量。
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
         /// </summary>
-        public UpdateFunctionReservedInstancesResponse UpdateFunctionReservedInstances(UpdateFunctionReservedInstancesRequest updateFunctionReservedInstancesRequest)
+        public UpdateFunctionReservedInstancesCountResponse UpdateFunctionReservedInstancesCount(UpdateFunctionReservedInstancesCountRequest updateFunctionReservedInstancesCountRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , updateFunctionReservedInstancesRequest.FunctionUrn.ToString());
+            urlParam.Add("function_urn" , updateFunctionReservedInstancesCountRequest.FunctionUrn.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionReservedInstancesRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionReservedInstancesCountRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerialize<UpdateFunctionReservedInstancesResponse>(response);
+            return JsonUtils.DeSerialize<UpdateFunctionReservedInstancesCountResponse>(response);
         }
         
         /// <summary>
@@ -1134,7 +1133,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 修改函数版本别名信息。
+        /// 修改函数版本别名信息
         ///
         /// 修改函数版本别名信息。
         /// 
@@ -1153,9 +1152,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 修改指定函数流实例
+        /// 修改指定函数流实例的元数据
         ///
-        /// 修改指定函数流实例
+        /// 修改指定函数流实例的元数据
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.

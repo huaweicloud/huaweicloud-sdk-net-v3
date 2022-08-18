@@ -666,6 +666,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("domain_names", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainNames { get; set; }
 
+        /// <summary>
+        /// 是否允许在请求头中添加鉴权信息
+        /// </summary>
+        [JsonProperty("enable_auth_in_header", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAuthInHeader { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("custom_image", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomImage CustomImage { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -712,6 +724,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
             sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
             sb.Append("  domainNames: ").Append(DomainNames).Append("\n");
+            sb.Append("  enableAuthInHeader: ").Append(EnableAuthInHeader).Append("\n");
+            sb.Append("  customImage: ").Append(CustomImage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -923,6 +937,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.DomainNames == input.DomainNames ||
                     (this.DomainNames != null &&
                     this.DomainNames.Equals(input.DomainNames))
+                ) && 
+                (
+                    this.EnableAuthInHeader == input.EnableAuthInHeader ||
+                    (this.EnableAuthInHeader != null &&
+                    this.EnableAuthInHeader.Equals(input.EnableAuthInHeader))
+                ) && 
+                (
+                    this.CustomImage == input.CustomImage ||
+                    (this.CustomImage != null &&
+                    this.CustomImage.Equals(input.CustomImage))
                 );
         }
 
@@ -1010,6 +1034,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
                 if (this.DomainNames != null)
                     hashCode = hashCode * 59 + this.DomainNames.GetHashCode();
+                if (this.EnableAuthInHeader != null)
+                    hashCode = hashCode * 59 + this.EnableAuthInHeader.GetHashCode();
+                if (this.CustomImage != null)
+                    hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
                 return hashCode;
             }
         }

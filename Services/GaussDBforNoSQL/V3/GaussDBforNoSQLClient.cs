@@ -50,6 +50,25 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 校验实例是否可以与指定实例建立/解除容灾关系
+        ///
+        /// 校验实例是否可以与指定实例建立/解除容灾关系。若接口返回成功，表示可以与指定实例建立/解除容灾关系。
+        /// 该接口需要对建立/解除容灾关系的两个实例各调用一次，2次调用都响应成功才能进行容灾关系的搭建/解除。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CheckDisasterRecoveryOperationResponse CheckDisasterRecoveryOperation(CheckDisasterRecoveryOperationRequest checkDisasterRecoveryOperationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , checkDisasterRecoveryOperationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/precheck",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDisasterRecoveryOperationRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CheckDisasterRecoveryOperationResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建参数模板
         ///
         /// 创建参数模板。
@@ -64,6 +83,24 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 搭建实例与特定实例的容灾关系
+        ///
+        /// 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateDisasterRecoveryResponse CreateDisasterRecovery(CreateDisasterRecoveryRequest createDisasterRecoveryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createDisasterRecoveryRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/construction",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDisasterRecoveryRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateDisasterRecoveryResponse>(response);
         }
         
         /// <summary>
@@ -99,6 +136,24 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 解除实例与特定实例的容灾关系
+        ///
+        /// 解除实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功解除容灾关系。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DeleteDisasterRecoveryResponse DeleteDisasterRecovery(DeleteDisasterRecoveryRequest deleteDisasterRecoveryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteDisasterRecoveryRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/deconstruction",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDisasterRecoveryRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DeleteDisasterRecoveryResponse>(response);
         }
         
         /// <summary>

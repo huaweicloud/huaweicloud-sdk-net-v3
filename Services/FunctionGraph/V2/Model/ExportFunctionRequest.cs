@@ -14,119 +14,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     /// </summary>
     public class ExportFunctionRequest 
     {
-        /// <summary>
-        /// 兼容老的方式，type&#x3D;code代表导出代码,type&#x3D;config代码导出配置
-        /// </summary>
-        /// <value>兼容老的方式，type&#x3D;code代表导出代码,type&#x3D;config代码导出配置</value>
-        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
-        public class TypeEnum
-        {
-            /// <summary>
-            /// Enum TYPE for value: type
-            /// </summary>
-            public static readonly TypeEnum TYPE = new TypeEnum("type");
-
-            /// <summary>
-            /// Enum CODE for value: code
-            /// </summary>
-            public static readonly TypeEnum CODE = new TypeEnum("code");
-
-            private static readonly Dictionary<string, TypeEnum> StaticFields =
-            new Dictionary<string, TypeEnum>()
-            {
-                { "type", TYPE },
-                { "code", CODE },
-            };
-
-            private string Value;
-
-            public TypeEnum(string value)
-            {
-                Value = value;
-            }
-
-            public static TypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return Value;
-            }
-
-            public override string ToString()
-            {
-                return $"{Value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this.Value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as TypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(TypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
-            }
-
-            public static bool operator ==(TypeEnum a, TypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(TypeEnum a, TypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 函数的URN（Uniform Resource Name），唯一标识函数。
+        /// 函数的URN，详细解释见FunctionGraph函数模型的描述。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
@@ -151,7 +41,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public TypeEnum Type { get; set; }
+        public string Type { get; set; }
+
 
         /// <summary>
         /// Get the string

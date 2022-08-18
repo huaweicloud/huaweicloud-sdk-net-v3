@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 错误码
+        /// 流程实例ID
         /// </summary>
         [JsonProperty("execution_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecutionId { get; set; }

@@ -642,6 +642,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 函数最近1天内执行失败的次数。
+        /// </summary>
+        [JsonProperty("fail_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? FailCount { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -684,6 +690,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  failCount: ").Append(FailCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -874,6 +881,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.FailCount == input.FailCount ||
+                    (this.FailCount != null &&
+                    this.FailCount.Equals(input.FailCount))
                 );
         }
 
@@ -953,6 +965,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.FailCount != null)
+                    hashCode = hashCode * 59 + this.FailCount.GetHashCode();
                 return hashCode;
             }
         }

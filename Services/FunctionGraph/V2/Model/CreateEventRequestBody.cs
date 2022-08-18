@@ -10,19 +10,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// 创建测试事件请求体。
+    /// 
     /// </summary>
     public class CreateEventRequestBody 
     {
 
         /// <summary>
-        /// 测试事件名称。只能由字母、数字、中划线和下划线组成，且必须以大写或小写字母开头。
+        /// 测试事件名称。只能由字母、数字、中划线和下划线组成，且必须以大写或小写字母开头
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 测试事件content。
+        /// 测试事件content,为json字符串
         /// </summary>
         [JsonProperty("content", NullValueHandling = NullValueHandling.Ignore)]
         public string Content { get; set; }

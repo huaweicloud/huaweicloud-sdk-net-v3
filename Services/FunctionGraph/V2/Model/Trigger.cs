@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class Trigger 
     {
         /// <summary>
-        /// 触发器类型
+        /// 触发器类型 FLOWTIMER：定时触发器 SMN：SMN触发器 APIG：APIG触发器(共享版) APIG_DE：APIG触发器(专享版) OBS：OBS触发器
         /// </summary>
-        /// <value>触发器类型</value>
+        /// <value>触发器类型 FLOWTIMER：定时触发器 SMN：SMN触发器 APIG：APIG触发器(共享版) APIG_DE：APIG触发器(专享版) OBS：OBS触发器</value>
         [JsonConverter(typeof(EnumClassConverter<TriggerTypeEnum>))]
         public class TriggerTypeEnum
         {
@@ -25,6 +25,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// Enum FLOWTIMER for value: FLOWTIMER
             /// </summary>
             public static readonly TriggerTypeEnum FLOWTIMER = new TriggerTypeEnum("FLOWTIMER");
+
+            /// <summary>
+            /// Enum SMN for value: SMN
+            /// </summary>
+            public static readonly TriggerTypeEnum SMN = new TriggerTypeEnum("SMN");
+
+            /// <summary>
+            /// Enum APIG for value: APIG
+            /// </summary>
+            public static readonly TriggerTypeEnum APIG = new TriggerTypeEnum("APIG");
+
+            /// <summary>
+            /// Enum APIG_DE for value: APIG_DE
+            /// </summary>
+            public static readonly TriggerTypeEnum APIG_DE = new TriggerTypeEnum("APIG_DE");
 
             /// <summary>
             /// Enum OBS for value: OBS
@@ -35,6 +50,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             new Dictionary<string, TriggerTypeEnum>()
             {
                 { "FLOWTIMER", FLOWTIMER },
+                { "SMN", SMN },
+                { "APIG", APIG },
+                { "APIG_DE", APIG_DE },
                 { "OBS", OBS },
             };
 
@@ -132,12 +150,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string TriggerName { get; set; }
 
         /// <summary>
-        /// 触发器类型
+        /// 触发器类型 FLOWTIMER：定时触发器 SMN：SMN触发器 APIG：APIG触发器(共享版) APIG_DE：APIG触发器(专享版) OBS：OBS触发器
         /// </summary>
         [JsonProperty("trigger_type", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerTypeEnum TriggerType { get; set; }
         /// <summary>
-        /// 是否启用
+        /// 是否启用触发器
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

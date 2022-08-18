@@ -22,16 +22,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string CustomField { get; set; }
 
         /// <summary>
-        /// 自定义属性对应的值，多个值以英文逗号区分开
-        /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
-
-        /// <summary>
         /// 自定义字段名称
         /// </summary>
         [JsonProperty("field_name", NullValueHandling = NullValueHandling.Ignore)]
         public string FieldName { get; set; }
+
+        /// <summary>
+        /// 自定义属性对应的值，多个值以英文逗号区分开
+        /// </summary>
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
 
         /// <summary>
         /// 自定义字段类型， textArea 多行文本，text 单行文本，select 下拉框，number 数字，time_date 日期，checkbox 多选框，radio 单选框
@@ -54,8 +54,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             var sb = new StringBuilder();
             sb.Append("class IssueDetailCustomField {\n");
             sb.Append("  customField: ").Append(CustomField).Append("\n");
-            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  fieldName: ").Append(FieldName).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  fieldType: ").Append(FieldType).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -85,14 +85,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.CustomField.Equals(input.CustomField))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
                     this.FieldName == input.FieldName ||
                     (this.FieldName != null &&
                     this.FieldName.Equals(input.FieldName))
+                ) && 
+                (
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 ) && 
                 (
                     this.FieldType == input.FieldType ||
@@ -116,10 +116,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                 int hashCode = 41;
                 if (this.CustomField != null)
                     hashCode = hashCode * 59 + this.CustomField.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.FieldName != null)
                     hashCode = hashCode * 59 + this.FieldName.GetHashCode();
+                if (this.Value != null)
+                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.FieldType != null)
                     hashCode = hashCode * 59 + this.FieldType.GetHashCode();
                 if (this.Description != null)

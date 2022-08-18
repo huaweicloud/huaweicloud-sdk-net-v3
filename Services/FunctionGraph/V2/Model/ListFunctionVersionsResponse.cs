@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public long? NextMarker { get; set; }
 
         /// <summary>
-        /// 函数版本总数
+        /// 版本总数
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public long? Count { get; set; }
