@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// listener对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。若需要绑定访问控制组，则ipgroup_id是必须的。  [  不支持该字段，请勿使用。](tags:otc,otc_test)
+    /// listener对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。若需要绑定访问控制组，则ipgroup_id是必须的。  [不支持该字段，请勿使用。](tag:otc,otc_test)
     /// </summary>
     public class CreateListenerIpGroupOption 
     {

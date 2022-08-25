@@ -1,3 +1,58 @@
+# 3.0.102 2022-08-25
+
+### HuaweiCloud SDK ELB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the following interfaces：
+    - `ListMasterSlavePools`
+    - `CreateMasterSlavePool`
+    - `ShowMasterSlavePool`
+    - `DeleteMasterSlavePool`
+  - Add the response parameter `waf_failure_action` to the interface `ListLoadBalancers`
+  - Add the request parameter `waf_failure_action` to the interface `CreateLoadBalancer`
+  - Add the response parameter `waf_failure_action` to the interface `ShowLoadBalancer`
+  - Changes of the interface `UpdateLoadBalancer`:
+    - Add the request parameter `waf_failure_action`
+    - Add the response parameter `waf_failure_action`
+    - Remove the request parameter `cloud_service_console_url`
+  - Add the response parameters `enc_certificate`, `enc_private_key` to the interface `ListCertificates`
+  - Add the request parameters `enc_certificate`, `enc_private_key` to the interface `CreateCertificate`
+  - Add the response parameters `enc_certificate`, `enc_private_key` to the interface `ShowCertificate`
+  - Changes of the interface `UpdateCertificate`:
+    - Add the request parameters `enc_certificate`, `enc_private_key`
+    - Add the response parameters `enc_certificate`, `enc_private_key`
+  - Add the response parameter `sni_match_algo` to the interface `ListListeners`
+  - Add the request parameter `sni_match_algo` to the interface `CreateListener`
+  - Add the response parameter `sni_match_algo` to the interface `ShowListener`
+  - Changes of the interface `UpdateListener`:
+    - Add the request parameter `sni_match_algo`
+    - Add the response parameter `sni_match_algo`
+  - Add the request parameter `instance_id` to the interface `ListMembers`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeWebImage`:
+    - Add the request parameter `detect_font`
+    - Add the response parameters `font_list`, `font_scores`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `int32` -> `int64` of the request parameter `size` of the interface `CheckMd5Duplication`
+
 # 3.0.101 2022-08-18
 
 ### HuaweiCloud SDK ECS

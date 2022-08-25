@@ -306,7 +306,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<GlobalEipInfo> GlobalEips { get; set; }
 
         /// <summary>
-        /// 下联面子网网络ID列表。可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets  响应参数中的id得到。  [  若不指定该字段，则会在当前负载均衡器所在的VPC中任意选一个子网，优选双栈网络。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs)   若指定多个下联面子网，则按顺序优先使用第一个子网来为负载均衡器下联面端口分配ip地址。   下联面子网必须属于该LB所在的VPC。
+        /// 下联面子网的网络ID列表。
         /// </summary>
         [JsonProperty("elb_virsubnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElbVirsubnetIds { get; set; }
@@ -351,6 +351,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+        /// </summary>
+        [JsonProperty("waf_failure_action", NullValueHandling = NullValueHandling.Ignore)]
+        public string WafFailureAction { get; set; }
 
 
         /// <summary>
@@ -398,6 +404,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  wafFailureAction: ").Append(WafFailureAction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -616,6 +623,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.PublicBorderGroup == input.PublicBorderGroup ||
                     (this.PublicBorderGroup != null &&
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.WafFailureAction == input.WafFailureAction ||
+                    (this.WafFailureAction != null &&
+                    this.WafFailureAction.Equals(input.WafFailureAction))
                 );
         }
 
@@ -703,6 +715,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.WafFailureAction != null)
+                    hashCode = hashCode * 59 + this.WafFailureAction.GetHashCode();
                 return hashCode;
             }
         }

@@ -10,17 +10,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// This is a auto create Response Object
     /// </summary>
-    public class DeleteMasterSlavePoolRequest 
+    public class BatchDeleteIpListRequestBody 
     {
 
         /// <summary>
-        /// 后端服务器组ID。
+        /// 
         /// </summary>
-        [SDKProperty("pool_id", IsPath = true)]
-        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PoolId { get; set; }
+        [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
+        public BatchDeleteIpListOption Ipgroup { get; set; }
 
 
         /// <summary>
@@ -29,8 +28,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteMasterSlavePoolRequest {\n");
-            sb.Append("  poolId: ").Append(PoolId).Append("\n");
+            sb.Append("class BatchDeleteIpListRequestBody {\n");
+            sb.Append("  ipgroup: ").Append(Ipgroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -40,22 +39,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteMasterSlavePoolRequest);
+            return this.Equals(input as BatchDeleteIpListRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteMasterSlavePoolRequest input)
+        public bool Equals(BatchDeleteIpListRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
+                    this.Ipgroup == input.Ipgroup ||
+                    (this.Ipgroup != null &&
+                    this.Ipgroup.Equals(input.Ipgroup))
                 );
         }
 
@@ -67,8 +66,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.Ipgroup != null)
+                    hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
                 return hashCode;
             }
         }

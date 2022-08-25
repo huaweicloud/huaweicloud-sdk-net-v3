@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchDeleteIpGroupIpListRequestBody Body { get; set; }
+        public BatchDeleteIpListRequestBody Body { get; set; }
 
 
         /// <summary>

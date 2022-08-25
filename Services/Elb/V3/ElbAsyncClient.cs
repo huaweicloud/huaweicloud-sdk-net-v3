@@ -226,23 +226,6 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 创建主备后端服务器组
-        ///
-        /// 创建主备后端服务器组。
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateMasterSlavePoolResponse> CreateMasterSlavePoolAsync(CreateMasterSlavePoolRequest createMasterSlavePoolRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMasterSlavePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateMasterSlavePoolResponse>(response);
-        }
-        
-        /// <summary>
         /// 创建后端服务器
         ///
         /// 创建后端服务器。
@@ -419,24 +402,6 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLogtankResponse>(response);
-        }
-        
-        /// <summary>
-        /// 删除主备后端服务器组
-        ///
-        /// 删除主备后端服务器组。
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteMasterSlavePoolResponse> DeleteMasterSlavePoolAsync(DeleteMasterSlavePoolRequest deleteMasterSlavePoolRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , deleteMasterSlavePoolRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMasterSlavePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            return JsonUtils.DeSerializeNull<DeleteMasterSlavePoolResponse>(response);
         }
         
         /// <summary>
@@ -669,23 +634,6 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogtanksRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListLogtanksResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询主备后端服务器组列表
-        ///
-        /// 主备后端服务器组列表。
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListMasterSlavePoolsResponse> ListMasterSlavePoolsAsync(ListMasterSlavePoolsRequest listMasterSlavePoolsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMasterSlavePoolsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ListMasterSlavePoolsResponse>(response);
         }
         
         /// <summary>
@@ -939,24 +887,6 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLogtankResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询主备后端服务器组详情
-        ///
-        /// 主备后端服务器组详情。
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowMasterSlavePoolResponse> ShowMasterSlavePoolAsync(ShowMasterSlavePoolRequest showMasterSlavePoolRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , showMasterSlavePoolRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMasterSlavePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowMasterSlavePoolResponse>(response);
         }
         
         /// <summary>

@@ -87,6 +87,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
+        /// <summary>
+        /// HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+        /// </summary>
+        [JsonProperty("enc_certificate", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncCertificate { get; set; }
+
+        /// <summary>
+        /// HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+        /// </summary>
+        [JsonProperty("enc_private_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncPrivateKey { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -107,6 +119,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  encCertificate: ").Append(EncCertificate).Append("\n");
+            sb.Append("  encPrivateKey: ").Append(EncPrivateKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +201,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.EncCertificate == input.EncCertificate ||
+                    (this.EncCertificate != null &&
+                    this.EncCertificate.Equals(input.EncCertificate))
+                ) && 
+                (
+                    this.EncPrivateKey == input.EncPrivateKey ||
+                    (this.EncPrivateKey != null &&
+                    this.EncPrivateKey.Equals(input.EncPrivateKey))
                 );
         }
 
@@ -222,6 +246,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.EncCertificate != null)
+                    hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
+                if (this.EncPrivateKey != null)
+                    hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
                 return hashCode;
             }
         }

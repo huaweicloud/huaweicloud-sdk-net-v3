@@ -14,6 +14,116 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     /// </summary>
     public class CreateLoadBalancerOption 
     {
+        /// <summary>
+        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+        /// </summary>
+        /// <value>WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。</value>
+        [JsonConverter(typeof(EnumClassConverter<WafFailureActionEnum>))]
+        public class WafFailureActionEnum
+        {
+            /// <summary>
+            /// Enum DISCARD for value: discard
+            /// </summary>
+            public static readonly WafFailureActionEnum DISCARD = new WafFailureActionEnum("discard");
+
+            /// <summary>
+            /// Enum FORWARD for value: forward
+            /// </summary>
+            public static readonly WafFailureActionEnum FORWARD = new WafFailureActionEnum("forward");
+
+            private static readonly Dictionary<string, WafFailureActionEnum> StaticFields =
+            new Dictionary<string, WafFailureActionEnum>()
+            {
+                { "discard", DISCARD },
+                { "forward", FORWARD },
+            };
+
+            private string Value;
+
+            public WafFailureActionEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static WafFailureActionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as WafFailureActionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(WafFailureActionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(WafFailureActionEnum a, WafFailureActionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(WafFailureActionEnum a, WafFailureActionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 负载均衡器ID（UUID）
@@ -171,6 +281,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("autoscaling", NullValueHandling = NullValueHandling.Ignore)]
         public CreateLoadbalancerAutoscalingOption Autoscaling { get; set; }
 
+        /// <summary>
+        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）   使用说明：只有绑定了waf的LB实例，该字段才会生效。
+        /// </summary>
+        [JsonProperty("waf_failure_action", NullValueHandling = NullValueHandling.Ignore)]
+        public WafFailureActionEnum WafFailureAction { get; set; }
 
         /// <summary>
         /// Get the string
@@ -205,6 +320,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
             sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
+            sb.Append("  wafFailureAction: ").Append(WafFailureAction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -360,6 +476,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Autoscaling == input.Autoscaling ||
                     (this.Autoscaling != null &&
                     this.Autoscaling.Equals(input.Autoscaling))
+                ) && 
+                (
+                    this.WafFailureAction == input.WafFailureAction ||
+                    (this.WafFailureAction != null &&
+                    this.WafFailureAction.Equals(input.WafFailureAction))
                 );
         }
 
@@ -423,6 +544,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
                 if (this.Autoscaling != null)
                     hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.WafFailureAction != null)
+                    hashCode = hashCode * 59 + this.WafFailureAction.GetHashCode();
                 return hashCode;
             }
         }

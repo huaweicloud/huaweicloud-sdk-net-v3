@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? IpVersion { get; set; }
 
         /// <summary>
-        /// 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建。
+        /// 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建。  [华南-深圳局点该参数取值只能为5_gray](tag:hws)
         /// </summary>
         [JsonProperty("network_type", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkType { get; set; }

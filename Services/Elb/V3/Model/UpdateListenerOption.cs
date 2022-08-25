@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> SniContainerRefs { get; set; }
 
         /// <summary>
+        /// 监听器使用的SNI证书泛域名匹配方式。 longest_suffix表示最长尾缀匹配，wildcard表示标准域名分级匹配。 默认为wildcard。
+        /// </summary>
+        [JsonProperty("sni_match_algo", NullValueHandling = NullValueHandling.Ignore)]
+        public string SniMatchAlgo { get; set; }
+
+        /// <summary>
         /// 监听器使用的安全策略。  [取值：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0，默认：tls-1-0。](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:dt,dt_test,hcso_dt)  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。  - QUIC监听器不支持该字段。  - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。  - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt,dt_test)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)
         /// </summary>
         [JsonProperty("tls_ciphers_policy", NullValueHandling = NullValueHandling.Ignore)]
@@ -146,6 +152,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  insertHeaders: ").Append(InsertHeaders).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  sniContainerRefs: ").Append(SniContainerRefs).Append("\n");
+            sb.Append("  sniMatchAlgo: ").Append(SniMatchAlgo).Append("\n");
             sb.Append("  tlsCiphersPolicy: ").Append(TlsCiphersPolicy).Append("\n");
             sb.Append("  securityPolicyId: ").Append(SecurityPolicyId).Append("\n");
             sb.Append("  enableMemberRetry: ").Append(EnableMemberRetry).Append("\n");
@@ -222,6 +229,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.SniContainerRefs != null &&
                     input.SniContainerRefs != null &&
                     this.SniContainerRefs.SequenceEqual(input.SniContainerRefs)
+                ) && 
+                (
+                    this.SniMatchAlgo == input.SniMatchAlgo ||
+                    (this.SniMatchAlgo != null &&
+                    this.SniMatchAlgo.Equals(input.SniMatchAlgo))
                 ) && 
                 (
                     this.TlsCiphersPolicy == input.TlsCiphersPolicy ||
@@ -301,6 +313,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.SniContainerRefs != null)
                     hashCode = hashCode * 59 + this.SniContainerRefs.GetHashCode();
+                if (this.SniMatchAlgo != null)
+                    hashCode = hashCode * 59 + this.SniMatchAlgo.GetHashCode();
                 if (this.TlsCiphersPolicy != null)
                     hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
                 if (this.SecurityPolicyId != null)

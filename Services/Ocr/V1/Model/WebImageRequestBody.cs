@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("extract_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ExtractType { get; set; }
 
+        /// <summary>
+        /// 为Boolean类型，若不传该字段，默认不检测切片字体，为True时，将检测切片的字体类型，并返回最相似的5种字体名称。 
+        /// </summary>
+        [JsonProperty("detect_font", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectFont { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  detectDirection: ").Append(DetectDirection).Append("\n");
             sb.Append("  extractType: ").Append(ExtractType).Append("\n");
+            sb.Append("  detectFont: ").Append(DetectFont).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,6 +99,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ExtractType != null &&
                     input.ExtractType != null &&
                     this.ExtractType.SequenceEqual(input.ExtractType)
+                ) && 
+                (
+                    this.DetectFont == input.DetectFont ||
+                    (this.DetectFont != null &&
+                    this.DetectFont.Equals(input.DetectFont))
                 );
         }
 
@@ -111,6 +123,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
                 if (this.ExtractType != null)
                     hashCode = hashCode * 59 + this.ExtractType.GetHashCode();
+                if (this.DetectFont != null)
+                    hashCode = hashCode * 59 + this.DetectFont.GetHashCode();
                 return hashCode;
             }
         }

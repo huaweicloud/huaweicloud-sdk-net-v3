@@ -1,3 +1,58 @@
+# 3.0.102 2022-08-25
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除以下接口：
+    - `ListMasterSlavePools`
+    - `CreateMasterSlavePool`
+    - `ShowMasterSlavePool`
+    - `DeleteMasterSlavePool`
+  - 接口`ListLoadBalancers`新增响应参数 `waf_failure_action`
+  - 接口`CreateLoadBalancer`新增请求参数 `waf_failure_action`
+  - 接口`ShowLoadBalancer`新增响应参数 `waf_failure_action`
+  - 接口`UpdateLoadBalancer`:
+    - 新增请求参数 `waf_failure_action`
+    - 新增响应参数 `waf_failure_action`
+    - 移除请求参数 `cloud_service_console_url`
+  - 接口`ListCertificates`新增响应参数 `enc_certificate`、`enc_private_key`
+  - 接口`CreateCertificate`新增请求参数 `enc_certificate`、`enc_private_key`
+  - 接口`ShowCertificate`新增响应参数 `enc_certificate`、`enc_private_key`
+  - 接口`UpdateCertificate`:
+    - 新增请求参数 `enc_certificate`、`enc_private_key`
+    - 新增响应参数 `enc_certificate`、`enc_private_key`
+  - 接口`ListListeners`新增响应参数 `sni_match_algo`
+  - 接口`CreateListener`新增请求参数 `sni_match_algo`
+  - 接口`ShowListener`新增响应参数 `sni_match_algo`
+  - 接口`UpdateListener`:
+    - 新增请求参数 `sni_match_algo`
+    - 新增响应参数 `sni_match_algo`
+  - 接口`ListMembers`新增请求参数 `instance_id`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeWebImage`:
+    - 新增请求参数 `detect_font`
+    - 新增响应参数 `font_list`、`font_scores`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CheckMd5Duplication`请求参数`size`类型调整 `int32` -> `int64`
+
 # 3.0.101 2022-08-18
 
 ### HuaweiCloud SDK ECS

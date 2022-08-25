@@ -99,6 +99,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("detail_address", NullValueHandling = NullValueHandling.Ignore)]
         public string DetailAddress { get; set; }
 
+        /// <summary>
+        /// 文字块所属字体类型，列表形式，表示与文字块的文字最接近的字体类型。 
+        /// </summary>
+        [JsonProperty("font_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> FontList { get; set; }
+
+        /// <summary>
+        /// 文字块所属字体类型的概率，列表形式，与font_list一一对应，表示文字块的文字属于某种字体类型的概率。 
+        /// </summary>
+        [JsonProperty("font_scores", NullValueHandling = NullValueHandling.Ignore)]
+        public List<float?> FontScores { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -121,6 +133,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  city: ").Append(City).Append("\n");
             sb.Append("  district: ").Append(District).Append("\n");
             sb.Append("  detailAddress: ").Append(DetailAddress).Append("\n");
+            sb.Append("  fontList: ").Append(FontList).Append("\n");
+            sb.Append("  fontScores: ").Append(FontScores).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,6 +226,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.DetailAddress == input.DetailAddress ||
                     (this.DetailAddress != null &&
                     this.DetailAddress.Equals(input.DetailAddress))
+                ) && 
+                (
+                    this.FontList == input.FontList ||
+                    this.FontList != null &&
+                    input.FontList != null &&
+                    this.FontList.SequenceEqual(input.FontList)
+                ) && 
+                (
+                    this.FontScores == input.FontScores ||
+                    this.FontScores != null &&
+                    input.FontScores != null &&
+                    this.FontScores.SequenceEqual(input.FontScores)
                 );
         }
 
@@ -251,6 +277,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.District.GetHashCode();
                 if (this.DetailAddress != null)
                     hashCode = hashCode * 59 + this.DetailAddress.GetHashCode();
+                if (this.FontList != null)
+                    hashCode = hashCode * 59 + this.FontList.GetHashCode();
+                if (this.FontScores != null)
+                    hashCode = hashCode * 59 + this.FontScores.GetHashCode();
                 return hashCode;
             }
         }

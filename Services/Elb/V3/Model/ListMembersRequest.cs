@@ -120,6 +120,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("member_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberType { get; set; }
 
+        /// <summary>
+        /// member关联的ECS实例ID，空表示跨VPC场景的member。  支持多值查询，查询条件格式：*instance_id&#x3D;xxx&amp;instance_id&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("instance_id", IsQuery = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> InstanceId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -143,6 +150,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  memberType: ").Append(MemberType).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,6 +256,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MemberType != null &&
                     input.MemberType != null &&
                     this.MemberType.SequenceEqual(input.MemberType)
+                ) && 
+                (
+                    this.InstanceId == input.InstanceId ||
+                    this.InstanceId != null &&
+                    input.InstanceId != null &&
+                    this.InstanceId.SequenceEqual(input.InstanceId)
                 );
         }
 
@@ -289,6 +303,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.MemberType != null)
                     hashCode = hashCode * 59 + this.MemberType.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

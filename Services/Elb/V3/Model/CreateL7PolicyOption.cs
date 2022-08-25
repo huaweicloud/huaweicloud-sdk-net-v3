@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public CreateFixtedResponseConfig FixedResponseConfig { get; set; }
 
         /// <summary>
-        /// 转发策略关联的转发规则对象。详细参考表 l7rule字段说明。rules列表中最多含有10个rule规则（若rule中包含conditions字段，一条condition算一个规则），且列表中type为HOST_NAME，PATH，METHOD，SOURCE_IP的rule不能重复，至多指定一条。   仅支持全量替换。
+        /// 转发策略关联的转发规则对象。详细参考表 l7rule字段说明。rules列表中最多含有10个rule规则（若rule中包含conditions字段，一条condition算一个规则），且列表中type为HOST_NAME，PATH，METHOD，SOURCE_IP的rule不能重复，至多指定一条。  使用说明： - 仅支持全量替换。 - 如果 l7policy 是重定向到listener的话，不允许创建l7rule。
         /// </summary>
         [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateL7PolicyRuleOption> Rules { get; set; }

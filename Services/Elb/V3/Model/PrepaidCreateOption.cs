@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 创建负载均衡器的包周期信息，若传入该结构体，则创建包周期的LB
+    /// 创建负载均衡器的包周期信息，若传入该结构体，则创建包周期的LB。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
     /// </summary>
     public class PrepaidCreateOption 
     {

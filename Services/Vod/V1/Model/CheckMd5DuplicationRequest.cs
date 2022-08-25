@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         [SDKProperty("size", IsQuery = true)]
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// 文件MD5。  建议参考[上传校验](https://support.huaweicloud.com/api-vod/vod_04_0212.html#vod_04_0212__section575102165412)生成对应的MD5值。

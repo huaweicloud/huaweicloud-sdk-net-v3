@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> SniContainerRefs { get; set; }
 
         /// <summary>
+        /// 监听器使用的SNI证书泛域名匹配方式。 longest_suffix表示最长尾缀匹配，wildcard表示标准域名分级匹配。 默认为wildcard。
+        /// </summary>
+        [JsonProperty("sni_match_algo", NullValueHandling = NullValueHandling.Ignore)]
+        public string SniMatchAlgo { get; set; }
+
+        /// <summary>
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -207,6 +213,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
             sb.Append("  sniContainerRefs: ").Append(SniContainerRefs).Append("\n");
+            sb.Append("  sniMatchAlgo: ").Append(SniMatchAlgo).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  tlsCiphersPolicy: ").Append(TlsCiphersPolicy).Append("\n");
@@ -323,6 +330,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.SniContainerRefs.SequenceEqual(input.SniContainerRefs)
                 ) && 
                 (
+                    this.SniMatchAlgo == input.SniMatchAlgo ||
+                    (this.SniMatchAlgo != null &&
+                    this.SniMatchAlgo.Equals(input.SniMatchAlgo))
+                ) && 
+                (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
@@ -425,6 +437,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
                 if (this.SniContainerRefs != null)
                     hashCode = hashCode * 59 + this.SniContainerRefs.GetHashCode();
+                if (this.SniMatchAlgo != null)
+                    hashCode = hashCode * 59 + this.SniMatchAlgo.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.UpdatedAt != null)

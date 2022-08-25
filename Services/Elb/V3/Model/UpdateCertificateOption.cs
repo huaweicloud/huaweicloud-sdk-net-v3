@@ -45,6 +45,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }
 
+        /// <summary>
+        /// HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效。 最大长度65536字符。 支持证书链，最大11层(含证书和证书链)。
+        /// </summary>
+        [JsonProperty("enc_certificate", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncCertificate { get; set; }
+
+        /// <summary>
+        /// HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效。 最大长度8192字符。
+        /// </summary>
+        [JsonProperty("enc_private_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncPrivateKey { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +70,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  privateKey: ").Append(PrivateKey).Append("\n");
             sb.Append("  domain: ").Append(Domain).Append("\n");
+            sb.Append("  encCertificate: ").Append(EncCertificate).Append("\n");
+            sb.Append("  encPrivateKey: ").Append(EncPrivateKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +117,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Domain == input.Domain ||
                     (this.Domain != null &&
                     this.Domain.Equals(input.Domain))
+                ) && 
+                (
+                    this.EncCertificate == input.EncCertificate ||
+                    (this.EncCertificate != null &&
+                    this.EncCertificate.Equals(input.EncCertificate))
+                ) && 
+                (
+                    this.EncPrivateKey == input.EncPrivateKey ||
+                    (this.EncPrivateKey != null &&
+                    this.EncPrivateKey.Equals(input.EncPrivateKey))
                 );
         }
 
@@ -124,6 +148,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
                 if (this.Domain != null)
                     hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.EncCertificate != null)
+                    hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
+                if (this.EncPrivateKey != null)
+                    hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
                 return hashCode;
             }
         }

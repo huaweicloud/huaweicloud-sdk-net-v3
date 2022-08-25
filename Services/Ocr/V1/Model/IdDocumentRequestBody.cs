@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 证件签发国家或地区代码，命名遵循ISO-3166 3位代码。可选值。支持填写1个或多个地区。指定参数后，服务只识别指定地区的卡证，如留空，则识别所有地区卡证。建议地区固定或有限范围的情况下填写。支持国家列表见表1。 
+        /// 证件签发国家或地区代码，命名遵循ISO-3166 3位代码。可选值。支持填写1个或多个国家/地区。指定参数后，服务只识别指定国家/地区的卡证，如留空，则识别所有地区卡证。建议国家/地区固定或有限范围的情况下填写。支持国家/地区列表见表1国家/地区和证件列表。 
         /// </summary>
         [JsonProperty("country_region", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> CountryRegion { get; set; }
