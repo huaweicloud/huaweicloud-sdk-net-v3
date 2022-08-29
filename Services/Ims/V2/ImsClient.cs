@@ -425,6 +425,42 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// 查询job状态
+        ///
+        /// 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowJobResponse ShowJob(ShowJobRequest showJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , showJobRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 异步任务进度查询
+        ///
+        /// 该接口为扩展接口，主要用于查询异步任务进度。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowJobProgressResponse ShowJobProgress(ShowJobProgressRequest showJobProgressRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , showJobProgressRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/job/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobProgressRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowJobProgressResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新镜像信息
         ///
         /// 更新镜像信息接口，主要用于镜像属性的修改。当前仅支持可用（active）状态的镜像更新相关信息。
@@ -475,24 +511,6 @@ namespace HuaweiCloud.SDK.Ims.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVersionResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询job状态
-        ///
-        /// 该接口为扩展接口，主要用于查询异步接口执行情况，比如查询导出镜像任务的执行状态。
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public ShowJobResponse ShowJob(ShowJobRequest showJobRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowJobResponse>(response);
         }
         
         /// <summary>

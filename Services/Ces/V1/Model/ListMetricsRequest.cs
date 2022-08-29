@@ -126,21 +126,21 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
 
         /// <summary>
-        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("dim.0", IsQuery = true)]
         [JsonProperty("dim.0", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim0 { get; set; }
 
         /// <summary>
-        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：dim.1&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("dim.1", IsQuery = true)]
         [JsonProperty("dim.1", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim1 { get; set; }
 
         /// <summary>
-        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：dim.2&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}&#x3D;key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
         /// </summary>
         [SDKProperty("dim.2", IsQuery = true)]
         [JsonProperty("dim.2", NullValueHandling = NullValueHandling.Ignore)]
