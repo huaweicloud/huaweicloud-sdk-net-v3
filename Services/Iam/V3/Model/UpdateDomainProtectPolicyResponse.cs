@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("protect_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public ProtectPolicyResult ProtectPolicy { get; set; }
+        public UpdateDomainProtectPolicyResponseBodyProtectPolicy ProtectPolicy { get; set; }
 
 
         /// <summary>

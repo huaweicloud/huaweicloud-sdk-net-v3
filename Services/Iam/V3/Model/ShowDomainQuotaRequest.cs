@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     public class ShowDomainQuotaRequest 
     {
         /// <summary>
-        /// 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep。
+        /// 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep, mapping。
         /// </summary>
-        /// <value>查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep。</value>
+        /// <value>查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep, mapping。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -66,6 +66,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             /// </summary>
             public static readonly TypeEnum ASSIGMENT_USER_EP = new TypeEnum("assigment_user_ep");
 
+            /// <summary>
+            /// Enum MAPPING for value: mapping
+            /// </summary>
+            public static readonly TypeEnum MAPPING = new TypeEnum("mapping");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -78,6 +83,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 { "assigment_agency_mp", ASSIGMENT_AGENCY_MP },
                 { "assigment_group_ep", ASSIGMENT_GROUP_EP },
                 { "assigment_user_ep", ASSIGMENT_USER_EP },
+                { "mapping", MAPPING },
             };
 
             private string Value;
@@ -175,7 +181,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep。
+        /// 查询配额的类型，取值范围为：user, group, idp, agency, policy, assigment_group_mp, assigment_agency_mp, assigment_group_ep, assigment_user_ep, mapping。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

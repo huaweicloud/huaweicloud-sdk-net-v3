@@ -10,13 +10,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// 
+    /// 联邦用户在本系统中所属用户组
     /// </summary>
-    public class RulesLocalAdditional 
+    public class RulesLocalGroup 
     {
 
         /// <summary>
-        /// user：联邦用户在本系统中的用户名称。 &#x60;&#x60;&#x60; \&quot;user\&quot;:{\&quot;name\&quot;:\&quot;{0}\&quot;} &#x60;&#x60;&#x60;  group：联邦用户在本系统中所属用户组。 &#x60;&#x60;&#x60; \&quot;group\&quot;:{\&quot;name\&quot;:\&quot;0cd5e9\&quot;} &#x60;&#x60;&#x60;
+        /// 联邦用户在本系统中所属用户组
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RulesLocalAdditional {\n");
+            sb.Append("class RulesLocalGroup {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -39,13 +39,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RulesLocalAdditional);
+            return this.Equals(input as RulesLocalGroup);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RulesLocalAdditional input)
+        public bool Equals(RulesLocalGroup input)
         {
             if (input == null)
                 return false;

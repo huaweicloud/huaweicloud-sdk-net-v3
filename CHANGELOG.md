@@ -1,3 +1,30 @@
+# 3.0.104 2022-09-01
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the response parameters `version`, `last_modified` from the interface `CreateDependency`
+  - Remove the response parameters `version`, `last_modified` from the interface `ListDependencies`
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `UpdateDomainProtectPolicy`:
+    - Add the request parameters `allow_user`, `mobile`, `admin_check`, `email`, `scene`
+    - Remove the response parameter `operation_protection`
+  - Remove the response parameter `operation_protection` from the interface `ShowDomainProtectPolicy`
+  - The request parameter `maximum_consecutive_identical_chars`, `minimum_password_age`, `minimum_password_length`, `number_of_recent_passwords_disallowed`, `password_not_username_or_invert`, `password_validity_period`, `password_char_combination` changed to not required of the interface `UpdateDomainPasswordPolicy`
+  - The request parameter `account_validity_period`, `custom_info_for_login`, `lockout_duration`, `login_failed_times`, `period_with_login_failures`, `session_timeout`, `show_recent_login_info` changed to not required of the interface `UpdateDomainLoginPolicy`
+  - Add the enum values `mapping` to the request parameter `type` to the interface `ShowDomainQuota`
+
 # 3.0.103 2022-08-29
 
 ### HuaweiCloud SDK ECS

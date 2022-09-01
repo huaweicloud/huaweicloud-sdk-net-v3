@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// • 管理员为IAM用户解绑MFA设备：填写6位任意验证码，不做校验。 • IAM用户为自己解绑MFA设备：填写虚拟MFA验证码。
+        /// 管理员为IAM用户解绑MFA设备：填写6位任意验证码，不做校验。IAM用户为自己解绑MFA设备：填写虚拟MFA验证码。
         /// </summary>
         [JsonProperty("authentication_code", NullValueHandling = NullValueHandling.Ignore)]
         public string AuthenticationCode { get; set; }

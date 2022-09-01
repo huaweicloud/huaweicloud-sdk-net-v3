@@ -10,16 +10,10 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// 操作保护策略
+    /// 
     /// </summary>
-    public class ProtectPolicyOption 
+    public class UpdateDomainProtectPolicyResponseBodyProtectPolicy 
     {
-
-        /// <summary>
-        /// 是否开启操作保护，开启为\&quot;true\&quot;，未开启为\&quot;false\&quot;。
-        /// </summary>
-        [JsonProperty("operation_protection", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? OperationProtection { get; set; }
 
         /// <summary>
         /// 
@@ -28,22 +22,16 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public AllowUserBody AllowUser { get; set; }
 
         /// <summary>
-        /// 操作保护验证指定手机号码。示例：0086-123456789。
+        /// 是否开启操作保护，取值范围true或false。
         /// </summary>
-        [JsonProperty("mobile", NullValueHandling = NullValueHandling.Ignore)]
-        public string Mobile { get; set; }
+        [JsonProperty("operation_protection", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? OperationProtection { get; set; }
 
         /// <summary>
         /// 是否指定人员验证。on为指定人员验证，必须填写scene参数。off为操作员验证。
         /// </summary>
         [JsonProperty("admin_check", NullValueHandling = NullValueHandling.Ignore)]
         public string AdminCheck { get; set; }
-
-        /// <summary>
-        /// 操作保护验证指定邮件地址。示例：example@email.com。
-        /// </summary>
-        [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
-        public string Email { get; set; }
 
         /// <summary>
         /// 操作保护指定人员验证方式，admin_check为on时，必须填写。包括mobile、email。
@@ -58,12 +46,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProtectPolicyOption {\n");
-            sb.Append("  operationProtection: ").Append(OperationProtection).Append("\n");
+            sb.Append("class UpdateDomainProtectPolicyResponseBodyProtectPolicy {\n");
             sb.Append("  allowUser: ").Append(AllowUser).Append("\n");
-            sb.Append("  mobile: ").Append(Mobile).Append("\n");
+            sb.Append("  operationProtection: ").Append(OperationProtection).Append("\n");
             sb.Append("  adminCheck: ").Append(AdminCheck).Append("\n");
-            sb.Append("  email: ").Append(Email).Append("\n");
             sb.Append("  scene: ").Append(Scene).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,42 +60,32 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ProtectPolicyOption);
+            return this.Equals(input as UpdateDomainProtectPolicyResponseBodyProtectPolicy);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ProtectPolicyOption input)
+        public bool Equals(UpdateDomainProtectPolicyResponseBodyProtectPolicy input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OperationProtection == input.OperationProtection ||
-                    (this.OperationProtection != null &&
-                    this.OperationProtection.Equals(input.OperationProtection))
-                ) && 
-                (
                     this.AllowUser == input.AllowUser ||
                     (this.AllowUser != null &&
                     this.AllowUser.Equals(input.AllowUser))
                 ) && 
                 (
-                    this.Mobile == input.Mobile ||
-                    (this.Mobile != null &&
-                    this.Mobile.Equals(input.Mobile))
+                    this.OperationProtection == input.OperationProtection ||
+                    (this.OperationProtection != null &&
+                    this.OperationProtection.Equals(input.OperationProtection))
                 ) && 
                 (
                     this.AdminCheck == input.AdminCheck ||
                     (this.AdminCheck != null &&
                     this.AdminCheck.Equals(input.AdminCheck))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
                 ) && 
                 (
                     this.Scene == input.Scene ||
@@ -126,16 +102,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OperationProtection != null)
-                    hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
                 if (this.AllowUser != null)
                     hashCode = hashCode * 59 + this.AllowUser.GetHashCode();
-                if (this.Mobile != null)
-                    hashCode = hashCode * 59 + this.Mobile.GetHashCode();
+                if (this.OperationProtection != null)
+                    hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
                 if (this.AdminCheck != null)
                     hashCode = hashCode * 59 + this.AdminCheck.GetHashCode();
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
                 if (this.Scene != null)
                     hashCode = hashCode * 59 + this.Scene.GetHashCode();
                 return hashCode;

@@ -69,18 +69,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("file_name", NullValueHandling = NullValueHandling.Ignore)]
         public string FileName { get; set; }
 
-        /// <summary>
-        /// 依赖包版本号
-        /// </summary>
-        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Version { get; set; }
-
-        /// <summary>
-        /// 依赖包更新时间
-        /// </summary>
-        [JsonProperty("last_modified", NullValueHandling = NullValueHandling.Ignore)]
-        public long? LastModified { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -98,8 +86,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  fileName: ").Append(FileName).Append("\n");
-            sb.Append("  version: ").Append(Version).Append("\n");
-            sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -165,16 +151,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FileName == input.FileName ||
                     (this.FileName != null &&
                     this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.LastModified == input.LastModified ||
-                    (this.LastModified != null &&
-                    this.LastModified.Equals(input.LastModified))
                 );
         }
 
@@ -204,10 +180,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.FileName != null)
                     hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.LastModified != null)
-                    hashCode = hashCode * 59 + this.LastModified.GetHashCode();
                 return hashCode;
             }
         }

@@ -10,16 +10,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// Response Object
+    /// 联邦用户在本系统中的用户名称
     /// </summary>
-    public class ShowDomainProtectPolicyResponse : SdkResponse
+    public class RulesLocalUser 
     {
 
         /// <summary>
-        /// 
+        /// 联邦用户在本系统中的用户名称
         /// </summary>
-        [JsonProperty("protect_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public ShowDomainProtectPolicyResponseBodyProtectPolicy ProtectPolicy { get; set; }
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowDomainProtectPolicyResponse {\n");
-            sb.Append("  protectPolicy: ").Append(ProtectPolicy).Append("\n");
+            sb.Append("class RulesLocalUser {\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,22 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowDomainProtectPolicyResponse);
+            return this.Equals(input as RulesLocalUser);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowDomainProtectPolicyResponse input)
+        public bool Equals(RulesLocalUser input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ProtectPolicy == input.ProtectPolicy ||
-                    (this.ProtectPolicy != null &&
-                    this.ProtectPolicy.Equals(input.ProtectPolicy))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ProtectPolicy != null)
-                    hashCode = hashCode * 59 + this.ProtectPolicy.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

@@ -10,22 +10,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Iam.V3.Model
 {
     /// <summary>
-    /// 操作保护策略
+    /// 操作保护策略。
     /// </summary>
-    public class ProtectPolicyOption 
+    public class ShowDomainProtectPolicyResponseBodyProtectPolicy 
     {
-
-        /// <summary>
-        /// 是否开启操作保护，开启为\&quot;true\&quot;，未开启为\&quot;false\&quot;。
-        /// </summary>
-        [JsonProperty("operation_protection", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? OperationProtection { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("allow_user", NullValueHandling = NullValueHandling.Ignore)]
         public AllowUserBody AllowUser { get; set; }
+
+        /// <summary>
+        /// 是否开启操作保护，取值范围true或false。
+        /// </summary>
+        [JsonProperty("operation_protection", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? OperationProtection { get; set; }
 
         /// <summary>
         /// 操作保护验证指定手机号码。示例：0086-123456789。
@@ -58,9 +58,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProtectPolicyOption {\n");
-            sb.Append("  operationProtection: ").Append(OperationProtection).Append("\n");
+            sb.Append("class ShowDomainProtectPolicyResponseBodyProtectPolicy {\n");
             sb.Append("  allowUser: ").Append(AllowUser).Append("\n");
+            sb.Append("  operationProtection: ").Append(OperationProtection).Append("\n");
             sb.Append("  mobile: ").Append(Mobile).Append("\n");
             sb.Append("  adminCheck: ").Append(AdminCheck).Append("\n");
             sb.Append("  email: ").Append(Email).Append("\n");
@@ -74,27 +74,27 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ProtectPolicyOption);
+            return this.Equals(input as ShowDomainProtectPolicyResponseBodyProtectPolicy);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ProtectPolicyOption input)
+        public bool Equals(ShowDomainProtectPolicyResponseBodyProtectPolicy input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OperationProtection == input.OperationProtection ||
-                    (this.OperationProtection != null &&
-                    this.OperationProtection.Equals(input.OperationProtection))
-                ) && 
-                (
                     this.AllowUser == input.AllowUser ||
                     (this.AllowUser != null &&
                     this.AllowUser.Equals(input.AllowUser))
+                ) && 
+                (
+                    this.OperationProtection == input.OperationProtection ||
+                    (this.OperationProtection != null &&
+                    this.OperationProtection.Equals(input.OperationProtection))
                 ) && 
                 (
                     this.Mobile == input.Mobile ||
@@ -126,10 +126,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OperationProtection != null)
-                    hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
                 if (this.AllowUser != null)
                     hashCode = hashCode * 59 + this.AllowUser.GetHashCode();
+                if (this.OperationProtection != null)
+                    hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
                 if (this.Mobile != null)
                     hashCode = hashCode * 59 + this.Mobile.GetHashCode();
                 if (this.AdminCheck != null)

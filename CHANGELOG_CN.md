@@ -1,3 +1,30 @@
+# 3.0.104 2022-09-01
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateDependency`移除响应参数 `version`、`last_modified`
+  - 接口`ListDependencies`移除响应参数 `version`、`last_modified`
+
+### HuaweiCloud SDK IAM
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`UpdateDomainProtectPolicy`:
+    - 新增请求参数 `allow_user`、`mobile`、`admin_check`、`email`、`scene`
+    - 移除响应参数 `operation_protection`
+  - 接口`ShowDomainProtectPolicy`移除响应参数 `operation_protection`
+  - 接口`UpdateDomainPasswordPolicy`请求参数`maximum_consecutive_identical_chars`、`minimum_password_age`、`minimum_password_length`、`number_of_recent_passwords_disallowed`、`password_not_username_or_invert`、`password_validity_period`、`password_char_combination`改为非必填
+  - 接口`UpdateDomainLoginPolicy`请求参数`account_validity_period`、`custom_info_for_login`、`lockout_duration`、`login_failed_times`、`period_with_login_failures`、`session_timeout`、`show_recent_login_info`改为非必填
+  - 接口`ShowDomainQuota`请求参数`type`新增枚举值`mapping`
+
 # 3.0.103 2022-08-29
 
 ### HuaweiCloud SDK ECS

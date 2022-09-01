@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。 
+        /// 表示联邦用户在本系统中的用户信息。 user：联邦用户在本系统中的用户名称。group：联邦用户在本系统中所属用户组。
         /// </summary>
         [JsonProperty("local", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dictionary<string, RulesLocalAdditional>> Local { get; set; }
+        public List<RulesLocal> Local { get; set; }
 
         /// <summary>
         /// 表示联邦用户在IdP中的用户信息。由断言属性及运算符组成的表达式，取值由断言决定。

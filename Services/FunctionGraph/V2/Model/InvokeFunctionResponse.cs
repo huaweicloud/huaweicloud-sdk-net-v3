@@ -39,6 +39,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Cff-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Cff-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XCffRequestId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  log: ").Append(Log).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  xCffRequestId: ").Append(XCffRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +99,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.XCffRequestId == input.XCffRequestId ||
+                    (this.XCffRequestId != null &&
+                    this.XCffRequestId.Equals(input.XCffRequestId))
                 );
         }
 
@@ -110,6 +123,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Log.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.XCffRequestId != null)
+                    hashCode = hashCode * 59 + this.XCffRequestId.GetHashCode();
                 return hashCode;
             }
         }
