@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string VolumeType { get; set; }
 
         /// <summary>
+        /// 云硬盘的个数。  该字段于dry_run为true并且volumeId不存在时有效，如果该字段不存在，默认为1。
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
+
+        /// <summary>
         /// - true: 表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令 - false: 表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，VBD只能支持简单的SCSI读写命令。 该字段于dry_run为true并且volumeId不存在时有效且为必选字段。
         /// </summary>
         [JsonProperty("hw:passthrough", NullValueHandling = NullValueHandling.Ignore)]
@@ -50,6 +56,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  device: ").Append(Device).Append("\n");
             sb.Append("  volumeId: ").Append(VolumeId).Append("\n");
             sb.Append("  volumeType: ").Append(VolumeType).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  hwpassthrough: ").Append(Hwpassthrough).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -88,6 +95,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.VolumeType.Equals(input.VolumeType))
                 ) && 
                 (
+                    this.Count == input.Count ||
+                    (this.Count != null &&
+                    this.Count.Equals(input.Count))
+                ) && 
+                (
                     this.Hwpassthrough == input.Hwpassthrough ||
                     (this.Hwpassthrough != null &&
                     this.Hwpassthrough.Equals(input.Hwpassthrough))
@@ -108,6 +120,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
                 if (this.VolumeType != null)
                     hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.Count != null)
+                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.Hwpassthrough != null)
                     hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
                 return hashCode;

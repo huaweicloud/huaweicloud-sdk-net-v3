@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Moderation.V3.Model
+namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class AudioModerationResultResultSegments 
+    public class ShowVersionResponse : SdkResponse
     {
 
         /// <summary>
-        /// 命中的风险片段
+        /// 版本信息。
         /// </summary>
-        [JsonProperty("segment", NullValueHandling = NullValueHandling.Ignore)]
-        public string Segment { get; set; }
+        [JsonProperty("versions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Versions> Versions { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AudioModerationResultResultSegments {\n");
-            sb.Append("  segment: ").Append(Segment).Append("\n");
+            sb.Append("class ShowVersionResponse {\n");
+            sb.Append("  versions: ").Append(Versions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,23 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudioModerationResultResultSegments);
+            return this.Equals(input as ShowVersionResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AudioModerationResultResultSegments input)
+        public bool Equals(ShowVersionResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Segment == input.Segment ||
-                    (this.Segment != null &&
-                    this.Segment.Equals(input.Segment))
+                    this.Versions == input.Versions ||
+                    this.Versions != null &&
+                    input.Versions != null &&
+                    this.Versions.SequenceEqual(input.Versions)
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Segment != null)
-                    hashCode = hashCode * 59 + this.Segment.GetHashCode();
+                if (this.Versions != null)
+                    hashCode = hashCode * 59 + this.Versions.GetHashCode();
                 return hashCode;
             }
         }

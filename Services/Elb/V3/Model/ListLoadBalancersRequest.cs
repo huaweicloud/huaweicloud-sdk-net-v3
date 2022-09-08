@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+        /// 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 是否反向查询，取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+        /// 是否反向查询。取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> OperatingStatus { get; set; }
 
         /// <summary>
-        /// 是否独享型LB，取值： - false：共享型 - true：独享型
+        /// 是否独享型LB。取值： - false：共享型 - true：独享型
         /// </summary>
         [SDKProperty("guaranteed", IsQuery = true)]
         [JsonProperty("guaranteed", NullValueHandling = NullValueHandling.Ignore)]
@@ -114,21 +114,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> VipSubnetCidrId { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id&#x3D;xxx&amp;ipv6_vip_port_id&#x3D;xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+        /// 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id&#x3D;xxx&amp;ipv6_vip_port_id&#x3D;xxx*。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ipv6_vip_port_id", IsQuery = true)]
         [JsonProperty("ipv6_vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6VipPortId { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address&#x3D;xxx&amp;ipv6_vip_address&#x3D;xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+        /// 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address&#x3D;xxx&amp;ipv6_vip_address&#x3D;xxx*。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ipv6_vip_address", IsQuery = true)]
         [JsonProperty("ipv6_vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6VipAddress { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id&#x3D;xxx&amp;ipv6_vip_virsubnet_id&#x3D;xxx*。 [ 不支持IPv6，请勿使用。](tag:dt,dt_test)
+        /// 双栈类型负载均衡器所在的子网IPv6网络ID。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id&#x3D;xxx&amp;ipv6_vip_virsubnet_id&#x3D;xxx*。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ipv6_vip_virsubnet_id", IsQuery = true)]
         [JsonProperty("ipv6_vip_virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]

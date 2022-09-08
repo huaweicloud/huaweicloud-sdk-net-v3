@@ -185,22 +185,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         }
 
         /// <summary>
-        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。
+        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  chinese_16k_travel 支持采样率为16k的中文普通话语音识别，采用新一代端到端识别算法，并针对网约车质检场景进行了优化。格式仅支持pcm16k16bit、mp3、wav和aac，区域支持cn-east-3和cn-north-4（强烈推荐使用）。  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。
         /// </summary>
-        /// <value>所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。</value>
+        /// <value>所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  chinese_16k_travel 支持采样率为16k的中文普通话语音识别，采用新一代端到端识别算法，并针对网约车质检场景进行了优化。格式仅支持pcm16k16bit、mp3、wav和aac，区域支持cn-east-3和cn-north-4（强烈推荐使用）。  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。</value>
         [JsonConverter(typeof(EnumClassConverter<PropertyEnum>))]
         public class PropertyEnum
         {
-            /// <summary>
-            /// Enum CHINESE_8K_COMMON for value: chinese_8k_common
-            /// </summary>
-            public static readonly PropertyEnum CHINESE_8K_COMMON = new PropertyEnum("chinese_8k_common");
-
-            /// <summary>
-            /// Enum CHINESE_16K_COMMON for value: chinese_16k_common
-            /// </summary>
-            public static readonly PropertyEnum CHINESE_16K_COMMON = new PropertyEnum("chinese_16k_common");
-
             /// <summary>
             /// Enum CHINESE_16K_GENERAL for value: chinese_16k_general
             /// </summary>
@@ -210,6 +200,16 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             /// Enum CHINESE_16K_TRAVEL for value: chinese_16k_travel
             /// </summary>
             public static readonly PropertyEnum CHINESE_16K_TRAVEL = new PropertyEnum("chinese_16k_travel");
+
+            /// <summary>
+            /// Enum CHINESE_8K_COMMON for value: chinese_8k_common
+            /// </summary>
+            public static readonly PropertyEnum CHINESE_8K_COMMON = new PropertyEnum("chinese_8k_common");
+
+            /// <summary>
+            /// Enum CHINESE_16K_COMMON for value: chinese_16k_common
+            /// </summary>
+            public static readonly PropertyEnum CHINESE_16K_COMMON = new PropertyEnum("chinese_16k_common");
 
             /// <summary>
             /// Enum SICHUAN_16K_COMMON for value: sichuan_16k_common
@@ -229,10 +229,10 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             private static readonly Dictionary<string, PropertyEnum> StaticFields =
             new Dictionary<string, PropertyEnum>()
             {
-                { "chinese_8k_common", CHINESE_8K_COMMON },
-                { "chinese_16k_common", CHINESE_16K_COMMON },
                 { "chinese_16k_general", CHINESE_16K_GENERAL },
                 { "chinese_16k_travel", CHINESE_16K_TRAVEL },
+                { "chinese_8k_common", CHINESE_8K_COMMON },
+                { "chinese_16k_common", CHINESE_16K_COMMON },
                 { "sichuan_16k_common", SICHUAN_16K_COMMON },
                 { "cantonese_16k_common", CANTONESE_16K_COMMON },
                 { "shanghai_16k_common", SHANGHAI_16K_COMMON },
@@ -661,7 +661,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         [JsonProperty("audio_format", NullValueHandling = NullValueHandling.Ignore)]
         public AudioFormatEnum AudioFormat { get; set; }
         /// <summary>
-        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。
+        /// 所使用的模型特征串。通常是 “语种_采样率_领域”的形式。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_general  支持采样率为16k的中文普通话语音识别，同时可识别一些简单的方言。格式仅支持pcm16k16bit、mp3、wav，区域仅支持cn-north-4。  chinese_16k_travel 支持采样率为16k的中文普通话语音识别，采用新一代端到端识别算法，并针对网约车质检场景进行了优化。格式仅支持pcm16k16bit、mp3、wav和aac，区域支持cn-east-3和cn-north-4（强烈推荐使用）。  chinese_8k_common  支持采样率为8k的中文普通话语音识别。  chinese_16k_common  支持采样率为16k的中文普通话语音识别。  sichuan_16k_common  支持采样率为16k的中文普通话与四川话方言识别。区域仅支持cn-north-4。  cantonese_16k_common  支持采样率为16k的粤语方言识别。区域仅支持cn-north-4。  shanghai_16k_common  支持采样率为16k的上海话方言识别，区域仅支持cn-north-4。
         /// </summary>
         [JsonProperty("property", NullValueHandling = NullValueHandling.Ignore)]
         public PropertyEnum Property { get; set; }

@@ -70,13 +70,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? MembersPerPool { get; set; }
 
         /// <summary>
-        /// IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ipgroup { get; set; }
 
         /// <summary>
-        /// 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("security_policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? SecurityPolicy { get; set; }

@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string EipAddress { get; set; }
 
         /// <summary>
-        /// IP版本号，取值：4表示IPv4,6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+        /// IP版本号。取值：4表示IPv4,6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpVersion { get; set; }

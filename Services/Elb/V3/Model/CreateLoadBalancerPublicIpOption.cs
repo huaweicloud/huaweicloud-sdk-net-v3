@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// IP版本。取值：4表示IPv4，6表示IPv6。 [ 不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+        /// IP版本。取值：4表示IPv4，6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpVersion { get; set; }
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string NetworkType { get; set; }
 
         /// <summary>
-        /// 资源账单信息，取值：  - 空：按需计费。  - 非空：包周期计费。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+        /// 资源账单信息。取值：  - 空：按需计费。  - 非空：包周期计费。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }

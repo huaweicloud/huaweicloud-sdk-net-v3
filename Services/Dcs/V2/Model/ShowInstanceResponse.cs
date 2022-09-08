@@ -14,6 +14,348 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     /// </summary>
     public class ShowInstanceResponse : SdkResponse
     {
+        /// <summary>
+        /// 版本类型：社区版、企业版
+        /// </summary>
+        /// <value>版本类型：社区版、企业版</value>
+        [JsonConverter(typeof(EnumClassConverter<ProductTypeEnum>))]
+        public class ProductTypeEnum
+        {
+            /// <summary>
+            /// Enum GENERIC for value: generic
+            /// </summary>
+            public static readonly ProductTypeEnum GENERIC = new ProductTypeEnum("generic");
+
+            /// <summary>
+            /// Enum ENTERPRISE for value: enterprise
+            /// </summary>
+            public static readonly ProductTypeEnum ENTERPRISE = new ProductTypeEnum("enterprise");
+
+            private static readonly Dictionary<string, ProductTypeEnum> StaticFields =
+            new Dictionary<string, ProductTypeEnum>()
+            {
+                { "generic", GENERIC },
+                { "enterprise", ENTERPRISE },
+            };
+
+            private string Value;
+
+            public ProductTypeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static ProductTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ProductTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ProductTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(ProductTypeEnum a, ProductTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ProductTypeEnum a, ProductTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 存储类型：内存存储
+        /// </summary>
+        /// <value>存储类型：内存存储</value>
+        [JsonConverter(typeof(EnumClassConverter<StorageTypeEnum>))]
+        public class StorageTypeEnum
+        {
+            /// <summary>
+            /// Enum DRAM for value: DRAM
+            /// </summary>
+            public static readonly StorageTypeEnum DRAM = new StorageTypeEnum("DRAM");
+
+            private static readonly Dictionary<string, StorageTypeEnum> StaticFields =
+            new Dictionary<string, StorageTypeEnum>()
+            {
+                { "DRAM", DRAM },
+            };
+
+            private string Value;
+
+            public StorageTypeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static StorageTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StorageTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StorageTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(StorageTypeEnum a, StorageTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StorageTypeEnum a, StorageTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 缓存类型：单机类型，主备类型，主备读写分离，Proxy集群类型，原生集群类型
+        /// </summary>
+        /// <value>缓存类型：单机类型，主备类型，主备读写分离，Proxy集群类型，原生集群类型</value>
+        [JsonConverter(typeof(EnumClassConverter<CacheModeEnum>))]
+        public class CacheModeEnum
+        {
+            /// <summary>
+            /// Enum SINGLE for value: single
+            /// </summary>
+            public static readonly CacheModeEnum SINGLE = new CacheModeEnum("single");
+
+            /// <summary>
+            /// Enum HA for value: ha
+            /// </summary>
+            public static readonly CacheModeEnum HA = new CacheModeEnum("ha");
+
+            /// <summary>
+            /// Enum HA_RW_SPLIT for value: ha_rw_split
+            /// </summary>
+            public static readonly CacheModeEnum HA_RW_SPLIT = new CacheModeEnum("ha_rw_split");
+
+            /// <summary>
+            /// Enum PROXY for value: proxy
+            /// </summary>
+            public static readonly CacheModeEnum PROXY = new CacheModeEnum("proxy");
+
+            /// <summary>
+            /// Enum CLUSTER for value: cluster
+            /// </summary>
+            public static readonly CacheModeEnum CLUSTER = new CacheModeEnum("cluster");
+
+            private static readonly Dictionary<string, CacheModeEnum> StaticFields =
+            new Dictionary<string, CacheModeEnum>()
+            {
+                { "single", SINGLE },
+                { "ha", HA },
+                { "ha_rw_split", HA_RW_SPLIT },
+                { "proxy", PROXY },
+                { "cluster", CLUSTER },
+            };
+
+            private string Value;
+
+            public CacheModeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static CacheModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as CacheModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(CacheModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(CacheModeEnum a, CacheModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(CacheModeEnum a, CacheModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// VPC的名称。
@@ -297,6 +639,69 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("cpu_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CpuType { get; set; }
 
+        /// <summary>
+        /// 企业项目名称。
+        /// </summary>
+        [JsonProperty("enterprise_project_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectName { get; set; }
+
+        /// <summary>
+        /// 更新时间，形如2022-07-06T09:32:16.502Z
+        /// </summary>
+        [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdateAt { get; set; }
+
+        /// <summary>
+        /// 版本类型：社区版、企业版
+        /// </summary>
+        [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
+        public ProductTypeEnum ProductType { get; set; }
+        /// <summary>
+        /// 存储类型：内存存储
+        /// </summary>
+        [JsonProperty("storage_type", NullValueHandling = NullValueHandling.Ignore)]
+        public StorageTypeEnum StorageType { get; set; }
+        /// <summary>
+        /// 启动时间，形如2022-07-06T09:32:16.502Z
+        /// </summary>
+        [JsonProperty("launched_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string LaunchedAt { get; set; }
+
+        /// <summary>
+        /// 缓存类型：单机类型，主备类型，主备读写分离，Proxy集群类型，原生集群类型
+        /// </summary>
+        [JsonProperty("cache_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public CacheModeEnum CacheMode { get; set; }
+        /// <summary>
+        /// 是否支持慢日志
+        /// </summary>
+        [JsonProperty("support_slow_log_flag", NullValueHandling = NullValueHandling.Ignore)]
+        public string SupportSlowLogFlag { get; set; }
+
+        /// <summary>
+        /// 数据库数量
+        /// </summary>
+        [JsonProperty("db_number", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DbNumber { get; set; }
+
+        /// <summary>
+        /// 副本数
+        /// </summary>
+        [JsonProperty("replica_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReplicaCount { get; set; }
+
+        /// <summary>
+        /// 集群实例分片个数
+        /// </summary>
+        [JsonProperty("sharding_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ShardingCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("bandwidth_info", NullValueHandling = NullValueHandling.Ignore)]
+        public BandwidthInfo BandwidthInfo { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -352,6 +757,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  subStatus: ").Append(SubStatus).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  cpuType: ").Append(CpuType).Append("\n");
+            sb.Append("  enterpriseProjectName: ").Append(EnterpriseProjectName).Append("\n");
+            sb.Append("  updateAt: ").Append(UpdateAt).Append("\n");
+            sb.Append("  productType: ").Append(ProductType).Append("\n");
+            sb.Append("  storageType: ").Append(StorageType).Append("\n");
+            sb.Append("  launchedAt: ").Append(LaunchedAt).Append("\n");
+            sb.Append("  cacheMode: ").Append(CacheMode).Append("\n");
+            sb.Append("  supportSlowLogFlag: ").Append(SupportSlowLogFlag).Append("\n");
+            sb.Append("  dbNumber: ").Append(DbNumber).Append("\n");
+            sb.Append("  replicaCount: ").Append(ReplicaCount).Append("\n");
+            sb.Append("  shardingCount: ").Append(ShardingCount).Append("\n");
+            sb.Append("  bandwidthInfo: ").Append(BandwidthInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -609,6 +1025,61 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.CpuType == input.CpuType ||
                     (this.CpuType != null &&
                     this.CpuType.Equals(input.CpuType))
+                ) && 
+                (
+                    this.EnterpriseProjectName == input.EnterpriseProjectName ||
+                    (this.EnterpriseProjectName != null &&
+                    this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))
+                ) && 
+                (
+                    this.UpdateAt == input.UpdateAt ||
+                    (this.UpdateAt != null &&
+                    this.UpdateAt.Equals(input.UpdateAt))
+                ) && 
+                (
+                    this.ProductType == input.ProductType ||
+                    (this.ProductType != null &&
+                    this.ProductType.Equals(input.ProductType))
+                ) && 
+                (
+                    this.StorageType == input.StorageType ||
+                    (this.StorageType != null &&
+                    this.StorageType.Equals(input.StorageType))
+                ) && 
+                (
+                    this.LaunchedAt == input.LaunchedAt ||
+                    (this.LaunchedAt != null &&
+                    this.LaunchedAt.Equals(input.LaunchedAt))
+                ) && 
+                (
+                    this.CacheMode == input.CacheMode ||
+                    (this.CacheMode != null &&
+                    this.CacheMode.Equals(input.CacheMode))
+                ) && 
+                (
+                    this.SupportSlowLogFlag == input.SupportSlowLogFlag ||
+                    (this.SupportSlowLogFlag != null &&
+                    this.SupportSlowLogFlag.Equals(input.SupportSlowLogFlag))
+                ) && 
+                (
+                    this.DbNumber == input.DbNumber ||
+                    (this.DbNumber != null &&
+                    this.DbNumber.Equals(input.DbNumber))
+                ) && 
+                (
+                    this.ReplicaCount == input.ReplicaCount ||
+                    (this.ReplicaCount != null &&
+                    this.ReplicaCount.Equals(input.ReplicaCount))
+                ) && 
+                (
+                    this.ShardingCount == input.ShardingCount ||
+                    (this.ShardingCount != null &&
+                    this.ShardingCount.Equals(input.ShardingCount))
+                ) && 
+                (
+                    this.BandwidthInfo == input.BandwidthInfo ||
+                    (this.BandwidthInfo != null &&
+                    this.BandwidthInfo.Equals(input.BandwidthInfo))
                 );
         }
 
@@ -714,6 +1185,28 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.CpuType != null)
                     hashCode = hashCode * 59 + this.CpuType.GetHashCode();
+                if (this.EnterpriseProjectName != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
+                if (this.UpdateAt != null)
+                    hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
+                if (this.ProductType != null)
+                    hashCode = hashCode * 59 + this.ProductType.GetHashCode();
+                if (this.StorageType != null)
+                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
+                if (this.LaunchedAt != null)
+                    hashCode = hashCode * 59 + this.LaunchedAt.GetHashCode();
+                if (this.CacheMode != null)
+                    hashCode = hashCode * 59 + this.CacheMode.GetHashCode();
+                if (this.SupportSlowLogFlag != null)
+                    hashCode = hashCode * 59 + this.SupportSlowLogFlag.GetHashCode();
+                if (this.DbNumber != null)
+                    hashCode = hashCode * 59 + this.DbNumber.GetHashCode();
+                if (this.ReplicaCount != null)
+                    hashCode = hashCode * 59 + this.ReplicaCount.GetHashCode();
+                if (this.ShardingCount != null)
+                    hashCode = hashCode * 59 + this.ShardingCount.GetHashCode();
+                if (this.BandwidthInfo != null)
+                    hashCode = hashCode * 59 + this.BandwidthInfo.GetHashCode();
                 return hashCode;
             }
         }

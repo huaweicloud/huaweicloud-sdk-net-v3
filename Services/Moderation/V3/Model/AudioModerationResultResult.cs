@@ -140,7 +140,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// 审核详情
         /// </summary>
         [JsonProperty("details", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AudioModerationResultResultDetails> Details { get; set; }
+        public List<AudioModerationResultDetail> Details { get; set; }
 
         /// <summary>
         /// 音频文本内容

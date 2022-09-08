@@ -10,14 +10,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Moderation.V3.Model
 {
     /// <summary>
-    /// 
+    /// 作业审核结果，当作业状态为succeeded时存在
     /// </summary>
-    public class AudioModerationResultResultDetails 
+    public class VideoModerationResultResult 
     {
         /// <summary>
-        /// 音频片段审核处理建议： block：包含敏感信息，不通过 review：需要人工复检
+        /// 视频审核结果是否通过。 block：包含敏感信息，不通过  review：需要人工复检 pass：不包含敏感信息，通过
         /// </summary>
-        /// <value>音频片段审核处理建议： block：包含敏感信息，不通过 review：需要人工复检</value>
+        /// <value>视频审核结果是否通过。 block：包含敏感信息，不通过  review：需要人工复检 pass：不包含敏感信息，通过</value>
         [JsonConverter(typeof(EnumClassConverter<SuggestionEnum>))]
         public class SuggestionEnum
         {
@@ -25,6 +25,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             /// Enum BLOCK for value: block
             /// </summary>
             public static readonly SuggestionEnum BLOCK = new SuggestionEnum("block");
+
+            /// <summary>
+            /// Enum PASS for value: pass
+            /// </summary>
+            public static readonly SuggestionEnum PASS = new SuggestionEnum("pass");
 
             /// <summary>
             /// Enum REVIEW for value: review
@@ -35,6 +40,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             new Dictionary<string, SuggestionEnum>()
             {
                 { "block", BLOCK },
+                { "pass", PASS },
                 { "review", REVIEW },
             };
 
@@ -126,39 +132,21 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
 
 
         /// <summary>
-        /// 音频片段开始时间
-        /// </summary>
-        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? StartTime { get; set; }
-
-        /// <summary>
-        /// 音频片段审核处理建议： block：包含敏感信息，不通过 review：需要人工复检
+        /// 视频审核结果是否通过。 block：包含敏感信息，不通过  review：需要人工复检 pass：不包含敏感信息，通过
         /// </summary>
         [JsonProperty("suggestion", NullValueHandling = NullValueHandling.Ignore)]
         public SuggestionEnum Suggestion { get; set; }
         /// <summary>
-        /// 音频片段结束时间
+        /// 图像审核详情
         /// </summary>
-        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EndTime { get; set; }
+        [JsonProperty("image_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public List<VideoModerationImageDetail> ImageDetail { get; set; }
 
         /// <summary>
-        /// 音频片段标签
+        /// 音频审核详情
         /// </summary>
-        [JsonProperty("label", NullValueHandling = NullValueHandling.Ignore)]
-        public string Label { get; set; }
-
-        /// <summary>
-        /// 音频片段文本内容
-        /// </summary>
-        [JsonProperty("audio_text", NullValueHandling = NullValueHandling.Ignore)]
-        public string AudioText { get; set; }
-
-        /// <summary>
-        /// 命中的风险片段信息列表，如果命中语义算法模型，则该字段不会存在
-        /// </summary>
-        [JsonProperty("segments", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AudioModerationResultResultSegments> Segments { get; set; }
+        [JsonProperty("audio_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public List<VideoModerationVideoDetail> AudioDetail { get; set; }
 
 
         /// <summary>
@@ -167,13 +155,10 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AudioModerationResultResultDetails {\n");
-            sb.Append("  startTime: ").Append(StartTime).Append("\n");
+            sb.Append("class VideoModerationResultResult {\n");
             sb.Append("  suggestion: ").Append(Suggestion).Append("\n");
-            sb.Append("  endTime: ").Append(EndTime).Append("\n");
-            sb.Append("  label: ").Append(Label).Append("\n");
-            sb.Append("  audioText: ").Append(AudioText).Append("\n");
-            sb.Append("  segments: ").Append(Segments).Append("\n");
+            sb.Append("  imageDetail: ").Append(ImageDetail).Append("\n");
+            sb.Append("  audioDetail: ").Append(AudioDetail).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,48 +168,34 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudioModerationResultResultDetails);
+            return this.Equals(input as VideoModerationResultResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AudioModerationResultResultDetails input)
+        public bool Equals(VideoModerationResultResult input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
                     this.Suggestion == input.Suggestion ||
                     (this.Suggestion != null &&
                     this.Suggestion.Equals(input.Suggestion))
                 ) && 
                 (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
+                    this.ImageDetail == input.ImageDetail ||
+                    this.ImageDetail != null &&
+                    input.ImageDetail != null &&
+                    this.ImageDetail.SequenceEqual(input.ImageDetail)
                 ) && 
                 (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
-                ) && 
-                (
-                    this.AudioText == input.AudioText ||
-                    (this.AudioText != null &&
-                    this.AudioText.Equals(input.AudioText))
-                ) && 
-                (
-                    this.Segments == input.Segments ||
-                    this.Segments != null &&
-                    input.Segments != null &&
-                    this.Segments.SequenceEqual(input.Segments)
+                    this.AudioDetail == input.AudioDetail ||
+                    this.AudioDetail != null &&
+                    input.AudioDetail != null &&
+                    this.AudioDetail.SequenceEqual(input.AudioDetail)
                 );
         }
 
@@ -236,18 +207,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.Suggestion != null)
                     hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.AudioText != null)
-                    hashCode = hashCode * 59 + this.AudioText.GetHashCode();
-                if (this.Segments != null)
-                    hashCode = hashCode * 59 + this.Segments.GetHashCode();
+                if (this.ImageDetail != null)
+                    hashCode = hashCode * 59 + this.ImageDetail.GetHashCode();
+                if (this.AudioDetail != null)
+                    hashCode = hashCode * 59 + this.AudioDetail.GetHashCode();
                 return hashCode;
             }
         }

@@ -39,6 +39,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// <summary>
         /// 执行函数请求体，为json格式。
         /// </summary>
+        [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Body { get; set; }
 

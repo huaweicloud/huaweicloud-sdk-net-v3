@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
+        /// 实例ID
+        /// </summary>
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
         /// 是否启用白名单（true/false）。
         /// </summary>
         [JsonProperty("enable_whitelist", NullValueHandling = NullValueHandling.Ignore)]
@@ -35,6 +41,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ModifyIpWhitelistBody {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  enableWhitelist: ").Append(EnableWhitelist).Append("\n");
             sb.Append("  whitelist: ").Append(Whitelist).Append("\n");
             sb.Append("}\n");
@@ -59,6 +66,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
+                ) && 
+                (
                     this.EnableWhitelist == input.EnableWhitelist ||
                     (this.EnableWhitelist != null &&
                     this.EnableWhitelist.Equals(input.EnableWhitelist))
@@ -79,6 +91,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.EnableWhitelist != null)
                     hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
                 if (this.Whitelist != null)

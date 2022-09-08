@@ -31,6 +31,23 @@ namespace HuaweiCloud.SDK.Moderation.V3
         }
         
         /// <summary>
+        /// 创建视频内容审核作业
+        ///
+        /// 创建视频内容审核作业，创建成功会将作业ID返回给用户
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public RunCreateVideoModerationJobResponse RunCreateVideoModerationJob(RunCreateVideoModerationJobRequest runCreateVideoModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoModerationJobRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RunCreateVideoModerationJobResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询音频内容审核作业
         ///
         /// 
@@ -45,6 +62,24 @@ namespace HuaweiCloud.SDK.Moderation.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryAudioModerationJobRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<RunQueryAudioModerationJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询视频内容审核作业
+        ///
+        /// 查询视频审核作业处理状态与结果，并将识别结果返回给用户
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public RunQueryVideoModerationJobResponse RunQueryVideoModerationJob(RunQueryVideoModerationJobRequest runQueryVideoModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , runQueryVideoModerationJobRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryVideoModerationJobRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<RunQueryVideoModerationJobResponse>(response);
         }
         
         /// <summary>

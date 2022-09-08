@@ -54,6 +54,60 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 接受云硬盘过户
+        ///
+        /// 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CinderAcceptVolumeTransferResponse> CinderAcceptVolumeTransferAsync(CinderAcceptVolumeTransferRequest cinderAcceptVolumeTransferRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id" , cinderAcceptVolumeTransferRequest.TransferId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}/accept",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderAcceptVolumeTransferRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CinderAcceptVolumeTransferResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建云硬盘过户
+        ///
+        /// 指定云硬盘来创建云硬盘过户记录，创建成功后，会返回过户记录ID以及身份认证密钥。
+        /// 云硬盘在过户过程中的状态变化如下：创建云硬盘过户后，云硬盘状态由“available”变为“awaiting-transfer”。当云硬盘过户被接收后，云硬盘状态变为“available”。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CinderCreateVolumeTransferResponse> CinderCreateVolumeTransferAsync(CinderCreateVolumeTransferRequest cinderCreateVolumeTransferRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderCreateVolumeTransferRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CinderCreateVolumeTransferResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除云硬盘过户
+        ///
+        /// 当云硬盘过户未被接受时，您可以删除云硬盘过户记录，接受后则无法执行删除操作。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CinderDeleteVolumeTransferResponse> CinderDeleteVolumeTransferAsync(CinderDeleteVolumeTransferRequest cinderDeleteVolumeTransferRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id" , cinderDeleteVolumeTransferRequest.TransferId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderDeleteVolumeTransferRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<CinderDeleteVolumeTransferResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询所有的可用分区信息
         ///
         /// 查询所有的可用分区信息。
@@ -89,6 +143,23 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 查询云硬盘过户记录列表概要
+        ///
+        /// 查询当前租户下所有云硬盘的过户记录列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CinderListVolumeTransfersResponse> CinderListVolumeTransfersAsync(CinderListVolumeTransfersRequest cinderListVolumeTransfersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTransfersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<CinderListVolumeTransfersResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询云硬盘类型列表
         ///
         /// 查询云硬盘类型列表。
@@ -103,6 +174,24 @@ namespace HuaweiCloud.SDK.Evs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTypesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<CinderListVolumeTypesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询单个云硬盘过户记录详情
+        ///
+        /// 查询单个云硬盘的过户记录详情，比如过户记录创建时间、ID以及名称等信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CinderShowVolumeTransferResponse> CinderShowVolumeTransferAsync(CinderShowVolumeTransferRequest cinderShowVolumeTransferRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id" , cinderShowVolumeTransferRequest.TransferId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderShowVolumeTransferRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<CinderShowVolumeTransferResponse>(response);
         }
         
         /// <summary>
@@ -396,6 +485,41 @@ namespace HuaweiCloud.SDK.Evs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVolumeRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateVolumeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询接口版本信息列表
+        ///
+        /// 查询接口版本信息列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest listVersionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerializeNull<ListVersionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询API接口的版本信息
+        ///
+        /// 查询接口的指定版本信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowVersionResponse> ShowVersionAsync(ShowVersionRequest showVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("version" , showVersionRequest.Version.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{version}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowVersionResponse>(response);
         }
         
     }

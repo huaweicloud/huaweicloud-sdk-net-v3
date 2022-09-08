@@ -1,3 +1,56 @@
+# 3.1.1 2022-09-08
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the interfaces `ShowTags`, `CreateTags`, `BatchDeleteTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ShowUrlTaskInfo`:
+    - Add the response parameter `result`
+    - Remove the response parameter `results`
+  - Add the response parameter `error_code_cache` to the interface `ShowDomainFullConfig`
+  - Add the request parameter `error_code_cache` to the interface `UpdateDomainFullConfig`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `enterprise_project_name`, `update_at`, `product_type`, `storage_type`, `launched_at`, `cache_mode`, `support_slow_log_flag`, `db_number`, `replica_count`, `sharding_count`, `bandwidth_info` to the interface `ShowInstance`
+  - Add the response parameter `backupId` to the interface `ListRedislog`
+  - Add the response parameter `instance_id` to the interface `ShowIpWhitelist`
+  - Add the request parameter `instance_id` to the interface `UpdateIpWhitelist`
+  - Add the response parameters `updated_at`, `created_at`, `status` to the interface `ListBackgroundTask`
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+  - Support the following interfaces：
+    - `ShowVersion`
+    - `ListVersions`
+    - `CinderShowVolumeTransfer`
+    - `CinderDeleteVolumeTransfer`
+    - `CinderListVolumeTransfers`
+    - `CinderCreateVolumeTransfer`
+    - `CinderAcceptVolumeTransfer`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - Support the interfaces `RunCreateVideoModerationJob`, `RunQueryVideoModerationJob`
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `url` changed to not required of the interface `RunCreateAudioModerationJob`
+
 # 3.0.104 2022-09-01
 
 ### HuaweiCloud SDK FunctionGraph

@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// cookie名称。  格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  [使用说明：  - 只有当type为APP_COOKIE时才有效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// cookie名称。  格式：仅支持字母、数字、中划线(-)、下划线(_)和点号(.)。  [使用说明： - 只有当type为APP_COOKIE时才有效。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs,dt,dt_test)  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("cookie_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CookieName { get; set; }

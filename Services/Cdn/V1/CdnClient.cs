@@ -14,6 +14,23 @@ namespace HuaweiCloud.SDK.Cdn.V1
 
         
         /// <summary>
+        /// 删除资源标签配置接口
+        ///
+        /// 用于删除资源标签
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteTagsResponse BatchDeleteTags(BatchDeleteTagsRequest batchDeleteTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags/batch-delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchDeleteTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建加速域名
         ///
         /// 创建加速域名。
@@ -62,6 +79,23 @@ namespace HuaweiCloud.SDK.Cdn.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRefreshTasksRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateRefreshTasksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建资源标签配置接口
+        ///
+        /// 用于创建资源标签
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateTagsResponse CreateTags(CreateTagsRequest createTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateTagsResponse>(response);
         }
         
         /// <summary>
@@ -479,6 +513,23 @@ namespace HuaweiCloud.SDK.Cdn.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResponseHeaderRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowResponseHeaderResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询资源标签列表配置接口
+        ///
+        /// 用于查询资源标签列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowTagsResponse ShowTags(ShowTagsRequest showTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowTagsResponse>(response);
         }
         
         /// <summary>

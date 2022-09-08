@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// <summary>
         /// url信息
         /// </summary>
-        [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Urls> Results { get; set; }
+        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Urls> Result { get; set; }
 
         /// <summary>
         /// 
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("class ShowUrlTaskInfoResponse {\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
-            sb.Append("  results: ").Append(Results).Append("\n");
+            sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -84,10 +84,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Count.Equals(input.Count))
                 ) && 
                 (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
+                    this.Result == input.Result ||
+                    this.Result != null &&
+                    input.Result != null &&
+                    this.Result.SequenceEqual(input.Result)
                 ) && 
                 (
                     this.XRequestId == input.XRequestId ||
@@ -108,8 +108,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Count != null)
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Results != null)
-                    hashCode = hashCode * 59 + this.Results.GetHashCode();
+                if (this.Result != null)
+                    hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.XRequestId != null)
                     hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;

@@ -1,3 +1,56 @@
+# 3.1.1 2022-09-08
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 支持接口`ShowTags`、`CreateTags`、`BatchDeleteTags`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowUrlTaskInfo`:
+    - 新增响应参数 `result`
+    - 移除响应参数 `results`
+  - 接口`ShowDomainFullConfig`新增响应参数 `error_code_cache`
+  - 接口`UpdateDomainFullConfig`新增请求参数 `error_code_cache`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowInstance`新增响应参数 `enterprise_project_name`、`update_at`、`product_type`、`storage_type`、`launched_at`、`cache_mode`、`support_slow_log_flag`、`db_number`、`replica_count`、`sharding_count`、`bandwidth_info`
+  - 接口`ListRedislog`新增响应参数 `backupId`
+  - 接口`ShowIpWhitelist`新增响应参数 `instance_id`
+  - 接口`UpdateIpWhitelist`新增请求参数 `instance_id`
+  - 接口`ListBackgroundTask`新增响应参数 `updated_at`、`created_at`、`status`
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowVersion`
+    - `ListVersions`
+    - `CinderShowVolumeTransfer`
+    - `CinderDeleteVolumeTransfer`
+    - `CinderListVolumeTransfers`
+    - `CinderCreateVolumeTransfer`
+    - `CinderAcceptVolumeTransfer`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 支持接口`RunCreateVideoModerationJob`、`RunQueryVideoModerationJob`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RunCreateAudioModerationJob`请求参数`url`改为非必填
+
 # 3.0.104 2022-09-01
 
 ### HuaweiCloud SDK FunctionGraph

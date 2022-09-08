@@ -179,13 +179,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的SM加密证书内容。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效且必选。 最大长度65536字符。 支持证书链，最大11层(含证书和证书链)。
+        /// HTTPS协议使用的SM加密证书内容。支持证书链，最大11层(含证书和证书链)。  取值：PEM编码格式。最大长度65536字符。  使用说明：仅type为server_sm时有效且必选。
         /// </summary>
         [JsonProperty("enc_certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string EncCertificate { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的SM加密证书私钥。 取值：PEM编码格式。 使用说明：仅type为server_sm时有效且必选。 最大长度8192字符。
+        /// HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。最大长度8192字符。  使用说明：仅type为server_sm时有效且必选。
         /// </summary>
         [JsonProperty("enc_private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string EncPrivateKey { get; set; }

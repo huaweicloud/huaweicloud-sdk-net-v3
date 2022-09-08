@@ -51,6 +51,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
         public string Time { get; set; }
 
+        /// <summary>
+        /// 日志文件的ID
+        /// </summary>
+        [JsonProperty("backupId", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  replicationIp: ").Append(ReplicationIp).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
+            sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Time == input.Time ||
                     (this.Time != null &&
                     this.Time.Equals(input.Time))
+                ) && 
+                (
+                    this.BackupId == input.BackupId ||
+                    (this.BackupId != null &&
+                    this.BackupId.Equals(input.BackupId))
                 );
         }
 
@@ -138,6 +150,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Time != null)
                     hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.BackupId != null)
+                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 return hashCode;
             }
         }

@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ExpectedCodes { get; set; }
 
         /// <summary>
-        /// HTTP请求方法，取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。   使用说明：当type为HTTP/HTTPS时生效。   不支持该字段，请勿使用。
+        /// HTTP请求方法。取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。   使用说明：当type为HTTP/HTTPS时生效。   不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("http_method", NullValueHandling = NullValueHandling.Ignore)]
         public string HttpMethod { get; set; }
