@@ -16,10 +16,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 秘钥。
+        /// 用户名。
         /// </summary>
         [JsonProperty("access_key", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessKey { get; set; }
+
+        /// <summary>
+        /// 秘钥。
+        /// </summary>
+        [JsonProperty("secret_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecretKey { get; set; }
 
         /// <summary>
         /// IP白名单。
@@ -48,6 +54,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListAccessPolicyRespPolicies {\n");
             sb.Append("  accessKey: ").Append(AccessKey).Append("\n");
+            sb.Append("  secretKey: ").Append(SecretKey).Append("\n");
             sb.Append("  whiteRemoteAddress: ").Append(WhiteRemoteAddress).Append("\n");
             sb.Append("  admin: ").Append(Admin).Append("\n");
             sb.Append("  perm: ").Append(Perm).Append("\n");
@@ -78,6 +85,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.AccessKey.Equals(input.AccessKey))
                 ) && 
                 (
+                    this.SecretKey == input.SecretKey ||
+                    (this.SecretKey != null &&
+                    this.SecretKey.Equals(input.SecretKey))
+                ) && 
+                (
                     this.WhiteRemoteAddress == input.WhiteRemoteAddress ||
                     (this.WhiteRemoteAddress != null &&
                     this.WhiteRemoteAddress.Equals(input.WhiteRemoteAddress))
@@ -104,6 +116,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 int hashCode = 41;
                 if (this.AccessKey != null)
                     hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
+                if (this.SecretKey != null)
+                    hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
                 if (this.WhiteRemoteAddress != null)
                     hashCode = hashCode * 59 + this.WhiteRemoteAddress.GetHashCode();
                 if (this.Admin != null)

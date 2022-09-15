@@ -16,6 +16,24 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
+        /// 节点增长步长。
+        /// </summary>
+        [JsonProperty("step_length", NullValueHandling = NullValueHandling.Ignore)]
+        public string StepLength { get; set; }
+
+        /// <summary>
+        /// 每个Broker的最大对列。
+        /// </summary>
+        [JsonProperty("max_queue_per_broker", NullValueHandling = NullValueHandling.Ignore)]
+        public string MaxQueuePerBroker { get; set; }
+
+        /// <summary>
+        /// 每个Broker的最大连接数。
+        /// </summary>
+        [JsonProperty("max_connection_per_broker", NullValueHandling = NullValueHandling.Ignore)]
+        public string MaxConnectionPerBroker { get; set; }
+
+        /// <summary>
         /// 每个Broker的最大分区数。
         /// </summary>
         [JsonProperty("max_partition_per_broker", NullValueHandling = NullValueHandling.Ignore)]
@@ -71,6 +89,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListEnginePropertiesEntity {\n");
+            sb.Append("  stepLength: ").Append(StepLength).Append("\n");
+            sb.Append("  maxQueuePerBroker: ").Append(MaxQueuePerBroker).Append("\n");
+            sb.Append("  maxConnectionPerBroker: ").Append(MaxConnectionPerBroker).Append("\n");
             sb.Append("  maxPartitionPerBroker: ").Append(MaxPartitionPerBroker).Append("\n");
             sb.Append("  maxBroker: ").Append(MaxBroker).Append("\n");
             sb.Append("  maxStoragePerNode: ").Append(MaxStoragePerNode).Append("\n");
@@ -100,6 +121,21 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 return false;
 
             return 
+                (
+                    this.StepLength == input.StepLength ||
+                    (this.StepLength != null &&
+                    this.StepLength.Equals(input.StepLength))
+                ) && 
+                (
+                    this.MaxQueuePerBroker == input.MaxQueuePerBroker ||
+                    (this.MaxQueuePerBroker != null &&
+                    this.MaxQueuePerBroker.Equals(input.MaxQueuePerBroker))
+                ) && 
+                (
+                    this.MaxConnectionPerBroker == input.MaxConnectionPerBroker ||
+                    (this.MaxConnectionPerBroker != null &&
+                    this.MaxConnectionPerBroker.Equals(input.MaxConnectionPerBroker))
+                ) && 
                 (
                     this.MaxPartitionPerBroker == input.MaxPartitionPerBroker ||
                     (this.MaxPartitionPerBroker != null &&
@@ -150,6 +186,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.StepLength != null)
+                    hashCode = hashCode * 59 + this.StepLength.GetHashCode();
+                if (this.MaxQueuePerBroker != null)
+                    hashCode = hashCode * 59 + this.MaxQueuePerBroker.GetHashCode();
+                if (this.MaxConnectionPerBroker != null)
+                    hashCode = hashCode * 59 + this.MaxConnectionPerBroker.GetHashCode();
                 if (this.MaxPartitionPerBroker != null)
                     hashCode = hashCode * 59 + this.MaxPartitionPerBroker.GetHashCode();
                 if (this.MaxBroker != null)

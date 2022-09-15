@@ -166,7 +166,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 创建实例
         ///
-        /// [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc)[创建kafka实例。](tag:ocb)
+        /// [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -305,6 +305,24 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListEngineProductsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询所有消费组
+        ///
+        /// 查询所有消费组。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceConsumerGroupsResponse ListInstanceConsumerGroups(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listInstanceConsumerGroupsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstanceConsumerGroupsResponse>(response);
         }
         
         /// <summary>

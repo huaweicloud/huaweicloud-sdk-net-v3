@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public Object ExternalConfigs { get; set; }
 
         /// <summary>
-        /// topic类型。
+        /// topic类型(0:普通Topic 1:系统(内部)Topic。
         /// </summary>
         [JsonProperty("topic_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicType { get; set; }

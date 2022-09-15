@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> ArchTypes { get; set; }
 
         /// <summary>
-        /// 计费模式。   - monthly：包年/包月类型。   - hourly：按需类型。
+        /// [计费模式。monthly：包年/包月类型。hourly：按需类型。](tag:hc,hk,hws,hws_hk,otc,ctc,sbc,hk_sbc,cmcc,hws_eu)[暂未使用。](tag:hws_ocb,ocb)
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ChargingMode { get; set; }

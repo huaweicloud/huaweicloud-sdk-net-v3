@@ -119,27 +119,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 参数值为RocketMQ，表示删除租户所有创建失败的RocketMQ实例。
+        /// 参数值为reliability,表示删除租户所有创建失败的RocketMQ实例。
         /// </summary>
-        /// <value>参数值为RocketMQ，表示删除租户所有创建失败的RocketMQ实例。</value>
+        /// <value>参数值为reliability,表示删除租户所有创建失败的RocketMQ实例。</value>
         [JsonConverter(typeof(EnumClassConverter<AllFailureEnum>))]
         public class AllFailureEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
+            /// Enum RELIABILITY for value: reliability
             /// </summary>
-            public static readonly AllFailureEnum TRUE = new AllFailureEnum("true");
-
-            /// <summary>
-            /// Enum FALSE for value: false
-            /// </summary>
-            public static readonly AllFailureEnum FALSE = new AllFailureEnum("false");
+            public static readonly AllFailureEnum RELIABILITY = new AllFailureEnum("reliability");
 
             private static readonly Dictionary<string, AllFailureEnum> StaticFields =
             new Dictionary<string, AllFailureEnum>()
             {
-                { "true", TRUE },
-                { "false", FALSE },
+                { "reliability", RELIABILITY },
             };
 
             private string Value;
@@ -241,7 +235,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 参数值为RocketMQ，表示删除租户所有创建失败的RocketMQ实例。
+        /// 参数值为reliability,表示删除租户所有创建失败的RocketMQ实例。
         /// </summary>
         [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
