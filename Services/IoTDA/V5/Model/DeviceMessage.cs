@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Status { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("error_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ErrorInfoDTO ErrorInfo { get; set; }
+
+        /// <summary>
         /// 消息的创建时间，\&quot;yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;\&quot;格式的UTC字符串。
         /// </summary>
         [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -84,6 +90,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  payloadFormat: ").Append(PayloadFormat).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  errorInfo: ").Append(ErrorInfo).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  finishedTime: ").Append(FinishedTime).Append("\n");
             sb.Append("}\n");
@@ -143,6 +150,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.ErrorInfo == input.ErrorInfo ||
+                    (this.ErrorInfo != null &&
+                    this.ErrorInfo.Equals(input.ErrorInfo))
+                ) && 
+                (
                     this.CreatedTime == input.CreatedTime ||
                     (this.CreatedTime != null &&
                     this.CreatedTime.Equals(input.CreatedTime))
@@ -176,6 +188,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ErrorInfo != null)
+                    hashCode = hashCode * 59 + this.ErrorInfo.GetHashCode();
                 if (this.CreatedTime != null)
                     hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 if (this.FinishedTime != null)

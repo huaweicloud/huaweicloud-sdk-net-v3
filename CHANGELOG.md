@@ -1,3 +1,87 @@
+# 3.1.3 2022-09-22
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `event_type` to the interface `CreateEvents`
+  - Add the response parameter `event_type` to the interface `ListEventDetail`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `port_id` to the interface `CreatePublicip`
+  - Add the request parameter `port_id` to the interface `CreatePrePaidPublicip`
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `error_info` to the interface `ListDeviceMessages`
+  - Add the response parameter `error_info` to the interface `ShowDeviceMessage`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - Support the interface `CheckImageModeration`
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `url`, `categories` changed to required of the interface `RunCreateAudioModerationJob`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeIdCard`:
+    - Add the request parameter `detect_copy`
+    - Add the response parameter `detect_copy_result`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - Support the interfaces `DownloadImageFile`, `ListScrumProjectStatuses`, `UploadAttachments`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `rabbitmq`, Remove the enum values `true`, `false` from the request parameter `all_failure` to the interface `BatchRestartOrDeleteInstances`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `pack_type`, `pack_type` to the interface `PublishAssets`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `UnpublishAssets`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowAssetMeta`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowAssetDetail`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowTakeOverTaskDetails`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowTakeOverAssetDetails`
+
 # 3.1.2 2022-09-15
 
 ### HuaweiCloud SDK CDN

@@ -293,6 +293,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("event_user", NullValueHandling = NullValueHandling.Ignore)]
         public string EventUser { get; set; }
 
+        /// <summary>
+        /// 事件类型。 枚举类型，EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，用户自已不能上报，只能传EVENT.CUSTOM。
+        /// </summary>
+        [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string EventType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -308,6 +314,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  eventState: ").Append(EventState).Append("\n");
             sb.Append("  eventLevel: ").Append(EventLevel).Append("\n");
             sb.Append("  eventUser: ").Append(EventUser).Append("\n");
+            sb.Append("  eventType: ").Append(EventType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -363,6 +370,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.EventUser == input.EventUser ||
                     (this.EventUser != null &&
                     this.EventUser.Equals(input.EventUser))
+                ) && 
+                (
+                    this.EventType == input.EventType ||
+                    (this.EventType != null &&
+                    this.EventType.Equals(input.EventType))
                 );
         }
 
@@ -388,6 +400,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.EventLevel.GetHashCode();
                 if (this.EventUser != null)
                     hashCode = hashCode * 59 + this.EventUser.GetHashCode();
+                if (this.EventType != null)
+                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
                 return hashCode;
             }
         }

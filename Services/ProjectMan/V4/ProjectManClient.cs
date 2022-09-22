@@ -713,6 +713,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 下载图片
+        ///
+        /// 下载图片
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DownloadImageFileResponse DownloadImageFile(DownloadImageFileRequest downloadImageFileRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , downloadImageFileRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/image-file",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadImageFileRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<DownloadImageFileResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询当前工作项已经关联的工作项
         ///
         /// 查询当前工作项已经关联的工作项
@@ -732,9 +750,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
-        /// 查询关联Wiki
+        /// 查询关联用例
         ///
-        /// 查询关联Wiki
+        /// 查询关联用例
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -1007,6 +1025,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询项目的状态列表
+        ///
+        /// 查询项目的状态列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListScrumProjectStatusesResponse ListScrumProjectStatuses(ListScrumProjectStatusesRequest listScrumProjectStatusesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listScrumProjectStatusesRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/statuses",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScrumProjectStatusesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListScrumProjectStatusesResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取工作项完成率
         ///
         /// 获取工作项的完成率
@@ -1171,6 +1207,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectModuleRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateProjectModuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 上传工作项附件
+        ///
+        /// 上传工作项附件
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UploadAttachmentsResponse UploadAttachments(UploadAttachmentsRequest uploadAttachmentsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , uploadAttachmentsRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , uploadAttachmentsRequest.IssueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/attachments/upload",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadAttachmentsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<UploadAttachmentsResponse>(response);
         }
         
         /// <summary>

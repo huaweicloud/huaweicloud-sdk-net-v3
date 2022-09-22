@@ -87,6 +87,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("detect_reproduce_result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectReproduceResult { get; set; }
 
+        /// <summary>
+        /// 判断身份证图像是黑白复印件还是原件，“true”表示是复印件，“false”表示是原件。仅在输入参数detect_copy为true时，返回该字段。           
+        /// </summary>
+        [JsonProperty("detect_copy_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectCopyResult { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -107,6 +113,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  verificationResult: ").Append(VerificationResult).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("  detectReproduceResult: ").Append(DetectReproduceResult).Append("\n");
+            sb.Append("  detectCopyResult: ").Append(DetectCopyResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.DetectReproduceResult == input.DetectReproduceResult ||
                     (this.DetectReproduceResult != null &&
                     this.DetectReproduceResult.Equals(input.DetectReproduceResult))
+                ) && 
+                (
+                    this.DetectCopyResult == input.DetectCopyResult ||
+                    (this.DetectCopyResult != null &&
+                    this.DetectCopyResult.Equals(input.DetectCopyResult))
                 );
         }
 
@@ -222,6 +234,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 if (this.DetectReproduceResult != null)
                     hashCode = hashCode * 59 + this.DetectReproduceResult.GetHashCode();
+                if (this.DetectCopyResult != null)
+                    hashCode = hashCode * 59 + this.DetectCopyResult.GetHashCode();
                 return hashCode;
             }
         }

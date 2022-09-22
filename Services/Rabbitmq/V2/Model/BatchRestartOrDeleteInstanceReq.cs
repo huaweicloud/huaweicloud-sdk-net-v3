@@ -125,27 +125,21 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 是否批量删除创建失败的实例。  当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
+        /// 是否批量删除创建失败的实例。  当参数值为“rabbitmq”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
         /// </summary>
-        /// <value>是否批量删除创建失败的实例。  当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。</value>
+        /// <value>是否批量删除创建失败的实例。  当参数值为“rabbitmq”时，删除租户所有创建失败的实例，此时请求参数instances可为空。</value>
         [JsonConverter(typeof(EnumClassConverter<AllFailureEnum>))]
         public class AllFailureEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
+            /// Enum RABBITMQ for value: rabbitmq
             /// </summary>
-            public static readonly AllFailureEnum TRUE = new AllFailureEnum("true");
-
-            /// <summary>
-            /// Enum FALSE for value: false
-            /// </summary>
-            public static readonly AllFailureEnum FALSE = new AllFailureEnum("false");
+            public static readonly AllFailureEnum RABBITMQ = new AllFailureEnum("rabbitmq");
 
             private static readonly Dictionary<string, AllFailureEnum> StaticFields =
             new Dictionary<string, AllFailureEnum>()
             {
-                { "true", TRUE },
-                { "false", FALSE },
+                { "rabbitmq", RABBITMQ },
             };
 
             private string Value;
@@ -247,7 +241,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 是否批量删除创建失败的实例。  当参数值为“true”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
+        /// 是否批量删除创建失败的实例。  当参数值为“rabbitmq”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
         /// </summary>
         [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }

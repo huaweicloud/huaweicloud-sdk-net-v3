@@ -142,6 +142,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
         public string Alias { get; set; }
 
+        /// <summary>
+        /// 功能说明：端口id  约束：必须是存在的端口id，如果该端口不存在或端口已绑定EIP则会提示出错。
+        /// </summary>
+        [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PortId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -153,6 +159,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  alias: ").Append(Alias).Append("\n");
+            sb.Append("  portId: ").Append(PortId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,6 +195,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.Alias == input.Alias ||
                     (this.Alias != null &&
                     this.Alias.Equals(input.Alias))
+                ) && 
+                (
+                    this.PortId == input.PortId ||
+                    (this.PortId != null &&
+                    this.PortId.Equals(input.PortId))
                 );
         }
 
@@ -205,6 +217,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.Alias != null)
                     hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.PortId != null)
+                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
                 return hashCode;
             }
         }

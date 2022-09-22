@@ -14,6 +14,23 @@ namespace HuaweiCloud.SDK.Moderation.V3
 
         
         /// <summary>
+        /// 图片内容审核
+        ///
+        /// 分析并识别用户上传的图片是否有敏感内容（如色情、政治等），并将识别结果返回给用户
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CheckImageModerationResponse CheckImageModeration(CheckImageModerationRequest checkImageModerationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/image",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkImageModerationRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CheckImageModerationResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建音频内容审核作业
         ///
         /// 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户

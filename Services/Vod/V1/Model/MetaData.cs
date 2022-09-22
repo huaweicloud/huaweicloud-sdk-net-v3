@@ -15,6 +15,266 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
     public class MetaData 
     {
         /// <summary>
+        /// 视频封装格式。  取值如下： - MP4 - TS - MOV - MXF - MPG - FLV - WMV - MP3 - WMA - APE - FLAC - AAC - AC3 - MMF - AMR - M4A - M4R - OGG - WAV - WV - MP2 - AVI - F4V - M4V - MPEG - HLS - DASH
+        /// </summary>
+        /// <value>视频封装格式。  取值如下： - MP4 - TS - MOV - MXF - MPG - FLV - WMV - MP3 - WMA - APE - FLAC - AAC - AC3 - MMF - AMR - M4A - M4R - OGG - WAV - WV - MP2 - AVI - F4V - M4V - MPEG - HLS - DASH</value>
+        [JsonConverter(typeof(EnumClassConverter<PackTypeEnum>))]
+        public class PackTypeEnum
+        {
+            /// <summary>
+            /// Enum MP4 for value: MP4
+            /// </summary>
+            public static readonly PackTypeEnum MP4 = new PackTypeEnum("MP4");
+
+            /// <summary>
+            /// Enum TS for value: TS
+            /// </summary>
+            public static readonly PackTypeEnum TS = new PackTypeEnum("TS");
+
+            /// <summary>
+            /// Enum MOV for value: MOV
+            /// </summary>
+            public static readonly PackTypeEnum MOV = new PackTypeEnum("MOV");
+
+            /// <summary>
+            /// Enum MXF for value: MXF
+            /// </summary>
+            public static readonly PackTypeEnum MXF = new PackTypeEnum("MXF");
+
+            /// <summary>
+            /// Enum MPG for value: MPG
+            /// </summary>
+            public static readonly PackTypeEnum MPG = new PackTypeEnum("MPG");
+
+            /// <summary>
+            /// Enum FLV for value: FLV
+            /// </summary>
+            public static readonly PackTypeEnum FLV = new PackTypeEnum("FLV");
+
+            /// <summary>
+            /// Enum WMV for value: WMV
+            /// </summary>
+            public static readonly PackTypeEnum WMV = new PackTypeEnum("WMV");
+
+            /// <summary>
+            /// Enum MP3 for value: MP3
+            /// </summary>
+            public static readonly PackTypeEnum MP3 = new PackTypeEnum("MP3");
+
+            /// <summary>
+            /// Enum WMA for value: WMA
+            /// </summary>
+            public static readonly PackTypeEnum WMA = new PackTypeEnum("WMA");
+
+            /// <summary>
+            /// Enum APE for value: APE
+            /// </summary>
+            public static readonly PackTypeEnum APE = new PackTypeEnum("APE");
+
+            /// <summary>
+            /// Enum FLAC for value: FLAC
+            /// </summary>
+            public static readonly PackTypeEnum FLAC = new PackTypeEnum("FLAC");
+
+            /// <summary>
+            /// Enum AAC for value: AAC
+            /// </summary>
+            public static readonly PackTypeEnum AAC = new PackTypeEnum("AAC");
+
+            /// <summary>
+            /// Enum AC3 for value: AC3
+            /// </summary>
+            public static readonly PackTypeEnum AC3 = new PackTypeEnum("AC3");
+
+            /// <summary>
+            /// Enum MMF for value: MMF
+            /// </summary>
+            public static readonly PackTypeEnum MMF = new PackTypeEnum("MMF");
+
+            /// <summary>
+            /// Enum AMR for value: AMR
+            /// </summary>
+            public static readonly PackTypeEnum AMR = new PackTypeEnum("AMR");
+
+            /// <summary>
+            /// Enum M4A for value: M4A
+            /// </summary>
+            public static readonly PackTypeEnum M4A = new PackTypeEnum("M4A");
+
+            /// <summary>
+            /// Enum M4R for value: M4R
+            /// </summary>
+            public static readonly PackTypeEnum M4R = new PackTypeEnum("M4R");
+
+            /// <summary>
+            /// Enum OGG for value: OGG
+            /// </summary>
+            public static readonly PackTypeEnum OGG = new PackTypeEnum("OGG");
+
+            /// <summary>
+            /// Enum WAV for value: WAV
+            /// </summary>
+            public static readonly PackTypeEnum WAV = new PackTypeEnum("WAV");
+
+            /// <summary>
+            /// Enum WV for value: WV
+            /// </summary>
+            public static readonly PackTypeEnum WV = new PackTypeEnum("WV");
+
+            /// <summary>
+            /// Enum MP2 for value: MP2
+            /// </summary>
+            public static readonly PackTypeEnum MP2 = new PackTypeEnum("MP2");
+
+            /// <summary>
+            /// Enum AVI for value: AVI
+            /// </summary>
+            public static readonly PackTypeEnum AVI = new PackTypeEnum("AVI");
+
+            /// <summary>
+            /// Enum F4V for value: F4V
+            /// </summary>
+            public static readonly PackTypeEnum F4V = new PackTypeEnum("F4V");
+
+            /// <summary>
+            /// Enum M4V for value: M4V
+            /// </summary>
+            public static readonly PackTypeEnum M4V = new PackTypeEnum("M4V");
+
+            /// <summary>
+            /// Enum MPEG for value: MPEG
+            /// </summary>
+            public static readonly PackTypeEnum MPEG = new PackTypeEnum("MPEG");
+
+            /// <summary>
+            /// Enum HLS for value: HLS
+            /// </summary>
+            public static readonly PackTypeEnum HLS = new PackTypeEnum("HLS");
+
+            /// <summary>
+            /// Enum DASH for value: DASH
+            /// </summary>
+            public static readonly PackTypeEnum DASH = new PackTypeEnum("DASH");
+
+            private static readonly Dictionary<string, PackTypeEnum> StaticFields =
+            new Dictionary<string, PackTypeEnum>()
+            {
+                { "MP4", MP4 },
+                { "TS", TS },
+                { "MOV", MOV },
+                { "MXF", MXF },
+                { "MPG", MPG },
+                { "FLV", FLV },
+                { "WMV", WMV },
+                { "MP3", MP3 },
+                { "WMA", WMA },
+                { "APE", APE },
+                { "FLAC", FLAC },
+                { "AAC", AAC },
+                { "AC3", AC3 },
+                { "MMF", MMF },
+                { "AMR", AMR },
+                { "M4A", M4A },
+                { "M4R", M4R },
+                { "OGG", OGG },
+                { "WAV", WAV },
+                { "WV", WV },
+                { "MP2", MP2 },
+                { "AVI", AVI },
+                { "F4V", F4V },
+                { "M4V", M4V },
+                { "MPEG", MPEG },
+                { "HLS", HLS },
+                { "DASH", DASH },
+            };
+
+            private string Value;
+
+            public PackTypeEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static PackTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PackTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PackTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(PackTypeEnum a, PackTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PackTypeEnum a, PackTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
         /// </summary>
         /// <value>视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack</value>
@@ -234,6 +494,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
 
         /// <summary>
+        /// 视频封装格式。  取值如下： - MP4 - TS - MOV - MXF - MPG - FLV - WMV - MP3 - WMA - APE - FLAC - AAC - AC3 - MMF - AMR - M4A - M4R - OGG - WAV - WV - MP2 - AVI - F4V - M4V - MPEG - HLS - DASH
+        /// </summary>
+        [JsonProperty("pack_type", NullValueHandling = NullValueHandling.Ignore)]
+        public PackTypeEnum PackType { get; set; }
+        /// <summary>
         /// 视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
         /// </summary>
         [JsonProperty("codec", NullValueHandling = NullValueHandling.Ignore)]
@@ -294,6 +559,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MetaData {\n");
+            sb.Append("  packType: ").Append(PackType).Append("\n");
             sb.Append("  codec: ").Append(Codec).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  videoSize: ").Append(VideoSize).Append("\n");
@@ -324,6 +590,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 return false;
 
             return 
+                (
+                    this.PackType == input.PackType ||
+                    (this.PackType != null &&
+                    this.PackType.Equals(input.PackType))
+                ) && 
                 (
                     this.Codec == input.Codec ||
                     (this.Codec != null &&
@@ -379,6 +650,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.PackType != null)
+                    hashCode = hashCode * 59 + this.PackType.GetHashCode();
                 if (this.Codec != null)
                     hashCode = hashCode * 59 + this.Codec.GetHashCode();
                 if (this.Duration != null)
