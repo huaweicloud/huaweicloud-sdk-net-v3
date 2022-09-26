@@ -28,10 +28,10 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public string Category { get; set; }
 
         /// <summary>
-        /// 
+        /// 检测详情
         /// </summary>
         [JsonProperty("details", NullValueHandling = NullValueHandling.Ignore)]
-        public ImageDetectionResultDetail Details { get; set; }
+        public List<ImageDetectionResultDetail> Details { get; set; }
 
         /// <summary>
         /// 图文审核检测出的文本，只有在category参数配置image_text且检测出文本时展示该字段。
@@ -84,8 +84,9 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                 ) && 
                 (
                     this.Details == input.Details ||
-                    (this.Details != null &&
-                    this.Details.Equals(input.Details))
+                    this.Details != null &&
+                    input.Details != null &&
+                    this.Details.SequenceEqual(input.Details)
                 ) && 
                 (
                     this.OcrText == input.OcrText ||

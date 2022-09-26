@@ -27,6 +27,24 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("new_storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? NewStorageSpace { get; set; }
 
+        /// <summary>
+        /// 扩容类型, 新规格支持扩容类型：\&quot;horizontal\&quot;、\&quot;vertical\&quot;、\&quot;node\&quot;、\&quot;storage\&quot;四种类型。
+        /// </summary>
+        [JsonProperty("oper_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string OperType { get; set; }
+
+        /// <summary>
+        /// 扩容后集群节点数。
+        /// </summary>
+        [JsonProperty("new_broker_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NewBrokerNum { get; set; }
+
+        /// <summary>
+        /// 新规格变更后的产品ID。 涉及垂直扩容场景，需指定该项。
+        /// </summary>
+        [JsonProperty("new_product_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NewProductId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +55,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("class ResizeInstanceReq {\n");
             sb.Append("  newSpecCode: ").Append(NewSpecCode).Append("\n");
             sb.Append("  newStorageSpace: ").Append(NewStorageSpace).Append("\n");
+            sb.Append("  operType: ").Append(OperType).Append("\n");
+            sb.Append("  newBrokerNum: ").Append(NewBrokerNum).Append("\n");
+            sb.Append("  newProductId: ").Append(NewProductId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +88,21 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.NewStorageSpace == input.NewStorageSpace ||
                     (this.NewStorageSpace != null &&
                     this.NewStorageSpace.Equals(input.NewStorageSpace))
+                ) && 
+                (
+                    this.OperType == input.OperType ||
+                    (this.OperType != null &&
+                    this.OperType.Equals(input.OperType))
+                ) && 
+                (
+                    this.NewBrokerNum == input.NewBrokerNum ||
+                    (this.NewBrokerNum != null &&
+                    this.NewBrokerNum.Equals(input.NewBrokerNum))
+                ) && 
+                (
+                    this.NewProductId == input.NewProductId ||
+                    (this.NewProductId != null &&
+                    this.NewProductId.Equals(input.NewProductId))
                 );
         }
 
@@ -82,6 +118,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.NewSpecCode.GetHashCode();
                 if (this.NewStorageSpace != null)
                     hashCode = hashCode * 59 + this.NewStorageSpace.GetHashCode();
+                if (this.OperType != null)
+                    hashCode = hashCode * 59 + this.OperType.GetHashCode();
+                if (this.NewBrokerNum != null)
+                    hashCode = hashCode * 59 + this.NewBrokerNum.GetHashCode();
+                if (this.NewProductId != null)
+                    hashCode = hashCode * 59 + this.NewProductId.GetHashCode();
                 return hashCode;
             }
         }

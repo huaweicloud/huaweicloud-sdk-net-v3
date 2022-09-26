@@ -52,10 +52,10 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public string QrContent { get; set; }
 
         /// <summary>
-        /// 
+        /// image_text场景下命中的文本片段。
         /// </summary>
         [JsonProperty("segments", NullValueHandling = NullValueHandling.Ignore)]
-        public OCRTextDetail Segments { get; set; }
+        public List<OCRTextDetail> Segments { get; set; }
 
         /// <summary>
         /// 识别的详细标签。
@@ -132,8 +132,9 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                 ) && 
                 (
                     this.Segments == input.Segments ||
-                    (this.Segments != null &&
-                    this.Segments.Equals(input.Segments))
+                    this.Segments != null &&
+                    input.Segments != null &&
+                    this.Segments.SequenceEqual(input.Segments)
                 ) && 
                 (
                     this.Label == input.Label ||

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 函数代码，当CodeTye为inline/zip/jar时必选，且代码必须要进行base64编码。
+        /// 函数代码，如果不为空必须进行base64编码，为空时使用默认的代码。
         /// </summary>
         [JsonProperty("file", NullValueHandling = NullValueHandling.Ignore)]
         public string File { get; set; }

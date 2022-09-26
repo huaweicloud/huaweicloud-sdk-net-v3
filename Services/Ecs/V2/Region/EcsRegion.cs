@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         public static readonly Region LA_SOUTH_2 = new Region("la-south-2", "https://ecs.la-south-2.myhuaweicloud.com");
         public static readonly Region CN_SOUTH_2 = new Region("cn-south-2", "https://ecs.cn-south-2.myhuaweicloud.com");
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_2 = new Region("cn-north-2", "https://ecs.cn-north-2.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -43,6 +44,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
                 { "la-south-2", LA_SOUTH_2 },
                 { "cn-south-2", CN_SOUTH_2 },
                 { "cn-north-9", CN_NORTH_9 },
+                { "cn-north-2", CN_NORTH_2 },
         };
 
         public static Region ValueOf(string regionId)

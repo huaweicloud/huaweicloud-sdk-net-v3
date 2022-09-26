@@ -618,6 +618,36 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? DiskEncrypted { get; set; }
 
         /// <summary>
+        /// 磁盘加密key，未开启磁盘加密时为空。
+        /// </summary>
+        [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptedKey { get; set; }
+
+        /// <summary>
+        /// 公网访问Kafka Manager连接地址。
+        /// </summary>
+        [JsonProperty("public_management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicManagementConnectAddress { get; set; }
+
+        /// <summary>
+        /// 子网网段。
+        /// </summary>
+        [JsonProperty("subnet_cidr", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetCidr { get; set; }
+
+        /// <summary>
+        /// 子网名称。
+        /// </summary>
+        [JsonProperty("subnet_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetName { get; set; }
+
+        /// <summary>
+        /// 是否开启访问控制。
+        /// </summary>
+        [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAcl { get; set; }
+
+        /// <summary>
         /// Kafka实例私有连接地址。
         /// </summary>
         [JsonProperty("kafka_private_connect_address", NullValueHandling = NullValueHandling.Ignore)]
@@ -737,6 +767,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  agentEnable: ").Append(AgentEnable).Append("\n");
             sb.Append("  podConnectAddress: ").Append(PodConnectAddress).Append("\n");
             sb.Append("  diskEncrypted: ").Append(DiskEncrypted).Append("\n");
+            sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
+            sb.Append("  publicManagementConnectAddress: ").Append(PublicManagementConnectAddress).Append("\n");
+            sb.Append("  subnetCidr: ").Append(SubnetCidr).Append("\n");
+            sb.Append("  subnetName: ").Append(SubnetName).Append("\n");
+            sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  kafkaPrivateConnectAddress: ").Append(KafkaPrivateConnectAddress).Append("\n");
             sb.Append("  cesVersion: ").Append(CesVersion).Append("\n");
             sb.Append("  publicAccessEnabled: ").Append(PublicAccessEnabled).Append("\n");
@@ -1089,6 +1124,31 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.DiskEncrypted.Equals(input.DiskEncrypted))
                 ) && 
                 (
+                    this.DiskEncryptedKey == input.DiskEncryptedKey ||
+                    (this.DiskEncryptedKey != null &&
+                    this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))
+                ) && 
+                (
+                    this.PublicManagementConnectAddress == input.PublicManagementConnectAddress ||
+                    (this.PublicManagementConnectAddress != null &&
+                    this.PublicManagementConnectAddress.Equals(input.PublicManagementConnectAddress))
+                ) && 
+                (
+                    this.SubnetCidr == input.SubnetCidr ||
+                    (this.SubnetCidr != null &&
+                    this.SubnetCidr.Equals(input.SubnetCidr))
+                ) && 
+                (
+                    this.SubnetName == input.SubnetName ||
+                    (this.SubnetName != null &&
+                    this.SubnetName.Equals(input.SubnetName))
+                ) && 
+                (
+                    this.EnableAcl == input.EnableAcl ||
+                    (this.EnableAcl != null &&
+                    this.EnableAcl.Equals(input.EnableAcl))
+                ) && 
+                (
                     this.KafkaPrivateConnectAddress == input.KafkaPrivateConnectAddress ||
                     (this.KafkaPrivateConnectAddress != null &&
                     this.KafkaPrivateConnectAddress.Equals(input.KafkaPrivateConnectAddress))
@@ -1267,6 +1327,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.PodConnectAddress.GetHashCode();
                 if (this.DiskEncrypted != null)
                     hashCode = hashCode * 59 + this.DiskEncrypted.GetHashCode();
+                if (this.DiskEncryptedKey != null)
+                    hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
+                if (this.PublicManagementConnectAddress != null)
+                    hashCode = hashCode * 59 + this.PublicManagementConnectAddress.GetHashCode();
+                if (this.SubnetCidr != null)
+                    hashCode = hashCode * 59 + this.SubnetCidr.GetHashCode();
+                if (this.SubnetName != null)
+                    hashCode = hashCode * 59 + this.SubnetName.GetHashCode();
+                if (this.EnableAcl != null)
+                    hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.KafkaPrivateConnectAddress != null)
                     hashCode = hashCode * 59 + this.KafkaPrivateConnectAddress.GetHashCode();
                 if (this.CesVersion != null)
