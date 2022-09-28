@@ -76,10 +76,34 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? Ipv6Accelerate { get; set; }
 
         /// <summary>
-        /// 
+        /// 状态码缓存时间
         /// </summary>
         [JsonProperty("error_code_cache", NullValueHandling = NullValueHandling.Ignore)]
-        public ErrorCodeCache ErrorCodeCache { get; set; }
+        public List<ErrorCodeCache> ErrorCodeCache { get; set; }
+
+        /// <summary>
+        /// Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on 关闭: off
+        /// </summary>
+        [JsonProperty("origin_range_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginRangeStatus { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("user_agent_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public UserAgentFilter UserAgentFilter { get; set; }
+
+        /// <summary>
+        /// 改写回源URL，最多配置20条。
+        /// </summary>
+        [JsonProperty("origin_request_url_rewrite", NullValueHandling = NullValueHandling.Ignore)]
+        public List<OriginRequestUrlRewrite> OriginRequestUrlRewrite { get; set; }
+
+        /// <summary>
+        /// 自定义错误页面
+        /// </summary>
+        [JsonProperty("error_code_redirect_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ErrorCodeRedirectRules> ErrorCodeRedirectRules { get; set; }
 
 
         /// <summary>
@@ -100,6 +124,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  cacheUrlParameterFilter: ").Append(CacheUrlParameterFilter).Append("\n");
             sb.Append("  ipv6Accelerate: ").Append(Ipv6Accelerate).Append("\n");
             sb.Append("  errorCodeCache: ").Append(ErrorCodeCache).Append("\n");
+            sb.Append("  originRangeStatus: ").Append(OriginRangeStatus).Append("\n");
+            sb.Append("  userAgentFilter: ").Append(UserAgentFilter).Append("\n");
+            sb.Append("  originRequestUrlRewrite: ").Append(OriginRequestUrlRewrite).Append("\n");
+            sb.Append("  errorCodeRedirectRules: ").Append(ErrorCodeRedirectRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -176,8 +204,31 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 ) && 
                 (
                     this.ErrorCodeCache == input.ErrorCodeCache ||
-                    (this.ErrorCodeCache != null &&
-                    this.ErrorCodeCache.Equals(input.ErrorCodeCache))
+                    this.ErrorCodeCache != null &&
+                    input.ErrorCodeCache != null &&
+                    this.ErrorCodeCache.SequenceEqual(input.ErrorCodeCache)
+                ) && 
+                (
+                    this.OriginRangeStatus == input.OriginRangeStatus ||
+                    (this.OriginRangeStatus != null &&
+                    this.OriginRangeStatus.Equals(input.OriginRangeStatus))
+                ) && 
+                (
+                    this.UserAgentFilter == input.UserAgentFilter ||
+                    (this.UserAgentFilter != null &&
+                    this.UserAgentFilter.Equals(input.UserAgentFilter))
+                ) && 
+                (
+                    this.OriginRequestUrlRewrite == input.OriginRequestUrlRewrite ||
+                    this.OriginRequestUrlRewrite != null &&
+                    input.OriginRequestUrlRewrite != null &&
+                    this.OriginRequestUrlRewrite.SequenceEqual(input.OriginRequestUrlRewrite)
+                ) && 
+                (
+                    this.ErrorCodeRedirectRules == input.ErrorCodeRedirectRules ||
+                    this.ErrorCodeRedirectRules != null &&
+                    input.ErrorCodeRedirectRules != null &&
+                    this.ErrorCodeRedirectRules.SequenceEqual(input.ErrorCodeRedirectRules)
                 );
         }
 
@@ -211,6 +262,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.Ipv6Accelerate.GetHashCode();
                 if (this.ErrorCodeCache != null)
                     hashCode = hashCode * 59 + this.ErrorCodeCache.GetHashCode();
+                if (this.OriginRangeStatus != null)
+                    hashCode = hashCode * 59 + this.OriginRangeStatus.GetHashCode();
+                if (this.UserAgentFilter != null)
+                    hashCode = hashCode * 59 + this.UserAgentFilter.GetHashCode();
+                if (this.OriginRequestUrlRewrite != null)
+                    hashCode = hashCode * 59 + this.OriginRequestUrlRewrite.GetHashCode();
+                if (this.ErrorCodeRedirectRules != null)
+                    hashCode = hashCode * 59 + this.ErrorCodeRedirectRules.GetHashCode();
                 return hashCode;
             }
         }

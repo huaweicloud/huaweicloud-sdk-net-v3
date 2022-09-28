@@ -1,3 +1,108 @@
+# 3.1.5 2022-09-28
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `domain_id` to the interface `ListDomains`
+  - Changes of the interface `CreateDomain`:
+    - Add the request parameter `domain_id`
+    - Add the response parameter `domain_id`
+  - Add the response parameter `domain_id` to the interface `ShowDomainDetail`
+  - Add the response parameter `domain_id` to the interface `DeleteDomain`
+  - Add the response parameter `domain_id` to the interface `EnableDomain`
+  - Add the response parameter `domain_id` to the interface `DisableDomain`
+  - Changes of the interface `UpdateDomainOrigin`:
+    - Add the request parameter `domain_id`
+    - Add the response parameter `domain_id`
+  - Add the response parameters `origin_range_status`, `user_agent_filter`, `origin_request_url_rewrite`, `error_code_redirect_rules` to the interface `ShowDomainFullConfig`
+  - Add the request parameters `origin_range_status`, `user_agent_filter`, `origin_request_url_rewrite`, `error_code_redirect_rules` to the interface `UpdateDomainFullConfig`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ShowInstance`:
+    - Modify the type `string` -> `int64` of the response parameter `begin_time`
+    - Modify the type `string` -> `int64` of the response parameter `end_time`
+    - Modify the type `string` -> `int64` of the response parameter `current_time`
+    - Modify the type `string` -> `int64` of the response parameter `next_expand_time`
+    - Modify the type `string` -> `int64` of the response parameter `expand_effect_time`
+    - Modify the type `string` -> `int64` of the response parameter `expand_interval_time`
+  - Modify the type `int32` -> `integer` of the request parameter `new_capacity` of the interface `ResizeInstance`
+  - Add the response parameters `target_instance_address`, `migration_method`, `task_name`, `target_instance_id`, `source_instance_name`, `target_instance_name`, `migrate_type`, `created_at`, `source_instance_id`, `task_id`, `data_source`, `status` to the interface `ListMigrationTask`
+  - Changes of the interface `ListRedislog`:
+    - Add the response parameter `backup_id`
+    - Remove the response parameter `backupId`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `region` changed to required of the interface `ListFlavors`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `type`, `idcard_number`, `phone_number`, `province`, `city`, `vaccination_status`, `pcr_test_result`, `pcr_test_organization`, `pcr_test_time`, `pcr_sampling_time`, `reached_city` to the interface `RecognizeHealthCode`
+
+### HuaweiCloud SDK VPCEP
+
+- _Features_
+  - Support the following interfaces：
+    - `UpdateEndpointServiceName`
+    - `UpdateEndpointConnectionsDesc`
+    - `BatchAddEndpointServicePermissions`
+    - `BatchRemoveEndpointServicePermissions`
+    - `UpdateEndpointServicePermissionDesc`
+    - `UpdateEndpointPolicy`
+    - `DeleteEndpointPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `CreateEndpointService`:
+    - Add the request parameter `description`
+    - Add the response parameter `description`
+  - Changes of the interface `ListEndpointService`:
+    - Add the request parameter `public_border_group`
+    - Add the response parameters `description`, `public_border_group`
+    - Modify the type `string` -> `enum` of the response parameter `service_type`
+    - Modify the type `enum` -> `string` of the response parameter `server_type`
+  - Changes of the interface `UpdateEndpointService`:
+    - Add the request parameter `description`
+    - Add the response parameter `description`
+  - Changes of the interface `ListServiceDetails`:
+    - Add the response parameter `description`
+    - Modify the type `string` -> `enum` of the response parameter `service_type`
+  - Remove the response parameters `id`, `marker_id`, `created_at`, `updated_at`, `domain_id`, `status` from the interface `ListServiceConnections`
+  - Add the response parameter `description` to the interface `AcceptOrRejectEndpoint`
+  - Remove the response parameters `id`, `permission`, `created_at` from the interface `ListServicePermissionsDetails`
+  - Changes of the interface `CreateEndpoint`:
+    - Add the request parameter `description`
+    - Add the response parameters `specification_name`, `description`, `policy_statement`, `enable_status`
+  - Changes of the interface `ListEndpoints`:
+    - Add the request parameter `public_border_group`
+    - Add the response parameters `description`, `policy_statement`, `endpoint_pool_id`, `public_border_group`
+  - Add the response parameters `description`, `policy_statement` to the interface `ListEndpointInfoDetails`
+  - Remove the response parameters `status`, `id`, `updated`, `version`, `min_version`, `links` from the interface `ListVersionDetails`
+  - Remove the response parameters `status`, `id`, `updated`, `version`, `min_version`, `links` from the interface `ListSpecifiedVersionDetails`
+  - Changes of the interface `ListResourceInstances`:
+    - Add the request parameters `sys_tags`, `without_any_tag`
+    - Remove the request parameters `key`, `value`, `key`, `value`, `key`, `value`, `key`, `value`
+
 # 3.1.4 2022-09-26
 
 ### HuaweiCloud SDK FunctionGraph

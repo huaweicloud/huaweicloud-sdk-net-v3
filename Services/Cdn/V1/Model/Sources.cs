@@ -132,6 +132,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
 
 
         /// <summary>
+        /// 加速域名id。
+        /// </summary>
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
         /// 源站IP（非内网IP）或者域名。
         /// </summary>
         [JsonProperty("ip_or_domain", NullValueHandling = NullValueHandling.Ignore)]
@@ -162,6 +168,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Sources {\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  ipOrDomain: ").Append(IpOrDomain).Append("\n");
             sb.Append("  originType: ").Append(OriginType).Append("\n");
             sb.Append("  activeStandby: ").Append(ActiveStandby).Append("\n");
@@ -187,6 +194,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 return false;
 
             return 
+                (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                ) && 
                 (
                     this.IpOrDomain == input.IpOrDomain ||
                     (this.IpOrDomain != null &&
@@ -217,6 +229,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.IpOrDomain != null)
                     hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
                 if (this.OriginType != null)
