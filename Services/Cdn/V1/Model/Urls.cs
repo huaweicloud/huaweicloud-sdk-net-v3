@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// urlid
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// url具体值

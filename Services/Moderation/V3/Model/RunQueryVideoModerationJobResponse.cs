@@ -157,8 +157,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// <summary>
         /// 作业创建时间
         /// </summary>
-        [JsonProperty("craete_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CraeteTime { get; set; }
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTime { get; set; }
 
         /// <summary>
         /// 作业更新时间
@@ -184,7 +184,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  requestParams: ").Append(RequestParams).Append("\n");
-            sb.Append("  craeteTime: ").Append(CraeteTime).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("}\n");
@@ -229,9 +229,9 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.RequestParams.Equals(input.RequestParams))
                 ) && 
                 (
-                    this.CraeteTime == input.CraeteTime ||
-                    (this.CraeteTime != null &&
-                    this.CraeteTime.Equals(input.CraeteTime))
+                    this.CreateTime == input.CreateTime ||
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
                 ) && 
                 (
                     this.UpdateTime == input.UpdateTime ||
@@ -261,8 +261,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.RequestParams != null)
                     hashCode = hashCode * 59 + this.RequestParams.GetHashCode();
-                if (this.CraeteTime != null)
-                    hashCode = hashCode * 59 + this.CraeteTime.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null)
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Result != null)

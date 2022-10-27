@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string State { get; set; }
 
         /// <summary>
-        /// 未售罄的LB规格类别。取值：L4 表示网络型LB未售罄；L7 表示应用型LB未售罄。
+        /// 未售罄的LB规格类别。  取值：L4 表示网络型LB未售罄；L7 表示应用型LB未售罄。
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Protocol { get; set; }

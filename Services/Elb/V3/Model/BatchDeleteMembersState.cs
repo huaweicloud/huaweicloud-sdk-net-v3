@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 后端服务器ID。 &gt;说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
+        /// 后端服务器ID。  &gt;说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 当前后端服务器删除结果状态。取值： - successful：删除成功。 - not found：member不存在。
+        /// 当前后端服务器删除结果状态。  取值： - successful：删除成功。 - not found：member不存在。
         /// </summary>
         [JsonProperty("ret_status", NullValueHandling = NullValueHandling.Ignore)]
         public string RetStatus { get; set; }

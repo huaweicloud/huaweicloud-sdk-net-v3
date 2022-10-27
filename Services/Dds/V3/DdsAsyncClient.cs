@@ -15,6 +15,24 @@ namespace HuaweiCloud.SDK.Dds.V3
 
         
         /// <summary>
+        /// 实例新增只读节点
+        ///
+        /// DDS副本集实例新增只读节点。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddReadonlyNodeResponse> AddReadonlyNodeAsync(AddReadonlyNodeRequest addReadonlyNodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , addReadonlyNodeRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/readonly-node",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addReadonlyNodeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<AddReadonlyNodeResponse>(response);
+        }
+        
+        /// <summary>
         /// 扩容集群实例的节点数量
         ///
         /// 扩容指定集群实例的节点数量。
@@ -102,6 +120,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelEipRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CancelEipResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置可维护时间段
+        ///
+        /// 修改用户允许启动某项对数据库实例运行有影响的任务的时间范围，例如操作系统升级和数据库软件版本升级的时间窗。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeOpsWindowResponse> ChangeOpsWindowAsync(ChangeOpsWindowRequest changeOpsWindowRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , changeOpsWindowRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/maintenance-window",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeOpsWindowRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<ChangeOpsWindowResponse>(response);
         }
         
         /// <summary>
@@ -193,9 +229,9 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 打开集群的Shard/Config IP开关
+        /// 创建集群的Shard/Config IP
         ///
-        /// 打开集群的Shard/Config IP开关
+        /// 创建集群的Shard/Config IP
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -369,6 +405,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowlogRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DownloadSlowlogResponse>(response);
+        }
+        
+        /// <summary>
+        /// 扩容副本集实例的节点数量
+        ///
+        /// 扩容指定副本集实例的节点数量，暂不支持包周期实例
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExpandReplicasetNodeResponse> ExpandReplicasetNodeAsync(ExpandReplicasetNodeRequest expandReplicasetNodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , expandReplicasetNodeRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replicaset-node",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", expandReplicasetNodeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ExpandReplicasetNodeResponse>(response);
         }
         
         /// <summary>
@@ -957,6 +1011,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 设置实例回收站策略
+        ///
+        /// 设置实例回收站策略
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetRecyclePolicyResponse> SetRecyclePolicyAsync(SetRecyclePolicyRequest setRecyclePolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecyclePolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询审计日志策略
         ///
         /// 查询审计日志策略。
@@ -1098,6 +1169,24 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询秒级监控配置
+        ///
+        /// 查询秒级监控配置。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSecondLevelMonitoringStatusResponse> ShowSecondLevelMonitoringStatusAsync(ShowSecondLevelMonitoringStatusRequest showSecondLevelMonitoringStatusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showSecondLevelMonitoringStatusRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecondLevelMonitoringStatusRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowSecondLevelMonitoringStatusResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询集群均衡设置
         ///
         /// 查询集群均衡设置。
@@ -1131,6 +1220,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchConfigurationRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<SwitchConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 开启/关闭秒级监控
+        ///
+        /// 开启或关闭指定实例的秒级监控。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchSecondLevelMonitoringResponse> SwitchSecondLevelMonitoringAsync(SwitchSecondLevelMonitoringRequest switchSecondLevelMonitoringRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchSecondLevelMonitoringRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSecondLevelMonitoringRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<SwitchSecondLevelMonitoringResponse>(response);
         }
         
         /// <summary>
@@ -1312,6 +1419,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityGroupRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateSecurityGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 数据库补丁升级
+        ///
+        /// 升级数据库补丁版本。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeDatabaseVersionResponse> UpgradeDatabaseVersionAsync(UpgradeDatabaseVersionRequest upgradeDatabaseVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , upgradeDatabaseVersionRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDatabaseVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpgradeDatabaseVersionResponse>(response);
         }
         
         /// <summary>

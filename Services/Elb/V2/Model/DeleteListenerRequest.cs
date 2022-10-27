@@ -16,13 +16,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     {
 
         /// <summary>
-        /// （不再支持）级联删除负载均衡器
-        /// </summary>
-        [SDKProperty("cascade", IsQuery = true)]
-        [JsonProperty("cascade", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Cascade { get; set; }
-
-        /// <summary>
         /// 监听器id
         /// </summary>
         [SDKProperty("listener_id", IsPath = true)]
@@ -37,7 +30,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteListenerRequest {\n");
-            sb.Append("  cascade: ").Append(Cascade).Append("\n");
             sb.Append("  listenerId: ").Append(ListenerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -61,11 +53,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             return 
                 (
-                    this.Cascade == input.Cascade ||
-                    (this.Cascade != null &&
-                    this.Cascade.Equals(input.Cascade))
-                ) && 
-                (
                     this.ListenerId == input.ListenerId ||
                     (this.ListenerId != null &&
                     this.ListenerId.Equals(input.ListenerId))
@@ -80,8 +67,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Cascade != null)
-                    hashCode = hashCode * 59 + this.Cascade.GetHashCode();
                 if (this.ListenerId != null)
                     hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
                 return hashCode;

@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class CreateLoadBalancerBandwidthOption 
     {
         /// <summary>
-        /// 计费模式。 [取值：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：当id字段为null时，charge_mode是必须的。
+        /// 计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。
         /// </summary>
-        /// <value>计费模式。 [取值：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：当id字段为null时，charge_mode是必须的。</value>
+        /// <value>计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： 1. 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 2. 该字段为WHOLE时,必须指定带宽ID。 3. IPv6的EIP不支持WHOLE类型带宽。
+        /// 带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
         /// </summary>
-        /// <value>带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： 1. 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 2. 该字段为WHOLE时,必须指定带宽ID。 3. IPv6的EIP不支持WHOLE类型带宽。</value>
+        /// <value>带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。</value>
         [JsonConverter(typeof(EnumClassConverter<ShareTypeEnum>))]
         public class ShareTypeEnum
         {
@@ -236,7 +236,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 带宽名称。取值：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 使用说明： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。
+        /// 带宽名称。  取值：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  使用说明： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -248,17 +248,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 计费模式。 [取值：bandwidth表示按带宽计费，traffic表示按流量计费。](tag:hws,hws_hk,ocb,tlf,ctc,hcs,sbc,g42,tm,cmcc,hk_g42,mix,hk_sbc,hws_ocb,fcs) [当前仅支持traffic按流量计费](tag:dt,dt_test,hcso_dt) 使用说明：当id字段为null时，charge_mode是必须的。
+        /// 计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 带宽类型。 取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： 1. 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 2. 该字段为WHOLE时,必须指定带宽ID。 3. IPv6的EIP不支持WHOLE类型带宽。
+        /// 带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
         /// </summary>
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]
         public ShareTypeEnum ShareType { get; set; }
         /// <summary>
-        /// 资源账单信息。 [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42) [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+        /// 资源账单信息。  [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽 ](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,tm,cmcc)  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }

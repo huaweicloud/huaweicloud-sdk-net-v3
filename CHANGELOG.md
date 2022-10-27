@@ -1,3 +1,145 @@
+# 3.1.6 2022-10-27
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+  - Support the interfaces `DeleteServerNics`, `UpdateBaremetalServerInterfaceAttachments`, `AddServerNics`, `ShowServerRemoteConsole`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `int32` -> `int64` of the response parameter `id` of the interface `ShowUrlTaskInfo`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ShowInstance`:
+    - Modify the type `string` -> `int64` of the response parameter `begin_time`
+    - Modify the type `string` -> `int64` of the response parameter `end_time`
+    - Modify the type `string` -> `int64` of the response parameter `current_time`
+    - Modify the type `string` -> `int64` of the response parameter `next_expand_time`
+    - Modify the type `string` -> `int64` of the response parameter `expand_effect_time`
+    - Modify the type `string` -> `int64` of the response parameter `expand_interval_time`
+  - Modify the type `int32` -> `integer` of the request parameter `new_capacity` of the interface `ResizeInstance`
+  - Add the response parameters `target_instance_address`, `migration_method`, `task_name`, `target_instance_id`, `source_instance_name`, `target_instance_name`, `migrate_type`, `created_at`, `source_instance_id`, `task_id`, `data_source`, `status` to the interface `ListMigrationTask`
+  - Changes of the interface `ListRedislog`:
+    - Add the response parameter `backup_id`
+    - Remove the response parameter `backupId`
+  - Add the response parameter `enable_show` to the interface `ListBackgroundTask`
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+  - Support the following interfaces：
+    - `AddReadonlyNode`
+    - `UpgradeDatabaseVersion`
+    - `ShowSecondLevelMonitoringStatus`
+    - `SwitchSecondLevelMonitoring`
+    - `ChangeOpsWindow`
+    - `SetRecyclePolicy`
+    - `ExpandReplicasetNode`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `node_type` to the interface `ListConfigurations`
+  - Add the response parameter `patch_available` to the interface `ListInstances`
+  - Add the request parameter `node_ids` to the interface `ResizeInstanceVolume`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `X-Client-Token`, `batch_create_in_multi_az` to the interface `CreateServers`
+  - Add the request parameter `X-Client-Token` to the interface `CreatePostPaidServers`
+
+### HuaweiCloud SDK ELB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `tls-1-1`, `tls-1-2`, `tls-1-2-strict`, Remove the enum values ` tls-1-1`, ` tls-1-2`, ` tls-1-2-strict` from the request parameter `tls_ciphers_policy` to the interface `CreateListener`
+  - Remove the request parameter `cascade` from the interface `DeleteListener`
+  - Remove the request parameter `cascade` from the interface `DeleteLoadbalancer`
+  - Changes of the interface `ListApiVersions`:
+    - Add the response parameter `versions`
+    - Remove the response parameters `id`, `status`
+  - Remove the request parameter `global_eip_ids` from the interface `CreateLoadBalancer`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the interfaces `ShowRestorableList`, `ListRestoreTime`, `DeleteBackup`, `RestoreExistingInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `market` to the request parameter `__imagetype` to the interface `ListTags`
+  - Changes of the interface `GlanceListImages`:
+    - Add the enum values `market` to the request parameter `__imagetype`
+    - Add the enum values `market` to the response parameter `__imagetype`
+  - Add the enum values `market` to the response parameter `__imagetype` to the interface `GlanceShowImage`
+  - Add the enum values `market` to the response parameter `__imagetype` to the interface `GlanceUpdateImage`
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `properties` to the interface `CreateMessage`
+  - Add the response parameter `properties` to the interface `ListDeviceMessages`
+  - Add the response parameter `properties` to the interface `ShowDeviceMessage`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `CreatePostPaidInstance`:
+    - Add the request parameters `disk_encrypted_enable`, `disk_encrypted_key`
+    - Add the enum values `2.7` to the request parameter `engine_version`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `float` -> `integer` of the request parameter `frame_interval` of the interface `RunCreateVideoModerationJob`
+  - Modify the type `float` -> `integer` of the response parameters `start_time`, `end_time` of the interface `RunQueryAudioModerationJob`
+  - Changes of the interface `RunQueryVideoModerationJob`:
+    - Modify the type `integer` -> `float` of the response parameter `time`
+    - Modify the type `integer` -> `float` of the response parameters `start_time`, `end_time`
+
 # 3.1.5 2022-09-28
 
 ### HuaweiCloud SDK CDN

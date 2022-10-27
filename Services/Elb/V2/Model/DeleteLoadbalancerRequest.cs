@@ -22,13 +22,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
-        /// <summary>
-        /// （不再支持）级联删除负载均衡器
-        /// </summary>
-        [SDKProperty("cascade", IsQuery = true)]
-        [JsonProperty("cascade", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Cascade { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -38,7 +31,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             var sb = new StringBuilder();
             sb.Append("class DeleteLoadbalancerRequest {\n");
             sb.Append("  loadbalancerId: ").Append(LoadbalancerId).Append("\n");
-            sb.Append("  cascade: ").Append(Cascade).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -64,11 +56,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.LoadbalancerId == input.LoadbalancerId ||
                     (this.LoadbalancerId != null &&
                     this.LoadbalancerId.Equals(input.LoadbalancerId))
-                ) && 
-                (
-                    this.Cascade == input.Cascade ||
-                    (this.Cascade != null &&
-                    this.Cascade.Equals(input.Cascade))
                 );
         }
 
@@ -82,8 +69,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                 int hashCode = 41;
                 if (this.LoadbalancerId != null)
                     hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.Cascade != null)
-                    hashCode = hashCode * 59 + this.Cascade.GetHashCode();
                 return hashCode;
             }
         }

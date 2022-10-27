@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
     public class ListImagesRequest 
     {
         /// <summary>
-        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
+        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market
         /// </summary>
-        /// <value>镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared</value>
+        /// <value>镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market</value>
         [JsonConverter(typeof(EnumClassConverter<ImagetypeEnum>))]
         public class ImagetypeEnum
         {
@@ -1596,7 +1596,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
 
         /// <summary>
-        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
+        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market
         /// </summary>
         [SDKProperty("__imagetype", IsQuery = true)]
         [JsonProperty("__imagetype", NullValueHandling = NullValueHandling.Ignore)]

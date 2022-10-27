@@ -22,10 +22,10 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 截帧频率间隔，单位为秒，取值范围为0.5~60s；若不传递默认5s截帧一次
+        /// 截帧频率间隔，单位为秒，取值范围为1~60s；若不传递默认5s截帧一次
         /// </summary>
         [JsonProperty("frame_interval", NullValueHandling = NullValueHandling.Ignore)]
-        public float? FrameInterval { get; set; }
+        public int? FrameInterval { get; set; }
 
 
         /// <summary>

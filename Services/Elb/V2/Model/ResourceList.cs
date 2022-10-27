@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V2.Model
 {
     /// <summary>
-    /// 用于资源对象id列表，{“id”：id值}
+    /// 资源对象id列表。
     /// </summary>
     public class ResourceList 
     {

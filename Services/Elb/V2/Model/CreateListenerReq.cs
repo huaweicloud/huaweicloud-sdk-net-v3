@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V2.Model
 {
     /// <summary>
-    /// 创建监听器的结构体
+    /// 创建监听器的请求体
     /// </summary>
     public class CreateListenerReq 
     {
@@ -149,27 +149,27 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             public static readonly TlsCiphersPolicyEnum TLS_1_0 = new TlsCiphersPolicyEnum("tls-1-0");
 
             /// <summary>
-            /// Enum _TLS_1_1 for value:  tls-1-1
+            /// Enum TLS_1_1 for value: tls-1-1
             /// </summary>
-            public static readonly TlsCiphersPolicyEnum _TLS_1_1 = new TlsCiphersPolicyEnum(" tls-1-1");
+            public static readonly TlsCiphersPolicyEnum TLS_1_1 = new TlsCiphersPolicyEnum("tls-1-1");
 
             /// <summary>
-            /// Enum _TLS_1_2 for value:  tls-1-2
+            /// Enum TLS_1_2 for value: tls-1-2
             /// </summary>
-            public static readonly TlsCiphersPolicyEnum _TLS_1_2 = new TlsCiphersPolicyEnum(" tls-1-2");
+            public static readonly TlsCiphersPolicyEnum TLS_1_2 = new TlsCiphersPolicyEnum("tls-1-2");
 
             /// <summary>
-            /// Enum _TLS_1_2_STRICT for value:  tls-1-2-strict
+            /// Enum TLS_1_2_STRICT for value: tls-1-2-strict
             /// </summary>
-            public static readonly TlsCiphersPolicyEnum _TLS_1_2_STRICT = new TlsCiphersPolicyEnum(" tls-1-2-strict");
+            public static readonly TlsCiphersPolicyEnum TLS_1_2_STRICT = new TlsCiphersPolicyEnum("tls-1-2-strict");
 
             private static readonly Dictionary<string, TlsCiphersPolicyEnum> StaticFields =
             new Dictionary<string, TlsCiphersPolicyEnum>()
             {
                 { "tls-1-0", TLS_1_0 },
-                { " tls-1-1", _TLS_1_1 },
-                { " tls-1-2", _TLS_1_2 },
-                { " tls-1-2-strict", _TLS_1_2_STRICT },
+                { "tls-1-1", TLS_1_1 },
+                { "tls-1-2", TLS_1_2 },
+                { "tls-1-2-strict", TLS_1_2_STRICT },
             };
 
             private string Value;

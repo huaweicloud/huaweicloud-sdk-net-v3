@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public Object Message { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
+        public PropertiesDTO Properties { get; set; }
+
+        /// <summary>
         /// **参数说明**：消息内容编码格式。默认值none。 **取值范围**： - none  - base64：只能通过topic_full_name字段自定义的topic发送消息,否则会发送失败。
         /// </summary>
         [JsonProperty("encoding", NullValueHandling = NullValueHandling.Ignore)]
@@ -68,6 +74,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  messageId: ").Append(MessageId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  properties: ").Append(Properties).Append("\n");
             sb.Append("  encoding: ").Append(Encoding).Append("\n");
             sb.Append("  payloadFormat: ").Append(PayloadFormat).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
@@ -109,6 +116,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Message.Equals(input.Message))
                 ) && 
                 (
+                    this.Properties == input.Properties ||
+                    (this.Properties != null &&
+                    this.Properties.Equals(input.Properties))
+                ) && 
+                (
                     this.Encoding == input.Encoding ||
                     (this.Encoding != null &&
                     this.Encoding.Equals(input.Encoding))
@@ -144,6 +156,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Properties != null)
+                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
                 if (this.Encoding != null)
                     hashCode = hashCode * 59 + this.Encoding.GetHashCode();
                 if (this.PayloadFormat != null)

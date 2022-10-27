@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Topic { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
+        public PropertiesDTO Properties { get; set; }
+
+        /// <summary>
         /// 消息状态，包含PENDING，DELIVERED，FAILED和TIMEOUT，PENDING指设备不在线，消息被缓存起来，等设备上线之后下发； DELIVERED指消息发送成功；FAILED消息发送失败；TIMEOUT指消息在平台默认时间内（1天）还没有下发送给设备，则平台会将消息设置为超时，状态为TIMEOUT。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -89,6 +95,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  encoding: ").Append(Encoding).Append("\n");
             sb.Append("  payloadFormat: ").Append(PayloadFormat).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
+            sb.Append("  properties: ").Append(Properties).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  errorInfo: ").Append(ErrorInfo).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
@@ -145,6 +152,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Topic.Equals(input.Topic))
                 ) && 
                 (
+                    this.Properties == input.Properties ||
+                    (this.Properties != null &&
+                    this.Properties.Equals(input.Properties))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -186,6 +198,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.PayloadFormat.GetHashCode();
                 if (this.Topic != null)
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Properties != null)
+                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.ErrorInfo != null)

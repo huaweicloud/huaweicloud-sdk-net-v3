@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// listener对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。若需要绑定访问控制组，则ipgroup_id是必须的。  [不支持该字段，请勿使用。](tag:hcso_dt)
+    /// 监听器对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。 若需要绑定访问控制组，则ipgroup_id是必须的。  [不支持该字段，请勿使用。](tag:hcso_dt)
     /// </summary>
     public class CreateListenerIpGroupOption 
     {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string IpgroupId { get; set; }
 
         /// <summary>
-        /// 访问控制组的状态。取值： - true：开启访问控制，默认值。 - flase：关闭访问控制。
+        /// 访问控制组的状态。  取值： - true：开启访问控制，默认值。 - flase：关闭访问控制。
         /// </summary>
         [JsonProperty("enable_ipgroup", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableIpgroup { get; set; }

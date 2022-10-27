@@ -22,61 +22,61 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 负载均衡器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 负载均衡器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
         public int? Loadbalancer { get; set; }
 
         /// <summary>
-        /// 证书配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 证书配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Certificate { get; set; }
 
         /// <summary>
-        /// 监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 监听器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("listener", NullValueHandling = NullValueHandling.Ignore)]
         public int? Listener { get; set; }
 
         /// <summary>
-        /// 转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 转发策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("l7policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? L7policy { get; set; }
 
         /// <summary>
-        /// 后端云服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 后端云服务器组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? Pool { get; set; }
 
         /// <summary>
-        /// 健康检查配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 健康检查配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("healthmonitor", NullValueHandling = NullValueHandling.Ignore)]
         public int? Healthmonitor { get; set; }
 
         /// <summary>
-        /// 后端云服务器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 后端云服务器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("member", NullValueHandling = NullValueHandling.Ignore)]
         public int? Member { get; set; }
 
         /// <summary>
-        /// 单个pool下的member的配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 单个pool下的member的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("members_per_pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? MembersPerPool { get; set; }
 
         /// <summary>
-        /// IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ipgroup { get; set; }
 
         /// <summary>
-        /// 自定义安全策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// 自定义安全策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("security_policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? SecurityPolicy { get; set; }

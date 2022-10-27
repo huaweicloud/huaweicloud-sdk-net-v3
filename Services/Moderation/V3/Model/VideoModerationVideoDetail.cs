@@ -146,13 +146,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// 音频片段结束时间
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EndTime { get; set; }
+        public float? EndTime { get; set; }
 
         /// <summary>
         /// 音频片段开始时间
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? StartTime { get; set; }
+        public float? StartTime { get; set; }
 
         /// <summary>
         /// 音频片段审核详情

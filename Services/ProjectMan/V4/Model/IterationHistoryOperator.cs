@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     /// <summary>
     /// 变更操作人
     /// </summary>
-    public class VersionHistoryOperator 
+    public class IterationHistoryOperator 
     {
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class VersionHistoryOperator {\n");
+            sb.Append("class IterationHistoryOperator {\n");
             sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  nickName: ").Append(NickName).Append("\n");
@@ -67,13 +67,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as VersionHistoryOperator);
+            return this.Equals(input as IterationHistoryOperator);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(VersionHistoryOperator input)
+        public bool Equals(IterationHistoryOperator input)
         {
             if (input == null)
                 return false;

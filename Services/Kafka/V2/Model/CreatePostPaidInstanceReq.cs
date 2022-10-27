@@ -119,9 +119,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。取值填写为：1.1.0和2.3.0。
+        /// 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
         /// </summary>
-        /// <value>消息引擎的版本。取值填写为：1.1.0和2.3.0。</value>
+        /// <value>消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7</value>
         [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
         public class EngineVersionEnum
         {
@@ -135,11 +135,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             /// </summary>
             public static readonly EngineVersionEnum _2_3_0 = new EngineVersionEnum("2.3.0");
 
+            /// <summary>
+            /// Enum _2_7 for value: 2.7
+            /// </summary>
+            public static readonly EngineVersionEnum _2_7 = new EngineVersionEnum("2.7");
+
             private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
             new Dictionary<string, EngineVersionEnum>()
             {
                 { "1.1.0", _1_1_0 },
                 { "2.3.0", _2_3_0 },
+                { "2.7", _2_7 },
             };
 
             private string Value;
@@ -637,9 +643,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
         /// </summary>
-        /// <value>存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。</value>
+        /// <value>存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
@@ -783,7 +789,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：1.1.0和2.3.0。
+        /// 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
@@ -911,13 +917,25 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? ConnectorEnable { get; set; }
 
         /// <summary>
+        /// 是否开启磁盘加密。
+        /// </summary>
+        [JsonProperty("disk_encrypted_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DiskEncryptedEnable { get; set; }
+
+        /// <summary>
+        /// 磁盘加密key，未开启磁盘加密时为空。
+        /// </summary>
+        [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptedKey { get; set; }
+
+        /// <summary>
         /// 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。  默认是false关闭。
         /// </summary>
         [JsonProperty("enable_auto_topic", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableAutoTopic { get; set; }
 
         /// <summary>
-        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }
@@ -966,6 +984,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
+            sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
+            sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("  enableAutoTopic: ").Append(EnableAutoTopic).Append("\n");
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -1118,6 +1138,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.ConnectorEnable.Equals(input.ConnectorEnable))
                 ) && 
                 (
+                    this.DiskEncryptedEnable == input.DiskEncryptedEnable ||
+                    (this.DiskEncryptedEnable != null &&
+                    this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))
+                ) && 
+                (
+                    this.DiskEncryptedKey == input.DiskEncryptedKey ||
+                    (this.DiskEncryptedKey != null &&
+                    this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))
+                ) && 
+                (
                     this.EnableAutoTopic == input.EnableAutoTopic ||
                     (this.EnableAutoTopic != null &&
                     this.EnableAutoTopic.Equals(input.EnableAutoTopic))
@@ -1198,6 +1228,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
                 if (this.ConnectorEnable != null)
                     hashCode = hashCode * 59 + this.ConnectorEnable.GetHashCode();
+                if (this.DiskEncryptedEnable != null)
+                    hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();
+                if (this.DiskEncryptedKey != null)
+                    hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
                 if (this.EnableAutoTopic != null)
                     hashCode = hashCode * 59 + this.EnableAutoTopic.GetHashCode();
                 if (this.StorageSpecCode != null)

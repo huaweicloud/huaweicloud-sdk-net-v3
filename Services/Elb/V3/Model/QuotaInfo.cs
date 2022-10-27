@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 资源类型。  取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、healthmonitor、l7policy、certificate、security_policy，其中members_per_pool表示一个pool下最多可关联的member数量。
+        /// 资源类型。  取值：loadbalancer、listener、ipgroup、pool、member、members_per_pool、 healthmonitor、l7policy、certificate、security_policy，  其中members_per_pool表示一个pool下最多可关联的member数量。
         /// </summary>
         [JsonProperty("quota_key", NullValueHandling = NullValueHandling.Ignore)]
         public string QuotaKey { get; set; }
 
         /// <summary>
-        /// 总配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 总配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("quota_limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? QuotaLimit { get; set; }
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Used { get; set; }
 
         /// <summary>
-        /// 配额单位。 取值：count，表示个数。
+        /// 配额单位。  取值：count，表示个数。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }

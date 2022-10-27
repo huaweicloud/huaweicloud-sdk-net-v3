@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
+        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market
         /// </summary>
-        /// <value>镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared</value>
+        /// <value>镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market</value>
         [JsonConverter(typeof(EnumClassConverter<ImagetypeEnum>))]
         public class ImagetypeEnum
         {
@@ -1461,7 +1461,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("__image_source_type", NullValueHandling = NullValueHandling.Ignore)]
         public ImageSourceTypeEnum ImageSourceType { get; set; }
         /// <summary>
-        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
+        /// 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared 市场镜像：market
         /// </summary>
         [JsonProperty("__imagetype", NullValueHandling = NullValueHandling.Ignore)]
         public ImagetypeEnum Imagetype { get; set; }

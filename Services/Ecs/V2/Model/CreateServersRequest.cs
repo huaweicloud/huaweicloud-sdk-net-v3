@@ -16,6 +16,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
+        /// 保证客户端请求幂等性的标识
+        /// </summary>
+        [SDKProperty("X-Client-Token", IsHeader = true)]
+        [JsonProperty("X-Client-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XClientToken { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -30,6 +37,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateServersRequest {\n");
+            sb.Append("  xClientToken: ").Append(XClientToken).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -53,6 +61,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             return 
                 (
+                    this.XClientToken == input.XClientToken ||
+                    (this.XClientToken != null &&
+                    this.XClientToken.Equals(input.XClientToken))
+                ) && 
+                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -67,6 +80,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.XClientToken != null)
+                    hashCode = hashCode * 59 + this.XClientToken.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -19,19 +19,19 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 临时扩容开始时间
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string BeginTime { get; set; }
+        public long? BeginTime { get; set; }
 
         /// <summary>
         /// 临时扩容结束时间
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string EndTime { get; set; }
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// 当前时间
         /// </summary>
         [JsonProperty("current_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CurrentTime { get; set; }
+        public long? CurrentTime { get; set; }
 
         /// <summary>
         /// 当前带宽，单位为GB
@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 下一个扩容时间
         /// </summary>
         [JsonProperty("next_expand_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string NextExpandTime { get; set; }
+        public long? NextExpandTime { get; set; }
 
         /// <summary>
         /// 扩容数量
@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 临时扩容时间间隔
         /// </summary>
         [JsonProperty("expand_effect_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpandEffectTime { get; set; }
+        public long? ExpandEffectTime { get; set; }
 
         /// <summary>
         /// 下一次可以扩容间隔时间
         /// </summary>
         [JsonProperty("expand_interval_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpandIntervalTime { get; set; }
+        public long? ExpandIntervalTime { get; set; }
 
         /// <summary>
         /// 最大扩容数量

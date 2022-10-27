@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
+        /// <summary>
+        /// 是否有补丁版本的数据库支持升级，返回true时可以通过升级补丁接口进行数据库升级，否则不允许升级补丁。
+        /// </summary>
+        [JsonProperty("patch_available", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PatchAvailable { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("class DatastoreItem {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  patchAvailable: ").Append(PatchAvailable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.PatchAvailable == input.PatchAvailable ||
+                    (this.PatchAvailable != null &&
+                    this.PatchAvailable.Equals(input.PatchAvailable))
                 );
         }
 
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.PatchAvailable != null)
+                    hashCode = hashCode * 59 + this.PatchAvailable.GetHashCode();
                 return hashCode;
             }
         }

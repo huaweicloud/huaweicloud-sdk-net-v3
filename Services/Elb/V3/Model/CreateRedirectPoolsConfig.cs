@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 后端主机组的权重。 取值：0-100。
+        /// 后端主机组的权重。  取值：0-100。
         /// </summary>
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }

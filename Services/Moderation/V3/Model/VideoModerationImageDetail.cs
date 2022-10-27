@@ -267,7 +267,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// 截帧在视频文件中的时间，单位为秒
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Time { get; set; }
+        public float? Time { get; set; }
 
         /// <summary>
         /// 图像帧审核详情

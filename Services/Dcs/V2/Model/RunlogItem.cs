@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 日志文件的ID
         /// </summary>
-        [JsonProperty("backupId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BackupId { get; set; }
 
 

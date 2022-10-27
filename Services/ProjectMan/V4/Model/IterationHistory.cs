@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("operator", NullValueHandling = NullValueHandling.Ignore)]
-        public VersionHistoryOperator Operator { get; set; }
+        public IterationHistoryOperator Operator { get; set; }
 
         /// <summary>
         /// 操作类型

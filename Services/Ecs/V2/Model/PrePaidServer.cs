@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
+        /// 是否支持随机多AZ部署。  - “true”：批量创建的ecs部署在多个AZ上 - “false”：批量创建的ecs部署在单个AZ上  &gt; 说明： &gt;  &gt; 当availability_zone为空时该字段生效。
+        /// </summary>
+        [JsonProperty("batch_create_in_multi_az", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? BatchCreateInMultiAz { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("extendparam", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,6 +177,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  dataVolumes: ").Append(DataVolumes).Append("\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  batchCreateInMultiAz: ").Append(BatchCreateInMultiAz).Append("\n");
             sb.Append("  extendparam: ").Append(Extendparam).Append("\n");
             sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("  osschedulerHints: ").Append(OsschedulerHints).Append("\n");
@@ -282,6 +289,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.AvailabilityZone.Equals(input.AvailabilityZone))
                 ) && 
                 (
+                    this.BatchCreateInMultiAz == input.BatchCreateInMultiAz ||
+                    (this.BatchCreateInMultiAz != null &&
+                    this.BatchCreateInMultiAz.Equals(input.BatchCreateInMultiAz))
+                ) && 
+                (
                     this.Extendparam == input.Extendparam ||
                     (this.Extendparam != null &&
                     this.Extendparam.Equals(input.Extendparam))
@@ -356,6 +368,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 if (this.AvailabilityZone != null)
                     hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.BatchCreateInMultiAz != null)
+                    hashCode = hashCode * 59 + this.BatchCreateInMultiAz.GetHashCode();
                 if (this.Extendparam != null)
                     hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
                 if (this.Metadata != null)

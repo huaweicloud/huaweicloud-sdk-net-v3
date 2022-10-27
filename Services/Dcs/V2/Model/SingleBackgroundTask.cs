@@ -69,6 +69,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 是否有详细任务进展，可以展开查看
+        /// </summary>
+        [JsonProperty("enable_show", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableShow { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -86,6 +92,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  enableShow: ").Append(EnableShow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +158,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
+                ) && 
+                (
+                    this.EnableShow == input.EnableShow ||
+                    (this.EnableShow != null &&
+                    this.EnableShow.Equals(input.EnableShow))
                 );
         }
 
@@ -180,6 +192,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.EnableShow != null)
+                    hashCode = hashCode * 59 + this.EnableShow.GetHashCode();
                 return hashCode;
             }
         }

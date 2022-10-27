@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 分页查询中每页的监听器个数
+        /// 分页查询中每页的后端服务器个数
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

@@ -1,3 +1,145 @@
+# 3.1.6 2022-10-27
+
+### HuaweiCloud SDK BMS
+
+- _新增特性_
+  - 支持接口`DeleteServerNics`、`UpdateBaremetalServerInterfaceAttachments`、`AddServerNics`、`ShowServerRemoteConsole`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowUrlTaskInfo`响应参数`id`类型调整 `int32` -> `int64`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowInstance`:
+    - 响应参数`begin_time`类型调整 `string` -> `int64`
+    - 响应参数`end_time`类型调整 `string` -> `int64`
+    - 响应参数`current_time`类型调整 `string` -> `int64`
+    - 响应参数`next_expand_time`类型调整 `string` -> `int64`
+    - 响应参数`expand_effect_time`类型调整 `string` -> `int64`
+    - 响应参数`expand_interval_time`类型调整 `string` -> `int64`
+  - 接口`ResizeInstance`请求参数`new_capacity`类型调整 `int32` -> `integer`
+  - 接口`ListMigrationTask`新增响应参数 `target_instance_address`、`migration_method`、`task_name`、`target_instance_id`、`source_instance_name`、`target_instance_name`、`migrate_type`、`created_at`、`source_instance_id`、`task_id`、`data_source`、`status`
+  - 接口`ListRedislog`:
+    - 新增响应参数 `backup_id`
+    - 移除响应参数 `backupId`
+  - 接口`ListBackgroundTask`新增响应参数 `enable_show`
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `AddReadonlyNode`
+    - `UpgradeDatabaseVersion`
+    - `ShowSecondLevelMonitoringStatus`
+    - `SwitchSecondLevelMonitoring`
+    - `ChangeOpsWindow`
+    - `SetRecyclePolicy`
+    - `ExpandReplicasetNode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListConfigurations`新增响应参数 `node_type`
+  - 接口`ListInstances`新增响应参数 `patch_available`
+  - 接口`ResizeInstanceVolume`新增请求参数 `node_ids`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateServers`新增请求参数 `X-Client-Token`、`batch_create_in_multi_az`
+  - 接口`CreatePostPaidServers`新增请求参数 `X-Client-Token`
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateListener`请求参数`tls_ciphers_policy`新增枚举值`tls-1-1`、`tls-1-2`、`tls-1-2-strict`, 移除枚举值` tls-1-1`、` tls-1-2`、` tls-1-2-strict`
+  - 接口`DeleteListener`移除请求参数 `cascade`
+  - 接口`DeleteLoadbalancer`移除请求参数 `cascade`
+  - 接口`ListApiVersions`:
+    - 新增响应参数 `versions`
+    - 移除响应参数 `id`、`status`
+  - 接口`CreateLoadBalancer`移除请求参数 `global_eip_ids`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ShowRestorableList`、`ListRestoreTime`、`DeleteBackup`、`RestoreExistingInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListTags`请求参数`__imagetype`新增枚举值`market`
+  - 接口`GlanceListImages`:
+    - 请求参数`__imagetype`新增枚举值`market`
+    - 响应参数`__imagetype`新增枚举值`market`
+  - 接口`GlanceShowImage`响应参数`__imagetype`新增枚举值`market`
+  - 接口`GlanceUpdateImage`响应参数`__imagetype`新增枚举值`market`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateMessage`新增请求参数 `properties`
+  - 接口`ListDeviceMessages`新增响应参数 `properties`
+  - 接口`ShowDeviceMessage`新增响应参数 `properties`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePostPaidInstance`:
+    - 新增请求参数 `disk_encrypted_enable`、`disk_encrypted_key`
+    - 请求参数`engine_version`新增枚举值`2.7`
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RunCreateVideoModerationJob`的请求参数`frame_interval`类型变更 `float` -> `integer`
+  - 接口`RunQueryAudioModerationJob`的响应参数`start_time`、`end_time`类型变更 `integer` -> `float`
+  - 接口`RunQueryVideoModerationJob`
+    - 响应参数`time`类型变更 `integer` -> `float`
+    - 响应参数`start_time`、`end_time`类型变更 `integer` -> `float`
+
 # 3.1.5 2022-09-28
 
 ### HuaweiCloud SDK CDN

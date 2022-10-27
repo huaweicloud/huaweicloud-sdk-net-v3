@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string DatastoreName { get; set; }
 
         /// <summary>
+        /// 参数模板节点类型。 - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - single，表示单节点类型。
+        /// </summary>
+        [JsonProperty("node_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeType { get; set; }
+
+        /// <summary>
         /// 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
@@ -76,6 +82,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  datastoreVersion: ").Append(DatastoreVersion).Append("\n");
             sb.Append("  datastoreName: ").Append(DatastoreName).Append("\n");
+            sb.Append("  nodeType: ").Append(NodeType).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("  userDefined: ").Append(UserDefined).Append("\n");
@@ -126,6 +133,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.DatastoreName.Equals(input.DatastoreName))
                 ) && 
                 (
+                    this.NodeType == input.NodeType ||
+                    (this.NodeType != null &&
+                    this.NodeType.Equals(input.NodeType))
+                ) && 
+                (
                     this.Created == input.Created ||
                     (this.Created != null &&
                     this.Created.Equals(input.Created))
@@ -160,6 +172,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.DatastoreVersion.GetHashCode();
                 if (this.DatastoreName != null)
                     hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
+                if (this.NodeType != null)
+                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
                 if (this.Created != null)
                     hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Updated != null)
