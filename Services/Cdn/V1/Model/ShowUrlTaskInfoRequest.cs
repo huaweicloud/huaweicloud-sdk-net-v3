@@ -20,14 +20,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? StartTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
         /// 结束时间戳（毫秒），默认次日00:00
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EndTime { get; set; }
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// 偏移量

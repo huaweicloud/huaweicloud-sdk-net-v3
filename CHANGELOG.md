@@ -1,3 +1,35 @@
+# 3.1.7 2022-11-02
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ShowUrlTaskInfo`:
+    - Modify the type `int32` -> `int64` of the response parameter `modify_time`
+    - Modify the type `int32` -> `int64` of the response parameter `create_time`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the interfaces `UpdateServerBlockDevice`, `RegisterServerMonitor`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `sichuan_8k_common` to the request parameter `property` to the interface `PushTranscriberJobs`
+  - Add the enum values `chinese_huaxiaolong_common`, `chinese_huaxiaorui_common` to the request parameter `property` to the interface `RunTts`
+
 # 3.1.6 2022-10-27
 
 ### HuaweiCloud SDK BMS

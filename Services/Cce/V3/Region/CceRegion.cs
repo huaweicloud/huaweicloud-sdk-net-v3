@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Cce.V3
         public static readonly Region LA_SOUTH_2 = new Region("la-south-2", "https://cce.la-south-2.myhuaweicloud.com");
         public static readonly Region LA_NORTH_2 = new Region("la-north-2", "https://cce.la-north-2.myhuaweicloud.com");
         public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1", "https://cce.na-mexico-1.myhuaweicloud.com");
+        public static readonly Region RU_NORTHWEST_2 = new Region("ru-northwest-2", "https://cce.ru-northwest-2.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -45,6 +46,7 @@ namespace HuaweiCloud.SDK.Cce.V3
                 { "la-south-2", LA_SOUTH_2 },
                 { "la-north-2", LA_NORTH_2 },
                 { "na-mexico-1", NA_MEXICO_1 },
+                { "ru-northwest-2", RU_NORTHWEST_2 },
         };
 
         public static Region ValueOf(string regionId)

@@ -167,9 +167,9 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         }
 
         /// <summary>
-        /// 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4） 
+        /// 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4）  sichuan_8k_common （四川话识别，区域支持cn-north-4，cn-east-3） 
         /// </summary>
-        /// <value>所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4） </value>
+        /// <value>所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4）  sichuan_8k_common （四川话识别，区域支持cn-north-4，cn-east-3） </value>
         [JsonConverter(typeof(EnumClassConverter<PropertyEnum>))]
         public class PropertyEnum
         {
@@ -198,6 +198,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             /// </summary>
             public static readonly PropertyEnum CHINESE_8K_INSURANCE = new PropertyEnum("chinese_8k_insurance");
 
+            /// <summary>
+            /// Enum SICHUAN_8K_COMMON for value: sichuan_8k_common
+            /// </summary>
+            public static readonly PropertyEnum SICHUAN_8K_COMMON = new PropertyEnum("sichuan_8k_common");
+
             private static readonly Dictionary<string, PropertyEnum> StaticFields =
             new Dictionary<string, PropertyEnum>()
             {
@@ -206,6 +211,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 { "chinese_16k_conversation", CHINESE_16K_CONVERSATION },
                 { "chinese_8k_bank", CHINESE_8K_BANK },
                 { "chinese_8k_insurance", CHINESE_8K_INSURANCE },
+                { "sichuan_8k_common", SICHUAN_8K_COMMON },
             };
 
             private string Value;
@@ -631,7 +637,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         [JsonProperty("audio_format", NullValueHandling = NullValueHandling.Ignore)]
         public AudioFormatEnum AudioFormat { get; set; }
         /// <summary>
-        /// 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4） 
+        /// 所使用的模型特征串。通常是“语种_采样率_领域”的形式，例如chinese_8k_common。  采样率需要与音频采样率保持一致。  当前支持如下模型特征串：  chinese_16k_media (音视频领域，区域仅支持cn-north-4，cn-east-3)  chinese_8k_common  chinese_16k_conversation  chinese_8k_bank（银行领域，区域仅支持cn-north-4）  chinese_8k_insurance（保险领域，区域仅支持cn-north-4）  sichuan_8k_common （四川话识别，区域支持cn-north-4，cn-east-3） 
         /// </summary>
         [JsonProperty("property", NullValueHandling = NullValueHandling.Ignore)]
         public PropertyEnum Property { get; set; }

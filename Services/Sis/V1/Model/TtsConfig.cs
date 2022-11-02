@@ -382,6 +382,16 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             /// </summary>
             public static readonly PropertyEnum CHINESE_HUAXIAOFEI_COMMON = new PropertyEnum("chinese_huaxiaofei_common");
 
+            /// <summary>
+            /// Enum CHINESE_HUAXIAOLONG_COMMON for value: chinese_huaxiaolong_common
+            /// </summary>
+            public static readonly PropertyEnum CHINESE_HUAXIAOLONG_COMMON = new PropertyEnum("chinese_huaxiaolong_common");
+
+            /// <summary>
+            /// Enum CHINESE_HUAXIAORUI_COMMON for value: chinese_huaxiaorui_common
+            /// </summary>
+            public static readonly PropertyEnum CHINESE_HUAXIAORUI_COMMON = new PropertyEnum("chinese_huaxiaorui_common");
+
             private static readonly Dictionary<string, PropertyEnum> StaticFields =
             new Dictionary<string, PropertyEnum>()
             {
@@ -412,6 +422,8 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 { "chinese_huaxiaoxuan_literature", CHINESE_HUAXIAOXUAN_LITERATURE },
                 { "chinese_huaxiaomei_common", CHINESE_HUAXIAOMEI_COMMON },
                 { "chinese_huaxiaofei_common", CHINESE_HUAXIAOFEI_COMMON },
+                { "chinese_huaxiaolong_common", CHINESE_HUAXIAOLONG_COMMON },
+                { "chinese_huaxiaorui_common", CHINESE_HUAXIAORUI_COMMON },
             };
 
             private string Value;

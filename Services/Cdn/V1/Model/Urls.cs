@@ -49,13 +49,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// 修改时间戳（毫秒）
         /// </summary>
         [JsonProperty("modify_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ModifyTime { get; set; }
+        public long? ModifyTime { get; set; }
 
         /// <summary>
         /// 创建时间戳（毫秒）
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CreateTime { get; set; }
+        public long? CreateTime { get; set; }
 
         /// <summary>
         /// 文件类型，目录还是文件
