@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("quick_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? QuickMode { get; set; }
 
+        /// <summary>
+        /// 单字符模式开关。可选值包括： - true：打开单字符模式 - false：关闭单字符模式  未传入该参数时默认为false，即不返回单个文本行的单字符信息。 
+        /// </summary>
+        [JsonProperty("character_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CharacterMode { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  detectDirection: ").Append(DetectDirection).Append("\n");
             sb.Append("  quickMode: ").Append(QuickMode).Append("\n");
+            sb.Append("  characterMode: ").Append(CharacterMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.QuickMode == input.QuickMode ||
                     (this.QuickMode != null &&
                     this.QuickMode.Equals(input.QuickMode))
+                ) && 
+                (
+                    this.CharacterMode == input.CharacterMode ||
+                    (this.CharacterMode != null &&
+                    this.CharacterMode.Equals(input.CharacterMode))
                 );
         }
 
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
                 if (this.QuickMode != null)
                     hashCode = hashCode * 59 + this.QuickMode.GetHashCode();
+                if (this.CharacterMode != null)
+                    hashCode = hashCode * 59 + this.CharacterMode.GetHashCode();
                 return hashCode;
             }
         }

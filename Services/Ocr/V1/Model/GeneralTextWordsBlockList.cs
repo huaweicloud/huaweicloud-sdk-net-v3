@@ -27,6 +27,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<int?>> Location { get; set; }
 
+        /// <summary>
+        /// 文字块识别结果的置信度。 
+        /// </summary>
+        [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
+        public float? Confidence { get; set; }
+
+        /// <summary>
+        /// 文字块对应的单字符识别列表，输出顺序从左到右，先上后下。 
+        /// </summary>
+        [JsonProperty("char_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<GeneralTextCharList> CharList { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -37,6 +49,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class GeneralTextWordsBlockList {\n");
             sb.Append("  words: ").Append(Words).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
+            sb.Append("  confidence: ").Append(Confidence).Append("\n");
+            sb.Append("  charList: ").Append(CharList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,6 +82,17 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Location != null &&
                     input.Location != null &&
                     this.Location.SequenceEqual(input.Location)
+                ) && 
+                (
+                    this.Confidence == input.Confidence ||
+                    (this.Confidence != null &&
+                    this.Confidence.Equals(input.Confidence))
+                ) && 
+                (
+                    this.CharList == input.CharList ||
+                    this.CharList != null &&
+                    input.CharList != null &&
+                    this.CharList.SequenceEqual(input.CharList)
                 );
         }
 
@@ -83,6 +108,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Words.GetHashCode();
                 if (this.Location != null)
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Confidence != null)
+                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.CharList != null)
+                    hashCode = hashCode * 59 + this.CharList.GetHashCode();
                 return hashCode;
             }
         }

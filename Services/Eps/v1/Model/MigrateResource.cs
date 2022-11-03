@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
     {
 
         /// <summary>
+        /// 资源所属RegionID。迁移OBS服务资源时为必选项。
+        /// </summary>
+        [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RegionId { get; set; }
+
+        /// <summary>
         /// 项目ID。resource_type为region级别服务时为必选项。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -47,6 +53,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MigrateResource {\n");
+            sb.Append("  regionId: ").Append(RegionId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
@@ -72,6 +79,11 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
                 return false;
 
             return 
+                (
+                    this.RegionId == input.RegionId ||
+                    (this.RegionId != null &&
+                    this.RegionId.Equals(input.RegionId))
+                ) && 
                 (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
@@ -102,6 +114,8 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.RegionId != null)
+                    hashCode = hashCode * 59 + this.RegionId.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.ResourceId != null)
