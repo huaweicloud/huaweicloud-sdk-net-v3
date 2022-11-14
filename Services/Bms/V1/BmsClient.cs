@@ -416,7 +416,7 @@ namespace HuaweiCloud.SDK.Bms.V1
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/remote_console",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showServerRemoteConsoleRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerializeNull<ShowServerRemoteConsoleResponse>(response);
+            return JsonUtils.DeSerialize<ShowServerRemoteConsoleResponse>(response);
         }
         
         /// <summary>

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public RecyclePolicyResponseBody Body { get; set; }
+        public RecyclePolicyRequestBody Body { get; set; }
 
 
         /// <summary>

@@ -180,7 +180,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public DomainOriginHost DomainOriginHost { get; set; }
 
         /// <summary>
-        /// 是否开启HTTPS加速。
+        /// 是否开启HTTPS加速。 0：代表未开启HTTPS加速； 1：代表开启HTTPS加速，且回源方式为协议跟随； 2：代表开启HTTPS加速，且回源方式为HTTP； 3：代表开启HTTPS加速，且回源方式为HTTPS。
         /// </summary>
         [JsonProperty("https_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsStatus { get; set; }
@@ -221,37 +221,37 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceAreaEnum ServiceArea { get; set; }
         /// <summary>
-        /// Range回源状态。
+        /// Range回源状态（off代表关闭 on代表开启）。
         /// </summary>
         [JsonProperty("range_status", NullValueHandling = NullValueHandling.Ignore)]
         public string RangeStatus { get; set; }
 
         /// <summary>
-        /// 回源跟随状态。
+        /// 回源跟随状态（off代表关闭 on代表开启）。
         /// </summary>
         [JsonProperty("follow_status", NullValueHandling = NullValueHandling.Ignore)]
         public string FollowStatus { get; set; }
 
         /// <summary>
-        /// 是否暂停源站回源。
+        /// 是否暂停源站回源（off代表关闭 on代表开启）。
         /// </summary>
         [JsonProperty("origin_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginStatus { get; set; }
 
         /// <summary>
-        /// 域名禁用原因
+        /// 域名禁用原因。 1：该域名涉嫌违规内容（涉黄/涉赌/涉毒/涉政）已被禁用； 2：该域名因备案失效已被禁用； 3：该域名遭受攻击，已被禁用； 150：该域名涉嫌违规内容涉黄已被禁用； 151：该域名涉嫌违规内容涉政已被禁用； 152：该域名涉嫌违规内容涉暴已被禁用； 153：该域名涉嫌违规内容涉赌已被禁用。
         /// </summary>
         [JsonProperty("banned_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string BannedReason { get; set; }
 
         /// <summary>
-        /// 域名锁定原因
+        /// 域名锁定原因（Changing the config, please wait）。
         /// </summary>
         [JsonProperty("locked_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string LockedReason { get; set; }
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子账号调用接口时，该参数必传。
+        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

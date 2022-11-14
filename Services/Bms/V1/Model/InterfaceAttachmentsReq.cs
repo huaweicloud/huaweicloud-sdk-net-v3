@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 
         /// </summary>
         [JsonProperty("delete_on_termination", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeleteOnTermination { get; set; }
+        public bool? DeleteOnTermination { get; set; }
 
 
         /// <summary>

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示修改当前企业项目下加速域名的配置，\&quot;all\&quot;代表所有项目。注意：当使用子账号调用接口时，该参数必传。
+        /// 当用户开启企业项目功能时，该参数生效，表示修改当前企业项目下加速域名的配置，\&quot;all\&quot;代表所有项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

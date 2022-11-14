@@ -159,6 +159,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 检查弱密码
+        ///
+        /// 检查弱密码
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckWeakPasswordResponse> CheckWeakPasswordAsync(CheckWeakPasswordRequest checkWeakPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/weak-password-verification",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkWeakPasswordRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CheckWeakPasswordResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建参数模板
         ///
         /// 创建参数模板。
@@ -261,6 +278,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualBackupRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateManualBackupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除审计日志
+        ///
+        /// 删除审计日志
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAuditLogResponse> DeleteAuditLogAsync(DeleteAuditLogRequest deleteAuditLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteAuditLogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAuditLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteAuditLogResponse>(response);
         }
         
         /// <summary>
@@ -410,7 +445,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         /// <summary>
         /// 扩容副本集实例的节点数量
         ///
-        /// 扩容指定副本集实例的节点数量，暂不支持包周期实例
+        /// 扩容指定副本集实例的节点数量
         /// 
         /// 详细说明请参考华为云API Explorer。
         /// Please refer to Huawei cloud API Explorer for details.
@@ -689,6 +724,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询回收站实例列表
+        ///
+        /// 查询回收站实例列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRecycleInstancesResponse> ListRecycleInstancesAsync(ListRecycleInstancesRequest listRecycleInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListRecycleInstancesResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取可恢复的数据库集合列表
         ///
         /// 获取可恢复的数据库集合列表。
@@ -776,6 +828,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSlowLogsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取SSL证书下载地址
+        ///
+        /// 获取SSL证书下载地址
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSslCertDownloadAddressResponse> ListSslCertDownloadAddressAsync(ListSslCertDownloadAddressRequest listSslCertDownloadAddressRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listSslCertDownloadAddressRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSslCertDownloadAddressRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListSslCertDownloadAddressResponse>(response);
         }
         
         /// <summary>
@@ -1117,6 +1187,24 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询实例磁盘信息
+        ///
+        /// 查询实例磁盘信息
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDiskUsageResponse> ShowDiskUsageAsync(ShowDiskUsageRequest showDiskUsageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showDiskUsageRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-usage",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiskUsageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowDiskUsageResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定实例的参数信息
         ///
         /// 获取指定实例的参数，可以是实例，组，节点的参数模板。
@@ -1169,6 +1257,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询实例回收站策略
+        ///
+        /// 查询实例回收站策略
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRecyclePolicyResponse> ShowRecyclePolicyAsync(ShowRecyclePolicyRequest showRecyclePolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowRecyclePolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询秒级监控配置
         ///
         /// 查询秒级监控配置。
@@ -1202,6 +1307,42 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShardingBalancerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowShardingBalancerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询慢日志明文开关
+        ///
+        /// 查询慢日志明文开关
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSlowlogDesensitizationSwitchResponse> ShowSlowlogDesensitizationSwitchAsync(ShowSlowlogDesensitizationSwitchRequest showSlowlogDesensitizationSwitchRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showSlowlogDesensitizationSwitchRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization/status",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSlowlogDesensitizationSwitchRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowSlowlogDesensitizationSwitchResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询数据库补丁升级预估时长
+        ///
+        /// 查询数据库补丁升级预估时长
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowUpgradeDurationResponse> ShowUpgradeDurationAsync(ShowUpgradeDurationRequest showUpgradeDurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showUpgradeDurationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade-duration",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeDurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowUpgradeDurationResponse>(response);
         }
         
         /// <summary>

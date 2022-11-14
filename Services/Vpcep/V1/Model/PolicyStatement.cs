@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// obs访问权限
         /// </summary>
         [JsonProperty("Action", NullValueHandling = NullValueHandling.Ignore)]
-        public string Action { get; set; }
+        public List<string> Action { get; set; }
 
         /// <summary>
         /// obs对象
@@ -72,8 +72,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 ) && 
                 (
                     this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
+                    this.Action != null &&
+                    input.Action != null &&
+                    this.Action.SequenceEqual(input.Action)
                 ) && 
                 (
                     this.Resource == input.Resource ||

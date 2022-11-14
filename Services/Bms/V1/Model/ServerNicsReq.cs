@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public SecurityGroupInfo SecurityGroups { get; set; }
+        public List<SecurityGroupInfo> SecurityGroups { get; set; }
 
 
         /// <summary>
@@ -77,8 +77,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 ) && 
                 (
                     this.SecurityGroups == input.SecurityGroups ||
-                    (this.SecurityGroups != null &&
-                    this.SecurityGroups.Equals(input.SecurityGroups))
+                    this.SecurityGroups != null &&
+                    input.SecurityGroups != null &&
+                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
                 );
         }
 

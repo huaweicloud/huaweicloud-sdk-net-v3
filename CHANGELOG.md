@@ -1,3 +1,58 @@
+# 3.1.9 2022-11-14
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The response parameter `job_id` changed to required of the interface `DeleteServerNics`
+  - Changes of the interface `UpdateBaremetalServerInterfaceAttachments`:
+    - Modify the type `string` -> `boolean` of the request parameter `delete_on_termination`
+    - The request parameter `delete_on_termination` changed to required
+  - Add the response parameter `remote_console` to the interface `ShowServerRemoteConsole`
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+  - Support the following interfaces：
+    - `ShowSlowlogDesensitizationSwitch`
+    - `ListRecycleInstances`
+    - `CheckWeakPassword`
+    - `ShowUpgradeDuration`
+    - `ShowDiskUsage`
+    - `ListSslCertDownloadAddress`
+    - `DeleteAuditLog`
+    - `ShowRecyclePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `X-Language` to the interface `SwitchSlowlogDesensitization`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - Support the interface `ShowWorkflowExecutionForPage`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `enable_stream_response` to the interface `ListWorkflow`
+  - Add the response parameter `enable_stream_response` to the interface `UpdateWorkFlow`
+
+### HuaweiCloud SDK VPCEP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `string` -> `array` of the response parameter `Action` of the interface `ListEndpoints`
+  - Modify the type `string` -> `array` of the response parameter `Action` of the interface `DeleteEndpointPolicy`
+  - Changes of the interface `UpdateEndpointPolicy`:
+    - Modify the type `string` -> `array` of the request parameter `Action`
+    - Modify the type `string` -> `array` of the response parameter `Action`
+
 # 3.1.8 2022-11-03
 
 ### HuaweiCloud SDK ECS

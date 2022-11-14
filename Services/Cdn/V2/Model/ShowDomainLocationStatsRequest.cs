@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public long? Interval { get; set; }
 
         /// <summary>
-        /// 国家编码，多个以英文逗号分隔，all表示全部，取值见附录
+        /// - 国家&amp;地区编码，多个以英文逗号分隔，all表示全部，取值见附录 - 访问运营商统计数据时不能填写 - 访问top_url数据时不能填写 - 访问区域情况数据时只能填写cn(中国)
         /// </summary>
         [SDKProperty("country", IsQuery = true)]
         [JsonProperty("country", NullValueHandling = NullValueHandling.Ignore)]

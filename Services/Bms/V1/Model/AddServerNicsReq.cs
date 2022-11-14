@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 
         /// </summary>
         [JsonProperty("nics", NullValueHandling = NullValueHandling.Ignore)]
-        public ServerNicsReq Nics { get; set; }
+        public List<ServerNicsReq> Nics { get; set; }
 
 
         /// <summary>
@@ -53,8 +53,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             return 
                 (
                     this.Nics == input.Nics ||
-                    (this.Nics != null &&
-                    this.Nics.Equals(input.Nics))
+                    this.Nics != null &&
+                    input.Nics != null &&
+                    this.Nics.SequenceEqual(input.Nics)
                 );
         }
 

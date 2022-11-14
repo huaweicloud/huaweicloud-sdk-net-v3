@@ -16,6 +16,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
+        /// 函数流是否返回流式数据
+        /// </summary>
+        [JsonProperty("enable_stream_response", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableStreamResponse { get; set; }
+
+        /// <summary>
         /// 唯一标识ID，流程定义ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class WorkflowSimpleInfo {\n");
+            sb.Append("  enableStreamResponse: ").Append(EnableStreamResponse).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  workflowUrn: ").Append(WorkflowUrn).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
+                (
+                    this.EnableStreamResponse == input.EnableStreamResponse ||
+                    (this.EnableStreamResponse != null &&
+                    this.EnableStreamResponse.Equals(input.EnableStreamResponse))
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -138,6 +150,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.EnableStreamResponse != null)
+                    hashCode = hashCode * 59 + this.EnableStreamResponse.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.WorkflowUrn != null)

@@ -913,6 +913,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 分页获取指定函数流执行实例列表
+        ///
+        /// 分页获取指定函数流执行实例列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowWorkflowExecutionForPageResponse ShowWorkflowExecutionForPage(ShowWorkflowExecutionForPageRequest showWorkflowExecutionForPageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id" , showWorkflowExecutionForPageRequest.WorkflowId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions-history",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkflowExecutionForPageRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowWorkflowExecutionForPageResponse>(response);
+        }
+        
+        /// <summary>
         /// 同步执行函数流
         ///
         /// 以同步执行方式启动函数流（仅快速模式函数流支持）
