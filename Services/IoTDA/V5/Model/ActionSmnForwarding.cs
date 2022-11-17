@@ -40,13 +40,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string TopicUrn { get; set; }
 
         /// <summary>
-        /// **参数说明**：短信或邮件的内容。。
+        /// **参数说明**：短信或邮件的内容。
         /// </summary>
         [JsonProperty("message_content", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageContent { get; set; }
 
         /// <summary>
-        /// **参数说明**：短信或邮件的主题。。
+        /// **参数说明**：短信或邮件的主题。
         /// </summary>
         [JsonProperty("message_title", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageTitle { get; set; }

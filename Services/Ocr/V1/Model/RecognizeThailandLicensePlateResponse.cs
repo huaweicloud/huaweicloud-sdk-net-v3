@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 调用成功时表示调用结果。 调用失败时无此字段 
+        /// 
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ThailandLicensePlateItem> Result { get; set; }
+        public ThailandLicensePlateItem Result { get; set; }
 
 
         /// <summary>
@@ -53,9 +53,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             return 
                 (
                     this.Result == input.Result ||
-                    this.Result != null &&
-                    input.Result != null &&
-                    this.Result.SequenceEqual(input.Result)
+                    (this.Result != null &&
+                    this.Result.Equals(input.Result))
                 );
         }
 

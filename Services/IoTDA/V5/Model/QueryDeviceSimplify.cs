@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string DeviceName { get; set; }
 
         /// <summary>
-        /// 设备节点类型。 - ENDPOINT：非直连设备。 - GATEWAY：直连设备或网关。 - UNKNOWN：未知。 
+        /// 设备节点类型。 - ENDPOINT：非直连设备。 - GATEWAY：直连设备或网关。 - UNKNOWN：未知。
         /// </summary>
         [JsonProperty("node_type", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeType { get; set; }
@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ProductName { get; set; }
 
         /// <summary>
-        /// 设备的状态。 - ONLINE：设备在线。 - OFFLINE：设备离线。 - ABNORMAL：设备异常。 - INACTIVE：设备未激活。 - FROZEN：设备冻结。 
+        /// 设备的状态。 - ONLINE：设备在线。 - OFFLINE：设备离线。 - ABNORMAL：设备异常。 - INACTIVE：设备未激活。 - FROZEN：设备冻结。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

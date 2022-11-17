@@ -102,6 +102,23 @@ namespace HuaweiCloud.SDK.Eps.v1
         }
         
         /// <summary>
+        /// 查询企业项目支持的服务
+        ///
+        /// 查询企业项目支持的服务
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProvidersResponse> ListProvidersAsync(ListProvidersRequest listProvidersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/providers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListProvidersResponse>(response);
+        }
+        
+        /// <summary>
         /// 迁移资源
         ///
         /// 迁移资源到目标企业项目。

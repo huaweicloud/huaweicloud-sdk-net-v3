@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string AlarmStatus { get; set; }
 
         /// <summary>
-        /// **参数说明**：告警级别。 **取值范围**： - warning：警告。 - minor：一般。 - major：严重。 - critical：致命。
+        /// **参数说明**：告警级别。 **取值范围**：warning（警告）、minor（一般）、major（严重）和critical（致命）。
         /// </summary>
         [JsonProperty("severity", NullValueHandling = NullValueHandling.Ignore)]
         public string Severity { get; set; }

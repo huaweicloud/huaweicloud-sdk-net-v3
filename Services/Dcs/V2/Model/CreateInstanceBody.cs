@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string MaintainEnd { get; set; }
 
         /// <summary>
-        /// 缓存实例的认证信息 &gt; 当“no_password_access”配置为“false”或未配置时，请求消息中须包含password参数。 Redis类型的缓存实例密码复杂度要求： - 输入长度为8到32位的字符串。 - 新密码不能与旧密码相同。 - 必须包含如下四种字符中的三种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（&#x60;~!@#$%^&amp;*()-_&#x3D;+\\|[{}]:&#39;\&quot;,&lt;.&gt;/?） 
+        /// 缓存实例的认证信息 &gt; 当“no_password_access”配置为“false”或未配置时，请求消息中须包含password参数。 Redis类型的缓存实例密码复杂度要求： - 输入长度为8到32位的字符串。 - 新密码不能与旧密码相同。 - 必须包含如下四种字符中的三种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（&#x60;~!@#$^&amp;*()-_&#x3D;+\\|{}:&#39;\&quot;,&lt;.&gt;/?） 
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }

@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// Key值。 - 支持最大长度为36个UTF-8字符。 - 不支持特殊字符[\\&#x3D;\\*\\&lt;\\&gt;\\\\\\,\\|/]+ - 不支持ASCII控制字符(0-31)
+        /// Key值。 - 不能为空，最多支持128个字符 - 可用UTF-8格式表示的汉字、字母、数字和空格 - 支持部分特殊字符：_.:/&#x3D;+-@ - 不能以\&quot;\\_sys\\_\&quot;开头
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// Value值。 - 支持最大长度为43个UTF-8字符。 - 不支持特殊字符[\\&#x3D;\\*\\&lt;\\&gt;\\\\\\,\\|/]+ - 不支持ASCII控制字符(0-31)
+        /// Value值。 - 可以为空但不能缺省，最多支持255个字符 - 可用UTF-8格式表示的汉字、字母、数字和空格 - 支持部分特殊字符：_.:/&#x3D;+-@
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

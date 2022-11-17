@@ -14,13 +14,116 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     /// </summary>
     public class RegisterServerMonitorRequestBody 
     {
+        /// <summary>
+        /// 注册云服务器监控。
+        /// </summary>
+        /// <value>注册云服务器监控。</value>
+        [JsonConverter(typeof(EnumClassConverter<MonitorMetricsEnum>))]
+        public class MonitorMetricsEnum
+        {
+            /// <summary>
+            /// Enum EMPTY for value: 
+            /// </summary>
+            public static readonly MonitorMetricsEnum EMPTY = new MonitorMetricsEnum("");
+
+            private static readonly Dictionary<string, MonitorMetricsEnum> StaticFields =
+            new Dictionary<string, MonitorMetricsEnum>()
+            {
+                { "", EMPTY },
+            };
+
+            private string Value;
+
+            public MonitorMetricsEnum(string value)
+            {
+                Value = value;
+            }
+
+            public static MonitorMetricsEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as MonitorMetricsEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(MonitorMetricsEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(MonitorMetricsEnum a, MonitorMetricsEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(MonitorMetricsEnum a, MonitorMetricsEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 注册云服务器监控。
         /// </summary>
         [JsonProperty("monitorMetrics", NullValueHandling = NullValueHandling.Ignore)]
-        public string MonitorMetrics { get; set; }
-
+        public MonitorMetricsEnum MonitorMetrics { get; set; }
 
         /// <summary>
         /// Get the string

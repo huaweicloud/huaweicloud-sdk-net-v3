@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// 设备CA证书ID，在上传设备CA证书时由平台分配的唯一标识。
+        /// CA证书ID，在上传CA证书时由平台分配的唯一标识。
         /// </summary>
         [JsonProperty("certificate_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateId { get; set; }

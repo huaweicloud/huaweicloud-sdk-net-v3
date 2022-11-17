@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ocr.V1.Model
 {
     /// <summary>
-    /// 
+    /// 图像信息
     /// </summary>
     public class FinancialStatementResultImageSize 
     {

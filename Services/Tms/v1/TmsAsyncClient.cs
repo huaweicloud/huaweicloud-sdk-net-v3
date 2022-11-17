@@ -83,6 +83,23 @@ namespace HuaweiCloud.SDK.Tms.v1
         }
         
         /// <summary>
+        /// 查询标签管理支持的服务
+        ///
+        /// 查询标签管理支持的服务
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProvidersResponse> ListProvidersAsync(ListProvidersRequest listProvidersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/tms/providers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListProvidersResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询API版本号详情
         ///
         /// 查询指定的标签管理服务API版本号详情。

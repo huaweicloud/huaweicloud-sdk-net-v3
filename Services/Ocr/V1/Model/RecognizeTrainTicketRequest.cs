@@ -16,6 +16,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
+        /// 企业项目ID。OCR支持通过企业项目管理（EPS）对不同用户组和用户的资源使用，进行分账。  获取方法：进入“[企业项目管理](https://console.huaweicloud.com/eps/?region&#x3D;cn-north-4#/projects/list)”页面，单击企业项目名称，在企业项目详情页获取Enterprise-Project-Id（企业项目ID）。  企业项目创建步骤请参见用户指南。 &gt; 说明： 创建企业项目后，在传参时，有以下三类场景。 - 携带正确的ID，正常使用OCR服务，账单归到企业ID对应的企业项目中。 - 携带错误的ID，正常使用OCR服务，账单的企业项目会被分类为“未归集”。 - 不携带ID，正常使用OCR服务，账单的企业项目会被分类为“未归集”。
+        /// </summary>
+        [SDKProperty("Enterprise-Project-Id", IsHeader = true)]
+        [JsonProperty("Enterprise-Project-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -30,6 +37,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RecognizeTrainTicketRequest {\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -53,6 +61,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
 
             return 
                 (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -67,6 +80,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

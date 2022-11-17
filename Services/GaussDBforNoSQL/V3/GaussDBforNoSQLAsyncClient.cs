@@ -564,6 +564,24 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 获取容灾实例主/备角色信息
+        ///
+        /// 该接口用于获取容灾实例主/备角色信息，以便后续容灾实例备升主和容灾实例主降备接口调用。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstanceRoleResponse> ShowInstanceRoleAsync(ShowInstanceRoleRequest showInstanceRoleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showInstanceRoleRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/instance-role",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRoleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowInstanceRoleResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询配额
         ///
         /// 查询单租户在GaussDBforNoSQL服务下的资源配额。
@@ -614,6 +632,42 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", shrinkInstanceNodeRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ShrinkInstanceNodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 容灾实例备升主
+        ///
+        /// 该接口用于对已经搭建容灾关系的实例，将备实例升级为主实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchToMasterResponse> SwitchToMasterAsync(SwitchToMasterRequest switchToMasterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchToMasterRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-master",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchToMasterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<SwitchToMasterResponse>(response);
+        }
+        
+        /// <summary>
+        /// 容灾实例主降备
+        ///
+        /// 该接口用于对已经搭建容灾关系的实例，将主实例降级为备实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchToSlaveResponse> SwitchToSlaveAsync(SwitchToSlaveRequest switchToSlaveRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchToSlaveRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-slave",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchToSlaveRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<SwitchToSlaveResponse>(response);
         }
         
         /// <summary>

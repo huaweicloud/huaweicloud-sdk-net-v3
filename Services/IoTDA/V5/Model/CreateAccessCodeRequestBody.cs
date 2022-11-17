@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：接入凭证类型，默认为AMQP的接入凭证类型。 **取值范围**： - AMQP 
+        /// **参数说明**：接入凭证类型，默认为AMQP的接入凭证类型。 **取值范围**： - [AMQP,MQTT]
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

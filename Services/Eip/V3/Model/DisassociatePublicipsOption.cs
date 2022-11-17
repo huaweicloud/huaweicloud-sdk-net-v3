@@ -32,6 +32,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             public static readonly AssociateInstanceTypeEnum NATGW = new AssociateInstanceTypeEnum("NATGW");
 
             /// <summary>
+            /// Enum VPN for value: VPN
+            /// </summary>
+            public static readonly AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
+
+            /// <summary>
             /// Enum ELB for value: ELB
             /// </summary>
             public static readonly AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
@@ -46,6 +51,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             {
                 { "PORT", PORT },
                 { "NATGW", NATGW },
+                { "VPN", VPN },
                 { "ELB", ELB },
                 { "", EMPTY },
             };

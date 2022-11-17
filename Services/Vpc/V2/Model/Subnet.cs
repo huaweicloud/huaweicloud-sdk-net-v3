@@ -239,7 +239,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string NeutronSubnetIdV6 { get; set; }
 
         /// <summary>
-        /// 子网配置的NTP地址
+        /// 子网配置的NTP地址或DHCP租约时间
         /// </summary>
         [JsonProperty("extra_dhcp_opts", NullValueHandling = NullValueHandling.Ignore)]
         public List<ExtraDhcpOption> ExtraDhcpOpts { get; set; }

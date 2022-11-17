@@ -28,19 +28,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 消息内容。 
+        /// 消息内容。
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public Object Message { get; set; }
 
         /// <summary>
-        /// 消息内容编码格式，取值范围none|base64,默认值none, base64格式仅支持透传。 
+        /// 消息内容编码格式，取值范围none|base64,默认值none, base64格式仅支持透传。
         /// </summary>
         [JsonProperty("encoding", NullValueHandling = NullValueHandling.Ignore)]
         public string Encoding { get; set; }
 
         /// <summary>
-        /// 有效负载格式，在消息内容编码格式为none时有效，取值范围standard|raw，默认值standard（平台封装的标准格式），取值为raw时直接将消息内容作为有效负载下发。 
+        /// 有效负载格式，在消息内容编码格式为none时有效，取值范围standard|raw，默认值standard（平台封装的标准格式），取值为raw时直接将消息内容作为有效负载下发。
         /// </summary>
         [JsonProperty("payload_format", NullValueHandling = NullValueHandling.Ignore)]
         public string PayloadFormat { get; set; }

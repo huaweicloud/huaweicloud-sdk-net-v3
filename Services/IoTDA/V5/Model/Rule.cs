@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<RuleAction> Actions { get; set; }
 
         /// <summary>
-        /// **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：设备联动。 - DATA_FORWARDING：数据转发。 - EDGE：边缘侧。
+        /// **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：设备联动。
         /// </summary>
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleType { get; set; }
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
+        /// **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)](tag:hws)[[默认资源空间](https://support.huaweicloud.com/intl/zh-cn/usermanual-iothub/iot_01_0006.html#section0)](tag:hws_hk)下。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }

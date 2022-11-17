@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ocr.V1.Model
 {
     /// <summary>
-    /// 
+    /// 对应票证的状态信息及状态码
     /// </summary>
     public class AutoClassificationResultStatus 
     {

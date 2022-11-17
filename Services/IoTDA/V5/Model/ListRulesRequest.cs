@@ -30,14 +30,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string AppId { get; set; }
 
         /// <summary>
-        /// **参数说明**：规则类型。此参数为非必选参数，指定对应的规则类型结果进行返回，不携带该参数则会返回所有类型规则。 **取值范围**： - DEVICE_LINKAGE - DATA_FORWARDING
+        /// **参数说明**：规则类型。此参数为非必选参数，指定对应的规则类型结果进行返回，不携带该参数则会返回所有类型规则。 **取值范围**： - DEVICE_LINKAGE
         /// </summary>
         [SDKProperty("rule_type", IsQuery = true)]
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleType { get; set; }
 
         /// <summary>
-        /// **参数说明**：分页查询时每页显示的记录数，查询结果根据limit进行分页。 **取值范围**：1-50的整数，默认值为10。
+        /// **参数说明**：分页查询时每页显示的记录数。 **取值范围**：1-50的整数，默认值为10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

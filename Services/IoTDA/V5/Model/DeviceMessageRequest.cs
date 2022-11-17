@@ -63,6 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("topic_full_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicFullName { get; set; }
 
+        /// <summary>
+        /// **参数说明**：下发消息在平台缓存的老化时间，时间单位是分钟，默认值1440；ttl参数数值必须是5的倍数，即以5分钟为粒度；指定为0时表示不缓存消息，最大缓存时间1440分钟，即缓存一天
+        /// </summary>
+        [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Ttl { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -79,6 +85,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  payloadFormat: ").Append(PayloadFormat).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  topicFullName: ").Append(TopicFullName).Append("\n");
+            sb.Append("  ttl: ").Append(Ttl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.TopicFullName == input.TopicFullName ||
                     (this.TopicFullName != null &&
                     this.TopicFullName.Equals(input.TopicFullName))
+                ) && 
+                (
+                    this.Ttl == input.Ttl ||
+                    (this.Ttl != null &&
+                    this.Ttl.Equals(input.Ttl))
                 );
         }
 
@@ -166,6 +178,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.TopicFullName != null)
                     hashCode = hashCode * 59 + this.TopicFullName.GetHashCode();
+                if (this.Ttl != null)
+                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
                 return hashCode;
             }
         }

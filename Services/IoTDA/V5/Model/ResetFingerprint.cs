@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：设备指纹。设置改字段时平台将设备指纹重置为指定值；不携带时将之置空，后续设备第一次接入时，该设备指纹的值将设置为第一次接入时的证书指纹。 **取值范围**：长度为40的十六进制字符串或者长度为64的十六进制字符串。
+        /// **参数说明**：设备指纹。设置该字段时平台将设备指纹重置为指定值；不携带时将之置空，后续设备第一次接入时，该设备指纹的值将设置为第一次接入时的证书指纹。 **取值范围**：长度为40的十六进制字符串或者长度为64的十六进制字符串。
         /// </summary>
         [JsonProperty("fingerprint", NullValueHandling = NullValueHandling.Ignore)]
         public string Fingerprint { get; set; }

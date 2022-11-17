@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：设备属性的路径信息，格式：service_id/DataProperty，例如门磁状态为“DoorWindow/status”。多个属性路径之间以逗号分隔。
+        /// **参数说明**：设备属性的路径信息，格式：service_id/DataProperty，例如门磁状态为“DoorWindow/status”。
         /// </summary>
         [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
 
         /// <summary>
-        /// **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：&gt;，&lt;，&gt;&#x3D;，&lt;&#x3D;，&#x3D;和between:表示数值区间，geo.circle.in:表示圆形区域范围内，geo.circle.out:表示圆形区域范围外。
+        /// **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：&gt;，&lt;，&gt;&#x3D;，&lt;&#x3D;，&#x3D;和between:表示数值区间。
         /// </summary>
         [JsonProperty("operator", NullValueHandling = NullValueHandling.Ignore)]
         public string Operator { get; set; }

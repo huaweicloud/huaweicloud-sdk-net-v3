@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string CommandName { get; set; }
 
         /// <summary>
-        /// 设备执行的命令，Json格式，里面是一个个健值对，如果service_id不为空，每个健都是profile中命令的参数名（paraName）;如果service_id为空则由用户自定义命令格式。设备命令示例：{\&quot;value\&quot;:\&quot;1\&quot;}，具体格式需要应用和设备约定。 
+        /// 设备执行的命令，Json格式，里面是一个个健值对，如果service_id不为空，每个健都是profile中命令的参数名（paraName）;如果service_id为空则由用户自定义命令格式。设备命令示例：{\&quot;value\&quot;:\&quot;1\&quot;}，具体格式需要应用和设备约定。
         /// </summary>
         [JsonProperty("paras", NullValueHandling = NullValueHandling.Ignore)]
         public Object Paras { get; set; }
@@ -52,13 +52,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public int? ExpireTime { get; set; }
 
         /// <summary>
-        /// 下发命令的状态。 ·PENDING表示未下发,在物联网平台缓存着 ·EXPIRED表示命令已经过期，即缓存的时间超过设定的expire_time ·SENT表示命令正在下发 ·DELIVERED表示命令已送达设备 ·SUCCESSFUL表示命令已经成功执行 ·FAILED表示命令执行失败 ·TIMEOUT表示命令下发之后，没有收到设备确认或者响应结果一定时间后超时 
+        /// 下发命令的状态。 ·PENDING表示未下发,在物联网平台缓存着 ·EXPIRED表示命令已经过期，即缓存的时间超过设定的expire_time ·SENT表示命令正在下发 ·DELIVERED表示命令已送达设备 ·SUCCESSFUL表示命令已经成功执行 ·FAILED表示命令执行失败 ·TIMEOUT表示命令下发之后，没有收到设备确认或者响应结果一定时间后超时
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 设备命令执行的详细结果，由设备返回，Json格式。 
+        /// 设备命令执行的详细结果，由设备返回，Json格式。
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public Object Result { get; set; }

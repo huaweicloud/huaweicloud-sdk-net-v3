@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 调用成功时表示调用结果。  调用失败时此字段为空。 
+        /// 
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Result { get; set; }
+        public IdDocumentItem Result { get; set; }
 
 
         /// <summary>

@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// <summary>
         /// 缅文出生日期置信度。 
         /// </summary>
-        [JsonProperty("Birth", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("birth", NullValueHandling = NullValueHandling.Ignore)]
         public float? Birth { get; set; }
 
         /// <summary>

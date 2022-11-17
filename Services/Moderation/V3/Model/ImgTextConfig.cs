@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
     {
 
         /// <summary>
-        /// 用户输入的console界面自定义的黑词库名，支持传入多个。
+        /// 检测时使用的自定义黑名单词库列表。
         /// </summary>
         [JsonProperty("black_glossary_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> BlackGlossaryNames { get; set; }
 
         /// <summary>
-        /// 用户输入的console界面自定义的白词库名，支持传入多个。
+        /// 检测时使用的自定义白名单词库列表。
         /// </summary>
         [JsonProperty("white_glossary_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> WhiteGlossaryNames { get; set; }

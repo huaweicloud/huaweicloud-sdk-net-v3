@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ServiceId { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备命令的缓存时间，单位为秒，表示物联网平台在把命令下发给设备前缓存命令的有效时间，超过这个时间后命令将不再下发，默认值为172800s（48小时）。如果buffer_timeout设置为0，则无论物联网平台上设置的命令下发模式是什么，该命令都会立即下发给设备。
+        /// **参数说明**：设备命令的缓存时间，单位为秒，表示物联网平台在把命令下发给设备前缓存命令的有效时间，超过这个时间后命令将不再下发，默认值为172800s（48小时）。 如果buffer_timeout设置为0，则无论物联网平台上设置的命令下发模式是什么，该命令都会立即下发给设备。
         /// </summary>
         [JsonProperty("buffer_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? BufferTimeout { get; set; }
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public int? ResponseTimeout { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备命令的下发模式，仅当buffer_timeout的值大于0时有效。  - ACTIVE：主动模式，物联网平台主动将命令下发给设备。 - PASSIVE：被动模式，物联网平台创建设备命令后，会直接缓存命令。等到设备再次上线或者上报上一条命令的执行结果后才下发命令。
+        /// **参数说明**：设备命令的下发模式，仅当buffer_timeout的值大于0时有效。 - ACTIVE：主动模式，物联网平台主动将命令下发给设备。 - PASSIVE：被动模式，物联网平台创建设备命令后，会直接缓存命令。等到设备再次上线或者上报上一条命令的执行结果后才下发命令。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
