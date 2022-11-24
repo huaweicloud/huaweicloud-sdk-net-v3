@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// 
+    /// 用户容器镜像。
     /// </summary>
     public class CustomImage 
     {

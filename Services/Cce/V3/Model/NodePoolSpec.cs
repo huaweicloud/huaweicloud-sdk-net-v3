@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("podSecurityGroups", NullValueHandling = NullValueHandling.Ignore)]
         public List<SecurityID> PodSecurityGroups { get; set; }
 
+        /// <summary>
+        /// 节点池自定义安全组相关配置。支持节点池新扩容节点绑定指定的安全组。 - 未指定安全组ID，新建节点将添加Node节点默认安全组。 - 指定有效安全组ID，新建节点将使用指定安全组。 - 指定安全组，应避免对CCE运行依赖的端口规则进行修改。[链接请参见[CCE集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)](tag:hws)
+        /// </summary>
+        [JsonProperty("customSecurityGroups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CustomSecurityGroups { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -174,6 +180,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  nodeManagement: ").Append(NodeManagement).Append("\n");
             sb.Append("  podSecurityGroups: ").Append(PodSecurityGroups).Append("\n");
+            sb.Append("  customSecurityGroups: ").Append(CustomSecurityGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -225,6 +232,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.PodSecurityGroups != null &&
                     input.PodSecurityGroups != null &&
                     this.PodSecurityGroups.SequenceEqual(input.PodSecurityGroups)
+                ) && 
+                (
+                    this.CustomSecurityGroups == input.CustomSecurityGroups ||
+                    this.CustomSecurityGroups != null &&
+                    input.CustomSecurityGroups != null &&
+                    this.CustomSecurityGroups.SequenceEqual(input.CustomSecurityGroups)
                 );
         }
 
@@ -248,6 +261,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
                 if (this.PodSecurityGroups != null)
                     hashCode = hashCode * 59 + this.PodSecurityGroups.GetHashCode();
+                if (this.CustomSecurityGroups != null)
+                    hashCode = hashCode * 59 + this.CustomSecurityGroups.GetHashCode();
                 return hashCode;
             }
         }

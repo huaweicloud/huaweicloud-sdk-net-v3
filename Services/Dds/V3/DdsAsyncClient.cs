@@ -176,6 +176,41 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 参数模板比较
+        ///
+        /// 比较两个参数模板之间的差异。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CompareConfigurationResponse> CompareConfigurationAsync(CompareConfigurationRequest compareConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CompareConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 复制参数模板
+        ///
+        /// 复制参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CopyConfigurationResponse> CopyConfigurationAsync(CopyConfigurationRequest copyConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , copyConfigurationRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CopyConfigurationResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建参数模板
         ///
         /// 创建参数模板。
@@ -458,6 +493,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", expandReplicasetNodeRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ExpandReplicasetNodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询可应用的实例
+        ///
+        /// 查询指定参数模板可被应用的实例。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAppliedInstancesResponse> ListAppliedInstancesAsync(ListAppliedInstancesRequest listAppliedInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , listAppliedInstancesRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applicable-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppliedInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListAppliedInstancesResponse>(response);
         }
         
         /// <summary>
@@ -866,6 +919,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询任务列表和详情
+        ///
+        /// 根据指定条件查询任务中心中的任务列表和详情。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTasksResponse> ListTasksAsync(ListTasksRequest listTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/jobs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTasksRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTasksResponse>(response);
+        }
+        
+        /// <summary>
         /// 实例可用区迁移
         ///
         /// 实例可用区迁移。
@@ -881,6 +951,25 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateAzRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<MigrateAzResponse>(response);
+        }
+        
+        /// <summary>
+        /// 重置参数模板
+        ///
+        /// 重置参数模板。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ResetConfigurationResponse> ResetConfigurationAsync(ResetConfigurationRequest resetConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , resetConfigurationRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            ResetConfigurationResponse resetConfigurationResponse = JsonUtils.DeSerializeNull<ResetConfigurationResponse>(response);
+            return resetConfigurationResponse;
         }
         
         /// <summary>
@@ -1148,6 +1237,42 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBackupPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询参数模板被应用历史
+        ///
+        /// 查询参数模板应用历史
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowConfigurationAppliedHistoryResponse> ShowConfigurationAppliedHistoryAsync(ShowConfigurationAppliedHistoryRequest showConfigurationAppliedHistoryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , showConfigurationAppliedHistoryRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applied-histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationAppliedHistoryRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowConfigurationAppliedHistoryResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询参数模板修改历史
+        ///
+        /// 查询参数模板修改历史。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowConfigurationModifyHistoryResponse> ShowConfigurationModifyHistoryAsync(ShowConfigurationModifyHistoryRequest showConfigurationModifyHistoryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , showConfigurationModifyHistoryRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationModifyHistoryRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowConfigurationModifyHistoryResponse>(response);
         }
         
         /// <summary>

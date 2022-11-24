@@ -14,6 +14,117 @@ namespace HuaweiCloud.SDK.Dns.V2
 
         
         /// <summary>
+        /// 绑定ip地址。
+        ///
+        /// 绑定单个IP地址到终端节点
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public AssociateEndpointIpaddressResponse AssociateEndpointIpaddress(AssociateEndpointIpaddressRequest associateEndpointIpaddressRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("endpoint_id" , associateEndpointIpaddressRequest.EndpointId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint/{endpoint_id}/ipaddress",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateEndpointIpaddressRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AssociateEndpointIpaddressResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除PTR
+        ///
+        /// 批量删除PTR。本接口为原子操作，所有记录应全部删除成功或全部失败。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public BatchDeletePtrRecordsResponse BatchDeletePtrRecords(BatchDeletePtrRecordsRequest batchDeletePtrRecordsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/reverse/floatingips",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeletePtrRecordsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<BatchDeletePtrRecordsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除Record Set
+        ///
+        /// 批量删除Record Set。
+        /// 响应结果中只包含本次实际删除的Record Set。
+        /// 支持批量删除公网域名和内网域名的记录集。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteRecordSetsResponse BatchDeleteRecordSets(BatchDeleteRecordSetsRequest batchDeleteRecordSetsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<BatchDeleteRecordSetsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除Zone
+        ///
+        /// 批量删除Zone。
+        /// 本接口为原子操作，所有记录应全部删除成功或全部失败。
+        /// 仅支持公网Zone、内网Zone。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteZonesResponse BatchDeleteZones(BatchDeleteZonesRequest batchDeleteZonesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/zones",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteZonesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<BatchDeleteZonesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量设置Record Set状态
+        ///
+        /// 批量设置Record Set状态。
+        /// 响应结果中只包含本次实际更新的Record Set。
+        /// 仅支持公网域名记录集。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public BatchSetRecordSetsStatusResponse BatchSetRecordSetsStatus(BatchSetRecordSetsStatusRequest batchSetRecordSetsStatusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/statuses",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetRecordSetsStatusRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<BatchSetRecordSetsStatusResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量设置Zone状态
+        ///
+        /// 批量设置Zone状态。
+        /// 响应结果中只包含本次实际更新的Zone。
+        /// 仅支持公网Zone。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public BatchSetZonesStatusResponse BatchSetZonesStatus(BatchSetZonesStatusRequest batchSetZonesStatusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/zones/statuses",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetZonesStatusRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<BatchSetZonesStatusResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建单个自定义线路
         ///
         /// 创建单个自定义线路
@@ -28,6 +139,92 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCustomLineRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateCustomLineResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建终端节点。
+        ///
+        /// 创建单个终端节点。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateEndpointResponse CreateEndpoint(CreateEndpointRequest createEndpointRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEndpointRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateEndpointResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建线路分组。
+        ///
+        /// 创建一个线路分组。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateLineGroupResponse CreateLineGroup(CreateLineGroupRequest createLineGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createLineGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateLineGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建解析规则。
+        ///
+        /// 创建一个解析规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateResolveRuleResponse CreateResolveRule(CreateResolveRuleRequest createResolveRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrule",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createResolveRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateResolveRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建公网域名找回请求。
+        ///
+        /// 创建公网域名找回请求。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateRetrievalResponse CreateRetrieval(CreateRetrievalRequest createRetrievalRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/retrieval",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetrievalRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateRetrievalResponse>(response);
+        }
+        
+        /// <summary>
+        /// 请求立即验证域名找回。
+        ///
+        /// 请求服务器立即执行找回验证。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public CreateRetrievalVerificationResponse CreateRetrievalVerification(CreateRetrievalVerificationRequest createRetrievalVerificationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , createRetrievalVerificationRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/retrieval/verification/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetrievalVerificationRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerializeNull<CreateRetrievalVerificationResponse>(response);
         }
         
         /// <summary>
@@ -46,6 +243,79 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomLineRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteCustomLineResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除终端节点。
+        ///
+        /// 删除终端节点。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("endpoint_id" , deleteEndpointRequest.EndpointId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint/{endpoint_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteEndpointResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除线路分组。
+        ///
+        /// 删除单个线路分组。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DeleteLineGroupResponse DeleteLineGroup(DeleteLineGroupRequest deleteLineGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("linegroup_id" , deleteLineGroupRequest.LinegroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLineGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteLineGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除解析规则。
+        ///
+        /// 删除解析规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DeleteResolveRuleResponse DeleteResolveRule(DeleteResolveRuleRequest deleteResolveRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resolverrule_id" , deleteResolveRuleRequest.ResolverruleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrule/{resolverrule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResolveRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteResolveRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 解关联ip地址。
+        ///
+        /// 解除endpoint绑定的IP。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DisassociateEndpointIpaddressResponse DisassociateEndpointIpaddress(DisassociateEndpointIpaddressRequest disassociateEndpointIpaddressRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("endpoint_id" , disassociateEndpointIpaddressRequest.EndpointId.ToString());
+            urlParam.Add("ipaddress_id" , disassociateEndpointIpaddressRequest.IpaddressId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("v2.1/endpoint/{endpoint_id}/ipaddress/{ipaddress_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateEndpointIpaddressRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DisassociateEndpointIpaddressResponse>(response);
         }
         
         /// <summary>
@@ -83,6 +353,75 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 查询ip地址列表。
+        ///
+        /// 查询某个endpoint下的ip地址列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListEndpointIpaddressesResponse ListEndpointIpaddresses(ListEndpointIpaddressesRequest listEndpointIpaddressesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("endpoint_id" , listEndpointIpaddressesRequest.EndpointId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint/{endpoint_id}/ipaddress",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointIpaddressesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListEndpointIpaddressesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询vpc信息。
+        ///
+        /// 查询vpc的终端节点信息。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListEndpointVpcsResponse ListEndpointVpcs(ListEndpointVpcsRequest listEndpointVpcsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/vpc",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointVpcsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListEndpointVpcsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询终端节点列表。
+        ///
+        /// 查询终端节点列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListEndpointsResponse ListEndpoints(ListEndpointsRequest listEndpointsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListEndpointsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询线路分组列表。
+        ///
+        /// 查询线路分组列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListLineGroupsResponse ListLineGroups(ListLineGroupsRequest listLineGroupsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLineGroupsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListLineGroupsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询名称服务器列表
         ///
         /// 查询名称服务器列表
@@ -97,6 +436,23 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNameServersRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListNameServersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询解析规则列表。
+        ///
+        /// 查询解析规则的列表。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ListResoleRulesResponse ListResoleRules(ListResoleRulesRequest listResoleRulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrule",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResoleRulesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListResoleRulesResponse>(response);
         }
         
         /// <summary>
@@ -135,6 +491,95 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 查询endpoint。
+        ///
+        /// 查询终端单个节点。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowEndpointResponse ShowEndpoint(ShowEndpointRequest showEndpointRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("endpoint_id" , showEndpointRequest.EndpointId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint/{endpoint_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEndpointRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowEndpointResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询线路分组。
+        ///
+        /// 查询线路分组。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowLineGroupResponse ShowLineGroup(ShowLineGroupRequest showLineGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("linegroup_id" , showLineGroupRequest.LinegroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLineGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowLineGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询单个解析规则。
+        ///
+        /// 查询单个解析规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowResoleRuleResponse ShowResoleRule(ShowResoleRuleRequest showResoleRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resolverrule_id" , showResoleRuleRequest.ResolverruleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrule/{resolverrule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResoleRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowResoleRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询域名找回。
+        ///
+        /// 查询域名找回请求。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowRetrievalResponse ShowRetrieval(ShowRetrievalRequest showRetrievalRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/retrieval",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetrievalRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowRetrievalResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询域名找回结果。
+        ///
+        /// 查询域名找回结果。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public ShowRetrievalVerificationResponse ShowRetrievalVerification(ShowRetrievalVerificationRequest showRetrievalVerificationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , showRetrievalVerificationRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/retrieval/verification/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetrievalVerificationRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowRetrievalVerificationResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新单个自定义线路
         ///
         /// 更新单个自定义线路
@@ -150,6 +595,60 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCustomLineRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateCustomLineResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改终端节点
+        ///
+        /// 修改终端节点
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest updateEndpointRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("endpoint_id" , updateEndpointRequest.EndpointId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint/{endpoint_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEndpointRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateEndpointResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新线路分组。
+        ///
+        /// 更新单个线路分组。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UpdateLineGroupsResponse UpdateLineGroups(UpdateLineGroupsRequest updateLineGroupsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("linegroup_id" , updateLineGroupsRequest.LinegroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLineGroupsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateLineGroupsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改解析规则。
+        ///
+        /// 修改一个解析规则。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public UpdateResolveRuleResponse UpdateResolveRule(UpdateResolveRuleRequest updateResolveRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resolverrule_id" , updateResolveRuleRequest.ResolverruleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrule/{resolverrule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResolveRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateResolveRuleResponse>(response);
         }
         
         /// <summary>
@@ -243,6 +742,24 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRecordRequest);
             HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
             return JsonUtils.DeSerialize<UpdatePtrRecordResponse>(response);
+        }
+        
+        /// <summary>
+        /// Record Set关联健康检查。
+        ///
+        /// Record Set关联健康检查。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public AssociateHealthCheckResponse AssociateHealthCheck(AssociateHealthCheckRequest associateHealthCheckRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("recordset_id" , associateHealthCheckRequest.RecordsetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath(" /v2.1/recordsets/{recordset_id}/associatehealthcheck",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateHealthCheckRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AssociateHealthCheckResponse>(response);
         }
         
         /// <summary>
@@ -373,6 +890,24 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteRecordSetsResponse>(response);
+        }
+        
+        /// <summary>
+        /// Record Set解关联健康检查。
+        ///
+        /// Record Set解关联健康检查。。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public DisassociateHealthCheckResponse DisassociateHealthCheck(DisassociateHealthCheckRequest disassociateHealthCheckRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("recordset_id" , disassociateHealthCheckRequest.RecordsetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/associatehealthcheck",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateHealthCheckRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DisassociateHealthCheckResponse>(response);
         }
         
         /// <summary>
@@ -790,6 +1325,24 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZonesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListPublicZonesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置单个内网Zone的子域名递归解析代理
+        ///
+        /// 设置单个内网Zone的子域名递归解析代理
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public SetPrivateZoneProxyPatternResponse SetPrivateZoneProxyPattern(SetPrivateZoneProxyPatternRequest setPrivateZoneProxyPatternRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id" , setPrivateZoneProxyPatternRequest.ZoneId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/actions/set-proxy-pattern",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setPrivateZoneProxyPatternRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<SetPrivateZoneProxyPatternResponse>(response);
         }
         
         /// <summary>

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 最大实例数
+        /// 最大实例数；-1代表该函数实例数无限制，0代表该函数被禁用
         /// </summary>
         [JsonProperty("max_instance_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxInstanceNum { get; set; }

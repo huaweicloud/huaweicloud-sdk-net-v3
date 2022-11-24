@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string EngineName { get; set; }
 
         /// <summary>
-        /// 节点类型。文档数据库包含以下几种节点类型： - mongos - shard - config - replica - single
+        /// 节点类型。文档数据库包含以下几种节点类型： - mongos - shard - config - replica - single - readonly
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -64,10 +64,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Color { get; set; }
 
         /// <summary>
-        /// 疫苗接种情况 
+        /// 疫苗接种情况，可选值包括：  - 未接种 - 接种中 - 无接种记录 - 已接种1针 - 已接种2针 - 已接种3针 - 已完成新冠疫苗接种 
         /// </summary>
         [JsonProperty("vaccination_status", NullValueHandling = NullValueHandling.Ignore)]
         public string VaccinationStatus { get; set; }
+
+        /// <summary>
+        /// 核酸检测间隔时长，可选值包括： - 24小时内 - 48小时内 - 72小时内 - 5天内 - 7天内 - 7天外 
+        /// </summary>
+        [JsonProperty("test_interval", NullValueHandling = NullValueHandling.Ignore)]
+        public string TestInterval { get; set; }
 
         /// <summary>
         /// 核酸检测结果，可选值包括： - \&quot;positive\&quot;,即阳性 - \&quot;negative\&quot;,即阴性 - \&quot;unknown\&quot;,未知 
@@ -134,6 +140,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  color: ").Append(Color).Append("\n");
             sb.Append("  vaccinationStatus: ").Append(VaccinationStatus).Append("\n");
+            sb.Append("  testInterval: ").Append(TestInterval).Append("\n");
             sb.Append("  pcrTestResult: ").Append(PcrTestResult).Append("\n");
             sb.Append("  pcrTestOrganization: ").Append(PcrTestOrganization).Append("\n");
             sb.Append("  pcrTestTime: ").Append(PcrTestTime).Append("\n");
@@ -209,6 +216,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.VaccinationStatus.Equals(input.VaccinationStatus))
                 ) && 
                 (
+                    this.TestInterval == input.TestInterval ||
+                    (this.TestInterval != null &&
+                    this.TestInterval.Equals(input.TestInterval))
+                ) && 
+                (
                     this.PcrTestResult == input.PcrTestResult ||
                     (this.PcrTestResult != null &&
                     this.PcrTestResult.Equals(input.PcrTestResult))
@@ -278,6 +290,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Color.GetHashCode();
                 if (this.VaccinationStatus != null)
                     hashCode = hashCode * 59 + this.VaccinationStatus.GetHashCode();
+                if (this.TestInterval != null)
+                    hashCode = hashCode * 59 + this.TestInterval.GetHashCode();
                 if (this.PcrTestResult != null)
                     hashCode = hashCode * 59 + this.PcrTestResult.GetHashCode();
                 if (this.PcrTestOrganization != null)

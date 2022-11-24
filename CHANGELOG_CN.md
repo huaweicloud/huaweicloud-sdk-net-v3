@@ -1,3 +1,178 @@
+# 3.1.11 2022-11-24
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 支持接口`ListStackEvents`、`ListStackResources`、`DeleteStack`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowBackup`新增响应参数 `children`
+  - 接口`ListBackups`新增响应参数 `children`
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateCluster`新增请求参数 `configurationsOverride`
+  - 接口`ListClusters`新增响应参数 `configurationsOverride`
+  - 接口`UpdateCluster`:
+    - 新增请求参数 `eniNetwork`、`hostNetwork`
+    - 新增响应参数 `configurationsOverride`
+  - 接口`DeleteCluster`:
+    - 新增请求参数 `delete_sfs30`
+    - 新增响应参数 `configurationsOverride`
+  - 接口`ShowCluster`新增响应参数 `configurationsOverride`
+  - 接口`CreateNode`新增请求参数 `initializedConditions`
+  - 接口`ListNodes`新增响应参数 `initializedConditions`
+  - 接口`UpdateNode`新增响应参数 `initializedConditions`
+  - 接口`DeleteNode`新增响应参数 `initializedConditions`
+  - 接口`ShowNode`新增响应参数 `initializedConditions`
+  - 接口`AddNode`新增请求参数 `initializedConditions`
+  - 接口`ResetNode`新增请求参数 `initializedConditions`
+  - 接口`CreateNodePool`新增请求参数 `customSecurityGroups`、`initializedConditions`
+  - 接口`ListNodePools`新增响应参数 `customSecurityGroups`、`initializedConditions`
+  - 接口`UpdateNodePool`:
+    - 新增请求参数 `initializedConditions`
+    - 新增响应参数 `customSecurityGroups`、`initializedConditions`
+  - 接口`DeleteNodePool`新增响应参数 `customSecurityGroups`、`initializedConditions`
+  - 接口`ShowNodePool`新增响应参数 `customSecurityGroups`、`initializedConditions`
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListAlarmTemplates`
+    - `CreateAlarmTemplate`
+    - `BatchDeleteAlarmTemplates`
+    - `ShowAlarmTemplate`
+    - `UpdateAlarmTemplate`
+    - `ListAlarmTemplateAssociationAlarms`
+    - `ListResourceGroups`
+    - `CreateResourceGroup`
+    - `ShowResourceGroup`
+    - `UpdateResourceGroup`
+    - `ListResourceGroupsServicesResources`
+    - `BatchDeleteResourceGroups`
+    - `BatchCreateResources`
+    - `BatchDeleteResources`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListAppliedInstances`
+    - `ShowConfigurationAppliedHistory`
+    - `ShowConfigurationModifyHistory`
+    - `CompareConfiguration`
+    - `CopyConfiguration`
+    - `ResetConfiguration`
+    - `ListTasks`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`AddReadonlyNode`新增请求参数 `is_auto_pay`
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 支持以下接口：
+    - `SetPrivateZoneProxyPattern`
+    - `AssociateHealthCheck`
+    - `DisassociateHealthCheck`
+    - `CreateRetrieval`
+    - `ShowRetrieval`
+    - `CreateRetrievalVerification`
+    - `ShowRetrievalVerification`
+    - `CreateEndpoint`
+    - `ShowEndpoint`
+    - `ListEndpoints`
+    - `UpdateEndpoint`
+    - `DeleteEndpoint`
+    - `AssociateEndpointIpaddress`
+    - `ListEndpointIpaddresses`
+    - `DisassociateEndpointIpaddress`
+    - `ListEndpointVpcs`
+    - `CreateResolveRule`
+    - `ShowResoleRule`
+    - `ListResoleRules`
+    - `UpdateResolveRule`
+    - `DeleteResolveRule`
+    - `CreateLineGroup`
+    - `ListLineGroups`
+    - `ShowLineGroup`
+    - `UpdateLineGroups`
+    - `DeleteLineGroup`
+    - `BatchDeleteZones`
+    - `BatchDeletePtrRecords`
+    - `BatchSetZonesStatus`
+    - `BatchSetRecordSetsStatus`
+    - `BatchDeleteRecordSets`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 支持以下接口：
+    - `CreateDependencyVersion`
+    - `ListDependencyVersion`
+    - `ShowDependencyVersion`
+    - `DeleteDependencyVersion`
+    - `ListReservedInstanceConfigs`
+    - `ListFunctionReservedInstances`
+    - `ListFunctionAsMetric`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`AsyncInvokeReservedFunction`
+  - 接口`UpdateFunctionConfig`新增请求参数 `custom_image`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持以下接口：
+    - `ResizeColdVolume`
+    - `CreateColdVolume`
+    - `ModifyPublicIp`
+    - `SwitchSsl`
+    - `SetAutoEnlargePolicy`
+    - `RestartInstance`
+    - `ShowApplicableInstances`
+    - `ShowModifyHistory`
+    - `ShowApplyHistory`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateInstance`新增请求参数 `restore_info`、`port`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeHealthCode`新增响应参数 `test_interval`
+
 # 3.1.10 2022-11-17
 
 ### HuaweiCloud SDK AOS

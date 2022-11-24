@@ -33,6 +33,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("containerNetwork", NullValueHandling = NullValueHandling.Ignore)]
         public ContainerNetworkUpdate ContainerNetwork { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("eniNetwork", NullValueHandling = NullValueHandling.Ignore)]
+        public EniNetworkUpdate EniNetwork { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hostNetwork", NullValueHandling = NullValueHandling.Ignore)]
+        public ClusterInformationSpecHostNetwork HostNetwork { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +56,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  customSan: ").Append(CustomSan).Append("\n");
             sb.Append("  containerNetwork: ").Append(ContainerNetwork).Append("\n");
+            sb.Append("  eniNetwork: ").Append(EniNetwork).Append("\n");
+            sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,6 +94,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.ContainerNetwork == input.ContainerNetwork ||
                     (this.ContainerNetwork != null &&
                     this.ContainerNetwork.Equals(input.ContainerNetwork))
+                ) && 
+                (
+                    this.EniNetwork == input.EniNetwork ||
+                    (this.EniNetwork != null &&
+                    this.EniNetwork.Equals(input.EniNetwork))
+                ) && 
+                (
+                    this.HostNetwork == input.HostNetwork ||
+                    (this.HostNetwork != null &&
+                    this.HostNetwork.Equals(input.HostNetwork))
                 );
         }
 
@@ -97,6 +121,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
                 if (this.ContainerNetwork != null)
                     hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
+                if (this.EniNetwork != null)
+                    hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
+                if (this.HostNetwork != null)
+                    hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
                 return hashCode;
             }
         }

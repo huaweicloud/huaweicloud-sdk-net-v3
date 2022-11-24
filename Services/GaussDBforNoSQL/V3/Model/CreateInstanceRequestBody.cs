@@ -111,6 +111,18 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("charge_info", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeInfoOption ChargeInfo { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("restore_info", NullValueHandling = NullValueHandling.Ignore)]
+        public RestoreInfo RestoreInfo { get; set; }
+
+        /// <summary>
+        /// 数据库访问端口号。 目前仅支持GaussDB(for Redis)实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 不指定端口时，创建GaussDB(for Redis)实例的访问端口默认为6379。 如果该实例计划用于搭建双活容灾场景，请配置为8635端口。
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public string Port { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -135,6 +147,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
+            sb.Append("  restoreInfo: ").Append(RestoreInfo).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -236,6 +250,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.ChargeInfo == input.ChargeInfo ||
                     (this.ChargeInfo != null &&
                     this.ChargeInfo.Equals(input.ChargeInfo))
+                ) && 
+                (
+                    this.RestoreInfo == input.RestoreInfo ||
+                    (this.RestoreInfo != null &&
+                    this.RestoreInfo.Equals(input.RestoreInfo))
+                ) && 
+                (
+                    this.Port == input.Port ||
+                    (this.Port != null &&
+                    this.Port.Equals(input.Port))
                 );
         }
 
@@ -279,6 +303,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.SslOption.GetHashCode();
                 if (this.ChargeInfo != null)
                     hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
+                if (this.RestoreInfo != null)
+                    hashCode = hashCode * 59 + this.RestoreInfo.GetHashCode();
+                if (this.Port != null)
+                    hashCode = hashCode * 59 + this.Port.GetHashCode();
                 return hashCode;
             }
         }

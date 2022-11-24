@@ -52,6 +52,24 @@ namespace HuaweiCloud.SDK.Aos.V1
         }
         
         /// <summary>
+        /// 删除堆栈
+        ///
+        /// 删除堆栈
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest deleteStackRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name" , deleteStackRequest.StackName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteStackResponse>(response);
+        }
+        
+        /// <summary>
         /// 预估执行计划的价格
         ///
         /// 预估执行计划的价格
@@ -107,6 +125,24 @@ namespace HuaweiCloud.SDK.Aos.V1
         }
         
         /// <summary>
+        /// 获取栈的细节更新状态
+        ///
+        /// 获取栈的细节更新状态，可以获取整个栈从生成到当前时间点的所有状态
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListStackEventsResponse> ListStackEventsAsync(ListStackEventsRequest listStackEventsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name" , listStackEventsRequest.StackName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListStackEventsResponse>(response);
+        }
+        
+        /// <summary>
         /// 列举堆栈的输出
         ///
         /// 列举堆栈的输出
@@ -122,6 +158,24 @@ namespace HuaweiCloud.SDK.Aos.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStackOutputsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取堆栈的资源列表
+        ///
+        /// 获取堆栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest listStackResourcesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name" , listStackResourcesRequest.StackName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListStackResourcesResponse>(response);
         }
         
         /// <summary>

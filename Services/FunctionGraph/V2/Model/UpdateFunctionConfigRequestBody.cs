@@ -287,6 +287,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public StrategyConfig StrategyConfig { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("custom_image", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomImage CustomImage { get; set; }
+
+        /// <summary>
         /// 函数扩展配置。
         /// </summary>
         [JsonProperty("extend_config", NullValueHandling = NullValueHandling.Ignore)]
@@ -343,6 +349,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
+            sb.Append("  customImage: ").Append(CustomImage).Append("\n");
             sb.Append("  extendConfig: ").Append(ExtendConfig).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
@@ -436,6 +443,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.StrategyConfig.Equals(input.StrategyConfig))
                 ) && 
                 (
+                    this.CustomImage == input.CustomImage ||
+                    (this.CustomImage != null &&
+                    this.CustomImage.Equals(input.CustomImage))
+                ) && 
+                (
                     this.ExtendConfig == input.ExtendConfig ||
                     (this.ExtendConfig != null &&
                     this.ExtendConfig.Equals(input.ExtendConfig))
@@ -501,6 +513,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
                 if (this.StrategyConfig != null)
                     hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
+                if (this.CustomImage != null)
+                    hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
                 if (this.ExtendConfig != null)
                     hashCode = hashCode * 59 + this.ExtendConfig.GetHashCode();
                 if (this.InitializerHandler != null)

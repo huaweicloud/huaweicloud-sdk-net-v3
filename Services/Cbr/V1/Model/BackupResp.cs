@@ -510,6 +510,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("provider_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderId { get; set; }
 
+        /// <summary>
+        /// 子副本列表
+        /// </summary>
+        [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
+        public List<BackupResp> Children { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -540,6 +546,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  replicationRecords: ").Append(ReplicationRecords).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  providerId: ").Append(ProviderId).Append("\n");
+            sb.Append("  children: ").Append(Children).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -671,6 +678,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.ProviderId == input.ProviderId ||
                     (this.ProviderId != null &&
                     this.ProviderId.Equals(input.ProviderId))
+                ) && 
+                (
+                    this.Children == input.Children ||
+                    this.Children != null &&
+                    input.Children != null &&
+                    this.Children.SequenceEqual(input.Children)
                 );
         }
 
@@ -726,6 +739,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.ProviderId != null)
                     hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
+                if (this.Children != null)
+                    hashCode = hashCode * 59 + this.Children.GetHashCode();
                 return hashCode;
             }
         }

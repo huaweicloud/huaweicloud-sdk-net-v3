@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 单函数最大实例数，v1取值0和-1，v2取值-1到1000
+        /// 单函数最大实例数，v1取值0和-1，v2取值-1到1000 -1代表该函数实例数无限制 0代表该函数被禁用
         /// </summary>
         [JsonProperty("concurrency", NullValueHandling = NullValueHandling.Ignore)]
         public int? Concurrency { get; set; }

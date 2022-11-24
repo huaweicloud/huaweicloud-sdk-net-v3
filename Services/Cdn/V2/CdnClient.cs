@@ -14,6 +14,23 @@ namespace HuaweiCloud.SDK.Cdn.V2
 
         
         /// <summary>
+        /// 批量域名复制
+        ///
+        /// 批量域名复制接口
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public BatchCopyDomainResponse BatchCopyDomain(BatchCopyDomainRequest batchCopyDomainRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/batch-copy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCopyDomainRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchCopyDomainResponse>(response);
+        }
+        
+        /// <summary>
         /// 下载区域运营商指标数据表格文件
         ///
         /// - 下载区域运营商指标数据表格文件。

@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// storageGroups的名字，作为虚拟存储组的名字，因此各个group个名字不能重复。
+        /// storageGroups的名字，作为虚拟存储组的名字，因此各个group名字不能重复。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

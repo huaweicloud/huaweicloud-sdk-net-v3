@@ -362,7 +362,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Flavor { get; set; }
 
         /// <summary>
-        /// 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  &gt;    - 若不配置，默认创建最新版本的集群。 &gt;    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。
+        /// 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  &gt;    - 若不配置，默认创建最新版本的集群。 &gt;    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。 &gt;    - Turbo集群支持1.19及以上版本商用。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
@@ -462,6 +462,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("supportIstio", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportIstio { get; set; }
 
+        /// <summary>
+        /// 覆盖集群默认组件配置  若指定了不支持的组件或组件不支持的参数，该配置项将被忽略。  当前支持的可配置组件及其参数详见 [[配置管理](https://support.huaweicloud.com/usermanual-cce/cce_10_0213.html)](tag:hws) [[配置管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0213.html)](tag:hws_hk)
+        /// </summary>
+        [JsonProperty("configurationsOverride", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PackageConfiguration> ConfigurationsOverride { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -490,6 +496,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  az: ").Append(Az).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  supportIstio: ").Append(SupportIstio).Append("\n");
+            sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -613,6 +620,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.SupportIstio == input.SupportIstio ||
                     (this.SupportIstio != null &&
                     this.SupportIstio.Equals(input.SupportIstio))
+                ) && 
+                (
+                    this.ConfigurationsOverride == input.ConfigurationsOverride ||
+                    this.ConfigurationsOverride != null &&
+                    input.ConfigurationsOverride != null &&
+                    this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride)
                 );
         }
 
@@ -664,6 +677,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.SupportIstio != null)
                     hashCode = hashCode * 59 + this.SupportIstio.GetHashCode();
+                if (this.ConfigurationsOverride != null)
+                    hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
                 return hashCode;
             }
         }

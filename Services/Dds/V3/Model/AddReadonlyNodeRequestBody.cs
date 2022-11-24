@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
         public int? Delay { get; set; }
 
+        /// <summary>
+        /// 扩容包年包月实例的存储容量时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
+        /// </summary>
+        [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAutoPay { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  num: ").Append(Num).Append("\n");
             sb.Append("  delay: ").Append(Delay).Append("\n");
+            sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +86,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     this.Delay == input.Delay ||
                     (this.Delay != null &&
                     this.Delay.Equals(input.Delay))
+                ) && 
+                (
+                    this.IsAutoPay == input.IsAutoPay ||
+                    (this.IsAutoPay != null &&
+                    this.IsAutoPay.Equals(input.IsAutoPay))
                 );
         }
 
@@ -96,6 +108,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                     hashCode = hashCode * 59 + this.Num.GetHashCode();
                 if (this.Delay != null)
                     hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.IsAutoPay != null)
+                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

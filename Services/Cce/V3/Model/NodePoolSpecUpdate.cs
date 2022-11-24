@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodeSpecUpdate NodeTemplate { get; set; }
 
         /// <summary>
-        /// 节点池初始化节点个数。查询时为节点池目标节点数量。
+        /// 节点池初始化节点个数。查询时为节点池目标节点数量。默认值为0。
         /// </summary>
         [JsonProperty("initialNodeCount", NullValueHandling = NullValueHandling.Ignore)]
         public int? InitialNodeCount { get; set; }

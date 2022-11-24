@@ -33,24 +33,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 函数异步执行并返回预留实例ID
-        ///
-        /// 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
-        /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
-        /// </summary>
-        public async Task<AsyncInvokeReservedFunctionResponse> AsyncInvokeReservedFunctionAsync(AsyncInvokeReservedFunctionRequest asyncInvokeReservedFunctionRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , asyncInvokeReservedFunctionRequest.FunctionUrn.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", asyncInvokeReservedFunctionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<AsyncInvokeReservedFunctionResponse>(response);
-        }
-        
-        /// <summary>
         /// 删除指定函数的所有触发器
         ///
         /// 删除指定函数所有触发器设置。
@@ -122,6 +104,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDependencyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateDependencyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建依赖包版本
+        ///
+        /// 创建依赖包版本
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDependencyVersionResponse> CreateDependencyVersionAsync(CreateDependencyVersionRequest createDependencyVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/version",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDependencyVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateDependencyVersionResponse>(response);
         }
         
         /// <summary>
@@ -250,6 +249,25 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDependencyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteDependencyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除依赖包版本
+        ///
+        /// 删除依赖包版本
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDependencyVersionResponse> DeleteDependencyVersionAsync(DeleteDependencyVersionRequest deleteDependencyVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("depend_id" , deleteDependencyVersionRequest.DependId.ToString());
+            urlParam.Add("version" , deleteDependencyVersionRequest.Version.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDependencyVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteDependencyVersionResponse>(response);
         }
         
         /// <summary>
@@ -455,6 +473,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取依赖包版本列表
+        ///
+        /// 获取依赖包版本列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDependencyVersionResponse> ListDependencyVersionAsync(ListDependencyVersionRequest listDependencyVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("depend_id" , listDependencyVersionRequest.DependId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDependencyVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListDependencyVersionResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定函数的测试事件列表
         ///
         /// 获取指定函数的测试事件列表
@@ -473,6 +509,25 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取按指定指标排序的函数列表
+        ///
+        /// 按指定指标排序的函数列表。
+        /// 
+        /// 默认统计按错误次数指标统计最近一天失败次数最多的前10个函数
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFunctionAsMetricResponse> ListFunctionAsMetricAsync(ListFunctionAsMetricRequest listFunctionAsMetricRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/function/report",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionAsMetricRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionAsMetricResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取函数异步配置列表
         ///
         /// 获取指定函数所有版本的异步配置列表。。
@@ -488,6 +543,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionAsyncInvokeConfigRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListFunctionAsyncInvokeConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取函数预留实例数量
+        ///
+        /// 获取函数预留实例数量。
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFunctionReservedInstancesResponse> ListFunctionReservedInstancesAsync(ListFunctionReservedInstancesRequest listFunctionReservedInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/reservedinstances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionReservedInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionReservedInstancesResponse>(response);
         }
         
         /// <summary>
@@ -579,6 +651,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotasRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListQuotasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取函数预留实例配置列表
+        ///
+        /// 获取函数预留实例配置列表
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListReservedInstanceConfigsResponse> ListReservedInstanceConfigsAsync(ListReservedInstanceConfigsRequest listReservedInstanceConfigsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/reservedinstanceconfigs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReservedInstanceConfigsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListReservedInstanceConfigsResponse>(response);
         }
         
         /// <summary>
@@ -691,6 +780,25 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependcyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDependcyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取依赖包版本详情
+        ///
+        /// 获取依赖包版本详情
+        /// 
+        /// 详细说明请参考华为云API Explorer。
+        /// Please refer to Huawei cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDependencyVersionResponse> ShowDependencyVersionAsync(ShowDependencyVersionRequest showDependencyVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("depend_id" , showDependencyVersionRequest.DependId.ToString());
+            urlParam.Add("version" , showDependencyVersionRequest.Version.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependencyVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowDependencyVersionResponse>(response);
         }
         
         /// <summary>

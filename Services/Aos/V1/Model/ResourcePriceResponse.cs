@@ -283,19 +283,19 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 执行计划中的每个资源部署后最终优惠后的金额，保留小数点后2位，向下取整，默认单位是元
+        /// 执行计划中的每个资源部署后最终优惠后的金额（只考虑商务折扣以及伙伴折扣，不包含促销折扣及优惠券），保留小数点后2位，向上取整，默认单位是元
         /// </summary>
         [JsonProperty("sale_price", NullValueHandling = NullValueHandling.Ignore)]
         public Object SalePrice { get; set; }
 
         /// <summary>
-        /// 执行计划中的每个资源部署后的优惠额，保留小数点后2位，向下取整，默认单位是元
+        /// 执行计划中的每个资源部署后的优惠额，保留小数点后2位，向上取整，默认单位是元
         /// </summary>
         [JsonProperty("discount", NullValueHandling = NullValueHandling.Ignore)]
         public Object Discount { get; set; }
 
         /// <summary>
-        /// 执行计划中的每个资源部署后的原价，保留小数点后2位，向下取整，默认单位是元
+        /// 执行计划中的每个资源部署后的原价，保留小数点后2位，向上取整，默认单位是元
         /// </summary>
         [JsonProperty("original_price", NullValueHandling = NullValueHandling.Ignore)]
         public Object OriginalPrice { get; set; }

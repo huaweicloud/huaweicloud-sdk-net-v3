@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("backup", NullValueHandling = NullValueHandling.Ignore)]
-        public BackupDetail Backup { get; set; }
+        public BackupResp Backup { get; set; }
 
 
         /// <summary>
