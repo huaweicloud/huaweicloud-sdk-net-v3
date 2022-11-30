@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string MatchType { get; set; }
 
         /// <summary>
-        /// 需要替换的URL。 以正斜线（/）开头的URL，不含http(s)://头及域名。 长度不超过512个字符。 支持通配符*匹配，如：/test/_*_/_*.mp4。 匹配方式为“URL路径”时，不支持配置参数。
+        /// 需要替换的URL。 以正斜线（/）开头的URL，不含http(s)://头及域名。 长度不超过512个字符。 支持通配符\\*匹配，如：/test/\\*_/\\*.mp4。 匹配方式为“URL路径”时，不支持配置参数。
         /// </summary>
         [JsonProperty("source_url", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceUrl { get; set; }

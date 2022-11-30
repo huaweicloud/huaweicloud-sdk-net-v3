@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 批量添加或删除队列标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchCreateOrDeleteQueueTagResponse BatchCreateOrDeleteQueueTag(BatchCreateOrDeleteQueueTagRequest batchCreateOrDeleteQueueTagRequest)
         {
@@ -44,8 +43,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         /// 
         /// 确认消费失败后，可以再次重新消费和确认。当开启死信时，消息进行多次重复消费仍然失败后，DMS会将该条消息转存到死信队列中，有效期为72小时，用户可以根据需要对死信消息进行重新消费。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ConfirmConsumptionMessagesResponse ConfirmConsumptionMessages(ConfirmConsumptionMessagesRequest confirmConsumptionMessagesRequest)
         {
@@ -71,8 +69,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         /// 
         /// 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ConfirmDeadLettersMessagesResponse ConfirmDeadLettersMessages(ConfirmDeadLettersMessagesRequest confirmDeadLettersMessagesRequest)
         {
@@ -92,8 +89,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         /// 
         /// 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ConsumeDeadlettersMessageResponse ConsumeDeadlettersMessage(ConsumeDeadlettersMessageRequest consumeDeadlettersMessageRequest)
         {
@@ -117,8 +113,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         /// 
         /// 每个消费组只支持一种Label规则，如果第二次消费更换了Label规则，则消费失败。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ConsumeMessagesResponse ConsumeMessages(ConsumeMessagesRequest consumeMessagesRequest)
         {
@@ -142,8 +137,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         /// 
         /// &gt; 创建消费组后系统内部完成初始化需要1-3秒，如果创建消费组后立即进行操作，可能会导致消费失败。建议3秒后再操作该队列。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateConsumerGroupResponse CreateConsumerGroup(CreateConsumerGroupRequest createConsumerGroupRequest)
         {
@@ -161,8 +155,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         /// 每个project_id默认只能创建30个队列。
         /// &gt; 创建队列时系统内部完成初始化需要1-3秒，如果创建队列后立即进行操作，可能会导致生产消息、消费消息、查询队列详情、创建消费组和删除队列等操作失败。建议3秒后再操作该队列。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateQueueResponse CreateQueue(CreateQueueRequest createQueueRequest)
         {
@@ -178,8 +171,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 删除指定的队列。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteQueueResponse DeleteQueue(DeleteQueueRequest deleteQueueRequest)
         {
@@ -196,8 +188,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 删除指定消费组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteSpecifiedConsumerGroupResponse DeleteSpecifiedConsumerGroup(DeleteSpecifiedConsumerGroupRequest deleteSpecifiedConsumerGroupRequest)
         {
@@ -215,8 +206,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 获取指定队列的所有消费组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListConsumerGroupsResponse ListConsumerGroups(ListConsumerGroupsRequest listConsumerGroupsRequest)
         {
@@ -233,8 +223,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 查看所有队列。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListQueuesResponse ListQueues(ListQueuesRequest listQueuesRequest)
         {
@@ -254,8 +243,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         /// - 每次发送的消息总负载不超过512KB。
         /// - Kafka队列的消息保存时间在创建队列时可以设置，可设置范围为1~72小时。其他队列的消息最大保存时长为72小时。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public SendMessagesResponse SendMessages(SendMessagesRequest sendMessagesRequest)
         {
@@ -272,8 +260,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 查看指定的队列。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowQueueResponse ShowQueue(ShowQueueRequest showQueueRequest)
         {
@@ -290,8 +277,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 查询项目标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowQueueProjectTagsResponse ShowQueueProjectTags(ShowQueueProjectTagsRequest showQueueProjectTagsRequest)
         {
@@ -307,8 +293,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 查询队列标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowQueueTagsResponse ShowQueueTags(ShowQueueTagsRequest showQueueTagsRequest)
         {
@@ -325,8 +310,7 @@ namespace HuaweiCloud.SDK.Dms.V2
         ///
         /// 查看当前项目的配额。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowQuotasResponse ShowQuotas(ShowQuotasRequest showQuotasRequest)
         {

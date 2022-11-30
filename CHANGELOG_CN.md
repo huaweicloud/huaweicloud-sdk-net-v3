@@ -1,3 +1,75 @@
+# 3.1.12 2022-11-30
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`AddReadonlyNode`请求参数`num`类型调整 `string` -> `int32`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 支持接口`DisassociatePublicips`、`AssociatePublicips`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowTenantMetric`新增请求参数 `metric_type`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListAvailableFlavorInfos`
+    - `CheckWeekPassword`
+    - `ModifyPort`
+    - `UpdateClientNetwork`
+    - `DeleteEnlargeFailNode`
+    - `ShowIpNumRequirement`
+    - `ShowAutoEnlargePolicy`
+    - `ShowSlowLogDesensitization`
+    - `SwitchSlowlogDesensitization`
+    - `ShowErrorLog`
+    - `CopyConfiguration`
+    - `CompareConfiguration`
+    - `ListConfigurationDatastores`
+    - `ShowAllInstancesBackups`
+    - `CreateBack`
+    - `ShowRecyclePolicy`
+    - `SetRecyclePolicy`
+    - `ListRecycleInstances`
+    - `ShowPauseResumeStutus`
+    - `PauseResumeDataSynchronization`
+    - `ListProjectTags`
+    - `ListEpsQuotas`
+    - `ModifyEpsQuotas`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ModifyPublicIp`请求参数`public_ip`、`public_ip_id`改为非必填
+  - 接口`SwitchToMaster`新增请求参数 `SwitchToMasterDisasterRecoveryBody`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`PushTranscriberJobs`请求参数`property`新增枚举值`chinese_8k_general`
+  - 接口`RunTts`请求参数`property`新增枚举值`chinese_huaxiaoru_common`、`chinese_huaxiaohan_common`、`chinese_huaxiaoning_common`、`chinese_huaxiaozhen_common`、`english_alvin_common`、`english_amy_common`
+
 # 3.1.11 2022-11-24
 
 ### HuaweiCloud SDK AOS

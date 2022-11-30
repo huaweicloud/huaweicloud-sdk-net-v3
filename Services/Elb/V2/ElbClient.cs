@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 批量添加监听器标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchCreateListenerTagsResponse BatchCreateListenerTags(BatchCreateListenerTagsRequest batchCreateListenerTagsRequest)
         {
@@ -36,8 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 批量添加负载均衡器标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchCreateLoadbalancerTagsResponse BatchCreateLoadbalancerTags(BatchCreateLoadbalancerTagsRequest batchCreateLoadbalancerTagsRequest)
         {
@@ -54,8 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 批量删除监听器标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteListenerTagsResponse BatchDeleteListenerTags(BatchDeleteListenerTagsRequest batchDeleteListenerTagsRequest)
         {
@@ -72,8 +69,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 批量删除负载均衡器标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteLoadbalancerTagsResponse BatchDeleteLoadbalancerTags(BatchDeleteLoadbalancerTagsRequest batchDeleteLoadbalancerTagsRequest)
         {
@@ -90,8 +86,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 给后端云服务器组添加健康检查
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateHealthmonitorResponse CreateHealthmonitor(CreateHealthmonitorRequest createHealthmonitorRequest)
         {
@@ -107,8 +102,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 创建listener关联的转发策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateL7policyResponse CreateL7policy(CreateL7policyRequest createL7policyRequest)
         {
@@ -124,8 +118,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 创建转发规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateL7ruleResponse CreateL7rule(CreateL7ruleRequest createL7ruleRequest)
         {
@@ -142,8 +135,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 创建与负载均衡器绑定的监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateListenerResponse CreateListener(CreateListenerRequest createListenerRequest)
         {
@@ -159,8 +151,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 给指定监听器添加标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateListenerTagsResponse CreateListenerTags(CreateListenerTagsRequest createListenerTagsRequest)
         {
@@ -177,8 +168,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 创建私网类型的增强型负载均衡器。创建成功后，该接口会返回创建的增强型负载均衡器的ID、所属子网ID、负载均衡器IP等详细信息。若要创建公网类型的增强型负载均衡器，还需调用创建浮动IP的接口，将浮动IP与私网负载均衡器的vip_port_id绑定。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateLoadbalancerResponse CreateLoadbalancer(CreateLoadbalancerRequest createLoadbalancerRequest)
         {
@@ -194,8 +184,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 给指定负载均衡器添加标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateLoadbalancerTagsResponse CreateLoadbalancerTags(CreateLoadbalancerTagsRequest createLoadbalancerTagsRequest)
         {
@@ -212,8 +201,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 添加属于某个后端云服务器组的后端云服务器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateMemberResponse CreateMember(CreateMemberRequest createMemberRequest)
         {
@@ -230,8 +218,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 创建后端云服务器组。将多个后端云服务器添加到后端云服务器组中后，请求会在后端云服务器间按后端云服务器组的负载均衡算法和后端云服务器的权重来做请求分发。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreatePoolResponse CreatePool(CreatePoolRequest createPoolRequest)
         {
@@ -247,8 +234,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 创建白名单，控制监听器的访问权限。若开启了白名单功能，只有白名单中放通的IP可以访问该监听器的后端服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateWhitelistResponse CreateWhitelist(CreateWhitelistRequest createWhitelistRequest)
         {
@@ -264,8 +250,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除健康检查
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteHealthmonitorResponse DeleteHealthmonitor(DeleteHealthmonitorRequest deleteHealthmonitorRequest)
         {
@@ -282,8 +267,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除转发策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteL7policyResponse DeleteL7policy(DeleteL7policyRequest deleteL7policyRequest)
         {
@@ -300,8 +284,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除转发规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteL7ruleResponse DeleteL7rule(DeleteL7ruleRequest deleteL7ruleRequest)
         {
@@ -319,8 +302,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID删除监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteListenerResponse DeleteListener(DeleteListenerRequest deleteListenerRequest)
         {
@@ -337,8 +319,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除监听器的某个key对应的标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteListenerTagsResponse DeleteListenerTags(DeleteListenerTagsRequest deleteListenerTagsRequest)
         {
@@ -356,8 +337,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID删除负载均衡器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteLoadbalancerResponse DeleteLoadbalancer(DeleteLoadbalancerRequest deleteLoadbalancerRequest)
         {
@@ -374,8 +354,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除负载均衡器的某个key对应的标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteLoadbalancerTagsResponse DeleteLoadbalancerTags(DeleteLoadbalancerTagsRequest deleteLoadbalancerTagsRequest)
         {
@@ -393,8 +372,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除后端云服务器
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteMemberResponse DeleteMember(DeleteMemberRequest deleteMemberRequest)
         {
@@ -412,8 +390,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除后端云服务器组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeletePoolResponse DeletePool(DeletePoolRequest deletePoolRequest)
         {
@@ -430,8 +407,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除白名单
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteWhitelistResponse DeleteWhitelist(DeleteWhitelistRequest deleteWhitelistRequest)
         {
@@ -448,8 +424,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询健康检查列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListHealthmonitorsResponse ListHealthmonitors(ListHealthmonitorsRequest listHealthmonitorsRequest)
         {
@@ -465,8 +440,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询转发策略。支持过滤查询和分页查询。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListL7policiesResponse ListL7policies(ListL7policiesRequest listL7policiesRequest)
         {
@@ -482,8 +456,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询指定转发策略下关联的转发规则列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListL7rulesResponse ListL7rules(ListL7rulesRequest listL7rulesRequest)
         {
@@ -500,8 +473,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询指定项目下所有监听器的标签列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListListenerTagsResponse ListListenerTags(ListListenerTagsRequest listListenerTagsRequest)
         {
@@ -517,8 +489,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询监听器列表。支持过滤查询和分页查询。可以通过监听器ID、协议类型、监听端口号、关联的后端云服务器的IP等查询监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListListenersResponse ListListeners(ListListenersRequest listListenersRequest)
         {
@@ -534,8 +505,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据标签过滤查询监听器实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListListenersByTagsResponse ListListenersByTags(ListListenersByTagsRequest listListenersByTagsRequest)
         {
@@ -551,8 +521,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询指定项目下所有负载均衡器的标签列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListLoadbalancerTagsResponse ListLoadbalancerTags(ListLoadbalancerTagsRequest listLoadbalancerTagsRequest)
         {
@@ -568,8 +537,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询负载均衡器列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListLoadbalancersResponse ListLoadbalancers(ListLoadbalancersRequest listLoadbalancersRequest)
         {
@@ -585,8 +553,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据标签过滤查询负载均衡实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListLoadbalancersByTagsResponse ListLoadbalancersByTags(ListLoadbalancersByTagsRequest listLoadbalancersByTagsRequest)
         {
@@ -602,8 +569,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询属于某个后端云服务器组的后端云服务器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListMembersResponse ListMembers(ListMembersRequest listMembersRequest)
         {
@@ -620,8 +586,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询后端云服务器组列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListPoolsResponse ListPools(ListPoolsRequest listPoolsRequest)
         {
@@ -637,8 +602,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询白名单，支持过滤查询和分页查询。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListWhitelistsResponse ListWhitelists(ListWhitelistsRequest listWhitelistsRequest)
         {
@@ -654,8 +618,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID查询健康检查详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowHealthmonitorsResponse ShowHealthmonitors(ShowHealthmonitorsRequest showHealthmonitorsRequest)
         {
@@ -672,8 +635,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID查询转发策略详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowL7policyResponse ShowL7policy(ShowL7policyRequest showL7policyRequest)
         {
@@ -690,8 +652,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID查询某转发策略下关联的转发规则详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowL7ruleResponse ShowL7rule(ShowL7ruleRequest showL7ruleRequest)
         {
@@ -709,8 +670,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID查询监听器详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowListenerResponse ShowListener(ShowListenerRequest showListenerRequest)
         {
@@ -727,8 +687,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询指定监听器的所有标签信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowListenerTagsResponse ShowListenerTags(ShowListenerTagsRequest showListenerTagsRequest)
         {
@@ -745,8 +704,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定负载均衡器ID查询负载均衡器详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowLoadbalancerResponse ShowLoadbalancer(ShowLoadbalancerRequest showLoadbalancerRequest)
         {
@@ -763,8 +721,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询指定负载均衡器的所有标签信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowLoadbalancerTagsResponse ShowLoadbalancerTags(ShowLoadbalancerTagsRequest showLoadbalancerTagsRequest)
         {
@@ -781,8 +738,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询负载均衡器状态树。可通过该接口查询负载均衡器关联的监听器、后端云服务器组、后端云服务器、健康检查、转发策略、转发规则的主要信息，了解负载均衡器下资源的拓扑情况。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowLoadbalancersStatusResponse ShowLoadbalancersStatus(ShowLoadbalancersStatusRequest showLoadbalancersStatusRequest)
         {
@@ -799,8 +755,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID查询后端云服务器详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowMemberResponse ShowMember(ShowMemberRequest showMemberRequest)
         {
@@ -818,8 +773,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID查询后端云服务器组详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowPoolResponse ShowPool(ShowPoolRequest showPoolRequest)
         {
@@ -836,8 +790,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 根据指定ID查询白名单详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowWhitelistResponse ShowWhitelist(ShowWhitelistRequest showWhitelistRequest)
         {
@@ -854,8 +807,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新健康检查
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateHealthmonitorResponse UpdateHealthmonitor(UpdateHealthmonitorRequest updateHealthmonitorRequest)
         {
@@ -872,8 +824,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新转发策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateL7policiesResponse UpdateL7policies(UpdateL7policiesRequest updateL7policiesRequest)
         {
@@ -890,8 +841,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新指定的转发规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateL7ruleResponse UpdateL7rule(UpdateL7ruleRequest updateL7ruleRequest)
         {
@@ -909,8 +859,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateListenerResponse UpdateListener(UpdateListenerRequest updateListenerRequest)
         {
@@ -927,8 +876,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新负载均衡器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateLoadbalancerResponse UpdateLoadbalancer(UpdateLoadbalancerRequest updateLoadbalancerRequest)
         {
@@ -945,8 +893,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新后端云服务器
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateMemberResponse UpdateMember(UpdateMemberRequest updateMemberRequest)
         {
@@ -964,8 +911,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新后端云服务器组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdatePoolResponse UpdatePool(UpdatePoolRequest updatePoolRequest)
         {
@@ -982,8 +928,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新白名单。可以打开或关闭白名单，或更新访问控制的IP。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateWhitelistResponse UpdateWhitelist(UpdateWhitelistRequest updateWhitelistRequest)
         {
@@ -1000,8 +945,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 创建SSL证书。将监听器和SSL证书绑定后，可以通过负载均衡器实现服务端认证，后端服务器只要提供HTTP服务就能实现安全可靠的连接。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateCertificateResponse CreateCertificate(CreateCertificateRequest createCertificateRequest)
         {
@@ -1017,8 +961,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 删除指定的SSL证书
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest deleteCertificateRequest)
         {
@@ -1035,8 +978,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询SSL证书。支持过滤查询和分页查询。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListCertificatesResponse ListCertificates(ListCertificatesRequest listCertificatesRequest)
         {
@@ -1052,8 +994,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 查询指定SSL证书的详情信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowCertificateResponse ShowCertificate(ShowCertificateRequest showCertificateRequest)
         {
@@ -1070,8 +1011,7 @@ namespace HuaweiCloud.SDK.Elb.V2
         ///
         /// 更新指定的SSL证书
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest updateCertificateRequest)
         {

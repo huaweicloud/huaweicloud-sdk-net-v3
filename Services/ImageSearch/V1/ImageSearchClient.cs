@@ -21,8 +21,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         /// 
         /// &gt; - 添加或搜索的图片存储在OBS的桶中时，需要对OBS的桶授权。在图像搜索服务管理控制台“实例管理”页面，单击实例操作列的“离线导入”，进入“离线导入”页面。选择存放数据的OBS桶，单击“授权”按钮，字体显示为灰色即完成OBS授权访问。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunAddPictureResponse RunAddPicture(RunAddPictureRequest runAddPictureRequest)
         {
@@ -39,8 +38,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         ///
         /// 通过图片路径查询索引库中对应图片是否存在。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunCheckPictureResponse RunCheckPicture(RunCheckPictureRequest runCheckPictureRequest)
         {
@@ -57,8 +55,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         ///
         /// 创建实例，实例中会生成图片索引库，用来存放图片特征。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunCreateInstanceResponse RunCreateInstance(RunCreateInstanceRequest runCreateInstanceRequest)
         {
@@ -74,8 +71,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         ///
         /// 删除已存在的实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunDeleteInstanceResponse RunDeleteInstance(RunDeleteInstanceRequest runDeleteInstanceRequest)
         {
@@ -92,8 +88,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         ///
         /// 通过图片路径删除索引库中对应图片。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunDeletePictureResponse RunDeletePicture(RunDeletePictureRequest runDeletePictureRequest)
         {
@@ -110,8 +105,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         ///
         /// 修改图像索引库中已存在的图片信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunModifyPictureResponse RunModifyPicture(RunModifyPictureRequest runModifyPictureRequest)
         {
@@ -128,8 +122,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         ///
         /// 查看用户指定实例详细信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunQueryInstanceResponse RunQueryInstance(RunQueryInstanceRequest runQueryInstanceRequest)
         {
@@ -146,8 +139,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1
         ///
         /// 从图片索引库中搜索相似图片。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RunSearchPictureResponse RunSearchPicture(RunSearchPictureRequest runSearchPictureRequest)
         {

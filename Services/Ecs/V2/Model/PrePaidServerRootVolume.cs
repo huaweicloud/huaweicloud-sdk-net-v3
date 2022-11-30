@@ -282,7 +282,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("cluster_type", NullValueHandling = NullValueHandling.Ignore)]
         public ClusterTypeEnum ClusterType { get; set; }
         /// <summary>
-        /// 使用SDI规格创建虚拟机时请关注该参数，如果该参数值为true，说明创建的为scsi类型的卷
+        /// 云服务器数据盘对应的存储池的ID。
         /// </summary>
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }

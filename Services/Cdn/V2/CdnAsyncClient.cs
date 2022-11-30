@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         ///
         /// 批量域名复制接口
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchCopyDomainResponse> BatchCopyDomainAsync(BatchCopyDomainRequest batchCopyDomainRequest)
         {
@@ -46,8 +45,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：10次/min。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DownloadRegionCarrierExcelResponse> DownloadRegionCarrierExcelAsync(DownloadRegionCarrierExcelRequest downloadRegionCarrierExcelRequest)
         {
@@ -73,8 +71,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：10次/min。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DownloadStatisticsExcelResponse> DownloadStatisticsExcelAsync(DownloadStatisticsExcelRequest downloadStatisticsExcelRequest)
         {
@@ -98,8 +95,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：10次/min。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SetChargeModesResponse> SetChargeModesAsync(SetChargeModesRequest setChargeModesRequest)
         {
@@ -127,8 +123,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：2次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowBandwidthCalcResponse> ShowBandwidthCalcAsync(ShowBandwidthCalcRequest showBandwidthCalcRequest)
         {
@@ -152,8 +147,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：5次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowChargeModesResponse> ShowChargeModesAsync(ShowChargeModesRequest showChargeModesRequest)
         {
@@ -182,8 +176,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：15次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowDomainLocationStatsResponse> ShowDomainLocationStatsAsync(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
         {
@@ -212,8 +205,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：15次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowDomainStatsResponse> ShowDomainStatsAsync(ShowDomainStatsRequest showDomainStatsRequest)
         {
@@ -241,8 +233,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：5次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowTopDomainNamesResponse> ShowTopDomainNamesAsync(ShowTopDomainNamesRequest showTopDomainNamesRequest)
         {
@@ -270,8 +261,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：5次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowTopUrlResponse> ShowTopUrlAsync(ShowTopUrlRequest showTopUrlRequest)
         {

@@ -22,13 +22,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public DisassociatePublicipsRequestBody Body { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -38,7 +31,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             var sb = new StringBuilder();
             sb.Append("class DisassociatePublicipsRequest {\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -64,11 +56,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     this.PublicipId == input.PublicipId ||
                     (this.PublicipId != null &&
                     this.PublicipId.Equals(input.PublicipId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -82,8 +69,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 int hashCode = 41;
                 if (this.PublicipId != null)
                     hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

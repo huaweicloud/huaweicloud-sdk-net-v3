@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持500指标的批量查询。 对于不同的period取值和查询的指标数量，默认的最大查询区间(to-from)不同。 规则为\&quot;指标数量*(to-from)/监控周期&lt;&#x3D;3000\&quot;，若超出阈值，会自动调整from以满足规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchListMetricDataResponse> BatchListMetricDataAsync(BatchListMetricDataRequest batchListMetricDataRequest)
         {
@@ -36,8 +35,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 创建一条告警规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateAlarmResponse> CreateAlarmAsync(CreateAlarmRequest createAlarmRequest)
         {
@@ -53,8 +51,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 创建自定义告警模板。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateAlarmTemplateResponse> CreateAlarmTemplateAsync(CreateAlarmTemplateRequest createAlarmTemplateRequest)
         {
@@ -70,8 +67,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 上报自定义事件。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateEventsResponse> CreateEventsAsync(CreateEventsRequest createEventsRequest)
         {
@@ -89,8 +85,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 添加一条或多条指标监控数据。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateMetricDataResponse> CreateMetricDataAsync(CreateMetricDataRequest createMetricDataRequest)
         {
@@ -106,8 +101,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 创建资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateResourceGroupResponse> CreateResourceGroupAsync(CreateResourceGroupRequest createResourceGroupRequest)
         {
@@ -123,8 +117,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 删除一条告警规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteAlarmResponse> DeleteAlarmAsync(DeleteAlarmRequest deleteAlarmRequest)
         {
@@ -141,8 +134,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 根据ID删除自定义告警模板。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteAlarmTemplateResponse> DeleteAlarmTemplateAsync(DeleteAlarmTemplateRequest deleteAlarmTemplateRequest)
         {
@@ -159,8 +151,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 删除一条资源分组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteResourceGroupResponse> DeleteResourceGroupAsync(DeleteResourceGroupRequest deleteResourceGroupRequest)
         {
@@ -177,8 +168,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询告警历史列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAlarmHistoriesResponse> ListAlarmHistoriesAsync(ListAlarmHistoriesRequest listAlarmHistoriesRequest)
         {
@@ -194,8 +184,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询自定义告警模板列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAlarmTemplatesResponse> ListAlarmTemplatesAsync(ListAlarmTemplatesRequest listAlarmTemplatesRequest)
         {
@@ -211,8 +200,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAlarmsResponse> ListAlarmsAsync(ListAlarmsRequest listAlarmsRequest)
         {
@@ -228,8 +216,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 根据事件监控名称，查询该事件发生的详细信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListEventDetailResponse> ListEventDetailAsync(ListEventDetailRequest listEventDetailRequest)
         {
@@ -246,8 +233,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询事件监控列表，包括系统事件和自定义事件。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListEventsResponse> ListEventsAsync(ListEventsRequest listEventsRequest)
         {
@@ -263,8 +249,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询系统当前可监控指标列表，可以指定指标命名空间、指标名称、维度、排序方式，起始记录和最大记录条数过滤查询结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest listMetricsRequest)
         {
@@ -280,8 +265,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询所创建的所有资源分组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListResourceGroupResponse> ListResourceGroupAsync(ListResourceGroupRequest listResourceGroupRequest)
         {
@@ -297,8 +281,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 根据告警ID查询告警规则信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowAlarmResponse> ShowAlarmAsync(ShowAlarmRequest showAlarmRequest)
         {
@@ -315,8 +298,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询指定时间范围指定事件类型的主机配置数据，可以通过参数指定需要查询的数据维度。注意：该接口提供给HANA场景下SAP Monitor查询主机配置数据，其他场景下查不到主机配置数据。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowEventDataResponse> ShowEventDataAsync(ShowEventDataRequest showEventDataRequest)
         {
@@ -332,8 +314,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询指定时间范围指定指标的指定粒度的监控数据，可以通过参数指定需要查询的数据维度。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowMetricDataResponse> ShowMetricDataAsync(ShowMetricDataRequest showMetricDataRequest)
         {
@@ -349,8 +330,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 查询用户可以创建的资源配额总数及当前使用量，当前仅有告警规则一种资源类型。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
         {
@@ -366,8 +346,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 根据资源分组ID查询资源分组下的资源。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowResourceGroupResponse> ShowResourceGroupAsync(ShowResourceGroupRequest showResourceGroupRequest)
         {
@@ -384,8 +363,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 修改告警规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateAlarmResponse> UpdateAlarmAsync(UpdateAlarmRequest updateAlarmRequest)
         {
@@ -402,8 +380,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 启动或停止一条告警规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateAlarmActionResponse> UpdateAlarmActionAsync(UpdateAlarmActionRequest updateAlarmActionRequest)
         {
@@ -420,8 +397,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 更新自定义告警模板。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateAlarmTemplateResponse> UpdateAlarmTemplateAsync(UpdateAlarmTemplateRequest updateAlarmTemplateRequest)
         {
@@ -438,8 +414,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         ///
         /// 更新资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateResourceGroupResponse> UpdateResourceGroupAsync(UpdateResourceGroupRequest updateResourceGroupRequest)
         {

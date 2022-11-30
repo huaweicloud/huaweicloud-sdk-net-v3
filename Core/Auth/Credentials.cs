@@ -21,15 +21,24 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
+using System.Text.RegularExpressions;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
     public abstract class Credentials
     {
+        public static readonly string DEFAULT_ENDPOINT_REG =
+            "^[a-z][a-z0-9-]+(\\.[a-z]{2,}-[a-z]+-\\d{1,2})?\\.(my)?(huaweicloud|myhwclouds).(com|cn)";
         public abstract Dictionary<string, string> GetPathParamDictionary();
 
         public abstract Task<HttpRequest> SignAuthRequest(HttpRequest request);
 
         public abstract Credentials ProcessAuthParams(SdkHttpClient client, string regionId);
+
+        public abstract void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId);
+
+        public static Func<HttpRequest, bool> DefaultDerivedPredicate = httpRequest =>
+            !Regex.IsMatch(httpRequest.Url.Host, DEFAULT_ENDPOINT_REG);
     }
 }

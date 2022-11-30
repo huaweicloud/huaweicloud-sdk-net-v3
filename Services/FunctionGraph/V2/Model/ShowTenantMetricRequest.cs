@@ -36,6 +36,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
+        /// <summary>
+        /// 指标类型，为空或不在取值范围内时，查询所有指标。取值范围：totalCount 调用次数；errorCount 错误次数； averageDuration 运行时间；running 运行中个数；rejectCount  拒绝个数。
+        /// </summary>
+        [SDKProperty("metric_type", IsQuery = true)]
+        [JsonProperty("metric_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string MetricType { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -47,6 +54,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  period: ").Append(Period).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  metricType: ").Append(MetricType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,6 +90,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&
                     this.EndTime.Equals(input.EndTime))
+                ) && 
+                (
+                    this.MetricType == input.MetricType ||
+                    (this.MetricType != null &&
+                    this.MetricType.Equals(input.MetricType))
                 );
         }
 
@@ -99,6 +112,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null)
                     hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.MetricType != null)
+                    hashCode = hashCode * 59 + this.MetricType.GetHashCode();
                 return hashCode;
             }
         }

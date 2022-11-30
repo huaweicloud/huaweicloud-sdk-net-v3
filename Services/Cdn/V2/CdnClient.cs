@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         ///
         /// 批量域名复制接口
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchCopyDomainResponse BatchCopyDomain(BatchCopyDomainRequest batchCopyDomainRequest)
         {
@@ -45,8 +44,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：10次/min。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DownloadRegionCarrierExcelResponse DownloadRegionCarrierExcel(DownloadRegionCarrierExcelRequest downloadRegionCarrierExcelRequest)
         {
@@ -72,8 +70,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：10次/min。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DownloadStatisticsExcelResponse DownloadStatisticsExcel(DownloadStatisticsExcelRequest downloadStatisticsExcelRequest)
         {
@@ -97,8 +94,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：10次/min。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public SetChargeModesResponse SetChargeModes(SetChargeModesRequest setChargeModesRequest)
         {
@@ -126,8 +122,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：2次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowBandwidthCalcResponse ShowBandwidthCalc(ShowBandwidthCalcRequest showBandwidthCalcRequest)
         {
@@ -151,8 +146,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：5次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowChargeModesResponse ShowChargeModes(ShowChargeModesRequest showChargeModesRequest)
         {
@@ -181,8 +175,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：15次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainLocationStatsResponse ShowDomainLocationStats(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
         {
@@ -211,8 +204,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：15次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainStatsResponse ShowDomainStats(ShowDomainStatsRequest showDomainStatsRequest)
         {
@@ -240,8 +232,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：5次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowTopDomainNamesResponse ShowTopDomainNames(ShowTopDomainNamesRequest showTopDomainNamesRequest)
         {
@@ -269,8 +260,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// - 单租户调用频率：5次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowTopUrlResponse ShowTopUrl(ShowTopUrlRequest showTopUrlRequest)
         {

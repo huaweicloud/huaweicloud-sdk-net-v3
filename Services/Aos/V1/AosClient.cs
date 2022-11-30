@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 此命令用于执行已有的执行计划(execution plan)
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ApplyExecutionPlanResponse ApplyExecutionPlan(ApplyExecutionPlanRequest applyExecutionPlanRequest)
         {
@@ -37,8 +36,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 此命令用于生成一个执行计划(execution plan)
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateExecutionPlanResponse CreateExecutionPlan(CreateExecutionPlanRequest createExecutionPlanRequest)
         {
@@ -55,8 +53,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 删除堆栈
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteStackResponse DeleteStack(DeleteStackRequest deleteStackRequest)
         {
@@ -73,8 +70,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 预估执行计划的价格
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EstimateExecutionPlanPriceResponse EstimateExecutionPlanPrice(EstimateExecutionPlanPriceRequest estimateExecutionPlanPriceRequest)
         {
@@ -92,8 +88,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 获取堆栈当前使用的模板
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public GetStackTemplateResponse GetStackTemplate(GetStackTemplateRequest getStackTemplateRequest)
         {
@@ -110,8 +105,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 列举执行计划
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListExecutionPlansResponse ListExecutionPlans(ListExecutionPlansRequest listExecutionPlansRequest)
         {
@@ -128,8 +122,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 获取栈的细节更新状态，可以获取整个栈从生成到当前时间点的所有状态
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListStackEventsResponse ListStackEvents(ListStackEventsRequest listStackEventsRequest)
         {
@@ -146,8 +139,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 列举堆栈的输出
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListStackOutputsResponse ListStackOutputs(ListStackOutputsRequest listStackOutputsRequest)
         {
@@ -164,8 +156,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 获取堆栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListStackResourcesResponse ListStackResources(ListStackResourcesRequest listStackResourcesRequest)
         {
@@ -182,8 +173,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 此命令用于解析模板参数
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ParseTemplateVariablesResponse ParseTemplateVariables(ParseTemplateVariablesRequest parseTemplateVariablesRequest)
         {
@@ -202,8 +192,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// * 如果资源栈当前可以回滚，即处于&#x60;ROLLBACK_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许回滚并返回响应的错误码
         /// * 继续回滚也有可能会回滚失败。如果失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用ContinueRollbackStack去继续触发回滚
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ContinueRollbackStackResponse ContinueRollbackStack(ContinueRollbackStackRequest continueRollbackStackRequest)
         {
@@ -223,8 +212,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// * 当请求中不含有模板（template）、参数（vars）等信息，将生成一个无任何资源的空资源栈，返回资源栈ID（stack_id）
         /// * 当请求中携带了模板（template）、参数（vars）等信息，则会同时创建并部署资源栈，返回资源栈ID（stack_id）和部署ID（deployment_id）
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateStackResponse CreateStack(CreateStackRequest createStackRequest)
         {
@@ -248,8 +236,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// * 当触发的部署失败时，如果堆栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeployStackResponse DeployStack(DeployStackRequest deployStackRequest)
         {
@@ -272,8 +259,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// ListStacks返回的只有摘要信息（具体摘要信息见ListStacksResponseBody），如果用户需要详细的资源栈元数据请调用GetStackMetadata
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListStacksResponse ListStacks(ListStacksRequest listStacksRequest)
         {

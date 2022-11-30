@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 将参数模板应用到实例，可以指定一个或多个实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ApplyConfigurationResponse> ApplyConfigurationAsync(ApplyConfigurationRequest applyConfigurationRequest)
         {
@@ -37,8 +36,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 批量添加或删除指定数据库实例的标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchTagActionResponse> BatchTagActionAsync(BatchTagActionRequest batchTagActionRequest)
         {
@@ -56,8 +54,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 校验实例是否可以与指定实例建立/解除容灾关系。若接口返回成功，表示可以与指定实例建立/解除容灾关系。
         /// 该接口需要对建立/解除容灾关系的两个实例各调用一次，2次调用都响应成功才能进行容灾关系的搭建/解除。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CheckDisasterRecoveryOperationResponse> CheckDisasterRecoveryOperationAsync(CheckDisasterRecoveryOperationRequest checkDisasterRecoveryOperationRequest)
         {
@@ -70,12 +67,77 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 判断弱密码
+        ///
+        /// 判断弱密码。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckWeekPasswordResponse> CheckWeekPasswordAsync(CheckWeekPasswordRequest checkWeekPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/weak-password-verification",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkWeekPasswordRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CheckWeekPasswordResponse>(response);
+        }
+        
+        /// <summary>
+        /// 参数模板比较
+        ///
+        /// 比较两个参数模板之间的差异
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CompareConfigurationResponse> CompareConfigurationAsync(CompareConfigurationRequest compareConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CompareConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 复制参数模板
+        ///
+        /// 复制参数模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CopyConfigurationResponse> CopyConfigurationAsync(CopyConfigurationRequest copyConfigurationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , copyConfigurationRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyConfigurationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CopyConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建手动备份
+        ///
+        /// 创建手动备份。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateBackResponse> CreateBackAsync(CreateBackRequest createBackRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createBackRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBackRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateBackResponse>(response);
+        }
+        
+        /// <summary>
         /// ‘创建冷数据存储’
         ///
         /// ‘创建冷数据存储’
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateColdVolumeResponse> CreateColdVolumeAsync(CreateColdVolumeRequest createColdVolumeRequest)
         {
@@ -92,8 +154,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 创建参数模板。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest)
         {
@@ -109,8 +170,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateDisasterRecoveryResponse> CreateDisasterRecoveryAsync(CreateDisasterRecoveryRequest createDisasterRecoveryRequest)
         {
@@ -127,8 +187,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 创建数据库实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest)
         {
@@ -144,8 +203,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 删除手动备份
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest deleteBackupRequest)
         {
@@ -162,8 +220,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 删除指定参数模板。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteConfigurationResponse> DeleteConfigurationAsync(DeleteConfigurationRequest deleteConfigurationRequest)
         {
@@ -180,8 +237,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 解除实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功解除容灾关系。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteDisasterRecoveryResponse> DeleteDisasterRecoveryAsync(DeleteDisasterRecoveryRequest deleteDisasterRecoveryRequest)
         {
@@ -194,12 +250,28 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 删除扩容失败的节点
+        ///
+        /// 删除扩容失败的节点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteEnlargeFailNodeResponse> DeleteEnlargeFailNodeAsync(DeleteEnlargeFailNodeRequest deleteEnlargeFailNodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteEnlargeFailNodeRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-failed-nodes",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnlargeFailNodeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteEnlargeFailNodeResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除实例
         ///
         /// 删除数据库实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest)
         {
@@ -216,8 +288,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 扩容指定集群实例的节点数量。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ExpandInstanceNodeResponse> ExpandInstanceNodeAsync(ExpandInstanceNodeRequest expandInstanceNodeRequest)
         {
@@ -230,12 +301,44 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询实例可变更规格
+        ///
+        /// 查询实例可变更规格。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAvailableFlavorInfosResponse> ListAvailableFlavorInfosAsync(ListAvailableFlavorInfosRequest listAvailableFlavorInfosRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listAvailableFlavorInfosRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableFlavorInfosRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListAvailableFlavorInfosResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询支持参数模板的引擎信息
+        ///
+        /// 查询支持参数模板的引擎信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConfigurationDatastoresResponse> ListConfigurationDatastoresAsync(ListConfigurationDatastoresRequest listConfigurationDatastoresRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/datastores",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationDatastoresRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListConfigurationDatastoresResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取参数模板列表
         ///
         /// 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListConfigurationTemplatesResponse> ListConfigurationTemplatesAsync(ListConfigurationTemplatesRequest listConfigurationTemplatesRequest)
         {
@@ -251,8 +354,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest)
         {
@@ -268,8 +370,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 查询指定实例类型的数据库版本信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListDatastoresResponse> ListDatastoresAsync(ListDatastoresRequest listDatastoresRequest)
         {
@@ -286,8 +387,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 查询专属资源列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListDedicatedResourcesResponse> ListDedicatedResourcesAsync(ListDedicatedResourcesRequest listDedicatedResourcesRequest)
         {
@@ -299,12 +399,27 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询企业项目配额
+        ///
+        /// 查询企业项目配额。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListEpsQuotasResponse> ListEpsQuotasAsync(ListEpsQuotasRequest listEpsQuotasRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEpsQuotasRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListEpsQuotasResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询数据库规格
         ///
         /// 查询指定条件下的实例规格信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListFlavorInfosResponse> ListFlavorInfosAsync(ListFlavorInfosRequest listFlavorInfosRequest)
         {
@@ -320,8 +435,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 查询指定条件下的所有实例规格信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
@@ -337,8 +451,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 查询指定实例的标签信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListInstanceTagsResponse> ListInstanceTagsAsync(ListInstanceTagsRequest listInstanceTagsRequest)
         {
@@ -355,8 +468,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 根据指定条件查询数据库实例列表和详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest listInstancesRequest)
         {
@@ -372,8 +484,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 根据标签查询指定的数据库实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListInstancesByResourceTagsResponse> ListInstancesByResourceTagsAsync(ListInstancesByResourceTagsRequest listInstancesByResourceTagsRequest)
         {
@@ -389,8 +500,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 根据标签查询指定的数据库实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListInstancesByTagsResponse> ListInstancesByTagsAsync(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
@@ -402,12 +512,43 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询项目标签
+        ///
+        /// 查询指定项目的标签信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectTagsResponse> ListProjectTagsAsync(ListProjectTagsRequest listProjectTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListProjectTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询回收站实例列表
+        ///
+        /// 查询回收站所有引擎的实例列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRecycleInstancesResponse> ListRecycleInstancesAsync(ListRecycleInstancesRequest listRecycleInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListRecycleInstancesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询实例可恢复的时间段
         ///
         /// 查询实例可恢复的时间段
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListRestoreTimeResponse> ListRestoreTimeAsync(ListRestoreTimeRequest listRestoreTimeRequest)
         {
@@ -424,8 +565,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 查询数据库慢日志信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListSlowLogsResponse> ListSlowLogsAsync(ListSlowLogsRequest listSlowLogsRequest)
         {
@@ -438,12 +578,44 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 修改企业项目配额
+        ///
+        /// 修改企业项目配额。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyEpsQuotasResponse> ModifyEpsQuotasAsync(ModifyEpsQuotasRequest modifyEpsQuotasRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyEpsQuotasRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<ModifyEpsQuotasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改数据库端口
+        ///
+        /// 修改数据库实例的端口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyPortResponse> ModifyPortAsync(ModifyPortRequest modifyPortRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , modifyPortRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPortRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<ModifyPortResponse>(response);
+        }
+        
+        /// <summary>
         /// 绑定/解绑弹性公网IP
         ///
         /// 实例下的节点绑定弹性公网IP/解绑弹性公网IP
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ModifyPublicIpResponse> ModifyPublicIpAsync(ModifyPublicIpRequest modifyPublicIpRequest)
         {
@@ -457,12 +629,31 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 暂停/恢复具备容灾关系的实例数据同步
+        ///
+        /// 该接口用于暂停/恢复具备容灾关系的实例数据同步。
+        /// 
+        /// 该接口需要对具备容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功暂停/恢复容灾实例数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<PauseResumeDataSynchronizationResponse> PauseResumeDataSynchronizationAsync(PauseResumeDataSynchronizationRequest pauseResumeDataSynchronizationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , pauseResumeDataSynchronizationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseResumeDataSynchronizationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            PauseResumeDataSynchronizationResponse pauseResumeDataSynchronizationResponse = JsonUtils.DeSerializeNull<PauseResumeDataSynchronizationResponse>(response);
+            return pauseResumeDataSynchronizationResponse;
+        }
+        
+        /// <summary>
         /// 修改实例的管理员密码
         ///
         /// 修改实例的管理员密码。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest resetPasswordRequest)
         {
@@ -479,8 +670,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 扩容冷数据存储。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ResizeColdVolumeResponse> ResizeColdVolumeAsync(ResizeColdVolumeRequest resizeColdVolumeRequest)
         {
@@ -497,8 +687,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 变更实例的规格。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ResizeInstanceResponse> ResizeInstanceAsync(ResizeInstanceRequest resizeInstanceRequest)
         {
@@ -515,8 +704,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 扩容实例的存储容量大小。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ResizeInstanceVolumeResponse> ResizeInstanceVolumeAsync(ResizeInstanceVolumeRequest resizeInstanceVolumeRequest)
         {
@@ -533,8 +721,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 重启实例的数据库服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RestartInstanceResponse> RestartInstanceAsync(RestartInstanceRequest restartInstanceRequest)
         {
@@ -551,8 +738,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 恢复到已有实例
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RestoreExistingInstanceResponse> RestoreExistingInstanceAsync(RestoreExistingInstanceRequest restoreExistingInstanceRequest)
         {
@@ -569,8 +755,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 设置磁盘自动扩容策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SetAutoEnlargePolicyResponse> SetAutoEnlargePolicyAsync(SetAutoEnlargePolicyRequest setAutoEnlargePolicyRequest)
         {
@@ -586,8 +771,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 设置自动备份策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SetBackupPolicyResponse> SetBackupPolicyAsync(SetBackupPolicyRequest setBackupPolicyRequest)
         {
@@ -600,12 +784,43 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 设置回收策略
+        ///
+        /// 设置已删除实例保留天数，修改保留天数后删除的实例按照新的天数保留，修改之前已在回收站的实例保留天数不变。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetRecyclePolicyResponse> SetRecyclePolicyAsync(SetRecyclePolicyRequest setRecyclePolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecyclePolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询备份列表
+        ///
+        /// 根据指定条件查询备份列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAllInstancesBackupsResponse> ShowAllInstancesBackupsAsync(ShowAllInstancesBackupsRequest showAllInstancesBackupsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllInstancesBackupsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowAllInstancesBackupsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询参数模板可应用的实例列表
         ///
         /// 查询参数模板可应用的实例列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowApplicableInstancesResponse> ShowApplicableInstancesAsync(ShowApplicableInstancesRequest showApplicableInstancesRequest)
         {
@@ -621,8 +836,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 查询参数模板应用历史
         ///
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowApplyHistoryResponse> ShowApplyHistoryAsync(ShowApplyHistoryRequest showApplyHistoryRequest)
         {
@@ -635,12 +849,28 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询磁盘自动扩容策略
+        ///
+        /// 查询磁盘自动扩容策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutoEnlargePolicyResponse> ShowAutoEnlargePolicyAsync(ShowAutoEnlargePolicyRequest showAutoEnlargePolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showAutoEnlargePolicyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询自动备份策略
         ///
         /// 查询自动备份策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowBackupPolicyResponse> ShowBackupPolicyAsync(ShowBackupPolicyRequest showBackupPolicyRequest)
         {
@@ -657,8 +887,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 获取指定参数模板的详细信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowConfigurationDetailResponse> ShowConfigurationDetailAsync(ShowConfigurationDetailRequest showConfigurationDetailRequest)
         {
@@ -671,12 +900,28 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询数据库错误日志信息
+        ///
+        /// 查询数据库错误日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowErrorLogResponse> ShowErrorLogAsync(ShowErrorLogRequest showErrorLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showErrorLogRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowErrorLogResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定实例的参数
         ///
         /// 获取指定实例的参数信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowInstanceConfigurationResponse> ShowInstanceConfigurationAsync(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
         {
@@ -693,8 +938,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 该接口用于获取容灾实例主/备角色信息，以便后续容灾实例备升主和容灾实例主降备接口调用。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowInstanceRoleResponse> ShowInstanceRoleAsync(ShowInstanceRoleRequest showInstanceRoleRequest)
         {
@@ -707,12 +951,27 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询创建实例或扩容节点时需要的IP数量
+        ///
+        /// 查询创建实例或扩容节点时需要的IP数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIpNumRequirementResponse> ShowIpNumRequirementAsync(ShowIpNumRequirementRequest showIpNumRequirementRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ip-num-requirement",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpNumRequirementRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowIpNumRequirementResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询实例参数的修改历史
         ///
         /// 查询实例参数的修改历史
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowModifyHistoryResponse> ShowModifyHistoryAsync(ShowModifyHistoryRequest showModifyHistoryRequest)
         {
@@ -725,12 +984,28 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 获取容灾实例数据同步状态
+        ///
+        /// 获取容灾实例数据同步状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPauseResumeStutusResponse> ShowPauseResumeStutusAsync(ShowPauseResumeStutusRequest showPauseResumeStutusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showPauseResumeStutusRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPauseResumeStutusRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowPauseResumeStutusResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询配额
         ///
         /// 查询单租户在GaussDBforNoSQL服务下的资源配额。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
         {
@@ -742,12 +1017,27 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询回收策略
+        ///
+        /// 查询回收策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRecyclePolicyResponse> ShowRecyclePolicyAsync(ShowRecyclePolicyRequest showRecyclePolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowRecyclePolicyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询可恢复的实例列表
         ///
         /// 查询用户可恢复的实例列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowRestorableListResponse> ShowRestorableListAsync(ShowRestorableListRequest showRestorableListRequest)
         {
@@ -760,12 +1050,28 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询慢日志脱敏状态
+        ///
+        /// 查询慢日志脱敏状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSlowLogDesensitizationResponse> ShowSlowLogDesensitizationAsync(ShowSlowLogDesensitizationRequest showSlowLogDesensitizationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showSlowLogDesensitizationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSlowLogDesensitizationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowSlowLogDesensitizationResponse>(response);
+        }
+        
+        /// <summary>
         /// 缩容指定集群实例的节点数量
         ///
         /// 缩容指定集群实例的节点数量。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShrinkInstanceNodeResponse> ShrinkInstanceNodeAsync(ShrinkInstanceNodeRequest shrinkInstanceNodeRequest)
         {
@@ -778,12 +1084,28 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 设置慢日志脱敏状态
+        ///
+        /// 设置慢日志脱敏状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchSlowlogDesensitizationResponse> SwitchSlowlogDesensitizationAsync(SwitchSlowlogDesensitizationRequest switchSlowlogDesensitizationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchSlowlogDesensitizationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSlowlogDesensitizationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<SwitchSlowlogDesensitizationResponse>(response);
+        }
+        
+        /// <summary>
         /// 切换实例SSL开关
         ///
         /// 切换实例SSL开关。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SwitchSslResponse> SwitchSslAsync(SwitchSslRequest switchSslRequest)
         {
@@ -800,8 +1122,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 该接口用于对已经搭建容灾关系的实例，将备实例升级为主实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SwitchToMasterResponse> SwitchToMasterAsync(SwitchToMasterRequest switchToMasterRequest)
         {
@@ -818,8 +1139,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 该接口用于对已经搭建容灾关系的实例，将主实例降级为备实例。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SwitchToSlaveResponse> SwitchToSlaveAsync(SwitchToSlaveRequest switchToSlaveRequest)
         {
@@ -832,12 +1152,28 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 修改副本集跨网段访问配置
+        ///
+        /// 修改副本集跨网段访问配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateClientNetworkResponse> UpdateClientNetworkAsync(UpdateClientNetworkRequest updateClientNetworkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateClientNetworkRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/client-network",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClientNetworkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpdateClientNetworkResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改参数模板参数
         ///
         /// 修改参数模板参数。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest updateConfigurationRequest)
         {
@@ -854,8 +1190,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 修改指定实例的参数。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateInstanceConfigurationResponse> UpdateInstanceConfigurationAsync(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
         {
@@ -872,8 +1207,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 修改实例名称
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateInstanceNameResponse> UpdateInstanceNameAsync(UpdateInstanceNameRequest updateInstanceNameRequest)
         {
@@ -890,8 +1224,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 变更实例关联的安全组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateSecurityGroupResponse> UpdateSecurityGroupAsync(UpdateSecurityGroupRequest updateSecurityGroupRequest)
         {
@@ -908,8 +1241,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 升级数据库补丁版本
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpgradeDbVersionResponse> UpgradeDbVersionAsync(UpgradeDbVersionRequest upgradeDbVersionRequest)
         {
@@ -926,8 +1258,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 查询当前支持的API版本信息列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListApiVersionResponse> ListApiVersionAsync(ListApiVersionRequest listApiVersionRequest)
         {
@@ -943,8 +1274,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         ///
         /// 查询指定API版本信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
         {

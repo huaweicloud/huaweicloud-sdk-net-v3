@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 待新增只读节点个数。 取值范围：1-5。
         /// </summary>
         [JsonProperty("num", NullValueHandling = NullValueHandling.Ignore)]
-        public string Num { get; set; }
+        public int? Num { get; set; }
 
         /// <summary>
         /// 同步延迟时间。取值范围：0~1200毫秒。默认取值为0。

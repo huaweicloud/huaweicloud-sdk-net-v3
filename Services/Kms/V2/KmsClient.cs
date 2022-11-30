@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：批量添加删除密钥标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchCreateKmsTagsResponse BatchCreateKmsTags(BatchCreateKmsTagsRequest batchCreateKmsTagsRequest)
         {
@@ -38,8 +37,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 说明：
         ///    - 创建密钥的用户才能撤销该密钥授权。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CancelGrantResponse CancelGrant(CancelGrantRequest cancelGrantRequest)
         {
@@ -56,8 +54,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 功能介绍：取消计划删除密钥。
         /// - 说明：密钥处于“计划删除”状态才能取消计划删除密钥。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CancelKeyDeletionResponse CancelKeyDeletion(CancelKeyDeletionRequest cancelKeyDeletionRequest)
         {
@@ -80,8 +77,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///    - 授权中retiring_principal指向的用户；
         ///    - 当授权的操作列表中包含retire-grant时，grantee_principal指向的用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CancelSelfGrantResponse CancelSelfGrant(CancelSelfGrantRequest cancelSelfGrantRequest)
         {
@@ -97,8 +93,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：创建数据密钥，返回结果包含明文和密文。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateDatakeyResponse CreateDatakey(CreateDatakeyRequest createDatakeyRequest)
         {
@@ -114,8 +109,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：创建数据密钥，返回结果只包含密文。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateDatakeyWithoutPlaintextResponse CreateDatakeyWithoutPlaintext(CreateDatakeyWithoutPlaintextRequest createDatakeyWithoutPlaintextRequest)
         {
@@ -133,8 +127,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 说明：
         ///    - 服务默认主密钥（密钥别名后缀为“/default”）不可以授权。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateGrantResponse CreateGrant(CreateGrantRequest createGrantRequest)
         {
@@ -152,8 +145,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 对称密钥为长度为256位AES密钥或者128位SM4密钥，可用于小量数据的加密或者用于加密数据密钥。
         /// - 非对称密钥可以为RSA密钥对或者ECC密钥对（包含SM2密钥对），可用于加解密数据、数字签名及验签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateKeyResponse CreateKey(CreateKeyRequest createKeyRequest)
         {
@@ -169,8 +161,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - \&quot;创建租户专属密钥库，专属密钥库使用DHSM实例作为密钥的存储\&quot;
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateKeyStoreResponse CreateKeyStore(CreateKeyStoreRequest createKeyStoreRequest)
         {
@@ -186,8 +177,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：添加密钥标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateKmsTagResponse CreateKmsTag(CreateKmsTagRequest createKmsTagRequest)
         {
@@ -205,8 +195,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 功能介绍：获取导入密钥的必要参数，包括密钥导入令牌和密钥加密公钥。
         /// - 说明：返回的公钥类型默认为RSA_2048。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateParametersForImportResponse CreateParametersForImport(CreateParametersForImportRequest createParametersForImportRequest)
         {
@@ -223,8 +212,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 功能介绍：
         ///   生成8~8192bit范围内的随机数。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateRandomResponse CreateRandom(CreateRandomRequest createRandomRequest)
         {
@@ -240,8 +228,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：解密数据。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DecryptDataResponse DecryptData(DecryptDataRequest decryptDataRequest)
         {
@@ -257,8 +244,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：解密数据密钥，用指定的主密钥解密数据密钥。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DecryptDatakeyResponse DecryptDatakey(DecryptDatakeyRequest decryptDatakeyRequest)
         {
@@ -274,8 +260,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：删除密钥材料信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest)
         {
@@ -291,8 +276,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：计划多少天后删除密钥，可设置7天～1096天内删除密钥。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteKeyResponse DeleteKey(DeleteKeyRequest deleteKeyRequest)
         {
@@ -308,8 +292,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// 删除租户专属密钥库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteKeyStoreResponse DeleteKeyStore(DeleteKeyStoreRequest deleteKeyStoreRequest)
         {
@@ -326,8 +309,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：删除密钥标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteTagResponse DeleteTag(DeleteTagRequest deleteTagRequest)
         {
@@ -346,8 +328,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 功能介绍：禁用密钥，密钥禁用后不可以使用。
         /// - 说明：密钥为启用状态才能禁用密钥。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DisableKeyResponse DisableKey(DisableKeyRequest disableKeyRequest)
         {
@@ -363,8 +344,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：关闭用户主密钥轮换。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DisableKeyRotationResponse DisableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest)
         {
@@ -380,8 +360,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// 禁用租户专属密钥库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DisableKeyStoreResponse DisableKeyStore(DisableKeyStoreRequest disableKeyStoreRequest)
         {
@@ -399,8 +378,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// - 功能介绍：启用密钥，密钥启用后才可以使用。
         /// - 说明：密钥为禁用状态才能启用密钥。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EnableKeyResponse EnableKey(EnableKeyRequest enableKeyRequest)
         {
@@ -419,8 +397,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///   - 开启密钥轮换后，默认轮换间隔时间为365天。
         ///   - 默认主密钥及外部导入密钥不支持轮换操作。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EnableKeyRotationResponse EnableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest)
         {
@@ -436,8 +413,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// 启用租户专属密钥库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EnableKeyStoreResponse EnableKeyStore(EnableKeyStoreRequest enableKeyStoreRequest)
         {
@@ -454,8 +430,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：加密数据，用指定的用户主密钥加密数据。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EncryptDataResponse EncryptData(EncryptDataRequest encryptDataRequest)
         {
@@ -471,8 +446,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：加密数据密钥，用指定的主密钥加密数据密钥。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EncryptDatakeyResponse EncryptDatakey(EncryptDatakeyRequest encryptDatakeyRequest)
         {
@@ -488,8 +462,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：导入密钥材料。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest importKeyMaterialRequest)
         {
@@ -505,8 +478,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询密钥的授权列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListGrantsResponse ListGrants(ListGrantsRequest listGrantsRequest)
         {
@@ -522,8 +494,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询密钥详细信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListKeyDetailResponse ListKeyDetail(ListKeyDetailRequest listKeyDetailRequest)
         {
@@ -539,8 +510,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// 查询租户专属密钥库列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListKeyStoresResponse ListKeyStores(ListKeyStoresRequest listKeyStoresRequest)
         {
@@ -556,8 +526,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询用户所有密钥列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListKeysResponse ListKeys(ListKeysRequest listKeysRequest)
         {
@@ -573,8 +542,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询密钥实例。通过标签过滤，查询指定用户主密钥的详细信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListKmsByTagsResponse ListKmsByTags(ListKmsByTagsRequest listKmsByTagsRequest)
         {
@@ -591,8 +559,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询用户在指定项目下的所有标签集合。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListKmsTagsResponse ListKmsTags(ListKmsTagsRequest listKmsTagsRequest)
         {
@@ -608,8 +575,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询用户可以退役的授权列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListRetirableGrantsResponse ListRetirableGrants(ListRetirableGrantsRequest listRetirableGrantsRequest)
         {
@@ -625,8 +591,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询用户主密钥轮换状态。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowKeyRotationStatusResponse ShowKeyRotationStatus(ShowKeyRotationStatusRequest showKeyRotationStatusRequest)
         {
@@ -642,8 +607,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// 获取租户专属密钥库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowKeyStoreResponse ShowKeyStore(ShowKeyStoreRequest showKeyStoreRequest)
         {
@@ -660,8 +624,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询密钥标签。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowKmsTagsResponse ShowKmsTags(ShowKmsTagsRequest showKmsTagsRequest)
         {
@@ -678,8 +641,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 查询用户指定非对称密钥的公钥信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowPublicKeyResponse ShowPublicKey(ShowPublicKeyRequest showPublicKeyRequest)
         {
@@ -695,8 +657,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询实例数，获取用户已经创建的用户主密钥数量。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowUserInstancesResponse ShowUserInstances(ShowUserInstancesRequest showUserInstancesRequest)
         {
@@ -712,8 +673,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询配额，查询用户可以创建的用户主密钥配额总数及当前使用量信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowUserQuotasResponse ShowUserQuotas(ShowUserQuotasRequest showUserQuotasRequest)
         {
@@ -729,8 +689,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行数字签名。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public SignResponse Sign(SignRequest signRequest)
         {
@@ -749,8 +708,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。
         ///    - 密钥处于“计划删除”状态，密钥别名不可以修改。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateKeyAliasResponse UpdateKeyAlias(UpdateKeyAliasRequest updateKeyAliasRequest)
         {
@@ -769,8 +727,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。
         ///    - 密钥处于“计划删除”状态，密钥描述不可以修改。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateKeyDescriptionResponse UpdateKeyDescription(UpdateKeyDescriptionRequest updateKeyDescriptionRequest)
         {
@@ -786,8 +743,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：修改用户主密钥轮换周期。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateKeyRotationIntervalResponse UpdateKeyRotationInterval(UpdateKeyRotationIntervalRequest updateKeyRotationIntervalRequest)
         {
@@ -803,8 +759,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行签名验证。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ValidateSignatureResponse ValidateSignature(ValidateSignatureRequest validateSignatureRequest)
         {
@@ -820,8 +775,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查指定API版本信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowVersionResponse ShowVersion(ShowVersionRequest showVersionRequest)
         {
@@ -838,8 +792,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         ///
         /// - 功能介绍：查询API版本信息列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowVersionsResponse ShowVersions(ShowVersionsRequest showVersionsRequest)
         {

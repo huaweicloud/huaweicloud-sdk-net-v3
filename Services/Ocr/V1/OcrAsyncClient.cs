@@ -23,8 +23,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 只对识别成功的票证进行计费，识别失败的票证不计费。例如图片中包含三张票证，有两张识别成功，一张识别失败，此时接口计费两次。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeAutoClassificationResponse> RecognizeAutoClassificationAsync(RecognizeAutoClassificationRequest recognizeAutoClassificationRequest)
         {
@@ -44,8 +43,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeBankcardResponse> RecognizeBankcardAsync(RecognizeBankcardRequest recognizeBankcardRequest)
         {
@@ -61,8 +59,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别名片图片上的文字信息，并返回识别的结构化结果。支持对多种不同版式名片进行结构化信息提取。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeBusinessCardResponse> RecognizeBusinessCardAsync(RecognizeBusinessCardRequest recognizeBusinessCardRequest)
         {
@@ -82,8 +79,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeBusinessLicenseResponse> RecognizeBusinessLicenseAsync(RecognizeBusinessLicenseRequest recognizeBusinessLicenseRequest)
         {
@@ -99,8 +95,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别柬文身份证图片中的文字内容，并将识别的结构化结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeCambodianIdCardResponse> RecognizeCambodianIdCardAsync(RecognizeCambodianIdCardRequest recognizeCambodianIdCardRequest)
         {
@@ -116,8 +111,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeChileIdCardResponse> RecognizeChileIdCardAsync(RecognizeChileIdCardRequest recognizeChileIdCardRequest)
         {
@@ -137,8 +131,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用智能分类识别服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeDriverLicenseResponse> RecognizeDriverLicenseAsync(RecognizeDriverLicenseRequest recognizeDriverLicenseRequest)
         {
@@ -154,8 +147,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别往来港澳台证件图片中的文字内容，并将识别的结构化结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeExitEntryPermitResponse> RecognizeExitEntryPermitAsync(RecognizeExitEntryPermitRequest recognizeExitEntryPermitRequest)
         {
@@ -171,8 +163,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别用户上传的表格图片中的文字内容，并将识别的结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeFinancialStatementResponse> RecognizeFinancialStatementAsync(RecognizeFinancialStatementRequest recognizeFinancialStatementRequest)
         {
@@ -192,8 +183,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用智能分类识别服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeFlightItineraryResponse> RecognizeFlightItineraryAsync(RecognizeFlightItineraryRequest recognizeFlightItineraryRequest)
         {
@@ -209,8 +199,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别用于识别用户上传的通用表格图片（或者用户提供的华为云上OBS的通用表格图片文件的URL）中的文字内容，并将识别的结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeGeneralTableResponse> RecognizeGeneralTableAsync(RecognizeGeneralTableRequest recognizeGeneralTableRequest)
         {
@@ -226,8 +215,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别图片上的文字信息，返回识别的文字和坐标。支持扫描文件、电子文档、书籍、票据和表单等多种场景的文字识别。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeGeneralTextResponse> RecognizeGeneralTextAsync(RecognizeGeneralTextRequest recognizeGeneralTextRequest)
         {
@@ -243,8 +231,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别文档中的手写文字信息，并将识别的结构化结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeHandwritingResponse> RecognizeHandwritingAsync(RecognizeHandwritingRequest recognizeHandwritingRequest)
         {
@@ -260,8 +247,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 支持对全国各地区不同版式的防疫健康码、核酸检测记录、行程卡中的14个关键字段进行结构化识别；支持识别4种健康码颜色，包括绿码、黄码、红码、灰码；支持返回各个关键字段的置信度，以便提高人工校验效率。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeHealthCodeResponse> RecognizeHealthCodeAsync(RecognizeHealthCodeRequest recognizeHealthCodeRequest)
         {
@@ -277,8 +263,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别香港身份证中的文字内容，并将识别的结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeHkIdCardResponse> RecognizeHkIdCardAsync(RecognizeHkIdCardRequest recognizeHkIdCardRequest)
         {
@@ -300,8 +285,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeIdCardResponse> RecognizeIdCardAsync(RecognizeIdCardRequest recognizeIdCardRequest)
         {
@@ -341,8 +325,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// - DL: driving license,驾驶证
         /// - ID: identification card,各国颁发的身份证类型证件，比如身份证、选民证、社保卡等。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeIdDocumentResponse> RecognizeIdDocumentAsync(RecognizeIdDocumentRequest recognizeIdDocumentRequest)
         {
@@ -358,8 +341,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别保险单图片上的文字信息，并将识别的结构化结果返回给用户。支持对多板式保险单的扫描图片及手机照片进行结构化信息提取。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeInsurancePolicyResponse> RecognizeInsurancePolicyAsync(RecognizeInsurancePolicyRequest recognizeInsurancePolicyRequest)
         {
@@ -375,8 +357,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 发票验真服务支持10种增值税发票的信息核验，包括增值税专用发票、增值税普通发票、增值税普通发票（卷式）、增值税电子专用发票、增值税电子普通发票、增值税电子普通发票（通行费）、二手车销售统一发票、机动车销售统一发票、区块链电子发票、全电发票，支持返回票面的全部信息。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeInvoiceVerificationResponse> RecognizeInvoiceVerificationAsync(RecognizeInvoiceVerificationRequest recognizeInvoiceVerificationRequest)
         {
@@ -392,8 +373,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别输入图片中的车牌信息，并返回其坐标和内容。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeLicensePlateResponse> RecognizeLicensePlateAsync(RecognizeLicensePlateRequest recognizeLicensePlateRequest)
         {
@@ -409,8 +389,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别澳门身份证图片中的文字内容，并将识别的结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeMacaoIdCardResponse> RecognizeMacaoIdCardAsync(RecognizeMacaoIdCardRequest recognizeMacaoIdCardRequest)
         {
@@ -426,8 +405,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeMainlandTravelPermitResponse> RecognizeMainlandTravelPermitAsync(RecognizeMainlandTravelPermitRequest recognizeMainlandTravelPermitRequest)
         {
@@ -449,8 +427,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeMvsInvoiceResponse> RecognizeMvsInvoiceAsync(RecognizeMvsInvoiceRequest recognizeMvsInvoiceRequest)
         {
@@ -466,8 +443,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别缅甸驾驶证中的文字信息，并返回识别的结构化结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeMyanmarDriverLicenseResponse> RecognizeMyanmarDriverLicenseAsync(RecognizeMyanmarDriverLicenseRequest recognizeMyanmarDriverLicenseRequest)
         {
@@ -483,8 +459,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别缅文身份证中的文字信息，并返回识别的结构化结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeMyanmarIdcardResponse> RecognizeMyanmarIdcardAsync(RecognizeMyanmarIdcardRequest recognizeMyanmarIdcardRequest)
         {
@@ -504,8 +479,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizePassportResponse> RecognizePassportAsync(RecognizePassportRequest recognizePassportRequest)
         {
@@ -521,8 +495,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别核酸检测记录中的文字信息，并将识别的结构化结果返回给用户。PCR，全称Polymerase chain reaction,即聚合酶链式反应.PCR-test也为大众所认知为新型冠状病毒核酸检测测试。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizePcrTestRecordResponse> RecognizePcrTestRecordAsync(RecognizePcrTestRecordRequest recognizePcrTestRecordRequest)
         {
@@ -542,8 +515,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeQualificationCertificateResponse> RecognizeQualificationCertificateAsync(RecognizeQualificationCertificateRequest recognizeQualificationCertificateRequest)
         {
@@ -563,8 +535,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeQuotaInvoiceResponse> RecognizeQuotaInvoiceAsync(RecognizeQuotaInvoiceRequest recognizeQuotaInvoiceRequest)
         {
@@ -584,8 +555,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用智能分类识别服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeTaxiInvoiceResponse> RecognizeTaxiInvoiceAsync(RecognizeTaxiInvoiceRequest recognizeTaxiInvoiceRequest)
         {
@@ -601,8 +571,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别泰国身份证中的文字信息，并返回识别的结构化结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeThailandIdcardResponse> RecognizeThailandIdcardAsync(RecognizeThailandIdcardRequest recognizeThailandIdcardRequest)
         {
@@ -618,8 +587,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别泰国车牌图片中的车牌信息，并返回识别的结构化结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeThailandLicensePlateResponse> RecognizeThailandLicensePlateAsync(RecognizeThailandLicensePlateRequest recognizeThailandLicensePlateRequest)
         {
@@ -639,8 +607,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeTollInvoiceResponse> RecognizeTollInvoiceAsync(RecognizeTollInvoiceRequest recognizeTollInvoiceRequest)
         {
@@ -660,8 +627,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeTrainTicketResponse> RecognizeTrainTicketAsync(RecognizeTrainTicketRequest recognizeTrainTicketRequest)
         {
@@ -679,8 +645,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 说明： 如果图片中包含多张卡证票据，请调用智能分类识别服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeTransportationLicenseResponse> RecognizeTransportationLicenseAsync(RecognizeTransportationLicenseRequest recognizeTransportationLicenseRequest)
         {
@@ -704,8 +669,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用智能分类识别服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeVatInvoiceResponse> RecognizeVatInvoiceAsync(RecognizeVatInvoiceRequest recognizeVatInvoiceRequest)
         {
@@ -725,8 +689,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// 
         /// 如果图片中包含多张卡证票据，请调用智能分类识别服务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeVehicleLicenseResponse> RecognizeVehicleLicenseAsync(RecognizeVehicleLicenseRequest recognizeVehicleLicenseRequest)
         {
@@ -742,8 +705,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeWaybillElectronicResponse> RecognizeWaybillElectronicAsync(RecognizeWaybillElectronicRequest recognizeWaybillElectronicRequest)
         {
@@ -759,8 +721,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别网络图片中的文字内容，并返回识别的结构化结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeWebImageResponse> RecognizeWebImageAsync(RecognizeWebImageRequest recognizeWebImageRequest)
         {
@@ -776,8 +737,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         ///
         /// 识别图片中的车架号信息，并将识别结果返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RecognizeVinResponse> RecognizeVinAsync(RecognizeVinRequest recognizeVinRequest)
         {

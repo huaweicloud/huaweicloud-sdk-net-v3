@@ -33,6 +33,9 @@ namespace HuaweiCloud.SDK.Core.Auth
         private string ProjectId { set; get; }
         private string SecurityToken { set; get; }
         private string IamEndpoint { set; get; }
+        private Func<HttpRequest, bool> DerivedPredicate { set; get; }
+        private string _derivedAuthServiceName;
+        private string _regionId;
 
         public BasicCredentials(string ak, string sk, string projectId = null)
         {
@@ -61,6 +64,35 @@ namespace HuaweiCloud.SDK.Core.Auth
         {
             this.SecurityToken = token;
             return this;
+        }
+
+        public BasicCredentials WithDerivedPredicate(Func<HttpRequest, bool> func)
+        {
+            this.DerivedPredicate = func;
+            return this;
+        }
+
+        protected bool IsDerivedAuth(HttpRequest httpRequest)
+        {
+            if (DerivedPredicate == null)
+            {
+                return false;
+            }
+
+            return DerivedPredicate(httpRequest);
+        }
+
+        public override void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId)
+        {
+            if (this._derivedAuthServiceName == null)
+            {
+                this._derivedAuthServiceName = derivedAuthServiceName;
+            }
+
+            if (this._regionId == null)
+            {
+                this._regionId = regionId;
+            }
         }
 
         public override Dictionary<string, string> GetPathParamDictionary()
@@ -93,8 +125,24 @@ namespace HuaweiCloud.SDK.Core.Auth
                     request.Headers.Add("X-Sdk-Content-Sha256", "UNSIGNED-PAYLOAD");
                 }
 
-                var signer = new Signer {Key = Ak, Secret = Sk};
-                signer.Sign(request);
+                if (IsDerivedAuth(request))
+                {
+                    var signer = new DerivedSigner
+                    {
+                        Key = Ak,
+                        Secret = Sk
+                    };
+                    signer.Sign(request, _regionId, _derivedAuthServiceName);
+                }
+                else
+                {
+                    var signer = new Signer
+                    {
+                        Key = Ak,
+                        Secret = Sk
+                    };
+                    signer.Sign(request);
+                }
 
                 return request;
             });
@@ -117,6 +165,9 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
+            Func<HttpRequest, bool> derivedFunc = DerivedPredicate;
+            DerivedPredicate = null;
+
             IamEndpoint = IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
             var request = IamService.GetKeystoneListProjectsRequest(IamEndpoint, regionId);
             request = SignAuthRequest(request).Result;
@@ -124,6 +175,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             {
                 ProjectId = IamService.KeystoneListProjects(client, request);
                 AuthCache.PutAuth(akWithName, ProjectId);
+                DerivedPredicate = derivedFunc;
                 return this;
             }
             catch (ServiceResponseException e)

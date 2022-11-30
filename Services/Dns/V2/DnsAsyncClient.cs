@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 绑定单个IP地址到终端节点
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AssociateEndpointIpaddressResponse> AssociateEndpointIpaddressAsync(AssociateEndpointIpaddressRequest associateEndpointIpaddressRequest)
         {
@@ -37,8 +36,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 批量删除PTR。本接口为原子操作，所有记录应全部删除成功或全部失败。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeletePtrRecordsResponse> BatchDeletePtrRecordsAsync(BatchDeletePtrRecordsRequest batchDeletePtrRecordsRequest)
         {
@@ -56,8 +54,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// 响应结果中只包含本次实际删除的Record Set。
         /// 支持批量删除公网域名和内网域名的记录集。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteRecordSetsResponse> BatchDeleteRecordSetsAsync(BatchDeleteRecordSetsRequest batchDeleteRecordSetsRequest)
         {
@@ -75,8 +72,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// 本接口为原子操作，所有记录应全部删除成功或全部失败。
         /// 仅支持公网Zone、内网Zone。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteZonesResponse> BatchDeleteZonesAsync(BatchDeleteZonesRequest batchDeleteZonesRequest)
         {
@@ -94,8 +90,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// 响应结果中只包含本次实际更新的Record Set。
         /// 仅支持公网域名记录集。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchSetRecordSetsStatusResponse> BatchSetRecordSetsStatusAsync(BatchSetRecordSetsStatusRequest batchSetRecordSetsStatusRequest)
         {
@@ -113,8 +108,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// 响应结果中只包含本次实际更新的Zone。
         /// 仅支持公网Zone。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchSetZonesStatusResponse> BatchSetZonesStatusAsync(BatchSetZonesStatusRequest batchSetZonesStatusRequest)
         {
@@ -130,8 +124,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建单个自定义线路
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateCustomLineResponse> CreateCustomLineAsync(CreateCustomLineRequest createCustomLineRequest)
         {
@@ -147,8 +140,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建单个终端节点。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest createEndpointRequest)
         {
@@ -164,8 +156,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建一个线路分组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateLineGroupResponse> CreateLineGroupAsync(CreateLineGroupRequest createLineGroupRequest)
         {
@@ -181,8 +172,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建一个解析规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateResolveRuleResponse> CreateResolveRuleAsync(CreateResolveRuleRequest createResolveRuleRequest)
         {
@@ -198,8 +188,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建公网域名找回请求。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateRetrievalResponse> CreateRetrievalAsync(CreateRetrievalRequest createRetrievalRequest)
         {
@@ -215,8 +204,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 请求服务器立即执行找回验证。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateRetrievalVerificationResponse> CreateRetrievalVerificationAsync(CreateRetrievalVerificationRequest createRetrievalVerificationRequest)
         {
@@ -233,8 +221,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除单个自定义线路
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteCustomLineResponse> DeleteCustomLineAsync(DeleteCustomLineRequest deleteCustomLineRequest)
         {
@@ -251,8 +238,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除终端节点。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest deleteEndpointRequest)
         {
@@ -269,8 +255,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除单个线路分组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteLineGroupResponse> DeleteLineGroupAsync(DeleteLineGroupRequest deleteLineGroupRequest)
         {
@@ -287,8 +272,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除解析规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteResolveRuleResponse> DeleteResolveRuleAsync(DeleteResolveRuleRequest deleteResolveRuleRequest)
         {
@@ -305,8 +289,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 解除endpoint绑定的IP。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DisassociateEndpointIpaddressResponse> DisassociateEndpointIpaddressAsync(DisassociateEndpointIpaddressRequest disassociateEndpointIpaddressRequest)
         {
@@ -324,8 +307,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询所有的云解析服务API版本号列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
         {
@@ -341,8 +323,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询自定义线路
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListCustomLineResponse> ListCustomLineAsync(ListCustomLineRequest listCustomLineRequest)
         {
@@ -358,8 +339,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询某个endpoint下的ip地址列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListEndpointIpaddressesResponse> ListEndpointIpaddressesAsync(ListEndpointIpaddressesRequest listEndpointIpaddressesRequest)
         {
@@ -376,8 +356,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询vpc的终端节点信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListEndpointVpcsResponse> ListEndpointVpcsAsync(ListEndpointVpcsRequest listEndpointVpcsRequest)
         {
@@ -393,8 +372,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询终端节点列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListEndpointsResponse> ListEndpointsAsync(ListEndpointsRequest listEndpointsRequest)
         {
@@ -410,8 +388,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询线路分组列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListLineGroupsResponse> ListLineGroupsAsync(ListLineGroupsRequest listLineGroupsRequest)
         {
@@ -427,8 +404,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询名称服务器列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListNameServersResponse> ListNameServersAsync(ListNameServersRequest listNameServersRequest)
         {
@@ -444,8 +420,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询解析规则的列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListResoleRulesResponse> ListResoleRulesAsync(ListResoleRulesRequest listResoleRulesRequest)
         {
@@ -461,8 +436,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询指定的云解析服务API版本号
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowApiInfoResponse> ShowApiInfoAsync(ShowApiInfoRequest showApiInfoRequest)
         {
@@ -479,8 +453,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowDomainQuotaResponse> ShowDomainQuotaAsync(ShowDomainQuotaRequest showDomainQuotaRequest)
         {
@@ -496,8 +469,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询终端单个节点。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowEndpointResponse> ShowEndpointAsync(ShowEndpointRequest showEndpointRequest)
         {
@@ -514,8 +486,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询线路分组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowLineGroupResponse> ShowLineGroupAsync(ShowLineGroupRequest showLineGroupRequest)
         {
@@ -532,8 +503,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个解析规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowResoleRuleResponse> ShowResoleRuleAsync(ShowResoleRuleRequest showResoleRuleRequest)
         {
@@ -550,8 +520,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询域名找回请求。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowRetrievalResponse> ShowRetrievalAsync(ShowRetrievalRequest showRetrievalRequest)
         {
@@ -567,8 +536,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询域名找回结果。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowRetrievalVerificationResponse> ShowRetrievalVerificationAsync(ShowRetrievalVerificationRequest showRetrievalVerificationRequest)
         {
@@ -585,8 +553,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 更新单个自定义线路
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateCustomLineResponse> UpdateCustomLineAsync(UpdateCustomLineRequest updateCustomLineRequest)
         {
@@ -603,8 +570,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 修改终端节点
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest updateEndpointRequest)
         {
@@ -621,8 +587,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 更新单个线路分组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateLineGroupsResponse> UpdateLineGroupsAsync(UpdateLineGroupsRequest updateLineGroupsRequest)
         {
@@ -639,8 +604,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 修改一个解析规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateResolveRuleResponse> UpdateResolveRuleAsync(UpdateResolveRuleRequest updateResolveRuleRequest)
         {
@@ -657,8 +621,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 设置弹性IP的PTR记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateEipRecordSetResponse> CreateEipRecordSetAsync(CreateEipRecordSetRequest createEipRecordSetRequest)
         {
@@ -676,8 +639,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询租户弹性IP的PTR记录列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListPtrRecordsResponse> ListPtrRecordsAsync(ListPtrRecordsRequest listPtrRecordsRequest)
         {
@@ -693,8 +655,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 将弹性IP的PTR记录恢复为默认值
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RestorePtrRecordResponse> RestorePtrRecordAsync(RestorePtrRecordRequest restorePtrRecordRequest)
         {
@@ -712,8 +673,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个弹性IP的PTR记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPtrRecordSetResponse> ShowPtrRecordSetAsync(ShowPtrRecordSetRequest showPtrRecordSetRequest)
         {
@@ -731,8 +691,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 修改弹性IP的PTR记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdatePtrRecordResponse> UpdatePtrRecordAsync(UpdatePtrRecordRequest updatePtrRecordRequest)
         {
@@ -750,8 +709,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// Record Set关联健康检查。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AssociateHealthCheckResponse> AssociateHealthCheckAsync(AssociateHealthCheckRequest associateHealthCheckRequest)
         {
@@ -769,8 +727,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
         /// 响应结果中只包含本次实际删除的资源。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteRecordSetWithLineResponse> BatchDeleteRecordSetWithLineAsync(BatchDeleteRecordSetWithLineRequest batchDeleteRecordSetWithLineRequest)
         {
@@ -788,8 +745,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
         /// 仅公网Zone支持。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchUpdateRecordSetWithLineResponse> BatchUpdateRecordSetWithLineAsync(BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest)
         {
@@ -806,8 +762,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建单个Record Set
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateRecordSetResponse> CreateRecordSetAsync(CreateRecordSetRequest createRecordSetRequest)
         {
@@ -824,8 +779,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateRecordSetWithBatchLinesResponse> CreateRecordSetWithBatchLinesAsync(CreateRecordSetWithBatchLinesRequest createRecordSetWithBatchLinesRequest)
         {
@@ -842,8 +796,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建单个Record Set，仅适用于公网DNS
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateRecordSetWithLineResponse> CreateRecordSetWithLineAsync(CreateRecordSetWithLineRequest createRecordSetWithLineRequest)
         {
@@ -860,8 +813,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除单个Record Set
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteRecordSetResponse> DeleteRecordSetAsync(DeleteRecordSetRequest deleteRecordSetRequest)
         {
@@ -879,8 +831,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除单个Record Set
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteRecordSetsResponse> DeleteRecordSetsAsync(DeleteRecordSetsRequest deleteRecordSetsRequest)
         {
@@ -898,8 +849,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// Record Set解关联健康检查。。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DisassociateHealthCheckResponse> DisassociateHealthCheckAsync(DisassociateHealthCheckRequest disassociateHealthCheckRequest)
         {
@@ -916,8 +866,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询租户Record Set资源列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListRecordSetsResponse> ListRecordSetsAsync(ListRecordSetsRequest listRecordSetsRequest)
         {
@@ -933,8 +882,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个Zone下Record Set列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListRecordSetsByZoneResponse> ListRecordSetsByZoneAsync(ListRecordSetsByZoneRequest listRecordSetsByZoneRequest)
         {
@@ -951,8 +899,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询租户Record Set资源列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListRecordSetsWithLineResponse> ListRecordSetsWithLineAsync(ListRecordSetsWithLineRequest listRecordSetsWithLineRequest)
         {
@@ -968,8 +915,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 设置Record Set状态
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SetRecordSetsStatusResponse> SetRecordSetsStatusAsync(SetRecordSetsStatusRequest setRecordSetsStatusRequest)
         {
@@ -986,8 +932,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个Record Set
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowRecordSetResponse> ShowRecordSetAsync(ShowRecordSetRequest showRecordSetRequest)
         {
@@ -1005,8 +950,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个Zone下Record Set列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowRecordSetByZoneResponse> ShowRecordSetByZoneAsync(ShowRecordSetByZoneRequest showRecordSetByZoneRequest)
         {
@@ -1023,8 +967,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个Record Set，仅适用于公网DNS
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowRecordSetWithLineResponse> ShowRecordSetWithLineAsync(ShowRecordSetWithLineRequest showRecordSetWithLineRequest)
         {
@@ -1042,8 +985,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 修改单个Record Set
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateRecordSetResponse> UpdateRecordSetAsync(UpdateRecordSetRequest updateRecordSetRequest)
         {
@@ -1061,8 +1003,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 修改单个Record Set
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateRecordSetsResponse> UpdateRecordSetsAsync(UpdateRecordSetsRequest updateRecordSetsRequest)
         {
@@ -1080,8 +1021,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 为指定实例批量添加或删除标签
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchCreateTagResponse> BatchCreateTagAsync(BatchCreateTagRequest batchCreateTagRequest)
         {
@@ -1099,8 +1039,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 为指定实例添加标签
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateTagResponse> CreateTagAsync(CreateTagRequest createTagRequest)
         {
@@ -1118,8 +1057,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除资源标签
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteTagResponse> DeleteTagAsync(DeleteTagRequest deleteTagRequest)
         {
@@ -1138,8 +1076,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 使用标签查询资源实例
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListTagResponse> ListTagAsync(ListTagRequest listTagRequest)
         {
@@ -1156,8 +1093,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询指定实例类型的所有标签集合
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListTagsResponse> ListTagsAsync(ListTagsRequest listTagsRequest)
         {
@@ -1174,8 +1110,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询指定实例的标签信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowResourceTagResponse> ShowResourceTagAsync(ShowResourceTagRequest showResourceTagRequest)
         {
@@ -1193,8 +1128,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 在内网Zone上关联VPC
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AssociateRouterResponse> AssociateRouterAsync(AssociateRouterRequest associateRouterRequest)
         {
@@ -1211,8 +1145,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建单个内网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreatePrivateZoneResponse> CreatePrivateZoneAsync(CreatePrivateZoneRequest createPrivateZoneRequest)
         {
@@ -1228,8 +1161,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 创建单个公网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreatePublicZoneResponse> CreatePublicZoneAsync(CreatePublicZoneRequest createPublicZoneRequest)
         {
@@ -1245,8 +1177,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除单个内网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeletePrivateZoneResponse> DeletePrivateZoneAsync(DeletePrivateZoneRequest deletePrivateZoneRequest)
         {
@@ -1263,8 +1194,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 删除单个公网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeletePublicZoneResponse> DeletePublicZoneAsync(DeletePublicZoneRequest deletePublicZoneRequest)
         {
@@ -1281,8 +1211,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 在内网Zone上解关联VPC
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DisassociateRouterResponse> DisassociateRouterAsync(DisassociateRouterRequest disassociateRouterRequest)
         {
@@ -1299,8 +1228,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询内网Zone的列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListPrivateZonesResponse> ListPrivateZonesAsync(ListPrivateZonesRequest listPrivateZonesRequest)
         {
@@ -1316,8 +1244,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询公网Zone的列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListPublicZonesResponse> ListPublicZonesAsync(ListPublicZonesRequest listPublicZonesRequest)
         {
@@ -1333,8 +1260,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 设置单个内网Zone的子域名递归解析代理
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<SetPrivateZoneProxyPatternResponse> SetPrivateZoneProxyPatternAsync(SetPrivateZoneProxyPatternRequest setPrivateZoneProxyPatternRequest)
         {
@@ -1351,8 +1277,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个内网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPrivateZoneResponse> ShowPrivateZoneAsync(ShowPrivateZoneRequest showPrivateZoneRequest)
         {
@@ -1369,8 +1294,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个内网Zone的名称服务器
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPrivateZoneNameServerResponse> ShowPrivateZoneNameServerAsync(ShowPrivateZoneNameServerRequest showPrivateZoneNameServerRequest)
         {
@@ -1387,8 +1311,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个公网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPublicZoneResponse> ShowPublicZoneAsync(ShowPublicZoneRequest showPublicZoneRequest)
         {
@@ -1405,8 +1328,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 查询单个公网Zone的名称服务器
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPublicZoneNameServerResponse> ShowPublicZoneNameServerAsync(ShowPublicZoneNameServerRequest showPublicZoneNameServerRequest)
         {
@@ -1423,8 +1345,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 修改单个内网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdatePrivateZoneResponse> UpdatePrivateZoneAsync(UpdatePrivateZoneRequest updatePrivateZoneRequest)
         {
@@ -1441,8 +1362,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 修改单个公网Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdatePublicZoneResponse> UpdatePublicZoneAsync(UpdatePublicZoneRequest updatePublicZoneRequest)
         {
@@ -1459,8 +1379,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 设置单个公网Zone状态，支持暂停、启用Zone
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdatePublicZoneStatusResponse> UpdatePublicZoneStatusAsync(UpdatePublicZoneStatusRequest updatePublicZoneStatusRequest)
         {

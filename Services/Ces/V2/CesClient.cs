@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 批量增加告警规则资源(资源分组类型的告警规则不支持)，资源分组类型的修改请使用资源分组管理相关接口
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddAlarmRuleResourcesResponse AddAlarmRuleResources(AddAlarmRuleResourcesRequest addAlarmRuleResourcesRequest)
         {
@@ -36,8 +35,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 给自定义资源分组,即类型为手动添加的资源分组,批量增加关联资源
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchCreateResourcesResponse BatchCreateResources(BatchCreateResourcesRequest batchCreateResourcesRequest)
         {
@@ -54,8 +52,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 批量删除告警规则V2接口
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteAlarmRulesResponse BatchDeleteAlarmRules(BatchDeleteAlarmRulesRequest batchDeleteAlarmRulesRequest)
         {
@@ -71,8 +68,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 批量删除自定义告警模板
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteAlarmTemplatesResponse BatchDeleteAlarmTemplates(BatchDeleteAlarmTemplatesRequest batchDeleteAlarmTemplatesRequest)
         {
@@ -88,8 +84,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 批量删除资源分组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteResourceGroupsResponse BatchDeleteResourceGroups(BatchDeleteResourceGroupsRequest batchDeleteResourceGroupsRequest)
         {
@@ -105,8 +100,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 给自定义资源分组,即类型为手动添加的资源分组,批量删除关联资源
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteResourcesResponse BatchDeleteResources(BatchDeleteResourcesRequest batchDeleteResourcesRequest)
         {
@@ -123,8 +117,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 批量启停告警规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchEnableAlarmRulesResponse BatchEnableAlarmRules(BatchEnableAlarmRulesRequest batchEnableAlarmRulesRequest)
         {
@@ -140,8 +133,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 创建告警规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateAlarmRulesResponse CreateAlarmRules(CreateAlarmRulesRequest createAlarmRulesRequest)
         {
@@ -157,8 +149,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 创建自定义告警模板
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateAlarmTemplateResponse CreateAlarmTemplate(CreateAlarmTemplateRequest createAlarmTemplateRequest)
         {
@@ -174,8 +165,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 创建资源分组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest createResourceGroupRequest)
         {
@@ -191,8 +181,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 批量删除告警规则资源（资源分组类型的告警规则不支持），资源分组类型的修改请使用资源分组管理相关接口
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteAlarmRuleResourcesResponse DeleteAlarmRuleResources(DeleteAlarmRuleResourcesRequest deleteAlarmRuleResourcesRequest)
         {
@@ -209,8 +198,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 根据ECS/BMS资源ID查询磁盘、挂载点、进程、显卡、RAID控制器维度指标信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAgentDimensionInfoResponse ListAgentDimensionInfo(ListAgentDimensionInfoRequest listAgentDimensionInfoRequest)
         {
@@ -227,8 +215,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询告警记录列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAlarmHistoriesResponse ListAlarmHistories(ListAlarmHistoriesRequest listAlarmHistoriesRequest)
         {
@@ -244,8 +231,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 根据告警规则ID查询策略列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAlarmRulePoliciesResponse ListAlarmRulePolicies(ListAlarmRulePoliciesRequest listAlarmRulePoliciesRequest)
         {
@@ -262,8 +248,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 根据告警规则ID查询告警规则资源列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAlarmRuleResourcesResponse ListAlarmRuleResources(ListAlarmRuleResourcesRequest listAlarmRuleResourcesRequest)
         {
@@ -280,8 +265,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询告警规则列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAlarmRulesResponse ListAlarmRules(ListAlarmRulesRequest listAlarmRulesRequest)
         {
@@ -297,8 +281,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询告警模板关联的告警规则列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAlarmTemplateAssociationAlarmsResponse ListAlarmTemplateAssociationAlarms(ListAlarmTemplateAssociationAlarmsRequest listAlarmTemplateAssociationAlarmsRequest)
         {
@@ -315,8 +298,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询告警模板列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAlarmTemplatesResponse ListAlarmTemplates(ListAlarmTemplatesRequest listAlarmTemplatesRequest)
         {
@@ -332,8 +314,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询资源分组列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListResourceGroupsResponse ListResourceGroups(ListResourceGroupsRequest listResourceGroupsRequest)
         {
@@ -349,8 +330,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询资源分组下指定服务类别特定维度的资源列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListResourceGroupsServicesResourcesResponse ListResourceGroupsServicesResources(ListResourceGroupsServicesResourcesRequest listResourceGroupsServicesResourcesRequest)
         {
@@ -368,8 +348,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询告警模板详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowAlarmTemplateResponse ShowAlarmTemplate(ShowAlarmTemplateRequest showAlarmTemplateRequest)
         {
@@ -386,8 +365,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 查询指定资源分组详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowResourceGroupResponse ShowResourceGroup(ShowResourceGroupRequest showResourceGroupRequest)
         {
@@ -404,8 +382,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 修改告警规则策略(全量修改)
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateAlarmRulePoliciesResponse UpdateAlarmRulePolicies(UpdateAlarmRulePoliciesRequest updateAlarmRulePoliciesRequest)
         {
@@ -422,8 +399,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 修改自定义告警模板
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateAlarmTemplateResponse UpdateAlarmTemplate(UpdateAlarmTemplateRequest updateAlarmTemplateRequest)
         {
@@ -440,8 +416,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         ///
         /// 修改资源分组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateResourceGroupResponse UpdateResourceGroup(UpdateResourceGroupRequest updateResourceGroupRequest)
         {

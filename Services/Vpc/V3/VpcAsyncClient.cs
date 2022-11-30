@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 批量创建辅助弹性网卡
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchCreateSubNetworkInterfaceResponse> BatchCreateSubNetworkInterfaceAsync(BatchCreateSubNetworkInterfaceRequest batchCreateSubNetworkInterfaceRequest)
         {
@@ -36,8 +35,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 创建安全组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateSecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest createSecurityGroupRequest)
         {
@@ -53,8 +51,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 创建安全组规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateSecurityGroupRuleResponse> CreateSecurityGroupRuleAsync(CreateSecurityGroupRuleRequest createSecurityGroupRuleRequest)
         {
@@ -70,8 +67,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 创建辅助弹性网卡
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateSubNetworkInterfaceResponse> CreateSubNetworkInterfaceAsync(CreateSubNetworkInterfaceRequest createSubNetworkInterfaceRequest)
         {
@@ -87,8 +83,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 删除安全组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteSecurityGroupResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest deleteSecurityGroupRequest)
         {
@@ -105,8 +100,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 删除安全组规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteSecurityGroupRuleResponse> DeleteSecurityGroupRuleAsync(DeleteSecurityGroupRuleRequest deleteSecurityGroupRuleRequest)
         {
@@ -123,8 +117,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 删除辅助弹性网卡
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteSubNetworkInterfaceResponse> DeleteSubNetworkInterfaceAsync(DeleteSubNetworkInterfaceRequest deleteSubNetworkInterfaceRequest)
         {
@@ -141,8 +134,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询安全组规则列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListSecurityGroupRulesResponse> ListSecurityGroupRulesAsync(ListSecurityGroupRulesRequest listSecurityGroupRulesRequest)
         {
@@ -158,8 +150,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询某租户下的安全组列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListSecurityGroupsResponse> ListSecurityGroupsAsync(ListSecurityGroupsRequest listSecurityGroupsRequest)
         {
@@ -175,8 +166,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询辅助弹性网卡列表，单次查询最多返回2000条数据
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListSubNetworkInterfacesResponse> ListSubNetworkInterfacesAsync(ListSubNetworkInterfacesRequest listSubNetworkInterfacesRequest)
         {
@@ -192,8 +182,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 批量迁移辅助弹性网卡
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<MigrateSubNetworkInterfaceResponse> MigrateSubNetworkInterfaceAsync(MigrateSubNetworkInterfaceRequest migrateSubNetworkInterfaceRequest)
         {
@@ -209,8 +198,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询单个安全组详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowSecurityGroupResponse> ShowSecurityGroupAsync(ShowSecurityGroupRequest showSecurityGroupRequest)
         {
@@ -227,8 +215,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询单个安全组规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowSecurityGroupRuleResponse> ShowSecurityGroupRuleAsync(ShowSecurityGroupRuleRequest showSecurityGroupRuleRequest)
         {
@@ -245,8 +232,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询辅助弹性网卡详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowSubNetworkInterfaceResponse> ShowSubNetworkInterfaceAsync(ShowSubNetworkInterfaceRequest showSubNetworkInterfaceRequest)
         {
@@ -263,8 +249,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询辅助弹性网卡数目
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowSubNetworkInterfacesQuantityResponse> ShowSubNetworkInterfacesQuantityAsync(ShowSubNetworkInterfacesQuantityRequest showSubNetworkInterfacesQuantityRequest)
         {
@@ -280,8 +265,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 更新安全组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateSecurityGroupResponse> UpdateSecurityGroupAsync(UpdateSecurityGroupRequest updateSecurityGroupRequest)
         {
@@ -298,8 +282,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 更新辅助弹性网卡
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateSubNetworkInterfaceResponse> UpdateSubNetworkInterfaceAsync(UpdateSubNetworkInterfaceRequest updateSubNetworkInterfaceRequest)
         {
@@ -316,8 +299,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 创建地址组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateAddressGroupResponse> CreateAddressGroupAsync(CreateAddressGroupRequest createAddressGroupRequest)
         {
@@ -333,8 +315,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 删除地址组，非强制删除，删除前请确保未被其他资源引用
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteAddressGroupResponse> DeleteAddressGroupAsync(DeleteAddressGroupRequest deleteAddressGroupRequest)
         {
@@ -351,8 +332,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 强制删除地址组，删除的地址组与安全组规则关联时，会删除地址组与关联的安全组规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteIpAddressGroupForceResponse> DeleteIpAddressGroupForceAsync(DeleteIpAddressGroupForceRequest deleteIpAddressGroupForceRequest)
         {
@@ -369,8 +349,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询地址组列表，根据过滤条件进行过滤。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAddressGroupResponse> ListAddressGroupAsync(ListAddressGroupRequest listAddressGroupRequest)
         {
@@ -386,8 +365,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询地址组详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowAddressGroupResponse> ShowAddressGroupAsync(ShowAddressGroupRequest showAddressGroupRequest)
         {
@@ -404,8 +382,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 更新地址组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateAddressGroupResponse> UpdateAddressGroupAsync(UpdateAddressGroupRequest updateAddressGroupRequest)
         {
@@ -422,8 +399,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 添加VPC的扩展网段
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AddVpcExtendCidrResponse> AddVpcExtendCidrAsync(AddVpcExtendCidrRequest addVpcExtendCidrRequest)
         {
@@ -440,8 +416,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 创建虚拟私有云
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest createVpcRequest)
         {
@@ -457,8 +432,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 删除VPC
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteVpcResponse> DeleteVpcAsync(DeleteVpcRequest deleteVpcRequest)
         {
@@ -475,8 +449,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询vpc列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListVpcsResponse> ListVpcsAsync(ListVpcsRequest listVpcsRequest)
         {
@@ -492,8 +465,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 移除VPC扩展网段
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RemoveVpcExtendCidrResponse> RemoveVpcExtendCidrAsync(RemoveVpcExtendCidrRequest removeVpcExtendCidrRequest)
         {
@@ -510,8 +482,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 查询vpc详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowVpcResponse> ShowVpcAsync(ShowVpcRequest showVpcRequest)
         {
@@ -528,8 +499,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 更新vpc
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateVpcResponse> UpdateVpcAsync(UpdateVpcRequest updateVpcRequest)
         {

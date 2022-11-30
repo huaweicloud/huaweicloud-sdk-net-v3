@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 在指定pool下批量创建后端服务器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchCreateMembersResponse> BatchCreateMembersAsync(BatchCreateMembersRequest batchCreateMembersRequest)
         {
@@ -37,8 +36,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 在指定pool下批量删除后端服务器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteMembersResponse> BatchDeleteMembersAsync(BatchDeleteMembersRequest batchDeleteMembersRequest)
         {
@@ -55,8 +53,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 批量更新转发策略的优先级。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchUpdatePoliciesPriorityResponse> BatchUpdatePoliciesPriorityAsync(BatchUpdatePoliciesPriorityRequest batchUpdatePoliciesPriorityRequest)
         {
@@ -72,8 +69,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ChangeLoadbalancerChargeModeResponse> ChangeLoadbalancerChargeModeAsync(ChangeLoadbalancerChargeModeRequest changeLoadbalancerChargeModeRequest)
         {
@@ -89,8 +85,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建证书。用于HTTPS协议监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateCertificateResponse> CreateCertificateAsync(CreateCertificateRequest createCertificateRequest)
         {
@@ -106,8 +101,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建健康检查。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateHealthMonitorResponse> CreateHealthMonitorAsync(CreateHealthMonitorRequest createHealthMonitorRequest)
         {
@@ -123,8 +117,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建七层转发策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateL7PolicyResponse> CreateL7PolicyAsync(CreateL7PolicyRequest createL7PolicyRequest)
         {
@@ -140,8 +133,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建七层转发规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateL7RuleResponse> CreateL7RuleAsync(CreateL7RuleRequest createL7RuleRequest)
         {
@@ -158,8 +150,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateListenerResponse> CreateListenerAsync(CreateListenerRequest createListenerRequest)
         {
@@ -184,8 +175,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest createLoadBalancerRequest)
         {
@@ -201,8 +191,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建云日志
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateLogtankResponse> CreateLogtankAsync(CreateLogtankRequest createLogtankRequest)
         {
@@ -218,8 +207,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建后端服务器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateMemberResponse> CreateMemberAsync(CreateMemberRequest createMemberRequest)
         {
@@ -236,8 +224,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建后端服务器组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreatePoolResponse> CreatePoolAsync(CreatePoolRequest createPoolRequest)
         {
@@ -253,8 +240,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateSecurityPolicyResponse> CreateSecurityPolicyAsync(CreateSecurityPolicyRequest createSecurityPolicyRequest)
         {
@@ -270,8 +256,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除证书。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest)
         {
@@ -288,8 +273,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除健康检查。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteHealthMonitorResponse> DeleteHealthMonitorAsync(DeleteHealthMonitorRequest deleteHealthMonitorRequest)
         {
@@ -306,8 +290,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除七层转发策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteL7PolicyResponse> DeleteL7PolicyAsync(DeleteL7PolicyRequest deleteL7PolicyRequest)
         {
@@ -324,8 +307,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除七层转发规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteL7RuleResponse> DeleteL7RuleAsync(DeleteL7RuleRequest deleteL7RuleRequest)
         {
@@ -343,8 +325,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteListenerResponse> DeleteListenerAsync(DeleteListenerRequest deleteListenerRequest)
         {
@@ -361,8 +342,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除负载均衡器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
         {
@@ -379,8 +359,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除云日志。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteLogtankResponse> DeleteLogtankAsync(DeleteLogtankRequest deleteLogtankRequest)
         {
@@ -397,8 +376,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除后端服务器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest deleteMemberRequest)
         {
@@ -416,8 +394,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除后端服务器组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeletePoolResponse> DeletePoolAsync(DeletePoolRequest deletePoolRequest)
         {
@@ -434,8 +411,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除自定义安全策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteSecurityPolicyResponse> DeleteSecurityPolicyAsync(DeleteSecurityPolicyRequest deleteSecurityPolicyRequest)
         {
@@ -452,8 +428,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询当前租户下的后端服务器列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAllMembersResponse> ListAllMembersAsync(ListAllMembersRequest listAllMembersRequest)
         {
@@ -477,8 +452,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，
         /// 如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAvailabilityZonesResponse> ListAvailabilityZonesAsync(ListAvailabilityZonesRequest listAvailabilityZonesRequest)
         {
@@ -494,8 +468,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询证书列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest listCertificatesRequest)
         {
@@ -511,8 +484,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询租户在当前region下可用的负载均衡规格列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
@@ -528,8 +500,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 健康检查列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListHealthMonitorsResponse> ListHealthMonitorsAsync(ListHealthMonitorsRequest listHealthMonitorsRequest)
         {
@@ -545,8 +516,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询七层转发策略列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListL7PoliciesResponse> ListL7PoliciesAsync(ListL7PoliciesRequest listL7PoliciesRequest)
         {
@@ -562,8 +532,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询转发规则列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListL7RulesResponse> ListL7RulesAsync(ListL7RulesRequest listL7RulesRequest)
         {
@@ -580,8 +549,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询监听器列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListListenersResponse> ListListenersAsync(ListListenersRequest listListenersRequest)
         {
@@ -597,8 +565,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询负载均衡器列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListLoadBalancersResponse> ListLoadBalancersAsync(ListLoadBalancersRequest listLoadBalancersRequest)
         {
@@ -614,8 +581,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询云日志列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListLogtanksResponse> ListLogtanksAsync(ListLogtanksRequest listLogtanksRequest)
         {
@@ -631,8 +597,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// Pool下的后端服务器列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListMembersResponse> ListMembersAsync(ListMembersRequest listMembersRequest)
         {
@@ -649,8 +614,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 后端服务器组列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListPoolsResponse> ListPoolsAsync(ListPoolsRequest listPoolsRequest)
         {
@@ -666,8 +630,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListQuotaDetailsResponse> ListQuotaDetailsAsync(ListQuotaDetailsRequest listQuotaDetailsRequest)
         {
@@ -683,8 +646,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询自定义安全策略列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListSecurityPoliciesResponse> ListSecurityPoliciesAsync(ListSecurityPoliciesRequest listSecurityPoliciesRequest)
         {
@@ -702,8 +664,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListSystemSecurityPoliciesResponse> ListSystemSecurityPoliciesAsync(ListSystemSecurityPoliciesRequest listSystemSecurityPoliciesRequest)
         {
@@ -719,8 +680,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询证书详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowCertificateResponse> ShowCertificateAsync(ShowCertificateRequest showCertificateRequest)
         {
@@ -737,8 +697,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询规格的详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowFlavorResponse> ShowFlavorAsync(ShowFlavorRequest showFlavorRequest)
         {
@@ -755,8 +714,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询健康检查详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowHealthMonitorResponse> ShowHealthMonitorAsync(ShowHealthMonitorRequest showHealthMonitorRequest)
         {
@@ -773,8 +731,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询七层转发策略详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowL7PolicyResponse> ShowL7PolicyAsync(ShowL7PolicyRequest showL7PolicyRequest)
         {
@@ -791,8 +748,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询七层转发规则详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowL7RuleResponse> ShowL7RuleAsync(ShowL7RuleRequest showL7RuleRequest)
         {
@@ -810,8 +766,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 监听器详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowListenerResponse> ShowListenerAsync(ShowListenerRequest showListenerRequest)
         {
@@ -828,8 +783,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询负载均衡器详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowLoadBalancerResponse> ShowLoadBalancerAsync(ShowLoadBalancerRequest showLoadBalancerRequest)
         {
@@ -849,8 +803,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 如：当Member的admin_state_up&#x3D;false且operating_status&#x3D;OFFLINE时，
         /// 该接口返回member的operating_status&#x3D;DISABLE。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowLoadBalancerStatusResponse> ShowLoadBalancerStatusAsync(ShowLoadBalancerStatusRequest showLoadBalancerStatusRequest)
         {
@@ -867,8 +820,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 云日志详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowLogtankResponse> ShowLogtankAsync(ShowLogtankRequest showLogtankRequest)
         {
@@ -885,8 +837,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 后端服务器详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowMemberResponse> ShowMemberAsync(ShowMemberRequest showMemberRequest)
         {
@@ -904,8 +855,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 后端服务器组详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPoolResponse> ShowPoolAsync(ShowPoolRequest showPoolRequest)
         {
@@ -922,8 +872,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询指定项目中负载均衡相关的各类资源的当前配额。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowQuotaResponse> ShowQuotaAsync(ShowQuotaRequest showQuotaRequest)
         {
@@ -939,8 +888,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询自定义安全策略详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowSecurityPolicyResponse> ShowSecurityPolicyAsync(ShowSecurityPolicyRequest showSecurityPolicyRequest)
         {
@@ -957,8 +905,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新证书。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest updateCertificateRequest)
         {
@@ -975,8 +922,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新健康检查。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateHealthMonitorResponse> UpdateHealthMonitorAsync(UpdateHealthMonitorRequest updateHealthMonitorRequest)
         {
@@ -993,8 +939,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新七层转发策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateL7PolicyResponse> UpdateL7PolicyAsync(UpdateL7PolicyRequest updateL7PolicyRequest)
         {
@@ -1011,8 +956,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新七层转发规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateL7RuleResponse> UpdateL7RuleAsync(UpdateL7RuleRequest updateL7RuleRequest)
         {
@@ -1030,8 +974,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新监听器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateListenerResponse> UpdateListenerAsync(UpdateListenerRequest updateListenerRequest)
         {
@@ -1048,8 +991,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新负载均衡器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateLoadBalancerResponse> UpdateLoadBalancerAsync(UpdateLoadBalancerRequest updateLoadBalancerRequest)
         {
@@ -1066,8 +1008,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新云日志
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateLogtankResponse> UpdateLogtankAsync(UpdateLogtankRequest updateLogtankRequest)
         {
@@ -1084,8 +1025,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新后端服务器。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateMemberResponse> UpdateMemberAsync(UpdateMemberRequest updateMemberRequest)
         {
@@ -1103,8 +1043,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新后端服务器组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdatePoolResponse> UpdatePoolAsync(UpdatePoolRequest updatePoolRequest)
         {
@@ -1121,8 +1060,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新自定义安全策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateSecurityPolicyResponse> UpdateSecurityPolicyAsync(UpdateSecurityPolicyRequest updateSecurityPolicyRequest)
         {
@@ -1139,8 +1077,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 返回ELB当前所有可用的API版本。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
         {
@@ -1156,8 +1093,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 批量删除IP地址组的IP列表信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteIpListResponse> BatchDeleteIpListAsync(BatchDeleteIpListRequest batchDeleteIpListRequest)
         {
@@ -1187,8 +1123,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// - 计算出来的预占IP数大于等于最终实际占用的IP数。
         /// - 总占用IP数量，即整个LB所占用的IP数量。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CountPreoccupyIpNumResponse> CountPreoccupyIpNumAsync(CountPreoccupyIpNumRequest countPreoccupyIpNumRequest)
         {
@@ -1206,8 +1141,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateIpGroupResponse> CreateIpGroupAsync(CreateIpGroupRequest createIpGroupRequest)
         {
@@ -1223,8 +1157,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除ip地址组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteIpGroupResponse> DeleteIpGroupAsync(DeleteIpGroupRequest deleteIpGroupRequest)
         {
@@ -1241,8 +1174,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 查询IP地址组列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIpGroupsResponse> ListIpGroupsAsync(ListIpGroupsRequest listIpGroupsRequest)
         {
@@ -1258,8 +1190,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 获取IP地址组详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowIpGroupResponse> ShowIpGroupAsync(ShowIpGroupRequest showIpGroupRequest)
         {
@@ -1279,8 +1210,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateIpGroupResponse> UpdateIpGroupAsync(UpdateIpGroupRequest updateIpGroupRequest)
         {
@@ -1297,8 +1227,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 更新IP地址组的IP列表信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateIpListResponse> UpdateIpListAsync(UpdateIpListRequest updateIpListRequest)
         {

@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 批量删除实例。**实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。**
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteInstancesResponse BatchDeleteInstances(BatchDeleteInstancesRequest batchDeleteInstancesRequest)
         {
@@ -35,8 +34,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 批量修改消费组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchUpdateConsumerGroupResponse BatchUpdateConsumerGroup(BatchUpdateConsumerGroupRequest batchUpdateConsumerGroupRequest)
         {
@@ -53,8 +51,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 创建消费组或批量删除消费组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateConsumerGroupOrBatchDeleteConsumerGroupResponse CreateConsumerGroupOrBatchDeleteConsumerGroup(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest createConsumerGroupOrBatchDeleteConsumerGroupRequest)
         {
@@ -71,8 +68,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 创建实例，该接口创建的实例为按需计费的方式。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreatePostPaidInstanceResponse CreatePostPaidInstance(CreatePostPaidInstanceRequest createPostPaidInstanceRequest)
         {
@@ -88,8 +84,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 创建用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateUserResponse CreateUser(CreateUserRequest createUserRequest)
         {
@@ -106,8 +101,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 删除指定消费组。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteConsumerGroupResponse DeleteConsumerGroup(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
         {
@@ -125,8 +119,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 删除指定的实例，释放该实例的所有资源。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
@@ -143,8 +136,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 删除用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteUserResponse DeleteUser(DeleteUserRequest deleteUserRequest)
         {
@@ -162,8 +154,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 导出死信消息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ExportDlqMessageResponse ExportDlqMessage(ExportDlqMessageRequest exportDlqMessageRequest)
         {
@@ -182,8 +173,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest)
         {
@@ -199,8 +189,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询代理列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListBrokersResponse ListBrokers(ListBrokersRequest listBrokersRequest)
         {
@@ -217,8 +206,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询消费组的授权用户列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListConsumeGroupAccessPolicyResponse ListConsumeGroupAccessPolicy(ListConsumeGroupAccessPolicyRequest listConsumeGroupAccessPolicyRequest)
         {
@@ -237,8 +225,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询消费组列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListInstanceConsumerGroupsResponse ListInstanceConsumerGroups(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
         {
@@ -255,8 +242,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询租户的实例列表，支持按照条件查询。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListInstancesResponse ListInstances(ListInstancesRequest listInstancesRequest)
         {
@@ -272,8 +258,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询消息轨迹。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListMessageTraceResponse ListMessageTrace(ListMessageTraceRequest listMessageTraceRequest)
         {
@@ -291,8 +276,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询消息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListMessagesResponse ListMessages(ListMessagesRequest listMessagesRequest)
         {
@@ -310,8 +294,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询主题的授权用户列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListTopicAccessPolicyResponse ListTopicAccessPolicy(ListTopicAccessPolicyRequest listTopicAccessPolicyRequest)
         {
@@ -329,8 +312,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询用户列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListUserResponse ListUser(ListUserRequest listUserRequest)
         {
@@ -347,8 +329,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 重置消费进度。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ResetConsumeOffsetResponse ResetConsumeOffset(ResetConsumeOffsetRequest resetConsumeOffsetRequest)
         {
@@ -367,8 +348,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询消费列表或详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowConsumerListOrDetailsResponse ShowConsumerListOrDetails(ShowConsumerListOrDetailsRequest showConsumerListOrDetailsRequest)
         {
@@ -386,8 +366,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询指定消费组详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowGroupResponse ShowGroup(ShowGroupRequest showGroupRequest)
         {
@@ -405,8 +384,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询指定实例的详细信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
         {
@@ -423,8 +401,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询用户详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowUserResponse ShowUser(ShowUserRequest showUserRequest)
         {
@@ -442,8 +419,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 修改指定消费组参数。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateConsumerGroupResponse UpdateConsumerGroup(UpdateConsumerGroupRequest updateConsumerGroupRequest)
         {
@@ -461,8 +437,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 修改实例的名称和描述信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest updateInstanceRequest)
         {
@@ -479,8 +454,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 修改用户参数。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateUserResponse UpdateUser(UpdateUserRequest updateUserRequest)
         {
@@ -498,8 +472,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 创建主题或批量删除主题。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateTopicOrBatchDeleteTopicResponse CreateTopicOrBatchDeleteTopic(CreateTopicOrBatchDeleteTopicRequest createTopicOrBatchDeleteTopicRequest)
         {
@@ -516,8 +489,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 删除指定主题。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteTopicResponse DeleteTopic(DeleteTopicRequest deleteTopicRequest)
         {
@@ -535,8 +507,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询主题消费组列表。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListConsumerGroupOfTopicResponse ListConsumerGroupOfTopic(ListConsumerGroupOfTopicRequest listConsumerGroupOfTopicRequest)
         {
@@ -554,8 +525,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询单个主题。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowOneTopicResponse ShowOneTopic(ShowOneTopicRequest showOneTopicRequest)
         {
@@ -573,8 +543,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 查询主题的消息数。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowTopicStatusResponse ShowTopicStatus(ShowTopicStatusRequest showTopicStatusRequest)
         {
@@ -592,8 +561,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         ///
         /// 修改主题。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateTopicResponse UpdateTopic(UpdateTopicRequest updateTopicRequest)
         {

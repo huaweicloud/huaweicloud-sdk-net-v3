@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 添加备份可共享的成员，只有云服务器备份可以添加备份共享成员，且仅支持在同一区域的不同用户间共享。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddMemberResponse AddMember(AddMemberRequest addMemberRequest)
         {
@@ -36,8 +35,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 存储库添加资源
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddVaultResourceResponse AddVaultResource(AddVaultResourceRequest addVaultResourceRequest)
         {
@@ -54,8 +52,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 存储库设置策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AssociateVaultPolicyResponse AssociateVaultPolicy(AssociateVaultPolicyRequest associateVaultPolicyRequest)
         {
@@ -79,8 +76,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///     删除时，允许重复key。
         ///     删除时，如果删除的标签不存在，默认处理成功,删除时不对标签字符集范围做校验。key长度127个字符，value为255个字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchCreateAndDeleteVaultTagsResponse BatchCreateAndDeleteVaultTags(BatchCreateAndDeleteVaultTagsRequest batchCreateAndDeleteVaultTagsRequest)
         {
@@ -97,8 +93,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 跨区域复制备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CopyBackupResponse CopyBackup(CopyBackupRequest copyBackupRequest)
         {
@@ -115,8 +110,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 执行复制
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CopyCheckpointResponse CopyCheckpoint(CopyCheckpointRequest copyCheckpointRequest)
         {
@@ -132,8 +126,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 对存储库执行备份，生成备份还原点
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateCheckpointResponse CreateCheckpoint(CreateCheckpointRequest createCheckpointRequest)
         {
@@ -149,8 +142,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 创建策略，策略分为备份策略和复制策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreatePolicyResponse CreatePolicy(CreatePolicyRequest createPolicyRequest)
         {
@@ -166,8 +158,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 创建存储库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateVaultResponse CreateVault(CreateVaultRequest createVaultRequest)
         {
@@ -184,8 +175,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 一个资源上最多有10个标签。
         /// 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateVaultTagsResponse CreateVaultTags(CreateVaultTagsRequest createVaultTagsRequest)
         {
@@ -202,8 +192,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除单个备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteBackupResponse DeleteBackup(DeleteBackupRequest deleteBackupRequest)
         {
@@ -220,8 +209,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除指定的备份共享成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteMemberResponse DeleteMember(DeleteMemberRequest deleteMemberRequest)
         {
@@ -239,8 +227,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest deletePolicyRequest)
         {
@@ -257,8 +244,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除存储库。若删除储存库，将一并删除存储库中的所有备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteVaultResponse DeleteVault(DeleteVaultRequest deleteVaultRequest)
         {
@@ -275,8 +261,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 幂等接口：删除时，如果删除的标签不存在，返回404。Key不能为空或者空字符串。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteVaultTagResponse DeleteVaultTag(DeleteVaultTagRequest deleteVaultTagRequest)
         {
@@ -294,8 +279,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 存储库解除策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DisassociateVaultPolicyResponse DisassociateVaultPolicy(DisassociateVaultPolicyRequest disassociateVaultPolicyRequest)
         {
@@ -312,8 +296,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 同步线下混合云VMware备份副本
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ImportBackupResponse ImportBackup(ImportBackupRequest importBackupRequest)
         {
@@ -329,8 +312,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询所有副本
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListBackupsResponse ListBackups(ListBackupsRequest listBackupsRequest)
         {
@@ -346,8 +328,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询任务列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListOpLogsResponse ListOpLogs(ListOpLogsRequest listOpLogsRequest)
         {
@@ -363,8 +344,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询策略列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListPoliciesResponse ListPolicies(ListPoliciesRequest listPoliciesRequest)
         {
@@ -380,8 +360,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询可保护性资源列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListProtectableResponse ListProtectable(ListProtectableRequest listProtectableRequest)
         {
@@ -398,8 +377,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询存储库列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListVaultResponse ListVault(ListVaultRequest listVaultRequest)
         {
@@ -415,8 +393,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 支持资源迁移到另一个存储库，不删除备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public MigrateVaultResourceResponse MigrateVaultResource(MigrateVaultResourceRequest migrateVaultResourceRequest)
         {
@@ -433,8 +410,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RemoveVaultResourceResponse RemoveVaultResource(RemoveVaultResourceRequest removeVaultResourceRequest)
         {
@@ -451,8 +427,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 恢复备份数据
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public RestoreBackupResponse RestoreBackup(RestoreBackupRequest restoreBackupRequest)
         {
@@ -469,8 +444,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据指定id查询单个副本。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowBackupResponse ShowBackup(ShowBackupRequest showBackupRequest)
         {
@@ -487,8 +461,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据还原点ID查询指定还原点
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowCheckpointResponse ShowCheckpoint(ShowCheckpointRequest showCheckpointRequest)
         {
@@ -505,8 +478,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 获取备份成员的详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowMemberDetailResponse ShowMemberDetail(ShowMemberDetailRequest showMemberDetailRequest)
         {
@@ -524,8 +496,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 获取备份共享成员的列表信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowMembersDetailResponse ShowMembersDetail(ShowMembersDetailRequest showMembersDetailRequest)
         {
@@ -542,8 +513,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据指定任务ID查询任务
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowOpLogResponse ShowOpLog(ShowOpLogRequest showOpLogRequest)
         {
@@ -560,8 +530,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询单个策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowPolicyResponse ShowPolicy(ShowPolicyRequest showPolicyRequest)
         {
@@ -578,8 +547,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据ID查询可保护性资源
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowProtectableResponse ShowProtectable(ShowProtectableRequest showProtectableRequest)
         {
@@ -597,8 +565,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询本区域的复制能力
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowReplicationCapabilitiesResponse ShowReplicationCapabilities(ShowReplicationCapabilitiesRequest showReplicationCapabilitiesRequest)
         {
@@ -614,8 +581,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据ID查询指定存储库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowVaultResponse ShowVault(ShowVaultRequest showVaultRequest)
         {
@@ -633,8 +599,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 查询租户在指定Region和实例类型的所有标签集合
         /// 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowVaultProjectTagResponse ShowVaultProjectTag(ShowVaultProjectTagRequest showVaultProjectTagRequest)
         {
@@ -651,8 +616,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 使用标签过滤实例
         /// 标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowVaultResourceInstancesResponse ShowVaultResourceInstances(ShowVaultResourceInstancesRequest showVaultResourceInstancesRequest)
         {
@@ -669,8 +633,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 查询指定实例的标签信息
         /// 标签管理服务需要使用该接口查询指定实例的全部标签数据
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowVaultTagResponse ShowVaultTag(ShowVaultTagRequest showVaultTagRequest)
         {
@@ -687,8 +650,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 更新备份共享成员的状态，需要接收方执行此API。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateMemberStatusResponse UpdateMemberStatus(UpdateMemberStatusRequest updateMemberStatusRequest)
         {
@@ -706,8 +668,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 修改策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest updatePolicyRequest)
         {
@@ -724,8 +685,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据存储库ID修改存储库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateVaultResponse UpdateVault(UpdateVaultRequest updateVaultRequest)
         {

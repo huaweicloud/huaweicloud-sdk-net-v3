@@ -52,6 +52,7 @@ namespace HuaweiCloud.SDK.Core
             private bool _enableLogging;
             private LogLevel _logLevel = LogLevel.Information;
             private HttpHandler _httpHandler;
+            private string _derivedAuthServiceName;
 
             private const string HttpScheme = "http";
             private const string HttpsScheme = "https";
@@ -93,6 +94,12 @@ namespace HuaweiCloud.SDK.Core
                 return this;
             }
 
+            public ClientBuilder<T> WithDerivedAuthServiceName(string derivedAuthServiceName)
+            {
+                this._derivedAuthServiceName = derivedAuthServiceName;
+                return this;
+            }
+
             public T Build()
             {
                 Client client = Activator.CreateInstance<T>();
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.Core
                 {
                     this._endPoint = _region.Endpoint;
                     this._credentials = _credentials.ProcessAuthParams(client._sdkHttpClient, _region.Id);
+                    this._credentials.ProcessDerivedAuthParams(_derivedAuthServiceName, _region.Id);
                 }
 
                 if (!_endPoint.StartsWith(HttpScheme))

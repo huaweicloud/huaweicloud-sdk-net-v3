@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 添加地址组成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddAddressItemsUsingPostResponse AddAddressItemsUsingPost(AddAddressItemsUsingPostRequest addAddressItemsUsingPostRequest)
         {
@@ -35,8 +34,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 添加地址组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddAddressSetInfoUsingPostResponse AddAddressSetInfoUsingPost(AddAddressSetInfoUsingPostRequest addAddressSetInfoUsingPostRequest)
         {
@@ -52,8 +50,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 创建黑白名单规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddBlackWhiteListUsingPostResponse AddBlackWhiteListUsingPost(AddBlackWhiteListUsingPostRequest addBlackWhiteListUsingPostRequest)
         {
@@ -69,8 +66,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 批量添加服务组成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddServiceItemsUsingPostResponse AddServiceItemsUsingPost(AddServiceItemsUsingPostRequest addServiceItemsUsingPostRequest)
         {
@@ -86,8 +82,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 创建服务组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddServiceSetUsingPostResponse AddServiceSetUsingPost(AddServiceSetUsingPostRequest addServiceSetUsingPostRequest)
         {
@@ -103,8 +98,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 东西向防护资源防护开启/关闭
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ChangeEwProtectStatusResponse ChangeEwProtectStatus(ChangeEwProtectStatusRequest changeEwProtectStatusRequest)
         {
@@ -120,8 +114,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 切换防护模式
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ChangeIpsProtectModeUsingPostResponse ChangeIpsProtectModeUsingPost(ChangeIpsProtectModeUsingPostRequest changeIpsProtectModeUsingPostRequest)
         {
@@ -137,8 +130,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 清除规则击中次数
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteAclRuleCountResponse DeleteAclRuleCount(DeleteAclRuleCountRequest deleteAclRuleCountRequest)
         {
@@ -155,8 +147,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 删除地址组成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteAddressItemUsingDeleteResponse DeleteAddressItemUsingDelete(DeleteAddressItemUsingDeleteRequest deleteAddressItemUsingDeleteRequest)
         {
@@ -173,8 +164,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 删除地址组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteAddressSetInfoUsingDeleteResponse DeleteAddressSetInfoUsingDelete(DeleteAddressSetInfoUsingDeleteRequest deleteAddressSetInfoUsingDeleteRequest)
         {
@@ -191,8 +181,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 删除黑白名单规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteBlackWhiteListUsingDeleteResponse DeleteBlackWhiteListUsingDelete(DeleteBlackWhiteListUsingDeleteRequest deleteBlackWhiteListUsingDeleteRequest)
         {
@@ -209,8 +198,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 删除服务组成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteServiceItemUsingDeleteResponse DeleteServiceItemUsingDelete(DeleteServiceItemUsingDeleteRequest deleteServiceItemUsingDeleteRequest)
         {
@@ -227,8 +215,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 删除服务组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteServiceSetUsingDeleteResponse DeleteServiceSetUsingDelete(DeleteServiceSetUsingDeleteRequest deleteServiceSetUsingDeleteRequest)
         {
@@ -245,8 +232,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询访问控制日志
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAccessControlLogsResponse ListAccessControlLogs(ListAccessControlLogsRequest listAccessControlLogsRequest)
         {
@@ -262,8 +248,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询地址组成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAddressItemsUsingGetResponse ListAddressItemsUsingGet(ListAddressItemsUsingGetRequest listAddressItemsUsingGetRequest)
         {
@@ -279,8 +264,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询地址组详细
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAddressSetDetailUsingGetResponse ListAddressSetDetailUsingGet(ListAddressSetDetailUsingGetRequest listAddressSetDetailUsingGetRequest)
         {
@@ -297,8 +281,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询地址组列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAddressSetListUsingGetResponse ListAddressSetListUsingGet(ListAddressSetListUsingGetRequest listAddressSetListUsingGetRequest)
         {
@@ -314,8 +297,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询攻击日志
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListAttackLogsResponse ListAttackLogs(ListAttackLogsRequest listAttackLogsRequest)
         {
@@ -331,8 +313,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询黑白名单列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListBlackWhiteListsUsingGetResponse ListBlackWhiteListsUsingGet(ListBlackWhiteListsUsingGetRequest listBlackWhiteListsUsingGetRequest)
         {
@@ -348,8 +329,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询dns服务器列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListDnsServersResponse ListDnsServers(ListDnsServersRequest listDnsServersRequest)
         {
@@ -365,8 +345,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询东西向防火墙信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListEastWestFirewallResponse ListEastWestFirewall(ListEastWestFirewallRequest listEastWestFirewallRequest)
         {
@@ -382,8 +361,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询防火墙实例
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListFirewallUsingGetResponse ListFirewallUsingGet(ListFirewallUsingGetRequest listFirewallUsingGetRequest)
         {
@@ -399,8 +377,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询流日志
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListFlowLogsResponse ListFlowLogs(ListFlowLogsRequest listFlowLogsRequest)
         {
@@ -416,8 +393,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询防护模式
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListIpsProtectModeUsingPostResponse ListIpsProtectModeUsingPost(ListIpsProtectModeUsingPostRequest listIpsProtectModeUsingPostRequest)
         {
@@ -433,8 +409,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 测试域名有效性
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListParseDomainDetailsResponse ListParseDomainDetails(ListParseDomainDetailsRequest listParseDomainDetailsRequest)
         {
@@ -451,8 +426,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 获取规则击中次数
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListRuleHitCountResponse ListRuleHitCount(ListRuleHitCountRequest listRuleHitCountRequest)
         {
@@ -468,8 +442,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询服务组成员列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListServiceItemsDetailsResponse ListServiceItemsDetails(ListServiceItemsDetailsRequest listServiceItemsDetailsRequest)
         {
@@ -485,8 +458,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 获取服务组列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListServiceSetResponse ListServiceSet(ListServiceSetRequest listServiceSetRequest)
         {
@@ -502,8 +474,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询服务组细节
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListServiceSetDetailsResponse ListServiceSetDetails(ListServiceSetDetailsRequest listServiceSetDetailsRequest)
         {
@@ -520,8 +491,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 更新地址组信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateAddressSetInfoUsingPutResponse UpdateAddressSetInfoUsingPut(UpdateAddressSetInfoUsingPutRequest updateAddressSetInfoUsingPutRequest)
         {
@@ -538,8 +508,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 更新黑白名单列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateBlackWhiteListUsingPutResponse UpdateBlackWhiteListUsingPut(UpdateBlackWhiteListUsingPutRequest updateBlackWhiteListUsingPutRequest)
         {
@@ -556,8 +525,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 更新dns服务器列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateDnsServersResponse UpdateDnsServers(UpdateDnsServersRequest updateDnsServersRequest)
         {
@@ -573,8 +541,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 更新服务组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateServiceSetUsingPutResponse UpdateServiceSetUsingPut(UpdateServiceSetUsingPutRequest updateServiceSetUsingPutRequest)
         {
@@ -591,8 +558,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 创建ACL规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public AddRuleAclUsingPostResponse AddRuleAclUsingPost(AddRuleAclUsingPostRequest addRuleAclUsingPostRequest)
         {
@@ -608,8 +574,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 删除ACL规则组
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteRuleAclUsingDeleteResponse DeleteRuleAclUsingDelete(DeleteRuleAclUsingDeleteRequest deleteRuleAclUsingDeleteRequest)
         {
@@ -626,8 +591,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// ACL防护规则优先级设置
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListRuleAclUsingPutResponse ListRuleAclUsingPut(ListRuleAclUsingPutRequest listRuleAclUsingPutRequest)
         {
@@ -644,8 +608,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询防护规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListRuleAclsUsingGetResponse ListRuleAclsUsingGet(ListRuleAclsUsingGetRequest listRuleAclsUsingGetRequest)
         {
@@ -661,8 +624,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 更新ACL规则
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateRuleAclUsingPutResponse UpdateRuleAclUsingPut(UpdateRuleAclUsingPutRequest updateRuleAclUsingPutRequest)
         {
@@ -679,8 +641,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 开启关闭EIP
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ChangeProtectEipResponse ChangeProtectEip(ChangeProtectEipRequest changeProtectEipRequest)
         {
@@ -696,8 +657,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询Eip个数
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CountEipsResponse CountEips(CountEipsRequest countEipsRequest)
         {
@@ -714,8 +674,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 弹性IP列表查询
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListEipResourcesResponse ListEipResources(ListEipResourcesRequest listEipResourcesRequest)
         {
@@ -731,8 +690,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 切换开关状态
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ChangeIpsSwitchUsingPostResponse ChangeIpsSwitchUsingPost(ChangeIpsSwitchUsingPostRequest changeIpsSwitchUsingPostRequest)
         {
@@ -748,8 +706,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询IPS特性开关状态
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListIpsSwitchStatusUsingGetResponse ListIpsSwitchStatusUsingGet(ListIpsSwitchStatusUsingGetRequest listIpsSwitchStatusUsingGetRequest)
         {
@@ -765,8 +722,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         ///
         /// 查询防护vpc信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListVpcProtectsResponse ListVpcProtects(ListVpcProtectsRequest listVpcProtectsRequest)
         {

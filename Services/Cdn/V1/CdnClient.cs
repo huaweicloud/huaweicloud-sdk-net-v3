@@ -18,8 +18,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 用于删除资源标签
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public BatchDeleteTagsResponse BatchDeleteTags(BatchDeleteTagsRequest batchDeleteTagsRequest)
         {
@@ -35,8 +34,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 创建加速域名。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateDomainResponse CreateDomain(CreateDomainRequest createDomainRequest)
         {
@@ -52,8 +50,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 创建预热任务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreatePreheatingTasksResponse CreatePreheatingTasks(CreatePreheatingTasksRequest createPreheatingTasksRequest)
         {
@@ -69,8 +66,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 创建刷新缓存任务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateRefreshTasksResponse CreateRefreshTasks(CreateRefreshTasksRequest createRefreshTasksRequest)
         {
@@ -86,8 +82,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 用于创建资源标签
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateTagsResponse CreateTags(CreateTagsRequest createTagsRequest)
         {
@@ -103,8 +98,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 删除加速域名。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteDomainResponse DeleteDomain(DeleteDomainRequest deleteDomainRequest)
         {
@@ -121,8 +115,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 停用加速域名。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DisableDomainResponse DisableDomain(DisableDomainRequest disableDomainRequest)
         {
@@ -139,8 +132,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 启用加速域名。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EnableDomainResponse EnableDomain(EnableDomainRequest enableDomainRequest)
         {
@@ -157,8 +149,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询加速域名信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListDomainsResponse ListDomains(ListDomainsRequest listDomainsRequest)
         {
@@ -174,8 +165,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询域名已经设置的IP黑白名单。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowBlackWhiteListResponse ShowBlackWhiteList(ShowBlackWhiteListRequest showBlackWhiteListRequest)
         {
@@ -192,8 +182,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询缓存规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowCacheRulesResponse ShowCacheRules(ShowCacheRulesRequest showCacheRulesRequest)
         {
@@ -210,8 +199,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询所有绑定HTTPS证书的域名信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowCertificatesHttpsInfoResponse ShowCertificatesHttpsInfo(ShowCertificatesHttpsInfoRequest showCertificatesHttpsInfoRequest)
         {
@@ -227,8 +215,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询加速域名详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainDetailResponse ShowDomainDetail(ShowDomainDetailRequest showDomainDetailRequest)
         {
@@ -245,8 +232,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询域名配置接口，支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6开关、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainFullConfigResponse ShowDomainFullConfig(ShowDomainFullConfigRequest showDomainFullConfigRequest)
         {
@@ -271,8 +257,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// - 如果传的是多个域名，则每个域名的数据分开返回。
         /// - 支持同时查询多个指标，不超过10个。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainItemDetailsResponse ShowDomainItemDetails(ShowDomainItemDetailsRequest showDomainItemDetailsRequest)
         {
@@ -299,8 +284,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// - 支持同时查询多个指标，不超过10个。
         /// - 域名为海外加速场景不适用。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainItemLocationDetailsResponse ShowDomainItemLocationDetails(ShowDomainItemLocationDetailsRequest showDomainItemLocationDetailsRequest)
         {
@@ -322,8 +306,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的区域运营商明细数据。
         /// - 单租户调用频率：15次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainLocationStatsResponse ShowDomainLocationStats(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
         {
@@ -345,8 +328,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
         /// - 单租户调用频率：15次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowDomainStatsResponse ShowDomainStats(ShowDomainStatsRequest showDomainStatsRequest)
         {
@@ -362,8 +344,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询刷新预热任务详情。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowHistoryTaskDetailsResponse ShowHistoryTaskDetails(ShowHistoryTaskDetailsRequest showHistoryTaskDetailsRequest)
         {
@@ -380,8 +361,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询刷新预热任务。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowHistoryTasksResponse ShowHistoryTasks(ShowHistoryTasksRequest showHistoryTasksRequest)
         {
@@ -397,8 +377,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 获取加速域名证书。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowHttpInfoResponse ShowHttpInfo(ShowHttpInfoRequest showHttpInfoRequest)
         {
@@ -415,8 +394,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询IP归属信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowIpInfoResponse ShowIpInfo(ShowIpInfoRequest showIpInfoRequest)
         {
@@ -432,8 +410,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 日志查询。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowLogsResponse ShowLogs(ShowLogsRequest showLogsRequest)
         {
@@ -449,8 +426,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowOriginHostResponse ShowOriginHost(ShowOriginHostRequest showOriginHostRequest)
         {
@@ -467,8 +443,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询当前用户域名、刷新文件、刷新目录和预热的配额
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowQuotaResponse ShowQuota(ShowQuotaRequest showQuotaRequest)
         {
@@ -484,8 +459,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询Referer过滤规则。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowReferResponse ShowRefer(ShowReferRequest showReferRequest)
         {
@@ -502,8 +476,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 列举header所有配置。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowResponseHeaderResponse ShowResponseHeader(ShowResponseHeaderRequest showResponseHeaderRequest)
         {
@@ -520,8 +493,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 用于查询资源标签列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowTagsResponse ShowTags(ShowTagsRequest showTagsRequest)
         {
@@ -543,8 +515,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// - 流量类指标单位统一为Byte（字节）、请求数类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
         /// - 单租户调用频率：5次/s。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowTopUrlResponse ShowTopUrl(ShowTopUrlRequest showTopUrlRequest)
         {
@@ -560,8 +531,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 查询刷新预热URL记录。如需此接口，请提交工单开通
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowUrlTaskInfoResponse ShowUrlTaskInfo(ShowUrlTaskInfoRequest showUrlTaskInfoRequest)
         {
@@ -577,8 +547,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 设置域名的IP黑白名单。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateBlackWhiteListResponse UpdateBlackWhiteList(UpdateBlackWhiteListRequest updateBlackWhiteListRequest)
         {
@@ -595,8 +564,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 设置CDN节点上缓存资源的缓存策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateCacheRulesResponse UpdateCacheRules(UpdateCacheRulesRequest updateCacheRulesRequest)
         {
@@ -613,8 +581,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 修改域名全量配置接口，支持配置回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateDomainFullConfigResponse UpdateDomainFullConfig(UpdateDomainFullConfigRequest updateDomainFullConfigRequest)
         {
@@ -631,8 +598,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 一个证书配置多个域名，设置域名强制https回源参数。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateDomainMultiCertificatesResponse UpdateDomainMultiCertificates(UpdateDomainMultiCertificatesRequest updateDomainMultiCertificatesRequest)
         {
@@ -648,8 +614,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 修改源站信息。源站IP地址或域名都可以指引CDN节点回源到对应的源站服务器，源站域名不能与加速域名相同。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateDomainOriginResponse UpdateDomainOrigin(UpdateDomainOriginRequest updateDomainOriginRequest)
         {
@@ -666,8 +631,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 开启此项配置后，当CDN节点回源请求源站返回301/302状态码时，CDN节点会先跳转到301/302对应地址获取资源并缓存后再返回给用户。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateFollow302SwitchResponse UpdateFollow302Switch(UpdateFollow302SwitchRequest updateFollow302SwitchRequest)
         {
@@ -684,8 +648,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 设置加速域名HTTPS。通过配置加速域名的HTTPS证书，并将其部署在全网CDN节点，实现HTTPS安全加速。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateHttpsInfoResponse UpdateHttpsInfo(UpdateHttpsInfoRequest updateHttpsInfoRequest)
         {
@@ -702,8 +665,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 修改回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateOriginHostResponse UpdateOriginHost(UpdateOriginHostRequest updateOriginHostRequest)
         {
@@ -720,8 +682,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 修改私有桶开启关闭状态。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdatePrivateBucketAccessResponse UpdatePrivateBucketAccess(UpdatePrivateBucketAccessRequest updatePrivateBucketAccessRequest)
         {
@@ -740,8 +701,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// 开启Range回源前需要确认源站是否支持Range请求，若源站不支持Range请求，开启Range回源将导致资源无法缓存。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateRangeSwitchResponse UpdateRangeSwitch(UpdateRangeSwitchRequest updateRangeSwitchRequest)
         {
@@ -758,8 +718,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 设置Referer过滤规则。通过设置过滤策略，对访问者身份进行识别和过滤，实现限制访问来源的目的。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateReferResponse UpdateRefer(UpdateReferRequest updateReferRequest)
         {
@@ -776,8 +735,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         ///
         /// 新增/修改域名响应头配置。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateResponseHeaderResponse UpdateResponseHeader(UpdateResponseHeaderRequest updateResponseHeaderRequest)
         {

@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 添加备份可共享的成员，只有云服务器备份可以添加备份共享成员，且仅支持在同一区域的不同用户间共享。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AddMemberResponse> AddMemberAsync(AddMemberRequest addMemberRequest)
         {
@@ -37,8 +36,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 存储库添加资源
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AddVaultResourceResponse> AddVaultResourceAsync(AddVaultResourceRequest addVaultResourceRequest)
         {
@@ -55,8 +53,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 存储库设置策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AssociateVaultPolicyResponse> AssociateVaultPolicyAsync(AssociateVaultPolicyRequest associateVaultPolicyRequest)
         {
@@ -80,8 +77,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///     删除时，允许重复key。
         ///     删除时，如果删除的标签不存在，默认处理成功,删除时不对标签字符集范围做校验。key长度127个字符，value为255个字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchCreateAndDeleteVaultTagsResponse> BatchCreateAndDeleteVaultTagsAsync(BatchCreateAndDeleteVaultTagsRequest batchCreateAndDeleteVaultTagsRequest)
         {
@@ -98,8 +94,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 跨区域复制备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CopyBackupResponse> CopyBackupAsync(CopyBackupRequest copyBackupRequest)
         {
@@ -116,8 +111,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 执行复制
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CopyCheckpointResponse> CopyCheckpointAsync(CopyCheckpointRequest copyCheckpointRequest)
         {
@@ -133,8 +127,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 对存储库执行备份，生成备份还原点
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateCheckpointResponse> CreateCheckpointAsync(CreateCheckpointRequest createCheckpointRequest)
         {
@@ -150,8 +143,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 创建策略，策略分为备份策略和复制策略。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest createPolicyRequest)
         {
@@ -167,8 +159,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 创建存储库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest createVaultRequest)
         {
@@ -185,8 +176,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 一个资源上最多有10个标签。
         /// 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateVaultTagsResponse> CreateVaultTagsAsync(CreateVaultTagsRequest createVaultTagsRequest)
         {
@@ -203,8 +193,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除单个备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest deleteBackupRequest)
         {
@@ -221,8 +210,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除指定的备份共享成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest deleteMemberRequest)
         {
@@ -240,8 +228,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest deletePolicyRequest)
         {
@@ -258,8 +245,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 删除存储库。若删除储存库，将一并删除存储库中的所有备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest deleteVaultRequest)
         {
@@ -276,8 +262,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 幂等接口：删除时，如果删除的标签不存在，返回404。Key不能为空或者空字符串。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteVaultTagResponse> DeleteVaultTagAsync(DeleteVaultTagRequest deleteVaultTagRequest)
         {
@@ -295,8 +280,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 存储库解除策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DisassociateVaultPolicyResponse> DisassociateVaultPolicyAsync(DisassociateVaultPolicyRequest disassociateVaultPolicyRequest)
         {
@@ -313,8 +297,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 同步线下混合云VMware备份副本
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ImportBackupResponse> ImportBackupAsync(ImportBackupRequest importBackupRequest)
         {
@@ -330,8 +313,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询所有副本
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest listBackupsRequest)
         {
@@ -347,8 +329,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询任务列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListOpLogsResponse> ListOpLogsAsync(ListOpLogsRequest listOpLogsRequest)
         {
@@ -364,8 +345,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询策略列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest listPoliciesRequest)
         {
@@ -381,8 +361,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询可保护性资源列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProtectableResponse> ListProtectableAsync(ListProtectableRequest listProtectableRequest)
         {
@@ -399,8 +378,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询存储库列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListVaultResponse> ListVaultAsync(ListVaultRequest listVaultRequest)
         {
@@ -416,8 +394,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 支持资源迁移到另一个存储库，不删除备份。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<MigrateVaultResourceResponse> MigrateVaultResourceAsync(MigrateVaultResourceRequest migrateVaultResourceRequest)
         {
@@ -434,8 +411,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RemoveVaultResourceResponse> RemoveVaultResourceAsync(RemoveVaultResourceRequest removeVaultResourceRequest)
         {
@@ -452,8 +428,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 恢复备份数据
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RestoreBackupResponse> RestoreBackupAsync(RestoreBackupRequest restoreBackupRequest)
         {
@@ -470,8 +445,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据指定id查询单个副本。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowBackupResponse> ShowBackupAsync(ShowBackupRequest showBackupRequest)
         {
@@ -488,8 +462,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据还原点ID查询指定还原点
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowCheckpointResponse> ShowCheckpointAsync(ShowCheckpointRequest showCheckpointRequest)
         {
@@ -506,8 +479,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 获取备份成员的详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowMemberDetailResponse> ShowMemberDetailAsync(ShowMemberDetailRequest showMemberDetailRequest)
         {
@@ -525,8 +497,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 获取备份共享成员的列表信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowMembersDetailResponse> ShowMembersDetailAsync(ShowMembersDetailRequest showMembersDetailRequest)
         {
@@ -543,8 +514,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据指定任务ID查询任务
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowOpLogResponse> ShowOpLogAsync(ShowOpLogRequest showOpLogRequest)
         {
@@ -561,8 +531,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询单个策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowPolicyResponse> ShowPolicyAsync(ShowPolicyRequest showPolicyRequest)
         {
@@ -579,8 +548,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据ID查询可保护性资源
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowProtectableResponse> ShowProtectableAsync(ShowProtectableRequest showProtectableRequest)
         {
@@ -598,8 +566,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 查询本区域的复制能力
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowReplicationCapabilitiesResponse> ShowReplicationCapabilitiesAsync(ShowReplicationCapabilitiesRequest showReplicationCapabilitiesRequest)
         {
@@ -615,8 +582,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据ID查询指定存储库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowVaultResponse> ShowVaultAsync(ShowVaultRequest showVaultRequest)
         {
@@ -634,8 +600,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 查询租户在指定Region和实例类型的所有标签集合
         /// 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowVaultProjectTagResponse> ShowVaultProjectTagAsync(ShowVaultProjectTagRequest showVaultProjectTagRequest)
         {
@@ -652,8 +617,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 使用标签过滤实例
         /// 标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowVaultResourceInstancesResponse> ShowVaultResourceInstancesAsync(ShowVaultResourceInstancesRequest showVaultResourceInstancesRequest)
         {
@@ -670,8 +634,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 查询指定实例的标签信息
         /// 标签管理服务需要使用该接口查询指定实例的全部标签数据
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowVaultTagResponse> ShowVaultTagAsync(ShowVaultTagRequest showVaultTagRequest)
         {
@@ -688,8 +651,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 更新备份共享成员的状态，需要接收方执行此API。
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateMemberStatusResponse> UpdateMemberStatusAsync(UpdateMemberStatusRequest updateMemberStatusRequest)
         {
@@ -707,8 +669,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 修改策略
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdatePolicyResponse> UpdatePolicyAsync(UpdatePolicyRequest updatePolicyRequest)
         {
@@ -725,8 +686,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         ///
         /// 根据存储库ID修改存储库
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateVaultResponse> UpdateVaultAsync(UpdateVaultRequest updateVaultRequest)
         {

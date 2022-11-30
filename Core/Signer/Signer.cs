@@ -32,11 +32,11 @@ namespace HuaweiCloud.SDK.Core
 {
     public partial class Signer
     {
-        const string BasicDateFormat = "yyyyMMddTHHmmssZ";
+        protected const string BasicDateFormat = "yyyyMMddTHHmmssZ";
         const string Algorithm = "SDK-HMAC-SHA256";
-        const string HeaderXDate = "X-Sdk-Date";
-        const string HeaderHost = "host";
-        const string HeaderAuthorization = "Authorization";
+        protected const string HeaderXDate = "X-Sdk-Date";
+        protected const string HeaderHost = "host";
+        protected const string HeaderAuthorization = "Authorization";
         const string HeaderContentSha256 = "X-Sdk-Content-Sha256";
         private readonly HashSet<string> _unsignedHeaders = new HashSet<string> {"content-type"};
 
@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Core
         ///   Part 5 SignedHeaders
         ///   Part 6 HexEncode(Hash(RequestPayload))
         /// </summary>
-        private string ConstructCanonicalRequest(HttpRequest request)
+        protected string ConstructCanonicalRequest(HttpRequest request)
         {
             return $"{ProcessRequestMethod(request)}\n" +
                    $"{ProcessCanonicalUri(request)}\n" +
@@ -142,7 +142,7 @@ namespace HuaweiCloud.SDK.Core
             return Join("\n", headers) + "\n";
         }
 
-        private List<string> ProcessSignedHeaders(HttpRequest request)
+        protected List<string> ProcessSignedHeaders(HttpRequest request)
         {
             var signedHeaders = (from key in request.Headers.AllKeys
                 let keyLower = key.ToLower()
@@ -182,7 +182,7 @@ namespace HuaweiCloud.SDK.Core
             return ToHexString(bytes);
         }
 
-        private static string ToHexString(byte[] value)
+        protected static string ToHexString(byte[] value)
         {
             var num = value.Length * 2;
             var array = new char[num];
@@ -207,7 +207,7 @@ namespace HuaweiCloud.SDK.Core
             return (char) (i - 10 + 'a');
         }
 
-        string StringToSign(string canonicalRequest, DateTime t)
+        protected string StringToSign(string canonicalRequest, DateTime t)
         {
             SHA256 sha256 = new SHA256Managed();
             var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
@@ -217,7 +217,7 @@ namespace HuaweiCloud.SDK.Core
                    $"{ToHexString(bytes)}";
         }
 
-        string SignStringToSign(string stringToSign, byte[] signingKey)
+        protected string SignStringToSign(string stringToSign, byte[] signingKey)
         {
             var hm = HMacSha256(signingKey, stringToSign);
             return ToHexString(hm);

@@ -19,8 +19,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// AGC调用 当前用户申请加入项目, 申请的用户id写在header中
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AddApplyJoinProjectForAgcResponse> AddApplyJoinProjectForAgcAsync(AddApplyJoinProjectForAgcRequest addApplyJoinProjectForAgcRequest)
         {
@@ -37,8 +36,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 添加项目成员,可以添加跨租户成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<AddMemberV4Response> AddMemberV4Async(AddMemberV4Request addMemberV4Request)
         {
@@ -55,8 +53,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 批量添加项目成员，只能添加和项目创建者同一租户下的成员，不正确的用户id会略过，添加的用户超过权限的，默认角色设置为7
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchAddMembersV4Response> BatchAddMembersV4Async(BatchAddMembersV4Request batchAddMembersV4Request)
         {
@@ -73,8 +70,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 批量删除项目成员
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteMembersV4Response> BatchDeleteMembersV4Async(BatchDeleteMembersV4Request batchDeleteMembersV4Request)
         {
@@ -91,8 +87,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 拥有te_admin角色的用户可以更新其他用户的昵称
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchUpdateChildNickNamesResponse> BatchUpdateChildNickNamesAsync(BatchUpdateChildNickNamesRequest batchUpdateChildNickNamesRequest)
         {
@@ -108,8 +103,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 检查项目名称是否存在
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CheckProjectNameV4Response> CheckProjectNameV4Async(CheckProjectNameV4Request checkProjectNameV4Request)
         {
@@ -125,8 +119,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 创建项目
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateProjectV4Response> CreateProjectV4Async(CreateProjectV4Request createProjectV4Request)
         {
@@ -142,8 +135,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 删除项目
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteProjectV4Response> DeleteProjectV4Async(DeleteProjectV4Request deleteProjectV4Request)
         {
@@ -160,8 +152,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取租户没有加入的项目
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListDomainNotAddedProjectsV4Response> ListDomainNotAddedProjectsV4Async(ListDomainNotAddedProjectsV4Request listDomainNotAddedProjectsV4Request)
         {
@@ -177,8 +168,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取bug统计信息，按模块统计
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectBugStaticsV4Response> ListProjectBugStaticsV4Async(ListProjectBugStaticsV4Request listProjectBugStaticsV4Request)
         {
@@ -195,8 +185,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取需求统计信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectDemandStaticV4Response> ListProjectDemandStaticV4Async(ListProjectDemandStaticV4Request listProjectDemandStaticV4Request)
         {
@@ -213,8 +202,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取项目成员列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectMembersV4Response> ListProjectMembersV4Async(ListProjectMembersV4Request listProjectMembersV4Request)
         {
@@ -231,8 +219,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询项目列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectsV4Response> ListProjectsV4Async(ListProjectsV4Request listProjectsV4Request)
         {
@@ -248,8 +235,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 分页查询看板项目下工作项的状态历史记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListWorkitemStatusRecordsV4Response> ListWorkitemStatusRecordsV4Async(ListWorkitemStatusRecordsV4Request listWorkitemStatusRecordsV4Request)
         {
@@ -266,8 +252,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询看板项目下的工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListWorkitemsResponse> ListWorkitemsAsync(ListWorkitemsRequest listWorkitemsRequest)
         {
@@ -284,8 +269,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 项目成员主动退出项目，项目创建者不能退出
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<RemoveProjectResponse> RemoveProjectAsync(RemoveProjectRequest removeProjectRequest)
         {
@@ -302,8 +286,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询缺陷密度
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowBugDensityV2Response> ShowBugDensityV2Async(ShowBugDensityV2Request showBugDensityV2Request)
         {
@@ -320,8 +303,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询人均bug
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowBugsPerDeveloperResponse> ShowBugsPerDeveloperAsync(ShowBugsPerDeveloperRequest showBugsPerDeveloperRequest)
         {
@@ -338,8 +320,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询需求按时完成率
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowCompletionRateResponse> ShowCompletionRateAsync(ShowCompletionRateRequest showCompletionRateRequest)
         {
@@ -356,8 +337,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取当前用户信息
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowCurUserInfoResponse> ShowCurUserInfoAsync(ShowCurUserInfoRequest showCurUserInfoRequest)
         {
@@ -373,8 +353,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取用户在项目中的角色
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowCurUserRoleResponse> ShowCurUserRoleAsync(ShowCurUserRoleRequest showCurUserRoleRequest)
         {
@@ -391,8 +370,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取项目详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowProjectInfoV4Response> ShowProjectInfoV4Async(ShowProjectInfoV4Request showProjectInfoV4Request)
         {
@@ -409,8 +387,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取项目概览
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowProjectSummaryV4Response> ShowProjectSummaryV4Async(ShowProjectSummaryV4Request showProjectSummaryV4Request)
         {
@@ -427,8 +404,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询看板项目的工作项流转配置
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowWorkItemWrokflowConfigResponse> ShowWorkItemWrokflowConfigAsync(ShowWorkItemWrokflowConfigRequest showWorkItemWrokflowConfigRequest)
         {
@@ -445,8 +421,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 更新成员在项目中的角色
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateMembesRoleV4Response> UpdateMembesRoleV4Async(UpdateMembesRoleV4Request updateMembesRoleV4Request)
         {
@@ -463,8 +438,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 更新用户昵称
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateNickNameV4Response> UpdateNickNameV4Async(UpdateNickNameV4Request updateNickNameV4Request)
         {
@@ -480,8 +454,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 更新项目
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateProjectV4Response> UpdateProjectV4Async(UpdateProjectV4Request updateProjectV4Request)
         {
@@ -498,8 +471,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 批量删除工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteIssuesV4Response> BatchDeleteIssuesV4Async(BatchDeleteIssuesV4Request batchDeleteIssuesV4Request)
         {
@@ -516,8 +488,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 批量删除项目的迭代
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<BatchDeleteIterationsV4Response> BatchDeleteIterationsV4Async(BatchDeleteIterationsV4Request batchDeleteIterationsV4Request)
         {
@@ -534,8 +505,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 取消领域与项目的关联关系
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CancelProjectDomainResponse> CancelProjectDomainAsync(CancelProjectDomainRequest cancelProjectDomainRequest)
         {
@@ -553,8 +523,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 创建工作项类型自定义字段
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateCustomfieldsResponse> CreateCustomfieldsAsync(CreateCustomfieldsRequest createCustomfieldsRequest)
         {
@@ -571,8 +540,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 创建工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateIssueV4Response> CreateIssueV4Async(CreateIssueV4Request createIssueV4Request)
         {
@@ -589,8 +557,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 创建Scrum项目迭代
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateIterationV4Response> CreateIterationV4Async(CreateIterationV4Request createIterationV4Request)
         {
@@ -607,8 +574,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询项目的领域列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateProjectDomainResponse> CreateProjectDomainAsync(CreateProjectDomainRequest createProjectDomainRequest)
         {
@@ -625,8 +591,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询项目的模块列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateProjectModuleResponse> CreateProjectModuleAsync(CreateProjectModuleRequest createProjectModuleRequest)
         {
@@ -643,8 +608,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<CreateSystemIssueV4Response> CreateSystemIssueV4Async(CreateSystemIssueV4Request createSystemIssueV4Request)
         {
@@ -661,8 +625,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 删除工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteIssueV4Response> DeleteIssueV4Async(DeleteIssueV4Request deleteIssueV4Request)
         {
@@ -680,8 +643,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 删除项目迭代
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteIterationV4Response> DeleteIterationV4Async(DeleteIterationV4Request deleteIterationV4Request)
         {
@@ -699,8 +661,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 删除项目的模块
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DeleteProjectModuleResponse> DeleteProjectModuleAsync(DeleteProjectModuleRequest deleteProjectModuleRequest)
         {
@@ -718,8 +679,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 下载图片
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<DownloadImageFileResponse> DownloadImageFileAsync(DownloadImageFileRequest downloadImageFileRequest)
         {
@@ -736,8 +696,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询当前工作项已经关联的工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAssociatedIssuesResponse> ListAssociatedIssuesAsync(ListAssociatedIssuesRequest listAssociatedIssuesRequest)
         {
@@ -755,8 +714,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询关联用例
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAssociatedTestCasesResponse> ListAssociatedTestCasesAsync(ListAssociatedTestCasesRequest listAssociatedTestCasesRequest)
         {
@@ -774,8 +732,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询当前工作项已经关联的关联Wiki
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListAssociatedWikisResponse> ListAssociatedWikisAsync(ListAssociatedWikisRequest listAssociatedWikisRequest)
         {
@@ -793,8 +750,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取子工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListChildIssuesV4Response> ListChildIssuesV4Async(ListChildIssuesV4Request listChildIssuesV4Request)
         {
@@ -812,8 +768,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询当前工作项已经关联的代码提交记录 / 分支创建记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIssueAssociatedCommitsResponse> ListIssueAssociatedCommitsAsync(ListIssueAssociatedCommitsRequest listIssueAssociatedCommitsRequest)
         {
@@ -831,8 +786,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取工作项的评论
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIssueCommentsV4Response> ListIssueCommentsV4Async(ListIssueCommentsV4Request listIssueCommentsV4Request)
         {
@@ -850,8 +804,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIssueCustomFieldsResponse> ListIssueCustomFieldsAsync(ListIssueCustomFieldsRequest listIssueCustomFieldsRequest)
         {
@@ -868,8 +821,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取工作项历史记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIssueRecordsV4Response> ListIssueRecordsV4Async(ListIssueRecordsV4Request listIssueRecordsV4Request)
         {
@@ -887,8 +839,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 工作项类型id, 分页参数，创建时间查询项目的工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIssuesSfV4Response> ListIssuesSfV4Async(ListIssuesSfV4Request listIssuesSfV4Request)
         {
@@ -905,8 +856,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 根据筛选条件查询工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIssuesV4Response> ListIssuesV4Async(ListIssuesV4Request listIssuesV4Request)
         {
@@ -923,8 +873,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查看迭代历史记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListIterationHistoriesResponse> ListIterationHistoriesAsync(ListIterationHistoriesRequest listIterationHistoriesRequest)
         {
@@ -941,8 +890,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询项目的领域列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectDomainsResponse> ListProjectDomainsAsync(ListProjectDomainsRequest listProjectDomainsRequest)
         {
@@ -959,8 +907,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询项目下所有工作项的历史记录
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectIssuesRecordsV4Response> ListProjectIssuesRecordsV4Async(ListProjectIssuesRecordsV4Request listProjectIssuesRecordsV4Request)
         {
@@ -977,8 +924,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取项目迭代
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectIterationsV4Response> ListProjectIterationsV4Async(ListProjectIterationsV4Request listProjectIterationsV4Request)
         {
@@ -995,8 +941,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询项目的模块列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectModulesResponse> ListProjectModulesAsync(ListProjectModulesRequest listProjectModulesRequest)
         {
@@ -1013,8 +958,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 按用户查询工时（多项目）
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListProjectWorkHoursResponse> ListProjectWorkHoursAsync(ListProjectWorkHoursRequest listProjectWorkHoursRequest)
         {
@@ -1030,8 +974,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询项目的状态列表
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListScrumProjectStatusesResponse> ListScrumProjectStatusesAsync(ListScrumProjectStatusesRequest listScrumProjectStatusesRequest)
         {
@@ -1048,8 +991,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 获取工作项的完成率
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowIssueCompletionRateResponse> ShowIssueCompletionRateAsync(ShowIssueCompletionRateRequest showIssueCompletionRateRequest)
         {
@@ -1066,8 +1008,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询工作项详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowIssueV4Response> ShowIssueV4Async(ShowIssueV4Request showIssueV4Request)
         {
@@ -1085,8 +1026,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查询Scrum项目的工作项流转配置
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowIssuesWrokFlowConfigResponse> ShowIssuesWrokFlowConfigAsync(ShowIssuesWrokFlowConfigRequest showIssuesWrokFlowConfigRequest)
         {
@@ -1103,8 +1043,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 查看迭代详情
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowIterationV4Response> ShowIterationV4Async(ShowIterationV4Request showIterationV4Request)
         {
@@ -1121,8 +1060,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 按用户查询工时（单项目）
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ShowProjectWorkHoursResponse> ShowProjectWorkHoursAsync(ShowProjectWorkHoursRequest showProjectWorkHoursRequest)
         {
@@ -1139,8 +1077,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 更新工作项
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateIssueV4Response> UpdateIssueV4Async(UpdateIssueV4Request updateIssueV4Request)
         {
@@ -1158,8 +1095,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 更新Scrum项目迭代
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateIterationV4Response> UpdateIterationV4Async(UpdateIterationV4Request updateIterationV4Request)
         {
@@ -1177,8 +1113,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 更新项目的领域
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateProjectDomainResponse> UpdateProjectDomainAsync(UpdateProjectDomainRequest updateProjectDomainRequest)
         {
@@ -1196,8 +1131,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 更新项目的模块
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UpdateProjectModuleResponse> UpdateProjectModuleAsync(UpdateProjectModuleRequest updateProjectModuleRequest)
         {
@@ -1215,8 +1149,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 上传工作项附件
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UploadAttachmentsResponse> UploadAttachmentsAsync(UploadAttachmentsRequest uploadAttachmentsRequest)
         {
@@ -1234,8 +1167,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         ///
         /// 上传图片
         /// 
-        /// 详细说明请参考华为云API Explorer。
-        /// Please refer to Huawei cloud API Explorer for details.
+        /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<UploadIssueImgResponse> UploadIssueImgAsync(UploadIssueImgRequest uploadIssueImgRequest)
         {
