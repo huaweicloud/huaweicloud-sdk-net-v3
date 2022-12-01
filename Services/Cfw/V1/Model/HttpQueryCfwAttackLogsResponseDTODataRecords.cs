@@ -232,6 +232,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("app", NullValueHandling = NullValueHandling.Ignore)]
         public string App { get; set; }
 
+        /// <summary>
+        /// 攻击报文信息
+        /// </summary>
+        [JsonProperty("packetMessages", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PacketMessage> PacketMessages { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -258,6 +264,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  packet: ").Append(Packet).Append("\n");
             sb.Append("  app: ").Append(App).Append("\n");
+            sb.Append("  packetMessages: ").Append(PacketMessages).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -368,6 +375,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.App == input.App ||
                     (this.App != null &&
                     this.App.Equals(input.App))
+                ) && 
+                (
+                    this.PacketMessages == input.PacketMessages ||
+                    this.PacketMessages != null &&
+                    input.PacketMessages != null &&
+                    this.PacketMessages.SequenceEqual(input.PacketMessages)
                 );
         }
 
@@ -415,6 +428,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Packet.GetHashCode();
                 if (this.App != null)
                     hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.PacketMessages != null)
+                    hashCode = hashCode * 59 + this.PacketMessages.GetHashCode();
                 return hashCode;
             }
         }

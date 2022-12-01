@@ -16,22 +16,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// object_id
+        /// 
         /// </summary>
-        [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObjectId { get; set; }
-
-        /// <summary>
-        /// 基础防御状态
-        /// </summary>
-        [JsonProperty("basic_defense_status", NullValueHandling = NullValueHandling.Ignore)]
-        public int? BasicDefenseStatus { get; set; }
-
-        /// <summary>
-        /// 虚拟补丁状态
-        /// </summary>
-        [JsonProperty("virtual_patches_stauts", NullValueHandling = NullValueHandling.Ignore)]
-        public int? VirtualPatchesStauts { get; set; }
+        [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
+        public IpsSwitchResponseDTO Data { get; set; }
 
 
         /// <summary>
@@ -41,9 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListIpsSwitchStatusUsingGetResponse {\n");
-            sb.Append("  objectId: ").Append(ObjectId).Append("\n");
-            sb.Append("  basicDefenseStatus: ").Append(BasicDefenseStatus).Append("\n");
-            sb.Append("  virtualPatchesStauts: ").Append(VirtualPatchesStauts).Append("\n");
+            sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,19 +52,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             return 
                 (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.BasicDefenseStatus == input.BasicDefenseStatus ||
-                    (this.BasicDefenseStatus != null &&
-                    this.BasicDefenseStatus.Equals(input.BasicDefenseStatus))
-                ) && 
-                (
-                    this.VirtualPatchesStauts == input.VirtualPatchesStauts ||
-                    (this.VirtualPatchesStauts != null &&
-                    this.VirtualPatchesStauts.Equals(input.VirtualPatchesStauts))
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -90,12 +66,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.BasicDefenseStatus != null)
-                    hashCode = hashCode * 59 + this.BasicDefenseStatus.GetHashCode();
-                if (this.VirtualPatchesStauts != null)
-                    hashCode = hashCode * 59 + this.VirtualPatchesStauts.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

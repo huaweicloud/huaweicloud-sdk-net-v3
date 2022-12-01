@@ -16,40 +16,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 函数URN
+        /// 函数预留实例列表
         /// </summary>
-        [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
-        public string FunctionUrn { get; set; }
-
-        /// <summary>
-        /// 限定类型, 支持version和alias
-        /// </summary>
-        [JsonProperty("qualifier_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string QualifierType { get; set; }
-
-        /// <summary>
-        /// 限定类型对应的取值
-        /// </summary>
-        [JsonProperty("qualifier_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string QualifierName { get; set; }
-
-        /// <summary>
-        /// 预留实例个数
-        /// </summary>
-        [JsonProperty("min_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MinCount { get; set; }
-
-        /// <summary>
-        /// 是否开启闲置模式配置
-        /// </summary>
-        [JsonProperty("idle_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IdleMode { get; set; }
+        [JsonProperty("reservedinstances", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ReservedInstanceConfigs> Reservedinstances { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("tactics_config", NullValueHandling = NullValueHandling.Ignore)]
-        public TacticsConfig TacticsConfig { get; set; }
+        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
+        public PageInfo PageInfo { get; set; }
+
+        /// <summary>
+        /// 函数个数
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Count { get; set; }
 
 
         /// <summary>
@@ -59,12 +41,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListReservedInstanceConfigsResponse {\n");
-            sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
-            sb.Append("  qualifierType: ").Append(QualifierType).Append("\n");
-            sb.Append("  qualifierName: ").Append(QualifierName).Append("\n");
-            sb.Append("  minCount: ").Append(MinCount).Append("\n");
-            sb.Append("  idleMode: ").Append(IdleMode).Append("\n");
-            sb.Append("  tacticsConfig: ").Append(TacticsConfig).Append("\n");
+            sb.Append("  reservedinstances: ").Append(Reservedinstances).Append("\n");
+            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,34 +66,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
-                    this.FunctionUrn == input.FunctionUrn ||
-                    (this.FunctionUrn != null &&
-                    this.FunctionUrn.Equals(input.FunctionUrn))
+                    this.Reservedinstances == input.Reservedinstances ||
+                    this.Reservedinstances != null &&
+                    input.Reservedinstances != null &&
+                    this.Reservedinstances.SequenceEqual(input.Reservedinstances)
                 ) && 
                 (
-                    this.QualifierType == input.QualifierType ||
-                    (this.QualifierType != null &&
-                    this.QualifierType.Equals(input.QualifierType))
+                    this.PageInfo == input.PageInfo ||
+                    (this.PageInfo != null &&
+                    this.PageInfo.Equals(input.PageInfo))
                 ) && 
                 (
-                    this.QualifierName == input.QualifierName ||
-                    (this.QualifierName != null &&
-                    this.QualifierName.Equals(input.QualifierName))
-                ) && 
-                (
-                    this.MinCount == input.MinCount ||
-                    (this.MinCount != null &&
-                    this.MinCount.Equals(input.MinCount))
-                ) && 
-                (
-                    this.IdleMode == input.IdleMode ||
-                    (this.IdleMode != null &&
-                    this.IdleMode.Equals(input.IdleMode))
-                ) && 
-                (
-                    this.TacticsConfig == input.TacticsConfig ||
-                    (this.TacticsConfig != null &&
-                    this.TacticsConfig.Equals(input.TacticsConfig))
+                    this.Count == input.Count ||
+                    (this.Count != null &&
+                    this.Count.Equals(input.Count))
                 );
         }
 
@@ -126,18 +91,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FunctionUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.QualifierType != null)
-                    hashCode = hashCode * 59 + this.QualifierType.GetHashCode();
-                if (this.QualifierName != null)
-                    hashCode = hashCode * 59 + this.QualifierName.GetHashCode();
-                if (this.MinCount != null)
-                    hashCode = hashCode * 59 + this.MinCount.GetHashCode();
-                if (this.IdleMode != null)
-                    hashCode = hashCode * 59 + this.IdleMode.GetHashCode();
-                if (this.TacticsConfig != null)
-                    hashCode = hashCode * 59 + this.TacticsConfig.GetHashCode();
+                if (this.Reservedinstances != null)
+                    hashCode = hashCode * 59 + this.Reservedinstances.GetHashCode();
+                if (this.PageInfo != null)
+                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                if (this.Count != null)
+                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

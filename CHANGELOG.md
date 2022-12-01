@@ -1,3 +1,71 @@
+# 3.1.13 2022-12-01
+
+### HuaweiCloud SDK CFW
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListIpsSwitchStatusUsingGet`:
+    - Add the response parameter `data`
+    - Remove the response parameters `object_id`, `basic_defense_status`, `virtual_patches_stauts`
+  - Changes of the interface `ListEastWestFirewall`:
+    - Add the response parameter `protect_infos`
+    - Remove the response parameter `protected_infos`
+  - The request parameter `fw_instance_id` changed to not required of the interface `ListAttackLogs`
+  - Add the request parameter `type` to the interface `UpdateRuleAclUsingPut`
+  - Add the request parameters `list_type`, `object_id` to the interface `UpdateBlackWhiteListUsingPut`
+  - Changes of the interface `ListFirewallUsingGet`:
+    - Add the response parameter `data`
+    - Remove the response parameters `fw_instance_id`, `resource_id`, `name`, `ha_type`, `charge_mode`, `service_type`, `engine_type`, `flavor`, `protect_objects`, `status`, `description`, `is_old_firewall_instance`, `support_ipv6`, `feature_toggle`
+  - Changes of the interface `ListServiceSetDetails`:
+    - Add the response parameter `data`
+    - Remove the response parameters `id`, `name`, `description`
+  - Changes of the interface `CountEips`:
+    - Add the response parameter `data`
+    - Remove the response parameters `object_id`, `eip_total`, `eip_protected`
+  - Changes of the interface `ListEipResources`:
+    - Add the response parameter `data`
+    - Remove the response parameters `id`, `public_ip`, `status`, `public_ipv6`, `enterprise_project_id`, `device_id`, `device_name`, `device_owner`, `associate_instance_type`
+  - Add the request parameter `address_type` to the interface `UpdateAddressSetInfoUsingPut`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - Support the interface `AsyncInvokeReservedFunction`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `http` to the response parameter `runtime` to the interface `ListDependencies`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `ListDependencyVersion`
+  - Changes of the interface `CreateFunction`:
+    - Add the enum values `http` to the request parameter `runtime`
+    - Add the enum values `http` to the response parameter `runtime`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `ListFunctions`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `UpdateFunctionCode`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `ShowFunctionCode`
+  - Changes of the interface `UpdateFunctionConfig`:
+    - Add the enum values `http` to the request parameter `runtime`
+    - Add the enum values `http` to the response parameter `runtime`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `ShowFunctionConfig`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `UpdateFunctionMaxInstanceConfig`
+  - Changes of the interface `ListReservedInstanceConfigs`:
+    - Add the response parameters `reservedinstances`, `page_info`, `count`
+    - Remove the response parameters `function_urn`, `qualifier_type`, `qualifier_name`, `min_count`, `idle_mode`, `tactics_config`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `CreateFunctionVersion`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `ListFunctionVersions`
+  - Add the enum values `http` to the response parameter `runtime` to the interface `ImportFunction`
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - Support the interfaces `RunQueryCustomTags`, `RunDeleteCustomTags`, `RunImageMediaTaggingDet`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `use_default_tags` to the interface `RunImageMediaTagging`
+
 # 3.1.12 2022-11-30
 
 ### HuaweiCloud SDK DDS

@@ -16,22 +16,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防护对象ID
+        /// 
         /// </summary>
-        [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObjectId { get; set; }
-
-        /// <summary>
-        /// EIP总数
-        /// </summary>
-        [JsonProperty("eip_total", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EipTotal { get; set; }
-
-        /// <summary>
-        /// EIP防护数
-        /// </summary>
-        [JsonProperty("eip_protected", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EipProtected { get; set; }
+        [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
+        public EipCountRespData Data { get; set; }
 
 
         /// <summary>
@@ -41,9 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CountEipsResponse {\n");
-            sb.Append("  objectId: ").Append(ObjectId).Append("\n");
-            sb.Append("  eipTotal: ").Append(EipTotal).Append("\n");
-            sb.Append("  eipProtected: ").Append(EipProtected).Append("\n");
+            sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,19 +52,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             return 
                 (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.EipTotal == input.EipTotal ||
-                    (this.EipTotal != null &&
-                    this.EipTotal.Equals(input.EipTotal))
-                ) && 
-                (
-                    this.EipProtected == input.EipProtected ||
-                    (this.EipProtected != null &&
-                    this.EipProtected.Equals(input.EipProtected))
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -90,12 +66,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.EipTotal != null)
-                    hashCode = hashCode * 59 + this.EipTotal.GetHashCode();
-                if (this.EipProtected != null)
-                    hashCode = hashCode * 59 + this.EipProtected.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

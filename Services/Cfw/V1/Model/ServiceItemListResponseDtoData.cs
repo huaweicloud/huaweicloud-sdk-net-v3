@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Total { get; set; }
 
         /// <summary>
+        /// 服务组id
+        /// </summary>
+        [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SetId { get; set; }
+
+        /// <summary>
         /// 记录
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
@@ -50,6 +56,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  setId: ").Append(SetId).Append("\n");
             sb.Append("  records: ").Append(Records).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -88,6 +95,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Total.Equals(input.Total))
                 ) && 
                 (
+                    this.SetId == input.SetId ||
+                    (this.SetId != null &&
+                    this.SetId.Equals(input.SetId))
+                ) && 
+                (
                     this.Records == input.Records ||
                     this.Records != null &&
                     input.Records != null &&
@@ -109,6 +121,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Total != null)
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.SetId != null)
+                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
                 if (this.Records != null)
                     hashCode = hashCode * 59 + this.Records.GetHashCode();
                 return hashCode;

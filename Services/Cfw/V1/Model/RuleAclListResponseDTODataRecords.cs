@@ -124,6 +124,122 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             }
         }
 
+        /// <summary>
+        /// 规则type，0：互联网规则，1：vpc规则，2nat规则
+        /// </summary>
+        /// <value>规则type，0：互联网规则，1：vpc规则，2nat规则</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly TypeEnum NUMBER_0 = new TypeEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly TypeEnum NUMBER_1 = new TypeEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            public static readonly TypeEnum NUMBER_2 = new TypeEnum(2);
+
+            private static readonly Dictionary<int?, TypeEnum> StaticFields =
+            new Dictionary<int?, TypeEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 1, NUMBER_1 },
+                { 2, NUMBER_2 },
+            };
+
+            private int? Value;
+
+            public TypeEnum(int? value)
+            {
+                Value = value;
+            }
+
+            public static TypeEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return Value;
+            }
+
+            public override string ToString()
+            {
+                return $"{Value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 规则id
@@ -220,6 +336,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("service", NullValueHandling = NullValueHandling.Ignore)]
         public RuleServiceDto Service { get; set; }
 
+        /// <summary>
+        /// 规则type，0：互联网规则，1：vpc规则，2nat规则
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
 
         /// <summary>
         /// Get the string
@@ -244,6 +365,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  destination: ").Append(Destination).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -344,6 +466,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Service == input.Service ||
                     (this.Service != null &&
                     this.Service.Equals(input.Service))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -387,6 +514,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Destination.GetHashCode();
                 if (this.Service != null)
                     hashCode = hashCode * 59 + this.Service.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

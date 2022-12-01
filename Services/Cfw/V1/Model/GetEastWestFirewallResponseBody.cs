@@ -60,8 +60,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// <summary>
         /// 东西向防护资源信息
         /// </summary>
-        [JsonProperty("protected_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EwProtectResourceInfo> ProtectedInfos { get; set; }
+        [JsonProperty("protect_infos", NullValueHandling = NullValueHandling.Ignore)]
+        public List<EwProtectResourceInfo> ProtectInfos { get; set; }
 
         /// <summary>
         /// 防护VPC总数
@@ -96,7 +96,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  firewallAssociatedSubnets: ").Append(FirewallAssociatedSubnets).Append("\n");
             sb.Append("  er: ").Append(Er).Append("\n");
             sb.Append("  inspectionVpc: ").Append(InspectionVpc).Append("\n");
-            sb.Append("  protectedInfos: ").Append(ProtectedInfos).Append("\n");
+            sb.Append("  protectInfos: ").Append(ProtectInfos).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
@@ -158,10 +158,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.InspectionVpc.Equals(input.InspectionVpc))
                 ) && 
                 (
-                    this.ProtectedInfos == input.ProtectedInfos ||
-                    this.ProtectedInfos != null &&
-                    input.ProtectedInfos != null &&
-                    this.ProtectedInfos.SequenceEqual(input.ProtectedInfos)
+                    this.ProtectInfos == input.ProtectInfos ||
+                    this.ProtectInfos != null &&
+                    input.ProtectInfos != null &&
+                    this.ProtectInfos.SequenceEqual(input.ProtectInfos)
                 ) && 
                 (
                     this.Total == input.Total ||
@@ -202,8 +202,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Er.GetHashCode();
                 if (this.InspectionVpc != null)
                     hashCode = hashCode * 59 + this.InspectionVpc.GetHashCode();
-                if (this.ProtectedInfos != null)
-                    hashCode = hashCode * 59 + this.ProtectedInfos.GetHashCode();
+                if (this.ProtectInfos != null)
+                    hashCode = hashCode * 59 + this.ProtectInfos.GetHashCode();
                 if (this.Total != null)
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Offset != null)
