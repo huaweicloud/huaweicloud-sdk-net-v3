@@ -132,14 +132,14 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         [JsonProperty("locale", NullValueHandling = NullValueHandling.Ignore)]
         public LocaleEnum Locale { get; set; }
         /// <summary>
-        /// 查询记录数默认为200，limit最多为200, 最小值为1
+        /// 查询记录数默认为200，limit最多为200，最小值为1。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 索引位置，从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0
+        /// 索引位置，从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]

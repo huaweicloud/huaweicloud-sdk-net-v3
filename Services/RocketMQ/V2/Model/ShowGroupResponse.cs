@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 是否启用。
+        /// 是否可以消费。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
@@ -46,10 +46,22 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public decimal? RetryMaxTime { get; set; }
 
         /// <summary>
-        /// 是否重头消费。
+        /// 应用id。
         /// </summary>
-        [JsonProperty("from_beginning", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? FromBeginning { get; set; }
+        [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppId { get; set; }
+
+        /// <summary>
+        /// 应用名称。
+        /// </summary>
+        [JsonProperty("app_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppName { get; set; }
+
+        /// <summary>
+        /// 权限。
+        /// </summary>
+        [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Permissions { get; set; }
 
 
         /// <summary>
@@ -64,7 +76,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  retryMaxTime: ").Append(RetryMaxTime).Append("\n");
-            sb.Append("  fromBeginning: ").Append(FromBeginning).Append("\n");
+            sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  appName: ").Append(AppName).Append("\n");
+            sb.Append("  permissions: ").Append(Permissions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,9 +127,20 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.RetryMaxTime.Equals(input.RetryMaxTime))
                 ) && 
                 (
-                    this.FromBeginning == input.FromBeginning ||
-                    (this.FromBeginning != null &&
-                    this.FromBeginning.Equals(input.FromBeginning))
+                    this.AppId == input.AppId ||
+                    (this.AppId != null &&
+                    this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.AppName == input.AppName ||
+                    (this.AppName != null &&
+                    this.AppName.Equals(input.AppName))
+                ) && 
+                (
+                    this.Permissions == input.Permissions ||
+                    this.Permissions != null &&
+                    input.Permissions != null &&
+                    this.Permissions.SequenceEqual(input.Permissions)
                 );
         }
 
@@ -137,8 +162,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RetryMaxTime != null)
                     hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
-                if (this.FromBeginning != null)
-                    hashCode = hashCode * 59 + this.FromBeginning.GetHashCode();
+                if (this.AppId != null)
+                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.AppName != null)
+                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.Permissions != null)
+                    hashCode = hashCode * 59 + this.Permissions.GetHashCode();
                 return hashCode;
             }
         }

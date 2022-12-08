@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public GetFirewallInstanceResponseData Data { get; set; }
+        public GetFirewallInstanceData Data { get; set; }
 
 
         /// <summary>

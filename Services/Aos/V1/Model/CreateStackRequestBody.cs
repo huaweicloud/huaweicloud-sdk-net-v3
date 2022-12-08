@@ -22,12 +22,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string StackName { get; set; }
 
         /// <summary>
-        /// 执行操作者的名字，将用做未来的审计工作
-        /// </summary>
-        [JsonProperty("executor", NullValueHandling = NullValueHandling.Ignore)]
-        public string Executor { get; set; }
-
-        /// <summary>
         /// 委托授权的信息。
         /// </summary>
         [JsonProperty("agencies", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,7 +46,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public bool? EnableAutoRollback { get; set; }
 
         /// <summary>
-        /// HCL模板，描述了资源的目标状态。RF将比较此模板与当前远程资源的状态之间的区别。  template_body和template_uri 必须有且只有一个存在 
+        /// HCL模板，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。  template_body和template_uri 必须有且只有一个存在 
         /// </summary>
         [JsonProperty("template_body", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateBody { get; set; }
@@ -64,19 +58,19 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string TemplateUri { get; set; }
 
         /// <summary>
-        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * RF支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，RF会直接明文使用、log、展示、存储对应的vars 
+        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars 
         /// </summary>
         [JsonProperty("vars_body", NullValueHandling = NullValueHandling.Ignore)]
         public string VarsBody { get; set; }
 
         /// <summary>
-        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * RF支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars中不应该传递任何敏感信息，RF会直接明文使用、log、展示、存储对应的vars 
+        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars中不应该传递任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars 
         /// </summary>
         [JsonProperty("vars_structure", NullValueHandling = NullValueHandling.Ignore)]
         public List<VarsStructure> VarsStructure { get; set; }
 
         /// <summary>
-        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * RF支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，RF会直接明文使用、log、展示、存储对应的vars 
+        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars 
         /// </summary>
         [JsonProperty("vars_uri", NullValueHandling = NullValueHandling.Ignore)]
         public string VarsUri { get; set; }
@@ -90,7 +84,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             var sb = new StringBuilder();
             sb.Append("class CreateStackRequestBody {\n");
             sb.Append("  stackName: ").Append(StackName).Append("\n");
-            sb.Append("  executor: ").Append(Executor).Append("\n");
             sb.Append("  agencies: ").Append(Agencies).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  enableDeletionProtection: ").Append(EnableDeletionProtection).Append("\n");
@@ -125,11 +118,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.StackName == input.StackName ||
                     (this.StackName != null &&
                     this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.Executor == input.Executor ||
-                    (this.Executor != null &&
-                    this.Executor.Equals(input.Executor))
                 ) && 
                 (
                     this.Agencies == input.Agencies ||
@@ -190,8 +178,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 int hashCode = 41;
                 if (this.StackName != null)
                     hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.Executor != null)
-                    hashCode = hashCode * 59 + this.Executor.GetHashCode();
                 if (this.Agencies != null)
                     hashCode = hashCode * 59 + this.Agencies.GetHashCode();
                 if (this.Description != null)

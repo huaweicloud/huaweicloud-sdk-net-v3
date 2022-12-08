@@ -12,7 +12,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class GetFirewallInstanceResponseData 
+    public class GetFirewallInstanceResponseRecord 
     {
         /// <summary>
         /// 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
@@ -198,12 +198,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 资源id
-        /// </summary>
-        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceId { get; set; }
-
-        /// <summary>
         /// 防火墙名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -231,7 +225,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 引擎类型
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string EngineType { get; set; }
+        public int? EngineType { get; set; }
 
         /// <summary>
         /// 
@@ -251,12 +245,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 描述
-        /// </summary>
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
-
-        /// <summary>
         /// 是否为旧引擎，true表示是，false表示不是
         /// </summary>
         [JsonProperty("is_old_firewall_instance", NullValueHandling = NullValueHandling.Ignore)]
@@ -274,6 +262,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("feature_toggle", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, bool?> FeatureToggle { get; set; }
 
+        /// <summary>
+        /// 防火墙资源列表
+        /// </summary>
+        [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FirewallInstanceResource> Resources { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -281,9 +275,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class GetFirewallInstanceResponseData {\n");
+            sb.Append("class GetFirewallInstanceResponseRecord {\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
-            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  haType: ").Append(HaType).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
@@ -292,10 +285,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  protectObjects: ").Append(ProtectObjects).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  isOldFirewallInstance: ").Append(IsOldFirewallInstance).Append("\n");
             sb.Append("  supportIpv6: ").Append(SupportIpv6).Append("\n");
             sb.Append("  featureToggle: ").Append(FeatureToggle).Append("\n");
+            sb.Append("  resources: ").Append(Resources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -305,13 +298,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GetFirewallInstanceResponseData);
+            return this.Equals(input as GetFirewallInstanceResponseRecord);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(GetFirewallInstanceResponseData input)
+        public bool Equals(GetFirewallInstanceResponseRecord input)
         {
             if (input == null)
                 return false;
@@ -321,11 +314,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.FwInstanceId == input.FwInstanceId ||
                     (this.FwInstanceId != null &&
                     this.FwInstanceId.Equals(input.FwInstanceId))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -369,11 +357,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
                     this.IsOldFirewallInstance == input.IsOldFirewallInstance ||
                     (this.IsOldFirewallInstance != null &&
                     this.IsOldFirewallInstance.Equals(input.IsOldFirewallInstance))
@@ -388,6 +371,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.FeatureToggle != null &&
                     input.FeatureToggle != null &&
                     this.FeatureToggle.SequenceEqual(input.FeatureToggle)
+                ) && 
+                (
+                    this.Resources == input.Resources ||
+                    this.Resources != null &&
+                    input.Resources != null &&
+                    this.Resources.SequenceEqual(input.Resources)
                 );
         }
 
@@ -401,8 +390,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 int hashCode = 41;
                 if (this.FwInstanceId != null)
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.HaType != null)
@@ -419,14 +406,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ProtectObjects.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.IsOldFirewallInstance != null)
                     hashCode = hashCode * 59 + this.IsOldFirewallInstance.GetHashCode();
                 if (this.SupportIpv6 != null)
                     hashCode = hashCode * 59 + this.SupportIpv6.GetHashCode();
                 if (this.FeatureToggle != null)
                     hashCode = hashCode * 59 + this.FeatureToggle.GetHashCode();
+                if (this.Resources != null)
+                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
                 return hashCode;
             }
         }

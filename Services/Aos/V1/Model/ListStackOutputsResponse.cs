@@ -16,16 +16,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 堆栈输出
+        /// 资源栈输出
         /// </summary>
         [JsonProperty("outputs", NullValueHandling = NullValueHandling.Ignore)]
         public List<StackOutput> Outputs { get; set; }
-
-        /// <summary>
-        /// 下一页的标记信息
-        /// </summary>
-        [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string NextMarker { get; set; }
 
 
         /// <summary>
@@ -36,7 +30,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListStackOutputsResponse {\n");
             sb.Append("  outputs: ").Append(Outputs).Append("\n");
-            sb.Append("  nextMarker: ").Append(NextMarker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -63,11 +56,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.Outputs != null &&
                     input.Outputs != null &&
                     this.Outputs.SequenceEqual(input.Outputs)
-                ) && 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
                 );
         }
 
@@ -81,8 +69,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 int hashCode = 41;
                 if (this.Outputs != null)
                     hashCode = hashCode * 59 + this.Outputs.GetHashCode();
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,19 +16,19 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 用户希望生成执行计划的栈（stack）的Id。此Id由IAC在生成栈的时候生成，为UUID。
+        /// 用户希望生成执行计划的栈（stack）的Id。此Id由资源编排服务在生成栈的时候生成，为UUID。
         /// </summary>
         [JsonProperty("stack_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StackId { get; set; }
 
         /// <summary>
-        /// HCL模板，描述了资源的目标状态。IAC将比较此模板与当前远程资源的状态之间的区别 template_body 和 template_uri 有且仅有一个存在
+        /// HCL模板，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别 template_body 和 template_uri 有且仅有一个存在
         /// </summary>
         [JsonProperty("template_body", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateBody { get; set; }
 
         /// <summary>
-        /// HCL模板的OBS地址，描述了资源的目标状态。IAC将比较此模板与当前远程资源的状态之间的区别。目前接受纯tf文件或zip压缩包。 纯tf文件需要以“.tf”结尾，并遵守tf模板格式。压缩包目前只支持zip格式，文件需要以\&quot;.zip\&quot;结尾，压缩包解压后应该只包含文件，且文件均以“.tf”结尾，不支持nested结构 template_body 和 template_uri 有且仅有一个存在
+        /// HCL模板的OBS地址，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。目前接受纯tf文件或zip压缩包。 纯tf文件需要以“.tf”结尾，并遵守tf模板格式。压缩包目前只支持zip格式，文件需要以\&quot;.zip\&quot;结尾，压缩包解压后应该只包含文件，且文件均以“.tf”结尾，不支持nested结构 template_body 和 template_uri 有且仅有一个存在
         /// </summary>
         [JsonProperty("template_uri", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateUri { get; set; }
@@ -40,19 +40,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ExecutionPlanName { get; set; }
 
         /// <summary>
-        /// 执行操作者的名字
-        /// </summary>
-        [JsonProperty("executor", NullValueHandling = NullValueHandling.Ignore)]
-        public string Executor { get; set; }
-
-        /// <summary>
         /// 执行计划的描述。可用于客户识别自己的执行计划
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。var是一系列terraform所需要的参数。 注：IaC支持vars、vars_body和vars_uri，如果vars、vars_body和vars_uri中声名了同一个变量，将报错400。 注：vars中的值只支持简单的字符串类型，如果其他类型，需要用户自己在HCL引用时转换，或者用户可以使用vars_body或vars_uri， vars_body和vars_uri中支持HCL支持的各种类型以及复杂结构。
+        /// terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。var是一系列terraform所需要的参数。 注：资源编排服务支持vars、vars_body和vars_uri，如果vars、vars_body和vars_uri中声名了同一个变量，将报错400。 注：vars中的值只支持简单的字符串类型，如果其他类型，需要用户自己在HCL引用时转换，或者用户可以使用vars_body或vars_uri， vars_body和vars_uri中支持HCL支持的各种类型以及复杂结构。
         /// </summary>
         [JsonProperty("vars_structure", NullValueHandling = NullValueHandling.Ignore)]
         public List<VarsStructure> VarsStructure { get; set; }
@@ -64,7 +58,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string VarsBody { get; set; }
 
         /// <summary>
-        /// 参数文件的OBS地址，如果客户偏向使用文件维护参数，可以将参数上传OBS，并将OBS地址提交。 注：如果用户同时使用了vars_body、vars_uri和vars，且他们的内容中定义了同一个参数，IAC将报错并返回400。 vars_uri和vars_body中的vars按照HCL的语义，可以支持各种类型、复杂结构等
+        /// 参数文件的OBS地址，如果客户偏向使用文件维护参数，可以将参数上传OBS，并将OBS地址提交。 注：如果用户同时使用了vars_body、vars_uri和vars，且他们的内容中定义了同一个参数，资源编排服务将报错并返回400。 vars_uri和vars_body中的vars按照HCL的语义，可以支持各种类型、复杂结构等
         /// </summary>
         [JsonProperty("vars_uri", NullValueHandling = NullValueHandling.Ignore)]
         public string VarsUri { get; set; }
@@ -81,7 +75,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  templateBody: ").Append(TemplateBody).Append("\n");
             sb.Append("  templateUri: ").Append(TemplateUri).Append("\n");
             sb.Append("  executionPlanName: ").Append(ExecutionPlanName).Append("\n");
-            sb.Append("  executor: ").Append(Executor).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  varsStructure: ").Append(VarsStructure).Append("\n");
             sb.Append("  varsBody: ").Append(VarsBody).Append("\n");
@@ -128,11 +121,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.ExecutionPlanName.Equals(input.ExecutionPlanName))
                 ) && 
                 (
-                    this.Executor == input.Executor ||
-                    (this.Executor != null &&
-                    this.Executor.Equals(input.Executor))
-                ) && 
-                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -171,8 +159,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.TemplateUri.GetHashCode();
                 if (this.ExecutionPlanName != null)
                     hashCode = hashCode * 59 + this.ExecutionPlanName.GetHashCode();
-                if (this.Executor != null)
-                    hashCode = hashCode * 59 + this.Executor.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.VarsStructure != null)

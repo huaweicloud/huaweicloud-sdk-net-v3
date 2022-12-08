@@ -621,6 +621,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 删除附件
+        ///
+        /// 取消工作项与附件关联，如附件为工作项页面上传则删除附件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAttachmentResponse> DeleteAttachmentAsync(DeleteAttachmentRequest deleteAttachmentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , deleteAttachmentRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , deleteAttachmentRequest.IssueId.ToString());
+            urlParam.Add("attachment_id" , deleteAttachmentRequest.AttachmentId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/attachments/{attachment_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAttachmentRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteAttachmentResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除工作项
         ///
         /// 删除工作项
@@ -672,6 +691,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProjectModuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteProjectModuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 下载工作项附件
+        ///
+        /// 下载工作项附件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadAttachmentResponse> DownloadAttachmentAsync(DownloadAttachmentRequest downloadAttachmentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , downloadAttachmentRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , downloadAttachmentRequest.IssueId.ToString());
+            urlParam.Add("attachment_id" , downloadAttachmentRequest.AttachmentId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/attachments/{attachment_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAttachmentRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<DownloadAttachmentResponse>(response);
         }
         
         /// <summary>
@@ -984,6 +1022,25 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScrumProjectStatusesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScrumProjectStatusesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询迭代下工作项状态的统计数据（处理人维度）
+        ///
+        /// 查询迭代下工作项状态的统计数据（处理人维度）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListStatusStatisticResponse> ListStatusStatisticAsync(ListStatusStatisticRequest listStatusStatisticRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listStatusStatisticRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/status-statistic",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStatusStatisticRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ListStatusStatisticResponse listStatusStatisticResponse = JsonUtils.DeSerializeNull<ListStatusStatisticResponse>(response);
+            listStatusStatisticResponse.Body = JsonUtils.DeSerializeList<UserStatusStatistic>(response);
+            return listStatusStatisticResponse;
         }
         
         /// <summary>

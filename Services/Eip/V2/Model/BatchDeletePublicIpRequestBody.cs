@@ -7,19 +7,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Aos.V1.Model
+namespace HuaweiCloud.SDK.Eip.V2.Model
 {
     /// <summary>
-    /// 
+    /// 请求参数
     /// </summary>
-    public class ExecutorPrimitiveTypeHolder 
+    public class BatchDeletePublicIpRequestBody 
     {
 
         /// <summary>
-        /// 执行操作者的名字，将用做未来的审计工作
+        /// 弹性公网ip的id列表。
         /// </summary>
-        [JsonProperty("executor", NullValueHandling = NullValueHandling.Ignore)]
-        public string Executor { get; set; }
+        [JsonProperty("publicip_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PublicipIds { get; set; }
 
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ExecutorPrimitiveTypeHolder {\n");
-            sb.Append("  executor: ").Append(Executor).Append("\n");
+            sb.Append("class BatchDeletePublicIpRequestBody {\n");
+            sb.Append("  publicipIds: ").Append(PublicipIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -39,22 +39,23 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ExecutorPrimitiveTypeHolder);
+            return this.Equals(input as BatchDeletePublicIpRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ExecutorPrimitiveTypeHolder input)
+        public bool Equals(BatchDeletePublicIpRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Executor == input.Executor ||
-                    (this.Executor != null &&
-                    this.Executor.Equals(input.Executor))
+                    this.PublicipIds == input.PublicipIds ||
+                    this.PublicipIds != null &&
+                    input.PublicipIds != null &&
+                    this.PublicipIds.SequenceEqual(input.PublicipIds)
                 );
         }
 
@@ -66,8 +67,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Executor != null)
-                    hashCode = hashCode * 59 + this.Executor.GetHashCode();
+                if (this.PublicipIds != null)
+                    hashCode = hashCode * 59 + this.PublicipIds.GetHashCode();
                 return hashCode;
             }
         }

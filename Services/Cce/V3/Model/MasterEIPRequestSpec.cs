@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class MasterEIPRequestSpec 
     {
         /// <summary>
-        /// 绑定或解绑动作
+        /// 绑定或解绑动作，必选参数。 - 绑定：固定值为{\&quot;action\&quot;:\&quot;bind\&quot;} - 解绑：固定值为{\&quot;action\&quot;:\&quot;unbind\&quot;} 
         /// </summary>
-        /// <value>绑定或解绑动作</value>
+        /// <value>绑定或解绑动作，必选参数。 - 绑定：固定值为{\&quot;action\&quot;:\&quot;bind\&quot;} - 解绑：固定值为{\&quot;action\&quot;:\&quot;unbind\&quot;} </value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 绑定或解绑动作
+        /// 绑定或解绑动作，必选参数。 - 绑定：固定值为{\&quot;action\&quot;:\&quot;bind\&quot;} - 解绑：固定值为{\&quot;action\&quot;:\&quot;unbind\&quot;} 
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
@@ -137,13 +137,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public MasterEIPRequestSpecSpec Spec { get; set; }
 
         /// <summary>
-        /// 带宽
+        /// 带宽(字段已失效，暂不推荐使用)
         /// </summary>
         [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public string Bandwidth { get; set; }
 
         /// <summary>
-        /// 弹性网卡IP
+        /// 弹性网卡IP(字段已失效，暂不推荐使用)
         /// </summary>
         [JsonProperty("elasticIp", NullValueHandling = NullValueHandling.Ignore)]
         public string ElasticIp { get; set; }

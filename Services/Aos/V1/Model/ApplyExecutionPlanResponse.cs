@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 部署生成的唯一ID，由IAC生成
+        /// 部署生成的唯一ID，由资源编排服务生成
         /// </summary>
         [JsonProperty("deployment_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeploymentId { get; set; }

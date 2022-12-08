@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 继续回滚触发部署生成的唯一的deployment_id，由RF生成，通常为UUID
+        /// 继续回滚触发部署生成的唯一的deployment_id，由资源编排服务生成，通常为UUID
         /// </summary>
         [JsonProperty("deployment_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeploymentId { get; set; }

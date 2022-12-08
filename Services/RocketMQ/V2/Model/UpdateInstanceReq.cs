@@ -36,8 +36,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// <summary>
         /// ACL访问控制。
         /// </summary>
-        [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? RetentionPolicy { get; set; }
+        [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAcl { get; set; }
 
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
-            sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
+            sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,9 +88,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.SecurityGroupId.Equals(input.SecurityGroupId))
                 ) && 
                 (
-                    this.RetentionPolicy == input.RetentionPolicy ||
-                    (this.RetentionPolicy != null &&
-                    this.RetentionPolicy.Equals(input.RetentionPolicy))
+                    this.EnableAcl == input.EnableAcl ||
+                    (this.EnableAcl != null &&
+                    this.EnableAcl.Equals(input.EnableAcl))
                 );
         }
 
@@ -108,8 +108,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.SecurityGroupId != null)
                     hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.RetentionPolicy != null)
-                    hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
+                if (this.EnableAcl != null)
+                    hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 return hashCode;
             }
         }

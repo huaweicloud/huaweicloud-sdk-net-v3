@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 待安装、升级插件的具体版本版本号，例如1.0.0
+        /// 待安装、升级插件的具体版本版本号，例如1.0.0，如果不传，匹配集群支持的稳定版本
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterID { get; set; }
 
         /// <summary>
-        /// 插件模板安装参数（各插件不同），升级插件时需要填写全量安装参数，未填写参数将使用插件模板中的默认值，当前插件安装参数可通过查询插件实例接口获取。
+        /// 插件模板安装参数（各插件不同），升级插件时需要填写全量安装参数，未填写参数将使用插件模板中的默认值，当前插件安装参数可通过查询插件实例接口获取。 
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Values { get; set; }

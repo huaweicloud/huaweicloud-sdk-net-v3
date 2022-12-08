@@ -329,6 +329,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public bool? IsStatefulFunction { get; set; }
 
         /// <summary>
+        /// 是否启动动态内存配置
+        /// </summary>
+        [JsonProperty("enable_dynamic_memory", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableDynamicMemory { get; set; }
+
+        /// <summary>
+        /// 是否允许在请求头中添加鉴权信息
+        /// </summary>
+        [JsonProperty("enable_auth_in_header", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAuthInHeader { get; set; }
+
+        /// <summary>
         /// 内网域名配置。
         /// </summary>
         [JsonProperty("domain_names", NullValueHandling = NullValueHandling.Ignore)]
@@ -361,6 +373,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
+            sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
+            sb.Append("  enableAuthInHeader: ").Append(EnableAuthInHeader).Append("\n");
             sb.Append("  domainNames: ").Append(DomainNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -479,6 +493,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.IsStatefulFunction.Equals(input.IsStatefulFunction))
                 ) && 
                 (
+                    this.EnableDynamicMemory == input.EnableDynamicMemory ||
+                    (this.EnableDynamicMemory != null &&
+                    this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
+                ) && 
+                (
+                    this.EnableAuthInHeader == input.EnableAuthInHeader ||
+                    (this.EnableAuthInHeader != null &&
+                    this.EnableAuthInHeader.Equals(input.EnableAuthInHeader))
+                ) && 
+                (
                     this.DomainNames == input.DomainNames ||
                     (this.DomainNames != null &&
                     this.DomainNames.Equals(input.DomainNames))
@@ -531,6 +555,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.IsStatefulFunction != null)
                     hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
+                if (this.EnableDynamicMemory != null)
+                    hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
+                if (this.EnableAuthInHeader != null)
+                    hashCode = hashCode * 59 + this.EnableAuthInHeader.GetHashCode();
                 if (this.DomainNames != null)
                     hashCode = hashCode * 59 + this.DomainNames.GetHashCode();
                 return hashCode;

@@ -80,6 +80,22 @@ namespace HuaweiCloud.SDK.Eip.V2
         }
         
         /// <summary>
+        /// 查询带宽加油包列表
+        ///
+        /// 查询带宽加油包列表信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBandwidthPkgResponse ListBandwidthPkg(ListBandwidthPkgRequest listBandwidthPkgRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/bandwidthpkgs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBandwidthPkgRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListBandwidthPkgResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询带宽列表
         ///
         /// 查询带宽列表。
@@ -197,6 +213,38 @@ namespace HuaweiCloud.SDK.Eip.V2
         }
         
         /// <summary>
+        /// 批量创建弹性公网IP
+        ///
+        /// 批量创建弹性公网IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreatePublicipsResponse BatchCreatePublicips(BatchCreatePublicipsRequest batchCreatePublicipsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/batchpublicips",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreatePublicipsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchCreatePublicipsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除弹性公网IP
+        ///
+        /// 批量删除弹性公网IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeletePublicIpResponse BatchDeletePublicIp(BatchDeletePublicIpRequest batchDeletePublicIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/batchpublicips",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePublicIpRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<BatchDeletePublicIpResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量删除弹性公网IP资源标签
         ///
         /// 为指定的弹性公网IP资源实例批量删除标签。
@@ -211,6 +259,55 @@ namespace HuaweiCloud.SDK.Eip.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePublicipTagsRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<BatchDeletePublicipTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量解绑弹性公网IP
+        ///
+        /// 批量解绑弹性公网IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDisassociatePublicipsResponse BatchDisassociatePublicips(BatchDisassociatePublicipsRequest batchDisassociatePublicipsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/batchpublicips",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDisassociatePublicipsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
+            return JsonUtils.DeSerialize<BatchDisassociatePublicipsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询PublicIp数量
+        ///
+        /// 查询PublicIp数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountPublicIpResponse CountPublicIp(CountPublicIpRequest countPublicIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/elasticips",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPublicIpRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<CountPublicIpResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询PublicIp实例数
+        ///
+        /// 查询PublicIp实例数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountPublicIpInstanceResponse CountPublicIpInstance(CountPublicIpInstanceRequest countPublicIpInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/publicip/instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPublicIpInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            CountPublicIpInstanceResponse countPublicIpInstanceResponse = JsonUtils.DeSerializeNull<CountPublicIpInstanceResponse>(response);
+            return countPublicIpInstanceResponse;
         }
         
         /// <summary>
@@ -344,6 +441,23 @@ namespace HuaweiCloud.SDK.Eip.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listPublicipsByTagsRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ListPublicipsByTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询PublicIp类型
+        ///
+        /// 查询PublicIp类型
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPublicIpTypeResponse ShowPublicIpType(ShowPublicIpTypeRequest showPublicIpTypeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/publicip_types",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicIpTypeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            ShowPublicIpTypeResponse showPublicIpTypeResponse = JsonUtils.DeSerializeNull<ShowPublicIpTypeResponse>(response);
+            return showPublicIpTypeResponse;
         }
         
         /// <summary>

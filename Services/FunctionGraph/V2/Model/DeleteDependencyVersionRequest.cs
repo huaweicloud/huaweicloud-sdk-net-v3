@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string DependId { get; set; }
 
         /// <summary>
-        /// 依赖包的ID。
+        /// 依赖包版本号。
         /// </summary>
         [SDKProperty("version", IsPath = true)]
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]

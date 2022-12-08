@@ -21,12 +21,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("stack_events", NullValueHandling = NullValueHandling.Ignore)]
         public List<StackEventResponse> StackEvents { get; set; }
 
-        /// <summary>
-        /// 当一页无法发回所有的细节，将返回next_marker，客户可以继续调用list-stack-events并给与next_marker来继续读取下页
-        /// </summary>
-        [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string NextMarker { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -36,7 +30,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListStackEventsResponse {\n");
             sb.Append("  stackEvents: ").Append(StackEvents).Append("\n");
-            sb.Append("  nextMarker: ").Append(NextMarker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -63,11 +56,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.StackEvents != null &&
                     input.StackEvents != null &&
                     this.StackEvents.SequenceEqual(input.StackEvents)
-                ) && 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
                 );
         }
 
@@ -81,8 +69,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 int hashCode = 41;
                 if (this.StackEvents != null)
                     hashCode = hashCode * 59 + this.StackEvents.GetHashCode();
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
                 return hashCode;
             }
         }

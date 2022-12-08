@@ -47,6 +47,22 @@ namespace HuaweiCloud.SDK.Eip.V3
         }
         
         /// <summary>
+        /// 查询公网IP池列表
+        ///
+        /// 全量查询公网IP池列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPublicipPoolResponse> ListPublicipPoolAsync(ListPublicipPoolRequest listPublicipPoolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicip-pools",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicipPoolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListPublicipPoolResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询指定租户下的共享带宽类型列表
         ///
         /// 查询指定租户下的共享带宽类型列表
@@ -60,6 +76,23 @@ namespace HuaweiCloud.SDK.Eip.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listShareBandwidthTypesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListShareBandwidthTypesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询公网IP池详情
+        ///
+        /// 查询公网IP池详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPublicipPoolResponse> ShowPublicipPoolAsync(ShowPublicipPoolRequest showPublicipPoolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("publicip_pool_id" , showPublicipPoolRequest.PublicipPoolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicip-pools/{publicip_pool_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipPoolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowPublicipPoolResponse>(response);
         }
         
         /// <summary>
@@ -80,6 +113,22 @@ namespace HuaweiCloud.SDK.Eip.V3
         }
         
         /// <summary>
+        /// 查询弹性公网IP可用数
+        ///
+        /// IP池用于查询公网可用ip个数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CountEipAvailableResourcesResponse> CountEipAvailableResourcesAsync(CountEipAvailableResourcesRequest countEipAvailableResourcesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/resources/available",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countEipAvailableResourcesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CountEipAvailableResourcesResponse>(response);
+        }
+        
+        /// <summary>
         /// 解绑弹性公网IP
         ///
         /// 解绑弹性公网IP
@@ -94,22 +143,6 @@ namespace HuaweiCloud.SDK.Eip.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociatePublicipsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DisassociatePublicipsResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询公网IP池列表
-        ///
-        /// 全量查询公网IP池列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListPublicipPoolResponse> ListPublicipPoolAsync(ListPublicipPoolRequest listPublicipPoolRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicip-pools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicipPoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ListPublicipPoolResponse>(response);
         }
         
         /// <summary>
@@ -143,23 +176,6 @@ namespace HuaweiCloud.SDK.Eip.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowPublicipResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询公网IP池详情
-        ///
-        /// 查询公网IP池详情
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowPublicipPoolResponse> ShowPublicipPoolAsync(ShowPublicipPoolRequest showPublicipPoolRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_pool_id" , showPublicipPoolRequest.PublicipPoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicip-pools/{publicip_pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipPoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowPublicipPoolResponse>(response);
         }
         
         /// <summary>

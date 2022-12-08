@@ -31,6 +31,22 @@ namespace HuaweiCloud.SDK.Tms.v1
         }
         
         /// <summary>
+        /// 批量添加标签
+        ///
+        /// 用于给云服务的多个资源添加标签，每个资源最多可添加10个标签，每次最多支持批量操作20个资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateResourceTagResponse> CreateResourceTagAsync(CreateResourceTagRequest createResourceTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-create",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createResourceTagRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateResourceTagResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除预定义标签
         ///
         /// 用于删除预定标签。
@@ -44,6 +60,22 @@ namespace HuaweiCloud.SDK.Tms.v1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deletePredefineTagsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<DeletePredefineTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量移除标签
+        ///
+        /// 用于批量移除云服务多个资源的标签，每个资源最多支持移除10个标签，每次最多支持批量操作20个资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteResourceTagResponse> DeleteResourceTagAsync(DeleteResourceTagRequest deleteResourceTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteResourceTagRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DeleteResourceTagResponse>(response);
         }
         
         /// <summary>
@@ -81,7 +113,7 @@ namespace HuaweiCloud.SDK.Tms.v1
         /// <summary>
         /// 查询标签管理支持的服务
         ///
-        /// 查询标签管理支持的服务
+        /// 查询标签管理支持的服务。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -92,6 +124,54 @@ namespace HuaweiCloud.SDK.Tms.v1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListProvidersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 根据标签过滤资源
+        ///
+        /// 根据标签过滤资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListResourceResponse> ListResourceAsync(ListResourceRequest listResourceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/resource-instances/filter",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ListResourceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询标签键列表
+        ///
+        /// 查询指定区域的所有标签键.
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTagKeysResponse> ListTagKeysAsync(ListTagKeysRequest listTagKeysRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/tag-keys",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagKeysRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTagKeysResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询标签值列表
+        ///
+        /// 查询指定区域的标签键下的所有标签值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTagValuesResponse> ListTagValuesAsync(ListTagValuesRequest listTagValuesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/tag-values",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagValuesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTagValuesResponse>(response);
         }
         
         /// <summary>
@@ -109,6 +189,23 @@ namespace HuaweiCloud.SDK.Tms.v1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询资源标签
+        ///
+        /// 查询单个资源上的标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowResourceTagResponse> ShowResourceTagAsync(ShowResourceTagRequest showResourceTagRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id" , showResourceTagRequest.ResourceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/resources/{resource_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowResourceTagResponse>(response);
         }
         
         /// <summary>

@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string StackName { get; set; }
 
         /// <summary>
-        /// 执行计划的唯一Id，由IaC随机生成,为uuid
+        /// 执行计划的唯一Id，由资源编排服务随机生成,为uuid
         /// </summary>
         [JsonProperty("execution_plan_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecutionPlanId { get; set; }

@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// 对应provider所使用的IAM委托名称名称，RF会使用此委托的权限去访问、创建对应provider的资源
+        /// 对应provider所使用的IAM委托名称，资源编排服务会使用此委托的权限去访问、创建对应provider的资源
         /// </summary>
         [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyName { get; set; }

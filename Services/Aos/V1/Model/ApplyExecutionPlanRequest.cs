@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string StackName { get; set; }
 
         /// <summary>
-        /// 执行计划的名字。如果未指定，则使用execution_plan_id作为execution_plan_name。
+        /// 执行计划的名字。
         /// </summary>
         [SDKProperty("execution_plan_name", IsPath = true)]
         [JsonProperty("execution_plan_name", NullValueHandling = NullValueHandling.Ignore)]

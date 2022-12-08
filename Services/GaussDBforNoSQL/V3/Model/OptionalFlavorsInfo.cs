@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 扩容节点时可用的规格列表。
+        /// 实例规格变更时可用的规格列表。
         /// </summary>
-        [JsonProperty("optional_flavor_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ComputeFlavor> OptionalFlavorList { get; set; }
+        [JsonProperty("list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ComputeFlavor> List { get; set; }
 
         /// <summary>
         /// 总记录数。
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OptionalFlavorsInfo {\n");
-            sb.Append("  optionalFlavorList: ").Append(OptionalFlavorList).Append("\n");
+            sb.Append("  list: ").Append(List).Append("\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -59,10 +59,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 
             return 
                 (
-                    this.OptionalFlavorList == input.OptionalFlavorList ||
-                    this.OptionalFlavorList != null &&
-                    input.OptionalFlavorList != null &&
-                    this.OptionalFlavorList.SequenceEqual(input.OptionalFlavorList)
+                    this.List == input.List ||
+                    this.List != null &&
+                    input.List != null &&
+                    this.List.SequenceEqual(input.List)
                 ) && 
                 (
                     this.TotalCount == input.TotalCount ||
@@ -79,8 +79,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OptionalFlavorList != null)
-                    hashCode = hashCode * 59 + this.OptionalFlavorList.GetHashCode();
+                if (this.List != null)
+                    hashCode = hashCode * 59 + this.List.GetHashCode();
                 if (this.TotalCount != null)
                     hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;

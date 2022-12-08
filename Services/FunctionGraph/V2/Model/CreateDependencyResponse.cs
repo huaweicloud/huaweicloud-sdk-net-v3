@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 依赖包ID。
+        /// 依赖包版本ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public long? Version { get; set; }
 
         /// <summary>
+        /// 依赖包ID
+        /// </summary>
+        [JsonProperty("dep_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DepId { get; set; }
+
+        /// <summary>
         /// 依赖包更新时间
         /// </summary>
         [JsonProperty("last_modified", NullValueHandling = NullValueHandling.Ignore)]
@@ -99,6 +105,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  fileName: ").Append(FileName).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  depId: ").Append(DepId).Append("\n");
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -172,6 +179,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Version.Equals(input.Version))
                 ) && 
                 (
+                    this.DepId == input.DepId ||
+                    (this.DepId != null &&
+                    this.DepId.Equals(input.DepId))
+                ) && 
+                (
                     this.LastModified == input.LastModified ||
                     (this.LastModified != null &&
                     this.LastModified.Equals(input.LastModified))
@@ -206,6 +218,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.FileName.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.DepId != null)
+                    hashCode = hashCode * 59 + this.DepId.GetHashCode();
                 if (this.LastModified != null)
                     hashCode = hashCode * 59 + this.LastModified.GetHashCode();
                 return hashCode;

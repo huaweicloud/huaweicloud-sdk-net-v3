@@ -16,13 +16,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// API类型，固定值“Addon”，该值不可修改。
+        /// API类型，固定值“Addon”，该值不可修改，该字段传入无效。
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
 
         /// <summary>
-        /// API版本，固定值“v3”，该值不可修改。
+        /// API版本，固定值“v3”，该值不可修改，该字段传入无效。
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }

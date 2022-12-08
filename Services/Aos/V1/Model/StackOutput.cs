@@ -10,13 +10,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
-    /// 堆栈输出
+    /// 资源栈输出
     /// </summary>
     public class StackOutput 
     {
 
         /// <summary>
-        /// 堆栈输出的name，由用户自己在模板中定义
+        /// 资源栈输出的name，由用户自己在模板中定义
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

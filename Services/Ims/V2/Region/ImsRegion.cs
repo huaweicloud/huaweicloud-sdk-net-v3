@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         public static readonly Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://ims.sa-brazil-1.myhuaweicloud.com");
         public static readonly Region LA_NORTH_2 = new Region("la-north-2", "https://ims.la-north-2.myhuaweicloud.com");
         public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1", "https://ims.na-mexico-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4", "https://ims.ap-southeast-4.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -43,6 +44,7 @@ namespace HuaweiCloud.SDK.Ims.V2
                 { "sa-brazil-1", SA_BRAZIL_1 },
                 { "la-north-2", LA_NORTH_2 },
                 { "na-mexico-1", NA_MEXICO_1 },
+                { "ap-southeast-4", AP_SOUTHEAST_4 },
         };
 
         public static Region ValueOf(string regionId)

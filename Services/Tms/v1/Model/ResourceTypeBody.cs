@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 资源类型显示名称，可以通过参数中&#39;locale&#39;设置语言
+        /// 资源类型显示名称，可以通过参数中“locale”设置语言。
         /// </summary>
         [JsonProperty("resource_type_i18n_display_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceTypeI18nDisplayName { get; set; }

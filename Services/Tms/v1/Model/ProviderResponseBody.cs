@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         public string Provider { get; set; }
 
         /// <summary>
-        /// 服务显示名称，可以通过参数中&#39;locale&#39;设置语言。
+        /// 服务显示名称，可以通过参数中“locale”设置语言。
         /// </summary>
         [JsonProperty("provider_i18n_display_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderI18nDisplayName { get; set; }

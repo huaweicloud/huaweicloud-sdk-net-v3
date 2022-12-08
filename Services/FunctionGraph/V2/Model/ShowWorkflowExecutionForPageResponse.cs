@@ -16,16 +16,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 返回所有满足条件的对象个数
         /// </summary>
-        [JsonProperty("pager", NullValueHandling = NullValueHandling.Ignore)]
-        public Pager Pager { get; set; }
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Total { get; set; }
+
+        /// <summary>
+        /// 返回对象的大小
+        /// </summary>
+        [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Size { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("hisRecords", NullValueHandling = NullValueHandling.Ignore)]
-        public FlowExecutionBriefV2 HisRecords { get; set; }
+        [JsonProperty("executions", NullValueHandling = NullValueHandling.Ignore)]
+        public FlowExecutionBriefV2 Executions { get; set; }
 
 
         /// <summary>
@@ -35,8 +41,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowWorkflowExecutionForPageResponse {\n");
-            sb.Append("  pager: ").Append(Pager).Append("\n");
-            sb.Append("  hisRecords: ").Append(HisRecords).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  executions: ").Append(Executions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,14 +66,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
-                    this.Pager == input.Pager ||
-                    (this.Pager != null &&
-                    this.Pager.Equals(input.Pager))
+                    this.Total == input.Total ||
+                    (this.Total != null &&
+                    this.Total.Equals(input.Total))
                 ) && 
                 (
-                    this.HisRecords == input.HisRecords ||
-                    (this.HisRecords != null &&
-                    this.HisRecords.Equals(input.HisRecords))
+                    this.Size == input.Size ||
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
+                ) && 
+                (
+                    this.Executions == input.Executions ||
+                    (this.Executions != null &&
+                    this.Executions.Equals(input.Executions))
                 );
         }
 
@@ -78,10 +90,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Pager != null)
-                    hashCode = hashCode * 59 + this.Pager.GetHashCode();
-                if (this.HisRecords != null)
-                    hashCode = hashCode * 59 + this.HisRecords.GetHashCode();
+                if (this.Total != null)
+                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Executions != null)
+                    hashCode = hashCode * 59 + this.Executions.GetHashCode();
                 return hashCode;
             }
         }

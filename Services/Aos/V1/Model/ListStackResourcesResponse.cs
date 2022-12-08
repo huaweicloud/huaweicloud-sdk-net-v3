@@ -16,7 +16,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 堆栈输出
+        /// 资源栈输出
         /// </summary>
         [JsonProperty("stack_resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<StackResource> StackResources { get; set; }

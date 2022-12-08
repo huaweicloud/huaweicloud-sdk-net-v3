@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
     public class AssociatePublicipsOption 
     {
         /// <summary>
-        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例 约束：associate_instance_type字段不允许为空 约束：双栈公网IP不允许修改绑定的实例
         /// </summary>
-        /// <value>功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例</value>
+        /// <value>功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例 约束：associate_instance_type字段不允许为空 约束：双栈公网IP不允许修改绑定的实例</value>
         [JsonConverter(typeof(EnumClassConverter<AssociateInstanceTypeEnum>))]
         public class AssociateInstanceTypeEnum
         {
@@ -41,11 +41,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             /// </summary>
             public static readonly AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
 
-            /// <summary>
-            /// Enum EMPTY for value: 
-            /// </summary>
-            public static readonly AssociateInstanceTypeEnum EMPTY = new AssociateInstanceTypeEnum("");
-
             private static readonly Dictionary<string, AssociateInstanceTypeEnum> StaticFields =
             new Dictionary<string, AssociateInstanceTypeEnum>()
             {
@@ -53,7 +48,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 { "NATGW", NATGW },
                 { "VPN", VPN },
                 { "ELB", ELB },
-                { "", EMPTY },
             };
 
             private string Value;
@@ -144,7 +138,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
 
         /// <summary>
-        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例 约束：associate_instance_type字段不允许为空 约束：双栈公网IP不允许修改绑定的实例
         /// </summary>
         [JsonProperty("associate_instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public AssociateInstanceTypeEnum AssociateInstanceType { get; set; }
