@@ -643,8 +643,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseResumeDataSynchronizationRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            PauseResumeDataSynchronizationResponse pauseResumeDataSynchronizationResponse = JsonUtils.DeSerializeNull<PauseResumeDataSynchronizationResponse>(response);
-            return pauseResumeDataSynchronizationResponse;
+            return JsonUtils.DeSerialize<PauseResumeDataSynchronizationResponse>(response);
         }
         
         /// <summary>

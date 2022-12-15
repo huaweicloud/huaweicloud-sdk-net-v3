@@ -31,13 +31,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// 
         /// </summary>
         [JsonProperty("quota", NullValueHandling = NullValueHandling.Ignore)]
-        public NoSqlEpsQuota Quota { get; set; }
+        public NoSqlEpsQuotaTotal Quota { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("used", NullValueHandling = NullValueHandling.Ignore)]
-        public NoSqlQueryEpsQuotaUsed Used { get; set; }
+        public NoSqlEpsQuotaUsed Used { get; set; }
 
 
         /// <summary>

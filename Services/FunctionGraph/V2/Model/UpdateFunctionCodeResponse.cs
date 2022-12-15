@@ -408,6 +408,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public List<string> DependList { get; set; }
 
         /// <summary>
+        /// 依赖版本id列表
+        /// </summary>
+        [JsonProperty("depend_version_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DependVersionList { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("strategy_config", NullValueHandling = NullValueHandling.Ignore)]
@@ -439,6 +445,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("  funcCode: ").Append(FuncCode).Append("\n");
             sb.Append("  dependList: ").Append(DependList).Append("\n");
+            sb.Append("  dependVersionList: ").Append(DependVersionList).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
             sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("}\n");
@@ -524,6 +531,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.DependList.SequenceEqual(input.DependList)
                 ) && 
                 (
+                    this.DependVersionList == input.DependVersionList ||
+                    this.DependVersionList != null &&
+                    input.DependVersionList != null &&
+                    this.DependVersionList.SequenceEqual(input.DependVersionList)
+                ) && 
+                (
                     this.StrategyConfig == input.StrategyConfig ||
                     (this.StrategyConfig != null &&
                     this.StrategyConfig.Equals(input.StrategyConfig))
@@ -568,6 +581,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
                 if (this.DependList != null)
                     hashCode = hashCode * 59 + this.DependList.GetHashCode();
+                if (this.DependVersionList != null)
+                    hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
                 if (this.StrategyConfig != null)
                     hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
                 if (this.Dependencies != null)

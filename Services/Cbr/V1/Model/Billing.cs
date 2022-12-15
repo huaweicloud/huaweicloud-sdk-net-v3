@@ -345,9 +345,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// 对象类型
+        /// 对象类型: 云服务器（server），云硬盘（disk），云桌面（workspace）。
         /// </summary>
-        /// <value>对象类型</value>
+        /// <value>对象类型: 云服务器（server），云硬盘（disk），云桌面（workspace）。</value>
         [JsonConverter(typeof(EnumClassConverter<ObjectTypeEnum>))]
         public class ObjectTypeEnum
         {
@@ -361,11 +361,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             /// </summary>
             public static readonly ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
+            /// <summary>
+            /// Enum WORKSPACE for value: workspace
+            /// </summary>
+            public static readonly ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
+
             private static readonly Dictionary<string, ObjectTypeEnum> StaticFields =
             new Dictionary<string, ObjectTypeEnum>()
             {
                 { "server", SERVER },
                 { "disk", DISK },
+                { "workspace", WORKSPACE },
             };
 
             private string Value;
@@ -831,7 +837,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("consistent_level", NullValueHandling = NullValueHandling.Ignore)]
         public ConsistentLevelEnum ConsistentLevel { get; set; }
         /// <summary>
-        /// 对象类型
+        /// 对象类型: 云服务器（server），云硬盘（disk），云桌面（workspace）。
         /// </summary>
         [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
         public ObjectTypeEnum ObjectType { get; set; }

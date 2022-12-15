@@ -477,6 +477,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Handler { get; set; }
 
         /// <summary>
+        /// 依赖版本id列表
+        /// </summary>
+        [JsonProperty("depend_version_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DependVersionList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("func_vpc", NullValueHandling = NullValueHandling.Ignore)]
+        public FuncVpc FuncVpc { get; set; }
+
+        /// <summary>
         /// 函数消耗的内存。 单位M。 取值范围为：128、256、512、768、1024、1280、1536、1792、2048、2560、3072、3584、4096。 最小值为128，最大值为4096。
         /// </summary>
         [JsonProperty("memory_size", NullValueHandling = NullValueHandling.Ignore)]
@@ -565,6 +577,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  runtime: ").Append(Runtime).Append("\n");
             sb.Append("  timeout: ").Append(Timeout).Append("\n");
             sb.Append("  handler: ").Append(Handler).Append("\n");
+            sb.Append("  dependVersionList: ").Append(DependVersionList).Append("\n");
+            sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  memorySize: ").Append(MemorySize).Append("\n");
             sb.Append("  codeType: ").Append(CodeType).Append("\n");
             sb.Append("  codeUrl: ").Append(CodeUrl).Append("\n");
@@ -623,6 +637,17 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Handler == input.Handler ||
                     (this.Handler != null &&
                     this.Handler.Equals(input.Handler))
+                ) && 
+                (
+                    this.DependVersionList == input.DependVersionList ||
+                    this.DependVersionList != null &&
+                    input.DependVersionList != null &&
+                    this.DependVersionList.SequenceEqual(input.DependVersionList)
+                ) && 
+                (
+                    this.FuncVpc == input.FuncVpc ||
+                    (this.FuncVpc != null &&
+                    this.FuncVpc.Equals(input.FuncVpc))
                 ) && 
                 (
                     this.MemorySize == input.MemorySize ||
@@ -709,6 +734,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Timeout.GetHashCode();
                 if (this.Handler != null)
                     hashCode = hashCode * 59 + this.Handler.GetHashCode();
+                if (this.DependVersionList != null)
+                    hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
+                if (this.FuncVpc != null)
+                    hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
                 if (this.MemorySize != null)
                     hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
                 if (this.CodeType != null)

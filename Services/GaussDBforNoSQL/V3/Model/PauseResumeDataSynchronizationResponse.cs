@@ -16,10 +16,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 暂停/恢复具备容灾关系的实例数据同步的工作ID
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PauseResumeDataSynchronizationResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

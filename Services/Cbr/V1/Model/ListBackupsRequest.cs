@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// 资源类型
+        /// 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
         /// </summary>
-        /// <value>资源类型</value>
+        /// <value>资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -141,11 +141,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             /// </summary>
             public static readonly ResourceTypeEnum OS_NOVA_SERVER = new ResourceTypeEnum("OS::Nova::Server");
 
+            /// <summary>
+            /// Enum OS_WORKSPACE_DESKTOPV2 for value: OS::Workspace::DesktopV2
+            /// </summary>
+            public static readonly ResourceTypeEnum OS_WORKSPACE_DESKTOPV2 = new ResourceTypeEnum("OS::Workspace::DesktopV2");
+
             private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
             new Dictionary<string, ResourceTypeEnum>()
             {
                 { "OS::Cinder::Volume", OS_CINDER_VOLUME },
                 { "OS::Nova::Server", OS_NOVA_SERVER },
+                { "OS::Workspace::DesktopV2", OS_WORKSPACE_DESKTOPV2 },
             };
 
             private string Value;
@@ -690,7 +696,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 资源类型
+        /// 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
         /// </summary>
         [SDKProperty("resource_type", IsQuery = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

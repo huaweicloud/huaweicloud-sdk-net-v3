@@ -25,9 +25,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// <summary>
         /// 每次查询获取的最大函数记录数量  最大值：400 如果不提供该值或者提供的值大于400或等于0，则使用默认值：400 如果该值小于0，则返回参数错误。
         /// </summary>
-        [SDKProperty("maxitems", IsQuery = true)]
-        [JsonProperty("maxitems", NullValueHandling = NullValueHandling.Ignore)]
-        public string Maxitems { get; set; }
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Limit { get; set; }
 
         /// <summary>
         /// 查询指定函数版本预留实例数的函数urn。
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListFunctionReservedInstancesRequest {\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
-            sb.Append("  maxitems: ").Append(Maxitems).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  urn: ").Append(Urn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,9 +74,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Marker.Equals(input.Marker))
                 ) && 
                 (
-                    this.Maxitems == input.Maxitems ||
-                    (this.Maxitems != null &&
-                    this.Maxitems.Equals(input.Maxitems))
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
                 ) && 
                 (
                     this.Urn == input.Urn ||
@@ -95,8 +95,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.Marker != null)
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Maxitems != null)
-                    hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Urn != null)
                     hashCode = hashCode * 59 + this.Urn.GetHashCode();
                 return hashCode;

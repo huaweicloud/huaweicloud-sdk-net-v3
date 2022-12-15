@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("depend_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DependList { get; set; }
 
+        /// <summary>
+        /// 依赖版本id列表
+        /// </summary>
+        [JsonProperty("depend_version_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DependVersionList { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -179,6 +185,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
             sb.Append("  funcCode: ").Append(FuncCode).Append("\n");
             sb.Append("  dependList: ").Append(DependList).Append("\n");
+            sb.Append("  dependVersionList: ").Append(DependVersionList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -225,6 +232,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.DependList != null &&
                     input.DependList != null &&
                     this.DependList.SequenceEqual(input.DependList)
+                ) && 
+                (
+                    this.DependVersionList == input.DependVersionList ||
+                    this.DependVersionList != null &&
+                    input.DependVersionList != null &&
+                    this.DependVersionList.SequenceEqual(input.DependVersionList)
                 );
         }
 
@@ -246,6 +259,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
                 if (this.DependList != null)
                     hashCode = hashCode * 59 + this.DependList.GetHashCode();
+                if (this.DependVersionList != null)
+                    hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
                 return hashCode;
             }
         }

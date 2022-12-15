@@ -92,6 +92,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("ip_eq", NullValueHandling = NullValueHandling.Ignore)]
         public string IpEq { get; set; }
 
+        /// <summary>
+        /// 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id&#x3D;{id1}&amp;server_id&#x3D;{id2}
+        /// </summary>
+        [SDKProperty("server_id", IsQuery = true)]
+        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -111,6 +118,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  ipEq: ").Append(IpEq).Append("\n");
+            sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -186,6 +194,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.IpEq == input.IpEq ||
                     (this.IpEq != null &&
                     this.IpEq.Equals(input.IpEq))
+                ) && 
+                (
+                    this.ServerId == input.ServerId ||
+                    (this.ServerId != null &&
+                    this.ServerId.Equals(input.ServerId))
                 );
         }
 
@@ -219,6 +232,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.IpEq != null)
                     hashCode = hashCode * 59 + this.IpEq.GetHashCode();
+                if (this.ServerId != null)
+                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 return hashCode;
             }
         }

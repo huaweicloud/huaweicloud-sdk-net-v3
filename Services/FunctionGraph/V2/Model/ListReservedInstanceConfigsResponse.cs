@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// <summary>
         /// 函数预留实例列表
         /// </summary>
-        [JsonProperty("reservedinstances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ReservedInstanceConfigs> Reservedinstances { get; set; }
+        [JsonProperty("reserved_instances", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ReservedInstanceConfigs> ReservedInstances { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListReservedInstanceConfigsResponse {\n");
-            sb.Append("  reservedinstances: ").Append(Reservedinstances).Append("\n");
+            sb.Append("  reservedInstances: ").Append(ReservedInstances).Append("\n");
             sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
@@ -66,10 +66,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
-                    this.Reservedinstances == input.Reservedinstances ||
-                    this.Reservedinstances != null &&
-                    input.Reservedinstances != null &&
-                    this.Reservedinstances.SequenceEqual(input.Reservedinstances)
+                    this.ReservedInstances == input.ReservedInstances ||
+                    this.ReservedInstances != null &&
+                    input.ReservedInstances != null &&
+                    this.ReservedInstances.SequenceEqual(input.ReservedInstances)
                 ) && 
                 (
                     this.PageInfo == input.PageInfo ||
@@ -91,8 +91,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Reservedinstances != null)
-                    hashCode = hashCode * 59 + this.Reservedinstances.GetHashCode();
+                if (this.ReservedInstances != null)
+                    hashCode = hashCode * 59 + this.ReservedInstances.GetHashCode();
                 if (this.PageInfo != null)
                     hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 if (this.Count != null)

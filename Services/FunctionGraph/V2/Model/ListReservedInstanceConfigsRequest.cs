@@ -22,6 +22,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
 
+        /// <summary>
+        /// 本次查询起始位置，默认值0
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
+        /// 本次查询最大返回的数据条数，最大值500，默认值100
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Limit { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -31,6 +45,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListReservedInstanceConfigsRequest {\n");
             sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -56,6 +72,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FunctionUrn == input.FunctionUrn ||
                     (this.FunctionUrn != null &&
                     this.FunctionUrn.Equals(input.FunctionUrn))
+                ) && 
+                (
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
                 );
         }
 
@@ -69,6 +95,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.FunctionUrn != null)
                     hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

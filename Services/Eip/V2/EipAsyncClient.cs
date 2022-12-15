@@ -48,6 +48,22 @@ namespace HuaweiCloud.SDK.Eip.V2
         }
         
         /// <summary>
+        /// 按需转包API
+        ///
+        /// 租户按需转包接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeBandwidthToPeriodResponse> ChangeBandwidthToPeriodAsync(ChangeBandwidthToPeriodRequest changeBandwidthToPeriodRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/change-to-period",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBandwidthToPeriodRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ChangeBandwidthToPeriodResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建共享带宽
         ///
         /// 创建共享带宽。
@@ -276,6 +292,22 @@ namespace HuaweiCloud.SDK.Eip.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDisassociatePublicipsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<BatchDisassociatePublicipsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 按需转包接口
+        ///
+        /// 租户按需转包接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangePublicipToPeriodResponse> ChangePublicipToPeriodAsync(ChangePublicipToPeriodRequest changePublicipToPeriodRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/change-to-period",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changePublicipToPeriodRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ChangePublicipToPeriodResponse>(response);
         }
         
         /// <summary>
@@ -510,6 +542,23 @@ namespace HuaweiCloud.SDK.Eip.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePublicipRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePublicipResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询Job状态接口
+        ///
+        /// 查询Job状态接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowResourcesJobDetailResponse> ShowResourcesJobDetailAsync(ShowResourcesJobDetailRequest showResourcesJobDetailRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , showResourcesJobDetailRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourcesJobDetailRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowResourcesJobDetailResponse>(response);
         }
         
         /// <summary>

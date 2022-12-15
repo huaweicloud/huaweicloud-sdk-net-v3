@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// 
         /// </summary>
         [JsonProperty("quota", NullValueHandling = NullValueHandling.Ignore)]
-        public NoSqlEpsQuota Quota { get; set; }
+        public NoSqlEpsQuotaRequestInfo Quota { get; set; }
 
 
         /// <summary>

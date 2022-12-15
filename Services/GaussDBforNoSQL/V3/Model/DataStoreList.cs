@@ -18,8 +18,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// <summary>
         /// 数据库引擎。
         /// </summary>
-        [JsonProperty("datastore_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string DatastoreType { get; set; }
+        [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DatastoreName { get; set; }
 
         /// <summary>
         /// 数据库引擎版本。
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DataStoreList {\n");
-            sb.Append("  datastoreType: ").Append(DatastoreType).Append("\n");
+            sb.Append("  datastoreName: ").Append(DatastoreName).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -59,9 +59,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 
             return 
                 (
-                    this.DatastoreType == input.DatastoreType ||
-                    (this.DatastoreType != null &&
-                    this.DatastoreType.Equals(input.DatastoreType))
+                    this.DatastoreName == input.DatastoreName ||
+                    (this.DatastoreName != null &&
+                    this.DatastoreName.Equals(input.DatastoreName))
                 ) && 
                 (
                     this.Version == input.Version ||
@@ -78,8 +78,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DatastoreType != null)
-                    hashCode = hashCode * 59 + this.DatastoreType.GetHashCode();
+                if (this.DatastoreName != null)
+                    hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;

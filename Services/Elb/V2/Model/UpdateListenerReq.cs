@@ -10,7 +10,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V2.Model
 {
     /// <summary>
-    /// 更新监听器的结构体
+    /// 更新监听器的请求体。
     /// </summary>
     public class UpdateListenerReq 
     {
@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public InsertHeader InsertHeaders { get; set; }
 
         /// <summary>
-        /// 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效。  取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略。
+        /// 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效。  取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略。  加密套件的排序为国密套件、ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa）
         /// </summary>
         [JsonProperty("tls_ciphers_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string TlsCiphersPolicy { get; set; }
