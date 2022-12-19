@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在的子网IPv4网络ID
+        /// 负载均衡器所在的子网IPv4子网ID
         /// </summary>
         [JsonProperty("vip_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipSubnetId { get; set; }

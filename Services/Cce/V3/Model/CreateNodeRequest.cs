@@ -120,7 +120,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 集群 ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+        /// 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
         [SDKProperty("cluster_id", IsPath = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]

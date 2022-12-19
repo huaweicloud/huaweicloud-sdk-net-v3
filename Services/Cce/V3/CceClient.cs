@@ -49,6 +49,25 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 继续执行集群升级任务
+        ///
+        /// 继续执行被暂停的集群升级任务。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ContinueUpgradeClusterTaskResponse ContinueUpgradeClusterTask(ContinueUpgradeClusterTaskRequest continueUpgradeClusterTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , continueUpgradeClusterTaskRequest.ClusterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/continue",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueUpgradeClusterTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<ContinueUpgradeClusterTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建AddonInstance
         ///
         /// 根据提供的插件模板，安装插件实例。
@@ -381,6 +400,25 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 暂停集群升级任务
+        ///
+        /// 暂停集群升级任务。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public PauseUpgradeClusterTaskResponse PauseUpgradeClusterTask(PauseUpgradeClusterTaskRequest pauseUpgradeClusterTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , pauseUpgradeClusterTaskRequest.ClusterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/pause",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseUpgradeClusterTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<PauseUpgradeClusterTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 节点移除
         ///
         /// 该API用于在指定集群下移除节点。
@@ -414,6 +452,25 @@ namespace HuaweiCloud.SDK.Cce.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetNodeRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ResetNodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 重试集群升级任务
+        ///
+        /// 重新执行失败的集群升级任务。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RetryUpgradeClusterTaskResponse RetryUpgradeClusterTask(RetryUpgradeClusterTaskRequest retryUpgradeClusterTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , retryUpgradeClusterTaskRequest.ClusterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryUpgradeClusterTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<RetryUpgradeClusterTaskResponse>(response);
         }
         
         /// <summary>
@@ -545,6 +602,26 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取集群升级任务详情
+        ///
+        /// 获取集群升级任务详情，任务ID由调用集群升级API后从响应体中uid字段获取。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowUpgradeClusterTaskResponse ShowUpgradeClusterTask(ShowUpgradeClusterTaskRequest showUpgradeClusterTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , showUpgradeClusterTaskRequest.ClusterId.ToString());
+            urlParam.Add("task_id" , showUpgradeClusterTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeClusterTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowUpgradeClusterTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新AddonInstance
         ///
         /// 更新插件实例的功能。
@@ -638,6 +715,25 @@ namespace HuaweiCloud.SDK.Cce.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodePoolRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateNodePoolResponse>(response);
+        }
+        
+        /// <summary>
+        /// 集群升级
+        ///
+        /// 集群升级。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpgradeClusterResponse UpgradeCluster(UpgradeClusterRequest upgradeClusterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , upgradeClusterRequest.ClusterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeClusterRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<UpgradeClusterResponse>(response);
         }
         
         /// <summary>

@@ -1,3 +1,84 @@
+# 3.1.16 2022-12-19
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateVault`:
+    - 请求参数`object_type`新增枚举值`workspace`
+    - 响应参数`object_type`新增枚举值`workspace`
+  - 接口`ListVault`响应参数`object_type`新增枚举值`workspace`
+  - 接口`ShowVault`响应参数`object_type`新增枚举值`workspace`
+  - 接口`UpdateVault`响应参数`object_type`新增枚举值`workspace`
+  - 接口`ShowBackup`响应参数`resource_type`新增枚举值`OS::Workspace::DesktopV2`
+  - 接口`ListBackups`:
+    - 请求参数`resource_type`新增枚举值`OS::Workspace::DesktopV2`
+    - 响应参数`resource_type`新增枚举值`OS::Workspace::DesktopV2`
+  - 接口`ListProtectable`响应参数`object_type`新增枚举值`workspace`
+  - 接口`ShowProtectable`响应参数`object_type`新增枚举值`workspace`
+  - 接口`ShowVaultResourceInstances`响应参数`object_type`新增枚举值`workspace`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListServersDetails`新增请求参数 `server_id`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 支持接口`ShowResourcesJobDetail`、`ChangeBandwidthToPeriod`、`ChangePublicipToPeriod`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateFunction`:
+    - 新增请求参数 `depend_version_list`、`func_vpc`
+    - 新增响应参数 `depend_version_list`
+  - 接口`UpdateFunctionCode`:
+    - 新增请求参数 `depend_version_list`
+    - 新增响应参数 `depend_version_list`
+  - 接口`ShowFunctionCode`新增响应参数 `depend_version_list`
+  - 接口`ShowFunctionConfig`新增响应参数 `depend_version_list`
+  - 接口`ListReservedInstanceConfigs`:
+    - 新增请求参数 `marker`、`limit`
+    - 新增响应参数 `reserved_instances`
+    - 移除响应参数 `reservedinstances`
+  - 接口`ImportFunction`新增响应参数 `depend_version_list`
+  - 接口`ListFunctionReservedInstances`:
+    - 新增请求参数 `limit`
+    - 移除请求参数 `maxitems`
+  - 接口`ShowWorkflowExecutionForPage`:
+    - 新增请求参数 `offset`、`limit`、`start_time`、`end_time`
+    - 移除请求参数 `CreateWorkflowRequestBody`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListConfigurationDatastores`:
+    - 新增响应参数 `datastore_name`
+    - 移除响应参数 `datastore_type`
+  - 接口`ModifyEpsQuotas`移除请求参数 `instance`、`vcpus`、`ram`
+  - 接口`ListEpsQuotas`移除响应参数 `instance`、`vcpus`、`ram`、`instance`、`vcpus`、`ram`
+
 # 3.1.15 2022-12-15
 
 ### HuaweiCloud SDK CBR
