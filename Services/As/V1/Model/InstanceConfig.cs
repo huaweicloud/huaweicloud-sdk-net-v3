@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -32,11 +33,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 { "dedicated", DEDICATED },
             };
 
-            private string Value;
+            private string _value;
+
+            public TenancyEnum()
+            {
+
+            }
 
             public TenancyEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TenancyEnum FromValue(string value)
@@ -55,17 +61,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -94,7 +100,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TenancyEnum a, TenancyEnum b)
@@ -142,11 +148,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 { "COST_FIRST", COST_FIRST },
             };
 
-            private string Value;
+            private string _value;
+
+            public MultiFlavorPriorityPolicyEnum()
+            {
+
+            }
 
             public MultiFlavorPriorityPolicyEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static MultiFlavorPriorityPolicyEnum FromValue(string value)
@@ -165,17 +176,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -204,7 +215,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(MultiFlavorPriorityPolicyEnum a, MultiFlavorPriorityPolicyEnum b)
@@ -246,11 +257,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 { "spot", SPOT },
             };
 
-            private string Value;
+            private string _value;
+
+            public MarketTypeEnum()
+            {
+
+            }
 
             public MarketTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static MarketTypeEnum FromValue(string value)
@@ -269,17 +285,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -308,7 +324,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(MarketTypeEnum a, MarketTypeEnum b)

@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.Core
 {
     public class EnumClassConverter<T> : JsonConverter
     {
-        private readonly FieldInfo _value = typeof(T).GetField("Value", BindingFlags.Instance | BindingFlags.NonPublic);
+        private readonly FieldInfo _value = typeof(T).GetField("_value", BindingFlags.Instance | BindingFlags.NonPublic);
         private readonly MethodInfo _methodGetValue = typeof(T).GetMethod("GetValue");
         private readonly MethodInfo _methodFromValue = typeof(T).GetMethod("FromValue");
 

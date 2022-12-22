@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -50,11 +51,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "UNKNOW", UNKNOW },
             };
 
-            private string Value;
+            private string _value;
+
+            public PvcEnum()
+            {
+
+            }
 
             public PvcEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static PvcEnum FromValue(string value)
@@ -73,17 +79,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -112,7 +118,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(PvcEnum a, PvcEnum b)
@@ -166,11 +172,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "UNKNOW", UNKNOW },
             };
 
-            private string Value;
+            private string _value;
+
+            public VideoCodecEnum()
+            {
+
+            }
 
             public VideoCodecEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static VideoCodecEnum FromValue(string value)
@@ -189,17 +200,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -228,7 +239,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(VideoCodecEnum a, VideoCodecEnum b)
@@ -288,11 +299,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "MP3", MP3 },
             };
 
-            private string Value;
+            private string _value;
+
+            public AudioCodecEnum()
+            {
+
+            }
 
             public AudioCodecEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static AudioCodecEnum FromValue(string value)
@@ -311,17 +327,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -350,7 +366,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(AudioCodecEnum a, AudioCodecEnum b)

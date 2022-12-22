@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -80,11 +81,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "stopping", STOPPING },
             };
 
-            private string Value;
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
 
             public StatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -103,17 +109,17 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -142,7 +148,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
@@ -205,8 +211,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("create_by", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateBy { get; set; }
+        [JsonProperty("created_by", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedBy { get; set; }
 
         /// <summary>
         /// 函数流执行urn
@@ -228,7 +234,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  lastUpdateTime: ").Append(LastUpdateTime).Append("\n");
-            sb.Append("  createBy: ").Append(CreateBy).Append("\n");
+            sb.Append("  createdBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  workflowUrn: ").Append(WorkflowUrn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -282,9 +288,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.LastUpdateTime.Equals(input.LastUpdateTime))
                 ) && 
                 (
-                    this.CreateBy == input.CreateBy ||
-                    (this.CreateBy != null &&
-                    this.CreateBy.Equals(input.CreateBy))
+                    this.CreatedBy == input.CreatedBy ||
+                    (this.CreatedBy != null &&
+                    this.CreatedBy.Equals(input.CreatedBy))
                 ) && 
                 (
                     this.WorkflowUrn == input.WorkflowUrn ||
@@ -313,8 +319,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.LastUpdateTime != null)
                     hashCode = hashCode * 59 + this.LastUpdateTime.GetHashCode();
-                if (this.CreateBy != null)
-                    hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
+                if (this.CreatedBy != null)
+                    hashCode = hashCode * 59 + this.CreatedBy.GetHashCode();
                 if (this.WorkflowUrn != null)
                     hashCode = hashCode * 59 + this.WorkflowUrn.GetHashCode();
                 return hashCode;

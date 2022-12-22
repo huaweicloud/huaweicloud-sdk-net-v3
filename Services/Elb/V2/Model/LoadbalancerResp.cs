@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -56,11 +57,16 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                 { "NO_MONITOR", NO_MONITOR },
             };
 
-            private string Value;
+            private string _value;
+
+            public OperatingStatusEnum()
+            {
+
+            }
 
             public OperatingStatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static OperatingStatusEnum FromValue(string value)
@@ -79,17 +85,17 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -118,7 +124,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(OperatingStatusEnum a, OperatingStatusEnum b)
@@ -172,11 +178,16 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                 { "ERROR", ERROR },
             };
 
-            private string Value;
+            private string _value;
+
+            public ProvisioningStatusEnum()
+            {
+
+            }
 
             public ProvisioningStatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ProvisioningStatusEnum FromValue(string value)
@@ -195,17 +206,17 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -234,7 +245,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ProvisioningStatusEnum a, ProvisioningStatusEnum b)

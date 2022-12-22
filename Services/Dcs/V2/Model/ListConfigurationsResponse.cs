@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -44,11 +45,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 { "SUCCESS", SUCCESS },
             };
 
-            private string Value;
+            private string _value;
+
+            public ConfigStatusEnum()
+            {
+
+            }
 
             public ConfigStatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ConfigStatusEnum FromValue(string value)
@@ -67,17 +73,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -106,7 +112,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ConfigStatusEnum a, ConfigStatusEnum b)

@@ -23,6 +23,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Text;
 
@@ -185,7 +186,48 @@ namespace HuaweiCloud.SDK.Core
             return element;
         }
 
-        private static string GetRequestBody(object obj)
+        private static string GetCname(object obj)
+        {
+            var t = obj.GetType();
+            var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            var element = new Dictionary<string, string>();
+            foreach (var p in pi)
+            {
+                var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
+                SDKPropertyAttribute sdkPropertyAttribute = null;
+
+                if (attributes.Length == 0)
+                {
+                    continue;
+                }
+
+                foreach (var a in attributes)
+                {
+                    if (a is SDKPropertyAttribute propertyAttribute)
+                    {
+                        sdkPropertyAttribute = propertyAttribute;
+                    }
+                }
+
+                if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsCname)
+                {
+                    continue;
+                }
+
+                var value = p.GetValue(obj, null);
+                if (value == null || string.IsNullOrEmpty(Convert.ToString(value)))
+                {
+                    continue;
+                }
+
+                return Convert.ToString(value);
+            }
+
+            return null;
+        }
+
+        private static string GetRequestBody(object obj, string contentType)
         {
             var t = obj.GetType();
             var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -228,7 +270,7 @@ namespace HuaweiCloud.SDK.Core
             {
                 foreach (var elem in sdkPropertyList)
                 {
-                    return JsonUtils.Serialize(elem);
+                    return contentType == "application/xml" ? XmlUtils.Serialize(elem) : JsonUtils.Serialize(elem);
                 }
             }
 
@@ -247,10 +289,19 @@ namespace HuaweiCloud.SDK.Core
                 throw new ArgumentNullException("Url cannot be null.");
             }
 
-            var request = new SdkRequest {Path = path};
+            var request = new SdkRequest
+            {
+                Path = path
+            };
             if (data == null)
             {
                 return request;
+            }
+
+            var cname = GetCname(data);
+            if (!String.IsNullOrEmpty(cname))
+            {
+                request.Cname = cname;
             }
 
             var prams = GetQueryParameters(data);
@@ -265,7 +316,7 @@ namespace HuaweiCloud.SDK.Core
                 request.Header = headers;
             }
 
-            var bodyData = GetRequestBody(data);
+            var bodyData = GetRequestBody(data, contentType);
             if (bodyData != null)
             {
                 request.Body = bodyData;
@@ -279,10 +330,98 @@ namespace HuaweiCloud.SDK.Core
 
             if (data.GetType().IsSubclassOf(typeof(SdkStreamRequest)))
             {
-                request.FileStream = ((SdkStreamRequest) data).FileStream;
+                request.FileStream = ((SdkStreamRequest)data).FileStream;
             }
 
             return request;
+        }
+
+        public static T DeSerializeStream<T>(HttpResponseMessage message)
+        {
+            var t = Activator.CreateInstance<T>();
+            t.GetType().GetProperty("HttpStatusCode")?.SetValue(t, (int)message.StatusCode, null);
+            t.GetType().GetProperty("HttpHeaders")?.SetValue(t, message.Headers.ToString(), null);
+            BindingFlags flag = BindingFlags.Public | BindingFlags.Instance;
+            t.GetType().GetMethod("SetStream")
+                ?.Invoke(t, flag, Type.DefaultBinder,
+                    new object[]
+                    {
+                        message.Content.ReadAsStreamAsync().Result
+                    }, null);
+            return t;
+        }
+
+        public static void SetAdditionalAttrs<T>(HttpResponseMessage message, T obj, string body)
+        {
+            obj.GetType().GetProperty("HttpStatusCode")?.SetValue(obj, (int)message.StatusCode, null);
+            obj.GetType().GetProperty("HttpHeaders")?.SetValue(obj, message.Headers.ToString(), null);
+            obj.GetType().GetProperty("HttpBody")?.SetValue(obj, body, null);
+        }
+
+        private static readonly List<string> HttpContentHeadersList = new List<string>
+        {
+            "Allow",
+            "Content-Disposition",
+            "Content-Encoding",
+            "Content-Language",
+            "Content-Location",
+            "Content-MD5",
+            "Content-Range",
+            "Content-Type",
+            "Content-Length",
+            "Expires",
+            "Last-Modified"
+        };
+
+        public static void SetResponseHeaders<T>(HttpResponseMessage message, T obj)
+        {
+            const BindingFlags instanceBindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+
+            var properties = obj.GetType().GetProperties(instanceBindFlags);
+
+            foreach (var property in properties)
+            {
+                var oriAttrName = "";
+                var customAttrs = property.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
+                if (customAttrs.Length > 0)
+                {
+                    SDKPropertyAttribute sdkPropertyAttribute = null;
+                    foreach (var customAttr in customAttrs)
+                    {
+                        if (customAttr is SDKPropertyAttribute propertyAttribute)
+                        {
+                            sdkPropertyAttribute = propertyAttribute;
+                        }
+
+                        if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsHeader)
+                        {
+                            continue;
+                        }
+
+                        oriAttrName = sdkPropertyAttribute.PropertyName;
+                    }
+                }
+
+                if (string.IsNullOrEmpty(oriAttrName))
+                {
+                    continue;
+                }
+
+                if (HttpContentHeadersList.Contains(oriAttrName))
+                {
+                    if (message.Content.Headers.Contains(oriAttrName))
+                    {
+                        property.SetValue(obj, message.Content.Headers.GetValues(oriAttrName).First());
+                    }
+                }
+                else
+                {
+                    if (message.Headers.Contains(oriAttrName))
+                    {
+                        property.SetValue(obj, message.Headers.GetValues(oriAttrName).First());
+                    }
+                }
+            }
         }
     }
 }

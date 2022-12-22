@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -44,11 +45,16 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 { "pcm", PCM },
             };
 
-            private string Value;
+            private string _value;
+
+            public AudioFormatEnum()
+            {
+
+            }
 
             public AudioFormatEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static AudioFormatEnum FromValue(string value)
@@ -67,17 +73,17 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -106,7 +112,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(AudioFormatEnum a, AudioFormatEnum b)
@@ -154,11 +160,16 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 { "8000", _8000 },
             };
 
-            private string Value;
+            private string _value;
+
+            public SampleRateEnum()
+            {
+
+            }
 
             public SampleRateEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static SampleRateEnum FromValue(string value)
@@ -177,17 +188,17 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -216,7 +227,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(SampleRateEnum a, SampleRateEnum b)
@@ -462,11 +473,16 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 { "english_amy_common", ENGLISH_AMY_COMMON },
             };
 
-            private string Value;
+            private string _value;
+
+            public PropertyEnum()
+            {
+
+            }
 
             public PropertyEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static PropertyEnum FromValue(string value)
@@ -485,17 +501,17 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -524,7 +540,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(PropertyEnum a, PropertyEnum b)

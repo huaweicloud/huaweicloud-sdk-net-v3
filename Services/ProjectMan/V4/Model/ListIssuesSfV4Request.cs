@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -62,11 +63,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                 { 7, NUMBER_7 },
             };
 
-            private int? Value;
+            private int? _value;
+
+            public TrackerIdEnum()
+            {
+
+            }
 
             public TrackerIdEnum(int? value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TrackerIdEnum FromValue(int? value)
@@ -85,17 +91,17 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 
             public int? GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -124,7 +130,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TrackerIdEnum a, TrackerIdEnum b)

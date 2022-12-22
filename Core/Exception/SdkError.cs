@@ -19,19 +19,24 @@
  * under the License.
  */
 
+using System.Xml.Serialization;
 using Newtonsoft.Json;
 
 namespace HuaweiCloud.SDK.Core
 {
+    [XmlRoot("Error")]
     public class SdkError : SdkResponse
     {
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        [XmlElement("Message")]
         public string ErrorMsg { get; set; }
 
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
+        [XmlElement("Code")]
         public string ErrorCode;
 
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        [XmlElement("RequestId")]
         public string RequestId;
 
         public SdkError()

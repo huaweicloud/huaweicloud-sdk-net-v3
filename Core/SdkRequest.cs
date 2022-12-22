@@ -34,6 +34,8 @@ namespace HuaweiCloud.SDK.Core
 
         public string Method { get; set; }
 
+        public string Cname { get; set; }
+
         public Dictionary<string, string> Header { get; set; }
 
         public string ContentType { get; set; }

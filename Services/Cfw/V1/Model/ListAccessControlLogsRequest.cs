@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -44,11 +45,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 { "vpc", VPC },
             };
 
-            private string Value;
+            private string _value;
+
+            public LogTypeEnum()
+            {
+
+            }
 
             public LogTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static LogTypeEnum FromValue(string value)
@@ -67,17 +73,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -106,7 +112,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(LogTypeEnum a, LogTypeEnum b)
@@ -132,7 +138,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防火墙实例ID
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]

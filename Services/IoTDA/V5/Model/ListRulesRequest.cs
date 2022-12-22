@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -30,7 +31,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string AppId { get; set; }
 
         /// <summary>
-        /// **参数说明**：规则类型。此参数为非必选参数，指定对应的规则类型结果进行返回，不携带该参数则会返回所有类型规则。 **取值范围**： - DEVICE_LINKAGE
+        /// **参数说明**：规则类型。此参数为非必选参数，指定对应的规则类型结果进行返回，不携带该参数则会返回所有类型规则。 **取值范围**： - DEVICE_LINKAGE：云端联动规则。  - DEVICE_SIDE：端侧规则。
         /// </summary>
         [SDKProperty("rule_type", IsQuery = true)]
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]

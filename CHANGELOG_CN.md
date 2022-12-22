@@ -1,3 +1,66 @@
+# 3.1.17 2022-12-22
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowWorkflowExecutionForPage`:
+    - 新增响应参数 `created_by`
+    - 移除响应参数 `create_by`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ModifyVolume`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListAvailableFlavorInfos`新增请求参数 `offset`、`limit`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CopyImageCrossRegion`新增请求参数 `vault_id`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 支持接口`SearchDevices`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateRule`新增请求参数 `device_side`
+  - 接口`ListRules`新增响应参数 `device_side`
+  - 接口`ShowRule`新增响应参数 `device_side`
+  - 接口`UpdateRule`:
+    - 新增请求参数 `device_side`
+    - 新增响应参数 `device_side`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePostPaidInstance`新增请求参数 `sasl_enabled_mechanisms`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePostPaidInstance`新增请求参数 `enterprise_project_id`、`enable_acl`
+
 # 3.1.16 2022-12-19
 
 ### HuaweiCloud SDK CBR

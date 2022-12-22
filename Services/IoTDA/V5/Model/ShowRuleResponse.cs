@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -46,7 +47,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<RuleAction> Actions { get; set; }
 
         /// <summary>
-        /// 规则的类型 - DEVICE_LINKAGE：设备联动。
+        /// 规则的类型 - DEVICE_LINKAGE：云端联动规则。 - DEVICE_SIDE：端侧规则。
         /// </summary>
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleType { get; set; }
@@ -75,6 +76,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("last_update_time", NullValueHandling = NullValueHandling.Ignore)]
         public string LastUpdateTime { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("device_side", NullValueHandling = NullValueHandling.Ignore)]
+        public DeviceSide DeviceSide { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -93,6 +100,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  edgeNodeIds: ").Append(EdgeNodeIds).Append("\n");
             sb.Append("  lastUpdateTime: ").Append(LastUpdateTime).Append("\n");
+            sb.Append("  deviceSide: ").Append(DeviceSide).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -165,6 +173,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.LastUpdateTime == input.LastUpdateTime ||
                     (this.LastUpdateTime != null &&
                     this.LastUpdateTime.Equals(input.LastUpdateTime))
+                ) && 
+                (
+                    this.DeviceSide == input.DeviceSide ||
+                    (this.DeviceSide != null &&
+                    this.DeviceSide.Equals(input.DeviceSide))
                 );
         }
 
@@ -196,6 +209,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.EdgeNodeIds.GetHashCode();
                 if (this.LastUpdateTime != null)
                     hashCode = hashCode * 59 + this.LastUpdateTime.GetHashCode();
+                if (this.DeviceSide != null)
+                    hashCode = hashCode * 59 + this.DeviceSide.GetHashCode();
                 return hashCode;
             }
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -44,11 +45,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "EndTransaction", ENDTRANSACTION },
             };
 
-            private string Value;
+            private string _value;
+
+            public TraceTypeEnum()
+            {
+
+            }
 
             public TraceTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TraceTypeEnum FromValue(string value)
@@ -67,17 +73,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -106,7 +112,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TraceTypeEnum a, TraceTypeEnum b)
@@ -166,11 +172,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "Delay_Msg", DELAY_MSG },
             };
 
-            private string Value;
+            private string _value;
+
+            public MsgTypeEnum()
+            {
+
+            }
 
             public MsgTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static MsgTypeEnum FromValue(string value)
@@ -189,17 +200,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -228,7 +239,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(MsgTypeEnum a, MsgTypeEnum b)
@@ -282,11 +293,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "UNKNOW", UNKNOW },
             };
 
-            private string Value;
+            private string _value;
+
+            public TransactionStateEnum()
+            {
+
+            }
 
             public TransactionStateEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TransactionStateEnum FromValue(string value)
@@ -305,17 +321,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -344,7 +360,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TransactionStateEnum a, TransactionStateEnum b)

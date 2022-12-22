@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -56,11 +57,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "SHUTOFF", SHUTOFF },
             };
 
-            private string Value;
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
 
             public StatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -79,17 +85,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -118,7 +124,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
@@ -202,11 +208,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "deleting", DELETING },
             };
 
-            private string Value;
+            private string _value;
+
+            public OSEXTSTStaskStateEnum()
+            {
+
+            }
 
             public OSEXTSTStaskStateEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static OSEXTSTStaskStateEnum FromValue(string value)
@@ -225,17 +236,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -264,7 +275,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(OSEXTSTStaskStateEnum a, OSEXTSTStaskStateEnum b)
@@ -324,11 +335,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "reboot", REBOOT },
             };
 
-            private string Value;
+            private string _value;
+
+            public OSEXTSTSvmStateEnum()
+            {
+
+            }
 
             public OSEXTSTSvmStateEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static OSEXTSTSvmStateEnum FromValue(string value)
@@ -347,17 +363,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -386,7 +402,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(OSEXTSTSvmStateEnum a, OSEXTSTSvmStateEnum b)
@@ -434,11 +450,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "AUTO", AUTO },
             };
 
-            private string Value;
+            private string _value;
+
+            public OSDCFdiskConfigEnum()
+            {
+
+            }
 
             public OSDCFdiskConfigEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static OSDCFdiskConfigEnum FromValue(string value)
@@ -457,17 +478,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -496,7 +517,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(OSDCFdiskConfigEnum a, OSDCFdiskConfigEnum b)
@@ -556,11 +577,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "MAINTENANCE", MAINTENANCE },
             };
 
-            private string Value;
+            private string _value;
+
+            public HostStatusEnum()
+            {
+
+            }
 
             public HostStatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static HostStatusEnum FromValue(string value)
@@ -579,17 +605,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -618,7 +644,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(HostStatusEnum a, HostStatusEnum b)

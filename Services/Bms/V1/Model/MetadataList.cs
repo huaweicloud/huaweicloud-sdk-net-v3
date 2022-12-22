@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -32,11 +33,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "1", _1 },
             };
 
-            private string Value;
+            private string _value;
+
+            public ChargingModeEnum()
+            {
+
+            }
 
             public ChargingModeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ChargingModeEnum FromValue(string value)
@@ -55,17 +61,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -94,7 +100,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ChargingModeEnum a, ChargingModeEnum b)
@@ -148,11 +154,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "shared", SHARED },
             };
 
-            private string Value;
+            private string _value;
+
+            public MeteringImagetypeEnum()
+            {
+
+            }
 
             public MeteringImagetypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static MeteringImagetypeEnum FromValue(string value)
@@ -171,17 +182,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -210,7 +221,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(MeteringImagetypeEnum a, MeteringImagetypeEnum b)
@@ -258,11 +269,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "Windows", WINDOWS },
             };
 
-            private string Value;
+            private string _value;
+
+            public OsTypeEnum()
+            {
+
+            }
 
             public OsTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static OsTypeEnum FromValue(string value)
@@ -281,17 +297,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -320,7 +336,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(OsTypeEnum a, OsTypeEnum b)
@@ -368,11 +384,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "64", _64 },
             };
 
-            private string Value;
+            private string _value;
+
+            public OsBitEnum()
+            {
+
+            }
 
             public OsBitEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static OsBitEnum FromValue(string value)
@@ -391,17 +412,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -430,7 +451,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(OsBitEnum a, OsBitEnum b)

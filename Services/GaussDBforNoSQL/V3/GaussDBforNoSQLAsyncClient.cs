@@ -629,6 +629,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 变更实例存储容量
+        ///
+        /// 变更实例的存储容量大小
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyVolumeResponse> ModifyVolumeAsync(ModifyVolumeRequest modifyVolumeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , modifyVolumeRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volume",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyVolumeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<ModifyVolumeResponse>(response);
+        }
+        
+        /// <summary>
         /// 暂停/恢复具备容灾关系的实例数据同步
         ///
         /// 该接口用于暂停/恢复具备容灾关系的实例数据同步。

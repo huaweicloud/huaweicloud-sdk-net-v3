@@ -63,7 +63,9 @@ namespace HuaweiCloud.SDK.Core
             SdkError sdkError;
             try
             {
-                sdkError = GetSdkErrorFromResponse(requestId, result);
+                sdkError = responseMessage.Content.Headers.ContentType.MediaType.Equals("application/xml")
+                               ? XmlUtils.DeSerialize<SdkError>(result) 
+                               : GetSdkErrorFromResponse(requestId, result);
             }
             catch (Exception exception)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -86,11 +87,16 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                 { "SUCCESS_UNBIND", SUCCESS_UNBIND },
             };
 
-            private string Value;
+            private string _value;
+
+            public TaskStatusEnum()
+            {
+
+            }
 
             public TaskStatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TaskStatusEnum FromValue(string value)
@@ -109,17 +115,17 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -148,7 +154,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TaskStatusEnum a, TaskStatusEnum b)

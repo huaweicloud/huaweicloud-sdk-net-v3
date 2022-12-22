@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -38,11 +39,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 { "INSTANCE_LAUNCHING", INSTANCE_LAUNCHING },
             };
 
-            private string Value;
+            private string _value;
+
+            public LifecycleHookTypeEnum()
+            {
+
+            }
 
             public LifecycleHookTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static LifecycleHookTypeEnum FromValue(string value)
@@ -61,17 +67,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -100,7 +106,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(LifecycleHookTypeEnum a, LifecycleHookTypeEnum b)
@@ -148,11 +154,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 { "CONTINUE", CONTINUE },
             };
 
-            private string Value;
+            private string _value;
+
+            public DefaultResultEnum()
+            {
+
+            }
 
             public DefaultResultEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DefaultResultEnum FromValue(string value)
@@ -171,17 +182,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -210,7 +221,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DefaultResultEnum a, DefaultResultEnum b)

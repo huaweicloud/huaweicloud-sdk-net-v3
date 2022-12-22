@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -38,11 +39,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 { 5, NUMBER_5 },
             };
 
-            private int? Value;
+            private int? _value;
+
+            public ListTypeEnum()
+            {
+
+            }
 
             public ListTypeEnum(int? value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ListTypeEnum FromValue(int? value)
@@ -61,17 +67,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             public int? GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -100,7 +106,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ListTypeEnum a, ListTypeEnum b)
@@ -161,7 +167,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("list_type", NullValueHandling = NullValueHandling.Ignore)]
         public ListTypeEnum ListType { get; set; }
         /// <summary>
-        /// 防护对象id
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }

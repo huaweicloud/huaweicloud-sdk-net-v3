@@ -1,3 +1,66 @@
+# 3.1.17 2022-12-22
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ShowWorkflowExecutionForPage`:
+    - Add the response parameter `created_by`
+    - Remove the response parameter `create_by`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the interface `ModifyVolume`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `offset`, `limit` to the interface `ListAvailableFlavorInfos`
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `vault_id` to the interface `CopyImageCrossRegion`
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - Support the interface `SearchDevices`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `device_side` to the interface `CreateRule`
+  - Add the response parameter `device_side` to the interface `ListRules`
+  - Add the response parameter `device_side` to the interface `ShowRule`
+  - Changes of the interface `UpdateRule`:
+    - Add the request parameter `device_side`
+    - Add the response parameter `device_side`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `sasl_enabled_mechanisms` to the interface `CreatePostPaidInstance`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `enterprise_project_id`, `enable_acl` to the interface `CreatePostPaidInstance`
+
 # 3.1.16 2022-12-19
 
 ### HuaweiCloud SDK CBR

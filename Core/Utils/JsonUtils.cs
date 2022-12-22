@@ -21,9 +21,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Reflection;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -36,14 +34,14 @@ namespace HuaweiCloud.SDK.Core
         {
             if (typeof(T).IsSubclassOf(typeof(SdkStreamResponse)))
             {
-                return DeSerializeStream<T>(message);
+                return HttpUtils.DeSerializeStream<T>(message);
             }
 
             var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
             var jsonObject = SetResponseBody<T>(body);
 
-            SetAdditionalAttrs(message, jsonObject, body);
-            SetResponseHeaders(message, jsonObject);
+            HttpUtils.SetAdditionalAttrs(message, jsonObject, body);
+            HttpUtils.SetResponseHeaders(message, jsonObject);
 
             return jsonObject;
         }
@@ -58,73 +56,6 @@ namespace HuaweiCloud.SDK.Core
             }
 
             return jsonObject;
-        }
-
-        private static readonly List<string> HttpContentHeadersList = new List<string>
-        {
-            "Allow", "Content-Disposition", "Content-Encoding", "Content-Language", "Content-Location", "Content-MD5",
-            "Content-Range", "Content-Type", "Expires", "Last-Modified"
-        };
-
-        private static void SetResponseHeaders<T>(HttpResponseMessage message, T jsonObject)
-        {
-            const BindingFlags instanceBindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-
-            var properties = jsonObject.GetType().GetProperties(instanceBindFlags);
-
-            foreach (var property in properties)
-            {
-                var oriAttrName = "";
-                var customAttrs = property.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
-                if (customAttrs.Length > 0)
-                {
-                    SDKPropertyAttribute sdkPropertyAttribute = null;
-                    foreach (var customAttr in customAttrs)
-                    {
-                        if (customAttr is SDKPropertyAttribute propertyAttribute)
-                        {
-                            sdkPropertyAttribute = propertyAttribute;
-                        }
-
-                        if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsHeader)
-                        {
-                            continue;
-                        }
-
-                        oriAttrName = sdkPropertyAttribute.PropertyName;
-                    }
-                }
-
-                if (string.IsNullOrEmpty(oriAttrName))
-                {
-                    continue;
-                }
-
-                var isContentHeader = HttpContentHeadersList.Contains(oriAttrName);
-                property.SetValue(jsonObject,
-                    isContentHeader
-                        ? message.Content.Headers.GetValues(oriAttrName).First()
-                        : message.Headers.GetValues(oriAttrName).First());
-            }
-        }
-
-        private static void SetAdditionalAttrs<T>(HttpResponseMessage message, T jsonObject, string body)
-        {
-            jsonObject.GetType().GetProperty("HttpStatusCode")?.SetValue(jsonObject, (int) message.StatusCode, null);
-            jsonObject.GetType().GetProperty("HttpHeaders")?.SetValue(jsonObject, message.Headers.ToString(), null);
-            jsonObject.GetType().GetProperty("HttpBody")?.SetValue(jsonObject, body, null);
-        }
-
-        private static T DeSerializeStream<T>(HttpResponseMessage message)
-        {
-            var t = Activator.CreateInstance<T>();
-            t.GetType().GetProperty("HttpStatusCode")?.SetValue(t, (int) message.StatusCode, null);
-            t.GetType().GetProperty("HttpHeaders")?.SetValue(t, message.Headers.ToString(), null);
-            BindingFlags flag = BindingFlags.Public | BindingFlags.Instance;
-            t.GetType().GetMethod("SetStream")
-                ?.Invoke(t, flag, Type.DefaultBinder,
-                    new object[] {message.Content.ReadAsStreamAsync().Result}, null);
-            return t;
         }
 
         public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse

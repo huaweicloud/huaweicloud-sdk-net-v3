@@ -19,6 +19,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         public static readonly Region CN_SOUTH_2 = new Region("cn-south-2", "https://swr-api.cn-south-2.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2", "https://swr-api.cn-southwest-2.myhuaweicloud.com");
         public static readonly Region RU_NORTHWEST_2 = new Region("ru-northwest-2", "https://swr-api.ru-northwest-2.myhuaweicloud.com");
+        public static readonly Region LA_SOUTH_2 = new Region("la-south-2", "https://swr-api.la-south-2.myhuaweicloud.com");
+        public static readonly Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://swr-api.sa-brazil-1.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_9 = new Region("cn-north-9", "https://swr-api.cn-north-9.myhuaweicloud.com");
+        public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1", "https://swr-api.na-mexico-1.myhuaweicloud.com");
+        public static readonly Region LA_NORTH_2 = new Region("la-north-2", "https://swr-api.la-north-2.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -35,6 +40,11 @@ namespace HuaweiCloud.SDK.Swr.V2
                 { "cn-south-2", CN_SOUTH_2 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },
                 { "ru-northwest-2", RU_NORTHWEST_2 },
+                { "la-south-2", LA_SOUTH_2 },
+                { "sa-brazil-1", SA_BRAZIL_1 },
+                { "cn-north-9", CN_NORTH_9 },
+                { "na-mexico-1", NA_MEXICO_1 },
+                { "la-north-2", LA_NORTH_2 },
         };
 
         public static Region ValueOf(string regionId)

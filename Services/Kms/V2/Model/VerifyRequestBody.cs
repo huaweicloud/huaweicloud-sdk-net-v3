@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -86,11 +87,16 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 { "SM2DSA_SM3", SM2DSA_SM3 },
             };
 
-            private string Value;
+            private string _value;
+
+            public SigningAlgorithmEnum()
+            {
+
+            }
 
             public SigningAlgorithmEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static SigningAlgorithmEnum FromValue(string value)
@@ -109,17 +115,17 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -148,7 +154,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(SigningAlgorithmEnum a, SigningAlgorithmEnum b)
@@ -196,11 +202,16 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 { "RAW", RAW },
             };
 
-            private string Value;
+            private string _value;
+
+            public MessageTypeEnum()
+            {
+
+            }
 
             public MessageTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static MessageTypeEnum FromValue(string value)
@@ -219,17 +230,17 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -258,7 +269,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(MessageTypeEnum a, MessageTypeEnum b)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -32,11 +33,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 { "rabbitmq", RABBITMQ },
             };
 
-            private string Value;
+            private string _value;
+
+            public EngineEnum()
+            {
+
+            }
 
             public EngineEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static EngineEnum FromValue(string value)
@@ -55,17 +61,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -94,7 +100,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(EngineEnum a, EngineEnum b)
@@ -136,11 +142,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 { "3.7.17", _3_7_17 },
             };
 
-            private string Value;
+            private string _value;
+
+            public EngineVersionEnum()
+            {
+
+            }
 
             public EngineVersionEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static EngineVersionEnum FromValue(string value)
@@ -159,17 +170,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -198,7 +209,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(EngineVersionEnum a, EngineVersionEnum b)
@@ -258,11 +269,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 { 7, NUMBER_7 },
             };
 
-            private int? Value;
+            private int? _value;
+
+            public BrokerNumEnum()
+            {
+
+            }
 
             public BrokerNumEnum(int? value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static BrokerNumEnum FromValue(int? value)
@@ -281,17 +297,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             public int? GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -320,7 +336,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(BrokerNumEnum a, BrokerNumEnum b)
@@ -380,11 +396,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 { "dms.physical.storage.ultra.dss.v2", DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2 },
             };
 
-            private string Value;
+            private string _value;
+
+            public StorageSpecCodeEnum()
+            {
+
+            }
 
             public StorageSpecCodeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static StorageSpecCodeEnum FromValue(string value)
@@ -403,17 +424,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -442,7 +463,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(StorageSpecCodeEnum a, StorageSpecCodeEnum b)

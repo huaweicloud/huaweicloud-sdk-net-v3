@@ -172,7 +172,7 @@ namespace HuaweiCloud.SDK.Core
 
         protected async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request)
         {
-            var url = _endpoint
+            var url = GetRealEndpoint(request)
                       + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
                       + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
             return await _async_http(url, methodType.ToUpper(), request);
@@ -200,7 +200,7 @@ namespace HuaweiCloud.SDK.Core
 
         protected HttpResponseMessage DoHttpRequestSync(string methodType, SdkRequest request)
         {
-            var url = _endpoint
+            var url = GetRealEndpoint(request)
                       + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
                       + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
             return _sync_http(url, methodType.ToUpper(), request);
@@ -225,6 +225,16 @@ namespace HuaweiCloud.SDK.Core
                 throw new ConnectionException(ExceptionUtils.GetMessageFromAggregateException(aggregateException));
             }
         }
+
+        private string GetRealEndpoint(SdkRequest request)
+        {
+            if (String.IsNullOrEmpty(request.Cname))
+            {
+                return _endpoint;
+            }
+
+            return _endpoint.Insert(8, request.Cname + ".");
+        } 
 
         private HttpResponseMessage GetResult(HttpResponseMessage responseMessage)
         {

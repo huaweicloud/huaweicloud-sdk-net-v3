@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -28,10 +29,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 
+        /// 函数流返回体信息
         /// </summary>
         [JsonProperty("executions", NullValueHandling = NullValueHandling.Ignore)]
-        public FlowExecutionBriefV2 Executions { get; set; }
+        public List<FlowExecutionBriefV2> Executions { get; set; }
 
 
         /// <summary>
@@ -77,8 +78,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 ) && 
                 (
                     this.Executions == input.Executions ||
-                    (this.Executions != null &&
-                    this.Executions.Equals(input.Executions))
+                    this.Executions != null &&
+                    input.Executions != null &&
+                    this.Executions.SequenceEqual(input.Executions)
                 );
         }
 

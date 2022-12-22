@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -40,7 +41,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<RuleAction> Actions { get; set; }
 
         /// <summary>
-        /// **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：设备联动。
+        /// **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：云端联动规则。  - DEVICE_SIDE：端侧规则。
         /// </summary>
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleType { get; set; }
@@ -57,6 +58,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("device_side", NullValueHandling = NullValueHandling.Ignore)]
+        public DeviceSide DeviceSide { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -72,6 +79,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  ruleType: ").Append(RuleType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  deviceSide: ").Append(DeviceSide).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,6 +136,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.AppId == input.AppId ||
                     (this.AppId != null &&
                     this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.DeviceSide == input.DeviceSide ||
+                    (this.DeviceSide != null &&
+                    this.DeviceSide.Equals(input.DeviceSide))
                 );
         }
 
@@ -153,6 +166,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.DeviceSide != null)
+                    hashCode = hashCode * 59 + this.DeviceSide.GetHashCode();
                 return hashCode;
             }
         }

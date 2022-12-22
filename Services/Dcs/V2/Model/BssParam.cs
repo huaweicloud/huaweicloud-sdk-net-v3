@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -38,11 +39,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 { "false", FALSE },
             };
 
-            private string Value;
+            private string _value;
+
+            public IsAutoRenewEnum()
+            {
+
+            }
 
             public IsAutoRenewEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static IsAutoRenewEnum FromValue(string value)
@@ -61,17 +67,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -100,7 +106,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(IsAutoRenewEnum a, IsAutoRenewEnum b)
@@ -148,11 +154,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 { "postPaid", POSTPAID },
             };
 
-            private string Value;
+            private string _value;
+
+            public ChargingModeEnum()
+            {
+
+            }
 
             public ChargingModeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ChargingModeEnum FromValue(string value)
@@ -171,17 +182,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -210,7 +221,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ChargingModeEnum a, ChargingModeEnum b)
@@ -258,11 +269,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 { "false", FALSE },
             };
 
-            private string Value;
+            private string _value;
+
+            public IsAutoPayEnum()
+            {
+
+            }
 
             public IsAutoPayEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static IsAutoPayEnum FromValue(string value)
@@ -281,17 +297,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -320,7 +336,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(IsAutoPayEnum a, IsAutoPayEnum b)
@@ -368,11 +384,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 { "year", YEAR },
             };
 
-            private string Value;
+            private string _value;
+
+            public PeriodTypeEnum()
+            {
+
+            }
 
             public PeriodTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static PeriodTypeEnum FromValue(string value)
@@ -391,17 +412,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -430,7 +451,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(PeriodTypeEnum a, PeriodTypeEnum b)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -56,11 +57,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "skip", SKIP },
             };
 
-            private string Value;
+            private string _value;
+
+            public DeleteEfsEnum()
+            {
+
+            }
 
             public DeleteEfsEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DeleteEfsEnum FromValue(string value)
@@ -79,17 +85,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -118,7 +124,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DeleteEfsEnum a, DeleteEfsEnum b)
@@ -184,11 +190,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "skip", SKIP },
             };
 
-            private string Value;
+            private string _value;
+
+            public DeleteEniEnum()
+            {
+
+            }
 
             public DeleteEniEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DeleteEniEnum FromValue(string value)
@@ -207,17 +218,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -246,7 +257,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DeleteEniEnum a, DeleteEniEnum b)
@@ -312,11 +323,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "skip", SKIP },
             };
 
-            private string Value;
+            private string _value;
+
+            public DeleteEvsEnum()
+            {
+
+            }
 
             public DeleteEvsEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DeleteEvsEnum FromValue(string value)
@@ -335,17 +351,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -374,7 +390,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DeleteEvsEnum a, DeleteEvsEnum b)
@@ -440,11 +456,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "skip", SKIP },
             };
 
-            private string Value;
+            private string _value;
+
+            public DeleteNetEnum()
+            {
+
+            }
 
             public DeleteNetEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DeleteNetEnum FromValue(string value)
@@ -463,17 +484,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -502,7 +523,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DeleteNetEnum a, DeleteNetEnum b)
@@ -568,11 +589,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "skip", SKIP },
             };
 
-            private string Value;
+            private string _value;
+
+            public DeleteObsEnum()
+            {
+
+            }
 
             public DeleteObsEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DeleteObsEnum FromValue(string value)
@@ -591,17 +617,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -630,7 +656,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DeleteObsEnum a, DeleteObsEnum b)
@@ -696,11 +722,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "skip", SKIP },
             };
 
-            private string Value;
+            private string _value;
+
+            public DeleteSfsEnum()
+            {
+
+            }
 
             public DeleteSfsEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DeleteSfsEnum FromValue(string value)
@@ -719,17 +750,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -758,7 +789,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DeleteSfsEnum a, DeleteSfsEnum b)
@@ -824,11 +855,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "skip", SKIP },
             };
 
-            private string Value;
+            private string _value;
+
+            public DeleteSfs30Enum()
+            {
+
+            }
 
             public DeleteSfs30Enum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DeleteSfs30Enum FromValue(string value)
@@ -847,17 +883,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -886,7 +922,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DeleteSfs30Enum a, DeleteSfs30Enum b)
@@ -928,11 +964,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "true", TRUE },
             };
 
-            private string Value;
+            private string _value;
+
+            public TobedeletedEnum()
+            {
+
+            }
 
             public TobedeletedEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TobedeletedEnum FromValue(string value)
@@ -951,17 +992,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -990,7 +1031,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TobedeletedEnum a, TobedeletedEnum b)

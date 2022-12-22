@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -32,11 +33,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "reliability", RELIABILITY },
             };
 
-            private string Value;
+            private string _value;
+
+            public EngineEnum()
+            {
+
+            }
 
             public EngineEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static EngineEnum FromValue(string value)
@@ -55,17 +61,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -94,7 +100,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(EngineEnum a, EngineEnum b)
@@ -136,11 +142,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "4.8.0", _4_8_0 },
             };
 
-            private string Value;
+            private string _value;
+
+            public EngineVersionEnum()
+            {
+
+            }
 
             public EngineVersionEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static EngineVersionEnum FromValue(string value)
@@ -159,17 +170,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -198,7 +209,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(EngineVersionEnum a, EngineVersionEnum b)
@@ -258,11 +269,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "c6.16u32g.cluster", C6_16U32G_CLUSTER },
             };
 
-            private string Value;
+            private string _value;
+
+            public ProductIdEnum()
+            {
+
+            }
 
             public ProductIdEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ProductIdEnum FromValue(string value)
@@ -281,17 +297,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -320,7 +336,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ProductIdEnum a, ProductIdEnum b)
@@ -368,11 +384,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "dms.physical.storage.ultra.v2", DMS_PHYSICAL_STORAGE_ULTRA_V2 },
             };
 
-            private string Value;
+            private string _value;
+
+            public StorageSpecCodeEnum()
+            {
+
+            }
 
             public StorageSpecCodeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static StorageSpecCodeEnum FromValue(string value)
@@ -391,17 +412,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -430,7 +451,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(StorageSpecCodeEnum a, StorageSpecCodeEnum b)
@@ -524,6 +545,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }
         /// <summary>
+        /// 企业项目ID。若为企业项目帐号，该参数必填。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 是否开启访问控制列表。
+        /// </summary>
+        [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAcl { get; set; }
+
+        /// <summary>
         /// 是否支持IPV6。   - true: 支持   - false：不支持
         /// </summary>
         [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -567,6 +600,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
@@ -654,6 +689,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.StorageSpecCode.Equals(input.StorageSpecCode))
                 ) && 
                 (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.EnableAcl == input.EnableAcl ||
+                    (this.EnableAcl != null &&
+                    this.EnableAcl.Equals(input.EnableAcl))
+                ) && 
+                (
                     this.Ipv6Enable == input.Ipv6Enable ||
                     (this.Ipv6Enable != null &&
                     this.Ipv6Enable.Equals(input.Ipv6Enable))
@@ -707,6 +752,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
                 if (this.StorageSpecCode != null)
                     hashCode = hashCode * 59 + this.StorageSpecCode.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnableAcl != null)
+                    hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.Ipv6Enable != null)
                     hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.EnablePublicip != null)

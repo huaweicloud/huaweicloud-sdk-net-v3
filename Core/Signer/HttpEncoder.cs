@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Core
             return expandedBytes;
         }
 
-        private static string UrlEncode(string value)
+        protected static string UrlEncode(string value)
         {
             if (value == null)
                 return null;

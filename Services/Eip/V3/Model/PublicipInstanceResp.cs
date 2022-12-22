@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -38,11 +39,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 { 6, NUMBER_6 },
             };
 
-            private int? Value;
+            private int? _value;
+
+            public IpVersionEnum()
+            {
+
+            }
 
             public IpVersionEnum(int? value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static IpVersionEnum FromValue(int? value)
@@ -61,17 +67,17 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public int? GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -100,7 +106,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(IpVersionEnum a, IpVersionEnum b)
@@ -214,11 +220,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 { "VPN", VPN },
             };
 
-            private string Value;
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
 
             public StatusEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static StatusEnum FromValue(string value)
@@ -237,17 +248,17 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -276,7 +287,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
@@ -330,11 +341,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 { "DUALSTACK_SUBNET", DUALSTACK_SUBNET },
             };
 
-            private string Value;
+            private string _value;
+
+            public TypeEnum()
+            {
+
+            }
 
             public TypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TypeEnum FromValue(string value)
@@ -353,17 +369,17 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -392,7 +408,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TypeEnum a, TypeEnum b)
@@ -464,11 +480,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 { "null", NULL },
             };
 
-            private string Value;
+            private string _value;
+
+            public AssociateInstanceTypeEnum()
+            {
+
+            }
 
             public AssociateInstanceTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static AssociateInstanceTypeEnum FromValue(string value)
@@ -487,17 +508,17 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -526,7 +547,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(AssociateInstanceTypeEnum a, AssociateInstanceTypeEnum b)

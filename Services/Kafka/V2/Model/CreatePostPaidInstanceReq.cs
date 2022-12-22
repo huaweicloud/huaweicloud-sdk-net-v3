@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -32,11 +33,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "kafka", KAFKA },
             };
 
-            private string Value;
+            private string _value;
+
+            public EngineEnum()
+            {
+
+            }
 
             public EngineEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static EngineEnum FromValue(string value)
@@ -55,17 +61,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -94,7 +100,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(EngineEnum a, EngineEnum b)
@@ -148,11 +154,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "2.7", _2_7 },
             };
 
-            private string Value;
+            private string _value;
+
+            public EngineVersionEnum()
+            {
+
+            }
 
             public EngineVersionEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static EngineVersionEnum FromValue(string value)
@@ -171,17 +182,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -210,7 +221,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(EngineVersionEnum a, EngineVersionEnum b)
@@ -300,11 +311,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "c6.16u32g.cluster", C6_16U32G_CLUSTER },
             };
 
-            private string Value;
+            private string _value;
+
+            public SpecificationEnum()
+            {
+
+            }
 
             public SpecificationEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static SpecificationEnum FromValue(string value)
@@ -323,17 +339,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -362,7 +378,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(SpecificationEnum a, SpecificationEnum b)
@@ -446,11 +462,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { 2000, NUMBER_2000 },
             };
 
-            private int? Value;
+            private int? _value;
+
+            public PartitionNumEnum()
+            {
+
+            }
 
             public PartitionNumEnum(int? value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static PartitionNumEnum FromValue(int? value)
@@ -469,17 +490,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public int? GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -508,7 +529,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(PartitionNumEnum a, PartitionNumEnum b)
@@ -531,6 +552,121 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 return !(a == b);
             }
         }
+
+        /// <summary>
+        /// Defines saslEnabledMechanisms
+        /// </summary>
+        [JsonConverter(typeof(EnumClassConverter<SaslEnabledMechanismsEnum>))]
+        public class SaslEnabledMechanismsEnum
+        {
+            /// <summary>
+            /// Enum PLAIN for value: PLAIN
+            /// </summary>
+            public static readonly SaslEnabledMechanismsEnum PLAIN = new SaslEnabledMechanismsEnum("PLAIN");
+
+            /// <summary>
+            /// Enum SCRAM_SHA_512 for value: SCRAM-SHA-512
+            /// </summary>
+            public static readonly SaslEnabledMechanismsEnum SCRAM_SHA_512 = new SaslEnabledMechanismsEnum("SCRAM-SHA-512");
+
+            private static readonly Dictionary<string, SaslEnabledMechanismsEnum> StaticFields =
+            new Dictionary<string, SaslEnabledMechanismsEnum>()
+            {
+                { "PLAIN", PLAIN },
+                { "SCRAM-SHA-512", SCRAM_SHA_512 },
+            };
+
+            private string _value;
+
+            public SaslEnabledMechanismsEnum()
+            {
+
+            }
+
+            public SaslEnabledMechanismsEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SaslEnabledMechanismsEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SaslEnabledMechanismsEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SaslEnabledMechanismsEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
@@ -556,11 +692,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "produce_reject", PRODUCE_REJECT },
             };
 
-            private string Value;
+            private string _value;
+
+            public RetentionPolicyEnum()
+            {
+
+            }
 
             public RetentionPolicyEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static RetentionPolicyEnum FromValue(string value)
@@ -579,17 +720,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -618,7 +759,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(RetentionPolicyEnum a, RetentionPolicyEnum b)
@@ -684,11 +825,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA },
             };
 
-            private string Value;
+            private string _value;
+
+            public StorageSpecCodeEnum()
+            {
+
+            }
 
             public StorageSpecCodeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static StorageSpecCodeEnum FromValue(string value)
@@ -707,17 +853,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -746,7 +892,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(StorageSpecCodeEnum a, StorageSpecCodeEnum b)
@@ -906,6 +1052,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
+        /// 开启SASL后使用的认证机制，如果开启了SASL认证功能（即ssl_enable&#x3D;true），该字段为必选。  若该字段值为空，默认开启PLAIN认证机制。  选择其一进行SASL认证即可,支持同时开启两种认证机制。 取值如下： - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
+        /// </summary>
+        [JsonProperty("sasl_enabled_mechanisms", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SaslEnabledMechanismsEnum> SaslEnabledMechanisms { get; set; }
+        /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
         /// </summary>
         [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
@@ -982,6 +1133,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  publicBandwidth: ").Append(PublicBandwidth).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
+            sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
             sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
@@ -1128,6 +1280,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SslEnable.Equals(input.SslEnable))
                 ) && 
                 (
+                    this.SaslEnabledMechanisms == input.SaslEnabledMechanisms ||
+                    this.SaslEnabledMechanisms != null &&
+                    input.SaslEnabledMechanisms != null &&
+                    this.SaslEnabledMechanisms.SequenceEqual(input.SaslEnabledMechanisms)
+                ) && 
+                (
                     this.RetentionPolicy == input.RetentionPolicy ||
                     (this.RetentionPolicy != null &&
                     this.RetentionPolicy.Equals(input.RetentionPolicy))
@@ -1224,6 +1382,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 if (this.SslEnable != null)
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.SaslEnabledMechanisms != null)
+                    hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.RetentionPolicy != null)
                     hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
                 if (this.ConnectorEnable != null)

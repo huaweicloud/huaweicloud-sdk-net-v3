@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -44,11 +45,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 { "LB", LB },
             };
 
-            private string Value;
+            private string _value;
+
+            public ServerTypeEnum()
+            {
+
+            }
 
             public ServerTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ServerTypeEnum FromValue(string value)
@@ -67,17 +73,17 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -106,7 +112,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ServerTypeEnum a, ServerTypeEnum b)
@@ -166,11 +172,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 { "open", OPEN },
             };
 
-            private string Value;
+            private string _value;
+
+            public TcpProxyEnum()
+            {
+
+            }
 
             public TcpProxyEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static TcpProxyEnum FromValue(string value)
@@ -189,17 +200,17 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -228,7 +239,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(TcpProxyEnum a, TcpProxyEnum b)

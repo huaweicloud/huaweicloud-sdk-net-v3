@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -45,6 +46,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
 
+        /// <summary>
+        /// 存储库ID。如果是整机镜像，则在跨Region复制镜像时，为必选参数，需传入该值。
+        /// </summary>
+        [JsonProperty("vault_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VaultId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -58,6 +65,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
             sb.Append("  region: ").Append(Region).Append("\n");
+            sb.Append("  vaultId: ").Append(VaultId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,6 +111,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.Region == input.Region ||
                     (this.Region != null &&
                     this.Region.Equals(input.Region))
+                ) && 
+                (
+                    this.VaultId == input.VaultId ||
+                    (this.VaultId != null &&
+                    this.VaultId.Equals(input.VaultId))
                 );
         }
 
@@ -124,6 +137,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
                 if (this.Region != null)
                     hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.VaultId != null)
+                    hashCode = hashCode * 59 + this.VaultId.GetHashCode();
                 return hashCode;
             }
         }

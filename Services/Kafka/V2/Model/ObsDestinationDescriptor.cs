@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -38,11 +39,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "earliest", EARLIEST },
             };
 
-            private string Value;
+            private string _value;
+
+            public ConsumerStrategyEnum()
+            {
+
+            }
 
             public ConsumerStrategyEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ConsumerStrategyEnum FromValue(string value)
@@ -61,17 +67,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -100,7 +106,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ConsumerStrategyEnum a, ConsumerStrategyEnum b)
@@ -142,11 +148,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "TEXT", TEXT },
             };
 
-            private string Value;
+            private string _value;
+
+            public DestinationFileTypeEnum()
+            {
+
+            }
 
             public DestinationFileTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static DestinationFileTypeEnum FromValue(string value)
@@ -165,17 +176,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -204,7 +215,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(DestinationFileTypeEnum a, DestinationFileTypeEnum b)

@@ -40,11 +40,6 @@ namespace HuaweiCloud.SDK.Core
         public SdkHttpClient(String clientName, HttpConfig config, HttpHandler httpHandler, bool logging,
             LogLevel logLevel)
         {
-            if (_myHttpClient != null)
-            {
-                return;
-            }
-
             var serviceProvider = GetServiceCollection(config, logging, logLevel).BuildServiceProvider();
             var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
             this._logger = loggerFactory.CreateLogger("HuaweiCloud.Sdk");

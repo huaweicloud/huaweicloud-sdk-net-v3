@@ -40,5 +40,7 @@ namespace HuaweiCloud.SDK.Core
         public bool IsBody { get; set; }
 
         public bool IsPath { get; set; }
+        
+        public bool IsCname { get; set; }
     }
 }

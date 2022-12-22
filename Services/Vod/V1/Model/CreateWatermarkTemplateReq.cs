@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
@@ -38,11 +39,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "TEXT", TEXT },
             };
 
-            private string Value;
+            private string _value;
+
+            public WatermarkTypeEnum()
+            {
+
+            }
 
             public WatermarkTypeEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static WatermarkTypeEnum FromValue(string value)
@@ -61,17 +67,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -100,7 +106,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(WatermarkTypeEnum a, WatermarkTypeEnum b)
@@ -154,11 +160,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "GRAYED", GRAYED },
             };
 
-            private string Value;
+            private string _value;
+
+            public ImageProcessEnum()
+            {
+
+            }
 
             public ImageProcessEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static ImageProcessEnum FromValue(string value)
@@ -177,17 +188,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -216,7 +227,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(ImageProcessEnum a, ImageProcessEnum b)
@@ -276,11 +287,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "BOTTOMLEFT", BOTTOMLEFT },
             };
 
-            private string Value;
+            private string _value;
+
+            public PositionEnum()
+            {
+
+            }
 
             public PositionEnum(string value)
             {
-                Value = value;
+                _value = value;
             }
 
             public static PositionEnum FromValue(string value)
@@ -299,17 +315,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public string GetValue()
             {
-                return Value;
+                return _value;
             }
 
             public override string ToString()
             {
-                return $"{Value}";
+                return $"{_value}";
             }
 
             public override int GetHashCode()
             {
-                return this.Value.GetHashCode();
+                return this._value.GetHashCode();
             }
 
             public override bool Equals(object obj)
@@ -338,7 +354,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 {
                     return false;
                 }
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
             public static bool operator ==(PositionEnum a, PositionEnum b)
