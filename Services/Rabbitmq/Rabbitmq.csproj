@@ -15,7 +15,7 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Rabbitmq</PackageId>
-        <Version>3.1.17</Version>
+        <Version>3.1.18</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2020 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>
