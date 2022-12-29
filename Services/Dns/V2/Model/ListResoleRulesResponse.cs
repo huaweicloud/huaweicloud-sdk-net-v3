@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 查询resolver_rule的列表响应。
+        /// 解析记录资源列表。
         /// </summary>
         [JsonProperty("resolver_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResolveRuleParam> ResolverRules { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public Metadata Metadata { get; set; }
 
 
         /// <summary>
@@ -31,6 +37,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListResoleRulesResponse {\n");
             sb.Append("  resolverRules: ").Append(ResolverRules).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.ResolverRules != null &&
                     input.ResolverRules != null &&
                     this.ResolverRules.SequenceEqual(input.ResolverRules)
+                ) && 
+                (
+                    this.Metadata == input.Metadata ||
+                    (this.Metadata != null &&
+                    this.Metadata.Equals(input.Metadata))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 int hashCode = 41;
                 if (this.ResolverRules != null)
                     hashCode = hashCode * 59 + this.ResolverRules.GetHashCode();
+                if (this.Metadata != null)
+                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

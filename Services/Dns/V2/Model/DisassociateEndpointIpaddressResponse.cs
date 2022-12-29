@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 查询公网Zone的列表响应。
+        /// 
         /// </summary>
-        [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EndpointResp> Endpoints { get; set; }
+        [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
+        public EndpointResp Endpoint { get; set; }
 
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DisassociateEndpointIpaddressResponse {\n");
-            sb.Append("  endpoints: ").Append(Endpoints).Append("\n");
+            sb.Append("  endpoint: ").Append(Endpoint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -53,10 +53,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
 
             return 
                 (
-                    this.Endpoints == input.Endpoints ||
-                    this.Endpoints != null &&
-                    input.Endpoints != null &&
-                    this.Endpoints.SequenceEqual(input.Endpoints)
+                    this.Endpoint == input.Endpoint ||
+                    (this.Endpoint != null &&
+                    this.Endpoint.Equals(input.Endpoint))
                 );
         }
 
@@ -68,8 +67,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Endpoints != null)
-                    hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                if (this.Endpoint != null)
+                    hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
                 return hashCode;
             }
         }

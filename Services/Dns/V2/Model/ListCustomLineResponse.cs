@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 线路列表。
         /// </summary>
         [JsonProperty("lines", NullValueHandling = NullValueHandling.Ignore)]
         public List<Line> Lines { get; set; }
@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Metedata Metadata { get; set; }
+        public Metadata Metadata { get; set; }
 
 
         /// <summary>

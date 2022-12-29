@@ -17,16 +17,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 子网的网络id。
+        /// 
         /// </summary>
-        [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SubnetId { get; set; }
-
-        /// <summary>
-        /// 自定义ip地址，需在子网的网段内部。
-        /// </summary>
-        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
-        public string Ip { get; set; }
+        [JsonProperty("ipaddress", NullValueHandling = NullValueHandling.Ignore)]
+        public IpaddressData Ipaddress { get; set; }
 
 
         /// <summary>
@@ -36,8 +30,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Ipaddresses {\n");
-            sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
-            sb.Append("  ip: ").Append(Ip).Append("\n");
+            sb.Append("  ipaddress: ").Append(Ipaddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -60,14 +53,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
 
             return 
                 (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
+                    this.Ipaddress == input.Ipaddress ||
+                    (this.Ipaddress != null &&
+                    this.Ipaddress.Equals(input.Ipaddress))
                 );
         }
 
@@ -79,10 +67,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Ipaddress != null)
+                    hashCode = hashCode * 59 + this.Ipaddress.GetHashCode();
                 return hashCode;
             }
         }

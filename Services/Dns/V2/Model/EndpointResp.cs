@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// endpoint的ID，uuid形式的一个资源标识。
+        /// 终端节点方向。 取值： inbound，表示入站规则。 outbound，表示出站规则。
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public string Direction { get; set; }

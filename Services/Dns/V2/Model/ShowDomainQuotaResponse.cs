@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 配额项数据。
         /// </summary>
         [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
         public List<DomainQuotaResponseQuotas> Quotas { get; set; }

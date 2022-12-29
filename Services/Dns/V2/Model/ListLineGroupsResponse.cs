@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Metedata Metadata { get; set; }
+        public Metadata Metadata { get; set; }
 
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace HuaweiCloud.SDK.Dns.V2
 
         
         /// <summary>
-        /// 绑定ip地址。
+        /// 绑定ip地址
         ///
         /// 绑定单个IP地址到终端节点
         /// 
@@ -28,6 +28,23 @@ namespace HuaweiCloud.SDK.Dns.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateEndpointIpaddressRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<AssociateEndpointIpaddressResponse>(response);
+        }
+        
+        /// <summary>
+        /// 在解析规则上关联VPC
+        ///
+        /// 在解析规则上关联VPC
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AssociateResolveRuleRouterResponse AssociateResolveRuleRouter(AssociateResolveRuleRouterRequest associateResolveRuleRouterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resolverrule_id" , associateResolveRuleRouterRequest.ResolverruleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrule/{resolverrule_id}/associaterouter",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResolveRuleRouterRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AssociateResolveRuleRouterResponse>(response);
         }
         
         /// <summary>
@@ -135,7 +152,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 创建终端节点。
+        /// 创建终端节点
         ///
         /// 创建单个终端节点。
         /// 
@@ -151,7 +168,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 创建线路分组。
+        /// 创建线路分组
         ///
         /// 创建一个线路分组。
         /// 
@@ -167,7 +184,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 创建解析规则。
+        /// 创建解析规则
         ///
         /// 创建一个解析规则。
         /// 
@@ -183,7 +200,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 创建公网域名找回请求。
+        /// 创建公网域名找回请求
         ///
         /// 创建公网域名找回请求。
         /// 
@@ -199,7 +216,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 请求立即验证域名找回。
+        /// 请求立即验证域名找回
         ///
         /// 请求服务器立即执行找回验证。
         /// 
@@ -211,7 +228,7 @@ namespace HuaweiCloud.SDK.Dns.V2
             urlParam.Add("id" , createRetrievalVerificationRequest.Id.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/retrieval/verification/{id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetrievalVerificationRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<CreateRetrievalVerificationResponse>(response);
         }
         
@@ -233,7 +250,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 删除终端节点。
+        /// 删除终端节点
         ///
         /// 删除终端节点。
         /// 
@@ -250,7 +267,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 删除线路分组。
+        /// 删除线路分组
         ///
         /// 删除单个线路分组。
         /// 
@@ -267,7 +284,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 删除解析规则。
+        /// 删除解析规则
         ///
         /// 删除解析规则。
         /// 
@@ -284,7 +301,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 解关联ip地址。
+        /// 解关联ip地址
         ///
         /// 解除endpoint绑定的IP。
         /// 
@@ -295,10 +312,27 @@ namespace HuaweiCloud.SDK.Dns.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("endpoint_id" , disassociateEndpointIpaddressRequest.EndpointId.ToString());
             urlParam.Add("ipaddress_id" , disassociateEndpointIpaddressRequest.IpaddressId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("v2.1/endpoint/{endpoint_id}/ipaddress/{ipaddress_id}",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/endpoint/{endpoint_id}/ipaddress/{ipaddress_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateEndpointIpaddressRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DisassociateEndpointIpaddressResponse>(response);
+        }
+        
+        /// <summary>
+        /// 在解析规则上解关联VPC
+        ///
+        /// 在解析规则上解关联VPC
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DisassociateResolveRuleRouterResponse DisassociateResolveRuleRouter(DisassociateResolveRuleRouterRequest disassociateResolveRuleRouterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resolverrule_id" , disassociateResolveRuleRouterRequest.ResolverruleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrule/{resolverrule_id}/disassociaterouter",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResolveRuleRouterRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DisassociateResolveRuleRouterResponse>(response);
         }
         
         /// <summary>
@@ -334,7 +368,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询ip地址列表。
+        /// 查询ip地址列表
         ///
         /// 查询某个endpoint下的ip地址列表。
         /// 
@@ -351,7 +385,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询vpc信息。
+        /// 查询vpc信息
         ///
         /// 查询vpc的终端节点信息。
         /// 
@@ -367,7 +401,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询终端节点列表。
+        /// 查询终端节点列表
         ///
         /// 查询终端节点列表。
         /// 
@@ -383,7 +417,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询线路分组列表。
+        /// 查询线路分组列表
         ///
         /// 查询线路分组列表。
         /// 
@@ -415,7 +449,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询解析规则列表。
+        /// 查询解析规则列表
         ///
         /// 查询解析规则的列表。
         /// 
@@ -464,7 +498,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询endpoint。
+        /// 查询终端节点
         ///
         /// 查询终端单个节点。
         /// 
@@ -481,7 +515,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询线路分组。
+        /// 查询线路分组
         ///
         /// 查询线路分组。
         /// 
@@ -498,7 +532,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询单个解析规则。
+        /// 查询单个解析规则
         ///
         /// 查询单个解析规则。
         /// 
@@ -515,7 +549,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询域名找回。
+        /// 查询域名找回
         ///
         /// 查询域名找回请求。
         /// 
@@ -531,7 +565,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询域名找回结果。
+        /// 查询域名找回结果
         ///
         /// 查询域名找回结果。
         /// 
@@ -582,7 +616,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 更新线路分组。
+        /// 更新线路分组
         ///
         /// 更新单个线路分组。
         /// 
@@ -599,7 +633,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 修改解析规则。
+        /// 修改解析规则
         ///
         /// 修改一个解析规则。
         /// 
@@ -704,7 +738,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// Record Set关联健康检查。
+        /// Record Set关联健康检查
         ///
         /// Record Set关联健康检查。
         /// 
@@ -714,14 +748,14 @@ namespace HuaweiCloud.SDK.Dns.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("recordset_id" , associateHealthCheckRequest.RecordsetId.ToString());
-            string urlPath = HttpUtils.AddUrlPath(" /v2.1/recordsets/{recordset_id}/associatehealthcheck",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/associatehealthcheck",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateHealthCheckRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<AssociateHealthCheckResponse>(response);
         }
         
         /// <summary>
-        /// 批量删除某个Zone下的Record Set资源。
+        /// 批量删除某个Zone下的Record Set资源
         ///
         /// 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
         /// 响应结果中只包含本次实际删除的资源。
@@ -739,7 +773,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 批量修改RecordSet。
+        /// 批量修改RecordSet
         ///
         /// 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
         /// 仅公网Zone支持。
@@ -774,7 +808,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 批量线路创建RecordSet。仅公网Zone支持。
+        /// 批量线路创建RecordSet
         ///
         /// 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
         /// 
@@ -791,7 +825,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 创建单个Record Set，仅适用于公网DNS
+        /// 创建单个Record Set
         ///
         /// 创建单个Record Set，仅适用于公网DNS
         /// 
@@ -844,9 +878,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// Record Set解关联健康检查。
+        /// Record Set解关联健康检查
         ///
-        /// Record Set解关联健康检查。。
+        /// Record Set解关联健康检查。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -854,7 +888,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("recordset_id" , disassociateHealthCheckRequest.RecordsetId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/associatehealthcheck",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/disassociatehealthcheck",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateHealthCheckRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DisassociateHealthCheckResponse>(response);
@@ -929,7 +963,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询单个Record Set
         ///
-        /// 查询单个Record Set
+        /// 查询单个Record Set。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -962,7 +996,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询单个Record Set，仅适用于公网DNS
+        /// 查询单个Record Set
         ///
         /// 查询单个Record Set，仅适用于公网DNS
         /// 
@@ -1374,7 +1408,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 设置单个公网Zone状态，支持暂停、启用Zone
+        /// 设置单个公网Zone状态
         ///
         /// 设置单个公网Zone状态，支持暂停、启用Zone
         /// 

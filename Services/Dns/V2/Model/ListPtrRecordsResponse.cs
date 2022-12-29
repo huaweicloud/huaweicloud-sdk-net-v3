@@ -26,10 +26,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Metedata Metadata { get; set; }
+        public Metadata Metadata { get; set; }
 
         /// <summary>
-        /// 
+        /// 弹性IP的PTR记录ID列表信息。
         /// </summary>
         [JsonProperty("floatingips", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListPtrRecordsFloatingResp> Floatingips { get; set; }

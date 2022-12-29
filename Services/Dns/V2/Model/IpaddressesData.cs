@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// ip地址信息。
+        /// </summary>
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
+        /// <summary>
         /// 创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -62,6 +68,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("class IpaddressesData {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
@@ -98,6 +105,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
+                ) && 
+                (
                     this.CreateTime == input.CreateTime ||
                     (this.CreateTime != null &&
                     this.CreateTime.Equals(input.CreateTime))
@@ -131,6 +143,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Ip != null)
+                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null)

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 
+    /// 别名记录。
     /// </summary>
     public class AliasTarget 
     {

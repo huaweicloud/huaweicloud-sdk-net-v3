@@ -82,6 +82,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("security_policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? SecurityPolicy { get; set; }
 
+        /// <summary>
+        /// ipgroup最大可关联的监听器数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// </summary>
+        [JsonProperty("ipgroup_bindings", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpgroupBindings { get; set; }
+
+        /// <summary>
+        /// 单个ipgroup最多可设置的ip地址数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// </summary>
+        [JsonProperty("ipgroup_max_length", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpgroupMaxLength { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -101,6 +113,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  membersPerPool: ").Append(MembersPerPool).Append("\n");
             sb.Append("  ipgroup: ").Append(Ipgroup).Append("\n");
             sb.Append("  securityPolicy: ").Append(SecurityPolicy).Append("\n");
+            sb.Append("  ipgroupBindings: ").Append(IpgroupBindings).Append("\n");
+            sb.Append("  ipgroupMaxLength: ").Append(IpgroupMaxLength).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -176,6 +190,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.SecurityPolicy == input.SecurityPolicy ||
                     (this.SecurityPolicy != null &&
                     this.SecurityPolicy.Equals(input.SecurityPolicy))
+                ) && 
+                (
+                    this.IpgroupBindings == input.IpgroupBindings ||
+                    (this.IpgroupBindings != null &&
+                    this.IpgroupBindings.Equals(input.IpgroupBindings))
+                ) && 
+                (
+                    this.IpgroupMaxLength == input.IpgroupMaxLength ||
+                    (this.IpgroupMaxLength != null &&
+                    this.IpgroupMaxLength.Equals(input.IpgroupMaxLength))
                 );
         }
 
@@ -209,6 +233,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
                 if (this.SecurityPolicy != null)
                     hashCode = hashCode * 59 + this.SecurityPolicy.GetHashCode();
+                if (this.IpgroupBindings != null)
+                    hashCode = hashCode * 59 + this.IpgroupBindings.GetHashCode();
+                if (this.IpgroupMaxLength != null)
+                    hashCode = hashCode * 59 + this.IpgroupMaxLength.GetHashCode();
                 return hashCode;
             }
         }

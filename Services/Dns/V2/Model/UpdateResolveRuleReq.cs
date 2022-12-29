@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("ipaddresses", NullValueHandling = NullValueHandling.Ignore)]
         public IpInfo Ipaddresses { get; set; }
 
-        /// <summary>
-        /// 规则关联的目标ip地址。
-        /// </summary>
-        [JsonProperty("routers", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Router> Routers { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -44,7 +38,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("class UpdateResolveRuleReq {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  ipaddresses: ").Append(Ipaddresses).Append("\n");
-            sb.Append("  routers: ").Append(Routers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,12 +68,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Ipaddresses == input.Ipaddresses ||
                     (this.Ipaddresses != null &&
                     this.Ipaddresses.Equals(input.Ipaddresses))
-                ) && 
-                (
-                    this.Routers == input.Routers ||
-                    this.Routers != null &&
-                    input.Routers != null &&
-                    this.Routers.SequenceEqual(input.Routers)
                 );
         }
 
@@ -96,8 +83,6 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Ipaddresses != null)
                     hashCode = hashCode * 59 + this.Ipaddresses.GetHashCode();
-                if (this.Routers != null)
-                    hashCode = hashCode * 59 + this.Routers.GetHashCode();
                 return hashCode;
             }
         }

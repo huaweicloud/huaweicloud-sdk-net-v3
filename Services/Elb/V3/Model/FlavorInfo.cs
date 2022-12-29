@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Cps { get; set; }
 
         /// <summary>
-        /// 7层每秒查询数。单位：个
+        /// 每秒查询数。单位：个。仅7层LB有该指标。
         /// </summary>
         [JsonProperty("qps", NullValueHandling = NullValueHandling.Ignore)]
         public int? Qps { get; set; }
 
         /// <summary>
-        /// 带宽。单位：Mbit/s
+        /// 带宽。单位：Mbit/s。
         /// </summary>
         [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bandwidth { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Lcu { get; set; }
 
         /// <summary>
-        /// https新建连接数。单位：个
+        /// https新建连接数。单位：个。仅7层LB有该指标。
         /// </summary>
         [JsonProperty("https_cps", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsCps { get; set; }

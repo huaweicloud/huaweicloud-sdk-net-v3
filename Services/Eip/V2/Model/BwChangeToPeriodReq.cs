@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public List<string> BandwidthIds { get; set; }
 
         /// <summary>
-        /// 按需转包周期参数
+        /// 
         /// </summary>
         [JsonProperty("extendParam", NullValueHandling = NullValueHandling.Ignore)]
-        public Object ExtendParam { get; set; }
+        public CreatePrePaidPublicipExtendParamOption ExtendParam { get; set; }
 
 
         /// <summary>

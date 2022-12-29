@@ -35,22 +35,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string EndpointId { get; set; }
 
         /// <summary>
-        /// 当前规则所在的region。
-        /// </summary>
-        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
-        public string Region { get; set; }
-
-        /// <summary>
         /// 规则关联的目标ip地址。
         /// </summary>
         [JsonProperty("ipaddresses", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpInfo> Ipaddresses { get; set; }
-
-        /// <summary>
-        /// 规则关联的目标ip地址。
-        /// </summary>
-        [JsonProperty("routers", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Router> Routers { get; set; }
 
 
         /// <summary>
@@ -63,9 +51,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  endpointId: ").Append(EndpointId).Append("\n");
-            sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("  ipaddresses: ").Append(Ipaddresses).Append("\n");
-            sb.Append("  routers: ").Append(Routers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,21 +89,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.EndpointId.Equals(input.EndpointId))
                 ) && 
                 (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
                     this.Ipaddresses == input.Ipaddresses ||
                     this.Ipaddresses != null &&
                     input.Ipaddresses != null &&
                     this.Ipaddresses.SequenceEqual(input.Ipaddresses)
-                ) && 
-                (
-                    this.Routers == input.Routers ||
-                    this.Routers != null &&
-                    input.Routers != null &&
-                    this.Routers.SequenceEqual(input.Routers)
                 );
         }
 
@@ -135,12 +110,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.EndpointId != null)
                     hashCode = hashCode * 59 + this.EndpointId.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
                 if (this.Ipaddresses != null)
                     hashCode = hashCode * 59 + this.Ipaddresses.GetHashCode();
-                if (this.Routers != null)
-                    hashCode = hashCode * 59 + this.Routers.GetHashCode();
                 return hashCode;
             }
         }

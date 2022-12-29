@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 查询resolver_rule的列表响应。
+        /// 
         /// </summary>
-        [JsonProperty("resolver_rules", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResolveRuleParam> ResolverRules { get; set; }
+        [JsonProperty("resolver_rule", NullValueHandling = NullValueHandling.Ignore)]
+        public ResolveRuleParam ResolverRule { get; set; }
 
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteResolveRuleResponse {\n");
-            sb.Append("  resolverRules: ").Append(ResolverRules).Append("\n");
+            sb.Append("  resolverRule: ").Append(ResolverRule).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -53,10 +53,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
 
             return 
                 (
-                    this.ResolverRules == input.ResolverRules ||
-                    this.ResolverRules != null &&
-                    input.ResolverRules != null &&
-                    this.ResolverRules.SequenceEqual(input.ResolverRules)
+                    this.ResolverRule == input.ResolverRule ||
+                    (this.ResolverRule != null &&
+                    this.ResolverRule.Equals(input.ResolverRule))
                 );
         }
 
@@ -68,8 +67,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ResolverRules != null)
-                    hashCode = hashCode * 59 + this.ResolverRules.GetHashCode();
+                if (this.ResolverRule != null)
+                    hashCode = hashCode * 59 + this.ResolverRule.GetHashCode();
                 return hashCode;
             }
         }

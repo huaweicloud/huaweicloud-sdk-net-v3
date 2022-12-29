@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 查询单个resolver_rule响应。
+        /// 
         /// </summary>
         [JsonProperty("resolver_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public Object ResolverRule { get; set; }
+        public ShowResolveRuleParam ResolverRule { get; set; }
 
 
         /// <summary>

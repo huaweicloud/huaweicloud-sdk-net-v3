@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 域名所属的区域。
         /// </summary>
         [SDKProperty("region", IsPath = true)]
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
 
         /// <summary>
-        /// 
+        /// 待删除PTR ID。
         /// </summary>
         [SDKProperty("floatingip_id", IsPath = true)]
         [JsonProperty("floatingip_id", NullValueHandling = NullValueHandling.Ignore)]

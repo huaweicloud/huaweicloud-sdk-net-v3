@@ -274,6 +274,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<FirewallInstanceResource> Resources { get; set; }
 
+        /// <summary>
+        /// 防火墙名称
+        /// </summary>
+        [JsonProperty("fw_instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwInstanceName { get; set; }
+
+        /// <summary>
+        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -295,6 +307,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  supportIpv6: ").Append(SupportIpv6).Append("\n");
             sb.Append("  featureToggle: ").Append(FeatureToggle).Append("\n");
             sb.Append("  resources: ").Append(Resources).Append("\n");
+            sb.Append("  fwInstanceName: ").Append(FwInstanceName).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -383,6 +397,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Resources != null &&
                     input.Resources != null &&
                     this.Resources.SequenceEqual(input.Resources)
+                ) && 
+                (
+                    this.FwInstanceName == input.FwInstanceName ||
+                    (this.FwInstanceName != null &&
+                    this.FwInstanceName.Equals(input.FwInstanceName))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -420,6 +444,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.FeatureToggle.GetHashCode();
                 if (this.Resources != null)
                     hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.FwInstanceName != null)
+                    hashCode = hashCode * 59 + this.FwInstanceName.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

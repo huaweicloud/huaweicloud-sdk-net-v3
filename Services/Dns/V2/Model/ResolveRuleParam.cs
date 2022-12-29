@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? IpaddressCount { get; set; }
 
         /// <summary>
-        /// 
+        /// 规则关联的vpc信息。
         /// </summary>
         [JsonProperty("routers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Router> Routers { get; set; }

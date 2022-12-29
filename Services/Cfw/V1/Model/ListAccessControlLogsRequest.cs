@@ -241,6 +241,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [SDKProperty("log_type", IsQuery = true)]
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
         public LogTypeEnum LogType { get; set; }
+        /// <summary>
+        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -264,6 +271,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  logType: ").Append(LogType).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -359,6 +367,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.LogType == input.LogType ||
                     (this.LogType != null &&
                     this.LogType.Equals(input.LogType))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -400,6 +413,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.LogType != null)
                     hashCode = hashCode * 59 + this.LogType.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 分页信息
+    /// 指向当前资源或者其他资源的链接。当查询需要分页时，需要包含一个next链接指向下一页。
     /// </summary>
     public class PageLink 
     {

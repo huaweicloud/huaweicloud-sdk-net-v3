@@ -176,7 +176,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// key的value大小。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// key大小的单位。type为string时，单位是：byte；type为list/set/zset/hash时，单位是：count

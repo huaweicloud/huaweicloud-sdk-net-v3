@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 名称服务器列表信息。
         /// </summary>
         [JsonProperty("nameservers", NullValueHandling = NullValueHandling.Ignore)]
         public List<PrivateNameServer> Nameservers { get; set; }

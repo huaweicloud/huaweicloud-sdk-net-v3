@@ -8,25 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dns.V2.Model
+namespace HuaweiCloud.SDK.Ims.V2.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public class CreatePublicZoneFindRespRecord 
+    public class SubJobEntities 
     {
 
         /// <summary>
-        /// 找回记录host名称。
+        /// 镜像ID。
         /// </summary>
-        [JsonProperty("host", NullValueHandling = NullValueHandling.Ignore)]
-        public string Host { get; set; }
+        [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageId { get; set; }
 
         /// <summary>
-        /// 找回记录解析值。
+        /// 镜像名称
         /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
+        [JsonProperty("image_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageName { get; set; }
 
 
         /// <summary>
@@ -35,9 +35,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreatePublicZoneFindRespRecord {\n");
-            sb.Append("  host: ").Append(Host).Append("\n");
-            sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("class SubJobEntities {\n");
+            sb.Append("  imageId: ").Append(ImageId).Append("\n");
+            sb.Append("  imageName: ").Append(ImageName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -47,27 +47,27 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreatePublicZoneFindRespRecord);
+            return this.Equals(input as SubJobEntities);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreatePublicZoneFindRespRecord input)
+        public bool Equals(SubJobEntities input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Host == input.Host ||
-                    (this.Host != null &&
-                    this.Host.Equals(input.Host))
+                    this.ImageId == input.ImageId ||
+                    (this.ImageId != null &&
+                    this.ImageId.Equals(input.ImageId))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.ImageName == input.ImageName ||
+                    (this.ImageName != null &&
+                    this.ImageName.Equals(input.ImageName))
                 );
         }
 
@@ -79,10 +79,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Host != null)
-                    hashCode = hashCode * 59 + this.Host.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.ImageId != null)
+                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.ImageName != null)
+                    hashCode = hashCode * 59 + this.ImageName.GetHashCode();
                 return hashCode;
             }
         }

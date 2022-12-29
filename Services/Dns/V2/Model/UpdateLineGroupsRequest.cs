@@ -23,6 +23,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("linegroup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LinegroupId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateLineGroupsBody Body { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateLineGroupsRequest {\n");
             sb.Append("  linegroupId: ").Append(LinegroupId).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +65,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.LinegroupId == input.LinegroupId ||
                     (this.LinegroupId != null &&
                     this.LinegroupId.Equals(input.LinegroupId))
+                ) && 
+                (
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -70,6 +83,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 int hashCode = 41;
                 if (this.LinegroupId != null)
                     hashCode = hashCode * 59 + this.LinegroupId.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

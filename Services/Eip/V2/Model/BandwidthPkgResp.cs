@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// <summary>
         /// - 功能说明：租户id
         /// </summary>
-        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tenantId", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }
 
         /// <summary>

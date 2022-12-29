@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// <summary>
         /// 待设置Record Set ID列表。 最多支持50个。
         /// </summary>
-        [JsonProperty("zone_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> ZoneIds { get; set; }
+        [JsonProperty("recordset_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> RecordsetIds { get; set; }
 
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             var sb = new StringBuilder();
             sb.Append("class BatchSetRecordSetsStatusReq {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  zoneIds: ").Append(ZoneIds).Append("\n");
+            sb.Append("  recordsetIds: ").Append(RecordsetIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -65,10 +65,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.ZoneIds == input.ZoneIds ||
-                    this.ZoneIds != null &&
-                    input.ZoneIds != null &&
-                    this.ZoneIds.SequenceEqual(input.ZoneIds)
+                    this.RecordsetIds == input.RecordsetIds ||
+                    this.RecordsetIds != null &&
+                    input.RecordsetIds != null &&
+                    this.RecordsetIds.SequenceEqual(input.RecordsetIds)
                 );
         }
 
@@ -82,8 +82,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 int hashCode = 41;
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ZoneIds != null)
-                    hashCode = hashCode * 59 + this.ZoneIds.GetHashCode();
+                if (this.RecordsetIds != null)
+                    hashCode = hashCode * 59 + this.RecordsetIds.GetHashCode();
                 return hashCode;
             }
         }

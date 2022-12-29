@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dns.V2.Model
+namespace HuaweiCloud.SDK.Eip.V2.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public class Metedata 
+    public class SubJobsInfo 
     {
 
         /// <summary>
-        /// 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。
+        /// 子job信息，类型与主job一致
         /// </summary>
-        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalCount { get; set; }
+        [JsonProperty("sub_jobs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Object> SubJobs { get; set; }
 
 
         /// <summary>
@@ -29,8 +29,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Metedata {\n");
-            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("class SubJobsInfo {\n");
+            sb.Append("  subJobs: ").Append(SubJobs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -40,22 +40,23 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Metedata);
+            return this.Equals(input as SubJobsInfo);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(Metedata input)
+        public bool Equals(SubJobsInfo input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
+                    this.SubJobs == input.SubJobs ||
+                    this.SubJobs != null &&
+                    input.SubJobs != null &&
+                    this.SubJobs.SequenceEqual(input.SubJobs)
                 );
         }
 
@@ -67,8 +68,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.SubJobs != null)
+                    hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
                 return hashCode;
             }
         }

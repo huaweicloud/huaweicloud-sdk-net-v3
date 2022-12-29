@@ -46,12 +46,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ActionTag> Tags { get; set; }
 
-        /// <summary>
-        /// 查询不包含任何标签的资源，该字段为true时，忽略tags字段的查询条件。
-        /// </summary>
-        [JsonProperty("without_any_tag", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? WithoutAnyTag { get; set; }
-
 
         /// <summary>
         /// Get the string
@@ -65,7 +59,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  matches: ").Append(Matches).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
-            sb.Append("  withoutAnyTag: ").Append(WithoutAnyTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,11 +106,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.WithoutAnyTag == input.WithoutAnyTag ||
-                    (this.WithoutAnyTag != null &&
-                    this.WithoutAnyTag.Equals(input.WithoutAnyTag))
                 );
         }
 
@@ -139,8 +127,6 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.Matches.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.WithoutAnyTag != null)
-                    hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
                 return hashCode;
             }
         }

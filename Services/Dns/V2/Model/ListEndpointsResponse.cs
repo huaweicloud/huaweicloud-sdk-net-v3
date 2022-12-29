@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 查询公网Zone的列表响应。
+        /// 查询终端节点响应列表。
         /// </summary>
         [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
         public List<EndpointResp> Endpoints { get; set; }
@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Metedata Metadata { get; set; }
+        public Metadata Metadata { get; set; }
 
 
         /// <summary>

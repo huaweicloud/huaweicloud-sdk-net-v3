@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 待设置Record Set的ID信息。
         /// </summary>
         [SDKProperty("recordset_id", IsPath = true)]
         [JsonProperty("recordset_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -184,6 +184,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("associate_instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AssociateInstanceType { get; set; }
 
+        /// <summary>
+        /// 防火墙名称
+        /// </summary>
+        [JsonProperty("fw_instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwInstanceName { get; set; }
+
+        /// <summary>
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+        /// </summary>
+        [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwInstanceId { get; set; }
+
+        /// <summary>
+        /// Eip绑定的防火墙企业项目id
+        /// </summary>
+        [JsonProperty("fw_enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwEnterpriseProjectId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -201,6 +219,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  deviceName: ").Append(DeviceName).Append("\n");
             sb.Append("  deviceOwner: ").Append(DeviceOwner).Append("\n");
             sb.Append("  associateInstanceType: ").Append(AssociateInstanceType).Append("\n");
+            sb.Append("  fwInstanceName: ").Append(FwInstanceName).Append("\n");
+            sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
+            sb.Append("  fwEnterpriseProjectId: ").Append(FwEnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -266,6 +287,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.AssociateInstanceType == input.AssociateInstanceType ||
                     (this.AssociateInstanceType != null &&
                     this.AssociateInstanceType.Equals(input.AssociateInstanceType))
+                ) && 
+                (
+                    this.FwInstanceName == input.FwInstanceName ||
+                    (this.FwInstanceName != null &&
+                    this.FwInstanceName.Equals(input.FwInstanceName))
+                ) && 
+                (
+                    this.FwInstanceId == input.FwInstanceId ||
+                    (this.FwInstanceId != null &&
+                    this.FwInstanceId.Equals(input.FwInstanceId))
+                ) && 
+                (
+                    this.FwEnterpriseProjectId == input.FwEnterpriseProjectId ||
+                    (this.FwEnterpriseProjectId != null &&
+                    this.FwEnterpriseProjectId.Equals(input.FwEnterpriseProjectId))
                 );
         }
 
@@ -295,6 +331,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
                 if (this.AssociateInstanceType != null)
                     hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
+                if (this.FwInstanceName != null)
+                    hashCode = hashCode * 59 + this.FwInstanceName.GetHashCode();
+                if (this.FwInstanceId != null)
+                    hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.FwEnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.FwEnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

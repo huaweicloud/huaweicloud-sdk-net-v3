@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ZoneId { get; set; }
 
         /// <summary>
-        /// 分页查询起始的资源ID，为空时为查询第一页。
+        /// 分页查询起始的资源ID，为空时为查询第一页。  默认值为空。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]

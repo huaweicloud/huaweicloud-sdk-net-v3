@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 待查询的endpoint的方向。 取值：inbound，表示入站规则。
+        /// 终端节点方向。 取值： inbound，表示入站规则。 outbound，表示出站规则。
         /// </summary>
         [SDKProperty("direction", IsQuery = true)]
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,14 +31,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 每页返回的资源个数。 取值范围：0~500，取值一般为10，20，50。
+        /// 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 分页查询起始页码，起始值为0。 当前设置marker不为空时，以marker为分页起始标识。取值范围：0~2147483647。
+        /// 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]

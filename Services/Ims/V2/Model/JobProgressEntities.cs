@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("subJobId", NullValueHandling = NullValueHandling.Ignore)]
         public string SubJobId { get; set; }
 
+        /// <summary>
+        /// 子任务结果列表
+        /// </summary>
+        [JsonProperty("sub_jobs_result", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SubJobResult> SubJobsResult { get; set; }
+
+        /// <summary>
+        /// 子任务ID列表
+        /// </summary>
+        [JsonProperty("sub_jobs_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SubJobsList { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -59,6 +71,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  imageName: ").Append(ImageName).Append("\n");
             sb.Append("  processPercent: ").Append(ProcessPercent).Append("\n");
             sb.Append("  subJobId: ").Append(SubJobId).Append("\n");
+            sb.Append("  subJobsResult: ").Append(SubJobsResult).Append("\n");
+            sb.Append("  subJobsList: ").Append(SubJobsList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,6 +118,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.SubJobId == input.SubJobId ||
                     (this.SubJobId != null &&
                     this.SubJobId.Equals(input.SubJobId))
+                ) && 
+                (
+                    this.SubJobsResult == input.SubJobsResult ||
+                    this.SubJobsResult != null &&
+                    input.SubJobsResult != null &&
+                    this.SubJobsResult.SequenceEqual(input.SubJobsResult)
+                ) && 
+                (
+                    this.SubJobsList == input.SubJobsList ||
+                    this.SubJobsList != null &&
+                    input.SubJobsList != null &&
+                    this.SubJobsList.SequenceEqual(input.SubJobsList)
                 );
         }
 
@@ -125,6 +151,10 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.ProcessPercent.GetHashCode();
                 if (this.SubJobId != null)
                     hashCode = hashCode * 59 + this.SubJobId.GetHashCode();
+                if (this.SubJobsResult != null)
+                    hashCode = hashCode * 59 + this.SubJobsResult.GetHashCode();
+                if (this.SubJobsList != null)
+                    hashCode = hashCode * 59 + this.SubJobsList.GetHashCode();
                 return hashCode;
             }
         }

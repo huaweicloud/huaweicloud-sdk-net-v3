@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// 
         /// </summary>
         [JsonProperty("entities", NullValueHandling = NullValueHandling.Ignore)]
-        public SubJobs Entities { get; set; }
+        public SubJobsInfo Entities { get; set; }
 
 
         /// <summary>

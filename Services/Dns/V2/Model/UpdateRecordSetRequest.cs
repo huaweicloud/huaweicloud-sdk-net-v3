@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 所属zone的ID。
         /// </summary>
         [SDKProperty("zone_id", IsPath = true)]
         [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneId { get; set; }
 
         /// <summary>
-        /// 
+        /// 待修改的recordset的ID信息。
         /// </summary>
         [SDKProperty("recordset_id", IsPath = true)]
         [JsonProperty("recordset_id", NullValueHandling = NullValueHandling.Ignore)]

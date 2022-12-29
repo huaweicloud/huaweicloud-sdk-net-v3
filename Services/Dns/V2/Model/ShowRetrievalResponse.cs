@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// 
         /// </summary>
         [JsonProperty("record", NullValueHandling = NullValueHandling.Ignore)]
-        public CreatePublicZoneFindRespRecord Record { get; set; }
+        public RecordInfo Record { get; set; }
 
         /// <summary>
         /// 状态，(PENDING,VERIFIED,CREATED,EXPIRED)

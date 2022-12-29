@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 所在后端服务器组ID。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+        /// 所在后端服务器组ID。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolId { get; set; }
@@ -77,13 +77,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string IpVersion { get; set; }
 
         /// <summary>
-        /// 设备所有者。  取值： - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+        /// 设备所有者。  取值： - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("device_owner", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceOwner { get; set; }
 
         /// <summary>
-        /// 关联的ECS ID，为空表示后端服务器未关联到ECS。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+        /// 关联的ECS ID，为空表示后端服务器未关联到ECS。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceId { get; set; }
@@ -101,13 +101,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<MemberStatus> Status { get; set; }
 
         /// <summary>
-        /// 所属负载均衡器ID。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+        /// 所属负载均衡器ID。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 后端云服务器关联的负载均衡器ID列表。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+        /// 后端云服务器关联的负载均衡器ID列表。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("loadbalancers", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceID> Loadbalancers { get; set; }

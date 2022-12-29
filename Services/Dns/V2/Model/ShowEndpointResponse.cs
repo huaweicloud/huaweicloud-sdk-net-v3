@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 查询endpoint响应。
+        /// 
         /// </summary>
         [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Endpoint { get; set; }
+        public EndpointResp Endpoint { get; set; }
 
 
         /// <summary>

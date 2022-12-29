@@ -256,6 +256,24 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
         public string Scope { get; set; }
 
+        /// <summary>
+        /// 项目ID
+        /// </summary>
+        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TenantId { get; set; }
+
+        /// <summary>
+        /// 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+        /// </summary>
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? UpdatedAt { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -284,6 +302,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  neutronSubnetIdV6: ").Append(NeutronSubnetIdV6).Append("\n");
             sb.Append("  extraDhcpOpts: ").Append(ExtraDhcpOpts).Append("\n");
             sb.Append("  scope: ").Append(Scope).Append("\n");
+            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -406,6 +427,21 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.Scope == input.Scope ||
                     (this.Scope != null &&
                     this.Scope.Equals(input.Scope))
+                ) && 
+                (
+                    this.TenantId == input.TenantId ||
+                    (this.TenantId != null &&
+                    this.TenantId.Equals(input.TenantId))
+                ) && 
+                (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -457,6 +493,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
                 if (this.Scope != null)
                     hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.TenantId != null)
+                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null)
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

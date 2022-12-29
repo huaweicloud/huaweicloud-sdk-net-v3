@@ -1,3 +1,165 @@
+# 3.1.19 2022-12-29
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListDnsServers`新增请求参数 `fw_instance_id`、`enterprise_project_id`
+  - 接口`UpdateDnsServers`新增请求参数 `fw_instance_id`、`enterprise_project_id`
+  - 接口`ListVpcProtects`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListRuleHitCount`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`DeleteAclRuleCount`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ChangeIpsSwitchUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListIpsSwitchStatusUsingGet`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListEastWestFirewall`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ChangeEwProtectStatus`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListFlowLogs`新增请求参数 `enterprise_project_id`
+  - 接口`ListAccessControlLogs`新增请求参数 `enterprise_project_id`
+  - 接口`ListAttackLogs`新增请求参数 `enterprise_project_id`
+  - 接口`AddRuleAclUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`DeleteRuleAclUsingDelete`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`UpdateRuleAclUsingPut`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListRuleAclsUsingGet`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListRuleAclUsingPut`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`AddBlackWhiteListUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`DeleteBlackWhiteListUsingDelete`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`UpdateBlackWhiteListUsingPut`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListBlackWhiteListsUsingGet`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ChangeIpsProtectModeUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListIpsProtectModeUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListFirewallUsingGet`:
+    - 新增请求参数 `enterprise_project_id`、`fw_instance_id`
+    - 新增响应参数 `fw_instance_name`、`enterprise_project_id`
+  - 接口`AddServiceSetUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`DeleteServiceSetUsingDelete`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListServiceSetDetails`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`UpdateServiceSetUsingPut`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`AddServiceItemsUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListServiceItemsDetails`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`DeleteServiceItemUsingDelete`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListParseDomainDetails`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`CountEips`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ChangeProtectEip`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListEipResources`:
+    - 新增请求参数 `fw_instance_id`、`fw_key_word`、`eps_id`
+    - 新增响应参数 `fw_instance_name`、`fw_instance_id`、`fw_enterprise_project_id`
+  - 接口`DeleteAddressItemUsingDelete`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`AddAddressItemsUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListAddressItemsUsingGet`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`AddAddressSetInfoUsingPost`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListAddressSetListUsingGet`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`DeleteAddressSetInfoUsingDelete`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListAddressSetDetailUsingGet`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`UpdateAddressSetInfoUsingPut`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+  - 接口`ListServiceSet`新增请求参数 `enterprise_project_id`、`fw_instance_id`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateBigkeyScanTask`响应参数`size`类型调整 `int32` -> `int64`
+  - 接口`ShowBigkeyScanTaskDetails`响应参数`size`类型调整 `int32` -> `int64`
+  - 接口`CreateHotkeyScanTask`响应参数`size`类型调整 `int32` -> `int64`
+  - 接口`ShowHotkeyTaskDetails`响应参数`size`类型调整 `int32` -> `int64`
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 支持接口`AssociateResolveRuleRouter`、`DisassociateResolveRuleRouter`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListPublicZones`移除响应参数 `total_count`
+  - 接口`ListPrivateZones`移除响应参数 `total_count`
+  - 接口`ListRecordSetsByZone`移除响应参数 `total_count`
+  - 接口`ListRecordSets`移除响应参数 `total_count`
+  - 接口`BatchDeleteRecordSetWithLine`移除响应参数 `total_count`
+  - 接口`BatchUpdateRecordSetWithLine`移除响应参数 `total_count`
+  - 接口`ListRecordSetsWithLine`移除响应参数 `total_count`
+  - 接口`CreateRecordSetWithBatchLines`移除响应参数 `total_count`
+  - 接口`ShowRecordSetByZone`移除响应参数 `total_count`
+  - 接口`ListPtrRecords`移除响应参数 `total_count`
+  - 接口`ListCustomLine`移除响应参数 `total_count`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ChangeBandwidthToPeriod`新增请求参数 `extendParam`
+  - 接口`ChangePublicipToPeriod`新增请求参数 `extendParam`
+  - 接口`ListBandwidthPkg`:
+    - 新增响应参数 `tenantId`
+    - 移除响应参数 `tenant_id`
+  - 接口`UpdateAssociatePublicip`请求参数`associate_instance_type`、`associate_instance_id`改为必填
+  - 接口`AssociatePublicips`请求参数`associate_instance_type`、`associate_instance_id`改为必填
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListLoadbalancersByTags`:
+    - 移除请求参数 `without_any_tag`
+    - 请求参数`values`改为必填
+  - 接口`ListListenersByTags`:
+    - 移除请求参数 `without_any_tag`
+    - 请求参数`values`改为必填
+  - 接口`ShowQuota`新增响应参数 `ipgroup_bindings`、`ipgroup_max_length`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowJob`新增响应参数 `sub_jobs_result`、`sub_jobs_list`
+  - 接口`ShowJobProgress`新增响应参数 `sub_jobs_result`、`sub_jobs_list`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`UpdateTranscodeTemplate`请求参数`name`改为非必填
+  - 接口`UpdateTemplateGroupCollection`:
+    - 请求参数`collection_id`改为必填
+    - 请求参数`name`、`template_group_list`改为非必填
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListVpcs`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`CreateVpc`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ShowVpc`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`UpdateVpc`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ListSubnets`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`CreateSubnet`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ShowSubnet`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ListRouteTables`新增响应参数 `created_at`、`updated_at`
+  - 接口`CreateRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`ShowRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`UpdateRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`AssociateRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`DisassociateRouteTable`新增响应参数 `created_at`、`updated_at`
+
 # 3.1.18 2022-12-26
 
 ### HuaweiCloud SDK VOD

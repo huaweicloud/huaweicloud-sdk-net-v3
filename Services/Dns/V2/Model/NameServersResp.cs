@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Region { get; set; }
 
         /// <summary>
-        /// 
+        /// 名称服务器列表。
         /// </summary>
         [JsonProperty("ns_records", NullValueHandling = NullValueHandling.Ignore)]
         public List<NsRecords> NsRecords { get; set; }

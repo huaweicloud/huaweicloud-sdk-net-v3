@@ -293,7 +293,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 企业项目id
+        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -313,6 +313,27 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }
 
+        /// <summary>
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+        /// </summary>
+        [SDKProperty("fw_instance_id", IsQuery = true)]
+        [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwInstanceId { get; set; }
+
+        /// <summary>
+        /// 所绑定防火墙id防火墙名称
+        /// </summary>
+        [SDKProperty("fw_key_word", IsQuery = true)]
+        [JsonProperty("fw_key_word", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwKeyWord { get; set; }
+
+        /// <summary>
+        /// 弹性公网ip的企业项目id
+        /// </summary>
+        [SDKProperty("eps_id", IsQuery = true)]
+        [JsonProperty("eps_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EpsId { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -330,6 +351,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  deviceKey: ").Append(DeviceKey).Append("\n");
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
+            sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
+            sb.Append("  fwKeyWord: ").Append(FwKeyWord).Append("\n");
+            sb.Append("  epsId: ").Append(EpsId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -395,6 +419,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.AddressType == input.AddressType ||
                     (this.AddressType != null &&
                     this.AddressType.Equals(input.AddressType))
+                ) && 
+                (
+                    this.FwInstanceId == input.FwInstanceId ||
+                    (this.FwInstanceId != null &&
+                    this.FwInstanceId.Equals(input.FwInstanceId))
+                ) && 
+                (
+                    this.FwKeyWord == input.FwKeyWord ||
+                    (this.FwKeyWord != null &&
+                    this.FwKeyWord.Equals(input.FwKeyWord))
+                ) && 
+                (
+                    this.EpsId == input.EpsId ||
+                    (this.EpsId != null &&
+                    this.EpsId.Equals(input.EpsId))
                 );
         }
 
@@ -424,6 +463,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.DeviceKey.GetHashCode();
                 if (this.AddressType != null)
                     hashCode = hashCode * 59 + this.AddressType.GetHashCode();
+                if (this.FwInstanceId != null)
+                    hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.FwKeyWord != null)
+                    hashCode = hashCode * 59 + this.FwKeyWord.GetHashCode();
+                if (this.EpsId != null)
+                    hashCode = hashCode * 59 + this.EpsId.GetHashCode();
                 return hashCode;
             }
         }

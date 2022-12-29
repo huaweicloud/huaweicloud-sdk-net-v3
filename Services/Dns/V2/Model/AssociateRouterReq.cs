@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 需要关联的Router(VPC)。
+    /// 
     /// </summary>
     public class AssociateRouterReq 
     {

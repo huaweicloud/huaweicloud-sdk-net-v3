@@ -17,79 +17,79 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// Record Set的ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Record Set的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Record Set的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 托管该记录的zone_id。
         /// </summary>
         [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneId { get; set; }
 
         /// <summary>
-        /// 
+        /// 托管该记录的zone_name。
         /// </summary>
         [JsonProperty("zone_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneName { get; set; }
 
         /// <summary>
-        /// 
+        /// 记录类型。 取值范围：A，AAAA，MX，CNAME，TXT，NS（仅限公网Zone），SRV，CAA（仅限公网Zone）。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 
+        /// 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// 
+        /// 域名解析后的值。
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Records { get; set; }
 
         /// <summary>
-        /// 
+        /// 创建时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS
         /// </summary>
         [JsonProperty("create_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateAt { get; set; }
 
         /// <summary>
-        /// 
+        /// 更新时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS
         /// </summary>
         [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateAt { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
         /// </summary>
         [JsonProperty("default", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Default { get; set; }
 
         /// <summary>
-        /// 
+        /// 该Record Set所属的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
