@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ZoneId { get; set; }
 
         /// <summary>
-        /// 
+        /// 待查询recordset的ID信息。
         /// </summary>
         [SDKProperty("recordset_id", IsPath = true)]
         [JsonProperty("recordset_id", NullValueHandling = NullValueHandling.Ignore)]

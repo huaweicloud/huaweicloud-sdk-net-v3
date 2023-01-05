@@ -1,3 +1,88 @@
+# 3.1.20 2023-01-05
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 支持接口`ListConfigHistories`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除以下接口：
+    - `ListResoleRules`
+    - `SetPrivateZoneProxyPattern`
+    - `ShowDomainQuota`
+    - `ShowRetrieval`
+    - `CreateRetrieval`
+    - `ShowRetrievalVerification`
+    - `CreateRetrievalVerification`
+    - `ListEndpoints`
+    - `CreateEndpoint`
+    - `ShowEndpoint`
+    - `UpdateEndpoint`
+    - `DeleteEndpoint`
+    - `ListEndpointIpaddresses`
+    - `AssociateEndpointIpaddress`
+    - `DisassociateEndpointIpaddress`
+    - `ListEndpointVpcs`
+    - `CreateResolveRule`
+    - `AssociateResolveRuleRouter`
+    - `DisassociateResolveRuleRouter`
+    - `ShowResoleRule`
+    - `UpdateResolveRule`
+    - `DeleteResolveRule`
+    - `BatchDeleteZones`
+    - `BatchDeletePtrRecords`
+    - `BatchSetZonesStatus`
+    - `BatchSetRecordSetsStatus`
+    - `BatchDeleteRecordSets`
+  - 接口`CreatePrivateZone`:
+    - 新增请求参数 `proxy_pattern`
+    - 新增响应参数 `proxy_pattern`
+  - 接口`ListPrivateZones`新增响应参数 `proxy_pattern`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListFunctionTriggers`响应参数`trigger_status`新增枚举值`DISABLED`, 移除枚举值`DISABLE`
+  - 接口`UpdateTrigger`请求参数`trigger_status`新增枚举值`DISABLED`, 移除枚举值`DISABLE`
+  - 接口`ShowFunctionTrigger`响应参数`trigger_status`新增枚举值`DISABLED`, 移除枚举值`DISABLE`
+  - 接口`CreateWorkflow`新增请求参数 `enable_stream_response`
+  - 接口`UpdateWorkFlow`新增请求参数 `enable_stream_response`
+  - 接口`ShowWorkFlow`新增响应参数 `enable_stream_response`
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RunTextModeration`新增请求参数 `white_glossary_names`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListPorts`:
+    - 新增请求参数 `security_groups`
+    - 请求参数`fixed_ips`类型调整 `string` -> `array`
+
 # 3.1.19 2022-12-29
 
 ### HuaweiCloud SDK CFW

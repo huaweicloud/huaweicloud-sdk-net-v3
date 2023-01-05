@@ -8,28 +8,34 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dns.V2.Model
+namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class AssociateResolveRuleRouterResponse : SdkResponse
+    public class HistoryInfo 
     {
 
         /// <summary>
-        /// Router(VPC)的ID。
+        /// 修改记录ID
         /// </summary>
-        [JsonProperty("router_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RouterId { get; set; }
+        [JsonProperty("history_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string HistoryId { get; set; }
 
         /// <summary>
-        /// Router(VPC)所在的region。
+        /// 修改类型
         /// </summary>
-        [JsonProperty("router_region", NullValueHandling = NullValueHandling.Ignore)]
-        public string RouterRegion { get; set; }
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
 
         /// <summary>
-        /// 资源状态。
+        /// 修改时间
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 修改状态
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -41,9 +47,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AssociateResolveRuleRouterResponse {\n");
-            sb.Append("  routerId: ").Append(RouterId).Append("\n");
-            sb.Append("  routerRegion: ").Append(RouterRegion).Append("\n");
+            sb.Append("class HistoryInfo {\n");
+            sb.Append("  historyId: ").Append(HistoryId).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -54,27 +61,32 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AssociateResolveRuleRouterResponse);
+            return this.Equals(input as HistoryInfo);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AssociateResolveRuleRouterResponse input)
+        public bool Equals(HistoryInfo input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.RouterId == input.RouterId ||
-                    (this.RouterId != null &&
-                    this.RouterId.Equals(input.RouterId))
+                    this.HistoryId == input.HistoryId ||
+                    (this.HistoryId != null &&
+                    this.HistoryId.Equals(input.HistoryId))
                 ) && 
                 (
-                    this.RouterRegion == input.RouterRegion ||
-                    (this.RouterRegion != null &&
-                    this.RouterRegion.Equals(input.RouterRegion))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -91,10 +103,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.RouterId != null)
-                    hashCode = hashCode * 59 + this.RouterId.GetHashCode();
-                if (this.RouterRegion != null)
-                    hashCode = hashCode * 59 + this.RouterRegion.GetHashCode();
+                if (this.HistoryId != null)
+                    hashCode = hashCode * 59 + this.HistoryId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;

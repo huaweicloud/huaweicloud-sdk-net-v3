@@ -1,3 +1,88 @@
+# 3.1.20 2023-01-05
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the interface `ListConfigHistories`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DNS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the following interfaces：
+    - `ListResoleRules`
+    - `SetPrivateZoneProxyPattern`
+    - `ShowDomainQuota`
+    - `ShowRetrieval`
+    - `CreateRetrieval`
+    - `ShowRetrievalVerification`
+    - `CreateRetrievalVerification`
+    - `ListEndpoints`
+    - `CreateEndpoint`
+    - `ShowEndpoint`
+    - `UpdateEndpoint`
+    - `DeleteEndpoint`
+    - `ListEndpointIpaddresses`
+    - `AssociateEndpointIpaddress`
+    - `DisassociateEndpointIpaddress`
+    - `ListEndpointVpcs`
+    - `CreateResolveRule`
+    - `AssociateResolveRuleRouter`
+    - `DisassociateResolveRuleRouter`
+    - `ShowResoleRule`
+    - `UpdateResolveRule`
+    - `DeleteResolveRule`
+    - `BatchDeleteZones`
+    - `BatchDeletePtrRecords`
+    - `BatchSetZonesStatus`
+    - `BatchSetRecordSetsStatus`
+    - `BatchDeleteRecordSets`
+  - Changes of the interface `CreatePrivateZone`:
+    - Add the request parameter `proxy_pattern`
+    - Add the response parameter `proxy_pattern`
+  - Add the response parameter `proxy_pattern` to the interface `ListPrivateZones`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `DISABLED`, Remove the enum values `DISABLE` from the response parameter `trigger_status` to the interface `ListFunctionTriggers`
+  - Add the enum values `DISABLED`, Remove the enum values `DISABLE` from the request parameter `trigger_status` to the interface `UpdateTrigger`
+  - Add the enum values `DISABLED`, Remove the enum values `DISABLE` from the response parameter `trigger_status` to the interface `ShowFunctionTrigger`
+  - Add the request parameter `enable_stream_response` to the interface `CreateWorkflow`
+  - Add the request parameter `enable_stream_response` to the interface `UpdateWorkFlow`
+  - Add the response parameter `enable_stream_response` to the interface `ShowWorkFlow`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `white_glossary_names` to the interface `RunTextModeration`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListPorts`:
+    - Add the request parameter `security_groups`
+    - Modify the type `string` -> `array` of the request parameter `fixed_ips`
+
 # 3.1.19 2022-12-29
 
 ### HuaweiCloud SDK CFW

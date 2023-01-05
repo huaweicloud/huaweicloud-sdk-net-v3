@@ -20,6 +20,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -103,20 +104,26 @@ namespace HuaweiCloud.SDK.Core
             {
                 message.Content = new StringContent(request.Body);
                 message.Content.Headers.ContentType =
-                    new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
+                    new MediaTypeHeaderValue(SelectHeaderContentType(request.ContentType));
             }
 
             if (request.FileStream != null && request.FileStream != Stream.Null)
             {
                 message.Content = new StreamContent(request.FileStream);
                 message.Content.Headers.ContentType =
-                    new MediaTypeHeaderValue(select_header_content_type(request.ContentType));
+                    new MediaTypeHeaderValue(SelectHeaderContentType(request.ContentType));
+            }
+
+            if (request.FormData != null && request.FormData.Count != 0)
+            {
+                var formDataContent = GetFormDataContent(request);
+                message.Content = formDataContent;
             }
 
             return message;
         }
 
-        private string select_header_content_type(string contentType)
+        private string SelectHeaderContentType(string contentType)
         {
             if (contentType == null)
             {
@@ -129,6 +136,43 @@ namespace HuaweiCloud.SDK.Core
             }
 
             return contentType;
+        }
+
+        private HttpContent GetFormDataContent(HttpRequest request)
+        {
+            var boundary = Guid.NewGuid().ToString("N");
+            var contentType = "multipart/form-data; boundary=" + boundary;
+            var content = new MultipartFormDataContent(boundary);
+            request.Headers.Add("ContentType", contentType);
+            content.Headers.Remove("Content-Type");
+            content.Headers.TryAddWithoutValidation("Content-Type", contentType);
+
+            var fileParts = new Dictionary<string, FormDataFilePart>();
+
+            foreach (var pair in request.FormData)
+            {
+                if (pair.Value is FormDataFilePart formDataFilePart)
+                {
+                    fileParts.Add(pair.Key, formDataFilePart);
+                }
+                else
+                {
+                    content.Add(new StringContent(pair.Value.ToString()), $"\"{pair.Key}\"");
+                }
+            }
+
+            foreach (var pair in fileParts)
+            {
+                var filePart = pair.Value;
+                var streamContent = new StreamContent(filePart.GetValue());
+                if (filePart.GetContentType() != null)
+                {
+                    streamContent.Headers.ContentType = new MediaTypeHeaderValue(filePart.GetContentType());
+                }
+                content.Add(streamContent, $"\"{pair.Key}\"", $"\"{filePart.GetFilename()}\"");
+            }
+
+            return content;
         }
 
         public async Task<HttpResponseMessage> DoHttpRequest(HttpRequestMessage request)

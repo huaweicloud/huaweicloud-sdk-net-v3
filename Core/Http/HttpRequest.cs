@@ -37,6 +37,7 @@ namespace HuaweiCloud.SDK.Core
         public string Body = "";
         public string ContentType = "application/json";
         public Stream FileStream = Stream.Null;
+        public Dictionary<string, object> FormData;
 
         public HttpRequest(string method = "GET", string contentType = "application/json", Uri url = null,
             WebHeaderCollection headers = null,

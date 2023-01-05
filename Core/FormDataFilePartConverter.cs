@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -19,29 +19,34 @@
  * under the License.
  */
 
-using System.Collections.Generic;
+using System;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace HuaweiCloud.SDK.Core
 {
-    public class SdkRequest
+    public class FormDataFilePartConverter : JsonConverter<FormDataFilePart>
     {
-        public string Body { get; set; }
+        public override void WriteJson(JsonWriter writer, FormDataFilePart value, JsonSerializer serializer)
+        {
 
-        public string Path { get; set; }
+        }
 
-        public string QueryParams { get; set; }
+        public override FormDataFilePart ReadJson(JsonReader reader, Type objectType, FormDataFilePart existingValue, bool hasExistingValue, JsonSerializer serializer)
+        {
 
-        public string Method { get; set; }
+            if (reader.Value != null && reader.Value is string path)
+            {
+                if (!File.Exists(path))
+                {
+                    throw new FileNotFoundException(path + " does not exist.");
+                }
 
-        public string Cname { get; set; }
-
-        public Dictionary<string, string> Header { get; set; }
-
-        public string ContentType { get; set; }
-
-        public Stream FileStream { get; set; }
-
-        public Dictionary<string, object> FormData { get; set; }
+                var split = path.Split(Path.DirectorySeparatorChar);
+                var filename = split[split.Length - 1];
+                return new FormDataFilePart(File.OpenRead(path), filename);
+            }
+            return null;
+        }
     }
 }

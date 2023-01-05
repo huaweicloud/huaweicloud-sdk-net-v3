@@ -326,6 +326,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
+        /// 按照安全组ID列表过滤查询
+        /// </summary>
+        [SDKProperty("security_groups", IsQuery = true)]
+        [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SecurityGroups { get; set; }
+
+        /// <summary>
         /// 分页查询起始的资源ID，为空时查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
@@ -337,7 +344,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         [SDKProperty("fixed_ips", IsQuery = true)]
         [JsonProperty("fixed_ips", NullValueHandling = NullValueHandling.Ignore)]
-        public string FixedIps { get; set; }
+        public List<string> FixedIps { get; set; }
 
         /// <summary>
         /// 功能说明：企业项目ID，用于基于企业项目的权限管理。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。
@@ -363,6 +370,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  deviceOwner: ").Append(DeviceOwner).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  fixedIps: ").Append(FixedIps).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -433,14 +441,21 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.SecurityGroups == input.SecurityGroups ||
+                    this.SecurityGroups != null &&
+                    input.SecurityGroups != null &&
+                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
+                ) && 
+                (
                     this.Marker == input.Marker ||
                     (this.Marker != null &&
                     this.Marker.Equals(input.Marker))
                 ) && 
                 (
                     this.FixedIps == input.FixedIps ||
-                    (this.FixedIps != null &&
-                    this.FixedIps.Equals(input.FixedIps))
+                    this.FixedIps != null &&
+                    input.FixedIps != null &&
+                    this.FixedIps.SequenceEqual(input.FixedIps)
                 ) && 
                 (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
@@ -475,6 +490,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.SecurityGroups != null)
+                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 if (this.Marker != null)
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.FixedIps != null)

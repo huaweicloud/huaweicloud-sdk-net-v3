@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public TextDetectionDataReq Data { get; set; }
 
+        /// <summary>
+        /// 检测时使用的自定义白名单词库列表。
+        /// </summary>
+        [JsonProperty("white_glossary_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> WhiteGlossaryNames { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -45,6 +51,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             sb.Append("  eventType: ").Append(EventType).Append("\n");
             sb.Append("  glossaryNames: ").Append(GlossaryNames).Append("\n");
             sb.Append("  data: ").Append(Data).Append("\n");
+            sb.Append("  whiteGlossaryNames: ").Append(WhiteGlossaryNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.WhiteGlossaryNames == input.WhiteGlossaryNames ||
+                    this.WhiteGlossaryNames != null &&
+                    input.WhiteGlossaryNames != null &&
+                    this.WhiteGlossaryNames.SequenceEqual(input.WhiteGlossaryNames)
                 );
         }
 
@@ -98,6 +111,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     hashCode = hashCode * 59 + this.GlossaryNames.GetHashCode();
                 if (this.Data != null)
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.WhiteGlossaryNames != null)
+                    hashCode = hashCode * 59 + this.WhiteGlossaryNames.GetHashCode();
                 return hashCode;
             }
         }

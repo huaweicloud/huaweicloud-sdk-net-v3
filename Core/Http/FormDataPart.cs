@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -19,29 +19,32 @@
  * under the License.
  */
 
-using System.Collections.Generic;
-using System.IO;
-
 namespace HuaweiCloud.SDK.Core
 {
-    public class SdkRequest
+    public class FormDataPart<T>
     {
-        public string Body { get; set; }
+        private T _value;
 
-        public string Path { get; set; }
+        public FormDataPart(T value)
+        {
+            _value = value;
+        }
 
-        public string QueryParams { get; set; }
+        public T GetValue()
+        {
+            return _value;
+        }
 
-        public string Method { get; set; }
+        public FormDataPart<T> WithValue(T value)
+        {
+            _value = value;
+            return this;
+        }
 
-        public string Cname { get; set; }
+        public override string ToString()
+        {
+            return _value.ToString();
+        }
 
-        public Dictionary<string, string> Header { get; set; }
-
-        public string ContentType { get; set; }
-
-        public Stream FileStream { get; set; }
-
-        public Dictionary<string, object> FormData { get; set; }
     }
 }

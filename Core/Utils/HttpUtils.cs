@@ -276,6 +276,59 @@ namespace HuaweiCloud.SDK.Core
 
             return "";
         }
+        
+        private static Dictionary<string, object> GetFormData(object obj)
+        {
+            var t = obj.GetType();
+            var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            var sdkPropertyList = new List<object>();
+
+            foreach (var p in pi)
+            {
+                var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
+                SDKPropertyAttribute sdkPropertyAttribute = null;
+
+                if (attributes.Length == 0)
+                {
+                    continue;
+                }
+
+                foreach (var a in attributes)
+                {
+                    if (a is SDKPropertyAttribute propertyAttribute)
+                    {
+                        sdkPropertyAttribute = propertyAttribute;
+                    }
+                }
+
+                if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsBody)
+                {
+                    continue;
+                }
+
+                var value = p.GetValue(obj, null);
+                if (value == null)
+                {
+                    continue;
+                }
+
+                sdkPropertyList.Add(value);
+            }
+
+            if (sdkPropertyList.Count == 1)
+            {
+                foreach (var elem in sdkPropertyList)
+                {
+                    if (elem is IFormDataBody)
+                    {
+                        return ((IFormDataBody)elem).BuildFormData();
+                    }
+                }
+            }
+
+            return null;
+        } 
 
         public static SdkRequest InitSdkRequest(string path, object data = null)
         {
@@ -316,12 +369,23 @@ namespace HuaweiCloud.SDK.Core
                 request.Header = headers;
             }
 
-            var bodyData = GetRequestBody(data, contentType);
-            if (bodyData != null)
+            if (contentType == "multipart/form-data")
             {
-                request.Body = bodyData;
+                var formData = GetFormData(data);
+                if (formData != null)
+                {
+                    request.FormData = formData;
+                }
             }
-
+            else
+            {
+                var bodyData = GetRequestBody(data, contentType);
+                if (bodyData != null)
+                {
+                    request.Body = bodyData;
+                }
+            }
+            
             if (!string.IsNullOrEmpty(contentType))
             {
                 request.ContentType = contentType;

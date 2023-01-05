@@ -251,7 +251,8 @@ namespace HuaweiCloud.SDK.Core
             var request = new HttpRequest(method.ToUpper(), sdkRequest.ContentType, new Uri(url))
             {
                 Body = sdkRequest.Body ?? "",
-                FileStream = sdkRequest.FileStream
+                FileStream = sdkRequest.FileStream,
+                FormData = sdkRequest.FormData
             };
 
             UpdateHeaders(request, sdkRequest.Header);

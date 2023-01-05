@@ -252,9 +252,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 是否支持长连接，0表示支持长连接，1表示不支持长连接
+        /// 是否支持长连接，0表示不支持长连接，1表示支持长连接
         /// </summary>
-        /// <value>是否支持长连接，0表示支持长连接，1表示不支持长连接</value>
+        /// <value>是否支持长连接，0表示不支持长连接，1表示支持长连接</value>
         [JsonConverter(typeof(EnumClassConverter<LongConnectEnableEnum>))]
         public class LongConnectEnableEnum
         {
@@ -535,7 +535,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public long? LongConnectTimeSecond { get; set; }
 
         /// <summary>
-        /// 是否支持长连接，0表示支持长连接，1表示不支持长连接
+        /// 是否支持长连接，0表示不支持长连接，1表示支持长连接
         /// </summary>
         [JsonProperty("long_connect_enable", NullValueHandling = NullValueHandling.Ignore)]
         public LongConnectEnableEnum LongConnectEnable { get; set; }

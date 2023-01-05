@@ -464,6 +464,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询实例参数修改记录列表
+        ///
+        /// 查询实例的参数修改记录列表，支持按照关键字查询
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConfigHistoriesResponse> ListConfigHistoriesAsync(ListConfigHistoriesRequest listConfigHistoriesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listConfigHistoriesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/config-histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigHistoriesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListConfigHistoriesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询实例配置参数
         ///
         /// 查询指定实例的配置参数信息。

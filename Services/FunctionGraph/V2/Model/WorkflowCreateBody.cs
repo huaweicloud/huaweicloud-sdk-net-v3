@@ -196,6 +196,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 是否返回流数据
+        /// </summary>
+        [JsonProperty("enable_stream_response", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableStreamResponse { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -215,6 +221,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  expressConfig: ").Append(ExpressConfig).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  enableStreamResponse: ").Append(EnableStreamResponse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -294,6 +301,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.EnableStreamResponse == input.EnableStreamResponse ||
+                    (this.EnableStreamResponse != null &&
+                    this.EnableStreamResponse.Equals(input.EnableStreamResponse))
                 );
         }
 
@@ -327,6 +339,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.ExpressConfig.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnableStreamResponse != null)
+                    hashCode = hashCode * 59 + this.EnableStreamResponse.GetHashCode();
                 return hashCode;
             }
         }

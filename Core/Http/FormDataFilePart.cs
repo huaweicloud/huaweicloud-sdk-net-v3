@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -19,29 +19,42 @@
  * under the License.
  */
 
-using System.Collections.Generic;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace HuaweiCloud.SDK.Core
 {
-    public class SdkRequest
+    [JsonConverter(typeof(FormDataFilePartConverter))]
+    public class FormDataFilePart : FormDataPart<Stream>
     {
-        public string Body { get; set; }
+        private readonly string _filename;
 
-        public string Path { get; set; }
+        private string _contentType;
 
-        public string QueryParams { get; set; }
+        public FormDataFilePart(Stream stream, string filename) : base(stream)
+        {
+            _filename = filename;
+        }
 
-        public string Method { get; set; }
+        public string GetFilename()
+        {
+            return _filename;
+        }
 
-        public string Cname { get; set; }
+        public FormDataFilePart WithContentType(string contentType)
+        {
+            _contentType = contentType;
+            return this;
+        }
 
-        public Dictionary<string, string> Header { get; set; }
+        public string GetContentType()
+        {
+            return _contentType;
+        }
 
-        public string ContentType { get; set; }
-
-        public Stream FileStream { get; set; }
-
-        public Dictionary<string, object> FormData { get; set; }
+        public Stream GetStream()
+        {
+            return GetValue();
+        }
     }
 }

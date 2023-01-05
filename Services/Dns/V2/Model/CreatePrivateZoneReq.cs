@@ -53,6 +53,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Router Router { get; set; }
 
         /// <summary>
+        /// 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+        /// </summary>
+        [JsonProperty("proxy_pattern", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyPattern { get; set; }
+
+        /// <summary>
         /// 资源标签。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -78,6 +84,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  email: ").Append(Email).Append("\n");
             sb.Append("  ttl: ").Append(Ttl).Append("\n");
             sb.Append("  router: ").Append(Router).Append("\n");
+            sb.Append("  proxyPattern: ").Append(ProxyPattern).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
@@ -132,6 +139,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Router.Equals(input.Router))
                 ) && 
                 (
+                    this.ProxyPattern == input.ProxyPattern ||
+                    (this.ProxyPattern != null &&
+                    this.ProxyPattern.Equals(input.ProxyPattern))
+                ) && 
+                (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
@@ -164,6 +176,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Ttl.GetHashCode();
                 if (this.Router != null)
                     hashCode = hashCode * 59 + this.Router.GetHashCode();
+                if (this.ProxyPattern != null)
+                    hashCode = hashCode * 59 + this.ProxyPattern.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.EnterpriseProjectId != null)

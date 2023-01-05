@@ -71,6 +71,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? RecordNum { get; set; }
 
         /// <summary>
+        /// 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+        /// </summary>
+        [JsonProperty("proxy_pattern", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyPattern { get; set; }
+
+        /// <summary>
         /// 托管该zone的pool，由系统分配。
         /// </summary>
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -129,6 +135,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  serial: ").Append(Serial).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  recordNum: ").Append(RecordNum).Append("\n");
+            sb.Append("  proxyPattern: ").Append(ProxyPattern).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
@@ -203,6 +210,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.RecordNum.Equals(input.RecordNum))
                 ) && 
                 (
+                    this.ProxyPattern == input.ProxyPattern ||
+                    (this.ProxyPattern != null &&
+                    this.ProxyPattern.Equals(input.ProxyPattern))
+                ) && 
+                (
                     this.PoolId == input.PoolId ||
                     (this.PoolId != null &&
                     this.PoolId.Equals(input.PoolId))
@@ -266,6 +278,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.RecordNum != null)
                     hashCode = hashCode * 59 + this.RecordNum.GetHashCode();
+                if (this.ProxyPattern != null)
+                    hashCode = hashCode * 59 + this.ProxyPattern.GetHashCode();
                 if (this.PoolId != null)
                     hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.ProjectId != null)
