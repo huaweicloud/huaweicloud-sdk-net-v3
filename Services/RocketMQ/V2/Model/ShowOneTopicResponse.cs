@@ -138,6 +138,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
+        /// topic名称。
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
         /// 总读队列个数。
         /// </summary>
         [JsonProperty("total_read_queue_num", NullValueHandling = NullValueHandling.Ignore)]
@@ -168,6 +174,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowOneTopicResponse {\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  totalReadQueueNum: ").Append(TotalReadQueueNum).Append("\n");
             sb.Append("  totalWriteQueueNum: ").Append(TotalWriteQueueNum).Append("\n");
             sb.Append("  permission: ").Append(Permission).Append("\n");
@@ -193,6 +200,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 return false;
 
             return 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
                 (
                     this.TotalReadQueueNum == input.TotalReadQueueNum ||
                     (this.TotalReadQueueNum != null &&
@@ -224,6 +236,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.TotalReadQueueNum != null)
                     hashCode = hashCode * 59 + this.TotalReadQueueNum.GetHashCode();
                 if (this.TotalWriteQueueNum != null)

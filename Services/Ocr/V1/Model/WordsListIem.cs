@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<int?>> Location { get; set; }
 
+        /// <summary>
+        /// 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\&quot;return_text_location\&quot;和\&quot;return_char_location\&quot;同时为true时存在。 
+        /// </summary>
+        [JsonProperty("char_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CharListIem> CharList { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -45,6 +51,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  words: ").Append(Words).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
+            sb.Append("  charList: ").Append(CharList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Location != null &&
                     input.Location != null &&
                     this.Location.SequenceEqual(input.Location)
+                ) && 
+                (
+                    this.CharList == input.CharList ||
+                    this.CharList != null &&
+                    input.CharList != null &&
+                    this.CharList.SequenceEqual(input.CharList)
                 );
         }
 
@@ -98,6 +111,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 if (this.Location != null)
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.CharList != null)
+                    hashCode = hashCode * 59 + this.CharList.GetHashCode();
                 return hashCode;
             }
         }

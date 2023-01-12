@@ -521,6 +521,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 查询主题列表
+        ///
+        /// 该接口用于查询指定RocketMQ实例的Topic列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRocketInstanceTopicsResponse ListRocketInstanceTopics(ListRocketInstanceTopicsRequest listRocketInstanceTopicsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRocketInstanceTopicsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketInstanceTopicsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRocketInstanceTopicsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询单个主题
         ///
         /// 查询单个主题。

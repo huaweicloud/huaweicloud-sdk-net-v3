@@ -463,8 +463,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// <summary>
         /// 计算出该条告警记录的资源监控数据上报时间和监控数值。
         /// </summary>
-        [JsonProperty("datapoints", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DataPointInfo> Datapoints { get; set; }
+        [JsonProperty("data_points", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DataPointInfo> DataPoints { get; set; }
 
 
         /// <summary>
@@ -488,7 +488,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  additionalInfo: ").Append(AdditionalInfo).Append("\n");
             sb.Append("  alarmActions: ").Append(AlarmActions).Append("\n");
             sb.Append("  okActions: ").Append(OkActions).Append("\n");
-            sb.Append("  datapoints: ").Append(Datapoints).Append("\n");
+            sb.Append("  dataPoints: ").Append(DataPoints).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -583,10 +583,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.OkActions.SequenceEqual(input.OkActions)
                 ) && 
                 (
-                    this.Datapoints == input.Datapoints ||
-                    this.Datapoints != null &&
-                    input.Datapoints != null &&
-                    this.Datapoints.SequenceEqual(input.Datapoints)
+                    this.DataPoints == input.DataPoints ||
+                    this.DataPoints != null &&
+                    input.DataPoints != null &&
+                    this.DataPoints.SequenceEqual(input.DataPoints)
                 );
         }
 
@@ -626,8 +626,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
                 if (this.OkActions != null)
                     hashCode = hashCode * 59 + this.OkActions.GetHashCode();
-                if (this.Datapoints != null)
-                    hashCode = hashCode * 59 + this.Datapoints.GetHashCode();
+                if (this.DataPoints != null)
+                    hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
                 return hashCode;
             }
         }

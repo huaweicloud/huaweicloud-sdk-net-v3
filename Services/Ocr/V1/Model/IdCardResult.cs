@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string ValidFrom { get; set; }
 
         /// <summary>
-        /// 有效结束日期。   &gt; 说明：  - 身份证识别支持中华人民共和国居民身份证识别。 
+        /// 有效结束日期。  &gt; 说明： - 身份证识别支持中华人民共和国居民身份证识别。 
         /// </summary>
         [JsonProperty("valid_to", NullValueHandling = NullValueHandling.Ignore)]
         public string ValidTo { get; set; }

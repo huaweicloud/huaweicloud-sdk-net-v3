@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("words_block_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<WebImageWordsBlockList> WordsBlockList { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("extracted_data", NullValueHandling = NullValueHandling.Ignore)]
+        public WebImageExtractedData ExtractedData { get; set; }
+
 
         /// <summary>
         /// Get the string
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class WebImageResult {\n");
             sb.Append("  wordsBlockCount: ").Append(WordsBlockCount).Append("\n");
             sb.Append("  wordsBlockList: ").Append(WordsBlockList).Append("\n");
+            sb.Append("  extractedData: ").Append(ExtractedData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.WordsBlockList != null &&
                     input.WordsBlockList != null &&
                     this.WordsBlockList.SequenceEqual(input.WordsBlockList)
+                ) && 
+                (
+                    this.ExtractedData == input.ExtractedData ||
+                    (this.ExtractedData != null &&
+                    this.ExtractedData.Equals(input.ExtractedData))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
                 if (this.WordsBlockList != null)
                     hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
+                if (this.ExtractedData != null)
+                    hashCode = hashCode * 59 + this.ExtractedData.GetHashCode();
                 return hashCode;
             }
         }
