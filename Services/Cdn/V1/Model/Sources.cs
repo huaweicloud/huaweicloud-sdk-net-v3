@@ -167,6 +167,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? EnableObsWebHosting { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

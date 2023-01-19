@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public PoolResp Pool { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

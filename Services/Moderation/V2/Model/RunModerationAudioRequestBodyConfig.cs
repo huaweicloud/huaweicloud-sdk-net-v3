@@ -311,6 +311,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         [JsonProperty("property", NullValueHandling = NullValueHandling.Ignore)]
         public PropertyEnum Property { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

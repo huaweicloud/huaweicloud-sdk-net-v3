@@ -45,6 +45,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public UpdateRepoDomainsRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

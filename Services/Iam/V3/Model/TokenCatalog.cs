@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public List<TokenCatalogEndpoint> Endpoints { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

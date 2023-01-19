@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public UpdateBaremetalServerInterfaceAttachmentsReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

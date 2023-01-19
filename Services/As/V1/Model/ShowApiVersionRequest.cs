@@ -138,6 +138,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("api_version", NullValueHandling = NullValueHandling.Ignore)]
         public ApiVersionEnum ApiVersion { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

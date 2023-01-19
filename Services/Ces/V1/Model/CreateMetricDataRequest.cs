@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public List<MetricDataItem> Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public SubJobsInfo Entities { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

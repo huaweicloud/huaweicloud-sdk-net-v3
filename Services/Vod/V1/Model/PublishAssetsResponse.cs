@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public List<AssetInfo> AssetInfoArray { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public List<string> Description { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

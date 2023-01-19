@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public DeployStackRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

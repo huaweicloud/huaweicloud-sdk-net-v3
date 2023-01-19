@@ -173,6 +173,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public BatchProfile Profile { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

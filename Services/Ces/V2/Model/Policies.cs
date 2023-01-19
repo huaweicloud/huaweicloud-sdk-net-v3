@@ -383,6 +383,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("suppress_duration", NullValueHandling = NullValueHandling.Ignore)]
         public SuppressDurationEnum SuppressDuration { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

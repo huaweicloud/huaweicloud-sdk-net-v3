@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string LineId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

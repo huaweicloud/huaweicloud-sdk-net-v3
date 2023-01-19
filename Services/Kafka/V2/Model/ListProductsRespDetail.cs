@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ArchType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

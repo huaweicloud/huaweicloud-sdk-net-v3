@@ -245,6 +245,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<PacketMessage> PacketMessages { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

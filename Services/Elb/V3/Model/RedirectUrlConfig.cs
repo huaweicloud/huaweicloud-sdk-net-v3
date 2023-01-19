@@ -305,6 +305,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("status_code", NullValueHandling = NullValueHandling.Ignore)]
         public StatusCodeEnum StatusCode { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

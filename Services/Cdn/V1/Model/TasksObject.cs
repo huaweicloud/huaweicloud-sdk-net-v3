@@ -299,6 +299,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
         public FileTypeEnum FileType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public List<VideoModerationVideoDetail> AudioDetail { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public List<BandwidthResp> Bandwidths { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

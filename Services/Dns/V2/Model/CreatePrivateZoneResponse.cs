@@ -119,6 +119,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public RouterWithStatus Router { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

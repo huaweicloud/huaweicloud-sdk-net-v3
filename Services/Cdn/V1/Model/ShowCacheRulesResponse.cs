@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public CacheConfig CacheConfig { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

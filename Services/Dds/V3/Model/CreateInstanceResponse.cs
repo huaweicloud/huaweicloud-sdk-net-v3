@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public ChargeInfoResult ChargeInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

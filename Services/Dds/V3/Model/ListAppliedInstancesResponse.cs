@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public List<ApplicableInstancesInfo> Instances { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

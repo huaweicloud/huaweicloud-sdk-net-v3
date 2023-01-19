@@ -287,6 +287,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public SortDirEnum SortDir { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

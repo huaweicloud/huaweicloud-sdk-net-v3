@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string Type { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

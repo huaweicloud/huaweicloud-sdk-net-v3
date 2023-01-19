@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<BatchUpdateRecordSet> Recordsets { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

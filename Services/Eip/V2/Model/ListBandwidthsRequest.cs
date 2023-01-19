@@ -159,6 +159,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]
         public ShareTypeEnum ShareType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public float? Number { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

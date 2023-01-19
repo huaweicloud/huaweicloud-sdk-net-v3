@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public string ErrorMsg { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

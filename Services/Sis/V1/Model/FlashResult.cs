@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public List<Sentences> Sentences { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

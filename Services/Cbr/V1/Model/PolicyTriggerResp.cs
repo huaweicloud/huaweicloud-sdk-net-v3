@@ -149,6 +149,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

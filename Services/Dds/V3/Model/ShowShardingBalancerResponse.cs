@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public BalancerActiveWindow ActiveWindow { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

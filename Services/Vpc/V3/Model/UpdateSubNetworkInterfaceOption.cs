@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public List<string> SecurityGroups { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

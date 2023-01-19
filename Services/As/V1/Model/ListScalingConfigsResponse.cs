@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public List<ScalingConfiguration> ScalingConfigurations { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

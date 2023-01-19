@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public CreateWatermarkTemplateReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

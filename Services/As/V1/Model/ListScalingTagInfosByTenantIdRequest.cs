@@ -132,6 +132,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceTypeEnum ResourceType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

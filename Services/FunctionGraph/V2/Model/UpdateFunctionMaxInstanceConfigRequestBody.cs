@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? MaxInstanceNum { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

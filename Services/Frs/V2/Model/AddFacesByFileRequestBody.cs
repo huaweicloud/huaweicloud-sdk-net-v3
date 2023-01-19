@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,14 +14,14 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class AddFacesByFileRequestBody 
+    public class AddFacesByFileRequestBody : IFormDataBody
     {
 
         /// <summary>
         /// 本地图片文件，图片不能超过8MB，建议小于1MB。上传文件时，请求格式为multipart。
         /// </summary>
         [JsonProperty("image_file", NullValueHandling = NullValueHandling.Ignore)]
-        public System.IO.Stream ImageFile { get; set; }
+        public FormDataFilePart ImageFile { get; set; }
 
         /// <summary>
         /// 用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。 该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。
@@ -40,6 +41,38 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("single", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Single { get; set; }
 
+
+        
+        public AddFacesByFileRequestBody WithImageFile(Stream stream, string filename)
+        {
+            this.ImageFile = new FormDataFilePart(stream, filename);
+            return this;
+        }
+
+        public AddFacesByFileRequestBody WithImageFile(Stream stream, string filename, string contentType)
+        {
+            this.ImageFile = new FormDataFilePart(stream, filename).WithContentType(contentType);
+            return this;
+        }
+        
+
+        public Dictionary<string, object> BuildFormData()
+        {
+            var formData = new Dictionary<string, object>();
+
+            formData.Add("image_file", ImageFile);
+            if (ExternalImageId != null) {
+                formData.Add("external_image_id", new FormDataPart<string>(ExternalImageId));
+            }
+            if (ExternalFields != null) {
+                formData.Add("external_fields", new FormDataPart<string>(ExternalFields));
+            }
+            if (Single != null) {
+                formData.Add("single", new FormDataPart<bool?>(Single));
+            }
+
+            return formData;
+        }
 
         /// <summary>
         /// Get the string

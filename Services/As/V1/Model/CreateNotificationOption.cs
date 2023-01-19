@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("topic_scene", NullValueHandling = NullValueHandling.Ignore)]
         public List<TopicSceneEnum> TopicScene { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

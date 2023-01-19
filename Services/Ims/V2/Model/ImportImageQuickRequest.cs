@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public QuickImportImageByFileRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
         public List<string> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

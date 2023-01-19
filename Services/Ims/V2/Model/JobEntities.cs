@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public List<string> SubJobsList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

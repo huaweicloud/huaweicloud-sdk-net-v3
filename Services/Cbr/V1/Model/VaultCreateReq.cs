@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public VaultCreate Vault { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

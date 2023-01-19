@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public List<ItemsResponse> Items { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

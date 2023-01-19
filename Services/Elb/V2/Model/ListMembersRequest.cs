@@ -94,6 +94,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public int? Weight { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public int? PasswordCharCombination { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

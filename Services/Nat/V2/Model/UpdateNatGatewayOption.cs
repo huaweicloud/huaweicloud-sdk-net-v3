@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

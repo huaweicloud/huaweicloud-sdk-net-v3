@@ -426,6 +426,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

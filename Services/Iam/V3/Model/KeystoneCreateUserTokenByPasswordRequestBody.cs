@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public PwdAuth Auth { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

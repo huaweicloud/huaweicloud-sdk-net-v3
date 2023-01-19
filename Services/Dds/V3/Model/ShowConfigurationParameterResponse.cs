@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public List<ConfigurationParametersResult> Parameters { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

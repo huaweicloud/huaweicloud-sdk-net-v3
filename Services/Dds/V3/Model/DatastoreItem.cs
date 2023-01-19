@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public bool? PatchAvailable { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

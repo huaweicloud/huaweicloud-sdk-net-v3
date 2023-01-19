@@ -149,6 +149,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string VpcId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

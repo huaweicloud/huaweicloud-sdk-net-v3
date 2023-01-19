@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         public string ResourceType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

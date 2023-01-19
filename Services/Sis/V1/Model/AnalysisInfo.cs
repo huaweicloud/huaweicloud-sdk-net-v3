@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public bool? Speed { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

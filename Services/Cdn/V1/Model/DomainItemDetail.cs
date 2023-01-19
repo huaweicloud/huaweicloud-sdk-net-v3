@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public List<Dictionary<string, Object>> Domains { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

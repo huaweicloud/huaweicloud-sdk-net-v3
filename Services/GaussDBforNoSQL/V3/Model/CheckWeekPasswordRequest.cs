@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public CheckWeekPasswordRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public int? Offset { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

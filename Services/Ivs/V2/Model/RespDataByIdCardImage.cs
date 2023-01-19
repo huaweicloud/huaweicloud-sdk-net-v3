@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public IdcardResult IdcardResult { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

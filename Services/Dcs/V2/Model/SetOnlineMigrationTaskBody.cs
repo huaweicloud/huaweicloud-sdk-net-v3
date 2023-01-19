@@ -275,6 +275,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public ConfigMigrationInstanceBody TargetInstance { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

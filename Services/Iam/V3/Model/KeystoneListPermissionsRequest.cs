@@ -73,6 +73,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Catalog { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

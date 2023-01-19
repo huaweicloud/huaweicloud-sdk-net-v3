@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public BatchStopServersRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

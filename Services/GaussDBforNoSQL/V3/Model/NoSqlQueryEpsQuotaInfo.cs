@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public NoSqlEpsQuotaUsed Used { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

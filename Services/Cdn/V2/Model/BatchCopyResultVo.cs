@@ -149,6 +149,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string DomainName { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

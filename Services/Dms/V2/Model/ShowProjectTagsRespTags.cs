@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public List<string> Values { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

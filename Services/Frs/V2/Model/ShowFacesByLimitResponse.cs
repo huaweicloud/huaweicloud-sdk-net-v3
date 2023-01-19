@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public List<FaceSetFace> Faces { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

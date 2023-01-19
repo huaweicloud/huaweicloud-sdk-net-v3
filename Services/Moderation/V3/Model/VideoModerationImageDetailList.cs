@@ -305,6 +305,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public List<VideoModerationDetailSegment> Segments { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public List<string> ExtendCidrs { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

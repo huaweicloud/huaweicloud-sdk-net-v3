@@ -293,6 +293,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string FinishedAt { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

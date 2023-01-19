@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         [JsonProperty("case_status", NullValueHandling = NullValueHandling.Ignore)]
         public CaseStatusEnum CaseStatus { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

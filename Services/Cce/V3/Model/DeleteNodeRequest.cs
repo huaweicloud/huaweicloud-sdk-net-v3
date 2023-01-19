@@ -146,6 +146,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("nodepoolScaleDown", NullValueHandling = NullValueHandling.Ignore)]
         public NodepoolScaleDownEnum NodepoolScaleDown { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

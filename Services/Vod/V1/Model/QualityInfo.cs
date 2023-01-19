@@ -179,6 +179,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("format", NullValueHandling = NullValueHandling.Ignore)]
         public FormatEnum Format { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

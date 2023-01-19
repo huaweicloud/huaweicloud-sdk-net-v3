@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public bool? UserDefined { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

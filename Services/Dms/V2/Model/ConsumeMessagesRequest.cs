@@ -66,6 +66,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public string TagType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

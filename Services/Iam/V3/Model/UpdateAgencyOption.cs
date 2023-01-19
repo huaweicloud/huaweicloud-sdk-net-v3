@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public DurationEnum Duration { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

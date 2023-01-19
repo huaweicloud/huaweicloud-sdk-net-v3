@@ -17,5 +17,6 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
     {
 
 
+
     }
 }

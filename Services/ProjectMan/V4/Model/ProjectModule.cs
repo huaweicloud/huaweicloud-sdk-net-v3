@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<ProjectChildModule> Children { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

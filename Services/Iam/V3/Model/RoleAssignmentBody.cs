@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public bool? IsInherited { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

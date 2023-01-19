@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public Attributes Attributes { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

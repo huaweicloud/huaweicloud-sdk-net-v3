@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public BatchDeleteBaremetalServerTagsRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

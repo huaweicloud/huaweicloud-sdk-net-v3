@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string MemberId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

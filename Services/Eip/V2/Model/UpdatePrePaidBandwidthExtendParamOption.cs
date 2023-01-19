@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public bool? IsAutoPay { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -52,6 +52,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public bool? ShowDetail { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

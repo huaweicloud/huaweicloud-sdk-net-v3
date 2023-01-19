@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public List<ExtentionReqDataByIdCardImage> ReqData { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

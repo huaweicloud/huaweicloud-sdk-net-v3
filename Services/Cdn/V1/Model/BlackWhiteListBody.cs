@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public List<string> IpList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

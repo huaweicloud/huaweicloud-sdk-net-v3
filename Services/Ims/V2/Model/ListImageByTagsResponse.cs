@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public int? TotalCount { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

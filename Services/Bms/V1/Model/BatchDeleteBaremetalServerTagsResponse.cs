@@ -17,5 +17,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     {
 
 
+
     }
 }

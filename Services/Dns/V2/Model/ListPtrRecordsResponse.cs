@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<ListPtrRecordsFloatingResp> Floatingips { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

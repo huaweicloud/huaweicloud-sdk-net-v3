@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public Object Arguments { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

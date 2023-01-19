@@ -371,6 +371,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string WafFailureAction { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

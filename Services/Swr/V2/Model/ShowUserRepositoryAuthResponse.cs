@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public List<UserAuth> OthersAuths { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public KeystoneUserResultExtra Extra { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

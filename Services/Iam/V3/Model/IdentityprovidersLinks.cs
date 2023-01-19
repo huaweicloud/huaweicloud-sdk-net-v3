@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Protocols { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

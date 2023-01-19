@@ -257,6 +257,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

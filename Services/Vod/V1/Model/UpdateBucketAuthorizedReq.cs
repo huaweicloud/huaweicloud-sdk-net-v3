@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string Operation { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

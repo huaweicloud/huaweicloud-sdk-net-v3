@@ -431,6 +431,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public BandwidthInfoResp BandwithInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

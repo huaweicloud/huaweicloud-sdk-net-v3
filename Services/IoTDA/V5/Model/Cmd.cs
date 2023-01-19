@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Mode { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

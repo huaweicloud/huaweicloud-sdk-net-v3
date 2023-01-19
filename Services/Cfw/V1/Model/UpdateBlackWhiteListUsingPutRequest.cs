@@ -45,6 +45,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public UpdateBlackWhiteListDto Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

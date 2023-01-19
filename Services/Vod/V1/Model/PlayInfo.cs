@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public MetaData MetaData { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

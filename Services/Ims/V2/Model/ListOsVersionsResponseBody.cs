@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public List<OsVersionInfo> VersionList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

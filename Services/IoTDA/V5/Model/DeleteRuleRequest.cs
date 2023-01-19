@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string RuleId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

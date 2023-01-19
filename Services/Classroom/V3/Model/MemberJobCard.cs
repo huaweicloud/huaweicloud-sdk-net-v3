@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public string LastSubmitTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

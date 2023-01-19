@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string UpgradeMode { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

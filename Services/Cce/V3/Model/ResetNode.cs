@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public ReinstallNodeSpec Spec { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public List<BandwidthPkgPage> BandwidthpkgsLinks { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

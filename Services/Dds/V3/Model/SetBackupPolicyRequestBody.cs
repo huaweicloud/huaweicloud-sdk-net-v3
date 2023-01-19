@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public BackupPolicy BackupPolicy { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

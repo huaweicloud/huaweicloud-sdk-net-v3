@@ -179,6 +179,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public VideoModerationResultResult Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

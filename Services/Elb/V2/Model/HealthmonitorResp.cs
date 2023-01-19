@@ -227,6 +227,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public List<ResourceList> Pools { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

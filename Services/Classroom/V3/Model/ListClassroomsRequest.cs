@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public string QueryType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

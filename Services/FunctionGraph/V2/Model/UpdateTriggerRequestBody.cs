@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("trigger_status", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerStatusEnum TriggerStatus { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string VolumeType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

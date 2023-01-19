@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public ModifyPublicIpRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

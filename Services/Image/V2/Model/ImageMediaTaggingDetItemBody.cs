@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public List<ImageMediaTaggingDetInstance> Instances { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

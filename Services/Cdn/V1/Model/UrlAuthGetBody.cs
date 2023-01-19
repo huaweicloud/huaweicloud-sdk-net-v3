@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? ExpireTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

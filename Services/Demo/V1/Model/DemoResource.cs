@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         public string ResultValue { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

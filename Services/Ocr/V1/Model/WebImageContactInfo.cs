@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string DetailAddress { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

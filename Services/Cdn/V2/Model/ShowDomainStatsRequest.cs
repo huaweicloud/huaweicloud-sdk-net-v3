@@ -80,6 +80,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string EnterpriseProjectId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

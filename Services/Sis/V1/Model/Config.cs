@@ -713,6 +713,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         [JsonProperty("need_word_info", NullValueHandling = NullValueHandling.Ignore)]
         public NeedWordInfoEnum NeedWordInfo { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

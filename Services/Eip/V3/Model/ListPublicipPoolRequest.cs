@@ -101,6 +101,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string PublicBorderGroup { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

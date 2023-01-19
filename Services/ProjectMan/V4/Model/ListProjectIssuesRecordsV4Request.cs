@@ -45,6 +45,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string OperatedTimeInterval { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

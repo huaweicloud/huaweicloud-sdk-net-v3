@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public List<string> Contents { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Namespace { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

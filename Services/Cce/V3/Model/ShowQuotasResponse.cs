@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<QuotaResource> Quotas { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

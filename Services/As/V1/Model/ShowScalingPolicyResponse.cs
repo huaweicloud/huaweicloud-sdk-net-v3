@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public ScalingV1PolicyDetail ScalingPolicy { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

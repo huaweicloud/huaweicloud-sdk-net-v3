@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public string Url { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public List<DssPoolInfo> DssPoolInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

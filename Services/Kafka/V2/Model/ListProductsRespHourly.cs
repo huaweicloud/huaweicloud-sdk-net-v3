@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<ListProductsRespValues> Values { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

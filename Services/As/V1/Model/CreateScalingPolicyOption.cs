@@ -179,6 +179,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public int? CoolDownTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

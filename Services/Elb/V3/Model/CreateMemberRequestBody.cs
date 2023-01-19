@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public CreateMemberOption Member { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<AddServiceItemsUsingPOSTRequestBodyServiceItems> ServiceItems { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

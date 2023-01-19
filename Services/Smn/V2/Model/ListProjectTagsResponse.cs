@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public List<ResourceTags> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -233,6 +233,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string FreezedIpAddress { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

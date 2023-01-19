@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public PrecheckDisasterRecoveryInstance DisasterRecoveryInstance { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

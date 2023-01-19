@@ -257,6 +257,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public ObsDestinationDescriptor ObsDestinationDescriptor { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

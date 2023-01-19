@@ -437,6 +437,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("market_type", NullValueHandling = NullValueHandling.Ignore)]
         public MarketTypeEnum MarketType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

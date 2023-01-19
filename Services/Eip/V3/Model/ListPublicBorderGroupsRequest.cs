@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string Fields { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

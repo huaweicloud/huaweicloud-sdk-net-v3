@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<ConnectionEndpoints> Connections { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

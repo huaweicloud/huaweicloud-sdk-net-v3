@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public string PortId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

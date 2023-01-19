@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("chargingmode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargingmodeEnum Chargingmode { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

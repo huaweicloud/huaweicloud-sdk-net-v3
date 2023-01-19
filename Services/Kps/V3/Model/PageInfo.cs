@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public int? CurrentCount { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

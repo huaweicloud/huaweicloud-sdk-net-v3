@@ -181,6 +181,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string MsgId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

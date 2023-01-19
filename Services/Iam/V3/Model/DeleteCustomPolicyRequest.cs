@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string RoleId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

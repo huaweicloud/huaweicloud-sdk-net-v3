@@ -253,6 +253,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public List<string> Protocol { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

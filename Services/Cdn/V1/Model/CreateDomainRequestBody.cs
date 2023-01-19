@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public DomainBody Domain { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

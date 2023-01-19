@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public VaultAddResourceReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

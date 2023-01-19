@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public bool? Active { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public List<ImageMediaTaggingItemBody> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

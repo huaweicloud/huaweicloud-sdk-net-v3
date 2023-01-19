@@ -89,6 +89,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public long? EffDate { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

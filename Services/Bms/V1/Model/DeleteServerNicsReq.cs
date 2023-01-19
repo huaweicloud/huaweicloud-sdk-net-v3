@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public List<ServerNics> Nics { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

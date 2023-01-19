@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public List<string> ClientNetworkRanges { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

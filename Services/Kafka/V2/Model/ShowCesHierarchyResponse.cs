@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<ShowCeshierarchyRespGroups> Groups { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

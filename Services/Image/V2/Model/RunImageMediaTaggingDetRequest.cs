@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public ImageMediaTaggingDetReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

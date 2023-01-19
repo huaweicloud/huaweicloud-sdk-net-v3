@@ -173,6 +173,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         [JsonProperty("order_method", NullValueHandling = NullValueHandling.Ignore)]
         public OrderMethodEnum OrderMethod { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

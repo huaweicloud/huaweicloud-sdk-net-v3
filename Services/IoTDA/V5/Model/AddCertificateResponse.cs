@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ExpiryDate { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

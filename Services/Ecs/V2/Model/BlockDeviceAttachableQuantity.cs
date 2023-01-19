@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public int? FreeDisk { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

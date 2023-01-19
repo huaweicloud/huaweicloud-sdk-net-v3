@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public Dictionary<string, string> AdvertisedIpContents { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

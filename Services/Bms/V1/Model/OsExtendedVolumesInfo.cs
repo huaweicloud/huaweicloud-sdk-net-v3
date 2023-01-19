@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public string Device { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public long? Timestamp { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

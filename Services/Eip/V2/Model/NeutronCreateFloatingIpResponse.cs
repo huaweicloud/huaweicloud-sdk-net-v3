@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public PostAndPutFloatingIpResp Floatingip { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

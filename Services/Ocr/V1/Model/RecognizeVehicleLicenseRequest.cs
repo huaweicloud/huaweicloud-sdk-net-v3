@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public VehicleLicenseRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

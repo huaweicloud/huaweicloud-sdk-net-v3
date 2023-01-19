@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string IpgroupId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

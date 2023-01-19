@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string AddonTemplateName { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

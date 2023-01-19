@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public DatastoreResult Datastore { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

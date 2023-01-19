@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public string SendTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

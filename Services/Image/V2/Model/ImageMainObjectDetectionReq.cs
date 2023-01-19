@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public float? Threshold { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

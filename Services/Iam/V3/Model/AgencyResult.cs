@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string TrustDomainName { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,14 +14,14 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class SearchFaceByFileRequestBody 
+    public class SearchFaceByFileRequestBody : IFormDataBody
     {
 
         /// <summary>
         /// 本地图片文件，图片不能超过8MB,建议小于1MB。上传文件时，请求格式为multipart。  必选，与image_url、image_base64、face_id四选一。
         /// </summary>
         [JsonProperty("image_file", NullValueHandling = NullValueHandling.Ignore)]
-        public System.IO.Stream ImageFile { get; set; }
+        public FormDataFilePart ImageFile { get; set; }
 
         /// <summary>
         /// 返回查询到的最相似的N张人脸，N默认为10。
@@ -52,6 +53,44 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("return_fields", NullValueHandling = NullValueHandling.Ignore)]
         public string ReturnFields { get; set; }
 
+
+        
+        public SearchFaceByFileRequestBody WithImageFile(Stream stream, string filename)
+        {
+            this.ImageFile = new FormDataFilePart(stream, filename);
+            return this;
+        }
+
+        public SearchFaceByFileRequestBody WithImageFile(Stream stream, string filename, string contentType)
+        {
+            this.ImageFile = new FormDataFilePart(stream, filename).WithContentType(contentType);
+            return this;
+        }
+        
+
+        public Dictionary<string, object> BuildFormData()
+        {
+            var formData = new Dictionary<string, object>();
+
+            formData.Add("image_file", ImageFile);
+            if (TopN != null) {
+                formData.Add("top_n", new FormDataPart<int?>(TopN));
+            }
+            if (Threshold != null) {
+                formData.Add("threshold", new FormDataPart<double?>(Threshold));
+            }
+            if (Sort != null) {
+                formData.Add("sort", new FormDataPart<string>(Sort));
+            }
+            if (Filter != null) {
+                formData.Add("filter", new FormDataPart<string>(Filter));
+            }
+            if (ReturnFields != null) {
+                formData.Add("return_fields", new FormDataPart<string>(ReturnFields));
+            }
+
+            return formData;
+        }
 
         /// <summary>
         /// Get the string

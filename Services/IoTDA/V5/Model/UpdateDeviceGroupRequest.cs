@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public UpdateDeviceGroupDTO Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

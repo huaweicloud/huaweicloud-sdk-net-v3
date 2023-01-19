@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public DeviceSide DeviceSide { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

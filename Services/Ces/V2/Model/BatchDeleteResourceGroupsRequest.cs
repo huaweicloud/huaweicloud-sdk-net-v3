@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public BatchDeleteResourceGroupsRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

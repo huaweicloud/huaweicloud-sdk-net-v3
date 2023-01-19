@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public List<BatchCreateOrDeleteTagReqTags> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

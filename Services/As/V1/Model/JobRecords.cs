@@ -293,6 +293,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("job_status", NullValueHandling = NullValueHandling.Ignore)]
         public JobStatusEnum JobStatus { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

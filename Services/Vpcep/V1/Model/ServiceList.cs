@@ -503,6 +503,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string PublicBorderGroup { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string OsExtendedSnapshotAttributesprogress { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

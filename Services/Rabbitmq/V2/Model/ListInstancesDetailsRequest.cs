@@ -444,6 +444,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string EnterpriseProjectId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

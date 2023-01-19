@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public HttpInfoRequestBody Https { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

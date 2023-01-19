@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("follow302_status", NullValueHandling = NullValueHandling.Ignore)]
         public Follow302StatusEnum Follow302Status { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

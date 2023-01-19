@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public ApiVersionResponse Version { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string AlphaCceNodeImageID { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

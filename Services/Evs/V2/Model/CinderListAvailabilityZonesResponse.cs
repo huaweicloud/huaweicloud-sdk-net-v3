@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public List<AzInfo> AvailabilityZoneInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

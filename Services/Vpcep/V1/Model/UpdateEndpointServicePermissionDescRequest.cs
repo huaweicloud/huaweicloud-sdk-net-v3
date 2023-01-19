@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public UpdatePermissionDescRequest Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

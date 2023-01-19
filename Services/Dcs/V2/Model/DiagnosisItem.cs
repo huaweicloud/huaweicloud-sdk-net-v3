@@ -323,6 +323,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public ResultEnum Result { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

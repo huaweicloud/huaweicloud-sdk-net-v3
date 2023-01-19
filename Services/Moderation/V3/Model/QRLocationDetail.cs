@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public int? BottomRightY { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

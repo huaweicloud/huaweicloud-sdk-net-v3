@@ -66,6 +66,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string EgressFirewallPolicyId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

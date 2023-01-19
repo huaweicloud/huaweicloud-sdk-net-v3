@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public NetworkIpAvailability NetworkIpAvailability { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

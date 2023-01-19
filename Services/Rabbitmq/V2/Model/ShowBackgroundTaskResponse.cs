@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<ListBackgroundTasksRespTasks> Tasks { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

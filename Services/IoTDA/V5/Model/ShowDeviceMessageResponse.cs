@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string FinishedTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -66,6 +66,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public long? CreateTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

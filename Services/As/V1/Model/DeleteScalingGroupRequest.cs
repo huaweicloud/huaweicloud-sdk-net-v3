@@ -145,6 +145,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
         public ForceDeleteEnum ForceDelete { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

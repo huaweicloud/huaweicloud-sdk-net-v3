@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public CreateBatchTask Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -329,6 +329,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public bool? ProtectFromScalingDown { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

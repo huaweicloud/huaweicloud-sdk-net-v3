@@ -311,6 +311,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public TranscodeInfo TranscodeInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

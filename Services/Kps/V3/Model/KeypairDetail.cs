@@ -329,6 +329,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public int? FrozenState { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public Dictionary<string, string> ExtraSpecs { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -89,6 +89,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public float? ExpiriedDateEn { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Group { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

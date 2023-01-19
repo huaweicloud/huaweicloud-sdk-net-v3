@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string DimName { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

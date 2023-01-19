@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public string Type { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

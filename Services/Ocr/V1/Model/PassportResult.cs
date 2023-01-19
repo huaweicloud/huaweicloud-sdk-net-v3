@@ -107,6 +107,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public Object ExtraInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

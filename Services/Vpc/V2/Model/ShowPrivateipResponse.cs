@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public Privateip Privateip { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

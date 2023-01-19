@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string Description { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

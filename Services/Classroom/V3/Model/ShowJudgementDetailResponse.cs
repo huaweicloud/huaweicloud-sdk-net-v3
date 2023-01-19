@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public JudgementResult Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

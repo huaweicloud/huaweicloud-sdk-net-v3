@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string ResourceId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

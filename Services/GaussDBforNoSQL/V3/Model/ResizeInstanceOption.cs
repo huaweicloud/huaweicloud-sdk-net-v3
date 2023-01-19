@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string TargetSpecCode { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

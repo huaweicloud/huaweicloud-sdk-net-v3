@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public BatchDeleteBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -317,6 +317,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public QueryInstanceBackupResponseBodyDatastore Datastore { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

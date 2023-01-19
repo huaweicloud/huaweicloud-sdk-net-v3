@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public List<Phoneme> Phonemes { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

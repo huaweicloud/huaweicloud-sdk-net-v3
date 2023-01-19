@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public CreateSinkTaskReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

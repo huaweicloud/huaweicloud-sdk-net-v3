@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<ListBrokersRespBrokers> Brokers { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

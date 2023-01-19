@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? Priority { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -113,6 +113,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public FileAddr OutputPath { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

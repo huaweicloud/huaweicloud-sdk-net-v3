@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public double? Illumination { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public int? TotalCount { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public AssociatePublicipsOption Publicip { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

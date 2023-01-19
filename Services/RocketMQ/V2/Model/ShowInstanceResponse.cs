@@ -437,6 +437,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string ResourceSpecCode { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

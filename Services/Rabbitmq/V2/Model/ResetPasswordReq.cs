@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string NewPassword { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

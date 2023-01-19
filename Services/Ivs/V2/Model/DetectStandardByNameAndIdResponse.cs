@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public IvsStandardByNameAndIdResponseBodyResult Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

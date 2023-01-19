@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public VpcInfo AcceptVpcInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

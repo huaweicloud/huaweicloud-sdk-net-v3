@@ -323,6 +323,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string Sequence { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

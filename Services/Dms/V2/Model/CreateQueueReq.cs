@@ -293,6 +293,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public int? RetentionHours { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -173,6 +173,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public List<ReviewDetail> Porn { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("perm", NullValueHandling = NullValueHandling.Ignore)]
         public PermEnum Perm { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

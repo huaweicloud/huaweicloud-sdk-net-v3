@@ -145,6 +145,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("instance_delete", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceDeleteEnum InstanceDelete { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

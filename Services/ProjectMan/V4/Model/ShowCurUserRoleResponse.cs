@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? UserRole { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

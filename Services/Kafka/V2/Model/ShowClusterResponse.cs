@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public ShowClusterRespCluster Cluster { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

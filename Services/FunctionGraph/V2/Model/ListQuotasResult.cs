@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public List<Resources> Resources { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string ConfigId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

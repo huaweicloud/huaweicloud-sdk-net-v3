@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string EndedAt { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

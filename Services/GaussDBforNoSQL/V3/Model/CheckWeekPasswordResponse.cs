@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public bool? Weak { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

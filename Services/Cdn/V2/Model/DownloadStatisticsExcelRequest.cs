@@ -73,6 +73,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string ExcelType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

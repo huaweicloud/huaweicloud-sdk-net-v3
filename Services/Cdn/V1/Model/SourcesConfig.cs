@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string HostName { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

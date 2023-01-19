@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Type { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

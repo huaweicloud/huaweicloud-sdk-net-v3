@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<AddressSetListResponseDTODataRecords> Records { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

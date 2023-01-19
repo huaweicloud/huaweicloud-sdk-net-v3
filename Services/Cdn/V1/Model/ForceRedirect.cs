@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string RedirectType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

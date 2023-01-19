@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public string ImageBase64 { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

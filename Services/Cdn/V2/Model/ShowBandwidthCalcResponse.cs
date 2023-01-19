@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public Dictionary<string, Object> BandwidthCalc { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

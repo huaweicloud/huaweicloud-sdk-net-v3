@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public UpdateProduct Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

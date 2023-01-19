@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public List<PornModerationResultDetail> Porn { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

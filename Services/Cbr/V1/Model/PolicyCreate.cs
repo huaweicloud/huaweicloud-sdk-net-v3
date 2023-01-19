@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public PolicyTriggerReq Trigger { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

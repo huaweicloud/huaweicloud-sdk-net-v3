@@ -185,6 +185,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<IssueAccessory> Accessories { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

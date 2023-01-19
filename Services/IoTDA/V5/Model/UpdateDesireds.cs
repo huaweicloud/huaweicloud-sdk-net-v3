@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<UpdateDesired> Shadow { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

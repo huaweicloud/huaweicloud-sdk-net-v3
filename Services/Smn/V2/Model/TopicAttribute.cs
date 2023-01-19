@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public List<Statement> Statement { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

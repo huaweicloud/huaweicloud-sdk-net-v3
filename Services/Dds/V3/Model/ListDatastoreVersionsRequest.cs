@@ -138,6 +138,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]
         public DatastoreNameEnum DatastoreName { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

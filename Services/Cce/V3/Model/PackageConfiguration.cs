@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<ConfigurationItem> Configurations { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

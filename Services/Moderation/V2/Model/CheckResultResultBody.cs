@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public List<CheckResultItemsBody> Items { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

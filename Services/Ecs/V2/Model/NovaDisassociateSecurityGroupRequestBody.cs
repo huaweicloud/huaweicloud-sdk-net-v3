@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public NovaRemoveSecurityGroupOption RemoveSecurityGroup { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

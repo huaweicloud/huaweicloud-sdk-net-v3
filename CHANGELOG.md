@@ -1,3 +1,14 @@
+# 3.1.22 2023-01-19
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - Support the interface `UploadBatchTaskFile`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.21 2023-01-12
 
 ### HuaweiCloud SDK CES

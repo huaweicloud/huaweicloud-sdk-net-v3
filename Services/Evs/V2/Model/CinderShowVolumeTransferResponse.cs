@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public VolumeTransfer Transfer { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

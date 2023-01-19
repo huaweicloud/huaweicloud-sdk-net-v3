@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public TacticsConfig TacticsConfig { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

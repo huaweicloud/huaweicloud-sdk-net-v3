@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         public List<TagDeleteResponseItem> FailedResources { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

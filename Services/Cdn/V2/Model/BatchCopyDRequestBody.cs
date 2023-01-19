@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public BatchCopyConfigs Configs { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

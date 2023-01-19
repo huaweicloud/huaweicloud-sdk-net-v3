@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public RuleId Data { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

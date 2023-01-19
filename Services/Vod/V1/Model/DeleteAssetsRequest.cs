@@ -45,6 +45,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string DeleteType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

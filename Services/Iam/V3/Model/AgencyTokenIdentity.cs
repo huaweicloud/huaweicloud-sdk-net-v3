@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public AgencyTokenAssumerole AssumeRole { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

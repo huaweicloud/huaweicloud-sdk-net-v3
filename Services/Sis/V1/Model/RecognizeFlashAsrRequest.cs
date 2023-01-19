@@ -782,6 +782,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         [JsonProperty("first_channel_only", NullValueHandling = NullValueHandling.Ignore)]
         public FirstChannelOnlyEnum FirstChannelOnly { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

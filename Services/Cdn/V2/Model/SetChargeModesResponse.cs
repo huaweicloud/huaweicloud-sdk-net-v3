@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Status { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

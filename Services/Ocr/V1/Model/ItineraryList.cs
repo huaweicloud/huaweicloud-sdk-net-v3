@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string BaggageAllowance { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

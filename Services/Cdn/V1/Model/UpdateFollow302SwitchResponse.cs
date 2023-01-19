@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public Follow302StatusBody FollowStatus { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

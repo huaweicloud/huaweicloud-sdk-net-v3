@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public MigrateSubNetworkInterfaceRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

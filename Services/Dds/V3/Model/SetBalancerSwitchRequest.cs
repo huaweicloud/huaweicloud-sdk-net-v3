@@ -145,6 +145,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

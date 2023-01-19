@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("auth", NullValueHandling = NullValueHandling.Ignore)]
         public AuthEnum Auth { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

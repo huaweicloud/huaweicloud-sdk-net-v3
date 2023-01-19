@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string SnatRuleId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

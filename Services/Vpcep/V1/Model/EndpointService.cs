@@ -167,6 +167,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? IsCharge { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

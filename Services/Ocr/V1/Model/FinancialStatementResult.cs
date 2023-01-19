@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public FinancialStatementResultImageSize ImageSize { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

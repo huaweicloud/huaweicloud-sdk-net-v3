@@ -17,5 +17,6 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
 
+
     }
 }

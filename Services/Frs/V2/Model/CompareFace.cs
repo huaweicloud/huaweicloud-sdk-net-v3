@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public BoundingBox BoundingBox { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

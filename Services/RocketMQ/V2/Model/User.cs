@@ -317,6 +317,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<UserGroupPerms> GroupPerms { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string BandwidthId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

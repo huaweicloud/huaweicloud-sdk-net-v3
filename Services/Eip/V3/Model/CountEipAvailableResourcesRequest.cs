@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public EipResourcesAvailableV3RequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

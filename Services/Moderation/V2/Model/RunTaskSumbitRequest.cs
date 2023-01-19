@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public TaskSumbitReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public OsChange OsChange { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

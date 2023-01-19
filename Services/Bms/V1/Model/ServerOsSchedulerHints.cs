@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public List<string> Group { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

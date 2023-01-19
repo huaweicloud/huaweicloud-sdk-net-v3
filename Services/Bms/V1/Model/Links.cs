@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public string Href { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

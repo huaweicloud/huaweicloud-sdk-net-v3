@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public PrePaidServerIpv6Bandwidth Ipv6Bandwidth { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

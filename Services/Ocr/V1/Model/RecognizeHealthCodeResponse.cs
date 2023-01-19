@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public HealthCodeResult Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

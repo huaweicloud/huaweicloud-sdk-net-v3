@@ -485,6 +485,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<PackageConfiguration> ConfigurationsOverride { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

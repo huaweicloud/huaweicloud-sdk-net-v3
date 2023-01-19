@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? SucceedCount { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

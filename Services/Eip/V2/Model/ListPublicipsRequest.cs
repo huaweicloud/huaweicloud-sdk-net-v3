@@ -194,6 +194,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public List<string> AllowShareBandwidthTypeAny { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

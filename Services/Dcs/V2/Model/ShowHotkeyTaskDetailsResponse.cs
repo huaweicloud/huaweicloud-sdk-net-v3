@@ -311,6 +311,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<HotkeysBody> Keys { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

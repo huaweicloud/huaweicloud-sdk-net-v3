@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public List<MappingRules> Rules { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

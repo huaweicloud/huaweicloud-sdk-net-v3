@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string AuthenticationCodeSecond { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

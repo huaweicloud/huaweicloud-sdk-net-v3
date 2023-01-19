@@ -52,6 +52,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public int? Offset { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

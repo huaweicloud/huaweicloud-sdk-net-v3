@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public long? TimestampOffset { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

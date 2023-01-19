@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public CheckResultResultBody Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

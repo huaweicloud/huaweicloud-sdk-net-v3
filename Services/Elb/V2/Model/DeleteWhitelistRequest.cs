@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string WhitelistId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string NotResource { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

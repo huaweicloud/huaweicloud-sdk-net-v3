@@ -52,6 +52,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? Offset { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

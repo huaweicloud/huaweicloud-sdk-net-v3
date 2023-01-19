@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public List<string> Categories { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

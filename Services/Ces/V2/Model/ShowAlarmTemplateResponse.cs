@@ -58,6 +58,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<AlarmTemplatePolicies> Policies { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public int? AudioDuration { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

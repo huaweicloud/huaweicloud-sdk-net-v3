@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public Versions Version { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

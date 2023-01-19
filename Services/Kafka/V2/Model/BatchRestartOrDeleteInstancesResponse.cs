@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<BatchRestartOrDeleteInstanceRespResults> Results { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -145,6 +145,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("protectable_type", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectableTypeEnum ProtectableType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

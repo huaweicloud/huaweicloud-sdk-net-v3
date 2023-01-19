@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<ShowSinkTaskDetailRespTopicsInfo> TopicsInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

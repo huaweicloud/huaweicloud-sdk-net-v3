@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

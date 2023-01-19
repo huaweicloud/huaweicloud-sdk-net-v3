@@ -45,6 +45,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public UpdateTriggerRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

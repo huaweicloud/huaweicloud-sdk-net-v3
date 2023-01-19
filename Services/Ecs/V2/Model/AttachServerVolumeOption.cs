@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Hwpassthrough { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

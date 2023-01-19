@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string CalcType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

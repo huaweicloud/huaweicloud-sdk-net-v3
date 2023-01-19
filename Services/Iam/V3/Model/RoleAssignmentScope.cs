@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public RoleEnterpriseProjectAssignmentId EnterpriseProject { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

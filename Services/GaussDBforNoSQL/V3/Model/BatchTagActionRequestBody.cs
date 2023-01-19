@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public List<BatchTagActionTagOption> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

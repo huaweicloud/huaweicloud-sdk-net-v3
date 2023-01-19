@@ -42,6 +42,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string XRequestId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

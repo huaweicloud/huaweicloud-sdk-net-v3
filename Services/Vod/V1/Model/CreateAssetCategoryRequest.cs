@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public CreateCategoryReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

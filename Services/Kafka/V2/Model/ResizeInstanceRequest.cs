@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public ResizeInstanceReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

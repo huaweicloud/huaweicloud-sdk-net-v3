@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public ImageDetectionResult Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

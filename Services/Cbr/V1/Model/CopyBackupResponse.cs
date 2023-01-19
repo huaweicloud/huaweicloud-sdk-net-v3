@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public BackupReplicateRespBody Replication { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

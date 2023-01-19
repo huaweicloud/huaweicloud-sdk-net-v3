@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public Dictionary<string, int?> AdditionalVersionWeights { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

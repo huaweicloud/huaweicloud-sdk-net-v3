@@ -191,6 +191,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public SubJobEntities Entities { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

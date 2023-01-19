@@ -203,6 +203,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public bool? IsMultiAz { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -95,6 +95,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string References { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

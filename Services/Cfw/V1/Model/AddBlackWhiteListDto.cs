@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Port { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

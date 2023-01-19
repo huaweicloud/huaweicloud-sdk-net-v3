@@ -66,6 +66,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public int? CostTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

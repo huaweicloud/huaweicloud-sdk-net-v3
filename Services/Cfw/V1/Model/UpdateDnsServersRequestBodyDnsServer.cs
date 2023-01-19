@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? IsApplied { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

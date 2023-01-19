@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public BackupSyncReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

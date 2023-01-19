@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public bool? SniEnable { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

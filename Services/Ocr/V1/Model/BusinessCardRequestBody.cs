@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? ReturnAdjustedImage { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

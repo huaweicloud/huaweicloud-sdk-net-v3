@@ -101,6 +101,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public Object EndorsementInfoTw { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

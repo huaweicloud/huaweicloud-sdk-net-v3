@@ -119,6 +119,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public long? TagType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

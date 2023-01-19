@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string ErrorMsg { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

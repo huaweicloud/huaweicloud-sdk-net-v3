@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public SwitchToMasterDisasterRecoveryBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

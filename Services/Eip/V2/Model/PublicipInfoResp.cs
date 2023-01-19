@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public IpVersionEnum IpVersion { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

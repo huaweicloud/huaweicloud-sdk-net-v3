@@ -352,6 +352,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public int? Limit { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

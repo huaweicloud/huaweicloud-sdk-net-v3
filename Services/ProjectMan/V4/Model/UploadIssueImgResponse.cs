@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string ImgUrl { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

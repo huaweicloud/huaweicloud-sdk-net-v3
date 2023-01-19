@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public ZoneState ZoneState { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

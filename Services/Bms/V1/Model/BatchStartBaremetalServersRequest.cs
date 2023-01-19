@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public OsStartBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public BatchCopyErrorRspError Error { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public int? VerificationCode { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

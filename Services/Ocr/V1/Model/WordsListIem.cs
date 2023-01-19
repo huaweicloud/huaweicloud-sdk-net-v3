@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<CharListIem> CharList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

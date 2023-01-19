@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public CreateLogtankOption Logtank { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

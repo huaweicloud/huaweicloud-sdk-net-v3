@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string MinVersion { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public CreateFaceSetReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

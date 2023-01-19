@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string GroupId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

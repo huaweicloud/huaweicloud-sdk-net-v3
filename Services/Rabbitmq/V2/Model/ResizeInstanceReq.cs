@@ -149,6 +149,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public int? NewStorageSpace { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

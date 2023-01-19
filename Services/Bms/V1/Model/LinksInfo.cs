@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public string Type { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

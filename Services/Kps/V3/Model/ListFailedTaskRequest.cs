@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public string Offset { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

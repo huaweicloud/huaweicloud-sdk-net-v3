@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public List<VolumeDetail> Volumes { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

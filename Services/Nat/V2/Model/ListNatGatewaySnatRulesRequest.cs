@@ -239,6 +239,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

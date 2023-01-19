@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("access_policy", NullValueHandling = NullValueHandling.Ignore)]
         public AccessPolicyEnum AccessPolicy { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

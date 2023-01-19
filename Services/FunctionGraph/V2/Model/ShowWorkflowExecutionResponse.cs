@@ -221,6 +221,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public List<NodeExecutionDetail> NodeExecutionDetails { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

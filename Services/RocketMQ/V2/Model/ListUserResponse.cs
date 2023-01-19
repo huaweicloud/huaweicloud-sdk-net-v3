@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public decimal? Total { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

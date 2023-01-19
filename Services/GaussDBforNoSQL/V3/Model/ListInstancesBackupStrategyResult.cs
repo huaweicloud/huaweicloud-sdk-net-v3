@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public int? KeepDays { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public List<QueryCategoryRsp> Children { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

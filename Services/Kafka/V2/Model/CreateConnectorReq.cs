@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string SpecCode { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -125,6 +125,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public AdditionalInfo AdditionalInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

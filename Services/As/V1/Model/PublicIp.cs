@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public EipInfo Eip { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

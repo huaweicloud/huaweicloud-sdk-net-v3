@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string LbPort { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

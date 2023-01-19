@@ -179,6 +179,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? HttpsPort { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public DeleteDatabaseRoleRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

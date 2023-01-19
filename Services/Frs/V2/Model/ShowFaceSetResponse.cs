@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public FaceSetInfo FaceSetInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public int? SubmitJobNum { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

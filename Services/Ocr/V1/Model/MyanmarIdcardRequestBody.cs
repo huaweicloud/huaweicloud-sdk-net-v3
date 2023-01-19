@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? ReturnIdcardType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

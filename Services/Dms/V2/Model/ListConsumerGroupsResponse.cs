@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         [JsonProperty("redrive_policy", NullValueHandling = NullValueHandling.Ignore)]
         public RedrivePolicyEnum RedrivePolicy { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

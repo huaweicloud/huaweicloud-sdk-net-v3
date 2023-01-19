@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Metadata Metadata { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

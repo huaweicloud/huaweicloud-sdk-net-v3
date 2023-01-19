@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public AddSubscriptionRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

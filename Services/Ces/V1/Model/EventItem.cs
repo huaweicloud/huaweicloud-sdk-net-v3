@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public EventItemDetail Detail { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string MacAddress { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

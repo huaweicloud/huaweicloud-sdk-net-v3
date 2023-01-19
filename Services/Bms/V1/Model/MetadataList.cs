@@ -557,6 +557,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("os_bit", NullValueHandling = NullValueHandling.Ignore)]
         public OsBitEnum OsBit { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public RemoteConsole RemoteConsole { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

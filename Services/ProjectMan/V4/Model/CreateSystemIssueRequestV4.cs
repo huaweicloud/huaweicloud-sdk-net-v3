@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<ScrumCustomField> CustomFields { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

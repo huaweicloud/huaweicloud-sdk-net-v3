@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<HistoryInfo> Histories { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

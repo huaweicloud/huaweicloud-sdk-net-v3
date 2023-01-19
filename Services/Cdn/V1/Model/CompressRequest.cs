@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? CompressSwitch { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public ChangeServerOsWithoutCloudInitRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

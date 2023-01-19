@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string InstanceType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

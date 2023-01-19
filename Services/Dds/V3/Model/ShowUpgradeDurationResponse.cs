@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public List<DurationStrategies> Strategies { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

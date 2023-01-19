@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public bool? AlarmEnabled { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Instance { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public ReinstallExtendParam ExtendParam { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

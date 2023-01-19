@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public CreateTopicRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -149,6 +149,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("truncated", NullValueHandling = NullValueHandling.Ignore)]
         public TruncatedEnum Truncated { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

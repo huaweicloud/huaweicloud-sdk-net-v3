@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string OperatingStatus { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -89,6 +89,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<InsuranceItem> InsuranceList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

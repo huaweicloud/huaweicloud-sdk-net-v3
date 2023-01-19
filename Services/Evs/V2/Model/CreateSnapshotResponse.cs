@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public SnapshotDetails Snapshot { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

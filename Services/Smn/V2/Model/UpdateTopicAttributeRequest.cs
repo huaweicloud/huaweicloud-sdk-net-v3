@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public UpdateTopicAttributeRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

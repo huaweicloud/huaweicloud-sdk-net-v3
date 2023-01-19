@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public RemoveFromSharedBandwidthOption Bandwidth { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

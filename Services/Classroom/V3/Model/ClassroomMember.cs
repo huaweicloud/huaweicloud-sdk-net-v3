@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public decimal? JobFinishedRate { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

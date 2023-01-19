@@ -431,6 +431,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public List<JudgementCaseInfo> Testcases { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -152,6 +152,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("delete_flag", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteFlagEnum DeleteFlag { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

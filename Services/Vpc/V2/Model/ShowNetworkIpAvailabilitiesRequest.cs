@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string NetworkId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

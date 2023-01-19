@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public int? AutoScoreUsingTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

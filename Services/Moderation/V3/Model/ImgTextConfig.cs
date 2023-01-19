@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public List<string> WhiteGlossaryNames { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

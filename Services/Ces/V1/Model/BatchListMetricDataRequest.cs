@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public BatchListMetricDataRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

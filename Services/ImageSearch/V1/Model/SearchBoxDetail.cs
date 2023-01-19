@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
         public int? Height { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public UpdateBucketAuthorizedReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

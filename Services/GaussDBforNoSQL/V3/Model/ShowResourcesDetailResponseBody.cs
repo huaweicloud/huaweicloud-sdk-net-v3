@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public int? Used { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

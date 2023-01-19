@@ -215,6 +215,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string EcsinstanceArchitecture { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

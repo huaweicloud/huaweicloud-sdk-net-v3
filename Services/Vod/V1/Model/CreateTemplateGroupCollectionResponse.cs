@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string GroupCollectionId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string UserId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

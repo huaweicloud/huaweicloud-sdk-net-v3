@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public int? Min { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

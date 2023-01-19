@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public CreateConsumerGroupOrBatchDeleteConsumerGroupReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

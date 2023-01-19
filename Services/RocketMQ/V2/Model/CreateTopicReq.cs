@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
         public PermissionEnum Permission { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

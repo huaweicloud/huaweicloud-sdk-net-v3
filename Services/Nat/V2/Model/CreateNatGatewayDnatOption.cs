@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string ExternalServicePortRange { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

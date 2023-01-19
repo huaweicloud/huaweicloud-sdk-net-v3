@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> Users { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

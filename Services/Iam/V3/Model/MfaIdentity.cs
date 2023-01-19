@@ -149,6 +149,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public MfaTotp Totp { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

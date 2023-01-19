@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public List<ScalingActivityLogList> ScalingActivityLog { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

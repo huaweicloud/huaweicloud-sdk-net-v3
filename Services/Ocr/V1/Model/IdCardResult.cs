@@ -95,6 +95,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? DetectCopyResult { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

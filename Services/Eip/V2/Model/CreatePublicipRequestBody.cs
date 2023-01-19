@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public CreatePublicipOption Publicip { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

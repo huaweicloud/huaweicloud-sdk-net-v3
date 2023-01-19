@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public long? LastMessageTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

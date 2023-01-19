@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public AddressTypeEnum AddressType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

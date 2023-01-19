@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string SerialNumber { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

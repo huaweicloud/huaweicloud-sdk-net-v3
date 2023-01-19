@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public ListEngineSupportFeaturesPropertiesEntity Properties { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

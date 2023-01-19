@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("sharetype", NullValueHandling = NullValueHandling.Ignore)]
         public SharetypeEnum Sharetype { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

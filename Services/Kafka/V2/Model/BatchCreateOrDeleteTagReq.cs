@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<TagEntity> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

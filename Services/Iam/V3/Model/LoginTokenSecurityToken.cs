@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public int? DurationSeconds { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

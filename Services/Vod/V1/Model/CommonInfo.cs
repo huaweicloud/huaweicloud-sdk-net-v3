@@ -569,6 +569,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("adaptation", NullValueHandling = NullValueHandling.Ignore)]
         public AdaptationEnum Adaptation { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? Ipv6Enable { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

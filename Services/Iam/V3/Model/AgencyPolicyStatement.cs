@@ -257,6 +257,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public AgencyPolicyResource Resource { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public VideoCreateRequest Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

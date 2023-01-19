@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public ResetReplicaReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

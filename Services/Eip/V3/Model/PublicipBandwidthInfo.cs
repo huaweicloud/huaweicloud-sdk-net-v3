@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string BillingInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

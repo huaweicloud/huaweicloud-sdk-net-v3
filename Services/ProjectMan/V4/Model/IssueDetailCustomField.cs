@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string Description { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

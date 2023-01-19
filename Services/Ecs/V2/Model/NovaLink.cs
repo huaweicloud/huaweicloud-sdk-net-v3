@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("rel", NullValueHandling = NullValueHandling.Ignore)]
         public RelEnum Rel { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

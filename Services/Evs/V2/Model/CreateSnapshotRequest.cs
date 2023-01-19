@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public CreateSnapshotRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

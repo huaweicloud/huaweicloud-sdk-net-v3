@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public List<Links> Links { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

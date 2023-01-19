@@ -272,6 +272,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

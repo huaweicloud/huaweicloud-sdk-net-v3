@@ -197,6 +197,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         [JsonProperty("task_status", NullValueHandling = NullValueHandling.Ignore)]
         public TaskStatusEnum TaskStatus { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

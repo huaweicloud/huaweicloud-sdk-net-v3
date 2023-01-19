@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public UpdateSubNetworkInterfaceRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

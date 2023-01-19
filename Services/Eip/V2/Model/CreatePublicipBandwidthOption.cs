@@ -275,6 +275,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public int? Size { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

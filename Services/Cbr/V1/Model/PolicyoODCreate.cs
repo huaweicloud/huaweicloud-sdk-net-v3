@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public int? YearBackups { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public int? Total { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public decimal? PreviousOffset { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

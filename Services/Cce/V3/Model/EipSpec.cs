@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public EipSpecBandwidth Bandwidth { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

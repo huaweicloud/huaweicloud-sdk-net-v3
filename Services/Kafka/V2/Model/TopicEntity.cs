@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? TopicType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

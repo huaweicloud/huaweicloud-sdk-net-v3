@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public AgencyTokenScope Scope { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

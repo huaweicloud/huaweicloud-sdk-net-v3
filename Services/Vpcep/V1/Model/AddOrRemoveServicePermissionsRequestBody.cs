@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

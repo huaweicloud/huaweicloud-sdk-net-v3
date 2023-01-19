@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public List<RecycleInstance> Instances { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

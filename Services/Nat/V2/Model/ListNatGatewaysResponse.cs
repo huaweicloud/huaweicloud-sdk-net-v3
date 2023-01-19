@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public List<NatGatewayResponseBody> NatGateways { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

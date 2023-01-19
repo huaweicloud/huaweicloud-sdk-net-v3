@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Tag Tag { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

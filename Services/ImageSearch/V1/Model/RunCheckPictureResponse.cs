@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
         public string Exist { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

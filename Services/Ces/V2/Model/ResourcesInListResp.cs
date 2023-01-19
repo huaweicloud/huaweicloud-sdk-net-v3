@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<MetricDimension> Dimensions { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

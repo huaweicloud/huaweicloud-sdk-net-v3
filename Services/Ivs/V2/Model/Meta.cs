@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public string Uuid { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

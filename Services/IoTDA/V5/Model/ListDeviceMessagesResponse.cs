@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<DeviceMessage> Messages { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

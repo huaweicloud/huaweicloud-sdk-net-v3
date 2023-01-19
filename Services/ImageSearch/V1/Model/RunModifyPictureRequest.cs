@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
         public RunModifyPictureReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

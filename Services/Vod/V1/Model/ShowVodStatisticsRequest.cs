@@ -52,6 +52,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public int? Interval { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

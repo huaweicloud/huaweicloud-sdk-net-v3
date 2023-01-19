@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V1.Model
         public List<SearchPictureItem> Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

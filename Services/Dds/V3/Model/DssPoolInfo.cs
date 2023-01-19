@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string DssPoolStatus { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

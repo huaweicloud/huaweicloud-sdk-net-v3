@@ -145,6 +145,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("option", NullValueHandling = NullValueHandling.Ignore)]
         public OptionEnum Option { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

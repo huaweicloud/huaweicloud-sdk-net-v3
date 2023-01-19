@@ -581,6 +581,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public int? BrokerNum { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

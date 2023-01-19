@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string MaxTpsPerBroker { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

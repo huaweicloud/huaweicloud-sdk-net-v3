@@ -125,6 +125,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<NewCustomField> NewCustomFields { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public BatchStopMigrationTasksBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

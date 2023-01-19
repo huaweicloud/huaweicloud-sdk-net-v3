@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string AccessDomain { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

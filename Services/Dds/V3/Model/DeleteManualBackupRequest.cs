@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string BackupId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

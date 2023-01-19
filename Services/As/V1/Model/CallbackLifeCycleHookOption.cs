@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("lifecycle_action_result", NullValueHandling = NullValueHandling.Ignore)]
         public LifecycleActionResultEnum LifecycleActionResult { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public int? IssueId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

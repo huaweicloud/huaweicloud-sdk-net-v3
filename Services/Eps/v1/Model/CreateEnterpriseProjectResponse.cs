@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Eps.v1.Model
         public EpDetail EnterpriseProject { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

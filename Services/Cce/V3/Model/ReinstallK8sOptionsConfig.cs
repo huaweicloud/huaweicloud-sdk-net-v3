@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string NicThreshold { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

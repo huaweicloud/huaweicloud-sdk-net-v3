@@ -707,6 +707,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? DrEnable { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

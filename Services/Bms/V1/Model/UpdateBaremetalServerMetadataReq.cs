@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public Dictionary<string, string> Metadata { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public List<SendMessageEntity> Messages { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

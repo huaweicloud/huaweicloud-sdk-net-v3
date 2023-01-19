@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string RegionStatus { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

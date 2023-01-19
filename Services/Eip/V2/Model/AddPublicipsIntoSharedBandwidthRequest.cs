@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public AddPublicipsIntoSharedBandwidthRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

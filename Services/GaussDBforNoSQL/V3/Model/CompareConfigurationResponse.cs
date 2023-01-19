@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public List<DifferentDetails> Differences { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

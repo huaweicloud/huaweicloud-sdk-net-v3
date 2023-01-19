@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public int? Timeout { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public CreateIssueResponseV4Tracker Tracker { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string HealthCheckId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

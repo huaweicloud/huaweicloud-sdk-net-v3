@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public PostCreateVocabReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

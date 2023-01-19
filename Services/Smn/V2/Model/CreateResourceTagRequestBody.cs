@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public CreateResourceTagRequestBodyTag Tag { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

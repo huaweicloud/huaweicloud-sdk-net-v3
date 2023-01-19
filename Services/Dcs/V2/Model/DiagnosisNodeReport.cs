@@ -179,6 +179,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public CommandTimeTakenList CommandTimeTakenList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

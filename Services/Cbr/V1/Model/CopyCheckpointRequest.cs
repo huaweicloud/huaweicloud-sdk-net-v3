@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public CheckpointReplicateReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

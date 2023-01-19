@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,15 +14,38 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     /// <summary>
     /// 
     /// </summary>
-    public class UploadIssueImgRequestBody 
+    public class UploadIssueImgRequestBody : IFormDataBody
     {
 
         /// <summary>
         /// 图片文件
         /// </summary>
         [JsonProperty("file", NullValueHandling = NullValueHandling.Ignore)]
-        public System.IO.Stream File { get; set; }
+        public FormDataFilePart File { get; set; }
 
+
+        
+        public UploadIssueImgRequestBody WithFile(Stream stream, string filename)
+        {
+            this.File = new FormDataFilePart(stream, filename);
+            return this;
+        }
+
+        public UploadIssueImgRequestBody WithFile(Stream stream, string filename, string contentType)
+        {
+            this.File = new FormDataFilePart(stream, filename).WithContentType(contentType);
+            return this;
+        }
+        
+
+        public Dictionary<string, object> BuildFormData()
+        {
+            var formData = new Dictionary<string, object>();
+
+            formData.Add("file", File);
+
+            return formData;
+        }
 
         /// <summary>
         /// Get the string

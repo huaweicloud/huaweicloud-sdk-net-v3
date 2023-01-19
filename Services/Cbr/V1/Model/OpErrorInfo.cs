@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Message { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

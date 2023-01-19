@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public KeystoneCreateIdentityProviderRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

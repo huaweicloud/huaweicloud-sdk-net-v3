@@ -66,6 +66,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string FwInstanceId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

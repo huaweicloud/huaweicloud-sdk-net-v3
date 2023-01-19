@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Permissions { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

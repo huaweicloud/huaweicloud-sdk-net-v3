@@ -52,6 +52,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string FuzzyName { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

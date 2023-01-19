@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? RetentionTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

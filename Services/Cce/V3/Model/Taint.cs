@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("effect", NullValueHandling = NullValueHandling.Ignore)]
         public EffectEnum Effect { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

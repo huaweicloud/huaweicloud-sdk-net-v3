@@ -17,5 +17,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
 
+
     }
 }

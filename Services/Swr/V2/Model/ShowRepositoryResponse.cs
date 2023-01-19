@@ -125,6 +125,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public int? Priority { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

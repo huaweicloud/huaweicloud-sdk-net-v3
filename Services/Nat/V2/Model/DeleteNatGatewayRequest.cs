@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string NatGatewayId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

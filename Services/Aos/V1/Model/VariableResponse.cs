@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public List<VariableValidationResponse> Validations { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

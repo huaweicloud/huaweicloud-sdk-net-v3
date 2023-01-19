@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public List<ScalingGroupInstance> ScalingGroupInstances { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

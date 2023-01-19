@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<string> Records { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

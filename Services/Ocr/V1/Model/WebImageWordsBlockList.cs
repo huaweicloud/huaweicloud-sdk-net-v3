@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<float?> FontScores { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -173,6 +173,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public int? MaxLength { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

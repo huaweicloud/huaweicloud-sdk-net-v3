@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string StopTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

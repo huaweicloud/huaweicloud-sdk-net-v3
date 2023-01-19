@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,14 +14,14 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class UploadMultipartRequestBody 
+    public class UploadMultipartRequestBody : IFormDataBody
     {
 
         /// <summary>
         /// The file to upload.
         /// </summary>
         [JsonProperty("upfile", NullValueHandling = NullValueHandling.Ignore)]
-        public System.IO.Stream Upfile { get; set; }
+        public FormDataFilePart Upfile { get; set; }
 
         /// <summary>
         /// Description of file uuid.
@@ -28,6 +29,30 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         [JsonProperty("uuid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uuid { get; set; }
 
+
+        
+        public UploadMultipartRequestBody WithUpfile(Stream stream, string filename)
+        {
+            this.Upfile = new FormDataFilePart(stream, filename);
+            return this;
+        }
+
+        public UploadMultipartRequestBody WithUpfile(Stream stream, string filename, string contentType)
+        {
+            this.Upfile = new FormDataFilePart(stream, filename).WithContentType(contentType);
+            return this;
+        }
+        
+
+        public Dictionary<string, object> BuildFormData()
+        {
+            var formData = new Dictionary<string, object>();
+
+            formData.Add("upfile", Upfile);
+            formData.Add("uuid", new FormDataPart<string>(Uuid));
+
+            return formData;
+        }
 
         /// <summary>
         /// Get the string

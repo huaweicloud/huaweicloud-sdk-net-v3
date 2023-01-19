@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         public List<PredefineTagRequest> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

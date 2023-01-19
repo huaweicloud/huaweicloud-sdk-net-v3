@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public VersionItem Version { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

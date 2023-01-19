@@ -125,6 +125,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string IdcardType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

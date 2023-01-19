@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public string Similarity { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

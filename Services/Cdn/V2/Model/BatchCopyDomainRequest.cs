@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public BatchCopyDRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

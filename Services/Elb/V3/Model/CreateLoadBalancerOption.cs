@@ -287,6 +287,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("waf_failure_action", NullValueHandling = NullValueHandling.Ignore)]
         public WafFailureActionEnum WafFailureAction { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

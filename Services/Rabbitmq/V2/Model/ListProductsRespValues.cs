@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<string> AvailableZones { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

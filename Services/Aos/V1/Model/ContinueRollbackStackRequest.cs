@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public ContinueRollbackStackRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

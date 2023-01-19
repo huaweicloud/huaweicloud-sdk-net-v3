@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Guid? Jobid { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public CreatePostPaidInstanceReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

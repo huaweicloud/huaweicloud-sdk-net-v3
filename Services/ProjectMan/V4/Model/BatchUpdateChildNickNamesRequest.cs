@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public BatchUpdateChildUserNickNamesRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public Configs Configs { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

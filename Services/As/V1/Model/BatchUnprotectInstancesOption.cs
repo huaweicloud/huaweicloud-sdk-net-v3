@@ -377,6 +377,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("instance_append", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceAppendEnum InstanceAppend { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

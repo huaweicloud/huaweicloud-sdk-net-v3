@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public DateTime? Created { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

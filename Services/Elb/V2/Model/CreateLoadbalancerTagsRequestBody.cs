@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public ResourceTag Tag { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

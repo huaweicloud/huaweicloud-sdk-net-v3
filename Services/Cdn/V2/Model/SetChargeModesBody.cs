@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string ServiceArea { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

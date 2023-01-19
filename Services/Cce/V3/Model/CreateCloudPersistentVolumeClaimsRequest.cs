@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public PersistentVolumeClaim Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

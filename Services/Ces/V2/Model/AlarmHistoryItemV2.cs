@@ -467,6 +467,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<DataPointInfo> DataPoints { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

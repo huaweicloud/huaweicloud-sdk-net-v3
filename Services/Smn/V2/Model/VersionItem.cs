@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public List<LinksItem> Links { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

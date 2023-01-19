@@ -95,6 +95,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ResponseTime { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

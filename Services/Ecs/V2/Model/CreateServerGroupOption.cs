@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<PoliciesEnum> Policies { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

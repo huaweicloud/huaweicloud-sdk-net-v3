@@ -173,6 +173,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public List<PolicyAssociateVault> AssociatedVaults { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

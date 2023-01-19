@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string StatType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

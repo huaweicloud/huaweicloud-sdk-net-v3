@@ -503,6 +503,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public int? PeriodNum { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

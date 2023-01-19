@@ -389,6 +389,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string OutputPath { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

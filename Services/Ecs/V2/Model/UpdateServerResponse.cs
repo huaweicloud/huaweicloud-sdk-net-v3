@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public UpdateServerResult Server { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

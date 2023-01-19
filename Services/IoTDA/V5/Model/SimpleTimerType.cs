@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public int? RepeatCount { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

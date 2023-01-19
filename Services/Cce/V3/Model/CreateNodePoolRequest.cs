@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodePool Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

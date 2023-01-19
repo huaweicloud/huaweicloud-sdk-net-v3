@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         public CreateDemoResourceRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Instance { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

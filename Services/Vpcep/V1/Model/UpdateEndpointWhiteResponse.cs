@@ -377,6 +377,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? EnableWhitelist { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

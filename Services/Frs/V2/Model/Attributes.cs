@@ -83,6 +83,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public int? FaceAngle { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

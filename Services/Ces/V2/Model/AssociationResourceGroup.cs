@@ -34,6 +34,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("template_application_type", NullValueHandling = NullValueHandling.Ignore)]
         public TemplateApplicationType TemplateApplicationType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

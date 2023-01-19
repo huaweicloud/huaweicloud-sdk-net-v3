@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public List<ScalingV1PolicyDetail> ScalingPolicies { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

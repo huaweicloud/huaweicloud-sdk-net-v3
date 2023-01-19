@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public ProtocolEnum Protocol { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

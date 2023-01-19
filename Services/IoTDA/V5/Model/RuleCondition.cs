@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public DailyTimerType DailyTimerCondition { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

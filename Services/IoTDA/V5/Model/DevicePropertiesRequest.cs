@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public Object Services { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

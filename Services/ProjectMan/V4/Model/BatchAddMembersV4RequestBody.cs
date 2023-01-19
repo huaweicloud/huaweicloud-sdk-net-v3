@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<BatchAddMemberRequestV4> Users { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

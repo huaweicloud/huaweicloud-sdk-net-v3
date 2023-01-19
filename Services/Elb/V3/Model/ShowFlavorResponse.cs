@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public Flavor Flavor { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

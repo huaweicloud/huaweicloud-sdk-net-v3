@@ -438,6 +438,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string EnterpriseProjectId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

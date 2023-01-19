@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public List<string> ServerIds { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -52,6 +52,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public int? AckWait { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

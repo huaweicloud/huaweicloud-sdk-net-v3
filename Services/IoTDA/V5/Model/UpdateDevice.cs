@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public AuthInfoWithoutSecret AuthInfo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

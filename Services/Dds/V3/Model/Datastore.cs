@@ -257,6 +257,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("storage_engine", NullValueHandling = NullValueHandling.Ignore)]
         public StorageEngineEnum StorageEngine { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

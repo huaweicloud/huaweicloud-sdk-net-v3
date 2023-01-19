@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string DownloadLink { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

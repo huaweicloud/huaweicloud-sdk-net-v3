@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public string Output { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

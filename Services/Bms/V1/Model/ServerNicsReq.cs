@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public List<SecurityGroupInfo> SecurityGroups { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

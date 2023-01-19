@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dms.V2.Model
         public List<ConsumeMessage> Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

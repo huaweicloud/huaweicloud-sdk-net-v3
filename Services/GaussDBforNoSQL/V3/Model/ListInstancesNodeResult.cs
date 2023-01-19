@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public bool? SupportReduce { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

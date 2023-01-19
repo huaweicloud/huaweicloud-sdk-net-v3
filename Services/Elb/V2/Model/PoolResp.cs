@@ -335,6 +335,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public LbAlgorithmEnum LbAlgorithm { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

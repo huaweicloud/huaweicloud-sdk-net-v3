@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("backup_format", NullValueHandling = NullValueHandling.Ignore)]
         public BackupFormatEnum BackupFormat { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

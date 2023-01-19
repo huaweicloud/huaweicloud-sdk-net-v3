@@ -215,6 +215,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public Object TextLocation { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

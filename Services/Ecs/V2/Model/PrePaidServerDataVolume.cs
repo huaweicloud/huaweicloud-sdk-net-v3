@@ -329,6 +329,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string DataImageId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

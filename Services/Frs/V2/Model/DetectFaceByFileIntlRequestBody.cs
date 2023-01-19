@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,15 +14,38 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class DetectFaceByFileIntlRequestBody 
+    public class DetectFaceByFileIntlRequestBody : IFormDataBody
     {
 
         /// <summary>
         /// 本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。
         /// </summary>
         [JsonProperty("image_file", NullValueHandling = NullValueHandling.Ignore)]
-        public System.IO.Stream ImageFile { get; set; }
+        public FormDataFilePart ImageFile { get; set; }
 
+
+        
+        public DetectFaceByFileIntlRequestBody WithImageFile(Stream stream, string filename)
+        {
+            this.ImageFile = new FormDataFilePart(stream, filename);
+            return this;
+        }
+
+        public DetectFaceByFileIntlRequestBody WithImageFile(Stream stream, string filename, string contentType)
+        {
+            this.ImageFile = new FormDataFilePart(stream, filename).WithContentType(contentType);
+            return this;
+        }
+        
+
+        public Dictionary<string, object> BuildFormData()
+        {
+            var formData = new Dictionary<string, object>();
+
+            formData.Add("image_file", ImageFile);
+
+            return formData;
+        }
 
         /// <summary>
         /// Get the string

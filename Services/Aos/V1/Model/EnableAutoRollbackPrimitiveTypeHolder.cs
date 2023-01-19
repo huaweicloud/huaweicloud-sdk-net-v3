@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public bool? EnableAutoRollback { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

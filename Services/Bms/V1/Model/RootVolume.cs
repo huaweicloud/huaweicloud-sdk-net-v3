@@ -269,6 +269,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("cluster_type", NullValueHandling = NullValueHandling.Ignore)]
         public ClusterTypeEnum ClusterType { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

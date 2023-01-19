@@ -293,6 +293,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("channels", NullValueHandling = NullValueHandling.Ignore)]
         public ChannelsEnum Channels { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

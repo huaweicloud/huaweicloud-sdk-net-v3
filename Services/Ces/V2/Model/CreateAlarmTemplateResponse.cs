@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string TemplateId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public List<FailedTasks> Tasks { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

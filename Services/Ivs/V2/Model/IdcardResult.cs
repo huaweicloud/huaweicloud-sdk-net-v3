@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public string ValidTo { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

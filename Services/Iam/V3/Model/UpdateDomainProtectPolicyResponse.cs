@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public UpdateDomainProtectPolicyResponseBodyProtectPolicy ProtectPolicy { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

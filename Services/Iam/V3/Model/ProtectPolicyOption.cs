@@ -53,6 +53,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Scene { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

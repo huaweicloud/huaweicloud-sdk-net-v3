@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public DeleteFacesBatchReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

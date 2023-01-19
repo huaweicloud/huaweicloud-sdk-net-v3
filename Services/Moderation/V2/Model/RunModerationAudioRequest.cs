@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public RunModerationAudioRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

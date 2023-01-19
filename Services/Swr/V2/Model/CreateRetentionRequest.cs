@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public CreateRetentionRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<BatchTaskFile> Files { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

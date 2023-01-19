@@ -149,6 +149,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<Dimension2> Dimensions { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

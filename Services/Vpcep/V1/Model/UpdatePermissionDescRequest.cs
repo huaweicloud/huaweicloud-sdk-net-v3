@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public EpsUpdatePermissionDesc Permission { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

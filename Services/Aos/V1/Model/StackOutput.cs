@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public bool? Sensitive { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

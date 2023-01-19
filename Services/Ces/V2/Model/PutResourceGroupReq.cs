@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<ResourceGroupTagRelation> Tags { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

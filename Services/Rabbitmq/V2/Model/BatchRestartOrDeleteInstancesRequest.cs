@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public BatchRestartOrDeleteInstanceReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

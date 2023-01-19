@@ -143,6 +143,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public ServicePolicy Policy { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

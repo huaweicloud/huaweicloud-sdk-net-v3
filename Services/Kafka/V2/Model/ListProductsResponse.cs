@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<ListProductsRespHourly> Monthly { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

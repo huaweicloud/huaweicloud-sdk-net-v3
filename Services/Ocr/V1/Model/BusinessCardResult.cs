@@ -89,6 +89,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string AdjustedImage { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

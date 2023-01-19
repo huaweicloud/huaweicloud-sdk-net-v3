@@ -87,6 +87,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Carrier { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

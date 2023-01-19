@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public IvsExtentionByIdCardImageRequestBodyData Data { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

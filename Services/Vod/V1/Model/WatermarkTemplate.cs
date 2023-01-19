@@ -107,6 +107,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string TimelineDuration { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

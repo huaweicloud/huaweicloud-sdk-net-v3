@@ -113,6 +113,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public float? MachineCode3 { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

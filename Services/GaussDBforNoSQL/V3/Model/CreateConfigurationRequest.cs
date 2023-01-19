@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public CreateConfigurationRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

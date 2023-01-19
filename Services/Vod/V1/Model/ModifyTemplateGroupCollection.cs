@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public List<string> TemplateGroupList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

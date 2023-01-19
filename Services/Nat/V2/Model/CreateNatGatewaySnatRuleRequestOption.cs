@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public CreateNatGatewaySnatRuleOption SnatRule { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

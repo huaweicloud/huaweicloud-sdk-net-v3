@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string UpdatedAt { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

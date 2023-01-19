@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public ImageDetectionResultDetailFaceDetail FaceDetail { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

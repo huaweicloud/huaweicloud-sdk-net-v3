@@ -155,6 +155,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

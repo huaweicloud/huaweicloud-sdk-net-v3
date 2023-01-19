@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public List<VarsStructure> VarsStructure { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

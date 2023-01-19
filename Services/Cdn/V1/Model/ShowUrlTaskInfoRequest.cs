@@ -73,6 +73,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string FileType { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -113,6 +113,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<FlavorAzObject> FlavorsAvailableZones { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

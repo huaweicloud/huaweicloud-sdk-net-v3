@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public List<SubJob> SubJobs { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

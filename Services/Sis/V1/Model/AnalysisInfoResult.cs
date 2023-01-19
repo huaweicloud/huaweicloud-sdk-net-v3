@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public float? Speed { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

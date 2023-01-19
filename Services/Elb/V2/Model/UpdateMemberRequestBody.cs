@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public UpdateMemberReq Member { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

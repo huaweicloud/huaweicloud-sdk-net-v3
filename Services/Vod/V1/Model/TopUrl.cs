@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public long? Size { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

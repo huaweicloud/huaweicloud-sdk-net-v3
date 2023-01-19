@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         public bool? Global { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public List<VolumeTransferSummary> Transfers { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

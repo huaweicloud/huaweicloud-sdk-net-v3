@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public CreatePublicipRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

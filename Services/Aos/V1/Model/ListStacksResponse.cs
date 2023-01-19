@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public List<Stack> Stacks { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

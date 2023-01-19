@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public EncryptionStructure Encryption { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

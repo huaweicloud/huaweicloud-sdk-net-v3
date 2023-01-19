@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public List<RestoreInstanceFromCollectionRequestBodyCollections> Collections { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

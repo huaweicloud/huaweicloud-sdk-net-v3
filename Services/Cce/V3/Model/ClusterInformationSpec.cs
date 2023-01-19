@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public ClusterInformationSpecHostNetwork HostNetwork { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

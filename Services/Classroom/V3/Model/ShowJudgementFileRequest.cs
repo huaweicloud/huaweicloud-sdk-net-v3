@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public string FileId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

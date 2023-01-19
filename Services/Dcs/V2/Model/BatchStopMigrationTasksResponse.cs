@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<StopMigrationTaskResult> MigrationTasks { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

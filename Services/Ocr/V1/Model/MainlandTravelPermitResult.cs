@@ -131,6 +131,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public MainlandTravelPermitConfidence Confidence { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

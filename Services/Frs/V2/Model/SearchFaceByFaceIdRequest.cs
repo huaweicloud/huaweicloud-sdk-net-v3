@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         public FaceSearchFaceIdReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

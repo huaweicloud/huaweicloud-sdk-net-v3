@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public GetIdTokenScopeDomainOrProjectBody Project { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

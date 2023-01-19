@@ -503,6 +503,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? FromTransactionCheck { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

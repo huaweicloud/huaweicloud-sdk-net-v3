@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? QuotaTasks { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

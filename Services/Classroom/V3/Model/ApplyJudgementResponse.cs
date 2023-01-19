@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public string JudgementId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

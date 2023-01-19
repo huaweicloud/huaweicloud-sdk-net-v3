@@ -59,6 +59,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? FromBeginning { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

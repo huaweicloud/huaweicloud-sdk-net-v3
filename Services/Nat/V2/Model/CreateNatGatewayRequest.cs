@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public CreateNatGatewayRequestBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

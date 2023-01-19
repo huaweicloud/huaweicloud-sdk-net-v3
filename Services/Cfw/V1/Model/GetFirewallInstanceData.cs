@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<GetFirewallInstanceResponseRecord> Records { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

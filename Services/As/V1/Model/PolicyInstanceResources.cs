@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public int? Min { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

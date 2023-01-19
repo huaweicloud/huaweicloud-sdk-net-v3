@@ -77,6 +77,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<InitialDesired> Shadow { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public UpdatePrivateBucketAccessBody Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

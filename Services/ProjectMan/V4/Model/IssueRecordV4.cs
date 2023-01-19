@@ -41,6 +41,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public List<IssueRecordV4Details> Details { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

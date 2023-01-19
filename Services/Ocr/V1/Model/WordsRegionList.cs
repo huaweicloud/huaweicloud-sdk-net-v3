@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<GeneralTableWordsBlockList> WordsBlockList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

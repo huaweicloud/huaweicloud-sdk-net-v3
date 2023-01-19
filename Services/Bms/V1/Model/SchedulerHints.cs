@@ -137,6 +137,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("dec_baremetal", NullValueHandling = NullValueHandling.Ignore)]
         public List<DecBaremetalEnum> DecBaremetal { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

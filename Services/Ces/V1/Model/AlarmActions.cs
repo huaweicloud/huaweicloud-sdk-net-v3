@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public List<string> NotificationList { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

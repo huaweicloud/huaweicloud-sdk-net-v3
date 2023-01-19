@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,15 +14,38 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     /// <summary>
     /// 
     /// </summary>
-    public class UploadAttachmentsRequestBody 
+    public class UploadAttachmentsRequestBody : IFormDataBody
     {
 
         /// <summary>
         /// 附件文件， 最大上传大小为50M
         /// </summary>
         [JsonProperty("attachment", NullValueHandling = NullValueHandling.Ignore)]
-        public System.IO.Stream Attachment { get; set; }
+        public FormDataFilePart Attachment { get; set; }
 
+
+        
+        public UploadAttachmentsRequestBody WithAttachment(Stream stream, string filename)
+        {
+            this.Attachment = new FormDataFilePart(stream, filename);
+            return this;
+        }
+
+        public UploadAttachmentsRequestBody WithAttachment(Stream stream, string filename, string contentType)
+        {
+            this.Attachment = new FormDataFilePart(stream, filename).WithContentType(contentType);
+            return this;
+        }
+        
+
+        public Dictionary<string, object> BuildFormData()
+        {
+            var formData = new Dictionary<string, object>();
+
+            formData.Add("attachment", Attachment);
+
+            return formData;
+        }
 
         /// <summary>
         /// Get the string

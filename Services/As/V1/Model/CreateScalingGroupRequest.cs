@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public CreateScalingGroupOption Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<ThailandLicensePlateItem> Result { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

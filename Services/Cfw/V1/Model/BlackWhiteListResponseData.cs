@@ -47,6 +47,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<BlackWhiteListResponseDataRecords> Records { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

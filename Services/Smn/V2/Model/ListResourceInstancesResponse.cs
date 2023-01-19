@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public int? TotalCount { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

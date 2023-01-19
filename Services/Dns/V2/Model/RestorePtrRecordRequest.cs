@@ -38,6 +38,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public RestorePtrReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

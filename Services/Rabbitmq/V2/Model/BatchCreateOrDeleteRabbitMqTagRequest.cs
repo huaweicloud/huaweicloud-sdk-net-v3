@@ -31,6 +31,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public BatchCreateOrDeleteTagReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -179,6 +179,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string EnterpriseProjectId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public QueryTenantQuotaRespQuotas Quotas { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

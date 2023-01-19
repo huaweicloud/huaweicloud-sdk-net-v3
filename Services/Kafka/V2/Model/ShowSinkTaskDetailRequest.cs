@@ -152,6 +152,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("topic-info", NullValueHandling = NullValueHandling.Ignore)]
         public TopicInfoEnum TopicInfo { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

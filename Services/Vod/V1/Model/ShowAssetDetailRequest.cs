@@ -171,6 +171,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<CategoriesEnum> Categories { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

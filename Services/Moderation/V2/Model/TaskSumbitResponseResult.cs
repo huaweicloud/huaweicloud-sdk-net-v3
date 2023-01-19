@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public string JobId { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

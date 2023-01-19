@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<ListMessageTraceRespTrace> Trace { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

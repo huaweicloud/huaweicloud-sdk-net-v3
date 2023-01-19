@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public ImageMainObjectDetectionReq Body { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

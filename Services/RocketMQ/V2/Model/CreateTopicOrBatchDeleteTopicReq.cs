@@ -167,6 +167,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Topics { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

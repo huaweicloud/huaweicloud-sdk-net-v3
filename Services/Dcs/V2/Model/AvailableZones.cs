@@ -161,6 +161,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("resource_availability", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceAvailabilityEnum ResourceAvailability { get; set; }
 
+
         /// <summary>
         /// Get the string
         /// </summary>

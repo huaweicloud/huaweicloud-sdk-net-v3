@@ -35,6 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public List<string> NodeIps { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

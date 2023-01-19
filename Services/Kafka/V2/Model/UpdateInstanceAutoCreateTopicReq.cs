@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? EnableAutoTopic { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

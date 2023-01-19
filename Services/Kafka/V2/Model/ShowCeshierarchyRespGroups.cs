@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<ShowCeshierarchyRespQueues1> Queues { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

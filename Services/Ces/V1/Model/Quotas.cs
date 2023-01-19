@@ -23,6 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public List<Resource> Resources { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>

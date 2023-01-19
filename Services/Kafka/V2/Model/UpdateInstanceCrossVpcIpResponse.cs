@@ -29,6 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<UpdateInstanceCrossVpcIpRespResults> Results { get; set; }
 
 
+
         /// <summary>
         /// Get the string
         /// </summary>
