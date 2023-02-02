@@ -325,7 +325,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ResourceSpecCode { get; set; }
 
         /// <summary>
-        /// [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,otc,ctc,sbc,hk_sbc,cmcc)[付费模式，暂未使用。](tag:hws_ocb,ocb)[付费模式，1表示按需计费](tag:hws_eu)
+        /// [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm)
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }
@@ -347,6 +347,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 子网名称。
+        /// </summary>
+        [JsonProperty("subnet_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetName { get; set; }
+
+        /// <summary>
+        /// 子网网段。
+        /// </summary>
+        [JsonProperty("subnet_cidr", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetCidr { get; set; }
 
         /// <summary>
         /// 用户ID。
@@ -403,6 +415,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
+        /// 开启SASL后使用的认证机制。 - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
+        /// </summary>
+        [JsonProperty("sasl_enabled_mechanisms", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SaslEnabledMechanisms { get; set; }
+
+        /// <summary>
         /// 是否开启双向认证。
         /// </summary>
         [JsonProperty("ssl_two_way_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -413,6 +431,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("cert_replaced", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CertReplaced { get; set; }
+
+        /// <summary>
+        /// 公网访问Kafka Manager连接地址。
+        /// </summary>
+        [JsonProperty("public_management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicManagementConnectAddress { get; set; }
 
         /// <summary>
         /// 企业项目ID。
@@ -635,30 +659,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string DiskEncryptedKey { get; set; }
 
         /// <summary>
-        /// 公网访问Kafka Manager连接地址。
-        /// </summary>
-        [JsonProperty("public_management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string PublicManagementConnectAddress { get; set; }
-
-        /// <summary>
-        /// 子网网段。
-        /// </summary>
-        [JsonProperty("subnet_cidr", NullValueHandling = NullValueHandling.Ignore)]
-        public string SubnetCidr { get; set; }
-
-        /// <summary>
-        /// 子网名称。
-        /// </summary>
-        [JsonProperty("subnet_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string SubnetName { get; set; }
-
-        /// <summary>
-        /// 是否开启访问控制。
-        /// </summary>
-        [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? EnableAcl { get; set; }
-
-        /// <summary>
         /// Kafka实例私有连接地址。
         /// </summary>
         [JsonProperty("kafka_private_connect_address", NullValueHandling = NullValueHandling.Ignore)]
@@ -681,6 +681,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeNum { get; set; }
+
+        /// <summary>
+        /// 是否开启访问控制。
+        /// </summary>
+        [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAcl { get; set; }
 
         /// <summary>
         /// 是否启用新规格计费。
@@ -732,6 +738,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  vpcName: ").Append(VpcName).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  subnetName: ").Append(SubnetName).Append("\n");
+            sb.Append("  subnetCidr: ").Append(SubnetCidr).Append("\n");
             sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  accessUser: ").Append(AccessUser).Append("\n");
@@ -741,8 +749,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  managementConnectAddress: ").Append(ManagementConnectAddress).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
+            sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  sslTwoWayEnable: ").Append(SslTwoWayEnable).Append("\n");
             sb.Append("  certReplaced: ").Append(CertReplaced).Append("\n");
+            sb.Append("  publicManagementConnectAddress: ").Append(PublicManagementConnectAddress).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  isLogicalVolume: ").Append(IsLogicalVolume).Append("\n");
             sb.Append("  extendTimes: ").Append(ExtendTimes).Append("\n");
@@ -780,14 +790,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  podConnectAddress: ").Append(PodConnectAddress).Append("\n");
             sb.Append("  diskEncrypted: ").Append(DiskEncrypted).Append("\n");
             sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
-            sb.Append("  publicManagementConnectAddress: ").Append(PublicManagementConnectAddress).Append("\n");
-            sb.Append("  subnetCidr: ").Append(SubnetCidr).Append("\n");
-            sb.Append("  subnetName: ").Append(SubnetName).Append("\n");
-            sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  kafkaPrivateConnectAddress: ").Append(KafkaPrivateConnectAddress).Append("\n");
             sb.Append("  cesVersion: ").Append(CesVersion).Append("\n");
             sb.Append("  publicAccessEnabled: ").Append(PublicAccessEnabled).Append("\n");
             sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
+            sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  newSpecBillingEnable: ").Append(NewSpecBillingEnable).Append("\n");
             sb.Append("  brokerNum: ").Append(BrokerNum).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
@@ -899,6 +906,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
+                    this.SubnetName == input.SubnetName ||
+                    (this.SubnetName != null &&
+                    this.SubnetName.Equals(input.SubnetName))
+                ) && 
+                (
+                    this.SubnetCidr == input.SubnetCidr ||
+                    (this.SubnetCidr != null &&
+                    this.SubnetCidr.Equals(input.SubnetCidr))
+                ) && 
+                (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
                     this.UserId.Equals(input.UserId))
@@ -944,6 +961,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SslEnable.Equals(input.SslEnable))
                 ) && 
                 (
+                    this.SaslEnabledMechanisms == input.SaslEnabledMechanisms ||
+                    this.SaslEnabledMechanisms != null &&
+                    input.SaslEnabledMechanisms != null &&
+                    this.SaslEnabledMechanisms.SequenceEqual(input.SaslEnabledMechanisms)
+                ) && 
+                (
                     this.SslTwoWayEnable == input.SslTwoWayEnable ||
                     (this.SslTwoWayEnable != null &&
                     this.SslTwoWayEnable.Equals(input.SslTwoWayEnable))
@@ -952,6 +975,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.CertReplaced == input.CertReplaced ||
                     (this.CertReplaced != null &&
                     this.CertReplaced.Equals(input.CertReplaced))
+                ) && 
+                (
+                    this.PublicManagementConnectAddress == input.PublicManagementConnectAddress ||
+                    (this.PublicManagementConnectAddress != null &&
+                    this.PublicManagementConnectAddress.Equals(input.PublicManagementConnectAddress))
                 ) && 
                 (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
@@ -1141,26 +1169,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))
                 ) && 
                 (
-                    this.PublicManagementConnectAddress == input.PublicManagementConnectAddress ||
-                    (this.PublicManagementConnectAddress != null &&
-                    this.PublicManagementConnectAddress.Equals(input.PublicManagementConnectAddress))
-                ) && 
-                (
-                    this.SubnetCidr == input.SubnetCidr ||
-                    (this.SubnetCidr != null &&
-                    this.SubnetCidr.Equals(input.SubnetCidr))
-                ) && 
-                (
-                    this.SubnetName == input.SubnetName ||
-                    (this.SubnetName != null &&
-                    this.SubnetName.Equals(input.SubnetName))
-                ) && 
-                (
-                    this.EnableAcl == input.EnableAcl ||
-                    (this.EnableAcl != null &&
-                    this.EnableAcl.Equals(input.EnableAcl))
-                ) && 
-                (
                     this.KafkaPrivateConnectAddress == input.KafkaPrivateConnectAddress ||
                     (this.KafkaPrivateConnectAddress != null &&
                     this.KafkaPrivateConnectAddress.Equals(input.KafkaPrivateConnectAddress))
@@ -1179,6 +1187,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.NodeNum == input.NodeNum ||
                     (this.NodeNum != null &&
                     this.NodeNum.Equals(input.NodeNum))
+                ) && 
+                (
+                    this.EnableAcl == input.EnableAcl ||
+                    (this.EnableAcl != null &&
+                    this.EnableAcl.Equals(input.EnableAcl))
                 ) && 
                 (
                     this.NewSpecBillingEnable == input.NewSpecBillingEnable ||
@@ -1245,6 +1258,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.VpcName.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.SubnetName != null)
+                    hashCode = hashCode * 59 + this.SubnetName.GetHashCode();
+                if (this.SubnetCidr != null)
+                    hashCode = hashCode * 59 + this.SubnetCidr.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.UserName != null)
@@ -1263,10 +1280,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.ManagementConnectAddress.GetHashCode();
                 if (this.SslEnable != null)
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.SaslEnabledMechanisms != null)
+                    hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.SslTwoWayEnable != null)
                     hashCode = hashCode * 59 + this.SslTwoWayEnable.GetHashCode();
                 if (this.CertReplaced != null)
                     hashCode = hashCode * 59 + this.CertReplaced.GetHashCode();
+                if (this.PublicManagementConnectAddress != null)
+                    hashCode = hashCode * 59 + this.PublicManagementConnectAddress.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.IsLogicalVolume != null)
@@ -1341,14 +1362,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.DiskEncrypted.GetHashCode();
                 if (this.DiskEncryptedKey != null)
                     hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
-                if (this.PublicManagementConnectAddress != null)
-                    hashCode = hashCode * 59 + this.PublicManagementConnectAddress.GetHashCode();
-                if (this.SubnetCidr != null)
-                    hashCode = hashCode * 59 + this.SubnetCidr.GetHashCode();
-                if (this.SubnetName != null)
-                    hashCode = hashCode * 59 + this.SubnetName.GetHashCode();
-                if (this.EnableAcl != null)
-                    hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.KafkaPrivateConnectAddress != null)
                     hashCode = hashCode * 59 + this.KafkaPrivateConnectAddress.GetHashCode();
                 if (this.CesVersion != null)
@@ -1357,6 +1370,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.PublicAccessEnabled.GetHashCode();
                 if (this.NodeNum != null)
                     hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.EnableAcl != null)
+                    hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.NewSpecBillingEnable != null)
                     hashCode = hashCode * 59 + this.NewSpecBillingEnable.GetHashCode();
                 if (this.BrokerNum != null)

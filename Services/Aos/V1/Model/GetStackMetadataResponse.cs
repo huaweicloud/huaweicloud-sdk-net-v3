@@ -16,12 +16,17 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class GetStackMetadataResponse : SdkResponse
     {
         /// <summary>
-        /// 资源栈的执行状态     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于StatusMessage见更多详情     * &#x60;DEPLOYMENT_COMPLETE &#x60; - 部署结束     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 正在回滚     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于StatusMessage见更多详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除     * &#x60;DELETION_FAILED&#x60; - 删除失败     * &#x60;CREATION_COMPLETE&#x60; - 生成完成，并没有任何部署
+        /// 资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情
         /// </summary>
-        /// <value>资源栈的执行状态     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于StatusMessage见更多详情     * &#x60;DEPLOYMENT_COMPLETE &#x60; - 部署结束     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 正在回滚     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于StatusMessage见更多详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除     * &#x60;DELETION_FAILED&#x60; - 删除失败     * &#x60;CREATION_COMPLETE&#x60; - 生成完成，并没有任何部署</value>
+        /// <value>资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
+            /// <summary>
+            /// Enum CREATION_COMPLETE for value: CREATION_COMPLETE
+            /// </summary>
+            public static readonly StatusEnum CREATION_COMPLETE = new StatusEnum("CREATION_COMPLETE");
+
             /// <summary>
             /// Enum DEPLOYMENT_IN_PROGRESS for value: DEPLOYMENT_IN_PROGRESS
             /// </summary>
@@ -62,14 +67,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             /// </summary>
             public static readonly StatusEnum DELETION_FAILED = new StatusEnum("DELETION_FAILED");
 
-            /// <summary>
-            /// Enum CREATION_COMPLETE for value: CREATION_COMPLETE
-            /// </summary>
-            public static readonly StatusEnum CREATION_COMPLETE = new StatusEnum("CREATION_COMPLETE");
-
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
+                { "CREATION_COMPLETE", CREATION_COMPLETE },
                 { "DEPLOYMENT_IN_PROGRESS", DEPLOYMENT_IN_PROGRESS },
                 { "DEPLOYMENT_FAILED", DEPLOYMENT_FAILED },
                 { "DEPLOYMENT_COMPLETE", DEPLOYMENT_COMPLETE },
@@ -78,7 +79,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 { "ROLLBACK_COMPLETE", ROLLBACK_COMPLETE },
                 { "DELETION_IN_PROGRESS", DELETION_IN_PROGRESS },
                 { "DELETION_FAILED", DELETION_FAILED },
-                { "CREATION_COMPLETE", CREATION_COMPLETE },
             };
 
             private string _value;
@@ -174,81 +174,81 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 栈的唯一Id
+        /// 资源栈（stack）的唯一Id。  此Id由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈，删除，再重新创建一个同名资源栈。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈就是我认为的那个，而不是其他队友删除后创建的同名资源栈。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈所对应的ID都不相同，更新不会影响ID。如果给与的stack_id和当前资源栈的ID不一致，则返回400 
         /// </summary>
         [JsonProperty("stack_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StackId { get; set; }
 
         /// <summary>
-        /// 栈的名字
+        /// 用户希望生成的资源栈的名字。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
         /// </summary>
         [JsonProperty("stack_name", NullValueHandling = NullValueHandling.Ignore)]
         public string StackName { get; set; }
 
         /// <summary>
-        /// 栈的描述，此描述为用户在创建资源栈时指定
+        /// 资源栈的描述。可用于客户识别自己的资源栈。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数列表
+        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars_structure中默认不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议设置encryption字段开启加密 
         /// </summary>
         [JsonProperty("vars_structure", NullValueHandling = NullValueHandling.Ignore)]
         public List<VarsStructure> VarsStructure { get; set; }
 
         /// <summary>
-        /// vars文件中的内容
-        /// </summary>
-        [JsonProperty("vars_uri_content", NullValueHandling = NullValueHandling.Ignore)]
-        public string VarsUriContent { get; set; }
-
-        /// <summary>
-        /// terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。vars_body用于接收用户直接提交的tfvars文件内容
+        /// HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars_body中不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议通过vars_structure并设置encryption字段传递 
         /// </summary>
         [JsonProperty("vars_body", NullValueHandling = NullValueHandling.Ignore)]
         public string VarsBody { get; set; }
 
         /// <summary>
-        /// 栈的生成时间，格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
-        /// </summary>
-        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateTime { get; set; }
-
-        /// <summary>
-        /// 由于栈可以被更新，此处为上次更新时间，格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
-        /// </summary>
-        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdateTime { get; set; }
-
-        /// <summary>
-        /// 资源栈删除保护的目标状态
+        /// 删除保护的标识位，如果不传默认为false，即默认不开启资源栈删除保护（删除保护开启后资源栈不允许被删除）
         /// </summary>
         [JsonProperty("enable_deletion_protection", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableDeletionProtection { get; set; }
 
         /// <summary>
-        /// 资源栈是否开启自动回滚的标识位
+        /// 自动回滚的标识位，如果不传默认为false，即默认不开启资源栈自动回滚（自动回滚开启后，如果部署失败，则会自动回滚，并返回上一个稳定状态）
         /// </summary>
         [JsonProperty("enable_auto_rollback", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableAutoRollback { get; set; }
 
         /// <summary>
-        /// 资源栈的执行状态     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于StatusMessage见更多详情     * &#x60;DEPLOYMENT_COMPLETE &#x60; - 部署结束     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 正在回滚     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于StatusMessage见更多详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除     * &#x60;DELETION_FAILED&#x60; - 删除失败     * &#x60;CREATION_COMPLETE&#x60; - 生成完成，并没有任何部署
+        /// 资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 展示更多细节的信息
+        /// 委托授权的信息。
+        /// </summary>
+        [JsonProperty("agencies", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Agency> Agencies { get; set; }
+
+        /// <summary>
+        /// 当资源栈的状态为任意失败状态（即以 &#x60;FAILED&#x60; 结尾时），将会展示简要的错误信息总结以供debug
         /// </summary>
         [JsonProperty("status_message", NullValueHandling = NullValueHandling.Ignore)]
         public string StatusMessage { get; set; }
 
         /// <summary>
-        /// 委托授权的信息
+        /// vars_uri对应的文件内容
         /// </summary>
-        [JsonProperty("agencies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Agency> Agencies { get; set; }
+        [JsonProperty("vars_uri_content", NullValueHandling = NullValueHandling.Ignore)]
+        public string VarsUriContent { get; set; }
+
+        /// <summary>
+        /// 资源栈的生成时间 格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z 
+        /// </summary>
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 资源栈的更新时间（更新场景包括元数据更新场景和部署场景） 格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z 
+        /// </summary>
+        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdateTime { get; set; }
 
 
 
@@ -263,15 +263,15 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  stackName: ").Append(StackName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  varsStructure: ").Append(VarsStructure).Append("\n");
-            sb.Append("  varsUriContent: ").Append(VarsUriContent).Append("\n");
             sb.Append("  varsBody: ").Append(VarsBody).Append("\n");
-            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  enableDeletionProtection: ").Append(EnableDeletionProtection).Append("\n");
             sb.Append("  enableAutoRollback: ").Append(EnableAutoRollback).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  statusMessage: ").Append(StatusMessage).Append("\n");
             sb.Append("  agencies: ").Append(Agencies).Append("\n");
+            sb.Append("  statusMessage: ").Append(StatusMessage).Append("\n");
+            sb.Append("  varsUriContent: ").Append(VarsUriContent).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -315,24 +315,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.VarsStructure.SequenceEqual(input.VarsStructure)
                 ) && 
                 (
-                    this.VarsUriContent == input.VarsUriContent ||
-                    (this.VarsUriContent != null &&
-                    this.VarsUriContent.Equals(input.VarsUriContent))
-                ) && 
-                (
                     this.VarsBody == input.VarsBody ||
                     (this.VarsBody != null &&
                     this.VarsBody.Equals(input.VarsBody))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
                 ) && 
                 (
                     this.EnableDeletionProtection == input.EnableDeletionProtection ||
@@ -350,15 +335,30 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.Agencies == input.Agencies ||
+                    this.Agencies != null &&
+                    input.Agencies != null &&
+                    this.Agencies.SequenceEqual(input.Agencies)
+                ) && 
+                (
                     this.StatusMessage == input.StatusMessage ||
                     (this.StatusMessage != null &&
                     this.StatusMessage.Equals(input.StatusMessage))
                 ) && 
                 (
-                    this.Agencies == input.Agencies ||
-                    this.Agencies != null &&
-                    input.Agencies != null &&
-                    this.Agencies.SequenceEqual(input.Agencies)
+                    this.VarsUriContent == input.VarsUriContent ||
+                    (this.VarsUriContent != null &&
+                    this.VarsUriContent.Equals(input.VarsUriContent))
+                ) && 
+                (
+                    this.CreateTime == input.CreateTime ||
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.UpdateTime == input.UpdateTime ||
+                    (this.UpdateTime != null &&
+                    this.UpdateTime.Equals(input.UpdateTime))
                 );
         }
 
@@ -378,24 +378,24 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.VarsStructure != null)
                     hashCode = hashCode * 59 + this.VarsStructure.GetHashCode();
-                if (this.VarsUriContent != null)
-                    hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
                 if (this.VarsBody != null)
                     hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.EnableDeletionProtection != null)
                     hashCode = hashCode * 59 + this.EnableDeletionProtection.GetHashCode();
                 if (this.EnableAutoRollback != null)
                     hashCode = hashCode * 59 + this.EnableAutoRollback.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
                 if (this.Agencies != null)
                     hashCode = hashCode * 59 + this.Agencies.GetHashCode();
+                if (this.StatusMessage != null)
+                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                if (this.VarsUriContent != null)
+                    hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null)
+                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

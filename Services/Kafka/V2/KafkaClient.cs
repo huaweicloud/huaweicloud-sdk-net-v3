@@ -104,6 +104,25 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 创建实例
+        ///
+        /// 创建实例。
+        /// 
+        /// 该接口支持创建按需和包周期两种计费方式的实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceByEngineResponse CreateInstanceByEngine(CreateInstanceByEngineRequest createInstanceByEngineRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , createInstanceByEngineRequest.Engine.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateInstanceByEngineResponse>(response);
+        }
+        
+        /// <summary>
         /// Kafka实例创建Topic
         ///
         /// 该接口用于向Kafka实例创建Topic。
@@ -158,7 +177,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 创建实例
         ///
-        /// [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
+        /// [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:otc,ocb,hws_ocb)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -169,6 +188,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreatePostPaidInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// Kafka实例开始分区重平衡任务
+        ///
+        /// 该接口用于向Kafka实例提交分区重平衡任务，若成功则返回重平衡任务的job id。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateReassignmentTaskResponse CreateReassignmentTask(CreateReassignmentTaskRequest createReassignmentTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createReassignmentTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateReassignmentTaskResponse>(response);
         }
         
         /// <summary>
@@ -457,7 +493,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
         ///
         /// 实例规格变更。
         /// 
-        /// **当前通过调用API，只支持按需实例进行实例规格变更。**
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResizeEngineInstanceResponse ResizeEngineInstance(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , resizeEngineInstanceRequest.Engine.ToString());
+            urlParam.Add("instance_id" , resizeEngineInstanceRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ResizeEngineInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 实例规格变更
+        ///
+        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -558,6 +610,24 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 查询实例的扩容规格列表
+        ///
+        /// 查询实例的扩容规格列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowEngineInstanceExtendProductInfoResponse ShowEngineInstanceExtendProductInfo(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , showEngineInstanceExtendProductInfoRequest.Engine.ToString());
+            urlParam.Add("instance_id" , showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询消费组信息
         ///
         /// 查询消费组信息。
@@ -628,7 +698,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询Kafka实例Topic详细信息
+        /// 查询Kafka实例Topic详细信息(单个实例调用不要超过1s一次)
         ///
         /// 查询Kafka实例Topic详细信息。
         /// 

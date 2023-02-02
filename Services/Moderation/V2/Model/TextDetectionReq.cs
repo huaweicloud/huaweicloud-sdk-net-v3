@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public List<string> Categories { get; set; }
 
         /// <summary>
+        /// 启用的白名单列表  当前白名单使用规则为：  - 不传参数\&quot;white_glossaries\&quot;：     * 表示默认使用2022-09-02 16:00:00之前创建的白名单词库  - 传参数\&quot;white_glossaries\&quot;：   * 参数为空时不使用任何白名单词库     * 参数不为空时使用传入的白名单词库  &gt; - 自定义词库的创建和使用请参见[[配置自定义词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html)](tag:hc)[[配置自定义词库](https://support.huaweicloud.com/intl/zh-cn/api-moderation/moderation_03_0027.html)](tag:hk)。
+        /// </summary>
+        [JsonProperty("white_glossaries", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> WhiteGlossaries { get; set; }
+
+        /// <summary>
         /// 待检测的文本列表，目前暂时每次只支持传一个item。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
             var sb = new StringBuilder();
             sb.Append("class TextDetectionReq {\n");
             sb.Append("  categories: ").Append(Categories).Append("\n");
+            sb.Append("  whiteGlossaries: ").Append(WhiteGlossaries).Append("\n");
             sb.Append("  items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -67,6 +74,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                     this.Categories.SequenceEqual(input.Categories)
                 ) && 
                 (
+                    this.WhiteGlossaries == input.WhiteGlossaries ||
+                    this.WhiteGlossaries != null &&
+                    input.WhiteGlossaries != null &&
+                    this.WhiteGlossaries.SequenceEqual(input.WhiteGlossaries)
+                ) && 
+                (
                     this.Items == input.Items ||
                     this.Items != null &&
                     input.Items != null &&
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
                 int hashCode = 41;
                 if (this.Categories != null)
                     hashCode = hashCode * 59 + this.Categories.GetHashCode();
+                if (this.WhiteGlossaries != null)
+                    hashCode = hashCode * 59 + this.WhiteGlossaries.GetHashCode();
                 if (this.Items != null)
                     hashCode = hashCode * 59 + this.Items.GetHashCode();
                 return hashCode;

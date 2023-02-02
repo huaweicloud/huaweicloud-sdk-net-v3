@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 栈的更新状态
+        /// 资源栈事件列表
         /// </summary>
         [JsonProperty("stack_events", NullValueHandling = NullValueHandling.Ignore)]
-        public List<StackEventResponse> StackEvents { get; set; }
+        public List<StackEvent> StackEvents { get; set; }
 
 
 

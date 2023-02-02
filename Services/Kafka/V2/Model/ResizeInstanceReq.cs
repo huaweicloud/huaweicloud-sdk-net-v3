@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string NewProductId { get; set; }
 
         /// <summary>
-        /// 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网再扩容，需要填写此参数。
+        /// 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网再进行扩容，需要填写此参数。
         /// </summary>
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }

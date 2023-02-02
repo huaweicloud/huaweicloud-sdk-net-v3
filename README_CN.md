@@ -138,7 +138,8 @@ namespace ConsoleApp1
 * [6. 故障处理](#6-故障处理-top)
     * [6.1 访问日志](#61-访问日志-top)
     * [6.2 HTTP 监听器](#62-http-监听器-top)
-* [7. FAQ](#7-faq-top)
+* [7. 文件上传](#7-文件上传-top)
+* [8. FAQ](#8-faq-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -186,7 +187,7 @@ config.Timeout = 120;
 config.IgnoreSslVerification = true;
 ```
 
-### 2. 客户端认证信息 [:top:](#用户手册-top)
+### 2. 认证信息配置 [:top:](#用户手册-top)
 
 华为云服务存在两种部署方式，Region 级服务和 Global 级服务。
 
@@ -427,7 +428,64 @@ var vpcClient = VpcClient.NewBuilder()
 
 HttpHandler 支持如下方法 `AddRequestHandler` 、`AddResponseHandler` 。
 
-### 7. FAQ [:top:](#用户手册-top)
+### 7. 文件上传 [:top:](#用户手册-top)
+
+以设备接入服务的上传批量任务文件接口为例：
+
+```csharp
+using System;
+using System.IO;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.IoTDA.V5;
+using HuaweiCloud.SDK.IoTDA.V5.Model;
+
+namespace UploadBatchTaskFileDemo
+{
+    class Program
+    {
+
+        static void UploadBatchTaskFile(IoTDAClient client)
+        {
+            var file = File.OpenRead("/tmp/template.xlsx");
+            var filePart = new FormDataFilePart(file, "template.xlsx");
+
+            var body = new UploadBatchTaskFileRequestBody()
+            {
+                File = filePart
+            };
+
+            var req = new UploadBatchTaskFileRequest
+            {
+                Body = body
+            };
+
+            var resp = client.UploadBatchTaskFile(req);
+            var respStatusCode = resp.HttpStatusCode;
+            Console.WriteLine(respStatusCode);
+        }
+
+        static void Main(string[] args)
+        {
+            const string ak = "{your ak string}";
+            const string sk = "{your sk string}";
+            const string projectId = "{your project id}";
+            const string endpoint = "{your endpoint string}";
+
+            var auth = new BasicCredentials(ak, sk, projectId);
+
+            var client = IoTDAClient.NewBuilder()
+                .WithCredential(auth)
+                .WithEndPoint(endpoint)
+                .Build();
+
+            UploadBatchTaskFile(client);
+        }
+    }
+}
+```
+
+### 8. FAQ [:top:](#用户手册-top)
 
 - 使用 .Net Framework 4.7 集成 .Net SDK，发生死锁问题
 

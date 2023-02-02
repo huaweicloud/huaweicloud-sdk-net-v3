@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ClientRequestId { get; set; }
 
         /// <summary>
-        /// 用户希望操作的资源栈名
+        /// 用户希望操作的资源栈名称
         /// </summary>
         [SDKProperty("stack_name", IsPath = true)]
         [JsonProperty("stack_name", NullValueHandling = NullValueHandling.Ignore)]

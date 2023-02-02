@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ClientRequestId { get; set; }
 
         /// <summary>
-        /// 用户希望操作的资源栈名
+        /// 用户希望操作的资源栈名称
         /// </summary>
         [SDKProperty("stack_name", IsPath = true)]
         [JsonProperty("stack_name", NullValueHandling = NullValueHandling.Ignore)]
         public string StackName { get; set; }
 
         /// <summary>
-        /// 用户希望描述的栈的Id。若stack_name和stack_id同时存在，则资源编排服务会检查是否两个匹配，否则返回400
+        /// 用户希望描述的资源栈的Id。若stack_name和stack_id同时存在，则资源编排服务会检查是否两个匹配，否则返回400
         /// </summary>
         [SDKProperty("stack_id", IsQuery = true)]
         [JsonProperty("stack_id", NullValueHandling = NullValueHandling.Ignore)]

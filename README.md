@@ -140,7 +140,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
 * [6. Troubleshooting](#6-troubleshooting-top)
     * [6.1 Access Log](#61-access-log-top)
     * [6.2 Original HTTP Listener](#62-original-http-listener-top)
-* [7. FAQ](#7-faq-top)
+* [7. Upload Files](#7-upload-files-top)
+* [8. FAQ](#8-faq-top)
 
 ### 1. Client Configuration [:top:](#user-manual-top)
 
@@ -438,7 +439,64 @@ var vpcClient = VpcClient.NewBuilder()
 
 HttpHandler supports method `AddRequestHandler` and `AddResponseHandler`.
 
-### 7. FAQ [:top:](#user-manual-top)
+### 7. Upload Files [:top:](#user-manual-top)
+
+Take the interface `UploadBatchTaskFile` of the service `IoT Device Access` as an example:
+
+```csharp
+using System;
+using System.IO;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.IoTDA.V5;
+using HuaweiCloud.SDK.IoTDA.V5.Model;
+
+namespace UploadBatchTaskFileDemo
+{
+    class Program
+    {
+
+        static void UploadBatchTaskFile(IoTDAClient client)
+        {
+            var file = File.OpenRead("/tmp/template.xlsx");
+            var filePart = new FormDataFilePart(file, "template.xlsx");
+
+            var body = new UploadBatchTaskFileRequestBody()
+            {
+                File = filePart
+            };
+
+            var req = new UploadBatchTaskFileRequest
+            {
+                Body = body
+            };
+
+            var resp = client.UploadBatchTaskFile(req);
+            var respStatusCode = resp.HttpStatusCode;
+            Console.WriteLine(respStatusCode);
+        }
+
+        static void Main(string[] args)
+        {
+            const string ak = "{your ak string}";
+            const string sk = "{your sk string}";
+            const string projectId = "{your project id}";
+            const string endpoint = "{your endpoint string}";
+
+            var auth = new BasicCredentials(ak, sk, projectId);
+
+            var client = IoTDAClient.NewBuilder()
+                .WithCredential(auth)
+                .WithEndPoint(endpoint)
+                .Build();
+
+            UploadBatchTaskFile(client);
+        }
+    }
+}
+```
+
+### 8. FAQ [:top:](#user-manual-top)
 
 Use .Net Framework 4.7 to integrate .Net SDK, a dead lock occurs
 

@@ -246,9 +246,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+        ///  [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  注：此参数无需设置，其取值实际是由产品ID（product_id）决定。
         /// </summary>
-        /// <value>[新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB</value>
+        /// <value> [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  注：此参数无需设置，其取值实际是由产品ID（product_id）决定。</value>
         [JsonConverter(typeof(EnumClassConverter<SpecificationEnum>))]
         public class SpecificationEnum
         {
@@ -554,121 +554,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// Defines saslEnabledMechanisms
-        /// </summary>
-        [JsonConverter(typeof(EnumClassConverter<SaslEnabledMechanismsEnum>))]
-        public class SaslEnabledMechanismsEnum
-        {
-            /// <summary>
-            /// Enum PLAIN for value: PLAIN
-            /// </summary>
-            public static readonly SaslEnabledMechanismsEnum PLAIN = new SaslEnabledMechanismsEnum("PLAIN");
-
-            /// <summary>
-            /// Enum SCRAM_SHA_512 for value: SCRAM-SHA-512
-            /// </summary>
-            public static readonly SaslEnabledMechanismsEnum SCRAM_SHA_512 = new SaslEnabledMechanismsEnum("SCRAM-SHA-512");
-
-            private static readonly Dictionary<string, SaslEnabledMechanismsEnum> StaticFields =
-            new Dictionary<string, SaslEnabledMechanismsEnum>()
-            {
-                { "PLAIN", PLAIN },
-                { "SCRAM-SHA-512", SCRAM_SHA_512 },
-            };
-
-            private string _value;
-
-            public SaslEnabledMechanismsEnum()
-            {
-
-            }
-
-            public SaslEnabledMechanismsEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static SaslEnabledMechanismsEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as SaslEnabledMechanismsEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(SaslEnabledMechanismsEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-
-        /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
         /// </summary>
         /// <value>磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。</value>
@@ -784,9 +669,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考磁盘类型及性能介绍。
         /// </summary>
-        /// <value>存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。</value>
+        /// <value>存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考磁盘类型及性能介绍。</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
@@ -940,18 +825,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
         /// <summary>
-        /// [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+        ///  [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  注：此参数无需设置，其取值实际是由产品ID（product_id）决定。
         /// </summary>
         [JsonProperty("specification", NullValueHandling = NullValueHandling.Ignore)]
         public SpecificationEnum Specification { get; set; }
         /// <summary>
-        /// 代理个数。 [老规格实例此参数无需设置。 新规格实例取值范围：3 ~ 30。](tag:hc,hk)  [此参数无需设置](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc)
+        /// 代理个数。 [取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 30。](tag:hc,hk,hws,hws_hk,g42,tm) [此参数无需设置](tag:otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc)
         /// </summary>
         [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? BrokerNum { get; set; }
 
         /// <summary>
-        /// 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围600GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围1200GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围2400GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围3600GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围4800GB ~ 900000GB。](tag:hc,hk)
+        /// 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 900000GB。](tag:hc,hk)
         /// </summary>
         [JsonProperty("storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? StorageSpace { get; set; }
@@ -998,7 +883,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品ID。 产品ID可以从**查询产品规格列表**接口查询到，不同局点的产品ID的格式可能不同。 一种是包含字母的产品ID，例如：c6.2u4g.cluster；另一种是全数字格式的产品ID，例如：00300-30308-0- -0。
+        /// 产品ID。  [产品ID可以从**查询产品规格列表**接口查询到。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu,g42,tm)  [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0- -0/100MB/300/600;  00300-30310-0- -0/300MB/900/1200;  00300-30312-0- -0/600MB/1800/2400;  00300-30314-0- -0/1200MB/1800/4800](tag:otc,dt)
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
@@ -1034,7 +919,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? EnablePublicip { get; set; }
 
         /// <summary>
-        /// 表示公网带宽，单位是Mbit/s。  [取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc) [老规格实例取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。  新规格实例取值范围： - Kafka实例规格为c6.2u4g.cluster时，公网带宽取值范围3到250，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.4u8g.cluster时，公网带宽取值范围3到500，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.8u16g.cluster时，公网带宽取值范围4到1000，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.12u24g.cluster时，公网带宽取值范围8到1500，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.16u32g.cluster时，公网带宽取值范围8到2000，且必须为实例节点个数的倍数。](tag:hc,hk)
+        /// 表示公网带宽，单位是Mbit/s。  [取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc,g42,tm)   [老规格实例取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。   新规格实例取值范围：  - Kafka实例规格为c6.2u4g.cluster时，公网带宽取值范围3到250，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.4u8g.cluster时，公网带宽取值范围3到500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.8u16g.cluster时，公网带宽取值范围4到1000，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.12u24g.cluster时，公网带宽取值范围8到1500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.16u32g.cluster时，公网带宽取值范围8到2000，且必须为实例节点个数的倍数。](tag:hc,hk)
         /// </summary>
         [JsonProperty("public_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? PublicBandwidth { get; set; }
@@ -1055,18 +940,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 开启SASL后使用的认证机制，如果开启了SASL认证功能（即ssl_enable&#x3D;true），该字段为必选。  若该字段值为空，默认开启PLAIN认证机制。  选择其一进行SASL认证即可,支持同时开启两种认证机制。 取值如下： - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
         /// </summary>
         [JsonProperty("sasl_enabled_mechanisms", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SaslEnabledMechanismsEnum> SaslEnabledMechanisms { get; set; }
+        public List<string> SaslEnabledMechanisms { get; set; }
+
         /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
         /// </summary>
         [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
         public RetentionPolicyEnum RetentionPolicy { get; set; }
-        /// <summary>
-        /// 是否开启消息转储功能。  默认不开启消息转储。
-        /// </summary>
-        [JsonProperty("connector_enable", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? ConnectorEnable { get; set; }
-
         /// <summary>
         /// 是否开启磁盘加密。
         /// </summary>
@@ -1074,10 +954,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? DiskEncryptedEnable { get; set; }
 
         /// <summary>
-        /// 磁盘加密key，未开启磁盘加密时为空。
+        /// 磁盘加密key，未开启磁盘加密时为空
         /// </summary>
         [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
         public string DiskEncryptedKey { get; set; }
+
+        /// <summary>
+        /// 是否开启消息转储功能。  默认不开启消息转储。
+        /// </summary>
+        [JsonProperty("connector_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ConnectorEnable { get; set; }
 
         /// <summary>
         /// 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。  默认是false关闭。
@@ -1086,7 +972,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? EnableAutoTopic { get; set; }
 
         /// <summary>
-        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考磁盘类型及性能介绍。
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }
@@ -1136,9 +1022,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
             sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
-            sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
             sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
             sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
+            sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
             sb.Append("  enableAutoTopic: ").Append(EnableAutoTopic).Append("\n");
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -1292,11 +1178,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.RetentionPolicy.Equals(input.RetentionPolicy))
                 ) && 
                 (
-                    this.ConnectorEnable == input.ConnectorEnable ||
-                    (this.ConnectorEnable != null &&
-                    this.ConnectorEnable.Equals(input.ConnectorEnable))
-                ) && 
-                (
                     this.DiskEncryptedEnable == input.DiskEncryptedEnable ||
                     (this.DiskEncryptedEnable != null &&
                     this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))
@@ -1305,6 +1186,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.DiskEncryptedKey == input.DiskEncryptedKey ||
                     (this.DiskEncryptedKey != null &&
                     this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))
+                ) && 
+                (
+                    this.ConnectorEnable == input.ConnectorEnable ||
+                    (this.ConnectorEnable != null &&
+                    this.ConnectorEnable.Equals(input.ConnectorEnable))
                 ) && 
                 (
                     this.EnableAutoTopic == input.EnableAutoTopic ||
@@ -1387,12 +1273,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.RetentionPolicy != null)
                     hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
-                if (this.ConnectorEnable != null)
-                    hashCode = hashCode * 59 + this.ConnectorEnable.GetHashCode();
                 if (this.DiskEncryptedEnable != null)
                     hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();
                 if (this.DiskEncryptedKey != null)
                     hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
+                if (this.ConnectorEnable != null)
+                    hashCode = hashCode * 59 + this.ConnectorEnable.GetHashCode();
                 if (this.EnableAutoTopic != null)
                     hashCode = hashCode * 59 + this.EnableAutoTopic.GetHashCode();
                 if (this.StorageSpecCode != null)

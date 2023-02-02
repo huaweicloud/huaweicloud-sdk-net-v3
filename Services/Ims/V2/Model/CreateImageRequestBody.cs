@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly TypeEnum IRONIC = new TypeEnum("Ironic");
 
+            /// <summary>
+            /// Enum ISOIMAGE for value: IsoImage
+            /// </summary>
+            public static readonly TypeEnum ISOIMAGE = new TypeEnum("IsoImage");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 { "BMS", BMS },
                 { "FusionCompute", FUSIONCOMPUTE },
                 { "Ironic", IRONIC },
+                { "IsoImage", ISOIMAGE },
             };
 
             private string _value;
