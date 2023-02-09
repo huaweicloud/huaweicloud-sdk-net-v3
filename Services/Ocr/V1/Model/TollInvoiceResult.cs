@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
         public Object Confidence { get; set; }
 
+        /// <summary>
+        /// 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+        /// </summary>
+        [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
+        public Object TextLocation { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  date: ").Append(Date).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
+            sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -165,6 +172,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Confidence == input.Confidence ||
                     (this.Confidence != null &&
                     this.Confidence.Equals(input.Confidence))
+                ) && 
+                (
+                    this.TextLocation == input.TextLocation ||
+                    (this.TextLocation != null &&
+                    this.TextLocation.Equals(input.TextLocation))
                 );
         }
 
@@ -196,6 +208,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.Confidence != null)
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.TextLocation != null)
+                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

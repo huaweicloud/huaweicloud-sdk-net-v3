@@ -46,6 +46,36 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("dms_kafka_forwarding", NullValueHandling = NullValueHandling.Ignore)]
         public DmsKafkaForwarding DmsKafkaForwarding { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("roma_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public RomaForwarding RomaForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("influxdb_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public InfluxDBForwarding InfluxdbForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("functiongraph_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public FunctionGraphForwarding FunctiongraphForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("mrs_kafka_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public MrsKafkaForwarding MrsKafkaForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("dms_rocketmq_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public DmsRocketMQForwarding DmsRocketmqForwarding { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +90,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  obsForwarding: ").Append(ObsForwarding).Append("\n");
             sb.Append("  amqpForwarding: ").Append(AmqpForwarding).Append("\n");
             sb.Append("  dmsKafkaForwarding: ").Append(DmsKafkaForwarding).Append("\n");
+            sb.Append("  romaForwarding: ").Append(RomaForwarding).Append("\n");
+            sb.Append("  influxdbForwarding: ").Append(InfluxdbForwarding).Append("\n");
+            sb.Append("  functiongraphForwarding: ").Append(FunctiongraphForwarding).Append("\n");
+            sb.Append("  mrsKafkaForwarding: ").Append(MrsKafkaForwarding).Append("\n");
+            sb.Append("  dmsRocketmqForwarding: ").Append(DmsRocketmqForwarding).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +140,31 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.DmsKafkaForwarding == input.DmsKafkaForwarding ||
                     (this.DmsKafkaForwarding != null &&
                     this.DmsKafkaForwarding.Equals(input.DmsKafkaForwarding))
+                ) && 
+                (
+                    this.RomaForwarding == input.RomaForwarding ||
+                    (this.RomaForwarding != null &&
+                    this.RomaForwarding.Equals(input.RomaForwarding))
+                ) && 
+                (
+                    this.InfluxdbForwarding == input.InfluxdbForwarding ||
+                    (this.InfluxdbForwarding != null &&
+                    this.InfluxdbForwarding.Equals(input.InfluxdbForwarding))
+                ) && 
+                (
+                    this.FunctiongraphForwarding == input.FunctiongraphForwarding ||
+                    (this.FunctiongraphForwarding != null &&
+                    this.FunctiongraphForwarding.Equals(input.FunctiongraphForwarding))
+                ) && 
+                (
+                    this.MrsKafkaForwarding == input.MrsKafkaForwarding ||
+                    (this.MrsKafkaForwarding != null &&
+                    this.MrsKafkaForwarding.Equals(input.MrsKafkaForwarding))
+                ) && 
+                (
+                    this.DmsRocketmqForwarding == input.DmsRocketmqForwarding ||
+                    (this.DmsRocketmqForwarding != null &&
+                    this.DmsRocketmqForwarding.Equals(input.DmsRocketmqForwarding))
                 );
         }
 
@@ -126,6 +186,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.AmqpForwarding.GetHashCode();
                 if (this.DmsKafkaForwarding != null)
                     hashCode = hashCode * 59 + this.DmsKafkaForwarding.GetHashCode();
+                if (this.RomaForwarding != null)
+                    hashCode = hashCode * 59 + this.RomaForwarding.GetHashCode();
+                if (this.InfluxdbForwarding != null)
+                    hashCode = hashCode * 59 + this.InfluxdbForwarding.GetHashCode();
+                if (this.FunctiongraphForwarding != null)
+                    hashCode = hashCode * 59 + this.FunctiongraphForwarding.GetHashCode();
+                if (this.MrsKafkaForwarding != null)
+                    hashCode = hashCode * 59 + this.MrsKafkaForwarding.GetHashCode();
+                if (this.DmsRocketmqForwarding != null)
+                    hashCode = hashCode * 59 + this.DmsRocketmqForwarding.GetHashCode();
                 return hashCode;
             }
         }

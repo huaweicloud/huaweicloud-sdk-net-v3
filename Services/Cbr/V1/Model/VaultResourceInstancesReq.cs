@@ -301,7 +301,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Action { get; set; }
 
         /// <summary>
-        /// 资源本身支持的查询条件。  matches不允许为空列表。  matches中key不允许重复。
+        /// 资源本身支持的查询条件。  matches中key不允许重复。  数组长度最大值为 1，后续再扩展。
         /// </summary>
         [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
         public List<Match> Matches { get; set; }

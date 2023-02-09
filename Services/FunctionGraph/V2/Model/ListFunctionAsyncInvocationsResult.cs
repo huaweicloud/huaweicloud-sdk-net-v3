@@ -167,6 +167,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string ErrorMessage { get; set; }
 
         /// <summary>
+        /// 异步调用错误码，如果执行成功，则返回0
+        /// </summary>
+        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ErrorCode { get; set; }
+
+        /// <summary>
         /// 异步调用开始时间（格式为YYYY-MM-DD&#39;T&#39;HH:mm:ss,UTC时间）。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -190,6 +196,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
+            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("}\n");
@@ -229,6 +236,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.ErrorMessage.Equals(input.ErrorMessage))
                 ) && 
                 (
+                    this.ErrorCode == input.ErrorCode ||
+                    (this.ErrorCode != null &&
+                    this.ErrorCode.Equals(input.ErrorCode))
+                ) && 
+                (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
@@ -254,6 +266,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.ErrorMessage != null)
                     hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                if (this.ErrorCode != null)
+                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 if (this.StartTime != null)
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null)

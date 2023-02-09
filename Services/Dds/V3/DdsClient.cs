@@ -717,6 +717,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询数据库慢日志
+        ///
+        /// 查询数据库慢日志信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLtsSlowLogsResponse ListLtsSlowLogs(ListLtsSlowLogsRequest listLtsSlowLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listLtsSlowLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slow-logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsSlowLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListLtsSlowLogsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询项目标签
         ///
         /// 查询指定project ID下实例的所有标签集合。

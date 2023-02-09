@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 按tags过滤自动绑定的资源
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Tag> Tags { get; set; }
+        public List<BindRulesTags> Tags { get; set; }
 
 
 

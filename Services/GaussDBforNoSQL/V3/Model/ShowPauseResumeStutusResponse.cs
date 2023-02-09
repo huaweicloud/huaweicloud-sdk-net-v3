@@ -156,10 +156,34 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 
 
         /// <summary>
+        /// 主实例id
+        /// </summary>
+        [JsonProperty("master_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string MasterInstanceId { get; set; }
+
+        /// <summary>
+        /// 备实例id
+        /// </summary>
+        [JsonProperty("slave_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SlaveInstanceId { get; set; }
+
+        /// <summary>
         /// 容灾实例数据同步状态 - NA：实例尚未搭建容灾关系 - NEW：尚未启动的数据同步状态 - SYNCING：数据同步正常进行中 - SUSPENDING：正在暂停数据同步 - SUSPENDED：数据同步已暂停 - RECOVERYING：正在恢复数据同步
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("data_sync_indicators", NullValueHandling = NullValueHandling.Ignore)]
+        public NoSQLDrDateSyncIndicators DataSyncIndicators { get; set; }
+
+        /// <summary>
+        /// 切换或倒换RPO和RTO值，仅当请求实例id为主实例时有值
+        /// </summary>
+        [JsonProperty("rto_and_rpo_indicators", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NoSQLDrRpoAndRto> RtoAndRpoIndicators { get; set; }
+
 
 
         /// <summary>
@@ -169,7 +193,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowPauseResumeStutusResponse {\n");
+            sb.Append("  masterInstanceId: ").Append(MasterInstanceId).Append("\n");
+            sb.Append("  slaveInstanceId: ").Append(SlaveInstanceId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  dataSyncIndicators: ").Append(DataSyncIndicators).Append("\n");
+            sb.Append("  rtoAndRpoIndicators: ").Append(RtoAndRpoIndicators).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -192,9 +220,30 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 
             return 
                 (
+                    this.MasterInstanceId == input.MasterInstanceId ||
+                    (this.MasterInstanceId != null &&
+                    this.MasterInstanceId.Equals(input.MasterInstanceId))
+                ) && 
+                (
+                    this.SlaveInstanceId == input.SlaveInstanceId ||
+                    (this.SlaveInstanceId != null &&
+                    this.SlaveInstanceId.Equals(input.SlaveInstanceId))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.DataSyncIndicators == input.DataSyncIndicators ||
+                    (this.DataSyncIndicators != null &&
+                    this.DataSyncIndicators.Equals(input.DataSyncIndicators))
+                ) && 
+                (
+                    this.RtoAndRpoIndicators == input.RtoAndRpoIndicators ||
+                    this.RtoAndRpoIndicators != null &&
+                    input.RtoAndRpoIndicators != null &&
+                    this.RtoAndRpoIndicators.SequenceEqual(input.RtoAndRpoIndicators)
                 );
         }
 
@@ -206,8 +255,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.MasterInstanceId != null)
+                    hashCode = hashCode * 59 + this.MasterInstanceId.GetHashCode();
+                if (this.SlaveInstanceId != null)
+                    hashCode = hashCode * 59 + this.SlaveInstanceId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DataSyncIndicators != null)
+                    hashCode = hashCode * 59 + this.DataSyncIndicators.GetHashCode();
+                if (this.RtoAndRpoIndicators != null)
+                    hashCode = hashCode * 59 + this.RtoAndRpoIndicators.GetHashCode();
                 return hashCode;
             }
         }

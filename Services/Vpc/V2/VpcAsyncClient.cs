@@ -85,6 +85,24 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 创建流日志
+        ///
+        /// 创建流日志。
+        /// 流日志功能可以记录虚拟私有云中的流量信息，帮助您检查和优化安全组和网络ACL防火墙控制规则、监控网络流量、进行网络攻击分析等。
+        /// VPC流日志功能需要与云日志服务LTS结合使用，请先在云日志服务中创建日志组和日志主题，然后再创建VPC流日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateFlowLogResponse> CreateFlowLogAsync(CreateFlowLogRequest createFlowLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createFlowLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateFlowLogResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建端口
         ///
         /// 创建端口。
@@ -196,6 +214,23 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcPeeringRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateVpcPeeringResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除流日志
+        ///
+        /// 删除流日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteFlowLogResponse> DeleteFlowLogAsync(DeleteFlowLogRequest deleteFlowLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("flowlog_id" , deleteFlowLogRequest.FlowlogId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteFlowLogResponse>(response);
         }
         
         /// <summary>
@@ -336,6 +371,22 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateRouteTableRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DisassociateRouteTableResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询流日志列表
+        ///
+        /// 查询提交请求的租户的所有流日志列表，并根据过滤条件进行过滤
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFlowLogsResponse> ListFlowLogsAsync(ListFlowLogsRequest listFlowLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlowLogsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListFlowLogsResponse>(response);
         }
         
         /// <summary>
@@ -484,6 +535,23 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 查询流日志
+        ///
+        /// 查询流日志详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFlowLogResponse> ShowFlowLogAsync(ShowFlowLogRequest showFlowLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("flowlog_id" , showFlowLogRequest.FlowlogId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowFlowLogResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询端口
         ///
         /// 查询单个端口详情。
@@ -616,6 +684,23 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcPeeringRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVpcPeeringResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新流日志
+        ///
+        /// 更新流日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateFlowLogResponse> UpdateFlowLogAsync(UpdateFlowLogRequest updateFlowLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("flowlog_id" , updateFlowLogRequest.FlowlogId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateFlowLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateFlowLogResponse>(response);
         }
         
         /// <summary>
