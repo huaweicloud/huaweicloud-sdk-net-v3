@@ -116,6 +116,25 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 创建过期key扫描任务
+        ///
+        /// 创建过期key扫描任务（Redis 3.0 不支持过期key扫描）。
+        /// 过期key扫描会对键空间进行Redis的scan扫描，释放内存中已过期但是由于惰性删除机制而没有释放的内存空间。
+        /// 过期key扫描在主节点上执行，会对实例性能有一定的影响，建议不要在业务高峰期进行。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAutoExpireScanTaskResponse CreateAutoExpireScanTask(CreateAutoExpireScanTaskRequest createAutoExpireScanTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createAutoExpireScanTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/scan-expire-keys-task",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutoExpireScanTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateAutoExpireScanTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建大key分析任务
         ///
         /// 为Redis实例创建大key分析任务。
@@ -130,6 +149,22 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBigkeyScanTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateBigkeyScanTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建自定义模板
+        ///
+        /// 创建自定义模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateCustomTemplateResponse CreateCustomTemplate(CreateCustomTemplateRequest createCustomTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/config-templates",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createCustomTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateCustomTemplateResponse>(response);
         }
         
         /// <summary>

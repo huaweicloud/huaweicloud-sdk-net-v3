@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("action_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ActionTime { get; set; }
 
+        /// <summary>
+        /// 该参数为点头动作幅度的判断门限，取值范围：[1,90]，默认为10，单位为度。该值设置越大，则越难判断为点头。
+        /// </summary>
+        [JsonProperty("nod_threshold", NullValueHandling = NullValueHandling.Ignore)]
+        public double? NodThreshold { get; set; }
+
 
         
         public DetectLiveByFileRequestBody WithVideoFile(Stream stream, string filename)
@@ -59,6 +65,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             if (ActionTime != null) {
                 formData.Add("action_time", new FormDataPart<string>(ActionTime));
             }
+            if (NodThreshold != null) {
+                formData.Add("nod_threshold", new FormDataPart<double?>(NodThreshold));
+            }
 
             return formData;
         }
@@ -73,6 +82,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             sb.Append("  videoFile: ").Append(VideoFile).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
             sb.Append("  actionTime: ").Append(ActionTime).Append("\n");
+            sb.Append("  nodThreshold: ").Append(NodThreshold).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,6 +118,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.ActionTime == input.ActionTime ||
                     (this.ActionTime != null &&
                     this.ActionTime.Equals(input.ActionTime))
+                ) && 
+                (
+                    this.NodThreshold == input.NodThreshold ||
+                    (this.NodThreshold != null &&
+                    this.NodThreshold.Equals(input.NodThreshold))
                 );
         }
 
@@ -125,6 +140,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     hashCode = hashCode * 59 + this.Actions.GetHashCode();
                 if (this.ActionTime != null)
                     hashCode = hashCode * 59 + this.ActionTime.GetHashCode();
+                if (this.NodThreshold != null)
+                    hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
                 return hashCode;
             }
         }

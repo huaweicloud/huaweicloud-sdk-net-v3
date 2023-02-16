@@ -6,8 +6,10 @@ namespace HuaweiCloud.SDK.Cdn.V1
 {
     public class CdnRegion
     {
-        public static readonly Region CN_NORTH_1 = new Region("cn-north-1", "https://cdn.myhuaweicloud.com");
-        public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://cdn.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_1 = new Region("cn-north-1",
+            "https://cdn.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
+            "https://cdn.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {

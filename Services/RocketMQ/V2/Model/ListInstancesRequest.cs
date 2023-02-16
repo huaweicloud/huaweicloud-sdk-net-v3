@@ -437,6 +437,20 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 当次查询返回的最大个数,默认值为10,取值范围为1~50。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 偏移量，表示从此偏移量开始查询， offset大于等于0。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
 
 
         /// <summary>
@@ -453,6 +467,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  includeFailure: ").Append(IncludeFailure).Append("\n");
             sb.Append("  exactMatchName: ").Append(ExactMatchName).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -508,6 +524,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
                 );
         }
 
@@ -533,6 +559,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.ExactMatchName.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;
             }
         }

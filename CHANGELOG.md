@@ -1,3 +1,48 @@
+# 3.1.25 2023-02-16
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the interfaces `CreateCustomTemplate`, `CreateAutoExpireScanTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByUrl`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByUrlIntl`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByFile`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByFileIntl`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByBase64`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByBase64Intl`
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - Support the interfaces `RunImageSuperResolution`, `RunRecaptureDetect`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - Support the interfaces `CreateInstanceByEngine`, `BatchCreateOrDeleteRocketmqTag`, `ShowRocketmqTags`, `ShowRocketmqProjectTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `limit`, `offset` to the interface `ListInstances`
+  - Add the request parameters `limit`, `offset` to the interface `ShowConsumerListOrDetails`
+  - Add the request parameters `limit`, `offset` to the interface `ListConsumerGroupOfTopic`
+
 # 3.1.24 2023-02-09
 
 ### HuaweiCloud SDK DDS

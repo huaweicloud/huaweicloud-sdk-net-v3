@@ -6,12 +6,18 @@ namespace HuaweiCloud.SDK.Frs.V2
 {
     public class FrsRegion
     {
-        public static readonly Region CN_NORTH_1 = new Region("cn-north-1", "https://face.cn-north-1.myhuaweicloud.com");
-        public static readonly Region CN_NORTH_4 = new Region("cn-north-4", "https://face.cn-north-4.myhuaweicloud.com");
-        public static readonly Region CN_SOUTH_1 = new Region("cn-south-1", "https://face.cn-south-1.myhuaweicloud.com");
-        public static readonly Region CN_EAST_3 = new Region("cn-east-3", "https://face.cn-east-3.myhuaweicloud.com");
-        public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://face.ap-southeast-1.myhuaweicloud.com");
-        public static readonly Region AP_SOUTHEAST_2 = new Region("ap-southeast-2", "https://face.ap-southeast-2.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_1 = new Region("cn-north-1",
+            "https://face.cn-north-1.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
+            "https://face.cn-north-4.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_1 = new Region("cn-south-1",
+            "https://face.cn-south-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_3 = new Region("cn-east-3",
+            "https://face.cn-east-3.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
+            "https://face.ap-southeast-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_2 = new Region("ap-southeast-2",
+            "https://face.ap-southeast-2.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {

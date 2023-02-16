@@ -6,7 +6,8 @@ namespace HuaweiCloud.SDK.Tms.v1
 {
     public class TmsRegion
     {
-        public static readonly Region CN_NORTH_4 = new Region("cn-north-4", "https://tms.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
+            "https://tms.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {

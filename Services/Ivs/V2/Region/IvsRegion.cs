@@ -6,8 +6,10 @@ namespace HuaweiCloud.SDK.Ivs.V2
 {
     public class IvsRegion
     {
-        public static readonly Region CN_NORTH_4 = new Region("cn-north-4", "https://ivs.cn-north-4.myhuaweicloud.com");
-        public static readonly Region CN_NORTH_1 = new Region("cn-north-1", "https://ivs.cn-north-1.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
+            "https://ivs.cn-north-4.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_1 = new Region("cn-north-1",
+            "https://ivs.cn-north-1.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
