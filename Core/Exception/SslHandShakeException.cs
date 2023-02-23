@@ -19,11 +19,18 @@
  * under the License.
  */
 
+using System;
+
 namespace HuaweiCloud.SDK.Core
 {
     public class SslHandShakeException : ConnectionException
     {
-        public SslHandShakeException(string errorMessage):base(errorMessage)
+        public SslHandShakeException(string errorMessage) : base(errorMessage)
+        {
+            this.ErrorMessage = errorMessage;
+        }
+
+        public SslHandShakeException(string errorMessage, Exception innerException) : base(errorMessage, innerException)
         {
             this.ErrorMessage = errorMessage;
         }

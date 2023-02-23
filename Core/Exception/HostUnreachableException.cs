@@ -19,11 +19,18 @@
  * under the License.
  */
 
+using System;
+
 namespace HuaweiCloud.SDK.Core
 {
     public class HostUnreachableException : ConnectionException
     {
-        public HostUnreachableException(string errorMessage):base(errorMessage)
+        public HostUnreachableException(string errorMessage) : base(errorMessage)
+        {
+            this.ErrorMessage = errorMessage;
+        }
+
+        public HostUnreachableException(string errorMessage, Exception innerException) : base(errorMessage, innerException)
         {
             this.ErrorMessage = errorMessage;
         }

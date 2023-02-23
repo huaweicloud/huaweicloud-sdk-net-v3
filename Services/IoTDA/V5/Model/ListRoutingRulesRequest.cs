@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+        /// **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。您可以在IoTDA管理控制台界面，选择左侧导航栏“总览”页签查看当前实例的ID。
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
         [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +59,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string RuleName { get; set; }
 
         /// <summary>
+        /// **参数说明**：规则条件的状态是否为激活。
+        /// </summary>
+        [SDKProperty("active", IsQuery = true)]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Active { get; set; }
+
+        /// <summary>
         /// **参数说明**：分页查询时每页显示的记录数。默认每页10条记录，最大设定每页50条记录。 **取值范围**：1-50的整数，默认值为10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -94,6 +101,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appType: ").Append(AppType).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  ruleName: ").Append(RuleName).Append("\n");
+            sb.Append("  active: ").Append(Active).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -149,6 +157,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.RuleName.Equals(input.RuleName))
                 ) && 
                 (
+                    this.Active == input.Active ||
+                    (this.Active != null &&
+                    this.Active.Equals(input.Active))
+                ) && 
+                (
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
@@ -185,6 +198,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.RuleName != null)
                     hashCode = hashCode * 59 + this.RuleName.GetHashCode();
+                if (this.Active != null)
+                    hashCode = hashCode * 59 + this.Active.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null)

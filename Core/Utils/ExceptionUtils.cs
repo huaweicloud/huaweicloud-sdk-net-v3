@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
@@ -43,6 +44,36 @@ namespace HuaweiCloud.SDK.Core
                 messages.AppendLine(innerException.Message);
             }
             return messages.ToString();
+        }
+
+        public static SdkException HandleException(Exception exception)
+        {
+            if (exception is AggregateException)
+            {
+                if (exception.InnerException is HttpRequestException httpRequestException)
+                {
+                    if (httpRequestException.InnerException == null)
+                    {
+                        return new ConnectionException(httpRequestException.Message, exception);
+                    }
+
+                    if (httpRequestException.InnerException is WebException webException)
+                    {
+                        switch (webException.Status)
+                        {
+                            case WebExceptionStatus.NameResolutionFailure:
+                                return new HostUnreachableException(webException.Message, exception);
+                            case WebExceptionStatus.TrustFailure:
+                                return new SslHandShakeException(webException.Message, exception);
+                            case WebExceptionStatus.Timeout:
+                                return new RequestTimeoutException(webException.Message, exception);
+                            default:
+                                return new ConnectionException(webException.Message, exception);
+                        }
+                    }
+                }
+            }
+            return new SdkException(exception.Message, exception);
         }
 
         public static ServiceResponseException GetException(HttpResponseMessage responseMessage)

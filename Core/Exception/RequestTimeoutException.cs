@@ -19,13 +19,18 @@
  * under the License.
  */
 
+using System;
+
 namespace HuaweiCloud.SDK.Core
 {
     public class RequestTimeoutException : SdkException
     {
-        public string ErrorMessage { get; set; }
-
         public RequestTimeoutException(string errorMessage)
+        {
+            this.ErrorMessage = errorMessage;
+        }
+        
+        public RequestTimeoutException(string errorMessage, Exception innerException) : base(errorMessage, innerException)
         {
             this.ErrorMessage = errorMessage;
         }

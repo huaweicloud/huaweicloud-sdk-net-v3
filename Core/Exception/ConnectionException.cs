@@ -19,13 +19,18 @@
  * under the License.
  */
 
+using System;
+
 namespace HuaweiCloud.SDK.Core
 {
     public class ConnectionException : SdkException
     {
-        public string ErrorMessage { get; set; }
-
         public ConnectionException(string errorMessage)
+        {
+            this.ErrorMessage = errorMessage;
+        }
+
+        public ConnectionException(string errorMessage, Exception innerException) : base(errorMessage, innerException)
         {
             this.ErrorMessage = errorMessage;
         }

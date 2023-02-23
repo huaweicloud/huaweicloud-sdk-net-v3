@@ -55,6 +55,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("mysql_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public MysqlForwarding MysqlForwarding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("influxdb_forwarding", NullValueHandling = NullValueHandling.Ignore)]
         public InfluxDBForwarding InfluxdbForwarding { get; set; }
 
@@ -91,6 +97,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  amqpForwarding: ").Append(AmqpForwarding).Append("\n");
             sb.Append("  dmsKafkaForwarding: ").Append(DmsKafkaForwarding).Append("\n");
             sb.Append("  romaForwarding: ").Append(RomaForwarding).Append("\n");
+            sb.Append("  mysqlForwarding: ").Append(MysqlForwarding).Append("\n");
             sb.Append("  influxdbForwarding: ").Append(InfluxdbForwarding).Append("\n");
             sb.Append("  functiongraphForwarding: ").Append(FunctiongraphForwarding).Append("\n");
             sb.Append("  mrsKafkaForwarding: ").Append(MrsKafkaForwarding).Append("\n");
@@ -147,6 +154,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.RomaForwarding.Equals(input.RomaForwarding))
                 ) && 
                 (
+                    this.MysqlForwarding == input.MysqlForwarding ||
+                    (this.MysqlForwarding != null &&
+                    this.MysqlForwarding.Equals(input.MysqlForwarding))
+                ) && 
+                (
                     this.InfluxdbForwarding == input.InfluxdbForwarding ||
                     (this.InfluxdbForwarding != null &&
                     this.InfluxdbForwarding.Equals(input.InfluxdbForwarding))
@@ -188,6 +200,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.DmsKafkaForwarding.GetHashCode();
                 if (this.RomaForwarding != null)
                     hashCode = hashCode * 59 + this.RomaForwarding.GetHashCode();
+                if (this.MysqlForwarding != null)
+                    hashCode = hashCode * 59 + this.MysqlForwarding.GetHashCode();
                 if (this.InfluxdbForwarding != null)
                     hashCode = hashCode * 59 + this.InfluxdbForwarding.GetHashCode();
                 if (this.FunctiongraphForwarding != null)

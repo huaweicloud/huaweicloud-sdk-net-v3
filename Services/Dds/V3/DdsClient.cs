@@ -1405,6 +1405,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 删除实例的节点
+        ///
+        /// 删除实例的节点。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShrinkInstanceNodesResponse ShrinkInstanceNodes(ShrinkInstanceNodesRequest shrinkInstanceNodesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , shrinkInstanceNodesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", shrinkInstanceNodesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<ShrinkInstanceNodesResponse>(response);
+        }
+        
+        /// <summary>
         /// 应用参数模板
         ///
         /// 指定实例变更参数模板。

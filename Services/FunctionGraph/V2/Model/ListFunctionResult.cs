@@ -606,7 +606,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public DateTime? LastModified { get; set; }
 
         /// <summary>
-        /// 对应tbl_func_vpc表的id字段。
+        /// 用户的vpcid。
         /// </summary>
         [JsonProperty("func_vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FuncVpcId { get; set; }

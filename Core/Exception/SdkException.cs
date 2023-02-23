@@ -25,5 +25,20 @@ namespace HuaweiCloud.SDK.Core
 {
     public class SdkException : Exception
     {
+        protected SdkException()
+        {
+            
+        }
+        public string ErrorMessage { get; set; }
+
+        public SdkException(string errorMessage) : base(errorMessage)
+        {
+            this.ErrorMessage = errorMessage;
+        }
+
+        public SdkException(string errorMessage, Exception innerException) : base(errorMessage, innerException)
+        {
+            this.ErrorMessage = errorMessage;
+        }
     }
 }

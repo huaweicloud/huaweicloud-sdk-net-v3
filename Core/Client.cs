@@ -22,7 +22,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core.Auth;
 using Microsoft.Extensions.Logging;
@@ -34,7 +37,10 @@ namespace HuaweiCloud.SDK.Core
     {
         public class ClientBuilder<T> where T : Client
         {
-            private string[] CredentialType { get; } = {nameof(BasicCredentials)};
+            private string[] CredentialType { get; } =
+            {
+                nameof(BasicCredentials)
+            };
 
             public ClientBuilder()
             {
@@ -48,7 +54,7 @@ namespace HuaweiCloud.SDK.Core
             private Credentials _credentials;
             private HttpConfig _httpConfig;
             private Region _region;
-            private string _endPoint;
+            private List<string> _endpoints;
             private bool _enableLogging;
             private LogLevel _logLevel = LogLevel.Information;
             private HttpHandler _httpHandler;
@@ -74,10 +80,19 @@ namespace HuaweiCloud.SDK.Core
                 this._region = region;
                 return this;
             }
-
-            public ClientBuilder<T> WithEndPoint(string endPoint)
+            
+            [Obsolete("As of 3.1.26, because of the support of the multi-endpoint feature, use WithEndPoints instead")]
+            public ClientBuilder<T> WithEndPoint(string endpoint)
             {
-                this._endPoint = endPoint;
+                return this.WithEndPoints(new List<string>
+                {
+                    endpoint
+                });
+            }
+
+            public ClientBuilder<T> WithEndPoints(List<string> endpoints)
+            {
+                this._endpoints = endpoints;
                 return this;
             }
 
@@ -120,24 +135,29 @@ namespace HuaweiCloud.SDK.Core
 
                 if (this._region != null)
                 {
-                    this._endPoint = _region.Endpoint;
+                    this._endpoints = this._region.Endpoints;
                     this._credentials = _credentials.ProcessAuthParams(client._sdkHttpClient, _region.Id);
                     this._credentials.ProcessDerivedAuthParams(_derivedAuthServiceName, _region.Id);
                 }
 
-                if (!_endPoint.StartsWith(HttpScheme))
+                for (var i = 0; i < _endpoints.Count; i++)
                 {
-                    _endPoint = HttpsScheme + "://" + _endPoint;
+                    var endpoint = _endpoints[i];
+                    if (!endpoint.StartsWith(HttpScheme))
+                    {
+                        _endpoints[i] = HttpsScheme + "://" + endpoint;
+                    }
                 }
 
                 client.WithCredential(this._credentials)
-                    .WithEndPoint(this._endPoint);
+                    .WithEndPoints(this._endpoints);
 
-                return (T) client;
+                return (T)client;
             }
         }
 
-        private string _endpoint;
+        private List<string> _endpoints;
+        private volatile int _endpointIndex;
         private HttpConfig _httpConfig;
         private Credentials _credential;
 
@@ -158,11 +178,12 @@ namespace HuaweiCloud.SDK.Core
             return this;
         }
 
-        private Client WithEndPoint(string endPoint)
+        private Client WithEndPoints(List<string> endpoints)
         {
-            this._endpoint = endPoint;
+            this._endpoints = endpoints;
             return this;
         }
+
 
         private void InitSdkHttpClient(HttpHandler httpHandler, bool enableLogging, LogLevel logLevel)
         {
@@ -194,16 +215,33 @@ namespace HuaweiCloud.SDK.Core
             }
             catch (AggregateException aggregateException)
             {
-                throw new ConnectionException(ExceptionUtils.GetMessageFromAggregateException(aggregateException));
+                throw ExceptionUtils.HandleException(aggregateException);
             }
         }
 
+        [MethodImpl(MethodImplOptions.Synchronized)]
         protected HttpResponseMessage DoHttpRequestSync(string methodType, SdkRequest request)
         {
-            var url = GetRealEndpoint(request)
-                      + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
-                      + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
-            return _sync_http(url, methodType.ToUpper(), request);
+            while (true)
+            {
+                var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
+                                                   + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+                try
+                {
+                    return _sync_http(url, methodType.ToUpper(), request);
+                }
+                catch (HostUnreachableException hostUnreachableException)
+                {
+                    if (this._endpointIndex < this._endpoints.Count - 1)
+                    {
+                        Interlocked.Increment(ref _endpointIndex);
+                    }
+                    else
+                    {
+                        throw hostUnreachableException;
+                    }
+                }
+            }
         }
 
         private HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
@@ -222,23 +260,24 @@ namespace HuaweiCloud.SDK.Core
             }
             catch (AggregateException aggregateException)
             {
-                throw new ConnectionException(ExceptionUtils.GetMessageFromAggregateException(aggregateException));
+                throw ExceptionUtils.HandleException(aggregateException);
             }
         }
 
         private string GetRealEndpoint(SdkRequest request)
         {
+            var endpoint = this._endpoints[_endpointIndex];
             if (String.IsNullOrEmpty(request.Cname))
             {
-                return _endpoint;
+                return endpoint;
             }
 
-            return _endpoint.Insert(8, request.Cname + ".");
-        } 
+            return endpoint.Insert(8, request.Cname + ".");
+        }
 
         private HttpResponseMessage GetResult(HttpResponseMessage responseMessage)
         {
-            if ((int) responseMessage.StatusCode < 400)
+            if ((int)responseMessage.StatusCode < 400)
             {
                 return responseMessage;
             }

@@ -59,10 +59,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public List<ResourceResp> Resources { get; set; }
 
         /// <summary>
-        /// 标签
+        /// 存储库标签
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TagsResp> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
 
         /// <summary>
         /// 企业项目id，默认为‘0’。

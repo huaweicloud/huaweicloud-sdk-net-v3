@@ -1,3 +1,48 @@
+# 3.1.26 2023-02-23
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListVault`响应参数`value`改为必填
+  - 接口`CreateVault`:
+    - 请求参数`value`改为必填
+    - 响应参数`value`改为必填
+  - 接口`ShowVault`响应参数`value`改为必填
+  - 接口`UpdateVault`:
+    - 请求参数`value`改为必填
+    - 响应参数`value`改为必填
+  - 接口`ListProtectable`响应参数`value`改为必填
+  - 接口`ShowProtectable`响应参数`value`改为必填
+  - 接口`ShowVaultResourceInstances`响应参数`value`改为必填
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 支持接口`ShrinkInstanceNodes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListRoutingRules`新增请求参数 `active`
+  - 接口`CreateRuleAction`新增请求参数 `mysql_forwarding`
+  - 接口`ListRuleActions`新增响应参数 `mysql_forwarding`
+  - 接口`UpdateRuleAction`:
+    - 新增请求参数 `mysql_forwarding`
+    - 新增响应参数 `mysql_forwarding`
+  - 接口`ShowRuleAction`新增响应参数 `mysql_forwarding`
+
 # 3.1.25 2023-02-16
 
 ### HuaweiCloud SDK DCS

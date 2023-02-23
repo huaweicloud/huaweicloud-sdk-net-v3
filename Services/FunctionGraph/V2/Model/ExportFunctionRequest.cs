@@ -24,21 +24,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string FunctionUrn { get; set; }
 
         /// <summary>
-        /// 是否导出函数配置
+        /// 是否导出函数配置，默认为false
         /// </summary>
         [SDKProperty("config", IsQuery = true)]
         [JsonProperty("config", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Config { get; set; }
 
         /// <summary>
-        /// 是否导出函数代码
+        /// 是否导出函数代码，默认为false
         /// </summary>
         [SDKProperty("code", IsQuery = true)]
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Code { get; set; }
 
         /// <summary>
-        /// 兼容老的方式，type&#x3D;code代表导出代码,type&#x3D;config代码导出配置
+        /// 不兼容与code、config参数混用；type&#x3D;code代表导出代码,type&#x3D;config代码导出配置
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
