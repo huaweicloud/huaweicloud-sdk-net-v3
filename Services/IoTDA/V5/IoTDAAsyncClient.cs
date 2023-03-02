@@ -917,6 +917,74 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 创建OTA升级包
+        ///
+        /// 用户可调用此接口创建升级包关联OBS对象
+        /// 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam/?region&#x3D;cn-north-4#/iam/agencies)](tag:hws) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateOtaPackageResponse> CreateOtaPackageAsync(CreateOtaPackageRequest createOtaPackageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/packages",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createOtaPackageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateOtaPackageResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除OTA升级包
+        ///
+        /// 只删除升级包信息，不会删除OBS上对象
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteOtaPackageResponse> DeleteOtaPackageAsync(DeleteOtaPackageRequest deleteOtaPackageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("package_id" , deleteOtaPackageRequest.PackageId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/packages/{package_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOtaPackageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            DeleteOtaPackageResponse deleteOtaPackageResponse = JsonUtils.DeSerializeNull<DeleteOtaPackageResponse>(response);
+            return deleteOtaPackageResponse;
+        }
+        
+        /// <summary>
+        /// 查询OTA升级包列表
+        ///
+        /// 查询OTA升级包列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListOtaPackageInfoResponse> ListOtaPackageInfoAsync(ListOtaPackageInfoRequest listOtaPackageInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/packages",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOtaPackageInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListOtaPackageInfoResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取OTA升级包详情
+        ///
+        /// 获取OTA升级包详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowOtaPackageResponse> ShowOtaPackageAsync(ShowOtaPackageRequest showOtaPackageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("package_id" , showOtaPackageRequest.PackageId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/packages/{package_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOtaPackageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowOtaPackageResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建产品
         ///
         /// 应用服务器可调用此接口创建产品。

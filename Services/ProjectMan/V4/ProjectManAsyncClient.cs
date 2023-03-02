@@ -1025,6 +1025,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 获取指定工作项停留时间
+        ///
+        /// 获取指定工作项停留时间
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSpecIssueStayTimesResponse> ListSpecIssueStayTimesAsync(ListSpecIssueStayTimesRequest listSpecIssueStayTimesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v4/issues/duration",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpecIssueStayTimesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ListSpecIssueStayTimesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询迭代下工作项状态的统计数据（处理人维度）
         ///
         /// 查询迭代下工作项状态的统计数据（处理人维度）

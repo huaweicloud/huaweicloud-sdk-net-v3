@@ -136,6 +136,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [JsonProperty("trigger_status", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerStatusEnum TriggerStatus { get; set; }
+        /// <summary>
+        /// 触发器更新事件
+        /// </summary>
+        [JsonProperty("event_data", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TriggerEventData> EventData { get; set; }
+
 
 
         /// <summary>
@@ -146,6 +152,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateTriggerRequestBody {\n");
             sb.Append("  triggerStatus: ").Append(TriggerStatus).Append("\n");
+            sb.Append("  eventData: ").Append(EventData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +178,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.TriggerStatus == input.TriggerStatus ||
                     (this.TriggerStatus != null &&
                     this.TriggerStatus.Equals(input.TriggerStatus))
+                ) && 
+                (
+                    this.EventData == input.EventData ||
+                    this.EventData != null &&
+                    input.EventData != null &&
+                    this.EventData.SequenceEqual(input.EventData)
                 );
         }
 
@@ -184,6 +197,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.TriggerStatus != null)
                     hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
+                if (this.EventData != null)
+                    hashCode = hashCode * 59 + this.EventData.GetHashCode();
                 return hashCode;
             }
         }

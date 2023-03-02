@@ -23,7 +23,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Web;
 
 namespace HuaweiCloud.SDK.Core
 {
@@ -87,11 +86,11 @@ namespace HuaweiCloud.SDK.Core
                 foreach (var kv in Url.Query.Substring(1).Split('&'))
                 {
                     var spl = kv.Split(new char[] {'='}, 2);
-                    var key = HttpUtility.UrlDecode(spl[0]);
+                    var key = WebUtility.UrlDecode(spl[0]);
                     var value = "";
                     if (spl.Length > 1)
                     {
-                        value = HttpUtility.UrlDecode(spl[1]);
+                        value = WebUtility.UrlDecode(spl[1]);
                     }
 
                     if (QueryParam.ContainsKey(key))

@@ -1,3 +1,132 @@
+# 3.1.27 2023-03-02
+
+### HuaweiCloud SDK BMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListBareMetalServers`:
+    - 响应参数`status`新增枚举值`HARD_REBOOT`、`DELETED`
+    - 响应参数`OS-EXT-STS:vm_state`移除枚举值`suspended`
+  - 接口`CreateBareMetalServers`:
+    - 新增请求参数 `chargingMode`
+    - 移除请求参数 `chargingmode`
+  - 接口`ChangeBaremetalServerName`响应参数`OS-EXT-STS:vm_state`移除枚举值`SUSPENDED`
+  - 接口`ListBareMetalServerDetails`:
+    - 响应参数`status`新增枚举值`HARD_REBOOT`、`DELETED`
+    - 响应参数`OS-EXT-STS:vm_state`移除枚举值`suspended`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowDomainFullConfig`:
+    - 响应参数`error_code`类型调整 `string` -> `int32`
+    - 响应参数`target_code`类型调整 `string` -> `int32`
+  - 接口`UpdateDomainFullConfig`:
+    - 请求参数`error_code`类型调整 `string` -> `int32`
+    - 请求参数`target_code`类型调整 `string` -> `int32`
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 支持接口`ShowReplSetName`、`UpdateReplSetName`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`UpdateTrigger`:
+    - 新增请求参数 `event_data`
+    - 新增响应参数 `trigger_id`、`trigger_type_code`、`trigger_status`、`event_data`、`last_updated_time`、`created_time`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持以下接口：
+    - `ResetDbUserPassword`
+    - `ModifyDbUserPrivilege`
+    - `ListDbUsers`
+    - `CreateDbUser`
+    - `DeleteDbUser`
+    - `ListInstanceDatabases`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Image
+
+- _新增特性_
+  - 支持以下接口：
+    - `CreateVideoSynthesisTask`
+    - `ShowVideoSynthesisTask`
+    - `CreateImageToVideoTask`
+    - `ShowImageToVideoTask`
+    - `CreateVideoCuttingTask`
+    - `ShowVideoCuttingTask`
+    - `CreateVideoTranslateTask`
+    - `ShowVideoTranslateTask`
+    - `CreateImageHighresolutionMattingTask`
+    - `ShowImageHighresolutionMattingTask`
+    - `CreateImageTranslateTask`
+    - `ShowImageTranslateTask`
+    - `CreateVideoCoverAnalysisTask`
+    - `ShowVideoCoverAnalysisTask`
+    - `CreateVideoSummarizationAnalysisTask`
+    - `ShowVideoSummarizationAnalysisTask`
+    - `CreateVideoShotSplitTask`
+    - `ShowVideoShotSplitTask`
+    - `RunImageWisedesignCrop`
+    - `RunImageWisedesignInpainting`
+    - `RunImageWisedesignColorfilter`
+    - `RunImageWisedesignCombine`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 支持接口`ListOtaPackageInfo`、`CreateOtaPackage`、`ShowOtaPackage`、`DeleteOtaPackage`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListInstanceConsumerGroups`:
+    - 新增响应参数 `groups`
+    - 移除响应参数 `group_ids`、`next_offset`、`previous_offset`
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 支持接口`ListSpecIssueStayTimes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.26 2023-02-23
 
 ### HuaweiCloud SDK CBR

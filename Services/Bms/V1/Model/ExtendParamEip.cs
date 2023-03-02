@@ -19,21 +19,21 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 弹性公网IP的计费模式。若带宽计费类型为bandwidth，则支持prePaid和postPaid；若带宽计费类型为traffic，仅支持postPaid。取值范围：prePaid：预付费，即包年包月postPaid：后付费，即按需付费 说明：如果bandwidth对象中sharetype是WHOLE且id有值，弹性公网IP只能创建为按需付费的，故该参数传参“prePaid”无效。
         /// </summary>
         /// <value>弹性公网IP的计费模式。若带宽计费类型为bandwidth，则支持prePaid和postPaid；若带宽计费类型为traffic，仅支持postPaid。取值范围：prePaid：预付费，即包年包月postPaid：后付费，即按需付费 说明：如果bandwidth对象中sharetype是WHOLE且id有值，弹性公网IP只能创建为按需付费的，故该参数传参“prePaid”无效。</value>
-        [JsonConverter(typeof(EnumClassConverter<ChargingmodeEnum>))]
-        public class ChargingmodeEnum
+        [JsonConverter(typeof(EnumClassConverter<ChargingModeEnum>))]
+        public class ChargingModeEnum
         {
             /// <summary>
             /// Enum PREPAID for value: prePaid
             /// </summary>
-            public static readonly ChargingmodeEnum PREPAID = new ChargingmodeEnum("prePaid");
+            public static readonly ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
 
             /// <summary>
             /// Enum POSTPAID for value: postPaid
             /// </summary>
-            public static readonly ChargingmodeEnum POSTPAID = new ChargingmodeEnum("postPaid");
+            public static readonly ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
 
-            private static readonly Dictionary<string, ChargingmodeEnum> StaticFields =
-            new Dictionary<string, ChargingmodeEnum>()
+            private static readonly Dictionary<string, ChargingModeEnum> StaticFields =
+            new Dictionary<string, ChargingModeEnum>()
             {
                 { "prePaid", PREPAID },
                 { "postPaid", POSTPAID },
@@ -41,17 +41,17 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             private string _value;
 
-            public ChargingmodeEnum()
+            public ChargingModeEnum()
             {
 
             }
 
-            public ChargingmodeEnum(string value)
+            public ChargingModeEnum(string value)
             {
                 _value = value;
             }
 
-            public static ChargingmodeEnum FromValue(string value)
+            public static ChargingModeEnum FromValue(string value)
             {
                 if(value == null){
                     return null;
@@ -92,7 +92,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     return true;
                 }
 
-                if (this.Equals(obj as ChargingmodeEnum))
+                if (this.Equals(obj as ChargingModeEnum))
                 {
                     return true;
                 }
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 return false;
             }
 
-            public bool Equals(ChargingmodeEnum obj)
+            public bool Equals(ChargingModeEnum obj)
             {
                 if ((object)obj == null)
                 {
@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
-            public static bool operator ==(ChargingmodeEnum a, ChargingmodeEnum b)
+            public static bool operator ==(ChargingModeEnum a, ChargingModeEnum b)
             {
                 if (System.Object.ReferenceEquals(a, b))
                 {
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 return a.Equals(b);
             }
 
-            public static bool operator !=(ChargingmodeEnum a, ChargingmodeEnum b)
+            public static bool operator !=(ChargingModeEnum a, ChargingModeEnum b)
             {
                 return !(a == b);
             }
@@ -134,8 +134,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// <summary>
         /// 弹性公网IP的计费模式。若带宽计费类型为bandwidth，则支持prePaid和postPaid；若带宽计费类型为traffic，仅支持postPaid。取值范围：prePaid：预付费，即包年包月postPaid：后付费，即按需付费 说明：如果bandwidth对象中sharetype是WHOLE且id有值，弹性公网IP只能创建为按需付费的，故该参数传参“prePaid”无效。
         /// </summary>
-        [JsonProperty("chargingmode", NullValueHandling = NullValueHandling.Ignore)]
-        public ChargingmodeEnum Chargingmode { get; set; }
+        [JsonProperty("chargingMode", NullValueHandling = NullValueHandling.Ignore)]
+        public ChargingModeEnum ChargingMode { get; set; }
 
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ExtendParamEip {\n");
-            sb.Append("  chargingmode: ").Append(Chargingmode).Append("\n");
+            sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -168,9 +168,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             return 
                 (
-                    this.Chargingmode == input.Chargingmode ||
-                    (this.Chargingmode != null &&
-                    this.Chargingmode.Equals(input.Chargingmode))
+                    this.ChargingMode == input.ChargingMode ||
+                    (this.ChargingMode != null &&
+                    this.ChargingMode.Equals(input.ChargingMode))
                 );
         }
 
@@ -182,8 +182,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Chargingmode != null)
-                    hashCode = hashCode * 59 + this.Chargingmode.GetHashCode();
+                if (this.ChargingMode != null)
+                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 return hashCode;
             }
         }

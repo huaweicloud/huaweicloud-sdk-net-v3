@@ -14,6 +14,150 @@ namespace HuaweiCloud.SDK.Image.V2
 
         
         /// <summary>
+        /// 创建任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateImageHighresolutionMattingTaskResponse CreateImageHighresolutionMattingTask(CreateImageHighresolutionMattingTaskRequest createImageHighresolutionMattingTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-highresolution-matting/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageHighresolutionMattingTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateImageHighresolutionMattingTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateImageToVideoTaskResponse CreateImageToVideoTask(CreateImageToVideoTaskRequest createImageToVideoTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-to-video/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageToVideoTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateImageToVideoTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateImageTranslateTaskResponse CreateImageTranslateTask(CreateImageTranslateTaskRequest createImageTranslateTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-translate/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageTranslateTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateImageTranslateTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// 创建视频封面任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVideoCoverAnalysisTaskResponse CreateVideoCoverAnalysisTask(CreateVideoCoverAnalysisTaskRequest createVideoCoverAnalysisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cover-analysis/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoCoverAnalysisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoCoverAnalysisTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVideoCuttingTaskResponse CreateVideoCuttingTask(CreateVideoCuttingTaskRequest createVideoCuttingTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cutting/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoCuttingTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoCuttingTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// 创建视频拆条任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVideoShotSplitTaskResponse CreateVideoShotSplitTask(CreateVideoShotSplitTaskRequest createVideoShotSplitTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-shot-split/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoShotSplitTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoShotSplitTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVideoSummarizationAnalysisTaskResponse CreateVideoSummarizationAnalysisTask(CreateVideoSummarizationAnalysisTaskRequest createVideoSummarizationAnalysisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-summarization-analysis/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoSummarizationAnalysisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoSummarizationAnalysisTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVideoSynthesisTaskResponse CreateVideoSynthesisTask(CreateVideoSynthesisTaskRequest createVideoSynthesisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-synthesis/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoSynthesisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoSynthesisTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVideoTranslateTaskResponse CreateVideoTranslateTask(CreateVideoTranslateTaskRequest createVideoTranslateTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-translate/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoTranslateTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoTranslateTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 名人识别
         ///
         /// 分析并识别图片中包含的政治人物、明星及网红人物，返回人物信息及人脸坐标。
@@ -142,6 +286,70 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
+        /// 智能设计图像滤镜
+        ///
+        /// 智能设计图像滤镜服务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RunImageWisedesignColorfilterResponse RunImageWisedesignColorfilter(RunImageWisedesignColorfilterRequest runImageWisedesignColorfilterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-colorfilter",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageWisedesignColorfilterRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RunImageWisedesignColorfilterResponse>(response);
+        }
+        
+        /// <summary>
+        /// 智能设计图像合图
+        ///
+        /// 智能设计图像合图服务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RunImageWisedesignCombineResponse RunImageWisedesignCombine(RunImageWisedesignCombineRequest runImageWisedesignCombineRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-combine",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageWisedesignCombineRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RunImageWisedesignCombineResponse>(response);
+        }
+        
+        /// <summary>
+        /// 智能设计图像裁剪
+        ///
+        /// 智能设计图像裁剪服务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RunImageWisedesignCropResponse RunImageWisedesignCrop(RunImageWisedesignCropRequest runImageWisedesignCropRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-crop",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageWisedesignCropRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RunImageWisedesignCropResponse>(response);
+        }
+        
+        /// <summary>
+        /// 智能设计图像修复
+        ///
+        /// 智能设计图像修复服务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RunImageWisedesignInpaintingResponse RunImageWisedesignInpainting(RunImageWisedesignInpaintingRequest runImageWisedesignInpaintingRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-inpainting",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageWisedesignInpaintingRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RunImageWisedesignInpaintingResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询媒资图像标签
         ///
         /// 用于用户自查是否存在自定义的标签。
@@ -171,6 +379,159 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runRecaptureDetectRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RunRecaptureDetectResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowImageHighresolutionMattingTaskResponse ShowImageHighresolutionMattingTask(ShowImageHighresolutionMattingTaskRequest showImageHighresolutionMattingTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showImageHighresolutionMattingTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-highresolution-matting/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageHighresolutionMattingTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowImageHighresolutionMattingTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowImageToVideoTaskResponse ShowImageToVideoTask(ShowImageToVideoTaskRequest showImageToVideoTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showImageToVideoTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-to-video/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageToVideoTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowImageToVideoTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowImageTranslateTaskResponse ShowImageTranslateTask(ShowImageTranslateTaskRequest showImageTranslateTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showImageTranslateTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-translate/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageTranslateTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowImageTranslateTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// 查询视频封面任务完成状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVideoCoverAnalysisTaskResponse ShowVideoCoverAnalysisTask(ShowVideoCoverAnalysisTaskRequest showVideoCoverAnalysisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoCoverAnalysisTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cover-analysis/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoCoverAnalysisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoCoverAnalysisTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVideoCuttingTaskResponse ShowVideoCuttingTask(ShowVideoCuttingTaskRequest showVideoCuttingTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoCuttingTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cutting/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoCuttingTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoCuttingTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// 查询拆条任务状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVideoShotSplitTaskResponse ShowVideoShotSplitTask(ShowVideoShotSplitTaskRequest showVideoShotSplitTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoShotSplitTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-shot-split/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoShotSplitTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoShotSplitTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVideoSummarizationAnalysisTaskResponse ShowVideoSummarizationAnalysisTask(ShowVideoSummarizationAnalysisTaskRequest showVideoSummarizationAnalysisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoSummarizationAnalysisTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-summarization-analysis/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoSummarizationAnalysisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoSummarizationAnalysisTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVideoSynthesisTaskResponse ShowVideoSynthesisTask(ShowVideoSynthesisTaskRequest showVideoSynthesisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoSynthesisTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-synthesis/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoSynthesisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoSynthesisTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVideoTranslateTaskResponse ShowVideoTranslateTask(ShowVideoTranslateTaskRequest showVideoTranslateTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoTranslateTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-translate/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoTranslateTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoTranslateTaskResponse>(response);
         }
         
     }

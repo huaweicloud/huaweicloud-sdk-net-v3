@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     public class OsStopBodyType 
     {
         /// <summary>
-        /// 关机类型：SOFT：普通关机（默认）。HARD：强制关机。
+        /// 关机类型：SOFT：普通关机（不生效）。HARD：强制关机（默认）。
         /// </summary>
-        /// <value>关机类型：SOFT：普通关机（默认）。HARD：强制关机。</value>
+        /// <value>关机类型：SOFT：普通关机（不生效）。HARD：强制关机（默认）。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
 
         /// <summary>
-        /// 关机类型：SOFT：普通关机（默认）。HARD：强制关机。
+        /// 关机类型：SOFT：普通关机（不生效）。HARD：强制关机（默认）。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

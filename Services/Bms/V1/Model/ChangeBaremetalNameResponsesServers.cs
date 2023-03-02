@@ -433,9 +433,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         }
 
         /// <summary>
-        /// 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
+        /// 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机REBOOT表示重启
         /// </summary>
-        /// <value>扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启</value>
+        /// <value>扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机REBOOT表示重启</value>
         [JsonConverter(typeof(EnumClassConverter<OSEXTSTSvmStateEnum>))]
         public class OSEXTSTSvmStateEnum
         {
@@ -450,11 +450,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             public static readonly OSEXTSTSvmStateEnum SHUTOFF = new OSEXTSTSvmStateEnum("SHUTOFF");
 
             /// <summary>
-            /// Enum SUSPENDED for value: SUSPENDED
-            /// </summary>
-            public static readonly OSEXTSTSvmStateEnum SUSPENDED = new OSEXTSTSvmStateEnum("SUSPENDED");
-
-            /// <summary>
             /// Enum REBOOT for value: REBOOT
             /// </summary>
             public static readonly OSEXTSTSvmStateEnum REBOOT = new OSEXTSTSvmStateEnum("REBOOT");
@@ -464,7 +459,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             {
                 { "RUNNING", RUNNING },
                 { "SHUTOFF", SHUTOFF },
-                { "SUSPENDED", SUSPENDED },
                 { "REBOOT", REBOOT },
             };
 
@@ -817,7 +811,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("OS-EXT-STS:task_state", NullValueHandling = NullValueHandling.Ignore)]
         public OSEXTSTStaskStateEnum OSEXTSTStaskState { get; set; }
         /// <summary>
-        /// 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
+        /// 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机REBOOT表示重启
         /// </summary>
         [JsonProperty("OS-EXT-STS:vm_state", NullValueHandling = NullValueHandling.Ignore)]
         public OSEXTSTSvmStateEnum OSEXTSTSvmState { get; set; }

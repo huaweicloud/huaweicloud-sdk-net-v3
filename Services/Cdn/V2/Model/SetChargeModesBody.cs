@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 计费模式，支持flux（流量），bw（带宽）
+        /// 计费模式，支持flux（流量），v2及以上客户支持bw（带宽）
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }

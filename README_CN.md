@@ -21,8 +21,10 @@
   ，您需要确认已在 [华为云控制台](https://console.huaweicloud.com/console/?locale=zh-cn&region=cn-north-4#/home) 开通当前服务。
 
 - 华为云 .Net SDK 适用于：
-    - **.NET Standard 2.0** 及其以上版本
-    - **C# 4.0** 及其以上版本
+  - **.NET and .NET Core 2.0** 及以上版本
+  - **.NET Framework 4.6.2** 及以上版本
+
+更多版本维护信息请参考 [.NET Core](https://learn.microsoft.com/zh-cn/lifecycle/faq/dotnet-core)、[.NET Framework](https://learn.microsoft.com/zh-cn/lifecycle/faq/dotnet-framework) 生命周期常见问题解答。
 
 ## SDK 获取和安装
 
@@ -348,21 +350,18 @@ catch (ServiceResponseException serviceResponseException)
 
 ``` csharp
 // 初始化异步客户端，以初始化 VpcAsyncClient 为例
-var vpcClient = VpcAsyncClient.NewBuilder()
+var vpcAsyncClient = VpcAsyncClient.NewBuilder()
     .WithCredential(auth)
     .WithEndPoint(endpoint)
     .WithHttpConfig(config)
     .Build();
 
-// 发送异步请求
-var future = vpcClient.ListVpcsAsync(new ListVpcsRequest()
-{
-    Limit = 1
-});
 
-// 获取异步请求结果
-var response = future.Result;
-Console.WriteLine(JsonUtils.Serialize(response.Vpcs));
+var request = new ListVpcsRequest();
+
+// 异步发送请求，获取响应
+var response = await vpcAsyncClient.ListVpcsAsync(request);
+Console.WriteLine(JsonUtils.Serialize(response));
 ```
 
 ### 6. 故障处理 [:top:](#用户手册-top)
@@ -487,11 +486,148 @@ namespace UploadBatchTaskFileDemo
 
 ### 8. FAQ [:top:](#用户手册-top)
 
-- 使用 .Net Framework 4.7 集成 .Net SDK，发生死锁问题
+1、使用 .NET Framework 集成 .Net SDK, 报错 System.Net.ProtocolViolationException: 无法发送具有此谓词类型的内容正文
+
+【问题原因】：.NET Framework 不支持生成带有请求体的 GET 请求
+
+【解决方案】：配置参数`IgnoreBodyForGetRequest` 使GET请求不带请求体， 如下：
+
+```c#
+var httpConfig = HttpConfig.GetDefaultConfig();
+httpConfig.IgnoreBodyForGetRequest = true;
+
+var client = VpcClient.NewBuilder()
+    .WithCredential(auth)
+    .WithHttpConfig(httpConfig)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+```
+
+2、使用 .NET Framework 4.7 集成 .NET SDK，发生死锁问题
 
 【问题现象】：使用 **同步客户端** 调用某接口，任务启动后程序挂死，无任何报错信息，也不会超时退出
 
-【问题原因】：.Net SDK 内部 **同步客户端** 发送请求的实现是先发送 **异步** 请求，然后等待异步任务返回。在此场景下，.Net Framework UI 的线程上下文和 SDK 的异步任务上下文发生了**死锁**，导致
+【问题原因】：.NET SDK 内部 **同步客户端** 发送请求的实现是先发送 **异步** 请求，然后等待异步任务返回。在此场景下，.Net Framework UI 的线程上下文和 SDK 的异步任务上下文发生了**死锁**，导致
 SDK 的异步任务无法启动。[原文链接](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
 
-【解决方案】：**将同步客户端切换成异步客户端**，从 UI 事件到 API 请求均为异步就不会存在死锁问题。
+【解决方案】：**将同步客户端切换成异步客户端**，从 UI 事件到 API 请求均为异步就不会存在死锁问题，以下为MVC和WPF解决方案的示例：
+
+MVC
+
+```c
+using System;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+namespace WebApplication1.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly VpcAsyncClient _vpcAsyncClient = InitAsyncClient();
+
+        private static VpcAsyncClient InitAsyncClient()
+        {
+            const string ak = "{your ak string}";
+            const string sk = "{your sk string}";
+
+            var auth = new BasicCredentials(ak, sk);
+			
+            // 使用异步客户端
+            var client = VpcAsyncClient.NewBuilder()
+                    .WithCredential(auth)
+                    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+                    .Build();
+            return client;
+        }
+
+        private async Task<ListVpcsResponse> ListVpcsAsync()
+        {
+            var req = new ListVpcsRequest();
+            
+            // 异步发送请求，使用await不会阻塞线程
+            var resp = await _vpcAsyncClient.ListVpcsAsync(req);
+            Console.WriteLine(resp.GetHttpStatusCode());
+            return resp;
+        }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+        
+        // 使用异步方法替换同步方法
+        public async Task<ActionResult> About()
+        {
+            var resp = await ListVpcsAsync();
+            var respString = JsonUtils.Serialize(resp);
+
+            ViewBag.Message = respString;
+            return View();
+        }
+    }
+}
+```
+
+WPF
+
+```c#
+using System;
+using System.Threading.Tasks;
+using System.Windows;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+namespace WpfApp1
+{
+    public partial class MainWindow : Window
+    {
+
+        private readonly VpcAsyncClient _asyncClient = InitAsyncClient();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private static VpcAsyncClient InitAsyncClient()
+        {
+            const string ak = "{your ak string}";
+            const string sk = "{your sk string}";
+
+            var auth = new BasicCredentials(ak, sk);
+
+            // 使用异步客户端
+            var client = VpcAsyncClient.NewBuilder()
+                .WithCredential(auth)
+                .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+                .Build();
+
+            return client;
+        }
+
+        private async Task<ListVpcsResponse> ListVpcs()
+        {
+            var req = new ListVpcsRequest();
+
+            // 异步发送请求，使用await不会阻塞线程
+            var resp = await _asyncClient.ListVpcsAsync(req);
+            Console.WriteLine(resp.GetHttpStatusCode());
+            return resp;
+        }
+
+        // 使用异步方法替换同步方法
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var resp = await ListVpcs();
+            var respString = JsonUtils.Serialize(resp);
+            MessageBox.Show(respString);
+        }
+    }
+}
+```

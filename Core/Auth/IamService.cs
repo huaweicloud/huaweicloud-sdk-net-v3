@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             var message = client.InitHttpRequest(request, true);
             try
             {
-                var response = client.DoHttpRequest(message).Result;
+                var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));
                 if ((int)response.StatusCode >= 400)
                 {
                     throw ExceptionUtils.GetException(response);
@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             var message = client.InitHttpRequest(request, true);
             try
             {
-                var response = client.DoHttpRequest(message).Result;
+                var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));
                 if ((int)response.StatusCode >= 400)
                 {
                     throw ExceptionUtils.GetException(response);

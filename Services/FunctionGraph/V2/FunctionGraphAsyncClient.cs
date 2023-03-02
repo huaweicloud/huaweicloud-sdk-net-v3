@@ -1205,7 +1205,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerializeNull<UpdateTriggerResponse>(response);
+            return JsonUtils.DeSerialize<UpdateTriggerResponse>(response);
         }
         
         /// <summary>

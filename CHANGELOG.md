@@ -1,3 +1,132 @@
+# 3.1.27 2023-03-02
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListBareMetalServers`:
+    - Add the enum values `HARD_REBOOT`, `DELETED` to the response parameter `status`
+    - Remove the enum values `suspended` from the response parameter `OS-EXT-STS:vm_state`
+  - Changes of the interface `CreateBareMetalServers`:
+    - Add the request parameter `chargingMode`
+    - Remove the request parameter `chargingmode`
+  - Remove the enum values `SUSPENDED` from the response parameter `OS-EXT-STS:vm_state` from the interface `ChangeBaremetalServerName`
+  - Changes of the interface `ListBareMetalServerDetails`:
+    - Add the enum values `HARD_REBOOT`, `DELETED` to the response parameter `status`
+    - Remove the enum values `suspended` from the response parameter `OS-EXT-STS:vm_state`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ShowDomainFullConfig`:
+    - Modify the type `string` -> `int32` of the response parameter `error_code`
+    - Modify the type `string` -> `int32` of the response parameter `target_code`
+  - Changes of the interface `UpdateDomainFullConfig`:
+    - Modify the type `string` -> `int32` of the request parameter `error_code`
+    - Modify the type `string` -> `int32` of the request parameter `target_code`
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+  - Support the interfaces `ShowReplSetName`, `UpdateReplSetName`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `UpdateTrigger`:
+    - Add the request parameter `event_data`
+    - Add the response parameters `trigger_id`, `trigger_type_code`, `trigger_status`, `event_data`, `last_updated_time`, `created_time`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the following interfaces：
+    - `ResetDbUserPassword`
+    - `ModifyDbUserPrivilege`
+    - `ListDbUsers`
+    - `CreateDbUser`
+    - `DeleteDbUser`
+    - `ListInstanceDatabases`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - Support the following interfaces：
+    - `CreateVideoSynthesisTask`
+    - `ShowVideoSynthesisTask`
+    - `CreateImageToVideoTask`
+    - `ShowImageToVideoTask`
+    - `CreateVideoCuttingTask`
+    - `ShowVideoCuttingTask`
+    - `CreateVideoTranslateTask`
+    - `ShowVideoTranslateTask`
+    - `CreateImageHighresolutionMattingTask`
+    - `ShowImageHighresolutionMattingTask`
+    - `CreateImageTranslateTask`
+    - `ShowImageTranslateTask`
+    - `CreateVideoCoverAnalysisTask`
+    - `ShowVideoCoverAnalysisTask`
+    - `CreateVideoSummarizationAnalysisTask`
+    - `ShowVideoSummarizationAnalysisTask`
+    - `CreateVideoShotSplitTask`
+    - `ShowVideoShotSplitTask`
+    - `RunImageWisedesignCrop`
+    - `RunImageWisedesignInpainting`
+    - `RunImageWisedesignColorfilter`
+    - `RunImageWisedesignCombine`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - Support the interfaces `ListOtaPackageInfo`, `CreateOtaPackage`, `ShowOtaPackage`, `DeleteOtaPackage`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListInstanceConsumerGroups`:
+    - Add the response parameter `groups`
+    - Remove the response parameters `group_ids`, `next_offset`, `previous_offset`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - Support the interface `ListSpecIssueStayTimes`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.26 2023-02-23
 
 ### HuaweiCloud SDK CBR

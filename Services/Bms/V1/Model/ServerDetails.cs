@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     public class ServerDetails 
     {
         /// <summary>
-        /// 裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
+        /// 裸金属服务器当前状态信息。  取值范围：  ACTIVE：运行中/正在关机/删除中 BUILD：创建中 ERROR：故障 HARD_REBOOT：强制重启中 REBOOT：重启中 DELETED：实例已被正常删除 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
         /// </summary>
-        /// <value>裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中</value>
+        /// <value>裸金属服务器当前状态信息。  取值范围：  ACTIVE：运行中/正在关机/删除中 BUILD：创建中 ERROR：故障 HARD_REBOOT：强制重启中 REBOOT：重启中 DELETED：实例已被正常删除 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -38,9 +38,19 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             public static readonly StatusEnum ERROR = new StatusEnum("ERROR");
 
             /// <summary>
+            /// Enum HARD_REBOOT for value: HARD_REBOOT
+            /// </summary>
+            public static readonly StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
+
+            /// <summary>
             /// Enum REBOOT for value: REBOOT
             /// </summary>
             public static readonly StatusEnum REBOOT = new StatusEnum("REBOOT");
+
+            /// <summary>
+            /// Enum DELETED for value: DELETED
+            /// </summary>
+            public static readonly StatusEnum DELETED = new StatusEnum("DELETED");
 
             /// <summary>
             /// Enum SHUTOFF for value: SHUTOFF
@@ -53,7 +63,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 { "ACTIVE", ACTIVE },
                 { "BUILD", BUILD },
                 { "ERROR", ERROR },
+                { "HARD_REBOOT", HARD_REBOOT },
                 { "REBOOT", REBOOT },
+                { "DELETED", DELETED },
                 { "SHUTOFF", SHUTOFF },
             };
 
@@ -300,9 +312,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         }
 
         /// <summary>
-        /// 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机suspended：暂停reboot：重启
+        /// 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机reboot：重启
         /// </summary>
-        /// <value>扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机suspended：暂停reboot：重启</value>
+        /// <value>扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机reboot：重启</value>
         [JsonConverter(typeof(EnumClassConverter<OSEXTSTSvmStateEnum>))]
         public class OSEXTSTSvmStateEnum
         {
@@ -317,11 +329,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             public static readonly OSEXTSTSvmStateEnum SHUTOFF = new OSEXTSTSvmStateEnum("shutoff");
 
             /// <summary>
-            /// Enum SUSPENDED for value: suspended
-            /// </summary>
-            public static readonly OSEXTSTSvmStateEnum SUSPENDED = new OSEXTSTSvmStateEnum("suspended");
-
-            /// <summary>
             /// Enum REBOOT for value: reboot
             /// </summary>
             public static readonly OSEXTSTSvmStateEnum REBOOT = new OSEXTSTSvmStateEnum("reboot");
@@ -331,7 +338,6 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             {
                 { "active", ACTIVE },
                 { "shutoff", SHUTOFF },
-                { "suspended", SUSPENDED },
                 { "reboot", REBOOT },
             };
 
@@ -754,7 +760,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public string AccessIPv6 { get; set; }
 
         /// <summary>
-        /// 裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
+        /// 裸金属服务器当前状态信息。  取值范围：  ACTIVE：运行中/正在关机/删除中 BUILD：创建中 ERROR：故障 HARD_REBOOT：强制重启中 REBOOT：重启中 DELETED：实例已被正常删除 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -782,7 +788,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("OS-EXT-STS:task_state", NullValueHandling = NullValueHandling.Ignore)]
         public OSEXTSTStaskStateEnum OSEXTSTStaskState { get; set; }
         /// <summary>
-        /// 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机suspended：暂停reboot：重启
+        /// 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机reboot：重启
         /// </summary>
         [JsonProperty("OS-EXT-STS:vm_state", NullValueHandling = NullValueHandling.Ignore)]
         public OSEXTSTSvmStateEnum OSEXTSTSvmState { get; set; }

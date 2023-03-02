@@ -21,8 +21,10 @@ This document introduces how to obtain and use Huawei Cloud .Net SDK.
   service in [Huawei Cloud console](https://console.huaweicloud.com/?locale=en-us) if needed.
 
 - The .NET SDK requires：
-    - **.NET Standard 2.0** or above
-    - **C# 4.0** or above
+  - **.NET and .NET Core 2.0** or above
+  - **.NET Framework 4.6.2** or above
+
+For more version maintenance information, please refer to **Lifecycle FAQ** - [.NET Core](https://learn.microsoft.com/en-us/lifecycle/faq/dotnet-core), [.NET Framework](https://learn.microsoft.com/en-us/lifecycle/faq/dotnet-framework)
 
 ## Install .Net SDK
 
@@ -356,21 +358,18 @@ catch (ServiceResponseException serviceResponseException)
 
 ```csharp
 // Initialize asynchronous client instance, take VpcAsyncClient for example
-var vpcClient = VpcAsyncClient.NewBuilder()
+var vpcAsyncClient = VpcAsyncClient.NewBuilder()
     .WithCredential(auth)
     .WithEndPoint(endpoint)
     .WithHttpConfig(config)
     .Build();
 
-// send asynchronous request
-var future = vpcClient.ListVpcsAsync(new ListVpcsRequest()
-{
-    Limit = 1
-});
 
-// get asynchronous response
-var response = future.Result;
-Console.WriteLine(JsonUtils.Serialize(response.Vpcs));
+var request = new ListVpcsRequest();
+
+// Send the request asynchronously and get the response
+var response = await vpcAsyncClient.ListVpcsAsync(request);
+Console.WriteLine(JsonUtils.Serialize(response));
 ```
 
 ### 6. Troubleshooting [:top:](#user-manual-top)
@@ -498,15 +497,152 @@ namespace UploadBatchTaskFileDemo
 
 ### 8. FAQ [:top:](#user-manual-top)
 
-Use .Net Framework 4.7 to integrate .Net SDK, a dead lock occurs
+1 Using .NET Framework 4.7 to integrate .NET SDK, an exception throws - ProtocolViolationException: Cannot send a content-body with this verb-type
+
+**[Cause]**: .NET Framework does not support generating GET requests with content-body.
+
+**[Solution]**: Configuration parameter `IgnoreBodyForGetRequest` makes GET request without content-body, as follows:
+
+```c#
+var httpConfig = HttpConfig.GetDefaultConfig();
+httpConfig.IgnoreBodyForGetRequest = true;
+
+var client = VpcClient.NewBuilder()
+    .WithCredential(auth)
+    .WithHttpConfig(httpConfig)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+```
+
+2 Use .NET Framework 4.7 to integrate .NET SDK, a dead lock occurs
 
 **[Symptom]**: When using synchronized client to call an interface, and the program has been started, but where is no
 error message or timeout occurs.
 
 **[Cause]**: The inner implementation of sending requests in synchronized client of SDK is to use an asynchronous task,
-and SDK will await this task. In such scenario, **deadlock** occurs between the context of the .Net Framework UI and the
+and SDK will await this task. In such scenario, **deadlock** occurs between the context of the .NET Framework UI and the
 asynchronous task context of the SDK. As a result, the asynchronous task of the SDK cannot be
 activated. [Original article](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
 
 **[Solution]**: **Switch the synchronous client to the asynchronous client**. If the UI events and API requests are both
-asynchronous, there will be no deadlock.
+asynchronous, there will be no deadlock. The following are examples of MVC and WPF solutions:
+
+MVC
+
+```c#
+using System;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+namespace WebApplication1.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly VpcAsyncClient _vpcAsyncClient = InitAsyncClient();
+
+        private static VpcAsyncClient InitAsyncClient()
+        {
+            const string ak = "{your ak string}";
+            const string sk = "{your sk string}";
+
+            var auth = new BasicCredentials(ak, sk);
+			
+            // Use asynchronous client
+            var client = VpcAsyncClient.NewBuilder()
+                    .WithCredential(auth)
+                    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+                    .Build();
+            return client;
+        }
+
+        private async Task<ListVpcsResponse> ListVpcsAsync()
+        {
+            var req = new ListVpcsRequest();
+            
+            // Send the request asynchronously, using await will not block the thread
+            var resp = await _vpcAsyncClient.ListVpcsAsync(req);
+            Console.WriteLine(resp.GetHttpStatusCode());
+            return resp;
+        }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+        
+        // Replace synchronous methods with asynchronous methods
+        public async Task<ActionResult> About()
+        {
+            var resp = await ListVpcsAsync();
+            var respString = JsonUtils.Serialize(resp);
+
+            ViewBag.Message = respString;
+            return View();
+        }
+    }
+}
+```
+
+WPF
+
+```c#
+using System;
+using System.Threading.Tasks;
+using System.Windows;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+namespace WpfApp1
+{
+    public partial class MainWindow : Window
+    {
+
+        private readonly VpcAsyncClient _asyncClient = InitAsyncClient();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private static VpcAsyncClient InitAsyncClient()
+        {
+            const string ak = "{your ak string}";
+            const string sk = "{your sk string}";
+
+            var auth = new BasicCredentials(ak, sk);
+
+            // Use asynchronous client
+            var client = VpcAsyncClient.NewBuilder()
+                .WithCredential(auth)
+                .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+                .Build();
+
+            return client;
+        }
+
+        private async Task<ListVpcsResponse> ListVpcs()
+        {
+            var req = new ListVpcsRequest();
+
+            // Send the request asynchronously, using await will not block the thread
+            var resp = await _asyncClient.ListVpcsAsync(req);
+            Console.WriteLine(resp.GetHttpStatusCode());
+            return resp;
+        }
+
+        // Replace synchronous methods with asynchronous methods
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var resp = await ListVpcs();
+            var respString = JsonUtils.Serialize(resp);
+            MessageBox.Show(respString);
+        }
+    }
+}
+```

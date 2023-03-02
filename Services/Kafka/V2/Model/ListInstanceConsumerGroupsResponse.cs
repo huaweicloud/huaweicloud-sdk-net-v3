@@ -17,28 +17,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 所有的消费组ID
+        /// 所有的消费组。
         /// </summary>
-        [JsonProperty("group_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> GroupIds { get; set; }
+        [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<GroupInfoSimple> Groups { get; set; }
 
         /// <summary>
-        /// 所有的消费组总数
+        /// 所有的消费组总数。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
-
-        /// <summary>
-        /// 下一个消费组序号
-        /// </summary>
-        [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? NextOffset { get; set; }
-
-        /// <summary>
-        /// 上一个消费组序号
-        /// </summary>
-        [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PreviousOffset { get; set; }
 
 
 
@@ -49,10 +37,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListInstanceConsumerGroupsResponse {\n");
-            sb.Append("  groupIds: ").Append(GroupIds).Append("\n");
+            sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
-            sb.Append("  nextOffset: ").Append(NextOffset).Append("\n");
-            sb.Append("  previousOffset: ").Append(PreviousOffset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,25 +61,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             return 
                 (
-                    this.GroupIds == input.GroupIds ||
-                    this.GroupIds != null &&
-                    input.GroupIds != null &&
-                    this.GroupIds.SequenceEqual(input.GroupIds)
+                    this.Groups == input.Groups ||
+                    this.Groups != null &&
+                    input.Groups != null &&
+                    this.Groups.SequenceEqual(input.Groups)
                 ) && 
                 (
                     this.Total == input.Total ||
                     (this.Total != null &&
                     this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.NextOffset == input.NextOffset ||
-                    (this.NextOffset != null &&
-                    this.NextOffset.Equals(input.NextOffset))
-                ) && 
-                (
-                    this.PreviousOffset == input.PreviousOffset ||
-                    (this.PreviousOffset != null &&
-                    this.PreviousOffset.Equals(input.PreviousOffset))
                 );
         }
 
@@ -105,14 +81,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.GroupIds != null)
-                    hashCode = hashCode * 59 + this.GroupIds.GetHashCode();
+                if (this.Groups != null)
+                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.Total != null)
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.NextOffset != null)
-                    hashCode = hashCode * 59 + this.NextOffset.GetHashCode();
-                if (this.PreviousOffset != null)
-                    hashCode = hashCode * 59 + this.PreviousOffset.GetHashCode();
                 return hashCode;
             }
         }

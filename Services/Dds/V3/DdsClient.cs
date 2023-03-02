@@ -1337,6 +1337,24 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询数据库复制集名称
+        ///
+        /// 查询数据库复制集名称
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReplSetNameResponse ShowReplSetName(ShowReplSetNameRequest showReplSetNameRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showReplSetNameRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replica-set/name",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplSetNameRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            ShowReplSetNameResponse showReplSetNameResponse = JsonUtils.DeSerializeNull<ShowReplSetNameResponse>(response);
+            return showReplSetNameResponse;
+        }
+        
+        /// <summary>
         /// 查询秒级监控配置
         ///
         /// 查询秒级监控配置。
@@ -1607,6 +1625,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRemarkRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateInstanceRemarkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改数据库复制集名称
+        ///
+        /// 修改数据库复制集名称
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateReplSetNameResponse UpdateReplSetName(UpdateReplSetNameRequest updateReplSetNameRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateReplSetNameRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replica-set/name",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReplSetNameRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            UpdateReplSetNameResponse updateReplSetNameResponse = JsonUtils.DeSerializeNull<UpdateReplSetNameResponse>(response);
+            return updateReplSetNameResponse;
         }
         
         /// <summary>

@@ -165,6 +165,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 创建Redis数据库账号
+        ///
+        /// 在Redis实例中创建数据库帐号。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDbUserResponse CreateDbUser(CreateDbUserRequest createDbUserRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createDbUserRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbUserRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateDbUserResponse>(response);
+        }
+        
+        /// <summary>
         /// 搭建实例与特定实例的容灾关系
         ///
         /// 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
@@ -229,6 +246,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除Redis数据库账号
+        ///
+        /// 删除Redis实例的数据库账号。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDbUserResponse DeleteDbUser(DeleteDbUserRequest deleteDbUserRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteDbUserRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbUserRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteDbUserResponse>(response);
         }
         
         /// <summary>
@@ -382,6 +416,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 获取Redis数据库账号列表和详情
+        ///
+        /// 获取Redis数据库账号列表和详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDbUsersResponse ListDbUsers(ListDbUsersRequest listDbUsersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listDbUsersRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbUsersRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListDbUsersResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询专属资源列表
         ///
         /// 查询专属资源列表。
@@ -443,6 +494,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取Redis实例数据库列表
+        ///
+        /// 获取Redis实例数据库列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceDatabasesResponse ListInstanceDatabases(ListInstanceDatabasesRequest listInstanceDatabasesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listInstanceDatabasesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/databases",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDatabasesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstanceDatabasesResponse>(response);
         }
         
         /// <summary>
@@ -577,6 +645,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 修改Redis数据库帐号权限
+        ///
+        /// 修改Redis数据库帐号权限。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyDbUserPrivilegeResponse ModifyDbUserPrivilege(ModifyDbUserPrivilegeRequest modifyDbUserPrivilegeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , modifyDbUserPrivilegeRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/privilege",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyDbUserPrivilegeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<ModifyDbUserPrivilegeResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改企业项目配额
         ///
         /// 修改企业项目配额。
@@ -661,6 +746,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseResumeDataSynchronizationRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<PauseResumeDataSynchronizationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 重置Redis数据库账号密码
+        ///
+        /// 重置Redis数据库账号密码。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResetDbUserPasswordResponse ResetDbUserPassword(ResetDbUserPasswordRequest resetDbUserPasswordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , resetDbUserPasswordRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/password",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetDbUserPasswordRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<ResetDbUserPasswordResponse>(response);
         }
         
         /// <summary>

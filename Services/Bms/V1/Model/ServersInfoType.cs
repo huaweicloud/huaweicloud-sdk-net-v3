@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     public class ServersInfoType 
     {
         /// <summary>
-        /// 重启类型：SOFT：普通重启。HARD：强制重启。
+        /// 重启类型：SOFT：普通重启（不生效）。HARD：强制重启（默认）。
         /// </summary>
-        /// <value>重启类型：SOFT：普通重启。HARD：强制重启。</value>
+        /// <value>重启类型：SOFT：普通重启（不生效）。HARD：强制重启（默认）。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
 
         /// <summary>
-        /// 重启类型：SOFT：普通重启。HARD：强制重启。
+        /// 重启类型：SOFT：普通重启（不生效）。HARD：强制重启（默认）。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

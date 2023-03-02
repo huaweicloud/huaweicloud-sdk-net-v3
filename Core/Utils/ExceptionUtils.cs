@@ -50,13 +50,18 @@ namespace HuaweiCloud.SDK.Core
         {
             if (exception is AggregateException)
             {
+                if (exception.InnerException is SdkException sdkException)
+                {
+                    return sdkException;
+                }
+                
                 if (exception.InnerException is HttpRequestException httpRequestException)
                 {
                     if (httpRequestException.InnerException == null)
                     {
                         return new ConnectionException(httpRequestException.Message, exception);
                     }
-
+                    
                     if (httpRequestException.InnerException is WebException webException)
                     {
                         switch (webException.Status)
@@ -71,6 +76,11 @@ namespace HuaweiCloud.SDK.Core
                                 return new ConnectionException(webException.Message, exception);
                         }
                     }
+                }
+
+                if (exception.InnerException != null)
+                {
+                    return new SdkException(exception.InnerException.Message, exception.InnerException);
                 }
             }
             return new SdkException(exception.Message, exception);
