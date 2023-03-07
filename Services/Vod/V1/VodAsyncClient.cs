@@ -882,5 +882,21 @@ namespace HuaweiCloud.SDK.Vod.V1
             return JsonUtils.DeSerialize<ShowTakeOverTaskDetailsResponse>(response);
         }
         
+        /// <summary>
+        /// 多字幕封装
+        ///
+        /// 多字幕封装，仅支持 HLS VTT格式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifySubtitleResponse> ModifySubtitleAsync(ModifySubtitleRequest modifySubtitleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<ModifySubtitleResponse>(response);
+        }
+        
     }
 }

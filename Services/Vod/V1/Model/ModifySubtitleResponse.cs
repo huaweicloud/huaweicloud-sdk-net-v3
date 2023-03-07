@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cbr.V1.Model
+namespace HuaweiCloud.SDK.Vod.V1.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class VaultBindRules 
+    public class ModifySubtitleResponse : SdkResponse
     {
 
         /// <summary>
-        /// 按tags过滤自动绑定的资源  最小长度：1  最大长度：5
+        /// 媒资ID。
         /// </summary>
-        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<BindRulesTags> Tags { get; set; }
+        [JsonProperty("asset_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AssetId { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class VaultBindRules {\n");
-            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("class ModifySubtitleResponse {\n");
+            sb.Append("  assetId: ").Append(AssetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,23 +41,22 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as VaultBindRules);
+            return this.Equals(input as ModifySubtitleResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(VaultBindRules input)
+        public bool Equals(ModifySubtitleResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
+                    this.AssetId == input.AssetId ||
+                    (this.AssetId != null &&
+                    this.AssetId.Equals(input.AssetId))
                 );
         }
 
@@ -69,8 +68,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.AssetId != null)
+                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
                 return hashCode;
             }
         }
