@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 执行计划元素的列表，只有当状态为&#39;AVAILABLE&#39;、&#39;APPLIED&#39;、’APPLY_IN_PROGRESS‘等完成创建后的状态才会被赋值，而&#39;CREATION_IN_PROGRESS&#39;或&#39;CREATION_FAILED&#39;会返回错误。
+        /// 执行计划项目的列表
         /// </summary>
         [JsonProperty("execution_plan_items", NullValueHandling = NullValueHandling.Ignore)]
         public List<ExecutionPlanItem> ExecutionPlanItems { get; set; }

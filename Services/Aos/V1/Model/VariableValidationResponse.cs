@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
-    /// variable-validation response
+    /// 
     /// </summary>
     public class VariableValidationResponse 
     {
 
         /// <summary>
-        /// 校验表达式。支持Terraform表达式
+        /// 校验表达式
         /// </summary>
         [JsonProperty("condition", NullValueHandling = NullValueHandling.Ignore)]
         public string Condition { get; set; }

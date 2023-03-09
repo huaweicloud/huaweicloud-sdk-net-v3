@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 模板中的所有参数
+        /// 解析模板得到的参数列表
         /// </summary>
         [JsonProperty("variables", NullValueHandling = NullValueHandling.Ignore)]
         public List<VariableResponse> Variables { get; set; }

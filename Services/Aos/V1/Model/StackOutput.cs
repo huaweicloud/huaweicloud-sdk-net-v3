@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 资源栈输出的名称，由用户在模板中定义  以 hcl 模板为例，name 为 vpc_id  &#x60;&#x60;&#x60;hcl output \&quot;vpc_id\&quot; {   value &#x3D; huaweicloud_vpc.my_hello_world_vpc.id } &#x60;&#x60;&#x60;  以 json 模板为例，name 为 vpc_id &#x60;&#x60;&#x60;json {   \&quot;output\&quot;: {     \&quot;vpc_id\&quot;: [       {         \&quot;value\&quot;: \&quot;${huaweicloud_vpc.my_hello_world_vpc.id}\&quot;       }     ]   } } &#x60;&#x60;&#x60; 
+        /// 资源栈输出的名称，由用户在模板中定义  以 HCL 模板为例，name 为 vpc_id  &#x60;&#x60;&#x60;hcl output \&quot;vpc_id\&quot; {   value &#x3D; huaweicloud_vpc.my_hello_world_vpc.id } &#x60;&#x60;&#x60;  以 json 模板为例，name 为 vpc_id &#x60;&#x60;&#x60;json {   \&quot;output\&quot;: {     \&quot;vpc_id\&quot;: [       {         \&quot;value\&quot;: \&quot;${huaweicloud_vpc.my_hello_world_vpc.id}\&quot;       }     ]   } } &#x60;&#x60;&#x60; 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

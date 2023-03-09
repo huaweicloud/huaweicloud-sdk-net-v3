@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
-    /// 资源栈事件
+    /// 
     /// </summary>
     public class StackEvent 
     {
         /// <summary>
-        /// 此次事件的类型   * &#x60;LOG&#x60; - 记录状态信息，比如当前状态，目标状态等。   * &#x60;ERROR&#x60; - 记录失败信息   * &#x60;DRIFT&#x60; - 记录资源偏移信息   * &#x60;SUMMARY&#x60; - 记录资源变更结果总结   * &#x60;CREATION_IN_PROGRESS&#x60; - 正在生成   * &#x60;CREATION_FAILED&#x60; - 生成失败   * &#x60;CREATION_COMPLETE&#x60; - 生成完成   * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除   * &#x60;DELETION_FAILED&#x60; - 删除失败   * &#x60;DELETION_COMPLETE&#x60; - 已经删除   * &#x60;UPDATE_IN_PROGRESS&#x60; - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION   * &#x60;UPDATE_FAILED&#x60; - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后   * &#x60;UPDATE_COMPLETE&#x60; - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION 
+        /// 此次事件的类型   * &#x60;LOG&#x60; - 记录状态信息，比如当前状态，目标状态等。   * &#x60;ERROR&#x60; - 记录失败信息   * &#x60;DRIFT&#x60; - 记录资源偏移信息   * &#x60;SUMMARY&#x60; - 记录资源变更结果总结   * &#x60;CREATION_IN_PROGRESS&#x60; - 正在生成   * &#x60;CREATION_FAILED&#x60; - 生成失败   * &#x60;CREATION_COMPLETE&#x60; - 生成完成   * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除   * &#x60;DELETION_FAILED&#x60; - 删除失败   * &#x60;DELETION_COMPLETE&#x60; - 已经删除   * &#x60;UPDATE_IN_PROGRESS&#x60; - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * &#x60;UPDATE_FAILED&#x60; - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * &#x60;UPDATE_COMPLETE&#x60; - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。 
         /// </summary>
-        /// <value>此次事件的类型   * &#x60;LOG&#x60; - 记录状态信息，比如当前状态，目标状态等。   * &#x60;ERROR&#x60; - 记录失败信息   * &#x60;DRIFT&#x60; - 记录资源偏移信息   * &#x60;SUMMARY&#x60; - 记录资源变更结果总结   * &#x60;CREATION_IN_PROGRESS&#x60; - 正在生成   * &#x60;CREATION_FAILED&#x60; - 生成失败   * &#x60;CREATION_COMPLETE&#x60; - 生成完成   * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除   * &#x60;DELETION_FAILED&#x60; - 删除失败   * &#x60;DELETION_COMPLETE&#x60; - 已经删除   * &#x60;UPDATE_IN_PROGRESS&#x60; - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION   * &#x60;UPDATE_FAILED&#x60; - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后   * &#x60;UPDATE_COMPLETE&#x60; - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION </value>
+        /// <value>此次事件的类型   * &#x60;LOG&#x60; - 记录状态信息，比如当前状态，目标状态等。   * &#x60;ERROR&#x60; - 记录失败信息   * &#x60;DRIFT&#x60; - 记录资源偏移信息   * &#x60;SUMMARY&#x60; - 记录资源变更结果总结   * &#x60;CREATION_IN_PROGRESS&#x60; - 正在生成   * &#x60;CREATION_FAILED&#x60; - 生成失败   * &#x60;CREATION_COMPLETE&#x60; - 生成完成   * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除   * &#x60;DELETION_FAILED&#x60; - 删除失败   * &#x60;DELETION_COMPLETE&#x60; - 已经删除   * &#x60;UPDATE_IN_PROGRESS&#x60; - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * &#x60;UPDATE_FAILED&#x60; - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * &#x60;UPDATE_COMPLETE&#x60; - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。 </value>
         [JsonConverter(typeof(EnumClassConverter<EventTypeEnum>))]
         public class EventTypeEnum
         {
@@ -198,6 +198,18 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
+        /// 资源的类型  以HCL格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
+        /// </summary>
+        [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceType { get; set; }
+
+        /// <summary>
+        /// 资源的名称，默认为资源的逻辑名称  以HCL格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
+        /// </summary>
+        [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceName { get; set; }
+
+        /// <summary>
         /// 资源id的名称，即对应资源作为id使用的值的名称，当资源未创建的时候，不返回resource_id_key 此id由provider定义，因此不同的provider可能遵循了不同的命名规则，具体的命名规则请与provider开发者确认或阅读provider文档 
         /// </summary>
         [JsonProperty("resource_id_key", NullValueHandling = NullValueHandling.Ignore)]
@@ -210,19 +222,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ResourceIdValue { get; set; }
 
         /// <summary>
-        /// 资源的名称，默认为资源的逻辑名称  以hcl格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
-        /// </summary>
-        [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceName { get; set; }
-
-        /// <summary>
-        /// 资源的类型  以hcl格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
-        /// </summary>
-        [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceType { get; set; }
-
-        /// <summary>
-        /// 资源键，若用户在模板中使用了count或for_each则会返回resource_key  若用户在模板中使用count，则resource_key为从0开始的数字  以hcl格式的模板为例，resource_key分别为0和1  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   count &#x3D; 2   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_key分别为0和1  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;,         \&quot;count\&quot;: 2       }     }   } } &#x60;&#x60;&#x60;  若用户在模板中使用for_each，则resource_key为用户自定义的字符串  以hcl格式的模板为例，resource_key分别为vpc1和vpc2  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   for_each &#x3D; {     \&quot;vpc1\&quot; &#x3D; \&quot;test_vpc\&quot;     \&quot;vpc2\&quot; &#x3D; \&quot;test_vpc\&quot;   }   name &#x3D; each.value } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_key分别为vpc1和vpc2  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;for_each\&quot;: {           \&quot;vpc1\&quot;: \&quot;test_vpc\&quot;,           \&quot;vpc2\&quot;: \&quot;test_vpc\&quot;         }         \&quot;name\&quot;: \&quot;${each.value}\&quot;       }     }   } } &#x60;&#x60;&#x60; 
+        /// 资源键，若用户在模板中使用了count或for_each则会返回resource_key  若用户在模板中使用count，则resource_key为从0开始的数字  以HCL格式的模板为例，模板中count为2，意味着将会生成两个资源，对应的resource_key分别为0和1  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   count &#x3D; 2   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，模板中count为2，意味着将会生成两个资源，对应的resource_key分别为0和1  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;,         \&quot;count\&quot;: 2       }     }   } } &#x60;&#x60;&#x60;  若用户在模板中使用for_each，则resource_key为用户自定义的字符串  以HCL格式的模板为例，resource_key分别为vpc1和vpc2  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   for_each &#x3D; {     \&quot;vpc1\&quot; &#x3D; \&quot;test_vpc\&quot;     \&quot;vpc2\&quot; &#x3D; \&quot;test_vpc\&quot;   }   name &#x3D; each.value } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_key分别为vpc1和vpc2  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;for_each\&quot;: {           \&quot;vpc1\&quot;: \&quot;test_vpc\&quot;,           \&quot;vpc2\&quot;: \&quot;test_vpc\&quot;         }         \&quot;name\&quot;: \&quot;${each.value}\&quot;       }     }   } } &#x60;&#x60;&#x60; 
         /// </summary>
         [JsonProperty("resource_key", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceKey { get; set; }
@@ -234,7 +234,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string Time { get; set; }
 
         /// <summary>
-        /// 此次事件的类型   * &#x60;LOG&#x60; - 记录状态信息，比如当前状态，目标状态等。   * &#x60;ERROR&#x60; - 记录失败信息   * &#x60;DRIFT&#x60; - 记录资源偏移信息   * &#x60;SUMMARY&#x60; - 记录资源变更结果总结   * &#x60;CREATION_IN_PROGRESS&#x60; - 正在生成   * &#x60;CREATION_FAILED&#x60; - 生成失败   * &#x60;CREATION_COMPLETE&#x60; - 生成完成   * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除   * &#x60;DELETION_FAILED&#x60; - 删除失败   * &#x60;DELETION_COMPLETE&#x60; - 已经删除   * &#x60;UPDATE_IN_PROGRESS&#x60; - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION   * &#x60;UPDATE_FAILED&#x60; - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后   * &#x60;UPDATE_COMPLETE&#x60; - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION 
+        /// 此次事件的类型   * &#x60;LOG&#x60; - 记录状态信息，比如当前状态，目标状态等。   * &#x60;ERROR&#x60; - 记录失败信息   * &#x60;DRIFT&#x60; - 记录资源偏移信息   * &#x60;SUMMARY&#x60; - 记录资源变更结果总结   * &#x60;CREATION_IN_PROGRESS&#x60; - 正在生成   * &#x60;CREATION_FAILED&#x60; - 生成失败   * &#x60;CREATION_COMPLETE&#x60; - 生成完成   * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除   * &#x60;DELETION_FAILED&#x60; - 删除失败   * &#x60;DELETION_COMPLETE&#x60; - 已经删除   * &#x60;UPDATE_IN_PROGRESS&#x60; - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * &#x60;UPDATE_FAILED&#x60; - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * &#x60;UPDATE_COMPLETE&#x60; - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。 
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public EventTypeEnum EventType { get; set; }
@@ -259,10 +259,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StackEvent {\n");
+            sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
+            sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  resourceIdKey: ").Append(ResourceIdKey).Append("\n");
             sb.Append("  resourceIdValue: ").Append(ResourceIdValue).Append("\n");
-            sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
-            sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("  resourceKey: ").Append(ResourceKey).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  eventType: ").Append(EventType).Append("\n");
@@ -290,6 +290,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
             return 
                 (
+                    this.ResourceType == input.ResourceType ||
+                    (this.ResourceType != null &&
+                    this.ResourceType.Equals(input.ResourceType))
+                ) && 
+                (
+                    this.ResourceName == input.ResourceName ||
+                    (this.ResourceName != null &&
+                    this.ResourceName.Equals(input.ResourceName))
+                ) && 
+                (
                     this.ResourceIdKey == input.ResourceIdKey ||
                     (this.ResourceIdKey != null &&
                     this.ResourceIdKey.Equals(input.ResourceIdKey))
@@ -298,16 +308,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.ResourceIdValue == input.ResourceIdValue ||
                     (this.ResourceIdValue != null &&
                     this.ResourceIdValue.Equals(input.ResourceIdValue))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
                 ) && 
                 (
                     this.ResourceKey == input.ResourceKey ||
@@ -344,14 +344,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ResourceType != null)
+                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceName != null)
+                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.ResourceIdKey != null)
                     hashCode = hashCode * 59 + this.ResourceIdKey.GetHashCode();
                 if (this.ResourceIdValue != null)
                     hashCode = hashCode * 59 + this.ResourceIdValue.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 if (this.ResourceKey != null)
                     hashCode = hashCode * 59 + this.ResourceKey.GetHashCode();
                 if (this.Time != null)

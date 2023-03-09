@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ClientRequestId { get; set; }
 
         /// <summary>
-        /// 用户希望操作的资源栈名称
+        /// 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
         /// </summary>
         [SDKProperty("stack_name", IsPath = true)]
         [JsonProperty("stack_name", NullValueHandling = NullValueHandling.Ignore)]
         public string StackName { get; set; }
 
         /// <summary>
-        /// 执行计划的名字。
+        /// 执行计划的名称。此名字在domain_id+区域+project_id+stack_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
         /// </summary>
         [SDKProperty("execution_plan_name", IsPath = true)]
         [JsonProperty("execution_plan_name", NullValueHandling = NullValueHandling.Ignore)]

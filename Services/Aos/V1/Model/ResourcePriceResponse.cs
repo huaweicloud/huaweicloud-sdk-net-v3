@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
-    /// resource price response
+    /// 
     /// </summary>
     public class ResourcePriceResponse 
     {
         /// <summary>
-        /// 计费模式，包周期计费、按需计费、免费的返回，不支持的资源不返回 PRE_PAID 包周期计费 POST_PAID 按需计费 FREE 免费
+        /// 计费模式  * &#x60;PRE_PAID&#x60; - 包周期计费 * &#x60;POST_PAID&#x60; - 按需计费 * &#x60;FREE&#x60; - 免费 
         /// </summary>
-        /// <value>计费模式，包周期计费、按需计费、免费的返回，不支持的资源不返回 PRE_PAID 包周期计费 POST_PAID 按需计费 FREE 免费</value>
+        /// <value>计费模式  * &#x60;PRE_PAID&#x60; - 包周期计费 * &#x60;POST_PAID&#x60; - 按需计费 * &#x60;FREE&#x60; - 免费 </value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         }
 
         /// <summary>
-        /// 包周期和按需的计费单位，包周期计费和按需计费返回，免费不会返回 HOUR：小时，包周期计费和按需计费返回，免费不会返回 DAY：天，包周期计费返回，按需计费和免费不会返回 WEEK：周，包周期计费返回，按需计费和免费不会返回 MONTH：月，包周期计费返回，按需计费和免费不会返回 YEAR：年，包周期计费返回，按需计费和免费不会返回 BYTE：字节，按需计费返回，包周期计费和免费不会返回 MB：百万字节，按需计费返回，包周期计费和免费不会返回 GB：千兆字节，按需计费返回，包周期计费和免费不会返回
+        /// 计费单位  若该资源支持包周期计费或按需计费，则会返回该字段；若该资源为免费资源，则不返回该字段。  * &#x60;HOUR&#x60; - 小时，按需计费的单位 * &#x60;DAY&#x60; - 天，按需计费的单位 * &#x60;MONTH&#x60; - 月，包周期计费的单位 * &#x60;YEAR&#x60; - 年，包周期计费的单位 * &#x60;BYTE&#x60; - 字节，按需计费的单位 * &#x60;MB&#x60; - 百万字节，包周期计费和按需计费的单位 * &#x60;GB&#x60; - 千兆字节，包周期计费和按需计费的单位 
         /// </summary>
-        /// <value>包周期和按需的计费单位，包周期计费和按需计费返回，免费不会返回 HOUR：小时，包周期计费和按需计费返回，免费不会返回 DAY：天，包周期计费返回，按需计费和免费不会返回 WEEK：周，包周期计费返回，按需计费和免费不会返回 MONTH：月，包周期计费返回，按需计费和免费不会返回 YEAR：年，包周期计费返回，按需计费和免费不会返回 BYTE：字节，按需计费返回，包周期计费和免费不会返回 MB：百万字节，按需计费返回，包周期计费和免费不会返回 GB：千兆字节，按需计费返回，包周期计费和免费不会返回</value>
+        /// <value>计费单位  若该资源支持包周期计费或按需计费，则会返回该字段；若该资源为免费资源，则不返回该字段。  * &#x60;HOUR&#x60; - 小时，按需计费的单位 * &#x60;DAY&#x60; - 天，按需计费的单位 * &#x60;MONTH&#x60; - 月，包周期计费的单位 * &#x60;YEAR&#x60; - 年，包周期计费的单位 * &#x60;BYTE&#x60; - 字节，按需计费的单位 * &#x60;MB&#x60; - 百万字节，包周期计费和按需计费的单位 * &#x60;GB&#x60; - 千兆字节，包周期计费和按需计费的单位 </value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -152,11 +152,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             /// Enum DAY for value: DAY
             /// </summary>
             public static readonly PeriodTypeEnum DAY = new PeriodTypeEnum("DAY");
-
-            /// <summary>
-            /// Enum WEEK for value: WEEK
-            /// </summary>
-            public static readonly PeriodTypeEnum WEEK = new PeriodTypeEnum("WEEK");
 
             /// <summary>
             /// Enum MONTH for value: MONTH
@@ -188,7 +183,6 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             {
                 { "HOUR", HOUR },
                 { "DAY", DAY },
-                { "WEEK", WEEK },
                 { "MONTH", MONTH },
                 { "YEAR", YEAR },
                 { "BYTE", BYTE },
@@ -289,35 +283,35 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 计费模式，包周期计费、按需计费、免费的返回，不支持的资源不返回 PRE_PAID 包周期计费 POST_PAID 按需计费 FREE 免费
+        /// 计费模式  * &#x60;PRE_PAID&#x60; - 包周期计费 * &#x60;POST_PAID&#x60; - 按需计费 * &#x60;FREE&#x60; - 免费 
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 执行计划中的每个资源部署后最终优惠后的金额（只考虑商务折扣以及伙伴折扣，不包含促销折扣及优惠券），保留小数点后2位，向上取整，默认单位是元
+        /// 该资源最终优惠后的金额（只考虑官网折扣、商务折扣以及伙伴折扣，不包含促销折扣及优惠券），保留小数点后2位，向上取整，默认单位是元。
         /// </summary>
         [JsonProperty("sale_price", NullValueHandling = NullValueHandling.Ignore)]
-        public Object SalePrice { get; set; }
+        public double? SalePrice { get; set; }
 
         /// <summary>
-        /// 执行计划中的每个资源部署后的优惠额，保留小数点后2位，向上取整，默认单位是元
+        /// 该资源的总优惠额，保留小数点后2位，向上取整，默认单位是元。
         /// </summary>
         [JsonProperty("discount", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Discount { get; set; }
+        public double? Discount { get; set; }
 
         /// <summary>
-        /// 执行计划中的每个资源部署后的原价，保留小数点后2位，向上取整，默认单位是元
+        /// 该资源的原价，保留小数点后2位，向上取整，默认单位是元。
         /// </summary>
         [JsonProperty("original_price", NullValueHandling = NullValueHandling.Ignore)]
-        public Object OriginalPrice { get; set; }
+        public double? OriginalPrice { get; set; }
 
         /// <summary>
-        /// 包周期和按需的计费单位，包周期计费和按需计费返回，免费不会返回 HOUR：小时，包周期计费和按需计费返回，免费不会返回 DAY：天，包周期计费返回，按需计费和免费不会返回 WEEK：周，包周期计费返回，按需计费和免费不会返回 MONTH：月，包周期计费返回，按需计费和免费不会返回 YEAR：年，包周期计费返回，按需计费和免费不会返回 BYTE：字节，按需计费返回，包周期计费和免费不会返回 MB：百万字节，按需计费返回，包周期计费和免费不会返回 GB：千兆字节，按需计费返回，包周期计费和免费不会返回
+        /// 计费单位  若该资源支持包周期计费或按需计费，则会返回该字段；若该资源为免费资源，则不返回该字段。  * &#x60;HOUR&#x60; - 小时，按需计费的单位 * &#x60;DAY&#x60; - 天，按需计费的单位 * &#x60;MONTH&#x60; - 月，包周期计费的单位 * &#x60;YEAR&#x60; - 年，包周期计费的单位 * &#x60;BYTE&#x60; - 字节，按需计费的单位 * &#x60;MB&#x60; - 百万字节，包周期计费和按需计费的单位 * &#x60;GB&#x60; - 千兆字节，包周期计费和按需计费的单位 
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 订购数量。包周期计费和按需计费返回，免费不会返回。
+        /// 该资源的计费数量，需要和period_type搭配使用  若该资源支持包周期计费或按需计费，则会返回该字段；若该资源为免费资源，则不返回该字段。  * 对于按需计费资源，此值默认返回1，代表在1个计费单位下，该资源的价格 * 对于包周期计费资源，此值与模板中该资源的period字段保持一致 
         /// </summary>
         [JsonProperty("period_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodCount { get; set; }

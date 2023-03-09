@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class EstimateExecutionPlanPriceResponse : SdkResponse
     {
         /// <summary>
-        /// 币种，枚举值   CNY  元，中国站返回的币种   USD 美元，国际站返回的币种
+        /// 币种，枚举值   * &#x60;CNY&#x60; - 元，中国站返回的币种   * &#x60;USD&#x60; - 美元，国际站返回的币种 
         /// </summary>
-        /// <value>币种，枚举值   CNY  元，中国站返回的币种   USD 美元，国际站返回的币种</value>
+        /// <value>币种，枚举值   * &#x60;CNY&#x60; - 元，中国站返回的币种   * &#x60;USD&#x60; - 美元，国际站返回的币种 </value>
         [JsonConverter(typeof(EnumClassConverter<CurrencyEnum>))]
         public class CurrencyEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 币种，枚举值   CNY  元，中国站返回的币种   USD 美元，国际站返回的币种
+        /// 币种，枚举值   * &#x60;CNY&#x60; - 元，中国站返回的币种   * &#x60;USD&#x60; - 美元，国际站返回的币种 
         /// </summary>
         [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
         public CurrencyEnum Currency { get; set; }

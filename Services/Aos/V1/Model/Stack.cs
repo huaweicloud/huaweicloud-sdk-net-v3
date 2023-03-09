@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class Stack 
     {
         /// <summary>
-        /// 资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情
+        /// 资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情
         /// </summary>
-        /// <value>资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情</value>
+        /// <value>资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 用户希望生成的资源栈的名字。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
+        /// 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
         /// </summary>
         [JsonProperty("stack_name", NullValueHandling = NullValueHandling.Ignore)]
         public string StackName { get; set; }
@@ -192,7 +192,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string StackId { get; set; }
 
         /// <summary>
-        /// 资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情
+        /// 资源栈的状态     * &#x60;CREATION_COMPLETE&#x60; - 生成空资源栈完成，并没有任何部署     * &#x60;DEPLOYMENT_IN_PROGRESS&#x60; - 正在部署，请等待     * &#x60;DEPLOYMENT_FAILED&#x60; - 部署失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;DEPLOYMENT_COMPLETE&#x60; - 部署完成     * &#x60;ROLLBACK_IN_PROGRESS&#x60; - 部署失败，正在回滚，请等待     * &#x60;ROLLBACK_FAILED&#x60; - 回滚失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * &#x60;ROLLBACK_COMPLETE&#x60; - 回滚完成     * &#x60;DELETION_IN_PROGRESS&#x60; - 正在删除，请等待     * &#x60;DELETION_FAILED&#x60; - 删除失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

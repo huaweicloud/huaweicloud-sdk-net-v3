@@ -11,37 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
-    /// items response
+    /// 
     /// </summary>
     public class ItemsResponse 
     {
 
         /// <summary>
-        /// 执行计划中的资源类型，如：huaweicloud_evs_volume
+        /// 资源的类型  以HCL格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 执行计划中的用户定义的资源的名字，如：my_volume
+        /// 资源的名称，默认为资源的逻辑名称  以HCL格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 使用count构建的资源时资源对应的index
+        /// 资源的索引，若用户在模板中使用了count或for_each则会返回index。若index出现，则resource_name + index可以作为该资源的一种标识  若用户在模板中使用count，则index为从0开始的数字  以HCL格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[0]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[1]&#x60;标识两个资源  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   count &#x3D; 2   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[0]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[1]&#x60;标识两个资源  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;,         \&quot;count\&quot;: 2       }     }   } } &#x60;&#x60;&#x60;  若用户在模板中使用for_each，则index为用户自定义的字符串  以HCL格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc1\&quot;]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc2\&quot;]&#x60;标识两个资源  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   for_each &#x3D; {     \&quot;vpc1\&quot; &#x3D; \&quot;test_vpc\&quot;     \&quot;vpc2\&quot; &#x3D; \&quot;test_vpc\&quot;   }   name &#x3D; each.value } &#x60;&#x60;&#x60;  以json格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc1\&quot;]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc2\&quot;]&#x60;标识两个资源  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;for_each\&quot;: {           \&quot;vpc1\&quot;: \&quot;test_vpc\&quot;,           \&quot;vpc2\&quot;: \&quot;test_vpc\&quot;         }         \&quot;name\&quot;: \&quot;${each.value}\&quot;       }     }   } } &#x60;&#x60;&#x60; 
         /// </summary>
         [JsonProperty("index", NullValueHandling = NullValueHandling.Ignore)]
         public string Index { get; set; }
 
         /// <summary>
-        /// 执行计划中的资源是否支持询价
+        /// 该资源或该资源当前所给予的参数是否支持进行询价
         /// </summary>
         [JsonProperty("supported", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Supported { get; set; }
 
         /// <summary>
-        /// 执行计划中的每个资源部署后的总的询价信息，如果该资源询价结果包含不同的period_type，则询价结果根据period_type类型展示总价。 包周期计费和按需计费返回，免费和不支持询价的资源不返回
+        /// 该资源不支持询价的具体原因
+        /// </summary>
+        [JsonProperty("unsupported_message", NullValueHandling = NullValueHandling.Ignore)]
+        public string UnsupportedMessage { get; set; }
+
+        /// <summary>
+        /// 该资源的询价信息  若该资源支持包周期计费或按需计费，或者该资源为免费资源，则返回该字段；若该资源不支持询价，则不返回该字段。 
         /// </summary>
         [JsonProperty("resource_price", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourcePriceResponse> ResourcePrice { get; set; }
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  index: ").Append(Index).Append("\n");
             sb.Append("  supported: ").Append(Supported).Append("\n");
+            sb.Append("  unsupportedMessage: ").Append(UnsupportedMessage).Append("\n");
             sb.Append("  resourcePrice: ").Append(ResourcePrice).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -102,6 +109,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.Supported.Equals(input.Supported))
                 ) && 
                 (
+                    this.UnsupportedMessage == input.UnsupportedMessage ||
+                    (this.UnsupportedMessage != null &&
+                    this.UnsupportedMessage.Equals(input.UnsupportedMessage))
+                ) && 
+                (
                     this.ResourcePrice == input.ResourcePrice ||
                     this.ResourcePrice != null &&
                     input.ResourcePrice != null &&
@@ -125,6 +137,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.Index.GetHashCode();
                 if (this.Supported != null)
                     hashCode = hashCode * 59 + this.Supported.GetHashCode();
+                if (this.UnsupportedMessage != null)
+                    hashCode = hashCode * 59 + this.UnsupportedMessage.GetHashCode();
                 if (this.ResourcePrice != null)
                     hashCode = hashCode * 59 + this.ResourcePrice.GetHashCode();
                 return hashCode;

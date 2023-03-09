@@ -113,6 +113,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string CreateTime { get; set; }
 
         /// <summary>
+        /// 设备最近一次连接状态(ONLINE:在线，OFFLINE：离线，ABNORMAL：异常)变化时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;,如 2015-12-12T12:12:122Z。
+        /// </summary>
+        [JsonProperty("connection_status_update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConnectionStatusUpdateTime { get; set; }
+
+        /// <summary>
+        /// 设备激活时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;,如 2015-12-12T12:12:122Z。
+        /// </summary>
+        [JsonProperty("active_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActiveTime { get; set; }
+
+        /// <summary>
         /// 设备的标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -149,6 +161,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  productName: ").Append(ProductName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  connectionStatusUpdateTime: ").Append(ConnectionStatusUpdateTime).Append("\n");
+            sb.Append("  activeTime: ").Append(ActiveTime).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  extensionInfo: ").Append(ExtensionInfo).Append("\n");
             sb.Append("}\n");
@@ -253,6 +267,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.CreateTime.Equals(input.CreateTime))
                 ) && 
                 (
+                    this.ConnectionStatusUpdateTime == input.ConnectionStatusUpdateTime ||
+                    (this.ConnectionStatusUpdateTime != null &&
+                    this.ConnectionStatusUpdateTime.Equals(input.ConnectionStatusUpdateTime))
+                ) && 
+                (
+                    this.ActiveTime == input.ActiveTime ||
+                    (this.ActiveTime != null &&
+                    this.ActiveTime.Equals(input.ActiveTime))
+                ) && 
+                (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
@@ -305,6 +329,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ConnectionStatusUpdateTime != null)
+                    hashCode = hashCode * 59 + this.ConnectionStatusUpdateTime.GetHashCode();
+                if (this.ActiveTime != null)
+                    hashCode = hashCode * 59 + this.ActiveTime.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ExtensionInfo != null)

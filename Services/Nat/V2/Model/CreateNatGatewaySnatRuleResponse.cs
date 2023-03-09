@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// 
         /// </summary>
         [JsonProperty("snat_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public NatGatewaySnatRuleResponseBody SnatRule { get; set; }
+        public CreateNatGatewaySnatRuleResponseBody SnatRule { get; set; }
 
 
 
