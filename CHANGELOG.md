@@ -1,3 +1,14 @@
+# 3.1.30 2023-03-14
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - Support the interfaces `CreateTextToImageTask`, `ShowTextToImageTask`, `CreateImageVariationTask`, `ShowImageVariationTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the interfaces `RunImageWisedesignColorfilter`, `RunImageWisedesignCombine`
+
 # 3.1.29 2023-03-09
 
 ### HuaweiCloud SDK AOS

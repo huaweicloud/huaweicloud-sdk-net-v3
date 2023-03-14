@@ -11,17 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Image.V2.Model
 {
     /// <summary>
-    /// Request Object
+    /// 
     /// </summary>
-    public class RunImageWisedesignCombineRequest 
+    public class TextToImageTaskConfigCommon 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ImageWisedesignCombineReq Body { get; set; }
+        [JsonProperty("inference", NullValueHandling = NullValueHandling.Ignore)]
+        public TextToImageInference Inference { get; set; }
 
 
 
@@ -31,8 +30,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RunImageWisedesignCombineRequest {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class TextToImageTaskConfigCommon {\n");
+            sb.Append("  inference: ").Append(Inference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +41,22 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RunImageWisedesignCombineRequest);
+            return this.Equals(input as TextToImageTaskConfigCommon);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RunImageWisedesignCombineRequest input)
+        public bool Equals(TextToImageTaskConfigCommon input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.Inference == input.Inference ||
+                    (this.Inference != null &&
+                    this.Inference.Equals(input.Inference))
                 );
         }
 
@@ -69,8 +68,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.Inference != null)
+                    hashCode = hashCode * 59 + this.Inference.GetHashCode();
                 return hashCode;
             }
         }

@@ -11,16 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Image.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class RunImageWisedesignColorfilterResponse : SdkResponse
+    public class ImageVariationTaskConfig 
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public ImageWisedesignColorfilterResponseResult Result { get; set; }
+        [JsonProperty("common", NullValueHandling = NullValueHandling.Ignore)]
+        public ImageVariationTaskConfigCommon Common { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RunImageWisedesignColorfilterResponse {\n");
-            sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("class ImageVariationTaskConfig {\n");
+            sb.Append("  common: ").Append(Common).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RunImageWisedesignColorfilterResponse);
+            return this.Equals(input as ImageVariationTaskConfig);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RunImageWisedesignColorfilterResponse input)
+        public bool Equals(ImageVariationTaskConfig input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
+                    this.Common == input.Common ||
+                    (this.Common != null &&
+                    this.Common.Equals(input.Common))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Common != null)
+                    hashCode = hashCode * 59 + this.Common.GetHashCode();
                 return hashCode;
             }
         }

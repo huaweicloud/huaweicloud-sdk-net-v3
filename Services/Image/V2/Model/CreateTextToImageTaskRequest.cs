@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class RunImageWisedesignColorfilterRequest 
+    public class CreateTextToImageTaskRequest 
     {
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ImageWisedesignColorfilterReq Body { get; set; }
+        public CreateTextToImageTaskRequestBody Body { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RunImageWisedesignColorfilterRequest {\n");
+            sb.Append("class CreateTextToImageTaskRequest {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -42,13 +42,13 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RunImageWisedesignColorfilterRequest);
+            return this.Equals(input as CreateTextToImageTaskRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RunImageWisedesignColorfilterRequest input)
+        public bool Equals(CreateTextToImageTaskRequest input)
         {
             if (input == null)
                 return false;

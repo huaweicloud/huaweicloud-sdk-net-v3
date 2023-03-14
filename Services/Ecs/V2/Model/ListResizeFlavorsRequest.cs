@@ -271,7 +271,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
 
         /// <summary>
-        /// 进行规格切换的云服务器ID，UUID格式。
+        /// 进行规格切换的云服务器ID，UUID格式。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
         /// </summary>
         [SDKProperty("instance_uuid", IsQuery = true)]
         [JsonProperty("instance_uuid", NullValueHandling = NullValueHandling.Ignore)]
@@ -304,14 +304,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 进行规格切换的云服务器源规格ID。
+        /// 进行规格切换的云服务器源规格ID。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
         /// </summary>
         [SDKProperty("source_flavor_id", IsQuery = true)]
         [JsonProperty("source_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceFlavorId { get; set; }
 
         /// <summary>
-        /// 进行规格切换的云服务器源规格名称。
+        /// 进行规格切换的云服务器源规格名称。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
         /// </summary>
         [SDKProperty("source_flavor_name", IsQuery = true)]
         [JsonProperty("source_flavor_name", NullValueHandling = NullValueHandling.Ignore)]

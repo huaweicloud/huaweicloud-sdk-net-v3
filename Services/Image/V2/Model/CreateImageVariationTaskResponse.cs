@@ -11,16 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Image.V2.Model
 {
     /// <summary>
-    /// 智能设计图像滤镜结果信息
+    /// Response Object
     /// </summary>
-    public class ImageWisedesignColorfilterResponseResult 
+    public class CreateImageVariationTaskResponse : SdkResponse
     {
 
         /// <summary>
-        /// 图片加滤镜后图像的64位编码
+        /// 任务唯一标识
         /// </summary>
-        [JsonProperty("result_base64", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResultBase64 { get; set; }
+        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskId { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ImageWisedesignColorfilterResponseResult {\n");
-            sb.Append("  resultBase64: ").Append(ResultBase64).Append("\n");
+            sb.Append("class CreateImageVariationTaskResponse {\n");
+            sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ImageWisedesignColorfilterResponseResult);
+            return this.Equals(input as CreateImageVariationTaskResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ImageWisedesignColorfilterResponseResult input)
+        public bool Equals(CreateImageVariationTaskResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ResultBase64 == input.ResultBase64 ||
-                    (this.ResultBase64 != null &&
-                    this.ResultBase64.Equals(input.ResultBase64))
+                    this.TaskId == input.TaskId ||
+                    (this.TaskId != null &&
+                    this.TaskId.Equals(input.TaskId))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ResultBase64 != null)
-                    hashCode = hashCode * 59 + this.ResultBase64.GetHashCode();
+                if (this.TaskId != null)
+                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 return hashCode;
             }
         }
