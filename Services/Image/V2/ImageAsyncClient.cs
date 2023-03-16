@@ -127,6 +127,22 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
+        /// 创建司乘敏感擦除任务
+        ///
+        /// Create Task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateVideoObjectMaskingTaskResponse> CreateVideoObjectMaskingTaskAsync(CreateVideoObjectMaskingTaskRequest createVideoObjectMaskingTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-object-masking/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoObjectMaskingTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoObjectMaskingTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建任务
         ///
         /// 创建视频拆条任务
@@ -499,6 +515,23 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoCuttingTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVideoCuttingTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// show task 查询任务信息
+        ///
+        /// show task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowVideoObjectMaskingTaskResponse> ShowVideoObjectMaskingTaskAsync(ShowVideoObjectMaskingTaskRequest showVideoObjectMaskingTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoObjectMaskingTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-object-masking/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoObjectMaskingTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoObjectMaskingTaskResponse>(response);
         }
         
         /// <summary>

@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string IpEq { get; set; }
 
         /// <summary>
-        /// 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id&#x3D;{id1}&amp;server_id&#x3D;{id2}
+        /// 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id&#x3D;id1,id2
         /// </summary>
         [SDKProperty("server_id", IsQuery = true)]
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]

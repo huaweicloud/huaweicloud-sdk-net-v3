@@ -24,6 +24,20 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string Fields { get; set; }
 
         /// <summary>
+        /// 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 分页查询起始的资源序号
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
         /// 公共池名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
@@ -47,6 +61,8 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListCommonPoolsRequest {\n");
             sb.Append("  fields: ").Append(Fields).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
@@ -76,6 +92,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     this.Fields.Equals(input.Fields))
                 ) && 
                 (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -97,6 +123,10 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 int hashCode = 41;
                 if (this.Fields != null)
                     hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.PublicBorderGroup != null)

@@ -1,3 +1,145 @@
+# 3.1.31 2023-03-16
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowJobInfos**
+    - changes of response param
+      - `* begin_time: date-time -> string`
+      - `* end_time: date-time -> string`
+      - `* entities.sub_jobs.begin_time: date-time -> string`
+      - `* entities.sub_jobs.end_time: date-time -> string`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the interfaces `ListDomains`, `ShowDomainDetailByName`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListDomains**
+    - changes of request param
+      - `+ show_tags`
+      - `+ exact_match`
+    - changes of response param
+      - `+ domains.tags`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListBandwidthPkg**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+      - `+ offset`
+  - **ListCommonPools**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+  - **ListShareBandwidthTypes**
+    - changes of request param
+      - `+ marker`
+      - `+ offset`
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **KeystoneListMappings**
+    - changes of response param
+      - `* mappings.rules.local.groups: object -> string`
+  - **KeystoneShowMapping**
+    - changes of response param
+      - `* mapping.rules.local.groups: object -> string`
+  - **KeystoneCreateMapping**
+    - changes of request param
+      - `* mapping.rules.local.groups: object -> string`
+    - changes of response param
+      - `* mapping.rules.local.groups: object -> string`
+  - **KeystoneUpdateMapping**
+    - changes of request param
+      - `* mapping.rules.local.groups: object -> string`
+    - changes of response param
+      - `* mapping.rules.local.groups: object -> string`
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - Support the interfaces `CreateVideoObjectMaskingTask`, `ShowVideoObjectMaskingTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateTextToImageTask**
+    - changes of request param
+      - `+ config.common.inference.image_nums`
+      - `+ config.common.inference.resolution: enum value [512*768,768*512,512*512]`
+  - **ShowTextToImageTask**
+    - changes of response param
+      - `+ config.common.inference.image_nums`
+      - `+ config.common.inference.resolution: enum value [512*768,768*512,512*512]`
+  - **CreateImageVariationTask**
+    - changes of request param
+      - `+ config.common.inference.image_nums`
+      - `+ config.common.inference.resolution: enum value [512*768,768*512,512*512]`
+  - **ShowImageVariationTask**
+    - changes of response param
+      - `+ config.common.inference.image_nums`
+      - `+ config.common.inference.resolution: enum value [512*768,768*512,512*512]`
+
+### HuaweiCloud SDK IVS
+
+- _Features_
+  - Support the interfaces `DetectStandardByVideoAndIdCardImage`, `DetectStandardByVideoAndNameAndId`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeMvsInvoice**
+    - changes of request param
+      - `+ return_text_location`
+      - `+ return_confidence`
+      - `+ type`
+    - changes of response param
+      - `+ result.buyer_address`
+      - `+ result.buyer_phone`
+      - `+ result.licence_plate_number`
+      - `+ result.registration_number`
+      - `+ result.dept_motor_vehicles`
+      - `+ result.auction_org_name`
+      - `+ result.auction_org_address`
+      - `+ result.auction_org_id`
+      - `+ result.auction_org_bank_account`
+      - `+ result.auction_org_phone`
+      - `+ result.used_vehicle_market_name`
+      - `+ result.used_vehicle_market_id`
+      - `+ result.used_vehicle_market_address`
+      - `+ result.used_vehicle_market_bank_account`
+      - `+ result.used_vehicle_market_phone`
+      - `+ result.remark`
+      - `+ result.drawer_name`
+      - `+ result.type`
+      - `+ result.text_location`
+      - `+ result.confidence`
+
 # 3.1.30 2023-03-14
 
 ### HuaweiCloud SDK Image

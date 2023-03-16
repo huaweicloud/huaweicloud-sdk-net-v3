@@ -49,8 +49,7 @@ namespace HuaweiCloud.SDK.Ivs.V2
         /// <summary>
         /// 人证核身标准版（三要素）
         ///
-        /// 使用姓名、身份证号码、人脸图片三要素进行身份审核。
-        /// 身份验证时，传入的数据为人脸图片、身份证信息。提取身份证信息时，可以使用身份证正反面图片，也可以直接输入姓名、身份证号文本。
+        /// 使用身份证正反面图片提取姓名和身份证号码，与人脸图片进行三要素身份审核。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -66,7 +65,7 @@ namespace HuaweiCloud.SDK.Ivs.V2
         /// <summary>
         /// 人证核身标准版（三要素）
         ///
-        /// 校验用户上传的身份证图片支持正反面同时上传 中的信息的真实性，输出最终的审核结果。 该接口也支持用户直接上传姓名和身份证号码进行合法性校验 。
+        /// 使用姓名、身份证号文本和人脸图片进行三要素身份审核。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -77,6 +76,38 @@ namespace HuaweiCloud.SDK.Ivs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectStandardByNameAndIdRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DetectStandardByNameAndIdResponse>(response);
+        }
+        
+        /// <summary>
+        /// 人证核身标准版（三要素）
+        ///
+        /// 从身份证正反面图片中提取姓名和身份证号码，并对视频做活体检测后提取人脸图片，以此进行三要素身份审核。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DetectStandardByVideoAndIdCardImageResponse> DetectStandardByVideoAndIdCardImageAsync(DetectStandardByVideoAndIdCardImageRequest detectStandardByVideoAndIdCardImageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/ivs-standard",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectStandardByVideoAndIdCardImageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectStandardByVideoAndIdCardImageResponse>(response);
+        }
+        
+        /// <summary>
+        /// 人证核身标准版（三要素）
+        ///
+        /// 使用姓名、身份证号文本，并对视频做活体检测后提取人脸图片，以此进行三要素身份审核。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DetectStandardByVideoAndNameAndIdResponse> DetectStandardByVideoAndNameAndIdAsync(DetectStandardByVideoAndNameAndIdRequest detectStandardByVideoAndNameAndIdRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/ivs-standard",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectStandardByVideoAndNameAndIdRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DetectStandardByVideoAndNameAndIdResponse>(response);
         }
         
     }

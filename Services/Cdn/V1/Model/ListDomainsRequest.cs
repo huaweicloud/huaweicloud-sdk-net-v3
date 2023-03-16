@@ -449,6 +449,20 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? PageNumber { get; set; }
 
         /// <summary>
+        /// 展示标签标识 true：不展示 false：展示。
+        /// </summary>
+        [SDKProperty("show_tags", IsQuery = true)]
+        [JsonProperty("show_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ShowTags { get; set; }
+
+        /// <summary>
+        /// 精准匹配 on：开启 off：关闭。
+        /// </summary>
+        [SDKProperty("exact_match", IsQuery = true)]
+        [JsonProperty("exact_match", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ExactMatch { get; set; }
+
+        /// <summary>
         /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\&quot;all\&quot;表示所有项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
@@ -470,6 +484,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
             sb.Append("  pageSize: ").Append(PageSize).Append("\n");
             sb.Append("  pageNumber: ").Append(PageNumber).Append("\n");
+            sb.Append("  showTags: ").Append(ShowTags).Append("\n");
+            sb.Append("  exactMatch: ").Append(ExactMatch).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -523,6 +539,16 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.PageNumber.Equals(input.PageNumber))
                 ) && 
                 (
+                    this.ShowTags == input.ShowTags ||
+                    (this.ShowTags != null &&
+                    this.ShowTags.Equals(input.ShowTags))
+                ) && 
+                (
+                    this.ExactMatch == input.ExactMatch ||
+                    (this.ExactMatch != null &&
+                    this.ExactMatch.Equals(input.ExactMatch))
+                ) && 
+                (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
@@ -549,6 +575,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.PageSize.GetHashCode();
                 if (this.PageNumber != null)
                     hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
+                if (this.ShowTags != null)
+                    hashCode = hashCode * 59 + this.ShowTags.GetHashCode();
+                if (this.ExactMatch != null)
+                    hashCode = hashCode * 59 + this.ExactMatch.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;

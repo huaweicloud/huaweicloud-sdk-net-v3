@@ -170,13 +170,13 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? BeginTime { get; set; }
+        public string BeginTime { get; set; }
 
         /// <summary>
         /// 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
         /// Job执行失败时的错误码

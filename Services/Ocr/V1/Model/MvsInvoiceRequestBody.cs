@@ -28,6 +28,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
+        /// <summary>
+        /// 如果为True，返回体中会包含text_location对象，内容是各字段的检测框四点坐标。如果是False或者没有这个key，则返回体中不包含text_location对象。 
+        /// </summary>
+        [JsonProperty("return_text_location", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnTextLocation { get; set; }
+
+        /// <summary>
+        /// 如果为True，返回体中会包含confidence对象，内容是各字段的置信度。如果是False或者没有这个key，则返回体中不包含confidence对象。 
+        /// </summary>
+        [JsonProperty("return_confidence", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnConfidence { get; set; }
+
+        /// <summary>
+        /// 如果没有type字段则默认返回原机动车销售发票出参； 若存在type字段但是不属于 auto、new或者used三个枚举值，API返回AIS.0101入参错误； 如果type为auto，API自动判断发票类型，并在返回参数中添加type出参以指明发票类型； 如果type为new，API在检测出的类型为机动车发票时返回原版机动车发票出参并添加type出参（机动车销售统一发票），不一致时报错AIS.0104图像质量差； 如果type为used，API在检测出的类型为二手车时返回二手车发票出参，并添加type出参（二手车销售统一发票），不一致时报错AIS.0104图像质量差。 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +57,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class MvsInvoiceRequestBody {\n");
             sb.Append("  image: ").Append(Image).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
+            sb.Append("  returnConfidence: ").Append(ReturnConfidence).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +90,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
+                ) && 
+                (
+                    this.ReturnTextLocation == input.ReturnTextLocation ||
+                    (this.ReturnTextLocation != null &&
+                    this.ReturnTextLocation.Equals(input.ReturnTextLocation))
+                ) && 
+                (
+                    this.ReturnConfidence == input.ReturnConfidence ||
+                    (this.ReturnConfidence != null &&
+                    this.ReturnConfidence.Equals(input.ReturnConfidence))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -84,6 +120,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Image.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.ReturnTextLocation != null)
+                    hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
+                if (this.ReturnConfidence != null)
+                    hashCode = hashCode * 59 + this.ReturnConfidence.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

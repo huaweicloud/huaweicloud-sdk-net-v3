@@ -83,6 +83,22 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 查询加速域名
+        ///
+        /// 查询加速域名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest listDomainsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListDomainsResponse>(response);
+        }
+        
+        /// <summary>
         /// 设置用户计费模式
         ///
         /// - 设置用户计费模式。
@@ -156,6 +172,23 @@ namespace HuaweiCloud.SDK.Cdn.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showChargeModesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowChargeModesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询加速域名详情
+        ///
+        /// 加速域名详情信息接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainDetailByNameResponse> ShowDomainDetailByNameAsync(ShowDomainDetailByNameRequest showDomainDetailByNameRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name" , showDomainDetailByNameRequest.DomainName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetailByNameRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainDetailByNameResponse>(response);
         }
         
         /// <summary>

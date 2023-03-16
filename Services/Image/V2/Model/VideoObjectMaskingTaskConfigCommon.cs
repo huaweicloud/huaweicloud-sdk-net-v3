@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Iam.V3.Model
+namespace HuaweiCloud.SDK.Image.V2.Model
 {
     /// <summary>
-    /// 联邦用户在本系统中所属用户组列表
+    /// 
     /// </summary>
-    public class RulesLocalGroups 
+    public class VideoObjectMaskingTaskConfigCommon 
     {
 
         /// <summary>
-        /// 联邦用户在本系统中所属用户组列表
+        /// 
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [JsonProperty("inference", NullValueHandling = NullValueHandling.Ignore)]
+        public VideoObjectMaskingInference Inference { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RulesLocalGroups {\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("class VideoObjectMaskingTaskConfigCommon {\n");
+            sb.Append("  inference: ").Append(Inference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RulesLocalGroups);
+            return this.Equals(input as VideoObjectMaskingTaskConfigCommon);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RulesLocalGroups input)
+        public bool Equals(VideoObjectMaskingTaskConfigCommon input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Inference == input.Inference ||
+                    (this.Inference != null &&
+                    this.Inference.Equals(input.Inference))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Inference != null)
+                    hashCode = hashCode * 59 + this.Inference.GetHashCode();
                 return hashCode;
             }
         }

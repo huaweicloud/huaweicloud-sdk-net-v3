@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public RulesLocalGroup Group { get; set; }
 
         /// <summary>
-        /// 
+        /// 联邦用户在本系统中所属用户组列表
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public RulesLocalGroups Groups { get; set; }
+        public string Groups { get; set; }
 
 
 

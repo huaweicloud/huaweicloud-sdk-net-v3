@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public string VerificationResult { get; set; }
 
         /// <summary>
-        /// 审核校验信息，具体参[考校验信息说明](https://support.huaweicloud.com/api-ivs/ivs_02_0017.html)
+        /// 审核校验信息，具体参考[校验信息说明](https://support.huaweicloud.com/api-ivs/ivs_02_0017.html)
         /// </summary>
         [JsonProperty("verification_message", NullValueHandling = NullValueHandling.Ignore)]
         public string VerificationMessage { get; set; }
 
         /// <summary>
-        /// 审核校验代码，具体参[考校验信息说明](https://support.huaweicloud.com/api-ivs/ivs_02_0017.html)
+        /// 审核校验代码，具体参考[校验信息说明](https://support.huaweicloud.com/api-ivs/ivs_02_0017.html)
         /// </summary>
         [JsonProperty("verification_code", NullValueHandling = NullValueHandling.Ignore)]
         public int? VerificationCode { get; set; }
