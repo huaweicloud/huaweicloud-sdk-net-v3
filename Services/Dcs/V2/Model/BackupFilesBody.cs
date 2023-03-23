@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly FileSourceEnum SELF_BUILD_OBS = new FileSourceEnum("self_build_obs");
 
+            /// <summary>
+            /// Enum BACKUP_RECORD for value: backup_record
+            /// </summary>
+            public static readonly FileSourceEnum BACKUP_RECORD = new FileSourceEnum("backup_record");
+
             private static readonly Dictionary<string, FileSourceEnum> StaticFields =
             new Dictionary<string, FileSourceEnum>()
             {
                 { "self_build_obs", SELF_BUILD_OBS },
+                { "backup_record", BACKUP_RECORD },
             };
 
             private string _value;

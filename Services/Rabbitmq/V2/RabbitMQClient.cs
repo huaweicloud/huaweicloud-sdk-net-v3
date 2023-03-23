@@ -235,6 +235,24 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
+        /// 新规格实例的规格变更
+        ///
+        /// 新规格实例的规格变更。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResizeEngineInstanceResponse ResizeEngineInstance(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , resizeEngineInstanceRequest.InstanceId.ToString());
+            urlParam.Add("engine" , resizeEngineInstanceRequest.Engine.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ResizeEngineInstanceResponse>(response);
+        }
+        
+        /// <summary>
         /// 实例规格变更
         ///
         /// 实例规格变更。
@@ -269,6 +287,24 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowBackgroundTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询新规格可扩容规格列表
+        ///
+        /// 查询新规格实例可扩容列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowEngineInstanceExtendProductInfoResponse ShowEngineInstanceExtendProductInfo(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , showEngineInstanceExtendProductInfoRequest.Engine.ToString());
+            urlParam.Add("instance_id" , showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>(response);
         }
         
         /// <summary>

@@ -31,12 +31,15 @@ namespace HuaweiCloud.SDK.Core
 
         public string RequestId { get; set; }
 
+        public string EncodedAuthorizationMessage { get; set; }
+
         public ServiceResponseException(int? httpStatusCode, SdkError sdkError)
         {
             this.HttpStatusCode = httpStatusCode;
             this.ErrorCode = sdkError.ErrorCode;
             this.ErrorMsg = sdkError.ErrorMsg;
             this.RequestId = sdkError.RequestId;
+            this.EncodedAuthorizationMessage = sdkError.EncodedAuthorizationMessage;
         }
 
         public static ServiceResponseException MapException(int? httpStatusCode, SdkError sdkError)

@@ -34,6 +34,11 @@ namespace HuaweiCloud.SDK.Core
     public static class ExceptionUtils
     {
         private const string XRequestId = "X-Request-Id";
+        private const string EncodedAuthorizationMessage = "encoded_authorization_message";
+        private const string ErrorCode = "error_code";
+        private const string ErrorMsg = "error_msg";
+        private const string Code = "code";
+        private const string Message = "message";
 
         public static string GetMessageFromAggregateException(AggregateException aggregateException)
         {
@@ -54,14 +59,14 @@ namespace HuaweiCloud.SDK.Core
                 {
                     return sdkException;
                 }
-                
+
                 if (exception.InnerException is HttpRequestException httpRequestException)
                 {
                     if (httpRequestException.InnerException == null)
                     {
                         return new ConnectionException(httpRequestException.Message, exception);
                     }
-                    
+
                     if (httpRequestException.InnerException is WebException webException)
                     {
                         switch (webException.Status)
@@ -90,7 +95,7 @@ namespace HuaweiCloud.SDK.Core
         {
             var result = new SdkResponse
             {
-                HttpStatusCode = (int) responseMessage.StatusCode,
+                HttpStatusCode = (int)responseMessage.StatusCode,
                 HttpHeaders = responseMessage.Headers.ToString(),
                 HttpBody = Encoding.UTF8.GetString(responseMessage.Content.ReadAsByteArrayAsync().Result)
             };
@@ -105,16 +110,19 @@ namespace HuaweiCloud.SDK.Core
             try
             {
                 sdkError = responseMessage.Content.Headers.ContentType.MediaType.Equals("application/xml")
-                               ? XmlUtils.DeSerialize<SdkError>(result) 
+                               ? XmlUtils.DeSerialize<SdkError>(result)
                                : GetSdkErrorFromResponse(requestId, result);
             }
             catch (Exception exception)
             {
                 throw new ServerResponseException(result.HttpStatusCode,
-                    new SdkError {ErrorMsg = exception.Message});
+                    new SdkError
+                    {
+                        ErrorMsg = exception.Message
+                    });
             }
 
-            throw ServiceResponseException.MapException((int) responseMessage.StatusCode, sdkError);
+            throw ServiceResponseException.MapException((int)responseMessage.StatusCode, sdkError);
         }
 
         private static SdkError GetSdkErrorFromResponse(string requestId, SdkResponse response)
@@ -128,14 +136,18 @@ namespace HuaweiCloud.SDK.Core
                     sdkError = HandleServiceCommonException(response);
                 }
             }
-            catch (Exception)
+            catch (JsonReaderException)
             {
-                sdkError = new SdkError();
+                sdkError = new SdkError(response.HttpBody);
+            }
+            catch (Exception e)
+            {
+                sdkError = new SdkError(e.Message);
             }
 
             if (IsNullOrEmpty(sdkError.ErrorMsg))
             {
-                sdkError = HandleServiceSpecException(response);
+                sdkError = new SdkError(response.HttpBody);
             }
 
             if (IsNullOrEmpty(sdkError.RequestId))
@@ -146,38 +158,51 @@ namespace HuaweiCloud.SDK.Core
             return sdkError;
         }
 
-        private static SdkError HandleServiceSpecException(SdkResponse response)
+        private static void ProcessSdkError(JObject jObject, SdkError sdkError)
         {
-            return new SdkError();
+            if (jObject.ContainsKey(EncodedAuthorizationMessage))
+            {
+                sdkError.EncodedAuthorizationMessage = jObject[EncodedAuthorizationMessage].ToString();
+            }
+
+            if (jObject.ContainsKey(ErrorCode) && jObject.ContainsKey(ErrorMsg))
+            {
+                sdkError.ErrorCode = jObject[ErrorCode].ToString();
+                sdkError.ErrorMsg = jObject[ErrorMsg].ToString();
+                return;
+            }
+
+            if (jObject.ContainsKey(Code) && jObject.ContainsKey(Message))
+            {
+                sdkError.ErrorCode = jObject[Code].ToString();
+                sdkError.ErrorMsg = jObject[Message].ToString();
+                return;
+            }
+
+            foreach (var pair in jObject)
+            {
+                if (pair.Value is JObject value)
+                {
+                    ProcessSdkError(value, sdkError);
+                }
+            }
         }
 
         private static SdkError HandleServiceCommonException(SdkResponse response)
         {
-            var exception = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.HttpBody);
-            if (exception.ContainsKey("code") && exception.ContainsKey("message"))
+            var errorDict = JsonConvert.DeserializeObject<JObject>(response.HttpBody);
+            if (errorDict == null)
             {
-                return new SdkError(exception["code"].ToString(), exception["message"].ToString());
+                return new SdkError(response.HttpBody);
             }
 
-            foreach (var item in exception)
+            var sdkError = new SdkError();
+            ProcessSdkError(errorDict, sdkError);
+            if (sdkError.ErrorMsg == null)
             {
-                var jValue = JObject.Parse(item.Value.ToString());
-                var errorCode = jValue["error_code"];
-                var errorMsg = jValue["error_msg"];
-                if (errorCode != null && errorMsg != null)
-                {
-                    return new SdkError(errorCode.ToString(), errorMsg.ToString());
-                }
-
-                var message = jValue["message"];
-                var code = jValue["code"];
-                if (message != null && code != null)
-                {
-                    return new SdkError(code.ToString(), message.ToString());
-                }
+                sdkError.ErrorMsg = response.HttpBody;
             }
-
-            return new SdkError(response.HttpBody);
+            return sdkError;
         }
     }
 }

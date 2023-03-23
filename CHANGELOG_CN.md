@@ -1,3 +1,140 @@
+# 3.1.32 2023-03-23
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.extendParam.agency_name`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.extendParam.agency_name`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.extendParam.agency_name`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.extendParam.agency_name`
+    - 响应参数变更
+      - `+ spec.extendParam.agency_name`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.spec.extendParam.agency_name`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **UpdateNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.spec.nodeTemplate.extendParam.agency_name`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainDetailByName**
+    - 响应参数变更
+      - `- domain.banned_reason`
+      - `- domain.locked_reason`
+      - `- domain.enterprise_project_id`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateMigrationTask**
+    - 请求参数变更
+      - `+ backup_files.file_source: enum value [backup_record]`
+  - **ShowMigrationTask**
+    - 响应参数变更
+      - `+ backup_files.file_source: enum value [backup_record]`
+  - **StopMigrationTask**
+    - 响应参数变更
+      - `+ backup_files.file_source: enum value [backup_record]`
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowReplSetName**
+    - 响应参数变更
+      - `+ name`
+  - **UpdateReplSetName**
+    - 响应参数变更
+      - `+ job_id`
+
+### HuaweiCloud SDK NAT
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListPrivateNats`
+    - `CreatePrivateNat`
+    - `ShowPrivateNat`
+    - `UpdatePrivateNat`
+    - `DeletePrivateNat`
+    - `ListPrivateDnats`
+    - `CreatePrivateDnat`
+    - `ShowPrivateDnat`
+    - `UpdatePrivateDnat`
+    - `DeletePrivateDnat`
+    - `ListPrivateSnats`
+    - `CreatePrivateSnat`
+    - `ShowPrivateSnat`
+    - `UpdatePrivateSnat`
+    - `DeletePrivateSnat`
+    - `ListTransitIps`
+    - `CreateTransitIp`
+    - `ShowTransitIp`
+    - `DeleteTransitIp`
+    - `ListPrivateNatsByTags`
+    - `ListPrivateNatTags`
+    - `ShowPrivateNatTags`
+    - `CreatePrivateNatTag`
+    - `BatchCreateDeletePrivateNatTags`
+    - `DeletePrivateNatTag`
+    - `ListTransitIpsByTags`
+    - `ListTransitIpTags`
+    - `ShowTransitIpTags`
+    - `CreateTransitIpTag`
+    - `BatchCreateDeleteTransitIpTags`
+    - `DeleteTransitIpTag`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 支持接口`ShowEngineInstanceExtendProductInfo`、`ResizeEngineInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.31 2023-03-16
 
 ### HuaweiCloud SDK BMS

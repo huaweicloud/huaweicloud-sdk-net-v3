@@ -1,3 +1,140 @@
+# 3.1.32 2023-03-23
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.extendParam.agency_name`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.extendParam.agency_name`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.extendParam.agency_name`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.extendParam.agency_name`
+    - changes of response param
+      - `+ spec.extendParam.agency_name`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.extendParam.agency_name`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **UpdateNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.agency_name`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.extendParam.agency_name`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainDetailByName**
+    - changes of response param
+      - `- domain.banned_reason`
+      - `- domain.locked_reason`
+      - `- domain.enterprise_project_id`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateMigrationTask**
+    - changes of request param
+      - `+ backup_files.file_source: enum value [backup_record]`
+  - **ShowMigrationTask**
+    - changes of response param
+      - `+ backup_files.file_source: enum value [backup_record]`
+  - **StopMigrationTask**
+    - changes of response param
+      - `+ backup_files.file_source: enum value [backup_record]`
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowReplSetName**
+    - changes of response param
+      - `+ name`
+  - **UpdateReplSetName**
+    - changes of response param
+      - `+ job_id`
+
+### HuaweiCloud SDK NAT
+
+- _Features_
+  - Support the following interfaces：
+    - `ListPrivateNats`
+    - `CreatePrivateNat`
+    - `ShowPrivateNat`
+    - `UpdatePrivateNat`
+    - `DeletePrivateNat`
+    - `ListPrivateDnats`
+    - `CreatePrivateDnat`
+    - `ShowPrivateDnat`
+    - `UpdatePrivateDnat`
+    - `DeletePrivateDnat`
+    - `ListPrivateSnats`
+    - `CreatePrivateSnat`
+    - `ShowPrivateSnat`
+    - `UpdatePrivateSnat`
+    - `DeletePrivateSnat`
+    - `ListTransitIps`
+    - `CreateTransitIp`
+    - `ShowTransitIp`
+    - `DeleteTransitIp`
+    - `ListPrivateNatsByTags`
+    - `ListPrivateNatTags`
+    - `ShowPrivateNatTags`
+    - `CreatePrivateNatTag`
+    - `BatchCreateDeletePrivateNatTags`
+    - `DeletePrivateNatTag`
+    - `ListTransitIpsByTags`
+    - `ListTransitIpTags`
+    - `ShowTransitIpTags`
+    - `CreateTransitIpTag`
+    - `BatchCreateDeleteTransitIpTags`
+    - `DeleteTransitIpTag`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+  - Support the interfaces `ShowEngineInstanceExtendProductInfo`, `ResizeEngineInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.31 2023-03-16
 
 ### HuaweiCloud SDK BMS

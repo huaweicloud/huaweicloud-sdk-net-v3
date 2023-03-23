@@ -1350,8 +1350,7 @@ namespace HuaweiCloud.SDK.Dds.V3
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replica-set/name",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplSetNameRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            ShowReplSetNameResponse showReplSetNameResponse = JsonUtils.DeSerializeNull<ShowReplSetNameResponse>(response);
-            return showReplSetNameResponse;
+            return JsonUtils.DeSerialize<ShowReplSetNameResponse>(response);
         }
         
         /// <summary>
@@ -1641,8 +1640,7 @@ namespace HuaweiCloud.SDK.Dds.V3
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replica-set/name",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReplSetNameRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            UpdateReplSetNameResponse updateReplSetNameResponse = JsonUtils.DeSerializeNull<UpdateReplSetNameResponse>(response);
-            return updateReplSetNameResponse;
+            return JsonUtils.DeSerialize<UpdateReplSetNameResponse>(response);
         }
         
         /// <summary>

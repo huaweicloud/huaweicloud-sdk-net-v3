@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("chargingMode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }
 
+        /// <summary>
+        /// 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为CCE节点提供访问云服务器的临时凭证。 
+        /// </summary>
+        [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyName { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  nicThreshold: ").Append(NicThreshold).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -261,6 +268,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.ChargingMode == input.ChargingMode ||
                     (this.ChargingMode != null &&
                     this.ChargingMode.Equals(input.ChargingMode))
+                ) && 
+                (
+                    this.AgencyName == input.AgencyName ||
+                    (this.AgencyName != null &&
+                    this.AgencyName.Equals(input.AgencyName))
                 );
         }
 
@@ -308,6 +320,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.ChargingMode != null)
                     hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.AgencyName != null)
+                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 return hashCode;
             }
         }

@@ -202,24 +202,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceAreaEnum ServiceArea { get; set; }
-        /// <summary>
-        /// 域名禁用原因。 1：该域名涉嫌违规内容（涉黄/涉赌/涉毒/涉政）已被禁用； 2：该域名因备案失效已被禁用； 3：该域名遭受攻击，已被禁用； 150：该域名涉嫌违规内容涉黄已被禁用； 151：该域名涉嫌违规内容涉政已被禁用； 152：该域名涉嫌违规内容涉暴已被禁用； 153：该域名涉嫌违规内容涉赌已被禁用。
-        /// </summary>
-        [JsonProperty("banned_reason", NullValueHandling = NullValueHandling.Ignore)]
-        public string BannedReason { get; set; }
-
-        /// <summary>
-        /// 域名锁定原因（Changing the config, please wait）。
-        /// </summary>
-        [JsonProperty("locked_reason", NullValueHandling = NullValueHandling.Ignore)]
-        public string LockedReason { get; set; }
-
-        /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。       
-        /// </summary>
-        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EnterpriseProjectId { get; set; }
-
 
 
         /// <summary>
@@ -240,9 +222,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  disabled: ").Append(Disabled).Append("\n");
             sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
-            sb.Append("  bannedReason: ").Append(BannedReason).Append("\n");
-            sb.Append("  lockedReason: ").Append(LockedReason).Append("\n");
-            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -319,21 +298,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.ServiceArea == input.ServiceArea ||
                     (this.ServiceArea != null &&
                     this.ServiceArea.Equals(input.ServiceArea))
-                ) && 
-                (
-                    this.BannedReason == input.BannedReason ||
-                    (this.BannedReason != null &&
-                    this.BannedReason.Equals(input.BannedReason))
-                ) && 
-                (
-                    this.LockedReason == input.LockedReason ||
-                    (this.LockedReason != null &&
-                    this.LockedReason.Equals(input.LockedReason))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -367,12 +331,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 if (this.ServiceArea != null)
                     hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
-                if (this.BannedReason != null)
-                    hashCode = hashCode * 59 + this.BannedReason.GetHashCode();
-                if (this.LockedReason != null)
-                    hashCode = hashCode * 59 + this.LockedReason.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

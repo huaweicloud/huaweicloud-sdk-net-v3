@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Email { get; set; }
 
         /// <summary>
-        /// zone类型，公网（public）或者内网（private）。
+        /// zone类型，公网（public）。
         /// </summary>
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneType { get; set; }

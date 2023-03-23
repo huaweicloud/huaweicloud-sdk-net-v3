@@ -31,13 +31,14 @@ namespace HuaweiCloud.SDK.Core
         [XmlElement("Message")]
         public string ErrorMsg { get; set; }
 
-        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
-        [XmlElement("Code")]
+        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)] [XmlElement("Code")]
         public string ErrorCode;
 
-        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
-        [XmlElement("RequestId")]
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)] [XmlElement("RequestId")]
         public string RequestId;
+
+        [JsonProperty("encoded_authorization_message", NullValueHandling = NullValueHandling.Ignore)] [XmlElement("EncodedAuthorizationMessage")]
+        public string EncodedAuthorizationMessage;
 
         public SdkError()
         {
@@ -49,13 +50,13 @@ namespace HuaweiCloud.SDK.Core
             this.ErrorMsg = errorMsg;
             this.RequestId = requestId;
         }
-        
+
         public SdkError(string errorCode, string errorMsg)
         {
             this.ErrorCode = errorCode;
             this.ErrorMsg = errorMsg;
         }
-        
+
         public SdkError(string errorMsg)
         {
             this.ErrorMsg = errorMsg;

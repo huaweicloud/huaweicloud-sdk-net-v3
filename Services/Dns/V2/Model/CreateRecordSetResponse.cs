@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ZoneName { get; set; }
 
         /// <summary>
-        /// 记录类型。 取值范围：A，AAAA，MX，CNAME，TXT，NS（仅限公网Zone），SRV，CAA（仅限公网Zone）
+        /// 记录类型。  公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。  内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA、PTR。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
