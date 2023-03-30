@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// 设备组信息列表。
         /// </summary>
         [JsonProperty("device_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DeviceGroupResponseDTO> DeviceGroups { get; set; }
+        public List<DeviceGroupResponseSummary> DeviceGroups { get; set; }
 
         /// <summary>
         /// 

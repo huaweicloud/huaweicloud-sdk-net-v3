@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Path { get; set; }
 
         /// <summary>
-        /// **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：&gt;，&lt;，&gt;&#x3D;，&lt;&#x3D;，&#x3D;和between:表示数值区间。
+        /// **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：&gt;，&lt;，&gt;&#x3D;，&lt;&#x3D;，&#x3D;,in:表示在指定值中匹配和between:表示数值区间。
         /// </summary>
         [JsonProperty("operator", NullValueHandling = NullValueHandling.Ignore)]
         public string Operator { get; set; }
@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
+
+        /// <summary>
+        /// **参数说明**：当operator为in时该字段必填，使用该字段传递比较表达式右值，上限为20个。
+        /// </summary>
+        [JsonProperty("in_values", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> InValues { get; set; }
 
         /// <summary>
         /// 
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  path: ").Append(Path).Append("\n");
             sb.Append("  Operator: ").Append(Operator).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  inValues: ").Append(InValues).Append("\n");
             sb.Append("  strategy: ").Append(Strategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Value.Equals(input.Value))
                 ) && 
                 (
+                    this.InValues == input.InValues ||
+                    this.InValues != null &&
+                    input.InValues != null &&
+                    this.InValues.SequenceEqual(input.InValues)
+                ) && 
+                (
                     this.Strategy == input.Strategy ||
                     (this.Strategy != null &&
                     this.Strategy.Equals(input.Strategy))
@@ -110,6 +123,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Operator.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.InValues != null)
+                    hashCode = hashCode * 59 + this.InValues.GetHashCode();
                 if (this.Strategy != null)
                     hashCode = hashCode * 59 + this.Strategy.GetHashCode();
                 return hashCode;

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     /// <summary>
     /// 设备组信息结构体，创建、查询、修改设备组时返回
     /// </summary>
-    public class DeviceGroupResponseDTO 
+    public class DeviceGroupResponseSummary 
     {
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeviceGroupResponseDTO {\n");
+            sb.Append("class DeviceGroupResponseSummary {\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -62,13 +62,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeviceGroupResponseDTO);
+            return this.Equals(input as DeviceGroupResponseSummary);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeviceGroupResponseDTO input)
+        public bool Equals(DeviceGroupResponseSummary input)
         {
             if (input == null)
                 return false;

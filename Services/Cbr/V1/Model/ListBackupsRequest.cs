@@ -653,7 +653,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string CheckpointId { get; set; }
 
         /// <summary>
-        /// 专属云
+        /// 专属云 （专属云场景使用，非专属云场景不生效）
         /// </summary>
         [SDKProperty("dec", IsQuery = true)]
         [JsonProperty("dec", NullValueHandling = NullValueHandling.Ignore)]
@@ -794,6 +794,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("show_replication", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShowReplication { get; set; }
 
+        /// <summary>
+        /// 是否是增备
+        /// </summary>
+        [SDKProperty("incremental", IsQuery = true)]
+        [JsonProperty("incremental", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Incremental { get; set; }
+
 
 
         /// <summary>
@@ -825,6 +832,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  parentId: ").Append(ParentId).Append("\n");
             sb.Append("  usedPercent: ").Append(UsedPercent).Append("\n");
             sb.Append("  showReplication: ").Append(ShowReplication).Append("\n");
+            sb.Append("  incremental: ").Append(Incremental).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -955,6 +963,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.ShowReplication == input.ShowReplication ||
                     (this.ShowReplication != null &&
                     this.ShowReplication.Equals(input.ShowReplication))
+                ) && 
+                (
+                    this.Incremental == input.Incremental ||
+                    (this.Incremental != null &&
+                    this.Incremental.Equals(input.Incremental))
                 );
         }
 
@@ -1010,6 +1023,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.UsedPercent.GetHashCode();
                 if (this.ShowReplication != null)
                     hashCode = hashCode * 59 + this.ShowReplication.GetHashCode();
+                if (this.Incremental != null)
+                    hashCode = hashCode * 59 + this.Incremental.GetHashCode();
                 return hashCode;
             }
         }

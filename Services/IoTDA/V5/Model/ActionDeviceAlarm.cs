@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Severity { get; set; }
 
         /// <summary>
+        /// **参数说明**：告警维度，与告警名称和告警级别组合起来共同标识一条告警，默认不携带该字段为用户维度告警，支持设备维度和资源空间维度告警。 **取值范围**： - device：设备维度。 - app：资源空间维度。
+        /// </summary>
+        [JsonProperty("dimension", NullValueHandling = NullValueHandling.Ignore)]
+        public string Dimension { get; set; }
+
+        /// <summary>
         /// **参数说明**：告警的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  alarmStatus: ").Append(AlarmStatus).Append("\n");
             sb.Append("  severity: ").Append(Severity).Append("\n");
+            sb.Append("  dimension: ").Append(Dimension).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Severity.Equals(input.Severity))
                 ) && 
                 (
+                    this.Dimension == input.Dimension ||
+                    (this.Dimension != null &&
+                    this.Dimension.Equals(input.Dimension))
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.AlarmStatus.GetHashCode();
                 if (this.Severity != null)
                     hashCode = hashCode * 59 + this.Severity.GetHashCode();
+                if (this.Dimension != null)
+                    hashCode = hashCode * 59 + this.Dimension.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;

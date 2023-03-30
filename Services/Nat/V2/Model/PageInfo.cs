@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// 分页查询资源时，本页的实例的个数。
         /// </summary>
         [JsonProperty("current_count", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CurrentCount { get; set; }
+        public int? CurrentCount { get; set; }
 
 
 

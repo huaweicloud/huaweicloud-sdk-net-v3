@@ -12,13 +12,14 @@ namespace HuaweiCloud.SDK.Core
 
         public void Sign(HttpRequest request, string regionId, string derivedAuthServiceName)
         {
+            verifyAkSk();
             if (string.IsNullOrEmpty(regionId))
             {
-                throw new ArgumentException("regionId in credential is required when using derived auth");
+                throw new ArgumentException("regionId is required in credentials when using derived auth");
             }
             if (string.IsNullOrEmpty(derivedAuthServiceName))
             {
-                throw new ArgumentException("derivedAuthServiceName in credential is required when using derived auth");
+                throw new ArgumentException("derivedAuthServiceName is required in credentials when using derived auth");
             }
             // Add X-Sdk-Date
             var time = request.Headers.GetValues(HeaderXDate);

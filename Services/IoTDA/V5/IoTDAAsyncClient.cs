@@ -1,3 +1,4 @@
+using System;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -402,7 +403,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// <summary>
         /// 添加设备组
         ///
-        /// 应用服务器可调用此接口新建设备组，一个华为云账号下最多可有1,000个分组，包括父分组和子分组。设备组的最大层级关系不超过5层，即群组形成的关系树最大深度不超过5。
+        /// 应用服务器可调用此接口新建设备组，一个华为云账号下最多可有1,000个设备组，包括父设备组和子设备组。设备组的最大层级关系不超过5层，即群组形成的关系树最大深度不超过5。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -732,8 +733,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// | &gt;       | create_time、marker                      |
         /// | &lt;       | create_time、marker                      |
         /// | like    | device_name、node_id、tag_key、tag_value |
-        /// | in      | 所有                                     |
-        /// | not  in | 所有                                     |
+        /// | in      | 除tag_key、tag_value以外字段             |
+        /// | not  in | 除tag_key、tag_value以外字段             |
         /// 
         /// #### SQL 限制
         /// 
@@ -920,7 +921,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// 创建OTA升级包
         ///
         /// 用户可调用此接口创建升级包关联OBS对象
-        /// 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam/?region&#x3D;cn-north-4#/iam/agencies)](tag:hws) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
+        /// 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam)](tag:hws)[[统一身份认证服务（IAM）](https://console-intl.huaweicloud.com/iam)](tag:hws_hk) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -936,7 +937,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// <summary>
         /// 删除OTA升级包
         ///
-        /// 只删除升级包信息，不会删除OBS上对象
+        /// 用户可调用此接口删除关联OBS对象的升级包信息，不会删除OBS上对象
+        /// 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam)](tag:hws)[[统一身份认证服务（IAM）](https://console-intl.huaweicloud.com/iam)](tag:hws_hk) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -954,7 +956,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// <summary>
         /// 查询OTA升级包列表
         ///
-        /// 查询OTA升级包列表
+        /// 用户可调用此接口查询关联OBS对象的升级包列表
+        /// 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam)](tag:hws)[[统一身份认证服务（IAM）](https://console-intl.huaweicloud.com/iam)](tag:hws_hk) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -970,7 +973,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// <summary>
         /// 获取OTA升级包详情
         ///
-        /// 获取OTA升级包详情
+        /// 用户可调用此接口查询关联OBS对象的升级包详情
+        /// 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam)](tag:hws)[[统一身份认证服务（IAM）](https://console-intl.huaweicloud.com/iam)](tag:hws_hk) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -987,7 +991,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// <summary>
         /// 创建产品
         ///
-        /// 应用服务器可调用此接口创建产品。
+        /// 应用服务器可调用此接口创建产品。此接口仅创建了产品，没有创建和安装插件，如果需要对数据进行编解码，还需要在平台开发和安装插件。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1003,7 +1007,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// <summary>
         /// 删除产品
         ///
-        /// 应用服务器可调用此接口删除已导入物联网平台的指定产品模型。
+        /// 应用服务器可调用此接口删除已导入物联网平台的指定产品模型。此接口仅删除了产品，未删除关联的插件，在产品下存在设备时，该产品不允许删除。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1054,7 +1058,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         /// <summary>
         /// 修改产品
         ///
-        /// 应用服务器可调用此接口修改已导入物联网平台的指定产品模型，包括产品模型的服务、属性、命令等。
+        /// 应用服务器可调用此接口修改已导入物联网平台的指定产品模型，包括产品模型的服务、属性、命令等。此接口仅修改了产品，未修改和安装插件，如果修改了产品中的service定义，且在平台中有对应的插件，请修改并重新安装插件。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string AppId { get; set; }
 
         /// <summary>
-        /// 用户自定义sql select语句，最大长度500，该参数仅供标准版和企业版用户使用。
+        /// 用户自定义sql select语句，最大长度2500，该参数仅供标准版和企业版用户使用。
         /// </summary>
         [JsonProperty("select", NullValueHandling = NullValueHandling.Ignore)]
         public string Select { get; set; }
 
         /// <summary>
-        /// 用户自定义sql where语句，最大长度500，该参数仅供标准版和企业版用户使用。
+        /// 用户自定义sql where语句，最大长度2500，该参数仅供标准版和企业版用户使用。
         /// </summary>
         [JsonProperty("where", NullValueHandling = NullValueHandling.Ignore)]
         public string Where { get; set; }

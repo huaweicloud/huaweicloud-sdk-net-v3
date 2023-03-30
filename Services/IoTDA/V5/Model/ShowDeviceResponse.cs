@@ -113,13 +113,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string CreateTime { get; set; }
 
         /// <summary>
-        /// 设备最近一次连接状态(ONLINE:在线，OFFLINE：离线，ABNORMAL：异常)变化时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;,如 2015-12-12T12:12:122Z。
+        /// 设备最近一次连接状态(ONLINE:在线，OFFLINE：离线，ABNORMAL：异常)变化时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39; ，如2015-12-12T12:12:122Z。
         /// </summary>
         [JsonProperty("connection_status_update_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectionStatusUpdateTime { get; set; }
 
         /// <summary>
-        /// 设备激活时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;,如 2015-12-12T12:12:122Z。
+        /// 设备激活时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39; ，如2015-12-12T12:12:122Z。
         /// </summary>
         [JsonProperty("active_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ActiveTime { get; set; }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// **参数说明**：证书id，请参见[获取证书ID](https://support.huaweicloud.com/usermanual-iothub/iot_01_0001.html#section3)
+        /// **参数说明**：证书id，请参见[[加载推送证书第3步](https://support.huaweicloud.com/usermanual-iothub/iot_01_0001.html#section3)](tag:hws)[[加载推送证书第3步](https://support.huaweicloud.com/intl/zh-cn/usermanual-iothub/iot_01_0001.html#section3)](tag:hws_hk)获取证书ID
         /// </summary>
         [JsonProperty("cert_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CertId { get; set; }
@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("sni_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SniEnable { get; set; }
 
+        /// <summary>
+        /// **参数说明**：是否启用签名。填写token时， 该参数必须为true， token才可以生效，否则token不生效。推荐设置成true，使用token签名验证消息是否来自平台。
+        /// </summary>
+        [JsonProperty("signature_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SignatureEnable { get; set; }
+
+        /// <summary>
+        /// **参数说明**：用作生成签名的Token，客户端可以使用该token按照规则生成签名并与推送消息中携带的签名做对比， 从而验证安全性。**取值范围**: 长度不超过32， 不小于3， 只允许字母、数字的组合。请参见[[HTTP/HTTPS推送基于Token认证物联网平台](https://support.huaweicloud.com/usermanual-iothub/iot_01_0001.html#section6)](tag:hws)[[HTTP/HTTPS推送基于Token认证物联网平台](https://support.huaweicloud.com/intl/zh-cn/usermanual-iothub/iot_01_0001.html#section6)](tag:hws_hk)
+        /// </summary>
+        [JsonProperty("token", NullValueHandling = NullValueHandling.Ignore)]
+        public string Token { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  certId: ").Append(CertId).Append("\n");
             sb.Append("  cnName: ").Append(CnName).Append("\n");
             sb.Append("  sniEnable: ").Append(SniEnable).Append("\n");
+            sb.Append("  signatureEnable: ").Append(SignatureEnable).Append("\n");
+            sb.Append("  token: ").Append(Token).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +107,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.SniEnable == input.SniEnable ||
                     (this.SniEnable != null &&
                     this.SniEnable.Equals(input.SniEnable))
+                ) && 
+                (
+                    this.SignatureEnable == input.SignatureEnable ||
+                    (this.SignatureEnable != null &&
+                    this.SignatureEnable.Equals(input.SignatureEnable))
+                ) && 
+                (
+                    this.Token == input.Token ||
+                    (this.Token != null &&
+                    this.Token.Equals(input.Token))
                 );
         }
 
@@ -112,6 +136,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.CnName.GetHashCode();
                 if (this.SniEnable != null)
                     hashCode = hashCode * 59 + this.SniEnable.GetHashCode();
+                if (this.SignatureEnable != null)
+                    hashCode = hashCode * 59 + this.SignatureEnable.GetHashCode();
+                if (this.Token != null)
+                    hashCode = hashCode * 59 + this.Token.GetHashCode();
                 return hashCode;
             }
         }

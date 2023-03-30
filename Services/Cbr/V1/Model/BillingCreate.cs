@@ -246,9 +246,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         }
 
         /// <summary>
-        /// 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。
+        /// 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace），VMware（vmware），关系型数据库（rds），文件（file）。
         /// </summary>
-        /// <value>对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。</value>
+        /// <value>对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace），VMware（vmware），关系型数据库（rds），文件（file）。</value>
         [JsonConverter(typeof(EnumClassConverter<ObjectTypeEnum>))]
         public class ObjectTypeEnum
         {
@@ -272,6 +272,21 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             /// </summary>
             public static readonly ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
 
+            /// <summary>
+            /// Enum VMWARE for value: vmware
+            /// </summary>
+            public static readonly ObjectTypeEnum VMWARE = new ObjectTypeEnum("vmware");
+
+            /// <summary>
+            /// Enum RDS for value: rds
+            /// </summary>
+            public static readonly ObjectTypeEnum RDS = new ObjectTypeEnum("rds");
+
+            /// <summary>
+            /// Enum FILE for value: file
+            /// </summary>
+            public static readonly ObjectTypeEnum FILE = new ObjectTypeEnum("file");
+
             private static readonly Dictionary<string, ObjectTypeEnum> StaticFields =
             new Dictionary<string, ObjectTypeEnum>()
             {
@@ -279,6 +294,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 { "disk", DISK },
                 { "turbo", TURBO },
                 { "workspace", WORKSPACE },
+                { "vmware", VMWARE },
+                { "rds", RDS },
+                { "file", FILE },
             };
 
             private string _value;
@@ -729,7 +747,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("consistent_level", NullValueHandling = NullValueHandling.Ignore)]
         public ConsistentLevelEnum ConsistentLevel { get; set; }
         /// <summary>
-        /// 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。
+        /// 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace），VMware（vmware），关系型数据库（rds），文件（file）。
         /// </summary>
         [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
         public ObjectTypeEnum ObjectType { get; set; }

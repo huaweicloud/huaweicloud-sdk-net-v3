@@ -38,13 +38,18 @@ namespace HuaweiCloud.SDK.Core
         protected const string HeaderHost = "host";
         protected const string HeaderAuthorization = "Authorization";
         const string HeaderContentSha256 = "X-Sdk-Content-Sha256";
-        private readonly HashSet<string> _unsignedHeaders = new HashSet<string> {"content-type"};
+
+        private readonly HashSet<string> _unsignedHeaders = new HashSet<string>
+        {
+            "content-type"
+        };
 
         public string Key { get; set; }
         public string Secret { get; set; }
 
         public void Sign(HttpRequest request)
         {
+            verifyAkSk();
             var time = request.Headers.GetValues(HeaderXDate);
             DateTime t;
             if (time == null)
@@ -71,6 +76,18 @@ namespace HuaweiCloud.SDK.Core
             var signature = SignStringToSign(stringToSign, Encoding.UTF8.GetBytes(Secret));
             var authValue = ProcessAuthHeader(signature, signedHeaders);
             request.Headers.Set(HeaderAuthorization, authValue);
+        }
+
+        protected void verifyAkSk()
+        {
+            if (string.IsNullOrEmpty(Key))
+            {
+                throw new ArgumentException("Ak is required in credentials");
+            }
+            if (string.IsNullOrEmpty(Secret))
+            {
+                throw new ArgumentException("Sk is required in credentials");
+            }
         }
 
         /// <summary>
@@ -145,9 +162,9 @@ namespace HuaweiCloud.SDK.Core
         protected List<string> ProcessSignedHeaders(HttpRequest request)
         {
             var signedHeaders = (from key in request.Headers.AllKeys
-                let keyLower = key.ToLower()
-                where !_unsignedHeaders.Contains(keyLower)
-                select key.ToLower()).ToList();
+                                 let keyLower = key.ToLower()
+                                 where !_unsignedHeaders.Contains(keyLower)
+                                 select key.ToLower()).ToList();
 
             signedHeaders.Sort(CompareOrdinal);
             return signedHeaders;
@@ -201,10 +218,10 @@ namespace HuaweiCloud.SDK.Core
         {
             if (i < 10)
             {
-                return (char) (i + '0');
+                return (char)(i + '0');
             }
 
-            return (char) (i - 10 + 'a');
+            return (char)(i - 10 + 'a');
         }
 
         protected string StringToSign(string canonicalRequest, DateTime t)

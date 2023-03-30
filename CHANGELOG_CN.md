@@ -1,3 +1,140 @@
+# 3.1.33 2023-03-30
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListBackups**
+    - 请求参数变更
+      - `+ incremental`
+  - **ListVault**
+    - 响应参数变更
+      - `+ vaults.billing.object_type: enum value [vmware,rds,file]`
+  - **CreateVault**
+    - 请求参数变更
+      - `+ vault.billing.object_type: enum value [vmware,rds,file]`
+    - 响应参数变更
+      - `+ vault.billing.object_type: enum value [vmware,rds,file]`
+  - **ShowVault**
+    - 响应参数变更
+      - `+ vault.billing.object_type: enum value [vmware,rds,file]`
+  - **UpdateVault**
+    - 响应参数变更
+      - `+ vault.billing.object_type: enum value [vmware,rds,file]`
+  - **ShowVaultResourceInstances**
+    - 响应参数变更
+      - `+ resources.resource_detail.billing.object_type: enum value [vmware,rds,file]`
+  - **ListProtectable**
+    - 响应参数变更
+      - `+ instances.protectable.vault.billing.object_type: enum value [vmware,rds,file]`
+  - **ShowProtectable**
+    - 响应参数变更
+      - `+ instance.protectable.vault.billing.object_type: enum value [vmware,rds,file]`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListOtaPackageInfo**
+    - 请求参数变更
+      - `- Sp-Auth-Token`
+  - **CreateOtaPackage**
+    - 请求参数变更
+      - `- Sp-Auth-Token`
+  - **DeleteOtaPackage**
+    - 请求参数变更
+      - `- Sp-Auth-Token`
+  - **ShowOtaPackage**
+    - 请求参数变更
+      - `- Sp-Auth-Token`
+  - **ShowRuleAction**
+    - 响应参数变更
+      - `+ channel_detail.http_forwarding.signature_enable`
+      - `+ channel_detail.http_forwarding.token`
+  - **UpdateRuleAction**
+    - 请求参数变更
+      - `+ channel_detail.http_forwarding.signature_enable`
+      - `+ channel_detail.http_forwarding.token`
+    - 响应参数变更
+      - `+ channel_detail.http_forwarding.signature_enable`
+      - `+ channel_detail.http_forwarding.token`
+  - **CreateRuleAction**
+    - 请求参数变更
+      - `+ channel_detail.http_forwarding.signature_enable`
+      - `+ channel_detail.http_forwarding.token`
+    - 响应参数变更
+      - `+ channel_detail.http_forwarding.signature_enable`
+      - `+ channel_detail.http_forwarding.token`
+  - **ListRuleActions**
+    - 响应参数变更
+      - `+ actions.channel_detail.http_forwarding.signature_enable`
+      - `+ actions.channel_detail.http_forwarding.token`
+  - **ShowRule**
+    - 响应参数变更
+      - `+ actions.device_alarm.dimension`
+      - `+ condition_group.conditions.device_linkage_status_condition`
+      - `+ condition_group.conditions.device_property_condition.filters.in_values`
+  - **UpdateRule**
+    - 请求参数变更
+      - `+ actions.device_alarm.dimension`
+      - `+ condition_group.conditions.device_linkage_status_condition`
+      - `+ condition_group.conditions.device_property_condition.filters.in_values`
+    - 响应参数变更
+      - `+ actions.device_alarm.dimension`
+      - `+ condition_group.conditions.device_linkage_status_condition`
+      - `+ condition_group.conditions.device_property_condition.filters.in_values`
+  - **CreateRule**
+    - 请求参数变更
+      - `+ actions.device_alarm.dimension`
+      - `+ condition_group.conditions.device_linkage_status_condition`
+      - `+ condition_group.conditions.device_property_condition.filters.in_values`
+    - 响应参数变更
+      - `+ actions.device_alarm.dimension`
+      - `+ condition_group.conditions.device_linkage_status_condition`
+      - `+ condition_group.conditions.device_property_condition.filters.in_values`
+  - **ListRules**
+    - 响应参数变更
+      - `+ rules.actions.device_alarm.dimension`
+      - `+ rules.condition_group.conditions.device_linkage_status_condition`
+      - `+ rules.condition_group.conditions.device_property_condition.filters.in_values`
+
+### HuaweiCloud SDK NAT
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPrivateDnats**
+    - 响应参数变更
+      - `* page_info.current_count: number -> integer`
+  - **ListPrivateNats**
+    - 响应参数变更
+      - `* page_info.current_count: number -> integer`
+  - **ListPrivateSnats**
+    - 响应参数变更
+      - `* page_info.current_count: number -> integer`
+  - **ListTransitIps**
+    - 响应参数变更
+      - `* page_info.current_count: number -> integer`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **PublishAssetFromObs**
+    - 请求参数变更
+      - `+ video_type: enum value [RMVB,WEBM]`
+
 # 3.1.32 2023-03-23
 
 ### HuaweiCloud SDK CCE

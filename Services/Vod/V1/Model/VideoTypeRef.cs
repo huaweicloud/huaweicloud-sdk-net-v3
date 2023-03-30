@@ -167,6 +167,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             /// </summary>
             public static readonly VideoTypeEnum MP2 = new VideoTypeEnum("MP2");
 
+            /// <summary>
+            /// Enum RMVB for value: RMVB
+            /// </summary>
+            public static readonly VideoTypeEnum RMVB = new VideoTypeEnum("RMVB");
+
+            /// <summary>
+            /// Enum WEBM for value: WEBM
+            /// </summary>
+            public static readonly VideoTypeEnum WEBM = new VideoTypeEnum("WEBM");
+
             private static readonly Dictionary<string, VideoTypeEnum> StaticFields =
             new Dictionary<string, VideoTypeEnum>()
             {
@@ -199,6 +209,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 { "M4R", M4R },
                 { "WV", WV },
                 { "MP2", MP2 },
+                { "RMVB", RMVB },
+                { "WEBM", WEBM },
             };
 
             private string _value;

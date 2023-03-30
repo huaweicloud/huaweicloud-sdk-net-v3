@@ -17,14 +17,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
-        /// Sp用户Token。通过调用IoBPS服务获取SP用户Token
-        /// </summary>
-        [SDKProperty("Sp-Auth-Token", IsHeader = true)]
-        [JsonProperty("Sp-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpAuthToken { get; set; }
-
-        /// <summary>
-        /// 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+        /// **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。您可以在IoTDA管理控制台界面，选择左侧导航栏“总览”页签查看当前实例的ID。
         /// </summary>
         [SDKProperty("Instance-Id", IsHeader = true)]
         [JsonProperty("Instance-Id", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,14 +52,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// |- **参数说明**：分页查询时每页显示的记录数。 **取值范围**：1-50的整数，默认值为10。
+        /// **参数说明**：分页查询时每页显示的记录数。 **取值范围**：1-50的整数，默认值为10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// **参数说明**：上一次分页查询结果中最后一条记录的ID，在上一次分页查询时由物联网平台返回获得。分页查询时物联网平台是按marker也就是记录ID降序查询的，越新的数据记录ID也会越大。若填写marker，则本次只查询记录ID小于marker的数据记录。若不填写，则从记录ID最大也就是最新的一条数据开始查询。如果需要依次查询所有数据，则每次查询时必须填写上一次查询响应中的marker值。 **取值范围**：长度为24的十六进制字符串，默认值为ffffffffffffffffffffffff。
+        /// **参数说明**：上一次分页查询结果中最后一条记录的ID，在上一次分页查询时由物联网平台返回获得。分页查询时物联网平台是按marker也就是记录ID降序查询的，越新的数据记录ID也会越大。若填写marker，则本次只查询记录ID小于marker的数据记录。若不填写，则从记录ID最大也就是最新的一条数据开始查询。如果需要依次查询所有数据，则每次查询时必须填写上一次查询响应中的marker值。**取值范围**：长度为24的十六进制字符串，默认值为ffffffffffffffffffffffff。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
@@ -88,7 +81,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListOtaPackageInfoRequest {\n");
-            sb.Append("  spAuthToken: ").Append(SpAuthToken).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  packageType: ").Append(PackageType).Append("\n");
@@ -118,11 +110,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 return false;
 
             return 
-                (
-                    this.SpAuthToken == input.SpAuthToken ||
-                    (this.SpAuthToken != null &&
-                    this.SpAuthToken.Equals(input.SpAuthToken))
-                ) && 
                 (
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
@@ -173,8 +160,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SpAuthToken != null)
-                    hashCode = hashCode * 59 + this.SpAuthToken.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.AppId != null)
