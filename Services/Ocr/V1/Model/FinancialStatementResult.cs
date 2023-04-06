@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("image_size", NullValueHandling = NullValueHandling.Ignore)]
         public FinancialStatementResultImageSize ImageSize { get; set; }
 
+        /// <summary>
+        /// 返回透视变换矩阵 
+        /// </summary>
+        [JsonProperty("rectification_matrix", NullValueHandling = NullValueHandling.Ignore)]
+        public List<List<float?>> RectificationMatrix { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  wordsRegionList: ").Append(WordsRegionList).Append("\n");
             sb.Append("  excel: ").Append(Excel).Append("\n");
             sb.Append("  imageSize: ").Append(ImageSize).Append("\n");
+            sb.Append("  rectificationMatrix: ").Append(RectificationMatrix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ImageSize == input.ImageSize ||
                     (this.ImageSize != null &&
                     this.ImageSize.Equals(input.ImageSize))
+                ) && 
+                (
+                    this.RectificationMatrix == input.RectificationMatrix ||
+                    this.RectificationMatrix != null &&
+                    input.RectificationMatrix != null &&
+                    this.RectificationMatrix.SequenceEqual(input.RectificationMatrix)
                 );
         }
 
@@ -113,6 +126,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Excel.GetHashCode();
                 if (this.ImageSize != null)
                     hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
+                if (this.RectificationMatrix != null)
+                    hashCode = hashCode * 59 + this.RectificationMatrix.GetHashCode();
                 return hashCode;
             }
         }

@@ -137,6 +137,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
+        /// 目录刷新只刷新变更资源标识，其值为true 或false，默认为false
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Mode { get; set; }
+
+        /// <summary>
         /// 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url。
         /// </summary>
         [JsonProperty("urls", NullValueHandling = NullValueHandling.Ignore)]
@@ -152,6 +158,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             var sb = new StringBuilder();
             sb.Append("class RefreshTaskRequestBody {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  urls: ").Append(Urls).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -180,6 +187,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
+                ) && 
+                (
                     this.Urls == input.Urls ||
                     this.Urls != null &&
                     input.Urls != null &&
@@ -197,6 +209,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 int hashCode = 41;
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Urls != null)
                     hashCode = hashCode * 59 + this.Urls.GetHashCode();
                 return hashCode;

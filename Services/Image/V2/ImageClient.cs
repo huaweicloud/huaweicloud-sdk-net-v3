@@ -63,38 +63,6 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 创建图像重构任务
-        ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateImageVariationTaskResponse CreateImageVariationTask(CreateImageVariationTaskRequest createImageVariationTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-variation/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageVariationTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<CreateImageVariationTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建文生图任务
-        ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateTextToImageTaskResponse CreateTextToImageTask(CreateTextToImageTaskRequest createTextToImageTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/text-to-image/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTextToImageTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<CreateTextToImageTaskResponse>(response);
-        }
-        
-        /// <summary>
         /// 创建任务
         ///
         /// 创建视频封面任务
@@ -447,40 +415,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageTranslateTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowImageTranslateTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// show task 查询任务信息
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowImageVariationTaskResponse ShowImageVariationTask(ShowImageVariationTaskRequest showImageVariationTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showImageVariationTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-variation/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageVariationTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowImageVariationTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// show task 查询任务信息
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowTextToImageTaskResponse ShowTextToImageTask(ShowTextToImageTaskRequest showTextToImageTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showTextToImageTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/text-to-image/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTextToImageTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowTextToImageTaskResponse>(response);
         }
         
         /// <summary>

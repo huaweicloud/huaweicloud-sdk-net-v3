@@ -1,3 +1,55 @@
+# 3.1.34 2023-04-06
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateRefreshTasks**
+    - 请求参数变更
+      - `+ refresh_task.mode`
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAlarmHistories**
+    - 响应参数变更
+      - `+ alarm_histories.type: enum value [DNSHealthCheck,RESOURCE_GROUP,MULTI_INSTANCE,ALL_INSTANCE]`
+  - **ListAlarmRules**
+    - 响应参数变更
+      - `+ alarms.type: enum value [EVENT.SYS,EVENT.CUSTOM,DNSHealthCheck,RESOURCE_GROUP,MULTI_INSTANCE,ALL_INSTANCE]`
+  - **CreateAlarmRules**
+    - 请求参数变更
+      - `+ type: enum value [EVENT.SYS,EVENT.CUSTOM,DNSHealthCheck,RESOURCE_GROUP,MULTI_INSTANCE,ALL_INSTANCE]`
+
+### HuaweiCloud SDK Image
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`CreateTextToImageTask`、`ShowTextToImageTask`、`CreateImageVariationTask`、`ShowImageVariationTask`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeFinancialStatement**
+    - 请求参数变更
+      - `+ return_rectification_matrix`
+    - 响应参数变更
+      - `+ result.rectification_matrix`
+
 # 3.1.33 2023-03-30
 
 ### HuaweiCloud SDK CBR

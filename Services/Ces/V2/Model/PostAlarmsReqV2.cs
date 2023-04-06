@@ -53,11 +53,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<Policy> Policies { get; set; }
 
         /// <summary>
-        /// 告警规则类型
+        /// 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; set; }
-
+        public AlarmType Type { get; set; }
         /// <summary>
         /// 告警触发的动作
         /// </summary>

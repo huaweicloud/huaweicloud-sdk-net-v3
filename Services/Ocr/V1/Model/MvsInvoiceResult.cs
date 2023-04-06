@@ -17,307 +17,307 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 发票代码。
+        /// 发票代码。 
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public string Code { get; set; }
 
         /// <summary>
-        /// 发票号码。
+        /// 发票号码。 
         /// </summary>
         [JsonProperty("number", NullValueHandling = NullValueHandling.Ignore)]
         public string Number { get; set; }
 
         /// <summary>
-        /// 机打代码。
+        /// 机打代码。 
         /// </summary>
         [JsonProperty("machine_printed_code", NullValueHandling = NullValueHandling.Ignore)]
         public string MachinePrintedCode { get; set; }
 
         /// <summary>
-        /// 机打号码。
+        /// 机打号码。 
         /// </summary>
         [JsonProperty("machine_printed_number", NullValueHandling = NullValueHandling.Ignore)]
         public string MachinePrintedNumber { get; set; }
 
         /// <summary>
-        /// 开票日期。
+        /// 开票日期。 
         /// </summary>
         [JsonProperty("issue_date", NullValueHandling = NullValueHandling.Ignore)]
         public string IssueDate { get; set; }
 
         /// <summary>
-        /// 机器编号。
+        /// 机器编号。 
         /// </summary>
         [JsonProperty("machine_number", NullValueHandling = NullValueHandling.Ignore)]
         public string MachineNumber { get; set; }
 
         /// <summary>
-        /// 购买方名称、二手车买方单位/个人
+        /// 购买方名称、二手车买方单位/个人 
         /// </summary>
         [JsonProperty("buyer_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BuyerName { get; set; }
 
         /// <summary>
-        /// 购买方身份证号码/组织机构代码。
+        /// 购买方身份证号码/组织机构代码。 
         /// </summary>
         [JsonProperty("buyer_organization_number", NullValueHandling = NullValueHandling.Ignore)]
         public string BuyerOrganizationNumber { get; set; }
 
         /// <summary>
-        /// 购买方纳税人识别号、二手车买方单位代码/身份证号
+        /// 购买方纳税人识别号、二手车买方单位代码/身份证号 
         /// </summary>
         [JsonProperty("buyer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BuyerId { get; set; }
 
         /// <summary>
-        /// 二手车买方单位/个人住址。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车买方单位/个人住址。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("buyer_address", NullValueHandling = NullValueHandling.Ignore)]
         public string BuyerAddress { get; set; }
 
         /// <summary>
-        /// 二手车买方单位/个人电话。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车买方单位/个人电话。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("buyer_phone", NullValueHandling = NullValueHandling.Ignore)]
         public string BuyerPhone { get; set; }
 
         /// <summary>
-        /// 销货单位名称、二手车卖方单位/个人
+        /// 销货单位名称、二手车卖方单位/个人 
         /// </summary>
         [JsonProperty("seller_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SellerName { get; set; }
 
         /// <summary>
-        /// 销售方电话、二手车卖方电话
+        /// 销售方电话、二手车卖方电话 
         /// </summary>
         [JsonProperty("seller_phone", NullValueHandling = NullValueHandling.Ignore)]
         public string SellerPhone { get; set; }
 
         /// <summary>
-        /// 销售方纳税人识别号、二手车卖方单位代码/身份证号
+        /// 销售方纳税人识别号、二手车卖方单位代码/身份证号 
         /// </summary>
         [JsonProperty("seller_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SellerId { get; set; }
 
         /// <summary>
-        /// 销售方账号。
+        /// 销售方账号。 
         /// </summary>
         [JsonProperty("seller_account", NullValueHandling = NullValueHandling.Ignore)]
         public string SellerAccount { get; set; }
 
         /// <summary>
-        /// 销售方地址、二手车卖方单位/个人地址
+        /// 销售方地址、二手车卖方单位/个人地址 
         /// </summary>
         [JsonProperty("seller_address", NullValueHandling = NullValueHandling.Ignore)]
         public string SellerAddress { get; set; }
 
         /// <summary>
-        /// 二手车车牌照号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车车牌照号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("licence_plate_number", NullValueHandling = NullValueHandling.Ignore)]
         public string LicencePlateNumber { get; set; }
 
         /// <summary>
-        /// 二手车登记证号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车登记证号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("registration_number", NullValueHandling = NullValueHandling.Ignore)]
         public string RegistrationNumber { get; set; }
 
         /// <summary>
-        /// 二手车转入地车管所名称。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车转入地车管所名称。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("dept_motor_vehicles", NullValueHandling = NullValueHandling.Ignore)]
         public string DeptMotorVehicles { get; set; }
 
         /// <summary>
-        /// 销售方开户行。
+        /// 销售方开户行。 
         /// </summary>
         [JsonProperty("seller_bank", NullValueHandling = NullValueHandling.Ignore)]
         public string SellerBank { get; set; }
 
         /// <summary>
-        /// 车辆类型。
+        /// 车辆类型。 
         /// </summary>
         [JsonProperty("vehicle_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VehicleType { get; set; }
 
         /// <summary>
-        /// 厂牌型号。
+        /// 厂牌型号。 
         /// </summary>
         [JsonProperty("brand_model", NullValueHandling = NullValueHandling.Ignore)]
         public string BrandModel { get; set; }
 
         /// <summary>
-        /// 产地。
+        /// 产地。 
         /// </summary>
         [JsonProperty("manufacturing_location", NullValueHandling = NullValueHandling.Ignore)]
         public string ManufacturingLocation { get; set; }
 
         /// <summary>
-        /// 合格证号。
+        /// 合格证号。 
         /// </summary>
         [JsonProperty("quality_certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string QualityCertificate { get; set; }
 
         /// <summary>
-        /// 进口证明书号。
+        /// 进口证明书号。 
         /// </summary>
         [JsonProperty("import_certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string ImportCertificate { get; set; }
 
         /// <summary>
-        /// 商检单号。
+        /// 商检单号。 
         /// </summary>
         [JsonProperty("inspection_number", NullValueHandling = NullValueHandling.Ignore)]
         public string InspectionNumber { get; set; }
 
         /// <summary>
-        /// 发动机号码。
+        /// 发动机号码。 
         /// </summary>
         [JsonProperty("engine_number", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineNumber { get; set; }
 
         /// <summary>
-        /// 车辆识别代号/车架号码。
+        /// 车辆识别代号/车架号码。 
         /// </summary>
         [JsonProperty("vehicle_identification_number", NullValueHandling = NullValueHandling.Ignore)]
         public string VehicleIdentificationNumber { get; set; }
 
         /// <summary>
-        /// 吨位。
+        /// 吨位。 
         /// </summary>
         [JsonProperty("tonnage", NullValueHandling = NullValueHandling.Ignore)]
         public string Tonnage { get; set; }
 
         /// <summary>
-        /// 限乘人数。
+        /// 限乘人数。 
         /// </summary>
         [JsonProperty("seating_capacity", NullValueHandling = NullValueHandling.Ignore)]
         public string SeatingCapacity { get; set; }
 
         /// <summary>
-        /// 主管税务机关。
+        /// 主管税务机关。 
         /// </summary>
         [JsonProperty("tax_authority", NullValueHandling = NullValueHandling.Ignore)]
         public string TaxAuthority { get; set; }
 
         /// <summary>
-        /// 主管税务机关代码。
+        /// 主管税务机关代码。 
         /// </summary>
         [JsonProperty("tax_authority_code", NullValueHandling = NullValueHandling.Ignore)]
         public string TaxAuthorityCode { get; set; }
 
         /// <summary>
-        /// 完税凭证号码。
+        /// 完税凭证号码。 
         /// </summary>
         [JsonProperty("tax_payment_receipt", NullValueHandling = NullValueHandling.Ignore)]
         public string TaxPaymentReceipt { get; set; }
 
         /// <summary>
-        /// 增值税税率或征收率。
+        /// 增值税税率或征收率。 
         /// </summary>
         [JsonProperty("tax_rate", NullValueHandling = NullValueHandling.Ignore)]
         public string TaxRate { get; set; }
 
         /// <summary>
-        /// 增值税税额。
+        /// 增值税税额。 
         /// </summary>
         [JsonProperty("tax", NullValueHandling = NullValueHandling.Ignore)]
         public string Tax { get; set; }
 
         /// <summary>
-        /// 不含税价。
+        /// 不含税价。 
         /// </summary>
         [JsonProperty("tax_exclusive_price", NullValueHandling = NullValueHandling.Ignore)]
         public string TaxExclusivePrice { get; set; }
 
         /// <summary>
-        /// 价税合计、二手车车价合计（小写）
+        /// 价税合计、二手车车价合计（小写） 
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public string Total { get; set; }
 
         /// <summary>
-        /// 价税合计大写、二手车车价合计（大写）
+        /// 价税合计大写、二手车车价合计（大写） 
         /// </summary>
         [JsonProperty("total_chinese", NullValueHandling = NullValueHandling.Ignore)]
         public string TotalChinese { get; set; }
 
         /// <summary>
-        /// 税控码。
+        /// 税控码。 
         /// </summary>
         [JsonProperty("fiscal_code", NullValueHandling = NullValueHandling.Ignore)]
         public string FiscalCode { get; set; }
 
         /// <summary>
-        /// 二手车经营拍卖单位名称。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车经营拍卖单位名称。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("auction_org_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AuctionOrgName { get; set; }
 
         /// <summary>
-        /// 二手车经营拍卖单位地址。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车经营拍卖单位地址。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("auction_org_address", NullValueHandling = NullValueHandling.Ignore)]
         public string AuctionOrgAddress { get; set; }
 
         /// <summary>
-        /// 二手车经营拍卖单位纳税人识别号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车经营拍卖单位纳税人识别号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("auction_org_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AuctionOrgId { get; set; }
 
         /// <summary>
-        /// 二手车经营拍卖单位银行和账号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车经营拍卖单位银行和账号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("auction_org_bank_account", NullValueHandling = NullValueHandling.Ignore)]
         public string AuctionOrgBankAccount { get; set; }
 
         /// <summary>
-        /// 二手车经营拍卖单位电话。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车经营拍卖单位电话。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("auction_org_phone", NullValueHandling = NullValueHandling.Ignore)]
         public string AuctionOrgPhone { get; set; }
 
         /// <summary>
-        /// 二手车市场名称。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车市场名称。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("used_vehicle_market_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedVehicleMarketName { get; set; }
 
         /// <summary>
-        /// 二手车市场纳税人识别号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车市场纳税人识别号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("used_vehicle_market_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedVehicleMarketId { get; set; }
 
         /// <summary>
-        /// 二手车市场地址。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车市场地址。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("used_vehicle_market_address", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedVehicleMarketAddress { get; set; }
 
         /// <summary>
-        /// 二手车市场银行和账号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车市场银行和账号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("used_vehicle_market_bank_account", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedVehicleMarketBankAccount { get; set; }
 
         /// <summary>
-        /// 二手车市场电话。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+        /// 二手车市场电话。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
         /// </summary>
         [JsonProperty("used_vehicle_market_phone", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedVehicleMarketPhone { get; set; }
 
         /// <summary>
-        /// 备注
+        /// 备注 
         /// </summary>
         [JsonProperty("remark", NullValueHandling = NullValueHandling.Ignore)]
         public string Remark { get; set; }
 
         /// <summary>
-        /// 开票人
+        /// 开票人 
         /// </summary>
         [JsonProperty("drawer_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DrawerName { get; set; }
@@ -329,13 +329,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 检测框对象，内部为字段-框坐标对。如 code:[[x0, y0],[x1,y1],[x2,y2],[x3,y3]], 点的顺序是左上角、右上角、右下角、左下角。如果原图找不到字段，返回空列表。
+        /// 检测框对象，内部为字段-框坐标对。如 code:[[x0, y0],[x1,y1],[x2,y2],[x3,y3]], 点的顺序是左上角、右上角、右下角、左下角。如果原图找不到字段，返回空列表。 
         /// </summary>
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }
 
         /// <summary>
-        /// 字段文字内容置信度，内容为字段-字符置信度对,如code:0.9999。这个数值为字段中每个字符置信度，格式为fp32，保留四位。若字段不存在则返回0.0。
+        /// 字段文字内容置信度，内容为字段-字符置信度对,如code:0.9999。这个数值为字段中每个字符置信度，格式为fp32，保留四位。若字段不存在则返回0.0。 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
         public Object Confidence { get; set; }

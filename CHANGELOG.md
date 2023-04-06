@@ -1,3 +1,55 @@
+# 3.1.34 2023-04-06
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateRefreshTasks**
+    - changes of request param
+      - `+ refresh_task.mode`
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAlarmHistories**
+    - changes of response param
+      - `+ alarm_histories.type: enum value [DNSHealthCheck,RESOURCE_GROUP,MULTI_INSTANCE,ALL_INSTANCE]`
+  - **ListAlarmRules**
+    - changes of response param
+      - `+ alarms.type: enum value [EVENT.SYS,EVENT.CUSTOM,DNSHealthCheck,RESOURCE_GROUP,MULTI_INSTANCE,ALL_INSTANCE]`
+  - **CreateAlarmRules**
+    - changes of request param
+      - `+ type: enum value [EVENT.SYS,EVENT.CUSTOM,DNSHealthCheck,RESOURCE_GROUP,MULTI_INSTANCE,ALL_INSTANCE]`
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the interfaces `CreateTextToImageTask`, `ShowTextToImageTask`, `CreateImageVariationTask`, `ShowImageVariationTask`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeFinancialStatement**
+    - changes of request param
+      - `+ return_rectification_matrix`
+    - changes of response param
+      - `+ result.rectification_matrix`
+
 # 3.1.33 2023-03-30
 
 ### HuaweiCloud SDK CBR

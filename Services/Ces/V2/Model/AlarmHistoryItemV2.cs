@@ -263,121 +263,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             }
         }
 
-        /// <summary>
-        /// 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
-        /// </summary>
-        /// <value>告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM</value>
-        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
-        public class TypeEnum
-        {
-            /// <summary>
-            /// Enum EVENT_SYS for value: EVENT.SYS
-            /// </summary>
-            public static readonly TypeEnum EVENT_SYS = new TypeEnum("EVENT.SYS");
-
-            /// <summary>
-            /// Enum EVENT_CUSTOM for value: EVENT.CUSTOM
-            /// </summary>
-            public static readonly TypeEnum EVENT_CUSTOM = new TypeEnum("EVENT.CUSTOM");
-
-            private static readonly Dictionary<string, TypeEnum> StaticFields =
-            new Dictionary<string, TypeEnum>()
-            {
-                { "EVENT.SYS", EVENT_SYS },
-                { "EVENT.CUSTOM", EVENT_CUSTOM },
-            };
-
-            private string _value;
-
-            public TypeEnum()
-            {
-
-            }
-
-            public TypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static TypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as TypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(TypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(TypeEnum a, TypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(TypeEnum a, TypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 告警记录ID
@@ -408,10 +293,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public LevelEnum Level { get; set; }
         /// <summary>
-        /// 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
+        /// 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public TypeEnum Type { get; set; }
+        public AlarmType Type { get; set; }
         /// <summary>
         /// 是否发送通知，值为true或者false。
         /// </summary>

@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("return_image_size", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnImageSize { get; set; }
 
+        /// <summary>
+        /// 透视变换矩阵，可选值包括： - true：返回透视变换矩阵; - false：不返回。  &gt; 说明： - 未传入该参数时默认为false，即不返回透视变换矩阵。 
+        /// </summary>
+        [JsonProperty("return_rectification_matrix", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnRectificationMatrix { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  returnExcel: ").Append(ReturnExcel).Append("\n");
             sb.Append("  returnTableLocation: ").Append(ReturnTableLocation).Append("\n");
             sb.Append("  returnImageSize: ").Append(ReturnImageSize).Append("\n");
+            sb.Append("  returnRectificationMatrix: ").Append(ReturnRectificationMatrix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnImageSize == input.ReturnImageSize ||
                     (this.ReturnImageSize != null &&
                     this.ReturnImageSize.Equals(input.ReturnImageSize))
+                ) && 
+                (
+                    this.ReturnRectificationMatrix == input.ReturnRectificationMatrix ||
+                    (this.ReturnRectificationMatrix != null &&
+                    this.ReturnRectificationMatrix.Equals(input.ReturnRectificationMatrix))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ReturnTableLocation.GetHashCode();
                 if (this.ReturnImageSize != null)
                     hashCode = hashCode * 59 + this.ReturnImageSize.GetHashCode();
+                if (this.ReturnRectificationMatrix != null)
+                    hashCode = hashCode * 59 + this.ReturnRectificationMatrix.GetHashCode();
                 return hashCode;
             }
         }
