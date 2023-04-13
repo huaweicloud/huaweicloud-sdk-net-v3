@@ -160,14 +160,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Offset { get; set; }
 
         /// <summary>
-        /// 开始时间。
+        /// 开始时间（不按msg_id查询时需要填写开始时间）。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间。
+        /// 结束时间（不按msg_id查询时需要填写结束时间）。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]

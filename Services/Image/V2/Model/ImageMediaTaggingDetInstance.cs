@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Image.V2.Model
     {
 
         /// <summary>
-        /// 目标检测框位置信息，包括4个值：  width：检测框区域宽度  height：检测框区域高度  top_left_x：检测框左上角到垂直轴距离  top_left_y：检测框左上角到水平轴距离 
+        /// 
         /// </summary>
         [JsonProperty("bounding_box", NullValueHandling = NullValueHandling.Ignore)]
-        public Object BoundingBox { get; set; }
+        public BoundingBox BoundingBox { get; set; }
 
         /// <summary>
         /// 检测标签的置信度，将Float型置信度转为String类型返回，Float取值范围（0~100）。

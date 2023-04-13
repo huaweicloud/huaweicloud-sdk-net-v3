@@ -15,127 +15,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
     /// </summary>
     public class ShowVideoShotSplitTaskResponse : SdkResponse
     {
-        /// <summary>
-        /// 任务当前的状态，分别为SUCCEEDED（运行成功），FAILED（运行失败），RUNNING（运行中）。
-        /// </summary>
-        /// <value>任务当前的状态，分别为SUCCEEDED（运行成功），FAILED（运行失败），RUNNING（运行中）。</value>
-        [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
-        public class StateEnum
-        {
-            /// <summary>
-            /// Enum SUCCEEDED for value: SUCCEEDED
-            /// </summary>
-            public static readonly StateEnum SUCCEEDED = new StateEnum("SUCCEEDED");
-
-            /// <summary>
-            /// Enum FAILED for value: FAILED
-            /// </summary>
-            public static readonly StateEnum FAILED = new StateEnum("FAILED");
-
-            /// <summary>
-            /// Enum RUNNING for value: RUNNING
-            /// </summary>
-            public static readonly StateEnum RUNNING = new StateEnum("RUNNING");
-
-            private static readonly Dictionary<string, StateEnum> StaticFields =
-            new Dictionary<string, StateEnum>()
-            {
-                { "SUCCEEDED", SUCCEEDED },
-                { "FAILED", FAILED },
-                { "RUNNING", RUNNING },
-            };
-
-            private string _value;
-
-            public StateEnum()
-            {
-
-            }
-
-            public StateEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static StateEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as StateEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(StateEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(StateEnum a, StateEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(StateEnum a, StateEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 任务id
@@ -159,7 +38,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// 任务当前的状态，分别为SUCCEEDED（运行成功），FAILED（运行失败），RUNNING（运行中）。
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public StateEnum State { get; set; }
+        public string State { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

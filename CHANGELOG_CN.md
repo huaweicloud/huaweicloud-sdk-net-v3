@@ -1,3 +1,134 @@
+# 3.1.35 2023-04-13
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVolume**
+    - 响应参数变更
+      - `+ volume.iops`
+      - `+ volume.throughput`
+  - **ListVolumes**
+    - 响应参数变更
+      - `+ volumes.iops`
+      - `+ volumes.throughput`
+
+### HuaweiCloud SDK Image
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除以下接口：
+    - `CreateVideoSynthesisTask`
+    - `ShowVideoSynthesisTask`
+    - `CreateImageToVideoTask`
+    - `ShowImageToVideoTask`
+    - `CreateVideoCuttingTask`
+    - `ShowVideoCuttingTask`
+    - `RunImageWisedesignCrop`
+    - `RunImageWisedesignInpainting`
+  - **RunImageTagging**
+    - 响应参数变更
+      - `+ result.tags.instances.bounding_box.width`
+      - `+ result.tags.instances.bounding_box.height`
+      - `+ result.tags.instances.bounding_box.top_left_x`
+      - `+ result.tags.instances.bounding_box.top_left_y`
+      - `* result.tags.instances.bounding_box: object -> object<ImageTaggingBoundingBox>`
+  - **RunImageMediaTagging**
+    - 响应参数变更
+      - `+ result.tags.instances.bounding_box.width`
+      - `+ result.tags.instances.bounding_box.height`
+      - `+ result.tags.instances.bounding_box.top_left_x`
+      - `+ result.tags.instances.bounding_box.top_left_y`
+      - `* result.tags.instances.bounding_box: object -> object<BoundingBox>`
+      - `* result.tags.instances: list<ImageTaggingInstance> -> list<ImageMediaTaggingInstance>`
+  - **RunImageMediaTaggingDet**
+    - 响应参数变更
+      - `+ result.tags.instances.bounding_box.width`
+      - `+ result.tags.instances.bounding_box.height`
+      - `+ result.tags.instances.bounding_box.top_left_x`
+      - `+ result.tags.instances.bounding_box.top_left_y`
+      - `* result.tags.instances.bounding_box: object -> object<BoundingBox>`
+  - **ShowVideoShotSplitTask**
+    - 响应参数变更
+      - `- state: enum value [SUCCEEDED,FAILED,RUNNING]`
+  - **CreateVideoTranslateTask**
+    - 请求参数变更
+      - `* body: object<VideoTranslateRequestBody> -> object<CreateVideoTranslateTaskRequestBody>`
+  - **CreateImageHighresolutionMattingTask**
+    - 请求参数变更
+      - `* input.data: list<TaskInputData> -> list<ImageHighresolutionMattingInputData>`
+      - `* input: object<TaskInput> -> object<ImageHighresolutionMattingInput>`
+  - **ShowImageHighresolutionMattingTask**
+    - 响应参数变更
+      - `* input.data: list<TaskInputData> -> list<ImageHighresolutionMattingInputData>`
+      - `* input: object<TaskInput> -> object<ImageHighresolutionMattingInput>`
+  - **CreateImageTranslateTask**
+    - 请求参数变更
+      - `* input.data: list<TaskInputData> -> list<ImageTranslateTaskInputData>`
+      - `* input: object<TaskInput> -> object<ImageTranslateTaskInput>`
+      - `* body: object<ImageTranslateRequestBody> -> object<CreateImageTranslateRequestBody>`
+  - **ShowImageTranslateTask**
+    - 响应参数变更
+      - `* input.data: list<TaskInputData> -> list<ImageTranslateTaskInputData>`
+      - `* input: object<TaskInput> -> object<ImageTranslateTaskInput>`
+  - **CreateVideoCoverAnalysisTask**
+    - 请求参数变更
+      - `* input.data: list<TaskInputData> -> list<VideoCoverAnalysisTaskInputData>`
+      - `* input: object<TaskInput> -> object<VideoCoverAnalysisTaskInput>`
+      - `* body: object<VideoCoverAnalysisCreateTaskRequestBody> -> object<CreateVideoCoverAnalysisTaskRequestBody>`
+  - **ShowVideoCoverAnalysisTask**
+    - 响应参数变更
+      - `* input.data: list<TaskInputData> -> list<VideoCoverAnalysisTaskInputData>`
+      - `* input: object<TaskInput> -> object<VideoCoverAnalysisTaskInput>`
+  - **CreateVideoSummarizationAnalysisTask**
+    - 请求参数变更
+      - `* input.data: list<TaskInputData> -> list<VideoSummarizationTaskInputData>`
+      - `* input: object<TaskInput> -> object<VideoSummarizationTaskInput>`
+      - `* body: object<VideoSummarizationCreateTaskRequestBody> -> object<CreateVideoSummarizationTaskRequestBody>`
+  - **ShowVideoSummarizationAnalysisTask**
+    - 响应参数变更
+      - `* input.data: list<TaskInputData> -> list<VideoSummarizationTaskInputData>`
+      - `* input: object<TaskInput> -> object<VideoSummarizationTaskInput>`
+  - **CreateVideoObjectMaskingTask**
+    - 请求参数变更
+      - `* input.data: list<TaskInputData> -> list<ObjectMaskingTaskInputData>`
+      - `* input: object<TaskInput> -> object<ObjectMaskingTaskInput>`
+  - **ShowVideoObjectMaskingTask**
+    - 响应参数变更
+      - `* input.data: list<TaskInputData> -> list<ObjectMaskingTaskInputData>`
+      - `* input: object<TaskInput> -> object<ObjectMaskingTaskInput>`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 支持接口`BatchDeleteGroup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ResizeEngineInstance**
+    - 请求参数变更
+      - `+ publicip_id`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeShortAudio**
+    - 请求参数变更
+      - `+ config.property: enum value [english_8k_common,english_16k_common]`
+  - **CollectTranscriberJob**
+    - 响应参数变更
+      - `+ job_id`
+
 # 3.1.34 2023-04-06
 
 ### HuaweiCloud SDK CDN

@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public ImageTaggingItemBodyI18nType I18nType { get; set; }
 
         /// <summary>
-        /// 目标检测框信息，为空则表示没有目标检测框。
+        /// 目标检测框信息(该服务不返回目标检测信息)。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<ImageTaggingInstance> Instances { get; set; }

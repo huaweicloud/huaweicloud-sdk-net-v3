@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Image.V2
 
         
         /// <summary>
-        /// 创建任务
+        /// 创建图像高清抠图任务
         ///
-        /// Create Task
+        /// 创建图像高清抠图任务，将输入的高清图像中的商品主体从原图中扣取出来，输出商品主体图片或者蒙版。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -29,22 +29,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageHighresolutionMattingTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateImageHighresolutionMattingTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建任务
-        ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateImageToVideoTaskResponse> CreateImageToVideoTaskAsync(CreateImageToVideoTaskRequest createImageToVideoTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-to-video/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageToVideoTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateImageToVideoTaskResponse>(response);
         }
         
         /// <summary>
@@ -80,25 +64,9 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 创建任务
+        /// 创建视频脱敏任务
         ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateVideoCuttingTaskResponse> CreateVideoCuttingTaskAsync(CreateVideoCuttingTaskRequest createVideoCuttingTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cutting/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoCuttingTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateVideoCuttingTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建司乘敏感擦除任务
-        ///
-        /// Create Task
+        /// 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -141,22 +109,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoSummarizationAnalysisTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateVideoSummarizationAnalysisTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建任务
-        ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateVideoSynthesisTaskResponse> CreateVideoSynthesisTaskAsync(CreateVideoSynthesisTaskRequest createVideoSynthesisTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-synthesis/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoSynthesisTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateVideoSynthesisTaskResponse>(response);
         }
         
         /// <summary>
@@ -304,38 +256,6 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 智能设计图像裁剪
-        ///
-        /// 智能设计图像裁剪服务
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RunImageWisedesignCropResponse> RunImageWisedesignCropAsync(RunImageWisedesignCropRequest runImageWisedesignCropRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-crop",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageWisedesignCropRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<RunImageWisedesignCropResponse>(response);
-        }
-        
-        /// <summary>
-        /// 智能设计图像修复
-        ///
-        /// 智能设计图像修复服务
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RunImageWisedesignInpaintingResponse> RunImageWisedesignInpaintingAsync(RunImageWisedesignInpaintingRequest runImageWisedesignInpaintingRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-inpainting",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageWisedesignInpaintingRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<RunImageWisedesignInpaintingResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询媒资图像标签
         ///
         /// 用于用户自查是否存在自定义的标签。
@@ -368,9 +288,9 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 查询任务
+        /// 查询图像高清抠图任务
         ///
-        /// show task
+        /// 查询图像高清抠图任务，返回参数配置以及任务状态信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -382,23 +302,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageHighresolutionMattingTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowImageHighresolutionMattingTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询任务
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowImageToVideoTaskResponse> ShowImageToVideoTaskAsync(ShowImageToVideoTaskRequest showImageToVideoTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showImageToVideoTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-to-video/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageToVideoTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowImageToVideoTaskResponse>(response);
         }
         
         /// <summary>
@@ -436,24 +339,7 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 查询任务
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVideoCuttingTaskResponse> ShowVideoCuttingTaskAsync(ShowVideoCuttingTaskRequest showVideoCuttingTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showVideoCuttingTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cutting/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoCuttingTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowVideoCuttingTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// show task 查询任务信息
+        /// 查询视频脱敏任务详情
         ///
         /// show task
         /// 
@@ -501,23 +387,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoSummarizationAnalysisTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVideoSummarizationAnalysisTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询任务
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVideoSynthesisTaskResponse> ShowVideoSynthesisTaskAsync(ShowVideoSynthesisTaskRequest showVideoSynthesisTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showVideoSynthesisTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-synthesis/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoSynthesisTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowVideoSynthesisTaskResponse>(response);
         }
         
         /// <summary>

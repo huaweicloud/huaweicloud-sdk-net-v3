@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// 
         /// </summary>
         [JsonProperty("input", NullValueHandling = NullValueHandling.Ignore)]
-        public TaskInput Input { get; set; }
+        public ImageTranslateTaskInput Input { get; set; }
 
         /// <summary>
         /// 

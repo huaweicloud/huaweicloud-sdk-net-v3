@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public VideoSummarizationCreateTaskRequestBody Body { get; set; }
+        public CreateVideoSummarizationTaskRequestBody Body { get; set; }
 
 
 

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
     {
 
         /// <summary>
-        /// 回调url地址。
+        /// 回调url地址，用于通知客户任务运行结束。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }

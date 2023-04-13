@@ -438,7 +438,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 当次查询返回的最大个数,默认值为10,取值范围为1~50。
+        /// 当次查询返回的最大个数，默认值为10，取值范围为1~50。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

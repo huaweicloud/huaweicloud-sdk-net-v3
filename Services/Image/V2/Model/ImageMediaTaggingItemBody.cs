@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// 目标检测框信息，为空则表示没有目标检测框。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ImageTaggingInstance> Instances { get; set; }
+        public List<ImageMediaTaggingInstance> Instances { get; set; }
 
 
 

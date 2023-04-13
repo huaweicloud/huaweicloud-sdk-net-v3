@@ -31,14 +31,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Topic { get; set; }
 
         /// <summary>
-        /// 当次查询返回的最大个数,默认值为10,取值范围为1~50。
+        /// 当次查询返回的最大个数，默认值为10，取值范围为1~50。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 偏移量，表示从此偏移量开始查询， offset大于等于0。
+        /// 偏移量，表示从此偏移量开始查询，offset大于等于0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]

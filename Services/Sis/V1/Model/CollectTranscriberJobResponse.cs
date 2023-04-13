@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
     {
 
         /// <summary>
+        /// 录音文件识别任务标识符。  使用“callback_url”回调url时，该字段会随结果发送至用户服务器。 使用get接口查询，不会出现该字段
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
+        /// <summary>
         /// 当前识别状态。具体状态如下所示：  WAITING 等待识别。 FINISHED 识别已经完成。 ERROR 识别过程中发生错误。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -61,6 +67,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CollectTranscriberJobResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
@@ -88,6 +95,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 return false;
 
             return 
+                (
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
+                ) && 
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
@@ -129,6 +141,8 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CreateTime != null)

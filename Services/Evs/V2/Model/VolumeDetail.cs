@@ -220,6 +220,18 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("serial_number", NullValueHandling = NullValueHandling.Ignore)]
         public string SerialNumber { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("iops", NullValueHandling = NullValueHandling.Ignore)]
+        public Iops Iops { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
+        public Throughput Throughput { get; set; }
+
 
 
         /// <summary>
@@ -263,6 +275,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  wwn: ").Append(Wwn).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  serialNumber: ").Append(SerialNumber).Append("\n");
+            sb.Append("  iops: ").Append(Iops).Append("\n");
+            sb.Append("  throughput: ").Append(Throughput).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -458,6 +472,16 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.SerialNumber == input.SerialNumber ||
                     (this.SerialNumber != null &&
                     this.SerialNumber.Equals(input.SerialNumber))
+                ) && 
+                (
+                    this.Iops == input.Iops ||
+                    (this.Iops != null &&
+                    this.Iops.Equals(input.Iops))
+                ) && 
+                (
+                    this.Throughput == input.Throughput ||
+                    (this.Throughput != null &&
+                    this.Throughput.Equals(input.Throughput))
                 );
         }
 
@@ -537,6 +561,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SerialNumber != null)
                     hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.Iops != null)
+                    hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null)
+                    hashCode = hashCode * 59 + this.Throughput.GetHashCode();
                 return hashCode;
             }
         }

@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("new_product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NewProductId { get; set; }
 
+        /// <summary>
+        /// 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 当oper_type类型是horizontal时，该参数必填。
+        /// </summary>
+        [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicipId { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  newStorageSpace: ").Append(NewStorageSpace).Append("\n");
             sb.Append("  newBrokerNum: ").Append(NewBrokerNum).Append("\n");
             sb.Append("  newProductId: ").Append(NewProductId).Append("\n");
+            sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.NewProductId == input.NewProductId ||
                     (this.NewProductId != null &&
                     this.NewProductId.Equals(input.NewProductId))
+                ) && 
+                (
+                    this.PublicipId == input.PublicipId ||
+                    (this.PublicipId != null &&
+                    this.PublicipId.Equals(input.PublicipId))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.NewBrokerNum.GetHashCode();
                 if (this.NewProductId != null)
                     hashCode = hashCode * 59 + this.NewProductId.GetHashCode();
+                if (this.PublicipId != null)
+                    hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 return hashCode;
             }
         }

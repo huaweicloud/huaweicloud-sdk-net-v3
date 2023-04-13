@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Image.V2.Model
     {
 
         /// <summary>
-        /// OBS桶名。
+        /// 任务运行结果输出的OBS桶名。
         /// </summary>
         [JsonProperty("bucket", NullValueHandling = NullValueHandling.Ignore)]
         public string Bucket { get; set; }
 
         /// <summary>
-        /// OBS的路径。
+        /// 任务运行结果输出的OBS路径。
         /// </summary>
         [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
