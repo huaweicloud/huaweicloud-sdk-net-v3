@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
+        /// <summary>
+        /// 重定向跳转码301,302。
+        /// </summary>
+        [JsonProperty("redirect_code", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RedirectCode { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("class ForceRedirectConfig {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  redirectCode: ").Append(RedirectCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.RedirectCode == input.RedirectCode ||
+                    (this.RedirectCode != null &&
+                    this.RedirectCode.Equals(input.RedirectCode))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.RedirectCode != null)
+                    hashCode = hashCode * 59 + this.RedirectCode.GetHashCode();
                 return hashCode;
             }
         }

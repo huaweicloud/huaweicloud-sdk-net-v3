@@ -401,7 +401,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<PolicyStatement> PolicyStatement { get; set; }
 
         /// <summary>
-        /// 终端节点相关联的Pood的ID
+        /// 待废弃，实例相关联的集群ID
         /// </summary>
         [JsonProperty("endpoint_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EndpointPoolId { get; set; }

@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// <summary>
         /// 资源详情。 资源对象，用于扩展。默认为空
         /// </summary>
-        [JsonProperty("resouce_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public Object ResouceDetail { get; set; }
+        [JsonProperty("resource_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public Object ResourceDetail { get; set; }
 
         /// <summary>
         /// 资源ID
@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListResourceResp {\n");
-            sb.Append("  resouceDetail: ").Append(ResouceDetail).Append("\n");
+            sb.Append("  resourceDetail: ").Append(ResourceDetail).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
@@ -75,9 +75,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             return 
                 (
-                    this.ResouceDetail == input.ResouceDetail ||
-                    (this.ResouceDetail != null &&
-                    this.ResouceDetail.Equals(input.ResouceDetail))
+                    this.ResourceDetail == input.ResourceDetail ||
+                    (this.ResourceDetail != null &&
+                    this.ResourceDetail.Equals(input.ResourceDetail))
                 ) && 
                 (
                     this.ResourceId == input.ResourceId ||
@@ -105,8 +105,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ResouceDetail != null)
-                    hashCode = hashCode * 59 + this.ResouceDetail.GetHashCode();
+                if (this.ResourceDetail != null)
+                    hashCode = hashCode * 59 + this.ResourceDetail.GetHashCode();
                 if (this.ResourceId != null)
                     hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.ResourceName != null)

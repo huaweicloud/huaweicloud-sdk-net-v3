@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
         /// </summary>
-        /// <value>终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败</value>
+        /// <value>终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -282,10 +282,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceTypeEnum ServiceType { get; set; }
         /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
+        /// <summary>
+        /// 终端节点ip
+        /// </summary>
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
         /// <summary>
         /// 帐号状态。 ● frozen：冻结 ● active：解冻
         /// </summary>
@@ -400,6 +406,18 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("enable_status", NullValueHandling = NullValueHandling.Ignore)]
         public string EnableStatus { get; set; }
 
+        /// <summary>
+        /// 待废弃，实例相关联的集群ID
+        /// </summary>
+        [JsonProperty("endpoint_pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndpointPoolId { get; set; }
+
+        /// <summary>
+        /// 终端节点对应Pool的Public Border Group信息
+        /// </summary>
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicBorderGroup { get; set; }
+
 
 
         /// <summary>
@@ -412,6 +430,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("  activeStatus: ").Append(ActiveStatus).Append("\n");
             sb.Append("  endpointServiceName: ").Append(EndpointServiceName).Append("\n");
             sb.Append("  markerId: ").Append(MarkerId).Append("\n");
@@ -431,6 +450,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  policyStatement: ").Append(PolicyStatement).Append("\n");
             sb.Append("  enableStatus: ").Append(EnableStatus).Append("\n");
+            sb.Append("  endpointPoolId: ").Append(EndpointPoolId).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -466,6 +487,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
                 ) && 
                 (
                     this.ActiveStatus == input.ActiveStatus ||
@@ -567,6 +593,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.EnableStatus == input.EnableStatus ||
                     (this.EnableStatus != null &&
                     this.EnableStatus.Equals(input.EnableStatus))
+                ) && 
+                (
+                    this.EndpointPoolId == input.EndpointPoolId ||
+                    (this.EndpointPoolId != null &&
+                    this.EndpointPoolId.Equals(input.EndpointPoolId))
+                ) && 
+                (
+                    this.PublicBorderGroup == input.PublicBorderGroup ||
+                    (this.PublicBorderGroup != null &&
+                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
                 );
         }
 
@@ -584,6 +620,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Ip != null)
+                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 if (this.ActiveStatus != null)
                     hashCode = hashCode * 59 + this.ActiveStatus.GetHashCode();
                 if (this.EndpointServiceName != null)
@@ -622,6 +660,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
                 if (this.EnableStatus != null)
                     hashCode = hashCode * 59 + this.EnableStatus.GetHashCode();
+                if (this.EndpointPoolId != null)
+                    hashCode = hashCode * 59 + this.EndpointPoolId.GetHashCode();
+                if (this.PublicBorderGroup != null)
+                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

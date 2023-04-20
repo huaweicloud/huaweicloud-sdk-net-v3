@@ -379,6 +379,24 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 查询消费者列表
+        ///
+        /// 查询消费组内消费者列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowConsumerConnectionsResponse ShowConsumerConnections(ShowConsumerConnectionsRequest showConsumerConnectionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showConsumerConnectionsRequest.InstanceId.ToString());
+            urlParam.Add("group" , showConsumerConnectionsRequest.Group.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/rocketmq/{project_id}/instances/{instance_id}/groups/{group}/clients",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerConnectionsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowConsumerConnectionsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询消费列表或详情
         ///
         /// 查询消费列表或详情。

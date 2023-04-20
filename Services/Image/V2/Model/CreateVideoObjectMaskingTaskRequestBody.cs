@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// 
         /// </summary>
         [JsonProperty("input", NullValueHandling = NullValueHandling.Ignore)]
-        public ObjectMaskingTaskInput Input { get; set; }
+        public TaskInput Input { get; set; }
 
         /// <summary>
         /// 

@@ -312,6 +312,24 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 下发广播消息
+        ///
+        /// 应用服务器可调用此接口向订阅了指定Topic的所有在线设备发布广播消息。应用将广播消息下发给平台后，平台会先返回应用响应结果，再将消息广播给设备。
+        /// 注意：
+        /// - 此接口只适用于使用MQTT协议接入的设备。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BroadcastMessageResponse BroadcastMessage(BroadcastMessageRequest broadcastMessageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/broadcast-messages",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", broadcastMessageRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BroadcastMessageResponse>(response);
+        }
+        
+        /// <summary>
         /// 上传设备CA证书
         ///
         /// 应用服务器可调用此接口在物联网平台上传设备CA证书

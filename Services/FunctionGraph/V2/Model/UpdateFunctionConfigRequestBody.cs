@@ -251,6 +251,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? MemorySize { get; set; }
 
         /// <summary>
+        /// 函数消耗的显存，只支持自定义运行时与自定义镜像函数配置GPU。 单位MB。 取值范围为：1024、2048、3072、4096、5120、6144、7168、8192、9216、10240、11264、12288、13312、14336、15360、16384。 最小值为1024，最大值为16384。
+        /// </summary>
+        [JsonProperty("gpu_memory", NullValueHandling = NullValueHandling.Ignore)]
+        public int? GpuMemory { get; set; }
+
+        /// <summary>
         /// 用户自定义的name/value信息。 在函数中使用的参数。 举例：如函数要访问某个主机，可以设置自定义参数：Host&#x3D;{host_ip}，最多定义20个，总长度不超过4KB。
         /// </summary>
         [JsonProperty("user_data", NullValueHandling = NullValueHandling.Ignore)]
@@ -323,10 +329,28 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? InitializerTimeout { get; set; }
 
         /// <summary>
+        /// 临时存储大小, 默认512M, 支持配置10G。
+        /// </summary>
+        [JsonProperty("ephemeral_storage", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EphemeralStorage { get; set; }
+
+        /// <summary>
         /// 企业项目ID，在企业用户创建函数时必填。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("log_config", NullValueHandling = NullValueHandling.Ignore)]
+        public FuncLogConfig LogConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("network_controller", NullValueHandling = NullValueHandling.Ignore)]
+        public NetworkControlConfig NetworkController { get; set; }
 
         /// <summary>
         /// 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
@@ -352,6 +376,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("domain_names", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainNames { get; set; }
 
+        /// <summary>
+        /// 函数快照式冷启动Restore Hook入口，仅支持Java，规则：xx.xx，必须包含“. ”。如：com.huawei.demo.Test.restoreHook
+        /// </summary>
+        [JsonProperty("restore_hook_handler", NullValueHandling = NullValueHandling.Ignore)]
+        public string RestoreHookHandler { get; set; }
+
+        /// <summary>
+        /// 快照冷启动Restore Hook的超时时间，超时函数将被强行停止，范围1～300秒。
+        /// </summary>
+        [JsonProperty("restore_hook_timeout", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RestoreHookTimeout { get; set; }
+
 
 
         /// <summary>
@@ -366,6 +402,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  timeout: ").Append(Timeout).Append("\n");
             sb.Append("  handler: ").Append(Handler).Append("\n");
             sb.Append("  memorySize: ").Append(MemorySize).Append("\n");
+            sb.Append("  gpuMemory: ").Append(GpuMemory).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("  encryptedUserData: ").Append(EncryptedUserData).Append("\n");
             sb.Append("  xrole: ").Append(Xrole).Append("\n");
@@ -378,11 +415,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  extendConfig: ").Append(ExtendConfig).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
+            sb.Append("  ephemeralStorage: ").Append(EphemeralStorage).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  logConfig: ").Append(LogConfig).Append("\n");
+            sb.Append("  networkController: ").Append(NetworkController).Append("\n");
             sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
             sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
             sb.Append("  enableAuthInHeader: ").Append(EnableAuthInHeader).Append("\n");
             sb.Append("  domainNames: ").Append(DomainNames).Append("\n");
+            sb.Append("  restoreHookHandler: ").Append(RestoreHookHandler).Append("\n");
+            sb.Append("  restoreHookTimeout: ").Append(RestoreHookTimeout).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -428,6 +470,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.MemorySize == input.MemorySize ||
                     (this.MemorySize != null &&
                     this.MemorySize.Equals(input.MemorySize))
+                ) && 
+                (
+                    this.GpuMemory == input.GpuMemory ||
+                    (this.GpuMemory != null &&
+                    this.GpuMemory.Equals(input.GpuMemory))
                 ) && 
                 (
                     this.UserData == input.UserData ||
@@ -490,9 +537,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.InitializerTimeout.Equals(input.InitializerTimeout))
                 ) && 
                 (
+                    this.EphemeralStorage == input.EphemeralStorage ||
+                    (this.EphemeralStorage != null &&
+                    this.EphemeralStorage.Equals(input.EphemeralStorage))
+                ) && 
+                (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.LogConfig == input.LogConfig ||
+                    (this.LogConfig != null &&
+                    this.LogConfig.Equals(input.LogConfig))
+                ) && 
+                (
+                    this.NetworkController == input.NetworkController ||
+                    (this.NetworkController != null &&
+                    this.NetworkController.Equals(input.NetworkController))
                 ) && 
                 (
                     this.IsStatefulFunction == input.IsStatefulFunction ||
@@ -513,6 +575,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.DomainNames == input.DomainNames ||
                     (this.DomainNames != null &&
                     this.DomainNames.Equals(input.DomainNames))
+                ) && 
+                (
+                    this.RestoreHookHandler == input.RestoreHookHandler ||
+                    (this.RestoreHookHandler != null &&
+                    this.RestoreHookHandler.Equals(input.RestoreHookHandler))
+                ) && 
+                (
+                    this.RestoreHookTimeout == input.RestoreHookTimeout ||
+                    (this.RestoreHookTimeout != null &&
+                    this.RestoreHookTimeout.Equals(input.RestoreHookTimeout))
                 );
         }
 
@@ -534,6 +606,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Handler.GetHashCode();
                 if (this.MemorySize != null)
                     hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
+                if (this.GpuMemory != null)
+                    hashCode = hashCode * 59 + this.GpuMemory.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 if (this.EncryptedUserData != null)
@@ -558,8 +632,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.InitializerHandler.GetHashCode();
                 if (this.InitializerTimeout != null)
                     hashCode = hashCode * 59 + this.InitializerTimeout.GetHashCode();
+                if (this.EphemeralStorage != null)
+                    hashCode = hashCode * 59 + this.EphemeralStorage.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.LogConfig != null)
+                    hashCode = hashCode * 59 + this.LogConfig.GetHashCode();
+                if (this.NetworkController != null)
+                    hashCode = hashCode * 59 + this.NetworkController.GetHashCode();
                 if (this.IsStatefulFunction != null)
                     hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
                 if (this.EnableDynamicMemory != null)
@@ -568,6 +648,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.EnableAuthInHeader.GetHashCode();
                 if (this.DomainNames != null)
                     hashCode = hashCode * 59 + this.DomainNames.GetHashCode();
+                if (this.RestoreHookHandler != null)
+                    hashCode = hashCode * 59 + this.RestoreHookHandler.GetHashCode();
+                if (this.RestoreHookTimeout != null)
+                    hashCode = hashCode * 59 + this.RestoreHookTimeout.GetHashCode();
                 return hashCode;
             }
         }

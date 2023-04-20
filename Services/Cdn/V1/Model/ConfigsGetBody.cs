@@ -47,6 +47,30 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public List<SourcesConfig> Sources { get; set; }
 
         /// <summary>
+        /// 回源跟随（on：开启，off：关闭）。
+        /// </summary>
+        [JsonProperty("origin_follow302_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginFollow302Status { get; set; }
+
+        /// <summary>
+        /// 缓存规则。
+        /// </summary>
+        [JsonProperty("cache_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CacheRules> CacheRules { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("ip_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public IpFilter IpFilter { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("referer", NullValueHandling = NullValueHandling.Ignore)]
+        public RefererConfig Referer { get; set; }
+
+        /// <summary>
         /// 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
         /// </summary>
         [JsonProperty("origin_protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -120,6 +144,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  urlAuth: ").Append(UrlAuth).Append("\n");
             sb.Append("  https: ").Append(Https).Append("\n");
             sb.Append("  sources: ").Append(Sources).Append("\n");
+            sb.Append("  originFollow302Status: ").Append(OriginFollow302Status).Append("\n");
+            sb.Append("  cacheRules: ").Append(CacheRules).Append("\n");
+            sb.Append("  ipFilter: ").Append(IpFilter).Append("\n");
+            sb.Append("  referer: ").Append(Referer).Append("\n");
             sb.Append("  originProtocol: ").Append(OriginProtocol).Append("\n");
             sb.Append("  forceRedirect: ").Append(ForceRedirect).Append("\n");
             sb.Append("  compress: ").Append(Compress).Append("\n");
@@ -178,6 +206,27 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Sources != null &&
                     input.Sources != null &&
                     this.Sources.SequenceEqual(input.Sources)
+                ) && 
+                (
+                    this.OriginFollow302Status == input.OriginFollow302Status ||
+                    (this.OriginFollow302Status != null &&
+                    this.OriginFollow302Status.Equals(input.OriginFollow302Status))
+                ) && 
+                (
+                    this.CacheRules == input.CacheRules ||
+                    this.CacheRules != null &&
+                    input.CacheRules != null &&
+                    this.CacheRules.SequenceEqual(input.CacheRules)
+                ) && 
+                (
+                    this.IpFilter == input.IpFilter ||
+                    (this.IpFilter != null &&
+                    this.IpFilter.Equals(input.IpFilter))
+                ) && 
+                (
+                    this.Referer == input.Referer ||
+                    (this.Referer != null &&
+                    this.Referer.Equals(input.Referer))
                 ) && 
                 (
                     this.OriginProtocol == input.OriginProtocol ||
@@ -252,6 +301,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.Https.GetHashCode();
                 if (this.Sources != null)
                     hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                if (this.OriginFollow302Status != null)
+                    hashCode = hashCode * 59 + this.OriginFollow302Status.GetHashCode();
+                if (this.CacheRules != null)
+                    hashCode = hashCode * 59 + this.CacheRules.GetHashCode();
+                if (this.IpFilter != null)
+                    hashCode = hashCode * 59 + this.IpFilter.GetHashCode();
+                if (this.Referer != null)
+                    hashCode = hashCode * 59 + this.Referer.GetHashCode();
                 if (this.OriginProtocol != null)
                     hashCode = hashCode * 59 + this.OriginProtocol.GetHashCode();
                 if (this.ForceRedirect != null)

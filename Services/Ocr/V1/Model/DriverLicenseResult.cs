@@ -130,6 +130,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("front", NullValueHandling = NullValueHandling.Ignore)]
+        public DriverLicenseFront Front { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("back", NullValueHandling = NullValueHandling.Ignore)]
+        public DriverLicenseBack Back { get; set; }
+
 
 
         /// <summary>
@@ -158,6 +170,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  generationDate: ").Append(GenerationDate).Append("\n");
             sb.Append("  currentTime: ").Append(CurrentTime).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
+            sb.Append("  front: ").Append(Front).Append("\n");
+            sb.Append("  back: ").Append(Back).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -274,6 +288,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.TextLocation == input.TextLocation ||
                     (this.TextLocation != null &&
                     this.TextLocation.Equals(input.TextLocation))
+                ) && 
+                (
+                    this.Front == input.Front ||
+                    (this.Front != null &&
+                    this.Front.Equals(input.Front))
+                ) && 
+                (
+                    this.Back == input.Back ||
+                    (this.Back != null &&
+                    this.Back.Equals(input.Back))
                 );
         }
 
@@ -323,6 +347,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.CurrentTime.GetHashCode();
                 if (this.TextLocation != null)
                     hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.Front != null)
+                    hashCode = hashCode * 59 + this.Front.GetHashCode();
+                if (this.Back != null)
+                    hashCode = hashCode * 59 + this.Back.GetHashCode();
                 return hashCode;
             }
         }

@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
-        /// 批量添加或移除终端节点服务的白名单
+        /// 批量添加终端节点服务的白名单
         ///
         /// 功能介绍
         /// 批量添加当前用户下终端节点服务的白名单，支持添加描述信息。
@@ -74,7 +74,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
-        /// 批量添加或移除终端节点服务的白名单
+        /// 批量删除终端节点服务的白名单
         ///
         /// 功能介绍
         /// 批量删除当前用户下终端节点服务的白名单
@@ -148,7 +148,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
-        /// 修改终端节点路由表
+        /// 删除网关型终端节点policy
         ///
         /// 功能介绍
         /// 删除网关型终端节点policy。
@@ -273,8 +273,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         /// <summary>
         /// 查询终端节点服务概要
         ///
-        /// 功能介绍
-        /// 查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
+        /// 功能介绍查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -397,7 +396,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
-        /// 修改终端节点路由表
+        /// 修改网关型终端节点policy
         ///
         /// 功能介绍
         /// 修改网关型终端节点policy。
@@ -415,10 +414,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
-        /// 修改终端节点路由表
+        /// 修改终端节点的路由表
         ///
         /// 功能介绍
-        /// 修改终端节点路由表。
+        /// 修改终端节点的路由表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

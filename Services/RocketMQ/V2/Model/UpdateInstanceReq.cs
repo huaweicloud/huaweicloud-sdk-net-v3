@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableAcl { get; set; }
 
+        /// <summary>
+        /// 是否开启公网。
+        /// </summary>
+        [JsonProperty("enable_publicip", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnablePublicip { get; set; }
+
+        /// <summary>
+        /// 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+        /// </summary>
+        [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicipId { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
             sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
+            sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
+            sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +107,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.EnableAcl == input.EnableAcl ||
                     (this.EnableAcl != null &&
                     this.EnableAcl.Equals(input.EnableAcl))
+                ) && 
+                (
+                    this.EnablePublicip == input.EnablePublicip ||
+                    (this.EnablePublicip != null &&
+                    this.EnablePublicip.Equals(input.EnablePublicip))
+                ) && 
+                (
+                    this.PublicipId == input.PublicipId ||
+                    (this.PublicipId != null &&
+                    this.PublicipId.Equals(input.PublicipId))
                 );
         }
 
@@ -112,6 +136,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
                 if (this.EnableAcl != null)
                     hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
+                if (this.EnablePublicip != null)
+                    hashCode = hashCode * 59 + this.EnablePublicip.GetHashCode();
+                if (this.PublicipId != null)
+                    hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 return hashCode;
             }
         }

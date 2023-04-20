@@ -17,6 +17,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
+        /// 返回证件类型，\&quot;normal\&quot;表示普通泰文证件，\&quot;pink\&quot;表示外国人身份证件 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// 英文名。 
+        /// </summary>
+        [JsonProperty("name_en", NullValueHandling = NullValueHandling.Ignore)]
+        public string NameEn { get; set; }
+
+        /// <summary>
+        /// 参考编码。 
+        /// </summary>
+        [JsonProperty("ref_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string RefNumber { get; set; }
+
+        /// <summary>
         /// 标示正面还是反面，取值为front或back。 
         /// </summary>
         [JsonProperty("side", NullValueHandling = NullValueHandling.Ignore)]
@@ -131,7 +149,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<List<int?>> PortraitLocation { get; set; }
 
         /// <summary>
-        /// 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
+        /// 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 - screen：屏幕翻拍 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
         /// </summary>
         [JsonProperty("idcard_type", NullValueHandling = NullValueHandling.Ignore)]
         public string IdcardType { get; set; }
@@ -151,6 +169,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ThailandIdcardResult {\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  nameEn: ").Append(NameEn).Append("\n");
+            sb.Append("  refNumber: ").Append(RefNumber).Append("\n");
             sb.Append("  side: ").Append(Side).Append("\n");
             sb.Append("  idNumber: ").Append(IdNumber).Append("\n");
             sb.Append("  nameTh: ").Append(NameTh).Append("\n");
@@ -193,6 +214,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 return false;
 
             return 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.NameEn == input.NameEn ||
+                    (this.NameEn != null &&
+                    this.NameEn.Equals(input.NameEn))
+                ) && 
+                (
+                    this.RefNumber == input.RefNumber ||
+                    (this.RefNumber != null &&
+                    this.RefNumber.Equals(input.RefNumber))
+                ) && 
                 (
                     this.Side == input.Side ||
                     (this.Side != null &&
@@ -309,6 +345,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.NameEn != null)
+                    hashCode = hashCode * 59 + this.NameEn.GetHashCode();
+                if (this.RefNumber != null)
+                    hashCode = hashCode * 59 + this.RefNumber.GetHashCode();
                 if (this.Side != null)
                     hashCode = hashCode * 59 + this.Side.GetHashCode();
                 if (this.IdNumber != null)

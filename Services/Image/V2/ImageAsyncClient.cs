@@ -32,38 +32,6 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 创建任务
-        ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateImageTranslateTaskResponse> CreateImageTranslateTaskAsync(CreateImageTranslateTaskRequest createImageTranslateTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-translate/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageTranslateTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateImageTranslateTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建任务
-        ///
-        /// 创建视频封面任务
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateVideoCoverAnalysisTaskResponse> CreateVideoCoverAnalysisTaskAsync(CreateVideoCoverAnalysisTaskRequest createVideoCoverAnalysisTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cover-analysis/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoCoverAnalysisTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateVideoCoverAnalysisTaskResponse>(response);
-        }
-        
-        /// <summary>
         /// 创建视频脱敏任务
         ///
         /// 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
@@ -77,54 +45,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoObjectMaskingTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateVideoObjectMaskingTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建任务
-        ///
-        /// 创建视频拆条任务
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateVideoShotSplitTaskResponse> CreateVideoShotSplitTaskAsync(CreateVideoShotSplitTaskRequest createVideoShotSplitTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-shot-split/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoShotSplitTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateVideoShotSplitTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建任务
-        ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateVideoSummarizationAnalysisTaskResponse> CreateVideoSummarizationAnalysisTaskAsync(CreateVideoSummarizationAnalysisTaskRequest createVideoSummarizationAnalysisTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-summarization-analysis/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoSummarizationAnalysisTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateVideoSummarizationAnalysisTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 创建任务
-        ///
-        /// Create Task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateVideoTranslateTaskResponse> CreateVideoTranslateTaskAsync(CreateVideoTranslateTaskRequest createVideoTranslateTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-translate/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoTranslateTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateVideoTranslateTaskResponse>(response);
         }
         
         /// <summary>
@@ -305,40 +225,6 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 查询任务
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowImageTranslateTaskResponse> ShowImageTranslateTaskAsync(ShowImageTranslateTaskRequest showImageTranslateTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showImageTranslateTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/image-wisedesign-translate/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageTranslateTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowImageTranslateTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询任务
-        ///
-        /// 查询视频封面任务完成状态
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVideoCoverAnalysisTaskResponse> ShowVideoCoverAnalysisTaskAsync(ShowVideoCoverAnalysisTaskRequest showVideoCoverAnalysisTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showVideoCoverAnalysisTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-cover-analysis/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoCoverAnalysisTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowVideoCoverAnalysisTaskResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询视频脱敏任务详情
         ///
         /// show task
@@ -353,57 +239,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoObjectMaskingTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVideoObjectMaskingTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询任务
-        ///
-        /// 查询拆条任务状态
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVideoShotSplitTaskResponse> ShowVideoShotSplitTaskAsync(ShowVideoShotSplitTaskRequest showVideoShotSplitTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showVideoShotSplitTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-shot-split/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoShotSplitTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowVideoShotSplitTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询任务
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVideoSummarizationAnalysisTaskResponse> ShowVideoSummarizationAnalysisTaskAsync(ShowVideoSummarizationAnalysisTaskRequest showVideoSummarizationAnalysisTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showVideoSummarizationAnalysisTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-summarization-analysis/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoSummarizationAnalysisTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowVideoSummarizationAnalysisTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询任务
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVideoTranslateTaskResponse> ShowVideoTranslateTaskAsync(ShowVideoTranslateTaskRequest showVideoTranslateTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showVideoTranslateTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-translate/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoTranslateTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowVideoTranslateTaskResponse>(response);
         }
         
     }

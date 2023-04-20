@@ -258,9 +258,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
         /// </summary>
-        /// <value>用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。</value>
+        /// <value>用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。</value>
         [JsonConverter(typeof(EnumClassConverter<TcpProxyEnum>))]
         public class TcpProxyEnum
         {
@@ -284,6 +284,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             /// </summary>
             public static readonly TcpProxyEnum OPEN = new TcpProxyEnum("open");
 
+            /// <summary>
+            /// Enum PROXY_VNI for value: proxy_vni
+            /// </summary>
+            public static readonly TcpProxyEnum PROXY_VNI = new TcpProxyEnum("proxy_vni");
+
             private static readonly Dictionary<string, TcpProxyEnum> StaticFields =
             new Dictionary<string, TcpProxyEnum>()
             {
@@ -291,6 +296,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 { "toa_open", TOA_OPEN },
                 { "proxy_open", PROXY_OPEN },
                 { "open", OPEN },
+                { "proxy_vni", PROXY_VNI },
             };
 
             private string _value;
@@ -392,7 +398,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
+        /// 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。（该字段已废弃，请优先使用LB类型）
         /// </summary>
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
@@ -480,7 +486,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public int? ConnectionCount { get; set; }
 
         /// <summary>
-        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
         /// </summary>
         [JsonProperty("tcp_proxy", NullValueHandling = NullValueHandling.Ignore)]
         public TcpProxyEnum TcpProxy { get; set; }
@@ -501,6 +507,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+        /// </summary>
+        [JsonProperty("enable_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnablePolicy { get; set; }
 
 
 
@@ -531,6 +543,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  error: ").Append(Error).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  enablePolicy: ").Append(EnablePolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -654,6 +667,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PublicBorderGroup == input.PublicBorderGroup ||
                     (this.PublicBorderGroup != null &&
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.EnablePolicy == input.EnablePolicy ||
+                    (this.EnablePolicy != null &&
+                    this.EnablePolicy.Equals(input.EnablePolicy))
                 );
         }
 
@@ -705,6 +723,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.EnablePolicy != null)
+                    hashCode = hashCode * 59 + this.EnablePolicy.GetHashCode();
                 return hashCode;
             }
         }

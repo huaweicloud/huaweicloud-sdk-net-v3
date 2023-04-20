@@ -526,6 +526,18 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("policy_statement", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PolicyStatement { get; set; }
 
+        /// <summary>
+        /// 待废弃，实例相关联的集群ID
+        /// </summary>
+        [JsonProperty("endpoint_pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndpointPoolId { get; set; }
+
+        /// <summary>
+        /// 终端节点对应Pool的Public Border Group信息
+        /// </summary>
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicBorderGroup { get; set; }
+
 
 
         /// <summary>
@@ -559,6 +571,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  routetables: ").Append(Routetables).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  policyStatement: ").Append(PolicyStatement).Append("\n");
+            sb.Append("  endpointPoolId: ").Append(EndpointPoolId).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -705,6 +719,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PolicyStatement != null &&
                     input.PolicyStatement != null &&
                     this.PolicyStatement.SequenceEqual(input.PolicyStatement)
+                ) && 
+                (
+                    this.EndpointPoolId == input.EndpointPoolId ||
+                    (this.EndpointPoolId != null &&
+                    this.EndpointPoolId.Equals(input.EndpointPoolId))
+                ) && 
+                (
+                    this.PublicBorderGroup == input.PublicBorderGroup ||
+                    (this.PublicBorderGroup != null &&
+                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
                 );
         }
 
@@ -764,6 +788,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.PolicyStatement != null)
                     hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
+                if (this.EndpointPoolId != null)
+                    hashCode = hashCode * 59 + this.EndpointPoolId.GetHashCode();
+                if (this.PublicBorderGroup != null)
+                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

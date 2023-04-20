@@ -29,6 +29,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public float? NameTh { get; set; }
 
         /// <summary>
+        /// 英文名置信度。 
+        /// </summary>
+        [JsonProperty("name_en", NullValueHandling = NullValueHandling.Ignore)]
+        public float? NameEn { get; set; }
+
+        /// <summary>
+        /// 参考编码置信度。 
+        /// </summary>
+        [JsonProperty("ref_number", NullValueHandling = NullValueHandling.Ignore)]
+        public float? RefNumber { get; set; }
+
+        /// <summary>
         /// 英文名字置信度。 
         /// </summary>
         [JsonProperty("first_name_en", NullValueHandling = NullValueHandling.Ignore)]
@@ -117,6 +129,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class ThailandIdcardConfidence {\n");
             sb.Append("  idNumber: ").Append(IdNumber).Append("\n");
             sb.Append("  nameTh: ").Append(NameTh).Append("\n");
+            sb.Append("  nameEn: ").Append(NameEn).Append("\n");
+            sb.Append("  refNumber: ").Append(RefNumber).Append("\n");
             sb.Append("  firstNameEn: ").Append(FirstNameEn).Append("\n");
             sb.Append("  lastNameEn: ").Append(LastNameEn).Append("\n");
             sb.Append("  dateOfBirthTh: ").Append(DateOfBirthTh).Append("\n");
@@ -160,6 +174,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.NameTh == input.NameTh ||
                     (this.NameTh != null &&
                     this.NameTh.Equals(input.NameTh))
+                ) && 
+                (
+                    this.NameEn == input.NameEn ||
+                    (this.NameEn != null &&
+                    this.NameEn.Equals(input.NameEn))
+                ) && 
+                (
+                    this.RefNumber == input.RefNumber ||
+                    (this.RefNumber != null &&
+                    this.RefNumber.Equals(input.RefNumber))
                 ) && 
                 (
                     this.FirstNameEn == input.FirstNameEn ||
@@ -240,6 +264,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
                 if (this.NameTh != null)
                     hashCode = hashCode * 59 + this.NameTh.GetHashCode();
+                if (this.NameEn != null)
+                    hashCode = hashCode * 59 + this.NameEn.GetHashCode();
+                if (this.RefNumber != null)
+                    hashCode = hashCode * 59 + this.RefNumber.GetHashCode();
                 if (this.FirstNameEn != null)
                     hashCode = hashCode * 59 + this.FirstNameEn.GetHashCode();
                 if (this.LastNameEn != null)

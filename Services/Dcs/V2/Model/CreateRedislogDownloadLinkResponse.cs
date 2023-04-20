@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// 后台任务id
+        /// </summary>
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupId { get; set; }
+
+        /// <summary>
         /// 日志下载链接，默认有效时间为24小时
         /// </summary>
         [JsonProperty("link", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateRedislogDownloadLinkResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("  link: ").Append(Link).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +73,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.BackupId == input.BackupId ||
+                    (this.BackupId != null &&
+                    this.BackupId.Equals(input.BackupId))
+                ) && 
+                (
                     this.Link == input.Link ||
                     (this.Link != null &&
                     this.Link.Equals(input.Link))
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.BackupId != null)
+                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 if (this.Link != null)
                     hashCode = hashCode * 59 + this.Link.GetHashCode();
                 return hashCode;

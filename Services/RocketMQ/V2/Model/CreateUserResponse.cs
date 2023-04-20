@@ -150,19 +150,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public class DefaultGroupPermEnum
         {
             /// <summary>
-            /// Enum PUB for value: PUB
-            /// </summary>
-            public static readonly DefaultGroupPermEnum PUB = new DefaultGroupPermEnum("PUB");
-
-            /// <summary>
             /// Enum SUB for value: SUB
             /// </summary>
             public static readonly DefaultGroupPermEnum SUB = new DefaultGroupPermEnum("SUB");
-
-            /// <summary>
-            /// Enum PUB_SUB for value: PUB|SUB
-            /// </summary>
-            public static readonly DefaultGroupPermEnum PUB_SUB = new DefaultGroupPermEnum("PUB|SUB");
 
             /// <summary>
             /// Enum DENY for value: DENY
@@ -172,9 +162,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             private static readonly Dictionary<string, DefaultGroupPermEnum> StaticFields =
             new Dictionary<string, DefaultGroupPermEnum>()
             {
-                { "PUB", PUB },
                 { "SUB", SUB },
-                { "PUB|SUB", PUB_SUB },
                 { "DENY", DENY },
             };
 

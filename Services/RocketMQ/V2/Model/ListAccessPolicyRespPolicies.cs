@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string AccessKey { get; set; }
 
         /// <summary>
-        /// 秘钥。
+        /// 密钥。
         /// </summary>
         [JsonProperty("secret_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretKey { get; set; }

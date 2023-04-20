@@ -557,7 +557,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? EnableAcl { get; set; }
 
         /// <summary>
-        /// 是否支持IPV6。   - true: 支持   - false：不支持
+        /// 是否支持IPv6。   - true: 支持   - false：不支持
         /// </summary>
         [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Ipv6Enable { get; set; }

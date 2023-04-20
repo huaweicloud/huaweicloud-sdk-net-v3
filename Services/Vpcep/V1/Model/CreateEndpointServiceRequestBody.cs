@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class CreateEndpointServiceRequestBody 
     {
         /// <summary>
-        /// 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。 ● LB：增强型负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
+        /// 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。（该字段已废弃，请优先使用LB类型） ● LB：负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
         /// </summary>
-        /// <value>资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。 ● LB：增强型负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。</value>
+        /// <value>资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。（该字段已废弃，请优先使用LB类型） ● LB：负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。</value>
         [JsonConverter(typeof(EnumClassConverter<ServerTypeEnum>))]
         public class ServerTypeEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
         /// </summary>
-        /// <value>用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。</value>
+        /// <value>用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。</value>
         [JsonConverter(typeof(EnumClassConverter<TcpProxyEnum>))]
         public class TcpProxyEnum
         {
@@ -163,6 +163,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             /// </summary>
             public static readonly TcpProxyEnum OPEN = new TcpProxyEnum("open");
 
+            /// <summary>
+            /// Enum PROXY_VNI for value: proxy_vni
+            /// </summary>
+            public static readonly TcpProxyEnum PROXY_VNI = new TcpProxyEnum("proxy_vni");
+
             private static readonly Dictionary<string, TcpProxyEnum> StaticFields =
             new Dictionary<string, TcpProxyEnum>()
             {
@@ -170,6 +175,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 { "toa_open", TOA_OPEN },
                 { "proxy_open", PROXY_OPEN },
                 { "open", OPEN },
+                { "proxy_vni", PROXY_VNI },
             };
 
             private string _value;
@@ -265,13 +271,13 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
 
         /// <summary>
-        /// 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”， 详见响应消息中的“vip_port_id”字段。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。 说明 ● 创建终端节点服务时，VPC的子网网段不能与198.19.128.0/17重叠。 ● VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠。
+        /// 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”， 详见响应消息中的“vip_port_id”字段。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 ● VIP类型：虚拟IP所在虚拟机的网卡ID（VIP类型业务已不支持，该取值类型已废弃） 说明： ● 创建终端节点服务时，VPC的子网网段不能与198.19.128.0/17重叠。 ● VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠。
         /// </summary>
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
 
         /// <summary>
-        /// 虚拟IP的网卡ID。
+        /// 虚拟IP的网卡ID。如果是DCS VIP场景，则该参数必需提供
         /// </summary>
         [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipPortId { get; set; }
@@ -295,13 +301,13 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? ApprovalEnabled { get; set; }
 
         /// <summary>
-        /// 终端节点服务类型。 仅支持将用户私有服务创建为interface类型的终端节点服务。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过查询公共终端节点服务列表, 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+        /// 终端节点服务类型。 仅支持将用户私有服务创建为interface类型的终端节点服务。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。 ● LB：增强型负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
+        /// 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。（该字段已废弃，请优先使用LB类型） ● LB：负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
         /// </summary>
         [JsonProperty("server_type", NullValueHandling = NullValueHandling.Ignore)]
         public ServerTypeEnum ServerType { get; set; }
@@ -312,7 +318,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<PortList> Ports { get; set; }
 
         /// <summary>
-        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
         /// </summary>
         [JsonProperty("tcp_proxy", NullValueHandling = NullValueHandling.Ignore)]
         public TcpProxyEnum TcpProxy { get; set; }
@@ -327,6 +333,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+        /// </summary>
+        [JsonProperty("enable_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnablePolicy { get; set; }
 
 
 
@@ -348,6 +360,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  tcpProxy: ").Append(TcpProxy).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  enablePolicy: ").Append(EnablePolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -425,6 +438,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.EnablePolicy == input.EnablePolicy ||
+                    (this.EnablePolicy != null &&
+                    this.EnablePolicy.Equals(input.EnablePolicy))
                 );
         }
 
@@ -458,6 +476,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.EnablePolicy != null)
+                    hashCode = hashCode * 59 + this.EnablePolicy.GetHashCode();
                 return hashCode;
             }
         }

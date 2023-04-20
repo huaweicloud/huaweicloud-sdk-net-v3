@@ -17,18 +17,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
     {
 
         /// <summary>
-        /// OBS桶名，当输入为obs类型时必填。
-        /// </summary>
-        [JsonProperty("bucket", NullValueHandling = NullValueHandling.Ignore)]
-        public string Bucket { get; set; }
-
-        /// <summary>
-        /// OBS的路径，当输入为obs类型时必填。
-        /// </summary>
-        [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
-        public string Path { get; set; }
-
-        /// <summary>
         /// url输入源的地址，当输入为url类型时必填。 长度不超过1000。输入的图片大小不能大于20M，长边不能大于10000px。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
@@ -49,8 +37,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ImageHighresolutionMattingInputData {\n");
-            sb.Append("  bucket: ").Append(Bucket).Append("\n");
-            sb.Append("  path: ").Append(Path).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("}\n");
@@ -75,16 +61,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
 
             return 
                 (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
@@ -104,10 +80,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.Key != null)

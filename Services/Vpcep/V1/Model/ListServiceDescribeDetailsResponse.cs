@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("is_charge", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsCharge { get; set; }
 
+        /// <summary>
+        /// 终端节点对应Pool的Public Border Group信息
+        /// </summary>
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicBorderGroup { get; set; }
+
 
 
         /// <summary>
@@ -168,6 +174,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  isCharge: ").Append(IsCharge).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,6 +220,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.IsCharge == input.IsCharge ||
                     (this.IsCharge != null &&
                     this.IsCharge.Equals(input.IsCharge))
+                ) && 
+                (
+                    this.PublicBorderGroup == input.PublicBorderGroup ||
+                    (this.PublicBorderGroup != null &&
+                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
                 );
         }
 
@@ -234,6 +246,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.IsCharge != null)
                     hashCode = hashCode * 59 + this.IsCharge.GetHashCode();
+                if (this.PublicBorderGroup != null)
+                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

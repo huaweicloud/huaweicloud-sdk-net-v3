@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("gateway", NullValueHandling = NullValueHandling.Ignore)]
         public string Gateway { get; set; }
 
+        /// <summary>
+        /// 安全组
+        /// </summary>
+        [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SecurityGroups { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
             sb.Append("  gateway: ").Append(Gateway).Append("\n");
+            sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Gateway == input.Gateway ||
                     (this.Gateway != null &&
                     this.Gateway.Equals(input.Gateway))
+                ) && 
+                (
+                    this.SecurityGroups == input.SecurityGroups ||
+                    this.SecurityGroups != null &&
+                    input.SecurityGroups != null &&
+                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
                 );
         }
 
@@ -140,6 +153,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Cidr.GetHashCode();
                 if (this.Gateway != null)
                     hashCode = hashCode * 59 + this.Gateway.GetHashCode();
+                if (this.SecurityGroups != null)
+                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 return hashCode;
             }
         }

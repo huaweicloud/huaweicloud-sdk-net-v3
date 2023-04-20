@@ -408,6 +408,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? MemorySize { get; set; }
 
         /// <summary>
+        /// 函数消耗的显存，只支持自定义运行时与自定义镜像函数配置GPU。 单位MB。 取值范围为：1024、2048、3072、4096、5120、6144、7168、8192、9216、10240、11264、12288、13312、14336、15360、16384。 最小值为1024，最大值为16384。
+        /// </summary>
+        [JsonProperty("gpu_memory", NullValueHandling = NullValueHandling.Ignore)]
+        public int? GpuMemory { get; set; }
+
+        /// <summary>
         /// 函数占用的cpu资源。 单位为millicore（1 core&#x3D;1000 millicores）。 取值与MemorySize成比例，默认是128M内存占0.1个核（100 millicores）。 函数占用的CPU为基础CPU：200 millicores，再加上内存按比例占用的CPU，计算方法：内存/128 *100 + 200。
         /// </summary>
         [JsonProperty("cpu", NullValueHandling = NullValueHandling.Ignore)]
@@ -557,6 +563,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  timeout: ").Append(Timeout).Append("\n");
             sb.Append("  handler: ").Append(Handler).Append("\n");
             sb.Append("  memorySize: ").Append(MemorySize).Append("\n");
+            sb.Append("  gpuMemory: ").Append(GpuMemory).Append("\n");
             sb.Append("  cpu: ").Append(Cpu).Append("\n");
             sb.Append("  codeType: ").Append(CodeType).Append("\n");
             sb.Append("  codeUrl: ").Append(CodeUrl).Append("\n");
@@ -649,6 +656,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.MemorySize == input.MemorySize ||
                     (this.MemorySize != null &&
                     this.MemorySize.Equals(input.MemorySize))
+                ) && 
+                (
+                    this.GpuMemory == input.GpuMemory ||
+                    (this.GpuMemory != null &&
+                    this.GpuMemory.Equals(input.GpuMemory))
                 ) && 
                 (
                     this.Cpu == input.Cpu ||
@@ -792,6 +804,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Handler.GetHashCode();
                 if (this.MemorySize != null)
                     hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
+                if (this.GpuMemory != null)
+                    hashCode = hashCode * 59 + this.GpuMemory.GetHashCode();
                 if (this.Cpu != null)
                     hashCode = hashCode * 59 + this.Cpu.GetHashCode();
                 if (this.CodeType != null)

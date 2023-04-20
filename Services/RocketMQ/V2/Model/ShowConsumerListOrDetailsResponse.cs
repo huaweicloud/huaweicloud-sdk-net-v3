@@ -17,10 +17,22 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// Topic列表。
+        /// Topic列表（当查询topic消费“列表”时才显示此参数）。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Topics { get; set; }
+
+        /// <summary>
+        /// Topic总数（当查询topic消费“列表”时才显示此参数）。
+        /// </summary>
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? Total { get; set; }
+
+        /// <summary>
+        /// Topic关联代理（当查询topic消费“详情”才显示此参数）。
+        /// </summary>
+        [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Brokers> Brokers { get; set; }
 
 
 
@@ -32,6 +44,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowConsumerListOrDetailsResponse {\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +72,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.Topics != null &&
                     input.Topics != null &&
                     this.Topics.SequenceEqual(input.Topics)
+                ) && 
+                (
+                    this.Total == input.Total ||
+                    (this.Total != null &&
+                    this.Total.Equals(input.Total))
+                ) && 
+                (
+                    this.Brokers == input.Brokers ||
+                    this.Brokers != null &&
+                    input.Brokers != null &&
+                    this.Brokers.SequenceEqual(input.Brokers)
                 );
         }
 
@@ -71,6 +96,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 int hashCode = 41;
                 if (this.Topics != null)
                     hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                if (this.Total != null)
+                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Brokers != null)
+                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 return hashCode;
             }
         }
