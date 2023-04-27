@@ -42,6 +42,8 @@ namespace HuaweiCloud.SDK.Vpc.V2
             "https://vpc.na-mexico-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
             "https://vpc.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://vpc.tr-west-1.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -63,6 +65,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
                 { "la-south-2", LA_SOUTH_2 },
                 { "na-mexico-1", NA_MEXICO_1 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "tr-west-1", TR_WEST_1 },
         };
 
         public static Region ValueOf(string regionId)

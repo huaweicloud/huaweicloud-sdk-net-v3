@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 防护状态：0 未开启防护， 1 已开启防护
+        /// 防护状态：0 已开启防护， 1 未开启防护
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }

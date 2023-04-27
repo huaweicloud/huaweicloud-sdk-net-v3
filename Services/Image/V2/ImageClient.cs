@@ -63,22 +63,6 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 删除媒资图像标签
-        ///
-        /// 用于用户删除自定义的标签。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public RunDeleteCustomTagsResponse RunDeleteCustomTags(RunDeleteCustomTagsRequest runDeleteCustomTagsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/media-tagging/custom-tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runDeleteCustomTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            return JsonUtils.DeSerialize<RunDeleteCustomTagsResponse>(response);
-        }
-        
-        /// <summary>
         /// 图像描述
         ///
         /// 图像描述
@@ -172,22 +156,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageTaggingRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RunImageTaggingResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询媒资图像标签
-        ///
-        /// 用于用户自查是否存在自定义的标签。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public RunQueryCustomTagsResponse RunQueryCustomTags(RunQueryCustomTagsRequest runQueryCustomTagsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/media-tagging/custom-tags/check",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryCustomTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<RunQueryCustomTagsResponse>(response);
         }
         
         /// <summary>

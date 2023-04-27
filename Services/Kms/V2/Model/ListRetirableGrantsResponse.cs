@@ -144,6 +144,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string NextMarker { get; set; }
 
         /// <summary>
+        /// 可退役授权总条数。
+        /// </summary>
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Total { get; set; }
+
+        /// <summary>
         /// 是否还有下一页：  - “true”表示还有数据。  - “false”表示已经是最后一页。
         /// </summary>
         [JsonProperty("truncated", NullValueHandling = NullValueHandling.Ignore)]
@@ -159,6 +165,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("class ListRetirableGrantsResponse {\n");
             sb.Append("  grants: ").Append(Grants).Append("\n");
             sb.Append("  nextMarker: ").Append(NextMarker).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  truncated: ").Append(Truncated).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -193,6 +200,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.NextMarker.Equals(input.NextMarker))
                 ) && 
                 (
+                    this.Total == input.Total ||
+                    (this.Total != null &&
+                    this.Total.Equals(input.Total))
+                ) && 
+                (
                     this.Truncated == input.Truncated ||
                     (this.Truncated != null &&
                     this.Truncated.Equals(input.Truncated))
@@ -211,6 +223,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.Grants.GetHashCode();
                 if (this.NextMarker != null)
                     hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                if (this.Total != null)
+                    hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Truncated != null)
                     hashCode = hashCode * 59 + this.Truncated.GetHashCode();
                 return hashCode;

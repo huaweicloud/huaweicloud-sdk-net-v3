@@ -8,19 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Image.V2.Model
+namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class RunDeleteCustomTagsResponse : SdkResponse
+    public class UpdateInstanceBandwidthRequest 
     {
 
         /// <summary>
-        /// 查询/删除自定义标签结果
+        /// 实例ID
         /// </summary>
-        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public string Result { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -30,8 +31,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RunDeleteCustomTagsResponse {\n");
-            sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("class UpdateInstanceBandwidthRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +42,22 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RunDeleteCustomTagsResponse);
+            return this.Equals(input as UpdateInstanceBandwidthRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RunDeleteCustomTagsResponse input)
+        public bool Equals(UpdateInstanceBandwidthRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

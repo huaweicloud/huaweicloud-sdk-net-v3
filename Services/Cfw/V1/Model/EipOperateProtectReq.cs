@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// EIP状态
+        /// EIP状态，0表示防护中，1表示未防护
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }

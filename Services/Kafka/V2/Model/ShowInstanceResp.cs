@@ -16,6 +16,121 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class ShowInstanceResp 
     {
         /// <summary>
+        /// Defines saslEnabledMechanisms
+        /// </summary>
+        [JsonConverter(typeof(EnumClassConverter<SaslEnabledMechanismsEnum>))]
+        public class SaslEnabledMechanismsEnum
+        {
+            /// <summary>
+            /// Enum PLAIN for value: PLAIN
+            /// </summary>
+            public static readonly SaslEnabledMechanismsEnum PLAIN = new SaslEnabledMechanismsEnum("PLAIN");
+
+            /// <summary>
+            /// Enum SCRAM_SHA_512 for value: SCRAM-SHA-512
+            /// </summary>
+            public static readonly SaslEnabledMechanismsEnum SCRAM_SHA_512 = new SaslEnabledMechanismsEnum("SCRAM-SHA-512");
+
+            private static readonly Dictionary<string, SaslEnabledMechanismsEnum> StaticFields =
+            new Dictionary<string, SaslEnabledMechanismsEnum>()
+            {
+                { "PLAIN", PLAIN },
+                { "SCRAM-SHA-512", SCRAM_SHA_512 },
+            };
+
+            private string _value;
+
+            public SaslEnabledMechanismsEnum()
+            {
+
+            }
+
+            public SaslEnabledMechanismsEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SaslEnabledMechanismsEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SaslEnabledMechanismsEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SaslEnabledMechanismsEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
         /// 实例类型：集群，cluster。
         /// </summary>
         /// <value>实例类型：集群，cluster。</value>
@@ -415,11 +530,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
+        /// 开启SASL后使用的安全协议。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，仅支持SCRAM-SHA-512机制。  
+        /// </summary>
+        [JsonProperty("kafka_security_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public string KafkaSecurityProtocol { get; set; }
+
+        /// <summary>
         /// 开启SASL后使用的认证机制。 - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
         /// </summary>
         [JsonProperty("sasl_enabled_mechanisms", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> SaslEnabledMechanisms { get; set; }
-
+        public List<SaslEnabledMechanismsEnum> SaslEnabledMechanisms { get; set; }
         /// <summary>
         /// 是否开启双向认证。
         /// </summary>
@@ -749,6 +869,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  managementConnectAddress: ").Append(ManagementConnectAddress).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
+            sb.Append("  kafkaSecurityProtocol: ").Append(KafkaSecurityProtocol).Append("\n");
             sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  sslTwoWayEnable: ").Append(SslTwoWayEnable).Append("\n");
             sb.Append("  certReplaced: ").Append(CertReplaced).Append("\n");
@@ -959,6 +1080,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SslEnable == input.SslEnable ||
                     (this.SslEnable != null &&
                     this.SslEnable.Equals(input.SslEnable))
+                ) && 
+                (
+                    this.KafkaSecurityProtocol == input.KafkaSecurityProtocol ||
+                    (this.KafkaSecurityProtocol != null &&
+                    this.KafkaSecurityProtocol.Equals(input.KafkaSecurityProtocol))
                 ) && 
                 (
                     this.SaslEnabledMechanisms == input.SaslEnabledMechanisms ||
@@ -1280,6 +1406,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.ManagementConnectAddress.GetHashCode();
                 if (this.SslEnable != null)
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.KafkaSecurityProtocol != null)
+                    hashCode = hashCode * 59 + this.KafkaSecurityProtocol.GetHashCode();
                 if (this.SaslEnabledMechanisms != null)
                     hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.SslTwoWayEnable != null)

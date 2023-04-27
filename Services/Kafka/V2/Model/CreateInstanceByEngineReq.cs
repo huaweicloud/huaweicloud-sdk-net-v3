@@ -246,6 +246,121 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
+        /// Defines saslEnabledMechanisms
+        /// </summary>
+        [JsonConverter(typeof(EnumClassConverter<SaslEnabledMechanismsEnum>))]
+        public class SaslEnabledMechanismsEnum
+        {
+            /// <summary>
+            /// Enum PLAIN for value: PLAIN
+            /// </summary>
+            public static readonly SaslEnabledMechanismsEnum PLAIN = new SaslEnabledMechanismsEnum("PLAIN");
+
+            /// <summary>
+            /// Enum SCRAM_SHA_512 for value: SCRAM-SHA-512
+            /// </summary>
+            public static readonly SaslEnabledMechanismsEnum SCRAM_SHA_512 = new SaslEnabledMechanismsEnum("SCRAM-SHA-512");
+
+            private static readonly Dictionary<string, SaslEnabledMechanismsEnum> StaticFields =
+            new Dictionary<string, SaslEnabledMechanismsEnum>()
+            {
+                { "PLAIN", PLAIN },
+                { "SCRAM-SHA-512", SCRAM_SHA_512 },
+            };
+
+            private string _value;
+
+            public SaslEnabledMechanismsEnum()
+            {
+
+            }
+
+            public SaslEnabledMechanismsEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SaslEnabledMechanismsEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SaslEnabledMechanismsEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SaslEnabledMechanismsEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
         /// </summary>
         /// <value>磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。</value>
@@ -595,6 +710,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
+        /// 开启SASL后使用的安全协议，如果开启了SASL认证功能（即ssl_enable&#x3D;true），该字段为必选。  若该字段值为空，默认开启SASL_SSL认证机制。  实例创建后将不支持动态开启和关闭。  - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，仅支持SCRAM-SHA-512机制。  
+        /// </summary>
+        [JsonProperty("kafka_security_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public string KafkaSecurityProtocol { get; set; }
+
+        /// <summary>
+        /// 开启SASL后使用的认证机制，如果开启了SASL认证功能（即ssl_enable&#x3D;true），该字段为必选。  若该字段值为空，默认开启PLAIN认证机制。  选择其一进行SASL认证即可,支持同时开启两种认证机制。 取值如下： - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
+        /// </summary>
+        [JsonProperty("sasl_enabled_mechanisms", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SaslEnabledMechanismsEnum> SaslEnabledMechanisms { get; set; }
+        /// <summary>
         /// 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
         /// </summary>
         [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
@@ -675,6 +801,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
+            sb.Append("  kafkaSecurityProtocol: ").Append(KafkaSecurityProtocol).Append("\n");
+            sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
             sb.Append("  enableAutoTopic: ").Append(EnableAutoTopic).Append("\n");
@@ -807,6 +935,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SslEnable.Equals(input.SslEnable))
                 ) && 
                 (
+                    this.KafkaSecurityProtocol == input.KafkaSecurityProtocol ||
+                    (this.KafkaSecurityProtocol != null &&
+                    this.KafkaSecurityProtocol.Equals(input.KafkaSecurityProtocol))
+                ) && 
+                (
+                    this.SaslEnabledMechanisms == input.SaslEnabledMechanisms ||
+                    this.SaslEnabledMechanisms != null &&
+                    input.SaslEnabledMechanisms != null &&
+                    this.SaslEnabledMechanisms.SequenceEqual(input.SaslEnabledMechanisms)
+                ) && 
+                (
                     this.RetentionPolicy == input.RetentionPolicy ||
                     (this.RetentionPolicy != null &&
                     this.RetentionPolicy.Equals(input.RetentionPolicy))
@@ -902,6 +1041,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 if (this.SslEnable != null)
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.KafkaSecurityProtocol != null)
+                    hashCode = hashCode * 59 + this.KafkaSecurityProtocol.GetHashCode();
+                if (this.SaslEnabledMechanisms != null)
+                    hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.RetentionPolicy != null)
                     hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
                 if (this.ConnectorEnable != null)

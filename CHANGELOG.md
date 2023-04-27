@@ -1,3 +1,104 @@
+# 3.1.37 2023-04-27
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.ipv6_accelerate`
+      - `+ configs.origin_range_status`
+
+### HuaweiCloud SDK CFW
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListIpsProtectModeUsingPost**
+    - changes of response param
+      - `+ data`
+      - `- object_id`
+      - `- status`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the interfaces `ResetPassword`, `UpdateInstanceBandwidth`, `ListConfigTemplates`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the interfaces `RunQueryCustomTags`, `RunDeleteCustomTags`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstanceByEngine**
+    - changes of request param
+      - `+ kafka_security_protocol`
+      - `+ sasl_enabled_mechanisms`
+  - **ShowInstance**
+    - changes of response param
+      - `+ kafka_security_protocol`
+      - `+ sasl_enabled_mechanisms: enum value [PLAIN,SCRAM-SHA-512]`
+  - **CreatePostPaidInstance**
+    - changes of request param
+      - `+ kafka_security_protocol`
+      - `+ sasl_enabled_mechanisms: enum value [PLAIN,SCRAM-SHA-512]`
+  - **ListInstances**
+    - changes of response param
+      - `+ kafka_security_protocol`
+      - `+ instances.kafka_security_protocol`
+      - `+ instances.sasl_enabled_mechanisms: enum value [PLAIN,SCRAM-SHA-512]`
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListKeys**
+    - changes of response param
+      - `+ key_details.partition_type`
+  - **ListKeyDetail**
+    - changes of response param
+      - `+ key_info.partition_type`
+  - **ListRetirableGrants**
+    - changes of response param
+      - `+ total`
+  - **ListKmsByTags**
+    - changes of response param
+      - `+ resources.resource_detail.partition_type`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowConsumerListOrDetails**
+    - changes of response param
+      - `* total: int64 -> int32`
+
 # 3.1.36 2023-04-20
 
 ### HuaweiCloud SDK AOS

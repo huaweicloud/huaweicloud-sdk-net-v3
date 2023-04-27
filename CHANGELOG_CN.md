@@ -1,3 +1,104 @@
+# 3.1.37 2023-04-27
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.ipv6_accelerate`
+      - `+ configs.origin_range_status`
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListIpsProtectModeUsingPost**
+    - 响应参数变更
+      - `+ data`
+      - `- object_id`
+      - `- status`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 支持接口`ResetPassword`、`UpdateInstanceBandwidth`、`ListConfigTemplates`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Image
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`RunQueryCustomTags`、`RunDeleteCustomTags`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstanceByEngine**
+    - 请求参数变更
+      - `+ kafka_security_protocol`
+      - `+ sasl_enabled_mechanisms`
+  - **ShowInstance**
+    - 响应参数变更
+      - `+ kafka_security_protocol`
+      - `+ sasl_enabled_mechanisms: enum value [PLAIN,SCRAM-SHA-512]`
+  - **CreatePostPaidInstance**
+    - 请求参数变更
+      - `+ kafka_security_protocol`
+      - `+ sasl_enabled_mechanisms: enum value [PLAIN,SCRAM-SHA-512]`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ kafka_security_protocol`
+      - `+ instances.kafka_security_protocol`
+      - `+ instances.sasl_enabled_mechanisms: enum value [PLAIN,SCRAM-SHA-512]`
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListKeys**
+    - 响应参数变更
+      - `+ key_details.partition_type`
+  - **ListKeyDetail**
+    - 响应参数变更
+      - `+ key_info.partition_type`
+  - **ListRetirableGrants**
+    - 响应参数变更
+      - `+ total`
+  - **ListKmsByTags**
+    - 响应参数变更
+      - `+ resources.resource_detail.partition_type`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowConsumerListOrDetails**
+    - 响应参数变更
+      - `* total: int64 -> int32`
+
 # 3.1.36 2023-04-20
 
 ### HuaweiCloud SDK AOS

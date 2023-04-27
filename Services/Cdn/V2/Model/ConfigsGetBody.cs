@@ -95,10 +95,22 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public CacheUrlParameterFilter CacheUrlParameterFilter { get; set; }
 
         /// <summary>
+        /// ipv6设置（1：打开；0：关闭）
+        /// </summary>
+        [JsonProperty("ipv6_accelerate", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Ipv6Accelerate { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("error_code_cache", NullValueHandling = NullValueHandling.Ignore)]
         public List<ErrorCodeCache> ErrorCodeCache { get; set; }
+
+        /// <summary>
+        /// Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on
+        /// </summary>
+        [JsonProperty("origin_range_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginRangeStatus { get; set; }
 
         /// <summary>
         /// 
@@ -140,7 +152,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  forceRedirect: ").Append(ForceRedirect).Append("\n");
             sb.Append("  compress: ").Append(Compress).Append("\n");
             sb.Append("  cacheUrlParameterFilter: ").Append(CacheUrlParameterFilter).Append("\n");
+            sb.Append("  ipv6Accelerate: ").Append(Ipv6Accelerate).Append("\n");
             sb.Append("  errorCodeCache: ").Append(ErrorCodeCache).Append("\n");
+            sb.Append("  originRangeStatus: ").Append(OriginRangeStatus).Append("\n");
             sb.Append("  userAgentFilter: ").Append(UserAgentFilter).Append("\n");
             sb.Append("  originRequestUrlRewrite: ").Append(OriginRequestUrlRewrite).Append("\n");
             sb.Append("  errorCodeRedirectRules: ").Append(ErrorCodeRedirectRules).Append("\n");
@@ -235,10 +249,20 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.CacheUrlParameterFilter.Equals(input.CacheUrlParameterFilter))
                 ) && 
                 (
+                    this.Ipv6Accelerate == input.Ipv6Accelerate ||
+                    (this.Ipv6Accelerate != null &&
+                    this.Ipv6Accelerate.Equals(input.Ipv6Accelerate))
+                ) && 
+                (
                     this.ErrorCodeCache == input.ErrorCodeCache ||
                     this.ErrorCodeCache != null &&
                     input.ErrorCodeCache != null &&
                     this.ErrorCodeCache.SequenceEqual(input.ErrorCodeCache)
+                ) && 
+                (
+                    this.OriginRangeStatus == input.OriginRangeStatus ||
+                    (this.OriginRangeStatus != null &&
+                    this.OriginRangeStatus.Equals(input.OriginRangeStatus))
                 ) && 
                 (
                     this.UserAgentFilter == input.UserAgentFilter ||
@@ -293,8 +317,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Compress.GetHashCode();
                 if (this.CacheUrlParameterFilter != null)
                     hashCode = hashCode * 59 + this.CacheUrlParameterFilter.GetHashCode();
+                if (this.Ipv6Accelerate != null)
+                    hashCode = hashCode * 59 + this.Ipv6Accelerate.GetHashCode();
                 if (this.ErrorCodeCache != null)
                     hashCode = hashCode * 59 + this.ErrorCodeCache.GetHashCode();
+                if (this.OriginRangeStatus != null)
+                    hashCode = hashCode * 59 + this.OriginRangeStatus.GetHashCode();
                 if (this.UserAgentFilter != null)
                     hashCode = hashCode * 59 + this.UserAgentFilter.GetHashCode();
                 if (this.OriginRequestUrlRewrite != null)

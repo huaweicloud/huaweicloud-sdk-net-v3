@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.RocketMQ.V2.Model
+namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class ListRocketInstanceTopicsRequest 
+    public class ResetPasswordRequest 
     {
 
         /// <summary>
@@ -24,18 +24,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 查询数量，取值范围为1~50。
+        /// 
         /// </summary>
-        [SDKProperty("limit", IsQuery = true)]
-        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Limit { get; set; }
-
-        /// <summary>
-        /// 偏移量，表示从此偏移量开始查询， offset大于等于0。
-        /// </summary>
-        [SDKProperty("offset", IsQuery = true)]
-        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Offset { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public ResetInstancePasswordBody Body { get; set; }
 
 
 
@@ -45,10 +38,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListRocketInstanceTopicsRequest {\n");
+            sb.Append("class ResetPasswordRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,13 +50,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListRocketInstanceTopicsRequest);
+            return this.Equals(input as ResetPasswordRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListRocketInstanceTopicsRequest input)
+        public bool Equals(ResetPasswordRequest input)
         {
             if (input == null)
                 return false;
@@ -76,14 +68,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -97,10 +84,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 int hashCode = 41;
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

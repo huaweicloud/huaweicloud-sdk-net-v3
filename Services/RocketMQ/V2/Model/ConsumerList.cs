@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// Topic总数（当查询topic消费“列表”时才显示此参数）。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Total { get; set; }
+        public int? Total { get; set; }
 
 
 

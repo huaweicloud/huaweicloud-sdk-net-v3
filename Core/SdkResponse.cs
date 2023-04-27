@@ -19,14 +19,19 @@
  * under the License.
  */
 
+using Newtonsoft.Json;
+
 namespace HuaweiCloud.SDK.Core
 {
     public class SdkResponse
     {
+        [JsonIgnore]
         public string HttpBody { get; set; }
 
+        [JsonIgnore]
         public int? HttpStatusCode { get; set; }
 
+        [JsonIgnore]
         public string HttpHeaders { get; set; }
 
         public string GetHttpBody()

@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -142,10 +143,10 @@ namespace HuaweiCloud.SDK.Core
         {
             var boundary = Guid.NewGuid().ToString("N");
             var contentType = "multipart/form-data; boundary=" + boundary;
-            var content = new MultipartFormDataContent(boundary);
+            var multipartContent = new MultipartFormDataContent(boundary);
             request.Headers.Add("ContentType", contentType);
-            content.Headers.Remove("Content-Type");
-            content.Headers.TryAddWithoutValidation("Content-Type", contentType);
+            multipartContent.Headers.Remove("Content-Type");
+            multipartContent.Headers.TryAddWithoutValidation("Content-Type", contentType);
 
             var fileParts = new Dictionary<string, FormDataFilePart>();
 
@@ -157,7 +158,7 @@ namespace HuaweiCloud.SDK.Core
                 }
                 else
                 {
-                    content.Add(new StringContent(pair.Value.ToString()), $"\"{pair.Key}\"");
+                    multipartContent.Add(new StringContent(pair.Value.ToString()), $"\"{pair.Key}\"");
                 }
             }
 
@@ -169,10 +170,17 @@ namespace HuaweiCloud.SDK.Core
                 {
                     streamContent.Headers.ContentType = new MediaTypeHeaderValue(filePart.GetContentType());
                 }
-                content.Add(streamContent, $"\"{pair.Key}\"", $"\"{filePart.GetFilename()}\"");
+
+                multipartContent.Add(streamContent, $"\"{pair.Key}\"", $"\"{filePart.GetFilename()}\"");
             }
 
-            return content;
+            foreach (var content in multipartContent) {
+                var headerContent = content.Headers.ContentDisposition.Parameters.SingleOrDefault(x => x.Name == "filename*");
+                if(headerContent != null)
+                    content.Headers.ContentDisposition.Parameters.Remove(headerContent);
+            }
+
+            return multipartContent;
         }
 
         public async Task<HttpResponseMessage> DoHttpRequest(HttpRequestMessage request)

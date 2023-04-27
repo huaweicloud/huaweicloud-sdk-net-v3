@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Group { get; set; }
 
         /// <summary>
-        /// 查询数量，取值范围[1, 50]。
+        /// 查询数量，取值范围为1~50。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

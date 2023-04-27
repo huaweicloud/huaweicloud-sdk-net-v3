@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class EipResource 
     {
         /// <summary>
-        /// EIP防护状态
+        /// EIP防护状态，0表示防护中，1表示未防护
         /// </summary>
-        /// <value>EIP防护状态</value>
+        /// <value>EIP防护状态，0表示防护中，1表示未防护</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string PublicIp { get; set; }
 
         /// <summary>
-        /// EIP防护状态
+        /// EIP防护状态，0表示防护中，1表示未防护
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
