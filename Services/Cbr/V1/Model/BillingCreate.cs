@@ -797,12 +797,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ConsoleUrl { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("extra_info", NullValueHandling = NullValueHandling.Ignore)]
-        public BillbingCreateExtraInfo ExtraInfo { get; set; }
-
-        /// <summary>
         /// 存储库多az属性，默认为false
         /// </summary>
         [JsonProperty("is_multi_az", NullValueHandling = NullValueHandling.Ignore)]
@@ -846,7 +840,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  isAutoRenew: ").Append(IsAutoRenew).Append("\n");
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("  consoleUrl: ").Append(ConsoleUrl).Append("\n");
-            sb.Append("  extraInfo: ").Append(ExtraInfo).Append("\n");
             sb.Append("  isMultiAz: ").Append(IsMultiAz).Append("\n");
             sb.Append("  promotionInfo: ").Append(PromotionInfo).Append("\n");
             sb.Append("  purchaseMode: ").Append(PurchaseMode).Append("\n");
@@ -928,11 +921,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.ConsoleUrl.Equals(input.ConsoleUrl))
                 ) && 
                 (
-                    this.ExtraInfo == input.ExtraInfo ||
-                    (this.ExtraInfo != null &&
-                    this.ExtraInfo.Equals(input.ExtraInfo))
-                ) && 
-                (
                     this.IsMultiAz == input.IsMultiAz ||
                     (this.IsMultiAz != null &&
                     this.IsMultiAz.Equals(input.IsMultiAz))
@@ -984,8 +972,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 if (this.ConsoleUrl != null)
                     hashCode = hashCode * 59 + this.ConsoleUrl.GetHashCode();
-                if (this.ExtraInfo != null)
-                    hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
                 if (this.IsMultiAz != null)
                     hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
                 if (this.PromotionInfo != null)

@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("year_backups", NullValueHandling = NullValueHandling.Ignore)]
         public int? YearBackups { get; set; }
 
+        /// <summary>
+        /// 每间隔多少次执行一次全量备份，当取值为 -1 时，不执行全量备份。  最小值：-1  最大值：100
+        /// </summary>
+        [JsonProperty("full_backup_interval", NullValueHandling = NullValueHandling.Ignore)]
+        public int? FullBackupInterval { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  timezone: ").Append(Timezone).Append("\n");
             sb.Append("  weekBackups: ").Append(WeekBackups).Append("\n");
             sb.Append("  yearBackups: ").Append(YearBackups).Append("\n");
+            sb.Append("  fullBackupInterval: ").Append(FullBackupInterval).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -165,6 +172,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.YearBackups == input.YearBackups ||
                     (this.YearBackups != null &&
                     this.YearBackups.Equals(input.YearBackups))
+                ) && 
+                (
+                    this.FullBackupInterval == input.FullBackupInterval ||
+                    (this.FullBackupInterval != null &&
+                    this.FullBackupInterval.Equals(input.FullBackupInterval))
                 );
         }
 
@@ -196,6 +208,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.WeekBackups.GetHashCode();
                 if (this.YearBackups != null)
                     hashCode = hashCode * 59 + this.YearBackups.GetHashCode();
+                if (this.FullBackupInterval != null)
+                    hashCode = hashCode * 59 + this.FullBackupInterval.GetHashCode();
                 return hashCode;
             }
         }

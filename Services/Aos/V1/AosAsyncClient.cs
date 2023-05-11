@@ -204,6 +204,29 @@ namespace HuaweiCloud.SDK.Aos.V1
         }
         
         /// <summary>
+        /// 继续部署资源栈
+        ///
+        /// 继续部署资源栈（ContinueDeployStack）
+        /// 
+        /// 此API用于继续部署一个已有的资源栈
+        /// 
+        /// * 如果资源栈当前可以继续部署，即处于&#x60;DEPLOYMENT_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许继续部署并返回相应的错误码
+        /// 
+        /// * 继续部署操作依然有可能部署失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用此API触发继续部署
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ContinueDeployStackResponse> ContinueDeployStackAsync(ContinueDeployStackRequest continueDeployStackRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name" , continueDeployStackRequest.StackName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ContinueDeployStackResponse>(response);
+        }
+        
+        /// <summary>
         /// 继续回滚资源栈
         ///
         /// 继续回滚资源栈（ContinueRollbackStack）

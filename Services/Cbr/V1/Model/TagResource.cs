@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 资源详情
+        /// 
         /// </summary>
         [JsonProperty("resource_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Vault> ResourceDetail { get; set; }
+        public InstancesResourceDetail ResourceDetail { get; set; }
 
         /// <summary>
         /// 标签列表 没有标签默认为空数字。
@@ -88,9 +88,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 ) && 
                 (
                     this.ResourceDetail == input.ResourceDetail ||
-                    this.ResourceDetail != null &&
-                    input.ResourceDetail != null &&
-                    this.ResourceDetail.SequenceEqual(input.ResourceDetail)
+                    (this.ResourceDetail != null &&
+                    this.ResourceDetail.Equals(input.ResourceDetail))
                 ) && 
                 (
                     this.Tags == input.Tags ||

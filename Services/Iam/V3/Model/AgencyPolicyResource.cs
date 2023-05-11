@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 委托资源的URI，长度不超过128。格式为：/iam/agencies/委托ID。例： &#x60;&#x60;&#x60; \&quot;uri\&quot;: [\&quot;/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\&quot;] &#x60;&#x60;&#x60;
+        /// 委托资源的URI。格式为：/iam/agencies/委托ID。例： &#x60;&#x60;&#x60; \&quot;uri\&quot;: [\&quot;/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\&quot;] &#x60;&#x60;&#x60;
         /// </summary>
         [JsonProperty("uri", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Uri { get; set; }

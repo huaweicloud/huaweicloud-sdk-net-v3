@@ -47,6 +47,22 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
+        /// 创建视频标签任务
+        ///
+        /// 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVideoTaggingMediaTaskResponse CreateVideoTaggingMediaTask(CreateVideoTaggingMediaTaskRequest createVideoTaggingMediaTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-tagging-media/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoTaggingMediaTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateVideoTaggingMediaTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 名人识别
         ///
         /// 分析并识别图片中包含的政治人物、明星及网红人物，返回人物信息及人脸坐标。
@@ -206,6 +222,23 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoObjectMaskingTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVideoObjectMaskingTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询视频标签任务
+        ///
+        /// 查询视频标签任务详情，返回参数配置以及任务状态信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVideoTaggingMediaTaskResponse ShowVideoTaggingMediaTask(ShowVideoTaggingMediaTaskRequest showVideoTaggingMediaTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showVideoTaggingMediaTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-tagging-media/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoTaggingMediaTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowVideoTaggingMediaTaskResponse>(response);
         }
         
     }

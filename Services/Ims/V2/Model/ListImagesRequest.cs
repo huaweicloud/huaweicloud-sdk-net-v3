@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly ImagetypeEnum SHARED = new ImagetypeEnum("shared");
 
+            /// <summary>
+            /// Enum MARKET for value: market
+            /// </summary>
+            public static readonly ImagetypeEnum MARKET = new ImagetypeEnum("market");
+
             private static readonly Dictionary<string, ImagetypeEnum> StaticFields =
             new Dictionary<string, ImagetypeEnum>()
             {
                 { "gold", GOLD },
                 { "private", PRIVATE },
                 { "shared", SHARED },
+                { "market", MARKET },
             };
 
             private string _value;

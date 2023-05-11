@@ -666,6 +666,23 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 添加云服务器网卡
+        ///
+        /// 给云服务器添加一张网卡。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NovaAttachInterfaceResponse> NovaAttachInterfaceAsync(NovaAttachInterfaceRequest novaAttachInterfaceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id" , novaAttachInterfaceRequest.ServerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}/os-interface",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", novaAttachInterfaceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<NovaAttachInterfaceResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建和导入SSH密钥
         ///
         /// 创建SSH密钥，或把公钥导入系统，生成密钥对。

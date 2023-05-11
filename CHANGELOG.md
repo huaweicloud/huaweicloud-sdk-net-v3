@@ -1,3 +1,94 @@
+# 3.1.38 2023-05-11
+
+### HuaweiCloud SDK AOS
+
+- _Features_
+  - Support the interface `ContinueDeployStack`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVaultResourceInstances**
+    - changes of response param
+      - `* resources.resource_detail: list<Vault> -> object<InstancesResourceDetail>`
+  - **ListPolicies**
+    - changes of response param
+      - `+ policies.operation_definition.full_backup_interval`
+  - **CreatePolicy**
+    - changes of request param
+      - `+ policy.operation_definition.full_backup_interval`
+    - changes of response param
+      - `+ policy.operation_definition.full_backup_interval`
+  - **ShowPolicy**
+    - changes of response param
+      - `+ policy.operation_definition.full_backup_interval`
+  - **UpdatePolicy**
+    - changes of request param
+      - `+ policy.operation_definition.full_backup_interval`
+    - changes of response param
+      - `+ policy.operation_definition.full_backup_interval`
+  - **CreateVault**
+    - changes of request param
+      - `- vault.billing.extra_info`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the interface `NovaAttachInterface`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ReinstallServerWithoutCloudInit**
+    - changes of request param
+      - `+ os-reinstall.metadata`
+  - **ChangeServerOsWithoutCloudInit**
+    - changes of request param
+      - `+ os-change.metadata`
+  - **ReinstallServerWithCloudInit**
+    - changes of request param
+      - `+ os-reinstall.metadata.__system__encrypted`
+      - `+ os-reinstall.metadata.__system__cmkid`
+  - **ChangeServerOsWithCloudInit**
+    - changes of request param
+      - `+ os-change.metadata.__system__encrypted`
+      - `+ os-change.metadata.__system__cmkid`
+  - **CreateServers**
+    - changes of request param
+      - `+ server.root_volume.extendparam.__system__encrypted`
+      - `+ server.root_volume.extendparam.__system__cmkid`
+  - **CreatePostPaidServers**
+    - changes of request param
+      - `+ server.root_volume.extendparam.__system__encrypted`
+      - `+ server.root_volume.extendparam.__system__cmkid`
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - Support the interfaces `CreateVideoTaggingMediaTask`, `ShowVideoTaggingMediaTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListImages**
+    - changes of request param
+      - `+ __imagetype: enum value [market]`
+
 # 3.1.37 2023-04-27
 
 ### HuaweiCloud SDK CDN

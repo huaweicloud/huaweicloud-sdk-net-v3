@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// 授权语句，描述自定义策略的具体内容，不超过8个。
+        /// 授权语句，描述自定义策略的具体内容。
         /// </summary>
         [JsonProperty("Statement", NullValueHandling = NullValueHandling.Ignore)]
         public List<AgencyPolicyStatement> Statement { get; set; }

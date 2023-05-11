@@ -1,3 +1,94 @@
+# 3.1.38 2023-05-11
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 支持接口`ContinueDeployStack`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVaultResourceInstances**
+    - 响应参数变更
+      - `* resources.resource_detail: list<Vault> -> object<InstancesResourceDetail>`
+  - **ListPolicies**
+    - 响应参数变更
+      - `+ policies.operation_definition.full_backup_interval`
+  - **CreatePolicy**
+    - 请求参数变更
+      - `+ policy.operation_definition.full_backup_interval`
+    - 响应参数变更
+      - `+ policy.operation_definition.full_backup_interval`
+  - **ShowPolicy**
+    - 响应参数变更
+      - `+ policy.operation_definition.full_backup_interval`
+  - **UpdatePolicy**
+    - 请求参数变更
+      - `+ policy.operation_definition.full_backup_interval`
+    - 响应参数变更
+      - `+ policy.operation_definition.full_backup_interval`
+  - **CreateVault**
+    - 请求参数变更
+      - `- vault.billing.extra_info`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`NovaAttachInterface`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ReinstallServerWithoutCloudInit**
+    - 请求参数变更
+      - `+ os-reinstall.metadata`
+  - **ChangeServerOsWithoutCloudInit**
+    - 请求参数变更
+      - `+ os-change.metadata`
+  - **ReinstallServerWithCloudInit**
+    - 请求参数变更
+      - `+ os-reinstall.metadata.__system__encrypted`
+      - `+ os-reinstall.metadata.__system__cmkid`
+  - **ChangeServerOsWithCloudInit**
+    - 请求参数变更
+      - `+ os-change.metadata.__system__encrypted`
+      - `+ os-change.metadata.__system__cmkid`
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.root_volume.extendparam.__system__encrypted`
+      - `+ server.root_volume.extendparam.__system__cmkid`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.root_volume.extendparam.__system__encrypted`
+      - `+ server.root_volume.extendparam.__system__cmkid`
+
+### HuaweiCloud SDK Image
+
+- _新增特性_
+  - 支持接口`CreateVideoTaggingMediaTask`、`ShowVideoTaggingMediaTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListImages**
+    - 请求参数变更
+      - `+ __imagetype: enum value [market]`
+
 # 3.1.37 2023-04-27
 
 ### HuaweiCloud SDK CDN

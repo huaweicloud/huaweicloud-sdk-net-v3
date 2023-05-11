@@ -55,15 +55,8 @@ namespace HuaweiCloud.SDK.Core
             var service = new ServiceCollection()
                 .AddHttpClient(
                     "SdkHttpClient",
-                    x => { x.Timeout = TimeSpan.FromSeconds(httpConfig.Timeout.Value); }
-                )
-                .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[]
-                {
-                    TimeSpan.FromSeconds(3),
-                    TimeSpan.FromSeconds(3),
-                    TimeSpan.FromSeconds(3)
-                }))
-                .ConfigurePrimaryHttpMessageHandler(
+                    x => { x.Timeout = TimeSpan.FromSeconds(httpConfig.Timeout ?? 60); }
+                ).ConfigurePrimaryHttpMessageHandler(
                     () => new HwMessageHandlerFactory(httpConfig).GetHandler()
                 )
                 .Services;
@@ -170,7 +163,6 @@ namespace HuaweiCloud.SDK.Core
                 {
                     streamContent.Headers.ContentType = new MediaTypeHeaderValue(filePart.GetContentType());
                 }
-
                 multipartContent.Add(streamContent, $"\"{pair.Key}\"", $"\"{filePart.GetFilename()}\"");
             }
 

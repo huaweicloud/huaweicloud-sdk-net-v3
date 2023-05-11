@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string CurrentTime { get; set; }
 
         /// <summary>
-        /// 档案编号。 
+        /// 档案编号。  &gt; 说明：当驾驶证类型为电子驾驶证时才返回。 
         /// </summary>
         [JsonProperty("file_number", NullValueHandling = NullValueHandling.Ignore)]
         public string FileNumber { get; set; }

@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public ChangeSeversOsMetadataWithoutCloudInitOption Metadata { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  userid: ").Append(Userid).Append("\n");
             sb.Append("  imageid: ").Append(Imageid).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +112,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Mode == input.Mode ||
                     (this.Mode != null &&
                     this.Mode.Equals(input.Mode))
+                ) && 
+                (
+                    this.Metadata == input.Metadata ||
+                    (this.Metadata != null &&
+                    this.Metadata.Equals(input.Metadata))
                 );
         }
 
@@ -126,6 +138,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Imageid.GetHashCode();
                 if (this.Mode != null)
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Metadata != null)
+                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }
