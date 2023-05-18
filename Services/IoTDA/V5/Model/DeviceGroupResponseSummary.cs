@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     /// <summary>
     /// 设备组信息结构体，创建、查询、修改设备组时返回
     /// </summary>
-    public class DeviceGroupResponsSummery 
+    public class DeviceGroupResponseSummary 
     {
 
         /// <summary>
@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("super_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SuperGroupId { get; set; }
 
+        /// <summary>
+        /// **参数说明**：设备组类型，默认为静态设备组；当设备组类型为动态设备组时，需要填写动态设备组规则
+        /// </summary>
+        [JsonProperty("group_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupType { get; set; }
+
 
 
         /// <summary>
@@ -48,11 +54,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeviceGroupResponsSummery {\n");
+            sb.Append("class DeviceGroupResponseSummary {\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  superGroupId: ").Append(SuperGroupId).Append("\n");
+            sb.Append("  groupType: ").Append(GroupType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -62,13 +69,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeviceGroupResponsSummery);
+            return this.Equals(input as DeviceGroupResponseSummary);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeviceGroupResponsSummery input)
+        public bool Equals(DeviceGroupResponseSummary input)
         {
             if (input == null)
                 return false;
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.SuperGroupId == input.SuperGroupId ||
                     (this.SuperGroupId != null &&
                     this.SuperGroupId.Equals(input.SuperGroupId))
+                ) && 
+                (
+                    this.GroupType == input.GroupType ||
+                    (this.GroupType != null &&
+                    this.GroupType.Equals(input.GroupType))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.SuperGroupId != null)
                     hashCode = hashCode * 59 + this.SuperGroupId.GetHashCode();
+                if (this.GroupType != null)
+                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
                 return hashCode;
             }
         }

@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 与url二选一  图片文件Base64编码字符串。要求base64编码后大小不超过10M。  政治人物检测人脸部分不小于50*50像素。  支持JPG/PNG/BMP格式。 
+        /// 与url二选一  图片文件Base64编码字符串。要求base64编码后大小不超过10M。  政治人物检测人脸部分不小于50*50像素。  支持JPEG/PNG/BMP/WEBP/GIF格式。 
         /// </summary>
         [JsonProperty("image", NullValueHandling = NullValueHandling.Ignore)]
         public string Image { get; set; }

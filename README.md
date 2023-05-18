@@ -53,57 +53,135 @@ Install-Package HuaweiCloud.SDK.Vpc
   real `{Service}Client` for `VpcClient` in actual use.
 - Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint string}` and `{your project id}`.
 
+**Simplified Demo**
+
 ```csharp
 using System;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Core.Auth;
-// Import the specified {Service}, take Vpc as an example
 using HuaweiCloud.SDK.Vpc.V2;
 using HuaweiCloud.SDK.Vpc.V2.Model;
-// Import the namespace for logging
-using Microsoft.Extensions.Logging;
 
-namespace ConsoleApp1
+namespace ListVpcsSolution
 {
     class Program
     {
         static void Main(string[] args)
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-            const string endpoint = "{your endpoint string}";
-            const string projectId = "{your projectID string}";
+            // Configure authentication
+            var auth = new BasicCredentials("{your ak string}", "{your sk string}");
 
-            Credentials auth = new BasicCredentials(ak, sk, projectId);
-            var config = HttpConfig.GetDefaultConfig();
-            config.IgnoreSslVerification = true;
-
-            VpcClient vpcClient = VpcClient.NewBuilder()
+            // Create a service client
+            var client = VpcClient.NewBuilder()
                 .WithCredential(auth)
-                .WithEndPoint(endpoint)
-                .WithHttpConfig(config)
-                .WithLogging(LogLevel.Information)
+                .WithRegion(VpcRegion.ValueOf("cn-north-4"))
                 .Build();
 
-            var request = new ListVpcsRequest
-            {
-                Limit = 1
-            };
-
+            // Create a request
+            var request = new ListVpcsRequest();
             try
             {
-                var response = vpcClient.ListVpcs(request);
-                Console.WriteLine(JsonUtils.Serialize(response.Vpcs));
+                // Send the request and get the response
+                var response = client.ListVpcs(request);
+                Console.WriteLine(response.HttpStatusCode);
             }
             catch (RequestTimeoutException requestTimeoutException)
             {
                 Console.WriteLine(requestTimeoutException.ErrorMessage);
             }
-            catch (ServiceResponseException serviceResponseException)
+            catch (ServiceResponseException clientRequestException)
             {
-                Console.WriteLine(serviceResponseException.HttpStatusCode);
-                Console.WriteLine(serviceResponseException.ErrorCode);
-                Console.WriteLine(serviceResponseException.ErrorMsg);
+                Console.WriteLine(clientRequestException.HttpStatusCode);
+                Console.WriteLine(clientRequestException.RequestId);
+                Console.WriteLine(clientRequestException.ErrorCode);
+                Console.WriteLine(clientRequestException.ErrorMsg);
+            }
+            catch (ConnectionException connectionException)
+            {
+                Console.WriteLine(connectionException.ErrorMessage);
+            }
+        }
+    }
+}
+```
+
+**Detailed Demo**
+
+```csharp
+using System;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+using Microsoft.Extensions.Logging;
+
+namespace ListVpcsSolution
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Configure authentication
+            // If projectId is not filled in, the SDK will automatically call the IAM service to query the project id corresponding to the region.
+            var auth = new BasicCredentials("{your ak string}", "{your sk string}", projectId: "{your projectId string}")
+                // Configure the SDK built-in IAM service endpoint, default is https://iam.myhuaweicloud.com
+                .WithIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
+
+            // Use default configuration
+            var httpConfig = HttpConfig.GetDefaultConfig()
+                // Configure whether to ignore the SSL certificate verification, default is false
+                .WithIgnoreSslVerification(true)
+                // Configure timeout as needed, default timeout is 120 seconds
+                .WithTimeout(120)
+                // Configure proxy as needed
+                .WithProxyHost("proxy.huaweicloud.com")
+                .WithProxyPort(8080)
+                .WithIgnoreProxyUsername("username")
+                .WithIgnoreProxyPassword("password");
+
+            // Configure HTTP handler to print the original request and response, do not use it in a production environment
+            var httpHandler = new HttpHandler()
+                .AddRequestHandler((requestMessage, logger) => logger.LogDebug(requestMessage.ToString()))
+                .AddResponseHandler((responseMessage, logger) => logger.LogDebug(responseMessage.ToString()));
+
+            // Create a service client
+            var client = VpcClient.NewBuilder()
+                // Configure authentication
+                .WithCredential(auth)
+                // Configure region, it will throw a ArgumentNullException if the region does not exist
+                .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+                // Configure log level
+                .WithLogging(LogLevel.Debug)
+                // Configure HTTP handler
+                .WithHttpHandler(httpHandler)
+                // Configure HTTP
+                .WithHttpConfig(httpConfig)
+                .Build();
+
+            // Create a request
+            var request = new ListVpcsRequest();
+            // Configure the number of records on each page
+            request.Limit = 1;
+            try
+            {
+                // Send the request and get the response
+                var response = client.ListVpcs(request);
+                foreach (var vpc in response.Vpcs)
+                {
+                    Console.WriteLine(vpc.Name);
+                    Console.WriteLine(vpc.Description);
+                }
+            }
+            catch (RequestTimeoutException requestTimeoutException)
+            {
+                Console.WriteLine(requestTimeoutException.ErrorMessage);
+            }
+            catch (ServiceResponseException clientRequestException)
+            {
+                Console.WriteLine(clientRequestException.HttpStatusCode);
+                Console.WriteLine(clientRequestException.RequestId);
+                Console.WriteLine(clientRequestException.ErrorCode);
+                Console.WriteLine(clientRequestException.ErrorMsg);
             }
             catch (ConnectionException connectionException)
             {
@@ -151,7 +229,11 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
 
 ```csharp
 // Use default configuration
-var config = HttpConfig.GetDefaultConfig();
+var httpConfig = HttpConfig.GetDefaultConfig();
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 #### 1.2 Network Proxy [:top:](#user-manual-top)
@@ -161,33 +243,51 @@ Use network proxy if needed.
 - Only HTTP proxy is supported if you have assigned proxy port when configuring proxy.
 
 ``` csharp
-config.ProxyHost = "proxy.huaweicloud.com";
+var httpConfig = HttpConfig.GetDefaultConfig()
+    .WithProxyHost("proxy.huaweicloud.com")
 // assign proxy port
-config.ProxyPort = 8080;
-config.ProxyUsername = "test";
-config.ProxyPassword = "test";
+    .WithProxyPort(8080)
+    .WithIgnoreProxyUsername("username")
+    .WithIgnoreProxyPassword("password");
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 - Both HTTP and HTTPS proxy are supported if proxy port is unassigned when configuring proxy.
 
 ``` csharp
-config.ProxyHost = "https://proxy.huaweicloud.com:8080";
-config.ProxyUsername = "test";
-config.ProxyPassword = "test";
+var httpConfig = HttpConfig.GetDefaultConfig()
+    .WithProxyHost("https://proxy.huaweicloud.com:8080")
+    .WithIgnoreProxyUsername("username")
+    .WithIgnoreProxyPassword("password");
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 #### 1.3 Timeout Configuration [:top:](#user-manual-top)
 
 ``` csharp
 // The default timeout is 120 seconds, which can be adjusted as needed
-config.Timeout = 120;
+var httpConfig = HttpConfig.GetDefaultConfig().WithTimeout(120);
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 #### 1.4 SSL Certification [:top:](#user-manual-top)
 
 ``` csharp
 // Skip SSL certifaction checking while using https protocal if needed
-config.IgnoreSslVerification = true;
+var httpConfig = HttpConfig.GetDefaultConfig().WithIgnoreSslVerification(true);
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 ### 2. Credentials Configuration [:top:](#user-manual-top)
@@ -423,11 +523,8 @@ private void ResponseHandler(HttpResponseMessage message, ILogger logger)
     logger.LogDebug(message.ToString());
 }
 
-var vpcClient = VpcClient.NewBuilder()
-    .WithCredential(auth)
-    .WithEndPoint(endpoint)
+var client = VpcClient.NewBuilder()
     .WithLogging(LogLevel.Debug)
-    .WithHttpConfig(config)
     .WithHttpHandler(new HttpHandler()
         .AddRequestHandler(RequestHandler)
         .AddResponseHandler(ResponseHandler))

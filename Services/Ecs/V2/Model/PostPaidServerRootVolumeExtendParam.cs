@@ -17,18 +17,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// metadata中的表示加密功能的字段，0代表不加密，1代表加密。  该字段不存在时，云硬盘默认为不加密。
-        /// </summary>
-        [JsonProperty("__system__encrypted", NullValueHandling = NullValueHandling.Ignore)]
-        public string SystemEncrypted { get; set; }
-
-        /// <summary>
-        /// metadata中的加密cmkid字段，与__system__encrypted配合表示需要加密，cmkid长度固定为36个字节。  &gt; 说明：  - 请参考[查询密钥列表](https://support.huaweicloud.com/api-dew/ListKeys.html)，通过HTTPS请求获取密钥ID。
-        /// </summary>
-        [JsonProperty("__system__cmkid", NullValueHandling = NullValueHandling.Ignore)]
-        public string SystemCmkid { get; set; }
-
-        /// <summary>
         /// 磁盘产品资源规格编码，如SATA，SAS和SSD。  &gt; 说明： &gt;  &gt; 废弃字段。
         /// </summary>
         [JsonProperty("resourceSpecCode", NullValueHandling = NullValueHandling.Ignore)]
@@ -55,8 +43,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PostPaidServerRootVolumeExtendParam {\n");
-            sb.Append("  systemEncrypted: ").Append(SystemEncrypted).Append("\n");
-            sb.Append("  systemCmkid: ").Append(SystemCmkid).Append("\n");
             sb.Append("  resourceSpecCode: ").Append(ResourceSpecCode).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("  snapshotId: ").Append(SnapshotId).Append("\n");
@@ -82,16 +68,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             return 
                 (
-                    this.SystemEncrypted == input.SystemEncrypted ||
-                    (this.SystemEncrypted != null &&
-                    this.SystemEncrypted.Equals(input.SystemEncrypted))
-                ) && 
-                (
-                    this.SystemCmkid == input.SystemCmkid ||
-                    (this.SystemCmkid != null &&
-                    this.SystemCmkid.Equals(input.SystemCmkid))
-                ) && 
-                (
                     this.ResourceSpecCode == input.ResourceSpecCode ||
                     (this.ResourceSpecCode != null &&
                     this.ResourceSpecCode.Equals(input.ResourceSpecCode))
@@ -116,10 +92,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SystemEncrypted != null)
-                    hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
-                if (this.SystemCmkid != null)
-                    hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
                 if (this.ResourceSpecCode != null)
                     hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
                 if (this.ResourceType != null)

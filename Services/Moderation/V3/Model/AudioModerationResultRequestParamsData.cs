@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Moderation.V3.Model
 {
     /// <summary>
-    /// 
+    /// 创建作业时传的data参数
     /// </summary>
     public class AudioModerationResultRequestParamsData 
     {

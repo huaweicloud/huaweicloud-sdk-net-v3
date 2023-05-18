@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("super_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SuperGroupId { get; set; }
 
+        /// <summary>
+        /// 设备组类型，分为动态设备组和静态设备组两种
+        /// </summary>
+        [JsonProperty("group_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupType { get; set; }
+
+        /// <summary>
+        /// 动态设备组规则
+        /// </summary>
+        [JsonProperty("dynamic_group_rule", NullValueHandling = NullValueHandling.Ignore)]
+        public string DynamicGroupRule { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  superGroupId: ").Append(SuperGroupId).Append("\n");
+            sb.Append("  groupType: ").Append(GroupType).Append("\n");
+            sb.Append("  dynamicGroupRule: ").Append(DynamicGroupRule).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +107,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.SuperGroupId == input.SuperGroupId ||
                     (this.SuperGroupId != null &&
                     this.SuperGroupId.Equals(input.SuperGroupId))
+                ) && 
+                (
+                    this.GroupType == input.GroupType ||
+                    (this.GroupType != null &&
+                    this.GroupType.Equals(input.GroupType))
+                ) && 
+                (
+                    this.DynamicGroupRule == input.DynamicGroupRule ||
+                    (this.DynamicGroupRule != null &&
+                    this.DynamicGroupRule.Equals(input.DynamicGroupRule))
                 );
         }
 
@@ -112,6 +136,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.SuperGroupId != null)
                     hashCode = hashCode * 59 + this.SuperGroupId.GetHashCode();
+                if (this.GroupType != null)
+                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.DynamicGroupRule != null)
+                    hashCode = hashCode * 59 + this.DynamicGroupRule.GetHashCode();
                 return hashCode;
             }
         }

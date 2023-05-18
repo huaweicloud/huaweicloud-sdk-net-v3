@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 缓存url参数配置
+    /// 缓存url参数配置。
     /// </summary>
     public class CacheUrlParameterFilter 
     {

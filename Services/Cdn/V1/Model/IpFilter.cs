@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 
+    /// IP黑白名单。
     /// </summary>
     public class IpFilter 
     {

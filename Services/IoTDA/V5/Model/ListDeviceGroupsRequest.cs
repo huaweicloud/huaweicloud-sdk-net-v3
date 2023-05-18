@@ -58,6 +58,20 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
+        /// <summary>
+        /// **参数说明**：设备组类型，默认为静态设备组；当设备组类型为动态设备组时，需要填写动态设备组规则
+        /// </summary>
+        [SDKProperty("group_type", IsQuery = true)]
+        [JsonProperty("group_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupType { get; set; }
+
+        /// <summary>
+        /// **参数说明**：设备组名称，单个资源空间下不可重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? &#39;#().,&amp;%@!-等字符的组合。
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
 
 
         /// <summary>
@@ -73,6 +87,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  lastModifiedTime: ").Append(LastModifiedTime).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  groupType: ").Append(GroupType).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +139,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.AppId == input.AppId ||
                     (this.AppId != null &&
                     this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.GroupType == input.GroupType ||
+                    (this.GroupType != null &&
+                    this.GroupType.Equals(input.GroupType))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -146,6 +172,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.LastModifiedTime.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.GroupType != null)
+                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

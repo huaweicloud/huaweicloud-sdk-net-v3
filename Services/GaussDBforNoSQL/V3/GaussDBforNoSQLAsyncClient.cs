@@ -935,6 +935,22 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询备份列表（推荐）
+        ///
+        /// 根据指定条件查询备份列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAllInstancesBackupsNewResponse> ShowAllInstancesBackupsNewAsync(ShowAllInstancesBackupsNewRequest showAllInstancesBackupsNewRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/backups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllInstancesBackupsNewRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowAllInstancesBackupsNewResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询参数模板可应用的实例列表
         ///
         /// 查询参数模板可应用的实例列表。

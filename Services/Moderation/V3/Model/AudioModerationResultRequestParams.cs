@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 创建作业时传的event_type参数
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EventType { get; set; }
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public AudioModerationResultRequestParamsData Data { get; set; }
 
         /// <summary>
-        /// 
+        /// 创建作业时传的callback参数
         /// </summary>
         [JsonProperty("callback", NullValueHandling = NullValueHandling.Ignore)]
         public string Callback { get; set; }
 
         /// <summary>
-        /// 
+        /// 创建作业时传的categories参数
         /// </summary>
         [JsonProperty("categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Categories { get; set; }

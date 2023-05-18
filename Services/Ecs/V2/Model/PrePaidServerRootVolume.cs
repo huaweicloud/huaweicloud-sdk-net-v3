@@ -288,6 +288,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public PrePaidServerRootVolumeExtendParam Extendparam { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public PrePaidServerRootVolumeMetadata Metadata { get; set; }
+
+        /// <summary>
         /// 云服务器系统盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
         /// </summary>
         [JsonProperty("cluster_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -316,6 +322,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  volumetype: ").Append(Volumetype).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  extendparam: ").Append(Extendparam).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("  clusterType: ").Append(ClusterType).Append("\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  hwpassthrough: ").Append(Hwpassthrough).Append("\n");
@@ -356,6 +363,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Extendparam.Equals(input.Extendparam))
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    (this.Metadata != null &&
+                    this.Metadata.Equals(input.Metadata))
+                ) && 
+                (
                     this.ClusterType == input.ClusterType ||
                     (this.ClusterType != null &&
                     this.ClusterType.Equals(input.ClusterType))
@@ -386,6 +398,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Extendparam != null)
                     hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
+                if (this.Metadata != null)
+                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 if (this.ClusterType != null)
                     hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
                 if (this.ClusterId != null)

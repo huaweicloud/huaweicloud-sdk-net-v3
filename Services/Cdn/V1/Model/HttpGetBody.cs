@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string HttpsStatus { get; set; }
 
         /// <summary>
-        /// 证书名字。（长度限制为3-32字符）。当证书开启时必返回该字段。
+        /// 证书名字。（长度限制为3-64字符）。当证书开启时必返回该字段。
         /// </summary>
         [JsonProperty("certificate_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateName { get; set; }

@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
+        /// <summary>
+        /// 压缩格式，内容总长度不可超过200个字符， 使用\&quot;,\&quot;分隔，每组内容不可超过50个字符， 开启状态下，首次传空时默认值为.js,.html,.css,.xml,.json,.shtml,.htm，否则为上次设置的结果。
+        /// </summary>
+        [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string FileType { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("class Compress {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  fileType: ").Append(FileType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.FileType == input.FileType ||
+                    (this.FileType != null &&
+                    this.FileType.Equals(input.FileType))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.FileType != null)
+                    hashCode = hashCode * 59 + this.FileType.GetHashCode();
                 return hashCode;
             }
         }

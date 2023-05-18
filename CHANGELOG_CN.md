@@ -1,3 +1,162 @@
+# 3.1.39 2023-05-18
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 支持以下接口：
+    - `AddAgentPath`
+    - `ShowAgent`
+    - `UpdateAgent`
+    - `UnregisterAgent`
+    - `ListAgent`
+    - `RegisterAgent`
+    - `RemoveAgentPath`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `+ status.lastProbeTime`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ status.lastProbeTime`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ status.lastProbeTime`
+  - **CreateNode**
+    - 响应参数变更
+      - `+ status.lastProbeTime`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.status.lastProbeTime`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateRefreshTasks**
+    - 请求参数变更
+      - `* refresh_task.mode: boolean -> string`
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.flexible_origin`
+      - `+ configs.slice_etag_status`
+      - `+ configs.origin_receive_timeout`
+      - `+ configs.remote_auth`
+      - `+ configs.websocket`
+      - `+ configs.video_seek`
+      - `+ configs.request_limit_rules`
+      - `+ configs.url_auth.sign_method`
+      - `+ configs.url_auth.match_type`
+      - `+ configs.url_auth.key`
+      - `+ configs.url_auth.backup_key`
+      - `+ configs.url_auth.sign_arg`
+      - `+ configs.https.expire_time`
+      - `+ configs.https.certificate_type`
+      - `+ configs.https.ocsp_stapling_status`
+      - `+ configs.sources.obs_bucket_type`
+      - `+ configs.compress.file_type`
+      - `+ configs.user_agent_filter.ua_list`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.flexible_origin`
+      - `+ configs.slice_etag_status`
+      - `+ configs.origin_receive_timeout`
+      - `+ configs.remote_auth`
+      - `+ configs.websocket`
+      - `+ configs.video_seek`
+      - `+ configs.request_limit_rules`
+      - `+ configs.url_auth.sign_method`
+      - `+ configs.url_auth.match_type`
+      - `+ configs.url_auth.backup_key`
+      - `+ configs.url_auth.sign_arg`
+      - `+ configs.https.certificate_type`
+      - `+ configs.https.ocsp_stapling_status`
+      - `+ configs.sources.obs_bucket_type`
+      - `+ configs.compress.file_type`
+      - `+ configs.user_agent_filter.ua_list`
+  - **ShowDomainDetailByName**
+    - 响应参数变更
+      - `+ domain.sources.obs_bucket_type`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.root_volume.metadata`
+      - `- server.root_volume.extendparam.__system__encrypted`
+      - `- server.root_volume.extendparam.__system__cmkid`
+      - `+ server.data_volumes.delete_on_termination`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.data_volumes.delete_on_termination`
+      - `+ server.root_volume.metadata`
+      - `- server.root_volume.extendparam.__system__encrypted`
+      - `- server.root_volume.extendparam.__system__cmkid`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BroadcastMessage**
+    - 请求参数变更
+      - `+ ttl`
+      - `+ message_id`
+  - **ShowDeviceGroup**
+    - 响应参数变更
+      - `+ dynamic_group_rule`
+      - `+ group_type`
+  - **UpdateDeviceGroup**
+    - 响应参数变更
+      - `+ dynamic_group_rule`
+      - `+ group_type`
+  - **SearchDevices**
+    - 响应参数变更
+      - `+ devices.groups`
+  - **AddDeviceGroup**
+    - 请求参数变更
+      - `+ group_type`
+      - `+ dynamic_group_rule`
+    - 响应参数变更
+      - `+ dynamic_group_rule`
+      - `+ group_type`
+  - **ListDeviceGroups**
+    - 请求参数变更
+      - `+ group_type`
+      - `+ name`
+    - 响应参数变更
+      - `+ device_groups.group_type`
+      - `* device_groups: list<DeviceGroupResponsSummery> -> list<DeviceGroupResponseSummary>`
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 支持接口`ListTemplates`、`SearchIssues`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.38 2023-05-11
 
 ### HuaweiCloud SDK AOS

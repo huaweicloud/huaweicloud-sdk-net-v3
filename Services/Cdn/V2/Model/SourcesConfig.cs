@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("host_name", NullValueHandling = NullValueHandling.Ignore)]
         public string HostName { get; set; }
 
+        /// <summary>
+        /// obs桶源站类型 “private” 私有桶 “public” 公有桶。
+        /// </summary>
+        [JsonProperty("obs_bucket_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObsBucketType { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  httpPort: ").Append(HttpPort).Append("\n");
             sb.Append("  httpsPort: ").Append(HttpsPort).Append("\n");
             sb.Append("  hostName: ").Append(HostName).Append("\n");
+            sb.Append("  obsBucketType: ").Append(ObsBucketType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.HostName == input.HostName ||
                     (this.HostName != null &&
                     this.HostName.Equals(input.HostName))
+                ) && 
+                (
+                    this.ObsBucketType == input.ObsBucketType ||
+                    (this.ObsBucketType != null &&
+                    this.ObsBucketType.Equals(input.ObsBucketType))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
                 if (this.HostName != null)
                     hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                if (this.ObsBucketType != null)
+                    hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
                 return hashCode;
             }
         }

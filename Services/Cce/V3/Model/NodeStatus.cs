@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class NodeStatus 
     {
         /// <summary>
-        /// 节点状态。
+        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
         /// </summary>
-        /// <value>节点状态。</value>
+        /// <value>节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。</value>
         [JsonConverter(typeof(EnumClassConverter<PhaseEnum>))]
         public class PhaseEnum
         {
@@ -174,10 +174,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 节点状态。
+        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public PhaseEnum Phase { get; set; }
+        /// <summary>
+        /// 节点最近一次状态检查时间。集群处于异常、冻结或者中间态（例如创建中）时，节点的状态检查动作可能受影响。检查时间超过5分的节点状态不具有参考意义。
+        /// </summary>
+        [JsonProperty("lastProbeTime", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastProbeTime { get; set; }
+
         /// <summary>
         /// 创建或删除时的任务ID。
         /// </summary>
@@ -224,6 +230,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class NodeStatus {\n");
             sb.Append("  phase: ").Append(Phase).Append("\n");
+            sb.Append("  lastProbeTime: ").Append(LastProbeTime).Append("\n");
             sb.Append("  jobID: ").Append(JobID).Append("\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("  privateIP: ").Append(PrivateIP).Append("\n");
@@ -255,6 +262,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Phase == input.Phase ||
                     (this.Phase != null &&
                     this.Phase.Equals(input.Phase))
+                ) && 
+                (
+                    this.LastProbeTime == input.LastProbeTime ||
+                    (this.LastProbeTime != null &&
+                    this.LastProbeTime.Equals(input.LastProbeTime))
                 ) && 
                 (
                     this.JobID == input.JobID ||
@@ -298,6 +310,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.Phase != null)
                     hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.LastProbeTime != null)
+                    hashCode = hashCode * 59 + this.LastProbeTime.GetHashCode();
                 if (this.JobID != null)
                     hashCode = hashCode * 59 + this.JobID.GetHashCode();
                 if (this.ServerId != null)

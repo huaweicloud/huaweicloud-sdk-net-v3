@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// IP黑白名单
+    /// IP黑白名单。
     /// </summary>
     public class IpFilter 
     {
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 配置IP黑白名单，当type&#x3D;off时，非必传。多条规则用“,”分割。
+        /// 配置IP黑白名单，当type&#x3D;off时，非必传。多条规则用“,”分割,不支持带通配符的地址，如192.168.0.*。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

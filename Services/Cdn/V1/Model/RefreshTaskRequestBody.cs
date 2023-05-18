@@ -130,6 +130,121 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             }
         }
 
+        /// <summary>
+        /// 目录刷新方式，all：刷新目录下全部资源；detect_modify_refresh：刷新目录下已变更的资源，默认值为all。
+        /// </summary>
+        /// <value>目录刷新方式，all：刷新目录下全部资源；detect_modify_refresh：刷新目录下已变更的资源，默认值为all。</value>
+        [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
+        public class ModeEnum
+        {
+            /// <summary>
+            /// Enum ALL for value: all
+            /// </summary>
+            public static readonly ModeEnum ALL = new ModeEnum("all");
+
+            /// <summary>
+            /// Enum DETECT_MODIFY_REFRESH for value: detect_modify_refresh
+            /// </summary>
+            public static readonly ModeEnum DETECT_MODIFY_REFRESH = new ModeEnum("detect_modify_refresh");
+
+            private static readonly Dictionary<string, ModeEnum> StaticFields =
+            new Dictionary<string, ModeEnum>()
+            {
+                { "all", ALL },
+                { "detect_modify_refresh", DETECT_MODIFY_REFRESH },
+            };
+
+            private string _value;
+
+            public ModeEnum()
+            {
+
+            }
+
+            public ModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ModeEnum a, ModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ModeEnum a, ModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 刷新的类型，其值可以为file 或directory，默认为file
@@ -137,13 +252,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 目录刷新只刷新变更资源标识，其值为true 或false，默认为false
+        /// 目录刷新方式，all：刷新目录下全部资源；detect_modify_refresh：刷新目录下已变更的资源，默认值为all。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Mode { get; set; }
-
+        public ModeEnum Mode { get; set; }
         /// <summary>
-        /// 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url。
+        /// 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url。 &gt;   如果您需要刷新的URL中有中文，请同时刷新中文URL和转码后的URL。
         /// </summary>
         [JsonProperty("urls", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Urls { get; set; }

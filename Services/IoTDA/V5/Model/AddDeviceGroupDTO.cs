@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
+        /// <summary>
+        /// **参数说明**：设备组类型，默认为静态设备组；当设备组类型为动态设备组时，需要填写动态设备组组规则
+        /// </summary>
+        [JsonProperty("group_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupType { get; set; }
+
+        /// <summary>
+        /// **参数说明**：动态设备组规则语法和高级搜索保持一致，只需要填写where 子句内容，其余子句无需填写，todo补充说明
+        /// </summary>
+        [JsonProperty("dynamic_group_rule", NullValueHandling = NullValueHandling.Ignore)]
+        public string DynamicGroupRule { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  superGroupId: ").Append(SuperGroupId).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  groupType: ").Append(GroupType).Append("\n");
+            sb.Append("  dynamicGroupRule: ").Append(DynamicGroupRule).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +107,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.AppId == input.AppId ||
                     (this.AppId != null &&
                     this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.GroupType == input.GroupType ||
+                    (this.GroupType != null &&
+                    this.GroupType.Equals(input.GroupType))
+                ) && 
+                (
+                    this.DynamicGroupRule == input.DynamicGroupRule ||
+                    (this.DynamicGroupRule != null &&
+                    this.DynamicGroupRule.Equals(input.DynamicGroupRule))
                 );
         }
 
@@ -112,6 +136,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.SuperGroupId.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.GroupType != null)
+                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.DynamicGroupRule != null)
+                    hashCode = hashCode * 59 + this.DynamicGroupRule.GetHashCode();
                 return hashCode;
             }
         }

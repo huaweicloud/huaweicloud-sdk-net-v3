@@ -89,6 +89,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ProductName { get; set; }
 
         /// <summary>
+        /// 设备组列表。
+        /// </summary>
+        [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Groups { get; set; }
+
+        /// <summary>
         /// 设备的状态。 - ONLINE：设备在线。 - OFFLINE：设备离线。 - ABNORMAL：设备异常。 - INACTIVE：设备未激活。 - FROZEN：设备冻结。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -127,6 +133,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  deviceSdkVersion: ").Append(DeviceSdkVersion).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  productName: ").Append(ProductName).Append("\n");
+            sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
@@ -212,6 +219,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.ProductName.Equals(input.ProductName))
                 ) && 
                 (
+                    this.Groups == input.Groups ||
+                    (this.Groups != null &&
+                    this.Groups.Equals(input.Groups))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -260,6 +272,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.ProductName != null)
                     hashCode = hashCode * 59 + this.ProductName.GetHashCode();
+                if (this.Groups != null)
+                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Tags != null)

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// UA黑白名单设置
+    /// UA黑白名单设置。
     /// </summary>
     public class UserAgentFilter 
     {

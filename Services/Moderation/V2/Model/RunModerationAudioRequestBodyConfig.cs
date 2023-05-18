@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
     public class RunModerationAudioRequestBodyConfig 
     {
         /// <summary>
-        /// 支持的语音格式
+        /// 支持的语音格式。 枚举值： - pcm16k16bit - pcm8k16bit - ulaw16k8bit - ulaw8k8bit - alaw16k8bit - alaw8k8bit - mp3 - aac - wav - amr - amrwb
         /// </summary>
-        /// <value>支持的语音格式</value>
+        /// <value>支持的语音格式。 枚举值： - pcm16k16bit - pcm8k16bit - ulaw16k8bit - ulaw8k8bit - alaw16k8bit - alaw8k8bit - mp3 - aac - wav - amr - amrwb</value>
         [JsonConverter(typeof(EnumClassConverter<FormatEnum>))]
         public class FormatEnum
         {
@@ -301,7 +301,7 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
 
 
         /// <summary>
-        /// 支持的语音格式
+        /// 支持的语音格式。 枚举值： - pcm16k16bit - pcm8k16bit - ulaw16k8bit - ulaw8k8bit - alaw16k8bit - alaw8k8bit - mp3 - aac - wav - amr - amrwb
         /// </summary>
         [JsonProperty("format", NullValueHandling = NullValueHandling.Ignore)]
         public FormatEnum Format { get; set; }

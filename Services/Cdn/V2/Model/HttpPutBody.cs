@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string HttpsStatus { get; set; }
 
         /// <summary>
-        /// 证书名字。（长度限制为3-32字符）。当证书开启时必传。
+        /// 证书名字。（长度限制为3-64字符）。当证书开启时必传。
         /// </summary>
         [JsonProperty("certificate_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateName { get; set; }
@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? CertificateSource { get; set; }
 
         /// <summary>
+        /// 证书类型。server：国际证书；server_sm：国密证书。
+        /// </summary>
+        [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string CertificateType { get; set; }
+
+        /// <summary>
         /// 是否使用HTTP2.0。（on：是，off：否。）,默认关闭，https_status&#x3D;off时，该值不生效。
         /// </summary>
         [JsonProperty("http2_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -57,6 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         [JsonProperty("tls_version", NullValueHandling = NullValueHandling.Ignore)]
         public string TlsVersion { get; set; }
+
+        /// <summary>
+        /// 是否开启ocsp stapling （on：是，off：否）。
+        /// </summary>
+        [JsonProperty("ocsp_stapling_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string OcspStaplingStatus { get; set; }
 
 
 
@@ -72,8 +84,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  certificateValue: ").Append(CertificateValue).Append("\n");
             sb.Append("  privateKey: ").Append(PrivateKey).Append("\n");
             sb.Append("  certificateSource: ").Append(CertificateSource).Append("\n");
+            sb.Append("  certificateType: ").Append(CertificateType).Append("\n");
             sb.Append("  http2Status: ").Append(Http2Status).Append("\n");
             sb.Append("  tlsVersion: ").Append(TlsVersion).Append("\n");
+            sb.Append("  ocspStaplingStatus: ").Append(OcspStaplingStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +135,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.CertificateSource.Equals(input.CertificateSource))
                 ) && 
                 (
+                    this.CertificateType == input.CertificateType ||
+                    (this.CertificateType != null &&
+                    this.CertificateType.Equals(input.CertificateType))
+                ) && 
+                (
                     this.Http2Status == input.Http2Status ||
                     (this.Http2Status != null &&
                     this.Http2Status.Equals(input.Http2Status))
@@ -129,6 +148,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.TlsVersion == input.TlsVersion ||
                     (this.TlsVersion != null &&
                     this.TlsVersion.Equals(input.TlsVersion))
+                ) && 
+                (
+                    this.OcspStaplingStatus == input.OcspStaplingStatus ||
+                    (this.OcspStaplingStatus != null &&
+                    this.OcspStaplingStatus.Equals(input.OcspStaplingStatus))
                 );
         }
 
@@ -150,10 +174,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
                 if (this.CertificateSource != null)
                     hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
+                if (this.CertificateType != null)
+                    hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
                 if (this.Http2Status != null)
                     hashCode = hashCode * 59 + this.Http2Status.GetHashCode();
                 if (this.TlsVersion != null)
                     hashCode = hashCode * 59 + this.TlsVersion.GetHashCode();
+                if (this.OcspStaplingStatus != null)
+                    hashCode = hashCode * 59 + this.OcspStaplingStatus.GetHashCode();
                 return hashCode;
             }
         }

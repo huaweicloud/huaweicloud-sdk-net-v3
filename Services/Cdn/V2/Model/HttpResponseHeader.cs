@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 设置HTTP响应头参数的值。自定义HTTP响应头参数长度范围1~256，支持字母、数字和特定字符（.-_*#!%&amp;+|^~&#39;\&quot;/:;,&#x3D;@?）。
+        /// 设置HTTP响应头参数的值。自定义HTTP响应头参数长度范围1~256，支持字母、数字和特定字符（.-_*#!&amp;+|^~&#39;\&quot;/:;,&#x3D;@?&lt;&gt;）。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

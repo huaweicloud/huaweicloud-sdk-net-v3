@@ -15,6 +15,23 @@ namespace HuaweiCloud.SDK.Cbr.V1
 
         
         /// <summary>
+        /// 新增备份路径
+        ///
+        /// 对客户端新增备份路径，新增的路径不会校验是否存在。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddAgentPathResponse AddAgentPath(AddAgentPathRequest addAgentPathRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agent_id" , addAgentPathRequest.AgentId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agents/{agent_id}/add-path",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addAgentPathRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AddAgentPathResponse>(response);
+        }
+        
+        /// <summary>
         /// 添加备份成员
         ///
         /// 添加备份可共享的成员，只有云服务器备份可以添加备份共享成员，且仅支持在同一区域的不同用户间共享。
@@ -309,6 +326,22 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 查询客户端列表
+        ///
+        /// 查询客户端列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAgentResponse ListAgent(ListAgentRequest listAgentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agents",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAgentResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询所有备份
         ///
         /// 查询所有副本
@@ -407,6 +440,39 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 注册客户端
+        ///
+        /// 注册客户端，安装时候由Agent调用，无需手动注册。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RegisterAgentResponse RegisterAgent(RegisterAgentRequest registerAgentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agents",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerAgentRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RegisterAgentResponse>(response);
+        }
+        
+        /// <summary>
+        /// 移除备份路径
+        ///
+        /// 移除已添加的文件备份路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RemoveAgentPathResponse RemoveAgentPath(RemoveAgentPathRequest removeAgentPathRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agent_id" , removeAgentPathRequest.AgentId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agents/{agent_id}/remove-path",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", removeAgentPathRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RemoveAgentPathResponse>(response);
+        }
+        
+        /// <summary>
         /// 移除资源
         ///
         /// 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
@@ -438,6 +504,23 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restoreBackupRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<RestoreBackupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定客户端
+        ///
+        /// 查询指定客户端
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAgentResponse ShowAgent(ShowAgentRequest showAgentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agent_id" , showAgentRequest.AgentId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agents/{agent_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAgentRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowAgentResponse>(response);
         }
         
         /// <summary>
@@ -644,6 +727,40 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVaultTagRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowVaultTagResponse>(response);
+        }
+        
+        /// <summary>
+        /// 移除客户端
+        ///
+        /// 移除客户端，移除客户端时将会删除该客户端所有备份，请谨慎操作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UnregisterAgentResponse UnregisterAgent(UnregisterAgentRequest unregisterAgentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agent_id" , unregisterAgentRequest.AgentId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agents/{agent_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", unregisterAgentRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<UnregisterAgentResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改客户端
+        ///
+        /// 修改客户端状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAgentResponse UpdateAgent(UpdateAgentRequest updateAgentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("agent_id" , updateAgentRequest.AgentId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agents/{agent_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAgentRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateAgentResponse>(response);
         }
         
         /// <summary>

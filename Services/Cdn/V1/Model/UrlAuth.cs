@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// URL鉴权
+    /// URL鉴权。
     /// </summary>
     public class UrlAuth 
     {
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 鉴权密钥由6 - 32位大小写字母、数字构成。
+        /// 鉴权KEY 由6-32位大小写字母、数字构成。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }

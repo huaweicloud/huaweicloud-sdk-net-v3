@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public HttpGetBody Https { get; set; }
 
         /// <summary>
-        /// 
+        /// 源站配置。
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
         public List<SourcesConfig> Sources { get; set; }
 
         /// <summary>
-        /// 
+        /// 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
         /// </summary>
         [JsonProperty("origin_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginProtocol { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string OriginFollow302Status { get; set; }
 
         /// <summary>
-        /// 
+        /// 缓存规则。
         /// </summary>
         [JsonProperty("cache_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<CacheRules> CacheRules { get; set; }
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Ipv6Accelerate { get; set; }
 
         /// <summary>
-        /// 
+        /// CDN状态码缓存时间
         /// </summary>
         [JsonProperty("error_code_cache", NullValueHandling = NullValueHandling.Ignore)]
         public List<ErrorCodeCache> ErrorCodeCache { get; set; }
@@ -123,6 +123,48 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         [JsonProperty("origin_request_url_rewrite", NullValueHandling = NullValueHandling.Ignore)]
         public List<OriginRequestUrlRewrite> OriginRequestUrlRewrite { get; set; }
+
+        /// <summary>
+        /// 高级回源，最多配置20条。
+        /// </summary>
+        [JsonProperty("flexible_origin", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FlexibleOrigins> FlexibleOrigin { get; set; }
+
+        /// <summary>
+        /// 回源是否校验ETag（on：开启，off：关闭）。
+        /// </summary>
+        [JsonProperty("slice_etag_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string SliceEtagStatus { get; set; }
+
+        /// <summary>
+        /// 回源超时时间，范围:5-60，单位：秒。
+        /// </summary>
+        [JsonProperty("origin_receive_timeout", NullValueHandling = NullValueHandling.Ignore)]
+        public int? OriginReceiveTimeout { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("remote_auth", NullValueHandling = NullValueHandling.Ignore)]
+        public CommonRemoteAuth RemoteAuth { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("websocket", NullValueHandling = NullValueHandling.Ignore)]
+        public WebSocketSeek Websocket { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("video_seek", NullValueHandling = NullValueHandling.Ignore)]
+        public VideoSeek VideoSeek { get; set; }
+
+        /// <summary>
+        /// 请求限速。
+        /// </summary>
+        [JsonProperty("request_limit_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RequestLimitRules> RequestLimitRules { get; set; }
 
         /// <summary>
         /// 自定义错误页面
@@ -157,6 +199,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  originRangeStatus: ").Append(OriginRangeStatus).Append("\n");
             sb.Append("  userAgentFilter: ").Append(UserAgentFilter).Append("\n");
             sb.Append("  originRequestUrlRewrite: ").Append(OriginRequestUrlRewrite).Append("\n");
+            sb.Append("  flexibleOrigin: ").Append(FlexibleOrigin).Append("\n");
+            sb.Append("  sliceEtagStatus: ").Append(SliceEtagStatus).Append("\n");
+            sb.Append("  originReceiveTimeout: ").Append(OriginReceiveTimeout).Append("\n");
+            sb.Append("  remoteAuth: ").Append(RemoteAuth).Append("\n");
+            sb.Append("  websocket: ").Append(Websocket).Append("\n");
+            sb.Append("  videoSeek: ").Append(VideoSeek).Append("\n");
+            sb.Append("  requestLimitRules: ").Append(RequestLimitRules).Append("\n");
             sb.Append("  errorCodeRedirectRules: ").Append(ErrorCodeRedirectRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -276,6 +325,43 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.OriginRequestUrlRewrite.SequenceEqual(input.OriginRequestUrlRewrite)
                 ) && 
                 (
+                    this.FlexibleOrigin == input.FlexibleOrigin ||
+                    this.FlexibleOrigin != null &&
+                    input.FlexibleOrigin != null &&
+                    this.FlexibleOrigin.SequenceEqual(input.FlexibleOrigin)
+                ) && 
+                (
+                    this.SliceEtagStatus == input.SliceEtagStatus ||
+                    (this.SliceEtagStatus != null &&
+                    this.SliceEtagStatus.Equals(input.SliceEtagStatus))
+                ) && 
+                (
+                    this.OriginReceiveTimeout == input.OriginReceiveTimeout ||
+                    (this.OriginReceiveTimeout != null &&
+                    this.OriginReceiveTimeout.Equals(input.OriginReceiveTimeout))
+                ) && 
+                (
+                    this.RemoteAuth == input.RemoteAuth ||
+                    (this.RemoteAuth != null &&
+                    this.RemoteAuth.Equals(input.RemoteAuth))
+                ) && 
+                (
+                    this.Websocket == input.Websocket ||
+                    (this.Websocket != null &&
+                    this.Websocket.Equals(input.Websocket))
+                ) && 
+                (
+                    this.VideoSeek == input.VideoSeek ||
+                    (this.VideoSeek != null &&
+                    this.VideoSeek.Equals(input.VideoSeek))
+                ) && 
+                (
+                    this.RequestLimitRules == input.RequestLimitRules ||
+                    this.RequestLimitRules != null &&
+                    input.RequestLimitRules != null &&
+                    this.RequestLimitRules.SequenceEqual(input.RequestLimitRules)
+                ) && 
+                (
                     this.ErrorCodeRedirectRules == input.ErrorCodeRedirectRules ||
                     this.ErrorCodeRedirectRules != null &&
                     input.ErrorCodeRedirectRules != null &&
@@ -327,6 +413,20 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.UserAgentFilter.GetHashCode();
                 if (this.OriginRequestUrlRewrite != null)
                     hashCode = hashCode * 59 + this.OriginRequestUrlRewrite.GetHashCode();
+                if (this.FlexibleOrigin != null)
+                    hashCode = hashCode * 59 + this.FlexibleOrigin.GetHashCode();
+                if (this.SliceEtagStatus != null)
+                    hashCode = hashCode * 59 + this.SliceEtagStatus.GetHashCode();
+                if (this.OriginReceiveTimeout != null)
+                    hashCode = hashCode * 59 + this.OriginReceiveTimeout.GetHashCode();
+                if (this.RemoteAuth != null)
+                    hashCode = hashCode * 59 + this.RemoteAuth.GetHashCode();
+                if (this.Websocket != null)
+                    hashCode = hashCode * 59 + this.Websocket.GetHashCode();
+                if (this.VideoSeek != null)
+                    hashCode = hashCode * 59 + this.VideoSeek.GetHashCode();
+                if (this.RequestLimitRules != null)
+                    hashCode = hashCode * 59 + this.RequestLimitRules.GetHashCode();
                 if (this.ErrorCodeRedirectRules != null)
                     hashCode = hashCode * 59 + this.ErrorCodeRedirectRules.GetHashCode();
                 return hashCode;

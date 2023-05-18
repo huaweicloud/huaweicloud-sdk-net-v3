@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// UA黑白名单设置
+    /// UA黑白名单设置。
     /// </summary>
     public class UserAgentFilter 
     {
@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
+        /// <summary>
+        /// 配置UA黑白名单，当type&#x3D;off时，非必传。最多配置10条规则，单条规则不超过100个字符,同时配置value和ua_list时，ua_list生效。 
+        /// </summary>
+        [JsonProperty("ua_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> UaList { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("class UserAgentFilter {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  uaList: ").Append(UaList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.UaList == input.UaList ||
+                    this.UaList != null &&
+                    input.UaList != null &&
+                    this.UaList.SequenceEqual(input.UaList)
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.UaList != null)
+                    hashCode = hashCode * 59 + this.UaList.GetHashCode();
                 return hashCode;
             }
         }

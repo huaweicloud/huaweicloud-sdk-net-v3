@@ -231,6 +231,23 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询项目模板
+        ///
+        /// 查询项目模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTemplatesResponse ListTemplates(ListTemplatesRequest listTemplatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listTemplatesRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/templates",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListTemplatesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询看板项目下工作项的状态历史记录
         ///
         /// 分页查询看板项目下工作项的状态历史记录
@@ -1057,6 +1074,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             ListStatusStatisticResponse listStatusStatisticResponse = JsonUtils.DeSerializeNull<ListStatusStatisticResponse>(response);
             listStatusStatisticResponse.Body = JsonUtils.DeSerializeList<UserStatusStatistic>(response);
             return listStatusStatisticResponse;
+        }
+        
+        /// <summary>
+        /// 高级查询我的待办工作项
+        ///
+        /// 高级查询我的待办工作项
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SearchIssuesResponse SearchIssues(SearchIssuesRequest searchIssuesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v4/issues",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchIssuesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<SearchIssuesResponse>(response);
         }
         
         /// <summary>

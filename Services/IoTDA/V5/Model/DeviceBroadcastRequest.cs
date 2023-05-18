@@ -29,10 +29,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string TopicFullName { get; set; }
 
         /// <summary>
-        /// **参数说明**：广播消息的内容，您需要将消息原文转换成二进制数据并进行Base64编码，Base64编码后的长度不超过128KB。
+        /// **参数说明**：广播消息的内容，用户需要将消息原文使用Base64编码，Base64编码后的长度不超过128KB。
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }
+
+        /// <summary>
+        /// **参数说明**：广播消息在平台缓存的老化时间，时间单位是分钟，默认值为0；ttl参数数值必须是5的倍数，即以5分钟为粒度；指定为0时表示不缓存消息，最大缓存时间1440分钟，即缓存一天；ttl&gt;0时，一个topic订阅设备数限制为10，如果一个topic订阅设备数超过10，则接口返回错误。
+        /// </summary>
+        [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Ttl { get; set; }
+
+        /// <summary>
+        /// **参数说明**：消息id，由用户生成（推荐使用UUID）。ttl&gt; 0时，平台会缓存消息，需确保message_id是唯一的， 否则接口返回错误。 **取值范围**：长度不超过100，只允许字母、数字、下划线（_）、连接符（-）的组合。
+        /// </summary>
+        [JsonProperty("message_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string MessageId { get; set; }
 
 
 
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  topicFullName: ").Append(TopicFullName).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  ttl: ").Append(Ttl).Append("\n");
+            sb.Append("  messageId: ").Append(MessageId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +95,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Ttl == input.Ttl ||
+                    (this.Ttl != null &&
+                    this.Ttl.Equals(input.Ttl))
+                ) && 
+                (
+                    this.MessageId == input.MessageId ||
+                    (this.MessageId != null &&
+                    this.MessageId.Equals(input.MessageId))
                 );
         }
 
@@ -98,6 +122,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.TopicFullName.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Ttl != null)
+                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                if (this.MessageId != null)
+                    hashCode = hashCode * 59 + this.MessageId.GetHashCode();
                 return hashCode;
             }
         }

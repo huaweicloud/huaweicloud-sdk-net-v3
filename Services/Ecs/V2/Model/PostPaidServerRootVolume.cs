@@ -304,6 +304,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("extendparam", NullValueHandling = NullValueHandling.Ignore)]
         public PostPaidServerRootVolumeExtendParam Extendparam { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public PostPaidServerRootVolumeMetadata Metadata { get; set; }
+
 
 
         /// <summary>
@@ -319,6 +325,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  clusterType: ").Append(ClusterType).Append("\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  extendparam: ").Append(Extendparam).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -369,6 +376,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Extendparam == input.Extendparam ||
                     (this.Extendparam != null &&
                     this.Extendparam.Equals(input.Extendparam))
+                ) && 
+                (
+                    this.Metadata == input.Metadata ||
+                    (this.Metadata != null &&
+                    this.Metadata.Equals(input.Metadata))
                 );
         }
 
@@ -392,6 +404,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.Extendparam != null)
                     hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
+                if (this.Metadata != null)
+                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

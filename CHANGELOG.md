@@ -1,3 +1,162 @@
+# 3.1.39 2023-05-18
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - Support the following interfaces：
+    - `AddAgentPath`
+    - `ShowAgent`
+    - `UpdateAgent`
+    - `UnregisterAgent`
+    - `ListAgent`
+    - `RegisterAgent`
+    - `RemoveAgentPath`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `+ status.lastProbeTime`
+  - **UpdateNode**
+    - changes of response param
+      - `+ status.lastProbeTime`
+  - **DeleteNode**
+    - changes of response param
+      - `+ status.lastProbeTime`
+  - **CreateNode**
+    - changes of response param
+      - `+ status.lastProbeTime`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.status.lastProbeTime`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateRefreshTasks**
+    - changes of request param
+      - `* refresh_task.mode: boolean -> string`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.flexible_origin`
+      - `+ configs.slice_etag_status`
+      - `+ configs.origin_receive_timeout`
+      - `+ configs.remote_auth`
+      - `+ configs.websocket`
+      - `+ configs.video_seek`
+      - `+ configs.request_limit_rules`
+      - `+ configs.url_auth.sign_method`
+      - `+ configs.url_auth.match_type`
+      - `+ configs.url_auth.key`
+      - `+ configs.url_auth.backup_key`
+      - `+ configs.url_auth.sign_arg`
+      - `+ configs.https.expire_time`
+      - `+ configs.https.certificate_type`
+      - `+ configs.https.ocsp_stapling_status`
+      - `+ configs.sources.obs_bucket_type`
+      - `+ configs.compress.file_type`
+      - `+ configs.user_agent_filter.ua_list`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.flexible_origin`
+      - `+ configs.slice_etag_status`
+      - `+ configs.origin_receive_timeout`
+      - `+ configs.remote_auth`
+      - `+ configs.websocket`
+      - `+ configs.video_seek`
+      - `+ configs.request_limit_rules`
+      - `+ configs.url_auth.sign_method`
+      - `+ configs.url_auth.match_type`
+      - `+ configs.url_auth.backup_key`
+      - `+ configs.url_auth.sign_arg`
+      - `+ configs.https.certificate_type`
+      - `+ configs.https.ocsp_stapling_status`
+      - `+ configs.sources.obs_bucket_type`
+      - `+ configs.compress.file_type`
+      - `+ configs.user_agent_filter.ua_list`
+  - **ShowDomainDetailByName**
+    - changes of response param
+      - `+ domain.sources.obs_bucket_type`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateServers**
+    - changes of request param
+      - `+ server.root_volume.metadata`
+      - `- server.root_volume.extendparam.__system__encrypted`
+      - `- server.root_volume.extendparam.__system__cmkid`
+      - `+ server.data_volumes.delete_on_termination`
+  - **CreatePostPaidServers**
+    - changes of request param
+      - `+ server.data_volumes.delete_on_termination`
+      - `+ server.root_volume.metadata`
+      - `- server.root_volume.extendparam.__system__encrypted`
+      - `- server.root_volume.extendparam.__system__cmkid`
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BroadcastMessage**
+    - changes of request param
+      - `+ ttl`
+      - `+ message_id`
+  - **ShowDeviceGroup**
+    - changes of response param
+      - `+ dynamic_group_rule`
+      - `+ group_type`
+  - **UpdateDeviceGroup**
+    - changes of response param
+      - `+ dynamic_group_rule`
+      - `+ group_type`
+  - **SearchDevices**
+    - changes of response param
+      - `+ devices.groups`
+  - **AddDeviceGroup**
+    - changes of request param
+      - `+ group_type`
+      - `+ dynamic_group_rule`
+    - changes of response param
+      - `+ dynamic_group_rule`
+      - `+ group_type`
+  - **ListDeviceGroups**
+    - changes of request param
+      - `+ group_type`
+      - `+ name`
+    - changes of response param
+      - `+ device_groups.group_type`
+      - `* device_groups: list<DeviceGroupResponsSummery> -> list<DeviceGroupResponseSummary>`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - Support the interfaces `ListTemplates`, `SearchIssues`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.38 2023-05-11
 
 ### HuaweiCloud SDK AOS

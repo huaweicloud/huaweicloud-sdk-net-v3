@@ -49,59 +49,137 @@ Install-Package HuaweiCloud.SDK.Vpc
 ## 代码示例
 
 - 使用如下代码同步查询指定 Region 下的 VPC 列表，实际使用中请将 `VpcClient` 替换为您使用的产品/服务相应的 `{Service}Client` 。
-- 调用前请根据实际情况替换如下变量： `{your ak string}`、`{your sk string}`、`{your endpoint string}` 以及 `{your project id}`。
+- 调用前请根据实际情况替换如下变量： `{your ak string}` 和 `{your sk string}`
+
+**精简示例**
 
 ``` csharp
 using System;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Core.Auth;
-// 导入指定云服务的 {Service}，此处以 Vpc 为例
 using HuaweiCloud.SDK.Vpc.V2;
 using HuaweiCloud.SDK.Vpc.V2.Model;
-// 导入日志打印的命名空间
-using Microsoft.Extensions.Logging;
 
-namespace ConsoleApp1
+namespace ListVpcsSolution
 {
     class Program
     {
         static void Main(string[] args)
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-            const string endpoint = "{your endpoint string}";
-            const string projectId = "{your projectID string}";
+            // 配置认证信息
+            var auth = new BasicCredentials("{your ak string}", "{your sk string}");
 
-            Credentials auth = new BasicCredentials(ak, sk, projectId);
-            var config = HttpConfig.GetDefaultConfig();
-            config.IgnoreSslVerification = true;
-
-            VpcClient vpcClient = VpcClient.NewBuilder()
+            // 创建客户端
+            var client = VpcClient.NewBuilder()
                 .WithCredential(auth)
-                .WithEndPoint(endpoint)
-                .WithHttpConfig(config)
-                .WithLogging(LogLevel.Information)
+                .WithRegion(VpcRegion.ValueOf("cn-north-4"))
                 .Build();
 
-            var request = new ListVpcsRequest
-            {
-                Limit = 1
-            };
-
+            // 创建请求
+            var request = new ListVpcsRequest();
             try
             {
-                var response = vpcClient.ListVpcs(request);
-                Console.WriteLine(JsonUtils.Serialize(response.Vpcs));
+                // 发送请求并获取响应
+                var response = client.ListVpcs(request);
+                Console.WriteLine(response.HttpStatusCode);
             }
             catch (RequestTimeoutException requestTimeoutException)
             {
                 Console.WriteLine(requestTimeoutException.ErrorMessage);
             }
-            catch (ServiceResponseException serviceResponseException)
+            catch (ServiceResponseException clientRequestException)
             {
-                Console.WriteLine(serviceResponseException.HttpStatusCode);
-                Console.WriteLine(serviceResponseException.ErrorCode);
-                Console.WriteLine(serviceResponseException.ErrorMsg);
+                Console.WriteLine(clientRequestException.HttpStatusCode);
+                Console.WriteLine(clientRequestException.RequestId);
+                Console.WriteLine(clientRequestException.ErrorCode);
+                Console.WriteLine(clientRequestException.ErrorMsg);
+            }
+            catch (ConnectionException connectionException)
+            {
+                Console.WriteLine(connectionException.ErrorMessage);
+            }
+        }
+    }
+}
+```
+
+**详细示例**
+
+```java
+using System;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+using Microsoft.Extensions.Logging;
+
+namespace ListVpcsSolution
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 配置认证信息
+            // 如果未填写projectId，SDK会自动调用IAM服务查询所在region对应的项目id
+            var auth = new BasicCredentials("{your ak string}", "{your sk string}", projectId: "{your projectId string}")
+                // 配置SDK内置的IAM服务地址，默认为https://iam.myhuaweicloud.com
+                .WithIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
+
+            // 使用默认配置
+            var httpConfig = HttpConfig.GetDefaultConfig()
+                // 配置是否忽略SSL证书校验， 默认不忽略
+                .WithIgnoreSslVerification(true)
+                // 默认超时时间为120秒，可根据需要配置
+                .WithTimeout(120)
+                // 根据需要配置网络代理
+                .WithProxyHost("proxy.huaweicloud.com")
+                .WithProxyPort(8080)
+                .WithIgnoreProxyUsername("username")
+                .WithIgnoreProxyPassword("password");
+
+            // 配置HTTP监听器用于打印原始请求和响应信息,请勿用于生产环境
+            var httpHandler = new HttpHandler()
+                .AddRequestHandler((requestMessage, logger) => logger.LogDebug(requestMessage.ToString()))
+                .AddResponseHandler((responseMessage, logger) => logger.LogDebug(responseMessage.ToString()));
+
+            // 创建客户端
+            var client = VpcClient.NewBuilder()
+                // 配置认证信息
+                .WithCredential(auth)
+                // 配置地区, 如果地区不存在会抛出ArgumentNullException
+                .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+                // 配置日志级别
+                .WithLogging(LogLevel.Debug)
+                // 配置HTTP监听器
+                .WithHttpHandler(httpHandler)
+                // HTTP配置
+                .WithHttpConfig(httpConfig)
+                .Build();
+
+            // 创建请求
+            var request = new ListVpcsRequest();
+            // 配置每页返回的个数
+            request.Limit = 1;
+            try
+            {
+                // 发送请求并获取响应
+                var response = client.ListVpcs(request);
+                foreach (var vpc in response.Vpcs)
+                {
+                    Console.WriteLine(vpc.Name);
+                    Console.WriteLine(vpc.Description);
+                }
+            }
+            catch (RequestTimeoutException requestTimeoutException)
+            {
+                Console.WriteLine(requestTimeoutException.ErrorMessage);
+            }
+            catch (ServiceResponseException clientRequestException)
+            {
+                Console.WriteLine(clientRequestException.HttpStatusCode);
+                Console.WriteLine(clientRequestException.RequestId);
+                Console.WriteLine(clientRequestException.ErrorCode);
+                Console.WriteLine(clientRequestException.ErrorMsg);
             }
             catch (ConnectionException connectionException)
             {
@@ -149,7 +227,11 @@ namespace ConsoleApp1
 
 ``` csharp
 // 使用默认配置
-var config = HttpConfig.GetDefaultConfig();
+var httpConfig = HttpConfig.GetDefaultConfig();
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 #### 1.2 网络代理 [:top:](#用户手册-top)
@@ -159,34 +241,52 @@ var config = HttpConfig.GetDefaultConfig();
 - 若配置代理时指定了端口号，则默认仅支持 HTTP 代理
 
 ``` csharp
-config.ProxyHost = "proxy.huaweicloud.com";
-// 指定端口号为8080
-config.ProxyPort = 8080;
-config.ProxyUsername = "test";
-config.ProxyPassword = "test";
+var httpConfig = HttpConfig.GetDefaultConfig()
+    .WithProxyHost("proxy.huaweicloud.com")
+    // 指定端口号为8080
+    .WithProxyPort(8080)
+    .WithIgnoreProxyUsername("username")
+    .WithIgnoreProxyPassword("password");
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 - 若配置代理时未指定端口号，则可支持 HTTP 和 HTTPS 代理
 
 ``` csharp
-// 协议和端口号均在host中
-config.ProxyHost = "https://proxy.huaweicloud.com:8080";
-config.ProxyUsername = "test";
-config.ProxyPassword = "test";
+var httpConfig = HttpConfig.GetDefaultConfig()
+    // 协议和端口号均在host中
+    .WithProxyHost("https://proxy.huaweicloud.com:8080")
+    .WithIgnoreProxyUsername("username")
+    .WithIgnoreProxyPassword("password");
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 #### 1.3 超时配置 [:top:](#用户手册-top)
 
 ``` csharp
 // 默认超时时间为120秒，可根据需要调整
-config.Timeout = 120;
+var httpConfig = HttpConfig.GetDefaultConfig().WithTimeout(120);
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 #### 1.4 SSL 配置 [:top:](#用户手册-top)
 
 ``` csharp
 // 根据需要配置是否跳过SSL证书验证
-config.IgnoreSslVerification = true;
+var httpConfig = HttpConfig.GetDefaultConfig().WithIgnoreSslVerification(true);
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 ### 2. 认证信息配置 [:top:](#用户手册-top)
@@ -412,11 +512,8 @@ private void ResponseHandler(HttpResponseMessage message, ILogger logger)
     logger.LogDebug(message.ToString());
 }
 
-var vpcClient = VpcClient.NewBuilder()
-    .WithCredential(auth)
-    .WithEndPoint(endpoint)
+var client = VpcClient.NewBuilder()
     .WithLogging(LogLevel.Debug)
-    .WithHttpConfig(config)
     .WithHttpHandler(new HttpHandler()
         .AddRequestHandler(RequestHandler)
         .AddResponseHandler(ResponseHandler))

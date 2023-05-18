@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<ServiceCommand> Commands { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备服务支持的事件列表。 **取值范围**：数组长度大小不超过500。
+        /// **参数说明**：设备服务支持的事件列表。目前暂未支持自定义事件，创建/修改产品时无需定义该字段。 **取值范围**：数组长度大小不超过500。
         /// </summary>
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
         public List<ServiceEvent> Events { get; set; }

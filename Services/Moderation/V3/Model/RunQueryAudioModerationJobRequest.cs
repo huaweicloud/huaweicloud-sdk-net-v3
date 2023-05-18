@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// 创建作业成功时，接口返回的job_id。
         /// </summary>
         [SDKProperty("job_id", IsPath = true)]
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
