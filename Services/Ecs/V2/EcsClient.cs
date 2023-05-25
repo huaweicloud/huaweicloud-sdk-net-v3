@@ -491,6 +491,22 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询规格销售策略
+        ///
+        /// 查询规格销售策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListFlavorSellPoliciesResponse ListFlavorSellPolicies(ListFlavorSellPoliciesRequest listFlavorSellPoliciesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/flavor-sell-policies",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorSellPoliciesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListFlavorSellPoliciesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询规格详情和规格扩展信息列表
         ///
         /// 查询云服务器规格详情信息和规格扩展信息列表。

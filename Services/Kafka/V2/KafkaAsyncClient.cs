@@ -104,6 +104,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 关闭kafka manager
+        ///
+        /// 关闭kafka manager，相应的原来开放出的management相关接口也将不可用
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CloseKafkaManagerResponse> CloseKafkaManagerAsync(CloseKafkaManagerRequest closeKafkaManagerRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , closeKafkaManagerRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/management",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeKafkaManagerRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<CloseKafkaManagerResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建实例的转储节点
         ///
         /// 创建实例的转储节点。
@@ -120,6 +137,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateConnectorResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建关闭实例转储节点的订单
+        ///
+        /// 创建删除实例转储节点的订单。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDeleteConnectorOrderResponse> CreateDeleteConnectorOrderAsync(CreateDeleteConnectorOrderRequest createDeleteConnectorOrderRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createDeleteConnectorOrderRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector-order",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeleteConnectorOrderRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateDeleteConnectorOrderResponse>(response);
         }
         
         /// <summary>
@@ -173,6 +207,24 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceUserRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CreateInstanceUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建消费组
+        ///
+        /// 实例创建消费组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateKafkaConsumerGroupResponse> CreateKafkaConsumerGroupAsync(CreateKafkaConsumerGroupRequest createKafkaConsumerGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createKafkaConsumerGroupRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaConsumerGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            CreateKafkaConsumerGroupResponse createKafkaConsumerGroupResponse = JsonUtils.DeSerializeNull<CreateKafkaConsumerGroupResponse>(response);
+            return createKafkaConsumerGroupResponse;
         }
         
         /// <summary>
@@ -259,6 +311,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 关闭实例转储节点
+        ///
+        /// 关闭实例转储节点。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest deleteConnectorRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteConnectorRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DeleteConnectorResponse>(response);
         }
         
         /// <summary>
@@ -457,7 +526,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         ///
         /// Kafka实例不支持在线重置消费进度。在执行重置消费进度之前，必须停止被重置消费组客户端。
         /// 
-        /// &gt; 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
+        /// 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -510,7 +579,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 实例规格变更
         ///
-        /// 实例规格变更。
+        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -528,7 +597,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 实例规格变更
         ///
-        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)
+        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -717,9 +786,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询Kafka实例Topic详细信息(单个实例调用不要超过1s一次)
+        /// 查询Kafka实例Topic详细信息
         ///
-        /// 查询Kafka实例Topic详细信息。
+        /// 查询Kafka实例Topic详细信息。(单个实例调用不要超过1s一次)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

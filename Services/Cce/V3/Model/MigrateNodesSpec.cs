@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Login Login { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
+        public Runtime Runtime { get; set; }
+
+        /// <summary>
         /// 待操作节点列表
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  os: ").Append(Os).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  login: ").Append(Login).Append("\n");
+            sb.Append("  runtime: ").Append(Runtime).Append("\n");
             sb.Append("  nodes: ").Append(Nodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Login.Equals(input.Login))
                 ) && 
                 (
+                    this.Runtime == input.Runtime ||
+                    (this.Runtime != null &&
+                    this.Runtime.Equals(input.Runtime))
+                ) && 
+                (
                     this.Nodes == input.Nodes ||
                     this.Nodes != null &&
                     input.Nodes != null &&
@@ -111,6 +123,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.Login != null)
                     hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.Runtime != null)
+                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
                 if (this.Nodes != null)
                     hashCode = hashCode * 59 + this.Nodes.GetHashCode();
                 return hashCode;

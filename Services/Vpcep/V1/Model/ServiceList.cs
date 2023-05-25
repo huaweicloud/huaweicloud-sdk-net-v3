@@ -258,9 +258,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+        /// 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
         /// </summary>
-        /// <value>用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。</value>
+        /// <value>用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。</value>
         [JsonConverter(typeof(EnumClassConverter<TcpProxyEnum>))]
         public class TcpProxyEnum
         {
@@ -404,12 +404,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string PortId { get; set; }
 
         /// <summary>
-        /// 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参数。
-        /// </summary>
-        [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string VipPortId { get; set; }
-
-        /// <summary>
         /// 终端节点服务的名称。
         /// </summary>
         [JsonProperty("service_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -486,7 +480,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public int? ConnectionCount { get; set; }
 
         /// <summary>
-        /// 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+        /// 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
         /// </summary>
         [JsonProperty("tcp_proxy", NullValueHandling = NullValueHandling.Ignore)]
         public TcpProxyEnum TcpProxy { get; set; }
@@ -525,7 +519,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("class ServiceList {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  portId: ").Append(PortId).Append("\n");
-            sb.Append("  vipPortId: ").Append(VipPortId).Append("\n");
             sb.Append("  serviceName: ").Append(ServiceName).Append("\n");
             sb.Append("  serverType: ").Append(ServerType).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
@@ -574,11 +567,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PortId == input.PortId ||
                     (this.PortId != null &&
                     this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.VipPortId == input.VipPortId ||
-                    (this.VipPortId != null &&
-                    this.VipPortId.Equals(input.VipPortId))
                 ) && 
                 (
                     this.ServiceName == input.ServiceName ||
@@ -687,8 +675,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.PortId != null)
                     hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.VipPortId != null)
-                    hashCode = hashCode * 59 + this.VipPortId.GetHashCode();
                 if (this.ServiceName != null)
                     hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
                 if (this.ServerType != null)

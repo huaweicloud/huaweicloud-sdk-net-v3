@@ -440,7 +440,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ResourceSpecCode { get; set; }
 
         /// <summary>
-        /// [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm)
+        /// &#39;[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm)&#39;
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }
@@ -671,6 +671,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? PublicBandwidth { get; set; }
 
         /// <summary>
+        /// 是否已开启kafka manager
+        /// </summary>
+        [JsonProperty("kafka_manager_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? KafkaManagerEnable { get; set; }
+
+        /// <summary>
         /// 登录Kafka Manager的用户名。
         /// </summary>
         [JsonProperty("kafka_manager_user", NullValueHandling = NullValueHandling.Ignore)]
@@ -893,6 +899,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
             sb.Append("  kafkaPublicStatus: ").Append(KafkaPublicStatus).Append("\n");
             sb.Append("  publicBandwidth: ").Append(PublicBandwidth).Append("\n");
+            sb.Append("  kafkaManagerEnable: ").Append(KafkaManagerEnable).Append("\n");
             sb.Append("  kafkaManagerUser: ").Append(KafkaManagerUser).Append("\n");
             sb.Append("  enableLogCollection: ").Append(EnableLogCollection).Append("\n");
             sb.Append("  crossVpcInfo: ").Append(CrossVpcInfo).Append("\n");
@@ -1204,6 +1211,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.PublicBandwidth.Equals(input.PublicBandwidth))
                 ) && 
                 (
+                    this.KafkaManagerEnable == input.KafkaManagerEnable ||
+                    (this.KafkaManagerEnable != null &&
+                    this.KafkaManagerEnable.Equals(input.KafkaManagerEnable))
+                ) && 
+                (
                     this.KafkaManagerUser == input.KafkaManagerUser ||
                     (this.KafkaManagerUser != null &&
                     this.KafkaManagerUser.Equals(input.KafkaManagerUser))
@@ -1454,6 +1466,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.KafkaPublicStatus.GetHashCode();
                 if (this.PublicBandwidth != null)
                     hashCode = hashCode * 59 + this.PublicBandwidth.GetHashCode();
+                if (this.KafkaManagerEnable != null)
+                    hashCode = hashCode * 59 + this.KafkaManagerEnable.GetHashCode();
                 if (this.KafkaManagerUser != null)
                     hashCode = hashCode * 59 + this.KafkaManagerUser.GetHashCode();
                 if (this.EnableLogCollection != null)

@@ -8,19 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Image.V2.Model
+namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class VideoObjectMaskingTaskConfigCommon 
+    public class CloseKafkaManagerRequest 
     {
 
         /// <summary>
-        /// 
+        /// 实例id
         /// </summary>
-        [JsonProperty("inference", NullValueHandling = NullValueHandling.Ignore)]
-        public VideoObjectMaskingInference Inference { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -30,8 +31,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class VideoObjectMaskingTaskConfigCommon {\n");
-            sb.Append("  inference: ").Append(Inference).Append("\n");
+            sb.Append("class CloseKafkaManagerRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +42,22 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as VideoObjectMaskingTaskConfigCommon);
+            return this.Equals(input as CloseKafkaManagerRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(VideoObjectMaskingTaskConfigCommon input)
+        public bool Equals(CloseKafkaManagerRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Inference == input.Inference ||
-                    (this.Inference != null &&
-                    this.Inference.Equals(input.Inference))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Inference != null)
-                    hashCode = hashCode * 59 + this.Inference.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

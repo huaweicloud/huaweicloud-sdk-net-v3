@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 是否开启改插件。
+        /// 是否开启该插件。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }

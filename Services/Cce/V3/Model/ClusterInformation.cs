@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public ClusterInformationSpec Spec { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public ClusterMetadataForUpdate Metadata { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ClusterInformation {\n");
             sb.Append("  spec: ").Append(Spec).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Spec == input.Spec ||
                     (this.Spec != null &&
                     this.Spec.Equals(input.Spec))
+                ) && 
+                (
+                    this.Metadata == input.Metadata ||
+                    (this.Metadata != null &&
+                    this.Metadata.Equals(input.Metadata))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 int hashCode = 41;
                 if (this.Spec != null)
                     hashCode = hashCode * 59 + this.Spec.GetHashCode();
+                if (this.Metadata != null)
+                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

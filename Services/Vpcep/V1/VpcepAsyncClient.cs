@@ -487,7 +487,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
-        /// 更新终端节点的白名单
+        /// 更新终端节点
         ///
         /// 功能介绍
         /// 更新或删除允许访问终端节点的白名单。

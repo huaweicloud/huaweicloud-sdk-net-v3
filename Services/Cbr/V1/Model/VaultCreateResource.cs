@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 是否开启存储库自动扩容能力（只支持按需存储库）
+        /// [是否开启存储库自动扩容能力（只支持按需存储库）。](tag:hws,hws_hk) [是否开启存储库自动扩容能力。](tag:dt,ocb,tlf,sbc,fcs_vm,ctc,g42,tm,cmcc,tm,hcso_dt)
         /// </summary>
         [JsonProperty("auto_expand", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoExpand { get; set; }
@@ -130,6 +130,30 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("orders", NullValueHandling = NullValueHandling.Ignore)]
         public List<CbcOrderResult> Orders { get; set; }
 
+        /// <summary>
+        /// 备份名称前缀
+        /// </summary>
+        [JsonProperty("backup_name_prefix", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupNamePrefix { get; set; }
+
+        /// <summary>
+        /// 是否允许使用超出存储库容量
+        /// </summary>
+        [JsonProperty("demand_billing", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DemandBilling { get; set; }
+
+        /// <summary>
+        /// 存储库删除次数
+        /// </summary>
+        [JsonProperty("cbc_delete_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CbcDeleteCount { get; set; }
+
+        /// <summary>
+        /// 存储库是否冻结
+        /// </summary>
+        [JsonProperty("frozen", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Frozen { get; set; }
+
 
 
         /// <summary>
@@ -158,6 +182,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  errText: ").Append(ErrText).Append("\n");
             sb.Append("  retCode: ").Append(RetCode).Append("\n");
             sb.Append("  orders: ").Append(Orders).Append("\n");
+            sb.Append("  backupNamePrefix: ").Append(BackupNamePrefix).Append("\n");
+            sb.Append("  demandBilling: ").Append(DemandBilling).Append("\n");
+            sb.Append("  cbcDeleteCount: ").Append(CbcDeleteCount).Append("\n");
+            sb.Append("  frozen: ").Append(Frozen).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -276,6 +304,26 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Orders != null &&
                     input.Orders != null &&
                     this.Orders.SequenceEqual(input.Orders)
+                ) && 
+                (
+                    this.BackupNamePrefix == input.BackupNamePrefix ||
+                    (this.BackupNamePrefix != null &&
+                    this.BackupNamePrefix.Equals(input.BackupNamePrefix))
+                ) && 
+                (
+                    this.DemandBilling == input.DemandBilling ||
+                    (this.DemandBilling != null &&
+                    this.DemandBilling.Equals(input.DemandBilling))
+                ) && 
+                (
+                    this.CbcDeleteCount == input.CbcDeleteCount ||
+                    (this.CbcDeleteCount != null &&
+                    this.CbcDeleteCount.Equals(input.CbcDeleteCount))
+                ) && 
+                (
+                    this.Frozen == input.Frozen ||
+                    (this.Frozen != null &&
+                    this.Frozen.Equals(input.Frozen))
                 );
         }
 
@@ -325,6 +373,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.RetCode.GetHashCode();
                 if (this.Orders != null)
                     hashCode = hashCode * 59 + this.Orders.GetHashCode();
+                if (this.BackupNamePrefix != null)
+                    hashCode = hashCode * 59 + this.BackupNamePrefix.GetHashCode();
+                if (this.DemandBilling != null)
+                    hashCode = hashCode * 59 + this.DemandBilling.GetHashCode();
+                if (this.CbcDeleteCount != null)
+                    hashCode = hashCode * 59 + this.CbcDeleteCount.GetHashCode();
+                if (this.Frozen != null)
+                    hashCode = hashCode * 59 + this.Frozen.GetHashCode();
                 return hashCode;
             }
         }

@@ -71,10 +71,34 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public VaultBindRules BindRules { get; set; }
 
         /// <summary>
-        /// 是否自动扩容。按需存储库支持自动扩容，包周期存储库不支持扩容。
+        /// [是否开启存储库自动扩容能力（只支持按需存储库）。](tag:hws,hws_hk) [是否开启存储库自动扩容能力。](tag:dt,ocb,tlf,sbc,fcs_vm,ctc,g42,tm,cmcc,hcso_dt)
         /// </summary>
         [JsonProperty("auto_expand", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoExpand { get; set; }
+
+        /// <summary>
+        /// 存储库容量阈值，已用容量占总容量达到此百分比，将根据 smn_notify 参数设置选择是否发送相关通知。 默认值为：80 最大值：100 最小值：1
+        /// </summary>
+        [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Threshold { get; set; }
+
+        /// <summary>
+        /// 存储库smn消息通知开关。 默认值为 true。
+        /// </summary>
+        [JsonProperty("smn_notify", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SmnNotify { get; set; }
+
+        /// <summary>
+        /// 备份名称前缀，设置后该存储库自动备份产生的备份副本都将携带该备份名称前缀
+        /// </summary>
+        [JsonProperty("backup_name_prefix", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupNamePrefix { get; set; }
+
+        /// <summary>
+        /// 存储库使用是否允许超出容量，只有创建包周期存储库时才允许该值为 true
+        /// </summary>
+        [JsonProperty("demand_billing", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DemandBilling { get; set; }
 
 
 
@@ -95,6 +119,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  autoBind: ").Append(AutoBind).Append("\n");
             sb.Append("  bindRules: ").Append(BindRules).Append("\n");
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
+            sb.Append("  threshold: ").Append(Threshold).Append("\n");
+            sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
+            sb.Append("  backupNamePrefix: ").Append(BackupNamePrefix).Append("\n");
+            sb.Append("  demandBilling: ").Append(DemandBilling).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,6 +195,26 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.AutoExpand == input.AutoExpand ||
                     (this.AutoExpand != null &&
                     this.AutoExpand.Equals(input.AutoExpand))
+                ) && 
+                (
+                    this.Threshold == input.Threshold ||
+                    (this.Threshold != null &&
+                    this.Threshold.Equals(input.Threshold))
+                ) && 
+                (
+                    this.SmnNotify == input.SmnNotify ||
+                    (this.SmnNotify != null &&
+                    this.SmnNotify.Equals(input.SmnNotify))
+                ) && 
+                (
+                    this.BackupNamePrefix == input.BackupNamePrefix ||
+                    (this.BackupNamePrefix != null &&
+                    this.BackupNamePrefix.Equals(input.BackupNamePrefix))
+                ) && 
+                (
+                    this.DemandBilling == input.DemandBilling ||
+                    (this.DemandBilling != null &&
+                    this.DemandBilling.Equals(input.DemandBilling))
                 );
         }
 
@@ -198,6 +246,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.BindRules.GetHashCode();
                 if (this.AutoExpand != null)
                     hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
+                if (this.Threshold != null)
+                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.SmnNotify != null)
+                    hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
+                if (this.BackupNamePrefix != null)
+                    hashCode = hashCode * 59 + this.BackupNamePrefix.GetHashCode();
+                if (this.DemandBilling != null)
+                    hashCode = hashCode * 59 + this.DemandBilling.GetHashCode();
                 return hashCode;
             }
         }

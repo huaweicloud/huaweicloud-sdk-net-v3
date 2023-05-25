@@ -8,20 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Image.V2.Model
+namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class CreateVideoObjectMaskingTaskRequest 
+    public class CreateKafkaConsumerGroupResponse : SdkResponse
     {
 
         /// <summary>
-        /// 
+        /// 创建结果
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateVideoObjectMaskingTaskRequestBody Body { get; set; }
+        public string Body { get; set; }
 
 
 
@@ -31,7 +30,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateVideoObjectMaskingTaskRequest {\n");
+            sb.Append("class CreateKafkaConsumerGroupResponse {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -42,13 +41,13 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateVideoObjectMaskingTaskRequest);
+            return this.Equals(input as CreateKafkaConsumerGroupResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateVideoObjectMaskingTaskRequest input)
+        public bool Equals(CreateKafkaConsumerGroupResponse input)
         {
             if (input == null)
                 return false;

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     {
 
         /// <summary>
-        /// 路由表ID列表。节点的白名单。 此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白名单更新为取值所示内容。 ● 当取值为空时，表示删除所有白名单。 默认为空列表。
+        /// 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 更新Gateway类型终端节点服务的终端节点时，显示此参数。
         /// </summary>
         [JsonProperty("routetables", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Routetables { get; set; }

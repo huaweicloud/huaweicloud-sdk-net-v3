@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 要移除的资源ID列表
+        /// 要移除的资源ID列表 最小长度：1 最大长度：256
         /// </summary>
         [JsonProperty("resource_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ResourceIds { get; set; }

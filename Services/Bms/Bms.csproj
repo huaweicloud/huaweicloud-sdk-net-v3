@@ -15,7 +15,7 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Bms</PackageId>
-        <Version>3.1.39</Version>
+        <Version>3.1.40</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2020 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>

@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Image.V2.Model
+namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class CreateVideoObjectMaskingTaskResponse : SdkResponse
+    public class ProtectableAgentReq 
     {
 
         /// <summary>
-        /// 任务唯一标识
+        /// 查询参数列表
         /// </summary>
-        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TaskId { get; set; }
+        [JsonProperty("agent_status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ProtectableAgentStatusResource> AgentStatus { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateVideoObjectMaskingTaskResponse {\n");
-            sb.Append("  taskId: ").Append(TaskId).Append("\n");
+            sb.Append("class ProtectableAgentReq {\n");
+            sb.Append("  agentStatus: ").Append(AgentStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,23 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateVideoObjectMaskingTaskResponse);
+            return this.Equals(input as ProtectableAgentReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateVideoObjectMaskingTaskResponse input)
+        public bool Equals(ProtectableAgentReq input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
+                    this.AgentStatus == input.AgentStatus ||
+                    this.AgentStatus != null &&
+                    input.AgentStatus != null &&
+                    this.AgentStatus.SequenceEqual(input.AgentStatus)
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.AgentStatus != null)
+                    hashCode = hashCode * 59 + this.AgentStatus.GetHashCode();
                 return hashCode;
             }
         }

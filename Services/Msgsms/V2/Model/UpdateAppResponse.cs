@@ -34,12 +34,6 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
-        /// <summary>
-        /// Application Secret，应用密钥
-        /// </summary>
-        [JsonProperty("app_secret", NullValueHandling = NullValueHandling.Ignore)]
-        public string AppSecret { get; set; }
-
 
 
         /// <summary>
@@ -52,7 +46,6 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             sb.Append("  appKey: ").Append(AppKey).Append("\n");
             sb.Append("  appName: ").Append(AppName).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  appSecret: ").Append(AppSecret).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,11 +81,6 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.AppSecret == input.AppSecret ||
-                    (this.AppSecret != null &&
-                    this.AppSecret.Equals(input.AppSecret))
                 );
         }
 
@@ -110,8 +98,6 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
                     hashCode = hashCode * 59 + this.AppName.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.AppSecret != null)
-                    hashCode = hashCode * 59 + this.AppSecret.GetHashCode();
                 return hashCode;
             }
         }

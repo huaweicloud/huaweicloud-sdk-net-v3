@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Capacity { get; set; }
 
         /// <summary>
+        /// 缓存容量单位。
+        /// </summary>
+        [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Unit { get; set; }
+
+        /// <summary>
+        /// 可用区信息。
+        /// </summary>
+        [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailableZones { get; set; }
+
+        /// <summary>
         /// 有资源的可用区编码。
         /// </summary>
         [JsonProperty("az_codes", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +50,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class FlavorAzObject {\n");
             sb.Append("  capacity: ").Append(Capacity).Append("\n");
+            sb.Append("  unit: ").Append(Unit).Append("\n");
+            sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
             sb.Append("  azCodes: ").Append(AzCodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +80,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Capacity.Equals(input.Capacity))
                 ) && 
                 (
+                    this.Unit == input.Unit ||
+                    (this.Unit != null &&
+                    this.Unit.Equals(input.Unit))
+                ) && 
+                (
+                    this.AvailableZones == input.AvailableZones ||
+                    this.AvailableZones != null &&
+                    input.AvailableZones != null &&
+                    this.AvailableZones.SequenceEqual(input.AvailableZones)
+                ) && 
+                (
                     this.AzCodes == input.AzCodes ||
                     this.AzCodes != null &&
                     input.AzCodes != null &&
@@ -83,6 +108,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 int hashCode = 41;
                 if (this.Capacity != null)
                     hashCode = hashCode * 59 + this.Capacity.GetHashCode();
+                if (this.Unit != null)
+                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.AvailableZones != null)
+                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
                 if (this.AzCodes != null)
                     hashCode = hashCode * 59 + this.AzCodes.GetHashCode();
                 return hashCode;

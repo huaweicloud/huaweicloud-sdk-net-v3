@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 功能说明：VPC资源标签。创建VPC时，给VPC添加资源标签。 取值范围：最大10个标签, key：标签名称; value：标签值。 格式：[key*value]，每一个标签的key和value之间用*连接
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tags { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -112,6 +125,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

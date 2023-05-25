@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class Runtime 
     {
         /// <summary>
-        /// 容器运行时，默认为“docker”
+        /// 容器运行时, 默认场景： - 1.25以下集群：默认为\&quot;docker\&quot; - 1.25及以上集群，随操作系统变化，默认的容器运行时不同：操作系统为欧拉2.5、欧拉2.8的节点默认为\&quot;docker\&quot;，其余操作系统的节点默认为\&quot;containerd\&quot; 
         /// </summary>
-        /// <value>容器运行时，默认为“docker”</value>
+        /// <value>容器运行时, 默认场景： - 1.25以下集群：默认为\&quot;docker\&quot; - 1.25及以上集群，随操作系统变化，默认的容器运行时不同：操作系统为欧拉2.5、欧拉2.8的节点默认为\&quot;docker\&quot;，其余操作系统的节点默认为\&quot;containerd\&quot; </value>
         [JsonConverter(typeof(EnumClassConverter<NameEnum>))]
         public class NameEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 容器运行时，默认为“docker”
+        /// 容器运行时, 默认场景： - 1.25以下集群：默认为\&quot;docker\&quot; - 1.25及以上集群，随操作系统变化，默认的容器运行时不同：操作系统为欧拉2.5、欧拉2.8的节点默认为\&quot;docker\&quot;，其余操作系统的节点默认为\&quot;containerd\&quot; 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public NameEnum Name { get; set; }

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 模板个数。
         /// </summary>
         [JsonProperty("template_num", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TemplateNum { get; set; }
+        public int? TemplateNum { get; set; }
 
         /// <summary>
         /// 模板的详情数组。

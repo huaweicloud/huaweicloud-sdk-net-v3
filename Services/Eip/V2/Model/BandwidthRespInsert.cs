@@ -430,6 +430,24 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
+        /// <summary>
+        /// 功能说明：是否开启企业级qos 取值范围：true/false
+        /// </summary>
+        [JsonProperty("enable_bandwidth_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableBandwidthRules { get; set; }
+
+        /// <summary>
+        /// 功能说明：带宽支持的最大分组规则数。
+        /// </summary>
+        [JsonProperty("rule_quota", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RuleQuota { get; set; }
+
+        /// <summary>
+        /// 功能说明：带宽规则对象
+        /// </summary>
+        [JsonProperty("bandwidth_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<BandWidthRules> BandwidthRules { get; set; }
+
 
 
         /// <summary>
@@ -450,6 +468,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  enableBandwidthRules: ").Append(EnableBandwidthRules).Append("\n");
+            sb.Append("  ruleQuota: ").Append(RuleQuota).Append("\n");
+            sb.Append("  bandwidthRules: ").Append(BandwidthRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -526,6 +547,22 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.EnableBandwidthRules == input.EnableBandwidthRules ||
+                    (this.EnableBandwidthRules != null &&
+                    this.EnableBandwidthRules.Equals(input.EnableBandwidthRules))
+                ) && 
+                (
+                    this.RuleQuota == input.RuleQuota ||
+                    (this.RuleQuota != null &&
+                    this.RuleQuota.Equals(input.RuleQuota))
+                ) && 
+                (
+                    this.BandwidthRules == input.BandwidthRules ||
+                    this.BandwidthRules != null &&
+                    input.BandwidthRules != null &&
+                    this.BandwidthRules.SequenceEqual(input.BandwidthRules)
                 );
         }
 
@@ -559,6 +596,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.EnableBandwidthRules != null)
+                    hashCode = hashCode * 59 + this.EnableBandwidthRules.GetHashCode();
+                if (this.RuleQuota != null)
+                    hashCode = hashCode * 59 + this.RuleQuota.GetHashCode();
+                if (this.BandwidthRules != null)
+                    hashCode = hashCode * 59 + this.BandwidthRules.GetHashCode();
                 return hashCode;
             }
         }

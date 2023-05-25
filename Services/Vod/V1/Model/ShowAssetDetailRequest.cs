@@ -144,13 +144,6 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
 
         /// <summary>
-        /// 使用AK/SK方式认证时必选，携带的鉴权信息。 
-        /// </summary>
-        [SDKProperty("Authorization", IsHeader = true)]
-        [JsonProperty("Authorization", NullValueHandling = NullValueHandling.Ignore)]
-        public string Authorization { get; set; }
-
-        /// <summary>
         /// 使用AK/SK方式认证时必选，请求的发生时间。 
         /// </summary>
         [SDKProperty("X-Sdk-Date", IsHeader = true)]
@@ -179,7 +172,6 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowAssetDetailRequest {\n");
-            sb.Append("  authorization: ").Append(Authorization).Append("\n");
             sb.Append("  xSdkDate: ").Append(XSdkDate).Append("\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
             sb.Append("  categories: ").Append(Categories).Append("\n");
@@ -204,11 +196,6 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 return false;
 
             return 
-                (
-                    this.Authorization == input.Authorization ||
-                    (this.Authorization != null &&
-                    this.Authorization.Equals(input.Authorization))
-                ) && 
                 (
                     this.XSdkDate == input.XSdkDate ||
                     (this.XSdkDate != null &&
@@ -235,8 +222,6 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Authorization != null)
-                    hashCode = hashCode * 59 + this.Authorization.GetHashCode();
                 if (this.XSdkDate != null)
                     hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
                 if (this.AssetId != null)

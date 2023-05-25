@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
 
+        /// <summary>
+        /// 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+        /// </summary>
+        [JsonProperty("enable_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnablePolicy { get; set; }
+
 
 
         /// <summary>
@@ -175,6 +181,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  isCharge: ").Append(IsCharge).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  enablePolicy: ").Append(EnablePolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -225,6 +232,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PublicBorderGroup == input.PublicBorderGroup ||
                     (this.PublicBorderGroup != null &&
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.EnablePolicy == input.EnablePolicy ||
+                    (this.EnablePolicy != null &&
+                    this.EnablePolicy.Equals(input.EnablePolicy))
                 );
         }
 
@@ -248,6 +260,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.IsCharge.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.EnablePolicy != null)
+                    hashCode = hashCode * 59 + this.EnablePolicy.GetHashCode();
                 return hashCode;
             }
         }

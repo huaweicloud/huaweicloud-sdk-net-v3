@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         public string Operator { get; set; }
 
         /// <summary>
+        /// 描述
+        /// </summary>
+        [JsonProperty("file_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string FileDesc { get; set; }
+
+        /// <summary>
         /// 更新时间
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -80,6 +86,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             sb.Append("  fileType: ").Append(FileType).Append("\n");
             sb.Append("  moduleType: ").Append(ModuleType).Append("\n");
             sb.Append("  Operator: ").Append(Operator).Append("\n");
+            sb.Append("  fileDesc: ").Append(FileDesc).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -138,6 +145,11 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
                     this.Operator.Equals(input.Operator))
                 ) && 
                 (
+                    this.FileDesc == input.FileDesc ||
+                    (this.FileDesc != null &&
+                    this.FileDesc.Equals(input.FileDesc))
+                ) && 
+                (
                     this.UpdateTime == input.UpdateTime ||
                     (this.UpdateTime != null &&
                     this.UpdateTime.Equals(input.UpdateTime))
@@ -166,6 +178,8 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
                     hashCode = hashCode * 59 + this.ModuleType.GetHashCode();
                 if (this.Operator != null)
                     hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.FileDesc != null)
+                    hashCode = hashCode * 59 + this.FileDesc.GetHashCode();
                 if (this.UpdateTime != null)
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;

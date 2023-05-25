@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("ip_set", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpSet { get; set; }
 
+        /// <summary>
+        /// 功能说明：地址组最大条目数，限制地址组可以包含的地址数量 取值范围：0-20
+        /// </summary>
+        [JsonProperty("max_capacity", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxCapacity { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  ipSet: ").Append(IpSet).Append("\n");
+            sb.Append("  maxCapacity: ").Append(MaxCapacity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,6 +89,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.IpSet != null &&
                     input.IpSet != null &&
                     this.IpSet.SequenceEqual(input.IpSet)
+                ) && 
+                (
+                    this.MaxCapacity == input.MaxCapacity ||
+                    (this.MaxCapacity != null &&
+                    this.MaxCapacity.Equals(input.MaxCapacity))
                 );
         }
 
@@ -99,6 +111,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.IpSet != null)
                     hashCode = hashCode * 59 + this.IpSet.GetHashCode();
+                if (this.MaxCapacity != null)
+                    hashCode = hashCode * 59 + this.MaxCapacity.GetHashCode();
                 return hashCode;
             }
         }

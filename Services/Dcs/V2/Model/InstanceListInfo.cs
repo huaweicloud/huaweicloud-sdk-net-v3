@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
+        /// 更新时间。格式为：2017-03-31T19:24:46.297Z
+        /// </summary>
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdatedAt { get; set; }
+
+        /// <summary>
         /// Redis缓存实例开启公网访问功能时，是否选择支持ssl。 - true：开启 - false：不开启 
         /// </summary>
         [JsonProperty("enable_ssl", NullValueHandling = NullValueHandling.Ignore)]
@@ -272,6 +278,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  enableSsl: ").Append(EnableSsl).Append("\n");
             sb.Append("  maxMemory: ").Append(MaxMemory).Append("\n");
             sb.Append("  usedMemory: ").Append(UsedMemory).Append("\n");
@@ -360,6 +367,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
                     this.EnableSsl == input.EnableSsl ||
@@ -552,6 +564,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null)
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.EnableSsl != null)
                     hashCode = hashCode * 59 + this.EnableSsl.GetHashCode();
                 if (this.MaxMemory != null)

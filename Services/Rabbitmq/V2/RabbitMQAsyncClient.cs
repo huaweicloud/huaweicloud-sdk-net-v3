@@ -239,7 +239,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         /// <summary>
         /// 新规格实例的规格变更
         ///
-        /// 新规格实例的规格变更。
+        /// 实例规格变更。
+        /// 
+        /// [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -259,7 +261,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         ///
         /// 实例规格变更。
         /// 
-        /// [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
+        /// [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

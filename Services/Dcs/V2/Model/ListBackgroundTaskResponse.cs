@@ -28,24 +28,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("tasks", NullValueHandling = NullValueHandling.Ignore)]
         public List<SingleBackgroundTask> Tasks { get; set; }
 
-        /// <summary>
-        /// 任务结束时间，格式为2020-06-17T07:38:42.503Z
-        /// </summary>
-        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAt { get; set; }
-
-        /// <summary>
-        /// 任务启动时间，格式为2020-06-17T07:38:42.503Z
-        /// </summary>
-        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
-
-        /// <summary>
-        /// 任务状态
-        /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
 
 
         /// <summary>
@@ -57,9 +39,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("class ListBackgroundTaskResponse {\n");
             sb.Append("  taskCount: ").Append(TaskCount).Append("\n");
             sb.Append("  tasks: ").Append(Tasks).Append("\n");
-            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,21 +70,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Tasks != null &&
                     input.Tasks != null &&
                     this.Tasks.SequenceEqual(input.Tasks)
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
                 );
         }
 
@@ -121,12 +85,6 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.TaskCount.GetHashCode();
                 if (this.Tasks != null)
                     hashCode = hashCode * 59 + this.Tasks.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

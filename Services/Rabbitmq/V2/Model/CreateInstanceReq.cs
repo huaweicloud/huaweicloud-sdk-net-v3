@@ -125,12 +125,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。   - RabbitMQ版本有：3.7.17 
+        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
         /// </summary>
-        /// <value>消息引擎的版本。   - RabbitMQ版本有：3.7.17 </value>
+        /// <value>消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 </value>
         [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
         public class EngineVersionEnum
         {
+            /// <summary>
+            /// Enum _3_8_35 for value: 3.8.35
+            /// </summary>
+            public static readonly EngineVersionEnum _3_8_35 = new EngineVersionEnum("3.8.35");
+
             /// <summary>
             /// Enum _3_7_17 for value: 3.7.17
             /// </summary>
@@ -139,6 +144,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
             new Dictionary<string, EngineVersionEnum>()
             {
+                { "3.8.35", _3_8_35 },
                 { "3.7.17", _3_7_17 },
             };
 
@@ -361,9 +367,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)
         /// </summary>
-        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2</value>
+        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
@@ -506,7 +512,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。   - RabbitMQ版本有：3.7.17 
+        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
@@ -594,7 +600,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }

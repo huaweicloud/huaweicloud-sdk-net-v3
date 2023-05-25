@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public long? Total { get; set; }
 
         /// <summary>
-        /// 消息条数。
+        /// 每页消息条数。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public long? Size { get; set; }

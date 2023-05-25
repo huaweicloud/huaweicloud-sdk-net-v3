@@ -8,19 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Image.V2.Model
+namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class VideoObjectMaskingTaskConfig 
+    public class ShowMetadataRequest 
     {
 
         /// <summary>
-        /// 
+        /// 备份ID
         /// </summary>
-        [JsonProperty("common", NullValueHandling = NullValueHandling.Ignore)]
-        public VideoObjectMaskingTaskConfigCommon Common { get; set; }
+        [SDKProperty("backup_id", IsPath = true)]
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupId { get; set; }
 
 
 
@@ -30,8 +31,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class VideoObjectMaskingTaskConfig {\n");
-            sb.Append("  common: ").Append(Common).Append("\n");
+            sb.Append("class ShowMetadataRequest {\n");
+            sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +42,22 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as VideoObjectMaskingTaskConfig);
+            return this.Equals(input as ShowMetadataRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(VideoObjectMaskingTaskConfig input)
+        public bool Equals(ShowMetadataRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Common == input.Common ||
-                    (this.Common != null &&
-                    this.Common.Equals(input.Common))
+                    this.BackupId == input.BackupId ||
+                    (this.BackupId != null &&
+                    this.BackupId.Equals(input.BackupId))
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Common != null)
-                    hashCode = hashCode * 59 + this.Common.GetHashCode();
+                if (this.BackupId != null)
+                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 return hashCode;
             }
         }

@@ -144,6 +144,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// 加速域名。
+        /// </summary>
+        [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainName { get; set; }
+
+        /// <summary>
         /// 域名业务类型，若为web，则表示类型为网站加速；若为download，则表示业务类型为文件下载加速；若为video，则表示业务类型为点播加速；若为wholeSite，则表示类型为全站加速。
         /// </summary>
         [JsonProperty("business_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -212,6 +218,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             var sb = new StringBuilder();
             sb.Append("class DomainsWithPort {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  businessType: ").Append(BusinessType).Append("\n");
             sb.Append("  domainStatus: ").Append(DomainStatus).Append("\n");
             sb.Append("  cname: ").Append(Cname).Append("\n");
@@ -247,6 +254,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.DomainName == input.DomainName ||
+                    (this.DomainName != null &&
+                    this.DomainName.Equals(input.DomainName))
                 ) && 
                 (
                     this.BusinessType == input.BusinessType ||
@@ -311,6 +323,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.DomainName != null)
+                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.BusinessType != null)
                     hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
                 if (this.DomainStatus != null)

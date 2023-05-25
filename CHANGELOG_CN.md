@@ -1,3 +1,274 @@
+# 3.1.40 2023-05-25
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 支持以下接口：
+    - `ImportCheckpoint`
+    - `ListExternalVault`
+    - `BatchUpdateVault`
+    - `SetVaultResource`
+    - `ShowMetadata`
+    - `CheckAgent`
+    - `ListProjects`
+    - `ListDomainProjects`
+    - `ShowDomain`
+    - `ShowMigrateStatus`
+    - `MigrateDomain`
+    - `ShowStorageUsage`
+    - `UpdateOrder`
+    - `CreatePostPaidVault`
+    - `UpdateBackup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateVault**
+    - 请求参数变更
+      - `+ vault.threshold`
+      - `+ vault.smn_notify`
+      - `+ vault.backup_name_prefix`
+      - `+ vault.demand_billing`
+    - 响应参数变更
+      - `+ vault.backup_name_prefix`
+      - `+ vault.demand_billing`
+      - `+ vault.cbc_delete_count`
+      - `+ vault.frozen`
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowCluster**
+    - 响应参数变更
+      - `+ metadata.alias`
+  - **UpdateCluster**
+    - 请求参数变更
+      - `+ metadata`
+    - 响应参数变更
+      - `+ metadata.alias`
+  - **DeleteCluster**
+    - 响应参数变更
+      - `+ metadata.alias`
+  - **MigrateNode**
+    - 请求参数变更
+      - `+ spec.runtime`
+    - 响应参数变更
+      - `+ spec.runtime`
+  - **CreateCluster**
+    - 请求参数变更
+      - `+ metadata.alias`
+    - 响应参数变更
+      - `+ metadata.alias`
+  - **ListClusters**
+    - 响应参数变更
+      - `+ items.metadata.alias`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainDetailByName**
+    - 响应参数变更
+      - `+ domain.domain_name`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListMigrationTask**
+    - 响应参数变更
+      - `- task_name`
+      - `- target_instance_id`
+      - `- target_instance_address`
+      - `- target_instance_name`
+      - `- migrate_type`
+      - `- created_at`
+      - `- source_instance_id`
+      - `- task_id`
+      - `- data_source`
+      - `- migration_method`
+      - `- source_instance_name`
+      - `- status`
+  - **ListConfigTemplates**
+    - 响应参数变更
+      - `* template_num: number -> integer`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.updated_at`
+  - **ListBackgroundTask**
+    - 响应参数变更
+      - `- updated_at`
+      - `- created_at`
+      - `- status`
+  - **ListFlavors**
+    - 响应参数变更
+      - `+ flavors.flavors_available_zones.unit`
+      - `+ flavors.flavors_available_zones.available_zones`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`ListFlavorSellPolicies`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPublicipsByTags**
+    - 响应参数变更
+      - `+ resources.resource_detail`
+      - `- resources.resouce_detail`
+  - **AddPublicipsIntoSharedBandwidth**
+    - 响应参数变更
+      - `+ bandwidth.enable_bandwidth_rules`
+      - `+ bandwidth.rule_quota`
+      - `+ bandwidth.bandwidth_rules`
+
+### HuaweiCloud SDK IAM
+
+- _新增特性_
+  - 支持接口`AssociateRoleToAgencyOnEnterpriseProject`、`RevokeRoleFromAgencyOnEnterpriseProject`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Image
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`CreateVideoObjectMaskingTask`、`ShowVideoObjectMaskingTask`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 支持接口`DeleteConnector`、`CreateDeleteConnectorOrder`、`CreateKafkaConsumerGroup`、`CloseKafkaManager`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowInstance**
+    - 响应参数变更
+      - `+ kafka_manager_enable`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ kafka_manager_enable`
+      - `+ instances.kafka_manager_enable`
+
+### HuaweiCloud SDK MSGSMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowSignatureFile**
+    - 响应参数变更
+      - `+ file_desc`
+  - **UpdateApp**
+    - 响应参数变更
+      - `- app_secret`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreatePostPaidInstanceByEngine**
+    - 请求参数变更
+      - `+ engine_version: enum value [3.8.35]`
+  - **CreatePostPaidInstance**
+    - 请求参数变更
+      - `+ engine_version: enum value [3.8.35]`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateVpc**
+    - 请求参数变更
+      - `+ vpc.tags`
+  - **CreateSubnet**
+    - 请求参数变更
+      - `+ subnet.tags`
+    - **ShowAddressGroup**
+    - 响应参数变更
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+  - **UpdateAddressGroup**
+    - 请求参数变更
+      - `+ address_group.max_capacity`
+    - 响应参数变更
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+  - **ListAddressGroup**
+    - 响应参数变更
+      - `+ address_groups.max_capacity`
+      - `+ address_groups.status`
+      - `+ address_groups.status_message`
+  - **CreateAddressGroup**
+    - 请求参数变更
+      - `+ address_group.max_capacity`
+    - 响应参数变更
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+
+### HuaweiCloud SDK VPCEP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListServiceDescribeDetails**
+    - 响应参数变更
+      - `+ enable_policy`
+  - **ListServiceDetails**
+    - 响应参数变更
+      - `- vip_port_id`
+  - **UpdateEndpointService**
+    - 请求参数变更
+      - `- vip_port_id`
+    - 响应参数变更
+      - `- vip_port_id`
+  - **ListServicePublicDetails**
+    - 响应参数变更
+      - `+ endpoint_services.enable_policy`
+  - **CreateEndpointService**
+    - 请求参数变更
+      - `- vip_port_id`
+    - 响应参数变更
+      - `- vip_port_id`
+  - **ListEndpointService**
+    - 响应参数变更
+      - `- endpoint_services.vip_port_id`
+
 # 3.1.39 2023-05-18
 
 ### HuaweiCloud SDK CBR

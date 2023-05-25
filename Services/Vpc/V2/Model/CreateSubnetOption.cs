@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("extra_dhcp_opts", NullValueHandling = NullValueHandling.Ignore)]
         public List<ExtraDhcpOption> ExtraDhcpOpts { get; set; }
 
+        /// <summary>
+        /// 功能说明：子网资源标签。创建子网时，给子网添加资源标签。 取值范围：最大10个标签, key：标签名称; value：标签值。 格式：[key*value]，每一个标签的key和value之间用*连接
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tags { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  dnsList: ").Append(DnsList).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  extraDhcpOpts: ").Append(ExtraDhcpOpts).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +198,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.ExtraDhcpOpts != null &&
                     input.ExtraDhcpOpts != null &&
                     this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts)
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -226,6 +239,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.ExtraDhcpOpts != null)
                     hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

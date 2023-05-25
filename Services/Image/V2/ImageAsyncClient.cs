@@ -32,22 +32,6 @@ namespace HuaweiCloud.SDK.Image.V2
         }
         
         /// <summary>
-        /// 创建视频脱敏任务
-        ///
-        /// 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateVideoObjectMaskingTaskResponse> CreateVideoObjectMaskingTaskAsync(CreateVideoObjectMaskingTaskRequest createVideoObjectMaskingTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-object-masking/tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVideoObjectMaskingTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<CreateVideoObjectMaskingTaskResponse>(response);
-        }
-        
-        /// <summary>
         /// 创建视频标签任务
         ///
         /// 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
@@ -206,23 +190,6 @@ namespace HuaweiCloud.SDK.Image.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageHighresolutionMattingTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowImageHighresolutionMattingTaskResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询视频脱敏任务详情
-        ///
-        /// show task
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVideoObjectMaskingTaskResponse> ShowVideoObjectMaskingTaskAsync(ShowVideoObjectMaskingTaskRequest showVideoObjectMaskingTaskRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , showVideoObjectMaskingTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/image/video-object-masking/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoObjectMaskingTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowVideoObjectMaskingTaskResponse>(response);
         }
         
         /// <summary>

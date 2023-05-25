@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+        /// 终端节点的状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
         /// </summary>
-        /// <value>终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中</value>
+        /// <value>终端节点的状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -282,7 +282,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceTypeEnum ServiceType { get; set; }
         /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+        /// 终端节点的状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

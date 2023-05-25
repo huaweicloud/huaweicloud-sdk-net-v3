@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string LatestVersionId { get; set; }
 
         /// <summary>
-        /// -&gt; 模板中最新模板版本的版本描述
+        /// 模板中最新模板版本的版本描述
         /// </summary>
         [JsonProperty("latest_version_description", NullValueHandling = NullValueHandling.Ignore)]
         public string LatestVersionDescription { get; set; }

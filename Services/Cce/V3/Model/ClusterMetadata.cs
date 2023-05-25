@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Uid { get; set; }
 
         /// <summary>
+        /// 集群显示名，用于在 CCE 界面显示，该名称创建后可修改。  命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-128位，且不能以中划线(-)结尾。  显示名和其他集群的名称、显示名不可以重复。  在创建集群、更新集群请求体中，集群显示名alias未指定或取值为空，表示与集群名称name一致。在查询集群等响应体中，集群显示名alias将必然返回，未配置时将返回集群名称name。
+        /// </summary>
+        [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string Alias { get; set; }
+
+        /// <summary>
         /// 集群注解，由key/value组成：  &#x60;&#x60;&#x60; \&quot;annotations\&quot;: {    \&quot;key1\&quot; : \&quot;value1\&quot;,    \&quot;key2\&quot; : \&quot;value2\&quot; } &#x60;&#x60;&#x60;  &gt;    - Annotations不用于标识和选择对象。Annotations中的元数据可以是small或large，structured或unstructured，并且可以包括标签不允许使用的字符。 &gt;    - 该字段不会被数据库保存，当前仅用于指定集群待安装插件。 &gt;    - 可通过加入\&quot;cluster.install.addons.external/install\&quot;:\&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的键值对在创建集群时安装ICAgent。 
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
@@ -63,6 +69,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class ClusterMetadata {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  uid: ").Append(Uid).Append("\n");
+            sb.Append("  alias: ").Append(Alias).Append("\n");
             sb.Append("  annotations: ").Append(Annotations).Append("\n");
             sb.Append("  labels: ").Append(Labels).Append("\n");
             sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
@@ -97,6 +104,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Uid == input.Uid ||
                     (this.Uid != null &&
                     this.Uid.Equals(input.Uid))
+                ) && 
+                (
+                    this.Alias == input.Alias ||
+                    (this.Alias != null &&
+                    this.Alias.Equals(input.Alias))
                 ) && 
                 (
                     this.Annotations == input.Annotations ||
@@ -134,6 +146,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Uid != null)
                     hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Alias != null)
+                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
                 if (this.Annotations != null)
                     hashCode = hashCode * 59 + this.Annotations.GetHashCode();
                 if (this.Labels != null)

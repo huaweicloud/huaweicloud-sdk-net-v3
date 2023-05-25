@@ -79,6 +79,23 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// application/json
+        ///
+        /// 该接口可以基于委托为企业项目授权
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AssociateRoleToAgencyOnEnterpriseProjectResponse> AssociateRoleToAgencyOnEnterpriseProjectAsync(AssociateRoleToAgencyOnEnterpriseProjectRequest associateRoleToAgencyOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/subjects/agency/scopes/enterprise-project/role-assignments",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateRoleToAgencyOnEnterpriseProjectRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            AssociateRoleToAgencyOnEnterpriseProjectResponse associateRoleToAgencyOnEnterpriseProjectResponse = JsonUtils.DeSerializeNull<AssociateRoleToAgencyOnEnterpriseProjectResponse>(response);
+            return associateRoleToAgencyOnEnterpriseProjectResponse;
+        }
+        
+        /// <summary>
         /// 基于用户组为企业项目授权
         ///
         /// 该接口用于基于用户组为企业项目授权。
@@ -1730,6 +1747,23 @@ namespace HuaweiCloud.SDK.Iam.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeProjectPermissionFromAgencyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<RemoveProjectPermissionFromAgencyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 该接口可以删除企业项目委托上的授权
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RevokeRoleFromAgencyOnEnterpriseProjectResponse> RevokeRoleFromAgencyOnEnterpriseProjectAsync(RevokeRoleFromAgencyOnEnterpriseProjectRequest revokeRoleFromAgencyOnEnterpriseProjectRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/subjects/agency/scopes/enterprise-project/role-assignments",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRoleFromAgencyOnEnterpriseProjectRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            RevokeRoleFromAgencyOnEnterpriseProjectResponse revokeRoleFromAgencyOnEnterpriseProjectResponse = JsonUtils.DeSerializeNull<RevokeRoleFromAgencyOnEnterpriseProjectResponse>(response);
+            return revokeRoleFromAgencyOnEnterpriseProjectResponse;
         }
         
         /// <summary>

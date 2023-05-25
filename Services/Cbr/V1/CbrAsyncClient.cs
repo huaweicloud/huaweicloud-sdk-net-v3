@@ -108,6 +108,38 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 批量修改存储库
+        ///
+        /// 批量修改项目下所有存储库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchUpdateVaultResponse> BatchUpdateVaultAsync(BatchUpdateVaultRequest batchUpdateVaultRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/batch-update",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateVaultRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<BatchUpdateVaultResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询agent状态
+        ///
+        /// 检查应用一致性Agent状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckAgentResponse> CheckAgentAsync(CheckAgentRequest checkAgentRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent/check",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkAgentRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CheckAgentResponse>(response);
+        }
+        
+        /// <summary>
         /// 复制备份
         ///
         /// 跨区域复制备份。
@@ -170,6 +202,22 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPolicyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreatePolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建包周期存储库
+        ///
+        /// 创建包周期存储库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePostPaidVaultResponse> CreatePostPaidVaultAsync(CreatePostPaidVaultRequest createPostPaidVaultRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/order",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPostPaidVaultRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreatePostPaidVaultResponse>(response);
         }
         
         /// <summary>
@@ -327,6 +375,22 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 同步备份还原点
+        ///
+        /// 针对vault同步备份副本
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ImportCheckpointResponse> ImportCheckpointAsync(ImportCheckpointRequest importCheckpointRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/checkpoints/sync",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importCheckpointRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ImportCheckpointResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询客户端列表
         ///
         /// 查询客户端列表
@@ -356,6 +420,39 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListBackupsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询租户项目列表
+        ///
+        /// 根据指定租户名称查询项目列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDomainProjectsResponse> ListDomainProjectsAsync(ListDomainProjectsRequest listDomainProjectsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name" , listDomainProjectsRequest.DomainName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/domain/{domain_name}/projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainProjectsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListDomainProjectsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询其他区域存储库列表
+        ///
+        /// 查询其他区域的存储库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListExternalVaultResponse> ListExternalVaultAsync(ListExternalVaultRequest listExternalVaultRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/external",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExternalVaultRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListExternalVaultResponse>(response);
         }
         
         /// <summary>
@@ -391,6 +488,22 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 查询租户的项目信息
+        ///
+        /// 查询租户的企业项目信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest listProjectsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/region-projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListProjectsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询可保护资源
         ///
         /// 查询可保护性资源列表
@@ -421,6 +534,24 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVaultRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListVaultResponse>(response);
+        }
+        
+        /// <summary>
+        /// 租户迁移
+        ///
+        /// 将CSBS/VBS资源迁移到CBR。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<MigrateDomainResponse> MigrateDomainAsync(MigrateDomainRequest migrateDomainRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/migrates",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateDomainRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            MigrateDomainResponse migrateDomainResponse = JsonUtils.DeSerializeNull<MigrateDomainResponse>(response);
+            migrateDomainResponse.Body = JsonUtils.DeSerializeMap<string, string>(response);
+            return migrateDomainResponse;
         }
         
         /// <summary>
@@ -508,6 +639,23 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 设置存储库资源
+        ///
+        /// 设置存储库资源是否自动备份
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetVaultResourceResponse> SetVaultResourceAsync(SetVaultResourceRequest setVaultResourceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vault_id" , setVaultResourceRequest.VaultId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/{vault_id}/set-resources",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setVaultResourceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<SetVaultResourceResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询指定客户端
         ///
         /// 查询指定客户端
@@ -559,6 +707,23 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 查询租户信息
+        ///
+        /// 由控制台调用的内部接口，用于仅在查询共享备份时获取源project_id的域名信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainResponse> ShowDomainAsync(ShowDomainRequest showDomainRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("source_project_id" , showDomainRequest.SourceProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/domain/{source_project_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowDomainResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取备份成员详情
         ///
         /// 获取备份成员的详情
@@ -591,6 +756,39 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMembersDetailRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowMembersDetailResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询备份元数据
+        ///
+        /// 查询备份时资源的元数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMetadataResponse> ShowMetadataAsync(ShowMetadataRequest showMetadataRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("backup_id" , showMetadataRequest.BackupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMetadataRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowMetadataResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询迁移
+        ///
+        /// 查询迁移结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMigrateStatusResponse> ShowMigrateStatusAsync(ShowMigrateStatusRequest showMigrateStatusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/migrates",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMigrateStatusRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowMigrateStatusResponse>(response);
         }
         
         /// <summary>
@@ -659,6 +857,22 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationCapabilitiesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowReplicationCapabilitiesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询容量统计
+        ///
+        /// 查询容量统计
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowStorageUsageResponse> ShowStorageUsageAsync(ShowStorageUsageRequest showStorageUsageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/storage_usage",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStorageUsageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowStorageUsageResponse>(response);
         }
         
         /// <summary>
@@ -765,6 +979,23 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 更新备份
+        ///
+        /// 根据备份id更改备份
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateBackupResponse> UpdateBackupAsync(UpdateBackupRequest updateBackupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("backup_id" , updateBackupRequest.BackupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBackupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateBackupResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新备份成员状态
         ///
         /// 更新备份共享成员的状态，需要接收方执行此API。
@@ -780,6 +1011,23 @@ namespace HuaweiCloud.SDK.Cbr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMemberStatusRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateMemberStatusResponse>(response);
+        }
+        
+        /// <summary>
+        /// 变更
+        ///
+        /// 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateOrderResponse> UpdateOrderAsync(UpdateOrderRequest updateOrderRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("order_id" , updateOrderRequest.OrderId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/orders/{order_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOrderRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateOrderResponse>(response);
         }
         
         /// <summary>
