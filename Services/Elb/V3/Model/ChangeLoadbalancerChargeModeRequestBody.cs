@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class ChangeLoadbalancerChargeModeRequestBody 
     {
         /// <summary>
-        /// 计费模式。  取值： - prepaid：包周期计费。
+        /// 计费模式。取值： - prepaid：包周期计费（仅当不传pay_type时，允许设为该值）
         /// </summary>
-        /// <value>计费模式。  取值： - prepaid：包周期计费。</value>
+        /// <value>计费模式。取值： - prepaid：包周期计费（仅当不传pay_type时，允许设为该值）</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> LoadbalancerIds { get; set; }
 
         /// <summary>
-        /// 计费模式。  取值： - prepaid：包周期计费。
+        /// 计费模式。取值： - prepaid：包周期计费（仅当不传pay_type时，允许设为该值）
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }

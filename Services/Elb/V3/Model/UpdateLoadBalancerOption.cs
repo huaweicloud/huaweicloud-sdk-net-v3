@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class UpdateLoadBalancerOption 
     {
         /// <summary>
-        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc)
+        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
         /// </summary>
-        /// <value>WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc)</value>
+        /// <value>WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)</value>
         [JsonConverter(typeof(EnumClassConverter<WafFailureActionEnum>))]
         public class WafFailureActionEnum
         {
@@ -130,6 +130,121 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             }
         }
 
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护 - consoleProtection: 控制台修改保护
+        /// </summary>
+        /// <value>修改保护状态, 取值： - nonProtection: 不保护 - consoleProtection: 控制台修改保护</value>
+        [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
+        public class ProtectionStatusEnum
+        {
+            /// <summary>
+            /// Enum NONPROTECTION for value: nonProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+            /// <summary>
+            /// Enum CONSOLEPROTECTION for value: consoleProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+            private static readonly Dictionary<string, ProtectionStatusEnum> StaticFields =
+            new Dictionary<string, ProtectionStatusEnum>()
+            {
+                { "nonProtection", NONPROTECTION },
+                { "consoleProtection", CONSOLEPROTECTION },
+            };
+
+            private string _value;
+
+            public ProtectionStatusEnum()
+            {
+
+            }
+
+            public ProtectionStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ProtectionStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ProtectionStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ProtectionStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 负载均衡器的名称。
@@ -168,13 +283,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string VipAddress { get; set; }
 
         /// <summary>
-        /// 四层Flavor ID。  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， - autoscaling.enable&#x3D;true时，修改无意义，不生效。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+        /// 四层Flavor ID。  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， - autoscaling.enable&#x3D;true时，修改无意义，不生效。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， - autoscaling.enable&#x3D;true时，修改无意义，不生效。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt)  [只支持设置为l7_flavor.elb.shared。](tag:hcso_dt)   [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+        /// 七层Flavor ID。  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， - autoscaling.enable&#x3D;true时，修改无意义，不生效。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt)  [只支持设置为l7_flavor.elb.shared。](tag:hcso_dt)   [所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
@@ -186,7 +301,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public BandwidthRef Ipv6Bandwidth { get; set; }
 
         /// <summary>
-        /// 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加 [其他VPC、](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs) 其他公有云、云下数据中心的服务器。  [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
+        /// 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。  [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
         /// </summary>
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
@@ -216,10 +331,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public UpdateLoadbalancerAutoscalingOption Autoscaling { get; set; }
 
         /// <summary>
-        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc)
+        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
         /// </summary>
         [JsonProperty("waf_failure_action", NullValueHandling = NullValueHandling.Ignore)]
         public WafFailureActionEnum WafFailureAction { get; set; }
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护 - consoleProtection: 控制台修改保护
+        /// </summary>
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public ProtectionStatusEnum ProtectionStatus { get; set; }
+        /// <summary>
+        /// 设置保护的原因 &gt;仅当protection_status为consoleProtection时有效。
+        /// </summary>
+        [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProtectionReason { get; set; }
+
 
 
         /// <summary>
@@ -244,6 +370,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  wafFailureAction: ").Append(WafFailureAction).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
+            sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -340,6 +468,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.WafFailureAction == input.WafFailureAction ||
                     (this.WafFailureAction != null &&
                     this.WafFailureAction.Equals(input.WafFailureAction))
+                ) && 
+                (
+                    this.ProtectionStatus == input.ProtectionStatus ||
+                    (this.ProtectionStatus != null &&
+                    this.ProtectionStatus.Equals(input.ProtectionStatus))
+                ) && 
+                (
+                    this.ProtectionReason == input.ProtectionReason ||
+                    (this.ProtectionReason != null &&
+                    this.ProtectionReason.Equals(input.ProtectionReason))
                 );
         }
 
@@ -381,6 +519,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 if (this.WafFailureAction != null)
                     hashCode = hashCode * 59 + this.WafFailureAction.GetHashCode();
+                if (this.ProtectionStatus != null)
+                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null)
+                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

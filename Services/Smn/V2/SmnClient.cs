@@ -70,6 +70,23 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 绑定云日志
+        ///
+        /// 为指定Topic绑定一个云日志，用于记录主题消息发送状态等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateLogtankResponse CreateLogtank(CreateLogtankRequest createLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn" , createLogtankRequest.TopicUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateLogtankResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建消息模板
         ///
         /// 创建一个模板，用户可以按照模板去发送消息，这样可以减少请求的数据量。
@@ -119,6 +136,24 @@ namespace HuaweiCloud.SDK.Smn.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTopicRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateTopicResponse>(response);
+        }
+        
+        /// <summary>
+        /// 解绑云日志
+        ///
+        /// 解绑指定Topic绑定的云日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteLogtankResponse DeleteLogtank(DeleteLogtankRequest deleteLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn" , deleteLogtankRequest.TopicUrn.ToString());
+            urlParam.Add("logtank_id" , deleteLogtankRequest.LogtankId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks/{logtank_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteLogtankResponse>(response);
         }
         
         /// <summary>
@@ -207,6 +242,23 @@ namespace HuaweiCloud.SDK.Smn.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTopicAttributesRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteTopicAttributesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询云日志
+        ///
+        /// 查询指定Topic绑定的云日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLogtankResponse ListLogtank(ListLogtankRequest listLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn" , listLogtankRequest.TopicUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListLogtankResponse>(response);
         }
         
         /// <summary>
@@ -387,8 +439,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         public ListVersionResponse ListVersion(ListVersionRequest listVersionRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version" , listVersionRequest.ApiVersion.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v2",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListVersionResponse>(response);
@@ -437,6 +488,24 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 更新云日志
+        ///
+        /// 更新指定Topic绑定的云日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateLogtankResponse UpdateLogtank(UpdateLogtankRequest updateLogtankRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn" , updateLogtankRequest.TopicUrn.ToString());
+            urlParam.Add("logtank_id" , updateLogtankRequest.LogtankId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks/{logtank_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogtankRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateLogtankResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新消息模板
         ///
         /// 修改消息模板的内容。
@@ -451,6 +520,24 @@ namespace HuaweiCloud.SDK.Smn.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMessageTemplateRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateMessageTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新订阅者
+        ///
+        /// 更新订阅者备注。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSubscriptionResponse UpdateSubscription(UpdateSubscriptionRequest updateSubscriptionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn" , updateSubscriptionRequest.TopicUrn.ToString());
+            urlParam.Add("subscription_urn" , updateSubscriptionRequest.SubscriptionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions/{subscription_urn}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSubscriptionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateSubscriptionResponse>(response);
         }
         
         /// <summary>

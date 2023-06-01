@@ -25,9 +25,15 @@ namespace HuaweiCloud.SDK.Core
     {
         public int? Timeout = 120;
 
-        public bool IgnoreSslVerification = false;
+        public bool IgnoreSslVerification;
 
-        public bool IgnoreBodyForGetRequest = false;
+        public bool IgnoreBodyForGetRequest;
+
+        /// <summary>
+        /// Experimental configuration, the default value is false.
+        /// Automatic redirection is allowed when turns on, which may cause some request exceptions.
+        /// </summary>
+        public bool AllowRedirects;
 
         public string ProxyUsername { get; set; }
 
@@ -59,6 +65,16 @@ namespace HuaweiCloud.SDK.Core
         public HttpConfig WithIgnoreBodyForGetRequest(bool ignore)
         {
             this.IgnoreBodyForGetRequest = ignore;
+            return this;
+        }
+
+        /// <summary>
+        /// Experimental configuration, the default value is false.
+        /// Automatic redirection is allowed when turns on, which may cause some request exceptions.
+        /// </summary>
+        public HttpConfig WithAllowRedirects(bool allowRedirects)
+        {
+            this.AllowRedirects = allowRedirects;
             return this;
         }
 

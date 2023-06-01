@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? Serial { get; set; }
 
         /// <summary>
-        /// 状态
+        /// 资源状态
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

@@ -875,6 +875,22 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 存储库容量总览
+        ///
+        /// 查询项目下所有存储库的总容量和总使用量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSummaryResponse ShowSummary(ShowSummaryRequest showSummaryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/summary",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSummaryRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowSummaryResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询指定存储库
         ///
         /// 根据ID查询指定存储库
@@ -1026,7 +1042,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/orders/{order_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOrderRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerializeNull<UpdateOrderResponse>(response);
+            return JsonUtils.DeSerialize<UpdateOrderResponse>(response);
         }
         
         /// <summary>

@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string SignMethod { get; set; }
 
         /// <summary>
-        /// 鉴权范围，目前仅支持配置所有文件参与鉴权。all：所有文件
+        /// 鉴权范围，目前仅支持配置所有文件参与鉴权，all：所有文件。
         /// </summary>
         [JsonProperty("match_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MatchType { get; set; }

@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? L7policy { get; set; }
 
         /// <summary>
+        /// 转发策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// </summary>
+        [JsonProperty("condition_per_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ConditionPerPolicy { get; set; }
+
+        /// <summary>
         /// 后端云服务器组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("pool", NullValueHandling = NullValueHandling.Ignore)]
@@ -71,10 +77,28 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? MembersPerPool { get; set; }
 
         /// <summary>
+        /// 单个pool下的member的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// </summary>
+        [JsonProperty("listeners_per_pool", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ListenersPerPool { get; set; }
+
+        /// <summary>
         /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ipgroup { get; set; }
+
+        /// <summary>
+        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// </summary>
+        [JsonProperty("ipgroup_bindings", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IpgroupBindings { get; set; }
+
+        /// <summary>
+        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// </summary>
+        [JsonProperty("ipgroup_max_length", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IpgroupMaxLength { get; set; }
 
         /// <summary>
         /// 自定义安全策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
@@ -83,16 +107,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? SecurityPolicy { get; set; }
 
         /// <summary>
-        /// ipgroup最大可关联的监听器数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// 单个LB实例下的监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
-        [JsonProperty("ipgroup_bindings", NullValueHandling = NullValueHandling.Ignore)]
-        public string IpgroupBindings { get; set; }
-
-        /// <summary>
-        /// 单个ipgroup最多可设置的ip地址数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
-        /// </summary>
-        [JsonProperty("ipgroup_max_length", NullValueHandling = NullValueHandling.Ignore)]
-        public string IpgroupMaxLength { get; set; }
+        [JsonProperty("listeners_per_loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ListenersPerLoadbalancer { get; set; }
 
 
 
@@ -108,14 +126,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  certificate: ").Append(Certificate).Append("\n");
             sb.Append("  listener: ").Append(Listener).Append("\n");
             sb.Append("  l7policy: ").Append(L7policy).Append("\n");
+            sb.Append("  conditionPerPolicy: ").Append(ConditionPerPolicy).Append("\n");
             sb.Append("  pool: ").Append(Pool).Append("\n");
             sb.Append("  healthmonitor: ").Append(Healthmonitor).Append("\n");
             sb.Append("  member: ").Append(Member).Append("\n");
             sb.Append("  membersPerPool: ").Append(MembersPerPool).Append("\n");
+            sb.Append("  listenersPerPool: ").Append(ListenersPerPool).Append("\n");
             sb.Append("  ipgroup: ").Append(Ipgroup).Append("\n");
-            sb.Append("  securityPolicy: ").Append(SecurityPolicy).Append("\n");
             sb.Append("  ipgroupBindings: ").Append(IpgroupBindings).Append("\n");
             sb.Append("  ipgroupMaxLength: ").Append(IpgroupMaxLength).Append("\n");
+            sb.Append("  securityPolicy: ").Append(SecurityPolicy).Append("\n");
+            sb.Append("  listenersPerLoadbalancer: ").Append(ListenersPerLoadbalancer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +184,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.L7policy.Equals(input.L7policy))
                 ) && 
                 (
+                    this.ConditionPerPolicy == input.ConditionPerPolicy ||
+                    (this.ConditionPerPolicy != null &&
+                    this.ConditionPerPolicy.Equals(input.ConditionPerPolicy))
+                ) && 
+                (
                     this.Pool == input.Pool ||
                     (this.Pool != null &&
                     this.Pool.Equals(input.Pool))
@@ -183,14 +209,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MembersPerPool.Equals(input.MembersPerPool))
                 ) && 
                 (
+                    this.ListenersPerPool == input.ListenersPerPool ||
+                    (this.ListenersPerPool != null &&
+                    this.ListenersPerPool.Equals(input.ListenersPerPool))
+                ) && 
+                (
                     this.Ipgroup == input.Ipgroup ||
                     (this.Ipgroup != null &&
                     this.Ipgroup.Equals(input.Ipgroup))
-                ) && 
-                (
-                    this.SecurityPolicy == input.SecurityPolicy ||
-                    (this.SecurityPolicy != null &&
-                    this.SecurityPolicy.Equals(input.SecurityPolicy))
                 ) && 
                 (
                     this.IpgroupBindings == input.IpgroupBindings ||
@@ -201,6 +227,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.IpgroupMaxLength == input.IpgroupMaxLength ||
                     (this.IpgroupMaxLength != null &&
                     this.IpgroupMaxLength.Equals(input.IpgroupMaxLength))
+                ) && 
+                (
+                    this.SecurityPolicy == input.SecurityPolicy ||
+                    (this.SecurityPolicy != null &&
+                    this.SecurityPolicy.Equals(input.SecurityPolicy))
+                ) && 
+                (
+                    this.ListenersPerLoadbalancer == input.ListenersPerLoadbalancer ||
+                    (this.ListenersPerLoadbalancer != null &&
+                    this.ListenersPerLoadbalancer.Equals(input.ListenersPerLoadbalancer))
                 );
         }
 
@@ -222,6 +258,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Listener.GetHashCode();
                 if (this.L7policy != null)
                     hashCode = hashCode * 59 + this.L7policy.GetHashCode();
+                if (this.ConditionPerPolicy != null)
+                    hashCode = hashCode * 59 + this.ConditionPerPolicy.GetHashCode();
                 if (this.Pool != null)
                     hashCode = hashCode * 59 + this.Pool.GetHashCode();
                 if (this.Healthmonitor != null)
@@ -230,14 +268,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Member.GetHashCode();
                 if (this.MembersPerPool != null)
                     hashCode = hashCode * 59 + this.MembersPerPool.GetHashCode();
+                if (this.ListenersPerPool != null)
+                    hashCode = hashCode * 59 + this.ListenersPerPool.GetHashCode();
                 if (this.Ipgroup != null)
                     hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
-                if (this.SecurityPolicy != null)
-                    hashCode = hashCode * 59 + this.SecurityPolicy.GetHashCode();
                 if (this.IpgroupBindings != null)
                     hashCode = hashCode * 59 + this.IpgroupBindings.GetHashCode();
                 if (this.IpgroupMaxLength != null)
                     hashCode = hashCode * 59 + this.IpgroupMaxLength.GetHashCode();
+                if (this.SecurityPolicy != null)
+                    hashCode = hashCode * 59 + this.SecurityPolicy.GetHashCode();
+                if (this.ListenersPerLoadbalancer != null)
+                    hashCode = hashCode * 59 + this.ListenersPerLoadbalancer.GetHashCode();
                 return hashCode;
             }
         }

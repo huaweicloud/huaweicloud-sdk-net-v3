@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id" , createKafkaConsumerGroupRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/groups",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/group",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaConsumerGroupRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             CreateKafkaConsumerGroupResponse createKafkaConsumerGroupResponse = JsonUtils.DeSerializeNull<CreateKafkaConsumerGroupResponse>(response);

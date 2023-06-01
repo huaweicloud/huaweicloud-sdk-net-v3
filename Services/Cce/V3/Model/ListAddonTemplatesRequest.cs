@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 指定的模板名称，不填写则查询列表。
+        /// 指定的插件名称或插件别名，不填写则查询列表。
         /// </summary>
         [SDKProperty("addon_template_name", IsQuery = true)]
         [JsonProperty("addon_template_name", NullValueHandling = NullValueHandling.Ignore)]

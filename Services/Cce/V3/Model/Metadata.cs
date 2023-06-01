@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。
+    /// 资源描述基本信息，集合类的元素类型，包含一组由不同名称定义的属性。
     /// </summary>
     public class Metadata 
     {
@@ -23,19 +23,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Uid { get; set; }
 
         /// <summary>
-        /// 插件名称
+        /// 资源名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 插件标签，key/value对格式，接口保留字段，填写不会生效
+        /// 资源标签，key/value对格式，接口保留字段，填写不会生效
         /// </summary>
         [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
-        /// 插件注解，由key/value组成 - 安装：固定值为{\&quot;addon.install/type\&quot;:\&quot;install\&quot;} - 升级：固定值为{\&quot;addon.upgrade/type\&quot;:\&quot;upgrade\&quot;} 
+        /// 资源注解，由key/value组成 
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Annotations { get; set; }

@@ -71,16 +71,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string RedirectListenerId { get; set; }
 
         /// <summary>
-        /// 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。  使用说明： - 当action为REDIRECT_TO_POOL时，redirect_pool_id和redirect_pools_config 必须指定一个，两个都指定时按redirect_pools_config生效。 - 当action为REDIRECT_TO_LISTENER时，不可指定。
+        /// 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。  使用说明： - 当action为REDIRECT_TO_LISTENER时，不可指定。
         /// </summary>
         [JsonProperty("redirect_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RedirectPoolId { get; set; }
-
-        /// <summary>
-        /// 转发到的后端主机组的配置。当action为REDIRECT_TO_POOL时生效。  使用说明： - 当action为REDIRECT_TO_POOL时redirect_pool_id和redirect_pools_config 必须指定一个，两个都指定时按redirect_pools_config生效。 - 当action为REDIRECT_TO_LISTENER时，不可指定。
-        /// </summary>
-        [JsonProperty("redirect_pools_config", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateRedirectPoolsConfig> RedirectPoolsConfig { get; set; }
 
         /// <summary>
         /// 转发到的url。必须满足格式: protocol://host:port/path?query。  [不支持该字段，请勿使用。](tag:hcso_dt)
@@ -99,6 +93,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("fixed_response_config", NullValueHandling = NullValueHandling.Ignore)]
         public CreateFixtedResponseConfig FixedResponseConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("redirect_pools_extend_config", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateRedirectPoolsExtendConfig RedirectPoolsExtendConfig { get; set; }
 
         /// <summary>
         /// 转发策略关联的转发规则对象。详细参考表 l7rule字段说明。rules列表中最多含有10个rule规则 （若rule中包含conditions字段，一条condition算一个规则）， 且列表中type为HOST_NAME，PATH，METHOD，SOURCE_IP的rule不能重复，至多指定一条。  使用说明： - 仅支持全量替换。 - 如果l7policy 是重定向到listener的话，不允许创建l7rule。
@@ -125,10 +125,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  redirectListenerId: ").Append(RedirectListenerId).Append("\n");
             sb.Append("  redirectPoolId: ").Append(RedirectPoolId).Append("\n");
-            sb.Append("  redirectPoolsConfig: ").Append(RedirectPoolsConfig).Append("\n");
             sb.Append("  redirectUrl: ").Append(RedirectUrl).Append("\n");
             sb.Append("  redirectUrlConfig: ").Append(RedirectUrlConfig).Append("\n");
             sb.Append("  fixedResponseConfig: ").Append(FixedResponseConfig).Append("\n");
+            sb.Append("  redirectPoolsExtendConfig: ").Append(RedirectPoolsExtendConfig).Append("\n");
             sb.Append("  rules: ").Append(Rules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -202,12 +202,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.RedirectPoolId.Equals(input.RedirectPoolId))
                 ) && 
                 (
-                    this.RedirectPoolsConfig == input.RedirectPoolsConfig ||
-                    this.RedirectPoolsConfig != null &&
-                    input.RedirectPoolsConfig != null &&
-                    this.RedirectPoolsConfig.SequenceEqual(input.RedirectPoolsConfig)
-                ) && 
-                (
                     this.RedirectUrl == input.RedirectUrl ||
                     (this.RedirectUrl != null &&
                     this.RedirectUrl.Equals(input.RedirectUrl))
@@ -221,6 +215,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.FixedResponseConfig == input.FixedResponseConfig ||
                     (this.FixedResponseConfig != null &&
                     this.FixedResponseConfig.Equals(input.FixedResponseConfig))
+                ) && 
+                (
+                    this.RedirectPoolsExtendConfig == input.RedirectPoolsExtendConfig ||
+                    (this.RedirectPoolsExtendConfig != null &&
+                    this.RedirectPoolsExtendConfig.Equals(input.RedirectPoolsExtendConfig))
                 ) && 
                 (
                     this.Rules == input.Rules ||
@@ -258,14 +257,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
                 if (this.RedirectPoolId != null)
                     hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
-                if (this.RedirectPoolsConfig != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolsConfig.GetHashCode();
                 if (this.RedirectUrl != null)
                     hashCode = hashCode * 59 + this.RedirectUrl.GetHashCode();
                 if (this.RedirectUrlConfig != null)
                     hashCode = hashCode * 59 + this.RedirectUrlConfig.GetHashCode();
                 if (this.FixedResponseConfig != null)
                     hashCode = hashCode * 59 + this.FixedResponseConfig.GetHashCode();
+                if (this.RedirectPoolsExtendConfig != null)
+                    hashCode = hashCode * 59 + this.RedirectPoolsExtendConfig.GetHashCode();
                 if (this.Rules != null)
                     hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;

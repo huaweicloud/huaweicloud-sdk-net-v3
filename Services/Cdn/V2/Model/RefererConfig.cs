@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// Referer黑白名单类型 off：关闭Referer黑白名单; black：Referer黑名单; white：Referer白名单;
+        /// Referer黑白名单类型，off：关闭Referer黑白名单，black：Referer黑名单，white：Referer白名单。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 域名或IP地址，以“,”进行分割，域名、IP地址可以混合输入，支持泛域名添加。域名、IP地址总数不超过400个，端口最大值为65535。
+        /// 域名或IP地址，以“,”进行分割，域名、IP地址可以混合输入，支持泛域名和带端口的域名。域名、IP地址总数不超过400个，端口取值范围1-65535。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认值false。
+        /// 是否包含空Referer，如果是黑名单并开启该选项，则表示无referer不允许访问，如果是白名单并开启该选项，则表示无referer允许访问，默认值false。
         /// </summary>
         [JsonProperty("include_empty", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IncludeEmpty { get; set; }

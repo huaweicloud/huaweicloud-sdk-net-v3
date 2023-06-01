@@ -116,6 +116,24 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 新建元数据迁移任务
+        ///
+        /// 新建元数据迁移任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRocketMqMigrationTaskResponse> CreateRocketMqMigrationTaskAsync(CreateRocketMqMigrationTaskRequest createRocketMqMigrationTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createRocketMqMigrationTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRocketMqMigrationTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            CreateRocketMqMigrationTaskResponse createRocketMqMigrationTaskResponse = JsonUtils.DeSerializeNull<CreateRocketMqMigrationTaskResponse>(response);
+            return createRocketMqMigrationTaskResponse;
+        }
+        
+        /// <summary>
         /// 创建用户
         ///
         /// 创建用户。
@@ -165,6 +183,24 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除元数据迁移任务
+        ///
+        /// 删除元数据迁移任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteRocketMqMigrationTaskResponse> DeleteRocketMqMigrationTaskAsync(DeleteRocketMqMigrationTaskRequest deleteRocketMqMigrationTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteRocketMqMigrationTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRocketMqMigrationTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            DeleteRocketMqMigrationTaskResponse deleteRocketMqMigrationTaskResponse = JsonUtils.DeSerializeNull<DeleteRocketMqMigrationTaskResponse>(response);
+            return deleteRocketMqMigrationTaskResponse;
         }
         
         /// <summary>
@@ -326,6 +362,24 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 查询实例下所有迁移任务或查询指定迁移任务信息
+        ///
+        /// 1. 查询实例下所有迁移任务
+        /// 2. 查询指定迁移任务信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRocketMqMigrationTaskResponse> ListRocketMqMigrationTaskAsync(ListRocketMqMigrationTaskRequest listRocketMqMigrationTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRocketMqMigrationTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketMqMigrationTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListRocketMqMigrationTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询主题的授权用户列表
         ///
         /// 查询主题的授权用户列表。
@@ -377,6 +431,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetConsumeOffsetRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ResetConsumeOffsetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 重发死信消息
+        ///
+        /// 重发死信消息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SendRocketMqDlqMessageResponse> SendRocketMqDlqMessageAsync(SendRocketMqDlqMessageRequest sendRocketMqDlqMessageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , sendRocketMqDlqMessageRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/reliability/{project_id}/instances/{instance_id}/messages/deadletter-resend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendRocketMqDlqMessageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<SendRocketMqDlqMessageResponse>(response);
         }
         
         /// <summary>
@@ -552,6 +623,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 消费验证
+        ///
+        /// 消费验证。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ValidateRocketMqConsumedMessageResponse> ValidateRocketMqConsumedMessageAsync(ValidateRocketMqConsumedMessageRequest validateRocketMqConsumedMessageRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , validateRocketMqConsumedMessageRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/reliability/{project_id}/instances/{instance_id}/messages/resend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateRocketMqConsumedMessageRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ValidateRocketMqConsumedMessageResponse>(response);
         }
         
         /// <summary>

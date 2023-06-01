@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// 
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateResourceTagRequestBodyTag Tag { get; set; }
+        public ResourceTag Tag { get; set; }
 
 
 

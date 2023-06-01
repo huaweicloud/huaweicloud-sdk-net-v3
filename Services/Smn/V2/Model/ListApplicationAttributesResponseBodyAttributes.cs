@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Smn.V2.Model
 {
     /// <summary>
-    /// 
+    /// Application的属性列表。
     /// </summary>
     public class ListApplicationAttributesResponseBodyAttributes 
     {

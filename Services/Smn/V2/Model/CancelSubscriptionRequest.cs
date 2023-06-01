@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 订阅者的唯一的资源标识，可通过[查询订阅者列表](https://support.huaweicloud.com/api-smn/ListSubscriptions.html)获取该标识。
+        /// 订阅者的唯一的资源标识，可通过[查询订阅者列表](ListSubscriptions.xml)获取该标识。
         /// </summary>
         [SDKProperty("subscription_urn", IsPath = true)]
         [JsonProperty("subscription_urn", NullValueHandling = NullValueHandling.Ignore)]

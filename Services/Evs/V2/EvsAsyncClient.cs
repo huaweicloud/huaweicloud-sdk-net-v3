@@ -475,7 +475,7 @@ namespace HuaweiCloud.SDK.Evs.V2
             string urlPath = HttpUtils.AddUrlPath("/",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerializeNull<ListVersionsResponse>(response);
+            return JsonUtils.DeSerialize<ListVersionsResponse>(response);
         }
         
         /// <summary>

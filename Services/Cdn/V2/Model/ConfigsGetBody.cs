@@ -47,13 +47,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public List<SourcesConfig> Sources { get; set; }
 
         /// <summary>
-        /// 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
+        /// 回源协议，follow：协议跟随回源，http：HTTP回源(默认)，https：https回源。
         /// </summary>
         [JsonProperty("origin_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginProtocol { get; set; }
 
         /// <summary>
-        /// 回源跟随（on：开启，off：关闭）。
+        /// 回源跟随，on：开启，off：关闭。
         /// </summary>
         [JsonProperty("origin_follow302_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginFollow302Status { get; set; }
@@ -95,19 +95,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public CacheUrlParameterFilter CacheUrlParameterFilter { get; set; }
 
         /// <summary>
-        /// ipv6设置（1：打开；0：关闭）
+        /// ipv6设置，1：打开；0：关闭。
         /// </summary>
         [JsonProperty("ipv6_accelerate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ipv6Accelerate { get; set; }
 
         /// <summary>
-        /// CDN状态码缓存时间
+        /// 状态码缓存时间。
         /// </summary>
         [JsonProperty("error_code_cache", NullValueHandling = NullValueHandling.Ignore)]
         public List<ErrorCodeCache> ErrorCodeCache { get; set; }
 
         /// <summary>
-        /// Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on
+        /// Range回源，开启: on，off:关闭。
         /// </summary>
         [JsonProperty("origin_range_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginRangeStatus { get; set; }
@@ -119,25 +119,25 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public UserAgentFilter UserAgentFilter { get; set; }
 
         /// <summary>
-        /// 改写回源URL，最多配置20条。
+        /// 改写回源URL。
         /// </summary>
         [JsonProperty("origin_request_url_rewrite", NullValueHandling = NullValueHandling.Ignore)]
         public List<OriginRequestUrlRewrite> OriginRequestUrlRewrite { get; set; }
 
         /// <summary>
-        /// 高级回源，最多配置20条。
+        /// 高级回源。
         /// </summary>
         [JsonProperty("flexible_origin", NullValueHandling = NullValueHandling.Ignore)]
         public List<FlexibleOrigins> FlexibleOrigin { get; set; }
 
         /// <summary>
-        /// 回源是否校验ETag（on：开启，off：关闭）。
+        /// 回源是否校验ETag，on：开启，off：关闭。
         /// </summary>
         [JsonProperty("slice_etag_status", NullValueHandling = NullValueHandling.Ignore)]
         public string SliceEtagStatus { get; set; }
 
         /// <summary>
-        /// 回源超时时间，范围:5-60，单位：秒。
+        /// 回源超时时间，单位：秒。
         /// </summary>
         [JsonProperty("origin_receive_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? OriginReceiveTimeout { get; set; }

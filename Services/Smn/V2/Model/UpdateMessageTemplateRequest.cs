@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 模板唯一的资源标识，可通过查询[消息模板列表](https://support.huaweicloud.com/api-smn/ListMessageTemplates.html)获取该标识。
+        /// 模板唯一的资源标识，可通过查询[消息模板列表](ListMessageTemplates.xml)获取该标识。
         /// </summary>
         [SDKProperty("message_template_id", IsPath = true)]
         [JsonProperty("message_template_id", NullValueHandling = NullValueHandling.Ignore)]

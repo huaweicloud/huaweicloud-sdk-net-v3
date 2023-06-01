@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public int? ApplicationCount { get; set; }
 
         /// <summary>
-        /// 
+        /// Application列表。
         /// </summary>
         [JsonProperty("applications", NullValueHandling = NullValueHandling.Ignore)]
         public List<ApplicationItem> Applications { get; set; }

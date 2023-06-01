@@ -17,18 +17,25 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 加速域名
+        /// 加速域名。
         /// </summary>
         [SDKProperty("domain_name", IsPath = true)]
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\&quot;all\&quot;表示所有项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+        /// 企业项目ID， all：所有项目。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 取值为auth_key，用来查询鉴权KEY和鉴权备KEY的值。
+        /// </summary>
+        [SDKProperty("show_special_configs", IsQuery = true)]
+        [JsonProperty("show_special_configs", NullValueHandling = NullValueHandling.Ignore)]
+        public string ShowSpecialConfigs { get; set; }
 
 
 
@@ -41,6 +48,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("class ShowDomainFullConfigRequest {\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  showSpecialConfigs: ").Append(ShowSpecialConfigs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,6 +79,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.ShowSpecialConfigs == input.ShowSpecialConfigs ||
+                    (this.ShowSpecialConfigs != null &&
+                    this.ShowSpecialConfigs.Equals(input.ShowSpecialConfigs))
                 );
         }
 
@@ -86,6 +99,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ShowSpecialConfigs != null)
+                    hashCode = hashCode * 59 + this.ShowSpecialConfigs.GetHashCode();
                 return hashCode;
             }
         }

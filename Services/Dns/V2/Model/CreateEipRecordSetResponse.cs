@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
         public PageLink Links { get; set; }
 
+        /// <summary>
+        /// 反向解析关联的企业项目ID，长度不超过36个字符。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,6 +148,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Links == input.Links ||
                     (this.Links != null &&
                     this.Links.Equals(input.Links))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -168,6 +180,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Links != null)
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

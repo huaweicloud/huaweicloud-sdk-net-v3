@@ -1,3 +1,362 @@
+# 3.1.41 2023-06-01
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - Support the interface `ShowSummary`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAddonInstance**
+    - changes of response param
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+  - **UpdateAddonInstance**
+    - changes of request param
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+    - changes of response param
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+  - **CreateAddonInstance**
+    - changes of request param
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+    - changes of response param
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+  - **ListAddonInstances**
+    - changes of response param
+      - `+ items.metadata.alias`
+      - `* items.metadata: object<Metadata> -> object<AddonMetadata>`
+  - **ListAddonTemplates**
+    - changes of response param
+      - `+ items.metadata.alias`
+      - `* items.metadata: object<Metadata> -> object<AddonMetadata>`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowLogs**
+    - changes of request param
+      - `+ start_time`
+      - `+ end_time`
+      - `- query_date`
+  - **ShowDomainFullConfig**
+    - changes of request param
+      - `+ show_special_configs`
+    - changes of response param
+      - `- configs.error_code_cache.code: enum value [400,403,404,405,414,500,501,502,503,504]`
+      - `+ configs.flexible_origin.back_sources.http_port`
+      - `+ configs.flexible_origin.back_sources.https_port`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `- configs.error_code_cache.code: enum value [400,403,404,405,414,500,501,502,503,504]`
+      - `+ configs.flexible_origin.back_sources.http_port`
+      - `+ configs.flexible_origin.back_sources.https_port`
+
+### HuaweiCloud SDK DNS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RestorePtrRecord**
+    - changes of request param
+      - `* ptrdname: string -> object`
+  - **ShowRecordSet**
+    - changes of response param
+      - `+ bundle`
+  - **CreateEipRecordSet**
+    - changes of response param
+      - `+ enterprise_project_id`
+  - **ShowPtrRecordSet**
+    - changes of response param
+      - `+ enterprise_project_id`
+  - **ShowResourceTag**
+    - changes of response param
+      - `+ enterpriseProjectOrDefault`
+  - **ListPrivateZones**
+    - changes of request param
+      - `* type: required -> optional`
+
+### HuaweiCloud SDK ELB
+
+- _Features_
+  - Support the interfaces `DeleteLoadBalancerForce`, `DeleteListenerForce`, `BatchUpdateMembers`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowQuota**
+    - changes of response param
+      - `+ quota.condition_per_policy`
+      - `+ quota.listeners_per_pool`
+      - `+ quota.listeners_per_loadbalancer`
+      - `* quota.ipgroup_bindings: string -> int32`
+      - `* quota.ipgroup_max_length: string -> int32`
+  - **ShowLoadBalancer**
+    - changes of response param
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+  - **UpdateLoadBalancer**
+    - changes of request param
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+    - changes of response param
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+  - **ListListeners**
+    - changes of request param
+      - `+ protection_status`
+    - changes of response param
+      - `+ listeners.protection_status`
+      - `+ listeners.protection_reason`
+      - `+ listeners.gzip_enable`
+  - **CreateListener**
+    - changes of request param
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+    - changes of response param
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+  - **ShowListener**
+    - changes of response param
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+  - **UpdateListener**
+    - changes of request param
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+    - changes of response param
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+  - **ListPools**
+    - changes of request param
+      - `+ protection_status`
+    - changes of response param
+      - `+ pools.protection_status`
+      - `+ pools.protection_reason`
+  - **CreatePool**
+    - changes of request param
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+    - changes of response param
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+  - **ShowPool**
+    - changes of response param
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+  - **UpdatePool**
+    - changes of request param
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+    - changes of response param
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+  - **UpdateMember**
+    - changes of request param
+      - `+ member.protocol_port`
+  - **ListLoadBalancers**
+    - changes of request param
+      - `+ protection_status`
+      - `+ global_eips`
+    - changes of response param
+      - `+ loadbalancers.protection_status`
+      - `+ loadbalancers.protection_reason`
+  - **CreateLoadBalancer**
+    - changes of request param
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+    - changes of response param
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+  - **ListL7Policies**
+    - changes of response param
+      - `+ l7policies.redirect_pools_extend_config`
+      - `- l7policies.redirect_pools_config`
+  - **CreateL7Policy**
+    - changes of request param
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+    - changes of response param
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+  - **ShowL7Policy**
+    - changes of response param
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+  - **UpdateL7Policy**
+    - changes of request param
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+    - changes of response param
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstanceTopics**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+  - **ListInstances**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowIssueV4**
+    - changes of response param
+      - `+ story_point`
+  - **SearchIssues**
+    - changes of response param
+      - `+ issue_list.due_date`
+  - **ListIssueCommentsV4**
+    - changes of response param
+      - `+ comments.timestamp`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreatePostPaidInstanceByEngine**
+    - changes of request param
+      - `+ bss_param`
+  - **CreatePostPaidInstance**
+    - changes of request param
+      - `+ bss_param`
+  - **ListInstancesDetails**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - Support the following interfaces：
+    - `SendRocketMqDlqMessage`
+    - `ValidateRocketMqConsumedMessage`
+    - `ListRocketMqMigrationTask`
+    - `CreateRocketMqMigrationTask`
+    - `DeleteRocketMqMigrationTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SMN
+
+- _Features_
+  - Support the following interfaces：
+    - `UpdateSubscription`
+    - `ListLogtank`
+    - `CreateLogtank`
+    - `UpdateLogtank`
+    - `DeleteLogtank`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTopicDetails**
+    - changes of response param
+      - `+ topic_id`
+  - **ListTopics**
+    - changes of request param
+      - `+ topic_id`
+    - changes of response param
+      - `+ topics.topic_id`
+  - **ListTopicAttributes**
+    - changes of response param
+      - `+ attributes.access_policy`
+      - `+ attributes.introduction`
+      - `- attributes.Version`
+      - `- attributes.Id`
+      - `- attributes.Statement`
+  - **AddSubscription**
+    - changes of request param
+      - `+ extension`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAssetByFileUpload**
+    - changes of request param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **PublishAssetFromObs**
+    - changes of request param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **CreateAssetReviewTask**
+    - changes of request param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+    - changes of response param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **UploadMetaDataByUrl**
+    - changes of request param
+      - `+ upload_metadatas.review.interval`
+      - `+ upload_metadatas.review.politics`
+      - `+ upload_metadatas.review.terrorism`
+      - `+ upload_metadatas.review.porn`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateVpcPeering**
+    - changes of request param
+      - `+ peering.description`
+
 # 3.1.40 2023-05-25
 
 ### HuaweiCloud SDK CBR

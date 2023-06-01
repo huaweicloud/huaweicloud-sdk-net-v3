@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id&#x3D;xxx&amp;l4_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:fcs)
+        /// 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id&#x3D;xxx&amp;l4_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [SDKProperty("l4_flavor_id", IsQuery = true)]
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,7 +171,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id&#x3D;xxx&amp;l7_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:fcs)
+        /// 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id&#x3D;xxx&amp;l7_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [SDKProperty("l7_flavor_id", IsQuery = true)]
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> L7ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 资源账单信息。  支持多值查询，查询条件格式：*billing_info&#x3D;xxx&amp;billing_info&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
+        /// 资源账单信息。  支持多值查询，查询条件格式：*billing_info&#x3D;xxx&amp;billing_info&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
         /// </summary>
         [SDKProperty("billing_info", IsQuery = true)]
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -234,11 +234,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> ElbVirsubnetType { get; set; }
 
         /// <summary>
-        /// 是否开启弹性扩缩容。示例如下： \&quot;autoscaling\&quot;: {             \&quot;enable\&quot;: \&quot;true\&quot;         }  支持多值查询，查询条件格式：  *autoscaling&#x3D;enable&#x3D;true&amp;autoscaling&#x3D;enable&#x3D;false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,fcs)
+        /// 是否开启弹性扩缩容。示例如下： \&quot;autoscaling\&quot;: {             \&quot;enable\&quot;: \&quot;true\&quot;         }  支持多值查询，查询条件格式：  *autoscaling&#x3D;enable&#x3D;true&amp;autoscaling&#x3D;enable&#x3D;false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [SDKProperty("autoscaling", IsQuery = true)]
         [JsonProperty("autoscaling", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Autoscaling { get; set; }
+
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// </summary>
+        [SDKProperty("protection_status", IsQuery = true)]
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ProtectionStatus { get; set; }
+
+        /// <summary>
+        /// 负载均衡器绑定的公网IP。示例如下：  {     \&quot;global_eips\&quot;: [         {             \&quot;global_eip_id\&quot;: \&quot;24000000-0000-0000-0000-100000000001\&quot;,             \&quot;global_eip_address\&quot;: \&quot;10.10.10.10\&quot;,             \&quot;ip_version\&quot;: 4         }     ] }   支持多值查询，查询条件格式：  - global_eip_id作为查询条件：*global_eips&#x3D;global_eip_id&#x3D;xxx&amp;global_eips&#x3D;global_eip_id&#x3D;xxx*。  - global_eip_address作为查询条件：*global_eips&#x3D;global_eip_address&#x3D;xxx&amp;global_eips&#x3D;global_eip_address&#x3D;xxx*。  - ip_version作为查询条件：*global_eips&#x3D;ip_version&#x3D;xxx&amp;global_eips&#x3D;ip_version&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("global_eips", IsQuery = true)]
+        [JsonProperty("global_eips", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> GlobalEips { get; set; }
 
 
 
@@ -281,6 +295,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
             sb.Append("  elbVirsubnetType: ").Append(ElbVirsubnetType).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
+            sb.Append("  globalEips: ").Append(GlobalEips).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -487,6 +503,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Autoscaling != null &&
                     input.Autoscaling != null &&
                     this.Autoscaling.SequenceEqual(input.Autoscaling)
+                ) && 
+                (
+                    this.ProtectionStatus == input.ProtectionStatus ||
+                    this.ProtectionStatus != null &&
+                    input.ProtectionStatus != null &&
+                    this.ProtectionStatus.SequenceEqual(input.ProtectionStatus)
+                ) && 
+                (
+                    this.GlobalEips == input.GlobalEips ||
+                    this.GlobalEips != null &&
+                    input.GlobalEips != null &&
+                    this.GlobalEips.SequenceEqual(input.GlobalEips)
                 );
         }
 
@@ -562,6 +590,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ElbVirsubnetType.GetHashCode();
                 if (this.Autoscaling != null)
                     hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.ProtectionStatus != null)
+                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.GlobalEips != null)
+                    hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
                 return hashCode;
             }
         }

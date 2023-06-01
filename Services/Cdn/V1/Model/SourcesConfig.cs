@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string OriginAddr { get; set; }
 
         /// <summary>
-        /// 源站类型（\&quot;ipaddr\&quot;：\&quot;IP源站\&quot;，\&quot;domain\&quot;：\&quot;域名源站\&quot;，\&quot;obs_bucket\&quot;：\&quot;OBS Bucket源站\&quot;）。
+        /// 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
         /// </summary>
         [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginType { get; set; }

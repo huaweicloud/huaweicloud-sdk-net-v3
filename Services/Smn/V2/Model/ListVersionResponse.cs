@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// 
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Version { get; set; }
+        public VersionItem Version { get; set; }
 
 
 

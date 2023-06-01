@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// HTTPS证书是否启用。（on：开启，off：关闭）
+        /// HTTPS证书是否启用，on：开启，off：关闭。
         /// </summary>
         [JsonProperty("https_status", NullValueHandling = NullValueHandling.Ignore)]
         public string HttpsStatus { get; set; }
 
         /// <summary>
-        /// 证书名字。（长度限制为3-64字符）。当证书开启时必传。
+        /// 证书名字，长度限制为3-64字符。  &gt; 当证书开启时必传。
         /// </summary>
         [JsonProperty("certificate_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateName { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的证书内容，当证书开启时必传。取值范围：PEM编码格式。
+        /// HTTPS协议使用的证书内容，当证书开启时必传。  &gt; PEM编码格式。
         /// </summary>
         [JsonProperty("certificate_value", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateValue { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的私钥，当证书开启时必传。取值范围：PEM编码格式。
+        /// HTTPS协议使用的私钥，当证书开启时必传。  &gt; PEM编码格式。
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }
 
         /// <summary>
-        /// 证书来源。1：代表华为云托管证书；0：表示自有证书。 默认值0。当证书开启时必传。
+        /// 证书来源,1：华为云托管证书,0：自有证书, 默认值0。  &gt; 证书开启时必传
         /// </summary>
         [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateSource { get; set; }
 
         /// <summary>
-        /// 证书类型。server：国际证书；server_sm：国密证书。
+        /// 证书类型，server：国际证书；server_sm：国密证书。
         /// </summary>
         [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateType { get; set; }
 
         /// <summary>
-        /// 是否使用HTTP2.0。（on：是，off：否。）,默认关闭，https_status&#x3D;off时，该值不生效。
+        /// 是否使用HTTP2.0，on：是，off：否。  &gt; 默认关闭，https_status&#x3D;off时，该值不生效。
         /// </summary>
         [JsonProperty("http2_status", NullValueHandling = NullValueHandling.Ignore)]
         public string Http2Status { get; set; }
 
         /// <summary>
-        /// 传输层安全性协议。目前支持TLSv1.0/1.1/1.2/1.3四个版本的协议。默认全部开启，不可全部关闭，只可开启连续或单个版本号。多版本开启时，使用逗号拼接传输，例：TLSv1.1,TLSv1.2。
+        /// 传输层安全性协议， 目前支持TLSv1.0/1.1/1.2/1.3四个版本的协议，CDN默认开启TLS1.1/1.2/1.3，不可全部关闭。  &gt; 1.需开启连续或单个版本号，例：不可仅开启TLS1.0/1.2而关闭TLS1.1。  &gt; 2.多版本开启时，使用逗号拼接传输，例：TLSv1.1,TLSv1.2。
         /// </summary>
         [JsonProperty("tls_version", NullValueHandling = NullValueHandling.Ignore)]
         public string TlsVersion { get; set; }
 
         /// <summary>
-        /// 是否开启ocsp stapling （on：是，off：否）。
+        /// 是否开启ocsp stapling,on：是，off：否。
         /// </summary>
         [JsonProperty("ocsp_stapling_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OcspStaplingStatus { get; set; }

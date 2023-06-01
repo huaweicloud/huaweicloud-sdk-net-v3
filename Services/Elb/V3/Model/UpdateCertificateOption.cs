@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 服务器证书的私钥。PEM编码格式。 当type为client时，该参数被忽略，不影响证书的创建和使用。且若不符合格式，不报错但会被设置为空。 当type为server时，该字段必须符合格式要求，且私钥必须是有效的。 最大长度8192字符。
+        /// 服务器证书的私钥。PEM编码格式。 当type为client时，该参数被忽略，不影响证书的创建和使用。若传入不符合格式值，则会报错。 当type为server时，该字段必须符合格式要求，且私钥必须是有效的。 最大长度8192字符。
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }

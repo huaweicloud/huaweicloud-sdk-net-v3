@@ -1,3 +1,362 @@
+# 3.1.41 2023-06-01
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 支持接口`ShowSummary`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAddonInstance**
+    - 响应参数变更
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+  - **UpdateAddonInstance**
+    - 请求参数变更
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+    - 响应参数变更
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+  - **CreateAddonInstance**
+    - 请求参数变更
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+    - 响应参数变更
+      - `+ metadata.alias`
+      - `* metadata: object<Metadata> -> object<AddonMetadata>`
+  - **ListAddonInstances**
+    - 响应参数变更
+      - `+ items.metadata.alias`
+      - `* items.metadata: object<Metadata> -> object<AddonMetadata>`
+  - **ListAddonTemplates**
+    - 响应参数变更
+      - `+ items.metadata.alias`
+      - `* items.metadata: object<Metadata> -> object<AddonMetadata>`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowLogs**
+    - 请求参数变更
+      - `+ start_time`
+      - `+ end_time`
+      - `- query_date`
+  - **ShowDomainFullConfig**
+    - 请求参数变更
+      - `+ show_special_configs`
+    - 响应参数变更
+      - `- configs.error_code_cache.code: enum value [400,403,404,405,414,500,501,502,503,504]`
+      - `+ configs.flexible_origin.back_sources.http_port`
+      - `+ configs.flexible_origin.back_sources.https_port`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `- configs.error_code_cache.code: enum value [400,403,404,405,414,500,501,502,503,504]`
+      - `+ configs.flexible_origin.back_sources.http_port`
+      - `+ configs.flexible_origin.back_sources.https_port`
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RestorePtrRecord**
+    - 请求参数变更
+      - `* ptrdname: string -> object`
+  - **ShowRecordSet**
+    - 响应参数变更
+      - `+ bundle`
+  - **CreateEipRecordSet**
+    - 响应参数变更
+      - `+ enterprise_project_id`
+  - **ShowPtrRecordSet**
+    - 响应参数变更
+      - `+ enterprise_project_id`
+  - **ShowResourceTag**
+    - 响应参数变更
+      - `+ enterpriseProjectOrDefault`
+  - **ListPrivateZones**
+    - 请求参数变更
+      - `* type: required -> optional`
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+  - 支持接口`DeleteLoadBalancerForce`、`DeleteListenerForce`、`BatchUpdateMembers`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowQuota**
+    - 响应参数变更
+      - `+ quota.condition_per_policy`
+      - `+ quota.listeners_per_pool`
+      - `+ quota.listeners_per_loadbalancer`
+      - `* quota.ipgroup_bindings: string -> int32`
+      - `* quota.ipgroup_max_length: string -> int32`
+  - **ShowLoadBalancer**
+    - 响应参数变更
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+  - **UpdateLoadBalancer**
+    - 请求参数变更
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+    - 响应参数变更
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+  - **ListListeners**
+    - 请求参数变更
+      - `+ protection_status`
+    - 响应参数变更
+      - `+ listeners.protection_status`
+      - `+ listeners.protection_reason`
+      - `+ listeners.gzip_enable`
+  - **CreateListener**
+    - 请求参数变更
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+    - 响应参数变更
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+  - **ShowListener**
+    - 响应参数变更
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+  - **UpdateListener**
+    - 请求参数变更
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+    - 响应参数变更
+      - `+ listener.protection_status`
+      - `+ listener.protection_reason`
+      - `+ listener.gzip_enable`
+  - **ListPools**
+    - 请求参数变更
+      - `+ protection_status`
+    - 响应参数变更
+      - `+ pools.protection_status`
+      - `+ pools.protection_reason`
+  - **CreatePool**
+    - 请求参数变更
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+    - 响应参数变更
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+  - **ShowPool**
+    - 响应参数变更
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+  - **UpdatePool**
+    - 请求参数变更
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+    - 响应参数变更
+      - `+ pool.protection_status`
+      - `+ pool.protection_reason`
+  - **UpdateMember**
+    - 请求参数变更
+      - `+ member.protocol_port`
+  - **ListLoadBalancers**
+    - 请求参数变更
+      - `+ protection_status`
+      - `+ global_eips`
+    - 响应参数变更
+      - `+ loadbalancers.protection_status`
+      - `+ loadbalancers.protection_reason`
+  - **CreateLoadBalancer**
+    - 请求参数变更
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+    - 响应参数变更
+      - `+ loadbalancer.protection_status`
+      - `+ loadbalancer.protection_reason`
+  - **ListL7Policies**
+    - 响应参数变更
+      - `+ l7policies.redirect_pools_extend_config`
+      - `- l7policies.redirect_pools_config`
+  - **CreateL7Policy**
+    - 请求参数变更
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+    - 响应参数变更
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+  - **ShowL7Policy**
+    - 响应参数变更
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+  - **UpdateL7Policy**
+    - 请求参数变更
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+    - 响应参数变更
+      - `+ l7policy.redirect_pools_extend_config`
+      - `- l7policy.redirect_pools_config`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstanceTopics**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+  - **ListInstances**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowIssueV4**
+    - 响应参数变更
+      - `+ story_point`
+  - **SearchIssues**
+    - 响应参数变更
+      - `+ issue_list.due_date`
+  - **ListIssueCommentsV4**
+    - 响应参数变更
+      - `+ comments.timestamp`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreatePostPaidInstanceByEngine**
+    - 请求参数变更
+      - `+ bss_param`
+  - **CreatePostPaidInstance**
+    - 请求参数变更
+      - `+ bss_param`
+  - **ListInstancesDetails**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 支持以下接口：
+    - `SendRocketMqDlqMessage`
+    - `ValidateRocketMqConsumedMessage`
+    - `ListRocketMqMigrationTask`
+    - `CreateRocketMqMigrationTask`
+    - `DeleteRocketMqMigrationTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SMN
+
+- _新增特性_
+  - 支持以下接口：
+    - `UpdateSubscription`
+    - `ListLogtank`
+    - `CreateLogtank`
+    - `UpdateLogtank`
+    - `DeleteLogtank`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTopicDetails**
+    - 响应参数变更
+      - `+ topic_id`
+  - **ListTopics**
+    - 请求参数变更
+      - `+ topic_id`
+    - 响应参数变更
+      - `+ topics.topic_id`
+  - **ListTopicAttributes**
+    - 响应参数变更
+      - `+ attributes.access_policy`
+      - `+ attributes.introduction`
+      - `- attributes.Version`
+      - `- attributes.Id`
+      - `- attributes.Statement`
+  - **AddSubscription**
+    - 请求参数变更
+      - `+ extension`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateAssetByFileUpload**
+    - 请求参数变更
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **PublishAssetFromObs**
+    - 请求参数变更
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **CreateAssetReviewTask**
+    - 请求参数变更
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+    - 响应参数变更
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **UploadMetaDataByUrl**
+    - 请求参数变更
+      - `+ upload_metadatas.review.interval`
+      - `+ upload_metadatas.review.politics`
+      - `+ upload_metadatas.review.terrorism`
+      - `+ upload_metadatas.review.porn`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateVpcPeering**
+    - 请求参数变更
+      - `+ peering.description`
+
 # 3.1.40 2023-05-25
 
 ### HuaweiCloud SDK CBR

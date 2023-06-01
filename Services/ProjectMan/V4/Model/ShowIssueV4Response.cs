@@ -115,6 +115,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("story_point", NullValueHandling = NullValueHandling.Ignore)]
+        public IssueDetailResponseV4StoryPoint StoryPoint { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("module", NullValueHandling = NullValueHandling.Ignore)]
         public IssueItemSfV4Module Module { get; set; }
 
@@ -209,6 +215,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  project: ").Append(Project).Append("\n");
             sb.Append("  iteration: ").Append(Iteration).Append("\n");
+            sb.Append("  storyPoint: ").Append(StoryPoint).Append("\n");
             sb.Append("  module: ").Append(Module).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  parentIssue: ").Append(ParentIssue).Append("\n");
@@ -326,6 +333,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Iteration.Equals(input.Iteration))
                 ) && 
                 (
+                    this.StoryPoint == input.StoryPoint ||
+                    (this.StoryPoint != null &&
+                    this.StoryPoint.Equals(input.StoryPoint))
+                ) && 
+                (
                     this.Module == input.Module ||
                     (this.Module != null &&
                     this.Module.Equals(input.Module))
@@ -428,6 +440,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Project.GetHashCode();
                 if (this.Iteration != null)
                     hashCode = hashCode * 59 + this.Iteration.GetHashCode();
+                if (this.StoryPoint != null)
+                    hashCode = hashCode * 59 + this.StoryPoint.GetHashCode();
                 if (this.Module != null)
                     hashCode = hashCode * 59 + this.Module.GetHashCode();
                 if (this.Name != null)

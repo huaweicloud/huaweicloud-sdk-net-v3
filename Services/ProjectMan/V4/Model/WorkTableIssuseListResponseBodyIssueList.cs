@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("updated_on", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedOn { get; set; }
 
+        /// <summary>
+        /// 工作项预计结束时间戳
+        /// </summary>
+        [JsonProperty("due_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string DueDate { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  closedFlag: ").Append(ClosedFlag).Append("\n");
             sb.Append("  createdOn: ").Append(CreatedOn).Append("\n");
             sb.Append("  updatedOn: ").Append(UpdatedOn).Append("\n");
+            sb.Append("  dueDate: ").Append(DueDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -369,6 +376,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.UpdatedOn == input.UpdatedOn ||
                     (this.UpdatedOn != null &&
                     this.UpdatedOn.Equals(input.UpdatedOn))
+                ) && 
+                (
+                    this.DueDate == input.DueDate ||
+                    (this.DueDate != null &&
+                    this.DueDate.Equals(input.DueDate))
                 );
         }
 
@@ -434,6 +446,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.CreatedOn.GetHashCode();
                 if (this.UpdatedOn != null)
                     hashCode = hashCode * 59 + this.UpdatedOn.GetHashCode();
+                if (this.DueDate != null)
+                    hashCode = hashCode * 59 + this.DueDate.GetHashCode();
                 return hashCode;
             }
         }

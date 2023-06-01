@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> ProtocolPort { get; set; }
 
         /// <summary>
-        /// 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。  说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hws_eu,hcso_dt)  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [荷兰region不支持QUIC。](tag:dt)
+        /// 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。  说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hws_eu,hcso_dt)  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -108,7 +108,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [荷兰region不支持QUIC。](tag:dt)
+        /// 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
         /// </summary>
         [SDKProperty("http2_enable", IsQuery = true)]
         [JsonProperty("http2_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,7 +171,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<int?> ClientTimeout { get; set; }
 
         /// <summary>
-        /// 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到一下次请求时重新建立新的连接。  取值： - TCP监听器：10-4000s。 - HTTP/HTTPS/TERMINATED_HTTPS监听器：0-4000s。 - UDP监听器不支持此字段。  支持多值查询，查询条件格式：*keepalive_timeout&#x3D;xxx&amp;keepalive_timeout&#x3D;xxx*。
+        /// 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  取值： - TCP监听器：10-4000s。 - HTTP/HTTPS/TERMINATED_HTTPS监听器：0-4000s。 - UDP监听器不支持此字段。  支持多值查询，查询条件格式：*keepalive_timeout&#x3D;xxx&amp;keepalive_timeout&#x3D;xxx*。
         /// </summary>
         [SDKProperty("keepalive_timeout", IsQuery = true)]
         [JsonProperty("keepalive_timeout", NullValueHandling = NullValueHandling.Ignore)]
@@ -197,6 +197,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [SDKProperty("member_instance_id", IsQuery = true)]
         [JsonProperty("member_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberInstanceId { get; set; }
+
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// </summary>
+        [SDKProperty("protection_status", IsQuery = true)]
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ProtectionStatus { get; set; }
 
 
 
@@ -233,6 +240,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  transparentClientIpEnable: ").Append(TransparentClientIpEnable).Append("\n");
             sb.Append("  enhanceL7policyEnable: ").Append(EnhanceL7policyEnable).Append("\n");
             sb.Append("  memberInstanceId: ").Append(MemberInstanceId).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -401,6 +409,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MemberInstanceId != null &&
                     input.MemberInstanceId != null &&
                     this.MemberInstanceId.SequenceEqual(input.MemberInstanceId)
+                ) && 
+                (
+                    this.ProtectionStatus == input.ProtectionStatus ||
+                    this.ProtectionStatus != null &&
+                    input.ProtectionStatus != null &&
+                    this.ProtectionStatus.SequenceEqual(input.ProtectionStatus)
                 );
         }
 
@@ -464,6 +478,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.EnhanceL7policyEnable.GetHashCode();
                 if (this.MemberInstanceId != null)
                     hashCode = hashCode * 59 + this.MemberInstanceId.GetHashCode();
+                if (this.ProtectionStatus != null)
+                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public UpdateFixtedResponseConfig FixedResponseConfig { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("redirect_pools_extend_config", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateRedirectPoolsExtendConfig RedirectPoolsExtendConfig { get; set; }
+
+        /// <summary>
         /// 转发策略关联的转发规则对象。 详细参考表l7rule字段说明。rules列表中最多含有10个rule规则 （若rule中包含conditions字段，一条condition算一个规则）， 且列表中type为HOST_NAME，PATH，METHOD，SOURCE_IP的rule不能重复，至多指定一条。
         /// </summary>
         [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
@@ -69,12 +75,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }
-
-        /// <summary>
-        /// 转发到的后端主机组的配置。当action为REDIRECT_TO_POOL时生效。  使用说明： - 当action为REDIRECT_TO_POOL时redirect_pool_id和redirect_pools_config 必须指定一个，两个都指定时按redirect_pools_config生效。 - 当action为REDIRECT_TO_LISTENER时，不可指定。  只支持全量覆盖。
-        /// </summary>
-        [JsonProperty("redirect_pools_config", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateRedirectPoolsConfig> RedirectPoolsConfig { get; set; }
 
 
 
@@ -92,9 +92,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  redirectPoolId: ").Append(RedirectPoolId).Append("\n");
             sb.Append("  redirectUrlConfig: ").Append(RedirectUrlConfig).Append("\n");
             sb.Append("  fixedResponseConfig: ").Append(FixedResponseConfig).Append("\n");
+            sb.Append("  redirectPoolsExtendConfig: ").Append(RedirectPoolsExtendConfig).Append("\n");
             sb.Append("  rules: ").Append(Rules).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
-            sb.Append("  redirectPoolsConfig: ").Append(RedirectPoolsConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -152,6 +152,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.FixedResponseConfig.Equals(input.FixedResponseConfig))
                 ) && 
                 (
+                    this.RedirectPoolsExtendConfig == input.RedirectPoolsExtendConfig ||
+                    (this.RedirectPoolsExtendConfig != null &&
+                    this.RedirectPoolsExtendConfig.Equals(input.RedirectPoolsExtendConfig))
+                ) && 
+                (
                     this.Rules == input.Rules ||
                     this.Rules != null &&
                     input.Rules != null &&
@@ -161,12 +166,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Priority == input.Priority ||
                     (this.Priority != null &&
                     this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.RedirectPoolsConfig == input.RedirectPoolsConfig ||
-                    this.RedirectPoolsConfig != null &&
-                    input.RedirectPoolsConfig != null &&
-                    this.RedirectPoolsConfig.SequenceEqual(input.RedirectPoolsConfig)
                 );
         }
 
@@ -192,12 +191,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.RedirectUrlConfig.GetHashCode();
                 if (this.FixedResponseConfig != null)
                     hashCode = hashCode * 59 + this.FixedResponseConfig.GetHashCode();
+                if (this.RedirectPoolsExtendConfig != null)
+                    hashCode = hashCode * 59 + this.RedirectPoolsExtendConfig.GetHashCode();
                 if (this.Rules != null)
                     hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 if (this.Priority != null)
                     hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.RedirectPoolsConfig != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolsConfig.GetHashCode();
                 return hashCode;
             }
         }

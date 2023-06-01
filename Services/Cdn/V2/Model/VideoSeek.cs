@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 视频拖拽配置。
+    /// 视频拖拽配置。 &gt; 1. 需同步开启FLV、MP4格式文件的URL参数功能，并选择“忽略参数”。 &gt; 2. 关闭视频拖拽功能时，FLV时间拖拽功能失效。
     /// </summary>
     public class VideoSeek 
     {
 
         /// <summary>
-        /// 视频拖拽开关（true：开启，false：关闭）  &gt; 当本字段设置为“false”时，查询域名配置接口将不会返回视频拖拽配置信息。
+        /// 视频拖拽开关， true：开启，false：关闭  &gt; 当本字段设置为“false”时，查询域名配置接口将不会返回视频拖拽配置信息。
         /// </summary>
         [JsonProperty("enable_video_seek", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableVideoSeek { get; set; }
 
         /// <summary>
-        /// flv时间拖拽开关（true：开启，false：关闭）。
+        /// flv时间拖拽开关， true：开启，false：关闭。
         /// </summary>
         [JsonProperty("enable_flv_by_time_seek", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableFlvByTimeSeek { get; set; }

@@ -31,6 +31,22 @@ namespace HuaweiCloud.SDK.Core
 {
     public static class HttpUtils
     {
+
+        private static readonly List<string> HttpContentHeadersList = new List<string>
+        {
+            "Allow",
+            "Content-Disposition",
+            "Content-Encoding",
+            "Content-Language",
+            "Content-Location",
+            "Content-MD5",
+            "Content-Range",
+            "Content-Type",
+            "Content-Length",
+            "Expires",
+            "Last-Modified"
+        };
+
         public static string AddUrlPath(string path, Dictionary<string, string> pathParams)
         {
             return pathParams.Aggregate(path,
@@ -38,7 +54,7 @@ namespace HuaweiCloud.SDK.Core
                     keyValuePair.Value));
         }
 
-        private static string GetQueryParameters(Object obj)
+        private static string GetQueryParameters(object obj)
         {
             var sb = new StringBuilder();
             var t = obj.GetType();
@@ -270,13 +286,18 @@ namespace HuaweiCloud.SDK.Core
             {
                 foreach (var elem in sdkPropertyList)
                 {
+                    if (elem is string eleString)
+                    {
+                        return eleString;
+                    }
+
                     return contentType == "application/xml" ? XmlUtils.Serialize(elem) : JsonUtils.Serialize(elem);
                 }
             }
 
             return "";
         }
-        
+
         private static Dictionary<string, object> GetFormData(object obj)
         {
             var t = obj.GetType();
@@ -328,14 +349,14 @@ namespace HuaweiCloud.SDK.Core
             }
 
             return null;
-        } 
+        }
 
         public static SdkRequest InitSdkRequest(string path, object data = null)
         {
             return InitSdkRequest(path, null, data);
         }
 
-        public static SdkRequest InitSdkRequest(string path, String contentType, object data = null)
+        public static SdkRequest InitSdkRequest(string path, string contentType, object data = null)
         {
             if (path != null && string.IsNullOrEmpty(path))
             {
@@ -352,7 +373,7 @@ namespace HuaweiCloud.SDK.Core
             }
 
             var cname = GetCname(data);
-            if (!String.IsNullOrEmpty(cname))
+            if (!string.IsNullOrEmpty(cname))
             {
                 request.Cname = cname;
             }
@@ -385,7 +406,7 @@ namespace HuaweiCloud.SDK.Core
                     request.Body = bodyData;
                 }
             }
-            
+
             if (!string.IsNullOrEmpty(contentType))
             {
                 request.ContentType = contentType;
@@ -405,7 +426,7 @@ namespace HuaweiCloud.SDK.Core
             var t = Activator.CreateInstance<T>();
             t.GetType().GetProperty("HttpStatusCode")?.SetValue(t, (int)message.StatusCode, null);
             t.GetType().GetProperty("HttpHeaders")?.SetValue(t, message.Headers.ToString(), null);
-            BindingFlags flag = BindingFlags.Public | BindingFlags.Instance;
+            var flag = BindingFlags.Public | BindingFlags.Instance;
             t.GetType().GetMethod("SetStream")
                 ?.Invoke(t, flag, Type.DefaultBinder,
                     new object[]
@@ -421,21 +442,6 @@ namespace HuaweiCloud.SDK.Core
             obj.GetType().GetProperty("HttpHeaders")?.SetValue(obj, message.Headers.ToString(), null);
             obj.GetType().GetProperty("HttpBody")?.SetValue(obj, body, null);
         }
-
-        private static readonly List<string> HttpContentHeadersList = new List<string>
-        {
-            "Allow",
-            "Content-Disposition",
-            "Content-Encoding",
-            "Content-Language",
-            "Content-Location",
-            "Content-MD5",
-            "Content-Range",
-            "Content-Type",
-            "Content-Length",
-            "Expires",
-            "Last-Modified"
-        };
 
         public static void SetResponseHeaders<T>(HttpResponseMessage message, T obj)
         {

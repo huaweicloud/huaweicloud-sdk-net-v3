@@ -24,11 +24,18 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 查询开始时间，查询开始时间到开始时间+1天内的日志数据，取值范围是距离当前30天内。
+        /// 查询开始时间，时间格式为整点毫秒时间戳，此参数传空值时默认为当天0点。
         /// </summary>
-        [SDKProperty("query_date", IsQuery = true)]
-        [JsonProperty("query_date", NullValueHandling = NullValueHandling.Ignore)]
-        public long? QueryDate { get; set; }
+        [SDKProperty("start_time", IsQuery = true)]
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? StartTime { get; set; }
+
+        /// <summary>
+        /// 查询结束时间（不包含结束时间），时间格式为整点毫秒时间戳，与开始时间的最大跨度为30天，此参数传空值时默认为开始时间加1天。
+        /// </summary>
+        [SDKProperty("end_time", IsQuery = true)]
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// 单页最大数量，取值范围为1-10000。
@@ -61,7 +68,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ShowLogsRequest {\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
-            sb.Append("  queryDate: ").Append(QueryDate).Append("\n");
+            sb.Append("  startTime: ").Append(StartTime).Append("\n");
+            sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  pageSize: ").Append(PageSize).Append("\n");
             sb.Append("  pageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -92,9 +100,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.DomainName.Equals(input.DomainName))
                 ) && 
                 (
-                    this.QueryDate == input.QueryDate ||
-                    (this.QueryDate != null &&
-                    this.QueryDate.Equals(input.QueryDate))
+                    this.StartTime == input.StartTime ||
+                    (this.StartTime != null &&
+                    this.StartTime.Equals(input.StartTime))
+                ) && 
+                (
+                    this.EndTime == input.EndTime ||
+                    (this.EndTime != null &&
+                    this.EndTime.Equals(input.EndTime))
                 ) && 
                 (
                     this.PageSize == input.PageSize ||
@@ -123,8 +136,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 int hashCode = 41;
                 if (this.DomainName != null)
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.QueryDate != null)
-                    hashCode = hashCode * 59 + this.QueryDate.GetHashCode();
+                if (this.StartTime != null)
+                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null)
+                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.PageSize != null)
                     hashCode = hashCode * 59 + this.PageSize.GetHashCode();
                 if (this.PageNumber != null)

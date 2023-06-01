@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public Metadata Metadata { get; set; }
+        public AddonMetadata Metadata { get; set; }
 
         /// <summary>
         /// 

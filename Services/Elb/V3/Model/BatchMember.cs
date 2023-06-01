@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string SubnetCidrId { get; set; }
 
         /// <summary>
-        /// 后端服务器业务端口号。
+        /// 后端服务器业务端口。 &gt;在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
         /// </summary>
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }

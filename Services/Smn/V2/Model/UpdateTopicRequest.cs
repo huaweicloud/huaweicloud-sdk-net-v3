@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// Topic的唯一的资源标识。可以通过[查看主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
+        /// Topic的唯一的资源标识。可以通过[查看主题列表](smn_api_51004.xml)获取该标识。
         /// </summary>
         [SDKProperty("topic_urn", IsPath = true)]
         [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]

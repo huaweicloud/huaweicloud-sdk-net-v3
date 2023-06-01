@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 证书配置查询响应体
+    /// 证书配置查询响应体。
     /// </summary>
     public class HttpGetBody 
     {
 
         /// <summary>
-        /// HTTPS证书是否启用。（on：开启，off：关闭）
+        /// HTTPS证书是否启用，on：开启，off：关闭。
         /// </summary>
         [JsonProperty("https_status", NullValueHandling = NullValueHandling.Ignore)]
         public string HttpsStatus { get; set; }
 
         /// <summary>
-        /// 证书名字。（长度限制为3-64字符）。当证书开启时必返回该字段。
+        /// 证书名字。
         /// </summary>
         [JsonProperty("certificate_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateName { get; set; }
 
         /// <summary>
-        /// HTTPS协议使用的证书内容，当证书开启时必返回该字段。取值范围：PEM编码格式。
+        /// HTTPS协议使用的证书内容，PEM编码格式。
         /// </summary>
         [JsonProperty("certificate_value", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateValue { get; set; }
 
         /// <summary>
-        /// 证书来源。1：代表华为云托管证书；0：表示自有证书。 默认值0。当证书开启时必返回该字段。
+        /// 证书来源,1：华为云托管证书,0：自有证书。
         /// </summary>
         [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateSource { get; set; }
 
         /// <summary>
-        /// 是否使用HTTP2.0。（on：是，off：否）
+        /// 是否使用HTTP2.0，on：是，off：否。
         /// </summary>
         [JsonProperty("http2_status", NullValueHandling = NullValueHandling.Ignore)]
         public string Http2Status { get; set; }
 
         /// <summary>
-        /// 传输层安全性协议，目前支持TLSv1.0/1.1/1.2/1.3四个版本的协议。当证书开启时返回该字段，默认全部开启，不可全部关闭。
+        /// 传输层安全性协议。
         /// </summary>
         [JsonProperty("tls_version", NullValueHandling = NullValueHandling.Ignore)]
         public string TlsVersion { get; set; }

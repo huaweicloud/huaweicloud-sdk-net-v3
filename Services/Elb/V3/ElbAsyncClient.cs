@@ -18,7 +18,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 批量创建后端服务器
         ///
-        /// 在指定pool下批量创建后端服务器。
+        /// 在指定pool下批量创建后端服务器。一次最多添加200个。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 批量删除后端服务器
         ///
-        /// 在指定pool下批量删除后端服务器。
+        /// 在指定pool下批量删除后端服务器。一次最多添加200个。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -47,6 +47,23 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchDeleteMembersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量更新后端服务器
+        ///
+        /// 在指定pool下批量更新后端服务器。一次最多添加200个。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchUpdateMembersResponse> BatchUpdateMembersAsync(BatchUpdateMembersRequest batchUpdateMembersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id" , batchUpdateMembersRequest.PoolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-update",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<BatchUpdateMembersResponse>(response);
         }
         
         /// <summary>
@@ -68,7 +85,10 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 变更负载均衡器计费模式
         ///
-        /// 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
+        /// 负载均衡器计费模式变更，当前支持的计费模式变更为：
+        /// 1. 按需计费转包周期计费；
+        /// 2. 按需按规格计费转按需按使用量计费；
+        /// 3. 按需按使用量计费转按需按规格计费；
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -341,6 +361,23 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 级联删除监听器
+        ///
+        /// 删除监听器且级联删除其下子资源（删除监听器、转发策略等，解绑后端服务器组）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteListenerForceResponse> DeleteListenerForceAsync(DeleteListenerForceRequest deleteListenerForceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id" , deleteListenerForceRequest.ListenerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/force",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerForceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteListenerForceResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除负载均衡器
         ///
         /// 删除负载均衡器。
@@ -355,6 +392,23 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLoadBalancerResponse>(response);
+        }
+        
+        /// <summary>
+        /// 级联删除负载均衡器
+        ///
+        /// 删除负载均衡器且级联删除其下子资源（删除负载均衡器及其绑定的监听器、后端服务器组、后端服务器等一系列资源）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteLoadBalancerForceResponse> DeleteLoadBalancerForceAsync(DeleteLoadBalancerForceRequest deleteLoadBalancerForceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id" , deleteLoadBalancerForceRequest.LoadbalancerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/force-elb",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerForceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteLoadBalancerForceResponse>(response);
         }
         
         /// <summary>
@@ -666,8 +720,6 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 查询系统安全策略列表。
         /// 
         /// 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
-        /// 
-        /// [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1096,7 +1148,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 删除IP地址组的IP列表项
         ///
-        /// 批量删除IP地址组的IP列表信息。
+        /// 批量删除IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1128,7 +1180,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// - 计算出来的预占IP数大于等于最终实际占用的IP数。
         /// - 总占用IP数量，即整个LB所占用的IP数量。
         /// 
-        /// [不支持传入l7_flavor_id](tag:fcs)
+        /// [不支持传入l7_flavor_id](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

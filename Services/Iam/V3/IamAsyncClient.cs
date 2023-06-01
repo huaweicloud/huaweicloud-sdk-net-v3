@@ -1068,7 +1068,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             string urlPath = HttpUtils.AddUrlPath("/",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListVersionsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerializeNull<KeystoneListVersionsResponse>(response);
+            return JsonUtils.DeSerialize<KeystoneListVersionsResponse>(response);
         }
         
         /// <summary>

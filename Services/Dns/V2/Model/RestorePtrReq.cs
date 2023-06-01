@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// PTR记录对应的域名。  此处值为null。
         /// </summary>
         [JsonProperty("ptrdname", NullValueHandling = NullValueHandling.Ignore)]
-        public string Ptrdname { get; set; }
+        public Object Ptrdname { get; set; }
 
 
 

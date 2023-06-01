@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 配置开关（on/off）
+        /// 状态, on：开启，off：关闭。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 限速方式，目前只支持按流量大小限速，size:大小。
+        /// 限速方式，目前只支持按传送流量限速，当单个HTTP请求流量达到设定的值，开始限制访问速度。  &gt; size:按传送流量限速。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 限速条件,type&#x3D;size,limit_rate_after&#x3D;50表示从传输表示传输50个字节后开始限速且限速值为limit_rate_value， 单位byte，取值范围：0-1073741824。
+        /// 限速条件,type&#x3D;size,limit_rate_after&#x3D;50表示从传输传输50个字节后开始限速且限速值为limit_rate_value，  &gt; 单位byte，取值范围：0-1073741824。
         /// </summary>
         [JsonProperty("limit_rate_after", NullValueHandling = NullValueHandling.Ignore)]
         public long? LimitRateAfter { get; set; }
 
         /// <summary>
-        /// 限速值,单位Bps，取值范围 0-104857600
+        /// 限速值,设置开始限速后的最大访问速度。  &gt; 单位Bps，取值范围 0-104857600
         /// </summary>
         [JsonProperty("limit_rate_value", NullValueHandling = NullValueHandling.Ignore)]
         public int? LimitRateValue { get; set; }

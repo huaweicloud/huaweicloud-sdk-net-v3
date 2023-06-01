@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string CreatedTime { get; set; }
 
         /// <summary>
+        /// 评论时间戳
+        /// </summary>
+        [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
+        public string Timestamp { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  comment: ").Append(Comment).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
+            sb.Append("  timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  user: ").Append(User).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.CreatedTime.Equals(input.CreatedTime))
                 ) && 
                 (
+                    this.Timestamp == input.Timestamp ||
+                    (this.Timestamp != null &&
+                    this.Timestamp.Equals(input.Timestamp))
+                ) && 
+                (
                     this.User == input.User ||
                     (this.User != null &&
                     this.User.Equals(input.User))
@@ -110,6 +122,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.CreatedTime != null)
                     hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                if (this.Timestamp != null)
+                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 if (this.User != null)
                     hashCode = hashCode * 59 + this.User.GetHashCode();
                 return hashCode;

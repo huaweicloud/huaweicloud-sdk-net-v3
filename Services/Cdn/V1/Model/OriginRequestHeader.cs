@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 设置回源请求头参数。格式要求：由数字，大小写字母，中划线-组成，不能以数字或者中划线开头。
+        /// 设置回源请求头参数。格式要求：由数字，大小写字母，中划线-组成，只能以字母开头。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

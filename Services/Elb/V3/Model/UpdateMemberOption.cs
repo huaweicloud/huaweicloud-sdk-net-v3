@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }
 
+        /// <summary>
+        /// 后端服务器端口。 &gt;在开启端口透传的pool下的member，该字段无法更新
+        /// </summary>
+        [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ProtocolPort { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
+            sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
+                ) && 
+                (
+                    this.ProtocolPort == input.ProtocolPort ||
+                    (this.ProtocolPort != null &&
+                    this.ProtocolPort.Equals(input.ProtocolPort))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Weight != null)
                     hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.ProtocolPort != null)
+                    hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
                 return hashCode;
             }
         }

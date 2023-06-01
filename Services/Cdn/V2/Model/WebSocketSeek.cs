@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// webSocket配置。
+    /// webSocket配置。  &gt; 只支持全站加速。
     /// </summary>
     public class WebSocketSeek 
     {
 
         /// <summary>
-        /// 开关(on 开启，off 关闭)
+        /// 开关， on 开启，off 关闭。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

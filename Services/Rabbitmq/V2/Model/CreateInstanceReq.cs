@@ -616,6 +616,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagEntity> Tags { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("bss_param", NullValueHandling = NullValueHandling.Ignore)]
+        public BssParam BssParam { get; set; }
+
 
 
         /// <summary>
@@ -646,6 +652,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  bssParam: ").Append(BssParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -773,6 +780,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.BssParam == input.BssParam ||
+                    (this.BssParam != null &&
+                    this.BssParam.Equals(input.BssParam))
                 );
         }
 
@@ -826,6 +838,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.BssParam != null)
+                    hashCode = hashCode * 59 + this.BssParam.GetHashCode();
                 return hashCode;
             }
         }

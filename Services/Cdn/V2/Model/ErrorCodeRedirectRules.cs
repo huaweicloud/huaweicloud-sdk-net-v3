@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 自定义错误页面
+    /// 自定义错误页面。
     /// </summary>
     public class ErrorCodeRedirectRules 
     {

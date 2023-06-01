@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }
 
+        /// <summary>
+        /// 企业项目或默认项目
+        /// </summary>
+        [JsonProperty("enterpriseProjectOrDefault", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectOrDefault { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowResourceTagResponse {\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  enterpriseProjectOrDefault: ").Append(EnterpriseProjectOrDefault).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +65,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.EnterpriseProjectOrDefault == input.EnterpriseProjectOrDefault ||
+                    (this.EnterpriseProjectOrDefault != null &&
+                    this.EnterpriseProjectOrDefault.Equals(input.EnterpriseProjectOrDefault))
                 );
         }
 
@@ -71,6 +83,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 int hashCode = 41;
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.EnterpriseProjectOrDefault != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectOrDefault.GetHashCode();
                 return hashCode;
             }
         }

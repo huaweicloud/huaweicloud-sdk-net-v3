@@ -1,0 +1,92 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.RocketMQ.V2.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class DeadletterResendReq 
+    {
+
+        /// <summary>
+        /// topic。
+        /// </summary>
+        [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
+        public string Topic { get; set; }
+
+        /// <summary>
+        /// 消息列表。
+        /// </summary>
+        [JsonProperty("msg_id_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> MsgIdList { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class DeadletterResendReq {\n");
+            sb.Append("  topic: ").Append(Topic).Append("\n");
+            sb.Append("  msgIdList: ").Append(MsgIdList).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as DeadletterResendReq);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(DeadletterResendReq input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Topic == input.Topic ||
+                    (this.Topic != null &&
+                    this.Topic.Equals(input.Topic))
+                ) && 
+                (
+                    this.MsgIdList == input.MsgIdList ||
+                    this.MsgIdList != null &&
+                    input.MsgIdList != null &&
+                    this.MsgIdList.SequenceEqual(input.MsgIdList)
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Topic != null)
+                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.MsgIdList != null)
+                    hashCode = hashCode * 59 + this.MsgIdList.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

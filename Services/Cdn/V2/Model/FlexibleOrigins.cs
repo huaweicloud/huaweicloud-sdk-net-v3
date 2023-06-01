@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 回源信息。
+        /// 回源信息。  &gt; 每个目录的回源源站数量不超过1个。
         /// </summary>
         [JsonProperty("back_sources", NullValueHandling = NullValueHandling.Ignore)]
         public List<BackSources> BackSources { get; set; }

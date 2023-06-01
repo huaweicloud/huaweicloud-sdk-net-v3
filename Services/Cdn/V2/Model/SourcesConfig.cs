@@ -23,31 +23,31 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string OriginAddr { get; set; }
 
         /// <summary>
-        /// 源站类型（\&quot;ipaddr\&quot;：\&quot;IP源站\&quot;，\&quot;domain\&quot;：\&quot;域名源站\&quot;，\&quot;obs_bucket\&quot;：\&quot;OBS Bucket源站\&quot;）。
+        /// 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
         /// </summary>
         [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginType { get; set; }
 
         /// <summary>
-        /// 源站优先级（70：主，30：备）。
+        /// 源站优先级，70：主，30：备。
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 是否开启Obs静态网站托管，源站类型为obs_bucket时传递(off：关闭，on：开启)。
+        /// 是否开启Obs静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
         /// </summary>
         [JsonProperty("obs_web_hosting_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsWebHostingStatus { get; set; }
 
         /// <summary>
-        /// HTTP端口，默认80。
+        /// HTTP端口，默认80,端口取值取值范围1-65535。
         /// </summary>
         [JsonProperty("http_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpPort { get; set; }
 
         /// <summary>
-        /// HTTPS端口，默认443。
+        /// HTTPS端口，默认443,端口取值取值范围1-65535。
         /// </summary>
         [JsonProperty("https_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsPort { get; set; }

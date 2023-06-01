@@ -17,22 +17,16 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 访问策略规范版本。目前只支持“2016-09-07”。
+        /// 
         /// </summary>
-        [JsonProperty("Version", NullValueHandling = NullValueHandling.Ignore)]
-        public string Version { get; set; }
+        [JsonProperty("access_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public AccessPolicy AccessPolicy { get; set; }
 
         /// <summary>
-        /// 策略的唯一标识。不能为空。
+        /// topic的简介
         /// </summary>
-        [JsonProperty("Id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// 访问策略是通过Statement语句来定义的。一个访问策略可包含一条或多条Statement语句。通过Statement语句向其他用户或云服务授权对主题的操作。
-        /// </summary>
-        [JsonProperty("Statement", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Statement> Statement { get; set; }
+        [JsonProperty("introduction", NullValueHandling = NullValueHandling.Ignore)]
+        public string Introduction { get; set; }
 
 
 
@@ -43,9 +37,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class TopicAttribute {\n");
-            sb.Append("  version: ").Append(Version).Append("\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  statement: ").Append(Statement).Append("\n");
+            sb.Append("  accessPolicy: ").Append(AccessPolicy).Append("\n");
+            sb.Append("  introduction: ").Append(Introduction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,20 +61,14 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
 
             return 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this.AccessPolicy == input.AccessPolicy ||
+                    (this.AccessPolicy != null &&
+                    this.AccessPolicy.Equals(input.AccessPolicy))
                 ) && 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Statement == input.Statement ||
-                    this.Statement != null &&
-                    input.Statement != null &&
-                    this.Statement.SequenceEqual(input.Statement)
+                    this.Introduction == input.Introduction ||
+                    (this.Introduction != null &&
+                    this.Introduction.Equals(input.Introduction))
                 );
         }
 
@@ -93,12 +80,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Statement != null)
-                    hashCode = hashCode * 59 + this.Statement.GetHashCode();
+                if (this.AccessPolicy != null)
+                    hashCode = hashCode * 59 + this.AccessPolicy.GetHashCode();
+                if (this.Introduction != null)
+                    hashCode = hashCode * 59 + this.Introduction.GetHashCode();
                 return hashCode;
             }
         }

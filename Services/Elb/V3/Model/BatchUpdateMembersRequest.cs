@@ -11,22 +11,24 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 转发的后端主机组的配置。
+    /// Request Object
     /// </summary>
-    public class CreateRedirectPoolsConfig 
+    public class BatchUpdateMembersRequest 
     {
 
         /// <summary>
-        /// 后端主机组的ID。
+        /// 后端服务器组ID。
         /// </summary>
+        [SDKProperty("pool_id", IsPath = true)]
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 后端主机组的权重。  取值：0-100。
+        /// 
         /// </summary>
-        [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Weight { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public BatchUpdateMembersRequestBody Body { get; set; }
 
 
 
@@ -36,9 +38,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateRedirectPoolsConfig {\n");
+            sb.Append("class BatchUpdateMembersRequest {\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
-            sb.Append("  weight: ").Append(Weight).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,13 +50,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateRedirectPoolsConfig);
+            return this.Equals(input as BatchUpdateMembersRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateRedirectPoolsConfig input)
+        public bool Equals(BatchUpdateMembersRequest input)
         {
             if (input == null)
                 return false;
@@ -66,9 +68,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.PoolId.Equals(input.PoolId))
                 ) && 
                 (
-                    this.Weight == input.Weight ||
-                    (this.Weight != null &&
-                    this.Weight.Equals(input.Weight))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -82,8 +84,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 int hashCode = 41;
                 if (this.PoolId != null)
                     hashCode = hashCode * 59 + this.PoolId.GetHashCode();
-                if (this.Weight != null)
-                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

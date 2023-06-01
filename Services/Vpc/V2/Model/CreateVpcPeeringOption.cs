@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 功能说明：对等连接的描述 取值范围：0-255个字符，不能包含“&lt;”和“&gt;”。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("request_vpc_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateVpcPeeringOption {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  requestVpcInfo: ").Append(RequestVpcInfo).Append("\n");
             sb.Append("  acceptVpcInfo: ").Append(AcceptVpcInfo).Append("\n");
             sb.Append("}\n");
@@ -73,6 +80,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
                     this.RequestVpcInfo == input.RequestVpcInfo ||
                     (this.RequestVpcInfo != null &&
                     this.RequestVpcInfo.Equals(input.RequestVpcInfo))
@@ -94,6 +106,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.RequestVpcInfo != null)
                     hashCode = hashCode * 59 + this.RequestVpcInfo.GetHashCode();
                 if (this.AcceptVpcInfo != null)

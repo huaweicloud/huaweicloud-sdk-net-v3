@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 表示[按需付费的](tag:hc,hk,hws,hws_hk,hws_ocb,ctc,sbc,hk_sbc,cmcc,g42,tm)产品列表。
+        /// 表示[按需付费的](tag:hws,hws_hk,hws_ocb,ctc,sbc,hk_sbc,cmcc,g42,tm,hk_g42,hk_tm)产品列表。
         /// </summary>
         [JsonProperty("hourly", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowInstanceExtendProductInfoRespHourly> Hourly { get; set; }

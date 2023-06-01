@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 匹配类型， all：所有文件， file_path：URL路径， wildcard：通配符。 full_path: 全路径
+        /// 匹配类型， all：所有文件， file_path：URL路径， wildcard：通配符， full_path: 全路径。
         /// </summary>
         [JsonProperty("match_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MatchType { get; set; }

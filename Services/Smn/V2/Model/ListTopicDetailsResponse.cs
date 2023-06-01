@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Topic的唯一的资源标识。可以通过[查看主题列表获](https://support.huaweicloud.com/api-smn/smn_api_51004.html)取该标识。
+        /// Topic的唯一的资源标识。可以通过[查看主题列表获](smn_api_51004.xml)取该标识。
         /// </summary>
         [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicUrn { get; set; }
@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 主题ID。
+        /// </summary>
+        [JsonProperty("topic_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TopicId { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  displayName: ").Append(DisplayName).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  topicId: ").Append(TopicId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,6 +148,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.TopicId == input.TopicId ||
+                    (this.TopicId != null &&
+                    this.TopicId.Equals(input.TopicId))
                 );
         }
 
@@ -168,6 +180,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.TopicId != null)
+                    hashCode = hashCode * 59 + this.TopicId.GetHashCode();
                 return hashCode;
             }
         }

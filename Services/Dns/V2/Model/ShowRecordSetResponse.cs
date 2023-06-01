@@ -100,6 +100,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
         public PageLink Links { get; set; }
 
+        /// <summary>
+        /// 规格，默认规格，保留字段。
+        /// </summary>
+        [JsonProperty("bundle", NullValueHandling = NullValueHandling.Ignore)]
+        public string Bundle { get; set; }
+
 
 
         /// <summary>
@@ -123,6 +129,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
+            sb.Append("  bundle: ").Append(Bundle).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -214,6 +221,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Links == input.Links ||
                     (this.Links != null &&
                     this.Links.Equals(input.Links))
+                ) && 
+                (
+                    this.Bundle == input.Bundle ||
+                    (this.Bundle != null &&
+                    this.Bundle.Equals(input.Bundle))
                 );
         }
 
@@ -253,6 +265,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Links != null)
                     hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Bundle != null)
+                    hashCode = hashCode * 59 + this.Bundle.GetHashCode();
                 return hashCode;
             }
         }

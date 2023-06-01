@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class CreateFixtedResponseConfig 
     {
         /// <summary>
-        /// 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
+        /// 返回body的格式。  取值范围： - text/plain，默认值 - text/css - text/html - application/javascript - application/json
         /// </summary>
-        /// <value>返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json</value>
+        /// <value>返回body的格式。  取值范围： - text/plain，默认值 - text/css - text/html - application/javascript - application/json</value>
         [JsonConverter(typeof(EnumClassConverter<ContentTypeEnum>))]
         public class ContentTypeEnum
         {
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string StatusCode { get; set; }
 
         /// <summary>
-        /// 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
+        /// 返回body的格式。  取值范围： - text/plain，默认值 - text/css - text/html - application/javascript - application/json
         /// </summary>
         [JsonProperty("content_type", NullValueHandling = NullValueHandling.Ignore)]
         public ContentTypeEnum ContentType { get; set; }

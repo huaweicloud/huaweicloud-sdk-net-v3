@@ -80,14 +80,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
+        /// 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS、QUIC。  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Protocol { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。  [不支持QUIC_CID算法。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
+        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("lb_algorithm", IsQuery = true)]
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
@@ -156,6 +156,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// </summary>
+        [SDKProperty("protection_status", IsQuery = true)]
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ProtectionStatus { get; set; }
+
 
 
         /// <summary>
@@ -185,6 +192,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  memberInstanceId: ").Append(MemberInstanceId).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -320,6 +328,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Type != null &&
                     input.Type != null &&
                     this.Type.SequenceEqual(input.Type)
+                ) && 
+                (
+                    this.ProtectionStatus == input.ProtectionStatus ||
+                    this.ProtectionStatus != null &&
+                    input.ProtectionStatus != null &&
+                    this.ProtectionStatus.SequenceEqual(input.ProtectionStatus)
                 );
         }
 
@@ -371,6 +385,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ProtectionStatus != null)
+                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 return hashCode;
             }
         }

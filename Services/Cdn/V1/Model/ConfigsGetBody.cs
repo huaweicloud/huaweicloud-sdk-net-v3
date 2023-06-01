@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 回源请求头配置
+        /// 回源请求头配置。
         /// </summary>
         [JsonProperty("origin_request_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<OriginRequestHeader> OriginRequestHeader { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public List<SourcesConfig> Sources { get; set; }
 
         /// <summary>
-        /// 回源跟随（on：开启，off：关闭）。
+        /// 回源跟随，on：开启，off：关闭。
         /// </summary>
         [JsonProperty("origin_follow302_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginFollow302Status { get; set; }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public RefererConfig Referer { get; set; }
 
         /// <summary>
-        /// 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
+        /// 回源协议。
         /// </summary>
         [JsonProperty("origin_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginProtocol { get; set; }
@@ -95,19 +95,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public CacheUrlParameterFilter CacheUrlParameterFilter { get; set; }
 
         /// <summary>
-        /// ipv6设置（1：打开；0：关闭）
+        /// ipv6设置，1：打开；0：关闭。
         /// </summary>
         [JsonProperty("ipv6_accelerate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ipv6Accelerate { get; set; }
 
         /// <summary>
-        /// 状态码缓存时间
+        /// 状态码缓存时间。
         /// </summary>
         [JsonProperty("error_code_cache", NullValueHandling = NullValueHandling.Ignore)]
         public List<ErrorCodeCache> ErrorCodeCache { get; set; }
 
         /// <summary>
-        /// Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on 关闭: off
+        /// Range回源。
         /// </summary>
         [JsonProperty("origin_range_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginRangeStatus { get; set; }
@@ -119,13 +119,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public UserAgentFilter UserAgentFilter { get; set; }
 
         /// <summary>
-        /// 改写回源URL，最多配置20条。
+        /// 改写回源URL。
         /// </summary>
         [JsonProperty("origin_request_url_rewrite", NullValueHandling = NullValueHandling.Ignore)]
         public List<OriginRequestUrlRewrite> OriginRequestUrlRewrite { get; set; }
 
         /// <summary>
-        /// 自定义错误页面
+        /// 自定义错误页面。
         /// </summary>
         [JsonProperty("error_code_redirect_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<ErrorCodeRedirectRules> ErrorCodeRedirectRules { get; set; }

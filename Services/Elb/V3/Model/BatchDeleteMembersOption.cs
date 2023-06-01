@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Address { get; set; }
 
         /// <summary>
-        /// 后端服务器端口。  使用说明： - address和protocol_port必须同时传入。 - 不能同时传入ID字段
+        /// 后端服务器端口。  使用说明： - address和protocol_port必须同时传入。 - 不能同时传入ID字段 - 可以传0，用于删除端口透传pool下的member
         /// </summary>
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }
