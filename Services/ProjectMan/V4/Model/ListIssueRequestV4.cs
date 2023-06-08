@@ -113,10 +113,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public bool? IncludeDeleted { get; set; }
 
         /// <summary>
+        /// 根据工作项的创建时间查询工作项，(查询的起始时间,查询的结束时间)
+        /// </summary>
+        [JsonProperty("created_time_interval", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedTimeInterval { get; set; }
+
+        /// <summary>
         /// 根据工作项的更新时间查询工作项，(查询的起始时间,查询的结束时间)
         /// </summary>
         [JsonProperty("updated_time_interval", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedTimeInterval { get; set; }
+
+        /// <summary>
+        /// 根据工作项的结束时间查询工作项，(查询的起始时间,查询的结束时间)
+        /// </summary>
+        [JsonProperty("closed_time_interval", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClosedTimeInterval { get; set; }
 
         /// <summary>
         /// 自定义字段
@@ -149,7 +161,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  storyPointIds: ").Append(StoryPointIds).Append("\n");
             sb.Append("  trackerIds: ").Append(TrackerIds).Append("\n");
             sb.Append("  includeDeleted: ").Append(IncludeDeleted).Append("\n");
+            sb.Append("  createdTimeInterval: ").Append(CreatedTimeInterval).Append("\n");
             sb.Append("  updatedTimeInterval: ").Append(UpdatedTimeInterval).Append("\n");
+            sb.Append("  closedTimeInterval: ").Append(ClosedTimeInterval).Append("\n");
             sb.Append("  customFields: ").Append(CustomFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -265,9 +279,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.IncludeDeleted.Equals(input.IncludeDeleted))
                 ) && 
                 (
+                    this.CreatedTimeInterval == input.CreatedTimeInterval ||
+                    (this.CreatedTimeInterval != null &&
+                    this.CreatedTimeInterval.Equals(input.CreatedTimeInterval))
+                ) && 
+                (
                     this.UpdatedTimeInterval == input.UpdatedTimeInterval ||
                     (this.UpdatedTimeInterval != null &&
                     this.UpdatedTimeInterval.Equals(input.UpdatedTimeInterval))
+                ) && 
+                (
+                    this.ClosedTimeInterval == input.ClosedTimeInterval ||
+                    (this.ClosedTimeInterval != null &&
+                    this.ClosedTimeInterval.Equals(input.ClosedTimeInterval))
                 ) && 
                 (
                     this.CustomFields == input.CustomFields ||
@@ -317,8 +341,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.TrackerIds.GetHashCode();
                 if (this.IncludeDeleted != null)
                     hashCode = hashCode * 59 + this.IncludeDeleted.GetHashCode();
+                if (this.CreatedTimeInterval != null)
+                    hashCode = hashCode * 59 + this.CreatedTimeInterval.GetHashCode();
                 if (this.UpdatedTimeInterval != null)
                     hashCode = hashCode * 59 + this.UpdatedTimeInterval.GetHashCode();
+                if (this.ClosedTimeInterval != null)
+                    hashCode = hashCode * 59 + this.ClosedTimeInterval.GetHashCode();
                 if (this.CustomFields != null)
                     hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
                 return hashCode;

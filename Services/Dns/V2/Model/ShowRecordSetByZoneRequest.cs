@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的记录集类型。  取值范围：A、CNAME、MX、AAAA、TXT、SRV、NS、CAA
+        /// 待查询的Record Set的记录集类型。  公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string SortDir { get; set; }
 
         /// <summary>
-        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为like。
+        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
         /// </summary>
         [SDKProperty("search_mode", IsQuery = true)]
         [JsonProperty("search_mode", NullValueHandling = NullValueHandling.Ignore)]

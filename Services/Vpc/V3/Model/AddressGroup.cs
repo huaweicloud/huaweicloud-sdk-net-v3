@@ -71,6 +71,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string TenantId { get; set; }
 
         /// <summary>
+        /// 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 功能说明：地址组状态 取值范围：       NORMAL：正常       UPDATING：更新中       UPDATE_FAILED：更新失败 默认值：NORMAL 约束：当地址组处于UPDATING（更新中）状态时，不允许再次更新
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -100,6 +106,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  tenantId: ").Append(TenantId).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  statusMessage: ").Append(StatusMessage).Append("\n");
             sb.Append("}\n");
@@ -170,6 +177,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.TenantId.Equals(input.TenantId))
                 ) && 
                 (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -207,6 +219,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.TenantId != null)
                     hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.StatusMessage != null)

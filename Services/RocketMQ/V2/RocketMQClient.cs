@@ -439,14 +439,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public SendRocketMqDlqMessageResponse SendRocketMqDlqMessage(SendRocketMqDlqMessageRequest sendRocketMqDlqMessageRequest)
+        public SendDlqMessageResponse SendDlqMessage(SendDlqMessageRequest sendDlqMessageRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , sendRocketMqDlqMessageRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/reliability/{project_id}/instances/{instance_id}/messages/deadletter-resend",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendRocketMqDlqMessageRequest);
+            urlParam.Add("engine" , sendDlqMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id" , sendDlqMessageRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/deadletter-resend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendDlqMessageRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<SendRocketMqDlqMessageResponse>(response);
+            return JsonUtils.DeSerialize<SendDlqMessageResponse>(response);
         }
         
         /// <summary>
@@ -631,14 +632,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ValidateRocketMqConsumedMessageResponse ValidateRocketMqConsumedMessage(ValidateRocketMqConsumedMessageRequest validateRocketMqConsumedMessageRequest)
+        public ValidateConsumedMessageResponse ValidateConsumedMessage(ValidateConsumedMessageRequest validateConsumedMessageRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , validateRocketMqConsumedMessageRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/reliability/{project_id}/instances/{instance_id}/messages/resend",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateRocketMqConsumedMessageRequest);
+            urlParam.Add("engine" , validateConsumedMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id" , validateConsumedMessageRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/resend",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConsumedMessageRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<ValidateRocketMqConsumedMessageResponse>(response);
+            return JsonUtils.DeSerialize<ValidateConsumedMessageResponse>(response);
         }
         
         /// <summary>

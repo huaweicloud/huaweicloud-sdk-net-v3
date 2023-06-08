@@ -24,6 +24,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ZoneId { get; set; }
 
         /// <summary>
+        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+        /// </summary>
+        [SDKProperty("search_mode", IsQuery = true)]
+        [JsonProperty("search_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string SearchMode { get; set; }
+
+        /// <summary>
         /// 分页查询起始的资源ID，为空时为查询第一页。  默认值为空。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
@@ -103,6 +110,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListRecordSetsByZoneRequest {\n");
             sb.Append("  zoneId: ").Append(ZoneId).Append("\n");
+            sb.Append("  searchMode: ").Append(SearchMode).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -138,6 +146,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.ZoneId == input.ZoneId ||
                     (this.ZoneId != null &&
                     this.ZoneId.Equals(input.ZoneId))
+                ) && 
+                (
+                    this.SearchMode == input.SearchMode ||
+                    (this.SearchMode != null &&
+                    this.SearchMode.Equals(input.SearchMode))
                 ) && 
                 (
                     this.Marker == input.Marker ||
@@ -201,6 +214,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 int hashCode = 41;
                 if (this.ZoneId != null)
                     hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
+                if (this.SearchMode != null)
+                    hashCode = hashCode * 59 + this.SearchMode.GetHashCode();
                 if (this.Marker != null)
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Limit != null)

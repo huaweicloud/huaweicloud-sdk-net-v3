@@ -42,6 +42,10 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             "https://dms.la-north-2.myhuaweicloud.com");
         public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1",
             "https://dms.na-mexico-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+            "https://dms.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://dms.tr-west-1.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -63,6 +67,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
                 { "sa-brazil-1", SA_BRAZIL_1 },
                 { "la-north-2", LA_NORTH_2 },
                 { "na-mexico-1", NA_MEXICO_1 },
+                { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "tr-west-1", TR_WEST_1 },
         };
 
         public static Region ValueOf(string regionId)

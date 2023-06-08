@@ -130,6 +130,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyName { get; set; }
 
+        /// <summary>
+        /// 节点内存预留，Kubernetes相关组件预留值。 
+        /// </summary>
+        [JsonProperty("kube-reserved-mem", NullValueHandling = NullValueHandling.Ignore)]
+        public int? KubeReservedMem { get; set; }
+
+        /// <summary>
+        /// 节点内存预留，系统组件预留值。 
+        /// </summary>
+        [JsonProperty("system-reserved-mem", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SystemReservedMem { get; set; }
+
 
 
         /// <summary>
@@ -158,6 +170,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
             sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
+            sb.Append("  kubeReservedMem: ").Append(KubeReservedMem).Append("\n");
+            sb.Append("  systemReservedMem: ").Append(SystemReservedMem).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -273,6 +287,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.AgencyName == input.AgencyName ||
                     (this.AgencyName != null &&
                     this.AgencyName.Equals(input.AgencyName))
+                ) && 
+                (
+                    this.KubeReservedMem == input.KubeReservedMem ||
+                    (this.KubeReservedMem != null &&
+                    this.KubeReservedMem.Equals(input.KubeReservedMem))
+                ) && 
+                (
+                    this.SystemReservedMem == input.SystemReservedMem ||
+                    (this.SystemReservedMem != null &&
+                    this.SystemReservedMem.Equals(input.SystemReservedMem))
                 );
         }
 
@@ -322,6 +346,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 if (this.AgencyName != null)
                     hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.KubeReservedMem != null)
+                    hashCode = hashCode * 59 + this.KubeReservedMem.GetHashCode();
+                if (this.SystemReservedMem != null)
+                    hashCode = hashCode * 59 + this.SystemReservedMem.GetHashCode();
                 return hashCode;
             }
         }

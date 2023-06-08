@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateTagRequest> Tags { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,12 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
                     this.ResourceType == input.ResourceType ||
                     (this.ResourceType != null &&
                     this.ResourceType.Equals(input.ResourceType))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -140,6 +153,8 @@ namespace HuaweiCloud.SDK.Tms.v1.Model
                     hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.ResourceType != null)
                     hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

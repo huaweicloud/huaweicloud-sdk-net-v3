@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("tracker_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> TrackerIds { get; set; }
 
+        /// <summary>
+        /// 自定义字段创建时间
+        /// </summary>
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTime { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  options: ").Append(Options).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  trackerIds: ").Append(TrackerIds).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +113,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.TrackerIds != null &&
                     input.TrackerIds != null &&
                     this.TrackerIds.SequenceEqual(input.TrackerIds)
+                ) && 
+                (
+                    this.CreateTime == input.CreateTime ||
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
                 );
         }
 
@@ -127,6 +139,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.TrackerIds != null)
                     hashCode = hashCode * 59 + this.TrackerIds.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

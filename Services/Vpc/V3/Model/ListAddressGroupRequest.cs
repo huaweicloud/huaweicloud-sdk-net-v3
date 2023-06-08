@@ -58,6 +58,13 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
+        /// <summary>
+        /// 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的IP地址组。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的IP地址组，请传参all_granted_eps。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -73,6 +80,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,6 +134,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.Description != null &&
                     input.Description != null &&
                     this.Description.SequenceEqual(input.Description)
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -149,6 +162,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

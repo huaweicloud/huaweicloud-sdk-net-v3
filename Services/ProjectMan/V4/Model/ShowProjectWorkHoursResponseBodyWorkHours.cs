@@ -94,6 +94,18 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("closed_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ClosedTime { get; set; }
 
+        /// <summary>
+        /// 工时创建时间
+        /// </summary>
+        [JsonProperty("work_hours_created_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkHoursCreatedTime { get; set; }
+
+        /// <summary>
+        /// 工时更新时间
+        /// </summary>
+        [JsonProperty("work_hours_updated_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkHoursUpdatedTime { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +128,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  subject: ").Append(Subject).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  closedTime: ").Append(ClosedTime).Append("\n");
+            sb.Append("  workHoursCreatedTime: ").Append(WorkHoursCreatedTime).Append("\n");
+            sb.Append("  workHoursUpdatedTime: ").Append(WorkHoursUpdatedTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +215,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.ClosedTime == input.ClosedTime ||
                     (this.ClosedTime != null &&
                     this.ClosedTime.Equals(input.ClosedTime))
+                ) && 
+                (
+                    this.WorkHoursCreatedTime == input.WorkHoursCreatedTime ||
+                    (this.WorkHoursCreatedTime != null &&
+                    this.WorkHoursCreatedTime.Equals(input.WorkHoursCreatedTime))
+                ) && 
+                (
+                    this.WorkHoursUpdatedTime == input.WorkHoursUpdatedTime ||
+                    (this.WorkHoursUpdatedTime != null &&
+                    this.WorkHoursUpdatedTime.Equals(input.WorkHoursUpdatedTime))
                 );
         }
 
@@ -238,6 +262,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 if (this.ClosedTime != null)
                     hashCode = hashCode * 59 + this.ClosedTime.GetHashCode();
+                if (this.WorkHoursCreatedTime != null)
+                    hashCode = hashCode * 59 + this.WorkHoursCreatedTime.GetHashCode();
+                if (this.WorkHoursUpdatedTime != null)
+                    hashCode = hashCode * 59 + this.WorkHoursUpdatedTime.GetHashCode();
                 return hashCode;
             }
         }

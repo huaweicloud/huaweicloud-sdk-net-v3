@@ -207,6 +207,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 创建资源标签
+        ///
+        /// 创建资源标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest createTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type" , createTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id" , createTagsRequest.ResourceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/create",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建函数版本别名
         ///
         /// 创建函数灰度版本别名。
@@ -221,6 +239,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVersionAliasRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateVersionAliasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建下沉入口
+        ///
+        /// 创建下沉入口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest createVpcEndpointRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/vpc-endpoint",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVpcEndpointRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateVpcEndpointResponse>(response);
         }
         
         /// <summary>
@@ -349,6 +383,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 删除资源标签
+        ///
+        /// 删除资源标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest deleteTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type" , deleteTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id" , deleteTagsRequest.ResourceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTagsResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除函数版本别名
         ///
         /// 删除函数版本别名。
@@ -364,6 +416,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVersionAliasRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteVersionAliasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除下沉入口
+        ///
+        /// 删除下沉入口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest deleteVpcEndpointRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_id" , deleteVpcEndpointRequest.VpcId.ToString());
+            urlParam.Add("subnet_id" , deleteVpcEndpointRequest.SubnetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/vpc-endpoint/{vpc_id}/{subnet_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcEndpointRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteVpcEndpointResponse>(response);
         }
         
         /// <summary>
@@ -795,6 +865,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 查询函数快照制作状态
+        ///
+        /// 查询函数快照制作状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFuncSnapshotStateResponse> ShowFuncSnapshotStateAsync(ShowFuncSnapshotStateRequest showFuncSnapshotStateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , showFuncSnapshotStateRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/state",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFuncSnapshotStateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowFuncSnapshotStateResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取函数异步配置信息
         ///
         /// 获取指定函数某一版本的异步配置信息。
@@ -879,6 +966,41 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLtsLogDetailsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLtsLogDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询资源标签
+        ///
+        /// 查询资源标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowProjectTagsListResponse> ShowProjectTagsListAsync(ShowProjectTagsListRequest showProjectTagsListRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type" , showProjectTagsListRequest.ResourceType.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTagsListRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowProjectTagsListResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询资源实例
+        ///
+        /// 查询资源实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowResInstanceInfoResponse> ShowResInstanceInfoAsync(ShowResInstanceInfoRequest showResInstanceInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type" , showResInstanceInfoRequest.ResourceType.ToString());
+            urlParam.Add("action" , showResInstanceInfoRequest.Action.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/{action}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResInstanceInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ShowResInstanceInfoResponse>(response);
         }
         
         /// <summary>
@@ -1086,6 +1208,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEventRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateEventResponse>(response);
+        }
+        
+        /// <summary>
+        /// 禁用/启动函数快照
+        ///
+        /// 禁用/启动函数快照
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateFuncSnapshotResponse> UpdateFuncSnapshotAsync(UpdateFuncSnapshotRequest updateFuncSnapshotRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("action" , updateFuncSnapshotRequest.Action.ToString());
+            urlParam.Add("function_urn" , updateFuncSnapshotRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFuncSnapshotRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<UpdateFuncSnapshotResponse>(response);
         }
         
         /// <summary>

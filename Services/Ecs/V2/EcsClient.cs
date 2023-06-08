@@ -242,6 +242,22 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 更换云服务器计费模式
+        ///
+        /// 更换云服务器的计费模式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeServerChargeModeResponse ChangeServerChargeMode(ChangeServerChargeModeRequest changeServerChargeModeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/actions/change-charge-mode",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeServerChargeModeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ChangeServerChargeModeResponse>(response);
+        }
+        
+        /// <summary>
         /// 切换弹性云服务器操作系统(安装Cloud init)
         ///
         /// 切换弹性云服务器操作系统。支持弹性云服务器数据盘不变的情况下，使用新镜像重装系统盘。

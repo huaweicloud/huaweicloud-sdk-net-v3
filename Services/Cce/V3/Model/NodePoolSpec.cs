@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class NodePoolSpec 
     {
         /// <summary>
-        /// 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+        /// 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical - pm: 裸金属服务器 
         /// </summary>
-        /// <value>节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical </value>
+        /// <value>节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical - pm: 裸金属服务器 </value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -32,11 +32,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             /// </summary>
             public static readonly TypeEnum ELASTICBMS = new TypeEnum("ElasticBMS");
 
+            /// <summary>
+            /// Enum PM for value: pm
+            /// </summary>
+            public static readonly TypeEnum PM = new TypeEnum("pm");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "vm", VM },
                 { "ElasticBMS", ELASTICBMS },
+                { "pm", PM },
             };
 
             private string _value;
@@ -132,7 +138,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+        /// 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical - pm: 裸金属服务器 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

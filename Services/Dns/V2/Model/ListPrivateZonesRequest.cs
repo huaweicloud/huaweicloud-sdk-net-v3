@@ -66,6 +66,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Status { get; set; }
 
         /// <summary>
+        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+        /// </summary>
+        [SDKProperty("search_mode", IsQuery = true)]
+        [JsonProperty("search_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string SearchMode { get; set; }
+
+        /// <summary>
         /// 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
@@ -88,6 +95,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  searchMode: ").Append(SearchMode).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -146,6 +154,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.SearchMode == input.SearchMode ||
+                    (this.SearchMode != null &&
+                    this.SearchMode.Equals(input.SearchMode))
+                ) && 
+                (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
@@ -174,6 +187,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.SearchMode != null)
+                    hashCode = hashCode * 59 + this.SearchMode.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;

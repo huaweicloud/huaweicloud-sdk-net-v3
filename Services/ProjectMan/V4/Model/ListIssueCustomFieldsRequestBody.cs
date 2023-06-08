@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Names { get; set; }
 
+        /// <summary>
+        /// 查询结果是否包括未使用的自定义字段，默认仅查询使用中的自定义字段，设为true时查询项目中所有自定义字段
+        /// </summary>
+        [JsonProperty("included_not_in_use", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IncludedNotInUse { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("class ListIssueCustomFieldsRequestBody {\n");
             sb.Append("  customFields: ").Append(CustomFields).Append("\n");
             sb.Append("  names: ").Append(Names).Append("\n");
+            sb.Append("  includedNotInUse: ").Append(IncludedNotInUse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,6 +78,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Names != null &&
                     input.Names != null &&
                     this.Names.SequenceEqual(input.Names)
+                ) && 
+                (
+                    this.IncludedNotInUse == input.IncludedNotInUse ||
+                    (this.IncludedNotInUse != null &&
+                    this.IncludedNotInUse.Equals(input.IncludedNotInUse))
                 );
         }
 
@@ -86,6 +98,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
                 if (this.Names != null)
                     hashCode = hashCode * 59 + this.Names.GetHashCode();
+                if (this.IncludedNotInUse != null)
+                    hashCode = hashCode * 59 + this.IncludedNotInUse.GetHashCode();
                 return hashCode;
             }
         }

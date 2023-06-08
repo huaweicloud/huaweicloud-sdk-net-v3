@@ -485,6 +485,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 添加指定工作项工时
+        ///
+        /// 添加指定工作项工时
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddIssueWorkHoursResponse> AddIssueWorkHoursAsync(AddIssueWorkHoursRequest addIssueWorkHoursRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , addIssueWorkHoursRequest.ProjectId.ToString());
+            urlParam.Add("issue_id" , addIssueWorkHoursRequest.IssueId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/{issue_id}/work-hours",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addIssueWorkHoursRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<AddIssueWorkHoursResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量删除工作项
         ///
         /// 批量删除工作项
@@ -1023,6 +1041,23 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectWorkHoursRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListProjectWorkHoursResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询项目下的工时类型
+        ///
+        /// 查询项目下的工时类型
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectWorkHoursTypeResponse> ListProjectWorkHoursTypeAsync(ListProjectWorkHoursTypeRequest listProjectWorkHoursTypeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id" , listProjectWorkHoursTypeRequest.ProjectId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/work-hours-type",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectWorkHoursTypeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListProjectWorkHoursTypeResponse>(response);
         }
         
         /// <summary>

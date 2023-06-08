@@ -23,25 +23,25 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string TemplateId { get; set; }
 
         /// <summary>
-        /// 截图检测时间间隔，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。
+        /// 截图检测时间间隔，取值范围为[0,100]，该参数在请求参数中忽略。
         /// </summary>
         [JsonProperty("interval", NullValueHandling = NullValueHandling.Ignore)]
         public int? Interval { get; set; }
 
         /// <summary>
-        /// 鉴政内容检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。
+        /// 鉴政内容检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示未进行此项检测。
         /// </summary>
         [JsonProperty("politics", NullValueHandling = NullValueHandling.Ignore)]
         public int? Politics { get; set; }
 
         /// <summary>
-        /// 鉴恐内容的检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。
+        /// 鉴恐内容的检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示未进行此项检测。
         /// </summary>
         [JsonProperty("terrorism", NullValueHandling = NullValueHandling.Ignore)]
         public int? Terrorism { get; set; }
 
         /// <summary>
-        /// 鉴黄内容的检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。  
+        /// 鉴黄内容的检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示未进行此项检测。  
         /// </summary>
         [JsonProperty("porn", NullValueHandling = NullValueHandling.Ignore)]
         public int? Porn { get; set; }

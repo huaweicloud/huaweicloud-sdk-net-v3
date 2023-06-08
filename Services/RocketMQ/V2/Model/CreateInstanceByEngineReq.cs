@@ -234,12 +234,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// RocketMQ实例规格。   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
+        /// RocketMQ实例规格。   - c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
         /// </summary>
-        /// <value>RocketMQ实例规格。   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000</value>
+        /// <value>RocketMQ实例规格。   - c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000</value>
         [JsonConverter(typeof(EnumClassConverter<ProductIdEnum>))]
         public class ProductIdEnum
         {
+            /// <summary>
+            /// Enum C6_4U8G_CLUSTER_SMALL for value: c6.4u8g.cluster.small
+            /// </summary>
+            public static readonly ProductIdEnum C6_4U8G_CLUSTER_SMALL = new ProductIdEnum("c6.4u8g.cluster.small");
+
             /// <summary>
             /// Enum C6_4U8G_CLUSTER for value: c6.4u8g.cluster
             /// </summary>
@@ -263,6 +268,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             private static readonly Dictionary<string, ProductIdEnum> StaticFields =
             new Dictionary<string, ProductIdEnum>()
             {
+                { "c6.4u8g.cluster.small", C6_4U8G_CLUSTER_SMALL },
                 { "c6.4u8g.cluster", C6_4U8G_CLUSTER },
                 { "c6.8u16g.cluster", C6_8U16G_CLUSTER },
                 { "c6.12u24g.cluster", C6_12U24G_CLUSTER },
@@ -529,7 +535,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// RocketMQ实例规格。   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
+        /// RocketMQ实例规格。   - c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public ProductIdEnum ProductId { get; set; }

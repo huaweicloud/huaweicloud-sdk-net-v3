@@ -236,6 +236,23 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 重试批量任务
+        ///
+        /// 应用服务器可调用此接口重试批量任务，目前只支持task_type为firmwareUpgrade，softwareUpgrade。如果task_id对应任务已经成功、停止、正在停止、等待中或初始化中，则不可以调用该接口。如果请求Body为{}，则调用该接口后会重新执行所有状态为失败、失败待重试和已停止的子任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RetryBatchTaskResponse> RetryBatchTaskAsync(RetryBatchTaskRequest retryBatchTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , retryBatchTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{project_id}/batchtasks/{task_id}/retry",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryBatchTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RetryBatchTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询批量任务
         ///
         /// 应用服务器可调用此接口查询物联网平台中指定批量任务的信息，包括任务内容、任务状态、任务完成情况统计以及子任务列表等。
@@ -250,6 +267,23 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBatchTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBatchTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 停止批量任务
+        ///
+        /// 应用服务器可调用此接口停止批量任务，目前只支持task_type为firmwareUpgrade，softwareUpgrade。如果task_id对应任务已经完成（成功、失败、部分成功，已经停止）或正在停止中，则不可以调用该接口。如果请求Body为{}，则调用该接口后会停止所有正在执行中、等待中和失败待重试状态的子任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StopBatchTaskResponse> StopBatchTaskAsync(StopBatchTaskRequest stopBatchTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , stopBatchTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/{project_id}/batchtasks/{task_id}/stop",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBatchTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<StopBatchTaskResponse>(response);
         }
         
         /// <summary>

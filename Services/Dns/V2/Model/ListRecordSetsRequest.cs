@@ -31,6 +31,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Marker { get; set; }
 
         /// <summary>
+        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+        /// </summary>
+        [SDKProperty("search_mode", IsQuery = true)]
+        [JsonProperty("search_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string SearchMode { get; set; }
+
+        /// <summary>
         /// 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -59,7 +66,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的记录集类型。  取值范围：A,AAAA,MX,CNAME,TXT, NS（仅限公网Zone）,SRV,PTR（仅限内网Zone）,CAA（仅限公网Zone）。
+        /// 待查询的Record Set的记录集类型。 公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -111,6 +118,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("class ListRecordSetsRequest {\n");
             sb.Append("  zoneType: ").Append(ZoneType).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  searchMode: ").Append(SearchMode).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
@@ -151,6 +159,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Marker == input.Marker ||
                     (this.Marker != null &&
                     this.Marker.Equals(input.Marker))
+                ) && 
+                (
+                    this.SearchMode == input.SearchMode ||
+                    (this.SearchMode != null &&
+                    this.SearchMode.Equals(input.SearchMode))
                 ) && 
                 (
                     this.Limit == input.Limit ||
@@ -216,6 +229,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.ZoneType.GetHashCode();
                 if (this.Marker != null)
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.SearchMode != null)
+                    hashCode = hashCode * 59 + this.SearchMode.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null)

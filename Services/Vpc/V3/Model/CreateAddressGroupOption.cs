@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("max_capacity", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxCapacity { get; set; }
 
+        /// <summary>
+        /// 功能说明：企业项目ID。创建IP地址组时，给IP地址组绑定企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  ipSet: ").Append(IpSet).Append("\n");
             sb.Append("  maxCapacity: ").Append(MaxCapacity).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +113,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.MaxCapacity == input.MaxCapacity ||
                     (this.MaxCapacity != null &&
                     this.MaxCapacity.Equals(input.MaxCapacity))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -127,6 +139,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.IpSet.GetHashCode();
                 if (this.MaxCapacity != null)
                     hashCode = hashCode * 59 + this.MaxCapacity.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

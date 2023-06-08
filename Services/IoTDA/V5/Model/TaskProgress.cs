@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("stopped", NullValueHandling = NullValueHandling.Ignore)]
         public int? Stopped { get; set; }
 
+        /// <summary>
+        /// 移除的子任务个数。
+        /// </summary>
+        [JsonProperty("removed", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Removed { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  waitting: ").Append(Waitting).Append("\n");
             sb.Append("  failWaitRetry: ").Append(FailWaitRetry).Append("\n");
             sb.Append("  stopped: ").Append(Stopped).Append("\n");
+            sb.Append("  removed: ").Append(Removed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Stopped == input.Stopped ||
                     (this.Stopped != null &&
                     this.Stopped.Equals(input.Stopped))
+                ) && 
+                (
+                    this.Removed == input.Removed ||
+                    (this.Removed != null &&
+                    this.Removed.Equals(input.Removed))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.FailWaitRetry.GetHashCode();
                 if (this.Stopped != null)
                     hashCode = hashCode * 59 + this.Stopped.GetHashCode();
+                if (this.Removed != null)
+                    hashCode = hashCode * 59 + this.Removed.GetHashCode();
                 return hashCode;
             }
         }

@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public DisassociaterouterReq Body { get; set; }
+        public DisassociaterouterRequestBody Body { get; set; }
 
 
 

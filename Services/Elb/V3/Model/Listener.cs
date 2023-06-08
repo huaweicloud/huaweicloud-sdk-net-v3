@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 监听器的前端监听端口。客户端将请求发送到该端口中。
+        /// 监听器的监听端口。QUIC监听器端口不能是4789，且不能和UDP监听器端口重复。传0时表示开启监听端口范围的能力，此时port_ranges为必填字段。 [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
         /// </summary>
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }
@@ -322,6 +322,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("gzip_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? GzipEnable { get; set; }
 
+        /// <summary>
+        /// 端口监听范围（闭区间)，最多指定10个端口组，每个组范围不可有重叠部分 &gt;仅当protocol_port为0时可以传入。
+        /// </summary>
+        [JsonProperty("port_ranges", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PortRange> PortRanges { get; set; }
+
 
 
         /// <summary>
@@ -363,6 +369,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
             sb.Append("  gzipEnable: ").Append(GzipEnable).Append("\n");
+            sb.Append("  portRanges: ").Append(PortRanges).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -546,6 +553,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.GzipEnable == input.GzipEnable ||
                     (this.GzipEnable != null &&
                     this.GzipEnable.Equals(input.GzipEnable))
+                ) && 
+                (
+                    this.PortRanges == input.PortRanges ||
+                    this.PortRanges != null &&
+                    input.PortRanges != null &&
+                    this.PortRanges.SequenceEqual(input.PortRanges)
                 );
         }
 
@@ -621,6 +634,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 if (this.GzipEnable != null)
                     hashCode = hashCode * 59 + this.GzipEnable.GetHashCode();
+                if (this.PortRanges != null)
+                    hashCode = hashCode * 59 + this.PortRanges.GetHashCode();
                 return hashCode;
             }
         }

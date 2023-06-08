@@ -220,6 +220,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectionReason { get; set; }
 
+        /// <summary>
+        /// 后端是否开启端口透传，开启后，后端服务器端口与前端监听器端口保持一致。  使用说明： - 仅QUIC,TCP,UDP的pool支持。
+        /// </summary>
+        [JsonProperty("any_port_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AnyPortEnable { get; set; }
+
 
 
         /// <summary>
@@ -244,6 +250,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
+            sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -339,6 +346,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ProtectionReason == input.ProtectionReason ||
                     (this.ProtectionReason != null &&
                     this.ProtectionReason.Equals(input.ProtectionReason))
+                ) && 
+                (
+                    this.AnyPortEnable == input.AnyPortEnable ||
+                    (this.AnyPortEnable != null &&
+                    this.AnyPortEnable.Equals(input.AnyPortEnable))
                 );
         }
 
@@ -380,6 +392,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ProtectionReason != null)
                     hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.AnyPortEnable != null)
+                    hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
                 return hashCode;
             }
         }
