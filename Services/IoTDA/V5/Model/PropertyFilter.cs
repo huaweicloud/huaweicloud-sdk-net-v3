@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Path { get; set; }
 
         /// <summary>
-        /// **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：&gt;，&lt;，&gt;&#x3D;，&lt;&#x3D;，&#x3D;,in:表示在指定值中匹配和between:表示数值区间。
+        /// **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：&gt;，&lt;，&gt;&#x3D;，&lt;&#x3D;，&#x3D;，in:表示在指定值中匹配和between:表示数值区间。
         /// </summary>
         [JsonProperty("operator", NullValueHandling = NullValueHandling.Ignore)]
         public string Operator { get; set; }

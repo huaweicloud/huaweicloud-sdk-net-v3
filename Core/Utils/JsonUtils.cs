@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.Core
         public static Dictionary<TK, TV> DeSerializeMap<TK, TV>(HttpResponseMessage message)
         {
             var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
-            return JArray.Parse(body).ToObject<Dictionary<TK, TV>>(JsonSerializer.CreateDefault(GetJsonSettings()));
+            return JObject.Parse(body).ToObject<Dictionary<TK, TV>>(JsonSerializer.CreateDefault(GetJsonSettings()));
         }
 
         public static string Serialize(object item)

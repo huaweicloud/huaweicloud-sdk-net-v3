@@ -24,7 +24,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数说明**：子任务的执行状态，可选参数。 **取值范围**： - Success: 成功。 - Fail: 失败。 - Processing: 执行中。 - FailWaitRetry: 失败重试。 - Stopped: 已停止。 - Waitting: 等待执行。 - Removed: 已移除
+        /// **参数说明**：批量任务ID，创建批量任务时由物联网平台分配获得。 **取值范围**：长度不超过24，只允许小写字母a到f、数字的组合。
+        /// </summary>
+        [SDKProperty("task_id", IsPath = true)]
+        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskId { get; set; }
+
+        /// <summary>
+        /// **参数说明**：子任务的执行状态，可选参数。 **取值范围**： - Success: 成功。 - Fail: 失败。 - Processing: 执行中。 - FailWaitRetry: 失败重试。 - Stopped: 已停止。 - Waitting: 等待执行。 - Removed: 已移除。
         /// </summary>
         [SDKProperty("task_detail_status", IsQuery = true)]
         [JsonProperty("task_detail_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -36,13 +43,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [SDKProperty("target", IsQuery = true)]
         [JsonProperty("target", NullValueHandling = NullValueHandling.Ignore)]
         public string Target { get; set; }
-
-        /// <summary>
-        /// **参数说明**：批量任务ID，创建批量任务时由物联网平台分配获得。 **取值范围**：长度不超过24，只允许小写字母a到f、数字的组合。
-        /// </summary>
-        [SDKProperty("task_id", IsPath = true)]
-        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TaskId { get; set; }
 
         /// <summary>
         /// **参数说明**：分页查询时每页显示的记录数。 **取值范围**：1-50的整数，默认值为10。
@@ -75,9 +75,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class ShowBatchTaskRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("  taskDetailStatus: ").Append(TaskDetailStatus).Append("\n");
             sb.Append("  target: ").Append(Target).Append("\n");
-            sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -108,6 +108,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
+                    this.TaskId == input.TaskId ||
+                    (this.TaskId != null &&
+                    this.TaskId.Equals(input.TaskId))
+                ) && 
+                (
                     this.TaskDetailStatus == input.TaskDetailStatus ||
                     (this.TaskDetailStatus != null &&
                     this.TaskDetailStatus.Equals(input.TaskDetailStatus))
@@ -116,11 +121,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Target == input.Target ||
                     (this.Target != null &&
                     this.Target.Equals(input.Target))
-                ) && 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
                 ) && 
                 (
                     this.Limit == input.Limit ||
@@ -149,12 +149,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.TaskId != null)
+                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 if (this.TaskDetailStatus != null)
                     hashCode = hashCode * 59 + this.TaskDetailStatus.GetHashCode();
                 if (this.Target != null)
                     hashCode = hashCode * 59 + this.Target.GetHashCode();
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null)

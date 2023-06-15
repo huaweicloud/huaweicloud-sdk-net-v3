@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 数据过滤条件
+        /// 数据过滤条件。
         /// </summary>
         [JsonProperty("filters", NullValueHandling = NullValueHandling.Ignore)]
         public List<PropertyFilter> Filters { get; set; }

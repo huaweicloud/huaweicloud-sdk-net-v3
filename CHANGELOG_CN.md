@@ -1,3 +1,80 @@
+# 3.1.43 2023-06-15
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+    - 支持云备份服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+    - 支持视频直播服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateBatchTask**
+    - 响应参数变更
+      - `- task_progress.device_in_progress`
+      - `- task_progress.rejected`
+  - **ListBatchTasks**
+    - 响应参数变更
+      - `- batchtasks.task_progress.device_in_progress`
+      - `- batchtasks.task_progress.rejected`
+  - **ShowBatchTask**
+    - 响应参数变更
+      - `- batchtask.task_progress.device_in_progress`
+      - `- batchtask.task_progress.rejected`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeGeneralText**
+    - 请求参数变更
+      - `+ single_orientation_mode`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SendDlqMessage**
+    - 请求参数变更
+      - `+ engine: enum value [reliability]`
+  - **CreateRocketMqMigrationTask**
+    - 请求参数变更
+      - `+ type: enum value [kafka]`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVocabularies**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+
 # 3.1.42 2023-06-08
 
 ### HuaweiCloud SDK CCE

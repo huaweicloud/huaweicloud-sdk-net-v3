@@ -1,3 +1,80 @@
+# 3.1.43 2023-06-15
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+    - Support Cloud Backup and Recovery service.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK Live
+
+- _Features_
+    - Support Live service.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateBatchTask**
+    - changes of response param
+      - `- task_progress.device_in_progress`
+      - `- task_progress.rejected`
+  - **ListBatchTasks**
+    - changes of response param
+      - `- batchtasks.task_progress.device_in_progress`
+      - `- batchtasks.task_progress.rejected`
+  - **ShowBatchTask**
+    - changes of response param
+      - `- batchtask.task_progress.device_in_progress`
+      - `- batchtask.task_progress.rejected`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeGeneralText**
+    - changes of request param
+      - `+ single_orientation_mode`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **SendDlqMessage**
+    - changes of request param
+      - `+ engine: enum value [reliability]`
+  - **CreateRocketMqMigrationTask**
+    - changes of request param
+      - `+ type: enum value [kafka]`
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVocabularies**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+
 # 3.1.42 2023-06-08
 
 ### HuaweiCloud SDK CCE

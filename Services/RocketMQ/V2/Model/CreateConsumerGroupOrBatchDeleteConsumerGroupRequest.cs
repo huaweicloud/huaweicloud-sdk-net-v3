@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 批量删除topic时使用，不配置则为创建接口。
+        /// 批量删除消费组时使用，不配置则为创建接口。
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]

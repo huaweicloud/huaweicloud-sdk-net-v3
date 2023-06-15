@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 安全组ID。
+        /// 安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? EnablePublicip { get; set; }
 
         /// <summary>
-        /// 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+        /// 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
         /// </summary>
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }

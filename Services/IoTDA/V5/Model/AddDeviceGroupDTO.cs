@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// **参数说明**：父设备组ID，携带该参数时表示在该设备组下创建一个子设备组。 **取值范围**：长度不超过36，十六进制字符串和连接符（-）的组合。
+        /// **参数说明**：父设备组ID，携带该参数时表示在该设备组下创建一个子设备组,动态群组不支持该参数。 **取值范围**：长度不超过36，十六进制字符串和连接符（-）的组合。
         /// </summary>
         [JsonProperty("super_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SuperGroupId { get; set; }

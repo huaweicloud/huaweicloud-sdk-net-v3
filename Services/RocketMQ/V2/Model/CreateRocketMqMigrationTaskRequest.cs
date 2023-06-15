@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)、自建Kafka上云(kafka)
+        /// 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
         /// </summary>
-        /// <value>迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)、自建Kafka上云(kafka)</value>
+        /// <value>迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -147,17 +147,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             /// </summary>
             public static readonly TypeEnum RABBITTOROCKET = new TypeEnum("rabbitToRocket");
 
-            /// <summary>
-            /// Enum KAFKA for value: kafka
-            /// </summary>
-            public static readonly TypeEnum KAFKA = new TypeEnum("kafka");
-
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "rocketmq", ROCKETMQ },
                 { "rabbitToRocket", RABBITTOROCKET },
-                { "kafka", KAFKA },
             };
 
             private string _value;
@@ -273,7 +267,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)、自建Kafka上云(kafka)
+        /// 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
