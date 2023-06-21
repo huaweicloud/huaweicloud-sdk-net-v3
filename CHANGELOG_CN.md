@@ -1,3 +1,58 @@
+# 3.1.44 2023-06-21
+
+### HuaweiCloud SDK CloudRTC
+
+- _新增特性_
+  - 支持华为云实时音视频服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Classroom
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListPackages`
+    - `ShowPackageDetail`
+    - `ListExercises`
+    - `ShowExerciseDetail`
+    - `ExecuteExercise`
+    - `ListAllDifficults`
+    - `ListMyKnowledgePoints`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ApplyJudgement**
+    - 请求参数变更
+      - `+ runtime_type: enum value [javaScript]`
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 支持接口`ShowDomainQuota`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowRecordSetWithLine**
+    - 响应参数变更
+      - `+ bundle`
+  - **SetRecordSetsStatus**
+    - 响应参数变更
+      - `+ bundle`
+  - **BatchUpdateRecordSetWithLine**
+    - 响应参数变更
+      - `+ bundle`
+      - `+ recordsets.bundle`
+  - **BatchDeleteRecordSetWithLine**
+    - 响应参数变更
+      - `+ bundle`
+      - `+ recordsets.bundle`
+  - **CreateRecordSetWithBatchLines**
+    - 响应参数变更
+      - `+ bundle`
+      - `+ recordsets.bundle`
+
 # 3.1.43 2023-06-15
 
 ### HuaweiCloud SDK CBR

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 资源栈输出的名称，由用户在模板中定义  以 HCL 模板为例，name 为 vpc_id  &#x60;&#x60;&#x60;hcl output \&quot;vpc_id\&quot; {   value &#x3D; huaweicloud_vpc.my_hello_world_vpc.id } &#x60;&#x60;&#x60;  以 json 模板为例，name 为 vpc_id &#x60;&#x60;&#x60;json {   \&quot;output\&quot;: {     \&quot;vpc_id\&quot;: [       {         \&quot;value\&quot;: \&quot;${huaweicloud_vpc.my_hello_world_vpc.id}\&quot;       }     ]   } } &#x60;&#x60;&#x60;
+        /// 资源栈输出的名称，由用户在模板中定义  以 HCL 模板为例，name 为 vpc_id  &#x60;&#x60;&#x60;hcl output \&quot;vpc_id\&quot; {   value &#x3D; huaweicloud_vpc.my_hello_world_vpc.id } &#x60;&#x60;&#x60;  以 json 模板为例，name 为 vpc_id &#x60;&#x60;&#x60;json {   \&quot;output\&quot;: {     \&quot;vpc_id\&quot;: [       {         \&quot;value\&quot;: \&quot;${huaweicloud_vpc.my_hello_world_vpc.id}\&quot;       }     ]   } } &#x60;&#x60;&#x60; 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string Value { get; set; }
 
         /// <summary>
-        /// 标识该资源栈输出是否为敏感信息，由用户在模板中定义  若用户在模板中将该输出定义为sensitive，则返回体中该输出的value和type不会返回真实值，而是返回&#x60;&lt;sensitive&gt;&#x60;
+        /// 标识该资源栈输出是否为敏感信息，由用户在模板中定义  若用户在模板中将该输出定义为sensitive，则返回体中该输出的value和type不会返回真实值，而是返回&#x60;&lt;sensitive&gt;&#x60; 
         /// </summary>
         [JsonProperty("sensitive", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Sensitive { get; set; }

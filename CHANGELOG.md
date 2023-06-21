@@ -1,3 +1,58 @@
+# 3.1.44 2023-06-21
+
+### HuaweiCloud SDK CloudRTC
+
+- _Features_
+  - Support the service `CloudRTC`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Classroom
+
+- _Features_
+  - Support the following interfaces：
+    - `ListPackages`
+    - `ShowPackageDetail`
+    - `ListExercises`
+    - `ShowExerciseDetail`
+    - `ExecuteExercise`
+    - `ListAllDifficults`
+    - `ListMyKnowledgePoints`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ApplyJudgement**
+    - changes of request param
+      - `+ runtime_type: enum value [javaScript]`
+
+### HuaweiCloud SDK DNS
+
+- _Features_
+  - Support the interface `ShowDomainQuota`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowRecordSetWithLine**
+    - changes of response param
+      - `+ bundle`
+  - **SetRecordSetsStatus**
+    - changes of response param
+      - `+ bundle`
+  - **BatchUpdateRecordSetWithLine**
+    - changes of response param
+      - `+ bundle`
+      - `+ recordsets.bundle`
+  - **BatchDeleteRecordSetWithLine**
+    - changes of response param
+      - `+ bundle`
+      - `+ recordsets.bundle`
+  - **CreateRecordSetWithBatchLines**
+    - changes of response param
+      - `+ bundle`
+      - `+ recordsets.bundle`
+
 # 3.1.43 2023-06-15
 
 ### HuaweiCloud SDK CBR

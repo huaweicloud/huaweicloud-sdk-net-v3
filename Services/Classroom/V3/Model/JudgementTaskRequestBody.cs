@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         }
 
         /// <summary>
-        /// 支持语言类型：java、c、cpp、python
+        /// 支持语言类型：java、c、cpp、python、javaScript
         /// </summary>
-        /// <value>支持语言类型：java、c、cpp、python</value>
+        /// <value>支持语言类型：java、c、cpp、python、javaScript</value>
         [JsonConverter(typeof(EnumClassConverter<RuntimeTypeEnum>))]
         public class RuntimeTypeEnum
         {
@@ -151,6 +151,11 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
             /// </summary>
             public static readonly RuntimeTypeEnum PYTHON = new RuntimeTypeEnum("python");
 
+            /// <summary>
+            /// Enum JAVASCRIPT for value: javaScript
+            /// </summary>
+            public static readonly RuntimeTypeEnum JAVASCRIPT = new RuntimeTypeEnum("javaScript");
+
             private static readonly Dictionary<string, RuntimeTypeEnum> StaticFields =
             new Dictionary<string, RuntimeTypeEnum>()
             {
@@ -158,6 +163,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
                 { "c", C },
                 { "cpp", CPP },
                 { "python", PYTHON },
+                { "javaScript", JAVASCRIPT },
             };
 
             private string _value;
@@ -409,7 +415,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 支持语言类型：java、c、cpp、python
+        /// 支持语言类型：java、c、cpp、python、javaScript
         /// </summary>
         [JsonProperty("runtime_type", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeTypeEnum RuntimeType { get; set; }

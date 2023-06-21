@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 线路分组的描述信息。长度不超过255个字符。默认值为空。
+        /// 线路列表。
         /// </summary>
         [JsonProperty("lines", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Lines { get; set; }

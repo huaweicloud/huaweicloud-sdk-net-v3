@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("alias_target", NullValueHandling = NullValueHandling.Ignore)]
         public AliasTarget AliasTarget { get; set; }
 
+        /// <summary>
+        /// 规格，默认规格，保留字段。
+        /// </summary>
+        [JsonProperty("bundle", NullValueHandling = NullValueHandling.Ignore)]
+        public string Bundle { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  healthCheckId: ").Append(HealthCheckId).Append("\n");
             sb.Append("  aliasTarget: ").Append(AliasTarget).Append("\n");
+            sb.Append("  bundle: ").Append(Bundle).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -262,6 +269,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.AliasTarget == input.AliasTarget ||
                     (this.AliasTarget != null &&
                     this.AliasTarget.Equals(input.AliasTarget))
+                ) && 
+                (
+                    this.Bundle == input.Bundle ||
+                    (this.Bundle != null &&
+                    this.Bundle.Equals(input.Bundle))
                 );
         }
 
@@ -309,6 +321,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.HealthCheckId.GetHashCode();
                 if (this.AliasTarget != null)
                     hashCode = hashCode * 59 + this.AliasTarget.GetHashCode();
+                if (this.Bundle != null)
+                    hashCode = hashCode * 59 + this.Bundle.GetHashCode();
                 return hashCode;
             }
         }

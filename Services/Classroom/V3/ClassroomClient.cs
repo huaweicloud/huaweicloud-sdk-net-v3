@@ -65,6 +65,122 @@ namespace HuaweiCloud.SDK.Classroom.V3
         }
         
         /// <summary>
+        /// 习题判题
+        ///
+        /// 习题判题
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteExerciseResponse ExecuteExercise(ExecuteExerciseRequest executeExerciseRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("exercise_id" , executeExerciseRequest.ExerciseId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/assemble/exercise/{exercise_id}/judge",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeExerciseRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ExecuteExerciseResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询习题库下习题列表
+        ///
+        /// 查询习题库下习题列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListExercisesResponse ListExercises(ListExercisesRequest listExercisesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("package_id" , listExercisesRequest.PackageId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/assemble/package/{package_id}/exercise/list",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listExercisesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListExercisesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询当前租户的习题库列表
+        ///
+        /// 查询当前租户的习题库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPackagesResponse ListPackages(ListPackagesRequest listPackagesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/assemble/package/list",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listPackagesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListPackagesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询单个习题详情
+        ///
+        /// 查询单个习题详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowExerciseDetailResponse ShowExerciseDetail(ShowExerciseDetailRequest showExerciseDetailRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("exercise_id" , showExerciseDetailRequest.ExerciseId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/assemble/exercise/{exercise_id}/detail",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExerciseDetailRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowExerciseDetailResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询单个习题库详情
+        ///
+        /// 查询单个习题库详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPackageDetailResponse ShowPackageDetail(ShowPackageDetailRequest showPackageDetailRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("package_id" , showPackageDetailRequest.PackageId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/assemble/package/{package_id}/detail",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPackageDetailRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowPackageDetailResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取习题所有难度
+        ///
+        /// 获取习题所有难度
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAllDifficultsResponse ListAllDifficults(ListAllDifficultsRequest listAllDifficultsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/baseresource/extend-resource/difficult/all",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllDifficultsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAllDifficultsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取自身习题知识点
+        ///
+        /// 获取自身习题知识点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListMyKnowledgePointsResponse ListMyKnowledgePoints(ListMyKnowledgePointsRequest listMyKnowledgePointsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/baseresource/extend-resource/knowledge-point/mine",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listMyKnowledgePointsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListMyKnowledgePointsResponse>(response);
+        }
+        
+        /// <summary>
         /// 根据课堂ID获取指定课堂的课堂成员列表
         ///
         /// 根据课堂ID获取指定课堂的课堂成员列表，支持分页，搜索字段默认同时匹配姓名，学号，用户名，班级。

@@ -48,21 +48,12 @@ namespace HuaweiCloud.SDK.Core
 
         private static T SetResponseBody<T>(string body)
         {
-            var jsonObject = JsonConvert.DeserializeObject<T>(body, GetJsonSettings());
-
-            if (jsonObject == null)
-            {
-                jsonObject = Activator.CreateInstance<T>();
-            }
-
-            return jsonObject;
+            return string.IsNullOrEmpty(body) ? Activator.CreateInstance<T>() : JsonConvert.DeserializeObject<T>(body, GetJsonSettings());
         }
 
         public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse
         {
-            var jsonObject = JsonConvert.DeserializeObject<T>(response.HttpBody, GetJsonSettings()) ??
-                             Activator.CreateInstance<T>();
-
+            var jsonObject = SetResponseBody<T>(response.HttpBody);
             jsonObject.HttpStatusCode = response.HttpStatusCode;
             jsonObject.HttpHeaders = response.HttpHeaders;
             jsonObject.HttpBody = response.HttpBody;
@@ -72,7 +63,7 @@ namespace HuaweiCloud.SDK.Core
         public static T DeSerializeNull<T>(HttpResponseMessage message) where T : SdkResponse
         {
             var t = Activator.CreateInstance<T>();
-            t.HttpStatusCode = (int) message.StatusCode;
+            t.HttpStatusCode = (int)message.StatusCode;
             t.HttpHeaders = message.Headers.ToString();
             t.HttpBody = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
             return t;
@@ -81,13 +72,13 @@ namespace HuaweiCloud.SDK.Core
         public static List<T> DeSerializeList<T>(HttpResponseMessage message)
         {
             var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
-            return JArray.Parse(body).ToObject<List<T>>(JsonSerializer.CreateDefault(GetJsonSettings()));
+            return string.IsNullOrEmpty(body) ? new List<T>() : JArray.Parse(body).ToObject<List<T>>(JsonSerializer.CreateDefault(GetJsonSettings()));
         }
 
         public static Dictionary<TK, TV> DeSerializeMap<TK, TV>(HttpResponseMessage message)
         {
             var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
-            return JObject.Parse(body).ToObject<Dictionary<TK, TV>>(JsonSerializer.CreateDefault(GetJsonSettings()));
+            return string.IsNullOrEmpty(body) ? new Dictionary<TK, TV>() : JObject.Parse(body).ToObject<Dictionary<TK, TV>>(JsonSerializer.CreateDefault(GetJsonSettings()));
         }
 
         public static string Serialize(object item)
