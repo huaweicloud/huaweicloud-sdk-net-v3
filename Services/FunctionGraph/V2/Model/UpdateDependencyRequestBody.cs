@@ -102,6 +102,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
 
+            /// <summary>
+            /// Enum CUSTOM for value: Custom
+            /// </summary>
+            public static readonly RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+            /// <summary>
+            /// Enum HTTP for value: http
+            /// </summary>
+            public static readonly RuntimeEnum HTTP = new RuntimeEnum("http");
+
             private static readonly Dictionary<string, RuntimeEnum> StaticFields =
             new Dictionary<string, RuntimeEnum>()
             {
@@ -121,6 +131,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "C#(.NET Core 2.1)", C_NET_CORE_2_1_ },
                 { "C#(.NET Core 3.1)", C_NET_CORE_3_1_ },
                 { "PHP7.3", PHP7_3 },
+                { "Custom", CUSTOM },
+                { "http", HTTP },
             };
 
             private string _value;

@@ -77,6 +77,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// IP地址组资源标签
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
+        /// <summary>
         /// 功能说明：地址组状态 取值范围：       NORMAL：正常       UPDATING：更新中       UPDATE_FAILED：更新失败 默认值：NORMAL 约束：当地址组处于UPDATING（更新中）状态时，不允许再次更新
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -107,6 +113,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  statusMessage: ").Append(StatusMessage).Append("\n");
             sb.Append("}\n");
@@ -182,6 +189,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -221,6 +234,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.StatusMessage != null)

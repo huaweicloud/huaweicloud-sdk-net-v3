@@ -103,6 +103,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             public static readonly RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
             /// <summary>
+            /// Enum CUSTOM for value: Custom
+            /// </summary>
+            public static readonly RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+            /// <summary>
             /// Enum HTTP for value: http
             /// </summary>
             public static readonly RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -126,6 +131,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "C#(.NET Core 3.1)", C_NET_CORE_3_1_ },
                 { "PHP7.3", PHP7_3 },
                 { "Python3.9", PYTHON3_9 },
+                { "Custom", CUSTOM },
                 { "http", HTTP },
             };
 

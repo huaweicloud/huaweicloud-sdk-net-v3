@@ -350,7 +350,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 事件结构体。
         /// </summary>
         [JsonProperty("event_data", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> EventData { get; set; }
+        public Object EventData { get; set; }
 
 
 
@@ -403,9 +403,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 ) && 
                 (
                     this.EventData == input.EventData ||
-                    this.EventData != null &&
-                    input.EventData != null &&
-                    this.EventData.SequenceEqual(input.EventData)
+                    (this.EventData != null &&
+                    this.EventData.Equals(input.EventData))
                 );
         }
 

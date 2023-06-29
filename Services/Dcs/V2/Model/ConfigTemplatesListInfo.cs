@@ -298,6 +298,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
+        /// <summary>
+        /// 模板创建时间，仅在自定义参数模板中有意义，格式例如：2023-05-10T11:09:35.802Z
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
+
 
 
         /// <summary>
@@ -316,6 +322,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  productType: ").Append(ProductType).Append("\n");
             sb.Append("  storageType: ").Append(StorageType).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -381,6 +388,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 );
         }
 
@@ -410,6 +422,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.StorageType.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 return hashCode;
             }
         }

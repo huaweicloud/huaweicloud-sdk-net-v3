@@ -95,7 +95,7 @@ namespace Examples.Rabbitmq.V2
                 InstanceId = instanceId,
                 Body = new ResetPasswordReq
                 {
-                    NewPassword = "Cloud@123abc",
+                    NewPassword = "password",
                 }
             };
             try

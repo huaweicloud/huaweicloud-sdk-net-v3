@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// </summary>
     public class BatchAddPermissionRequest 
     {
+        /// <summary>
+        /// 终端节点服务白名单类型。 ● domainId：基于账户ID配置终端节点服务白名单。 ● orgPath：基于账户所在组织路径配置终端节点服务白名单。
+        /// </summary>
+        /// <value>终端节点服务白名单类型。 ● domainId：基于账户ID配置终端节点服务白名单。 ● orgPath：基于账户所在组织路径配置终端节点服务白名单。</value>
+        [JsonConverter(typeof(EnumClassConverter<PermissionTypeEnum>))]
+        public class PermissionTypeEnum
+        {
+            /// <summary>
+            /// Enum DOMAINID for value: domainId
+            /// </summary>
+            public static readonly PermissionTypeEnum DOMAINID = new PermissionTypeEnum("domainId");
+
+            /// <summary>
+            /// Enum ORGPATH for value: orgPath
+            /// </summary>
+            public static readonly PermissionTypeEnum ORGPATH = new PermissionTypeEnum("orgPath");
+
+            private static readonly Dictionary<string, PermissionTypeEnum> StaticFields =
+            new Dictionary<string, PermissionTypeEnum>()
+            {
+                { "domainId", DOMAINID },
+                { "orgPath", ORGPATH },
+            };
+
+            private string _value;
+
+            public PermissionTypeEnum()
+            {
+
+            }
+
+            public PermissionTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PermissionTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PermissionTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PermissionTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PermissionTypeEnum a, PermissionTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PermissionTypeEnum a, PermissionTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 终端节点服务白名单列表
@@ -22,6 +137,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
         public List<EpsAddPermissionRequest> Permissions { get; set; }
 
+        /// <summary>
+        /// 终端节点服务白名单类型。 ● domainId：基于账户ID配置终端节点服务白名单。 ● orgPath：基于账户所在组织路径配置终端节点服务白名单。
+        /// </summary>
+        [JsonProperty("permission_type", NullValueHandling = NullValueHandling.Ignore)]
+        public PermissionTypeEnum PermissionType { get; set; }
 
 
         /// <summary>
@@ -32,6 +152,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             var sb = new StringBuilder();
             sb.Append("class BatchAddPermissionRequest {\n");
             sb.Append("  permissions: ").Append(Permissions).Append("\n");
+            sb.Append("  permissionType: ").Append(PermissionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +179,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.Permissions != null &&
                     input.Permissions != null &&
                     this.Permissions.SequenceEqual(input.Permissions)
+                ) && 
+                (
+                    this.PermissionType == input.PermissionType ||
+                    (this.PermissionType != null &&
+                    this.PermissionType.Equals(input.PermissionType))
                 );
         }
 
@@ -71,6 +197,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 int hashCode = 41;
                 if (this.Permissions != null)
                     hashCode = hashCode * 59 + this.Permissions.GetHashCode();
+                if (this.PermissionType != null)
+                    hashCode = hashCode * 59 + this.PermissionType.GetHashCode();
                 return hashCode;
             }
         }

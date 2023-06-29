@@ -1,3 +1,101 @@
+# 3.1.45 2023-06-29
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 支持接口`ListTemplateVersions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 支持接口`ExecuteClusterSwitchover`、`ShowJobInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListConfigTemplates**
+    - 响应参数变更
+      - `+ config_templates.created_at`
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ template_id`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateCommand**
+    - 响应参数变更
+      - `+ error_msg`
+      - `+ error_code`
+  - **ListProperties**
+    - 响应参数变更
+      - `+ error_msg`
+      - `+ error_code`
+  - **UpdateProperties**
+    - 响应参数变更
+      - `+ error_msg`
+      - `+ error_code`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAddressGroup**
+    - 响应参数变更
+      - `+ address_group.tags`
+  - **UpdateAddressGroup**
+    - 响应参数变更
+      - `+ address_group.tags`
+  - **ListAddressGroup**
+    - 响应参数变更
+      - `+ address_groups.tags`
+  - **CreateAddressGroup**
+    - 响应参数变更
+      - `+ address_group.tags`
+
+### HuaweiCloud SDK VPCEP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddOrRemoveServicePermissions**
+    - 请求参数变更
+      - `+ permission_type`
+    - 响应参数变更
+      - `+ permission_type`
+  - **UpdateEndpointService**
+    - 响应参数变更
+      - `- cidr_type`
+  - **ListServicePermissionsDetails**
+    - 响应参数变更
+      - `+ permissions.permission_type`
+  - **BatchAddEndpointServicePermissions**
+    - 请求参数变更
+      - `+ permission_type`
+    - 响应参数变更
+      - `+ permissions.permission_type`
+  - **BatchRemoveEndpointServicePermissions**
+    - 响应参数变更
+      - `+ permissions.permission_type`
+  - **UpdateEndpointServicePermissionDesc**
+    - 响应参数变更
+      - `+ permissions.permission_type`
+  - **CreateEndpointService**
+    - 响应参数变更
+      - `- cidr_type`
+
 # 3.1.44 2023-06-21
 
 ### HuaweiCloud SDK CloudRTC

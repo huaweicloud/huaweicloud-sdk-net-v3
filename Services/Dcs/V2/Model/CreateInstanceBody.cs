@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("rename_commands", NullValueHandling = NullValueHandling.Ignore)]
         public Object RenameCommands { get; set; }
 
+        /// <summary>
+        /// 参数模板ID
+        /// </summary>
+        [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TemplateId { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  renameCommands: ").Append(RenameCommands).Append("\n");
+            sb.Append("  templateId: ").Append(TemplateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -371,6 +378,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.RenameCommands == input.RenameCommands ||
                     (this.RenameCommands != null &&
                     this.RenameCommands.Equals(input.RenameCommands))
+                ) && 
+                (
+                    this.TemplateId == input.TemplateId ||
+                    (this.TemplateId != null &&
+                    this.TemplateId.Equals(input.TemplateId))
                 );
         }
 
@@ -436,6 +448,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.RenameCommands != null)
                     hashCode = hashCode * 59 + this.RenameCommands.GetHashCode();
+                if (this.TemplateId != null)
+                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 return hashCode;
             }
         }

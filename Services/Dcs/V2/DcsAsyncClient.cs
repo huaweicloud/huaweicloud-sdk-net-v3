@@ -415,6 +415,25 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 集群分片倒换
+        ///
+        /// 集群分片倒换，适用于proxy和cluster实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteClusterSwitchoverResponse> ExecuteClusterSwitchoverAsync(ExecuteClusterSwitchoverRequest executeClusterSwitchoverRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , executeClusterSwitchoverRequest.InstanceId.ToString());
+            urlParam.Add("group_id" , executeClusterSwitchoverRequest.GroupId.ToString());
+            urlParam.Add("node_id" , executeClusterSwitchoverRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/groups/{group_id}/replications/{node_id}/async-switchover",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeClusterSwitchoverRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ExecuteClusterSwitchoverResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询可用区信息
         ///
         /// 查询所在局点的可用区信息
@@ -987,6 +1006,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询租户Job执行结果
+        ///
+        /// 查询租户Job执行结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowJobInfoResponse> ShowJobInfoAsync(ShowJobInfoRequest showJobInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , showJobInfoRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowJobInfoResponse>(response);
         }
         
         /// <summary>

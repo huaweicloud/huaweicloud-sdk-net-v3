@@ -258,121 +258,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 网段类型。 ● public：公网网段 ● internal：内网网段 默认值为internal。
-        /// </summary>
-        /// <value>网段类型。 ● public：公网网段 ● internal：内网网段 默认值为internal。</value>
-        [JsonConverter(typeof(EnumClassConverter<CidrTypeEnum>))]
-        public class CidrTypeEnum
-        {
-            /// <summary>
-            /// Enum PUBLIC for value: public
-            /// </summary>
-            public static readonly CidrTypeEnum PUBLIC = new CidrTypeEnum("public");
-
-            /// <summary>
-            /// Enum INTERNAL for value: internal
-            /// </summary>
-            public static readonly CidrTypeEnum INTERNAL = new CidrTypeEnum("internal");
-
-            private static readonly Dictionary<string, CidrTypeEnum> StaticFields =
-            new Dictionary<string, CidrTypeEnum>()
-            {
-                { "public", PUBLIC },
-                { "internal", INTERNAL },
-            };
-
-            private string _value;
-
-            public CidrTypeEnum()
-            {
-
-            }
-
-            public CidrTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static CidrTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as CidrTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(CidrTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(CidrTypeEnum a, CidrTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(CidrTypeEnum a, CidrTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
         /// </summary>
         /// <value>用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。</value>
@@ -577,11 +462,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 网段类型。 ● public：公网网段 ● internal：内网网段 默认值为internal。
-        /// </summary>
-        [JsonProperty("cidr_type", NullValueHandling = NullValueHandling.Ignore)]
-        public CidrTypeEnum CidrType { get; set; }
-        /// <summary>
         /// 服务开放的端口映射列表 同一个终端节点服务下，不允许重复的端口映射。 若多个终端节点服务共用一个port_id， 则终端节点服务之间的所有端口映射的server_port和protocol的组合不能重复。
         /// </summary>
         [JsonProperty("ports", NullValueHandling = NullValueHandling.Ignore)]
@@ -631,7 +511,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  cidrType: ").Append(CidrType).Append("\n");
             sb.Append("  ports: ").Append(Ports).Append("\n");
             sb.Append("  tcpProxy: ").Append(TcpProxy).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
@@ -719,11 +598,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.ProjectId.Equals(input.ProjectId))
                 ) && 
                 (
-                    this.CidrType == input.CidrType ||
-                    (this.CidrType != null &&
-                    this.CidrType.Equals(input.CidrType))
-                ) && 
-                (
                     this.Ports == input.Ports ||
                     this.Ports != null &&
                     input.Ports != null &&
@@ -784,8 +658,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.CidrType != null)
-                    hashCode = hashCode * 59 + this.CidrType.GetHashCode();
                 if (this.Ports != null)
                     hashCode = hashCode * 59 + this.Ports.GetHashCode();
                 if (this.TcpProxy != null)

@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("response", NullValueHandling = NullValueHandling.Ignore)]
         public Object Response { get; set; }
 
+        /// <summary>
+        /// 命令下发异常错误码。
+        /// </summary>
+        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorCode { get; set; }
+
+        /// <summary>
+        /// 命令下发异常错误信息。
+        /// </summary>
+        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public Object ErrorMsg { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("class CreateCommandResponse {\n");
             sb.Append("  commandId: ").Append(CommandId).Append("\n");
             sb.Append("  response: ").Append(Response).Append("\n");
+            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
+            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +83,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Response == input.Response ||
                     (this.Response != null &&
                     this.Response.Equals(input.Response))
+                ) && 
+                (
+                    this.ErrorCode == input.ErrorCode ||
+                    (this.ErrorCode != null &&
+                    this.ErrorCode.Equals(input.ErrorCode))
+                ) && 
+                (
+                    this.ErrorMsg == input.ErrorMsg ||
+                    (this.ErrorMsg != null &&
+                    this.ErrorMsg.Equals(input.ErrorMsg))
                 );
         }
 
@@ -84,6 +108,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.CommandId.GetHashCode();
                 if (this.Response != null)
                     hashCode = hashCode * 59 + this.Response.GetHashCode();
+                if (this.ErrorCode != null)
+                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null)
+                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

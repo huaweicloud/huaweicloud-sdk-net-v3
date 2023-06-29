@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     {
 
         /// <summary>
-        /// 依赖id列表
+        /// Ip列表
         /// </summary>
-        [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> State { get; set; }
+        [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Endpoints { get; set; }
 
         /// <summary>
-        /// 快照制作响应码
+        /// 域名地址
         /// </summary>
-        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
-        public string Code { get; set; }
+        [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
+        public string Address { get; set; }
 
 
 
@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateVpcEndpointResponse {\n");
-            sb.Append("  state: ").Append(State).Append("\n");
-            sb.Append("  code: ").Append(Code).Append("\n");
+            sb.Append("  endpoints: ").Append(Endpoints).Append("\n");
+            sb.Append("  address: ").Append(Address).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,15 +61,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
-                    this.State == input.State ||
-                    this.State != null &&
-                    input.State != null &&
-                    this.State.SequenceEqual(input.State)
+                    this.Endpoints == input.Endpoints ||
+                    this.Endpoints != null &&
+                    input.Endpoints != null &&
+                    this.Endpoints.SequenceEqual(input.Endpoints)
                 ) && 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
+                    this.Address == input.Address ||
+                    (this.Address != null &&
+                    this.Address.Equals(input.Address))
                 );
         }
 
@@ -81,10 +81,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Endpoints != null)
+                    hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                if (this.Address != null)
+                    hashCode = hashCode * 59 + this.Address.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,3 +1,101 @@
+# 3.1.45 2023-06-29
+
+### HuaweiCloud SDK AOS
+
+- _Features_
+  - Support the interface `ListTemplateVersions`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the interfaces `ExecuteClusterSwitchover`, `ShowJobInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListConfigTemplates**
+    - changes of response param
+      - `+ config_templates.created_at`
+  - **CreateInstance**
+    - changes of request param
+      - `+ template_id`
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateCommand**
+    - changes of response param
+      - `+ error_msg`
+      - `+ error_code`
+  - **ListProperties**
+    - changes of response param
+      - `+ error_msg`
+      - `+ error_code`
+  - **UpdateProperties**
+    - changes of response param
+      - `+ error_msg`
+      - `+ error_code`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAddressGroup**
+    - changes of response param
+      - `+ address_group.tags`
+  - **UpdateAddressGroup**
+    - changes of response param
+      - `+ address_group.tags`
+  - **ListAddressGroup**
+    - changes of response param
+      - `+ address_groups.tags`
+  - **CreateAddressGroup**
+    - changes of response param
+      - `+ address_group.tags`
+
+### HuaweiCloud SDK VPCEP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddOrRemoveServicePermissions**
+    - changes of request param
+      - `+ permission_type`
+    - changes of response param
+      - `+ permission_type`
+  - **UpdateEndpointService**
+    - changes of response param
+      - `- cidr_type`
+  - **ListServicePermissionsDetails**
+    - changes of response param
+      - `+ permissions.permission_type`
+  - **BatchAddEndpointServicePermissions**
+    - changes of request param
+      - `+ permission_type`
+    - changes of response param
+      - `+ permissions.permission_type`
+  - **BatchRemoveEndpointServicePermissions**
+    - changes of response param
+      - `+ permissions.permission_type`
+  - **UpdateEndpointServicePermissionDesc**
+    - changes of response param
+      - `+ permissions.permission_type`
+  - **CreateEndpointService**
+    - changes of response param
+      - `- cidr_type`
+
 # 3.1.44 2023-06-21
 
 ### HuaweiCloud SDK CloudRTC
