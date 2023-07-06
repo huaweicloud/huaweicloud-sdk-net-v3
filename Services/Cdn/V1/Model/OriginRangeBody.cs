@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("range_status", NullValueHandling = NullValueHandling.Ignore)]
         public RangeStatusEnum RangeStatus { get; set; }
         /// <summary>
-        /// 加速域名id。获取方法请参见查询加速域名。
+        /// 加速域名id。
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }

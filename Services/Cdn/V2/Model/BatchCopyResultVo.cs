@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 成功响应详细内容
+    /// 成功响应详细内容。
     /// </summary>
     public class BatchCopyResultVo 
     {
         /// <summary>
-        /// 批量操作结果
+        /// 批量操作结果。
         /// </summary>
-        /// <value>批量操作结果</value>
+        /// <value>批量操作结果。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -138,12 +138,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Reason { get; set; }
 
         /// <summary>
-        /// 批量操作结果
+        /// 批量操作结果。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 域名
+        /// 域名。
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }

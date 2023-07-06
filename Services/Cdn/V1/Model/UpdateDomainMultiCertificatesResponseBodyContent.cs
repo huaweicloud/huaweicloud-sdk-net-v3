@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 域名列表
+        /// 域名列表。
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// https开关(0：\&quot;关闭\&quot;；1：\&quot;设置证书\&quot;)
+        /// https开关(0：\&quot;关闭\&quot;；1：\&quot;设置证书\&quot;)。
         /// </summary>
         [JsonProperty("https_switch", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsSwitch { get; set; }
 
         /// <summary>
-        /// 回源方式:1：\&quot;PROTOCOL_FOLLOW\&quot;；2：\&quot;HTTP\&quot;(默认)，3：\&quot;https\&quot;
+        /// 回源方式:1：\&quot;回源跟随\&quot;；2：\&quot;HTTP\&quot;(默认)，3：https（自建）。
         /// </summary>
         [JsonProperty("access_origin_way", NullValueHandling = NullValueHandling.Ignore)]
         public int? AccessOriginWay { get; set; }
 
         /// <summary>
-        /// 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+        /// 强制跳转HTTPS（0：不强制；1：强制） 。
         /// </summary>
         [JsonProperty("force_redirect_https", NullValueHandling = NullValueHandling.Ignore)]
         public int? ForceRedirectHttps { get; set; }
@@ -47,31 +47,31 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public ForceRedirect ForceRedirectConfig { get; set; }
 
         /// <summary>
-        /// http2.0（0：关闭；1：开启）
+        /// http2.0（0：关闭；1：开启）。
         /// </summary>
         [JsonProperty("http2", NullValueHandling = NullValueHandling.Ignore)]
         public int? Http2 { get; set; }
 
         /// <summary>
-        /// 证书名称。（长度限制为3-32字符）。
+        /// 证书名称。
         /// </summary>
         [JsonProperty("cert_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertName { get; set; }
 
         /// <summary>
-        /// 证书内容
+        /// 证书内容。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string Certificate { get; set; }
 
         /// <summary>
-        /// 证书类型（0为自有证书 ， 1为托管证书）
+        /// 证书类型（0为自有证书 ， 1为托管证书）。
         /// </summary>
         [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateType { get; set; }
 
         /// <summary>
-        /// 证书过期时间
+        /// 证书过期时间。
         /// </summary>
         [JsonProperty("expiration_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? ExpirationTime { get; set; }

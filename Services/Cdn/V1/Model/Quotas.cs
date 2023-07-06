@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 配额上限
+        /// 配额上限。
         /// </summary>
         [JsonProperty("quota_limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? QuotaLimit { get; set; }
 
         /// <summary>
-        /// 配额类型
+        /// 配额类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 已使用配额数
+        /// 已使用配额数。
         /// </summary>
         [JsonProperty("used", NullValueHandling = NullValueHandling.Ignore)]
         public int? Used { get; set; }

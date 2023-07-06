@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 源站信息
+    /// 源站信息。
     /// </summary>
     public class Sources 
     {
         /// <summary>
-        /// 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
+        /// 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
         /// </summary>
-        /// <value>源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。</value>
+        /// <value>源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。</value>
         [JsonConverter(typeof(EnumClassConverter<OriginTypeEnum>))]
         public class OriginTypeEnum
         {
@@ -150,12 +150,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string IpOrDomain { get; set; }
 
         /// <summary>
-        /// 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
+        /// 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
         /// </summary>
         [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
         public OriginTypeEnum OriginType { get; set; }
         /// <summary>
-        /// 主备状态（1代表主站；0代表备站）,主源站必须存在，备源站可选，OBS桶不能有备源站。
+        /// 主备状态，1代表主源站，0代表备源站。
         /// </summary>
         [JsonProperty("active_standby", NullValueHandling = NullValueHandling.Ignore)]
         public int? ActiveStandby { get; set; }

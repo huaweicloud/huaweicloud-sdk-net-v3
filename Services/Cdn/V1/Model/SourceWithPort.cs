@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     public class SourceWithPort 
     {
         /// <summary>
-        /// 源站类型（\&quot;ipaddr\&quot;： \&quot;IP源站\&quot;；\&quot;domain\&quot;： \&quot;域名源站\&quot;；\&quot;obs_bucket\&quot;： \&quot;OBS Bucket源站\&quot;）
+        /// 源站类型，ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
         /// </summary>
-        /// <value>源站类型（\&quot;ipaddr\&quot;： \&quot;IP源站\&quot;；\&quot;domain\&quot;： \&quot;域名源站\&quot;；\&quot;obs_bucket\&quot;： \&quot;OBS Bucket源站\&quot;）</value>
+        /// <value>源站类型，ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。</value>
         [JsonConverter(typeof(EnumClassConverter<OriginTypeEnum>))]
         public class OriginTypeEnum
         {
@@ -150,12 +150,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string IpOrDomain { get; set; }
 
         /// <summary>
-        /// 源站类型（\&quot;ipaddr\&quot;： \&quot;IP源站\&quot;；\&quot;domain\&quot;： \&quot;域名源站\&quot;；\&quot;obs_bucket\&quot;： \&quot;OBS Bucket源站\&quot;）
+        /// 源站类型，ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
         /// </summary>
         [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
         public OriginTypeEnum OriginType { get; set; }
         /// <summary>
-        /// 主备状态（1代表主站；0代表备站）；主源站必须存在，备源站可选。
+        /// 主备状态（1代表主源站；0代表备源站）。
         /// </summary>
         [JsonProperty("active_standby", NullValueHandling = NullValueHandling.Ignore)]
         public int? ActiveStandby { get; set; }

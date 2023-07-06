@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// GZIP压缩开关。0关闭。1打开
+        /// GZIP压缩开关。0关闭。1打开。
         /// </summary>
         [JsonProperty("compress_switch", NullValueHandling = NullValueHandling.Ignore)]
         public int? CompressSwitch { get; set; }

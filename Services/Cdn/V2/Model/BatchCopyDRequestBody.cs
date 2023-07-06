@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 域名复制请求体
+    /// 域名复制请求体。
     /// </summary>
     public class BatchCopyDRequestBody 
     {

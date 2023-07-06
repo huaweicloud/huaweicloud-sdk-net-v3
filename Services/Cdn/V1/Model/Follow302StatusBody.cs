@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     public class Follow302StatusBody 
     {
         /// <summary>
-        /// follow302状态（\&quot;off\&quot;/\&quot;on\&quot;）
+        /// follow302状态，off：关闭，on：开启。
         /// </summary>
-        /// <value>follow302状态（\&quot;off\&quot;/\&quot;on\&quot;）</value>
+        /// <value>follow302状态，off：关闭，on：开启。</value>
         [JsonConverter(typeof(EnumClassConverter<FollowStatusEnum>))]
         public class FollowStatusEnum
         {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
 
 
         /// <summary>
-        /// 加速域名id。获取方法请参见查询加速域名。
+        /// 加速域名id。
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// follow302状态（\&quot;off\&quot;/\&quot;on\&quot;）
+        /// follow302状态，off：关闭，on：开启。
         /// </summary>
         [JsonProperty("follow_status", NullValueHandling = NullValueHandling.Ignore)]
         public FollowStatusEnum FollowStatus { get; set; }

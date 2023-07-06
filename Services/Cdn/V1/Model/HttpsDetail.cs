@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 域名id
+        /// 域名id。
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 绑定该证书的域名
+        /// 绑定该证书的域名。
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 证书名字。（长度限制为3-32字符）。
+        /// 证书名字。
         /// </summary>
         [JsonProperty("cert_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertName { get; set; }
 
         /// <summary>
-        /// 证书内容
+        /// 证书内容。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string Certificate { get; set; }
 
         /// <summary>
-        /// 私钥内容
+        /// 私钥内容。
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }
 
         /// <summary>
-        /// 0：自有证书  1：云托管证书
+        /// 0：自有证书  1：云托管证书。
         /// </summary>
         [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateType { get; set; }
 
         /// <summary>
-        /// 证书过期时间
+        /// 证书过期时间。
         /// </summary>
         [JsonProperty("expiration_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? ExpirationTime { get; set; }
 
         /// <summary>
-        /// HTTPS证书是否启用，取值0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，开启时需要传递证书及私钥。
+        /// HTTPS证书是否启用，取值0：不启用；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源。
         /// </summary>
         [JsonProperty("https_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsStatus { get; set; }

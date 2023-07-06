@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// tms资源标签key，值最大长度36个unicode字符。 key不能为空。不能包含非打印字符ASCII(0-31)
+        /// 资源标签key。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// tms资源标签value值，每个值最大长度43个unicode字符，删除时如果value有值按照key/value删除，如果value没值，则按照key删除，可以为空字符串
+        /// 资源标签value值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

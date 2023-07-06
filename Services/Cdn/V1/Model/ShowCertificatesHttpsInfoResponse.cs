@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 查询结果总数
+        /// 查询结果总数。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// https对象。
+        /// https配置。
         /// </summary>
         [JsonProperty("https", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpsDetail> Https { get; set; }

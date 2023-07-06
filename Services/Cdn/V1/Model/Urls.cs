@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 具体url信息
+    /// 具体url信息。
     /// </summary>
     public class Urls 
     {
@@ -23,43 +23,43 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public long? Id { get; set; }
 
         /// <summary>
-        /// url具体值
+        /// url具体值。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
         /// <summary>
-        /// url状态
+        /// url状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 任务类型
+        /// 任务类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 任务id
+        /// 任务id。
         /// </summary>
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
         public long? TaskId { get; set; }
 
         /// <summary>
-        /// 修改时间戳（毫秒）
+        /// 修改时间戳（毫秒）。
         /// </summary>
         [JsonProperty("modify_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? ModifyTime { get; set; }
 
         /// <summary>
-        /// 创建时间戳（毫秒）
+        /// 创建时间戳（毫秒）。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 文件类型，目录还是文件
+        /// 文件类型，目录还是文件。
         /// </summary>
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
         public string FileType { get; set; }

@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Value { get; set; }
 
         /// <summary>
-        /// 是否包含空Referer，如果是黑名单并开启该选项，则表示无referer不允许访问，如果是白名单并开启该选项，则表示无referer允许访问，默认值false。
+        /// 是否包含空Referer，如果是黑名单并开启该选项，则表示无referer不允许访问，如果是白名单并开启该选项，则表示无referer允许访问，true:包含空，false：不包含空，默认值false。
         /// </summary>
         [JsonProperty("include_empty", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IncludeEmpty { get; set; }

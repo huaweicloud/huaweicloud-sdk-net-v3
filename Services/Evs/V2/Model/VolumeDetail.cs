@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public Dictionary<string, Object> VolumeImageMetadata { get; set; }
 
         /// <summary>
-        /// 云硬盘类型。 目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;和\&quot;ESSD\&quot;五种。  - \&quot;SATA\&quot;为普通IO云硬盘 - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘
+        /// 云硬盘类型。 目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;，\&quot;ESSD\&quot;，\&quot;GPSSD2\&quot;,\&quot;ESSD2\&quot;七种。  - \&quot;SATA\&quot;为普通IO云硬盘 - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘 - \&quot;GPSSD2\&quot;为通用型SSD V2云硬盘 - \&quot;ESSD2\&quot;为极速型SSD V2云硬盘
         /// </summary>
         [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeType { get; set; }

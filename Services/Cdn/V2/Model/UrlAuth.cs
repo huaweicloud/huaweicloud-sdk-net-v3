@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 是否开启URL鉴权(\&quot;off\&quot;/\&quot;on\&quot;)。
+        /// 是否开启URL鉴权，off：开启,on：关闭。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

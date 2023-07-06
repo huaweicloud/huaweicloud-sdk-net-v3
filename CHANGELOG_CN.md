@@ -1,3 +1,74 @@
+# 3.1.46 2023-07-06
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeCluster**
+    - 响应参数变更
+      - `+ metadata`
+      - `+ spec`
+      - `- uid`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainDetailByName**
+    - 响应参数变更
+      - `+ domain.sources.weight`
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.business_type`
+      - `+ configs.service_area`
+      - `+ configs.sources.weight`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.business_type`
+      - `+ configs.service_area`
+      - `+ configs.sources.weight`
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateVolume**
+    - 请求参数变更
+      - `+ volume.iops`
+      - `+ volume.throughput`
+      - `+ volume.volume_type: enum value [GPSSD2,ESSD2]`
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunCreateVideoModerationJob**
+    - 请求参数变更
+      - `+ data.language`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSecurityGroupRules**
+    - 请求参数变更
+      - `+ remote_ip_prefix`
+
 # 3.1.45 2023-06-29
 
 ### HuaweiCloud SDK AOS

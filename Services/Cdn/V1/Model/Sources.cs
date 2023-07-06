@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 源站信息
+    /// 源站信息。
     /// </summary>
     public class Sources 
     {
         /// <summary>
-        /// 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
+        /// 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。源站为ipaddr时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持50个源站IP对象，备源站最多支持50个源站IP对象；源站为domain时，仅支持1个源站对象。不支持IP源站和域名源站混用。
         /// </summary>
-        /// <value>源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。</value>
+        /// <value>源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。源站为ipaddr时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持50个源站IP对象，备源站最多支持50个源站IP对象；源站为domain时，仅支持1个源站对象。不支持IP源站和域名源站混用。</value>
         [JsonConverter(typeof(EnumClassConverter<OriginTypeEnum>))]
         public class OriginTypeEnum
         {
@@ -144,18 +144,18 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string DomainId { get; set; }
 
         /// <summary>
+        /// 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。源站为ipaddr时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持50个源站IP对象，备源站最多支持50个源站IP对象；源站为domain时，仅支持1个源站对象。不支持IP源站和域名源站混用。
+        /// </summary>
+        [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
+        public OriginTypeEnum OriginType { get; set; }
+        /// <summary>
         /// 源站IP（非内网IP）或者域名。
         /// </summary>
         [JsonProperty("ip_or_domain", NullValueHandling = NullValueHandling.Ignore)]
         public string IpOrDomain { get; set; }
 
         /// <summary>
-        /// 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
-        /// </summary>
-        [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
-        public OriginTypeEnum OriginType { get; set; }
-        /// <summary>
-        /// 主备状态（1代表主站；0代表备站）,主源站必须存在，备源站可选，OBS桶不能有备源站。
+        /// 主备状态，1代表主源站，0代表备源站。
         /// </summary>
         [JsonProperty("active_standby", NullValueHandling = NullValueHandling.Ignore)]
         public int? ActiveStandby { get; set; }
@@ -176,8 +176,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             var sb = new StringBuilder();
             sb.Append("class Sources {\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
-            sb.Append("  ipOrDomain: ").Append(IpOrDomain).Append("\n");
             sb.Append("  originType: ").Append(OriginType).Append("\n");
+            sb.Append("  ipOrDomain: ").Append(IpOrDomain).Append("\n");
             sb.Append("  activeStandby: ").Append(ActiveStandby).Append("\n");
             sb.Append("  enableObsWebHosting: ").Append(EnableObsWebHosting).Append("\n");
             sb.Append("}\n");
@@ -207,14 +207,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.DomainId.Equals(input.DomainId))
                 ) && 
                 (
-                    this.IpOrDomain == input.IpOrDomain ||
-                    (this.IpOrDomain != null &&
-                    this.IpOrDomain.Equals(input.IpOrDomain))
-                ) && 
-                (
                     this.OriginType == input.OriginType ||
                     (this.OriginType != null &&
                     this.OriginType.Equals(input.OriginType))
+                ) && 
+                (
+                    this.IpOrDomain == input.IpOrDomain ||
+                    (this.IpOrDomain != null &&
+                    this.IpOrDomain.Equals(input.IpOrDomain))
                 ) && 
                 (
                     this.ActiveStandby == input.ActiveStandby ||
@@ -238,10 +238,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 int hashCode = 41;
                 if (this.DomainId != null)
                     hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.IpOrDomain != null)
-                    hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
                 if (this.OriginType != null)
                     hashCode = hashCode * 59 + this.OriginType.GetHashCode();
+                if (this.IpOrDomain != null)
+                    hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
                 if (this.ActiveStandby != null)
                     hashCode = hashCode * 59 + this.ActiveStandby.GetHashCode();
                 if (this.EnableObsWebHosting != null)

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     public class OriginHostBody 
     {
         /// <summary>
-        /// accelerate：选择加速域名作为回源地址；  customize：使用自定义的域名作为回源host域名；
+        /// accelerate：选择加速域名作为回源host域名； customize：使用自定义的域名作为回源host域名；
         /// </summary>
-        /// <value>accelerate：选择加速域名作为回源地址；  customize：使用自定义的域名作为回源host域名；</value>
+        /// <value>accelerate：选择加速域名作为回源host域名； customize：使用自定义的域名作为回源host域名；</value>
         [JsonConverter(typeof(EnumClassConverter<OriginHostTypeEnum>))]
         public class OriginHostTypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
 
 
         /// <summary>
-        /// accelerate：选择加速域名作为回源地址；  customize：使用自定义的域名作为回源host域名；
+        /// accelerate：选择加速域名作为回源host域名； customize：使用自定义的域名作为回源host域名；
         /// </summary>
         [JsonProperty("origin_host_type", NullValueHandling = NullValueHandling.Ignore)]
         public OriginHostTypeEnum OriginHostType { get; set; }

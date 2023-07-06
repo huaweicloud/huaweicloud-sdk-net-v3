@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Total { get; set; }
 
         /// <summary>
-        /// 域名信息
+        /// 域名信息。
         /// </summary>
         [JsonProperty("domains", NullValueHandling = NullValueHandling.Ignore)]
         public List<Domains> Domains { get; set; }

@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Cname { get; set; }
 
         /// <summary>
-        /// 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
+        /// 源站配置。
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
         public List<Sources> Sources { get; set; }
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Locked { get; set; }
 
         /// <summary>
-        /// 自动刷新预热（0代表关闭；1代表打开）
+        /// 自动刷新预热（0代表关闭；1代表打开）。
         /// </summary>
         [JsonProperty("auto_refresh_preheat", NullValueHandling = NullValueHandling.Ignore)]
         public int? AutoRefreshPreheat { get; set; }
@@ -233,19 +233,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string FollowStatus { get; set; }
 
         /// <summary>
-        /// 是否暂停源站回源。
+        /// 是否暂停源站回源（off代表关闭 on代表开启）。
         /// </summary>
         [JsonProperty("origin_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginStatus { get; set; }
 
         /// <summary>
-        /// 域名禁用原因
+        /// 域名禁用原因。
         /// </summary>
         [JsonProperty("banned_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string BannedReason { get; set; }
 
         /// <summary>
-        /// 域名锁定原因
+        /// 域名锁定原因。
         /// </summary>
         [JsonProperty("locked_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string LockedReason { get; set; }
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 标签信息
+        /// 标签信息。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<EpResourceTag> Tags { get; set; }

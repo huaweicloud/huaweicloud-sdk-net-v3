@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     public class CreateVolumeOption 
     {
         /// <summary>
-        /// 云硬盘类型。  目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;和\&quot;ESSD\&quot;五种。  - \&quot;SATA\&quot;为普通IO云硬盘(已售罄) - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)
+        /// 云硬盘类型。  目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;，\&quot;ESSD\&quot;，\&quot;GPSSD2\&quot;和\&quot;ESSD2\&quot;七种。  - \&quot;SATA\&quot;为普通IO云硬盘(已售罄) - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘 - \&quot;GPSSD2\&quot;为通用型SSD V2云硬盘 - \&quot;ESSD2\&quot;为极速型SSD V2云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)
         /// </summary>
-        /// <value>云硬盘类型。  目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;和\&quot;ESSD\&quot;五种。  - \&quot;SATA\&quot;为普通IO云硬盘(已售罄) - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)</value>
+        /// <value>云硬盘类型。  目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;，\&quot;ESSD\&quot;，\&quot;GPSSD2\&quot;和\&quot;ESSD2\&quot;七种。  - \&quot;SATA\&quot;为普通IO云硬盘(已售罄) - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘 - \&quot;GPSSD2\&quot;为通用型SSD V2云硬盘 - \&quot;ESSD2\&quot;为极速型SSD V2云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)</value>
         [JsonConverter(typeof(EnumClassConverter<VolumeTypeEnum>))]
         public class VolumeTypeEnum
         {
@@ -47,6 +47,16 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             /// </summary>
             public static readonly VolumeTypeEnum ESSD = new VolumeTypeEnum("ESSD");
 
+            /// <summary>
+            /// Enum GPSSD2 for value: GPSSD2
+            /// </summary>
+            public static readonly VolumeTypeEnum GPSSD2 = new VolumeTypeEnum("GPSSD2");
+
+            /// <summary>
+            /// Enum ESSD2 for value: ESSD2
+            /// </summary>
+            public static readonly VolumeTypeEnum ESSD2 = new VolumeTypeEnum("ESSD2");
+
             private static readonly Dictionary<string, VolumeTypeEnum> StaticFields =
             new Dictionary<string, VolumeTypeEnum>()
             {
@@ -55,6 +65,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                 { "SAS", SAS },
                 { "SATA", SATA },
                 { "ESSD", ESSD },
+                { "GPSSD2", GPSSD2 },
+                { "ESSD2", ESSD2 },
             };
 
             private string _value;
@@ -216,7 +228,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string SnapshotId { get; set; }
 
         /// <summary>
-        /// 云硬盘类型。  目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;和\&quot;ESSD\&quot;五种。  - \&quot;SATA\&quot;为普通IO云硬盘(已售罄) - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)
+        /// 云硬盘类型。  目前支持\&quot;SATA\&quot;，\&quot;SAS\&quot;，\&quot;GPSSD\&quot;，\&quot;SSD\&quot;，\&quot;ESSD\&quot;，\&quot;GPSSD2\&quot;和\&quot;ESSD2\&quot;七种。  - \&quot;SATA\&quot;为普通IO云硬盘(已售罄) - \&quot;SAS\&quot;为高IO云硬盘 - \&quot;GPSSD\&quot;为通用型SSD云硬盘 - \&quot;SSD\&quot;为超高IO云硬盘 - \&quot;ESSD\&quot;为极速IO云硬盘 - \&quot;GPSSD2\&quot;为通用型SSD V2云硬盘 - \&quot;ESSD2\&quot;为极速型SSD V2云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)
         /// </summary>
         [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
         public VolumeTypeEnum VolumeType { get; set; }
@@ -225,6 +237,18 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Tags { get; set; }
+
+        /// <summary>
+        /// 给云硬盘配置iops，购买GPSSD2、ESSD2类型的云硬盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2、ESSD2类型的iops大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+        /// </summary>
+        [JsonProperty("iops", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Iops { get; set; }
+
+        /// <summary>
+        /// 给云硬盘配置吞吐量，单位是MiB/s，购买GPSSD2类型云盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2类型的吞吐量大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+        /// </summary>
+        [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Throughput { get; set; }
 
 
 
@@ -248,6 +272,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  snapshotId: ").Append(SnapshotId).Append("\n");
             sb.Append("  volumeType: ").Append(VolumeType).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  iops: ").Append(Iops).Append("\n");
+            sb.Append("  throughput: ").Append(Throughput).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -335,6 +361,16 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.Iops == input.Iops ||
+                    (this.Iops != null &&
+                    this.Iops.Equals(input.Iops))
+                ) && 
+                (
+                    this.Throughput == input.Throughput ||
+                    (this.Throughput != null &&
+                    this.Throughput.Equals(input.Throughput))
                 );
         }
 
@@ -372,6 +408,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Iops != null)
+                    hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null)
+                    hashCode = hashCode * 59 + this.Throughput.GetHashCode();
                 return hashCode;
             }
         }

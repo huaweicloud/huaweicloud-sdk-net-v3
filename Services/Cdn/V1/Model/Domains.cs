@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? Locked { get; set; }
 
         /// <summary>
-        /// 自动刷新预热（0代表关闭；1代表打开）
+        /// 自动刷新预热（0代表关闭；1代表打开）。
         /// </summary>
         [JsonProperty("auto_refresh_preheat", NullValueHandling = NullValueHandling.Ignore)]
         public int? AutoRefreshPreheat { get; set; }
@@ -239,19 +239,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string FollowStatus { get; set; }
 
         /// <summary>
-        /// 是否暂停源站回源。
+        /// 是否暂停源站回源（off代表关闭 on代表开启）。。
         /// </summary>
         [JsonProperty("origin_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginStatus { get; set; }
 
         /// <summary>
-        /// 域名禁用原因
+        /// 域名禁用原因。
         /// </summary>
         [JsonProperty("banned_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string BannedReason { get; set; }
 
         /// <summary>
-        /// 域名锁定原因
+        /// 域名锁定原因。
         /// </summary>
         [JsonProperty("locked_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string LockedReason { get; set; }

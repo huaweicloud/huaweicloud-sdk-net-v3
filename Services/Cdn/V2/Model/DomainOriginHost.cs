@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 域源信息
+    /// 域名回源HOST配置。
     /// </summary>
     public class DomainOriginHost 
     {
 
         /// <summary>
-        /// 域名ID。获取方法请参见查询加速域名。
+        /// 域名ID。
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 回源host的类型。
+        /// 回源host的类型,accelerate：选择加速域名作为回源host域名， customize：使用自定义的域名作为回源host域名。
         /// </summary>
         [JsonProperty("origin_host_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginHostType { get; set; }

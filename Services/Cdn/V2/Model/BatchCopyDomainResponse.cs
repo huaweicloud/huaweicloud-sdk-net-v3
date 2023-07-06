@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 成功响应体
+        /// 复制配置结果。
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchCopyResultVo> Result { get; set; }

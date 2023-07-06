@@ -23,19 +23,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// https开关（0：\&quot;关闭\&quot;；1：\&quot;设置证书\&quot; https_switch为1时，证书参数不能为空）
+        /// https开关(0：\&quot;关闭\&quot;；1：\&quot;设置证书\&quot;)。
         /// </summary>
         [JsonProperty("https_switch", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsSwitch { get; set; }
 
         /// <summary>
-        /// 回源方式:1：\&quot;回源跟随\&quot;；2：\&quot;http\&quot;(默认)，3：\&quot;https\&quot;  为空值时默认设置为http
+        /// 回源方式:1：\&quot;回源跟随\&quot;；2：\&quot;HTTP\&quot;(默认)，3：https（自建）。
         /// </summary>
         [JsonProperty("access_origin_way", NullValueHandling = NullValueHandling.Ignore)]
         public int? AccessOriginWay { get; set; }
 
         /// <summary>
-        /// 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+        /// 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（此参数即将下线，建议使用force_redirect_config修改配置）.
         /// </summary>
         [JsonProperty("force_redirect_https", NullValueHandling = NullValueHandling.Ignore)]
         public int? ForceRedirectHttps { get; set; }
@@ -53,19 +53,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? Http2 { get; set; }
 
         /// <summary>
-        /// 证书名称（设置证书必填）（长度限制为3-32字符）。
+        /// 证书名称（设置证书必填）（长度限制为3-64字符）。
         /// </summary>
         [JsonProperty("cert_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertName { get; set; }
 
         /// <summary>
-        /// 证书内容（设置证书必填）
+        /// HTTPS协议使用的SSL证书内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string Certificate { get; set; }
 
         /// <summary>
-        /// 私钥内容（设置证书必填）
+        /// HTTPS协议使用的SSL证书私钥内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }

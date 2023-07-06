@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 证书名字。（长度限制为3-32字符）。
+        /// 证书名字。（长度限制为3-64字符）。
         /// </summary>
         [JsonProperty("cert_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertName { get; set; }
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? HttpsStatus { get; set; }
 
         /// <summary>
-        /// 功能说明：HTTPS协议使用的证书内容，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
+        /// HTTPS协议使用的SSL证书内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string Certificate { get; set; }
 
         /// <summary>
-        /// 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
+        /// HTTPS协议使用的SSL证书私钥内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? CertificateType { get; set; }
 
         /// <summary>
-        /// 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+        /// 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（此参数即将下线,建议使用force_redirect_config修改配置）
         /// </summary>
         [JsonProperty("force_redirect_https", NullValueHandling = NullValueHandling.Ignore)]
         public int? ForceRedirectHttps { get; set; }

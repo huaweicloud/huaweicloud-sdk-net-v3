@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 0：全部类型，表示匹配所有文件，默认值。  1：文件类型，表示按文件后缀匹配。  2：文件夹类型，表示按目录匹配。  3：文件全路径类型，表示按文件全路径匹配。
+        /// 0：全部类型，表示匹配所有文件，默认值。  1：文件类型，表示按文件后缀匹配。  2：文件夹类型，表示按目录匹配。  3：文件全路径类型，表示按文件全路径匹配。 5：缓存首页。
         /// </summary>
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? RuleType { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? TtlType { get; set; }
 
         /// <summary>
-        /// 此条配置的权重值, 默认值1，数值越大，优先级越高。取值范围为1-100，权重值不能相同。
+        /// 此条配置的优先级, 默认值1，数值越大，优先级越高。取值范围为1-100，优先级不能相同。
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }

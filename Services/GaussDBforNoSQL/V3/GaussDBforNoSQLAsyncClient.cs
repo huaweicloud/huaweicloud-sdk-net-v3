@@ -1052,6 +1052,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询高危命令
+        ///
+        /// 查询Redis的高危命令
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowHighRiskCommandsResponse> ShowHighRiskCommandsAsync(ShowHighRiskCommandsRequest showHighRiskCommandsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showHighRiskCommandsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHighRiskCommandsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowHighRiskCommandsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定实例的参数
         ///
         /// 获取指定实例的参数信息。
@@ -1318,6 +1335,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConfigurationRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改高危命令
+        ///
+        /// 批量修改高危命令
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateHighRiskCommandsResponse> UpdateHighRiskCommandsAsync(UpdateHighRiskCommandsRequest updateHighRiskCommandsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateHighRiskCommandsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHighRiskCommandsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateHighRiskCommandsResponse>(response);
         }
         
         /// <summary>

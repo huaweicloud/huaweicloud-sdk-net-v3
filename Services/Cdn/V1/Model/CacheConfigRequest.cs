@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public bool? IgnoreUrlParameter { get; set; }
 
         /// <summary>
-        /// 缓存规则是否遵循源站
+        /// 缓存规则是否遵循源站。
         /// </summary>
         [JsonProperty("follow_origin", NullValueHandling = NullValueHandling.Ignore)]
         public bool? FollowOrigin { get; set; }

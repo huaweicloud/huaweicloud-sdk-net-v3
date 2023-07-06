@@ -17,6 +17,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
+        /// 业务类型，web：网站加速，download：文件下载加速，video：点播加速。  &gt; 暂不支持“全站加速”变更为其它业务类型。
+        /// </summary>
+        [JsonProperty("business_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BusinessType { get; set; }
+
+        /// <summary>
+        /// 服务区域，mainland_china：中国大陆，global：全球，outside_mainland_china：中国大陆境外。  &gt; 暂不支持“中国大陆”与“中国大陆境外”互相直接切换。
+        /// </summary>
+        [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServiceArea { get; set; }
+
+        /// <summary>
         /// 回源请求头改写 该功能将覆盖原有配置（清空之前的配置），在使用此接口时，请上传全量头部信息。
         /// </summary>
         [JsonProperty("origin_request_header", NullValueHandling = NullValueHandling.Ignore)]
@@ -181,6 +193,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Configs {\n");
+            sb.Append("  businessType: ").Append(BusinessType).Append("\n");
+            sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
             sb.Append("  originRequestHeader: ").Append(OriginRequestHeader).Append("\n");
             sb.Append("  httpResponseHeader: ").Append(HttpResponseHeader).Append("\n");
             sb.Append("  urlAuth: ").Append(UrlAuth).Append("\n");
@@ -228,6 +242,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 return false;
 
             return 
+                (
+                    this.BusinessType == input.BusinessType ||
+                    (this.BusinessType != null &&
+                    this.BusinessType.Equals(input.BusinessType))
+                ) && 
+                (
+                    this.ServiceArea == input.ServiceArea ||
+                    (this.ServiceArea != null &&
+                    this.ServiceArea.Equals(input.ServiceArea))
+                ) && 
                 (
                     this.OriginRequestHeader == input.OriginRequestHeader ||
                     this.OriginRequestHeader != null &&
@@ -377,6 +401,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.BusinessType != null)
+                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.ServiceArea != null)
+                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
                 if (this.OriginRequestHeader != null)
                     hashCode = hashCode * 59 + this.OriginRequestHeader.GetHashCode();
                 if (this.HttpResponseHeader != null)

@@ -1,0 +1,357 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Drs.V5.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ListLinksRequest 
+    {
+        /// <summary>
+        /// 请求语言类型。
+        /// </summary>
+        /// <value>请求语言类型。</value>
+        [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
+        public class XLanguageEnum
+        {
+            /// <summary>
+            /// Enum EN_US for value: en-us
+            /// </summary>
+            public static readonly XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+            /// <summary>
+            /// Enum ZH_CN for value: zh-cn
+            /// </summary>
+            public static readonly XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+
+            private static readonly Dictionary<string, XLanguageEnum> StaticFields =
+            new Dictionary<string, XLanguageEnum>()
+            {
+                { "en-us", EN_US },
+                { "zh-cn", ZH_CN },
+            };
+
+            private string _value;
+
+            public XLanguageEnum()
+            {
+
+            }
+
+            public XLanguageEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static XLanguageEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as XLanguageEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(XLanguageEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(XLanguageEnum a, XLanguageEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+        /// </summary>
+        /// <value>任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。</value>
+        [JsonConverter(typeof(EnumClassConverter<JobTypeEnum>))]
+        public class JobTypeEnum
+        {
+            /// <summary>
+            /// Enum MIGRATION for value: migration
+            /// </summary>
+            public static readonly JobTypeEnum MIGRATION = new JobTypeEnum("migration");
+
+            /// <summary>
+            /// Enum SYNC for value: sync
+            /// </summary>
+            public static readonly JobTypeEnum SYNC = new JobTypeEnum("sync");
+
+            /// <summary>
+            /// Enum CLOUDDATAGUARD for value: cloudDataGuard
+            /// </summary>
+            public static readonly JobTypeEnum CLOUDDATAGUARD = new JobTypeEnum("cloudDataGuard");
+
+            private static readonly Dictionary<string, JobTypeEnum> StaticFields =
+            new Dictionary<string, JobTypeEnum>()
+            {
+                { "migration", MIGRATION },
+                { "sync", SYNC },
+                { "cloudDataGuard", CLOUDDATAGUARD },
+            };
+
+            private string _value;
+
+            public JobTypeEnum()
+            {
+
+            }
+
+            public JobTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static JobTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as JobTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(JobTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(JobTypeEnum a, JobTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(JobTypeEnum a, JobTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 请求语言类型。
+        /// </summary>
+        [SDKProperty("X-Language", IsHeader = true)]
+        [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
+        public XLanguageEnum XLanguage { get; set; }
+        /// <summary>
+        /// 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+        /// </summary>
+        [SDKProperty("job_type", IsQuery = true)]
+        [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]
+        public JobTypeEnum JobType { get; set; }
+        /// <summary>
+        /// 偏移量，表示查询该偏移量后面的记录。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// 查询返回记录的数量限制。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListLinksRequest {\n");
+            sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  jobType: ").Append(JobType).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListLinksRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListLinksRequest input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.XLanguage == input.XLanguage ||
+                    (this.XLanguage != null &&
+                    this.XLanguage.Equals(input.XLanguage))
+                ) && 
+                (
+                    this.JobType == input.JobType ||
+                    (this.JobType != null &&
+                    this.JobType.Equals(input.JobType))
+                ) && 
+                (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.XLanguage != null)
+                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.JobType != null)
+                    hashCode = hashCode * 59 + this.JobType.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? RefererType { get; set; }
 
         /// <summary>
-        /// 请输入域名或IP地址，以“;”进行分割，域名、IP地址可以混合输入，支持泛域名添加。输入的域名、IP地址总数不超过100个。当设置防盗链时，此项必填。
+        /// ：配置的referer地址。
         /// </summary>
         [JsonProperty("referer_list", NullValueHandling = NullValueHandling.Ignore)]
         public string RefererList { get; set; }
 
         /// <summary>
-        /// 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认不包含。
+        /// 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认不包含,true：包含，false：不包含。
         /// </summary>
         [JsonProperty("include_empty", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IncludeEmpty { get; set; }

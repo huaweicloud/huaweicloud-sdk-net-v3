@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     public class Follow302StatusRequest 
     {
         /// <summary>
-        /// follow302状态（\&quot;off\&quot;/\&quot;on\&quot;）
+        /// follow302状态，off：关闭，on：开启。
         /// </summary>
-        /// <value>follow302状态（\&quot;off\&quot;/\&quot;on\&quot;）</value>
+        /// <value>follow302状态，off：关闭，on：开启。</value>
         [JsonConverter(typeof(EnumClassConverter<Follow302StatusEnum>))]
         public class Follow302StatusEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
 
 
         /// <summary>
-        /// follow302状态（\&quot;off\&quot;/\&quot;on\&quot;）
+        /// follow302状态，off：关闭，on：开启。
         /// </summary>
         [JsonProperty("follow302_status", NullValueHandling = NullValueHandling.Ignore)]
         public Follow302StatusEnum Follow302Status { get; set; }

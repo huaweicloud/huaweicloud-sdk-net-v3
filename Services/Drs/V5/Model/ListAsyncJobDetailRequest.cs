@@ -1,0 +1,237 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Drs.V5.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ListAsyncJobDetailRequest 
+    {
+        /// <summary>
+        /// 请求语言类型。
+        /// </summary>
+        /// <value>请求语言类型。</value>
+        [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
+        public class XLanguageEnum
+        {
+            /// <summary>
+            /// Enum EN_US for value: en-us
+            /// </summary>
+            public static readonly XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+            /// <summary>
+            /// Enum ZH_CN for value: zh-cn
+            /// </summary>
+            public static readonly XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+
+            private static readonly Dictionary<string, XLanguageEnum> StaticFields =
+            new Dictionary<string, XLanguageEnum>()
+            {
+                { "en-us", EN_US },
+                { "zh-cn", ZH_CN },
+            };
+
+            private string _value;
+
+            public XLanguageEnum()
+            {
+
+            }
+
+            public XLanguageEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static XLanguageEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as XLanguageEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(XLanguageEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(XLanguageEnum a, XLanguageEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 批量异步创建的任务ID，由创建批量异步任务接口返回。
+        /// </summary>
+        [SDKProperty("async_job_id", IsPath = true)]
+        [JsonProperty("async_job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AsyncJobId { get; set; }
+
+        /// <summary>
+        /// 请求语言类型。
+        /// </summary>
+        [SDKProperty("X-Language", IsHeader = true)]
+        [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
+        public XLanguageEnum XLanguage { get; set; }
+        /// <summary>
+        /// 偏移量，表示查询该偏移量后面的记录。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// 查询返回记录的数量限制。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListAsyncJobDetailRequest {\n");
+            sb.Append("  asyncJobId: ").Append(AsyncJobId).Append("\n");
+            sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListAsyncJobDetailRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListAsyncJobDetailRequest input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.AsyncJobId == input.AsyncJobId ||
+                    (this.AsyncJobId != null &&
+                    this.AsyncJobId.Equals(input.AsyncJobId))
+                ) && 
+                (
+                    this.XLanguage == input.XLanguage ||
+                    (this.XLanguage != null &&
+                    this.XLanguage.Equals(input.XLanguage))
+                ) && 
+                (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.AsyncJobId != null)
+                    hashCode = hashCode * 59 + this.AsyncJobId.GetHashCode();
+                if (this.XLanguage != null)
+                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

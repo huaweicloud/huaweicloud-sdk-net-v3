@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 配额数组
+        /// 配额数组。
         /// </summary>
         [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
         public List<Quotas> Quotas { get; set; }

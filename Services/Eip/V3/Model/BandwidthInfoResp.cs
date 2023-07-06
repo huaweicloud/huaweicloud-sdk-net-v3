@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Eip.V3.Model
 {
     /// <summary>
-    /// 公网IP绑定的带宽信息
+    /// 弹性公网IP绑定的带宽信息
     /// </summary>
     public class BandwidthInfoResp 
     {
         /// <summary>
-        /// 带宽类型
+        /// - 功能说明：带宽类型
         /// </summary>
-        /// <value>带宽类型</value>
+        /// <value>- 功能说明：带宽类型</value>
         [JsonConverter(typeof(EnumClassConverter<BandwidthTypeEnum>))]
         public class BandwidthTypeEnum
         {
@@ -132,24 +132,24 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
 
         /// <summary>
-        /// 带宽名称
+        /// - 功能说明：带宽名称
         /// </summary>
         [JsonProperty("bandwidth_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BandwidthName { get; set; }
 
         /// <summary>
-        /// 带宽大小
+        /// - 功能说明：带宽大小
         /// </summary>
         [JsonProperty("bandwidth_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? BandwidthNumber { get; set; }
 
         /// <summary>
-        /// 带宽类型
+        /// - 功能说明：带宽类型
         /// </summary>
         [JsonProperty("bandwidth_type", NullValueHandling = NullValueHandling.Ignore)]
         public BandwidthTypeEnum BandwidthType { get; set; }
         /// <summary>
-        /// 带宽id
+        /// - 功能说明：带宽id
         /// </summary>
         [JsonProperty("bandwidth_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BandwidthId { get; set; }

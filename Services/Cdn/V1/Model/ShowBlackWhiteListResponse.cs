@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// IP黑白名单类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）
+        /// IP黑白名单类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public int? Type { get; set; }
 
         /// <summary>
-        /// IP黑白名单列表（支持掩码且有掩码的情况下IP必须是该IP段的第一个IP）
+        /// IP黑白名单列表。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpList { get; set; }

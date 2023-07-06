@@ -17,22 +17,28 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 源站IP或者域名。
-        /// </summary>
-        [JsonProperty("origin_addr", NullValueHandling = NullValueHandling.Ignore)]
-        public string OriginAddr { get; set; }
-
-        /// <summary>
         /// 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
         /// </summary>
         [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginType { get; set; }
 
         /// <summary>
+        /// 源站IP或者域名。
+        /// </summary>
+        [JsonProperty("origin_addr", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginAddr { get; set; }
+
+        /// <summary>
         /// 源站优先级，70：主，30：备。
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }
+
+        /// <summary>
+        /// 权重，取值范围1-100。
+        /// </summary>
+        [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Weight { get; set; }
 
         /// <summary>
         /// 是否开启Obs静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
@@ -73,9 +79,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SourcesConfig {\n");
-            sb.Append("  originAddr: ").Append(OriginAddr).Append("\n");
             sb.Append("  originType: ").Append(OriginType).Append("\n");
+            sb.Append("  originAddr: ").Append(OriginAddr).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
+            sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  obsWebHostingStatus: ").Append(ObsWebHostingStatus).Append("\n");
             sb.Append("  httpPort: ").Append(HttpPort).Append("\n");
             sb.Append("  httpsPort: ").Append(HttpsPort).Append("\n");
@@ -103,19 +110,24 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
 
             return 
                 (
-                    this.OriginAddr == input.OriginAddr ||
-                    (this.OriginAddr != null &&
-                    this.OriginAddr.Equals(input.OriginAddr))
-                ) && 
-                (
                     this.OriginType == input.OriginType ||
                     (this.OriginType != null &&
                     this.OriginType.Equals(input.OriginType))
                 ) && 
                 (
+                    this.OriginAddr == input.OriginAddr ||
+                    (this.OriginAddr != null &&
+                    this.OriginAddr.Equals(input.OriginAddr))
+                ) && 
+                (
                     this.Priority == input.Priority ||
                     (this.Priority != null &&
                     this.Priority.Equals(input.Priority))
+                ) && 
+                (
+                    this.Weight == input.Weight ||
+                    (this.Weight != null &&
+                    this.Weight.Equals(input.Weight))
                 ) && 
                 (
                     this.ObsWebHostingStatus == input.ObsWebHostingStatus ||
@@ -152,12 +164,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OriginAddr != null)
-                    hashCode = hashCode * 59 + this.OriginAddr.GetHashCode();
                 if (this.OriginType != null)
                     hashCode = hashCode * 59 + this.OriginType.GetHashCode();
+                if (this.OriginAddr != null)
+                    hashCode = hashCode * 59 + this.OriginAddr.GetHashCode();
                 if (this.Priority != null)
                     hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Weight != null)
+                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 if (this.ObsWebHostingStatus != null)
                     hashCode = hashCode * 59 + this.ObsWebHostingStatus.GetHashCode();
                 if (this.HttpPort != null)

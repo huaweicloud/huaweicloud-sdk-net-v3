@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 加速域名名称,获取方法请参见查询加速域名。
+        /// 加速域名名称。
         /// </summary>
         [SDKProperty("domain_name", IsPath = true)]
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]

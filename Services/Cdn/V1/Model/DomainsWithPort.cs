@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 域名信息
+    /// 域名信息。
     /// </summary>
     public class DomainsWithPort 
     {
@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string Cname { get; set; }
 
         /// <summary>
-        /// 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
+        /// 源站配置。
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
         public List<SourceWithPort> Sources { get; set; }
@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? Locked { get; set; }
 
         /// <summary>
-        /// 自动刷新预热（0代表关闭；1代表打开）
+        /// 自动刷新预热（0代表关闭；1代表打开）。
         /// </summary>
         [JsonProperty("auto_refresh_preheat", NullValueHandling = NullValueHandling.Ignore)]
         public int? AutoRefreshPreheat { get; set; }

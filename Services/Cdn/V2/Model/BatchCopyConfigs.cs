@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 原域名所有配置
+    /// 需要复制的原域名配置。
     /// </summary>
     public class BatchCopyConfigs 
     {
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string TargetDomain { get; set; }
 
         /// <summary>
-        /// 原域名
+        /// 原域名。
         /// </summary>
         [JsonProperty("source_domain", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceDomain { get; set; }

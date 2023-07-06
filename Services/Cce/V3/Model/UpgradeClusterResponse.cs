@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 升级任务ID，可通过调用获取集群升级任务详情API查询进展
+        /// 
         /// </summary>
-        [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Uid { get; set; }
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public UpgradeCluserResponseMetadata Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
+        public UpgradeResponseSpec Spec { get; set; }
 
 
 
@@ -31,7 +37,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpgradeClusterResponse {\n");
-            sb.Append("  uid: ").Append(Uid).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  spec: ").Append(Spec).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,9 +61,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
+                    this.Metadata == input.Metadata ||
+                    (this.Metadata != null &&
+                    this.Metadata.Equals(input.Metadata))
+                ) && 
+                (
+                    this.Spec == input.Spec ||
+                    (this.Spec != null &&
+                    this.Spec.Equals(input.Spec))
                 );
         }
 
@@ -68,8 +80,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Metadata != null)
+                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Spec != null)
+                    hashCode = hashCode * 59 + this.Spec.GetHashCode();
                 return hashCode;
             }
         }

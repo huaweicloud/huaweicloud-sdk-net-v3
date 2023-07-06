@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 编码
+        /// 响应码，200：成功，400，失败。
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public string Code { get; set; }
 
         /// <summary>
-        /// 结果
+        /// 响应结果。
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public string Result { get; set; }
 
         /// <summary>
-        /// 数据
+        /// 响应体返回内容。
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public Object Data { get; set; }

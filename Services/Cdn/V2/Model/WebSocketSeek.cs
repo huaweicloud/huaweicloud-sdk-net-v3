@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// webSocket配置。  &gt; 只支持全站加速。
+    /// webSocket配置。  &gt; 只有全站加速的域名支持该配置。
     /// </summary>
     public class WebSocketSeek 
     {

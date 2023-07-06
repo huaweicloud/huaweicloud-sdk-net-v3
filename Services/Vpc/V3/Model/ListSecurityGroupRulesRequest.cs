@@ -79,6 +79,13 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
+        /// <summary>
+        /// 功能说明：远端IP地址 取值范围：cidr格式
+        /// </summary>
+        [SDKProperty("remote_ip_prefix", IsQuery = true)]
+        [JsonProperty("remote_ip_prefix", NullValueHandling = NullValueHandling.Ignore)]
+        public string RemoteIpPrefix { get; set; }
+
 
 
         /// <summary>
@@ -97,6 +104,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  remoteGroupId: ").Append(RemoteGroupId).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
+            sb.Append("  remoteIpPrefix: ").Append(RemoteIpPrefix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,6 +175,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.Action == input.Action ||
                     (this.Action != null &&
                     this.Action.Equals(input.Action))
+                ) && 
+                (
+                    this.RemoteIpPrefix == input.RemoteIpPrefix ||
+                    (this.RemoteIpPrefix != null &&
+                    this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))
                 );
         }
 
@@ -196,6 +209,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.Action != null)
                     hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.RemoteIpPrefix != null)
+                    hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
                 return hashCode;
             }
         }

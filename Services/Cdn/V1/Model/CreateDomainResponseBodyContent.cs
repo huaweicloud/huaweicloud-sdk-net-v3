@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V1.Model
 {
     /// <summary>
-    /// 创建域名返回信息
+    /// 创建域名返回信息。
     /// </summary>
     public class CreateDomainResponseBodyContent 
     {
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string Cname { get; set; }
 
         /// <summary>
-        /// 源站信息
+        /// 源站信息。
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
         public List<Sources> Sources { get; set; }
@@ -101,25 +101,25 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public int? Locked { get; set; }
 
         /// <summary>
-        /// range状态（\&quot;off\&quot;/\&quot;on\&quot;）。
+        /// range状态，off：关闭，on：开启。
         /// </summary>
         [JsonProperty("range_status", NullValueHandling = NullValueHandling.Ignore)]
         public string RangeStatus { get; set; }
 
         /// <summary>
-        /// follow302状态（\&quot;off\&quot;/\&quot;on\&quot;）。
+        /// follow302状态，off：关闭，on：开启。
         /// </summary>
         [JsonProperty("follow_status", NullValueHandling = NullValueHandling.Ignore)]
         public string FollowStatus { get; set; }
 
         /// <summary>
-        /// 是否暂停源站回源。
+        /// 是否暂停源站回源（off代表关闭 on代表开启）。
         /// </summary>
         [JsonProperty("origin_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginStatus { get; set; }
 
         /// <summary>
-        /// 自动刷新预热（0代表关闭；1代表打开）
+        /// 自动刷新预热（0代表关闭；1代表打开）。
         /// </summary>
         [JsonProperty("auto_refresh_preheat", NullValueHandling = NullValueHandling.Ignore)]
         public int? AutoRefreshPreheat { get; set; }
