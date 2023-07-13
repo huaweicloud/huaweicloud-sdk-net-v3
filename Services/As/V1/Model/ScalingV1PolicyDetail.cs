@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string ScalingPolicyId { get; set; }
 
         /// <summary>
-        /// 伸缩策略状态  INSERVICE：已启用 PAUSED：已停用 EXECUTING：执行中
+        /// 伸缩策略状态 INSERVICE：已启用 PAUSED：已停用 EXECUTING：执行中
         /// </summary>
         [JsonProperty("policy_status", NullValueHandling = NullValueHandling.Ignore)]
         public string PolicyStatus { get; set; }

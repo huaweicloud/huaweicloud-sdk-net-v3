@@ -35,15 +35,7 @@ namespace HuaweiCloud.SDK.As.V1
         /// <summary>
         /// 批量添加实例
         ///
-        /// 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
-        /// 说明：
-        /// - 单次最多批量操作实例个数为10。批量添加后实例数不能大于伸缩组的最大实例数，批量移出后实例数不能小于伸缩组的最小实例数。
-        /// - 当伸缩组处于INSERVICE状态且没有伸缩活动时，才能添加实例。
-        /// - 当伸缩组没有伸缩活动时，才能移出实例。
-        /// - 向伸缩组中添加实例时，必须保证实例所在的可用区包含于伸缩组的可用区内。
-        /// - 实例处于INSERVICE状态时才可以进行移出、设置或取消实例保护属性等操作。
-        /// - 当伸缩组发生自动缩容活动时，设置了实例保护的实例不会被移出伸缩组。
-        /// - 批量移出弹性伸缩组中的实例时，若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器相同，会解绑定实例和监听器。若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器不同，会保留实例和监听器的绑定关系。
+        /// 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。说明：- 单次最多批量操作实例个数为10。批量添加后实例数不能大于伸缩组的最大实例数，批量移出后实例数不能小于伸缩组的最小实例数。- 当伸缩组处于INSERVICE状态且没有伸缩活动时，才能添加实例。- 当伸缩组没有伸缩活动时，才能移出实例。- 向伸缩组中添加实例时，必须保证实例所在的可用区包含于伸缩组的可用区内。- 实例处于INSERVICE状态时才可以进行移出、设置或取消实例保护属性等操作。- 当伸缩组发生自动缩容活动时，设置了实例保护的实例不会被移出伸缩组。- 批量移出弹性伸缩组中的实例时，若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器相同，会解绑定实例和监听器。若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器不同，会保留实例和监听器的绑定关系。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -207,6 +199,23 @@ namespace HuaweiCloud.SDK.As.V1
         }
         
         /// <summary>
+        /// 创建计划任务
+        ///
+        /// 创建计划任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateGroupScheduledTaskResponse> CreateGroupScheduledTaskAsync(CreateGroupScheduledTaskRequest createGroupScheduledTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , createGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGroupScheduledTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateGroupScheduledTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建生命周期挂钩
         ///
         /// 创建生命周期挂钩，可为伸缩组添加一个或多个生命周期挂钩，最多添加5个。添加生命周期挂钩后，当伸缩组进行伸缩活动时，实例将被生命周期挂钩挂起并置于等待状态（正在加入伸缩组或正在移出伸缩组），实例将保持此状态直至超时时间结束或者用户手动回调。用户能够在实例保持等待状态的时间段内执行自定义操作，例如，用户可以在新启动的实例上安装或配置软件，也可以在实例终止前从实例中下载日志文件。
@@ -304,6 +313,24 @@ namespace HuaweiCloud.SDK.As.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingTagInfoRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CreateScalingTagInfoResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除计划任务
+        ///
+        /// 删除计划任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteGroupScheduledTaskResponse> DeleteGroupScheduledTaskAsync(DeleteGroupScheduledTaskRequest deleteGroupScheduledTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , deleteGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            urlParam.Add("scheduled_task_id" , deleteGroupScheduledTaskRequest.ScheduledTaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupScheduledTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteGroupScheduledTaskResponse>(response);
         }
         
         /// <summary>
@@ -443,6 +470,23 @@ namespace HuaweiCloud.SDK.As.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeScalingPolicyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<ExecuteScalingPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询计划任务列表
+        ///
+        /// 查询计划任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListGroupScheduledTasksResponse> ListGroupScheduledTasksAsync(ListGroupScheduledTasksRequest listGroupScheduledTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , listGroupScheduledTasksRequest.ScalingGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupScheduledTasksRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListGroupScheduledTasksResponse>(response);
         }
         
         /// <summary>
@@ -833,6 +877,24 @@ namespace HuaweiCloud.SDK.As.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingPolicyRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowScalingPolicyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新计划任务
+        ///
+        /// 更新计划任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateGroupScheduledTaskResponse> UpdateGroupScheduledTaskAsync(UpdateGroupScheduledTaskRequest updateGroupScheduledTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id" , updateGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            urlParam.Add("scheduled_task_id" , updateGroupScheduledTaskRequest.ScheduledTaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGroupScheduledTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateGroupScheduledTaskResponse>(response);
         }
         
         /// <summary>

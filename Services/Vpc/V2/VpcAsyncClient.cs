@@ -865,6 +865,71 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 路由器添加接口
+        ///
+        /// 添加路由器接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronAddRouterInterfaceResponse> NeutronAddRouterInterfaceAsync(NeutronAddRouterInterfaceRequest neutronAddRouterInterfaceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("router_id" , neutronAddRouterInterfaceRequest.RouterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/add_router_interface",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronAddRouterInterfaceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<NeutronAddRouterInterfaceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建网络
+        ///
+        /// 创建网络
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronCreateNetworkResponse> NeutronCreateNetworkAsync(NeutronCreateNetworkRequest neutronCreateNetworkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/networks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateNetworkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<NeutronCreateNetworkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建端口
+        ///
+        /// 创建端口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronCreatePortResponse> NeutronCreatePortAsync(NeutronCreatePortRequest neutronCreatePortRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/ports",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreatePortRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<NeutronCreatePortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建路由器
+        ///
+        /// 创建路由器。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronCreateRouterResponse> NeutronCreateRouterAsync(NeutronCreateRouterRequest neutronCreateRouterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/routers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateRouterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<NeutronCreateRouterResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建安全组
         ///
         /// 创建安全组
@@ -894,6 +959,73 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSecurityGroupRuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<NeutronCreateSecurityGroupRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建子网
+        ///
+        /// 创建子网。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronCreateSubnetResponse> NeutronCreateSubnetAsync(NeutronCreateSubnetRequest neutronCreateSubnetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/subnets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSubnetRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<NeutronCreateSubnetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除网络
+        ///
+        /// 删除网络
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronDeleteNetworkResponse> NeutronDeleteNetworkAsync(NeutronDeleteNetworkRequest neutronDeleteNetworkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("network_id" , neutronDeleteNetworkRequest.NetworkId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteNetworkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<NeutronDeleteNetworkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除端口
+        ///
+        /// 删除端口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronDeletePortResponse> NeutronDeletePortAsync(NeutronDeletePortRequest neutronDeletePortRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id" , neutronDeletePortRequest.PortId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeletePortRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<NeutronDeletePortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除路由器
+        ///
+        /// 删除路由器
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronDeleteRouterResponse> NeutronDeleteRouterAsync(NeutronDeleteRouterRequest neutronDeleteRouterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("router_id" , neutronDeleteRouterRequest.RouterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteRouterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<NeutronDeleteRouterResponse>(response);
         }
         
         /// <summary>
@@ -931,6 +1063,71 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 删除子网
+        ///
+        /// 删除子网
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronDeleteSubnetResponse> NeutronDeleteSubnetAsync(NeutronDeleteSubnetRequest neutronDeleteSubnetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("subnet_id" , neutronDeleteSubnetRequest.SubnetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteSubnetRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<NeutronDeleteSubnetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询网络列表
+        ///
+        /// 查询提交请求的租户的所有网络，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronListNetworksResponse> NeutronListNetworksAsync(NeutronListNetworksRequest neutronListNetworksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/networks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListNetworksRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronListNetworksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询端口列表
+        ///
+        /// 查询提交请求的租户的所有端口，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronListPortsResponse> NeutronListPortsAsync(NeutronListPortsRequest neutronListPortsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/ports",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListPortsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronListPortsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询路由器列表
+        ///
+        /// 查询提交请求的租户有权限操作的所有路由器信息，单次查询最多返回2000条数据，超过2000后会返回分页标记。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronListRoutersResponse> NeutronListRoutersAsync(NeutronListRoutersRequest neutronListRoutersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/routers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListRoutersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronListRoutersResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询安全组规则列表
         ///
         /// 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
@@ -960,6 +1157,90 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSecurityGroupsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<NeutronListSecurityGroupsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询子网列表
+        ///
+        /// 查询提交请求租户的所有子网，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronListSubnetsResponse> NeutronListSubnetsAsync(NeutronListSubnetsRequest neutronListSubnetsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/subnets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSubnetsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronListSubnetsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 路由器删除接口
+        ///
+        /// 删除路由器接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronRemoveRouterInterfaceResponse> NeutronRemoveRouterInterfaceAsync(NeutronRemoveRouterInterfaceRequest neutronRemoveRouterInterfaceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("router_id" , neutronRemoveRouterInterfaceRequest.RouterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/remove_router_interface",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronRemoveRouterInterfaceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<NeutronRemoveRouterInterfaceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询网络
+        ///
+        /// 查询指定的网络详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronShowNetworkResponse> NeutronShowNetworkAsync(NeutronShowNetworkRequest neutronShowNetworkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("network_id" , neutronShowNetworkRequest.NetworkId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowNetworkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronShowNetworkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询端口
+        ///
+        /// 查询端口详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronShowPortResponse> NeutronShowPortAsync(NeutronShowPortRequest neutronShowPortRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id" , neutronShowPortRequest.PortId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowPortRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronShowPortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询路由器
+        ///
+        /// 查询路由器详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronShowRouterResponse> NeutronShowRouterAsync(NeutronShowRouterRequest neutronShowRouterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("router_id" , neutronShowRouterRequest.RouterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowRouterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronShowRouterResponse>(response);
         }
         
         /// <summary>
@@ -997,6 +1278,74 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 查询子网
+        ///
+        /// 查询子网详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronShowSubnetResponse> NeutronShowSubnetAsync(NeutronShowSubnetRequest neutronShowSubnetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("subnet_id" , neutronShowSubnetRequest.SubnetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowSubnetRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<NeutronShowSubnetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新网络
+        ///
+        /// 更新网络
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronUpdateNetworkResponse> NeutronUpdateNetworkAsync(NeutronUpdateNetworkRequest neutronUpdateNetworkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("network_id" , neutronUpdateNetworkRequest.NetworkId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateNetworkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<NeutronUpdateNetworkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新端口
+        ///
+        /// 更新端口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronUpdatePortResponse> NeutronUpdatePortAsync(NeutronUpdatePortRequest neutronUpdatePortRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id" , neutronUpdatePortRequest.PortId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdatePortRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<NeutronUpdatePortResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新路由器
+        ///
+        /// 更新路由器。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronUpdateRouterResponse> NeutronUpdateRouterAsync(NeutronUpdateRouterRequest neutronUpdateRouterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("router_id" , neutronUpdateRouterRequest.RouterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateRouterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<NeutronUpdateRouterResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新安全组
         ///
         /// 更新安全组
@@ -1011,6 +1360,23 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateSecurityGroupRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<NeutronUpdateSecurityGroupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新子网
+        ///
+        /// 更新子网
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NeutronUpdateSubnetResponse> NeutronUpdateSubnetAsync(NeutronUpdateSubnetRequest neutronUpdateSubnetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("subnet_id" , neutronUpdateSubnetRequest.SubnetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateSubnetRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<NeutronUpdateSubnetResponse>(response);
         }
         
         /// <summary>
@@ -1294,6 +1660,22 @@ namespace HuaweiCloud.SDK.Vpc.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFirewallRuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<NeutronUpdateFirewallRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询API版本信息列表
+        ///
+        /// 返回当前API所有可用的版本（仅针对OpenStack原生接口）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListApiVersionResponse> ListApiVersionAsync(ListApiVersionRequest listApiVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListApiVersionResponse>(response);
         }
         
         /// <summary>

@@ -11,38 +11,38 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.As.V1.Model
 {
     /// <summary>
-    /// 定时、周期任务策略
+    /// 
     /// </summary>
     public class ScheduledPolicy 
     {
         /// <summary>
-        /// 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
+        /// 非必选，不填写时计划任务为定时执行， 填写时，为周期执行，且只能填写DAILY，WEEKLY，MONTHLY 中的一种，分别为按天，按周，按月周期执行
         /// </summary>
-        /// <value>周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。</value>
+        /// <value>非必选，不填写时计划任务为定时执行， 填写时，为周期执行，且只能填写DAILY，WEEKLY，MONTHLY 中的一种，分别为按天，按周，按月周期执行</value>
         [JsonConverter(typeof(EnumClassConverter<RecurrenceTypeEnum>))]
         public class RecurrenceTypeEnum
         {
             /// <summary>
-            /// Enum DAILY for value: Daily
+            /// Enum DAILY for value: DAILY
             /// </summary>
-            public static readonly RecurrenceTypeEnum DAILY = new RecurrenceTypeEnum("Daily");
+            public static readonly RecurrenceTypeEnum DAILY = new RecurrenceTypeEnum("DAILY");
 
             /// <summary>
-            /// Enum WEEKLY for value: Weekly
+            /// Enum WEEKLY for value: WEEKLY
             /// </summary>
-            public static readonly RecurrenceTypeEnum WEEKLY = new RecurrenceTypeEnum("Weekly");
+            public static readonly RecurrenceTypeEnum WEEKLY = new RecurrenceTypeEnum("WEEKLY");
 
             /// <summary>
-            /// Enum MONTHLY for value: Monthly
+            /// Enum MONTHLY for value: MONTHLY
             /// </summary>
-            public static readonly RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("Monthly");
+            public static readonly RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("MONTHLY");
 
             private static readonly Dictionary<string, RecurrenceTypeEnum> StaticFields =
             new Dictionary<string, RecurrenceTypeEnum>()
             {
-                { "Daily", DAILY },
-                { "Weekly", WEEKLY },
-                { "Monthly", MONTHLY },
+                { "DAILY", DAILY },
+                { "WEEKLY", WEEKLY },
+                { "MONTHLY", MONTHLY },
             };
 
             private string _value;
@@ -138,33 +138,33 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 触发时间，遵循UTC时间。如果scaling_policy_type为SCHEDULED，则格式为：YYYY-MM-DDThh:mmZ。如果scaling_policy_type为RECURRENCE，则格式为：hh:mm。
-        /// </summary>
-        [JsonProperty("launch_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string LaunchTime { get; set; }
-
-        /// <summary>
-        /// 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
-        /// </summary>
-        [JsonProperty("recurrence_type", NullValueHandling = NullValueHandling.Ignore)]
-        public RecurrenceTypeEnum RecurrenceType { get; set; }
-        /// <summary>
-        /// 周期触发任务数值，scaling_policy_type为RECURRENCE时该项必选。类型为Daily时，该字段为null，表示每天执行类型为Weekly时，该字段取值范围为1-7，1表示星期日，以此类推，以”,”分割，例如：1,3,5。类型为Monthly时，该字段取值范围为1-31，分别表示每月的日期，以“,”分割，例如：1,10,13,28。 说明： - 当recurrence_type类型为Daily时，recurrence_value参数不生效。
-        /// </summary>
-        [JsonProperty("recurrence_value", NullValueHandling = NullValueHandling.Ignore)]
-        public string RecurrenceValue { get; set; }
-
-        /// <summary>
-        /// 周期策略重复执行开始时间，遵循UTC时间。默认为当前时间，格式为：YYYY-MM-DDThh：mZ
+        /// 非必选，仅当recurrence_type不为空时生效，表示计划任务的生效开始时间，格式为yyyy-MM-dd&#39;T&#39;HH:mm&#39;Z&#39;，不填写时默认为任务创建成功的时间
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 周期策略重复执行结束时间，遵循UTC时间，scaling_policy_type为RECURRENCE时该项必选。当为周期类型策略时，不得早于当前时间和开始时间。格式为：YYYY-MM-DDThh：mmZ
+        /// 仅当recurrence_type不为空时生效且必选，表示计划任务的生效结束时间，格式为yyyy-MM-dd&#39;T&#39;HH:mm&#39;Z&#39;
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
+
+        /// <summary>
+        /// 必选，执行时间，采用UTC时间，recurrence_type不填写或为空时，格式为HH:mm, recurrence_type不为空时，格式为yyyy-MM-dd&#39;T&#39;HH:mm&#39;Z&#39;
+        /// </summary>
+        [JsonProperty("launch_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string LaunchTime { get; set; }
+
+        /// <summary>
+        /// 非必选，不填写时计划任务为定时执行， 填写时，为周期执行，且只能填写DAILY，WEEKLY，MONTHLY 中的一种，分别为按天，按周，按月周期执行
+        /// </summary>
+        [JsonProperty("recurrence_type", NullValueHandling = NullValueHandling.Ignore)]
+        public RecurrenceTypeEnum RecurrenceType { get; set; }
+        /// <summary>
+        /// 仅当recurrence_type为WEEKLY，MONTHLY时必选，表示周期执行的具体日期，多个日期用,分割。recurrence_type为WEEKLY时，可填入1-7， recurrence_type为MONTHLY时，可填入1-31
+        /// </summary>
+        [JsonProperty("recurrence_value", NullValueHandling = NullValueHandling.Ignore)]
+        public string RecurrenceValue { get; set; }
 
 
 
@@ -175,11 +175,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ScheduledPolicy {\n");
+            sb.Append("  startTime: ").Append(StartTime).Append("\n");
+            sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  launchTime: ").Append(LaunchTime).Append("\n");
             sb.Append("  recurrenceType: ").Append(RecurrenceType).Append("\n");
             sb.Append("  recurrenceValue: ").Append(RecurrenceValue).Append("\n");
-            sb.Append("  startTime: ").Append(StartTime).Append("\n");
-            sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +202,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             return 
                 (
+                    this.StartTime == input.StartTime ||
+                    (this.StartTime != null &&
+                    this.StartTime.Equals(input.StartTime))
+                ) && 
+                (
+                    this.EndTime == input.EndTime ||
+                    (this.EndTime != null &&
+                    this.EndTime.Equals(input.EndTime))
+                ) && 
+                (
                     this.LaunchTime == input.LaunchTime ||
                     (this.LaunchTime != null &&
                     this.LaunchTime.Equals(input.LaunchTime))
@@ -215,16 +225,6 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.RecurrenceValue == input.RecurrenceValue ||
                     (this.RecurrenceValue != null &&
                     this.RecurrenceValue.Equals(input.RecurrenceValue))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
                 );
         }
 
@@ -236,16 +236,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.StartTime != null)
+                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null)
+                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.LaunchTime != null)
                     hashCode = hashCode * 59 + this.LaunchTime.GetHashCode();
                 if (this.RecurrenceType != null)
                     hashCode = hashCode * 59 + this.RecurrenceType.GetHashCode();
                 if (this.RecurrenceValue != null)
                     hashCode = hashCode * 59 + this.RecurrenceValue.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 return hashCode;
             }
         }

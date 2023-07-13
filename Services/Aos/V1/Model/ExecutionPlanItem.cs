@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class ExecutionPlanItem 
     {
         /// <summary>
-        /// 资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作 
+        /// 资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
         /// </summary>
-        /// <value>资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作 </value>
+        /// <value>资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -155,9 +155,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         }
 
         /// <summary>
-        /// 资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源 
+        /// 资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
         /// </summary>
-        /// <value>资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源 </value>
+        /// <value>资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源</value>
         [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
         public class ModeEnum
         {
@@ -271,25 +271,25 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 资源的类型  以HCL格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
+        /// 资源的类型  以HCL格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_type 为 huaweicloud_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60;
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 资源的名称，默认为资源的逻辑名称  以HCL格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60; 
+        /// 资源的名称，默认为资源的逻辑名称  以HCL格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，resource_name 为 my_hello_world_vpc  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;       }     }   } } &#x60;&#x60;&#x60;
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 资源的索引，若用户在模板中使用了count或for_each则会返回index。若index出现，则resource_name + index可以作为该资源的一种标识  若用户在模板中使用count，则index为从0开始的数字  以HCL格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[0]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[1]&#x60;标识两个资源  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   count &#x3D; 2   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[0]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[1]&#x60;标识两个资源  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;,         \&quot;count\&quot;: 2       }     }   } } &#x60;&#x60;&#x60;  若用户在模板中使用for_each，则index为用户自定义的字符串  以HCL格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc1\&quot;]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc2\&quot;]&#x60;标识两个资源  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   for_each &#x3D; {     \&quot;vpc1\&quot; &#x3D; \&quot;test_vpc\&quot;     \&quot;vpc2\&quot; &#x3D; \&quot;test_vpc\&quot;   }   name &#x3D; each.value } &#x60;&#x60;&#x60;  以json格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc1\&quot;]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc2\&quot;]&#x60;标识两个资源  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;for_each\&quot;: {           \&quot;vpc1\&quot;: \&quot;test_vpc\&quot;,           \&quot;vpc2\&quot;: \&quot;test_vpc\&quot;         }         \&quot;name\&quot;: \&quot;${each.value}\&quot;       }     }   } } &#x60;&#x60;&#x60; 
+        /// 资源的索引，若用户在模板中使用了count或for_each则会返回index。若index出现，则resource_name + index可以作为该资源的一种标识  若用户在模板中使用count，则index为从0开始的数字  以HCL格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[0]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[1]&#x60;标识两个资源  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   count &#x3D; 2   name &#x3D; \&quot;test_vpc\&quot; } &#x60;&#x60;&#x60;  以json格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[0]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[1]&#x60;标识两个资源  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;name\&quot;: \&quot;test_vpc\&quot;,         \&quot;count\&quot;: 2       }     }   } } &#x60;&#x60;&#x60;  若用户在模板中使用for_each，则index为用户自定义的字符串  以HCL格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc1\&quot;]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc2\&quot;]&#x60;标识两个资源  &#x60;&#x60;&#x60;hcl resource \&quot;huaweicloud_vpc\&quot; \&quot;my_hello_world_vpc\&quot; {   for_each &#x3D; {     \&quot;vpc1\&quot; &#x3D; \&quot;test_vpc\&quot;     \&quot;vpc2\&quot; &#x3D; \&quot;test_vpc\&quot;   }   name &#x3D; each.value } &#x60;&#x60;&#x60;  以json格式的模板为例，用户在模板中可以通过&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc1\&quot;]&#x60;和&#x60;huaweicloud_vpc.my_hello_world_vpc[\&quot;vpc2\&quot;]&#x60;标识两个资源  &#x60;&#x60;&#x60;json {   \&quot;resource\&quot;: {     \&quot;huaweicloud_vpc\&quot;: {       \&quot;my_hello_world_vpc\&quot;: {         \&quot;for_each\&quot;: {           \&quot;vpc1\&quot;: \&quot;test_vpc\&quot;,           \&quot;vpc2\&quot;: \&quot;test_vpc\&quot;         }         \&quot;name\&quot;: \&quot;${each.value}\&quot;       }     }   } } &#x60;&#x60;&#x60;
         /// </summary>
         [JsonProperty("index", NullValueHandling = NullValueHandling.Ignore)]
         public string Index { get; set; }
 
         /// <summary>
-        /// 资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作 
+        /// 资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
@@ -306,12 +306,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// 资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源 
+        /// 资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }
         /// <summary>
-        /// 当前资源的变更是否由偏差导致。  偏差，也叫漂移。指的是资源被资源编排服务创建以后，又经历过非资源编排服务触发的修改，如手动修改、调用SDK修改等，使得资源的配置与本服务所记录的资源的配置不一致。这种不一致便称为偏差。  当资源产生偏差以后： * 如果用户试图创建执行计划，则会提示用户产生偏差 * 如果用户直接部署，则偏差有可能被覆盖，资源编排服务只保证资源和模板最终一致。  资源的偏差有两种类型： * 资源定位属性被修改：如果是定位属性被修改，常见于删除后重建，此时资源已经不属于同一个资源。资源编排服务会认为此资源已经被删除，会尝试创建一个新的资源。 * 资源普通属性被修改：如果是普通属性被修改，则资源编排服务依然可以找到资源，但是下次部署会尝试修复偏差，即将资源保持和模板最终一致。  **注：资源编排服务团队极力推荐，如果资源是通过本服务创建的，请一直使用本服务进行维护和更新以确保资源和模板保持一致。建议非紧急事件以外的情况不要手动调整。** 
+        /// 当前资源的变更是否由偏差导致。  偏差，也叫漂移。指的是资源被资源编排服务创建以后，又经历过非资源编排服务触发的修改，如手动修改、调用SDK修改等，使得资源的配置与本服务所记录的资源的配置不一致。这种不一致便称为偏差。  当资源产生偏差以后： * 如果用户试图创建执行计划，则会提示用户产生偏差 * 如果用户直接部署，则偏差有可能被覆盖，资源编排服务只保证资源和模板最终一致。  资源的偏差有两种类型： * 资源定位属性被修改：如果是定位属性被修改，常见于删除后重建，此时资源已经不属于同一个资源。资源编排服务会认为此资源已经被删除，会尝试创建一个新的资源。 * 资源普通属性被修改：如果是普通属性被修改，则资源编排服务依然可以找到资源，但是下次部署会尝试修复偏差，即将资源保持和模板最终一致。  **注：资源编排服务团队极力推荐，如果资源是通过本服务创建的，请一直使用本服务进行维护和更新以确保资源和模板保持一致。建议非紧急事件以外的情况不要手动调整。**
         /// </summary>
         [JsonProperty("drifted", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Drifted { get; set; }
