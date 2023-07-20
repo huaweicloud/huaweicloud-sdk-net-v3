@@ -38,14 +38,14 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询任务的最小时间，格式为 YYYYMMDDHHmmss。
+        /// 查询任务的最小时间，格式为YYYYMMDDHHmmss。
         /// </summary>
         [SDKProperty("begin_time", IsQuery = true)]
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string BeginTime { get; set; }
 
         /// <summary>
-        /// 查询任务的最大时间，格式为 YYYYMMDDHHmmss。
+        /// 查询任务的最大时间，格式为YYYYMMDDHHmmss。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]

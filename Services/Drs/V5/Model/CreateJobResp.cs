@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
 
+        /// <summary>
+        /// 是否为克隆任务。
+        /// </summary>
+        [JsonProperty("is_clone_job", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsCloneJob { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  isCloneJob: ").Append(IsCloneJob).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.CreateTime == input.CreateTime ||
                     (this.CreateTime != null &&
                     this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.IsCloneJob == input.IsCloneJob ||
+                    (this.IsCloneJob != null &&
+                    this.IsCloneJob.Equals(input.IsCloneJob))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.IsCloneJob != null)
+                    hashCode = hashCode * 59 + this.IsCloneJob.GetHashCode();
                 return hashCode;
             }
         }

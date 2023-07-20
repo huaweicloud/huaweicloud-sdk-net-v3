@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class AsyncJobResp 
     {
         /// <summary>
-        /// 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - ASYNC_JOB_CREATING：批量异步任务创建中。 - ASYNC_JOB_CREATE_FAILED：批量异步任务创建失败。 - ASYNC_JOB_COMPLETED：批量异步任务创建完成。
+        /// 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功。 - COMMIT_SUCCESS：批量异步任务提交成功。
         /// </summary>
-        /// <value>批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - ASYNC_JOB_CREATING：批量异步任务创建中。 - ASYNC_JOB_CREATE_FAILED：批量异步任务创建失败。 - ASYNC_JOB_COMPLETED：批量异步任务创建完成。</value>
+        /// <value>批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功。 - COMMIT_SUCCESS：批量异步任务提交成功。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -33,28 +33,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             public static readonly StatusEnum ASYNC_JOB_VALIDATE_FAILED = new StatusEnum("ASYNC_JOB_VALIDATE_FAILED");
 
             /// <summary>
-            /// Enum ASYNC_JOB_CREATING for value: ASYNC_JOB_CREATING
+            /// Enum AUTO_PARAM_VALIDATE_SUCCESS for value: AUTO_PARAM_VALIDATE_SUCCESS
             /// </summary>
-            public static readonly StatusEnum ASYNC_JOB_CREATING = new StatusEnum("ASYNC_JOB_CREATING");
+            public static readonly StatusEnum AUTO_PARAM_VALIDATE_SUCCESS = new StatusEnum("AUTO_PARAM_VALIDATE_SUCCESS");
 
             /// <summary>
-            /// Enum ASYNC_JOB_CREATE_FAILED for value: ASYNC_JOB_CREATE_FAILED
+            /// Enum COMMIT_SUCCESS for value: COMMIT_SUCCESS
             /// </summary>
-            public static readonly StatusEnum ASYNC_JOB_CREATE_FAILED = new StatusEnum("ASYNC_JOB_CREATE_FAILED");
-
-            /// <summary>
-            /// Enum ASYNC_JOB_COMPLETED for value: ASYNC_JOB_COMPLETED
-            /// </summary>
-            public static readonly StatusEnum ASYNC_JOB_COMPLETED = new StatusEnum("ASYNC_JOB_COMPLETED");
+            public static readonly StatusEnum COMMIT_SUCCESS = new StatusEnum("COMMIT_SUCCESS");
 
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "ASYNC_JOB_VALIDATING", ASYNC_JOB_VALIDATING },
                 { "ASYNC_JOB_VALIDATE_FAILED", ASYNC_JOB_VALIDATE_FAILED },
-                { "ASYNC_JOB_CREATING", ASYNC_JOB_CREATING },
-                { "ASYNC_JOB_CREATE_FAILED", ASYNC_JOB_CREATE_FAILED },
-                { "ASYNC_JOB_COMPLETED", ASYNC_JOB_COMPLETED },
+                { "AUTO_PARAM_VALIDATE_SUCCESS", AUTO_PARAM_VALIDATE_SUCCESS },
+                { "COMMIT_SUCCESS", COMMIT_SUCCESS },
             };
 
             private string _value;
@@ -156,7 +150,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string AsyncJobId { get; set; }
 
         /// <summary>
-        /// 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - ASYNC_JOB_CREATING：批量异步任务创建中。 - ASYNC_JOB_CREATE_FAILED：批量异步任务创建失败。 - ASYNC_JOB_COMPLETED：批量异步任务创建完成。
+        /// 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功。 - COMMIT_SUCCESS：批量异步任务提交成功。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

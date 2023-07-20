@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V5.Model
 {
     /// <summary>
-    /// 用户迁移信息角色列表字段。当前支持的场景：  - 实时迁移场景：MongoDB迁移。
+    /// 用户迁移信息角色列表字段。当前支持的场景： - 实时迁移场景：MongoDB迁移。
     /// </summary>
     public class UserMigrationRole 
     {

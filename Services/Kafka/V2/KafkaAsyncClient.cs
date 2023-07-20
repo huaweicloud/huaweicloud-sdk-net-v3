@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// Kafka实例批量删除Topic
         ///
-        /// 该接口用于向Kafka实例批量删除Topic。批量删除多个消费组时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的消费组信息。
+        /// 该接口用于向Kafka实例批量删除Topic。批量删除多个Topic时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的Topic信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -474,7 +474,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// 
         /// 同时，unavailable_zones字段表示资源不足的可用区列表，如果为空，则表示所有可用区都有资源，如果不为空，则表示字段值的可用区没有资源。所以必须确保您购买的资源所在的可用区有资源，不在该字段列表内。
         /// 
-        /// [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hc,hws)
+        /// [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hws)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -502,6 +502,42 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSinkTasksRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSinkTasksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询Topic的分区列表
+        ///
+        /// 查询Topic的分区列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTopicPartitionsResponse> ListTopicPartitionsAsync(ListTopicPartitionsRequest listTopicPartitionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listTopicPartitionsRequest.InstanceId.ToString());
+            urlParam.Add("topic" , listTopicPartitionsRequest.Topic.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/partitions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicPartitionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTopicPartitionsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询Topic的当前生产者列表
+        ///
+        /// 查询Topic的当前生产者列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTopicProducersResponse> ListTopicProducersAsync(ListTopicProducersRequest listTopicProducersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listTopicProducersRequest.InstanceId.ToString());
+            urlParam.Add("topic" , listTopicProducersRequest.Topic.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/producers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicProducersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTopicProducersResponse>(response);
         }
         
         /// <summary>

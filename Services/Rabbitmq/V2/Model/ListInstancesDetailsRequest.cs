@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class ListInstancesDetailsRequest 
     {
         /// <summary>
-        /// 实例状态。
+        /// 实例状态，详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)。
         /// </summary>
-        /// <value>实例状态。</value>
+        /// <value>实例状态，详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -419,7 +419,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 实例状态。
+        /// 实例状态，详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

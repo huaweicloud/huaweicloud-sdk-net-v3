@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
         /// </summary>
-        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。</value>
+        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -172,6 +172,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum COMAPRE = new TypeEnum("comapre");
 
+            /// <summary>
+            /// Enum FILE for value: file
+            /// </summary>
+            public static readonly TypeEnum FILE = new TypeEnum("file");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -182,6 +187,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "progress", PROGRESS },
                 { "log", LOG },
                 { "comapre", COMAPRE },
+                { "file", FILE },
             };
 
             private string _value;
@@ -774,7 +780,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

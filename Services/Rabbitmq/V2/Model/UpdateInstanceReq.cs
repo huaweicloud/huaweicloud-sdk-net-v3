@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string MaintainEnd { get; set; }
 
         /// <summary>
-        /// 安全组ID。
+        /// 安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }

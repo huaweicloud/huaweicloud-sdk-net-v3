@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public int? Count { get; set; }
 
         /// <summary>
+        /// 用户可创建的自定义参数模板最大数量。
+        /// </summary>
+        [JsonProperty("quota", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Quota { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("configurations", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListConfigurationsResponse {\n");
             sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  quota: ").Append(Quota).Append("\n");
             sb.Append("  configurations: ").Append(Configurations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +73,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.Count.Equals(input.Count))
                 ) && 
                 (
+                    this.Quota == input.Quota ||
+                    (this.Quota != null &&
+                    this.Quota.Equals(input.Quota))
+                ) && 
+                (
                     this.Configurations == input.Configurations ||
                     this.Configurations != null &&
                     input.Configurations != null &&
@@ -83,6 +95,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 int hashCode = 41;
                 if (this.Count != null)
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Quota != null)
+                    hashCode = hashCode * 59 + this.Quota.GetHashCode();
                 if (this.Configurations != null)
                     hashCode = hashCode * 59 + this.Configurations.GetHashCode();
                 return hashCode;

@@ -476,9 +476,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:otc,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。
         /// </summary>
-        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考磁盘类型及性能介绍。</value>
+        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:otc,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
@@ -626,7 +626,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? StorageSpace { get; set; }
 
         /// <summary>
-        /// 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+        /// 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
         /// </summary>
         [JsonProperty("access_user", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessUser { get; set; }
@@ -656,13 +656,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。 创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
+        /// 创建节点到指定且有资源的可用区ID。请参考[查询可用区信息](ListAvailableZones.xml)获取可用区ID。  该参数不能为空数组或者数组的值为空。  创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品ID。 产品ID可以从**查询产品规格列表**接口查询到。
+        /// 产品ID。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
@@ -738,7 +738,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? EnableAutoTopic { get; set; }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考磁盘类型及性能介绍。
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:otc,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }

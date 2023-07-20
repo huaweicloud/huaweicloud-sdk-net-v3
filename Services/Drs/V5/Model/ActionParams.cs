@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool? IsSyncReEdit { get; set; }
 
         /// <summary>
-        /// 强制结束任务时取值true。
+        /// 强制结束时取值为true。
         /// </summary>
         [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ForceDelete { get; set; }

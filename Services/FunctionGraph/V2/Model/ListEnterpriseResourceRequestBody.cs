@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 查询指定键值对
         /// </summary>
         [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dictionary<string, string>> Matches { get; set; }
+        public List<KvItem> Matches { get; set; }
 
         /// <summary>
         /// 查询指定系统标签列表

@@ -1,3 +1,144 @@
+# 3.1.48 2023-07-20
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - Support `LTS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support `GaussDBforopenGauss`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support `GaussDB`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support `RDS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CloudRTC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateIndividualStreamJob**
+    - changes of request param
+      - `- publish_param`
+  - **UpdateIndividualStreamJob**
+    - changes of request param
+      - `- publish_param`
+  - **CreateMixJob**
+    - changes of request param
+      - `- publish_param`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the following interfaces：
+    - `AttachShareBandwidth`
+    - `AttachBatchPublicIp`
+    - `DetachShareBandwidth`
+    - `DetachBatchPublicIp`
+    - `EnableNat64`
+    - `DisableNat64`
+    - `ListBandwidth`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - Support the interface `DeleteBatchTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - Support the interfaces `ListTopicPartitions`, `ListTopicProducers`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListProducts**
+    - changes of request param
+      - `+ engine: enum value [kafka]`
+  - **UpdateInstanceTopic**
+    - changes of request param
+      - `+ topics.topic_other_configs`
+      - `+ topics.topic_desc`
+  - **CreateInstanceTopic**
+    - changes of request param
+      - `+ topic_other_configs`
+      - `+ topic_desc`
+    - changes of response param
+      - `+ id`
+  - **ListInstanceTopics**
+    - changes of request param
+      - `- offset`
+      - `- limit`
+    - changes of response param
+      - `+ topics.topic_other_configs`
+      - `+ topics.topic_desc`
+      - `+ topics.created_at`
+  - **ListInstances**
+    - changes of request param
+      - `+ engine: enum value [kafka]`
+  - **ResizeEngineInstance**
+    - changes of request param
+      - `+ engine: enum value [kafka]`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowInstanceExtendProductInfo**
+    - changes of request param
+      - `+ engine: enum value [rabbitmq]`
+    - changes of response param
+      - `+ engine`
+      - `+ versions`
+      - `+ products`
+      - `- monthly`
+      - `- hourly`
+  - **ListProducts**
+    - changes of request param
+      - `+ engine: enum value [rabbitmq]`
+  - **ResizeEngineInstance**
+    - changes of request param
+      - `+ engine: enum value [rabbitmq]`
+  - **ShowEngineInstanceExtendProductInfo**
+    - changes of request param
+      - `+ engine: enum value [rabbitmq]`
+
 # 3.1.47 2023-07-13
 
 ### HuaweiCloud SDK CodeArtsDeploy

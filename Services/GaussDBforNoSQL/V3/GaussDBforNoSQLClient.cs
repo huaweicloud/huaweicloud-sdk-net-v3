@@ -1068,6 +1068,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询实例可搭建双活关系的Region
+        ///
+        /// 查询实例可搭建双活关系的Region。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceBiactiveRegionsResponse ShowInstanceBiactiveRegions(ShowInstanceBiactiveRegionsRequest showInstanceBiactiveRegionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showInstanceBiactiveRegionsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/regions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceBiactiveRegionsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowInstanceBiactiveRegionsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定实例的参数
         ///
         /// 获取指定实例的参数信息。

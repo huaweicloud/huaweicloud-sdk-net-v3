@@ -41,6 +41,18 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Updated { get; set; }
 
         /// <summary>
+        /// 参数模板ID。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 数据库实例类型。 GaussDB(for Cassandra)集群类型为\&quot;Cluster\&quot;。 GaussDB(for Mongo)副本集类型为\&quot;ReplicaSet\&quot;。 GaussDB(for Mongo)集群类型为\&quot;Sharding\&quot;。 GaussDB(for Influx)集群类型为\&quot;Cluster\&quot;。 GaussDB(for Influx)单节点类型为\&quot;InfluxdbSingle\&quot;。
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
+
+        /// <summary>
         /// 参数对象，用户基于默认参数模板自定义的参数配置。
         /// </summary>
         [JsonProperty("configuration_parameters", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +71,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  datastoreName: ").Append(DatastoreName).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  configurationParameters: ").Append(ConfigurationParameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -102,6 +116,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.Updated.Equals(input.Updated))
                 ) && 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
+                ) && 
+                (
                     this.ConfigurationParameters == input.ConfigurationParameters ||
                     this.ConfigurationParameters != null &&
                     input.ConfigurationParameters != null &&
@@ -125,6 +149,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Updated != null)
                     hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.ConfigurationParameters != null)
                     hashCode = hashCode * 59 + this.ConfigurationParameters.GetHashCode();
                 return hashCode;

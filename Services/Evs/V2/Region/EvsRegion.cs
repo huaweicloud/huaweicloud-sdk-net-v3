@@ -6,6 +6,8 @@ namespace HuaweiCloud.SDK.Evs.V2
 {
     public class EvsRegion
     {
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://evs.eu-west-101.myhuaweicloud.eu");
         public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
             "https://evs.af-south-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
@@ -42,9 +44,12 @@ namespace HuaweiCloud.SDK.Evs.V2
             "https://evs.cn-north-9.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
             "https://evs.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://evs.tr-west-1.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
+                { "eu-west-101", EU_WEST_101 },
                 { "af-south-1", AF_SOUTH_1 },
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-north-1", CN_NORTH_1 },
@@ -63,6 +68,7 @@ namespace HuaweiCloud.SDK.Evs.V2
                 { "na-mexico-1", NA_MEXICO_1 },
                 { "cn-north-9", CN_NORTH_9 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "tr-west-1", TR_WEST_1 },
         };
 
         public static Region ValueOf(string regionId)

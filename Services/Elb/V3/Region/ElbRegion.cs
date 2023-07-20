@@ -6,6 +6,8 @@ namespace HuaweiCloud.SDK.Elb.V3
 {
     public class ElbRegion
     {
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://elb.eu-west-101.myhuaweicloud.eu");
         public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
             "https://elb.af-south-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
@@ -47,6 +49,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
+                { "eu-west-101", EU_WEST_101 },
                 { "af-south-1", AF_SOUTH_1 },
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-north-1", CN_NORTH_1 },

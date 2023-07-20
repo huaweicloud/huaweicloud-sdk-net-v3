@@ -286,7 +286,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 是否强制刷新。取值： - true：是，表示从源库重新查询。    - false：否，表示从已缓存中数据查询。
+        /// 是否强制刷新。取值： - true：是，表示从源库重新查询。 - false：否，表示从已缓存中数据查询。
         /// </summary>
         [SDKProperty("is_refresh", IsQuery = true)]
         [JsonProperty("is_refresh", NullValueHandling = NullValueHandling.Ignore)]

@@ -130,6 +130,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             }
         }
 
+        /// <summary>
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+        /// </summary>
+        /// <value>文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级</value>
+        [JsonConverter(typeof(EnumClassConverter<FileImportDbLevelEnum>))]
+        public class FileImportDbLevelEnum
+        {
+            /// <summary>
+            /// Enum DATABASE for value: database
+            /// </summary>
+            public static readonly FileImportDbLevelEnum DATABASE = new FileImportDbLevelEnum("database");
+
+            /// <summary>
+            /// Enum TABLE for value: table
+            /// </summary>
+            public static readonly FileImportDbLevelEnum TABLE = new FileImportDbLevelEnum("table");
+
+            private static readonly Dictionary<string, FileImportDbLevelEnum> StaticFields =
+            new Dictionary<string, FileImportDbLevelEnum>()
+            {
+                { "database", DATABASE },
+                { "table", TABLE },
+            };
+
+            private string _value;
+
+            public FileImportDbLevelEnum()
+            {
+
+            }
+
+            public FileImportDbLevelEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static FileImportDbLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as FileImportDbLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(FileImportDbLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(FileImportDbLevelEnum a, FileImportDbLevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(FileImportDbLevelEnum a, FileImportDbLevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 任务ID。
@@ -144,6 +259,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
+        /// <summary>
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+        /// </summary>
+        [SDKProperty("file_import_db_level", IsQuery = true)]
+        [JsonProperty("file_import_db_level", NullValueHandling = NullValueHandling.Ignore)]
+        public FileImportDbLevelEnum FileImportDbLevel { get; set; }
 
 
         /// <summary>
@@ -155,6 +276,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("class DownloadDbObjectTemplateRequest {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  fileImportDbLevel: ").Append(FileImportDbLevel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -185,6 +307,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.XLanguage == input.XLanguage ||
                     (this.XLanguage != null &&
                     this.XLanguage.Equals(input.XLanguage))
+                ) && 
+                (
+                    this.FileImportDbLevel == input.FileImportDbLevel ||
+                    (this.FileImportDbLevel != null &&
+                    this.FileImportDbLevel.Equals(input.FileImportDbLevel))
                 );
         }
 
@@ -200,6 +327,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.XLanguage != null)
                     hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.FileImportDbLevel != null)
+                    hashCode = hashCode * 59 + this.FileImportDbLevel.GetHashCode();
                 return hashCode;
             }
         }

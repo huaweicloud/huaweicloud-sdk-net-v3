@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool? IsMigrateUser { get; set; }
 
         /// <summary>
-        /// 是否统一重置密码。取值： - true：重置密码为统一密码。 - false：不统一重置密码。 当前支持的场景：  - 实时迁移场景：MySQL迁移。
+        /// 是否统一重置密码。取值： - true：重置密码为统一密码。 - false：不统一重置密码。 当前支持的场景： - 实时迁移场景：MySQL迁移。
         /// </summary>
         [JsonProperty("is_set_password", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSetPassword { get; set; }

@@ -25,12 +25,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("publish_param", NullValueHandling = NullValueHandling.Ignore)]
-        public PublishParam PublishParam { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("record_param", NullValueHandling = NullValueHandling.Ignore)]
         public RecordParam RecordParam { get; set; }
 
@@ -44,7 +38,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
             var sb = new StringBuilder();
             sb.Append("class MixJobReq {\n");
             sb.Append("  mixParam: ").Append(MixParam).Append("\n");
-            sb.Append("  publishParam: ").Append(PublishParam).Append("\n");
             sb.Append("  recordParam: ").Append(RecordParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -73,11 +66,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
                     this.MixParam.Equals(input.MixParam))
                 ) && 
                 (
-                    this.PublishParam == input.PublishParam ||
-                    (this.PublishParam != null &&
-                    this.PublishParam.Equals(input.PublishParam))
-                ) && 
-                (
                     this.RecordParam == input.RecordParam ||
                     (this.RecordParam != null &&
                     this.RecordParam.Equals(input.RecordParam))
@@ -94,8 +82,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
                 int hashCode = 41;
                 if (this.MixParam != null)
                     hashCode = hashCode * 59 + this.MixParam.GetHashCode();
-                if (this.PublishParam != null)
-                    hashCode = hashCode * 59 + this.PublishParam.GetHashCode();
                 if (this.RecordParam != null)
                     hashCode = hashCode * 59 + this.RecordParam.GetHashCode();
                 return hashCode;

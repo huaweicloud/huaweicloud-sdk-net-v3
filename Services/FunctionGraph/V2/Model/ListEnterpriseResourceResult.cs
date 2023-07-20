@@ -32,13 +32,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 标签列表
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dictionary<string, string>> Tags { get; set; }
+        public List<KvItem> Tags { get; set; }
 
         /// <summary>
         /// 系统标签列表
         /// </summary>
         [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dictionary<string, string>> SysTags { get; set; }
+        public List<KvItem> SysTags { get; set; }
 
         /// <summary>
         /// 资源名称

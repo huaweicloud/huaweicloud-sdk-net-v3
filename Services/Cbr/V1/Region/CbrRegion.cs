@@ -6,6 +6,8 @@ namespace HuaweiCloud.SDK.Cbr.V1
 {
     public class CbrRegion
     {
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://cbr.eu-west-101.myhuaweicloud.eu");
         public static readonly Region CN_NORTH_1 = new Region("cn-north-1",
             "https://cbr.cn-north-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
@@ -49,6 +51,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
+                { "eu-west-101", EU_WEST_101 },
                 { "cn-north-1", CN_NORTH_1 },
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-south-1", CN_SOUTH_1 },

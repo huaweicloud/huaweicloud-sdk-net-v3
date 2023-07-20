@@ -15,6 +15,22 @@ namespace HuaweiCloud.SDK.Eip.V3
 
         
         /// <summary>
+        /// 查询带宽列表
+        ///
+        /// 查询带宽列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBandwidthResponse ListBandwidth(ListBandwidthRequest listBandwidthRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/bandwidths",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBandwidthRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListBandwidthResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询公共池列表
         ///
         /// 查询公共池列表
@@ -113,6 +129,39 @@ namespace HuaweiCloud.SDK.Eip.V3
         }
         
         /// <summary>
+        /// 共享带宽批量加入弹性公网IP
+        ///
+        /// 共享带宽批量加入弹性公网IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AttachBatchPublicIpResponse AttachBatchPublicIp(AttachBatchPublicIpRequest attachBatchPublicIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/attach-share-bandwidth",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachBatchPublicIpRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AttachBatchPublicIpResponse>(response);
+        }
+        
+        /// <summary>
+        /// 共享带宽加入弹性公网IP
+        ///
+        /// 共享带宽加入弹性公网IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AttachShareBandwidthResponse AttachShareBandwidth(AttachShareBandwidthRequest attachShareBandwidthRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("publicip_id" , attachShareBandwidthRequest.PublicipId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/attach-share-bandwidth",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachShareBandwidthRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AttachShareBandwidthResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询弹性公网IP可用数
         ///
         /// IP池用于查询公网可用ip个数
@@ -126,6 +175,56 @@ namespace HuaweiCloud.SDK.Eip.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countEipAvailableResourcesRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CountEipAvailableResourcesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 共享带宽批量移出弹性公网IP
+        ///
+        /// 共享带宽批量移出弹性公网IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DetachBatchPublicIpResponse DetachBatchPublicIp(DetachBatchPublicIpRequest detachBatchPublicIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/detach-share-bandwidth",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", detachBatchPublicIpRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetachBatchPublicIpResponse>(response);
+        }
+        
+        /// <summary>
+        /// 共享带宽移出弹性公网IP
+        ///
+        /// 共享带宽移出弹性公网IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DetachShareBandwidthResponse DetachShareBandwidth(DetachShareBandwidthRequest detachShareBandwidthRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("publicip_id" , detachShareBandwidthRequest.PublicipId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/detach-share-bandwidth",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", detachShareBandwidthRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DetachShareBandwidthResponse>(response);
+        }
+        
+        /// <summary>
+        /// 弹性公网IP关闭NAT64
+        ///
+        /// 弹性公网IP关闭NAT64
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DisableNat64Response DisableNat64(DisableNat64Request disableNat64Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("publicip_id" , disableNat64Request.PublicipId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/disable-nat64",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableNat64Request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DisableNat64Response>(response);
         }
         
         /// <summary>
@@ -143,6 +242,23 @@ namespace HuaweiCloud.SDK.Eip.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociatePublicipsRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<DisassociatePublicipsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 弹性公网IP开启NAT64
+        ///
+        /// 弹性公网IP开启NAT64
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public EnableNat64Response EnableNat64(EnableNat64Request enableNat64Request)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("publicip_id" , enableNat64Request.PublicipId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/enable-nat64",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableNat64Request);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<EnableNat64Response>(response);
         }
         
         /// <summary>

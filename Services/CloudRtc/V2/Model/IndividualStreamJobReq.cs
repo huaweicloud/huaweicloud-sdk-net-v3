@@ -295,12 +295,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("publish_param", NullValueHandling = NullValueHandling.Ignore)]
-        public PublishParam PublishParam { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("record_param", NullValueHandling = NullValueHandling.Ignore)]
         public RecordParam RecordParam { get; set; }
 
@@ -319,7 +313,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
             sb.Append("  videoType: ").Append(VideoType).Append("\n");
             sb.Append("  selectStreamType: ").Append(SelectStreamType).Append("\n");
             sb.Append("  maxIdleTime: ").Append(MaxIdleTime).Append("\n");
-            sb.Append("  publishParam: ").Append(PublishParam).Append("\n");
             sb.Append("  recordParam: ").Append(RecordParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -373,11 +366,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
                     this.MaxIdleTime.Equals(input.MaxIdleTime))
                 ) && 
                 (
-                    this.PublishParam == input.PublishParam ||
-                    (this.PublishParam != null &&
-                    this.PublishParam.Equals(input.PublishParam))
-                ) && 
-                (
                     this.RecordParam == input.RecordParam ||
                     (this.RecordParam != null &&
                     this.RecordParam.Equals(input.RecordParam))
@@ -404,8 +392,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
                     hashCode = hashCode * 59 + this.SelectStreamType.GetHashCode();
                 if (this.MaxIdleTime != null)
                     hashCode = hashCode * 59 + this.MaxIdleTime.GetHashCode();
-                if (this.PublishParam != null)
-                    hashCode = hashCode * 59 + this.PublishParam.GetHashCode();
                 if (this.RecordParam != null)
                     hashCode = hashCode * 59 + this.RecordParam.GetHashCode();
                 return hashCode;

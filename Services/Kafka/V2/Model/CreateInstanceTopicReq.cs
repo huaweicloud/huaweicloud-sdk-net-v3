@@ -52,6 +52,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("retention_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetentionTime { get; set; }
 
+        /// <summary>
+        /// topic配置
+        /// </summary>
+        [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateInstanceTopicReqTopicOtherConfigs> TopicOtherConfigs { get; set; }
+
+        /// <summary>
+        /// topic描述
+        /// </summary>
+        [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string TopicDesc { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  partition: ").Append(Partition).Append("\n");
             sb.Append("  syncReplication: ").Append(SyncReplication).Append("\n");
             sb.Append("  retentionTime: ").Append(RetentionTime).Append("\n");
+            sb.Append("  topicOtherConfigs: ").Append(TopicOtherConfigs).Append("\n");
+            sb.Append("  topicDesc: ").Append(TopicDesc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +131,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.RetentionTime == input.RetentionTime ||
                     (this.RetentionTime != null &&
                     this.RetentionTime.Equals(input.RetentionTime))
+                ) && 
+                (
+                    this.TopicOtherConfigs == input.TopicOtherConfigs ||
+                    this.TopicOtherConfigs != null &&
+                    input.TopicOtherConfigs != null &&
+                    this.TopicOtherConfigs.SequenceEqual(input.TopicOtherConfigs)
+                ) && 
+                (
+                    this.TopicDesc == input.TopicDesc ||
+                    (this.TopicDesc != null &&
+                    this.TopicDesc.Equals(input.TopicDesc))
                 );
         }
 
@@ -140,6 +165,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
                 if (this.RetentionTime != null)
                     hashCode = hashCode * 59 + this.RetentionTime.GetHashCode();
+                if (this.TopicOtherConfigs != null)
+                    hashCode = hashCode * 59 + this.TopicOtherConfigs.GetHashCode();
+                if (this.TopicDesc != null)
+                    hashCode = hashCode * 59 + this.TopicDesc.GetHashCode();
                 return hashCode;
             }
         }

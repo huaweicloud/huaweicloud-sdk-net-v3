@@ -6,6 +6,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
 {
     public class KafkaRegion
     {
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://dms.eu-west-101.myhuaweicloud.eu");
         public static readonly Region CN_NORTH_1 = new Region("cn-north-1",
             "https://dms.cn-north-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_2 = new Region("cn-north-2",
@@ -49,6 +51,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
+                { "eu-west-101", EU_WEST_101 },
                 { "cn-north-1", CN_NORTH_1 },
                 { "cn-north-2", CN_NORTH_2 },
                 { "cn-north-4", CN_NORTH_4 },

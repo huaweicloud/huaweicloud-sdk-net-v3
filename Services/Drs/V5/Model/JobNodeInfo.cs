@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("vpc", NullValueHandling = NullValueHandling.Ignore)]
         public JobNodeVpcInfo Vpc { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("base_info", NullValueHandling = NullValueHandling.Ignore)]
+        public JobNodeBaseInfo BaseInfo { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("class JobNodeInfo {\n");
             sb.Append("  spec: ").Append(Spec).Append("\n");
             sb.Append("  vpc: ").Append(Vpc).Append("\n");
+            sb.Append("  baseInfo: ").Append(BaseInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.Vpc == input.Vpc ||
                     (this.Vpc != null &&
                     this.Vpc.Equals(input.Vpc))
+                ) && 
+                (
+                    this.BaseInfo == input.BaseInfo ||
+                    (this.BaseInfo != null &&
+                    this.BaseInfo.Equals(input.BaseInfo))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.Spec.GetHashCode();
                 if (this.Vpc != null)
                     hashCode = hashCode * 59 + this.Vpc.GetHashCode();
+                if (this.BaseInfo != null)
+                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
                 return hashCode;
             }
         }

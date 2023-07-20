@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class UpdateInstanceReq 
     {
         /// <summary>
-        /// 容量阈值策略。 支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
+        /// 容量阈值策略。  支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
         /// </summary>
-        /// <value>容量阈值策略。 支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 </value>
+        /// <value>容量阈值策略。  支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 </value>
         [JsonConverter(typeof(EnumClassConverter<RetentionPolicyEnum>))]
         public class RetentionPolicyEnum
         {
@@ -156,13 +156,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string MaintainEnd { get; set; }
 
         /// <summary>
-        /// 安全组ID。
+        /// 安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 容量阈值策略。 支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
+        /// 容量阈值策略。  支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
         /// </summary>
         [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
         public RetentionPolicyEnum RetentionPolicy { get; set; }

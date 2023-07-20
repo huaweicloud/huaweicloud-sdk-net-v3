@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public AlarmNotifyConfig AlarmNotify { get; set; }
 
         /// <summary>
-        /// 限速信息体。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。  - 不限速：对迁移速度不进行限制，通常会最大化使用源数据库的出口带宽。该流速模式同时会对源数据库造成读消耗，消耗取决于源数据库的出口带宽。比如：源数据库的出口带宽为100MB/s，假设高速模式使用了80%带宽，则迁移对源数据库将造成80MB/s的读操作IO消耗。
+        /// 限速信息体。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。 - 不限速：对迁移速度不进行限制，通常会最大化使用源数据库的出口带宽。该流速模式同时会对源数据库造成读消耗，消耗取决于源数据库的出口带宽。比如：源数据库的出口带宽为100MB/s，假设高速模式使用了80%带宽，则迁移对源数据库将造成80MB/s的读操作IO消耗。
         /// </summary>
         [JsonProperty("speed_limit", NullValueHandling = NullValueHandling.Ignore)]
         public List<SpeedLimitInfo> SpeedLimit { get; set; }
@@ -154,6 +154,24 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("compare_result", NullValueHandling = NullValueHandling.Ignore)]
         public CompareResultInfo CompareResult { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("support_import_file_resp", NullValueHandling = NullValueHandling.Ignore)]
+        public SupportImportFileResult SupportImportFileResp { get; set; }
+
+        /// <summary>
+        /// 由开关和版本共同控制的任务级别的功能列表。
+        /// </summary>
+        [JsonProperty("instance_features", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> InstanceFeatures { get; set; }
+
+        /// <summary>
+        /// 任务版本。
+        /// </summary>
+        [JsonProperty("task_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskVersion { get; set; }
+
 
 
         /// <summary>
@@ -186,6 +204,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  migrationObjectProgressInfo: ").Append(MigrationObjectProgressInfo).Append("\n");
             sb.Append("  metrics: ").Append(Metrics).Append("\n");
             sb.Append("  compareResult: ").Append(CompareResult).Append("\n");
+            sb.Append("  supportImportFileResp: ").Append(SupportImportFileResp).Append("\n");
+            sb.Append("  instanceFeatures: ").Append(InstanceFeatures).Append("\n");
+            sb.Append("  taskVersion: ").Append(TaskVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -326,6 +347,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.CompareResult == input.CompareResult ||
                     (this.CompareResult != null &&
                     this.CompareResult.Equals(input.CompareResult))
+                ) && 
+                (
+                    this.SupportImportFileResp == input.SupportImportFileResp ||
+                    (this.SupportImportFileResp != null &&
+                    this.SupportImportFileResp.Equals(input.SupportImportFileResp))
+                ) && 
+                (
+                    this.InstanceFeatures == input.InstanceFeatures ||
+                    this.InstanceFeatures != null &&
+                    input.InstanceFeatures != null &&
+                    this.InstanceFeatures.SequenceEqual(input.InstanceFeatures)
+                ) && 
+                (
+                    this.TaskVersion == input.TaskVersion ||
+                    (this.TaskVersion != null &&
+                    this.TaskVersion.Equals(input.TaskVersion))
                 );
         }
 
@@ -383,6 +420,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.Metrics.GetHashCode();
                 if (this.CompareResult != null)
                     hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
+                if (this.SupportImportFileResp != null)
+                    hashCode = hashCode * 59 + this.SupportImportFileResp.GetHashCode();
+                if (this.InstanceFeatures != null)
+                    hashCode = hashCode * 59 + this.InstanceFeatures.GetHashCode();
+                if (this.TaskVersion != null)
+                    hashCode = hashCode * 59 + this.TaskVersion.GetHashCode();
                 return hashCode;
             }
         }

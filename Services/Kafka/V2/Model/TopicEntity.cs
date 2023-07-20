@@ -70,6 +70,24 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("topic_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicType { get; set; }
 
+        /// <summary>
+        /// topic其他配置
+        /// </summary>
+        [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TopicEntityTopicOtherConfigs> TopicOtherConfigs { get; set; }
+
+        /// <summary>
+        /// topic描述
+        /// </summary>
+        [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string TopicDesc { get; set; }
+
+        /// <summary>
+        /// topic创建时间
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CreatedAt { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +106,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  syncMessageFlush: ").Append(SyncMessageFlush).Append("\n");
             sb.Append("  externalConfigs: ").Append(ExternalConfigs).Append("\n");
             sb.Append("  topicType: ").Append(TopicType).Append("\n");
+            sb.Append("  topicOtherConfigs: ").Append(TopicOtherConfigs).Append("\n");
+            sb.Append("  topicDesc: ").Append(TopicDesc).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +174,22 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.TopicType == input.TopicType ||
                     (this.TopicType != null &&
                     this.TopicType.Equals(input.TopicType))
+                ) && 
+                (
+                    this.TopicOtherConfigs == input.TopicOtherConfigs ||
+                    this.TopicOtherConfigs != null &&
+                    input.TopicOtherConfigs != null &&
+                    this.TopicOtherConfigs.SequenceEqual(input.TopicOtherConfigs)
+                ) && 
+                (
+                    this.TopicDesc == input.TopicDesc ||
+                    (this.TopicDesc != null &&
+                    this.TopicDesc.Equals(input.TopicDesc))
+                ) && 
+                (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 );
         }
 
@@ -182,6 +219,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.ExternalConfigs.GetHashCode();
                 if (this.TopicType != null)
                     hashCode = hashCode * 59 + this.TopicType.GetHashCode();
+                if (this.TopicOtherConfigs != null)
+                    hashCode = hashCode * 59 + this.TopicOtherConfigs.GetHashCode();
+                if (this.TopicDesc != null)
+                    hashCode = hashCode * 59 + this.TopicDesc.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 return hashCode;
             }
         }

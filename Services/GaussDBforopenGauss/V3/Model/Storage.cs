@@ -1,0 +1,107 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
+{
+    /// <summary>
+    /// 实例磁盘类型信息。
+    /// </summary>
+    public class Storage 
+    {
+
+        /// <summary>
+        /// 磁盘类型名称，可能取值如下： - ULTRAHIGH，表示SSD。 - ESSD,表示急速云盘
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
+        /// </summary>
+        [JsonProperty("az_status", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> AzStatus { get; set; }
+
+        /// <summary>
+        /// 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用计算增强型。 - armFlavors2Shared：鲲鹏通用计算增强II型（共享型）。
+        /// </summary>
+        [JsonProperty("support_compute_group_type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SupportComputeGroupType { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class Storage {\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  azStatus: ").Append(AzStatus).Append("\n");
+            sb.Append("  supportComputeGroupType: ").Append(SupportComputeGroupType).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as Storage);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(Storage input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.AzStatus == input.AzStatus ||
+                    this.AzStatus != null &&
+                    input.AzStatus != null &&
+                    this.AzStatus.SequenceEqual(input.AzStatus)
+                ) && 
+                (
+                    this.SupportComputeGroupType == input.SupportComputeGroupType ||
+                    this.SupportComputeGroupType != null &&
+                    input.SupportComputeGroupType != null &&
+                    this.SupportComputeGroupType.SequenceEqual(input.SupportComputeGroupType)
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AzStatus != null)
+                    hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
+                if (this.SupportComputeGroupType != null)
+                    hashCode = hashCode * 59 + this.SupportComputeGroupType.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

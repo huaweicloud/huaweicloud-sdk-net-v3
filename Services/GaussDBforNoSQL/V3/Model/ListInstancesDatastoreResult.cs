@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("patch_available", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PatchAvailable { get; set; }
 
+        /// <summary>
+        /// 数据库的完整版本号(目前只有GaussDB(for Cassandra)支持)。
+        /// </summary>
+        [JsonProperty("whole_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string WholeVersion { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  patchAvailable: ").Append(PatchAvailable).Append("\n");
+            sb.Append("  wholeVersion: ").Append(WholeVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.PatchAvailable == input.PatchAvailable ||
                     (this.PatchAvailable != null &&
                     this.PatchAvailable.Equals(input.PatchAvailable))
+                ) && 
+                (
+                    this.WholeVersion == input.WholeVersion ||
+                    (this.WholeVersion != null &&
+                    this.WholeVersion.Equals(input.WholeVersion))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.PatchAvailable != null)
                     hashCode = hashCode * 59 + this.PatchAvailable.GetHashCode();
+                if (this.WholeVersion != null)
+                    hashCode = hashCode * 59 + this.WholeVersion.GetHashCode();
                 return hashCode;
             }
         }

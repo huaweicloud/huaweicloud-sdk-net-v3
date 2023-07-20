@@ -1,3 +1,144 @@
+# 3.1.48 2023-07-20
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 支持云日志服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持云数据库 GaussDB服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持云数据库 GaussDB服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持云数据库服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CloudRTC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateIndividualStreamJob**
+    - 请求参数变更
+      - `- publish_param`
+  - **UpdateIndividualStreamJob**
+    - 请求参数变更
+      - `- publish_param`
+  - **CreateMixJob**
+    - 请求参数变更
+      - `- publish_param`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 支持以下接口：
+    - `AttachShareBandwidth`
+    - `AttachBatchPublicIp`
+    - `DetachShareBandwidth`
+    - `DetachBatchPublicIp`
+    - `EnableNat64`
+    - `DisableNat64`
+    - `ListBandwidth`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 支持接口`DeleteBatchTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 支持接口`ListTopicPartitions`、`ListTopicProducers`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListProducts**
+    - 请求参数变更
+      - `+ engine: enum value [kafka]`
+  - **UpdateInstanceTopic**
+    - 请求参数变更
+      - `+ topics.topic_other_configs`
+      - `+ topics.topic_desc`
+  - **CreateInstanceTopic**
+    - 请求参数变更
+      - `+ topic_other_configs`
+      - `+ topic_desc`
+    - 响应参数变更
+      - `+ id`
+  - **ListInstanceTopics**
+    - 请求参数变更
+      - `- offset`
+      - `- limit`
+    - 响应参数变更
+      - `+ topics.topic_other_configs`
+      - `+ topics.topic_desc`
+      - `+ topics.created_at`
+  - **ListInstances**
+    - 请求参数变更
+      - `+ engine: enum value [kafka]`
+  - **ResizeEngineInstance**
+    - 请求参数变更
+      - `+ engine: enum value [kafka]`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowInstanceExtendProductInfo**
+    - 请求参数变更
+      - `+ engine: enum value [rabbitmq]`
+    - 响应参数变更
+      - `+ engine`
+      - `+ versions`
+      - `+ products`
+      - `- monthly`
+      - `- hourly`
+  - **ListProducts**
+    - 请求参数变更
+      - `+ engine: enum value [rabbitmq]`
+  - **ResizeEngineInstance**
+    - 请求参数变更
+      - `+ engine: enum value [rabbitmq]`
+  - **ShowEngineInstanceExtendProductInfo**
+    - 请求参数变更
+      - `+ engine: enum value [rabbitmq]`
+
 # 3.1.47 2023-07-13
 
 ### HuaweiCloud SDK CodeArtsDeploy

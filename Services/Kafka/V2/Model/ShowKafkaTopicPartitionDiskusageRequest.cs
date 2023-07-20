@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 占用磁盘大小，默认值1G (1K ,1M , 1G)。
+        /// 占用磁盘大小，默认值1G (1K，1M，1G)。
         /// </summary>
         [SDKProperty("minSize", IsQuery = true)]
         [JsonProperty("minSize", NullValueHandling = NullValueHandling.Ignore)]

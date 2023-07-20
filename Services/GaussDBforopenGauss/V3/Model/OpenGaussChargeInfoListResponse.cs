@@ -1,0 +1,185 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
+{
+    /// <summary>
+    /// 计费类型信息，支持按需和包周期。
+    /// </summary>
+    public class OpenGaussChargeInfoListResponse 
+    {
+        /// <summary>
+        /// 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
+        /// </summary>
+        /// <value>计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。</value>
+        [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
+        public class ChargeModeEnum
+        {
+            /// <summary>
+            /// Enum POSTPAID for value: postPaid
+            /// </summary>
+            public static readonly ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
+
+            private static readonly Dictionary<string, ChargeModeEnum> StaticFields =
+            new Dictionary<string, ChargeModeEnum>()
+            {
+                { "postPaid", POSTPAID },
+            };
+
+            private string _value;
+
+            public ChargeModeEnum()
+            {
+
+            }
+
+            public ChargeModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ChargeModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ChargeModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ChargeModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ChargeModeEnum a, ChargeModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
+        /// </summary>
+        [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public ChargeModeEnum ChargeMode { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class OpenGaussChargeInfoListResponse {\n");
+            sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as OpenGaussChargeInfoListResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(OpenGaussChargeInfoListResponse input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.ChargeMode == input.ChargeMode ||
+                    (this.ChargeMode != null &&
+                    this.ChargeMode.Equals(input.ChargeMode))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.ChargeMode != null)
+                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

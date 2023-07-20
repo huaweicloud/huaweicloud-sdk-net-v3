@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
+        /// <summary>
+        /// 实例类型。 取值为“Cluster”，表示GaussDB(for Cassandra)、GaussDB(for Influx)、GaussDB(for Redis)集群实例类型。 取值为“InfluxdbSingle”，表示GaussDB(for Influx)单节点实例类型。 取值为“ReplicaSet”，表示GaussDB(for Mongo)副本集实例类型。
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("class DataStoreList {\n");
             sb.Append("  datastoreName: ").Append(DatastoreName).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 return hashCode;
             }
         }

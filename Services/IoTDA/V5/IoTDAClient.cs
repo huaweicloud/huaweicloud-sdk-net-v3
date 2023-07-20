@@ -219,6 +219,24 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 删除批量任务
+        ///
+        /// 应用服务器可调用此接口删除物联网平台中已经完成（状态为成功，失败，部分成功，已停止）的批量任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBatchTaskResponse DeleteBatchTask(DeleteBatchTaskRequest deleteBatchTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , deleteBatchTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/batchtasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBatchTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            DeleteBatchTaskResponse deleteBatchTaskResponse = JsonUtils.DeSerializeNull<DeleteBatchTaskResponse>(response);
+            return deleteBatchTaskResponse;
+        }
+        
+        /// <summary>
         /// 查询批量任务列表
         ///
         /// 应用服务器可调用此接口查询物联网平台中批量任务列表，每一个任务又包括具体的任务内容、任务状态、任务完成情况统计等。

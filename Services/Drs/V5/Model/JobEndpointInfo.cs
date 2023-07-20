@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class JobEndpointInfo 
     {
         /// <summary>
-        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+        /// 数据库类型。取值： - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
         /// </summary>
-        /// <value>数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。</value>
+        /// <value>数据库类型。取值： - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。</value>
         [JsonConverter(typeof(EnumClassConverter<DbTypeEnum>))]
         public class DbTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 数据库实例类型。取值：  - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+        /// 数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
         /// </summary>
-        /// <value>数据库实例类型。取值：  - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。</value>
+        /// <value>数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。</value>
         [JsonConverter(typeof(EnumClassConverter<EndpointTypeEnum>))]
         public class EndpointTypeEnum
         {
@@ -368,12 +368,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+        /// 数据库类型。取值： - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
         /// </summary>
         [JsonProperty("db_type", NullValueHandling = NullValueHandling.Ignore)]
         public DbTypeEnum DbType { get; set; }
         /// <summary>
-        /// 数据库实例类型。取值：  - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+        /// 数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
         /// </summary>
         [JsonProperty("endpoint_type", NullValueHandling = NullValueHandling.Ignore)]
         public EndpointTypeEnum EndpointType { get; set; }

@@ -19,6 +19,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// topic名称。
         /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// topic名称。
+        /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
@@ -31,6 +37,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateInstanceTopicResponse {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -54,6 +61,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -68,6 +80,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;

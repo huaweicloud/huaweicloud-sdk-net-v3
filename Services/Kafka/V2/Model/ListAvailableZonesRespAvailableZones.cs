@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Port { get; set; }
 
         /// <summary>
-        /// 分区上是否还有可用资源。
+        /// 可用区上是否还有可用资源。
         /// </summary>
         [JsonProperty("resource_availability", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceAvailability { get; set; }

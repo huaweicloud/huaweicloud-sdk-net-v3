@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? NewBrokerNum { get; set; }
 
         /// <summary>
-        /// 垂直扩容时的新产品ID。  当oper_type类型是vertical时，该参数才有效且必填。
+        /// 垂直扩容时的新产品ID。  当oper_type类型是vertical时，该参数才有效且必填。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
         /// </summary>
         [JsonProperty("new_product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NewProductId { get; set; }
 
         /// <summary>
-        /// 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 当oper_type类型是horizontal时，该参数必填。
+        /// 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  当oper_type类型是horizontal时，该参数必填。
         /// </summary>
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }
