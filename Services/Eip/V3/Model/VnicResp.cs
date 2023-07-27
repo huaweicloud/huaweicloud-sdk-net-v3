@@ -35,6 +35,18 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string DeviceOwner { get; set; }
 
         /// <summary>
+        /// - 功能说明：VTEP IP
+        /// </summary>
+        [JsonProperty("vtep", NullValueHandling = NullValueHandling.Ignore)]
+        public string Vtep { get; set; }
+
+        /// <summary>
+        /// - 功能说明：VXLAN ID
+        /// </summary>
+        [JsonProperty("vni", NullValueHandling = NullValueHandling.Ignore)]
+        public string Vni { get; set; }
+
+        /// <summary>
         /// - 功能说明：PORT所在VPC的ID
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,6 +57,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
+
+        /// <summary>
+        /// - 功能说明：端口profile信息
+        /// </summary>
+        [JsonProperty("port_profile", NullValueHandling = NullValueHandling.Ignore)]
+        public string PortProfile { get; set; }
 
         /// <summary>
         /// - 功能说明：PORT的MAC信息
@@ -76,8 +94,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             sb.Append("  privateIpAddress: ").Append(PrivateIpAddress).Append("\n");
             sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  deviceOwner: ").Append(DeviceOwner).Append("\n");
+            sb.Append("  vtep: ").Append(Vtep).Append("\n");
+            sb.Append("  vni: ").Append(Vni).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  portId: ").Append(PortId).Append("\n");
+            sb.Append("  portProfile: ").Append(PortProfile).Append("\n");
             sb.Append("  mac: ").Append(Mac).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
@@ -118,6 +139,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     this.DeviceOwner.Equals(input.DeviceOwner))
                 ) && 
                 (
+                    this.Vtep == input.Vtep ||
+                    (this.Vtep != null &&
+                    this.Vtep.Equals(input.Vtep))
+                ) && 
+                (
+                    this.Vni == input.Vni ||
+                    (this.Vni != null &&
+                    this.Vni.Equals(input.Vni))
+                ) && 
+                (
                     this.VpcId == input.VpcId ||
                     (this.VpcId != null &&
                     this.VpcId.Equals(input.VpcId))
@@ -126,6 +157,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     this.PortId == input.PortId ||
                     (this.PortId != null &&
                     this.PortId.Equals(input.PortId))
+                ) && 
+                (
+                    this.PortProfile == input.PortProfile ||
+                    (this.PortProfile != null &&
+                    this.PortProfile.Equals(input.PortProfile))
                 ) && 
                 (
                     this.Mac == input.Mac ||
@@ -158,10 +194,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
                 if (this.DeviceOwner != null)
                     hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
+                if (this.Vtep != null)
+                    hashCode = hashCode * 59 + this.Vtep.GetHashCode();
+                if (this.Vni != null)
+                    hashCode = hashCode * 59 + this.Vni.GetHashCode();
                 if (this.VpcId != null)
                     hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.PortId != null)
                     hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.PortProfile != null)
+                    hashCode = hashCode * 59 + this.PortProfile.GetHashCode();
                 if (this.Mac != null)
                     hashCode = hashCode * 59 + this.Mac.GetHashCode();
                 if (this.InstanceId != null)

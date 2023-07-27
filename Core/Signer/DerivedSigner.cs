@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Text;
 using System.Globalization;
-using System.Security.Cryptography;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace HuaweiCloud.SDK.Core
 {
     public class DerivedSigner : Signer
     {
-        const string V11HmacSha256 = "V11-HMAC-SHA256";
+        private const string V11HmacSha256 = "V11-HMAC-SHA256";
 
         public void Sign(HttpRequest request, string regionId, string derivedAuthServiceName)
         {
@@ -44,19 +44,19 @@ namespace HuaweiCloud.SDK.Core
 
             // Create the string to sign
             var canonicalRequest = ConstructCanonicalRequest(request);
-            string timeStamp = t.ToUniversalTime().ToString(BasicDateFormat);
-            string info = timeStamp.Substring(0, 8) + "/" + regionId + "/" + derivedAuthServiceName;
-            string stringToSign = StringToSign(canonicalRequest, timeStamp, info);
+            var timeStamp = t.ToUniversalTime().ToString(BasicDateFormat);
+            var info = timeStamp.Substring(0, 8) + "/" + regionId + "/" + derivedAuthServiceName;
+            var stringToSign = StringToSign(canonicalRequest, timeStamp, info);
 
             // Calculate the signature
             var signedHeaders = ProcessSignedHeaders(request);
-            string derivationKey = Hkdf.GetDerKeySha(Key, Secret, info);
-            string signatureString = SignStringToSign(stringToSign, Encoding.UTF8.GetBytes(derivationKey));
+            var derivationKey = Hkdf.GetDerKeySha(Key, Secret, info);
+            var signatureString = SignStringToSign(stringToSign, Encoding.UTF8.GetBytes(derivationKey));
             var authValue = $"{V11HmacSha256} Credential={Key}/{info}, SignedHeaders={string.Join(";", signedHeaders)}, Signature={signatureString}";
             request.Headers.Set(HeaderAuthorization, authValue);
         }
 
-        string StringToSign(string canonicalRequest, string timeStamp, string info)
+        private string StringToSign(string canonicalRequest, string timeStamp, string info)
         {
             SHA256 sha256 = new SHA256Managed();
             var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
@@ -67,7 +67,7 @@ namespace HuaweiCloud.SDK.Core
                    $"{ToHexString(bytes)}";
         }
 
-        static class Hkdf
+        private static class Hkdf
         {
             private const string HmacSha1 = "HMACSHA1";
 
@@ -90,8 +90,8 @@ namespace HuaweiCloud.SDK.Core
 
                 try
                 {
-                    byte[] tmpKey = Extract(ak, sk);
-                    byte[] derSecretKey = Expend(tmpKey, Encoding.UTF8.GetBytes(info));
+                    var tmpKey = Extract(ak, sk);
+                    var derSecretKey = Expend(tmpKey, Encoding.UTF8.GetBytes(info));
                     if (derSecretKey != null)
                     {
                         return ToHexString(derSecretKey);
@@ -106,7 +106,7 @@ namespace HuaweiCloud.SDK.Core
 
             private static byte[] Expend(byte[] prk, byte[] info)
             {
-                HMAC hMacSha = HMAC.Create(HMAC_ALGORITHM);
+                var hMacSha = HMAC.Create(HMAC_ALGORITHM);
                 if (hMacSha == null)
                 {
                     throw new ArgumentException("unknown in HMAC algorithm");
@@ -121,11 +121,11 @@ namespace HuaweiCloud.SDK.Core
                 else
                 {
                     rawResult = new byte[0];
-                    byte[] temp = new byte[0];
-                    for (int i = 1; i <= ExpandCeil; ++i)
+                    var temp = new byte[0];
+                    for (var i = 1; i <= ExpandCeil; ++i)
                     {
                         temp = ExpandOnce(info, hMacSha, temp, i);
-                        MemoryStream combineBytes = new MemoryStream();
+                        var combineBytes = new MemoryStream();
                         combineBytes.Write(rawResult, 0, rawResult.Length);
                         combineBytes.Write(temp, 0, temp.Length);
                         rawResult = combineBytes.ToArray();
@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Core
 
             private static byte[] Extract(string ak, string sk)
             {
-                HMAC hMacSha = HMAC.Create(HMAC_ALGORITHM);
+                var hMacSha = HMAC.Create(HMAC_ALGORITHM);
                 if (hMacSha == null)
                 {
                     throw new ArgumentException("unknown in HMAC algorithm");
@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.Core
 
             private static byte[] ExpandFirst(byte[] info, HMAC mac)
             {
-                byte[] result = new byte[info.Length + 1];
+                var result = new byte[info.Length + 1];
                 Array.Copy(info, 0, result, 0, info.Length);
                 result[info.Length] = 0x01;
                 return mac.ComputeHash(result);
@@ -165,7 +165,7 @@ namespace HuaweiCloud.SDK.Core
 
             private static byte[] ExpandOnce(byte[] info, HMAC mac, byte[] preTemp, int i)
             {
-                MemoryStream hashBytes = new MemoryStream();
+                var hashBytes = new MemoryStream();
                 hashBytes.Write(preTemp, 0, preTemp.Length);
                 hashBytes.Write(info, 0, info.Length);
                 hashBytes.WriteByte((byte)i);
@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.Core
 
             private static string ToHexstring(byte[] data)
             {
-                string hex = string.Empty;
+                var hex = string.Empty;
                 foreach (var b in data)
                 {
                     hex += b.ToString("x2");

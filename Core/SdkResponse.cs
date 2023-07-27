@@ -36,17 +36,17 @@ namespace HuaweiCloud.SDK.Core
 
         public string GetHttpBody()
         {
-            return this.HttpBody;
+            return HttpBody;
         }
 
         public int? GetHttpStatusCode()
         {
-            return this.HttpStatusCode;
+            return HttpStatusCode;
         }
 
         public string GetHttpHeaders()
         {
-            return this.HttpHeaders;
+            return HttpHeaders;
         }
     }
 }

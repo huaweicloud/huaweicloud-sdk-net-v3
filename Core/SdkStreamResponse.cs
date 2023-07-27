@@ -30,12 +30,12 @@ namespace HuaweiCloud.SDK.Core
 
         public void SetStream(Stream stream)
         {
-            this._stream = stream;
+            _stream = stream;
         }
 
         public void ConsumeDownloadStream(Action<Stream> fn)
         {
-            fn(this._stream);
+            fn(_stream);
         }
     }
 }

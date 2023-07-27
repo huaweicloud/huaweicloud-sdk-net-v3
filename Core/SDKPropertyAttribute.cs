@@ -17,13 +17,13 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- */﻿
+ */
 
 using System;
 
 namespace HuaweiCloud.SDK.Core
 {
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public sealed class SDKPropertyAttribute : Attribute
     {
         public SDKPropertyAttribute(string propertyName)
@@ -40,7 +40,7 @@ namespace HuaweiCloud.SDK.Core
         public bool IsBody { get; set; }
 
         public bool IsPath { get; set; }
-        
+
         public bool IsCname { get; set; }
     }
 }

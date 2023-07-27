@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Core
 {
     public static class JsonUtils
     {
-        public static T DeSerialize<T>(HttpResponseMessage message)
+        public static T DeSerialize<T>(HttpResponseMessage message) where T : SdkResponse
         {
             if (typeof(T).IsSubclassOf(typeof(SdkStreamResponse)))
             {
@@ -38,35 +38,35 @@ namespace HuaweiCloud.SDK.Core
             }
 
             var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
-            var jsonObject = SetResponseBody<T>(body);
+            var response = SetResponseBody<T>(body);
 
-            HttpUtils.SetAdditionalAttrs(message, jsonObject, body);
-            HttpUtils.SetResponseHeaders(message, jsonObject);
+            HttpUtils.SetAdditionalAttrs(message, response, body);
+            HttpUtils.SetResponseHeaders(message, response);
 
-            return jsonObject;
+            return response;
         }
 
-        private static T SetResponseBody<T>(string body)
+        private static T SetResponseBody<T>(string body) where T : SdkResponse
         {
             return string.IsNullOrEmpty(body) ? Activator.CreateInstance<T>() : JsonConvert.DeserializeObject<T>(body, GetJsonSettings());
         }
 
         public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse
         {
-            var jsonObject = SetResponseBody<T>(response.HttpBody);
-            jsonObject.HttpStatusCode = response.HttpStatusCode;
-            jsonObject.HttpHeaders = response.HttpHeaders;
-            jsonObject.HttpBody = response.HttpBody;
-            return jsonObject;
+            var tResponse = SetResponseBody<T>(response.HttpBody);
+            tResponse.HttpStatusCode = response.HttpStatusCode;
+            tResponse.HttpHeaders = response.HttpHeaders;
+            tResponse.HttpBody = response.HttpBody;
+            return tResponse;
         }
 
         public static T DeSerializeNull<T>(HttpResponseMessage message) where T : SdkResponse
         {
-            var t = Activator.CreateInstance<T>();
-            t.HttpStatusCode = (int)message.StatusCode;
-            t.HttpHeaders = message.Headers.ToString();
-            t.HttpBody = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
-            return t;
+            var response = Activator.CreateInstance<T>();
+            response.HttpStatusCode = (int)message.StatusCode;
+            response.HttpHeaders = message.Headers.ToString();
+            response.HttpBody = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
+            return response;
         }
 
         public static List<T> DeSerializeList<T>(HttpResponseMessage message)

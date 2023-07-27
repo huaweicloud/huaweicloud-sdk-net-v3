@@ -19,10 +19,10 @@
  * under the License.
  */
 
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
@@ -30,6 +30,10 @@ namespace HuaweiCloud.SDK.Core.Auth
     {
         public static readonly string DEFAULT_ENDPOINT_REG =
             "^[a-z][a-z0-9-]+(\\.[a-z]{2,}-[a-z]+-\\d{1,2})?\\.(my)?(huaweicloud|myhwclouds).(com|cn)";
+
+        public static Func<HttpRequest, bool> DefaultDerivedPredicate = httpRequest =>
+            !Regex.IsMatch(httpRequest.Url.Host, DEFAULT_ENDPOINT_REG);
+
         public abstract Dictionary<string, string> GetPathParamDictionary();
 
         public abstract Task<HttpRequest> SignAuthRequest(HttpRequest request);
@@ -37,8 +41,5 @@ namespace HuaweiCloud.SDK.Core.Auth
         public abstract Credentials ProcessAuthParams(SdkHttpClient client, string regionId);
 
         public abstract void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId);
-
-        public static Func<HttpRequest, bool> DefaultDerivedPredicate = httpRequest =>
-            !Regex.IsMatch(httpRequest.Url.Host, DEFAULT_ENDPOINT_REG);
     }
 }

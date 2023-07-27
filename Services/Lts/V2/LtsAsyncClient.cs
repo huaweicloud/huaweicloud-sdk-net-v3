@@ -999,6 +999,24 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 修改日志流
+        ///
+        /// 该接口用于修改指定日志流下的日志存储时长。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateLogStreamResponse> UpdateLogStreamAsync(UpdateLogStreamRequest updateLogStreamRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("log_group_id" , updateLogStreamRequest.LogGroupId.ToString());
+            urlParam.Add("log_stream_id" , updateLogStreamRequest.LogStreamId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams_ttl/{log_stream_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogStreamRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateLogStreamResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改消息模板
         ///
         /// 该接口用于修改通知模板,根据名称进行修改。

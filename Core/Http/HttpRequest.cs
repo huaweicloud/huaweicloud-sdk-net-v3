@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Core
 {
     public class HttpRequest
     {
-        public string Method = "GET";
-        public string Host = "";
-        public Uri Url = null;
-        public Dictionary<string, List<string>> QueryParam = new Dictionary<string, List<string>>();
-        public WebHeaderCollection Headers = new WebHeaderCollection();
         public string Body = "";
         public string ContentType = "application/json";
         public Stream FileStream = Stream.Null;
         public Dictionary<string, object> FormData;
+        public WebHeaderCollection Headers = new WebHeaderCollection();
+        public string Host = "";
+        public string Method = "GET";
+        public Dictionary<string, List<string>> QueryParam = new Dictionary<string, List<string>>();
+        public Uri Url;
 
         public HttpRequest(string method = "GET", string contentType = "application/json", Uri url = null,
             WebHeaderCollection headers = null,
@@ -85,7 +85,10 @@ namespace HuaweiCloud.SDK.Core
             {
                 foreach (var kv in Url.Query.Substring(1).Split('&'))
                 {
-                    var spl = kv.Split(new char[] {'='}, 2);
+                    var spl = kv.Split(new[]
+                    {
+                        '='
+                    }, 2);
                     var key = WebUtility.UrlDecode(spl[0]);
                     var value = "";
                     if (spl.Length > 1)
@@ -99,7 +102,10 @@ namespace HuaweiCloud.SDK.Core
                     }
                     else
                     {
-                        QueryParam[key] = new List<string> {value};
+                        QueryParam[key] = new List<string>
+                        {
+                            value
+                        };
                     }
                 }
             }

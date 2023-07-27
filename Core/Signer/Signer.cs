@@ -33,11 +33,11 @@ namespace HuaweiCloud.SDK.Core
     public partial class Signer
     {
         protected const string BasicDateFormat = "yyyyMMddTHHmmssZ";
-        const string Algorithm = "SDK-HMAC-SHA256";
+        private const string Algorithm = "SDK-HMAC-SHA256";
         protected const string HeaderXDate = "X-Sdk-Date";
         protected const string HeaderHost = "host";
         protected const string HeaderAuthorization = "Authorization";
-        const string HeaderContentSha256 = "X-Sdk-Content-Sha256";
+        private const string HeaderContentSha256 = "X-Sdk-Content-Sha256";
 
         private readonly HashSet<string> _unsignedHeaders = new HashSet<string>
         {
@@ -80,25 +80,25 @@ namespace HuaweiCloud.SDK.Core
 
         protected void verifyAkSk()
         {
-            if (string.IsNullOrEmpty(Key))
+            if (IsNullOrEmpty(Key))
             {
                 throw new ArgumentException("Ak is required in credentials");
             }
-            if (string.IsNullOrEmpty(Secret))
+            if (IsNullOrEmpty(Secret))
             {
                 throw new ArgumentException("Sk is required in credentials");
             }
         }
 
         /// <summary>
-        /// Build a CanonicalRequest from a regular request string
-        /// CanonicalRequest consists of several parts:
-        ///   Part 1. HTTPRequestMethod
-        ///   Part 2. CanonicalURI
-        ///   Part 3. CanonicalQueryString
-        ///   Part 4. CanonicalHeaders
-        ///   Part 5 SignedHeaders
-        ///   Part 6 HexEncode(Hash(RequestPayload))
+        ///     Build a CanonicalRequest from a regular request string
+        ///     CanonicalRequest consists of several parts:
+        ///     Part 1. HTTPRequestMethod
+        ///     Part 2. CanonicalURI
+        ///     Part 3. CanonicalQueryString
+        ///     Part 4. CanonicalHeaders
+        ///     Part 5 SignedHeaders
+        ///     Part 6 HexEncode(Hash(RequestPayload))
         /// </summary>
         protected string ConstructCanonicalRequest(HttpRequest request)
         {

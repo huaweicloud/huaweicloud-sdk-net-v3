@@ -23,9 +23,9 @@ namespace HuaweiCloud.SDK.Core
 {
     public class RetryOutageException : RequestTimeoutException
     {
-        public RetryOutageException(string errorMessage):base(errorMessage)
+        public RetryOutageException(string errorMessage) : base(errorMessage)
         {
-            this.ErrorMessage = errorMessage;
+            ErrorMessage = errorMessage;
         }
     }
 }

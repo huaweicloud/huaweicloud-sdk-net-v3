@@ -284,6 +284,22 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 获取备份下载链接
+        ///
+        /// 获取备份下载链接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadBackupResponse> DownloadBackupAsync(DownloadBackupRequest downloadBackupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-files",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBackupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<DownloadBackupResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询可应用实例列表
         ///
         /// 查询可应用当前参数组模板的实例列表。

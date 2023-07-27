@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.Core
 
         private class ExclusiveSynchronizationContext : SynchronizationContext
         {
-            public Exception InnerException { get; set; }
 
-            private bool _done;
+            private readonly Queue<Tuple<SendOrPostCallback, object>> _items = new Queue<Tuple<SendOrPostCallback, object>>();
 
             private readonly AutoResetEvent _workItemsWaiting = new AutoResetEvent(false);
 
-            private readonly Queue<Tuple<SendOrPostCallback, object>> _items = new Queue<Tuple<SendOrPostCallback, object>>();
+            private bool _done;
+            public Exception InnerException { get; set; }
 
             public override void Send(SendOrPostCallback d, object state)
             {

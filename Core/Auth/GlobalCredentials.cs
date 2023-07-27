@@ -22,38 +22,38 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using static System.String;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
     public class GlobalCredentials : Credentials
     {
-        private string Ak { set; get; }
-        private string Sk { set; get; }
-        private string DomainId { set; get; }
-        private string SecurityToken { set; get; }
-        private string IamEndpoint { set; get; }
-        private Func<HttpRequest, bool> DerivedPredicate { set; get; }
         private string _derivedAuthServiceName;
         private string _regionId;
 
 
         public GlobalCredentials(string ak, string sk, string domainId = null)
         {
-            if (IsNullOrEmpty(ak))
+            if (string.IsNullOrEmpty(ak))
             {
                 throw new ArgumentNullException(nameof(ak));
             }
 
-            if (IsNullOrEmpty(sk))
+            if (string.IsNullOrEmpty(sk))
             {
                 throw new ArgumentNullException(nameof(sk));
             }
 
-            this.Ak = ak;
-            this.Sk = sk;
-            this.DomainId = domainId;
+            Ak = ak;
+            Sk = sk;
+            DomainId = domainId;
         }
+
+        private string Ak { set; get; }
+        private string Sk { set; get; }
+        private string DomainId { set; get; }
+        private string SecurityToken { set; get; }
+        private string IamEndpoint { set; get; }
+        private Func<HttpRequest, bool> DerivedPredicate { set; get; }
 
         public GlobalCredentials WithIamEndpoint(string endpoint)
         {
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public GlobalCredentials WithSecurityToken(string token)
         {
-            this.SecurityToken = token;
+            SecurityToken = token;
             return this;
         }
 
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.Core.Auth
          */
         public GlobalCredentials WithDerivedPredicate(Func<HttpRequest, bool> func)
         {
-            this.DerivedPredicate = func;
+            DerivedPredicate = func;
             return this;
         }
 
@@ -89,14 +89,14 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public override void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId)
         {
-            if (this._derivedAuthServiceName == null)
+            if (_derivedAuthServiceName == null)
             {
-                this._derivedAuthServiceName = derivedAuthServiceName;
+                _derivedAuthServiceName = derivedAuthServiceName;
             }
 
-            if (this._regionId == null)
+            if (_regionId == null)
             {
-                this._regionId = regionId;
+                _regionId = regionId;
             }
         }
 
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public override Task<HttpRequest> SignAuthRequest(HttpRequest request)
         {
-            Task<HttpRequest> httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
+            var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
                 if (DomainId != null)
                 {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                     request.Headers.Add("X-Security-Token", SecurityToken);
                 }
 
-                if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
+                if (!string.IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
                 {
                     request.Headers.Add("X-Sdk-Content-Sha256", "UNSIGNED-PAYLOAD");
                 }
@@ -170,10 +170,10 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
-            Func<HttpRequest, bool> derivedFunc = DerivedPredicate;
+            var derivedFunc = DerivedPredicate;
             DerivedPredicate = null;
 
-            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
             var request = IamService.GetKeystoneListAuthDomainsRequest(IamEndpoint);
             request = SignAuthRequest(request).Result;
             try

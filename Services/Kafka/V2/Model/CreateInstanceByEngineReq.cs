@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
+        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
         /// </summary>
-        /// <value>消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7</value>
+        /// <value>消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7</value>
         [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
         public class EngineVersionEnum
         {
@@ -609,7 +609,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
+        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
@@ -726,6 +726,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
         public RetentionPolicyEnum RetentionPolicy { get; set; }
         /// <summary>
+        /// 是否开启磁盘加密。
+        /// </summary>
+        [JsonProperty("disk_encrypted_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DiskEncryptedEnable { get; set; }
+
+        /// <summary>
+        /// 磁盘加密key，未开启磁盘加密时为空
+        /// </summary>
+        [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptedKey { get; set; }
+
+        /// <summary>
         /// 是否开启消息转储功能。  默认不开启消息转储。
         /// </summary>
         [JsonProperty("connector_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -804,6 +816,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  kafkaSecurityProtocol: ").Append(KafkaSecurityProtocol).Append("\n");
             sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
+            sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
+            sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
             sb.Append("  enableAutoTopic: ").Append(EnableAutoTopic).Append("\n");
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
@@ -951,6 +965,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.RetentionPolicy.Equals(input.RetentionPolicy))
                 ) && 
                 (
+                    this.DiskEncryptedEnable == input.DiskEncryptedEnable ||
+                    (this.DiskEncryptedEnable != null &&
+                    this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))
+                ) && 
+                (
+                    this.DiskEncryptedKey == input.DiskEncryptedKey ||
+                    (this.DiskEncryptedKey != null &&
+                    this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))
+                ) && 
+                (
                     this.ConnectorEnable == input.ConnectorEnable ||
                     (this.ConnectorEnable != null &&
                     this.ConnectorEnable.Equals(input.ConnectorEnable))
@@ -1047,6 +1071,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.RetentionPolicy != null)
                     hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
+                if (this.DiskEncryptedEnable != null)
+                    hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();
+                if (this.DiskEncryptedKey != null)
+                    hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
                 if (this.ConnectorEnable != null)
                     hashCode = hashCode * 59 + this.ConnectorEnable.GetHashCode();
                 if (this.EnableAutoTopic != null)

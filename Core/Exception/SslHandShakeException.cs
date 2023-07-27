@@ -27,12 +27,12 @@ namespace HuaweiCloud.SDK.Core
     {
         public SslHandShakeException(string errorMessage) : base(errorMessage)
         {
-            this.ErrorMessage = errorMessage;
+            ErrorMessage = errorMessage;
         }
 
         public SslHandShakeException(string errorMessage, Exception innerException) : base(errorMessage, innerException)
         {
-            this.ErrorMessage = errorMessage;
+            ErrorMessage = errorMessage;
         }
     }
 }

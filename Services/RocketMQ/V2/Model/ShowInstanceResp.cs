@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb)
+        /// [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb)
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }

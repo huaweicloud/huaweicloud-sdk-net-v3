@@ -52,19 +52,19 @@ namespace HuaweiCloud.SDK.Core
 
         public HttpConfig WithTimeout(int timeout)
         {
-            this.Timeout = timeout;
+            Timeout = timeout;
             return this;
         }
 
         public HttpConfig WithIgnoreSslVerification(bool ignore)
         {
-            this.IgnoreSslVerification = ignore;
+            IgnoreSslVerification = ignore;
             return this;
         }
 
         public HttpConfig WithIgnoreBodyForGetRequest(bool ignore)
         {
-            this.IgnoreBodyForGetRequest = ignore;
+            IgnoreBodyForGetRequest = ignore;
             return this;
         }
 
@@ -74,37 +74,37 @@ namespace HuaweiCloud.SDK.Core
         /// </summary>
         public HttpConfig WithAllowRedirects(bool allowRedirects)
         {
-            this.AllowRedirects = allowRedirects;
+            AllowRedirects = allowRedirects;
             return this;
         }
 
         public HttpConfig WithIgnoreProxyUsername(string username)
         {
-            this.ProxyUsername = username;
+            ProxyUsername = username;
             return this;
         }
 
         public HttpConfig WithIgnoreProxyPassword(string password)
         {
-            this.ProxyPassword = password;
+            ProxyPassword = password;
             return this;
         }
 
         public HttpConfig WithProxyDomain(string domain)
         {
-            this.ProxyDomain = domain;
+            ProxyDomain = domain;
             return this;
         }
 
         public HttpConfig WithProxyHost(string host)
         {
-            this.ProxyHost = host;
+            ProxyHost = host;
             return this;
         }
 
         public HttpConfig WithProxyPort(int port)
         {
-            this.ProxyPort = port;
+            ProxyPort = port;
             return this;
         }
     }

@@ -23,6 +23,16 @@ namespace HuaweiCloud.SDK.Core
 {
     public class ServiceResponseException : SdkException
     {
+
+        public ServiceResponseException(int? httpStatusCode, SdkError sdkError)
+        {
+            HttpStatusCode = httpStatusCode;
+            ErrorCode = sdkError.ErrorCode;
+            ErrorMsg = sdkError.ErrorMsg;
+            RequestId = sdkError.RequestId;
+            EncodedAuthorizationMessage = sdkError.EncodedAuthorizationMessage;
+        }
+
         public int? HttpStatusCode { get; set; }
 
         public string ErrorMsg { get; set; }
@@ -32,15 +42,6 @@ namespace HuaweiCloud.SDK.Core
         public string RequestId { get; set; }
 
         public string EncodedAuthorizationMessage { get; set; }
-
-        public ServiceResponseException(int? httpStatusCode, SdkError sdkError)
-        {
-            this.HttpStatusCode = httpStatusCode;
-            this.ErrorCode = sdkError.ErrorCode;
-            this.ErrorMsg = sdkError.ErrorMsg;
-            this.RequestId = sdkError.RequestId;
-            this.EncodedAuthorizationMessage = sdkError.EncodedAuthorizationMessage;
-        }
 
         public static ServiceResponseException MapException(int? httpStatusCode, SdkError sdkError)
         {

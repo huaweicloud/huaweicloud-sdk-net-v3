@@ -19,12 +19,24 @@
  * under the License.
  */
 
+using System;
 using System.IO;
 
 namespace HuaweiCloud.SDK.Core
 {
-    public class SdkStreamRequest
+    public class SdkStreamRequest : IProgressRequest
     {
+        private double _metric;
         public Stream FileStream { get; set; }
+
+        public ProgressTypeEnum ProgressType { get; set; }
+
+        public double ProgressInterval
+        {
+            get => _metric <= 0 ? ProgressType == ProgressTypeEnum.ByBytes ? Constants.DefaultProgressInterval : 1 : _metric;
+            set => _metric = value;
+        }
+
+        public EventHandler<TransferStatus> TransferProgress { get; set; }
     }
 }

@@ -27,12 +27,12 @@ namespace HuaweiCloud.SDK.Core
     {
         public HostUnreachableException(string errorMessage) : base(errorMessage)
         {
-            this.ErrorMessage = errorMessage;
+            ErrorMessage = errorMessage;
         }
 
         public HostUnreachableException(string errorMessage, Exception innerException) : base(errorMessage, innerException)
         {
-            this.ErrorMessage = errorMessage;
+            ErrorMessage = errorMessage;
         }
     }
 }

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string DbName { get; set; }
 
         /// <summary>
-        /// 新用户所拥有的角色。
+        /// 新用户所拥有的角色。 roles限制了该帐户所具有的权限。若指定一个空数组，表示该帐户不具有任何权限。
         /// </summary>
         [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
         public List<RolesOption> Roles { get; set; }

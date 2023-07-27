@@ -27,15 +27,17 @@ namespace HuaweiCloud.SDK.Core
 {
     public class EnumClassConverter<T> : JsonConverter
     {
-        private readonly FieldInfo _value = typeof(T).GetField("_value", BindingFlags.Instance | BindingFlags.NonPublic);
-        private readonly MethodInfo _methodGetValue = typeof(T).GetMethod("GetValue");
         private readonly MethodInfo _methodFromValue = typeof(T).GetMethod("FromValue");
+        private readonly MethodInfo _methodGetValue = typeof(T).GetMethod("GetValue");
+        private readonly FieldInfo _value = typeof(T).GetField("_value", BindingFlags.Instance | BindingFlags.NonPublic);
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             if (value != null)
             {
-                var actualValue = _methodGetValue.Invoke(value, new object[] { });
+                var actualValue = _methodGetValue.Invoke(value, new object[]
+                {
+                });
                 writer.WriteValue(actualValue);
             }
         }
@@ -54,11 +56,20 @@ namespace HuaweiCloud.SDK.Core
                 actualValue = Convert.ChangeType(reader.Value, Nullable.GetUnderlyingType(_value.FieldType));
             }
 
-            var obj = _methodFromValue.Invoke(null, new[] {actualValue});
+            var obj = _methodFromValue.Invoke(null, new[]
+            {
+                actualValue
+            });
             if (obj == null)
             {
-                ConstructorInfo constructor = typeof(T).GetConstructor(new[] {_value.FieldType});
-                obj = constructor.Invoke(new[] {actualValue});
+                var constructor = typeof(T).GetConstructor(new[]
+                {
+                    _value.FieldType
+                });
+                obj = constructor.Invoke(new[]
+                {
+                    actualValue
+                });
             }
 
             return obj;

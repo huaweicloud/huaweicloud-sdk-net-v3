@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("ttl_in_days", NullValueHandling = NullValueHandling.Ignore)]
         public int? TtlInDays { get; set; }
 
+        /// <summary>
+        /// 标签字段信息
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagsBody> Tags { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("class CreateLogGroupParams {\n");
             sb.Append("  logGroupName: ").Append(LogGroupName).Append("\n");
             sb.Append("  ttlInDays: ").Append(TtlInDays).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.TtlInDays == input.TtlInDays ||
                     (this.TtlInDays != null &&
                     this.TtlInDays.Equals(input.TtlInDays))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
                 if (this.TtlInDays != null)
                     hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

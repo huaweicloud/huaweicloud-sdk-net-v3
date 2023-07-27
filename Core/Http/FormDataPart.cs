@@ -45,6 +45,5 @@ namespace HuaweiCloud.SDK.Core
         {
             return _value.ToString();
         }
-
     }
 }

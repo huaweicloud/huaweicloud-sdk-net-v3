@@ -22,37 +22,37 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using static System.String;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
     public class BasicCredentials : Credentials
     {
+        private string _derivedAuthServiceName;
+        private string _regionId;
+
+        public BasicCredentials(string ak, string sk, string projectId = null)
+        {
+            if (string.IsNullOrEmpty(ak))
+            {
+                throw new ArgumentNullException(nameof(ak));
+            }
+
+            if (string.IsNullOrEmpty(sk))
+            {
+                throw new ArgumentNullException(nameof(sk));
+            }
+
+            Ak = ak;
+            Sk = sk;
+            ProjectId = projectId;
+        }
+
         private string Ak { set; get; }
         private string Sk { set; get; }
         private string ProjectId { set; get; }
         private string SecurityToken { set; get; }
         private string IamEndpoint { set; get; }
         private Func<HttpRequest, bool> DerivedPredicate { set; get; }
-        private string _derivedAuthServiceName;
-        private string _regionId;
-
-        public BasicCredentials(string ak, string sk, string projectId = null)
-        {
-            if (IsNullOrEmpty(ak))
-            {
-                throw new ArgumentNullException(nameof(ak));
-            }
-
-            if (IsNullOrEmpty(sk))
-            {
-                throw new ArgumentNullException(nameof(sk));
-            }
-
-            this.Ak = ak;
-            this.Sk = sk;
-            this.ProjectId = projectId;
-        }
 
         public BasicCredentials WithIamEndpoint(string endpoint)
         {
@@ -62,13 +62,13 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public BasicCredentials WithSecurityToken(string token)
         {
-            this.SecurityToken = token;
+            SecurityToken = token;
             return this;
         }
 
         public BasicCredentials WithDerivedPredicate(Func<HttpRequest, bool> func)
         {
-            this.DerivedPredicate = func;
+            DerivedPredicate = func;
             return this;
         }
 
@@ -84,14 +84,14 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public override void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId)
         {
-            if (this._derivedAuthServiceName == null)
+            if (_derivedAuthServiceName == null)
             {
-                this._derivedAuthServiceName = derivedAuthServiceName;
+                _derivedAuthServiceName = derivedAuthServiceName;
             }
 
-            if (this._regionId == null)
+            if (_regionId == null)
             {
-                this._regionId = regionId;
+                _regionId = regionId;
             }
         }
 
@@ -120,7 +120,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                     request.Headers.Add("X-Security-Token", SecurityToken);
                 }
 
-                if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
+                if (!string.IsNullOrEmpty(request.ContentType) && !request.ContentType.Contains("application/json"))
                 {
                     request.Headers.Add("X-Sdk-Content-Sha256", "UNSIGNED-PAYLOAD");
                 }
@@ -165,10 +165,10 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
-            Func<HttpRequest, bool> derivedFunc = DerivedPredicate;
+            var derivedFunc = DerivedPredicate;
             DerivedPredicate = null;
 
-            IamEndpoint = IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
             var request = IamService.GetKeystoneListProjectsRequest(IamEndpoint, regionId);
             request = SignAuthRequest(request).Result;
             try

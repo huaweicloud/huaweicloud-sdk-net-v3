@@ -1,3 +1,251 @@
+# 3.1.49 2023-07-27
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持以下接口：
+    - `DownloadBatchCreateTemplate`
+    - `ImportBatchCreateJobs`
+    - `CopyJob`
+    - `ShowMetering`
+    - `ShowDirtyData`
+    - `ShowComparePolicy`
+    - `ShowHealthCompareJobList`
+    - `ShowProgressData`
+    - `ShowObjectMapping`
+    - `ShowActions`
+    - `ValidateJobName`
+    - `ShowEnterpriseProject`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DownloadDbObjectTemplate**
+    - 请求参数变更
+      - `+ file_import_db_level`
+  - **UploadDbObjectTemplate**
+    - 请求参数变更
+      - `+ file_import_db_level`
+  - **ListAsyncJobs**
+    - 响应参数变更
+      - `+ jobs.status: enum value [AUTO_PARAM_VALIDATE_SUCCESS,COMMIT_SUCCESS]`
+      - `- jobs.status: enum value [ASYNC_JOB_CREATING,ASYNC_JOB_CREATE_FAILED,ASYNC_JOB_COMPLETED]`
+  - **CreateJob**
+    - 请求参数变更
+      - `+ job.node_info.base_info`
+    - 响应参数变更
+      - `+ is_clone_job`
+      - `+ create_time`
+      - `+ name`
+      - `+ id`
+      - `+ status`
+      - `+ job.is_clone_job`
+  - **BatchCreateJobsAsync**
+    - 请求参数变更
+      - `+ jobs.node_info.base_info`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.support_import_file_resp`
+      - `+ jobs.instance_features`
+      - `+ jobs.task_version`
+      - `+ jobs.node_info.base_info`
+  - **UpdateBatchAsyncJobs**
+    - 请求参数变更
+      - `+ jobs.type: enum value [policy]`
+      - `- jobs.type: enum value [policy_config]`
+      - `+ jobs.params.node_info.base_info`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `+ type: enum value [file]`
+    - 响应参数变更
+      - `+ job.support_import_file_resp`
+      - `+ job.instance_features`
+      - `+ job.task_version`
+      - `+ job.node_info.base_info`
+  - **UpdateJob**
+    - 请求参数变更
+      - `+ job.type: enum value [policy]`
+      - `- job.type: enum value [policy_config]`
+      - `+ job.params.node_info.base_info`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AttachShareBandwidth**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **DetachShareBandwidth**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **EnableNat64**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **DisableNat64**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **AttachBatchPublicIp**
+    - 响应参数变更
+      - `+ publicips.publicip.vnic.vtep`
+      - `+ publicips.publicip.vnic.vni`
+      - `+ publicips.publicip.vnic.port_profile`
+  - **DetachBatchPublicIp**
+    - 响应参数变更
+      - `+ publicips.publicip.vnic.vtep`
+      - `+ publicips.publicip.vnic.vni`
+      - `+ publicips.publicip.vnic.port_profile`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTags**
+    - 请求参数变更
+      - `+ tags.key`
+      - `+ tags.value`
+      - `* tags: list<Kv> -> list<KvItem>`
+  - **DeleteTags**
+    - 请求参数变更
+      - `+ tags.key`
+      - `+ tags.value`
+      - `* tags: list<Kv> -> list<KvItem>`
+  - **ShowResInstanceInfo**
+    - 请求参数变更
+      - `+ matches.key`
+      - `+ matches.value`
+      - `* matches: list<Kv> -> list<KvItem>`
+    - 响应参数变更
+      - `+ resources.tags.key`
+      - `+ resources.tags.value`
+      - `* resources.tags: list<Kv> -> list<KvItem>`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ShowInstanceBiactiveRegions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListConfigurations**
+    - 响应参数变更
+      - `+ quota`
+      - `+ configurations.mode`
+  - **ListConfigurationTemplates**
+    - 响应参数变更
+      - `+ quota`
+      - `+ configurations.mode`
+  - **ShowInstanceConfiguration**
+    - 响应参数变更
+      - `+ mode`
+      - `+ id`
+  - **ListConfigurationDatastores**
+    - 响应参数变更
+      - `+ datastores.mode`
+  - **ShowQuotas**
+    - 请求参数变更
+      - `+ datastore_type`
+      - `+ mode`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.datastore.whole_version`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持接口`DownloadBackup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListDeviceTunnels`
+    - `AddTunnel`
+    - `ShowDeviceTunnel`
+    - `CloseDeviceTunnel`
+    - `DeleteDeviceTunnel`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstanceByEngine**
+    - 请求参数变更
+      - `+ disk_encrypted_enable`
+      - `+ disk_encrypted_key`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 支持接口`UpdateLogStream`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateLogGroup**
+    - 请求参数变更
+      - `+ tags`
+  - **CreateLogGroup**
+    - 请求参数变更
+      - `+ tags`
+  - **CreateLogStream**
+    - 请求参数变更
+      - `+ enterprise_project_name`
+      - `+ ttl_in_days`
+      - `+ tags`
+      - `+ log_stream_name: enum value [lts-stream-13ci]`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowInstanceExtendProductInfo**
+    - 响应参数变更
+      - `+ monthly`
+      - `+ hourly`
+      - `- engine`
+      - `- versions`
+      - `- products`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ValidateConsumedMessage**
+    - 请求参数变更
+      - `+ engine: enum value [reliability]`
+  - **ListInstances**
+    - 请求参数变更
+      - `+ engine: enum value [reliability]`
+
 # 3.1.48 2023-07-20
 
 ### HuaweiCloud SDK LTS

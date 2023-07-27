@@ -27,9 +27,6 @@ namespace HuaweiCloud.SDK.Core
     [XmlRoot("Error")]
     public class SdkError : SdkResponse
     {
-        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
-        [XmlElement("Message")]
-        public string ErrorMsg { get; set; }
 
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)] [XmlElement("Code")]
         public string ErrorCode;
@@ -40,26 +37,32 @@ namespace HuaweiCloud.SDK.Core
         [JsonProperty("encoded_authorization_message", NullValueHandling = NullValueHandling.Ignore)] [XmlElement("EncodedAuthorizationMessage")]
         public string EncodedAuthorizationMessage;
 
+        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        [XmlElement("Message")]
+        public string ErrorMsg { get; set; }
+
+
+
         public SdkError()
         {
         }
 
         public SdkError(string errorCode, string errorMsg, string requestId)
         {
-            this.ErrorCode = errorCode;
-            this.ErrorMsg = errorMsg;
-            this.RequestId = requestId;
+            ErrorCode = errorCode;
+            ErrorMsg = errorMsg;
+            RequestId = requestId;
         }
 
         public SdkError(string errorCode, string errorMsg)
         {
-            this.ErrorCode = errorCode;
-            this.ErrorMsg = errorMsg;
+            ErrorCode = errorCode;
+            ErrorMsg = errorMsg;
         }
 
         public SdkError(string errorMsg)
         {
-            this.ErrorMsg = errorMsg;
+            ErrorMsg = errorMsg;
         }
     }
 }

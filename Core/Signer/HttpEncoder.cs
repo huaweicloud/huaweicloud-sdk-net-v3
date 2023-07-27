@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.Core
         private static char IntToHex(int n)
         {
             if (n <= 9)
-                return (char)(n + (int)'0');
-            else
-                return (char)(n - 10 + (int)'A');
+                return (char)(n + '0');
+
+            return (char)(n - 10 + 'A');
         }
 
         private static bool IsUrlSafeChar(char ch)
         {
-            if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9')
+            if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'))
                 return true;
 
             switch (ch)
@@ -48,12 +48,12 @@ namespace HuaweiCloud.SDK.Core
 
         private static byte[] UrlEncode(byte[] bytes, int offset, int count)
         {
-            int cUnsafe = 0;
+            var cUnsafe = 0;
 
             // count them first
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
-                char ch = (char)bytes[offset + i];
+                var ch = (char)bytes[offset + i];
 
                 if (!IsUrlSafeChar(ch))
                     cUnsafe++;
@@ -67,22 +67,19 @@ namespace HuaweiCloud.SDK.Core
                 {
                     return bytes;
                 }
-                else
-                {
-                    var subarray = new byte[count];
-                    Buffer.BlockCopy(bytes, offset, subarray, 0, count);
-                    return subarray;
-                }
+                var subarray = new byte[count];
+                Buffer.BlockCopy(bytes, offset, subarray, 0, count);
+                return subarray;
             }
 
             // expand not 'safe' characters into %XX, spaces to +s
-            byte[] expandedBytes = new byte[count + cUnsafe * 2];
-            int pos = 0;
+            var expandedBytes = new byte[count + cUnsafe * 2];
+            var pos = 0;
 
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
-                byte b = bytes[offset + i];
-                char ch = (char)b;
+                var b = bytes[offset + i];
+                var ch = (char)b;
 
                 if (IsUrlSafeChar(ch))
                 {
@@ -104,7 +101,7 @@ namespace HuaweiCloud.SDK.Core
             if (value == null)
                 return null;
 
-            byte[] bytes = Encoding.UTF8.GetBytes(value);
+            var bytes = Encoding.UTF8.GetBytes(value);
             return Encoding.UTF8.GetString(UrlEncode(bytes, 0, bytes.Length));
         }
     }

@@ -25,10 +25,10 @@ namespace HuaweiCloud.SDK.Core
     {
         public ClientRequestException(int? httpCode, SdkError sdkError) : base(httpCode, sdkError)
         {
-            this.HttpStatusCode = httpCode;
-            this.ErrorCode = sdkError.ErrorCode;
-            this.ErrorMsg = sdkError.ErrorMsg;
-            this.RequestId = sdkError.RequestId;
+            HttpStatusCode = httpCode;
+            ErrorCode = sdkError.ErrorCode;
+            ErrorMsg = sdkError.ErrorMsg;
+            RequestId = sdkError.RequestId;
         }
     }
 }

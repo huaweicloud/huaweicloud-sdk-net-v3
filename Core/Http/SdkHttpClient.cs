@@ -34,19 +34,19 @@ namespace HuaweiCloud.SDK.Core
 {
     public class SdkHttpClient
     {
-        private readonly HttpClient _myHttpClient;
-        private readonly ILogger _logger;
         private readonly HttpHandler _httpHandler;
+        private readonly ILogger _logger;
+        private readonly HttpClient _myHttpClient;
 
-        public SdkHttpClient(String clientName, HttpConfig config, HttpHandler httpHandler, bool logging,
+        public SdkHttpClient(string clientName, HttpConfig config, HttpHandler httpHandler, bool logging,
             LogLevel logLevel)
         {
             var serviceProvider = GetServiceCollection(config, logging, logLevel).BuildServiceProvider();
             var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
-            this._logger = loggerFactory.CreateLogger("HuaweiCloud.Sdk");
+            _logger = loggerFactory.CreateLogger("HuaweiCloud.Sdk");
             var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
-            this._myHttpClient = httpClientFactory.CreateClient("SdkHttpClient");
-            this._httpHandler = httpHandler;
+            _myHttpClient = httpClientFactory.CreateClient("SdkHttpClient");
+            _httpHandler = httpHandler;
         }
 
         private IServiceCollection GetServiceCollection(HttpConfig httpConfig, bool logging, LogLevel logLevel)
@@ -176,9 +176,9 @@ namespace HuaweiCloud.SDK.Core
 
         public async Task<HttpResponseMessage> DoHttpRequest(HttpRequestMessage request)
         {
-            _httpHandler?.ProcessRequest(request, this._logger);
+            _httpHandler?.ProcessRequest(request, _logger);
             var response = await _myHttpClient.SendAsync(request);
-            _httpHandler?.ProcessResponse(response, this._logger);
+            _httpHandler?.ProcessResponse(response, _logger);
             return response;
         }
     }

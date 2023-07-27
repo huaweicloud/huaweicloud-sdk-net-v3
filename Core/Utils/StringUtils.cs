@@ -15,7 +15,7 @@ namespace HuaweiCloud.SDK.Core
             var item = str;
             while (item.IndexOf('_') >= 0)
             {
-                string newUpper = item.Substring(item.IndexOf('_'), 2);
+                var newUpper = item.Substring(item.IndexOf('_'), 2);
                 item = item.Replace(newUpper, newUpper.Trim('_').ToUpper());
                 str = str.Replace(newUpper, newUpper.Trim('_').ToUpper());
             }

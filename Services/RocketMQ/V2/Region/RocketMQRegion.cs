@@ -36,6 +36,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             "https://dms.ru-northwest-2.myhuaweicloud.com");
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9",
             "https://dms.cn-north-9.myhuaweicloud.com");
+        public static readonly Region LA_SOUTH_2 = new Region("la-south-2",
+            "https://dms.la-south-2.myhuaweicloud.com");
+        public static readonly Region LA_NORTH_2 = new Region("la-north-2",
+            "https://dms.la-north-2.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
             "https://dms.ap-southeast-4.myhuaweicloud.com");
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
@@ -58,6 +62,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
                 { "af-south-1", AF_SOUTH_1 },
                 { "ru-northwest-2", RU_NORTHWEST_2 },
                 { "cn-north-9", CN_NORTH_9 },
+                { "la-south-2", LA_SOUTH_2 },
+                { "la-north-2", LA_NORTH_2 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "tr-west-1", TR_WEST_1 },
         };

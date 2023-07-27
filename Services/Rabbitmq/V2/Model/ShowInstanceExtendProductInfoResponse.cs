@@ -17,22 +17,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 消息引擎类型。
+        /// 表示按需付费的产品列表。
         /// </summary>
-        [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
-        public string Engine { get; set; }
+        [JsonProperty("hourly", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListProductsRespHourly> Hourly { get; set; }
 
         /// <summary>
-        /// 消息引擎支持的版本
+        /// 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Rabbitmq实例。
         /// </summary>
-        [JsonProperty("versions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Versions { get; set; }
-
-        /// <summary>
-        /// 规格变更的产品信息。
-        /// </summary>
-        [JsonProperty("products", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RabbitMQExtendProductInfoEntity> Products { get; set; }
+        [JsonProperty("monthly", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListProductsRespHourly> Monthly { get; set; }
 
 
 
@@ -43,9 +37,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowInstanceExtendProductInfoResponse {\n");
-            sb.Append("  engine: ").Append(Engine).Append("\n");
-            sb.Append("  versions: ").Append(Versions).Append("\n");
-            sb.Append("  products: ").Append(Products).Append("\n");
+            sb.Append("  hourly: ").Append(Hourly).Append("\n");
+            sb.Append("  monthly: ").Append(Monthly).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,21 +61,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
             return 
                 (
-                    this.Engine == input.Engine ||
-                    (this.Engine != null &&
-                    this.Engine.Equals(input.Engine))
+                    this.Hourly == input.Hourly ||
+                    this.Hourly != null &&
+                    input.Hourly != null &&
+                    this.Hourly.SequenceEqual(input.Hourly)
                 ) && 
                 (
-                    this.Versions == input.Versions ||
-                    this.Versions != null &&
-                    input.Versions != null &&
-                    this.Versions.SequenceEqual(input.Versions)
-                ) && 
-                (
-                    this.Products == input.Products ||
-                    this.Products != null &&
-                    input.Products != null &&
-                    this.Products.SequenceEqual(input.Products)
+                    this.Monthly == input.Monthly ||
+                    this.Monthly != null &&
+                    input.Monthly != null &&
+                    this.Monthly.SequenceEqual(input.Monthly)
                 );
         }
 
@@ -94,12 +82,10 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Engine != null)
-                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
-                if (this.Versions != null)
-                    hashCode = hashCode * 59 + this.Versions.GetHashCode();
-                if (this.Products != null)
-                    hashCode = hashCode * 59 + this.Products.GetHashCode();
+                if (this.Hourly != null)
+                    hashCode = hashCode * 59 + this.Hourly.GetHashCode();
+                if (this.Monthly != null)
+                    hashCode = hashCode * 59 + this.Monthly.GetHashCode();
                 return hashCode;
             }
         }

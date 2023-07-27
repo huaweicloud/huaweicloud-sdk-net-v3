@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 {
     public class AuthCache
     {
-        private static ConcurrentDictionary<string, string> _authDict = new ConcurrentDictionary<string, string>();
+        private static readonly ConcurrentDictionary<string, string> _authDict = new ConcurrentDictionary<string, string>();
 
         public static string GetAuth(string akWithName)
         {
@@ -36,7 +36,5 @@ namespace HuaweiCloud.SDK.Core.Auth
         {
             _authDict.AddOrUpdate(akWithName, id, (key, value) => id);
         }
-
-
     }
 }

@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
+        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,otc,ctc,g42,hk_g42,tm,hk_tm)   - 2.7
         /// </summary>
-        /// <value>消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7</value>
+        /// <value>消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,otc,ctc,g42,hk_g42,tm,hk_tm)   - 2.7</value>
         [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
         public class EngineVersionEnum
         {
@@ -403,9 +403,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hc,hk)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws,hws_hk)
+        /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hws)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws_hk)
         /// </summary>
-        /// <value>Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hc,hk)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws,hws_hk)</value>
+        /// <value>Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hws)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws_hk)</value>
         [JsonConverter(typeof(EnumClassConverter<PartitionNumEnum>))]
         public class PartitionNumEnum
         {
@@ -935,7 +935,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
+        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,otc,ctc,g42,hk_g42,tm,hk_tm)   - 2.7
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
@@ -957,7 +957,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? StorageSpace { get; set; }
 
         /// <summary>
-        /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hc,hk)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws,hws_hk)
+        /// Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800    [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/productdesc-kafka/Kafka-specification.html](tag:hws)   [新规格实例此参数无需设置，每种规格对应的分区数上限参考：https://support.huaweicloud.com/intl/zh-cn/productdesc-kafka/Kafka-specification.html](tag:hws_hk)
         /// </summary>
         [JsonProperty("partition_num", NullValueHandling = NullValueHandling.Ignore)]
         public PartitionNumEnum PartitionNum { get; set; }
@@ -998,7 +998,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu,g42,tm,hk_g42,hk_tm)  [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0- -0/100MB/300/600;  00300-30310-0- -0/300MB/900/1200;  00300-30312-0- -0/600MB/1800/2400;  00300-30314-0- -0/1200MB/1800/4800](tag:otc,dt)
+        /// 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu,g42,tm,hk_g42,hk_tm,ocb,hws_ocb)  [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0- -0/100MB/300/600;  00300-30310-0- -0/300MB/900/1200;  00300-30312-0- -0/600MB/1800/2400;  00300-30314-0- -0/1200MB/1800/4800](tag:otc,dt)
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }

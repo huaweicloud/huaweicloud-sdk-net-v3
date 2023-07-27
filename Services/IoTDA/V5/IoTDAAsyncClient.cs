@@ -1498,5 +1498,90 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             return untagDeviceResponse;
         }
         
+        /// <summary>
+        /// 创建设备隧道
+        ///
+        /// 创建设备隧道接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddTunnelResponse> AddTunnelAsync(AddTunnelRequest addTunnelRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tunnels",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addTunnelRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<AddTunnelResponse>(response);
+        }
+        
+        /// <summary>
+        /// 关闭设备隧道
+        ///
+        /// 关闭设备隧道接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CloseDeviceTunnelResponse> CloseDeviceTunnelAsync(CloseDeviceTunnelRequest closeDeviceTunnelRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("tunnel_id" , closeDeviceTunnelRequest.TunnelId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tunnels/{tunnel_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeDeviceTunnelRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            CloseDeviceTunnelResponse closeDeviceTunnelResponse = JsonUtils.DeSerializeNull<CloseDeviceTunnelResponse>(response);
+            return closeDeviceTunnelResponse;
+        }
+        
+        /// <summary>
+        /// 删除设备隧道
+        ///
+        /// 删除设备隧道接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDeviceTunnelResponse> DeleteDeviceTunnelAsync(DeleteDeviceTunnelRequest deleteDeviceTunnelRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("tunnel_id" , deleteDeviceTunnelRequest.TunnelId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tunnels/{tunnel_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceTunnelRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            DeleteDeviceTunnelResponse deleteDeviceTunnelResponse = JsonUtils.DeSerializeNull<DeleteDeviceTunnelResponse>(response);
+            return deleteDeviceTunnelResponse;
+        }
+        
+        /// <summary>
+        /// 查询设备所有隧道
+        ///
+        /// 查询设备所有隧道接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDeviceTunnelsResponse> ListDeviceTunnelsAsync(ListDeviceTunnelsRequest listDeviceTunnelsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tunnels",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceTunnelsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListDeviceTunnelsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询设备隧道
+        ///
+        /// 查询设备隧道信息接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDeviceTunnelResponse> ShowDeviceTunnelAsync(ShowDeviceTunnelRequest showDeviceTunnelRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("tunnel_id" , showDeviceTunnelRequest.TunnelId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/tunnels/{tunnel_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceTunnelRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowDeviceTunnelResponse>(response);
+        }
+        
     }
 }

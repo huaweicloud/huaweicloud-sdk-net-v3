@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Brokers { get; set; }
 
         /// <summary>
-        /// 消费组名称。
+        /// 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

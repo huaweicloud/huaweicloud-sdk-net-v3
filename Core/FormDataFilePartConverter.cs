@@ -29,12 +29,10 @@ namespace HuaweiCloud.SDK.Core
     {
         public override void WriteJson(JsonWriter writer, FormDataFilePart value, JsonSerializer serializer)
         {
-
         }
 
         public override FormDataFilePart ReadJson(JsonReader reader, Type objectType, FormDataFilePart existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-
             if (reader.Value != null && reader.Value is string path)
             {
                 if (!File.Exists(path))

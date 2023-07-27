@@ -7,10 +7,10 @@ namespace HuaweiCloud.SDK.Core
 {
     public class HttpHandler
     {
-        private List<Action<HttpRequestMessage, ILogger>> _requestHandlers =
+        private readonly List<Action<HttpRequestMessage, ILogger>> _requestHandlers =
             new List<Action<HttpRequestMessage, ILogger>>();
 
-        private List<Action<HttpResponseMessage, ILogger>> _responseHandlers =
+        private readonly List<Action<HttpResponseMessage, ILogger>> _responseHandlers =
             new List<Action<HttpResponseMessage, ILogger>>();
 
         public HttpHandler AddRequestHandler(Action<HttpRequestMessage, ILogger> func)

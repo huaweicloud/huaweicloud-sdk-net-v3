@@ -33,7 +33,7 @@ namespace HuaweiCloud.SDK.Core
 
         public HwMessageHandlerFactory(HttpConfig httpConfig)
         {
-            this._httpConfig = httpConfig;
+            _httpConfig = httpConfig;
         }
 
         public DelegatingHandler GetHandler()
@@ -57,17 +57,17 @@ namespace HuaweiCloud.SDK.Core
         private static WebProxy InitProxy(HttpConfig config)
         {
             var proxy = config.ProxyPort.HasValue
-                ? new WebProxy(config.ProxyHost, config.ProxyPort.Value)
-                : new WebProxy(config.ProxyHost);
+                            ? new WebProxy(config.ProxyHost, config.ProxyPort.Value)
+                            : new WebProxy(config.ProxyHost);
 
             proxy.BypassProxyOnLocal = true;
             proxy.UseDefaultCredentials = false;
             proxy.Credentials = string.IsNullOrEmpty(config.ProxyDomain)
-                ? new NetworkCredential(config.ProxyUsername,
-                    config.ProxyPassword ?? string.Empty)
-                : new NetworkCredential(config.ProxyUsername,
-                    config.ProxyPassword ?? string.Empty,
-                    config.ProxyDomain);
+                                    ? new NetworkCredential(config.ProxyUsername,
+                                        config.ProxyPassword ?? string.Empty)
+                                    : new NetworkCredential(config.ProxyUsername,
+                                        config.ProxyPassword ?? string.Empty,
+                                        config.ProxyDomain);
 
             return proxy;
         }

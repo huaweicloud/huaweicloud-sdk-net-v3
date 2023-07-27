@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 主题名称。
+        /// 主题名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Brokers { get; set; }
 
         /// <summary>
-        /// 队列数。
+        /// 队列数，范围1~50。
         /// </summary>
         [JsonProperty("queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? QueueNum { get; set; }

@@ -22,195 +22,73 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using HuaweiCloud.SDK.Core.Auth;
 using Microsoft.Extensions.Logging;
-using static System.String;
 
 namespace HuaweiCloud.SDK.Core
 {
     public class Client
     {
-        public class ClientBuilder<T> where T : Client
-        {
-            private string[] CredentialType { get; } =
-            {
-                nameof(BasicCredentials)
-            };
-
-            public ClientBuilder()
-            {
-            }
-
-            public ClientBuilder(string credentialType)
-            {
-                this.CredentialType = credentialType.Split(',');
-            }
-
-            private Credentials _credentials;
-            private HttpConfig _httpConfig;
-            private Region _region;
-            private List<string> _endpoints;
-            private bool _enableLogging;
-            private LogLevel _logLevel = LogLevel.Information;
-            private HttpHandler _httpHandler;
-            private string _derivedAuthServiceName;
-
-            private const string HttpScheme = "http";
-            private const string HttpsScheme = "https";
-
-            public ClientBuilder<T> WithCredential(Credentials credentials)
-            {
-                this._credentials = credentials;
-                return this;
-            }
-
-            public ClientBuilder<T> WithHttpConfig(HttpConfig httpConfig)
-            {
-                this._httpConfig = httpConfig;
-                return this;
-            }
-
-            public ClientBuilder<T> WithRegion(Region region)
-            {
-                this._region = region;
-                return this;
-            }
-            
-            [Obsolete("As of 3.1.26, because of the support of the multi-endpoint feature, use WithEndPoints instead")]
-            public ClientBuilder<T> WithEndPoint(string endpoint)
-            {
-                return this.WithEndPoints(new List<string>
-                {
-                    endpoint
-                });
-            }
-
-            public ClientBuilder<T> WithEndPoints(List<string> endpoints)
-            {
-                this._endpoints = endpoints;
-                return this;
-            }
-
-            public ClientBuilder<T> WithLogging(LogLevel logLevel)
-            {
-                this._enableLogging = true;
-                this._logLevel = logLevel;
-                return this;
-            }
-
-            public ClientBuilder<T> WithHttpHandler(HttpHandler httpHandler)
-            {
-                this._httpHandler = httpHandler;
-                return this;
-            }
-
-            public ClientBuilder<T> WithDerivedAuthServiceName(string derivedAuthServiceName)
-            {
-                this._derivedAuthServiceName = derivedAuthServiceName;
-                return this;
-            }
-
-            public T Build()
-            {
-                Client client = Activator.CreateInstance<T>();
-
-                if (this._credentials == null)
-                {
-                    this._credentials = EnvCredentials.LoadCredentialsFromEnv(CredentialType[0]);
-                }
-
-                if (!CredentialType.Contains(this._credentials.GetType().Name))
-                {
-                    throw new ArgumentException(
-                        $"credential type error, support credential type is {Join(",", CredentialType)}");
-                }
-
-                client.WithHttpConfig(_httpConfig ?? HttpConfig.GetDefaultConfig())
-                    .InitSdkHttpClient(this._httpHandler, this._enableLogging, this._logLevel);
-
-                if (this._region != null)
-                {
-                    this._endpoints = this._region.Endpoints;
-                    this._credentials = _credentials.ProcessAuthParams(client._sdkHttpClient, _region.Id);
-                    this._credentials.ProcessDerivedAuthParams(_derivedAuthServiceName, _region.Id);
-                }
-
-                for (var i = 0; i < _endpoints.Count; i++)
-                {
-                    var endpoint = _endpoints[i];
-                    if (!endpoint.StartsWith(HttpScheme))
-                    {
-                        _endpoints[i] = HttpsScheme + "://" + endpoint;
-                    }
-                }
-
-                client.WithCredential(this._credentials)
-                    .WithEndPoints(this._endpoints);
-
-                return (T)client;
-            }
-        }
-
-        private List<string> _endpoints;
-        private volatile int _endpointIndex;
-        private HttpConfig _httpConfig;
-        private Credentials _credential;
-
-        private SdkHttpClient _sdkHttpClient;
 
         private const string XRequestAgent = "User-Agent";
         private const string CredentialsNull = "Credentials cannot be null.";
+        private Credentials _credential;
+        private volatile int _endpointIndex;
+
+        private List<string> _endpoints;
+        private HttpConfig _httpConfig;
+
+        private SdkHttpClient _sdkHttpClient;
 
         private Client WithCredential(Credentials credentials)
         {
-            this._credential = credentials ?? throw new ArgumentNullException(CredentialsNull);
+            _credential = credentials ?? throw new ArgumentNullException(CredentialsNull);
             return this;
         }
 
         private Client WithHttpConfig(HttpConfig httpConfig)
         {
-            this._httpConfig = httpConfig;
+            _httpConfig = httpConfig;
             return this;
         }
 
         private Client WithEndPoints(List<string> endpoints)
         {
-            this._endpoints = endpoints;
+            _endpoints = endpoints;
             return this;
         }
 
 
         private void InitSdkHttpClient(HttpHandler httpHandler, bool enableLogging, LogLevel logLevel)
         {
-            this._sdkHttpClient =
-                new SdkHttpClient(this.GetType().FullName, _httpConfig, httpHandler, enableLogging, logLevel);
+            _sdkHttpClient =
+                new SdkHttpClient(GetType().FullName, _httpConfig, httpHandler, enableLogging, logLevel);
         }
 
         protected async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request)
         {
             var url = GetRealEndpoint(request)
                       + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
-                      + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+                      + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
             return await _async_http(url, methodType.ToUpper(), request);
         }
 
         private async Task<HttpResponseMessage> _async_http(string url, string method, SdkRequest sdkRequest)
         {
             var request = GetHttpRequest(url, method, sdkRequest);
-            if (IsNullOrEmpty(request.Headers.Get("Authorization")))
+            if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
             {
                 request = await _credential.SignAuthRequest(request);
             }
 
-            var message = this._sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
+            var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
             try
             {
-                var response = await this._sdkHttpClient.DoHttpRequest(message);
+                var response = await _sdkHttpClient.DoHttpRequest(message);
                 return GetResult(response);
             }
             catch (AggregateException aggregateException)
@@ -225,14 +103,14 @@ namespace HuaweiCloud.SDK.Core
             while (true)
             {
                 var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
-                                                   + (IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+                                                   + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
                 try
                 {
                     return _sync_http(url, methodType.ToUpper(), request);
                 }
                 catch (HostUnreachableException hostUnreachableException)
                 {
-                    if (this._endpointIndex < this._endpoints.Count - 1)
+                    if (_endpointIndex < _endpoints.Count - 1)
                     {
                         Interlocked.Increment(ref _endpointIndex);
                     }
@@ -247,15 +125,15 @@ namespace HuaweiCloud.SDK.Core
         private HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
         {
             var request = GetHttpRequest(url, method, sdkRequest);
-            if (IsNullOrEmpty(request.Headers.Get("Authorization")))
+            if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
             {
                 request = _credential.SignAuthRequest(request).Result;
             }
 
-            var message = this._sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
+            var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
             try
             {
-                var response = this._sdkHttpClient.DoHttpRequest(message).Result;
+                var response = _sdkHttpClient.DoHttpRequest(message).Result;
                 return GetResult(response);
             }
             catch (AggregateException aggregateException)
@@ -266,8 +144,8 @@ namespace HuaweiCloud.SDK.Core
 
         private string GetRealEndpoint(SdkRequest request)
         {
-            var endpoint = this._endpoints[_endpointIndex];
-            if (String.IsNullOrEmpty(request.Cname))
+            var endpoint = _endpoints[_endpointIndex];
+            if (string.IsNullOrEmpty(request.Cname))
             {
                 return endpoint;
             }
@@ -311,6 +189,128 @@ namespace HuaweiCloud.SDK.Core
             }
 
             request.Headers.Add(XRequestAgent, "huaweicloud-usdk-net/3.0");
+        }
+
+        public class ClientBuilder<T> where T : Client
+        {
+
+            private const string HttpScheme = "http";
+            private const string HttpsScheme = "https";
+
+            private Credentials _credentials;
+            private string _derivedAuthServiceName;
+            private bool _enableLogging;
+            private List<string> _endpoints;
+            private HttpConfig _httpConfig;
+            private HttpHandler _httpHandler;
+            private LogLevel _logLevel = LogLevel.Information;
+            private Region _region;
+
+            public ClientBuilder()
+            {
+            }
+
+            public ClientBuilder(string credentialType)
+            {
+                CredentialType = credentialType.Split(',');
+            }
+
+            private string[] CredentialType { get; } =
+            {
+                nameof(BasicCredentials)
+            };
+
+            public ClientBuilder<T> WithCredential(Credentials credentials)
+            {
+                _credentials = credentials;
+                return this;
+            }
+
+            public ClientBuilder<T> WithHttpConfig(HttpConfig httpConfig)
+            {
+                _httpConfig = httpConfig;
+                return this;
+            }
+
+            public ClientBuilder<T> WithRegion(Region region)
+            {
+                _region = region;
+                return this;
+            }
+
+            [Obsolete("As of 3.1.26, because of the support of the multi-endpoint feature, use WithEndPoints instead")]
+            public ClientBuilder<T> WithEndPoint(string endpoint)
+            {
+                return WithEndPoints(new List<string>
+                {
+                    endpoint
+                });
+            }
+
+            public ClientBuilder<T> WithEndPoints(List<string> endpoints)
+            {
+                _endpoints = endpoints;
+                return this;
+            }
+
+            public ClientBuilder<T> WithLogging(LogLevel logLevel)
+            {
+                _enableLogging = true;
+                _logLevel = logLevel;
+                return this;
+            }
+
+            public ClientBuilder<T> WithHttpHandler(HttpHandler httpHandler)
+            {
+                _httpHandler = httpHandler;
+                return this;
+            }
+
+            public ClientBuilder<T> WithDerivedAuthServiceName(string derivedAuthServiceName)
+            {
+                _derivedAuthServiceName = derivedAuthServiceName;
+                return this;
+            }
+
+            public T Build()
+            {
+                Client client = Activator.CreateInstance<T>();
+
+                if (_credentials == null)
+                {
+                    _credentials = EnvCredentials.LoadCredentialsFromEnv(CredentialType[0]);
+                }
+
+                if (!CredentialType.Contains(_credentials.GetType().Name))
+                {
+                    throw new ArgumentException(
+                        $"credential type error, support credential type is {string.Join(",", CredentialType)}");
+                }
+
+                client.WithHttpConfig(_httpConfig ?? HttpConfig.GetDefaultConfig())
+                    .InitSdkHttpClient(_httpHandler, _enableLogging, _logLevel);
+
+                if (_region != null)
+                {
+                    _endpoints = _region.Endpoints;
+                    _credentials = _credentials.ProcessAuthParams(client._sdkHttpClient, _region.Id);
+                    _credentials.ProcessDerivedAuthParams(_derivedAuthServiceName, _region.Id);
+                }
+
+                for (var i = 0; i < _endpoints.Count; i++)
+                {
+                    var endpoint = _endpoints[i];
+                    if (!endpoint.StartsWith(HttpScheme))
+                    {
+                        _endpoints[i] = HttpsScheme + "://" + endpoint;
+                    }
+                }
+
+                client.WithCredential(_credentials)
+                    .WithEndPoints(_endpoints);
+
+                return (T)client;
+            }
         }
     }
 }

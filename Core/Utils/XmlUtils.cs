@@ -3,66 +3,59 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace HuaweiCloud.SDK.Core
 {
     public class XmlUtils
     {
-
-        class Utf8StringWriter : StringWriter
+        public static T DeSerialize<T>(HttpResponseMessage message) where T : SdkResponse
         {
-            public override Encoding Encoding => Encoding.UTF8;
-        }
-        public static T DeSerialize<T>(HttpResponseMessage message)
-        {
-            
             var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
-            var xmlObject = SetResponseBody<T>(body);
-            
-            HttpUtils.SetAdditionalAttrs(message, xmlObject, body);
-            HttpUtils.SetResponseHeaders(message, xmlObject);
+            var response = SetResponseBody<T>(body);
 
-            return xmlObject;
+            HttpUtils.SetAdditionalAttrs(message, response, body);
+            HttpUtils.SetResponseHeaders(message, response);
+
+            return response;
         }
 
         public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse
         {
-            T xmlObject;
+            T tResponse;
             var xmlSerializer = new XmlSerializer(typeof(T));
             using (TextReader reader = new StringReader(RemoveXmlns(response.HttpBody)))
             {
-                xmlObject = (T)xmlSerializer.Deserialize(reader);
+                tResponse = (T)xmlSerializer.Deserialize(reader);
             }
 
-            if (xmlObject == null)
+            if (tResponse == null)
             {
-                xmlObject = Activator.CreateInstance<T>();
+                tResponse = Activator.CreateInstance<T>();
             }
 
-            xmlObject.HttpStatusCode = response.HttpStatusCode;
-            xmlObject.HttpHeaders = response.HttpHeaders;
-            xmlObject.HttpBody = response.HttpBody;
+            tResponse.HttpStatusCode = response.HttpStatusCode;
+            tResponse.HttpHeaders = response.HttpHeaders;
+            tResponse.HttpBody = response.HttpBody;
 
-            return xmlObject;
+            return tResponse;
         }
 
-        private static T SetResponseBody<T>(string body)
+        private static T SetResponseBody<T>(string body) where T : SdkResponse
         {
-            T xmlObject;
+            T response;
             var xmlSerializer = new XmlSerializer(typeof(T));
             using (TextReader reader = new StringReader(RemoveXmlns(body)))
             {
-                xmlObject = (T)xmlSerializer.Deserialize(reader);
+                response = (T)xmlSerializer.Deserialize(reader);
             }
 
-            if (xmlObject == null)
+            if (response == null)
             {
-                xmlObject = Activator.CreateInstance<T>();
+                response = Activator.CreateInstance<T>();
             }
 
-            return xmlObject;
+            return response;
         }
 
         private static string RemoveXmlns(string xml)
@@ -77,13 +70,19 @@ namespace HuaweiCloud.SDK.Core
 
         public static string Serialize(object obj)
         {
-            using (StringWriter stringWriter = new Utf8StringWriter()) {
-                XmlSerializer xmlSerializer = new XmlSerializer(obj.GetType());
-                XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();
+            using (StringWriter stringWriter = new Utf8StringWriter())
+            {
+                var xmlSerializer = new XmlSerializer(obj.GetType());
+                var xmlSerializerNamespaces = new XmlSerializerNamespaces();
                 xmlSerializerNamespaces.Add("", "");
                 xmlSerializer.Serialize(stringWriter, obj, xmlSerializerNamespaces);
                 return stringWriter.ToString();
             }
+        }
+
+        private class Utf8StringWriter : StringWriter
+        {
+            public override Encoding Encoding => Encoding.UTF8;
         }
     }
 }

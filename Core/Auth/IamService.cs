@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         public string Name { get; set; }
     }
 
-    internal class KeystoneListProjectsResponse
+    internal class KeystoneListProjectsResponse : SdkResponse
     {
         [JsonProperty("projects", NullValueHandling = NullValueHandling.Ignore)]
         public List<Project> Projects { get; set; }
@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         public string Name { get; set; }
     }
 
-    internal class KeystoneListAuthDomainsResponse
+    internal class KeystoneListAuthDomainsResponse : SdkResponse
     {
         [JsonProperty("domains", NullValueHandling = NullValueHandling.Ignore)]
         public List<Domains> Domains { get; set; }

@@ -415,7 +415,44 @@ namespace HuaweiCloud.SDK.Core
 
             if (data.GetType().IsSubclassOf(typeof(SdkStreamRequest)))
             {
-                request.FileStream = ((SdkStreamRequest)data).FileStream;
+                var streamRequest = (SdkStreamRequest)data;
+                if (streamRequest.TransferProgress != null)
+                {
+                    long contentLength = -1;
+                    if (request.Header.ContainsKey("Content-Length"))
+                    {
+                        contentLength = long.Parse(request.Header["Content-Length"]);
+                    }
+                    else
+                    {
+                        contentLength = streamRequest.FileStream.Length;
+                    }
+
+                    var transferStream = new TransferStream(streamRequest.FileStream);
+                    TransferStreamManager mgr;
+                    if (streamRequest.ProgressType == ProgressTypeEnum.ByBytes)
+                    {
+                        mgr = new TransferStreamByBytes(request, streamRequest.TransferProgress,
+                            contentLength, 0, streamRequest.ProgressInterval);
+                    }
+                    else
+                    {
+                        mgr = new ThreadSafeTransferStreamBySeconds(request, streamRequest.TransferProgress,
+                            contentLength, 0, streamRequest.ProgressInterval);
+                        transferStream.CloseStream += mgr.TransferEnd;
+                    }
+
+                    transferStream.BytesRead += mgr.BytesTransferred;
+                    transferStream.StartRead += mgr.TransferStart;
+                    transferStream.BytesReset += mgr.TransferReset;
+
+                    streamRequest.FileStream = transferStream;
+                    request.FileStream = streamRequest.FileStream;
+                }
+                else
+                {
+                    request.FileStream = streamRequest.FileStream;
+                }
             }
 
             return request;
@@ -436,11 +473,50 @@ namespace HuaweiCloud.SDK.Core
             return t;
         }
 
-        public static void SetAdditionalAttrs<T>(HttpResponseMessage message, T obj, string body)
+        public static T DeSerializeStream<R, T>(R progressRequest, HttpResponseMessage message)
+            where R : IProgressRequest
+            where T : SdkStreamResponse
         {
-            obj.GetType().GetProperty("HttpStatusCode")?.SetValue(obj, (int)message.StatusCode, null);
-            obj.GetType().GetProperty("HttpHeaders")?.SetValue(obj, message.Headers.ToString(), null);
-            obj.GetType().GetProperty("HttpBody")?.SetValue(obj, body, null);
+            var streamResponse = Activator.CreateInstance<T>();
+
+            streamResponse.HttpStatusCode = (int)message.StatusCode;
+            streamResponse.HttpHeaders = message.Headers.ToString();
+
+            var stream = message.Content.ReadAsStreamAsync().Result;
+
+            if (progressRequest.TransferProgress != null)
+            {
+                var contentLength = message.Content.Headers.ContentLength ?? stream.Length;
+                var transferStream = new TransferStream(stream);
+                TransferStreamManager mgr;
+                if (progressRequest.ProgressType == ProgressTypeEnum.ByBytes)
+                {
+                    mgr = new TransferStreamByBytes(streamResponse, progressRequest.TransferProgress,
+                        contentLength, 0, progressRequest.ProgressInterval);
+                }
+                else
+                {
+                    mgr = new ThreadSafeTransferStreamBySeconds(streamResponse, progressRequest.TransferProgress,
+                        contentLength, 0, progressRequest.ProgressInterval);
+                    transferStream.CloseStream += mgr.TransferEnd;
+                }
+
+                transferStream.BytesRead += mgr.BytesTransferred;
+                transferStream.StartRead += mgr.TransferStart;
+                transferStream.BytesReset += mgr.TransferReset;
+                stream = transferStream;
+            }
+
+            streamResponse.SetStream(stream);
+
+            return streamResponse;
+        }
+
+        public static void SetAdditionalAttrs<T>(HttpResponseMessage message, T response, string body) where T : SdkResponse
+        {
+            response.HttpStatusCode = (int)message.StatusCode;
+            response.HttpHeaders = message.Headers.ToString();
+            response.HttpBody = body;
         }
 
         public static void SetResponseHeaders<T>(HttpResponseMessage message, T obj)
@@ -451,7 +527,7 @@ namespace HuaweiCloud.SDK.Core
 
             foreach (var property in properties)
             {
-                var oriAttrName = "";
+                string oriAttrName = null;
                 var customAttrs = property.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
                 if (customAttrs.Length > 0)
                 {
