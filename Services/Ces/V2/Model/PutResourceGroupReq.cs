@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 标签动态匹配时的关联标签
+        /// 标签动态匹配时的关联标签,type为TAG时必传
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceGroupTagRelation> Tags { get; set; }

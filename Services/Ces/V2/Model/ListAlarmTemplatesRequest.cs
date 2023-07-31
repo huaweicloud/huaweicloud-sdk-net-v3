@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListAlarmTemplatesRequest 
     {
         /// <summary>
-        /// 模板类型(system代表默认自定义模板，custom代表系统模板),不传自定义和系统均需返回
+        /// 模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回
         /// </summary>
-        /// <value>模板类型(system代表默认自定义模板，custom代表系统模板),不传自定义和系统均需返回</value>
+        /// <value>模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回</value>
         [JsonConverter(typeof(EnumClassConverter<TemplateTypeEnum>))]
         public class TemplateTypeEnum
         {
@@ -160,7 +160,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string DimName { get; set; }
 
         /// <summary>
-        /// 模板类型(system代表默认自定义模板，custom代表系统模板),不传自定义和系统均需返回
+        /// 模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回
         /// </summary>
         [SDKProperty("template_type", IsQuery = true)]
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -1,3 +1,39 @@
+# 3.1.50 2023-07-31
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateIssueV4**
+    - changes of response param
+      - `+ find_release_dev`
+      - `+ order`
+      - `+ release_dev`
+      - `+ env`
+  - **ListIssuesV4**
+    - changes of response param
+      - `+ find_release_dev`
+      - `+ order`
+      - `+ release_dev`
+      - `+ env`
+      - `+ issues.order`
+      - `+ issues.release_dev`
+      - `+ issues.find_release_dev`
+      - `+ issues.env`
+  - **ListChildIssuesV4**
+    - changes of response param
+      - `+ find_release_dev`
+      - `+ order`
+      - `+ release_dev`
+      - `+ env`
+      - `+ issues.order`
+      - `+ issues.release_dev`
+      - `+ issues.find_release_dev`
+      - `+ issues.env`
+
 # 3.1.49 2023-07-27
 
 ### HuaweiCloud SDK DRS
