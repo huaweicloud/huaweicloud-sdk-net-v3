@@ -23,10 +23,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 数据库版本。  数据库支持的详细版本信息，可调用查询数据库引擎的版本接口获取。
+        /// 数据库版本。  两位数的大版本号，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的name字段。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
+
+        /// <summary>
+        /// 内核数据库版本。  完整的四位内核数据库版本，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的kernel_version字段。
+        /// </summary>
+        [JsonProperty("kernel_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string KernelVersion { get; set; }
 
 
 
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class MysqlDatastore {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  kernelVersion: ").Append(KernelVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.KernelVersion == input.KernelVersion ||
+                    (this.KernelVersion != null &&
+                    this.KernelVersion.Equals(input.KernelVersion))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.KernelVersion != null)
+                    hashCode = hashCode * 59 + this.KernelVersion.GetHashCode();
                 return hashCode;
             }
         }

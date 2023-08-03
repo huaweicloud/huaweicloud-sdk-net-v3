@@ -654,6 +654,24 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 设置读写分离路由模式
+        ///
+        /// 设置读写分离路由模式。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyGaussMySqlProxyRouteModeResponse ModifyGaussMySqlProxyRouteMode(ModifyGaussMySqlProxyRouteModeRequest modifyGaussMySqlProxyRouteModeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , modifyGaussMySqlProxyRouteModeRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id" , modifyGaussMySqlProxyRouteModeRequest.ProxyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyGaussMySqlProxyRouteModeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<ModifyGaussMySqlProxyRouteModeResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改数据库用户密码
         ///
         /// 修改云数据库 GaussDB(for MySQL)实例数据库用户密码。
@@ -1299,7 +1317,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         /// <summary>
         /// 更改数据库代理连接池类型
         ///
-        /// 更改数据库代理连接池类型
+        /// 更改数据库代理连接池类型。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

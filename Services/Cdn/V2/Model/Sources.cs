@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? ActiveStandby { get; set; }
 
         /// <summary>
-        /// 是否开启Obs静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
+        /// 是否开启OBS静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
         /// </summary>
         [JsonProperty("enable_obs_web_hosting", NullValueHandling = NullValueHandling.Ignore)]
         public int? EnableObsWebHosting { get; set; }

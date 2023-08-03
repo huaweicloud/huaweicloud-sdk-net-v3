@@ -394,6 +394,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneId { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否使能efi，使能则表示端口支持vRoCE能力，默认为false
+        /// </summary>
+        [JsonProperty("enable_efi", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableEfi { get; set; }
+
 
 
         /// <summary>
@@ -425,6 +431,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
             sb.Append("  portSecurityEnabled: ").Append(PortSecurityEnabled).Append("\n");
             sb.Append("  zoneId: ").Append(ZoneId).Append("\n");
+            sb.Append("  enableEfi: ").Append(EnableEfi).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -560,6 +567,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.ZoneId == input.ZoneId ||
                     (this.ZoneId != null &&
                     this.ZoneId.Equals(input.ZoneId))
+                ) && 
+                (
+                    this.EnableEfi == input.EnableEfi ||
+                    (this.EnableEfi != null &&
+                    this.EnableEfi.Equals(input.EnableEfi))
                 );
         }
 
@@ -615,6 +627,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.PortSecurityEnabled.GetHashCode();
                 if (this.ZoneId != null)
                     hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
+                if (this.EnableEfi != null)
+                    hashCode = hashCode * 59 + this.EnableEfi.GetHashCode();
                 return hashCode;
             }
         }

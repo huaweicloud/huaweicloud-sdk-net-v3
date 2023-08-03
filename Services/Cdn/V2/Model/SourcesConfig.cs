@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
+        /// 源站类型， - ipaddr：源站IP； - domain：源站域名； - obs_bucket：OBS桶域名； - third_bucket：第三方桶。
         /// </summary>
         [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginType { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Weight { get; set; }
 
         /// <summary>
-        /// 是否开启Obs静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
+        /// 是否开启OBS静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
         /// </summary>
         [JsonProperty("obs_web_hosting_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsWebHostingStatus { get; set; }
@@ -65,10 +65,34 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string HostName { get; set; }
 
         /// <summary>
-        /// obs桶源站类型 “private” 私有桶 “public” 公有桶。
+        /// OBS桶源站类型： - “private” 私有桶； - “public” 公有桶，默认为公有桶。
         /// </summary>
         [JsonProperty("obs_bucket_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketType { get; set; }
+
+        /// <summary>
+        /// 第三方对象存储访问密钥。  &gt; 源站类型为第三方桶时必填
+        /// </summary>
+        [JsonProperty("bucket_access_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string BucketAccessKey { get; set; }
+
+        /// <summary>
+        /// 第三方对象存储密钥。  &gt; 源站类型为第三方桶时必填
+        /// </summary>
+        [JsonProperty("bucket_secret_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string BucketSecretKey { get; set; }
+
+        /// <summary>
+        /// 第三方对象存储区域。  &gt; 源站类型为第三方桶时必填
+        /// </summary>
+        [JsonProperty("bucket_region", NullValueHandling = NullValueHandling.Ignore)]
+        public string BucketRegion { get; set; }
+
+        /// <summary>
+        /// 第三方对象存储名称。  &gt; 源站类型为第三方桶时必填
+        /// </summary>
+        [JsonProperty("bucket_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string BucketName { get; set; }
 
 
 
@@ -88,6 +112,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  httpsPort: ").Append(HttpsPort).Append("\n");
             sb.Append("  hostName: ").Append(HostName).Append("\n");
             sb.Append("  obsBucketType: ").Append(ObsBucketType).Append("\n");
+            sb.Append("  bucketAccessKey: ").Append(BucketAccessKey).Append("\n");
+            sb.Append("  bucketSecretKey: ").Append(BucketSecretKey).Append("\n");
+            sb.Append("  bucketRegion: ").Append(BucketRegion).Append("\n");
+            sb.Append("  bucketName: ").Append(BucketName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +181,26 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.ObsBucketType == input.ObsBucketType ||
                     (this.ObsBucketType != null &&
                     this.ObsBucketType.Equals(input.ObsBucketType))
+                ) && 
+                (
+                    this.BucketAccessKey == input.BucketAccessKey ||
+                    (this.BucketAccessKey != null &&
+                    this.BucketAccessKey.Equals(input.BucketAccessKey))
+                ) && 
+                (
+                    this.BucketSecretKey == input.BucketSecretKey ||
+                    (this.BucketSecretKey != null &&
+                    this.BucketSecretKey.Equals(input.BucketSecretKey))
+                ) && 
+                (
+                    this.BucketRegion == input.BucketRegion ||
+                    (this.BucketRegion != null &&
+                    this.BucketRegion.Equals(input.BucketRegion))
+                ) && 
+                (
+                    this.BucketName == input.BucketName ||
+                    (this.BucketName != null &&
+                    this.BucketName.Equals(input.BucketName))
                 );
         }
 
@@ -182,6 +230,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.HostName.GetHashCode();
                 if (this.ObsBucketType != null)
                     hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
+                if (this.BucketAccessKey != null)
+                    hashCode = hashCode * 59 + this.BucketAccessKey.GetHashCode();
+                if (this.BucketSecretKey != null)
+                    hashCode = hashCode * 59 + this.BucketSecretKey.GetHashCode();
+                if (this.BucketRegion != null)
+                    hashCode = hashCode * 59 + this.BucketRegion.GetHashCode();
+                if (this.BucketName != null)
+                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
                 return hashCode;
             }
         }

@@ -202,6 +202,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("disk_usage", NullValueHandling = NullValueHandling.Ignore)]
         public string DiskUsage { get; set; }
 
+        /// <summary>
+        /// 备份空间使用量，单位KB。
+        /// </summary>
+        [JsonProperty("backup_used_space", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupUsedSpace { get; set; }
+
 
 
         /// <summary>
@@ -242,6 +248,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  diskUsage: ").Append(DiskUsage).Append("\n");
+            sb.Append("  backupUsedSpace: ").Append(BackupUsedSpace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -421,6 +428,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.DiskUsage == input.DiskUsage ||
                     (this.DiskUsage != null &&
                     this.DiskUsage.Equals(input.DiskUsage))
+                ) && 
+                (
+                    this.BackupUsedSpace == input.BackupUsedSpace ||
+                    (this.BackupUsedSpace != null &&
+                    this.BackupUsedSpace.Equals(input.BackupUsedSpace))
                 );
         }
 
@@ -494,6 +506,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.DiskUsage != null)
                     hashCode = hashCode * 59 + this.DiskUsage.GetHashCode();
+                if (this.BackupUsedSpace != null)
+                    hashCode = hashCode * 59 + this.BackupUsedSpace.GetHashCode();
                 return hashCode;
             }
         }

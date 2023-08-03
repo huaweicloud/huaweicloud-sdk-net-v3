@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     /// <summary>
     /// 缺陷发现环境（仅Bug类型工作项具备该字段）
     /// </summary>
-    public class IssueResponseV4Env 
+    public class IssueDetailResponseV4Env 
     {
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class IssueResponseV4Env {\n");
+            sb.Append("class IssueDetailResponseV4Env {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
@@ -48,13 +48,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as IssueResponseV4Env);
+            return this.Equals(input as IssueDetailResponseV4Env);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(IssueResponseV4Env input)
+        public bool Equals(IssueDetailResponseV4Env input)
         {
             if (input == null)
                 return false;

@@ -17,16 +17,22 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 业务类型，web：网站加速，download：文件下载加速，video：点播加速。  &gt; 暂不支持“全站加速”变更为其它业务类型。
+        /// 业务类型： - web：网站加速； - download：文件下载加速； - video：点播加速。  &gt; 暂不支持“全站加速”变更为其它业务类型。
         /// </summary>
         [JsonProperty("business_type", NullValueHandling = NullValueHandling.Ignore)]
         public string BusinessType { get; set; }
 
         /// <summary>
-        /// 服务区域，mainland_china：中国大陆，global：全球，outside_mainland_china：中国大陆境外。  &gt; 暂不支持“中国大陆”与“中国大陆境外”互相直接切换。
+        /// 服务区域： - mainland_china：中国大陆； - global：全球； - outside_mainland_china：中国大陆境外。  &gt; 暂不支持“中国大陆”与“中国大陆境外”互相直接切换。
         /// </summary>
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceArea { get; set; }
+
+        /// <summary>
+        /// 给域名添加备注，字符长度范围0-200。
+        /// </summary>
+        [JsonProperty("remark", NullValueHandling = NullValueHandling.Ignore)]
+        public string Remark { get; set; }
 
         /// <summary>
         /// 回源请求头改写 该功能将覆盖原有配置（清空之前的配置），在使用此接口时，请上传全量头部信息。
@@ -179,6 +185,24 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public List<RequestLimitRules> RequestLimitRules { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("ip_frequency_limit", NullValueHandling = NullValueHandling.Ignore)]
+        public IpFrequencyLimit IpFrequencyLimit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hsts", NullValueHandling = NullValueHandling.Ignore)]
+        public Hsts Hsts { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("quic", NullValueHandling = NullValueHandling.Ignore)]
+        public Quic Quic { get; set; }
+
+        /// <summary>
         /// 自定义错误页面。
         /// </summary>
         [JsonProperty("error_code_redirect_rules", NullValueHandling = NullValueHandling.Ignore)]
@@ -195,6 +219,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("class Configs {\n");
             sb.Append("  businessType: ").Append(BusinessType).Append("\n");
             sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
+            sb.Append("  remark: ").Append(Remark).Append("\n");
             sb.Append("  originRequestHeader: ").Append(OriginRequestHeader).Append("\n");
             sb.Append("  httpResponseHeader: ").Append(HttpResponseHeader).Append("\n");
             sb.Append("  urlAuth: ").Append(UrlAuth).Append("\n");
@@ -220,6 +245,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  websocket: ").Append(Websocket).Append("\n");
             sb.Append("  videoSeek: ").Append(VideoSeek).Append("\n");
             sb.Append("  requestLimitRules: ").Append(RequestLimitRules).Append("\n");
+            sb.Append("  ipFrequencyLimit: ").Append(IpFrequencyLimit).Append("\n");
+            sb.Append("  hsts: ").Append(Hsts).Append("\n");
+            sb.Append("  quic: ").Append(Quic).Append("\n");
             sb.Append("  errorCodeRedirectRules: ").Append(ErrorCodeRedirectRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -251,6 +279,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.ServiceArea == input.ServiceArea ||
                     (this.ServiceArea != null &&
                     this.ServiceArea.Equals(input.ServiceArea))
+                ) && 
+                (
+                    this.Remark == input.Remark ||
+                    (this.Remark != null &&
+                    this.Remark.Equals(input.Remark))
                 ) && 
                 (
                     this.OriginRequestHeader == input.OriginRequestHeader ||
@@ -386,6 +419,21 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.RequestLimitRules.SequenceEqual(input.RequestLimitRules)
                 ) && 
                 (
+                    this.IpFrequencyLimit == input.IpFrequencyLimit ||
+                    (this.IpFrequencyLimit != null &&
+                    this.IpFrequencyLimit.Equals(input.IpFrequencyLimit))
+                ) && 
+                (
+                    this.Hsts == input.Hsts ||
+                    (this.Hsts != null &&
+                    this.Hsts.Equals(input.Hsts))
+                ) && 
+                (
+                    this.Quic == input.Quic ||
+                    (this.Quic != null &&
+                    this.Quic.Equals(input.Quic))
+                ) && 
+                (
                     this.ErrorCodeRedirectRules == input.ErrorCodeRedirectRules ||
                     this.ErrorCodeRedirectRules != null &&
                     input.ErrorCodeRedirectRules != null &&
@@ -405,6 +453,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
                 if (this.ServiceArea != null)
                     hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.Remark != null)
+                    hashCode = hashCode * 59 + this.Remark.GetHashCode();
                 if (this.OriginRequestHeader != null)
                     hashCode = hashCode * 59 + this.OriginRequestHeader.GetHashCode();
                 if (this.HttpResponseHeader != null)
@@ -455,6 +505,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.VideoSeek.GetHashCode();
                 if (this.RequestLimitRules != null)
                     hashCode = hashCode * 59 + this.RequestLimitRules.GetHashCode();
+                if (this.IpFrequencyLimit != null)
+                    hashCode = hashCode * 59 + this.IpFrequencyLimit.GetHashCode();
+                if (this.Hsts != null)
+                    hashCode = hashCode * 59 + this.Hsts.GetHashCode();
+                if (this.Quic != null)
+                    hashCode = hashCode * 59 + this.Quic.GetHashCode();
                 if (this.ErrorCodeRedirectRules != null)
                     hashCode = hashCode * 59 + this.ErrorCodeRedirectRules.GetHashCode();
                 return hashCode;

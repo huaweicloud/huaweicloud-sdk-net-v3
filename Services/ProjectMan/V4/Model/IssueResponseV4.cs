@@ -170,7 +170,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 
         /// </summary>
         [JsonProperty("env", NullValueHandling = NullValueHandling.Ignore)]
-        public IssueResponseV4Env Env { get; set; }
+        public IssueDetailResponseV4Env Env { get; set; }
 
         /// <summary>
         /// 

@@ -17,25 +17,43 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 状态, on：开启，off：关闭。
+        /// status只支持on，off无效。  &gt; request_limit_rules字段置空时代表关闭请求限速功能。  &gt; 旧接口中的参数，后续将下线。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 限速方式，目前只支持按传送流量限速，当单个HTTP请求流量达到设定的值，开始限制访问速度。  &gt; size:按传送流量限速。
+        /// 优先级，值越大，优先级越高,取值范围：1-100。
+        /// </summary>
+        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Priority { get; set; }
+
+        /// <summary>
+        /// 匹配类型，all：所有文件，catalog：目录。
+        /// </summary>
+        [JsonProperty("match_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string MatchType { get; set; }
+
+        /// <summary>
+        /// 匹配类型值。 当match_type为all时传空值，例如：\&quot;\&quot;； 当match_type为catalog时传目录地址，以“/”作为首字符,例如：\&quot;/test\&quot;。  &gt; 值为catalog的时候必填
+        /// </summary>
+        [JsonProperty("match_value", NullValueHandling = NullValueHandling.Ignore)]
+        public string MatchValue { get; set; }
+
+        /// <summary>
+        /// 限速方式，当前仅支持按流量大小限速，取值为size。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 限速条件,type&#x3D;size,limit_rate_after&#x3D;50表示从传输传输50个字节后开始限速且限速值为limit_rate_value，  &gt; 单位byte，取值范围：0-1073741824。
+        /// 限速条件,type&#x3D;size,limit_rate_after&#x3D;50表示从传输表示传输50个字节后开始限速且限速值为limit_rate_value， 单位byte，取值范围：0-1073741824。
         /// </summary>
         [JsonProperty("limit_rate_after", NullValueHandling = NullValueHandling.Ignore)]
         public long? LimitRateAfter { get; set; }
 
         /// <summary>
-        /// 限速值,设置开始限速后的最大访问速度。  &gt; 单位Bps，取值范围 0-104857600
+        /// 限速值,单位Bps，取值范围 0-104857600。
         /// </summary>
         [JsonProperty("limit_rate_value", NullValueHandling = NullValueHandling.Ignore)]
         public int? LimitRateValue { get; set; }
@@ -50,6 +68,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             var sb = new StringBuilder();
             sb.Append("class RequestLimitRules {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  priority: ").Append(Priority).Append("\n");
+            sb.Append("  matchType: ").Append(MatchType).Append("\n");
+            sb.Append("  matchValue: ").Append(MatchValue).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  limitRateAfter: ").Append(LimitRateAfter).Append("\n");
             sb.Append("  limitRateValue: ").Append(LimitRateValue).Append("\n");
@@ -80,6 +101,21 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.Priority == input.Priority ||
+                    (this.Priority != null &&
+                    this.Priority.Equals(input.Priority))
+                ) && 
+                (
+                    this.MatchType == input.MatchType ||
+                    (this.MatchType != null &&
+                    this.MatchType.Equals(input.MatchType))
+                ) && 
+                (
+                    this.MatchValue == input.MatchValue ||
+                    (this.MatchValue != null &&
+                    this.MatchValue.Equals(input.MatchValue))
+                ) && 
+                (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
@@ -106,6 +142,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 int hashCode = 41;
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Priority != null)
+                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.MatchType != null)
+                    hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.MatchValue != null)
+                    hashCode = hashCode * 59 + this.MatchValue.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.LimitRateAfter != null)

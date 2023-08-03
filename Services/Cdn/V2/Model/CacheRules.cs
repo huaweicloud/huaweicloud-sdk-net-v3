@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 类型,all：匹配所有文件， file_extension：按文件后缀匹配， catalog：按目录匹配， full_path：全路径匹配， home_page：按首页匹配。
+        /// 匹配类型: - all：匹配所有文件， - file_extension：按文件后缀匹配， - catalog：按目录匹配， - full_path：全路径匹配， - home_page：按首页匹配。   &gt; 配置单条缓存规则时，可不传，默认为all。   &gt; 配置多条缓存规则时，此参数必传。
         /// </summary>
         [JsonProperty("match_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MatchType { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string MatchValue { get; set; }
 
         /// <summary>
-        /// 缓存过期时间，最大支持365天。
+        /// 缓存过期时间，最大支持365天。  &gt; 默认值为0。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }
@@ -47,19 +47,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 缓存遵循源站开关，on：打开，off：关闭。
+        /// 缓存遵循源站开关，on：打开，off：关闭。  &gt; 默认值为off。
         /// </summary>
         [JsonProperty("follow_origin", NullValueHandling = NullValueHandling.Ignore)]
         public string FollowOrigin { get; set; }
 
         /// <summary>
-        /// URL参数， del_params：忽略指定URL参数， reserve_params：保留指定URL参数， ignore_url_params：忽略全部URL参数， full_url：使用完整URL参数。
+        /// URL参数： - del_params：忽略指定URL参数， - reserve_params：保留指定URL参数， - ignore_url_params：忽略全部URL参数， - full_url：使用完整URL参数。   &gt; 不传此参数时，默认为full_url。
         /// </summary>
         [JsonProperty("url_parameter_type", NullValueHandling = NullValueHandling.Ignore)]
         public string UrlParameterType { get; set; }
 
         /// <summary>
-        /// URL参数值，最多设置10条，以\&quot;,\&quot;分隔。
+        /// URL参数值，最多设置10条，以\&quot;,\&quot;分隔。  &gt; 当url_parameter_type为del_params或reserve_params时必填。
         /// </summary>
         [JsonProperty("url_parameter_value", NullValueHandling = NullValueHandling.Ignore)]
         public string UrlParameterValue { get; set; }

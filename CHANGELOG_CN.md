@@ -1,3 +1,253 @@
+# 3.1.51 2023-08-03
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `- spec.extendParam.enterprise_project_id`
+  - **UpdateNode**
+    - 响应参数变更
+      - `- spec.extendParam.enterprise_project_id`
+  - **DeleteNode**
+    - 响应参数变更
+      - `- spec.extendParam.enterprise_project_id`
+  - **CreateNode**
+    - 请求参数变更
+      - `- spec.extendParam.enterprise_project_id`
+    - 响应参数变更
+      - `- spec.extendParam.enterprise_project_id`
+  - **ListNodes**
+    - 响应参数变更
+      - `- items.spec.extendParam.enterprise_project_id`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **UpdateNodePool**
+    - 响应参数变更
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+    - 响应参数变更
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **ListNodePools**
+    - 响应参数变更
+      - `- items.spec.nodeTemplate.extendParam.enterprise_project_id`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainDetailByName**
+    - 响应参数变更
+      - `- domain.sources.weight`
+      - `* domain.sources: list<SourcesConfig> -> list<SourcesDomainConfig>`
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+
+### HuaweiCloud SDK CTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteTracker**
+    - 请求参数变更
+      - `+ tracker_type: enum value [system]`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`ModifyGaussMySqlProxyRouteMode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowGaussMySqlEngineVersion**
+    - 响应参数变更
+      - `+ datastores.version`
+      - `+ datastores.kernel_version`
+  - **CreateGaussMySqlProxy**
+    - 请求参数变更
+      - `+ route_mode`
+  - **CreateGaussMySqlInstance**
+    - 请求参数变更
+      - `+ datastore.kernel_version`
+    - 响应参数变更
+      - `+ instance.datastore.kernel_version`
+  - **ShowGaussMySqlBackupList**
+    - 响应参数变更
+      - `+ backups.datastore.kernel_version`
+  - **ShowGaussMySqlProxyList**
+    - 响应参数变更
+      - `+ proxy_list.proxy.route_mode`
+      - `+ proxy_list.proxy.balance_route_mode_enabled`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.backup_used_space`
+  - **ListComponentInfos**
+    - 请求参数变更
+      - `+ component_type`
+      - `+ availability_zone_id`
+    - 响应参数变更
+      - `+ nodes.name`
+      - `+ nodes.availability_zone_id`
+      - `+ nodes.description`
+      - `+ nodes.status`
+      - `+ nodes.components.distributed_id`
+  - **ListInstancesDetails**
+    - 响应参数变更
+      - `+ instances.backup_used_space`
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowIssueV4**
+    - 响应参数变更
+      - `+ find_release_dev`
+      - `+ release_dev`
+      - `+ env`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListDatastores**
+    - 请求参数变更
+      - `+ database_name: enum value [MariaDB]`
+  - **ListConfigurations**
+    - 响应参数变更
+      - `+ configurations.datastore_name: enum value [mariadb]`
+  - **CreateConfiguration**
+    - 请求参数变更
+      - `+ datastore.type: enum value [MariaDB]`
+    - 响应参数变更
+      - `+ configuration.datastore_name: enum value [mariadb]`
+  - **ShowConfiguration**
+    - 响应参数变更
+      - `+ datastore_name: enum value [mariadb]`
+  - **ShowInstanceConfiguration**
+    - 响应参数变更
+      - `+ datastore_name: enum value [mariadb]`
+  - **ListFlavors**
+    - 请求参数变更
+      - `+ database_name: enum value [MariaDB]`
+  - **ListStorageTypes**
+    - 请求参数变更
+      - `+ database_name: enum value [MariaDB]`
+  - **ListInstances**
+    - 请求参数变更
+      - `+ datastore_type: enum value [MariaDB]`
+    - 响应参数变更
+      - `+ instances.datastore.type: enum value [MariaDB]`
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ datastore.type: enum value [MariaDB]`
+    - 响应参数变更
+      - `+ instance.datastore.type: enum value [MariaDB]`
+  - **CreateRestoreInstance**
+    - 请求参数变更
+      - `+ datastore.type: enum value [MariaDB]`
+    - 响应参数变更
+      - `+ instance.datastore.type: enum value [MariaDB]`
+  - **ListBackups**
+    - 响应参数变更
+      - `+ backups.datastore.type: enum value [MariaDB]`
+  - **ListOffSiteBackups**
+    - 响应参数变更
+      - `+ backups.datastore.type: enum value [MariaDB]`
+  - **ListOffSiteInstances**
+    - 响应参数变更
+      - `+ offsite_backup_instances.datastore.type: enum value [MariaDB]`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListMessageTrace**
+    - 请求参数变更
+      - `* msg_id: optional -> required`
+  - **ListMessages**
+    - 请求参数变更
+      - `+ key`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 请求参数变更
+      - `+ enable_efi`
+    - 响应参数变更
+      - `+ ports.enable_efi`
+  - **CreatePort**
+    - 响应参数变更
+      - `+ port.enable_efi`
+  - **ShowPort**
+    - 响应参数变更
+      - `+ port.enable_efi`
+  - **UpdatePort**
+    - 响应参数变更
+      - `+ port.enable_efi`
+
 # 3.1.50 2023-07-31
 
 ### HuaweiCloud SDK ProjectMan

@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string IpOrDomain { get; set; }
 
         /// <summary>
-        /// obs桶类型， “private”： 私有桶， “public”： 公有桶。
+        /// OBS桶类型： - “private”， 私有桶： - “public”，公有桶。
         /// </summary>
         [JsonProperty("obs_bucket_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketType { get; set; }

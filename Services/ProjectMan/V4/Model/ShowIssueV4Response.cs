@@ -155,6 +155,24 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public IssueItemSfV4Status Status { get; set; }
 
         /// <summary>
+        /// 工作项发布版本号
+        /// </summary>
+        [JsonProperty("release_dev", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReleaseDev { get; set; }
+
+        /// <summary>
+        /// 缺陷发现版本号（仅Bug类型工作项具备该字段）
+        /// </summary>
+        [JsonProperty("find_release_dev", NullValueHandling = NullValueHandling.Ignore)]
+        public string FindReleaseDev { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("env", NullValueHandling = NullValueHandling.Ignore)]
+        public IssueDetailResponseV4Env Env { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("tracker", NullValueHandling = NullValueHandling.Ignore)]
@@ -222,6 +240,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  severity: ").Append(Severity).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  releaseDev: ").Append(ReleaseDev).Append("\n");
+            sb.Append("  findReleaseDev: ").Append(FindReleaseDev).Append("\n");
+            sb.Append("  env: ").Append(Env).Append("\n");
             sb.Append("  tracker: ").Append(Tracker).Append("\n");
             sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
             sb.Append("  closedTime: ").Append(ClosedTime).Append("\n");
@@ -368,6 +389,21 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.ReleaseDev == input.ReleaseDev ||
+                    (this.ReleaseDev != null &&
+                    this.ReleaseDev.Equals(input.ReleaseDev))
+                ) && 
+                (
+                    this.FindReleaseDev == input.FindReleaseDev ||
+                    (this.FindReleaseDev != null &&
+                    this.FindReleaseDev.Equals(input.FindReleaseDev))
+                ) && 
+                (
+                    this.Env == input.Env ||
+                    (this.Env != null &&
+                    this.Env.Equals(input.Env))
+                ) && 
+                (
                     this.Tracker == input.Tracker ||
                     (this.Tracker != null &&
                     this.Tracker.Equals(input.Tracker))
@@ -454,6 +490,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                     hashCode = hashCode * 59 + this.Severity.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ReleaseDev != null)
+                    hashCode = hashCode * 59 + this.ReleaseDev.GetHashCode();
+                if (this.FindReleaseDev != null)
+                    hashCode = hashCode * 59 + this.FindReleaseDev.GetHashCode();
+                if (this.Env != null)
+                    hashCode = hashCode * 59 + this.Env.GetHashCode();
                 if (this.Tracker != null)
                     hashCode = hashCode * 59 + this.Tracker.GetHashCode();
                 if (this.UpdatedTime != null)

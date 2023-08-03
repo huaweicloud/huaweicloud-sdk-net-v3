@@ -155,6 +155,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("proxy_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ProxyModeEnum ProxyMode { get; set; }
         /// <summary>
+        /// 数据库代理路由模式，默认为权重负载模式。  取值范围: - 0，表示权重负载模式; - 1，表示负载均衡模式（数据库主节点不接受读请求）； - 2，表示负载均衡模式（数据库主节点接受读请求）。
+        /// </summary>
+        [JsonProperty("route_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RouteMode { get; set; }
+
+        /// <summary>
         /// 数据库节点的读权重设置。
         /// </summary>
         [JsonProperty("nodes_read_weight", NullValueHandling = NullValueHandling.Ignore)]
@@ -173,6 +179,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
             sb.Append("  proxyName: ").Append(ProxyName).Append("\n");
             sb.Append("  proxyMode: ").Append(ProxyMode).Append("\n");
+            sb.Append("  routeMode: ").Append(RouteMode).Append("\n");
             sb.Append("  nodesReadWeight: ").Append(NodesReadWeight).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -216,6 +223,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.ProxyMode.Equals(input.ProxyMode))
                 ) && 
                 (
+                    this.RouteMode == input.RouteMode ||
+                    (this.RouteMode != null &&
+                    this.RouteMode.Equals(input.RouteMode))
+                ) && 
+                (
                     this.NodesReadWeight == input.NodesReadWeight ||
                     this.NodesReadWeight != null &&
                     input.NodesReadWeight != null &&
@@ -239,6 +251,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.ProxyName.GetHashCode();
                 if (this.ProxyMode != null)
                     hashCode = hashCode * 59 + this.ProxyMode.GetHashCode();
+                if (this.RouteMode != null)
+                    hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
                 if (this.NodesReadWeight != null)
                     hashCode = hashCode * 59 + this.NodesReadWeight.GetHashCode();
                 return hashCode;

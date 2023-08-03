@@ -252,9 +252,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         }
 
         /// <summary>
-        /// 数据库类型，区分大小写。  - MySQL - PostgreSQL - SQLServer
+        /// 数据库类型，区分大小写。 - MySQL - PostgreSQL - SQLServer - MariaDB
         /// </summary>
-        /// <value>数据库类型，区分大小写。  - MySQL - PostgreSQL - SQLServer</value>
+        /// <value>数据库类型，区分大小写。 - MySQL - PostgreSQL - SQLServer - MariaDB</value>
         [JsonConverter(typeof(EnumClassConverter<DatastoreTypeEnum>))]
         public class DatastoreTypeEnum
         {
@@ -273,12 +273,18 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             /// </summary>
             public static readonly DatastoreTypeEnum SQLSERVER = new DatastoreTypeEnum("SQLServer");
 
+            /// <summary>
+            /// Enum MARIADB for value: MariaDB
+            /// </summary>
+            public static readonly DatastoreTypeEnum MARIADB = new DatastoreTypeEnum("MariaDB");
+
             private static readonly Dictionary<string, DatastoreTypeEnum> StaticFields =
             new Dictionary<string, DatastoreTypeEnum>()
             {
                 { "MySQL", MYSQL },
                 { "PostgreSQL", POSTGRESQL },
                 { "SQLServer", SQLSERVER },
+                { "MariaDB", MARIADB },
             };
 
             private string _value;
@@ -400,7 +406,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 数据库类型，区分大小写。  - MySQL - PostgreSQL - SQLServer
+        /// 数据库类型，区分大小写。 - MySQL - PostgreSQL - SQLServer - MariaDB
         /// </summary>
         [SDKProperty("datastore_type", IsQuery = true)]
         [JsonProperty("datastore_type", NullValueHandling = NullValueHandling.Ignore)]

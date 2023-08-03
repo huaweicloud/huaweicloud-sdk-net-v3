@@ -29,10 +29,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Role { get; set; }
 
         /// <summary>
-        /// 节点状态。
+        /// 组件状态。 Primary：该组件为主。 Normal：该组件状态正常。 Down：该组件处于宕机状态。 Standby：该组件为备。 StateFollower：该ETCD为备。 StateLeader：该ETCD为主。 StateCandidate：该ETCD为仲裁。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 分组id，只有dn组件有分组id，用于区分是否是同一个分片下的组件。其他组件为空字符串。
+        /// </summary>
+        [JsonProperty("distributed_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DistributedId { get; set; }
 
 
 
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  role: ").Append(Role).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  distributedId: ").Append(DistributedId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.DistributedId == input.DistributedId ||
+                    (this.DistributedId != null &&
+                    this.DistributedId.Equals(input.DistributedId))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Role.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DistributedId != null)
+                    hashCode = hashCode * 59 + this.DistributedId.GetHashCode();
                 return hashCode;
             }
         }

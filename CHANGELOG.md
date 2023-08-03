@@ -1,3 +1,253 @@
+# 3.1.51 2023-08-03
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `- spec.extendParam.enterprise_project_id`
+  - **UpdateNode**
+    - changes of response param
+      - `- spec.extendParam.enterprise_project_id`
+  - **DeleteNode**
+    - changes of response param
+      - `- spec.extendParam.enterprise_project_id`
+  - **CreateNode**
+    - changes of request param
+      - `- spec.extendParam.enterprise_project_id`
+    - changes of response param
+      - `- spec.extendParam.enterprise_project_id`
+  - **ListNodes**
+    - changes of response param
+      - `- items.spec.extendParam.enterprise_project_id`
+  - **ShowNodePool**
+    - changes of response param
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **UpdateNodePool**
+    - changes of response param
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **DeleteNodePool**
+    - changes of response param
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **CreateNodePool**
+    - changes of request param
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+    - changes of response param
+      - `- spec.nodeTemplate.extendParam.enterprise_project_id`
+  - **ListNodePools**
+    - changes of response param
+      - `- items.spec.nodeTemplate.extendParam.enterprise_project_id`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainDetailByName**
+    - changes of response param
+      - `- domain.sources.weight`
+      - `* domain.sources: list<SourcesConfig> -> list<SourcesDomainConfig>`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+
+### HuaweiCloud SDK CTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteTracker**
+    - changes of request param
+      - `+ tracker_type: enum value [system]`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interface `ModifyGaussMySqlProxyRouteMode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGaussMySqlEngineVersion**
+    - changes of response param
+      - `+ datastores.version`
+      - `+ datastores.kernel_version`
+  - **CreateGaussMySqlProxy**
+    - changes of request param
+      - `+ route_mode`
+  - **CreateGaussMySqlInstance**
+    - changes of request param
+      - `+ datastore.kernel_version`
+    - changes of response param
+      - `+ instance.datastore.kernel_version`
+  - **ShowGaussMySqlBackupList**
+    - changes of response param
+      - `+ backups.datastore.kernel_version`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.route_mode`
+      - `+ proxy_list.proxy.balance_route_mode_enabled`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.backup_used_space`
+  - **ListComponentInfos**
+    - changes of request param
+      - `+ component_type`
+      - `+ availability_zone_id`
+    - changes of response param
+      - `+ nodes.name`
+      - `+ nodes.availability_zone_id`
+      - `+ nodes.description`
+      - `+ nodes.status`
+      - `+ nodes.components.distributed_id`
+  - **ListInstancesDetails**
+    - changes of response param
+      - `+ instances.backup_used_space`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowIssueV4**
+    - changes of response param
+      - `+ find_release_dev`
+      - `+ release_dev`
+      - `+ env`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListDatastores**
+    - changes of request param
+      - `+ database_name: enum value [MariaDB]`
+  - **ListConfigurations**
+    - changes of response param
+      - `+ configurations.datastore_name: enum value [mariadb]`
+  - **CreateConfiguration**
+    - changes of request param
+      - `+ datastore.type: enum value [MariaDB]`
+    - changes of response param
+      - `+ configuration.datastore_name: enum value [mariadb]`
+  - **ShowConfiguration**
+    - changes of response param
+      - `+ datastore_name: enum value [mariadb]`
+  - **ShowInstanceConfiguration**
+    - changes of response param
+      - `+ datastore_name: enum value [mariadb]`
+  - **ListFlavors**
+    - changes of request param
+      - `+ database_name: enum value [MariaDB]`
+  - **ListStorageTypes**
+    - changes of request param
+      - `+ database_name: enum value [MariaDB]`
+  - **ListInstances**
+    - changes of request param
+      - `+ datastore_type: enum value [MariaDB]`
+    - changes of response param
+      - `+ instances.datastore.type: enum value [MariaDB]`
+  - **CreateInstance**
+    - changes of request param
+      - `+ datastore.type: enum value [MariaDB]`
+    - changes of response param
+      - `+ instance.datastore.type: enum value [MariaDB]`
+  - **CreateRestoreInstance**
+    - changes of request param
+      - `+ datastore.type: enum value [MariaDB]`
+    - changes of response param
+      - `+ instance.datastore.type: enum value [MariaDB]`
+  - **ListBackups**
+    - changes of response param
+      - `+ backups.datastore.type: enum value [MariaDB]`
+  - **ListOffSiteBackups**
+    - changes of response param
+      - `+ backups.datastore.type: enum value [MariaDB]`
+  - **ListOffSiteInstances**
+    - changes of response param
+      - `+ offsite_backup_instances.datastore.type: enum value [MariaDB]`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListMessageTrace**
+    - changes of request param
+      - `* msg_id: optional -> required`
+  - **ListMessages**
+    - changes of request param
+      - `+ key`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of request param
+      - `+ enable_efi`
+    - changes of response param
+      - `+ ports.enable_efi`
+  - **CreatePort**
+    - changes of response param
+      - `+ port.enable_efi`
+  - **ShowPort**
+    - changes of response param
+      - `+ port.enable_efi`
+  - **UpdatePort**
+    - changes of response param
+      - `+ port.enable_efi`
+
 # 3.1.50 2023-07-31
 
 ### HuaweiCloud SDK ProjectMan

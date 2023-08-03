@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 
+    /// QUIC协议。
     /// </summary>
-    public class EnlargeVolume 
+    public class Quic 
     {
 
         /// <summary>
-        /// 
+        /// 状态，on：打开，off：关闭。
         /// </summary>
-        [JsonProperty("enlarge_volume", NullValueHandling = NullValueHandling.Ignore)]
-        public EnlargeVolumeObject _EnlargeVolume { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EnlargeVolume {\n");
-            sb.Append("  _enlargeVolume: ").Append(_EnlargeVolume).Append("\n");
+            sb.Append("class Quic {\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EnlargeVolume);
+            return this.Equals(input as Quic);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(EnlargeVolume input)
+        public bool Equals(Quic input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this._EnlargeVolume == input._EnlargeVolume ||
-                    (this._EnlargeVolume != null &&
-                    this._EnlargeVolume.Equals(input._EnlargeVolume))
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this._EnlargeVolume != null)
-                    hashCode = hashCode * 59 + this._EnlargeVolume.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

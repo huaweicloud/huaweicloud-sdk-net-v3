@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     public class ParaGroupDatastore 
     {
         /// <summary>
-        /// 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+        /// 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer - MariaDB
         /// </summary>
-        /// <value>数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer</value>
+        /// <value>数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer - MariaDB</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             /// </summary>
             public static readonly TypeEnum SQLSERVER = new TypeEnum("SQLServer");
 
+            /// <summary>
+            /// Enum MARIADB for value: MariaDB
+            /// </summary>
+            public static readonly TypeEnum MARIADB = new TypeEnum("MariaDB");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "MySQL", MYSQL },
                 { "PostgreSQL", POSTGRESQL },
                 { "SQLServer", SQLSERVER },
+                { "MariaDB", MARIADB },
             };
 
             private string _value;
@@ -138,7 +144,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
 
         /// <summary>
-        /// 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+        /// 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer - MariaDB
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

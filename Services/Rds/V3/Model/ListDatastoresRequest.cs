@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             /// </summary>
             public static readonly DatabaseNameEnum SQLSERVER = new DatabaseNameEnum("SQLServer");
 
+            /// <summary>
+            /// Enum MARIADB for value: MariaDB
+            /// </summary>
+            public static readonly DatabaseNameEnum MARIADB = new DatabaseNameEnum("MariaDB");
+
             private static readonly Dictionary<string, DatabaseNameEnum> StaticFields =
             new Dictionary<string, DatabaseNameEnum>()
             {
                 { "MySQL", MYSQL },
                 { "PostgreSQL", POSTGRESQL },
                 { "SQLServer", SQLSERVER },
+                { "MariaDB", MARIADB },
             };
 
             private string _value;

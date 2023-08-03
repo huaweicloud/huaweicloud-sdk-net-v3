@@ -353,6 +353,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否使能efi，使能则表示端口支持vRoCE能力，默认为false
+        /// </summary>
+        [SDKProperty("enable_efi", IsQuery = true)]
+        [JsonProperty("enable_efi", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableEfi { get; set; }
+
 
 
         /// <summary>
@@ -375,6 +382,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  fixedIps: ").Append(FixedIps).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  enableEfi: ").Append(EnableEfi).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -462,6 +470,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.EnableEfi == input.EnableEfi ||
+                    (this.EnableEfi != null &&
+                    this.EnableEfi.Equals(input.EnableEfi))
                 );
         }
 
@@ -499,6 +512,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnableEfi != null)
+                    hashCode = hashCode * 59 + this.EnableEfi.GetHashCode();
                 return hashCode;
             }
         }

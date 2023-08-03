@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 是否开启URL鉴权，off：开启,on：关闭。
+        /// 是否开启URL鉴权，on：开启,off：关闭。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -45,6 +45,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         [JsonProperty("match_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MatchType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("inherit_config", NullValueHandling = NullValueHandling.Ignore)]
+        public InheritConfig InheritConfig { get; set; }
 
         /// <summary>
         /// 鉴权KEY 由6-32位大小写字母、数字构成。
@@ -84,6 +90,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
             sb.Append("  signMethod: ").Append(SignMethod).Append("\n");
             sb.Append("  matchType: ").Append(MatchType).Append("\n");
+            sb.Append("  inheritConfig: ").Append(InheritConfig).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  backupKey: ").Append(BackupKey).Append("\n");
             sb.Append("  signArg: ").Append(SignArg).Append("\n");
@@ -135,6 +142,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.MatchType.Equals(input.MatchType))
                 ) && 
                 (
+                    this.InheritConfig == input.InheritConfig ||
+                    (this.InheritConfig != null &&
+                    this.InheritConfig.Equals(input.InheritConfig))
+                ) && 
+                (
                     this.Key == input.Key ||
                     (this.Key != null &&
                     this.Key.Equals(input.Key))
@@ -174,6 +186,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.SignMethod.GetHashCode();
                 if (this.MatchType != null)
                     hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.InheritConfig != null)
+                    hashCode = hashCode * 59 + this.InheritConfig.GetHashCode();
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.BackupKey != null)

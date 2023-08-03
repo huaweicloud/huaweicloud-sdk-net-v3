@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.cts.v3.Model
     public class DeleteTrackerRequest 
     {
         /// <summary>
-        /// 标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\&quot;data\&quot;。
+        /// 标识追踪器类型。 默认值为\&quot;data\&quot;。传入\&quot;system\&quot;时，配合tracker_name参数可删除管理类追踪器。
         /// </summary>
-        /// <value>标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\&quot;data\&quot;。</value>
+        /// <value>标识追踪器类型。 默认值为\&quot;data\&quot;。传入\&quot;system\&quot;时，配合tracker_name参数可删除管理类追踪器。</value>
         [JsonConverter(typeof(EnumClassConverter<TrackerTypeEnum>))]
         public class TrackerTypeEnum
         {
@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.cts.v3.Model
             /// </summary>
             public static readonly TrackerTypeEnum DATA = new TrackerTypeEnum("data");
 
+            /// <summary>
+            /// Enum SYSTEM for value: system
+            /// </summary>
+            public static readonly TrackerTypeEnum SYSTEM = new TrackerTypeEnum("system");
+
             private static readonly Dictionary<string, TrackerTypeEnum> StaticFields =
             new Dictionary<string, TrackerTypeEnum>()
             {
                 { "data", DATA },
+                { "system", SYSTEM },
             };
 
             private string _value;
@@ -133,7 +139,7 @@ namespace HuaweiCloud.SDK.cts.v3.Model
         public string TrackerName { get; set; }
 
         /// <summary>
-        /// 标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\&quot;data\&quot;。
+        /// 标识追踪器类型。 默认值为\&quot;data\&quot;。传入\&quot;system\&quot;时，配合tracker_name参数可删除管理类追踪器。
         /// </summary>
         [SDKProperty("tracker_type", IsQuery = true)]
         [JsonProperty("tracker_type", NullValueHandling = NullValueHandling.Ignore)]

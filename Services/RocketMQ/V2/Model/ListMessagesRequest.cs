@@ -160,6 +160,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Offset { get; set; }
 
         /// <summary>
+        /// 消息的key
+        /// </summary>
+        [SDKProperty("key", IsQuery = true)]
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
+        public string Key { get; set; }
+
+        /// <summary>
         /// 开始时间（不通过msg_id精确查询消息时，此参数必填）。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
@@ -194,6 +201,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  msgId: ").Append(MsgId).Append("\n");
@@ -244,6 +252,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.Offset.Equals(input.Offset))
                 ) && 
                 (
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
+                ) && 
+                (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
@@ -278,6 +291,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null)
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Key != null)
+                    hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.StartTime != null)
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null)

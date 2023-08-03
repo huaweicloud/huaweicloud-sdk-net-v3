@@ -124,6 +124,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("switch_connection_pool_type_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SwitchConnectionPoolTypeEnabled { get; set; }
 
+        /// <summary>
+        /// 数据库代理路由模式，默认为权重负载模式。  取值范围: - 0，表示权重负载模式; - 1，表示负载均衡模式（数据库主节点不接受读请求）； - 2，表示负载均衡模式（数据库主节点接受读请求）。
+        /// </summary>
+        [JsonProperty("route_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RouteMode { get; set; }
+
+        /// <summary>
+        /// 数据库代理版本是否支持负载均衡模式。  取值范围: - true 支持; - false 不支持。
+        /// </summary>
+        [JsonProperty("balance_route_mode_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? BalanceRouteModeEnabled { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +163,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  transactionSplit: ").Append(TransactionSplit).Append("\n");
             sb.Append("  connectionPoolType: ").Append(ConnectionPoolType).Append("\n");
             sb.Append("  switchConnectionPoolTypeEnabled: ").Append(SwitchConnectionPoolTypeEnabled).Append("\n");
+            sb.Append("  routeMode: ").Append(RouteMode).Append("\n");
+            sb.Append("  balanceRouteModeEnabled: ").Append(BalanceRouteModeEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -262,6 +276,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.SwitchConnectionPoolTypeEnabled == input.SwitchConnectionPoolTypeEnabled ||
                     (this.SwitchConnectionPoolTypeEnabled != null &&
                     this.SwitchConnectionPoolTypeEnabled.Equals(input.SwitchConnectionPoolTypeEnabled))
+                ) && 
+                (
+                    this.RouteMode == input.RouteMode ||
+                    (this.RouteMode != null &&
+                    this.RouteMode.Equals(input.RouteMode))
+                ) && 
+                (
+                    this.BalanceRouteModeEnabled == input.BalanceRouteModeEnabled ||
+                    (this.BalanceRouteModeEnabled != null &&
+                    this.BalanceRouteModeEnabled.Equals(input.BalanceRouteModeEnabled))
                 );
         }
 
@@ -309,6 +333,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.ConnectionPoolType.GetHashCode();
                 if (this.SwitchConnectionPoolTypeEnabled != null)
                     hashCode = hashCode * 59 + this.SwitchConnectionPoolTypeEnabled.GetHashCode();
+                if (this.RouteMode != null)
+                    hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
+                if (this.BalanceRouteModeEnabled != null)
+                    hashCode = hashCode * 59 + this.BalanceRouteModeEnabled.GetHashCode();
                 return hashCode;
             }
         }

@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
+        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm)。 
         /// </summary>
-        /// <value>消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 </value>
+        /// <value>消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm)。 </value>
         [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
         public class EngineVersionEnum
         {
@@ -512,7 +512,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
+        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm)。 
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
@@ -523,7 +523,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public int? StorageSpace { get; set; }
 
         /// <summary>
-        /// 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+        /// 认证用户名，只能由英文字母开头且由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
         /// </summary>
         [JsonProperty("access_user", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessUser { get; set; }
