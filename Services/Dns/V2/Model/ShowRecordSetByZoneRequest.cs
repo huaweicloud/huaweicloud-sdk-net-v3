@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string SortDir { get; set; }
 
         /// <summary>
-        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索
         /// </summary>
         [SDKProperty("search_mode", IsQuery = true)]
         [JsonProperty("search_mode", NullValueHandling = NullValueHandling.Ignore)]

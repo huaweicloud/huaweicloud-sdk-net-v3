@@ -419,6 +419,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string PublicBrokerAddress { get; set; }
 
         /// <summary>
+        /// grpc连接地址。
+        /// </summary>
+        [JsonProperty("grpc_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string GrpcAddress { get; set; }
+
+        /// <summary>
+        /// 公网grpc连接地址。
+        /// </summary>
+        [JsonProperty("public_grpc_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicGrpcAddress { get; set; }
+
+        /// <summary>
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -493,6 +505,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  brokerAddress: ").Append(BrokerAddress).Append("\n");
             sb.Append("  publicNamesrvAddress: ").Append(PublicNamesrvAddress).Append("\n");
             sb.Append("  publicBrokerAddress: ").Append(PublicBrokerAddress).Append("\n");
+            sb.Append("  grpcAddress: ").Append(GrpcAddress).Append("\n");
+            sb.Append("  publicGrpcAddress: ").Append(PublicGrpcAddress).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  totalStorageSpace: ").Append(TotalStorageSpace).Append("\n");
             sb.Append("  resourceSpecCode: ").Append(ResourceSpecCode).Append("\n");
@@ -759,6 +773,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.PublicBrokerAddress.Equals(input.PublicBrokerAddress))
                 ) && 
                 (
+                    this.GrpcAddress == input.GrpcAddress ||
+                    (this.GrpcAddress != null &&
+                    this.GrpcAddress.Equals(input.GrpcAddress))
+                ) && 
+                (
+                    this.PublicGrpcAddress == input.PublicGrpcAddress ||
+                    (this.PublicGrpcAddress != null &&
+                    this.PublicGrpcAddress.Equals(input.PublicGrpcAddress))
+                ) && 
+                (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
@@ -880,6 +904,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.PublicNamesrvAddress.GetHashCode();
                 if (this.PublicBrokerAddress != null)
                     hashCode = hashCode * 59 + this.PublicBrokerAddress.GetHashCode();
+                if (this.GrpcAddress != null)
+                    hashCode = hashCode * 59 + this.GrpcAddress.GetHashCode();
+                if (this.PublicGrpcAddress != null)
+                    hashCode = hashCode * 59 + this.PublicGrpcAddress.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.TotalStorageSpace != null)

@@ -1,3 +1,133 @@
+# 3.1.52 2023-08-10
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _新增特性_
+  - 支持编译构建服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPrivateZones**
+    - 请求参数变更
+      - `* type: optional -> required`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`UpdateProxyPort`、`DescribeBackupEncryptStatus`、`ModifyBackupEncryptStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateProxySessionConsistence**
+    - 请求参数变更
+      - `+ consistence_mode`
+  - **CreateGaussMySqlInstance**
+    - 请求参数变更
+      - `* datastore: object<MysqlDatastore> -> object<MysqlDatastoreInReq>`
+    - 响应参数变更
+      - `* instance.datastore: object<MysqlDatastore> -> object<MysqlDatastoreInRes>`
+  - **ShowGaussMySqlBackupList**
+    - 响应参数变更
+      - `- backups.datastore.kernel_version`
+      - `* backups.datastore: object<MysqlDatastore> -> object<MysqlDatastoreInBackup>`
+  - **ShowGaussMySqlProxyList**
+    - 响应参数变更
+      - `+ proxy_list.proxy.consistence_mode`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstanceConsumerGroups**
+    - 响应参数变更
+      - `+ groups.createdAt`
+      - `+ groups.group_desc`
+      - `+ groups.lag`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeMyanmarIdcard**
+    - 请求参数变更
+      - `+ return_translation`
+    - 响应参数变更
+      - `+ result.translation_info`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`ListXellogFiles`、`CreateXelLogDownload`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowOneTopic**
+    - 响应参数变更
+      - `+ message_type`
+  - **ShowTopicStatus**
+    - 响应参数变更
+      - `+ max_offset`
+      - `+ min_offset`
+  - **ShowInstance**
+    - 响应参数变更
+      - `+ grpc_address`
+      - `+ public_grpc_address`
+  - **CreateTopicOrBatchDeleteTopic**
+    - 请求参数变更
+      - `+ message_type`
+  - **ListRocketInstanceTopics**
+    - 响应参数变更
+      - `+ message_type`
+      - `+ topics.message_type`
+  - **ListMessages**
+    - 响应参数变更
+      - `* messages.reconsume_times: string -> int32`
+      - `* messages.queue_id: string -> int32`
+      - `* messages.queue_offset: string -> int32`
+  - **ExportDlqMessage**
+    - 响应参数变更
+      - `* reconsume_times: string -> int32`
+      - `* queue_id: string -> int32`
+      - `* queue_offset: string -> int32`
+  - **CreatePostPaidInstance**
+    - 请求参数变更
+      - `+ engine_version: enum value [5.x]`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ grpc_address`
+      - `+ public_grpc_address`
+      - `+ instances.grpc_address`
+      - `+ instances.public_grpc_address`
+  - **ShowConsumerListOrDetails**
+    - 响应参数变更
+      - `+ lag`
+      - `+ max_offset`
+      - `+ consumer_offset`
+
 # 3.1.51 2023-08-03
 
 ### HuaweiCloud SDK CCE

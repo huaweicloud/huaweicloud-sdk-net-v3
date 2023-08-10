@@ -248,6 +248,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取扩展日志下载信息
+        ///
+        /// 获取扩展日志下载信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateXelLogDownloadResponse CreateXelLogDownload(CreateXelLogDownloadRequest createXelLogDownloadRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createXelLogDownloadRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-download",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createXelLogDownloadRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateXelLogDownloadResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除参数模板
         ///
         /// 删除参数模板。
@@ -899,6 +916,24 @@ namespace HuaweiCloud.SDK.Rds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStorageTypesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListStorageTypesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询扩展日志文件列表
+        ///
+        /// 查询扩展日志文件列表。
+        /// 查询扩展日志文件列表，可以调用接口/v3/{project_id}/instances/{instance_id}/xellog-download 获取扩展日志下载链接
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListXellogFilesResponse ListXellogFiles(ListXellogFilesRequest listXellogFilesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listXellogFilesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-files",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listXellogFilesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListXellogFilesResponse>(response);
         }
         
         /// <summary>

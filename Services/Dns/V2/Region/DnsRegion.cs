@@ -40,6 +40,8 @@ namespace HuaweiCloud.SDK.Dns.V2
             "https://dns.cn-north-2.myhuaweicloud.com");
         public static readonly Region CN_SOUTH_2 = new Region("cn-south-2",
             "https://dns.cn-south-2.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+            "https://dns.ap-southeast-4.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -60,6 +62,7 @@ namespace HuaweiCloud.SDK.Dns.V2
                 { "cn-north-9", CN_NORTH_9 },
                 { "cn-north-2", CN_NORTH_2 },
                 { "cn-south-2", CN_SOUTH_2 },
+                { "ap-southeast-4", AP_SOUTHEAST_4 },
         };
 
         public static Region ValueOf(string regionId)

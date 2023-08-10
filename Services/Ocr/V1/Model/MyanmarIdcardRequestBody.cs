@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("return_idcard_type", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnIdcardType { get; set; }
 
+        /// <summary>
+        /// 是否返回转译信息的开关，可选值如下所示： - true: 返回转译信息。 - false：不返回转译信息。 
+        /// </summary>
+        [JsonProperty("return_translation", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnTranslation { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  returnPortraitImage: ").Append(ReturnPortraitImage).Append("\n");
             sb.Append("  returnPortraitLocation: ").Append(ReturnPortraitLocation).Append("\n");
             sb.Append("  returnIdcardType: ").Append(ReturnIdcardType).Append("\n");
+            sb.Append("  returnTranslation: ").Append(ReturnTranslation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnIdcardType == input.ReturnIdcardType ||
                     (this.ReturnIdcardType != null &&
                     this.ReturnIdcardType.Equals(input.ReturnIdcardType))
+                ) && 
+                (
+                    this.ReturnTranslation == input.ReturnTranslation ||
+                    (this.ReturnTranslation != null &&
+                    this.ReturnTranslation.Equals(input.ReturnTranslation))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ReturnPortraitLocation.GetHashCode();
                 if (this.ReturnIdcardType != null)
                     hashCode = hashCode * 59 + this.ReturnIdcardType.GetHashCode();
+                if (this.ReturnTranslation != null)
+                    hashCode = hashCode * 59 + this.ReturnTranslation.GetHashCode();
                 return hashCode;
             }
         }

@@ -29,6 +29,24 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public int? Total { get; set; }
 
         /// <summary>
+        /// 消费堆积总数
+        /// </summary>
+        [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Lag { get; set; }
+
+        /// <summary>
+        /// 消息总数
+        /// </summary>
+        [JsonProperty("max_offset", NullValueHandling = NullValueHandling.Ignore)]
+        public long? MaxOffset { get; set; }
+
+        /// <summary>
+        /// 已消费消息数
+        /// </summary>
+        [JsonProperty("consumer_offset", NullValueHandling = NullValueHandling.Ignore)]
+        public long? ConsumerOffset { get; set; }
+
+        /// <summary>
         /// Topic关联代理（当查询topic消费“详情”才显示此参数）。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,6 +63,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("class ShowConsumerListOrDetailsResponse {\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  lag: ").Append(Lag).Append("\n");
+            sb.Append("  maxOffset: ").Append(MaxOffset).Append("\n");
+            sb.Append("  consumerOffset: ").Append(ConsumerOffset).Append("\n");
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -79,6 +100,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.Total.Equals(input.Total))
                 ) && 
                 (
+                    this.Lag == input.Lag ||
+                    (this.Lag != null &&
+                    this.Lag.Equals(input.Lag))
+                ) && 
+                (
+                    this.MaxOffset == input.MaxOffset ||
+                    (this.MaxOffset != null &&
+                    this.MaxOffset.Equals(input.MaxOffset))
+                ) && 
+                (
+                    this.ConsumerOffset == input.ConsumerOffset ||
+                    (this.ConsumerOffset != null &&
+                    this.ConsumerOffset.Equals(input.ConsumerOffset))
+                ) && 
+                (
                     this.Brokers == input.Brokers ||
                     this.Brokers != null &&
                     input.Brokers != null &&
@@ -98,6 +134,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 if (this.Total != null)
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Lag != null)
+                    hashCode = hashCode * 59 + this.Lag.GetHashCode();
+                if (this.MaxOffset != null)
+                    hashCode = hashCode * 59 + this.MaxOffset.GetHashCode();
+                if (this.ConsumerOffset != null)
+                    hashCode = hashCode * 59 + this.ConsumerOffset.GetHashCode();
                 if (this.Brokers != null)
                     hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 return hashCode;

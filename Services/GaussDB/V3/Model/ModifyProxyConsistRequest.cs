@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("session_consistence", NullValueHandling = NullValueHandling.Ignore)]
         public string SessionConsistence { get; set; }
 
+        /// <summary>
+        /// 一致性模式。默认值为空，此时以会话一致性参数session_consistence为准。 - session: 会话一致性 - global: 全局一致性 - eventual: 最终一致性
+        /// </summary>
+        [JsonProperty("consistence_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConsistenceMode { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ModifyProxyConsistRequest {\n");
             sb.Append("  sessionConsistence: ").Append(SessionConsistence).Append("\n");
+            sb.Append("  consistenceMode: ").Append(ConsistenceMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.SessionConsistence == input.SessionConsistence ||
                     (this.SessionConsistence != null &&
                     this.SessionConsistence.Equals(input.SessionConsistence))
+                ) && 
+                (
+                    this.ConsistenceMode == input.ConsistenceMode ||
+                    (this.ConsistenceMode != null &&
+                    this.ConsistenceMode.Equals(input.ConsistenceMode))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 int hashCode = 41;
                 if (this.SessionConsistence != null)
                     hashCode = hashCode * 59 + this.SessionConsistence.GetHashCode();
+                if (this.ConsistenceMode != null)
+                    hashCode = hashCode * 59 + this.ConsistenceMode.GetHashCode();
                 return hashCode;
             }
         }

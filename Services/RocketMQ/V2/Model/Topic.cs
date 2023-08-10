@@ -136,6 +136,133 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             }
         }
 
+        /// <summary>
+        /// 消息类型。
+        /// </summary>
+        /// <value>消息类型。</value>
+        [JsonConverter(typeof(EnumClassConverter<MessageTypeEnum>))]
+        public class MessageTypeEnum
+        {
+            /// <summary>
+            /// Enum NORMAL for value: NORMAL
+            /// </summary>
+            public static readonly MessageTypeEnum NORMAL = new MessageTypeEnum("NORMAL");
+
+            /// <summary>
+            /// Enum FIFO for value: FIFO
+            /// </summary>
+            public static readonly MessageTypeEnum FIFO = new MessageTypeEnum("FIFO");
+
+            /// <summary>
+            /// Enum DELAY for value: DELAY
+            /// </summary>
+            public static readonly MessageTypeEnum DELAY = new MessageTypeEnum("DELAY");
+
+            /// <summary>
+            /// Enum TRANSACTION for value: TRANSACTION
+            /// </summary>
+            public static readonly MessageTypeEnum TRANSACTION = new MessageTypeEnum("TRANSACTION");
+
+            private static readonly Dictionary<string, MessageTypeEnum> StaticFields =
+            new Dictionary<string, MessageTypeEnum>()
+            {
+                { "NORMAL", NORMAL },
+                { "FIFO", FIFO },
+                { "DELAY", DELAY },
+                { "TRANSACTION", TRANSACTION },
+            };
+
+            private string _value;
+
+            public MessageTypeEnum()
+            {
+
+            }
+
+            public MessageTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static MessageTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as MessageTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(MessageTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(MessageTypeEnum a, MessageTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(MessageTypeEnum a, MessageTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// topic名称。
@@ -166,6 +293,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<TopicBrokers> Brokers { get; set; }
 
+        /// <summary>
+        /// 消息类型。
+        /// </summary>
+        [JsonProperty("message_type", NullValueHandling = NullValueHandling.Ignore)]
+        public MessageTypeEnum MessageType { get; set; }
 
 
         /// <summary>
@@ -180,6 +312,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  totalWriteQueueNum: ").Append(TotalWriteQueueNum).Append("\n");
             sb.Append("  permission: ").Append(Permission).Append("\n");
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
+            sb.Append("  messageType: ").Append(MessageType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -226,6 +359,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.Brokers != null &&
                     input.Brokers != null &&
                     this.Brokers.SequenceEqual(input.Brokers)
+                ) && 
+                (
+                    this.MessageType == input.MessageType ||
+                    (this.MessageType != null &&
+                    this.MessageType.Equals(input.MessageType))
                 );
         }
 
@@ -247,6 +385,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Permission.GetHashCode();
                 if (this.Brokers != null)
                     hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                if (this.MessageType != null)
+                    hashCode = hashCode * 59 + this.MessageType.GetHashCode();
                 return hashCode;
             }
         }

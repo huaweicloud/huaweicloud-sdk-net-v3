@@ -1,3 +1,133 @@
+# 3.1.52 2023-08-10
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _Features_
+  - Support `CodeArtsBuild`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DNS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPrivateZones**
+    - changes of request param
+      - `* type: optional -> required`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interfaces `UpdateProxyPort`, `DescribeBackupEncryptStatus`, `ModifyBackupEncryptStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateProxySessionConsistence**
+    - changes of request param
+      - `+ consistence_mode`
+  - **CreateGaussMySqlInstance**
+    - changes of request param
+      - `* datastore: object<MysqlDatastore> -> object<MysqlDatastoreInReq>`
+    - changes of response param
+      - `* instance.datastore: object<MysqlDatastore> -> object<MysqlDatastoreInRes>`
+  - **ShowGaussMySqlBackupList**
+    - changes of response param
+      - `- backups.datastore.kernel_version`
+      - `* backups.datastore: object<MysqlDatastore> -> object<MysqlDatastoreInBackup>`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.consistence_mode`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstanceConsumerGroups**
+    - changes of response param
+      - `+ groups.createdAt`
+      - `+ groups.group_desc`
+      - `+ groups.lag`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeMyanmarIdcard**
+    - changes of request param
+      - `+ return_translation`
+    - changes of response param
+      - `+ result.translation_info`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `ListXellogFiles`, `CreateXelLogDownload`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowOneTopic**
+    - changes of response param
+      - `+ message_type`
+  - **ShowTopicStatus**
+    - changes of response param
+      - `+ max_offset`
+      - `+ min_offset`
+  - **ShowInstance**
+    - changes of response param
+      - `+ grpc_address`
+      - `+ public_grpc_address`
+  - **CreateTopicOrBatchDeleteTopic**
+    - changes of request param
+      - `+ message_type`
+  - **ListRocketInstanceTopics**
+    - changes of response param
+      - `+ message_type`
+      - `+ topics.message_type`
+  - **ListMessages**
+    - changes of response param
+      - `* messages.reconsume_times: string -> int32`
+      - `* messages.queue_id: string -> int32`
+      - `* messages.queue_offset: string -> int32`
+  - **ExportDlqMessage**
+    - changes of response param
+      - `* reconsume_times: string -> int32`
+      - `* queue_id: string -> int32`
+      - `* queue_offset: string -> int32`
+  - **CreatePostPaidInstance**
+    - changes of request param
+      - `+ engine_version: enum value [5.x]`
+  - **ListInstances**
+    - changes of response param
+      - `+ grpc_address`
+      - `+ public_grpc_address`
+      - `+ instances.grpc_address`
+      - `+ instances.public_grpc_address`
+  - **ShowConsumerListOrDetails**
+    - changes of response param
+      - `+ lag`
+      - `+ max_offset`
+      - `+ consumer_offset`
+
 # 3.1.51 2023-08-03
 
 ### HuaweiCloud SDK CCE

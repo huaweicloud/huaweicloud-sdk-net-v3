@@ -136,6 +136,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("balance_route_mode_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? BalanceRouteModeEnabled { get; set; }
 
+        /// <summary>
+        /// 一致性模式。默认值为空，此时以会话一致性参数session_consistence为准。 - session: 会话一致性 - global: 全局一致性 - eventual: 最终一致性
+        /// </summary>
+        [JsonProperty("consistence_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConsistenceMode { get; set; }
+
 
 
         /// <summary>
@@ -165,6 +171,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  switchConnectionPoolTypeEnabled: ").Append(SwitchConnectionPoolTypeEnabled).Append("\n");
             sb.Append("  routeMode: ").Append(RouteMode).Append("\n");
             sb.Append("  balanceRouteModeEnabled: ").Append(BalanceRouteModeEnabled).Append("\n");
+            sb.Append("  consistenceMode: ").Append(ConsistenceMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -286,6 +293,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.BalanceRouteModeEnabled == input.BalanceRouteModeEnabled ||
                     (this.BalanceRouteModeEnabled != null &&
                     this.BalanceRouteModeEnabled.Equals(input.BalanceRouteModeEnabled))
+                ) && 
+                (
+                    this.ConsistenceMode == input.ConsistenceMode ||
+                    (this.ConsistenceMode != null &&
+                    this.ConsistenceMode.Equals(input.ConsistenceMode))
                 );
         }
 
@@ -337,6 +349,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
                 if (this.BalanceRouteModeEnabled != null)
                     hashCode = hashCode * 59 + this.BalanceRouteModeEnabled.GetHashCode();
+                if (this.ConsistenceMode != null)
+                    hashCode = hashCode * 59 + this.ConsistenceMode.GetHashCode();
                 return hashCode;
             }
         }

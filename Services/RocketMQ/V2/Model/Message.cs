@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 重试次数。
         /// </summary>
         [JsonProperty("reconsume_times", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReconsumeTimes { get; set; }
+        public int? ReconsumeTimes { get; set; }
 
         /// <summary>
         /// 消息体。
@@ -92,13 +92,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 队列ID。
         /// </summary>
         [JsonProperty("queue_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string QueueId { get; set; }
+        public int? QueueId { get; set; }
 
         /// <summary>
         /// 在队列中的偏移量。
         /// </summary>
         [JsonProperty("queue_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string QueueOffset { get; set; }
+        public int? QueueOffset { get; set; }
 
 
 

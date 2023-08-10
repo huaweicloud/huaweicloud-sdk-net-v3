@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 
         /// </summary>
         [JsonProperty("datastore", NullValueHandling = NullValueHandling.Ignore)]
-        public MysqlDatastore Datastore { get; set; }
+        public MysqlDatastoreInReq Datastore { get; set; }
 
         /// <summary>
         /// 实例类型，目前仅支持Cluster。

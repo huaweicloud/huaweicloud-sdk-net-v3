@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("idcard_type", NullValueHandling = NullValueHandling.Ignore)]
         public string IdcardType { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("translation_info", NullValueHandling = NullValueHandling.Ignore)]
+        public MyanmarIdcardTranslationInfo TranslationInfo { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  portraitImage: ").Append(PortraitImage).Append("\n");
             sb.Append("  portraitLocation: ").Append(PortraitLocation).Append("\n");
             sb.Append("  idcardType: ").Append(IdcardType).Append("\n");
+            sb.Append("  translationInfo: ").Append(TranslationInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -262,6 +269,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.IdcardType == input.IdcardType ||
                     (this.IdcardType != null &&
                     this.IdcardType.Equals(input.IdcardType))
+                ) && 
+                (
+                    this.TranslationInfo == input.TranslationInfo ||
+                    (this.TranslationInfo != null &&
+                    this.TranslationInfo.Equals(input.TranslationInfo))
                 );
         }
 
@@ -309,6 +321,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
                 if (this.IdcardType != null)
                     hashCode = hashCode * 59 + this.IdcardType.GetHashCode();
+                if (this.TranslationInfo != null)
+                    hashCode = hashCode * 59 + this.TranslationInfo.GetHashCode();
                 return hashCode;
             }
         }
