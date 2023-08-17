@@ -293,6 +293,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public string RemoteIpPrefix { get; set; }
 
         /// <summary>
+        /// 功能说明：远端地址组的ID
+        /// </summary>
+        [JsonProperty("remote_address_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RemoteAddressGroupId { get; set; }
+
+        /// <summary>
         /// 所属安全组ID
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -315,6 +321,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  remoteGroupId: ").Append(RemoteGroupId).Append("\n");
             sb.Append("  remoteIpPrefix: ").Append(RemoteIpPrefix).Append("\n");
+            sb.Append("  remoteAddressGroupId: ").Append(RemoteAddressGroupId).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -378,6 +385,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))
                 ) && 
                 (
+                    this.RemoteAddressGroupId == input.RemoteAddressGroupId ||
+                    (this.RemoteAddressGroupId != null &&
+                    this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))
+                ) && 
+                (
                     this.SecurityGroupId == input.SecurityGroupId ||
                     (this.SecurityGroupId != null &&
                     this.SecurityGroupId.Equals(input.SecurityGroupId))
@@ -408,6 +420,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
                 if (this.RemoteIpPrefix != null)
                     hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
+                if (this.RemoteAddressGroupId != null)
+                    hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
                 if (this.SecurityGroupId != null)
                     hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
                 return hashCode;

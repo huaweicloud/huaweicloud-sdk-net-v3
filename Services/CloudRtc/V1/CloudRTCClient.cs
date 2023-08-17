@@ -15,6 +15,38 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
 
         
         /// <summary>
+        /// 查询用户异常体验事件接口
+        ///
+        /// 查询指定APP下通话的异常明细数据。可查询5天内的数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRtcAbnormalEventResponse ListRtcAbnormalEvent(ListRtcAbnormalEventRequest listRtcAbnormalEventRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/abnormalevent",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRtcAbnormalEventResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询详情事件接口
+        ///
+        /// 查询指定APP下通话的异常明细数据。可查询5天内的数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRtcEventResponse ListRtcEvent(ListRtcEventRequest listRtcEventRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/event",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcEventRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRtcEventResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询异常事件用户分布
         ///
         /// 查询指定APP下指定时间内的通话异常明细数据分布情况。

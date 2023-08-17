@@ -59,16 +59,22 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         public int? PortRangeMax { get; set; }
 
         /// <summary>
-        /// 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id互斥
+        /// 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id，remote_address_group_id互斥
         /// </summary>
         [JsonProperty("remote_ip_prefix", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteIpPrefix { get; set; }
 
         /// <summary>
-        /// 功能说明：对端安全组ID 约束：和remote_ip_prefix互斥
+        /// 功能说明：对端安全组ID 约束：和remote_ip_prefix，remote_address_group_id互斥
         /// </summary>
         [JsonProperty("remote_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteGroupId { get; set; }
+
+        /// <summary>
+        /// 功能说明：远端IP地址组ID 约束：和remote_ip_prefix，remote_group_id互斥
+        /// </summary>
+        [JsonProperty("remote_address_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RemoteAddressGroupId { get; set; }
 
 
 
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  portRangeMax: ").Append(PortRangeMax).Append("\n");
             sb.Append("  remoteIpPrefix: ").Append(RemoteIpPrefix).Append("\n");
             sb.Append("  remoteGroupId: ").Append(RemoteGroupId).Append("\n");
+            sb.Append("  remoteAddressGroupId: ").Append(RemoteAddressGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +160,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.RemoteGroupId == input.RemoteGroupId ||
                     (this.RemoteGroupId != null &&
                     this.RemoteGroupId.Equals(input.RemoteGroupId))
+                ) && 
+                (
+                    this.RemoteAddressGroupId == input.RemoteAddressGroupId ||
+                    (this.RemoteAddressGroupId != null &&
+                    this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))
                 );
         }
 
@@ -182,6 +194,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
                 if (this.RemoteGroupId != null)
                     hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
+                if (this.RemoteAddressGroupId != null)
+                    hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
                 return hashCode;
             }
         }

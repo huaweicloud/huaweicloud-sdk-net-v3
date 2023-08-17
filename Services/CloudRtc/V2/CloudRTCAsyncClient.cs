@@ -516,5 +516,53 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
             return JsonUtils.DeSerialize<UpdateUrlAuthResponse>(response);
         }
         
+        /// <summary>
+        /// 查询OBS桶下对象列表
+        ///
+        /// 查询OBS桶下对象列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListObsBucketObjectsResponse> ListObsBucketObjectsAsync(ListObsBucketObjectsRequest listObsBucketObjectsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/objects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketObjectsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListObsBucketObjectsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询OBS桶列表
+        ///
+        /// 查询OBS桶列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListObsBucketsResponse> ListObsBucketsAsync(ListObsBucketsRequest listObsBucketsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListObsBucketsResponse>(response);
+        }
+        
+        /// <summary>
+        /// OBS桶授权及取消授权
+        ///
+        /// OBS桶授权及取消授权
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateObsBucketAuthorityResponse> UpdateObsBucketAuthorityAsync(UpdateObsBucketAuthorityRequest updateObsBucketAuthorityRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/authentication",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateObsBucketAuthorityRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateObsBucketAuthorityResponse>(response);
+        }
+        
     }
 }

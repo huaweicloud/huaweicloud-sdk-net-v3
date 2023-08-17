@@ -101,6 +101,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public List<string> PrivateWriteIps { get; set; }
 
         /// <summary>
+        /// 实例内网域名列表。实例创建成功后，需要手动申请内网域名，否则查询内网域名为空。
+        /// </summary>
+        [JsonProperty("private_dns_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PrivateDnsNames { get; set; }
+
+        /// <summary>
         /// 实例的公网IP。
         /// </summary>
         [JsonProperty("public_ips", NullValueHandling = NullValueHandling.Ignore)]
@@ -219,6 +225,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("  privateWriteIps: ").Append(PrivateWriteIps).Append("\n");
+            sb.Append("  privateDnsNames: ").Append(PrivateDnsNames).Append("\n");
             sb.Append("  publicIps: ").Append(PublicIps).Append("\n");
             sb.Append("  dbUserName: ").Append(DbUserName).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
@@ -326,6 +333,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.PrivateWriteIps != null &&
                     input.PrivateWriteIps != null &&
                     this.PrivateWriteIps.SequenceEqual(input.PrivateWriteIps)
+                ) && 
+                (
+                    this.PrivateDnsNames == input.PrivateDnsNames ||
+                    this.PrivateDnsNames != null &&
+                    input.PrivateDnsNames != null &&
+                    this.PrivateDnsNames.SequenceEqual(input.PrivateDnsNames)
                 ) && 
                 (
                     this.PublicIps == input.PublicIps ||
@@ -448,6 +461,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 if (this.PrivateWriteIps != null)
                     hashCode = hashCode * 59 + this.PrivateWriteIps.GetHashCode();
+                if (this.PrivateDnsNames != null)
+                    hashCode = hashCode * 59 + this.PrivateDnsNames.GetHashCode();
                 if (this.PublicIps != null)
                     hashCode = hashCode * 59 + this.PublicIps.GetHashCode();
                 if (this.DbUserName != null)

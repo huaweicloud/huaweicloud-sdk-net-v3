@@ -137,11 +137,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             public static readonly EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
 
             /// <summary>
-            /// Enum _2_3_0 for value: 2.3.0
-            /// </summary>
-            public static readonly EngineVersionEnum _2_3_0 = new EngineVersionEnum("2.3.0");
-
-            /// <summary>
             /// Enum _2_7 for value: 2.7
             /// </summary>
             public static readonly EngineVersionEnum _2_7 = new EngineVersionEnum("2.7");
@@ -150,7 +145,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             new Dictionary<string, EngineVersionEnum>()
             {
                 { "1.1.0", _1_1_0 },
-                { "2.3.0", _2_3_0 },
                 { "2.7", _2_7 },
             };
 

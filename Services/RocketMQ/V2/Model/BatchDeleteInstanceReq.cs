@@ -248,7 +248,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// <summary>
         /// 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。
         /// </summary>
-        [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("allFailure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
 
 

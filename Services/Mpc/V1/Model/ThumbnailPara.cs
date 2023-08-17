@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
     public class ThumbnailPara 
     {
         /// <summary>
-        /// 采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。  默认值：\&quot;TIME\&quot; 
+        /// 采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。 - \&quot;DOTS_MS\&quot;：同步截图指定时间点毫秒值。  默认值：\&quot;TIME\&quot; 
         /// </summary>
-        /// <value>采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。  默认值：\&quot;TIME\&quot; </value>
+        /// <value>采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。 - \&quot;DOTS_MS\&quot;：同步截图指定时间点毫秒值。  默认值：\&quot;TIME\&quot; </value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             /// </summary>
             public static readonly TypeEnum DOTS = new TypeEnum("DOTS");
 
+            /// <summary>
+            /// Enum DOTS_MS for value: DOTS_MS
+            /// </summary>
+            public static readonly TypeEnum DOTS_MS = new TypeEnum("DOTS_MS");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "PERCENT", PERCENT },
                 { "TIME", TIME },
                 { "DOTS", DOTS },
+                { "DOTS_MS", DOTS_MS },
             };
 
             private string _value;
@@ -138,7 +144,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
 
 
         /// <summary>
-        /// 采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。  默认值：\&quot;TIME\&quot; 
+        /// 采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。 - \&quot;DOTS_MS\&quot;：同步截图指定时间点毫秒值。  默认值：\&quot;TIME\&quot; 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -165,6 +171,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         [JsonProperty("dots", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Dots { get; set; }
+
+        /// <summary>
+        /// 同步截图下，指定时间截图的时间点数组，单位毫秒  例如输入[1000]，截取视频第1000毫秒位置的图像帧，仅支持一个时间点 
+        /// </summary>
+        [JsonProperty("dots_ms", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> DotsMs { get; set; }
 
         /// <summary>
         /// 截图输出文件名。  - 如果只抽一张图（即：按DOTS方式，指定1个时间点）则按该指定文件名输出图片。  - 如果抽多张图（即：按DOTS方式指定多个时间点或按TIME间隔截图）则输出图片名在该指定文件名基础上在增加时间点（示例：output_filename_10.jpg）。  - 如果指定了压缩抽帧图片生成tar包，则tar包按该指定文件名输出。 
@@ -210,6 +222,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  dots: ").Append(Dots).Append("\n");
+            sb.Append("  dotsMs: ").Append(DotsMs).Append("\n");
             sb.Append("  outputFilename: ").Append(OutputFilename).Append("\n");
             sb.Append("  format: ").Append(Format).Append("\n");
             sb.Append("  width: ").Append(Width).Append("\n");
@@ -263,6 +276,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     this.Dots.SequenceEqual(input.Dots)
                 ) && 
                 (
+                    this.DotsMs == input.DotsMs ||
+                    this.DotsMs != null &&
+                    input.DotsMs != null &&
+                    this.DotsMs.SequenceEqual(input.DotsMs)
+                ) && 
+                (
                     this.OutputFilename == input.OutputFilename ||
                     (this.OutputFilename != null &&
                     this.OutputFilename.Equals(input.OutputFilename))
@@ -307,6 +326,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.Dots != null)
                     hashCode = hashCode * 59 + this.Dots.GetHashCode();
+                if (this.DotsMs != null)
+                    hashCode = hashCode * 59 + this.DotsMs.GetHashCode();
                 if (this.OutputFilename != null)
                     hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
                 if (this.Format != null)

@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public int? Total { get; set; }
 
         /// <summary>
-        /// 
+        /// 截图配置
         /// </summary>
         [JsonProperty("snapshot_config_list", NullValueHandling = NullValueHandling.Ignore)]
-        public LiveSnapshotConfig SnapshotConfigList { get; set; }
+        public List<LiveSnapshotConfig> SnapshotConfigList { get; set; }
 
         /// <summary>
         /// 每页记录数
@@ -81,8 +81,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 ) && 
                 (
                     this.SnapshotConfigList == input.SnapshotConfigList ||
-                    (this.SnapshotConfigList != null &&
-                    this.SnapshotConfigList.Equals(input.SnapshotConfigList))
+                    this.SnapshotConfigList != null &&
+                    input.SnapshotConfigList != null &&
+                    this.SnapshotConfigList.SequenceEqual(input.SnapshotConfigList)
                 ) && 
                 (
                     this.Limit == input.Limit ||

@@ -138,16 +138,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public class AllFailureEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
-            /// </summary>
-            public static readonly AllFailureEnum TRUE = new AllFailureEnum("true");
-
-            /// <summary>
-            /// Enum FALSE for value: false
-            /// </summary>
-            public static readonly AllFailureEnum FALSE = new AllFailureEnum("false");
-
-            /// <summary>
             /// Enum KAFKA for value: kafka
             /// </summary>
             public static readonly AllFailureEnum KAFKA = new AllFailureEnum("kafka");
@@ -155,8 +145,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             private static readonly Dictionary<string, AllFailureEnum> StaticFields =
             new Dictionary<string, AllFailureEnum>()
             {
-                { "true", TRUE },
-                { "false", FALSE },
                 { "kafka", KAFKA },
             };
 
@@ -266,7 +254,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 参数值为kafka，表示删除租户所有创建失败的Kafka实例。
         /// </summary>
-        [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("allFailure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
 
 

@@ -718,6 +718,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("bandwidth_info", NullValueHandling = NullValueHandling.Ignore)]
         public BandwidthInfo BandwidthInfo { get; set; }
 
+        /// <summary>
+        /// 云服务类型编码。
+        /// </summary>
+        [JsonProperty("cloud_service_type_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string CloudServiceTypeCode { get; set; }
+
+        /// <summary>
+        /// 云资源类型编码。
+        /// </summary>
+        [JsonProperty("cloud_resource_type_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string CloudResourceTypeCode { get; set; }
+
+        /// <summary>
+        /// 运营系统中的规格编码
+        /// </summary>
+        [JsonProperty("inquery_spec_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string InquerySpecCode { get; set; }
+
 
 
         /// <summary>
@@ -785,6 +803,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  replicaCount: ").Append(ReplicaCount).Append("\n");
             sb.Append("  shardingCount: ").Append(ShardingCount).Append("\n");
             sb.Append("  bandwidthInfo: ").Append(BandwidthInfo).Append("\n");
+            sb.Append("  cloudServiceTypeCode: ").Append(CloudServiceTypeCode).Append("\n");
+            sb.Append("  cloudResourceTypeCode: ").Append(CloudResourceTypeCode).Append("\n");
+            sb.Append("  inquerySpecCode: ").Append(InquerySpecCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1097,6 +1118,21 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.BandwidthInfo == input.BandwidthInfo ||
                     (this.BandwidthInfo != null &&
                     this.BandwidthInfo.Equals(input.BandwidthInfo))
+                ) && 
+                (
+                    this.CloudServiceTypeCode == input.CloudServiceTypeCode ||
+                    (this.CloudServiceTypeCode != null &&
+                    this.CloudServiceTypeCode.Equals(input.CloudServiceTypeCode))
+                ) && 
+                (
+                    this.CloudResourceTypeCode == input.CloudResourceTypeCode ||
+                    (this.CloudResourceTypeCode != null &&
+                    this.CloudResourceTypeCode.Equals(input.CloudResourceTypeCode))
+                ) && 
+                (
+                    this.InquerySpecCode == input.InquerySpecCode ||
+                    (this.InquerySpecCode != null &&
+                    this.InquerySpecCode.Equals(input.InquerySpecCode))
                 );
         }
 
@@ -1224,6 +1260,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.ShardingCount.GetHashCode();
                 if (this.BandwidthInfo != null)
                     hashCode = hashCode * 59 + this.BandwidthInfo.GetHashCode();
+                if (this.CloudServiceTypeCode != null)
+                    hashCode = hashCode * 59 + this.CloudServiceTypeCode.GetHashCode();
+                if (this.CloudResourceTypeCode != null)
+                    hashCode = hashCode * 59 + this.CloudResourceTypeCode.GetHashCode();
+                if (this.InquerySpecCode != null)
+                    hashCode = hashCode * 59 + this.InquerySpecCode.GetHashCode();
                 return hashCode;
             }
         }

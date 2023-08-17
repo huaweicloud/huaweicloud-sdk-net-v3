@@ -136,16 +136,10 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             /// </summary>
             public static readonly EngineVersionEnum _3_8_35 = new EngineVersionEnum("3.8.35");
 
-            /// <summary>
-            /// Enum _3_7_17 for value: 3.7.17
-            /// </summary>
-            public static readonly EngineVersionEnum _3_7_17 = new EngineVersionEnum("3.7.17");
-
             private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
             new Dictionary<string, EngineVersionEnum>()
             {
                 { "3.8.35", _3_8_35 },
-                { "3.7.17", _3_7_17 },
             };
 
             private string _value;

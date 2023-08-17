@@ -23,10 +23,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// 对应provider所使用的IAM委托名称，资源编排服务会使用此委托的权限去访问、创建对应provider的资源
+        /// 对应provider所使用的IAM委托名称，资源编排服务会使用此委托的权限去访问、创建对应provider的资源。agency_name和agency_urn必须有且只有一个存在
         /// </summary>
         [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyName { get; set; }
+
+        /// <summary>
+        /// 委托URN  当用户定义Agency时，agency_name和agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给与agency_urn，agency_name只支持接收普通委托名称，若给与了v5委托名称，则会在部署模板时失败。
+        /// </summary>
+        [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyUrn { get; set; }
 
 
 
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("class Agency {\n");
             sb.Append("  providerName: ").Append(ProviderName).Append("\n");
             sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
+            sb.Append("  agencyUrn: ").Append(AgencyUrn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.AgencyName == input.AgencyName ||
                     (this.AgencyName != null &&
                     this.AgencyName.Equals(input.AgencyName))
+                ) && 
+                (
+                    this.AgencyUrn == input.AgencyUrn ||
+                    (this.AgencyUrn != null &&
+                    this.AgencyUrn.Equals(input.AgencyUrn))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.ProviderName.GetHashCode();
                 if (this.AgencyName != null)
                     hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.AgencyUrn != null)
+                    hashCode = hashCode * 59 + this.AgencyUrn.GetHashCode();
                 return hashCode;
             }
         }

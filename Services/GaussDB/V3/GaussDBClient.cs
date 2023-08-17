@@ -233,6 +233,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 申请内网域名
+        ///
+        /// 申请内网域名。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateGaussMysqlDnsResponse CreateGaussMysqlDns(CreateGaussMysqlDnsRequest createGaussMysqlDnsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createGaussMysqlDnsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMysqlDnsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateGaussMysqlDnsResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除数据库用户的数据库权限
         ///
         /// 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限。
@@ -703,6 +720,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyGaussMySqlProxyRouteModeRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<ModifyGaussMySqlProxyRouteModeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改内网域名
+        ///
+        /// 修改内网域名。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyGaussMysqlDnsResponse ModifyGaussMysqlDns(ModifyGaussMysqlDnsRequest modifyGaussMysqlDnsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , modifyGaussMysqlDnsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyGaussMysqlDnsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<ModifyGaussMysqlDnsResponse>(response);
         }
         
         /// <summary>

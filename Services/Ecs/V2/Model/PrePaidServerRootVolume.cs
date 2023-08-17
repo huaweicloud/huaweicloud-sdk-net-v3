@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     public class PrePaidServerRootVolume 
     {
         /// <summary>
-        /// 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  - SATA：普通IO磁盘类型。 - SAS：高IO磁盘类型。 - SSD：超高IO磁盘类型。 - co-p1：高IO (性能优化Ⅰ型) - uh-l1：超高IO (时延优化)  &gt; 说明： &gt;  &gt; 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
+        /// 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。   - SATA：普通IO磁盘类型。  - SAS：高IO磁盘类型。  - SSD：超高IO磁盘类型。  - co-p1：高IO (性能优化Ⅰ型)。  - uh-l1：超高IO (时延优化)。  - GPSSD2：通用型SSD V2磁盘类型。  - ESSD2：极速型SSD V2磁盘类型。   &gt; 说明： &gt;  &gt; 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。  了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。  获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)
         /// </summary>
-        /// <value>云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  - SATA：普通IO磁盘类型。 - SAS：高IO磁盘类型。 - SSD：超高IO磁盘类型。 - co-p1：高IO (性能优化Ⅰ型) - uh-l1：超高IO (时延优化)  &gt; 说明： &gt;  &gt; 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。</value>
+        /// <value>云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。   - SATA：普通IO磁盘类型。  - SAS：高IO磁盘类型。  - SSD：超高IO磁盘类型。  - co-p1：高IO (性能优化Ⅰ型)。  - uh-l1：超高IO (时延优化)。  - GPSSD2：通用型SSD V2磁盘类型。  - ESSD2：极速型SSD V2磁盘类型。   &gt; 说明： &gt;  &gt; 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。  了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。  获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)</value>
         [JsonConverter(typeof(EnumClassConverter<VolumetypeEnum>))]
         public class VolumetypeEnum
         {
@@ -57,6 +57,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             /// </summary>
             public static readonly VolumetypeEnum ESSD = new VolumetypeEnum("ESSD");
 
+            /// <summary>
+            /// Enum GPSSD2 for value: GPSSD2
+            /// </summary>
+            public static readonly VolumetypeEnum GPSSD2 = new VolumetypeEnum("GPSSD2");
+
+            /// <summary>
+            /// Enum ESSD2 for value: ESSD2
+            /// </summary>
+            public static readonly VolumetypeEnum ESSD2 = new VolumetypeEnum("ESSD2");
+
             private static readonly Dictionary<string, VolumetypeEnum> StaticFields =
             new Dictionary<string, VolumetypeEnum>()
             {
@@ -67,6 +77,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 { "co-p1", CO_P1 },
                 { "uh-l1", UH_L1 },
                 { "ESSD", ESSD },
+                { "GPSSD2", GPSSD2 },
+                { "ESSD2", ESSD2 },
             };
 
             private string _value;
@@ -271,7 +283,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
 
         /// <summary>
-        /// 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  - SATA：普通IO磁盘类型。 - SAS：高IO磁盘类型。 - SSD：超高IO磁盘类型。 - co-p1：高IO (性能优化Ⅰ型) - uh-l1：超高IO (时延优化)  &gt; 说明： &gt;  &gt; 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
+        /// 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。   - SATA：普通IO磁盘类型。  - SAS：高IO磁盘类型。  - SSD：超高IO磁盘类型。  - co-p1：高IO (性能优化Ⅰ型)。  - uh-l1：超高IO (时延优化)。  - GPSSD2：通用型SSD V2磁盘类型。  - ESSD2：极速型SSD V2磁盘类型。   &gt; 说明： &gt;  &gt; 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。  了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。  获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;EVS&amp;api&#x3D;CinderListVolumeTypes)
         /// </summary>
         [JsonProperty("volumetype", NullValueHandling = NullValueHandling.Ignore)]
         public VolumetypeEnum Volumetype { get; set; }
@@ -280,6 +292,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
+
+        /// <summary>
+        /// 给云硬盘配置iops，购买GPSSD2、ESSD2类型的云硬盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2、ESSD2类型的iops大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+        /// </summary>
+        [JsonProperty("iops", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Iops { get; set; }
+
+        /// <summary>
+        /// 给云硬盘配置吞吐量，单位是MiB/s，购买GPSSD2类型云盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2类型的吞吐量大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+        /// </summary>
+        [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Throughput { get; set; }
 
         /// <summary>
         /// 
@@ -321,6 +345,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("class PrePaidServerRootVolume {\n");
             sb.Append("  volumetype: ").Append(Volumetype).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  iops: ").Append(Iops).Append("\n");
+            sb.Append("  throughput: ").Append(Throughput).Append("\n");
             sb.Append("  extendparam: ").Append(Extendparam).Append("\n");
             sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("  clusterType: ").Append(ClusterType).Append("\n");
@@ -356,6 +382,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
+                ) && 
+                (
+                    this.Iops == input.Iops ||
+                    (this.Iops != null &&
+                    this.Iops.Equals(input.Iops))
+                ) && 
+                (
+                    this.Throughput == input.Throughput ||
+                    (this.Throughput != null &&
+                    this.Throughput.Equals(input.Throughput))
                 ) && 
                 (
                     this.Extendparam == input.Extendparam ||
@@ -396,6 +432,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Volumetype.GetHashCode();
                 if (this.Size != null)
                     hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Iops != null)
+                    hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null)
+                    hashCode = hashCode * 59 + this.Throughput.GetHashCode();
                 if (this.Extendparam != null)
                     hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
                 if (this.Metadata != null)

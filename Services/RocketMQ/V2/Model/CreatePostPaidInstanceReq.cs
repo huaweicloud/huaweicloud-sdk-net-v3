@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。取值填写为：4.8.0[和5.x](tag:hws)。
+        /// 消息引擎的版本。取值填写为：4.8.0。
         /// </summary>
-        /// <value>消息引擎的版本。取值填写为：4.8.0[和5.x](tag:hws)。</value>
+        /// <value>消息引擎的版本。取值填写为：4.8.0。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
         public class EngineVersionEnum
         {
@@ -136,16 +136,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             /// </summary>
             public static readonly EngineVersionEnum _4_8_0 = new EngineVersionEnum("4.8.0");
 
-            /// <summary>
-            /// Enum _5_X for value: 5.x
-            /// </summary>
-            public static readonly EngineVersionEnum _5_X = new EngineVersionEnum("5.x");
-
             private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
             new Dictionary<string, EngineVersionEnum>()
             {
                 { "4.8.0", _4_8_0 },
-                { "5.x", _5_X },
             };
 
             private string _value;
@@ -500,7 +494,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：4.8.0[和5.x](tag:hws)。
+        /// 消息引擎的版本。取值填写为：4.8.0。
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }

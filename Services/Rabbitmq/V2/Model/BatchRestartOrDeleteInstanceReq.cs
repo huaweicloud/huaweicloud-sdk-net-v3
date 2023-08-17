@@ -254,7 +254,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// <summary>
         /// 是否批量删除创建失败的实例。  当参数值为“rabbitmq”时，删除租户所有创建失败的实例，此时请求参数instances可为空。
         /// </summary>
-        [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("allFailure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
 
 

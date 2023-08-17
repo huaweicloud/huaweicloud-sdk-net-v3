@@ -1060,6 +1060,25 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询实例节点信息
+        ///
+        /// 查询指定实例的节点信息。
+        /// 仅支持Redis4.0和Redis5.0实例查询。
+        /// 创建中实例不返回节点信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowNodesInformationResponse> ShowNodesInformationAsync(ShowNodesInformationRequest showNodesInformationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showNodesInformationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/logical-nodes",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodesInformationRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowNodesInformationResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询租户配额
         ///
         /// 查询租户默认可以创建的实例数和总内存的配额限制，以及可以申请配额的最大值和最小值。不同的租户在不同的区域配额可能不同。
