@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("log_split", NullValueHandling = NullValueHandling.Ignore)]
         public bool? LogSplit { get; set; }
 
+        /// <summary>
+        /// CCE集群ID，当CCE类型时，为必填
+        /// </summary>
+        [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClusterId { get; set; }
+
 
 
         /// <summary>
@@ -195,6 +201,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  accessConfigTag: ").Append(AccessConfigTag).Append("\n");
             sb.Append("  binaryCollect: ").Append(BinaryCollect).Append("\n");
             sb.Append("  logSplit: ").Append(LogSplit).Append("\n");
+            sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -256,6 +263,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.LogSplit == input.LogSplit ||
                     (this.LogSplit != null &&
                     this.LogSplit.Equals(input.LogSplit))
+                ) && 
+                (
+                    this.ClusterId == input.ClusterId ||
+                    (this.ClusterId != null &&
+                    this.ClusterId.Equals(input.ClusterId))
                 );
         }
 
@@ -283,6 +295,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.BinaryCollect.GetHashCode();
                 if (this.LogSplit != null)
                     hashCode = hashCode * 59 + this.LogSplit.GetHashCode();
+                if (this.ClusterId != null)
+                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 return hashCode;
             }
         }

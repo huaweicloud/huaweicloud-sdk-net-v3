@@ -297,6 +297,22 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 删除仪表盘
+        ///
+        /// 删除仪表盘
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDashboardResponse> DeleteDashboardAsync(DeleteDashboardRequest deleteDashboardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dashboard",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDashboardRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteDashboardResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除主机组
         ///
         /// 删除主机组

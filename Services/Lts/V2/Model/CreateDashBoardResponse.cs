@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 最近修改时间
         /// </summary>
         [JsonProperty("last_update_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string LastUpdateTime { get; set; }
+        public long? LastUpdateTime { get; set; }
 
         /// <summary>
         /// 项目id
@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 是否使用模板
         /// </summary>
         [JsonProperty("useSystemTemplate", NullValueHandling = NullValueHandling.Ignore)]
-        public string UseSystemTemplate { get; set; }
+        public bool? UseSystemTemplate { get; set; }
 
 
 
