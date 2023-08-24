@@ -340,6 +340,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("session_conf", NullValueHandling = NullValueHandling.Ignore)]
+        public SessionConfiguration SessionConf { get; set; }
+
 
 
         /// <summary>
@@ -360,6 +366,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  routerId: ").Append(RouterId).Append("\n");
             sb.Append("  internalNetworkId: ").Append(InternalNetworkId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  sessionConf: ").Append(SessionConf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -435,6 +442,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.SessionConf == input.SessionConf ||
+                    (this.SessionConf != null &&
+                    this.SessionConf.Equals(input.SessionConf))
                 );
         }
 
@@ -468,6 +480,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.InternalNetworkId.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.SessionConf != null)
+                    hashCode = hashCode * 59 + this.SessionConf.GetHashCode();
                 return hashCode;
             }
         }

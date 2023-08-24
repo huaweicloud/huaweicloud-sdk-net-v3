@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("session_conf", NullValueHandling = NullValueHandling.Ignore)]
+        public SessionConfiguration SessionConf { get; set; }
+
 
 
         /// <summary>
@@ -172,6 +178,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  spec: ").Append(Spec).Append("\n");
+            sb.Append("  sessionConf: ").Append(SessionConf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -207,6 +214,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.Spec == input.Spec ||
                     (this.Spec != null &&
                     this.Spec.Equals(input.Spec))
+                ) && 
+                (
+                    this.SessionConf == input.SessionConf ||
+                    (this.SessionConf != null &&
+                    this.SessionConf.Equals(input.SessionConf))
                 );
         }
 
@@ -224,6 +236,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Spec != null)
                     hashCode = hashCode * 59 + this.Spec.GetHashCode();
+                if (this.SessionConf != null)
+                    hashCode = hashCode * 59 + this.SessionConf.GetHashCode();
                 return hashCode;
             }
         }

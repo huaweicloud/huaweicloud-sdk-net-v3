@@ -295,6 +295,174 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 网络ACL插入规则
+        ///
+        /// 网络ACL插入规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddFirewallRulesResponse AddFirewallRules(AddFirewallRulesRequest addFirewallRulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , addFirewallRulesRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/insert-rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFirewallRulesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<AddFirewallRulesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 网络ACL绑定子网
+        ///
+        /// 网络ACL绑定子网
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AssociateSubnetFirewallResponse AssociateSubnetFirewall(AssociateSubnetFirewallRequest associateSubnetFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , associateSubnetFirewallRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/associate-subnets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateSubnetFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<AssociateSubnetFirewallResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建网络ACL
+        ///
+        /// 创建网络ACL
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateFirewallResponse CreateFirewall(CreateFirewallRequest createFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateFirewallResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除网络ACL
+        ///
+        /// 删除网络ACL
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteFirewallResponse DeleteFirewall(DeleteFirewallRequest deleteFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , deleteFirewallRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteFirewallResponse>(response);
+        }
+        
+        /// <summary>
+        /// 网络ACL解绑子网
+        ///
+        /// 网络ACL解绑子网
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DisassociateSubnetFirewallResponse DisassociateSubnetFirewall(DisassociateSubnetFirewallRequest disassociateSubnetFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , disassociateSubnetFirewallRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/disassociate-subnets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateSubnetFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<DisassociateSubnetFirewallResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询网络ACL列表
+        ///
+        /// 查询网络ACL列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListFirewallResponse ListFirewall(ListFirewallRequest listFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListFirewallResponse>(response);
+        }
+        
+        /// <summary>
+        /// 网络ACL移除规则
+        ///
+        /// 网络ACL移除规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RemoveFirewallRulesResponse RemoveFirewallRules(RemoveFirewallRulesRequest removeFirewallRulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , removeFirewallRulesRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/remove-rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeFirewallRulesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<RemoveFirewallRulesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询网络ACL详情
+        ///
+        /// 查询网络ACL详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFirewallResponse ShowFirewall(ShowFirewallRequest showFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , showFirewallRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowFirewallResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新网络ACL
+        ///
+        /// 更新网络ACL
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateFirewallResponse UpdateFirewall(UpdateFirewallRequest updateFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , updateFirewallRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateFirewallResponse>(response);
+        }
+        
+        /// <summary>
+        /// 网络ACL更新规则
+        ///
+        /// 网络ACL更新规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateFirewallRulesResponse UpdateFirewallRules(UpdateFirewallRulesRequest updateFirewallRulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id" , updateFirewallRulesRequest.FirewallId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/update-rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFirewallRulesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateFirewallRulesResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建地址组
         ///
         /// 创建地址组

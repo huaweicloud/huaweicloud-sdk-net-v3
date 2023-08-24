@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ims.V2.Model
 {
     /// <summary>
-    /// 镜像信息响应体
+    /// 
     /// </summary>
-    public class GlanceShowImageResponseBody 
+    public class GlanceShowImageListResponseBody 
     {
         /// <summary>
         /// 镜像后端存储类型，目前只支持uds
@@ -2006,6 +2006,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+        /// </summary>
+        [JsonProperty("_sys_enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SysEnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
         /// </summary>
         [JsonProperty("hw_firmware_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -2106,7 +2112,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class GlanceShowImageResponseBody {\n");
+            sb.Append("class GlanceShowImageListResponseBody {\n");
             sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("  dataOrigin: ").Append(DataOrigin).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -2151,6 +2157,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  visibility: ").Append(Visibility).Append("\n");
             sb.Append("  supportFcInject: ").Append(SupportFcInject).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  sysEnterpriseProjectId: ").Append(SysEnterpriseProjectId).Append("\n");
             sb.Append("  hwFirmwareType: ").Append(HwFirmwareType).Append("\n");
             sb.Append("  supportArm: ").Append(SupportArm).Append("\n");
             sb.Append("  isOffshelved: ").Append(IsOffshelved).Append("\n");
@@ -2176,13 +2183,13 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GlanceShowImageResponseBody);
+            return this.Equals(input as GlanceShowImageListResponseBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(GlanceShowImageResponseBody input)
+        public bool Equals(GlanceShowImageListResponseBody input)
         {
             if (input == null)
                 return false;
@@ -2410,6 +2417,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.SysEnterpriseProjectId == input.SysEnterpriseProjectId ||
+                    (this.SysEnterpriseProjectId != null &&
+                    this.SysEnterpriseProjectId.Equals(input.SysEnterpriseProjectId))
+                ) && 
+                (
                     this.HwFirmwareType == input.HwFirmwareType ||
                     (this.HwFirmwareType != null &&
                     this.HwFirmwareType.Equals(input.HwFirmwareType))
@@ -2587,6 +2599,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.SupportFcInject.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.SysEnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.SysEnterpriseProjectId.GetHashCode();
                 if (this.HwFirmwareType != null)
                     hashCode = hashCode * 59 + this.HwFirmwareType.GetHashCode();
                 if (this.SupportArm != null)

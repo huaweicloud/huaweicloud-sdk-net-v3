@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("details", NullValueHandling = NullValueHandling.Ignore)]
+        public RestoreDetails Details { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("  volumeId: ").Append(VolumeId).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
+            sb.Append("  details: ").Append(Details).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +113,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.ResourceId == input.ResourceId ||
                     (this.ResourceId != null &&
                     this.ResourceId.Equals(input.ResourceId))
+                ) && 
+                (
+                    this.Details == input.Details ||
+                    (this.Details != null &&
+                    this.Details.Equals(input.Details))
                 );
         }
 
@@ -127,6 +139,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
                 if (this.ResourceId != null)
                     hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.Details != null)
+                    hashCode = hashCode * 59 + this.Details.GetHashCode();
                 return hashCode;
             }
         }

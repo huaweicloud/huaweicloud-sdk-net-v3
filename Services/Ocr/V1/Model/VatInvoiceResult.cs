@@ -29,6 +29,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Type { get; set; }
 
         /// <summary>
+        /// 增值税发票左上角标志。当“advanced_mode”设置为“true”时才返回。包含：通行费、代开。 
+        /// </summary>
+        [JsonProperty("invoice_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public string InvoiceTag { get; set; }
+
+        /// <summary>
+        /// 小计金额，当传入多页PDF时返回此字段。 
+        /// </summary>
+        [JsonProperty("sum_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public string SumAmount { get; set; }
+
+        /// <summary>
+        /// 小计税额，当传入多页PDF时返回此字段。 
+        /// </summary>
+        [JsonProperty("sum_tax", NullValueHandling = NullValueHandling.Ignore)]
+        public string SumTax { get; set; }
+
+        /// <summary>
         /// 发票联次。 当“advanced_mode”设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("serial_number", NullValueHandling = NullValueHandling.Ignore)]
@@ -225,6 +243,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class VatInvoiceResult {\n");
             sb.Append("  title: ").Append(Title).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  invoiceTag: ").Append(InvoiceTag).Append("\n");
+            sb.Append("  sumAmount: ").Append(SumAmount).Append("\n");
+            sb.Append("  sumTax: ").Append(SumTax).Append("\n");
             sb.Append("  serialNumber: ").Append(SerialNumber).Append("\n");
             sb.Append("  attribution: ").Append(Attribution).Append("\n");
             sb.Append("  supervisionSeal: ").Append(SupervisionSeal).Append("\n");
@@ -286,6 +307,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.InvoiceTag == input.InvoiceTag ||
+                    (this.InvoiceTag != null &&
+                    this.InvoiceTag.Equals(input.InvoiceTag))
+                ) && 
+                (
+                    this.SumAmount == input.SumAmount ||
+                    (this.SumAmount != null &&
+                    this.SumAmount.Equals(input.SumAmount))
+                ) && 
+                (
+                    this.SumTax == input.SumTax ||
+                    (this.SumTax != null &&
+                    this.SumTax.Equals(input.SumTax))
                 ) && 
                 (
                     this.SerialNumber == input.SerialNumber ||
@@ -459,6 +495,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.InvoiceTag != null)
+                    hashCode = hashCode * 59 + this.InvoiceTag.GetHashCode();
+                if (this.SumAmount != null)
+                    hashCode = hashCode * 59 + this.SumAmount.GetHashCode();
+                if (this.SumTax != null)
+                    hashCode = hashCode * 59 + this.SumTax.GetHashCode();
                 if (this.SerialNumber != null)
                     hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
                 if (this.Attribution != null)

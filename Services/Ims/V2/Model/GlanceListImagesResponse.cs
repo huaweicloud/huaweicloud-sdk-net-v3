@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// 资源类型。
         /// </summary>
         [JsonProperty("images", NullValueHandling = NullValueHandling.Ignore)]
-        public List<GlanceShowImageResponseBody> Images { get; set; }
+        public List<GlanceShowImageListResponseBody> Images { get; set; }
 
         /// <summary>
         /// 描述镜像列表模式的URL。

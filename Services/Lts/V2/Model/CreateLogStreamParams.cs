@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public int? TtlInDays { get; set; }
 
         /// <summary>
-        /// 
+        /// 标签字段信息
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public TagsBody Tags { get; set; }
+        public List<TagsBody> Tags { get; set; }
 
 
 
@@ -79,8 +79,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 ) && 
                 (
                     this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 

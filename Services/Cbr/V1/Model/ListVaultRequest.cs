@@ -315,7 +315,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 资源id
+        /// 资源id，支持多资源，以英文逗号分割
         /// </summary>
         [SDKProperty("resource_ids", IsQuery = true)]
         [JsonProperty("resource_ids", NullValueHandling = NullValueHandling.Ignore)]

@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("return_text_location", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnTextLocation { get; set; }
 
+        /// <summary>
+        /// 页码，默认为1，返回第一页结果。如果传参不大于PDF页数，则返回对应PDF页的结果。 
+        /// </summary>
+        [JsonProperty("page_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PageNum { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  advancedMode: ").Append(AdvancedMode).Append("\n");
             sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
+            sb.Append("  pageNum: ").Append(PageNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnTextLocation == input.ReturnTextLocation ||
                     (this.ReturnTextLocation != null &&
                     this.ReturnTextLocation.Equals(input.ReturnTextLocation))
+                ) && 
+                (
+                    this.PageNum == input.PageNum ||
+                    (this.PageNum != null &&
+                    this.PageNum.Equals(input.PageNum))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.AdvancedMode.GetHashCode();
                 if (this.ReturnTextLocation != null)
                     hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
+                if (this.PageNum != null)
+                    hashCode = hashCode * 59 + this.PageNum.GetHashCode();
                 return hashCode;
             }
         }
