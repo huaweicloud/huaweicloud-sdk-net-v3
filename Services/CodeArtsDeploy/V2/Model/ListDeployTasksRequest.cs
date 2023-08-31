@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
     {
 
         /// <summary>
+        /// 项目ID
+        /// </summary>
+        [SDKProperty("project_id", IsPath = true)]
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectId { get; set; }
+
+        /// <summary>
         /// 分页页码， 表示从此页开始查询， page大于等于1
         /// </summary>
         [SDKProperty("page", IsQuery = true)]
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListDeployTasksRequest {\n");
+            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  page: ").Append(Page).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("}\n");
@@ -63,6 +71,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
             return 
                 (
+                    this.ProjectId == input.ProjectId ||
+                    (this.ProjectId != null &&
+                    this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
                     this.Page == input.Page ||
                     (this.Page != null &&
                     this.Page.Equals(input.Page))
@@ -82,6 +95,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ProjectId != null)
+                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Page != null)
                     hashCode = hashCode * 59 + this.Page.GetHashCode();
                 if (this.Size != null)

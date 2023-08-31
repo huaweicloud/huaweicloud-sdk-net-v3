@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 资源配额列表。
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Resource> Resources { get; set; }
+        public List<ResourceQuotas> Resources { get; set; }
 
 
 

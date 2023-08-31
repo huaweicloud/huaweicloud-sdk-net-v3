@@ -146,7 +146,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? AsProxy { get; set; }
 
         /// <summary>
-        /// 偏移量,表示从此偏移量开始查询,offset大于等于0
+        /// 偏移量，表示从此偏移量开始查询，offset大于等于0
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]

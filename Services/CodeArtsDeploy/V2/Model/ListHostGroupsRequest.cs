@@ -247,6 +247,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
 
         /// <summary>
+        /// 项目ID
+        /// </summary>
+        [SDKProperty("project_id", IsQuery = true)]
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectId { get; set; }
+
+        /// <summary>
         /// 局点信息
         /// </summary>
         [SDKProperty("region_name", IsQuery = true)]
@@ -302,6 +309,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListHostGroupsRequest {\n");
+            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  regionName: ").Append(RegionName).Append("\n");
             sb.Append("  os: ").Append(Os).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -330,6 +338,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 return false;
 
             return 
+                (
+                    this.ProjectId == input.ProjectId ||
+                    (this.ProjectId != null &&
+                    this.ProjectId.Equals(input.ProjectId))
+                ) && 
                 (
                     this.RegionName == input.RegionName ||
                     (this.RegionName != null &&
@@ -375,6 +388,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ProjectId != null)
+                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.RegionName != null)
                     hashCode = hashCode * 59 + this.RegionName.GetHashCode();
                 if (this.Os != null)

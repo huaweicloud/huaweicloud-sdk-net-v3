@@ -45,30 +45,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("template_description", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateDescription { get; set; }
 
-        /// <summary>
-        /// 告警模板关联的告警规则数目
-        /// </summary>
-        [JsonProperty("association_alarm_total", NullValueHandling = NullValueHandling.Ignore)]
-        public int? AssociationAlarmTotal { get; set; }
-
-        /// <summary>
-        /// 告警模板的告警策略总数
-        /// </summary>
-        [JsonProperty("policy_total", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PolicyTotal { get; set; }
-
-        /// <summary>
-        /// 服务列表告警策略数目统计
-        /// </summary>
-        [JsonProperty("policy_statistics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PolicyStatistics> PolicyStatistics { get; set; }
-
-        /// <summary>
-        /// 关联的资源分组
-        /// </summary>
-        [JsonProperty("association_resource_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AssociationResourceGroup> AssociationResourceGroups { get; set; }
-
 
 
         /// <summary>
@@ -83,10 +59,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  templateType: ").Append(TemplateType).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  templateDescription: ").Append(TemplateDescription).Append("\n");
-            sb.Append("  associationAlarmTotal: ").Append(AssociationAlarmTotal).Append("\n");
-            sb.Append("  policyTotal: ").Append(PolicyTotal).Append("\n");
-            sb.Append("  policyStatistics: ").Append(PolicyStatistics).Append("\n");
-            sb.Append("  associationResourceGroups: ").Append(AssociationResourceGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -132,28 +104,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.TemplateDescription == input.TemplateDescription ||
                     (this.TemplateDescription != null &&
                     this.TemplateDescription.Equals(input.TemplateDescription))
-                ) && 
-                (
-                    this.AssociationAlarmTotal == input.AssociationAlarmTotal ||
-                    (this.AssociationAlarmTotal != null &&
-                    this.AssociationAlarmTotal.Equals(input.AssociationAlarmTotal))
-                ) && 
-                (
-                    this.PolicyTotal == input.PolicyTotal ||
-                    (this.PolicyTotal != null &&
-                    this.PolicyTotal.Equals(input.PolicyTotal))
-                ) && 
-                (
-                    this.PolicyStatistics == input.PolicyStatistics ||
-                    this.PolicyStatistics != null &&
-                    input.PolicyStatistics != null &&
-                    this.PolicyStatistics.SequenceEqual(input.PolicyStatistics)
-                ) && 
-                (
-                    this.AssociationResourceGroups == input.AssociationResourceGroups ||
-                    this.AssociationResourceGroups != null &&
-                    input.AssociationResourceGroups != null &&
-                    this.AssociationResourceGroups.SequenceEqual(input.AssociationResourceGroups)
                 );
         }
 
@@ -175,14 +125,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.TemplateDescription != null)
                     hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
-                if (this.AssociationAlarmTotal != null)
-                    hashCode = hashCode * 59 + this.AssociationAlarmTotal.GetHashCode();
-                if (this.PolicyTotal != null)
-                    hashCode = hashCode * 59 + this.PolicyTotal.GetHashCode();
-                if (this.PolicyStatistics != null)
-                    hashCode = hashCode * 59 + this.PolicyStatistics.GetHashCode();
-                if (this.AssociationResourceGroups != null)
-                    hashCode = hashCode * 59 + this.AssociationResourceGroups.GetHashCode();
                 return hashCode;
             }
         }

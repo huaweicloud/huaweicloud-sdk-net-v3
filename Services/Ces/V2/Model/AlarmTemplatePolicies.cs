@@ -348,7 +348,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Filter { get; set; }
 
         /// <summary>
-        /// 告警阈值的比较条件
+        /// 告警阈值的比较条件，支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|&gt;&lt;|cycle_decrease|cycle_increase|cycle_wave)，cycle_decrease为环比下降，cycle_increase为环比上升，cycle_wave为环比波动
         /// </summary>
         [JsonProperty("comparison_operator", NullValueHandling = NullValueHandling.Ignore)]
         public string ComparisonOperator { get; set; }

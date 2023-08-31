@@ -46,12 +46,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string TemplateDescription { get; set; }
 
         /// <summary>
-        /// 告警模板关联的告警规则数目
-        /// </summary>
-        [JsonProperty("association_alarm_total", NullValueHandling = NullValueHandling.Ignore)]
-        public int? AssociationAlarmTotal { get; set; }
-
-        /// <summary>
         /// 告警模板策略列表
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
@@ -71,7 +65,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  templateType: ").Append(TemplateType).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  templateDescription: ").Append(TemplateDescription).Append("\n");
-            sb.Append("  associationAlarmTotal: ").Append(AssociationAlarmTotal).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -120,11 +113,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.TemplateDescription.Equals(input.TemplateDescription))
                 ) && 
                 (
-                    this.AssociationAlarmTotal == input.AssociationAlarmTotal ||
-                    (this.AssociationAlarmTotal != null &&
-                    this.AssociationAlarmTotal.Equals(input.AssociationAlarmTotal))
-                ) && 
-                (
                     this.Policies == input.Policies ||
                     this.Policies != null &&
                     input.Policies != null &&
@@ -150,8 +138,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.TemplateDescription != null)
                     hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
-                if (this.AssociationAlarmTotal != null)
-                    hashCode = hashCode * 59 + this.AssociationAlarmTotal.GetHashCode();
                 if (this.Policies != null)
                     hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 return hashCode;

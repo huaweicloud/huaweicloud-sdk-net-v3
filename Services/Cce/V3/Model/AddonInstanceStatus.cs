@@ -77,6 +77,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             /// </summary>
             public static readonly StatusEnum ROLLBACKING = new StatusEnum("rollbacking");
 
+            /// <summary>
+            /// Enum ROLLBACKFAILED for value: rollbackFailed
+            /// </summary>
+            public static readonly StatusEnum ROLLBACKFAILED = new StatusEnum("rollbackFailed");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
@@ -91,6 +96,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "deleteFailed", DELETEFAILED },
                 { "available", AVAILABLE },
                 { "rollbacking", ROLLBACKING },
+                { "rollbackFailed", ROLLBACKFAILED },
             };
 
             private string _value;
@@ -214,6 +220,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("currentVersion", NullValueHandling = NullValueHandling.Ignore)]
         public Versions CurrentVersion { get; set; }
 
+        /// <summary>
+        /// 是否支持回滚到插件升级前的插件版本
+        /// </summary>
+        [JsonProperty("isRollbackable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsRollbackable { get; set; }
+
+        /// <summary>
+        /// 插件升级或回滚前的版本
+        /// </summary>
+        [JsonProperty("previousVersion", NullValueHandling = NullValueHandling.Ignore)]
+        public string PreviousVersion { get; set; }
+
 
 
         /// <summary>
@@ -228,6 +246,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  targetVersions: ").Append(TargetVersions).Append("\n");
             sb.Append("  currentVersion: ").Append(CurrentVersion).Append("\n");
+            sb.Append("  isRollbackable: ").Append(IsRollbackable).Append("\n");
+            sb.Append("  previousVersion: ").Append(PreviousVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -274,6 +294,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.CurrentVersion == input.CurrentVersion ||
                     (this.CurrentVersion != null &&
                     this.CurrentVersion.Equals(input.CurrentVersion))
+                ) && 
+                (
+                    this.IsRollbackable == input.IsRollbackable ||
+                    (this.IsRollbackable != null &&
+                    this.IsRollbackable.Equals(input.IsRollbackable))
+                ) && 
+                (
+                    this.PreviousVersion == input.PreviousVersion ||
+                    (this.PreviousVersion != null &&
+                    this.PreviousVersion.Equals(input.PreviousVersion))
                 );
         }
 
@@ -295,6 +325,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
                 if (this.CurrentVersion != null)
                     hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
+                if (this.IsRollbackable != null)
+                    hashCode = hashCode * 59 + this.IsRollbackable.GetHashCode();
+                if (this.PreviousVersion != null)
+                    hashCode = hashCode * 59 + this.PreviousVersion.GetHashCode();
                 return hashCode;
             }
         }

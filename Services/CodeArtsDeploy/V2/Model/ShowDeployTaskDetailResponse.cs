@@ -275,7 +275,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? CanCopy { get; set; }
 
         /// <summary>
-        /// 是否有管理权限，包含增删改查部署以及权限修改
+        /// 是否有编辑应用权限矩阵的权限
         /// </summary>
         [JsonProperty("can_manage", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CanManage { get; set; }

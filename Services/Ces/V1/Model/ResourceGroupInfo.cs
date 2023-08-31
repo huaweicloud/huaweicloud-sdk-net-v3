@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string GroupName { get; set; }
 
         /// <summary>
+        /// 资源分组添加资源方式，EPS：同步企业项目，TAG：标签动态匹配，空值：手动添加；
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// 企业项目ID列表
+        /// </summary>
+        [JsonProperty("relation_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> RelationIds { get; set; }
+
+        /// <summary>
         /// 资源分组的ID，如：rg1603786526428bWbVmk4rP。
         /// </summary>
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +64,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 一组或者多个资源信息，默认为空。
+        /// </summary>
+        [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Resource> Resources { get; set; }
+
 
 
         /// <summary>
@@ -62,11 +80,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ResourceGroupInfo {\n");
             sb.Append("  groupName: ").Append(GroupName).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  relationIds: ").Append(RelationIds).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  instanceStatistics: ").Append(InstanceStatistics).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  resources: ").Append(Resources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +115,17 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.GroupName.Equals(input.GroupName))
                 ) && 
                 (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.RelationIds == input.RelationIds ||
+                    this.RelationIds != null &&
+                    input.RelationIds != null &&
+                    this.RelationIds.SequenceEqual(input.RelationIds)
+                ) && 
+                (
                     this.GroupId == input.GroupId ||
                     (this.GroupId != null &&
                     this.GroupId.Equals(input.GroupId))
@@ -117,6 +149,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Resources == input.Resources ||
+                    this.Resources != null &&
+                    input.Resources != null &&
+                    this.Resources.SequenceEqual(input.Resources)
                 );
         }
 
@@ -130,6 +168,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                 int hashCode = 41;
                 if (this.GroupName != null)
                     hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.RelationIds != null)
+                    hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
                 if (this.GroupId != null)
                     hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.CreateTime != null)
@@ -140,6 +182,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Resources != null)
+                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
                 return hashCode;
             }
         }

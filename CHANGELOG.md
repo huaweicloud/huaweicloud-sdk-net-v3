@@ -1,3 +1,201 @@
+# 3.1.56 2023-08-31
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the interfaces `RollbackAddonInstance`, `ResizeCluster`, `BatchCreateClusterTags`, `BatchDeleteClusterTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAddonInstance**
+    - changes of response param
+      - `+ status.isRollbackable`
+      - `+ status.previousVersion`
+      - `+ status.status: enum value [rollbackFailed]`
+  - **UpdateAddonInstance**
+    - changes of response param
+      - `+ status.isRollbackable`
+      - `+ status.previousVersion`
+      - `+ status.status: enum value [rollbackFailed]`
+  - **CreateAddonInstance**
+    - changes of response param
+      - `+ status.isRollbackable`
+      - `+ status.previousVersion`
+      - `+ status.status: enum value [rollbackFailed]`
+  - **ListAddonInstances**
+    - changes of response param
+      - `+ items.status.isRollbackable`
+      - `+ items.status.previousVersion`
+      - `+ items.status.status: enum value [rollbackFailed]`
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowResourceGroup**
+    - changes of response param
+      - `+ resources.event_type`
+  - **ListResourceGroup**
+    - changes of response param
+      - `+ resource_groups.type`
+      - `+ resource_groups.relation_ids`
+      - `+ resource_groups.resources`
+  - **ListEventDetail**
+    - changes of response param
+      - `+ dimensions`
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - Support the following interfaces：
+    - `ListDashboardInfos`
+    - `CreateOneDashboard`
+    - `UpdateDashboard`
+    - `DeleteDashboards`
+    - `ListDashboardWidgets`
+    - `CreateDashboardWidgets`
+    - `ShowWidget`
+    - `DeleteOneWidget`
+    - `BatchUpdateWidgets`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAlarmRulePolicies**
+    - changes of response param
+      - `+ policies.extra_info`
+      - `+ policies.type`
+      - `* policies: list<Policy> -> list<ListPolicy>`
+  - **UpdateAlarmRulePolicies**
+    - changes of request param
+      - `+ policies.type`
+      - `* policies: list<Policy> -> list<UpdatePolicy>`
+    - changes of response param
+      - `+ policies.type`
+      - `* policies: list<Policy> -> list<UpdatePolicy>`
+  - **ListAlarmTemplates**
+    - changes of response param
+      - `- alarm_templates.association_alarm_total`
+      - `- alarm_templates.policy_total`
+      - `- alarm_templates.policy_statistics`
+      - `- alarm_templates.association_resource_groups`
+  - **ShowAlarmTemplate**
+    - changes of response param
+      - `- association_alarm_total`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - Support the following interfaces：
+    - `ListHostClusters`
+    - `CreateHostCluster`
+    - `ShowHostClusterDetail`
+    - `ListNewHosts`
+    - `CreateHost`
+    - `ShowHostDetail`
+    - `ListEnvironments`
+    - `CreateEnvironment`
+    - `ShowEnvironmentDetail`
+    - `DeleteEnvironment`
+    - `ImportHostToEnvironment`
+    - `DeleteHostFromEnvironment`
+    - `ListAllApp`
+    - `CreateApp`
+    - `ShowAppDetailById`
+    - `DeleteApplication`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowInstance**
+    - changes of response param
+      - `+ available_zones`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowJob**
+    - changes of response param
+      - `+ entities.server_id`
+      - `+ entities.nic_id`
+  - **CreateServers**
+    - changes of request param
+      - `+ server.extendparam.CB_CSBS_BACKUP`
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DetectFaceByFile**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByFileIntl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByUrl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByUrlIntl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByBase64**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByBase64Intl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstanceByEngine**
+    - changes of request param
+      - `- engine_version: enum value [1.1.0,2.7]`
+  - **CreatePostPaidInstance**
+    - changes of request param
+      - `- engine_version: enum value [1.1.0,2.7]`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeSmartDocumentRecognizer`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.public_dns_names`
+
 # 3.1.55 2023-08-24
 
 HuaweiCloud SDK APIG

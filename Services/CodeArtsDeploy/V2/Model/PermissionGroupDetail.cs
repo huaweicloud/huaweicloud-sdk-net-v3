@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? CanAddHost { get; set; }
 
         /// <summary>
-        /// 是否有管理权限
+        /// 是否有编辑主机集群权限矩阵的权限
         /// </summary>
         [JsonProperty("can_manage", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CanManage { get; set; }

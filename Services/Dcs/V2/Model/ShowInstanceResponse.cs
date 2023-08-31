@@ -488,6 +488,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<string> AzCodes { get; set; }
 
         /// <summary>
+        /// 实例所在的可用区id。返回\&quot;可用区ID\&quot;
+        /// </summary>
+        [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailableZones { get; set; }
+
+        /// <summary>
         /// 通过密码认证访问缓存实例的认证用户名。
         /// </summary>
         [JsonProperty("access_user", NullValueHandling = NullValueHandling.Ignore)]
@@ -764,6 +770,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("  instanceBackupPolicy: ").Append(InstanceBackupPolicy).Append("\n");
             sb.Append("  azCodes: ").Append(AzCodes).Append("\n");
+            sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
             sb.Append("  accessUser: ").Append(AccessUser).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
@@ -922,6 +929,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.AzCodes != null &&
                     input.AzCodes != null &&
                     this.AzCodes.SequenceEqual(input.AzCodes)
+                ) && 
+                (
+                    this.AvailableZones == input.AvailableZones ||
+                    this.AvailableZones != null &&
+                    input.AvailableZones != null &&
+                    this.AvailableZones.SequenceEqual(input.AvailableZones)
                 ) && 
                 (
                     this.AccessUser == input.AccessUser ||
@@ -1182,6 +1195,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.InstanceBackupPolicy.GetHashCode();
                 if (this.AzCodes != null)
                     hashCode = hashCode * 59 + this.AzCodes.GetHashCode();
+                if (this.AvailableZones != null)
+                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
                 if (this.AccessUser != null)
                     hashCode = hashCode * 59 + this.AccessUser.GetHashCode();
                 if (this.InstanceId != null)

@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
+        /// <summary>
+        /// 事件类型，默认为0。
+        /// </summary>
+        [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EventType { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  eventType: ").Append(EventType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,6 +89,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.EventType == input.EventType ||
+                    (this.EventType != null &&
+                    this.EventType.Equals(input.EventType))
                 );
         }
 
@@ -99,6 +111,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.EventType != null)
+                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
                 return hashCode;
             }
         }

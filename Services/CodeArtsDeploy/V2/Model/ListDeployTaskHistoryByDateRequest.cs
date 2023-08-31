@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
     {
 
         /// <summary>
+        /// 项目ID
+        /// </summary>
+        [SDKProperty("project_id", IsPath = true)]
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectId { get; set; }
+
+        /// <summary>
         /// 任务ID
         /// </summary>
         [SDKProperty("id", IsPath = true)]
@@ -60,6 +67,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListDeployTaskHistoryByDateRequest {\n");
+            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  page: ").Append(Page).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
@@ -86,6 +94,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 return false;
 
             return 
+                (
+                    this.ProjectId == input.ProjectId ||
+                    (this.ProjectId != null &&
+                    this.ProjectId.Equals(input.ProjectId))
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -121,6 +134,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ProjectId != null)
+                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Page != null)

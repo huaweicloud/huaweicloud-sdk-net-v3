@@ -125,121 +125,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
-        /// </summary>
-        /// <value>消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7</value>
-        [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
-        public class EngineVersionEnum
-        {
-            /// <summary>
-            /// Enum _1_1_0 for value: 1.1.0
-            /// </summary>
-            public static readonly EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
-
-            /// <summary>
-            /// Enum _2_7 for value: 2.7
-            /// </summary>
-            public static readonly EngineVersionEnum _2_7 = new EngineVersionEnum("2.7");
-
-            private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
-            new Dictionary<string, EngineVersionEnum>()
-            {
-                { "1.1.0", _1_1_0 },
-                { "2.7", _2_7 },
-            };
-
-            private string _value;
-
-            public EngineVersionEnum()
-            {
-
-            }
-
-            public EngineVersionEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static EngineVersionEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as EngineVersionEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(EngineVersionEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(EngineVersionEnum a, EngineVersionEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(EngineVersionEnum a, EngineVersionEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// Defines saslEnabledMechanisms
         /// </summary>
         [JsonConverter(typeof(EnumClassConverter<SaslEnabledMechanismsEnum>))]
@@ -606,7 +491,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
-        public EngineVersionEnum EngineVersion { get; set; }
+        public string EngineVersion { get; set; }
+
         /// <summary>
         /// 代理个数。
         /// </summary>

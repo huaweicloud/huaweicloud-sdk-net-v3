@@ -17,6 +17,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
+        /// 云服务器相关操作显示server_id。
+        /// </summary>
+        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerId { get; set; }
+
+        /// <summary>
+        /// 网卡相关操作显示nic_id。
+        /// </summary>
+        [JsonProperty("nic_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NicId { get; set; }
+
+        /// <summary>
         /// 每个子任务的执行信息。
         /// </summary>
         [JsonProperty("sub_jobs", NullValueHandling = NullValueHandling.Ignore)]
@@ -37,6 +49,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class JobEntities {\n");
+            sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("  nicId: ").Append(NicId).Append("\n");
             sb.Append("  subJobs: ").Append(SubJobs).Append("\n");
             sb.Append("  subJobsTotal: ").Append(SubJobsTotal).Append("\n");
             sb.Append("}\n");
@@ -61,6 +75,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             return 
                 (
+                    this.ServerId == input.ServerId ||
+                    (this.ServerId != null &&
+                    this.ServerId.Equals(input.ServerId))
+                ) && 
+                (
+                    this.NicId == input.NicId ||
+                    (this.NicId != null &&
+                    this.NicId.Equals(input.NicId))
+                ) && 
+                (
                     this.SubJobs == input.SubJobs ||
                     this.SubJobs != null &&
                     input.SubJobs != null &&
@@ -81,6 +105,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ServerId != null)
+                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.NicId != null)
+                    hashCode = hashCode * 59 + this.NicId.GetHashCode();
                 if (this.SubJobs != null)
                     hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
                 if (this.SubJobsTotal != null)

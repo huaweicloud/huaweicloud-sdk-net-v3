@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
     {
 
         /// <summary>
+        /// 性别： • male：男性 • female：女性
+        /// </summary>
+        [JsonProperty("gender", NullValueHandling = NullValueHandling.Ignore)]
+        public string Gender { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("dress", NullValueHandling = NullValueHandling.Ignore)]
@@ -91,6 +97,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Attributes {\n");
+            sb.Append("  gender: ").Append(Gender).Append("\n");
             sb.Append("  dress: ").Append(Dress).Append("\n");
             sb.Append("  glass: ").Append(Glass).Append("\n");
             sb.Append("  hat: ").Append(Hat).Append("\n");
@@ -123,6 +130,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                 return false;
 
             return 
+                (
+                    this.Gender == input.Gender ||
+                    (this.Gender != null &&
+                    this.Gender.Equals(input.Gender))
+                ) && 
                 (
                     this.Dress == input.Dress ||
                     (this.Dress != null &&
@@ -188,6 +200,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Gender != null)
+                    hashCode = hashCode * 59 + this.Gender.GetHashCode();
                 if (this.Dress != null)
                     hashCode = hashCode * 59 + this.Dress.GetHashCode();
                 if (this.Glass != null)

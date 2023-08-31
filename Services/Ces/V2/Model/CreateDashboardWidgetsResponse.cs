@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Ces.V2.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class CreateDashboardWidgetsResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// 批量创建监控视图返回结果
+        /// </summary>
+        [JsonProperty("widget_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> WidgetIds { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class CreateDashboardWidgetsResponse {\n");
+            sb.Append("  widgetIds: ").Append(WidgetIds).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as CreateDashboardWidgetsResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(CreateDashboardWidgetsResponse input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.WidgetIds == input.WidgetIds ||
+                    this.WidgetIds != null &&
+                    input.WidgetIds != null &&
+                    this.WidgetIds.SequenceEqual(input.WidgetIds)
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.WidgetIds != null)
+                    hashCode = hashCode * 59 + this.WidgetIds.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

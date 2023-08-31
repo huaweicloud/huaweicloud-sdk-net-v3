@@ -130,6 +130,22 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
+        /// 批量更新监控视图
+        ///
+        /// 批量更新监控视图
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdateWidgetsResponse BatchUpdateWidgets(BatchUpdateWidgetsRequest batchUpdateWidgetsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/widgets/batch-update",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateWidgetsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchUpdateWidgetsResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建告警规则
         ///
         /// 创建告警规则
@@ -159,6 +175,39 @@ namespace HuaweiCloud.SDK.Ces.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAlarmTemplateRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateAlarmTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建/复制/批量创建监控视图到指定的监控面板
+        ///
+        /// 创建/复制/批量创建监控视图到指定的监控面板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDashboardWidgetsResponse CreateDashboardWidgets(CreateDashboardWidgetsRequest createDashboardWidgetsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("dashboard_id" , createDashboardWidgetsRequest.DashboardId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dashboards/{dashboard_id}/widgets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDashboardWidgetsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateDashboardWidgetsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建/复制监控面板
+        ///
+        /// 创建/复制监控面板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateOneDashboardResponse CreateOneDashboard(CreateOneDashboardRequest createOneDashboardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dashboards",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createOneDashboardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateOneDashboardResponse>(response);
         }
         
         /// <summary>
@@ -192,6 +241,39 @@ namespace HuaweiCloud.SDK.Ces.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRuleResourcesRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<DeleteAlarmRuleResourcesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除监控面板
+        ///
+        /// 批量删除监控面板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDashboardsResponse DeleteDashboards(DeleteDashboardsRequest deleteDashboardsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dashboards/batch-delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDashboardsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DeleteDashboardsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除指定监控视图
+        ///
+        /// 删除指定监控视图
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteOneWidgetResponse DeleteOneWidget(DeleteOneWidgetRequest deleteOneWidgetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("widget_id" , deleteOneWidgetRequest.WidgetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/widgets/{widget_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOneWidgetRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteOneWidgetResponse>(response);
         }
         
         /// <summary>
@@ -311,6 +393,39 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
+        /// 查询监控面板列表
+        ///
+        /// 查询监控面板列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDashboardInfosResponse ListDashboardInfos(ListDashboardInfosRequest listDashboardInfosRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dashboards",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDashboardInfosRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListDashboardInfosResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询指定监控面板下的监控视图列表
+        ///
+        /// 查询指定监控面板下的监控视图列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDashboardWidgetsResponse ListDashboardWidgets(ListDashboardWidgetsRequest listDashboardWidgetsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("dashboard_id" , listDashboardWidgetsRequest.DashboardId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dashboards/{dashboard_id}/widgets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDashboardWidgetsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListDashboardWidgetsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询资源分组列表
         ///
         /// 查询资源分组列表
@@ -379,6 +494,23 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
+        /// 查询指定监控视图信息
+        ///
+        /// 查询指定监控视图信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowWidgetResponse ShowWidget(ShowWidgetRequest showWidgetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("widget_id" , showWidgetRequest.WidgetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/widgets/{widget_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWidgetRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowWidgetResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改告警规则策略(全量修改)
         ///
         /// 修改告警规则策略(全量修改)
@@ -410,6 +542,23 @@ namespace HuaweiCloud.SDK.Ces.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmTemplateRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateAlarmTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改监控面板
+        ///
+        /// 修改监控面板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDashboardResponse UpdateDashboard(UpdateDashboardRequest updateDashboardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("dashboard_id" , updateDashboardRequest.DashboardId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dashboards/{dashboard_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDashboardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateDashboardResponse>(response);
         }
         
         /// <summary>

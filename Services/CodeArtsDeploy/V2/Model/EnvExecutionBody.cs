@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string RecordId { get; set; }
 
         /// <summary>
-        /// 限制触发来源,0不限制任何部署请求来源,1时只允许通过流水线触发部署
+        /// 限制触发来源，0不限制任何部署请求来源，1时只允许通过流水线触发部署
         /// </summary>
         [JsonProperty("trigger_source", NullValueHandling = NullValueHandling.Ignore)]
         public string TriggerSource { get; set; }

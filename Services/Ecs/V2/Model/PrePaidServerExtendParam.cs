@@ -659,6 +659,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("interruption_policy", NullValueHandling = NullValueHandling.Ignore)]
         public InterruptionPolicyEnum InterruptionPolicy { get; set; }
         /// <summary>
+        /// 云备份策略和云备份存储库详情，取值包含：备份策略ID和云备份存储库ID。
+        /// </summary>
+        [JsonProperty("CB_CSBS_BACKUP", NullValueHandling = NullValueHandling.Ignore)]
+        public string CbCsbsBackup { get; set; }
+
+        /// <summary>
         /// 表示购买的“竞价实例时长”的个数。  - 仅spot_duration_hours&gt;0 时该字段有效。 - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于等于1。  spot_duration_count的最大值由预测系统给出可以从flavor的extra_specs的cond:spot_block:operation:longest_duration_count字段中查询。  
         /// </summary>
         [JsonProperty("spot_duration_count", NullValueHandling = NullValueHandling.Ignore)]
@@ -686,6 +692,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  diskPrior: ").Append(DiskPrior).Append("\n");
             sb.Append("  spotDurationHours: ").Append(SpotDurationHours).Append("\n");
             sb.Append("  interruptionPolicy: ").Append(InterruptionPolicy).Append("\n");
+            sb.Append("  cbCsbsBackup: ").Append(CbCsbsBackup).Append("\n");
             sb.Append("  spotDurationCount: ").Append(SpotDurationCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -774,6 +781,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.InterruptionPolicy.Equals(input.InterruptionPolicy))
                 ) && 
                 (
+                    this.CbCsbsBackup == input.CbCsbsBackup ||
+                    (this.CbCsbsBackup != null &&
+                    this.CbCsbsBackup.Equals(input.CbCsbsBackup))
+                ) && 
+                (
                     this.SpotDurationCount == input.SpotDurationCount ||
                     (this.SpotDurationCount != null &&
                     this.SpotDurationCount.Equals(input.SpotDurationCount))
@@ -814,6 +826,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.SpotDurationHours.GetHashCode();
                 if (this.InterruptionPolicy != null)
                     hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
+                if (this.CbCsbsBackup != null)
+                    hashCode = hashCode * 59 + this.CbCsbsBackup.GetHashCode();
                 if (this.SpotDurationCount != null)
                     hashCode = hashCode * 59 + this.SpotDurationCount.GetHashCode();
                 return hashCode;
