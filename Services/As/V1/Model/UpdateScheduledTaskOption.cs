@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("scheduled_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduledPolicy ScheduledPolicy { get; set; }
+        public ScheduledTaskPolicy ScheduledPolicy { get; set; }
 
         /// <summary>
         /// 

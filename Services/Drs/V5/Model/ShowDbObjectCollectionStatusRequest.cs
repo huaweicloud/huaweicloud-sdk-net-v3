@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     /// </summary>
     public class ShowDbObjectCollectionStatusRequest 
     {
+        /// <summary>
+        /// 请求语言类型。
+        /// </summary>
+        /// <value>请求语言类型。</value>
+        [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
+        public class XLanguageEnum
+        {
+            /// <summary>
+            /// Enum EN_US for value: en-us
+            /// </summary>
+            public static readonly XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+            /// <summary>
+            /// Enum ZH_CN for value: zh-cn
+            /// </summary>
+            public static readonly XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+
+            private static readonly Dictionary<string, XLanguageEnum> StaticFields =
+            new Dictionary<string, XLanguageEnum>()
+            {
+                { "en-us", EN_US },
+                { "zh-cn", ZH_CN },
+            };
+
+            private string _value;
+
+            public XLanguageEnum()
+            {
+
+            }
+
+            public XLanguageEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static XLanguageEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as XLanguageEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(XLanguageEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(XLanguageEnum a, XLanguageEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 任务ID。
@@ -28,8 +143,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
-        public string XLanguage { get; set; }
-
+        public XLanguageEnum XLanguage { get; set; }
         /// <summary>
         /// 对象信息采集的ID，提交查询数据库对象信息接口返回的ID。
         /// </summary>

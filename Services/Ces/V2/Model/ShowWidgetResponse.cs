@@ -305,7 +305,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Unit { get; set; }
 
         /// <summary>
-        /// 监控面板创建时间
+        /// 监控看板创建时间
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }

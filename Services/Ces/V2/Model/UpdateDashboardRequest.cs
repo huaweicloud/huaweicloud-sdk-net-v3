@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 监控面板id，以db开头，包含22个字母和数字例：db16564943172807wjOmoLyn&#39;
+        /// 监控看板id，以db开头，包含22个字母和数字例：db16564943172807wjOmoLyn&#39;
         /// </summary>
         [SDKProperty("dashboard_id", IsPath = true)]
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]

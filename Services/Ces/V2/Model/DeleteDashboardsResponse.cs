@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 批量删除监控面板返回结果
+        /// 批量删除监控看板返回结果
         /// </summary>
         [JsonProperty("dashboards", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchDeleteDashboardRespInfo> Dashboards { get; set; }

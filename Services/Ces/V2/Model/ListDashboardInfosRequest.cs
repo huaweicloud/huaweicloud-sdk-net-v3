@@ -24,21 +24,21 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseId { get; set; }
 
         /// <summary>
-        /// 指定企业项目下监控面板是否收藏，true:收藏，false:未收藏，填此参数时，enterprise_id必填
+        /// 指定企业项目下监控看板是否收藏，true:收藏，false:未收藏，填此参数时，enterprise_id必填
         /// </summary>
         [SDKProperty("is_favorite", IsQuery = true)]
         [JsonProperty("is_favorite", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFavorite { get; set; }
 
         /// <summary>
-        /// 监控面板名称
+        /// 监控看板名称
         /// </summary>
         [SDKProperty("dashboard_name", IsQuery = true)]
         [JsonProperty("dashboard_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardName { get; set; }
 
         /// <summary>
-        /// 监控面板id
+        /// 监控看板id
         /// </summary>
         [SDKProperty("dashboard_id", IsQuery = true)]
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]

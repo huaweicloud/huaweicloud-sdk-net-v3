@@ -789,6 +789,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public string SortDir { get; set; }
 
+        /// <summary>
+        /// 数据库实例ID列表，最多支持10个
+        /// </summary>
+        [SDKProperty("instance_ids", IsQuery = true)]
+        [JsonProperty("instance_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> InstanceIds { get; set; }
+
+        /// <summary>
+        /// 数据库实例IP
+        /// </summary>
+        [SDKProperty("instance_ip", IsQuery = true)]
+        [JsonProperty("instance_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceIp { get; set; }
+
 
 
         /// <summary>
@@ -809,6 +823,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
+            sb.Append("  instanceIds: ").Append(InstanceIds).Append("\n");
+            sb.Append("  instanceIp: ").Append(InstanceIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -884,6 +900,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.SortDir == input.SortDir ||
                     (this.SortDir != null &&
                     this.SortDir.Equals(input.SortDir))
+                ) && 
+                (
+                    this.InstanceIds == input.InstanceIds ||
+                    this.InstanceIds != null &&
+                    input.InstanceIds != null &&
+                    this.InstanceIds.SequenceEqual(input.InstanceIds)
+                ) && 
+                (
+                    this.InstanceIp == input.InstanceIp ||
+                    (this.InstanceIp != null &&
+                    this.InstanceIp.Equals(input.InstanceIp))
                 );
         }
 
@@ -917,6 +944,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.SortDir != null)
                     hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.InstanceIds != null)
+                    hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
+                if (this.InstanceIp != null)
+                    hashCode = hashCode * 59 + this.InstanceIp.GetHashCode();
                 return hashCode;
             }
         }

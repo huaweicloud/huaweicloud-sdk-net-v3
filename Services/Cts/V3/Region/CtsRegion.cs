@@ -44,6 +44,8 @@ namespace HuaweiCloud.SDK.Cts.V3
             "https://cts.la-north-2.myhuaweicloud.com");
         public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1",
             "https://cts.na-mexico-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://cts.eu-west-101.myhuaweicloud.eu");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -66,6 +68,7 @@ namespace HuaweiCloud.SDK.Cts.V3
                 { "sa-brazil-1", SA_BRAZIL_1 },
                 { "la-north-2", LA_NORTH_2 },
                 { "na-mexico-1", NA_MEXICO_1 },
+                { "eu-west-101", EU_WEST_101 },
         };
 
         public static Region ValueOf(string regionId)

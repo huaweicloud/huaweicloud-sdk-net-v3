@@ -409,9 +409,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。
+        /// 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
         /// </summary>
-        /// <value>查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。</value>
+        /// <value>查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。</value>
         [JsonConverter(typeof(EnumClassConverter<QueryTypeEnum>))]
         public class QueryTypeEnum
         {
@@ -813,7 +813,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]
         public CompareTypeEnum CompareType { get; set; }
         /// <summary>
-        /// 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。
+        /// 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
         /// </summary>
         [SDKProperty("query_type", IsQuery = true)]
         [JsonProperty("query_type", NullValueHandling = NullValueHandling.Ignore)]

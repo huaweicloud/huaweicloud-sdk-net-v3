@@ -194,7 +194,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 伸缩活动中变化（增加或减少）的云服务器数量。
         /// </summary>
         [JsonProperty("scaling_value", NullValueHandling = NullValueHandling.Ignore)]
-        public string ScalingValue { get; set; }
+        public int? ScalingValue { get; set; }
 
         /// <summary>
         /// 伸缩活动的描述信息。

@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string StatType { get; set; }
 
         /// <summary>
-        /// 服务区域：mainland_china（默认）、outside_mainland_china，当查询回源类指标时该参数无效。
+        /// 服务区域：mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china，当查询回源类指标时该参数无效。
         /// </summary>
         [SDKProperty("service_area", IsQuery = true)]
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]

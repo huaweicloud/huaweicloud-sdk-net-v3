@@ -179,9 +179,9 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 创建/复制/批量创建监控视图到指定的监控面板
+        /// 创建/复制/批量创建监控视图到指定的监控看板
         ///
-        /// 创建/复制/批量创建监控视图到指定的监控面板
+        /// 创建/复制/批量创建监控视图到指定的监控看板
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -196,9 +196,9 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 创建/复制监控面板
+        /// 创建/复制监控看板
         ///
-        /// 创建/复制监控面板
+        /// 创建/复制监控看板
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -245,9 +245,9 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 批量删除监控面板
+        /// 批量删除监控看板
         ///
-        /// 批量删除监控面板
+        /// 批量删除监控看板
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -394,9 +394,9 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 查询监控面板列表
+        /// 查询监控看板列表
         ///
-        /// 查询监控面板列表
+        /// 查询监控看板列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -410,9 +410,9 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 查询指定监控面板下的监控视图列表
+        /// 查询指定监控看板下的监控视图列表
         ///
-        /// 查询指定监控面板下的监控视图列表
+        /// 查询指定监控看板下的监控视图列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -546,9 +546,9 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 修改监控面板
+        /// 修改监控看板
         ///
-        /// 修改监控面板
+        /// 修改监控看板
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

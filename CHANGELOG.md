@@ -1,3 +1,149 @@
+# 3.1.57 2023-09-07
+
+### HuaweiCloud SDK AOS
+
+- _Features_
+  - Support the interface `DeleteStackEnhanced`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK AS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListScalingActivityLogs**
+    - changes of response param
+      - `* scaling_activity_log.scaling_value: string -> int32`
+  - **CreateScalingPolicy**
+    - changes of request param
+      - `+ scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **UpdateScalingPolicy**
+    - changes of request param
+      - `+ scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **ShowScalingPolicy**
+    - changes of response param
+      - `+ scaling_policy.scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scaling_policy.scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **ListScalingPolicies**
+    - changes of response param
+      - `+ scaling_policies.scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scaling_policies.scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **CreateScalingV2Policy**
+    - changes of request param
+      - `+ scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **ListAllScalingV2Policies**
+    - changes of response param
+      - `+ scaling_policies.scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scaling_policies.scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **UpdateScalingV2Policy**
+    - changes of request param
+      - `+ scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **ShowScalingV2Policy**
+    - changes of response param
+      - `+ scaling_policy.scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scaling_policy.scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **ListScalingV2Policies**
+    - changes of response param
+      - `+ scaling_policies.scheduled_policy.recurrence_type: enum value [Daily,Weekly,Monthly]`
+      - `- scaling_policies.scheduled_policy.recurrence_type: enum value [DAILY,WEEKLY,MONTHLY]`
+  - **ListScalingActivityV2Logs**
+    - changes of response param
+      - `* scaling_activity_log.scaling_value: string -> int32`
+  - **CreateScalingGroup**
+    - changes of request param
+      - `+ lbaas_listeners.protocol_version`
+  - **ListScalingGroups**
+    - changes of response param
+      - `+ scaling_groups.lbaas_listeners.protocol_version`
+  - **UpdateScalingGroup**
+    - changes of request param
+      - `+ lbaas_listeners.protocol_version`
+  - **ShowScalingGroup**
+    - changes of response param
+      - `+ scaling_group.lbaas_listeners.protocol_version`
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateEvents**
+    - changes of request param
+      - `+ detail.dimensions`
+  - **ListEventDetail**
+    - changes of response param
+      - `- dimensions`
+      - `+ event_info.detail.dimensions`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the following interfaces：
+    - `StopJobAction`
+    - `ShowDataProgress`
+    - `UpdateDataProgress`
+    - `ShowDataProcessingRulesResult`
+    - `CheckDataFilter`
+    - `ShowDataFilteringResult`
+    - `CollectColumns`
+    - `ShowColumnInfoResult`
+    - `BatchStopJobsAction`
+    - `ExportOperationInfo`
+    - `BatchTagAction`
+    - `ListProjectTags`
+    - `ShowInstanceTags`
+    - `UpdateStartPosition`
+    - `ShowMonitorData`
+    - `ShowSupportObjectType`
+    - `ShowIncrementComponentsDetail`
+    - `CollectDbObjectsInfo`
+    - `ShowDbObjectsList`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDbObjectTemplateResult**
+    - changes of request param
+      - `+ type: enum value [change]`
+  - **ShowUpdateObjectSavingStatus**
+    - changes of request param
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **ShowObjectMapping**
+    - changes of request param
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **ListJobs**
+    - changes of request param
+      - `+ instance_ids`
+      - `+ instance_ip`
+  - **ShowDbObjectCollectionStatus**
+    - changes of request param
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **UpdateBatchAsyncJobs**
+    - changes of request param
+      - `+ jobs.type: enum value [re_create,expired_days]`
+  - **UpdateJob**
+    - changes of request param
+      - `+ job.type: enum value [re_create,expired_days]`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `ListInstancesResourceMetrics`, `ListInstancesRecommendation`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.56 2023-08-31
 
 ### HuaweiCloud SDK CCE

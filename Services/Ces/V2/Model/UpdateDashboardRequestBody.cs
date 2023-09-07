@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 自定义监控面板名称
+        /// 自定义监控看板名称
         /// </summary>
         [JsonProperty("dashboard_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardName { get; set; }
 
         /// <summary>
-        /// 监控面板是否标记收藏, true: 收藏, false: 未收藏
+        /// 监控看板是否标记收藏, true: 收藏, false: 未收藏
         /// </summary>
         [JsonProperty("is_favorite", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFavorite { get; set; }

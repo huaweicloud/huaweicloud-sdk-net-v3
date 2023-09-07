@@ -599,6 +599,38 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询购买推荐
+        ///
+        /// 查询购买推荐
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstancesRecommendationResponse ListInstancesRecommendation(ListInstancesRecommendationRequest listInstancesRecommendationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/product-recommendation",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRecommendationRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstancesRecommendationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询监控大盘列表
+        ///
+        /// 查询监控大盘列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstancesResourceMetricsResponse ListInstancesResourceMetrics(ListInstancesResourceMetricsRequest listInstancesResourceMetricsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource-monitoring",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesResourceMetricsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstancesResourceMetricsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取实例是否能使用极速恢复
         ///
         /// 批量获取实例是否能在库表恢复时使用极速恢复。

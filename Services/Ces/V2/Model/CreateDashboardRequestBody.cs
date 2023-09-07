@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 自定义监控面板名称
+        /// 自定义监控看板名称
         /// </summary>
         [JsonProperty("dashboard_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardName { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseId { get; set; }
 
         /// <summary>
-        /// 监控面板id
+        /// 监控看板id
         /// </summary>
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }

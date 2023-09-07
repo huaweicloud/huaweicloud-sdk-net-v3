@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 监控面板id列表
+        /// 监控看板id列表
         /// </summary>
         [JsonProperty("dashboard_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DashboardIds { get; set; }

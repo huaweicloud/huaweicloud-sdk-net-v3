@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Count { get; set; }
 
         /// <summary>
-        /// 资源分组资源列表
+        /// 资源分组关联资源列表
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<GetResourceGroupResources> Resources { get; set; }

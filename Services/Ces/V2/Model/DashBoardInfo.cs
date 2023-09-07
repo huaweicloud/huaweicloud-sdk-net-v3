@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 监控面板id
+        /// 监控看板id
         /// </summary>
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }
 
         /// <summary>
-        /// 自定义监控面板名称
+        /// 自定义监控看板名称
         /// </summary>
         [JsonProperty("dashboard_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardName { get; set; }
@@ -41,19 +41,19 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? RowWidgetNum { get; set; }
 
         /// <summary>
-        /// 监控面板是否标记收藏, true: 收藏, false: 未收藏
+        /// 监控看板是否标记收藏, true: 收藏, false: 未收藏
         /// </summary>
         [JsonProperty("is_favorite", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFavorite { get; set; }
 
         /// <summary>
-        /// 监控面板的创建用户名
+        /// 监控看板的创建用户名
         /// </summary>
         [JsonProperty("creator_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatorName { get; set; }
 
         /// <summary>
-        /// 监控面板创建时间
+        /// 监控看板创建时间
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }

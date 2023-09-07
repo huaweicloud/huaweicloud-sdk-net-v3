@@ -22,6 +22,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             "https://iotda.ap-southeast-1.myhuaweicloud.com");
         public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
             "https://iotda.af-south-1.myhuaweicloud.com");
+        public static readonly Region ME_EAST_1 = new Region("me-east-1",
+            "https://iotda.me-east-1.myhuaweicloud.com");
         
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
@@ -33,6 +35,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "af-south-1", AF_SOUTH_1 },
+                { "me-east-1", ME_EAST_1 },
         };
 
         public static Region ValueOf(string regionId)
