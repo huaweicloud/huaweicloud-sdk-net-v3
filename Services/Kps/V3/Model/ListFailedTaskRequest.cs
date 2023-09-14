@@ -17,18 +17,18 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     {
 
         /// <summary>
-        /// 每页返回的个数。 默认值：50。 
+        /// 每页显示的条目数量。默认值1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
+        public int? Limit { get; set; }
 
         /// <summary>
-        /// 偏移量，表示从此偏移量开始查询， offset大于等于0 
+        /// 失败的任务信息列表的偏移量
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string Offset { get; set; }
+        public int? Offset { get; set; }
 
 
 

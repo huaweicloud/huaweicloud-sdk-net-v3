@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("flavors_available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<FlavorAzObject> FlavorsAvailableZones { get; set; }
 
+        /// <summary>
+        /// 副本数
+        /// </summary>
+        [JsonProperty("replica_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReplicaCount { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +143,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  isDec: ").Append(IsDec).Append("\n");
             sb.Append("  attrs: ").Append(Attrs).Append("\n");
             sb.Append("  flavorsAvailableZones: ").Append(FlavorsAvailableZones).Append("\n");
+            sb.Append("  replicaCount: ").Append(ReplicaCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,6 +248,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.FlavorsAvailableZones != null &&
                     input.FlavorsAvailableZones != null &&
                     this.FlavorsAvailableZones.SequenceEqual(input.FlavorsAvailableZones)
+                ) && 
+                (
+                    this.ReplicaCount == input.ReplicaCount ||
+                    (this.ReplicaCount != null &&
+                    this.ReplicaCount.Equals(input.ReplicaCount))
                 );
         }
 
@@ -284,6 +296,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Attrs.GetHashCode();
                 if (this.FlavorsAvailableZones != null)
                     hashCode = hashCode * 59 + this.FlavorsAvailableZones.GetHashCode();
+                if (this.ReplicaCount != null)
+                    hashCode = hashCode * 59 + this.ReplicaCount.GetHashCode();
                 return hashCode;
             }
         }

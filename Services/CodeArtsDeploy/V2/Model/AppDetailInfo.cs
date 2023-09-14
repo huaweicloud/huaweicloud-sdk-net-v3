@@ -152,7 +152,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// 部署任务信息
         /// </summary>
         [JsonProperty("arrange_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public Object ArrangeInfos { get; set; }
+        public List<TaskV2Info> ArrangeInfos { get; set; }
 
 
 
@@ -319,8 +319,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 ) && 
                 (
                     this.ArrangeInfos == input.ArrangeInfos ||
-                    (this.ArrangeInfos != null &&
-                    this.ArrangeInfos.Equals(input.ArrangeInfos))
+                    this.ArrangeInfos != null &&
+                    input.ArrangeInfos != null &&
+                    this.ArrangeInfos.SequenceEqual(input.ArrangeInfos)
                 );
         }
 

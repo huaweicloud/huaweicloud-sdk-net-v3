@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     public class CreateKeypairResp 
     {
         /// <summary>
-        /// SSH密钥对的类型
+        /// SSH密钥对的类型。ssh或x509。
         /// </summary>
-        /// <value>SSH密钥对的类型</value>
+        /// <value>SSH密钥对的类型。ssh或x509。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// SSH密钥对的类型
+        /// SSH密钥对的类型。ssh或x509。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

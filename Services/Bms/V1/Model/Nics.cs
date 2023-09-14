@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string IpAddress { get; set; }
 
+        /// <summary>
+        /// IP/Mac对列表， 约束：IP地址不允许为 “0.0.0.0/0” 如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组 如果allowed_address_pairs为“1.1.1.1/0”，表示关闭源目地址检查开关 被绑定的云服务器网卡allowed_address_pairs填“1.1.1.1/0”
+        /// </summary>
+        [JsonProperty("allowed_address_pairs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateServerNicAllowedAddressPairs> AllowedAddressPairs { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("class Nics {\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
+            sb.Append("  allowedAddressPairs: ").Append(AllowedAddressPairs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     this.IpAddress == input.IpAddress ||
                     (this.IpAddress != null &&
                     this.IpAddress.Equals(input.IpAddress))
+                ) && 
+                (
+                    this.AllowedAddressPairs == input.AllowedAddressPairs ||
+                    this.AllowedAddressPairs != null &&
+                    input.AllowedAddressPairs != null &&
+                    this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs)
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.IpAddress != null)
                     hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.AllowedAddressPairs != null)
+                    hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
                 return hashCode;
             }
         }

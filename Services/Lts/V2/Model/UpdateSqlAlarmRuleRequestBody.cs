@@ -298,7 +298,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 告警统计周期
         /// </summary>
         [JsonProperty("frequency", NullValueHandling = NullValueHandling.Ignore)]
-        public Frequency Frequency { get; set; }
+        public Object Frequency { get; set; }
 
         /// <summary>
         /// 条件表达式
@@ -332,7 +332,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 通知主题
         /// </summary>
         [JsonProperty("notification_save_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public SqlNotificationSaveRule NotificationSaveRule { get; set; }
+        public Object NotificationSaveRule { get; set; }
 
         /// <summary>
         /// 触发条件：触发次数;默认为1

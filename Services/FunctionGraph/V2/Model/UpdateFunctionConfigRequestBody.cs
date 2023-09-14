@@ -239,7 +239,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
         /// <summary>
-        /// 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询华为云函数工作流服务进行配置
+        /// 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }
@@ -383,7 +383,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string DomainNames { get; set; }
 
         /// <summary>
-        /// 函数快照式冷启动Restore Hook入口，仅支持Java，规则：xx.xx，必须包含“. ”。如：com.huawei.demo.Test.restoreHook
+        /// 函数快照式冷启动Restore Hook入口，仅支持Java，规则：xx.xx，必须包含“. ”。如：com.xxx.demo.Test.restoreHook
         /// </summary>
         [JsonProperty("restore_hook_handler", NullValueHandling = NullValueHandling.Ignore)]
         public string RestoreHookHandler { get; set; }

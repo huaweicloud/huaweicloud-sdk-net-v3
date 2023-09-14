@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     {
 
         /// <summary>
-        /// SSH密钥对信息详情
+        /// SSH密钥对信息列表
         /// </summary>
         [JsonProperty("keypairs", NullValueHandling = NullValueHandling.Ignore)]
         public List<Keypairs> Keypairs { get; set; }

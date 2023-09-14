@@ -1072,6 +1072,25 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 编辑消费组
+        ///
+        /// 编辑消费组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateInstanceConsumerGroupResponse> UpdateInstanceConsumerGroupAsync(UpdateInstanceConsumerGroupRequest updateInstanceConsumerGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , updateInstanceConsumerGroupRequest.Engine.ToString());
+            urlParam.Add("instance_id" , updateInstanceConsumerGroupRequest.InstanceId.ToString());
+            urlParam.Add("group" , updateInstanceConsumerGroupRequest.Group.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConsumerGroupRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceConsumerGroupResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改实例跨VPC访问的内网IP
         ///
         /// 修改实例跨VPC访问的内网IP。
@@ -1103,6 +1122,25 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceTopicRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateInstanceTopicResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改用户参数
+        ///
+        /// 修改用户参数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateInstanceUserResponse> UpdateInstanceUserAsync(UpdateInstanceUserRequest updateInstanceUserRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , updateInstanceUserRequest.Engine.ToString());
+            urlParam.Add("instance_id" , updateInstanceUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name" , updateInstanceUserRequest.UserName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/users/{user_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceUserRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceUserResponse>(response);
         }
         
         /// <summary>

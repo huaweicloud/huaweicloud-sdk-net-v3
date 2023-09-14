@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 用户描述。
+        /// </summary>
+        [JsonProperty("user_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserDesc { get; set; }
+
+        /// <summary>
         /// 用户角色。
         /// </summary>
         [JsonProperty("role", NullValueHandling = NullValueHandling.Ignore)]
@@ -50,6 +56,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowInstanceUsersEntity {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  userDesc: ").Append(UserDesc).Append("\n");
             sb.Append("  role: ").Append(Role).Append("\n");
             sb.Append("  defaultApp: ").Append(DefaultApp).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
@@ -80,6 +87,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.UserName.Equals(input.UserName))
                 ) && 
                 (
+                    this.UserDesc == input.UserDesc ||
+                    (this.UserDesc != null &&
+                    this.UserDesc.Equals(input.UserDesc))
+                ) && 
+                (
                     this.Role == input.Role ||
                     (this.Role != null &&
                     this.Role.Equals(input.Role))
@@ -106,6 +118,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserDesc != null)
+                    hashCode = hashCode * 59 + this.UserDesc.GetHashCode();
                 if (this.Role != null)
                     hashCode = hashCode * 59 + this.Role.GetHashCode();
                 if (this.DefaultApp != null)

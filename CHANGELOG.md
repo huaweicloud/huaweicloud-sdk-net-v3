@@ -1,3 +1,398 @@
+# 3.1.58 2023-09-14
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateBareMetalServers**
+    - changes of request param
+      - `+ server.nics.allowed_address_pairs`
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateVault**
+    - changes of request param
+      - `- vault.billing.promotion_info`
+      - `- vault.billing.purchase_mode`
+      - `- vault.billing.order_id`
+  - **CreatePostPaidVault**
+    - changes of request param
+      - `- vault.billing.promotion_info`
+      - `- vault.billing.purchase_mode`
+      - `- vault.billing.order_id`
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateEvents**
+    - changes of request param
+      - `- detail.dimensions`
+  - **ListEventDetail**
+    - changes of response param
+      - `* event_info.detail.dimensions: object<MetricsDimension> -> list<MetricsDimension>`
+      - `* event_info.detail: object<EventItemDetail> -> object<ShowEventItemDetail>`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAppDetailById**
+    - changes of response param
+      - `* result.arrange_infos: object -> list<TaskV2Info>`
+  - **ListNewHosts**
+    - changes of response param
+      - `+ result.permission.can_copy`
+      - `- result.permission.can_connection_test`
+      - `* result.permission: object<PermissionHostDetail> -> object<PermissionHostDetailNew>`
+  - **ShowHostDetail**
+    - changes of response param
+      - `* result.proxy_host: string -> object<HostInfoDetail>`
+      - `+ result.permission.can_copy`
+      - `- result.permission.can_connection_test`
+      - `* result.permission: object<PermissionHostDetail> -> object<PermissionHostDetailNew>`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavors**
+    - changes of response param
+      - `+ flavors.replica_count`
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+  - Support the interface `ModifyVolumeQoS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - Support the interfaces `ShowFunctionUrl`, `UpdateFunctionUrl`, `CreateFunctionUrl`, `DeleteFunctionUrl`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateFuncSnapshot**
+    - changes of request param
+      - `+ action: enum value [enable,disable]`
+  - **CreateFunction**
+    - changes of request param
+      - `+ custom_image`
+      - `+ code_type: enum value [Custom-Image-Swr]`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interface `ListAuditLogDownloadLink`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateGaussMySqlInstance**
+    - changes of response param
+      - `+ instance.volume`
+
+### HuaweiCloud SDK Image
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the following interfaces：
+    - `RunImageDescription`
+    - `RunImageSuperResolution`
+    - `CreateVideoTaggingMediaTask`
+    - `ShowVideoTaggingMediaTask`
+    - `CreateImageHighresolutionMattingTask`
+    - `ShowImageHighresolutionMattingTask`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - Support the interfaces `UpdateInstanceConsumerGroup`, `UpdateInstanceUser`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateKafkaConsumerGroup**
+    - changes of request param
+      - `+ group_desc`
+  - **CreateInstanceUser**
+    - changes of request param
+      - `+ user_desc`
+  - **ShowInstanceUsers**
+    - changes of response param
+      - `+ users.user_desc`
+  - **ShowInstanceMessages**
+    - changes of request param
+      - `+ keyword`
+
+### HuaweiCloud SDK KPS
+
+- _Features_
+  - Support the interfaces `ImportPrivateKey`, `ExportPrivateKey`, `BatchAssociateKeypair`, `ClearPrivateKey`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListKeypairDetail**
+    - changes of response param
+      - `+ keypair.key_id`
+      - `+ keypair.algorithm`
+  - **ListFailedTask**
+    - changes of request param
+      - `* limit: string -> int32`
+      - `* offset: string -> int32`
+  - **AssociateKeypair**
+    - changes of request param
+      - `+ server.port`
+    - changes of response param
+      - `+ error_msg`
+      - `+ error_code`
+      - `+ server_id`
+      - `+ status`
+  - **DisassociateKeypair**
+    - changes of response param
+      - `+ error_msg`
+      - `+ error_code`
+      - `+ server_id`
+      - `+ status`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListCharts**
+    - changes of response param
+      - `- config.can_sort`
+      - `- config.can_search`
+      - `- config.page_size`
+  - **ShowNotificationTemplate**
+    - changes of response param
+      - `+ body`
+      - `- create_time`
+      - `- project_id`
+      - `- templates`
+      - `- modify_time`
+      - `- name`
+      - `- source`
+      - `- type`
+      - `- locale`
+      - `- desc`
+  - **ListLogStream**
+    - changes of request param
+      - `- tag`
+    - changes of response param
+      - `* log_streams: list<LogStream> -> list<LogStreamResBody>`
+  - **ListStructuredLogsWithTimeRange**
+    - changes of response param
+      - `+ context`
+      - `- body`
+  - **DeleteTransfer**
+    - changes of response param
+      - `- log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfer_info.log_transfer_detail.tags`
+  - **ListTransfers**
+    - changes of response param
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.tags`
+  - **UpdateTransfer**
+    - changes of response param
+      - `- log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfer_info.log_transfer_detail.tags`
+  - **CreateTransfer**
+    - changes of response param
+      - `- log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfer_info.log_transfer_detail.tags`
+  - **ListNotificationTemplates**
+    - changes of response param
+      - `+ body`
+      - `- create_time`
+      - `- project_id`
+      - `- templates`
+      - `- modify_time`
+      - `- name`
+      - `- source`
+      - `- type`
+      - `- locale`
+      - `- desc`
+  - **UpdateSqlAlarmRule**
+    - changes of request param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+    - changes of response param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+  - **CreateSqlAlarmRule**
+    - changes of request param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+  - **ListSqlAlarmRules**
+    - changes of response param
+      - `- sql_alarm_rules.frequency.type`
+      - `- sql_alarm_rules.frequency.cron_expr`
+      - `- sql_alarm_rules.frequency.hour_of_day`
+      - `- sql_alarm_rules.frequency.day_of_week`
+      - `- sql_alarm_rules.frequency.fixed_rate`
+      - `- sql_alarm_rules.frequency.fixed_rate_unit`
+  - **UpdateKeywordsAlarmRule**
+    - changes of request param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+  - **CreateKeywordsAlarmRule**
+    - changes of request param
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+  - **ListKeywordsAlarmRules**
+    - changes of response param
+      - `- keywords_alarm_rules.frequency.type`
+      - `- keywords_alarm_rules.frequency.cron_expr`
+      - `- keywords_alarm_rules.frequency.hour_of_day`
+      - `- keywords_alarm_rules.frequency.day_of_week`
+      - `- keywords_alarm_rules.frequency.fixed_rate`
+      - `- keywords_alarm_rules.frequency.fixed_rate_unit`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RunCreateVideoModerationJob**
+    - changes of request param
+      - `+ biz_type`
+  - **RunCreateAudioModerationJob**
+    - changes of request param
+      - `+ biz_type`
+  - **RunTextModeration**
+    - changes of request param
+      - `+ biz_type`
+  - **CheckImageModeration**
+    - changes of request param
+      - `+ biz_type`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `RestoreTablesNew`, `UpgradeDbVersionNew`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.57 2023-09-07
 
 ### HuaweiCloud SDK AOS

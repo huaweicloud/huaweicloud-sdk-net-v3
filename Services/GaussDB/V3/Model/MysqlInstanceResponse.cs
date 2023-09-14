@@ -118,6 +118,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("charge_info", NullValueHandling = NullValueHandling.Ignore)]
         public MysqlChargeInfo ChargeInfo { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("volume", NullValueHandling = NullValueHandling.Ignore)]
+        public MysqlVolumeResp Volume { get; set; }
+
 
 
         /// <summary>
@@ -144,6 +150,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  flavorRef: ").Append(FlavorRef).Append("\n");
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
+            sb.Append("  volume: ").Append(Volume).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -249,6 +256,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.ChargeInfo == input.ChargeInfo ||
                     (this.ChargeInfo != null &&
                     this.ChargeInfo.Equals(input.ChargeInfo))
+                ) && 
+                (
+                    this.Volume == input.Volume ||
+                    (this.Volume != null &&
+                    this.Volume.Equals(input.Volume))
                 );
         }
 
@@ -294,6 +306,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
                 if (this.ChargeInfo != null)
                     hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
+                if (this.Volume != null)
+                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
                 return hashCode;
             }
         }

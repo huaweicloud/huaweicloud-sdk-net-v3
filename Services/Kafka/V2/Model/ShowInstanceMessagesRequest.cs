@@ -86,6 +86,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public string Partition { get; set; }
 
+        /// <summary>
+        /// 关键词。 取值范围为0~50。
+        /// </summary>
+        [SDKProperty("keyword", IsQuery = true)]
+        [JsonProperty("keyword", NullValueHandling = NullValueHandling.Ignore)]
+        public string Keyword { get; set; }
+
 
 
         /// <summary>
@@ -105,6 +112,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  download: ").Append(Download).Append("\n");
             sb.Append("  messageOffset: ").Append(MessageOffset).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
+            sb.Append("  keyword: ").Append(Keyword).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -175,6 +183,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Partition == input.Partition ||
                     (this.Partition != null &&
                     this.Partition.Equals(input.Partition))
+                ) && 
+                (
+                    this.Keyword == input.Keyword ||
+                    (this.Keyword != null &&
+                    this.Keyword.Equals(input.Keyword))
                 );
         }
 
@@ -206,6 +219,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.MessageOffset.GetHashCode();
                 if (this.Partition != null)
                     hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.Keyword != null)
+                    hashCode = hashCode * 59 + this.Keyword.GetHashCode();
                 return hashCode;
             }
         }

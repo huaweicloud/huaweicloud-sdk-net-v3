@@ -845,9 +845,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/streams/{log_stream_id}/struct-content/query",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStructuredLogsWithTimeRangeRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            ListStructuredLogsWithTimeRangeResponse listStructuredLogsWithTimeRangeResponse = JsonUtils.DeSerializeNull<ListStructuredLogsWithTimeRangeResponse>(response);
-            listStructuredLogsWithTimeRangeResponse.Body = JsonUtils.DeSerializeMap<string, List<Object>>(response);
-            return listStructuredLogsWithTimeRangeResponse;
+            return JsonUtils.DeSerialize<ListStructuredLogsWithTimeRangeResponse>(response);
         }
         
         /// <summary>

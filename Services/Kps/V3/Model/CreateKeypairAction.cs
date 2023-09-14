@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     public class CreateKeypairAction 
     {
         /// <summary>
-        /// SSH密钥对的类型
+        /// SSH密钥对的类型。ssh或x509。
         /// </summary>
-        /// <value>SSH密钥对的类型</value>
+        /// <value>SSH密钥对的类型。ssh或x509。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         }
 
         /// <summary>
-        /// 租户级或者用户级
+        /// 租户级或者用户级。domain或user。
         /// </summary>
-        /// <value>租户级或者用户级</value>
+        /// <value>租户级或者用户级。domain或user。</value>
         [JsonConverter(typeof(EnumClassConverter<ScopeEnum>))]
         public class ScopeEnum
         {
@@ -253,7 +253,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// SSH密钥对的类型
+        /// SSH密钥对的类型。ssh或x509。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -264,7 +264,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public string PublicKey { get; set; }
 
         /// <summary>
-        /// 租户级或者用户级
+        /// 租户级或者用户级。domain或user。
         /// </summary>
         [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
         public ScopeEnum Scope { get; set; }

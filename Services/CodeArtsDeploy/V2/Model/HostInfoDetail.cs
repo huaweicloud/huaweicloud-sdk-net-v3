@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// 
         /// </summary>
         [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
-        public PermissionHostDetail Permission { get; set; }
+        public PermissionHostDetailNew Permission { get; set; }
 
         /// <summary>
         /// 主机集群id
@@ -83,10 +83,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string OwnerName { get; set; }
 
         /// <summary>
-        /// 代理机
+        /// 
         /// </summary>
         [JsonProperty("proxy_host", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProxyHost { get; set; }
+        public HostInfoDetail ProxyHost { get; set; }
 
         /// <summary>
         /// 连通性状态

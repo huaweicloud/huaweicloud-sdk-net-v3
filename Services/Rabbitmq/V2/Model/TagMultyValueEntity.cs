@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 键。  key不能为空，长度1~128个字符（中文也可以输入128个字符）。  可用UTF-8格式表示的字母、数字和空格，以及以下字符： _ . : &#x3D; + - @  key两头不能有空格字符。
+        /// 标签键。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 值列表。  值长度0~255个字符（中文也可以输入255个字符）。  值可用UTF-8格式表示的字母、数字和空格，以及以下字符： _ . : / &#x3D; + - @  值可以为空字符串。
+        /// 标签值。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Values { get; set; }

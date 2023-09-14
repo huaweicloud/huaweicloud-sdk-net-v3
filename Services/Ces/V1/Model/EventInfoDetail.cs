@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
-        public EventItemDetail Detail { get; set; }
+        public ShowEventItemDetail Detail { get; set; }
 
         /// <summary>
         /// 事件ID。

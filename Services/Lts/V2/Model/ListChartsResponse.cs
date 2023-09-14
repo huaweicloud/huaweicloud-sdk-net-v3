@@ -200,7 +200,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 图表配置详情
         /// </summary>
         [JsonProperty("config", NullValueHandling = NullValueHandling.Ignore)]
-        public ChartConfig Config { get; set; }
+        public Object Config { get; set; }
 
 
 

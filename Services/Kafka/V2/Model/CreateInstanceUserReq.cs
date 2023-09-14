@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 用户描述。
+        /// </summary>
+        [JsonProperty("user_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserDesc { get; set; }
+
+        /// <summary>
         /// 用户密码。  密码不能和用户名相同。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（&#x60;~!@#$%^&amp;*()-_&#x3D;+\\|[{}]:&#39;\&quot;,&lt;.&gt;/?）
         /// </summary>
         [JsonProperty("user_passwd", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateInstanceUserReq {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  userDesc: ").Append(UserDesc).Append("\n");
             sb.Append("  userPasswd: ").Append(UserPasswd).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +73,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.UserName.Equals(input.UserName))
                 ) && 
                 (
+                    this.UserDesc == input.UserDesc ||
+                    (this.UserDesc != null &&
+                    this.UserDesc.Equals(input.UserDesc))
+                ) && 
+                (
                     this.UserPasswd == input.UserPasswd ||
                     (this.UserPasswd != null &&
                     this.UserPasswd.Equals(input.UserPasswd))
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserDesc != null)
+                    hashCode = hashCode * 59 + this.UserDesc.GetHashCode();
                 if (this.UserPasswd != null)
                     hashCode = hashCode * 59 + this.UserPasswd.GetHashCode();
                 return hashCode;

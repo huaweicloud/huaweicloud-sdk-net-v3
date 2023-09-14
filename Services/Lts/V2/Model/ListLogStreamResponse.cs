@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
     {
 
         /// <summary>
-        /// 日志组数组。
+        /// 
         /// </summary>
         [JsonProperty("log_streams", NullValueHandling = NullValueHandling.Ignore)]
-        public List<LogStream> LogStreams { get; set; }
+        public List<LogStreamResBody> LogStreams { get; set; }
 
 
 

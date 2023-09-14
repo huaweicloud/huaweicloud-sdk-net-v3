@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public string NextMarker { get; set; }
 
         /// <summary>
-        /// 返回前一页查询地址
+        /// 返回上一页的查询地址
         /// </summary>
         [JsonProperty("previous_marker", NullValueHandling = NullValueHandling.Ignore)]
         public string PreviousMarker { get; set; }
 
         /// <summary>
-        /// 本页返回条目数量
+        /// 返回条目数量
         /// </summary>
         [JsonProperty("current_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? CurrentCount { get; set; }

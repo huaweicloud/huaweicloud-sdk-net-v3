@@ -321,6 +321,23 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 修改云硬盘QoS
+        ///
+        /// 调整云硬盘的iops或者吞吐量。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyVolumeQoSResponse> ModifyVolumeQoSAsync(ModifyVolumeQoSRequest modifyVolumeQoSRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id" , modifyVolumeQoSRequest.VolumeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/cloudvolumes/{volume_id}/qos",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyVolumeQoSRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<ModifyVolumeQoSResponse>(response);
+        }
+        
+        /// <summary>
         /// 扩容云硬盘
         ///
         /// 对按需或者包周期云硬盘进行扩容。

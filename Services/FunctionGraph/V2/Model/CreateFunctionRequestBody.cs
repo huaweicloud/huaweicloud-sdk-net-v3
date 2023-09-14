@@ -253,6 +253,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+            /// <summary>
+            /// Enum CUSTOM_IMAGE_SWR for value: Custom-Image-Swr
+            /// </summary>
+            public static readonly CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
             private static readonly Dictionary<string, CodeTypeEnum> StaticFields =
             new Dictionary<string, CodeTypeEnum>()
             {
@@ -260,6 +265,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "zip", ZIP },
                 { "obs", OBS },
                 { "jar", JAR },
+                { "Custom-Image-Swr", CUSTOM_IMAGE_SWR },
             };
 
             private string _value;
@@ -487,13 +493,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
         /// <summary>
-        /// 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询华为云函数工作流服务进行配置
+        /// 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
+        /// 函数执行入口 规则：xx.xx，必须包含“. ”；自定义镜像函数handler为“-” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
         /// </summary>
         [JsonProperty("handler", NullValueHandling = NullValueHandling.Ignore)]
         public string Handler { get; set; }
@@ -534,10 +540,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string CodeUrl { get; set; }
 
         /// <summary>
-        /// 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
+        /// 函数的文件名，当CodeType为jar/zip时必须提供该字段，CodeType为其他值时不需要提供。
         /// </summary>
         [JsonProperty("code_filename", NullValueHandling = NullValueHandling.Ignore)]
         public string CodeFilename { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("custom_image", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomImage CustomImage { get; set; }
 
         /// <summary>
         /// 用户自定义的name/value信息。 在函数中使用的参数。 举例：如函数要访问某个主机，可以设置自定义参数：Host&#x3D;{host_ip}，最多定义20个，总长度不超过4KB。
@@ -625,6 +637,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  codeType: ").Append(CodeType).Append("\n");
             sb.Append("  codeUrl: ").Append(CodeUrl).Append("\n");
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
+            sb.Append("  customImage: ").Append(CustomImage).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("  xrole: ").Append(Xrole).Append("\n");
             sb.Append("  appXrole: ").Append(AppXrole).Append("\n");
@@ -719,6 +732,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.CodeFilename.Equals(input.CodeFilename))
                 ) && 
                 (
+                    this.CustomImage == input.CustomImage ||
+                    (this.CustomImage != null &&
+                    this.CustomImage.Equals(input.CustomImage))
+                ) && 
+                (
                     this.UserData == input.UserData ||
                     (this.UserData != null &&
                     this.UserData.Equals(input.UserData))
@@ -807,6 +825,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.CodeUrl.GetHashCode();
                 if (this.CodeFilename != null)
                     hashCode = hashCode * 59 + this.CodeFilename.GetHashCode();
+                if (this.CustomImage != null)
+                    hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 if (this.Xrole != null)

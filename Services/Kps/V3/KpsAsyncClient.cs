@@ -32,6 +32,40 @@ namespace HuaweiCloud.SDK.Kps.V3
         }
         
         /// <summary>
+        /// 批量绑定SSH密钥对
+        ///
+        /// 给指定的虚拟机批量绑定新的SSH密钥对。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchAssociateKeypairResponse> BatchAssociateKeypairAsync(BatchAssociateKeypairRequest batchAssociateKeypairRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/batch-associate",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAssociateKeypairRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<BatchAssociateKeypairResponse>(response);
+        }
+        
+        /// <summary>
+        /// 清除私钥
+        ///
+        /// 清除SSH密钥对私钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ClearPrivateKeyResponse> ClearPrivateKeyAsync(ClearPrivateKeyRequest clearPrivateKeyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name" , clearPrivateKeyRequest.KeypairName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}/private-key",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", clearPrivateKeyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            ClearPrivateKeyResponse clearPrivateKeyResponse = JsonUtils.DeSerializeNull<ClearPrivateKeyResponse>(response);
+            return clearPrivateKeyResponse;
+        }
+        
+        /// <summary>
         /// 创建和导入SSH密钥对
         ///
         /// 创建和导入SSH密钥对
@@ -111,6 +145,38 @@ namespace HuaweiCloud.SDK.Kps.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateKeypairRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DisassociateKeypairResponse>(response);
+        }
+        
+        /// <summary>
+        /// 导出私钥
+        ///
+        /// 导出指定密钥对的私钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExportPrivateKeyResponse> ExportPrivateKeyAsync(ExportPrivateKeyRequest exportPrivateKeyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/export",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportPrivateKeyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ExportPrivateKeyResponse>(response);
+        }
+        
+        /// <summary>
+        /// 导入私钥
+        ///
+        /// 导入私钥到指定密钥对。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ImportPrivateKeyResponse> ImportPrivateKeyAsync(ImportPrivateKeyRequest importPrivateKeyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/import",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importPrivateKeyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ImportPrivateKeyResponse>(response);
         }
         
         /// <summary>

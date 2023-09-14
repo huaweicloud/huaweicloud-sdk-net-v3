@@ -802,24 +802,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("is_multi_az", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsMultiAz { get; set; }
 
-        /// <summary>
-        /// 促销信息，包周期时可选参数
-        /// </summary>
-        [JsonProperty("promotion_info", NullValueHandling = NullValueHandling.Ignore)]
-        public string PromotionInfo { get; set; }
-
-        /// <summary>
-        /// 购买模式，包周期时可选参数
-        /// </summary>
-        [JsonProperty("purchase_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public string PurchaseMode { get; set; }
-
-        /// <summary>
-        /// 订单 ID，包周期时可选参数
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
 
 
         /// <summary>
@@ -841,9 +823,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("  consoleUrl: ").Append(ConsoleUrl).Append("\n");
             sb.Append("  isMultiAz: ").Append(IsMultiAz).Append("\n");
-            sb.Append("  promotionInfo: ").Append(PromotionInfo).Append("\n");
-            sb.Append("  purchaseMode: ").Append(PurchaseMode).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -924,21 +903,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.IsMultiAz == input.IsMultiAz ||
                     (this.IsMultiAz != null &&
                     this.IsMultiAz.Equals(input.IsMultiAz))
-                ) && 
-                (
-                    this.PromotionInfo == input.PromotionInfo ||
-                    (this.PromotionInfo != null &&
-                    this.PromotionInfo.Equals(input.PromotionInfo))
-                ) && 
-                (
-                    this.PurchaseMode == input.PurchaseMode ||
-                    (this.PurchaseMode != null &&
-                    this.PurchaseMode.Equals(input.PurchaseMode))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -974,12 +938,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.ConsoleUrl.GetHashCode();
                 if (this.IsMultiAz != null)
                     hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
-                if (this.PromotionInfo != null)
-                    hashCode = hashCode * 59 + this.PromotionInfo.GetHashCode();
-                if (this.PurchaseMode != null)
-                    hashCode = hashCode * 59 + this.PurchaseMode.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

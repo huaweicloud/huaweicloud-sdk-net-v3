@@ -29,10 +29,16 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public Auth Auth { get; set; }
 
         /// <summary>
-        /// - true：禁用虚拟机的ssh登陆。 - false：不禁用虚拟机的ssh登陆。
+        /// - true：禁用虚拟机的ssh登录。 - false：不禁用虚拟机的ssh登录。
         /// </summary>
         [JsonProperty("disable_password", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DisablePassword { get; set; }
+
+        /// <summary>
+        /// SSH监听端口。
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Port { get; set; }
 
 
 
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  auth: ").Append(Auth).Append("\n");
             sb.Append("  disablePassword: ").Append(DisablePassword).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                     this.DisablePassword == input.DisablePassword ||
                     (this.DisablePassword != null &&
                     this.DisablePassword.Equals(input.DisablePassword))
+                ) && 
+                (
+                    this.Port == input.Port ||
+                    (this.Port != null &&
+                    this.Port.Equals(input.Port))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                     hashCode = hashCode * 59 + this.Auth.GetHashCode();
                 if (this.DisablePassword != null)
                     hashCode = hashCode * 59 + this.DisablePassword.GetHashCode();
+                if (this.Port != null)
+                    hashCode = hashCode * 59 + this.Port.GetHashCode();
                 return hashCode;
             }
         }

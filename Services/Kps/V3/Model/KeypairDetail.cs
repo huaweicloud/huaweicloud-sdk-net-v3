@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     public class KeypairDetail 
     {
         /// <summary>
-        /// SSH密钥对的类型
+        /// SSH密钥对的类型。ssh或x509。
         /// </summary>
-        /// <value>SSH密钥对的类型</value>
+        /// <value>SSH密钥对的类型。ssh或x509。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         }
 
         /// <summary>
-        /// 租户级或者用户级
+        /// 租户级或者用户级。domain或user。
         /// </summary>
-        /// <value>租户级或者用户级</value>
+        /// <value>租户级或者用户级。domain或user。</value>
         [JsonConverter(typeof(EnumClassConverter<ScopeEnum>))]
         public class ScopeEnum
         {
@@ -259,12 +259,12 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         public long? Id { get; set; }
 
         /// <summary>
-        /// SSH密钥对的类型
+        /// SSH密钥对的类型。ssh或x509。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 租户级或者用户级
+        /// 租户级或者用户级。domain或user。
         /// </summary>
         [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
         public ScopeEnum Scope { get; set; }
@@ -328,6 +328,18 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         [JsonProperty("frozen_state", NullValueHandling = NullValueHandling.Ignore)]
         public int? FrozenState { get; set; }
 
+        /// <summary>
+        /// 密钥ID。
+        /// </summary>
+        [JsonProperty("key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KeyId { get; set; }
+
+        /// <summary>
+        /// 生成算法。
+        /// </summary>
+        [JsonProperty("algorithm", NullValueHandling = NullValueHandling.Ignore)]
+        public string Algorithm { get; set; }
+
 
 
         /// <summary>
@@ -351,6 +363,8 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
             sb.Append("  deleteTime: ").Append(DeleteTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  frozenState: ").Append(FrozenState).Append("\n");
+            sb.Append("  keyId: ").Append(KeyId).Append("\n");
+            sb.Append("  algorithm: ").Append(Algorithm).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -441,6 +455,16 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                     this.FrozenState == input.FrozenState ||
                     (this.FrozenState != null &&
                     this.FrozenState.Equals(input.FrozenState))
+                ) && 
+                (
+                    this.KeyId == input.KeyId ||
+                    (this.KeyId != null &&
+                    this.KeyId.Equals(input.KeyId))
+                ) && 
+                (
+                    this.Algorithm == input.Algorithm ||
+                    (this.Algorithm != null &&
+                    this.Algorithm.Equals(input.Algorithm))
                 );
         }
 
@@ -480,6 +504,10 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.FrozenState != null)
                     hashCode = hashCode * 59 + this.FrozenState.GetHashCode();
+                if (this.KeyId != null)
+                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.Algorithm != null)
+                    hashCode = hashCode * 59 + this.Algorithm.GetHashCode();
                 return hashCode;
             }
         }

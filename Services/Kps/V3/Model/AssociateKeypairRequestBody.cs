@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kps.V3.Model
 {
     /// <summary>
-    /// 绑定密钥对描述消息体
+    /// 绑定密钥对请求体。
     /// </summary>
     public class AssociateKeypairRequestBody 
     {

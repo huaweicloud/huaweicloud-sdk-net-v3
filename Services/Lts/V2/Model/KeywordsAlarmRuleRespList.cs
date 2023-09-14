@@ -297,7 +297,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 告警统计周期
         /// </summary>
         [JsonProperty("frequency", NullValueHandling = NullValueHandling.Ignore)]
-        public Frequency Frequency { get; set; }
+        public Object Frequency { get; set; }
 
         /// <summary>
         /// 告警级别

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
     public class Auth 
     {
         /// <summary>
-        /// 取值为枚举类型。
+        /// 取值为枚举类型。password或keypair。
         /// </summary>
-        /// <value>取值为枚举类型。</value>
+        /// <value>取值为枚举类型。password或keypair。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
 
 
         /// <summary>
-        /// 取值为枚举类型。
+        /// 取值为枚举类型。password或keypair。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

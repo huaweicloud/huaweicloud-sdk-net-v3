@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         }
 
         /// <summary>
-        /// 租户级或者用户级
+        /// 租户级或者用户级。domain或user。
         /// </summary>
-        /// <value>租户级或者用户级</value>
+        /// <value>租户级或者用户级。domain或user。</value>
         [JsonConverter(typeof(EnumClassConverter<ScopeEnum>))]
         public class ScopeEnum
         {
@@ -258,7 +258,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 租户级或者用户级
+        /// 租户级或者用户级。domain或user。
         /// </summary>
         [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
         public ScopeEnum Scope { get; set; }

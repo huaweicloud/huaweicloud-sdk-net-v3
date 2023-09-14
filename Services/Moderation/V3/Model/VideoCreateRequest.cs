@@ -392,6 +392,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public VideoCreateRequestData Data { get; set; }
 
         /// <summary>
+        /// 用户在控制台界面创建的biz_type名称，如果请求参数中传了biz_type则优先使用biz_type；如果用户没传biz_type则event_type和image_categories必须传。
+        /// </summary>
+        [JsonProperty("biz_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BizType { get; set; }
+
+        /// <summary>
         /// 事件类型，可选值如下： default：默认事件
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -422,6 +428,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             var sb = new StringBuilder();
             sb.Append("class VideoCreateRequest {\n");
             sb.Append("  data: ").Append(Data).Append("\n");
+            sb.Append("  bizType: ").Append(BizType).Append("\n");
             sb.Append("  eventType: ").Append(EventType).Append("\n");
             sb.Append("  imageCategories: ").Append(ImageCategories).Append("\n");
             sb.Append("  audioCategories: ").Append(AudioCategories).Append("\n");
@@ -451,6 +458,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.BizType == input.BizType ||
+                    (this.BizType != null &&
+                    this.BizType.Equals(input.BizType))
                 ) && 
                 (
                     this.EventType == input.EventType ||
@@ -486,6 +498,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                 int hashCode = 41;
                 if (this.Data != null)
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.BizType != null)
+                    hashCode = hashCode * 59 + this.BizType.GetHashCode();
                 if (this.EventType != null)
                     hashCode = hashCode * 59 + this.EventType.GetHashCode();
                 if (this.ImageCategories != null)

@@ -475,6 +475,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 获取全量SQL的临时下载链接
+        ///
+        /// 获取全量SQL的临时下载链接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAuditLogDownloadLinkResponse> ListAuditLogDownloadLinkAsync(ListAuditLogDownloadLinkRequest listAuditLogDownloadLinkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listAuditLogDownloadLinkRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/auditlog/download-link",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogDownloadLinkRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListAuditLogDownloadLinkResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询参数模板
         ///
         /// 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。

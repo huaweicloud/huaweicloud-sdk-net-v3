@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
+        /// <summary>
+        /// 消费组描述
+        /// </summary>
+        [JsonProperty("group_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupDesc { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateGroupReq {\n");
             sb.Append("  groupName: ").Append(GroupName).Append("\n");
+            sb.Append("  groupDesc: ").Append(GroupDesc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.GroupName == input.GroupName ||
                     (this.GroupName != null &&
                     this.GroupName.Equals(input.GroupName))
+                ) && 
+                (
+                    this.GroupDesc == input.GroupDesc ||
+                    (this.GroupDesc != null &&
+                    this.GroupDesc.Equals(input.GroupDesc))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.GroupName != null)
                     hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.GroupDesc != null)
+                    hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
                 return hashCode;
             }
         }

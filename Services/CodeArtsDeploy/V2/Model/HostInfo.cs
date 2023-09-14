@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// 
         /// </summary>
         [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
-        public PermissionHostDetail Permission { get; set; }
+        public PermissionHostDetailNew Permission { get; set; }
 
         /// <summary>
         /// 主机名称

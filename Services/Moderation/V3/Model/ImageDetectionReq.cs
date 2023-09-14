@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         [JsonProperty("image", NullValueHandling = NullValueHandling.Ignore)]
         public string Image { get; set; }
 
+        /// <summary>
+        /// 自定义审核策略名称，可在控制台配置;如果请求参数中传了biz_type则优先使用biz_type,如果用户没传biz_type则event_type和categories必须传。
+        /// </summary>
+        [JsonProperty("biz_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BizType { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             sb.Append("  imageTextConfig: ").Append(ImageTextConfig).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  image: ").Append(Image).Append("\n");
+            sb.Append("  bizType: ").Append(BizType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +113,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.Image == input.Image ||
                     (this.Image != null &&
                     this.Image.Equals(input.Image))
+                ) && 
+                (
+                    this.BizType == input.BizType ||
+                    (this.BizType != null &&
+                    this.BizType.Equals(input.BizType))
                 );
         }
 
@@ -127,6 +139,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.Image != null)
                     hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.BizType != null)
+                    hashCode = hashCode * 59 + this.BizType.GetHashCode();
                 return hashCode;
             }
         }

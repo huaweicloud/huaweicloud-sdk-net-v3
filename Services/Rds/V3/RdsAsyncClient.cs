@@ -1020,6 +1020,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 表级时间点恢复(MySQL)
+        ///
+        /// 表级时间点恢复(MySQL)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RestoreTablesNewResponse> RestoreTablesNewAsync(RestoreTablesNewRequest restoreTablesNewRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , restoreTablesNewRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/restore/tables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreTablesNewRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RestoreTablesNewResponse>(response);
+        }
+        
+        /// <summary>
         /// 恢复到已有实例
         ///
         /// 恢复到已有实例。
@@ -1750,6 +1767,23 @@ namespace HuaweiCloud.SDK.Rds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpgradeDbVersionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 升级内核小版本
+        ///
+        /// 对实例进行小版本升级。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeDbVersionNewResponse> UpgradeDbVersionNewAsync(UpgradeDbVersionNewRequest upgradeDbVersionNewRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , upgradeDbVersionNewRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionNewRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpgradeDbVersionNewResponse>(response);
         }
         
         /// <summary>
