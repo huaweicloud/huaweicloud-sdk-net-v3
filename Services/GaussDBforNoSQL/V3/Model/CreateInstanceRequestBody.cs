@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。
+        /// 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。   - GaussDB(for Influx)支持单节点类型，取值为“InfluxdbSingle”。   - GaussDB(for redis)支持集群类型，取值为“Cluster”。   - GaussDB(for redis)支持主备类型，取值为“Replication”。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("availability_zone_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public AvailabilityZoneDetail AvailabilityZoneDetail { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("  restoreInfo: ").Append(RestoreInfo).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  availabilityZoneDetail: ").Append(AvailabilityZoneDetail).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -262,6 +269,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.Port == input.Port ||
                     (this.Port != null &&
                     this.Port.Equals(input.Port))
+                ) && 
+                (
+                    this.AvailabilityZoneDetail == input.AvailabilityZoneDetail ||
+                    (this.AvailabilityZoneDetail != null &&
+                    this.AvailabilityZoneDetail.Equals(input.AvailabilityZoneDetail))
                 );
         }
 
@@ -309,6 +321,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.RestoreInfo.GetHashCode();
                 if (this.Port != null)
                     hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.AvailabilityZoneDetail != null)
+                    hashCode = hashCode * 59 + this.AvailabilityZoneDetail.GetHashCode();
                 return hashCode;
             }
         }

@@ -294,10 +294,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public List<KeywordsRequest> KeywordsRequests { get; set; }
 
         /// <summary>
-        /// 告警统计周期
+        /// 
         /// </summary>
         [JsonProperty("frequency", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Frequency { get; set; }
+        public Frequency Frequency { get; set; }
 
         /// <summary>
         /// 告警级别

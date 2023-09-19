@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string DateOfExpiry { get; set; }
 
         /// <summary>
-        /// 护照签发日期（英文）。 
+        /// 护照签发日期（英文）。只有中国护照才返回此字段。 
         /// </summary>
         [JsonProperty("date_of_issue", NullValueHandling = NullValueHandling.Ignore)]
         public string DateOfIssue { get; set; }

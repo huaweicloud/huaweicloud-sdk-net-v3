@@ -185,10 +185,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 通知主题
+        /// 
         /// </summary>
         [JsonProperty("notification_save_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public Object NotificationSaveRule { get; set; }
+        public SqlNotificationSaveRule NotificationSaveRule { get; set; }
 
         /// <summary>
         /// 触发条件：触发次数;默认为1

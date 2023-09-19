@@ -197,10 +197,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string LogStreamName { get; set; }
 
         /// <summary>
-        /// 图表配置详情
+        /// 
         /// </summary>
         [JsonProperty("config", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Config { get; set; }
+        public ChartConfig Config { get; set; }
 
 
 

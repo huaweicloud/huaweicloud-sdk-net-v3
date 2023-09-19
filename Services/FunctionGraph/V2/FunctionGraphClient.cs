@@ -536,6 +536,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 获取函数活跃异步调用请求列表
+        ///
+        /// 获取函数异步调用活跃请求列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListActiveAsyncInvocationsResponse ListActiveAsyncInvocations(ListActiveAsyncInvocationsRequest listActiveAsyncInvocationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , listActiveAsyncInvocationsRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/active-async-invocations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listActiveAsyncInvocationsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListActiveAsyncInvocationsResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取函数异步调用请求列表
         ///
         /// 获取函数异步调用请求列表

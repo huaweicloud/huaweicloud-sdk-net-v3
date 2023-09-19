@@ -129,8 +129,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRocketMqMigrationTaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            CreateRocketMqMigrationTaskResponse createRocketMqMigrationTaskResponse = JsonUtils.DeSerializeNull<CreateRocketMqMigrationTaskResponse>(response);
-            return createRocketMqMigrationTaskResponse;
+            return JsonUtils.DeSerialize<CreateRocketMqMigrationTaskResponse>(response);
         }
         
         /// <summary>

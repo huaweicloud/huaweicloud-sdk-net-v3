@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// 任务ID
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
+        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskId { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateRocketMqMigrationTaskResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,9 +54,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.TaskId == input.TaskId ||
+                    (this.TaskId != null &&
+                    this.TaskId.Equals(input.TaskId))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.TaskId != null)
+                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 return hashCode;
             }
         }

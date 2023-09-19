@@ -506,10 +506,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("log_storage_format", NullValueHandling = NullValueHandling.Ignore)]
         public LogStorageFormatEnum LogStorageFormat { get; set; }
         /// <summary>
-        /// 日志转储详细信息
+        /// 
         /// </summary>
         [JsonProperty("log_transfer_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public Object LogTransferDetail { get; set; }
+        public TransferDetail LogTransferDetail { get; set; }
 
         /// <summary>
         /// 日志转储方式。cycle是指周期性转储，realTime是指实时转储。OBS转储只支持\&quot;cycle\&quot;，DIS转储和DMS转储只支持\&quot;realTime\&quot;。

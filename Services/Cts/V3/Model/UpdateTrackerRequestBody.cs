@@ -263,6 +263,18 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
+        /// 是否应用到我的组织。 只针对管理类追踪器。设置为true时，ORG组织下所有成员当前区域的审计日志会转储到该追踪器配置的OBS桶或者LTS日志流，但是事件列表界面不支持查看其它组织成员的审计日志。
+        /// </summary>
+        [JsonProperty("is_organization_tracker", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOrganizationTracker { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("management_event_selector", NullValueHandling = NullValueHandling.Ignore)]
+        public ManagementEventSelector ManagementEventSelector { get; set; }
+
+        /// <summary>
         /// 是否打开事件分析。
         /// </summary>
         [JsonProperty("is_lts_enabled", NullValueHandling = NullValueHandling.Ignore)]
@@ -310,6 +322,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             sb.Append("  trackerType: ").Append(TrackerType).Append("\n");
             sb.Append("  trackerName: ").Append(TrackerName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  isOrganizationTracker: ").Append(IsOrganizationTracker).Append("\n");
+            sb.Append("  managementEventSelector: ").Append(ManagementEventSelector).Append("\n");
             sb.Append("  isLtsEnabled: ").Append(IsLtsEnabled).Append("\n");
             sb.Append("  obsInfo: ").Append(ObsInfo).Append("\n");
             sb.Append("  isSupportTraceFilesEncryption: ").Append(IsSupportTraceFilesEncryption).Append("\n");
@@ -351,6 +365,16 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.IsOrganizationTracker == input.IsOrganizationTracker ||
+                    (this.IsOrganizationTracker != null &&
+                    this.IsOrganizationTracker.Equals(input.IsOrganizationTracker))
+                ) && 
+                (
+                    this.ManagementEventSelector == input.ManagementEventSelector ||
+                    (this.ManagementEventSelector != null &&
+                    this.ManagementEventSelector.Equals(input.ManagementEventSelector))
                 ) && 
                 (
                     this.IsLtsEnabled == input.IsLtsEnabled ||
@@ -398,6 +422,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.IsOrganizationTracker != null)
+                    hashCode = hashCode * 59 + this.IsOrganizationTracker.GetHashCode();
+                if (this.ManagementEventSelector != null)
+                    hashCode = hashCode * 59 + this.ManagementEventSelector.GetHashCode();
                 if (this.IsLtsEnabled != null)
                     hashCode = hashCode * 59 + this.IsLtsEnabled.GetHashCode();
                 if (this.ObsInfo != null)

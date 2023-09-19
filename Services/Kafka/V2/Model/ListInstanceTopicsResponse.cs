@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? MaxPartitions { get; set; }
 
         /// <summary>
+        /// 单个topic最大占用分区数。
+        /// </summary>
+        [JsonProperty("topic_max_partitions", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TopicMaxPartitions { get; set; }
+
+        /// <summary>
         /// topic列表。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  remainPartitions: ").Append(RemainPartitions).Append("\n");
             sb.Append("  maxPartitions: ").Append(MaxPartitions).Append("\n");
+            sb.Append("  topicMaxPartitions: ").Append(TopicMaxPartitions).Append("\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -102,6 +109,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.MaxPartitions.Equals(input.MaxPartitions))
                 ) && 
                 (
+                    this.TopicMaxPartitions == input.TopicMaxPartitions ||
+                    (this.TopicMaxPartitions != null &&
+                    this.TopicMaxPartitions.Equals(input.TopicMaxPartitions))
+                ) && 
+                (
                     this.Topics == input.Topics ||
                     this.Topics != null &&
                     input.Topics != null &&
@@ -125,6 +137,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.RemainPartitions.GetHashCode();
                 if (this.MaxPartitions != null)
                     hashCode = hashCode * 59 + this.MaxPartitions.GetHashCode();
+                if (this.TopicMaxPartitions != null)
+                    hashCode = hashCode * 59 + this.TopicMaxPartitions.GetHashCode();
                 if (this.Topics != null)
                     hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 return hashCode;

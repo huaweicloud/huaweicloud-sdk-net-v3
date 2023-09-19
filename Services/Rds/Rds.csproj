@@ -15,9 +15,9 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Rds</PackageId>
-        <Version>3.1.58</Version>
+        <Version>3.1.59</Version>
         <Authors>HuaweiCloud</Authors>
-        <Copyright>Copyright 2020 Huawei Technologies Co., Ltd.</Copyright>
+        <Copyright>Copyright 2023 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>
         <Description>HuaweiCloud .net SDK</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -28,7 +28,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
     </ItemGroup>
 </Project>
 

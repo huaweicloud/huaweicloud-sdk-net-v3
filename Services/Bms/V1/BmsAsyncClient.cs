@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Bms.V1
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/nics",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addServerNicsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerializeNull<AddServerNicsResponse>(response);
+            return JsonUtils.DeSerialize<AddServerNicsResponse>(response);
         }
         
         /// <summary>
