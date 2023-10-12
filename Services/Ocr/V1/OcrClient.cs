@@ -15,9 +15,9 @@ namespace HuaweiCloud.SDK.Ocr.V1
 
         
         /// <summary>
-        /// 电子承兑汇票识别
+        /// 承兑汇票识别
         ///
-        /// 识别电子承兑汇票识别中的关键字段, 并以json格式返回结构化结果
+        /// 识别承兑汇票中的关键信息, 并以json格式返回结构化结果。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -132,6 +132,22 @@ namespace HuaweiCloud.SDK.Ocr.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeChileIdCardRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RecognizeChileIdCardResponse>(response);
+        }
+        
+        /// <summary>
+        /// 哥伦比亚身份证识别
+        ///
+        /// 识别哥伦比亚身份证中的文字信息，并将识别的结构化结果返回给用户。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RecognizeColombiaIdCardResponse RecognizeColombiaIdCard(RecognizeColombiaIdCardRequest recognizeColombiaIdCardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/colombia-id-card",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeColombiaIdCardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizeColombiaIdCardResponse>(response);
         }
         
         /// <summary>
@@ -757,7 +773,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         /// <summary>
         /// 电子面单识别
         ///
-        /// 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
+        /// 识别用户上传的电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

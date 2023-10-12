@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 执行计划不会做过多深层的检查和校验，如用户是否有权限生成、修改资源等
         /// 
         /// **注意：**
-        ///   * 若指定资源栈不存在，则返回404
+        ///   * 创建执行计划时，指定的资源栈必须存在。若指定的资源栈不存在，则返回404，用户可通过调用创建资源栈（CreateStack）API来创建资源栈。
         ///   * 若请求中不含有template_body和template_uri，则返回400
         ///   * 若资源栈进行了某次部署操作，则在该次部署操作前生成的执行计划将全部失效
         ///   * 执行计划只代表生成时刻的结果，若执行计划生成后，用户手动修改资源状态，则执行计划不会自动更新
@@ -342,20 +342,22 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// <summary>
         /// 条件删除资源栈
         ///
+        /// 条件删除资源栈（DeleteStackEnhanced）
+        /// 
         /// 此API用于删除某个资源栈，可以选择是否保留资源。
         /// **请谨慎操作，删除资源栈将默认删除与该资源栈相关的所有数据，如：执行计划、资源栈事件、资源栈输出、资源等。**
         /// **如果希望删除资源栈保留资源，可以在请求中设置&#x60;retain_all_resources&#x60;对资源进行保留。
         /// 
         /// * 此API会触发删除资源栈，并以最终一致性删除数据，用户可以调用GetStackMetadata或ListStacks跟踪资源栈删除情况。当删除完成后，被删除资源栈将不会在上述API中返回。
         /// * 如果资源栈状态处于非终态（状态以&#x60;IN_PROGRESS&#x60;结尾）状态时，则不允许删除。包括但不限于以下状态：
-        ///  * 正在部署（DEPLOYMENT_IN_PROGRESS）
-        ///  * 正在删除（DELETION_IN_PROGRESS）
-        ///  * 正在回滚（ROLLBACK_IN_PROGRESS）
+        ///   * 正在部署（DEPLOYMENT_IN_PROGRESS）
+        ///   * 正在删除（DELETION_IN_PROGRESS）
+        ///   * 正在回滚（ROLLBACK_IN_PROGRESS）
         /// 
         /// * 如果资源栈开启了删除保护，则不允许删除。用户可调用GetStackMetadata，查看返回中的&#x60;enable_deletion_protection&#x60;字段判断删除保护是否开启。用户可通过调用UpdateStack关闭删除保护。
         /// * 如果资源栈删除失败，可以根据StackEvents提示信息修复当前模板中的错误后，部署成功后再次删除资源栈。有以下两种方式触发部署：
-        ///  * 调用CreateExecutionPlan创建执行计划，执行计划创建成功后调用ApplyExecutionPlan部署资源栈。
-        ///  * 调用DeployStack部署资源栈。
+        ///   * 调用CreateExecutionPlan创建执行计划，执行计划创建成功后调用ApplyExecutionPlan部署资源栈。
+        ///   * 调用DeployStack部署资源栈。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -579,6 +581,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// <summary>
         /// 更新资源栈
         ///
+        /// 更新资源栈（UpdateStack）
+        /// 
         /// 更新资源栈的属性，该API可以根据用户给予的信息对资源栈的属性进行更新，可以更新资源栈的“description”、“enable_deletion_protection”、\&quot;enable_auto_rollback\&quot;、\&quot;agencies\&quot;四个属性中的一个或多个
         /// 
         /// 该API只会更新用户给予的信息中所涉及的字段；若某字段未给予，则不会对该资源栈属性进行更新
@@ -607,6 +611,285 @@ namespace HuaweiCloud.SDK.Aos.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
             HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
             return JsonUtils.DeSerializeNull<UpdateStackResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建资源栈实例
+        ///
+        /// 创建资源栈实例（CreateStackInstance）
+        /// 
+        /// 此API用于在指定资源栈集下生成多个资源栈实例，并返回资源栈集操作ID（stack_set_operation_id）
+        /// 
+        /// 此API可以通过var_overrides参数，指定创建资源栈实例的参数值，进行参数覆盖。若var_overrides参数未给与，则默认使用当前资源栈集中记录的参数进行部署，详见：var_overrides参数描述。
+        /// 
+        /// 通过DeployStackSet API更新资源栈集参数后，资源栈实例中已经被覆盖的参数不会被更新，仍然保留覆盖值。
+        /// 
+        /// 用户只能覆盖已经在资源栈集中记录的参数，如果用户想要增加可以覆盖的参数，需要先通过DeployStackSet API更新资源栈集记录的参数集合。
+        /// 
+        /// * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateStackInstanceResponse CreateStackInstance(CreateStackInstanceRequest createStackInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , createStackInstanceRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateStackInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建资源栈集
+        ///
+        /// 创建资源栈集（CreateStackSet）
+        /// 
+        /// 此API为同步API，用于生成一个空资源栈集，即不包含任何一个资源栈实例，并返回资源栈集ID（stack_set_id）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateStackSetResponse CreateStackSet(CreateStackSetRequest createStackSetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackSetRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateStackSetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除资源栈实例
+        ///
+        /// 删除资源栈实例（DeleteStackInstance）
+        /// 
+        /// 此API用于删除指定资源栈集下指定局点（region）或指定成员账户（domain_id）的资源栈实例，并返回资源栈集操作ID（stack_set_operation_id）
+        /// 
+        /// **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。
+        /// 
+        /// * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStackInstanceResponse DeleteStackInstance(DeleteStackInstanceRequest deleteStackInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , deleteStackInstanceRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteStackInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除资源栈集
+        ///
+        /// 删除资源栈集（DeleteStackSet）
+        /// 
+        /// **请谨慎操作，删除资源栈集将会删除与该资源栈集相关的所有数据，如：资源栈集操作、资源栈集操作事件等。**
+        /// 
+        /// 当且仅当指定的资源栈集满足以下所有条件时，资源栈集才能被成功删除，否则会报错
+        ///   * 资源栈集下没有资源栈实例
+        ///   * 资源栈集状态处于空闲（&#x60;IDLE&#x60;）状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest deleteStackSetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , deleteStackSetRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteStackSetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 部署资源栈集
+        ///
+        /// 部署资源栈集（DeployStackSet）
+        /// 
+        /// 此API用于部署一个已有的资源栈集，并返回资源栈集操作ID（stack_set_operation_id）
+        /// 
+        /// * 用户可以使用此API更新资源栈集的模板、参数并进行部署。
+        /// 
+        /// * 此API会直接触发资源栈实例部署。用户既可以部署资源栈集下所有的资源栈实例，也可以部署指定资源栈实例。
+        /// 
+        /// * 此API为全量API，即用户每次部署都需要给予所想要使用的template、vars的全量
+        /// 
+        /// * 当触发的部署失败时，资源栈集不会自动回滚模板和参数，但部署失败的资源栈会根据资源栈的回滚配置决定是否进行回滚，已经部署成功的资源栈不会触发回滚。
+        /// 
+        /// * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeployStackSetResponse DeployStackSet(DeployStackSetRequest deployStackSetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , deployStackSetRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<DeployStackSetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 列举资源栈实例
+        ///
+        /// 列举资源栈实例（ListStackInstances）
+        /// 
+        /// 此API用于列举指定资源栈集下指定局点（region）或指定成员账户（stack_domain_id）或全部资源栈实例
+        /// 
+        /// * 可以使用filter作为过滤器，过滤出指定局点（region）或指定成员账户（stack_domain_id）下的资源栈实例
+        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// * 若指定资源栈集下没有任何资源栈实例，则返回空list
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest listStackInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , listStackInstancesRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListStackInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 列举资源栈集操作
+        ///
+        /// 列举资源栈集操作（ListStackSetOperations）
+        /// 
+        /// 列举指定资源栈集下所有的资源栈集的操作。
+        /// 
+        /// 可以使用filter作为过滤器，过滤出指定操作状态（status）或操作类型（action）下的资源栈集操作。
+        /// 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// 若指定资源栈集下没有任何资源栈集操作，则返回空list。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest listStackSetOperationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , listStackSetOperationsRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListStackSetOperationsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 列举资源栈集
+        ///
+        /// 列举资源栈集（ListStackSets）
+        /// 
+        /// 此API用于列举当前用户（domain）当前局点（region）下全部资源栈集。
+        /// 
+        /// * 可以使用filter作为过滤器，过滤出指定权限模型（permission_model）下的资源栈集。
+        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// * 注意：目前暂时返回全量资源栈集信息，即不支持分页
+        /// * 如果没有任何资源栈集，则返回空list
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListStackSetsResponse ListStackSets(ListStackSetsRequest listStackSetsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListStackSetsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取资源栈集元数据
+        ///
+        /// 获取资源栈集元数据（ShowStackSetMetadata）
+        /// 
+        /// * 用户可以使用此API获取资源栈集的元数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStackSetMetadataResponse ShowStackSetMetadata(ShowStackSetMetadataRequest showStackSetMetadataRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , showStackSetMetadataRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowStackSetMetadataResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取资源栈集操作的元数据
+        ///
+        /// 获取资源栈集操作元数据（ShowStackSetOperationMetadata）
+        /// 
+        /// 此API用于获取指定资源栈集操作的元数据，包括资源栈集操作ID、资源栈集ID、资源栈集名称、资源栈集操作状态、创建时间、更新时间、部署目标等信息。
+        /// 
+        /// 具体信息见ShowStackSetOperationMetadataResponseBody。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStackSetOperationMetadataResponse ShowStackSetOperationMetadata(ShowStackSetOperationMetadataRequest showStackSetOperationMetadataRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , showStackSetOperationMetadataRequest.StackSetName.ToString());
+            urlParam.Add("stack_set_operation_id" , showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowStackSetOperationMetadataResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取资源栈集模板
+        ///
+        /// 获取资源栈集模板（ShowStackSetTemplate）
+        /// 
+        /// 此API用于获取指定资源栈集的模板。
+        /// 
+        /// 如果获取成功，则以临时重定向形式返回模板下载链接（OBS Pre Signed地址，有效期为5分钟），大多数的客户端会进行自动重定向并下载模板；
+        /// 若未进行自动重定向，请参考HTTP的重定向规则获取模板下载链接，手动下载模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStackSetTemplateResponse ShowStackSetTemplate(ShowStackSetTemplateRequest showStackSetTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , showStackSetTemplateRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerializeNull<ShowStackSetTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新资源栈集
+        ///
+        /// 更新资源栈集（UpdateStackSet）
+        /// 
+        /// 该API可以根据用户给予的信息对资源栈集的属性进行更新，可以更新资源栈集的“stack_set_description”、\&quot;initial_stack_description\&quot;、\&quot;permission_model\&quot;、“administration_agency_name”、\&quot;managed_agency_name\&quot;五个属性中的一个或多个。
+        /// 
+        /// 该API只会更新用户给予的信息中所涉及的字段；若某字段未给予，则不会对该资源栈集属性进行更新。
+        /// 
+        /// 注：
+        ///   * 所有属性的更新都是覆盖式更新。即，所给予的参数将被完全覆盖至资源栈已有的属性上。
+        ///   * 只有在permission_model&#x3D;self_managed时，才可更新administration_agency_name和managed_agency_name。
+        ///   * permission_model目前只支持更新SELF_MANAGED
+        ///   * 若资源栈集的状态是OPERATION_IN_PROGRESS，不允许更新资源栈集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest updateStackSetRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , updateStackSetRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
+            return JsonUtils.DeSerializeNull<UpdateStackSetResponse>(response);
         }
         
         /// <summary>

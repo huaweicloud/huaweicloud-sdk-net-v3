@@ -148,6 +148,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }
 
+        /// <summary>
+        /// 能源类型。 
+        /// </summary>
+        [JsonProperty("energy_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnergyType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("front", NullValueHandling = NullValueHandling.Ignore)]
+        public VehicleLicenseFront Front { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("back", NullValueHandling = NullValueHandling.Ignore)]
+        public VehicleLicenseback Back { get; set; }
+
 
 
         /// <summary>
@@ -179,6 +197,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  inspectionRecord: ").Append(InspectionRecord).Append("\n");
             sb.Append("  codeNumber: ").Append(CodeNumber).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
+            sb.Append("  energyType: ").Append(EnergyType).Append("\n");
+            sb.Append("  front: ").Append(Front).Append("\n");
+            sb.Append("  back: ").Append(Back).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -309,6 +330,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.TextLocation == input.TextLocation ||
                     (this.TextLocation != null &&
                     this.TextLocation.Equals(input.TextLocation))
+                ) && 
+                (
+                    this.EnergyType == input.EnergyType ||
+                    (this.EnergyType != null &&
+                    this.EnergyType.Equals(input.EnergyType))
+                ) && 
+                (
+                    this.Front == input.Front ||
+                    (this.Front != null &&
+                    this.Front.Equals(input.Front))
+                ) && 
+                (
+                    this.Back == input.Back ||
+                    (this.Back != null &&
+                    this.Back.Equals(input.Back))
                 );
         }
 
@@ -364,6 +400,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.CodeNumber.GetHashCode();
                 if (this.TextLocation != null)
                     hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.EnergyType != null)
+                    hashCode = hashCode * 59 + this.EnergyType.GetHashCode();
+                if (this.Front != null)
+                    hashCode = hashCode * 59 + this.Front.GetHashCode();
+                if (this.Back != null)
+                    hashCode = hashCode * 59 + this.Back.GetHashCode();
                 return hashCode;
             }
         }

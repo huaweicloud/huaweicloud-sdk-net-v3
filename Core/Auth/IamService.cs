@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         private const string KeystoneListProjectsUri = "/v3/projects";
         private const string KeystoneListAuthDomainsUri = "/v3/auth/domains";
 
-        public static HttpRequest GetKeystoneListProjectsRequest(string iamEndpoint, string regionId)
+        public static HttpRequest GetKeystoneListProjectsRequest(string iamEndpoint, string regionId, HttpConfig httpConfig)
         {
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath(KeystoneListProjectsUri, urlParam);
@@ -71,7 +71,8 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             var request = new HttpRequest("GET", sdkRequest.ContentType, new Uri(url))
             {
-                Body = ""
+                Body = "",
+                SigningAlgorithm = httpConfig.SigningAlgorithm
             };
 
             return request;
@@ -109,7 +110,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             }
         }
 
-        public static HttpRequest GetKeystoneListAuthDomainsRequest(string iamEndpoint)
+        public static HttpRequest GetKeystoneListAuthDomainsRequest(string iamEndpoint, HttpConfig httpConfig)
         {
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath(KeystoneListAuthDomainsUri, urlParam);
@@ -118,7 +119,8 @@ namespace HuaweiCloud.SDK.Core.Auth
             var url = iamEndpoint + urlPath;
             var request = new HttpRequest("GET", sdkRequest.ContentType, new Uri(url))
             {
-                Body = ""
+                Body = "",
+                SigningAlgorithm = httpConfig.SigningAlgorithm
             };
 
             return request;

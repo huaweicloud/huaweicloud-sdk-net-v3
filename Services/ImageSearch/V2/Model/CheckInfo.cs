@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// 符合条件的结果总数。
         /// </summary>
         [JsonProperty("total_num", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalNum { get; set; }
+        public int? TotalNum { get; set; }
 
         /// <summary>
         /// 返回的结果总数。
         /// </summary>
         [JsonProperty("return_num", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ReturnNum { get; set; }
+        public int? ReturnNum { get; set; }
 
         /// <summary>
         /// 

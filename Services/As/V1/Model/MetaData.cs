@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public string SystemEncrypted { get; set; }
 
         /// <summary>
-        /// 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。说明：- 系统盘不支持加密。- 请参考[查询密钥列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;KMS&amp;api&#x3D;ListKeys&amp;version&#x3D;v2)，通过HTTPS请求获取密钥ID。
+        /// 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。 说明： - 系统盘不支持加密。 - 请参考[查询密钥列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;KMS&amp;api&#x3D;ListKeys&amp;version&#x3D;v2)，通过HTTPS请求获取密钥ID。
         /// </summary>
         [JsonProperty("__system__cmkid", NullValueHandling = NullValueHandling.Ignore)]
         public string SystemCmkid { get; set; }

@@ -5,7 +5,7 @@ using HuaweiCloud.SDK.Core.Auth;
 
 namespace HuaweiCloud.SDK.Iam.V3
 {
-    public class IamCredentials : Credentials
+    public class IamCredentials : ICredential
     {
 
         public string XAuthToken { set; get; }
@@ -17,12 +17,12 @@ namespace HuaweiCloud.SDK.Iam.V3
             this.XAuthToken = xAuthToken;
         }
 
-        public override Dictionary<string, string> GetPathParamDictionary()
+        public Dictionary<string, string> GetPathParamDictionary()
         {
             return PathParamDict;
         }
 
-        public override Task<HttpRequest> SignAuthRequest(HttpRequest request)
+        public Task<HttpRequest> SignAuthRequest(HttpRequest request)
         {
             var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {
@@ -37,12 +37,12 @@ namespace HuaweiCloud.SDK.Iam.V3
             return httpRequestTask;
         }
 
-        public override Credentials ProcessAuthParams(SdkHttpClient client, string regionId)
+        public ICredential ProcessAuthParams(SdkHttpClient client, string regionId)
         {
             return this;
         }
 
-        public override void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId)
+        public void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId)
         {
         }
     }

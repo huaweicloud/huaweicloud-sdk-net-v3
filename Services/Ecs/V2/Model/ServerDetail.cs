@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Updated { get; set; }
 
         /// <summary>
-        /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+        /// 弹性云服务器定时删除时间。  时间格式例如：2020-01-19T03:30:52Z
         /// </summary>
         [JsonProperty("auto_terminate_time", NullValueHandling = NullValueHandling.Ignore)]
         public string AutoTerminateTime { get; set; }

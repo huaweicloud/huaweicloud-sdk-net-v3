@@ -37,6 +37,7 @@ namespace HuaweiCloud.SDK.Core
         private readonly HttpHandler _httpHandler;
         private readonly ILogger _logger;
         private readonly HttpClient _myHttpClient;
+        private readonly HttpConfig _httpConfig;
 
         public SdkHttpClient(string clientName, HttpConfig config, HttpHandler httpHandler, bool logging,
             LogLevel logLevel)
@@ -47,6 +48,12 @@ namespace HuaweiCloud.SDK.Core
             var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
             _myHttpClient = httpClientFactory.CreateClient("SdkHttpClient");
             _httpHandler = httpHandler;
+            _httpConfig = config;
+        }
+
+        public HttpConfig GetHttpConfig()
+        {
+            return _httpConfig;
         }
 
         private IServiceCollection GetServiceCollection(HttpConfig httpConfig, bool logging, LogLevel logLevel)

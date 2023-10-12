@@ -212,6 +212,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly SuppressDurationEnum NUMBER_43200 = new SuppressDurationEnum(43200);
 
+            /// <summary>
+            /// Enum NUMBER_86400 for value: 86400
+            /// </summary>
+            public static readonly SuppressDurationEnum NUMBER_86400 = new SuppressDurationEnum(86400);
+
             private static readonly Dictionary<int?, SuppressDurationEnum> StaticFields =
             new Dictionary<int?, SuppressDurationEnum>()
             {
@@ -224,6 +229,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 { 10800, NUMBER_10800 },
                 { 21600, NUMBER_21600 },
                 { 43200, NUMBER_43200 },
+                { 86400, NUMBER_86400 },
             };
 
             private int? _value;

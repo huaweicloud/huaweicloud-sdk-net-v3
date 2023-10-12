@@ -20,19 +20,19 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// 搜索结果总数。
         /// </summary>
         [JsonProperty("total_num", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalNum { get; set; }
+        public int? TotalNum { get; set; }
 
         /// <summary>
         /// 返回结果总数。
         /// </summary>
         [JsonProperty("return_num", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ReturnNum { get; set; }
+        public int? ReturnNum { get; set; }
 
         /// <summary>
         /// 搜索过程耗时，单位为毫秒。
         /// </summary>
         [JsonProperty("search_time", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? SearchTime { get; set; }
+        public int? SearchTime { get; set; }
 
         /// <summary>
         /// 

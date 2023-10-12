@@ -23,7 +23,7 @@ using System;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
-    public class EnvCredentials
+    public static class EnvCredentials
     {
         private const string AkEnvName = "HUAWEICLOUD_SDK_AK";
         private const string SkEnvName = "HUAWEICLOUD_SDK_SK";
@@ -33,7 +33,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         private const string BasicCredentialsType = "BasicCredentials";
         private const string GlobalCredentialsType = "GlobalCredentials";
 
-        public static Credentials LoadCredentialsFromEnv(string defaultType)
+        public static ICredential LoadCredentialsFromEnv(string defaultType)
         {
             var ak = Environment.GetEnvironmentVariable(AkEnvName);
             var sk = Environment.GetEnvironmentVariable(SkEnvName);

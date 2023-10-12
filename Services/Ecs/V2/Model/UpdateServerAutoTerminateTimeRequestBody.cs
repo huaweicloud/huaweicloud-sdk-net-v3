@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 销毁时间
+        /// 定时删除时间
         /// </summary>
         [JsonProperty("auto_terminate_time", NullValueHandling = NullValueHandling.Ignore)]
         public string AutoTerminateTime { get; set; }

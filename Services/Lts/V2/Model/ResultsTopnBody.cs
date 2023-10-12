@@ -58,6 +58,24 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("log_stream_name", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamName { get; set; }
 
+        /// <summary>
+        /// 基础转储流量，byte, 查询数据类型中包含basicTransfer时返回
+        /// </summary>
+        [JsonProperty("basic_transfer", NullValueHandling = NullValueHandling.Ignore)]
+        public double? BasicTransfer { get; set; }
+
+        /// <summary>
+        /// 基础转储流量，byte, 查询数据类型中包含seniorTransfer时返回
+        /// </summary>
+        [JsonProperty("senior_transfer", NullValueHandling = NullValueHandling.Ignore)]
+        public double? SeniorTransfer { get; set; }
+
+        /// <summary>
+        /// 不是委托转储，true，是委托转储，则前端资源统计展示的流不能跳
+        /// </summary>
+        [JsonProperty("is_agency_transfer", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAgencyTransfer { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +92,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  logGroupName: ").Append(LogGroupName).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
+            sb.Append("  basicTransfer: ").Append(BasicTransfer).Append("\n");
+            sb.Append("  seniorTransfer: ").Append(SeniorTransfer).Append("\n");
+            sb.Append("  isAgencyTransfer: ").Append(IsAgencyTransfer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +150,21 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.LogStreamName == input.LogStreamName ||
                     (this.LogStreamName != null &&
                     this.LogStreamName.Equals(input.LogStreamName))
+                ) && 
+                (
+                    this.BasicTransfer == input.BasicTransfer ||
+                    (this.BasicTransfer != null &&
+                    this.BasicTransfer.Equals(input.BasicTransfer))
+                ) && 
+                (
+                    this.SeniorTransfer == input.SeniorTransfer ||
+                    (this.SeniorTransfer != null &&
+                    this.SeniorTransfer.Equals(input.SeniorTransfer))
+                ) && 
+                (
+                    this.IsAgencyTransfer == input.IsAgencyTransfer ||
+                    (this.IsAgencyTransfer != null &&
+                    this.IsAgencyTransfer.Equals(input.IsAgencyTransfer))
                 );
         }
 
@@ -154,6 +190,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.LogStreamName != null)
                     hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.BasicTransfer != null)
+                    hashCode = hashCode * 59 + this.BasicTransfer.GetHashCode();
+                if (this.SeniorTransfer != null)
+                    hashCode = hashCode * 59 + this.SeniorTransfer.GetHashCode();
+                if (this.IsAgencyTransfer != null)
+                    hashCode = hashCode * 59 + this.IsAgencyTransfer.GetHashCode();
                 return hashCode;
             }
         }

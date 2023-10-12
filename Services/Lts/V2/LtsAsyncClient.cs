@@ -914,6 +914,56 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 获取日志汇聚开关
+        ///
+        /// 只能由管理员或者委托管理员调用    获取日志汇聚开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAdminConfigResponse> ShowAdminConfigAsync(ShowAdminConfigRequest showAdminConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/switch",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAdminConfigRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowAdminConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取组织成员汇聚配置
+        ///
+        /// 只能由组织管理员或者委托管理员调用    获取组织成员汇聚配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLogConvergeConfigResponse> ShowLogConvergeConfigAsync(ShowLogConvergeConfigRequest showLogConvergeConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("member_account_id" , showLogConvergeConfigRequest.MemberAccountId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/{member_account_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogConvergeConfigRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowLogConvergeConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取组织成员日志组日志流
+        ///
+        /// 只能由管理员或者委托管理员调用，获取组织成员日志组日志流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMemberGroupAndStreamResponse> ShowMemberGroupAndStreamAsync(ShowMemberGroupAndStreamRequest showMemberGroupAndStreamRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("member_account_id" , showMemberGroupAndStreamRequest.MemberAccountId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/{member_account_id}/all-streams",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberGroupAndStreamRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowMemberGroupAndStreamResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询单个消息模板
         ///
         /// 该接口用于查询单个通知模板
@@ -993,6 +1043,22 @@ namespace HuaweiCloud.SDK.Lts.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeywordsAlarmRuleRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateKeywordsAlarmRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新汇聚配置
+        ///
+        /// 只能由管理员或者委托管理员 ,更新汇聚配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateLogConvergeConfigResponse> UpdateLogConvergeConfigAsync(UpdateLogConvergeConfigRequest updateLogConvergeConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogConvergeConfigRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateLogConvergeConfigResponse>(response);
         }
         
         /// <summary>
@@ -1079,6 +1145,22 @@ namespace HuaweiCloud.SDK.Lts.V2
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             UpdateStructTemplateResponse updateStructTemplateResponse = JsonUtils.DeSerializeNull<UpdateStructTemplateResponse>(response);
             return updateStructTemplateResponse;
+        }
+        
+        /// <summary>
+        /// 修改日志汇聚开关
+        ///
+        /// 只能由管理员或者委托管理员调用     修改日志汇聚开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSwitchResponse> UpdateSwitchAsync(UpdateSwitchRequest updateSwitchRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/switch",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSwitchRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateSwitchResponse>(response);
         }
         
         /// <summary>
@@ -1184,88 +1266,6 @@ namespace HuaweiCloud.SDK.Lts.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAomMappingRulesRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateAomMappingRulesResponse>(response);
-        }
-        
-        /// <summary>
-        /// 获取日志汇聚开关
-        ///
-        /// 只能由管理员或者委托管理员调用    获取日志汇聚开关
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowAdminConfigResponse> ShowAdminConfigAsync(ShowAdminConfigRequest showAdminConfigRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/switch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAdminConfigRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowAdminConfigResponse>(response);
-        }
-        
-        /// <summary>
-        /// 获取组织成员汇聚配置
-        ///
-        /// 只能由组织管理员或者委托管理员调用    获取组织成员汇聚配置
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowLogConvergeConfigResponse> ShowLogConvergeConfigAsync(ShowLogConvergeConfigRequest showLogConvergeConfigRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_account_id" , showLogConvergeConfigRequest.MemberAccountId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/{member_account_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogConvergeConfigRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowLogConvergeConfigResponse>(response);
-        }
-        
-        /// <summary>
-        /// 获取组织成员日志组日志流
-        ///
-        /// 只能由管理员或者委托管理员调用，获取组织成员日志组日志流
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowMemberGroupAndStreamResponse> ShowMemberGroupAndStreamAsync(ShowMemberGroupAndStreamRequest showMemberGroupAndStreamRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_account_id" , showMemberGroupAndStreamRequest.MemberAccountId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/{member_account_id}/all-streams",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberGroupAndStreamRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowMemberGroupAndStreamResponse>(response);
-        }
-        
-        /// <summary>
-        /// 更新汇聚配置
-        ///
-        /// 只能由管理员或者委托管理员 ,更新汇聚配置
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateLogConvergeConfigResponse> UpdateLogConvergeConfigAsync(UpdateLogConvergeConfigRequest updateLogConvergeConfigRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogConvergeConfigRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerialize<UpdateLogConvergeConfigResponse>(response);
-        }
-        
-        /// <summary>
-        /// 修改日志汇聚开关
-        ///
-        /// 只能由管理员或者委托管理员调用     修改日志汇聚开关
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateSwitchResponse> UpdateSwitchAsync(UpdateSwitchRequest updateSwitchRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/switch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSwitchRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerialize<UpdateSwitchResponse>(response);
         }
         
         /// <summary>

@@ -16,6 +16,59 @@ namespace HuaweiCloud.SDK.Cts.V3
 
         
         /// <summary>
+        /// 批量添加CTS资源标签
+        ///
+        /// 批量添加CTS资源标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateResourceTagsResponse> BatchCreateResourceTagsAsync(BatchCreateResourceTagsRequest batchCreateResourceTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id" , batchCreateResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("resource_type" , batchCreateResourceTagsRequest.ResourceType.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{resource_type}/{resource_id}/tags/create",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateResourceTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<BatchCreateResourceTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 批量删除CTS资源标签
+        ///
+        /// 批量删除CTS资源标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteResourceTagsResponse> BatchDeleteResourceTagsAsync(BatchDeleteResourceTagsRequest batchDeleteResourceTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id" , batchDeleteResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("resource_type" , batchDeleteResourceTagsRequest.ResourceType.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{resource_type}/{resource_id}/tags/delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteResourceTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<BatchDeleteResourceTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 检查已经配置OBS桶是否可以成功转储
+        ///
+        /// 检查已经配置OBS桶是否可以成功转储。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckObsBucketsResponse> CheckObsBucketsAsync(CheckObsBucketsRequest checkObsBucketsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , checkObsBucketsRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/checkbucket",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkObsBucketsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CheckObsBucketsResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建关键操作通知
         ///
         /// 配置关键操作通知，可在发生特定操作时，使用预先创建好的SMN主题，向用户手机、邮箱发送消息，也可直接发送http/https消息。常用于实时感知高危操作、触发特定操作或对接用户自有审计分析系统。
@@ -98,6 +151,22 @@ namespace HuaweiCloud.SDK.Cts.V3
         }
         
         /// <summary>
+        /// 查询云服务的全量操作列表
+        ///
+        /// 查询云服务的全量操作列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest listOperationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/operations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOperationsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListOperationsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询租户追踪器配额信息
         ///
         /// 查询租户追踪器配额信息。
@@ -111,6 +180,23 @@ namespace HuaweiCloud.SDK.Cts.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotasRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListQuotasResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询事件的资源类型列表
+        ///
+        /// 查询事件的资源类型列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTraceResourcesResponse> ListTraceResourcesAsync(ListTraceResourcesRequest listTraceResourcesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id" , listTraceResourcesRequest.DomainId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/resources",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTraceResourcesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTraceResourcesResponse>(response);
         }
         
         /// <summary>
@@ -143,6 +229,22 @@ namespace HuaweiCloud.SDK.Cts.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrackersRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTrackersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询30天事件的操作用户列表
+        ///
+        /// 查询30天事件的操作用户列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListUserResourcesResponse> ListUserResourcesAsync(ListUserResourcesRequest listUserResourcesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/user-resources",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserResourcesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListUserResourcesResponse>(response);
         }
         
         /// <summary>

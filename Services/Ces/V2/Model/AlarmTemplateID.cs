@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
+    /// 告警规则关联告警模板ID
     /// </summary>
     public class AlarmTemplateID 
     {

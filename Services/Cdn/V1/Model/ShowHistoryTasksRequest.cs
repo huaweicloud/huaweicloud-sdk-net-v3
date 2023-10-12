@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         }
 
         /// <summary>
-        /// 默认是文件file。file：文件,directory：目录。
+        /// file：文件,directory：目录。
         /// </summary>
-        /// <value>默认是文件file。file：文件,directory：目录。</value>
+        /// <value>file：文件,directory：目录。</value>
         [JsonConverter(typeof(EnumClassConverter<FileTypeEnum>))]
         public class FileTypeEnum
         {
@@ -245,6 +245,121 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             }
         }
 
+        /// <summary>
+        /// 任务类型，refresh：刷新任务；preheating：预热任务
+        /// </summary>
+        /// <value>任务类型，refresh：刷新任务；preheating：预热任务</value>
+        [JsonConverter(typeof(EnumClassConverter<TaskTypeEnum>))]
+        public class TaskTypeEnum
+        {
+            /// <summary>
+            /// Enum REFRESH for value: refresh
+            /// </summary>
+            public static readonly TaskTypeEnum REFRESH = new TaskTypeEnum("refresh");
+
+            /// <summary>
+            /// Enum PREHEATING for value: preheating
+            /// </summary>
+            public static readonly TaskTypeEnum PREHEATING = new TaskTypeEnum("preheating");
+
+            private static readonly Dictionary<string, TaskTypeEnum> StaticFields =
+            new Dictionary<string, TaskTypeEnum>()
+            {
+                { "refresh", REFRESH },
+                { "preheating", PREHEATING },
+            };
+
+            private string _value;
+
+            public TaskTypeEnum()
+            {
+
+            }
+
+            public TaskTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TaskTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TaskTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TaskTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TaskTypeEnum a, TaskTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TaskTypeEnum a, TaskTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\&quot;all\&quot;表示所有项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
@@ -302,11 +417,17 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string OrderType { get; set; }
 
         /// <summary>
-        /// 默认是文件file。file：文件,directory：目录。
+        /// file：文件,directory：目录。
         /// </summary>
         [SDKProperty("file_type", IsQuery = true)]
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
         public FileTypeEnum FileType { get; set; }
+        /// <summary>
+        /// 任务类型，refresh：刷新任务；preheating：预热任务
+        /// </summary>
+        [SDKProperty("task_type", IsQuery = true)]
+        [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
+        public TaskTypeEnum TaskType { get; set; }
 
 
         /// <summary>
@@ -325,6 +446,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  orderField: ").Append(OrderField).Append("\n");
             sb.Append("  orderType: ").Append(OrderType).Append("\n");
             sb.Append("  fileType: ").Append(FileType).Append("\n");
+            sb.Append("  taskType: ").Append(TaskType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -390,6 +512,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.FileType == input.FileType ||
                     (this.FileType != null &&
                     this.FileType.Equals(input.FileType))
+                ) && 
+                (
+                    this.TaskType == input.TaskType ||
+                    (this.TaskType != null &&
+                    this.TaskType.Equals(input.TaskType))
                 );
         }
 
@@ -419,6 +546,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.OrderType.GetHashCode();
                 if (this.FileType != null)
                     hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                if (this.TaskType != null)
+                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 return hashCode;
             }
         }

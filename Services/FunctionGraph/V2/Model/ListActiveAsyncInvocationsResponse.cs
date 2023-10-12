@@ -22,6 +22,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("invocations", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListFunctionAsyncInvocationsResult> Invocations { get; set; }
 
+        /// <summary>
+        /// 查询数据总条数
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
+
+        /// <summary>
+        /// 查询下一页的起始位置
+        /// </summary>
+        [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NextMarker { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +44,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListActiveAsyncInvocationsResponse {\n");
             sb.Append("  invocations: ").Append(Invocations).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  nextMarker: ").Append(NextMarker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +72,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Invocations != null &&
                     input.Invocations != null &&
                     this.Invocations.SequenceEqual(input.Invocations)
+                ) && 
+                (
+                    this.Count == input.Count ||
+                    (this.Count != null &&
+                    this.Count.Equals(input.Count))
+                ) && 
+                (
+                    this.NextMarker == input.NextMarker ||
+                    (this.NextMarker != null &&
+                    this.NextMarker.Equals(input.NextMarker))
                 );
         }
 
@@ -71,6 +95,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.Invocations != null)
                     hashCode = hashCode * 59 + this.Invocations.GetHashCode();
+                if (this.Count != null)
+                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.NextMarker != null)
+                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
                 return hashCode;
             }
         }

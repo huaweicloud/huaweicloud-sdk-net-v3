@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 
         /// </summary>
         [JsonProperty("access_config_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public AccessConfigDeatilCreate AccessConfigDetail { get; set; }
+        public AccessConfigDeatilUpdate AccessConfigDetail { get; set; }
 
         /// <summary>
         /// 

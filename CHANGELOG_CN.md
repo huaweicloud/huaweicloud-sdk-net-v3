@@ -1,3 +1,280 @@
+# 3.1.60 2023-10-12
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListStackSets`
+    - `CreateStackSet`
+    - `ShowStackSetTemplate`
+    - `ListStackSetOperations`
+    - `ShowStackSetMetadata`
+    - `ListStackInstances`
+    - `CreateStackInstance`
+    - `DeleteStackInstance`
+    - `DeployStackSet`
+    - `DeleteStackSet`
+    - `UpdateStackSet`
+    - `ShowStackSetOperationMetadata`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK AS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateScalingConfig**
+    - 请求参数变更
+      - `+ source_scaling_configuration_id`
+
+### HuaweiCloud SDK BMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateBareMetalServers**
+    - 请求参数变更
+      - `* server.server_tags: map<string, list<SystemTags>> -> list<SystemTags>`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowHistoryTasks**
+    - 请求参数变更
+      - `+ task_type`
+  - **ShowUrlTaskInfo**
+    - 响应参数变更
+      - `+ result.mode`
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+  - 支持以下接口：
+    - `BatchUpdateNotificationMasks`
+    - `BatchUpdateNotificationMaskTime`
+    - `UpdateNotificationMasks`
+    - `BatchDeleteNotificationMasks`
+    - `ListNotificationMasks`
+    - `ListNotificationMaskResources`
+    - `ListOneClickAlarms`
+    - `CreateOneClickAlarm`
+    - `ListOneClickAlarmRules`
+    - `BatchUpdateOneClickAlarmsEnabledState`
+    - `BatchDeleteOneClickAlarms`
+    - `UpdateOneClickAlarmNotifications`
+    - `BatchUpdateOneClickAlarmPoliciesEnabledState`
+    - `UpdateAlarmNotifications`
+    - `ListCesTargetProjectTags`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAlarmHistories**
+    - 响应参数变更
+      - `+ alarm_histories.condition.suppress_duration: enum value [86400]`
+  - **ListAgentInvocations**
+    - 请求参数变更
+      - `- instance_name`
+      - `+ invocation_type: enum value [RETRY]`
+    - 响应参数变更
+      - `+ invocations.invocation_type: enum value [RETRY]`
+  - **ListAgentStatus**
+    - 响应参数变更
+      - `+ agent_status.extensions.version`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _新增特性_
+  - 支持接口`ShowExecutionParams`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAllApp**
+    - 请求参数变更
+      - `+ states`
+      - `+ group_id`
+
+### HuaweiCloud SDK CTS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListOperations`
+    - `BatchCreateResourceTags`
+    - `BatchDeleteResourceTags`
+    - `ListUserResources`
+    - `CheckObsBuckets`
+    - `ListTraceResources`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ReinstallServerWithoutCloudInit**
+    - 请求参数变更
+      - `+ os-reinstall.metadata.BYOL`
+  - **ListFlavors**
+    - 响应参数变更
+      - `+ flavors.os_extra_specs.quota:vif_max_num`
+      - `+ flavors.os_extra_specs.quota:sub_network_interface_max_num`
+  - **ListResizeFlavors**
+    - 响应参数变更
+      - `+ flavors.extra_specs.quota:vif_max_num`
+      - `+ flavors.extra_specs.quota:sub_network_interface_max_num`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowFunctionUrl`、`UpdateFunctionUrl`、`CreateFunctionUrl`、`DeleteFunctionUrl`
+  - **ListAsyncInvocations**
+    - 响应参数变更
+      - `+ next_marker`
+      - `+ count`
+  - **ListActiveAsyncInvocations**
+    - 响应参数变更
+      - `+ next_marker`
+      - `+ count`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.datastore.complete_version`
+      - `+ instances.datastore.hotfix_versions`
+  - **ListInstancesDetails**
+    - 响应参数变更
+      - `+ instances.datastore.complete_version`
+      - `+ instances.datastore.hotfix_versions`
+
+### HuaweiCloud SDK ImageSearch
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunAddData**
+    - 请求参数变更
+      - `* optional_params.category: int -> int32`
+    - 响应参数变更
+      - `* data.image_info.objects.category: number -> integer`
+  - **RunDeleteData**
+    - 响应参数变更
+      - `* data.delete_info.total_num: int -> int32`
+      - `* data.delete_info.delete_num: int -> int32`
+  - **RunSearch**
+    - 请求参数变更
+      - `* optional_params.category: int -> int32`
+    - 响应参数变更
+      - `* data.image_info.category: number -> integer`
+      - `* data.image_info.objects.category: number -> integer`
+      - `* data.search_info.total_num: int -> int32`
+      - `* data.search_info.return_num: int -> int32`
+      - `* data.search_info.search_time: long -> int32`
+  - **RunCheckData**
+    - 响应参数变更
+      - `* data.check_info.total_num: int -> int32`
+      - `* data.check_info.return_num: int -> int32`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowJob**
+    - 响应参数变更
+      - `+ entities.addition_error_code`
+      - `+ entities.addition_error_msg`
+      - `+ entities.error_code`
+      - `+ entities.error`
+      - `+ entities.alarm_code`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeColombiaIdCard`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeVehicleLicense**
+    - 响应参数变更
+      - `+ result.energy_type`
+      - `+ result.front`
+      - `+ result.back`
+  - **RecognizeWebImage**
+    - 请求参数变更
+      - `+ detect_text_direction`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListPostgresqlHbaInfo`
+    - `ModifyPostgresqlHbaConf`
+    - `AddPostgresqlHbaConf`
+    - `DeletePostgresqlHbaConf`
+    - `ListPostgresqlHbaInfoHistory`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeDbVersionNew**
+    - 请求参数变更
+      - `+ is_delayed`
+      - `- delay`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListTrafficMirrorSessions`
+    - `CreateTrafficMirrorSession`
+    - `ShowTrafficMirrorSession`
+    - `UpdateTrafficMirrorSession`
+    - `DeleteTrafficMirrorSession`
+    - `RemoveSourcesFromTrafficMirrorSession`
+    - `AddSourcesToTrafficMirrorSession`
+    - `ListTrafficMirrorFilters`
+    - `CreateTrafficMirrorFilter`
+    - `ShowTrafficMirrorFilter`
+    - `UpdateTrafficMirrorFilter`
+    - `DeleteTrafficMirrorFilter`
+    - `ListTrafficMirrorFilterRules`
+    - `CreateTrafficMirrorFilterRule`
+    - `ShowTrafficMirrorFilterRule`
+    - `UpdateTrafficMirrorFilterRule`
+    - `DeleteTrafficMirrorFilterRule`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.59 2023-09-19
 
 ### HuaweiCloud SDK BMS

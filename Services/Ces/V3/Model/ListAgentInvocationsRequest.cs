@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退
+        /// 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
         /// </summary>
-        /// <value>任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退</value>
+        /// <value>任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试</value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -152,12 +152,18 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             /// </summary>
             public static readonly InvocationTypeEnum ROLLBACK = new InvocationTypeEnum("ROLLBACK");
 
+            /// <summary>
+            /// Enum RETRY for value: RETRY
+            /// </summary>
+            public static readonly InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
+
             private static readonly Dictionary<string, InvocationTypeEnum> StaticFields =
             new Dictionary<string, InvocationTypeEnum>()
             {
                 { "INSTALL", INSTALL },
                 { "UPDATE", UPDATE },
                 { "ROLLBACK", ROLLBACK },
+                { "RETRY", RETRY },
             };
 
             private string _value;
@@ -369,13 +375,6 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 主机名称
-        /// </summary>
-        [SDKProperty("instance_name", IsQuery = true)]
-        [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceName { get; set; }
-
-        /// <summary>
         /// 主机类型，ECS弹性云服务器，BMS裸金属服务器
         /// </summary>
         [SDKProperty("instance_type", IsQuery = true)]
@@ -389,7 +388,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public string InvocationId { get; set; }
 
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退
+        /// 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
         /// </summary>
         [SDKProperty("invocation_type", IsQuery = true)]
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -424,7 +423,6 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListAgentInvocationsRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
             sb.Append("  invocationId: ").Append(InvocationId).Append("\n");
             sb.Append("  invocationType: ").Append(InvocationType).Append("\n");
@@ -456,11 +454,6 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
                 ) && 
                 (
                     this.InstanceType == input.InstanceType ||
@@ -504,8 +497,6 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 int hashCode = 41;
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 if (this.InstanceType != null)
                     hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
                 if (this.InvocationId != null)

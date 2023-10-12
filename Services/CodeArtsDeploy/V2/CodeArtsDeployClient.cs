@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 获取应用列表
         ///
-        /// 查询项目下应用列表
+        /// 查询项目下应用列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
         ///
-        /// 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
+        /// 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -166,6 +166,25 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         }
         
         /// <summary>
+        /// 查询部署记录的执行参数
+        ///
+        /// 查询部署记录的执行参数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowExecutionParamsResponse ShowExecutionParams(ShowExecutionParamsRequest showExecutionParamsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , showExecutionParamsRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/history/tasks/{task_id}/params",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExecutionParamsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            ShowExecutionParamsResponse showExecutionParamsResponse = JsonUtils.DeSerializeNull<ShowExecutionParamsResponse>(response);
+            showExecutionParamsResponse.Body = JsonUtils.DeSerializeList<ConfigInfo>(response);
+            return showExecutionParamsResponse;
+        }
+        
+        /// <summary>
         /// 部署应用
         ///
         /// 根据部署任务id部署应用。
@@ -185,7 +204,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 应用下创建环境
         ///
-        /// 应用下创建环境
+        /// 应用下创建环境。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -202,7 +221,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 删除应用下的环境
         ///
-        /// 删除应用下的环境
+        /// 删除应用下的环境。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -220,7 +239,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 环境下删除主机
         ///
-        /// 环境下删除主机
+        /// 环境下删除主机。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -239,7 +258,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 环境下导入主机
         ///
-        /// 环境下导入主机
+        /// 环境下导入主机。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -257,7 +276,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 查询应用下环境列表
         ///
-        /// 查询应用下环境列表
+        /// 查询应用下环境列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -274,7 +293,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 查询环境详情
         ///
-        /// 查询环境详情
+        /// 查询环境详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -511,7 +530,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         }
         
         /// <summary>
-        /// 查询主机集群
+        /// 查询主机集群详情
         ///
         /// 根据主机集群id查询主机集群详情。该接口于2024年09月30日后不再维护，推荐使用新版ShowHostClusterDetail接口。
         /// 
@@ -528,7 +547,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         }
         
         /// <summary>
-        /// 查询主机集群
+        /// 查询主机集群详情
         ///
         /// 根据主机集群id查询主机集群详情。
         /// 
@@ -564,7 +583,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 获取指定应用的应用部署成功率
         ///
-        /// 获取指定应用的应用部署成功率
+        /// 获取指定应用的应用部署成功率。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -581,7 +600,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         /// <summary>
         /// 获取指定项目的应用部署成功率
         ///
-        /// 获取指定项目的应用部署成功率
+        /// 获取指定项目的应用部署成功率。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

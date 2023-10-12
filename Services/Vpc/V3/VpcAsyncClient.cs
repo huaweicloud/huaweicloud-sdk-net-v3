@@ -16,6 +16,23 @@ namespace HuaweiCloud.SDK.Vpc.V3
 
         
         /// <summary>
+        /// 流量镜像会话添加镜像源
+        ///
+        /// 流量镜像会话添加镜像源
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddSourcesToTrafficMirrorSessionResponse> AddSourcesToTrafficMirrorSessionAsync(AddSourcesToTrafficMirrorSessionRequest addSourcesToTrafficMirrorSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_session_id" , addSourcesToTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/add-sources",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addSourcesToTrafficMirrorSessionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<AddSourcesToTrafficMirrorSessionResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量创建辅助弹性网卡
         ///
         /// 批量创建辅助弹性网卡
@@ -80,6 +97,54 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 创建流量镜像筛选条件
+        ///
+        /// 创建流量镜像筛选条件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTrafficMirrorFilterResponse> CreateTrafficMirrorFilterAsync(CreateTrafficMirrorFilterRequest createTrafficMirrorFilterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTrafficMirrorFilterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateTrafficMirrorFilterResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建流量镜像筛选规则
+        ///
+        /// 创建流量镜像筛选规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTrafficMirrorFilterRuleResponse> CreateTrafficMirrorFilterRuleAsync(CreateTrafficMirrorFilterRuleRequest createTrafficMirrorFilterRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTrafficMirrorFilterRuleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateTrafficMirrorFilterRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建流量镜像会话
+        ///
+        /// 创建流量镜像会话
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTrafficMirrorSessionResponse> CreateTrafficMirrorSessionAsync(CreateTrafficMirrorSessionRequest createTrafficMirrorSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTrafficMirrorSessionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateTrafficMirrorSessionResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除安全组
         ///
         /// 删除安全组
@@ -131,6 +196,57 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 删除流量镜像筛选条件
+        ///
+        /// 删除流量镜像筛选条件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTrafficMirrorFilterResponse> DeleteTrafficMirrorFilterAsync(DeleteTrafficMirrorFilterRequest deleteTrafficMirrorFilterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_filter_id" , deleteTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorFilterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTrafficMirrorFilterResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除流量镜像筛选规则
+        ///
+        /// 删除流量镜像筛选规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTrafficMirrorFilterRuleResponse> DeleteTrafficMirrorFilterRuleAsync(DeleteTrafficMirrorFilterRuleRequest deleteTrafficMirrorFilterRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_filter_rule_id" , deleteTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorFilterRuleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTrafficMirrorFilterRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除流量镜像会话
+        ///
+        /// 删除流量镜像会话
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTrafficMirrorSessionResponse> DeleteTrafficMirrorSessionAsync(DeleteTrafficMirrorSessionRequest deleteTrafficMirrorSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_session_id" , deleteTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorSessionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTrafficMirrorSessionResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询安全组规则列表
         ///
         /// 查询安全组规则列表
@@ -179,6 +295,54 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询流量镜像筛选规则列表
+        ///
+        /// 查询流量镜像筛选规则列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTrafficMirrorFilterRulesResponse> ListTrafficMirrorFilterRulesAsync(ListTrafficMirrorFilterRulesRequest listTrafficMirrorFilterRulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrafficMirrorFilterRulesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTrafficMirrorFilterRulesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询流量镜像筛选条件列表
+        ///
+        /// 查询流量镜像筛选条件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTrafficMirrorFiltersResponse> ListTrafficMirrorFiltersAsync(ListTrafficMirrorFiltersRequest listTrafficMirrorFiltersRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrafficMirrorFiltersRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTrafficMirrorFiltersResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询流量镜像会话列表
+        ///
+        /// 查询流量镜像会话列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTrafficMirrorSessionsResponse> ListTrafficMirrorSessionsAsync(ListTrafficMirrorSessionsRequest listTrafficMirrorSessionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrafficMirrorSessionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTrafficMirrorSessionsResponse>(response);
+        }
+        
+        /// <summary>
         /// 迁移辅助弹性网卡
         ///
         /// 批量迁移辅助弹性网卡
@@ -192,6 +356,23 @@ namespace HuaweiCloud.SDK.Vpc.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateSubNetworkInterfaceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<MigrateSubNetworkInterfaceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 流量镜像会话移除镜像源
+        ///
+        /// 流量镜像会话移除镜像源
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RemoveSourcesFromTrafficMirrorSessionResponse> RemoveSourcesFromTrafficMirrorSessionAsync(RemoveSourcesFromTrafficMirrorSessionRequest removeSourcesFromTrafficMirrorSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_session_id" , removeSourcesFromTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/remove-sources",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSourcesFromTrafficMirrorSessionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<RemoveSourcesFromTrafficMirrorSessionResponse>(response);
         }
         
         /// <summary>
@@ -262,6 +443,57 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询流量镜像筛选条件详情
+        ///
+        /// 查询流量镜像筛选条件详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTrafficMirrorFilterResponse> ShowTrafficMirrorFilterAsync(ShowTrafficMirrorFilterRequest showTrafficMirrorFilterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_filter_id" , showTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorFilterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowTrafficMirrorFilterResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询流量镜像筛选规则详情
+        ///
+        /// 查询流量镜像筛选规则详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTrafficMirrorFilterRuleResponse> ShowTrafficMirrorFilterRuleAsync(ShowTrafficMirrorFilterRuleRequest showTrafficMirrorFilterRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_filter_rule_id" , showTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorFilterRuleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowTrafficMirrorFilterRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询流量镜像会话详情
+        ///
+        /// 查询流量镜像会话详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTrafficMirrorSessionResponse> ShowTrafficMirrorSessionAsync(ShowTrafficMirrorSessionRequest showTrafficMirrorSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_session_id" , showTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorSessionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowTrafficMirrorSessionResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新安全组
         ///
         /// 更新安全组
@@ -293,6 +525,57 @@ namespace HuaweiCloud.SDK.Vpc.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubNetworkInterfaceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateSubNetworkInterfaceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新流量镜像筛选条件
+        ///
+        /// 更新流量镜像筛选条件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTrafficMirrorFilterResponse> UpdateTrafficMirrorFilterAsync(UpdateTrafficMirrorFilterRequest updateTrafficMirrorFilterRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_filter_id" , updateTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorFilterRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateTrafficMirrorFilterResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新流量镜像筛选规则
+        ///
+        /// 更新流量镜像筛选规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTrafficMirrorFilterRuleResponse> UpdateTrafficMirrorFilterRuleAsync(UpdateTrafficMirrorFilterRuleRequest updateTrafficMirrorFilterRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_filter_rule_id" , updateTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorFilterRuleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateTrafficMirrorFilterRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新流量镜像会话
+        ///
+        /// 更新流量镜像会话
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTrafficMirrorSessionResponse> UpdateTrafficMirrorSessionAsync(UpdateTrafficMirrorSessionRequest updateTrafficMirrorSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("traffic_mirror_session_id" , updateTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorSessionRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateTrafficMirrorSessionResponse>(response);
         }
         
         /// <summary>

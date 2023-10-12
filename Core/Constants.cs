@@ -24,5 +24,6 @@ namespace HuaweiCloud.SDK.Core
     public static class Constants
     {
         public const long DefaultProgressInterval = 102400;
+        public const SigningAlgorithm DefaultSigningAlgorithm = SigningAlgorithm.HmacSha256;
     }
 }

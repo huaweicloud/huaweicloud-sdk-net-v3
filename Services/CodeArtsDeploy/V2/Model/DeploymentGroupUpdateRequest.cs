@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
     public class DeploymentGroupUpdateRequest 
     {
         /// <summary>
-        /// 自动连通性验证 0不执行 1每日 2每周
+        /// 自动测试功能已下架，该字段已失效
         /// </summary>
-        /// <value>自动连通性验证 0不执行 1每日 2每周</value>
+        /// <value>自动测试功能已下架，该字段已失效</value>
         [JsonConverter(typeof(EnumClassConverter<AutoConnectionTestSwitchEnum>))]
         public class AutoConnectionTestSwitchEnum
         {
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string SlaveClusterId { get; set; }
 
         /// <summary>
-        /// 自动连通性验证 0不执行 1每日 2每周
+        /// 自动测试功能已下架，该字段已失效
         /// </summary>
         [JsonProperty("auto_connection_test_switch", NullValueHandling = NullValueHandling.Ignore)]
         public AutoConnectionTestSwitchEnum AutoConnectionTestSwitch { get; set; }

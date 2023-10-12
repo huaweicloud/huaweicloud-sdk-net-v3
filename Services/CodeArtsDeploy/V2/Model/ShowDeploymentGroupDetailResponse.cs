@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Os { get; set; }
 
         /// <summary>
-        /// 自动连通性验证 0不执行 1每日 2每周
+        /// 自动测试功能已下架，该字段已失效
         /// </summary>
         [JsonProperty("auto_connection_test_switch", NullValueHandling = NullValueHandling.Ignore)]
         public int? AutoConnectionTestSwitch { get; set; }

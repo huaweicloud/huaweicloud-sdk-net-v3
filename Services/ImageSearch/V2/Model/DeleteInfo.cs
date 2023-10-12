@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// 符合条件的结果总数。
         /// </summary>
         [JsonProperty("total_num", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalNum { get; set; }
+        public int? TotalNum { get; set; }
 
         /// <summary>
         /// 本次删除的结果总数，目前一次请求最多删除100条结果。
         /// </summary>
         [JsonProperty("delete_num", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? DeleteNum { get; set; }
+        public int? DeleteNum { get; set; }
 
 
 

@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// 是否延迟至可维护时间段内升级。 取值范围： - true：延迟升级。表示实例将在设置的可维护时间段内升级。 - false：立即升级，默认该方式。
         /// </summary>
-        [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Delay { get; set; }
+        [JsonProperty("is_delayed", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDelayed { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CustomerUpgradeDatabaseVersionReqNew {\n");
-            sb.Append("  delay: ").Append(Delay).Append("\n");
+            sb.Append("  isDelayed: ").Append(IsDelayed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,9 +54,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
             return 
                 (
-                    this.Delay == input.Delay ||
-                    (this.Delay != null &&
-                    this.Delay.Equals(input.Delay))
+                    this.IsDelayed == input.IsDelayed ||
+                    (this.IsDelayed != null &&
+                    this.IsDelayed.Equals(input.IsDelayed))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Delay != null)
-                    hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.IsDelayed != null)
+                    hashCode = hashCode * 59 + this.IsDelayed.GetHashCode();
                 return hashCode;
             }
         }

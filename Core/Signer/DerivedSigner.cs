@@ -1,23 +1,64 @@
-﻿using System;
+﻿/*
+ * Copyright 2023 Huawei Technologies Co.,Ltd.
+ * 
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+using System;
 using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using HuaweiCloud.SDK.Core.Auth;
 
 namespace HuaweiCloud.SDK.Core
 {
     public class DerivedSigner : Signer
     {
         private const string V11HmacSha256 = "V11-HMAC-SHA256";
-
-        public void Sign(HttpRequest request, string regionId, string derivedAuthServiceName)
+        
+        private static DerivedSigner _instance;
+        
+        private static readonly object Lock = new object();
+        
+        public new static DerivedSigner GetInstance()
         {
-            verifyAkSk();
-            if (string.IsNullOrEmpty(regionId))
+            if (_instance == null)
+            {
+                lock (Lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new DerivedSigner();
+                    }
+                }
+            }
+            return _instance;
+        }
+
+        public override void Sign<T>(HttpRequest request, T credentials)
+        {
+            VerifyRequired(credentials);
+            if (string.IsNullOrEmpty(credentials.RegionId))
             {
                 throw new ArgumentException("regionId is required in credentials when using derived auth");
             }
-            if (string.IsNullOrEmpty(derivedAuthServiceName))
+            if (string.IsNullOrEmpty(credentials.DerivedAuthServiceName))
             {
                 throw new ArgumentException("derivedAuthServiceName is required in credentials when using derived auth");
             }
@@ -45,14 +86,15 @@ namespace HuaweiCloud.SDK.Core
             // Create the string to sign
             var canonicalRequest = ConstructCanonicalRequest(request);
             var timeStamp = t.ToUniversalTime().ToString(BasicDateFormat);
-            var info = timeStamp.Substring(0, 8) + "/" + regionId + "/" + derivedAuthServiceName;
+            var info = timeStamp.Substring(0, 8) + "/" + credentials.RegionId + "/" + credentials.DerivedAuthServiceName;
             var stringToSign = StringToSign(canonicalRequest, timeStamp, info);
 
             // Calculate the signature
             var signedHeaders = ProcessSignedHeaders(request);
-            var derivationKey = Hkdf.GetDerKeySha(Key, Secret, info);
-            var signatureString = SignStringToSign(stringToSign, Encoding.UTF8.GetBytes(derivationKey));
-            var authValue = $"{V11HmacSha256} Credential={Key}/{info}, SignedHeaders={string.Join(";", signedHeaders)}, Signature={signatureString}";
+            var derivationKey = Hkdf.GetDerKeySha(credentials.Ak, credentials.Sk, info);
+            var signingKey = new HmacSigningKey(Hasher, Encoding.UTF8.GetBytes(derivationKey));
+            var signatureString = SignStringToSign(stringToSign, signingKey);
+            var authValue = $"{V11HmacSha256} Credential={credentials.Ak}/{info}, SignedHeaders={string.Join(";", signedHeaders)}, Signature={signatureString}";
             request.Headers.Set(HeaderAuthorization, authValue);
         }
 
@@ -64,7 +106,7 @@ namespace HuaweiCloud.SDK.Core
             return $"{V11HmacSha256}\n" +
                    $"{timeStamp}\n" +
                    $"{info}\n" +
-                   $"{ToHexString(bytes)}";
+                   $"{AbstractHasher.ToHexString(bytes)}";
         }
 
         private static class Hkdf
@@ -94,7 +136,7 @@ namespace HuaweiCloud.SDK.Core
                     var derSecretKey = Expend(tmpKey, Encoding.UTF8.GetBytes(info));
                     if (derSecretKey != null)
                     {
-                        return ToHexString(derSecretKey);
+                        return AbstractHasher.ToHexString(derSecretKey);
                     }
                 }
                 catch (Exception exception)

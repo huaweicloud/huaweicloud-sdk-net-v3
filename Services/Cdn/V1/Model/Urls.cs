@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
         public string FileType { get; set; }
 
+        /// <summary>
+        /// 目录刷新方式，all：刷新目录下全部资源；detect_modify_refresh：刷新目录下已变更的资源，默认值为all。
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("  modifyTime: ").Append(ModifyTime).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  fileType: ").Append(FileType).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,6 +148,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.FileType == input.FileType ||
                     (this.FileType != null &&
                     this.FileType.Equals(input.FileType))
+                ) && 
+                (
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
                 );
         }
 
@@ -168,6 +180,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.FileType != null)
                     hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 return hashCode;
             }
         }

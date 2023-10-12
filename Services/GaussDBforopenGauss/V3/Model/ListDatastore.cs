@@ -23,10 +23,22 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 数据库版本。
+        /// 数据库大版本。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
+
+        /// <summary>
+        /// 数据库小版本。
+        /// </summary>
+        [JsonProperty("complete_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string CompleteVersion { get; set; }
+
+        /// <summary>
+        /// 数据库已升级的热补丁版本，当数据库热补丁升级成功后，该值不为空。
+        /// </summary>
+        [JsonProperty("hotfix_versions", NullValueHandling = NullValueHandling.Ignore)]
+        public string HotfixVersions { get; set; }
 
 
 
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("class ListDatastore {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  completeVersion: ").Append(CompleteVersion).Append("\n");
+            sb.Append("  hotfixVersions: ").Append(HotfixVersions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +83,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.CompleteVersion == input.CompleteVersion ||
+                    (this.CompleteVersion != null &&
+                    this.CompleteVersion.Equals(input.CompleteVersion))
+                ) && 
+                (
+                    this.HotfixVersions == input.HotfixVersions ||
+                    (this.HotfixVersions != null &&
+                    this.HotfixVersions.Equals(input.HotfixVersions))
                 );
         }
 
@@ -84,6 +108,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.CompleteVersion != null)
+                    hashCode = hashCode * 59 + this.CompleteVersion.GetHashCode();
+                if (this.HotfixVersions != null)
+                    hashCode = hashCode * 59 + this.HotfixVersions.GetHashCode();
                 return hashCode;
             }
         }

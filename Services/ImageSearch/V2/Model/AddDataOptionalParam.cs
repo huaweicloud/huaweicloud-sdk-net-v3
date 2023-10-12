@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// 对象类目，如给定则不进行对象分类，直接使用该category作为类目。具体类目信息可参见对应的服务类型说明。
         /// </summary>
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Category { get; set; }
+        public int? Category { get; set; }
 
 
 

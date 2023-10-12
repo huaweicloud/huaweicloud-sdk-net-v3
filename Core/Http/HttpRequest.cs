@@ -37,10 +37,11 @@ namespace HuaweiCloud.SDK.Core
         public string Method = "GET";
         public Dictionary<string, List<string>> QueryParam = new Dictionary<string, List<string>>();
         public Uri Url;
+        public SigningAlgorithm SigningAlgorithm;
 
         public HttpRequest(string method = "GET", string contentType = "application/json", Uri url = null,
             WebHeaderCollection headers = null,
-            string body = null, Stream fileStream = null)
+            string body = null, Stream fileStream = null, SigningAlgorithm signingAlgorithm = Constants.DefaultSigningAlgorithm)
         {
             if (method != null)
             {
@@ -77,6 +78,8 @@ namespace HuaweiCloud.SDK.Core
             {
                 FileStream = fileStream;
             }
+
+            SigningAlgorithm = signingAlgorithm;
         }
 
         private void ParseQueryParam()

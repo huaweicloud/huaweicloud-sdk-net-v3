@@ -209,6 +209,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Quotagpu { get; set; }
 
         /// <summary>
+        /// 最多支持的弹性网卡个数
+        /// </summary>
+        [JsonProperty("quota:vif_max_num", NullValueHandling = NullValueHandling.Ignore)]
+        public string QuotavifMaxNum { get; set; }
+
+        /// <summary>
+        /// 最多支持的辅助弹性网卡个数
+        /// </summary>
+        [JsonProperty("quota:sub_network_interface_max_num", NullValueHandling = NullValueHandling.Ignore)]
+        public string QuotasubNetworkInterfaceMaxNum { get; set; }
+
+        /// <summary>
         /// 该规格对应的CPU架构，且仅鲲鹏实例架构规格返回该字段  - 取值为arm64表示CPU架构为鲲鹏计算。
         /// </summary>
         [JsonProperty("ecs:instance_architecture", NullValueHandling = NullValueHandling.Ignore)]
@@ -255,6 +267,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  infogpuname: ").Append(Infogpuname).Append("\n");
             sb.Append("  infocpuname: ").Append(Infocpuname).Append("\n");
             sb.Append("  quotagpu: ").Append(Quotagpu).Append("\n");
+            sb.Append("  quotavifMaxNum: ").Append(QuotavifMaxNum).Append("\n");
+            sb.Append("  quotasubNetworkInterfaceMaxNum: ").Append(QuotasubNetworkInterfaceMaxNum).Append("\n");
             sb.Append("  ecsinstanceArchitecture: ").Append(EcsinstanceArchitecture).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -438,6 +452,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Quotagpu.Equals(input.Quotagpu))
                 ) && 
                 (
+                    this.QuotavifMaxNum == input.QuotavifMaxNum ||
+                    (this.QuotavifMaxNum != null &&
+                    this.QuotavifMaxNum.Equals(input.QuotavifMaxNum))
+                ) && 
+                (
+                    this.QuotasubNetworkInterfaceMaxNum == input.QuotasubNetworkInterfaceMaxNum ||
+                    (this.QuotasubNetworkInterfaceMaxNum != null &&
+                    this.QuotasubNetworkInterfaceMaxNum.Equals(input.QuotasubNetworkInterfaceMaxNum))
+                ) && 
+                (
                     this.EcsinstanceArchitecture == input.EcsinstanceArchitecture ||
                     (this.EcsinstanceArchitecture != null &&
                     this.EcsinstanceArchitecture.Equals(input.EcsinstanceArchitecture))
@@ -516,6 +540,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Infocpuname.GetHashCode();
                 if (this.Quotagpu != null)
                     hashCode = hashCode * 59 + this.Quotagpu.GetHashCode();
+                if (this.QuotavifMaxNum != null)
+                    hashCode = hashCode * 59 + this.QuotavifMaxNum.GetHashCode();
+                if (this.QuotasubNetworkInterfaceMaxNum != null)
+                    hashCode = hashCode * 59 + this.QuotasubNetworkInterfaceMaxNum.GetHashCode();
                 if (this.EcsinstanceArchitecture != null)
                     hashCode = hashCode * 59 + this.EcsinstanceArchitecture.GetHashCode();
                 return hashCode;

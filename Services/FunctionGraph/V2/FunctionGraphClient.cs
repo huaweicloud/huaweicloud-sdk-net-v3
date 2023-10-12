@@ -189,23 +189,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 创建函数URL
-        ///
-        /// 创建函数URL
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateFunctionUrlResponse CreateFunctionUrl(CreateFunctionUrlRequest createFunctionUrlRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , createFunctionUrlRequest.FunctionUrn.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/function-url",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFunctionUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            return JsonUtils.DeSerialize<CreateFunctionUrlResponse>(response);
-        }
-        
-        /// <summary>
         /// 发布函数版本
         ///
         /// 发布函数版本。
@@ -396,23 +379,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionTriggerRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteFunctionTriggerResponse>(response);
-        }
-        
-        /// <summary>
-        /// 删除函数URL
-        ///
-        /// 删除函数URL
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteFunctionUrlResponse DeleteFunctionUrl(DeleteFunctionUrlRequest deleteFunctionUrlRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , deleteFunctionUrlRequest.FunctionUrn.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/function-url",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            return JsonUtils.DeSerializeNull<DeleteFunctionUrlResponse>(response);
         }
         
         /// <summary>
@@ -1003,23 +969,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 获取指定函数的URL
-        ///
-        /// 获取指定函数的URL
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowFunctionUrlResponse ShowFunctionUrl(ShowFunctionUrlRequest showFunctionUrlRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , showFunctionUrlRequest.FunctionUrn.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/function-url",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ShowFunctionUrlResponse>(response);
-        }
-        
-        /// <summary>
         /// 获取指定函数的lts日志组日志流配置
         ///
         /// 获取指定函数的lts日志组日志流配置。
@@ -1379,23 +1328,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionReservedInstancesCountRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateFunctionReservedInstancesCountResponse>(response);
-        }
-        
-        /// <summary>
-        /// 更新函数URL
-        ///
-        /// 更新函数URL
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateFunctionUrlResponse UpdateFunctionUrl(UpdateFunctionUrlRequest updateFunctionUrlRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn" , updateFunctionUrlRequest.FunctionUrn.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/function-url",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
-            return JsonUtils.DeSerialize<UpdateFunctionUrlResponse>(response);
         }
         
         /// <summary>

@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 裸金属服务器的标签。详情请参见表 server_tags字段数据结构说明。 说明：创建裸金属服务器时，一台裸金属服务器最多可以添加10个标签。其中，__type_baremetal为系统内部标签，因此实际能添加的标签为9个。
         /// </summary>
         [JsonProperty("server_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, List<SystemTags>> ServerTags { get; set; }
+        public List<SystemTags> ServerTags { get; set; }
 
 
 

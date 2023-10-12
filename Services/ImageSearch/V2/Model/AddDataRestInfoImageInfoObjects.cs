@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// 主体类目序号。
         /// </summary>
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Category { get; set; }
+        public int? Category { get; set; }
 
         /// <summary>
         /// 主体类目名称。

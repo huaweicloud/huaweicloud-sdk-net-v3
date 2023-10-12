@@ -23,18 +23,18 @@ using System.Collections.Concurrent;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
-    public class AuthCache
+    internal static class AuthCache
     {
-        private static readonly ConcurrentDictionary<string, string> _authDict = new ConcurrentDictionary<string, string>();
+        private static readonly ConcurrentDictionary<string, string> AuthDict = new ConcurrentDictionary<string, string>();
 
-        public static string GetAuth(string akWithName)
+        internal static string GetAuth(string akWithName)
         {
-            return _authDict.TryGetValue(akWithName, out var value) ? value : null;
+            return AuthDict.TryGetValue(akWithName, out var value) ? value : null;
         }
 
-        public static void PutAuth(string akWithName, string id)
+        internal static void PutAuth(string akWithName, string id)
         {
-            _authDict.AddOrUpdate(akWithName, id, (key, value) => id);
+            AuthDict.AddOrUpdate(akWithName, id, (key, value) => id);
         }
     }
 }

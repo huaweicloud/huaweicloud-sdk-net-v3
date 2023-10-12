@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚)
+        /// 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
         /// </summary>
-        /// <value>任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚)</value>
+        /// <value>任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)</value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -152,12 +152,18 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             /// </summary>
             public static readonly InvocationTypeEnum ROLLBACK = new InvocationTypeEnum("ROLLBACK");
 
+            /// <summary>
+            /// Enum RETRY for value: RETRY
+            /// </summary>
+            public static readonly InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
+
             private static readonly Dictionary<string, InvocationTypeEnum> StaticFields =
             new Dictionary<string, InvocationTypeEnum>()
             {
                 { "INSTALL", INSTALL },
                 { "UPDATE", UPDATE },
                 { "ROLLBACK", ROLLBACK },
+                { "RETRY", RETRY },
             };
 
             private string _value;
@@ -542,7 +548,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public List<string> ElasticIps { get; set; }
 
         /// <summary>
-        /// 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚)
+        /// 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
         /// </summary>
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }

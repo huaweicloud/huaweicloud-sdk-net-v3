@@ -35,6 +35,36 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string ImageName { get; set; }
 
         /// <summary>
+        /// 添加错误码
+        /// </summary>
+        [JsonProperty("addition_error_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdditionErrorCode { get; set; }
+
+        /// <summary>
+        /// 添加错误消息
+        /// </summary>
+        [JsonProperty("addition_error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdditionErrorMsg { get; set; }
+
+        /// <summary>
+        /// 错误码
+        /// </summary>
+        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorCode { get; set; }
+
+        /// <summary>
+        /// 错误消息
+        /// </summary>
+        [JsonProperty("error", NullValueHandling = NullValueHandling.Ignore)]
+        public string Error { get; set; }
+
+        /// <summary>
+        /// 告警代码
+        /// </summary>
+        [JsonProperty("alarm_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmCode { get; set; }
+
+        /// <summary>
         /// 任务执行进度
         /// </summary>
         [JsonProperty("process_percent", NullValueHandling = NullValueHandling.Ignore)]
@@ -70,6 +100,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  currentTask: ").Append(CurrentTask).Append("\n");
             sb.Append("  imageName: ").Append(ImageName).Append("\n");
+            sb.Append("  additionErrorCode: ").Append(AdditionErrorCode).Append("\n");
+            sb.Append("  additionErrorMsg: ").Append(AdditionErrorMsg).Append("\n");
+            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
+            sb.Append("  error: ").Append(Error).Append("\n");
+            sb.Append("  alarmCode: ").Append(AlarmCode).Append("\n");
             sb.Append("  processPercent: ").Append(ProcessPercent).Append("\n");
             sb.Append("  results: ").Append(Results).Append("\n");
             sb.Append("  subJobsResult: ").Append(SubJobsResult).Append("\n");
@@ -111,6 +146,31 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.ImageName.Equals(input.ImageName))
                 ) && 
                 (
+                    this.AdditionErrorCode == input.AdditionErrorCode ||
+                    (this.AdditionErrorCode != null &&
+                    this.AdditionErrorCode.Equals(input.AdditionErrorCode))
+                ) && 
+                (
+                    this.AdditionErrorMsg == input.AdditionErrorMsg ||
+                    (this.AdditionErrorMsg != null &&
+                    this.AdditionErrorMsg.Equals(input.AdditionErrorMsg))
+                ) && 
+                (
+                    this.ErrorCode == input.ErrorCode ||
+                    (this.ErrorCode != null &&
+                    this.ErrorCode.Equals(input.ErrorCode))
+                ) && 
+                (
+                    this.Error == input.Error ||
+                    (this.Error != null &&
+                    this.Error.Equals(input.Error))
+                ) && 
+                (
+                    this.AlarmCode == input.AlarmCode ||
+                    (this.AlarmCode != null &&
+                    this.AlarmCode.Equals(input.AlarmCode))
+                ) && 
+                (
                     this.ProcessPercent == input.ProcessPercent ||
                     (this.ProcessPercent != null &&
                     this.ProcessPercent.Equals(input.ProcessPercent))
@@ -149,6 +209,16 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.CurrentTask.GetHashCode();
                 if (this.ImageName != null)
                     hashCode = hashCode * 59 + this.ImageName.GetHashCode();
+                if (this.AdditionErrorCode != null)
+                    hashCode = hashCode * 59 + this.AdditionErrorCode.GetHashCode();
+                if (this.AdditionErrorMsg != null)
+                    hashCode = hashCode * 59 + this.AdditionErrorMsg.GetHashCode();
+                if (this.ErrorCode != null)
+                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.Error != null)
+                    hashCode = hashCode * 59 + this.Error.GetHashCode();
+                if (this.AlarmCode != null)
+                    hashCode = hashCode * 59 + this.AlarmCode.GetHashCode();
                 if (this.ProcessPercent != null)
                     hashCode = hashCode * 59 + this.ProcessPercent.GetHashCode();
                 if (this.Results != null)

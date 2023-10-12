@@ -26,20 +26,52 @@ using System.Threading.Tasks;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
-    public abstract class Credentials
+    public abstract class Credentials<T> : ICredential where T : Credentials<T>
     {
         public static readonly string DEFAULT_ENDPOINT_REG =
             "^[a-z][a-z0-9-]+(\\.[a-z]{2,}-[a-z]+-\\d{1,2})?\\.(my)?(huaweicloud|myhwclouds).(com|cn)";
 
         public static Func<HttpRequest, bool> DefaultDerivedPredicate = httpRequest =>
             !Regex.IsMatch(httpRequest.Url.Host, DEFAULT_ENDPOINT_REG);
+        
+        internal string DerivedAuthServiceName;
+        internal string RegionId;
+
+        public string Ak { set; get; }
+        public string Sk { set; get; }
+        public string SecurityToken { set; get; }
+        public string IamEndpoint { set; get; }
+        public Func<HttpRequest, bool> DerivedPredicate { set; get; }
 
         public abstract Dictionary<string, string> GetPathParamDictionary();
 
         public abstract Task<HttpRequest> SignAuthRequest(HttpRequest request);
 
-        public abstract Credentials ProcessAuthParams(SdkHttpClient client, string regionId);
+        public abstract ICredential ProcessAuthParams(SdkHttpClient client, string regionId);
 
         public abstract void ProcessDerivedAuthParams(string derivedAuthServiceName, string regionId);
+
+        public T WithIamEndpoint(string endpoint)
+        {
+            IamEndpoint = endpoint;
+            return (T)this;
+        }
+
+        public T WithSecurityToken(string token)
+        {
+            SecurityToken = token;
+            return (T)this;
+        }
+
+        public T WithDerivedPredicate(Func<HttpRequest, bool> func)
+        {
+            DerivedPredicate = func;
+            return (T)this;
+        }
+
+        protected bool IsDerivedAuth(HttpRequest httpRequest)
+        {
+            return DerivedPredicate == null ? false : DerivedPredicate(httpRequest);
+        }
     }
 }

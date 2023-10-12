@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
+        /// 告警规则关联告警模板ID
         /// </summary>
         [JsonProperty("alarm_template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmTemplateId { get; set; }

@@ -35,6 +35,8 @@ namespace HuaweiCloud.SDK.Core
         /// </summary>
         public bool AllowRedirects;
 
+        public SigningAlgorithm SigningAlgorithm = Constants.DefaultSigningAlgorithm;
+
         public string ProxyUsername { get; set; }
 
         public string ProxyPassword { get; set; }
@@ -75,6 +77,12 @@ namespace HuaweiCloud.SDK.Core
         public HttpConfig WithAllowRedirects(bool allowRedirects)
         {
             AllowRedirects = allowRedirects;
+            return this;
+        }
+
+        public HttpConfig WithSigningAlgorithm(SigningAlgorithm signingAlgorithm)
+        {
+            SigningAlgorithm = signingAlgorithm;
             return this;
         }
 

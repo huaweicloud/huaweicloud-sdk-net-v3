@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
+        /// <summary>
+        /// 插件版本
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public string Version { get; set; }
+
 
 
         /// <summary>
@@ -171,6 +177,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             sb.Append("class ExtensionInfo {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +208,11 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
                 );
         }
 
@@ -216,6 +228,8 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

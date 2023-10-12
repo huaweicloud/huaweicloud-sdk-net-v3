@@ -47,7 +47,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<List<Dimension>> Resources { get; set; }
 
         /// <summary>
-        /// 告警策略
+        /// 告警规则关联告警模板ID
+        /// </summary>
+        [JsonProperty("alarm_template_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmTemplateId { get; set; }
+
+        /// <summary>
+        /// 告警策略，当alarm_template_id字段为空时必填，不为空时不填
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<Policy> Policies { get; set; }
@@ -99,12 +105,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
 
-        /// <summary>
-        /// 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
-        /// </summary>
-        [JsonProperty("alarm_template_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string AlarmTemplateId { get; set; }
-
 
 
         /// <summary>
@@ -119,6 +119,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  resourceGroupId: ").Append(ResourceGroupId).Append("\n");
             sb.Append("  resources: ").Append(Resources).Append("\n");
+            sb.Append("  alarmTemplateId: ").Append(AlarmTemplateId).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  alarmNotifications: ").Append(AlarmNotifications).Append("\n");
@@ -128,7 +129,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
             sb.Append("  notificationEnabled: ").Append(NotificationEnabled).Append("\n");
-            sb.Append("  alarmTemplateId: ").Append(AlarmTemplateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,6 +177,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.Resources.SequenceEqual(input.Resources)
                 ) && 
                 (
+                    this.AlarmTemplateId == input.AlarmTemplateId ||
+                    (this.AlarmTemplateId != null &&
+                    this.AlarmTemplateId.Equals(input.AlarmTemplateId))
+                ) && 
+                (
                     this.Policies == input.Policies ||
                     this.Policies != null &&
                     input.Policies != null &&
@@ -223,11 +228,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.NotificationEnabled == input.NotificationEnabled ||
                     (this.NotificationEnabled != null &&
                     this.NotificationEnabled.Equals(input.NotificationEnabled))
-                ) && 
-                (
-                    this.AlarmTemplateId == input.AlarmTemplateId ||
-                    (this.AlarmTemplateId != null &&
-                    this.AlarmTemplateId.Equals(input.AlarmTemplateId))
                 );
         }
 
@@ -249,6 +249,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.ResourceGroupId.GetHashCode();
                 if (this.Resources != null)
                     hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.AlarmTemplateId != null)
+                    hashCode = hashCode * 59 + this.AlarmTemplateId.GetHashCode();
                 if (this.Policies != null)
                     hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 if (this.Type != null)
@@ -267,8 +269,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 if (this.NotificationEnabled != null)
                     hashCode = hashCode * 59 + this.NotificationEnabled.GetHashCode();
-                if (this.AlarmTemplateId != null)
-                    hashCode = hashCode * 59 + this.AlarmTemplateId.GetHashCode();
                 return hashCode;
             }
         }

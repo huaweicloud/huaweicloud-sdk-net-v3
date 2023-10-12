@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Core
 
         private const string XRequestAgent = "User-Agent";
         private const string CredentialsNull = "Credentials cannot be null.";
-        private Credentials _credential;
+        private ICredential _credentials;
         private volatile int _endpointIndex;
 
         private List<string> _endpoints;
@@ -44,9 +44,9 @@ namespace HuaweiCloud.SDK.Core
 
         private SdkHttpClient _sdkHttpClient;
 
-        private Client WithCredential(Credentials credentials)
+        private Client WithCredential(ICredential credentials)
         {
-            _credential = credentials ?? throw new ArgumentNullException(CredentialsNull);
+            _credentials = credentials ?? throw new ArgumentNullException(CredentialsNull);
             return this;
         }
 
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Core
         protected async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request)
         {
             var url = GetRealEndpoint(request)
-                      + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
+                      + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
                       + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
             return await _async_http(url, methodType.ToUpper(), request);
         }
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Core
             var request = GetHttpRequest(url, method, sdkRequest);
             if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
             {
-                request = await _credential.SignAuthRequest(request);
+                request = await _credentials.SignAuthRequest(request);
             }
 
             var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
@@ -102,7 +102,7 @@ namespace HuaweiCloud.SDK.Core
         {
             while (true)
             {
-                var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credential.GetPathParamDictionary())
+                var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
                                                    + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
                 try
                 {
@@ -127,7 +127,7 @@ namespace HuaweiCloud.SDK.Core
             var request = GetHttpRequest(url, method, sdkRequest);
             if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
             {
-                request = _credential.SignAuthRequest(request).Result;
+                request = _credentials.SignAuthRequest(request).Result;
             }
 
             var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
@@ -169,7 +169,8 @@ namespace HuaweiCloud.SDK.Core
             {
                 Body = sdkRequest.Body ?? "",
                 FileStream = sdkRequest.FileStream,
-                FormData = sdkRequest.FormData
+                FormData = sdkRequest.FormData,
+                SigningAlgorithm = _httpConfig.SigningAlgorithm
             };
 
             UpdateHeaders(request, sdkRequest.Header);
@@ -197,7 +198,7 @@ namespace HuaweiCloud.SDK.Core
             private const string HttpScheme = "http";
             private const string HttpsScheme = "https";
 
-            private Credentials _credentials;
+            private ICredential _credentials;
             private string _derivedAuthServiceName;
             private bool _enableLogging;
             private List<string> _endpoints;
@@ -220,7 +221,7 @@ namespace HuaweiCloud.SDK.Core
                 nameof(BasicCredentials)
             };
 
-            public ClientBuilder<T> WithCredential(Credentials credentials)
+            public ClientBuilder<T> WithCredential(ICredential credentials)
             {
                 _credentials = credentials;
                 return this;

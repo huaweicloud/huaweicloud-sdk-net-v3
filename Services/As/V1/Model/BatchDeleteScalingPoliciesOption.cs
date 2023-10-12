@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 是否删除告警策略使用的告警规则。可选值为yes或no，默认为no。 只有action为delete时，该字段才生效。
+        /// 是否删除告警策略使用的告警规则。可选值为yes或no，默认为no。  只有action为delete时，该字段才生效。
         /// </summary>
         [JsonProperty("delete_alarm", NullValueHandling = NullValueHandling.Ignore)]
         public string DeleteAlarm { get; set; }

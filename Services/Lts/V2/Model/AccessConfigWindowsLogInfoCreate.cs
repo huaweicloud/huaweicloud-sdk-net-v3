@@ -285,7 +285,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 
         /// </summary>
         [JsonProperty("time_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public AccessConfigTimeOffsetCreate TimeOffset { get; set; }
+        public AccessConfigTimeOffset TimeOffset { get; set; }
 
         /// <summary>
         /// 事件等级。information：info，warning：告警，error：错误，critical：关键，verbose：冗长

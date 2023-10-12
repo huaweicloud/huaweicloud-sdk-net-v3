@@ -19,19 +19,19 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// <summary>
         /// 是否开启排序
         /// </summary>
-        [JsonProperty("can_sort", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("canSort", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CanSort { get; set; }
 
         /// <summary>
         /// 是否开启搜索
         /// </summary>
-        [JsonProperty("can_search", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("canSearch", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CanSearch { get; set; }
 
         /// <summary>
         /// 每页显示数量
         /// </summary>
-        [JsonProperty("page_size", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pageSize", NullValueHandling = NullValueHandling.Ignore)]
         public int? PageSize { get; set; }
 
 

@@ -130,6 +130,158 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             }
         }
 
+        /// <summary>
+        /// 应用最后一次执行的状态
+        /// </summary>
+        /// <value>应用最后一次执行的状态</value>
+        [JsonConverter(typeof(EnumClassConverter<StatesEnum>))]
+        public class StatesEnum
+        {
+            /// <summary>
+            /// Enum ABORT for value: abort
+            /// </summary>
+            public static readonly StatesEnum ABORT = new StatesEnum("abort");
+
+            /// <summary>
+            /// Enum FAILED for value: failed
+            /// </summary>
+            public static readonly StatesEnum FAILED = new StatesEnum("failed");
+
+            /// <summary>
+            /// Enum NOT_STARTED for value: not_started
+            /// </summary>
+            public static readonly StatesEnum NOT_STARTED = new StatesEnum("not_started");
+
+            /// <summary>
+            /// Enum PENDING for value: pending
+            /// </summary>
+            public static readonly StatesEnum PENDING = new StatesEnum("pending");
+
+            /// <summary>
+            /// Enum RUNNING for value: running
+            /// </summary>
+            public static readonly StatesEnum RUNNING = new StatesEnum("running");
+
+            /// <summary>
+            /// Enum SUCCEEDED for value: succeeded
+            /// </summary>
+            public static readonly StatesEnum SUCCEEDED = new StatesEnum("succeeded");
+
+            /// <summary>
+            /// Enum TIMEOUT for value: timeout
+            /// </summary>
+            public static readonly StatesEnum TIMEOUT = new StatesEnum("timeout");
+
+            /// <summary>
+            /// Enum NOT_EXECUTED for value: not_executed
+            /// </summary>
+            public static readonly StatesEnum NOT_EXECUTED = new StatesEnum("not_executed");
+
+            private static readonly Dictionary<string, StatesEnum> StaticFields =
+            new Dictionary<string, StatesEnum>()
+            {
+                { "abort", ABORT },
+                { "failed", FAILED },
+                { "not_started", NOT_STARTED },
+                { "pending", PENDING },
+                { "running", RUNNING },
+                { "succeeded", SUCCEEDED },
+                { "timeout", TIMEOUT },
+                { "not_executed", NOT_EXECUTED },
+            };
+
+            private string _value;
+
+            public StatesEnum()
+            {
+
+            }
+
+            public StatesEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StatesEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatesEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatesEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatesEnum a, StatesEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatesEnum a, StatesEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
 
         /// <summary>
         /// 项目ID
@@ -160,6 +312,17 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         [JsonProperty("sort_by", NullValueHandling = NullValueHandling.Ignore)]
         public string SortBy { get; set; }
 
+        /// <summary>
+        /// 应用状态列表，支持查询以下状态： abort: 部署中止 failed: 部署失败 not_started: 取消执行 pending: 排队中 running: 正在部署 succeeded: 部署成功 timeout: 部署超时 not_executed: 未执行 
+        /// </summary>
+        [JsonProperty("states", NullValueHandling = NullValueHandling.Ignore)]
+        public List<StatesEnum> States { get; set; }
+        /// <summary>
+        /// 应用的分组id，传入no_grouped为查询未分组的应用
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
 
 
         /// <summary>
@@ -174,6 +337,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  sortName: ").Append(SortName).Append("\n");
             sb.Append("  sortBy: ").Append(SortBy).Append("\n");
+            sb.Append("  states: ").Append(States).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,6 +384,17 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.SortBy == input.SortBy ||
                     (this.SortBy != null &&
                     this.SortBy.Equals(input.SortBy))
+                ) && 
+                (
+                    this.States == input.States ||
+                    this.States != null &&
+                    input.States != null &&
+                    this.States.SequenceEqual(input.States)
+                ) && 
+                (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
                 );
         }
 
@@ -240,6 +416,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.SortName.GetHashCode();
                 if (this.SortBy != null)
                     hashCode = hashCode * 59 + this.SortBy.GetHashCode();
+                if (this.States != null)
+                    hashCode = hashCode * 59 + this.States.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 return hashCode;
             }
         }

@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 查询流量类型值为：write，index，storage
+        /// 查询流量类型值为：write，index，storage,basicTransfer，seniorTransfer
         /// </summary>
         [JsonProperty("search_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SearchType { get; set; }

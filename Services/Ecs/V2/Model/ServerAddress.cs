@@ -138,6 +138,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Version { get; set; }
 
         /// <summary>
+        /// 是否主网卡。  - true：是主网卡 - false：辅助网卡
+        /// </summary>
+        [JsonProperty("primary", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Primary { get; set; }
+
+        /// <summary>
         /// IP地址。
         /// </summary>
         [JsonProperty("addr", NullValueHandling = NullValueHandling.Ignore)]
@@ -170,6 +176,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ServerAddress {\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  primary: ").Append(Primary).Append("\n");
             sb.Append("  addr: ").Append(Addr).Append("\n");
             sb.Append("  oSEXTIPStype: ").Append(OSEXTIPStype).Append("\n");
             sb.Append("  oSEXTIPSMACmacAddr: ").Append(OSEXTIPSMACmacAddr).Append("\n");
@@ -199,6 +206,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.Primary == input.Primary ||
+                    (this.Primary != null &&
+                    this.Primary.Equals(input.Primary))
                 ) && 
                 (
                     this.Addr == input.Addr ||
@@ -232,6 +244,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 int hashCode = 41;
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Primary != null)
+                    hashCode = hashCode * 59 + this.Primary.GetHashCode();
                 if (this.Addr != null)
                     hashCode = hashCode * 59 + this.Addr.GetHashCode();
                 if (this.OSEXTIPStype != null)

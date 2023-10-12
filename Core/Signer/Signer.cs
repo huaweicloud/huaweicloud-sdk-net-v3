@@ -23,33 +23,60 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
+using HuaweiCloud.SDK.Core.Auth;
 using static System.String;
 
 namespace HuaweiCloud.SDK.Core
 
 {
-    public partial class Signer
+    public partial class Signer : IAkSkSigner
     {
         protected const string BasicDateFormat = "yyyyMMddTHHmmssZ";
-        private const string Algorithm = "SDK-HMAC-SHA256";
         protected const string HeaderXDate = "X-Sdk-Date";
         protected const string HeaderHost = "host";
         protected const string HeaderAuthorization = "Authorization";
-        private const string HeaderContentSha256 = "X-Sdk-Content-Sha256";
+
+        private static readonly object Lock = new object();
 
         private readonly HashSet<string> _unsignedHeaders = new HashSet<string>
         {
             "content-type"
         };
+        
+        internal string Algorithm { get; set; } = "SDK-HMAC-SHA256";
 
-        public string Key { get; set; }
-        public string Secret { get; set; }
+        internal string HeaderContent { get; set; } = "X-Sdk-Content-Sha256";
 
-        public void Sign(HttpRequest request)
+        internal string EmptyHash { get; set; } = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+
+        internal AbstractHasher Hasher { get; set; } = new Sha256Hasher();
+
+        internal Signer()
         {
-            verifyAkSk();
+        }
+
+        private static Signer _instance;
+
+        public static Signer GetInstance()
+        {
+            if (_instance == null)
+            {
+                lock (Lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new Signer();
+                    }
+                }
+            }
+            return _instance;
+        }
+
+        public virtual void Sign<T>(HttpRequest request, T credentials) where T : Credentials<T>
+        {
+            VerifyRequired(credentials);
+            ProcessContentHeader(request);
             var time = request.Headers.GetValues(HeaderXDate);
             DateTime t;
             if (time == null)
@@ -73,18 +100,24 @@ namespace HuaweiCloud.SDK.Core
             var signedHeaders = ProcessSignedHeaders(request);
             var canonicalRequest = ConstructCanonicalRequest(request);
             var stringToSign = StringToSign(canonicalRequest, t);
-            var signature = SignStringToSign(stringToSign, Encoding.UTF8.GetBytes(Secret));
-            var authValue = ProcessAuthHeader(signature, signedHeaders);
+            var signingKey = GetSigningKey(credentials);
+            var signature = SignStringToSign(stringToSign, signingKey);
+            var authValue = ProcessAuthHeader(credentials.Ak, signature, signedHeaders);
             request.Headers.Set(HeaderAuthorization, authValue);
         }
 
-        protected void verifyAkSk()
+        public virtual ISigningKey GetSigningKey<T>(T credentials) where T : Credentials<T>
         {
-            if (IsNullOrEmpty(Key))
+            return new HmacSigningKey(Hasher, Encoding.UTF8.GetBytes(credentials.Sk));
+        }
+
+        protected void VerifyRequired<T>(T credentials) where T : Credentials<T>
+        {
+            if (IsNullOrEmpty(credentials.Ak))
             {
                 throw new ArgumentException("Ak is required in credentials");
             }
-            if (IsNullOrEmpty(Secret))
+            if (IsNullOrEmpty(credentials.Sk))
             {
                 throw new ArgumentException("Sk is required in credentials");
             }
@@ -159,6 +192,14 @@ namespace HuaweiCloud.SDK.Core
             return Join("\n", headers) + "\n";
         }
 
+        private void ProcessContentHeader(HttpRequest request)
+        {
+            if (!IsNullOrEmpty(request.ContentType) && !request.ContentType.StartsWith("application/json"))
+            {
+                request.Headers.Add(HeaderContent, "UNSIGNED-PAYLOAD");
+            }
+        }
+
         protected List<string> ProcessSignedHeaders(HttpRequest request)
         {
             var signedHeaders = (from key in request.Headers.AllKeys
@@ -172,80 +213,61 @@ namespace HuaweiCloud.SDK.Core
 
         private string ProcessRequestPayload(HttpRequest request)
         {
-            string hexEncodePayload;
-            if (request.Headers.Get(HeaderContentSha256) != null)
+            if (request.Headers.Get(HeaderContent) != null)
             {
-                hexEncodePayload = request.Headers.Get(HeaderContentSha256);
-            }
-            else
-            {
-                var data = Encoding.UTF8.GetBytes(request.Body);
-                hexEncodePayload = HexEncodeSha256Hash(data);
+                return request.Headers.Get(HeaderContent);
             }
 
-            return hexEncodePayload;
-        }
-
-        private string ProcessAuthHeader(string signature, List<string> signedHeaders)
-        {
-            return $"{Algorithm} Access={Key}, SignedHeaders={Join(";", signedHeaders)}, Signature={signature}";
-        }
-
-        private static string HexEncodeSha256Hash(byte[] body)
-        {
-            SHA256 sha256 = new SHA256Managed();
-            var bytes = sha256.ComputeHash(body);
-            sha256.Clear();
-            return ToHexString(bytes);
-        }
-
-        protected static string ToHexString(byte[] value)
-        {
-            var num = value.Length * 2;
-            var array = new char[num];
-            var num2 = 0;
-            for (var i = 0; i < num; i += 2)
+            if (IsNullOrEmpty(request.Body))
             {
-                var b = value[num2++];
-                array[i] = GetHexValue(b / 16);
-                array[i + 1] = GetHexValue(b % 16);
+                return EmptyHash;
             }
 
-            return new string(array, 0, num);
+            var data = Encoding.UTF8.GetBytes(request.Body);
+            var hexEncode = Hasher.HashHexString(data);
+            return hexEncode;
         }
 
-        private static char GetHexValue(int i)
+        private string ProcessAuthHeader(string ak, string signature, List<string> signedHeaders)
         {
-            if (i < 10)
-            {
-                return (char)(i + '0');
-            }
-
-            return (char)(i - 10 + 'a');
+            return $"{Algorithm} Access={ak}, SignedHeaders={Join(";", signedHeaders)}, Signature={signature}";
         }
 
-        protected string StringToSign(string canonicalRequest, DateTime t)
+
+        private string StringToSign(string canonicalRequest, DateTime t)
         {
-            SHA256 sha256 = new SHA256Managed();
-            var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
-            sha256.Clear();
             return $"{Algorithm}\n" +
                    $"{t.ToUniversalTime().ToString(BasicDateFormat)}\n" +
-                   $"{ToHexString(bytes)}";
+                   $"{Hasher.HashHexString(Encoding.UTF8.GetBytes(canonicalRequest))}";
         }
 
-        protected string SignStringToSign(string stringToSign, byte[] signingKey)
+        protected static string SignStringToSign(string stringToSign, ISigningKey signingKey)
         {
-            var hm = HMacSha256(signingKey, stringToSign);
-            return ToHexString(hm);
+            var sign = signingKey.Sign(Encoding.UTF8.GetBytes(stringToSign));
+            return AbstractHasher.ToHexString(sign);
         }
 
-        private byte[] HMacSha256(byte[] keyByte, string message)
+        protected class HmacSigningKey : ISigningKey
         {
-            var messageBytes = Encoding.UTF8.GetBytes(message);
-            using (var hMacSha256 = new HMACSHA256(keyByte))
+
+            private readonly AbstractHasher _hasher;
+            private readonly byte[] _key;
+
+            internal HmacSigningKey(AbstractHasher hasher, byte[] key)
             {
-                return hMacSha256.ComputeHash(messageBytes);
+                _hasher = hasher;
+                _key = key;
+            }
+
+            public byte[] Sign(byte[] data)
+            {
+                return _hasher.Hmac(data, _key);
+            }
+
+            public bool Verify(byte[] signature, byte[] data)
+            {
+                var hmac = _hasher.Hmac(data, _key);
+                return signature.Equals(hmac);
             }
         }
     }
