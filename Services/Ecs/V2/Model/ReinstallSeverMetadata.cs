@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("user_data", NullValueHandling = NullValueHandling.Ignore)]
         public string UserData { get; set; }
 
+        /// <summary>
+        /// 如果您已拥有操作系统或软件的许可证（一般是指按物理插槽数、物理内核数等进行认证的许可证），您可以通过自带许可（BYOL）的方式将业务完整迁移到云平台，继续使用您的许可证。 - true： 使用自有license - 其他值： 视为非法参数，接口报错
+        /// </summary>
+        [JsonProperty("BYOL", NullValueHandling = NullValueHandling.Ignore)]
+        public string Byol { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  systemEncrypted: ").Append(SystemEncrypted).Append("\n");
             sb.Append("  systemCmkid: ").Append(SystemCmkid).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
+            sb.Append("  byol: ").Append(Byol).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.UserData == input.UserData ||
                     (this.UserData != null &&
                     this.UserData.Equals(input.UserData))
+                ) && 
+                (
+                    this.Byol == input.Byol ||
+                    (this.Byol != null &&
+                    this.Byol.Equals(input.Byol))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.Byol != null)
+                    hashCode = hashCode * 59 + this.Byol.GetHashCode();
                 return hashCode;
             }
         }

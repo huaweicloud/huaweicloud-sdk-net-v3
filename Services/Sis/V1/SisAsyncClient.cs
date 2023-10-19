@@ -124,38 +124,6 @@ namespace HuaweiCloud.SDK.Sis.V1
         }
         
         /// <summary>
-        /// 语音评测
-        ///
-        /// 口语评测接口，基于一小段朗读语音和预期文本，评价朗读者发音质量。当前仅支持华北-北京四。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RunAudioAssessmentResponse> RunAudioAssessmentAsync(RunAudioAssessmentRequest runAudioAssessmentRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/assessment/audio",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runAudioAssessmentRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<RunAudioAssessmentResponse>(response);
-        }
-        
-        /// <summary>
-        /// 多模态评测
-        ///
-        /// 多模态评测接口，根据朗读视频数据、视频对应的音频数据和试题文本，综合给出朗读者口语的评测分数。当前仅支持华北-北京四。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RunMultiModalAssessmentResponse> RunMultiModalAssessmentAsync(RunMultiModalAssessmentRequest runMultiModalAssessmentRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/assessment/video",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runMultiModalAssessmentRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<RunMultiModalAssessmentResponse>(response);
-        }
-        
-        /// <summary>
         /// 语音合成
         ///
         /// 语音合成，是一种将文本转换成逼真语音的服务。用户通过实时访问和调用API获取语音合成结果，将用户输入的文字合成为音频。通过音色选择、自定义音量、语速，为企业和个人提供个性化的发音服务

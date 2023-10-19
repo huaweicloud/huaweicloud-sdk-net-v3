@@ -44,6 +44,20 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 数据库名称。
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 数据库使用的字符集，如utf8mb4、gbk等。
+        /// </summary>
+        [SDKProperty("charset", IsQuery = true)]
+        [JsonProperty("charset", NullValueHandling = NullValueHandling.Ignore)]
+        public string Charset { get; set; }
+
 
 
         /// <summary>
@@ -57,6 +71,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  charset: ").Append(Charset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +113,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Charset == input.Charset ||
+                    (this.Charset != null &&
+                    this.Charset.Equals(input.Charset))
                 );
         }
 
@@ -116,6 +142,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Charset != null)
+                    hashCode = hashCode * 59 + this.Charset.GetHashCode();
                 return hashCode;
             }
         }

@@ -28,6 +28,13 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public IvsExtentionByNameAndIdResponseBodyResult Result { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
             sb.Append("class DetectExtentionByNameAndIdResponse {\n");
             sb.Append("  meta: ").Append(Meta).Append("\n");
             sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +77,11 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
                     this.Result == input.Result ||
                     (this.Result != null &&
                     this.Result.Equals(input.Result))
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
                     hashCode = hashCode * 59 + this.Meta.GetHashCode();
                 if (this.Result != null)
                     hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

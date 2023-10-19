@@ -29,10 +29,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? EipTotal { get; set; }
 
         /// <summary>
-        /// EIP防护数
+        /// 该账号下所有墙防护EIP总数量
         /// </summary>
         [JsonProperty("eip_protected", NullValueHandling = NullValueHandling.Ignore)]
         public int? EipProtected { get; set; }
+
+        /// <summary>
+        /// 该当前防火墙防护EIP数量
+        /// </summary>
+        [JsonProperty("eip_protected_self", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EipProtectedSelf { get; set; }
 
 
 
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("  eipTotal: ").Append(EipTotal).Append("\n");
             sb.Append("  eipProtected: ").Append(EipProtected).Append("\n");
+            sb.Append("  eipProtectedSelf: ").Append(EipProtectedSelf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.EipProtected == input.EipProtected ||
                     (this.EipProtected != null &&
                     this.EipProtected.Equals(input.EipProtected))
+                ) && 
+                (
+                    this.EipProtectedSelf == input.EipProtectedSelf ||
+                    (this.EipProtectedSelf != null &&
+                    this.EipProtectedSelf.Equals(input.EipProtectedSelf))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.EipTotal.GetHashCode();
                 if (this.EipProtected != null)
                     hashCode = hashCode * 59 + this.EipProtected.GetHashCode();
+                if (this.EipProtectedSelf != null)
+                    hashCode = hashCode * 59 + this.EipProtectedSelf.GetHashCode();
                 return hashCode;
             }
         }

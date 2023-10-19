@@ -202,6 +202,36 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("fw_enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwEnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+        /// </summary>
+        [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObjectId { get; set; }
+
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tags { get; set; }
+
+        /// <summary>
+        /// EIP所属用户
+        /// </summary>
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// 所属用户的名称
+        /// </summary>
+        [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
+        public string Owner { get; set; }
+
+        /// <summary>
+        /// 防火墙所属用户
+        /// </summary>
+        [JsonProperty("fw_domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwDomainId { get; set; }
+
 
 
         /// <summary>
@@ -223,6 +253,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  fwInstanceName: ").Append(FwInstanceName).Append("\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
             sb.Append("  fwEnterpriseProjectId: ").Append(FwEnterpriseProjectId).Append("\n");
+            sb.Append("  objectId: ").Append(ObjectId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  owner: ").Append(Owner).Append("\n");
+            sb.Append("  fwDomainId: ").Append(FwDomainId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -303,6 +338,31 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.FwEnterpriseProjectId == input.FwEnterpriseProjectId ||
                     (this.FwEnterpriseProjectId != null &&
                     this.FwEnterpriseProjectId.Equals(input.FwEnterpriseProjectId))
+                ) && 
+                (
+                    this.ObjectId == input.ObjectId ||
+                    (this.ObjectId != null &&
+                    this.ObjectId.Equals(input.ObjectId))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    (this.Tags != null &&
+                    this.Tags.Equals(input.Tags))
+                ) && 
+                (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                ) && 
+                (
+                    this.Owner == input.Owner ||
+                    (this.Owner != null &&
+                    this.Owner.Equals(input.Owner))
+                ) && 
+                (
+                    this.FwDomainId == input.FwDomainId ||
+                    (this.FwDomainId != null &&
+                    this.FwDomainId.Equals(input.FwDomainId))
                 );
         }
 
@@ -338,6 +398,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
                 if (this.FwEnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.FwEnterpriseProjectId.GetHashCode();
+                if (this.ObjectId != null)
+                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Owner != null)
+                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.FwDomainId != null)
+                    hashCode = hashCode * 59 + this.FwDomainId.GetHashCode();
                 return hashCode;
             }
         }

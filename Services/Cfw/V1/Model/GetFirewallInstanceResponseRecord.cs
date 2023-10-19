@@ -286,6 +286,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 资源id
+        /// </summary>
+        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceId { get; set; }
+
+        /// <summary>
+        /// 是否支持url过滤，true表示是，false表示不是
+        /// </summary>
+        [JsonProperty("support_url_filtering", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SupportUrlFiltering { get; set; }
+
 
 
         /// <summary>
@@ -310,6 +322,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  resources: ").Append(Resources).Append("\n");
             sb.Append("  fwInstanceName: ").Append(FwInstanceName).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
+            sb.Append("  supportUrlFiltering: ").Append(SupportUrlFiltering).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -408,6 +422,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.ResourceId == input.ResourceId ||
+                    (this.ResourceId != null &&
+                    this.ResourceId.Equals(input.ResourceId))
+                ) && 
+                (
+                    this.SupportUrlFiltering == input.SupportUrlFiltering ||
+                    (this.SupportUrlFiltering != null &&
+                    this.SupportUrlFiltering.Equals(input.SupportUrlFiltering))
                 );
         }
 
@@ -449,6 +473,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.FwInstanceName.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ResourceId != null)
+                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.SupportUrlFiltering != null)
+                    hashCode = hashCode * 59 + this.SupportUrlFiltering.GetHashCode();
                 return hashCode;
             }
         }

@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<IdObject> Items { get; set; }
 
+        /// <summary>
+        /// 覆盖ip列表
+        /// </summary>
+        [JsonProperty("covered_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CoveredIPVO> CoveredIp { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class AddressItems {\n");
             sb.Append("  items: ").Append(Items).Append("\n");
+            sb.Append("  coveredIp: ").Append(CoveredIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +65,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
+                ) && 
+                (
+                    this.CoveredIp == input.CoveredIp ||
+                    this.CoveredIp != null &&
+                    input.CoveredIp != null &&
+                    this.CoveredIp.SequenceEqual(input.CoveredIp)
                 );
         }
 
@@ -71,6 +84,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 int hashCode = 41;
                 if (this.Items != null)
                     hashCode = hashCode * 59 + this.Items.GetHashCode();
+                if (this.CoveredIp != null)
+                    hashCode = hashCode * 59 + this.CoveredIp.GetHashCode();
                 return hashCode;
             }
         }

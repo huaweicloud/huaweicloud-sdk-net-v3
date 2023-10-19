@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("support_ssl", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportSsl { get; set; }
 
+        /// <summary>
+        /// 是否支持审计日志 - true: 是 - false: 否 
+        /// </summary>
+        [JsonProperty("support_audit_log", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SupportAuditLog { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  supportAcl: ").Append(SupportAcl).Append("\n");
             sb.Append("  supportTransparentClientIp: ").Append(SupportTransparentClientIp).Append("\n");
             sb.Append("  supportSsl: ").Append(SupportSsl).Append("\n");
+            sb.Append("  supportAuditLog: ").Append(SupportAuditLog).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.SupportSsl == input.SupportSsl ||
                     (this.SupportSsl != null &&
                     this.SupportSsl.Equals(input.SupportSsl))
+                ) && 
+                (
+                    this.SupportAuditLog == input.SupportAuditLog ||
+                    (this.SupportAuditLog != null &&
+                    this.SupportAuditLog.Equals(input.SupportAuditLog))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.SupportTransparentClientIp.GetHashCode();
                 if (this.SupportSsl != null)
                     hashCode = hashCode * 59 + this.SupportSsl.GetHashCode();
+                if (this.SupportAuditLog != null)
+                    hashCode = hashCode * 59 + this.SupportAuditLog.GetHashCode();
                 return hashCode;
             }
         }

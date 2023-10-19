@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
+        /// <summary>
+        /// 描述
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
 
 
         /// <summary>
@@ -188,6 +194,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  listType: ").Append(ListType).Append("\n");
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,6 +250,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.ObjectId == input.ObjectId ||
                     (this.ObjectId != null &&
                     this.ObjectId.Equals(input.ObjectId))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -268,6 +280,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ListType.GetHashCode();
                 if (this.ObjectId != null)
                     hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

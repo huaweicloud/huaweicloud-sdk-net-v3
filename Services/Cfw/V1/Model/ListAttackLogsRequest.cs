@@ -372,6 +372,127 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             }
         }
 
+        /// <summary>
+        /// log_type
+        /// </summary>
+        /// <value>log_type</value>
+        [JsonConverter(typeof(EnumClassConverter<LogTypeEnum>))]
+        public class LogTypeEnum
+        {
+            /// <summary>
+            /// Enum INTERNET for value: internet
+            /// </summary>
+            public static readonly LogTypeEnum INTERNET = new LogTypeEnum("internet");
+
+            /// <summary>
+            /// Enum NAT for value: nat
+            /// </summary>
+            public static readonly LogTypeEnum NAT = new LogTypeEnum("nat");
+
+            /// <summary>
+            /// Enum VPC for value: vpc
+            /// </summary>
+            public static readonly LogTypeEnum VPC = new LogTypeEnum("vpc");
+
+            private static readonly Dictionary<string, LogTypeEnum> StaticFields =
+            new Dictionary<string, LogTypeEnum>()
+            {
+                { "internet", INTERNET },
+                { "nat", NAT },
+                { "vpc", VPC },
+            };
+
+            private string _value;
+
+            public LogTypeEnum()
+            {
+
+            }
+
+            public LogTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static LogTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as LogTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(LogTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(LogTypeEnum a, LogTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(LogTypeEnum a, LogTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 开始时间
@@ -450,7 +571,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 每页显示个数
+        /// 每页显示个数，范围为1-1024
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -510,6 +631,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 目标主机
+        /// </summary>
+        [SDKProperty("dst_host", IsQuery = true)]
+        [JsonProperty("dst_host", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstHost { get; set; }
+
+        /// <summary>
+        /// log_type
+        /// </summary>
+        [SDKProperty("log_type", IsQuery = true)]
+        [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
+        public LogTypeEnum LogType { get; set; }
 
 
         /// <summary>
@@ -539,6 +673,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  level: ").Append(Level).Append("\n");
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  dstHost: ").Append(DstHost).Append("\n");
+            sb.Append("  logType: ").Append(LogType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -659,6 +795,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.DstHost == input.DstHost ||
+                    (this.DstHost != null &&
+                    this.DstHost.Equals(input.DstHost))
+                ) && 
+                (
+                    this.LogType == input.LogType ||
+                    (this.LogType != null &&
+                    this.LogType.Equals(input.LogType))
                 );
         }
 
@@ -710,6 +856,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Source.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DstHost != null)
+                    hashCode = hashCode * 59 + this.DstHost.GetHashCode();
+                if (this.LogType != null)
+                    hashCode = hashCode * 59 + this.LogType.GetHashCode();
                 return hashCode;
             }
         }

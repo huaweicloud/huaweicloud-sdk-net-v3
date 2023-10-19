@@ -77,10 +77,22 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 每页显示个数
+        /// 每页显示个数，范围为1-1024
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// 防护模式
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
+
+        /// <summary>
+        /// 东西向路由限制
+        /// </summary>
+        [JsonProperty("ew_vpc_route_limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EwVpcRouteLimit { get; set; }
 
 
 
@@ -102,6 +114,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  ewVpcRouteLimit: ").Append(EwVpcRouteLimit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +193,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
+                ) && 
+                (
+                    this.EwVpcRouteLimit == input.EwVpcRouteLimit ||
+                    (this.EwVpcRouteLimit != null &&
+                    this.EwVpcRouteLimit.Equals(input.EwVpcRouteLimit))
                 );
         }
 
@@ -212,6 +236,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.EwVpcRouteLimit != null)
+                    hashCode = hashCode * 59 + this.EwVpcRouteLimit.GetHashCode();
                 return hashCode;
             }
         }

@@ -298,7 +298,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
         /// <summary>
         /// 策略ID
@@ -399,8 +399,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 ) && 
                 (
                     this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Id != null &&
+                    input.Id != null &&
+                    this.Id.SequenceEqual(input.Id)
                 ) && 
                 (
                     this.PolicyId == input.PolicyId ||

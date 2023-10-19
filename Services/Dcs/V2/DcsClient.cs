@@ -117,6 +117,25 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 创建ACL账号
+        ///
+        /// \&quot;为redis4.0/5.0实例（Cluster集群实例除外）创建权限访问账号，包含读写和只读权限。
+        /// 如果实例默认账号已开启免密访问，您创建的普通账号不能使用，如需使用普通账号请先关闭默认账号的免密访问。
+        /// 单机、主备实例默认账号的密码不能带有冒号(:)，否则无法创建普通账号。\&quot;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAclAccountResponse CreateAclAccount(CreateAclAccountRequest createAclAccountRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createAclAccountRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/accounts",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAclAccountRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateAclAccountResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建过期key扫描任务
         ///
         /// 创建过期key扫描任务（Redis 3.0 不支持过期key扫描）。
@@ -150,6 +169,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBigkeyScanTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateBigkeyScanTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建备份导入页面实例连接测试
+        ///
+        /// 创建备份导入页面实例连接测试
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateConnectivityTestResponse CreateConnectivityTest(CreateConnectivityTestRequest createConnectivityTestRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createConnectivityTestRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/connectivity-test",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createConnectivityTestRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateConnectivityTestResponse>(response);
         }
         
         /// <summary>
@@ -288,6 +324,24 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 删除ACL账号
+        ///
+        /// 删除所创建的ACL普通账号
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAclAccountResponse DeleteAclAccount(DeleteAclAccountRequest deleteAclAccountRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteAclAccountRequest.InstanceId.ToString());
+            urlParam.Add("account_id" , deleteAclAccountRequest.AccountId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAclAccountRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteAclAccountResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除后台任务
         ///
         /// 删除后台任务
@@ -339,6 +393,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBigkeyScanTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteBigkeyScanTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除自定义模板
+        ///
+        /// 删除自定义模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteConfigTemplateResponse DeleteConfigTemplate(DeleteConfigTemplateRequest deleteConfigTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id" , deleteConfigTemplateRequest.TemplateId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/config-templates/{template_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteConfigTemplateResponse>(response);
         }
         
         /// <summary>
@@ -430,6 +501,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeClusterSwitchoverRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ExecuteClusterSwitchoverResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询ACL账户列表
+        ///
+        /// 查询ACL账户列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAclAccountsResponse ListAclAccounts(ListAclAccountsRequest listAclAccountsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listAclAccountsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/accounts",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAclAccountsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAclAccountsResponse>(response);
         }
         
         /// <summary>
@@ -817,6 +905,24 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 重置ACL账号密码
+        ///
+        /// 重置ACL账号密码。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResetAclAccountPassWordResponse ResetAclAccountPassWord(ResetAclAccountPassWordRequest resetAclAccountPassWordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , resetAclAccountPassWordRequest.InstanceId.ToString());
+            urlParam.Add("account_id" , resetAclAccountPassWordRequest.AccountId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/password/reset",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetAclAccountPassWordRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<ResetAclAccountPassWordResponse>(response);
+        }
+        
+        /// <summary>
         /// 重置密码
         ///
         /// 重置缓存实例的密码。
@@ -936,6 +1042,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBigkeyScanTaskDetailsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowBigkeyScanTaskDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询参数模板详情
+        ///
+        /// 查询参数模板详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowConfigTemplateResponse ShowConfigTemplate(ShowConfigTemplateRequest showConfigTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id" , showConfigTemplateRequest.TemplateId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/config-templates/{template_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowConfigTemplateResponse>(response);
         }
         
         /// <summary>
@@ -1094,6 +1217,26 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 获取副本状态
+        ///
+        /// 获取副本状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReplicationStatesResponse ShowReplicationStates(ShowReplicationStatesRequest showReplicationStatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showReplicationStatesRequest.InstanceId.ToString());
+            urlParam.Add("group_id" , showReplicationStatesRequest.GroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/groups/{group_id}/group-nodes-state",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationStatesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            ShowReplicationStatesResponse showReplicationStatesResponse = JsonUtils.DeSerializeNull<ShowReplicationStatesResponse>(response);
+            showReplicationStatesResponse.Body = JsonUtils.DeSerializeList<InstanceReplicationListInfo>(response);
+            return showReplicationStatesResponse;
+        }
+        
+        /// <summary>
         /// 查询单个实例标签
         ///
         /// 通过实例ID查询标签。
@@ -1145,6 +1288,60 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 修改ACL账号密码
+        ///
+        /// 修改ACL账号密码。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAclAccountPassWordResponse UpdateAclAccountPassWord(UpdateAclAccountPassWordRequest updateAclAccountPassWordRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateAclAccountPassWordRequest.InstanceId.ToString());
+            urlParam.Add("account_id" , updateAclAccountPassWordRequest.AccountId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/password/modify",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAclAccountPassWordRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateAclAccountPassWordResponse>(response);
+        }
+        
+        /// <summary>
+        /// ACL账号修改备注
+        ///
+        /// ACL账号修改备注
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAclAccountRemarkResponse UpdateAclAccountRemark(UpdateAclAccountRemarkRequest updateAclAccountRemarkRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateAclAccountRemarkRequest.InstanceId.ToString());
+            urlParam.Add("account_id" , updateAclAccountRemarkRequest.AccountId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAclAccountRemarkRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateAclAccountRemarkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改ACL角色
+        ///
+        /// 修改用户的类型。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAclAccountRoleResponse UpdateAclAccountRole(UpdateAclAccountRoleRequest updateAclAccountRoleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateAclAccountRoleRequest.InstanceId.ToString());
+            urlParam.Add("account_id" , updateAclAccountRoleRequest.AccountId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/role",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAclAccountRoleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateAclAccountRoleResponse>(response);
+        }
+        
+        /// <summary>
         /// 设置大key自动分析配置
         ///
         /// 设置大key自动分析配置。
@@ -1159,6 +1356,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBigkeyAutoscanConfigRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateBigkeyAutoscanConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改自定义模板
+        ///
+        /// 修改自定义模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateConfigTemplateResponse UpdateConfigTemplate(UpdateConfigTemplateRequest updateConfigTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id" , updateConfigTemplateRequest.TemplateId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/config-templates/{template_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateConfigTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateConfigTemplateResponse>(response);
         }
         
         /// <summary>

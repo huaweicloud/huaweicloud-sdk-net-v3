@@ -118,6 +118,41 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 复制参数组
+        ///
+        /// 复制参数组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CopyConfigurationsResponse> CopyConfigurationsAsync(CopyConfigurationsRequest copyConfigurationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("configuration_id" , copyConfigurationsRequest.ConfigurationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/copy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyConfigurationsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CopyConfigurationsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置访问控制规则
+        ///
+        /// 设置访问控制规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAccessControlResponse> CreateAccessControlAsync(CreateAccessControlRequest createAccessControlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createAccessControlRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id" , createAccessControlRequest.ProxyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/access-control",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAccessControlRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateAccessControlResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建手动备份
         ///
         /// 创建手动备份。
@@ -248,6 +283,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMysqlDnsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateGaussMysqlDnsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 表级时间点恢复
+        ///
+        /// 表级时间点恢复。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRestoreTablesResponse> CreateRestoreTablesAsync(CreateRestoreTablesRequest createRestoreTablesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createRestoreTablesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restore/tables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRestoreTablesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateRestoreTablesResponse>(response);
         }
         
         /// <summary>
@@ -388,6 +440,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 删除定时任务
+        ///
+        /// 删除定时任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteScheduleTasKResponse> DeleteScheduleTasKAsync(DeleteScheduleTasKRequest deleteScheduleTasKRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteScheduleTasKRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/scheduled-jobs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScheduleTasKRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteScheduleTasKResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除指定任务记录
         ///
         /// 删除指定任务记录。
@@ -489,6 +558,55 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogDownloadLinkRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAuditLogDownloadLinkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 对比参数模板
+        ///
+        /// 比较两个参数模板之间的差异。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConfigurationsDifferencesResponse> ListConfigurationsDifferencesAsync(ListConfigurationsDifferencesRequest listConfigurationsDifferencesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listConfigurationsDifferencesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<ListConfigurationsDifferencesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询可应用的实例列表
+        ///
+        /// 查询指定参数模板可被应用的实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConfigurationsInstancesResponse> ListConfigurationsInstancesAsync(ListConfigurationsInstancesRequest listConfigurationsInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("configuration_id" , listConfigurationsInstancesRequest.ConfigurationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/applicable-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListConfigurationsInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询企业项目
+        ///
+        /// 查询企业项目。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListEnterpriseProjectsResponse> ListEnterpriseProjectsAsync(ListEnterpriseProjectsRequest listEnterpriseProjectsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListEnterpriseProjectsResponse>(response);
         }
         
         /// <summary>
@@ -623,6 +741,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 获取指定实例的参数信息
+        ///
+        /// 获取指定实例的参数信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstanceConfigurationsResponse> ListInstanceConfigurationsAsync(ListInstanceConfigurationsRequest listInstanceConfigurationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listInstanceConfigurationsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConfigurationsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListInstanceConfigurationsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询资源标签
         ///
         /// 查询指定实例的标签信息。
@@ -671,6 +806,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLtsSlowlogDetailsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListLtsSlowlogDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询参数修改历史
+        ///
+        /// 查询参数修改历史。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListModifyHistoryResponse> ListModifyHistoryAsync(ListModifyHistoryRequest listModifyHistoryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("configuration_id" , listModifyHistoryRequest.ConfigurationId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/modify-history",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listModifyHistoryRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListModifyHistoryResponse>(response);
         }
         
         /// <summary>
@@ -1012,6 +1164,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询增量备份列表
+        ///
+        /// 查询增量备份列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowGaussMySqlIncrementalBackupListResponse> ShowGaussMySqlIncrementalBackupListAsync(ShowGaussMySqlIncrementalBackupListRequest showGaussMySqlIncrementalBackupListRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showGaussMySqlIncrementalBackupListRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/incremental-backups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlIncrementalBackupListRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowGaussMySqlIncrementalBackupListResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询实例详情信息
         ///
         /// 查询实例详情信息。
@@ -1128,6 +1297,24 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 开启或关闭访问控制
+        ///
+        /// 开启或关闭访问控制。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchAccessControlResponse> SwitchAccessControlAsync(SwitchAccessControlRequest switchAccessControlRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchAccessControlRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id" , switchAccessControlRequest.ProxyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/access-control-switch",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAccessControlRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<SwitchAccessControlResponse>(response);
+        }
+        
+        /// <summary>
         /// 应用参数模板
         ///
         /// 指定实例变更参数模板。
@@ -1176,6 +1363,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAuditLogRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateAuditLogResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置跨区备份策略
+        ///
+        /// 设置跨区备份策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateBackupOffsitePolicyResponse> UpdateBackupOffsitePolicyAsync(UpdateBackupOffsitePolicyRequest updateBackupOffsitePolicyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateBackupOffsitePolicyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBackupOffsitePolicyRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateBackupOffsitePolicyResponse>(response);
         }
         
         /// <summary>
@@ -1416,6 +1620,24 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyConnectionPoolTypeRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateProxyConnectionPoolTypeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改代理实例参数
+        ///
+        /// 修改数据库代理参数。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateProxyNewConfigurationsResponse> UpdateProxyNewConfigurationsAsync(UpdateProxyNewConfigurationsRequest updateProxyNewConfigurationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateProxyNewConfigurationsRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id" , updateProxyNewConfigurationsRequest.ProxyId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/configurations",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyNewConfigurationsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateProxyNewConfigurationsResponse>(response);
         }
         
         /// <summary>

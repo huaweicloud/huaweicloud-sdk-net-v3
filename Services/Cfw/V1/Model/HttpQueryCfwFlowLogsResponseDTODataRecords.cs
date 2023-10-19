@@ -202,6 +202,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
 
+        /// <summary>
+        /// 目标主机
+        /// </summary>
+        [JsonProperty("dst_host", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstHost { get; set; }
+
 
 
         /// <summary>
@@ -223,6 +229,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  app: ").Append(App).Append("\n");
             sb.Append("  dstPort: ").Append(DstPort).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
+            sb.Append("  dstHost: ").Append(DstHost).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -303,6 +310,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Protocol == input.Protocol ||
                     (this.Protocol != null &&
                     this.Protocol.Equals(input.Protocol))
+                ) && 
+                (
+                    this.DstHost == input.DstHost ||
+                    (this.DstHost != null &&
+                    this.DstHost.Equals(input.DstHost))
                 );
         }
 
@@ -338,6 +350,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.DstPort.GetHashCode();
                 if (this.Protocol != null)
                     hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.DstHost != null)
+                    hashCode = hashCode * 59 + this.DstHost.GetHashCode();
                 return hashCode;
             }
         }

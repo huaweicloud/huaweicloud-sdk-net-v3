@@ -28,6 +28,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("warning-list", NullValueHandling = NullValueHandling.Ignore)]
         public List<WarningList> WarningList { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             sb.Append("class DetectLiveFaceByFileResponse {\n");
             sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  warningList: ").Append(WarningList).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.WarningList != null &&
                     input.WarningList != null &&
                     this.WarningList.SequenceEqual(input.WarningList)
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -85,6 +98,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.WarningList != null)
                     hashCode = hashCode * 59 + this.WarningList.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

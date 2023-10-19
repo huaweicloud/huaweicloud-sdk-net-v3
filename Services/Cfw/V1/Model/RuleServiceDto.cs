@@ -52,6 +52,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("service_set_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceSetName { get; set; }
 
+        /// <summary>
+        /// 自定义服务
+        /// </summary>
+        [JsonProperty("custom_service", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ServiceItem> CustomService { get; set; }
+
+        /// <summary>
+        /// 服务组列表
+        /// </summary>
+        [JsonProperty("service_group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ServiceGroup { get; set; }
+
+        /// <summary>
+        /// 服务组名称列表
+        /// </summary>
+        [JsonProperty("service_group_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AddressGroupVO> ServiceGroupNames { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +85,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  destPort: ").Append(DestPort).Append("\n");
             sb.Append("  serviceSetId: ").Append(ServiceSetId).Append("\n");
             sb.Append("  serviceSetName: ").Append(ServiceSetName).Append("\n");
+            sb.Append("  customService: ").Append(CustomService).Append("\n");
+            sb.Append("  serviceGroup: ").Append(ServiceGroup).Append("\n");
+            sb.Append("  serviceGroupNames: ").Append(ServiceGroupNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +138,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.ServiceSetName == input.ServiceSetName ||
                     (this.ServiceSetName != null &&
                     this.ServiceSetName.Equals(input.ServiceSetName))
+                ) && 
+                (
+                    this.CustomService == input.CustomService ||
+                    this.CustomService != null &&
+                    input.CustomService != null &&
+                    this.CustomService.SequenceEqual(input.CustomService)
+                ) && 
+                (
+                    this.ServiceGroup == input.ServiceGroup ||
+                    this.ServiceGroup != null &&
+                    input.ServiceGroup != null &&
+                    this.ServiceGroup.SequenceEqual(input.ServiceGroup)
+                ) && 
+                (
+                    this.ServiceGroupNames == input.ServiceGroupNames ||
+                    this.ServiceGroupNames != null &&
+                    input.ServiceGroupNames != null &&
+                    this.ServiceGroupNames.SequenceEqual(input.ServiceGroupNames)
                 );
         }
 
@@ -140,6 +179,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ServiceSetId.GetHashCode();
                 if (this.ServiceSetName != null)
                     hashCode = hashCode * 59 + this.ServiceSetName.GetHashCode();
+                if (this.CustomService != null)
+                    hashCode = hashCode * 59 + this.CustomService.GetHashCode();
+                if (this.ServiceGroup != null)
+                    hashCode = hashCode * 59 + this.ServiceGroup.GetHashCode();
+                if (this.ServiceGroupNames != null)
+                    hashCode = hashCode * 59 + this.ServiceGroupNames.GetHashCode();
                 return hashCode;
             }
         }

@@ -229,7 +229,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 每页显示个数
+        /// 每页显示个数，范围为1-1024
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -247,6 +247,27 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 目标主机
+        /// </summary>
+        [SDKProperty("dst_host", IsQuery = true)]
+        [JsonProperty("dst_host", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstHost { get; set; }
+
+        /// <summary>
+        /// 规则名称
+        /// </summary>
+        [SDKProperty("rule_name", IsQuery = true)]
+        [JsonProperty("rule_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string RuleName { get; set; }
+
+        /// <summary>
+        /// 动作0：permit,1：deny
+        /// </summary>
+        [SDKProperty("action", IsQuery = true)]
+        [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
+        public string Action { get; set; }
 
 
 
@@ -273,6 +294,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  logType: ").Append(LogType).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  dstHost: ").Append(DstHost).Append("\n");
+            sb.Append("  ruleName: ").Append(RuleName).Append("\n");
+            sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -373,6 +397,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.DstHost == input.DstHost ||
+                    (this.DstHost != null &&
+                    this.DstHost.Equals(input.DstHost))
+                ) && 
+                (
+                    this.RuleName == input.RuleName ||
+                    (this.RuleName != null &&
+                    this.RuleName.Equals(input.RuleName))
+                ) && 
+                (
+                    this.Action == input.Action ||
+                    (this.Action != null &&
+                    this.Action.Equals(input.Action))
                 );
         }
 
@@ -416,6 +455,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.LogType.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DstHost != null)
+                    hashCode = hashCode * 59 + this.DstHost.GetHashCode();
+                if (this.RuleName != null)
+                    hashCode = hashCode * 59 + this.RuleName.GetHashCode();
+                if (this.Action != null)
+                    hashCode = hashCode * 59 + this.Action.GetHashCode();
                 return hashCode;
             }
         }

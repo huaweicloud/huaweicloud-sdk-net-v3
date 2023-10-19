@@ -15,6 +15,133 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     /// </summary>
     public class CreateRedislogRequest 
     {
+        /// <summary>
+        /// 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。当前支持0，1，3，7。
+        /// </summary>
+        /// <value>日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。当前支持0，1，3，7。</value>
+        [JsonConverter(typeof(EnumClassConverter<QueryTimeEnum>))]
+        public class QueryTimeEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly QueryTimeEnum NUMBER_0 = new QueryTimeEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly QueryTimeEnum NUMBER_1 = new QueryTimeEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            public static readonly QueryTimeEnum NUMBER_3 = new QueryTimeEnum(3);
+
+            /// <summary>
+            /// Enum NUMBER_7 for value: 7
+            /// </summary>
+            public static readonly QueryTimeEnum NUMBER_7 = new QueryTimeEnum(7);
+
+            private static readonly Dictionary<int?, QueryTimeEnum> StaticFields =
+            new Dictionary<int?, QueryTimeEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 1, NUMBER_1 },
+                { 3, NUMBER_3 },
+                { 7, NUMBER_7 },
+            };
+
+            private int? _value;
+
+            public QueryTimeEnum()
+            {
+
+            }
+
+            public QueryTimeEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static QueryTimeEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as QueryTimeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(QueryTimeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(QueryTimeEnum a, QueryTimeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(QueryTimeEnum a, QueryTimeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 实例ID。
@@ -24,12 +151,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。最大支持0-7。
+        /// 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。当前支持0，1，3，7。
         /// </summary>
         [SDKProperty("query_time", IsQuery = true)]
         [JsonProperty("query_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? QueryTime { get; set; }
-
+        public QueryTimeEnum QueryTime { get; set; }
         /// <summary>
         /// 返回日志的类型，当前仅支持Redis运行日志，类型为run
         /// </summary>

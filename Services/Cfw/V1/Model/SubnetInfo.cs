@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
+        /// <summary>
+        /// 是否支持ipv6，boolean值为true表示是，false表示否
+        /// </summary>
+        [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Ipv6Enable { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  gatewayIp: ").Append(GatewayIp).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Ipv6Enable == input.Ipv6Enable ||
+                    (this.Ipv6Enable != null &&
+                    this.Ipv6Enable.Equals(input.Ipv6Enable))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Ipv6Enable != null)
+                    hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 return hashCode;
             }
         }

@@ -688,6 +688,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
+        public TagsVO Tag { get; set; }
+
 
 
         /// <summary>
@@ -713,6 +719,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  destination: ").Append(Destination).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  tag: ").Append(Tag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -813,6 +820,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Tag == input.Tag ||
+                    (this.Tag != null &&
+                    this.Tag.Equals(input.Tag))
                 );
         }
 
@@ -856,6 +868,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Service.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Tag != null)
+                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;
             }
         }

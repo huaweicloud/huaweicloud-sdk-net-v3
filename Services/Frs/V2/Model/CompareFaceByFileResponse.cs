@@ -34,6 +34,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("similarity", NullValueHandling = NullValueHandling.Ignore)]
         public double? Similarity { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +53,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             sb.Append("  image1Face: ").Append(Image1Face).Append("\n");
             sb.Append("  image2Face: ").Append(Image2Face).Append("\n");
             sb.Append("  similarity: ").Append(Similarity).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +89,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.Similarity == input.Similarity ||
                     (this.Similarity != null &&
                     this.Similarity.Equals(input.Similarity))
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -98,6 +111,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     hashCode = hashCode * 59 + this.Image2Face.GetHashCode();
                 if (this.Similarity != null)
                     hashCode = hashCode * 59 + this.Similarity.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

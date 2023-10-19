@@ -244,6 +244,36 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("packetMessages", NullValueHandling = NullValueHandling.Ignore)]
         public List<PacketMessage> PacketMessages { get; set; }
 
+        /// <summary>
+        /// 目标主机
+        /// </summary>
+        [JsonProperty("dst_host", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstHost { get; set; }
+
+        /// <summary>
+        /// 源区域id
+        /// </summary>
+        [JsonProperty("src_region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcRegionId { get; set; }
+
+        /// <summary>
+        /// 源区域名称
+        /// </summary>
+        [JsonProperty("src_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcRegionName { get; set; }
+
+        /// <summary>
+        /// 目的区域id
+        /// </summary>
+        [JsonProperty("dst_region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstRegionId { get; set; }
+
+        /// <summary>
+        /// 目的区域名称
+        /// </summary>
+        [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstRegionName { get; set; }
+
 
 
         /// <summary>
@@ -272,6 +302,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  packet: ").Append(Packet).Append("\n");
             sb.Append("  app: ").Append(App).Append("\n");
             sb.Append("  packetMessages: ").Append(PacketMessages).Append("\n");
+            sb.Append("  dstHost: ").Append(DstHost).Append("\n");
+            sb.Append("  srcRegionId: ").Append(SrcRegionId).Append("\n");
+            sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
+            sb.Append("  dstRegionId: ").Append(DstRegionId).Append("\n");
+            sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -388,6 +423,31 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.PacketMessages != null &&
                     input.PacketMessages != null &&
                     this.PacketMessages.SequenceEqual(input.PacketMessages)
+                ) && 
+                (
+                    this.DstHost == input.DstHost ||
+                    (this.DstHost != null &&
+                    this.DstHost.Equals(input.DstHost))
+                ) && 
+                (
+                    this.SrcRegionId == input.SrcRegionId ||
+                    (this.SrcRegionId != null &&
+                    this.SrcRegionId.Equals(input.SrcRegionId))
+                ) && 
+                (
+                    this.SrcRegionName == input.SrcRegionName ||
+                    (this.SrcRegionName != null &&
+                    this.SrcRegionName.Equals(input.SrcRegionName))
+                ) && 
+                (
+                    this.DstRegionId == input.DstRegionId ||
+                    (this.DstRegionId != null &&
+                    this.DstRegionId.Equals(input.DstRegionId))
+                ) && 
+                (
+                    this.DstRegionName == input.DstRegionName ||
+                    (this.DstRegionName != null &&
+                    this.DstRegionName.Equals(input.DstRegionName))
                 );
         }
 
@@ -437,6 +497,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.App.GetHashCode();
                 if (this.PacketMessages != null)
                     hashCode = hashCode * 59 + this.PacketMessages.GetHashCode();
+                if (this.DstHost != null)
+                    hashCode = hashCode * 59 + this.DstHost.GetHashCode();
+                if (this.SrcRegionId != null)
+                    hashCode = hashCode * 59 + this.SrcRegionId.GetHashCode();
+                if (this.SrcRegionName != null)
+                    hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
+                if (this.DstRegionId != null)
+                    hashCode = hashCode * 59 + this.DstRegionId.GetHashCode();
+                if (this.DstRegionName != null)
+                    hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
                 return hashCode;
             }
         }

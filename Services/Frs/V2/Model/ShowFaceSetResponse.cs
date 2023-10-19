@@ -22,6 +22,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         [JsonProperty("face_set_info", NullValueHandling = NullValueHandling.Ignore)]
         public FaceSetInfo FaceSetInfo { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowFaceSetResponse {\n");
             sb.Append("  faceSetInfo: ").Append(FaceSetInfo).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +65,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                     this.FaceSetInfo == input.FaceSetInfo ||
                     (this.FaceSetInfo != null &&
                     this.FaceSetInfo.Equals(input.FaceSetInfo))
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -70,6 +83,8 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
                 int hashCode = 41;
                 if (this.FaceSetInfo != null)
                     hashCode = hashCode * 59 + this.FaceSetInfo.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

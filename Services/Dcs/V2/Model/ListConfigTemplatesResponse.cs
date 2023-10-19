@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// <summary>
         /// 模板的详情数组。
         /// </summary>
-        [JsonProperty("config_templates", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ConfigTemplatesListInfo> ConfigTemplates { get; set; }
+        [JsonProperty("templates", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ConfigTemplatesListInfo> Templates { get; set; }
 
 
 
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListConfigTemplatesResponse {\n");
             sb.Append("  templateNum: ").Append(TemplateNum).Append("\n");
-            sb.Append("  configTemplates: ").Append(ConfigTemplates).Append("\n");
+            sb.Append("  templates: ").Append(Templates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,10 +66,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.TemplateNum.Equals(input.TemplateNum))
                 ) && 
                 (
-                    this.ConfigTemplates == input.ConfigTemplates ||
-                    this.ConfigTemplates != null &&
-                    input.ConfigTemplates != null &&
-                    this.ConfigTemplates.SequenceEqual(input.ConfigTemplates)
+                    this.Templates == input.Templates ||
+                    this.Templates != null &&
+                    input.Templates != null &&
+                    this.Templates.SequenceEqual(input.Templates)
                 );
         }
 
@@ -83,8 +83,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 int hashCode = 41;
                 if (this.TemplateNum != null)
                     hashCode = hashCode * 59 + this.TemplateNum.GetHashCode();
-                if (this.ConfigTemplates != null)
-                    hashCode = hashCode * 59 + this.ConfigTemplates.GetHashCode();
+                if (this.Templates != null)
+                    hashCode = hashCode * 59 + this.Templates.GetHashCode();
                 return hashCode;
             }
         }

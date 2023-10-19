@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class IpsSwitchDTO 
     {
         /// <summary>
-        /// 补丁类型，1-基础补丁 2&#x3D;虚拟补丁
+        /// 补丁类型，仅支持虚拟补丁，值为2。
         /// </summary>
-        /// <value>补丁类型，1-基础补丁 2&#x3D;虚拟补丁</value>
+        /// <value>补丁类型，仅支持虚拟补丁，值为2。</value>
         [JsonConverter(typeof(EnumClassConverter<IpsTypeEnum>))]
         public class IpsTypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 补丁类型，1-基础补丁 2&#x3D;虚拟补丁
+        /// 补丁类型，仅支持虚拟补丁，值为2。
         /// </summary>
         [JsonProperty("ips_type", NullValueHandling = NullValueHandling.Ignore)]
         public IpsTypeEnum IpsType { get; set; }

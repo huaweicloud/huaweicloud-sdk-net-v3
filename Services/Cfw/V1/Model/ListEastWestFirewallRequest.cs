@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 每页显示个数
+        /// 每页显示个数，范围为1-1024
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

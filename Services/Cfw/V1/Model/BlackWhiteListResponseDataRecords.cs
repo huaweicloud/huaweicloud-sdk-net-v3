@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
 
+        /// <summary>
+        /// 描述
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  address: ").Append(Address).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Port == input.Port ||
                     (this.Port != null &&
                     this.Port.Equals(input.Port))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.Port != null)
                     hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [SDKProperty("agent_id", IsQuery = true)]
         [JsonProperty("agent_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string AgentId { get; set; }
+        public List<string> AgentId { get; set; }
 
 
 
@@ -95,8 +95,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 ) && 
                 (
                     this.AgentId == input.AgentId ||
-                    (this.AgentId != null &&
-                    this.AgentId.Equals(input.AgentId))
+                    this.AgentId != null &&
+                    input.AgentId != null &&
+                    this.AgentId.SequenceEqual(input.AgentId)
                 );
         }
 

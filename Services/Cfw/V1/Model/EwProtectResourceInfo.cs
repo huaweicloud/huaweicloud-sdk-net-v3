@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("protected_resource_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectedResourceProjectId { get; set; }
 
+        /// <summary>
+        /// 防护资源模式
+        /// </summary>
+        [JsonProperty("protected_resource_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProtectedResourceMode { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  protectedResourceNatName: ").Append(ProtectedResourceNatName).Append("\n");
             sb.Append("  protectedResourceNatId: ").Append(ProtectedResourceNatId).Append("\n");
             sb.Append("  protectedResourceProjectId: ").Append(ProtectedResourceProjectId).Append("\n");
+            sb.Append("  protectedResourceMode: ").Append(ProtectedResourceMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.ProtectedResourceProjectId == input.ProtectedResourceProjectId ||
                     (this.ProtectedResourceProjectId != null &&
                     this.ProtectedResourceProjectId.Equals(input.ProtectedResourceProjectId))
+                ) && 
+                (
+                    this.ProtectedResourceMode == input.ProtectedResourceMode ||
+                    (this.ProtectedResourceMode != null &&
+                    this.ProtectedResourceMode.Equals(input.ProtectedResourceMode))
                 );
         }
 
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ProtectedResourceNatId.GetHashCode();
                 if (this.ProtectedResourceProjectId != null)
                     hashCode = hashCode * 59 + this.ProtectedResourceProjectId.GetHashCode();
+                if (this.ProtectedResourceMode != null)
+                    hashCode = hashCode * 59 + this.ProtectedResourceMode.GetHashCode();
                 return hashCode;
             }
         }

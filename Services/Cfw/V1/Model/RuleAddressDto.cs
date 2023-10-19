@@ -52,6 +52,48 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("domain_address_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainAddressName { get; set; }
 
+        /// <summary>
+        /// 规则region列表json值
+        /// </summary>
+        [JsonProperty("region_list_json", NullValueHandling = NullValueHandling.Ignore)]
+        public string RegionListJson { get; set; }
+
+        /// <summary>
+        /// 规则region列表
+        /// </summary>
+        [JsonProperty("region_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<IpRegionDto> RegionList { get; set; }
+
+        /// <summary>
+        /// 域名组id
+        /// </summary>
+        [JsonProperty("domain_set_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainSetId { get; set; }
+
+        /// <summary>
+        /// 域名组名称
+        /// </summary>
+        [JsonProperty("domain_set_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainSetName { get; set; }
+
+        /// <summary>
+        /// IP地址列表
+        /// </summary>
+        [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> IpAddress { get; set; }
+
+        /// <summary>
+        /// 地址组列表
+        /// </summary>
+        [JsonProperty("address_group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AddressGroup { get; set; }
+
+        /// <summary>
+        /// 地址组名称列表
+        /// </summary>
+        [JsonProperty("address_group_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AddressGroupVO> AddressGroupNames { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +109,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  addressSetId: ").Append(AddressSetId).Append("\n");
             sb.Append("  addressSetName: ").Append(AddressSetName).Append("\n");
             sb.Append("  domainAddressName: ").Append(DomainAddressName).Append("\n");
+            sb.Append("  regionListJson: ").Append(RegionListJson).Append("\n");
+            sb.Append("  regionList: ").Append(RegionList).Append("\n");
+            sb.Append("  domainSetId: ").Append(DomainSetId).Append("\n");
+            sb.Append("  domainSetName: ").Append(DomainSetName).Append("\n");
+            sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
+            sb.Append("  addressGroup: ").Append(AddressGroup).Append("\n");
+            sb.Append("  addressGroupNames: ").Append(AddressGroupNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +166,45 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DomainAddressName == input.DomainAddressName ||
                     (this.DomainAddressName != null &&
                     this.DomainAddressName.Equals(input.DomainAddressName))
+                ) && 
+                (
+                    this.RegionListJson == input.RegionListJson ||
+                    (this.RegionListJson != null &&
+                    this.RegionListJson.Equals(input.RegionListJson))
+                ) && 
+                (
+                    this.RegionList == input.RegionList ||
+                    this.RegionList != null &&
+                    input.RegionList != null &&
+                    this.RegionList.SequenceEqual(input.RegionList)
+                ) && 
+                (
+                    this.DomainSetId == input.DomainSetId ||
+                    (this.DomainSetId != null &&
+                    this.DomainSetId.Equals(input.DomainSetId))
+                ) && 
+                (
+                    this.DomainSetName == input.DomainSetName ||
+                    (this.DomainSetName != null &&
+                    this.DomainSetName.Equals(input.DomainSetName))
+                ) && 
+                (
+                    this.IpAddress == input.IpAddress ||
+                    this.IpAddress != null &&
+                    input.IpAddress != null &&
+                    this.IpAddress.SequenceEqual(input.IpAddress)
+                ) && 
+                (
+                    this.AddressGroup == input.AddressGroup ||
+                    this.AddressGroup != null &&
+                    input.AddressGroup != null &&
+                    this.AddressGroup.SequenceEqual(input.AddressGroup)
+                ) && 
+                (
+                    this.AddressGroupNames == input.AddressGroupNames ||
+                    this.AddressGroupNames != null &&
+                    input.AddressGroupNames != null &&
+                    this.AddressGroupNames.SequenceEqual(input.AddressGroupNames)
                 );
         }
 
@@ -140,6 +228,20 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.AddressSetName.GetHashCode();
                 if (this.DomainAddressName != null)
                     hashCode = hashCode * 59 + this.DomainAddressName.GetHashCode();
+                if (this.RegionListJson != null)
+                    hashCode = hashCode * 59 + this.RegionListJson.GetHashCode();
+                if (this.RegionList != null)
+                    hashCode = hashCode * 59 + this.RegionList.GetHashCode();
+                if (this.DomainSetId != null)
+                    hashCode = hashCode * 59 + this.DomainSetId.GetHashCode();
+                if (this.DomainSetName != null)
+                    hashCode = hashCode * 59 + this.DomainSetName.GetHashCode();
+                if (this.IpAddress != null)
+                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.AddressGroup != null)
+                    hashCode = hashCode * 59 + this.AddressGroup.GetHashCode();
+                if (this.AddressGroupNames != null)
+                    hashCode = hashCode * 59 + this.AddressGroupNames.GetHashCode();
                 return hashCode;
             }
         }

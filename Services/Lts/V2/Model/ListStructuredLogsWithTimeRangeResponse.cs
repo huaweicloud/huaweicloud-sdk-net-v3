@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// <summary>
         /// 查询结构化日志结果信息。 此处仅为示例，具体参数名称取决于查询的字段。
         /// </summary>
-        [JsonProperty("context", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Context { get; set; }
+        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Object> Result { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListStructuredLogsWithTimeRangeResponse {\n");
-            sb.Append("  context: ").Append(Context).Append("\n");
+            sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,10 +54,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
             return 
                 (
-                    this.Context == input.Context ||
-                    this.Context != null &&
-                    input.Context != null &&
-                    this.Context.SequenceEqual(input.Context)
+                    this.Result == input.Result ||
+                    this.Result != null &&
+                    input.Result != null &&
+                    this.Result.SequenceEqual(input.Result)
                 );
         }
 
@@ -69,8 +69,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Context != null)
-                    hashCode = hashCode * 59 + this.Context.GetHashCode();
+                if (this.Result != null)
+                    hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;
             }
         }

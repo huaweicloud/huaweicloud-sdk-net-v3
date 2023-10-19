@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("server_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerIp { get; set; }
 
+        /// <summary>
+        /// 健康检查域名
+        /// </summary>
+        [JsonProperty("health_check_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string HealthCheckDomainName { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  isApplied: ").Append(IsApplied).Append("\n");
             sb.Append("  isCustomized: ").Append(IsCustomized).Append("\n");
             sb.Append("  serverIp: ").Append(ServerIp).Append("\n");
+            sb.Append("  healthCheckDomainName: ").Append(HealthCheckDomainName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.ServerIp == input.ServerIp ||
                     (this.ServerIp != null &&
                     this.ServerIp.Equals(input.ServerIp))
+                ) && 
+                (
+                    this.HealthCheckDomainName == input.HealthCheckDomainName ||
+                    (this.HealthCheckDomainName != null &&
+                    this.HealthCheckDomainName.Equals(input.HealthCheckDomainName))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.IsCustomized.GetHashCode();
                 if (this.ServerIp != null)
                     hashCode = hashCode * 59 + this.ServerIp.GetHashCode();
+                if (this.HealthCheckDomainName != null)
+                    hashCode = hashCode * 59 + this.HealthCheckDomainName.GetHashCode();
                 return hashCode;
             }
         }

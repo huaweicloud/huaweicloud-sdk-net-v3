@@ -32,6 +32,23 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 批量创建安全组规则
+        ///
+        /// 在特定安全组下批量创建安全组规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateSecurityGroupRulesResponse BatchCreateSecurityGroupRules(BatchCreateSecurityGroupRulesRequest batchCreateSecurityGroupRulesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id" , batchCreateSecurityGroupRulesRequest.SecurityGroupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}/security-group-rules/batch-create",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSecurityGroupRulesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchCreateSecurityGroupRulesResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量创建辅助弹性网卡
         ///
         /// 批量创建辅助弹性网卡
