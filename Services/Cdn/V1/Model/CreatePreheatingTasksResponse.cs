@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 任务ID
+        /// 任务ID。
         /// </summary>
         [JsonProperty("preheating_task", NullValueHandling = NullValueHandling.Ignore)]
         public string PreheatingTask { get; set; }

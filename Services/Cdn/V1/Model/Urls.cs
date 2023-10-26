@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// urlid
+        /// url id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long? Id { get; set; }
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// url状态。
+        /// url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 任务类型。
+        /// 任务类型，REFRESH：刷新任务；PREHEATING：预热任务。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 文件类型，目录还是文件。
+        /// 文件类型，directory：目录，或file：文件。
         /// </summary>
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
         public string FileType { get; set; }

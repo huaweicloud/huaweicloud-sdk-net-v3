@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }
 
+        /// <summary>
+        /// 指定的内网IP地址，仅支持指定IPv4。  指定的IP数量只能小于等于新增节点数量。  当指定IP小于节点数量时，未指定的节点随机分配内网IP地址。
+        /// </summary>
+        [JsonProperty("tenant_ips", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> TenantIps { get; set; }
+
+        /// <summary>
+        /// 实例扩容时新节点使用备用子网的id  当实例扩容使用备用子网，则传入此值  需要联系客服添加白名单才能传入此值
+        /// </summary>
+        [JsonProperty("second_tenant_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecondTenantSubnetId { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  newBrokerNum: ").Append(NewBrokerNum).Append("\n");
             sb.Append("  newProductId: ").Append(NewProductId).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
+            sb.Append("  tenantIps: ").Append(TenantIps).Append("\n");
+            sb.Append("  secondTenantSubnetId: ").Append(SecondTenantSubnetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +119,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.PublicipId == input.PublicipId ||
                     (this.PublicipId != null &&
                     this.PublicipId.Equals(input.PublicipId))
+                ) && 
+                (
+                    this.TenantIps == input.TenantIps ||
+                    this.TenantIps != null &&
+                    input.TenantIps != null &&
+                    this.TenantIps.SequenceEqual(input.TenantIps)
+                ) && 
+                (
+                    this.SecondTenantSubnetId == input.SecondTenantSubnetId ||
+                    (this.SecondTenantSubnetId != null &&
+                    this.SecondTenantSubnetId.Equals(input.SecondTenantSubnetId))
                 );
         }
 
@@ -126,6 +151,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.NewProductId.GetHashCode();
                 if (this.PublicipId != null)
                     hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
+                if (this.TenantIps != null)
+                    hashCode = hashCode * 59 + this.TenantIps.GetHashCode();
+                if (this.SecondTenantSubnetId != null)
+                    hashCode = hashCode * 59 + this.SecondTenantSubnetId.GetHashCode();
                 return hashCode;
             }
         }

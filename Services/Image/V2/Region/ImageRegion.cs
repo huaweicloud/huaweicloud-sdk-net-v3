@@ -22,6 +22,8 @@ namespace HuaweiCloud.SDK.Image.V2
             "https://image.cn-east-3.myhuaweicloud.com",
             "https://image.cn-east-3.myhuaweicloud.cn");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IMAGE");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -36,6 +38,12 @@ namespace HuaweiCloud.SDK.Image.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

@@ -44,7 +44,11 @@ namespace HuaweiCloud.SDK.Swr.V2
             "https://swr-api.la-north-2.myhuaweicloud.com");
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
             "https://swr-api.tr-west-1.myhuaweicloud.com");
+        public static readonly Region AE_AD_1 = new Region("ae-ad-1",
+            "https://swr-api.ae-ad-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("SWR");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "af-south-1", AF_SOUTH_1 },
@@ -66,6 +70,7 @@ namespace HuaweiCloud.SDK.Swr.V2
                 { "na-mexico-1", NA_MEXICO_1 },
                 { "la-north-2", LA_NORTH_2 },
                 { "tr-west-1", TR_WEST_1 },
+                { "ae-ad-1", AE_AD_1 },
         };
 
         public static Region ValueOf(string regionId)
@@ -73,6 +78,12 @@ namespace HuaweiCloud.SDK.Swr.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

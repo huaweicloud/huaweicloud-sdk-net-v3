@@ -1,3 +1,142 @@
+# 3.1.62 2023-10-26
+
+### HuaweiCloud SDK AOS
+
+- _Features_
+  - Support the interfaces `ShowStackInstance`, `UpdateStackInstances`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK BMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateBareMetalServers**
+    - changes of request param
+      - `+ server.extendparam.chargingMode: enum value [postPaid]`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the following interfaces：
+    - `CreateRefreshTasks`
+    - `CreatePreheatingTasks`
+    - `ShowHistoryTasks`
+    - `ShowHistoryTaskDetails`
+    - `ShowUrlTaskInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateRefreshTasks**
+    - changes of request param
+      - `+ refresh_task.zh_url_encode`
+  - **CreatePreheatingTasks**
+    - changes of request param
+      - `+ preheating_task.zh_url_encode`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the following interfaces：
+    - `ShowBackgroundTaskProgress`
+    - `ListCenterTask`
+    - `StartInstanceResizeCheckJob`
+    - `ShowBackUpInfo`
+    - `CreateOrUpdateBackUpInfo`
+    - `ShowExpireKeyScanInfo`
+    - `ScanExpireKey`
+    - `ListMigrationTaskLogs`
+    - `CheckMigrationConnectivity`
+    - `ExchangeInstanceIp`
+    - `ExecuteCommandMobilization`
+    - `LoginWebCli`
+    - `UpdateMigrationTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListProducts**
+    - changes of request param
+      - `+ product_name`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResizeInstance**
+    - changes of request param
+      - `+ tenant_ips`
+      - `+ second_tenant_subnet_id`
+  - **ResizeEngineInstance**
+    - changes of request param
+      - `+ tenant_ips`
+      - `+ second_tenant_subnet_id`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - Support the interfaces `RunCreateAudioStreamModerationJob`, `RunCloseAudioStreamModerationJob`, `RunCreateVideoStreamModerationJob`, `RunCloseVideoStreamModerationJob`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeGeneralTable**
+    - changes of request param
+      - `+ with_borders`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `ListInstanceDiagnosis`, `ListInstancesInfoDiagnosis`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGroup**
+    - changes of response param
+      - `+ group_desc`
+  - **CreateConsumerGroupOrBatchDeleteConsumerGroup**
+    - changes of request param
+      - `+ group_desc`
+  - **ListInstanceConsumerGroups**
+    - changes of response param
+      - `+ groups.group_desc`
+  - **BatchUpdateConsumerGroup**
+    - changes of request param
+      - `+ groups.group_desc`
+
 # 3.1.61 2023-10-19
 
 ### HuaweiCloud SDK CBR

@@ -43,6 +43,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
             "https://dns.ap-southeast-4.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DNS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-east-2", CN_EAST_2 },
@@ -70,6 +72,12 @@ namespace HuaweiCloud.SDK.Dns.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

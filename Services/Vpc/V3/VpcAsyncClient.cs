@@ -16,6 +16,23 @@ namespace HuaweiCloud.SDK.Vpc.V3
 
         
         /// <summary>
+        /// 端口插入安全组
+        ///
+        /// 端口插入安全组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddSecurityGroupsResponse> AddSecurityGroupsAsync(AddSecurityGroupsRequest addSecurityGroupsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id" , addSecurityGroupsRequest.PortId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/insert-security-groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addSecurityGroupsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<AddSecurityGroupsResponse>(response);
+        }
+        
+        /// <summary>
         /// 流量镜像会话添加镜像源
         ///
         /// 流量镜像会话添加镜像源
@@ -373,6 +390,23 @@ namespace HuaweiCloud.SDK.Vpc.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateSubNetworkInterfaceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<MigrateSubNetworkInterfaceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 端口移除安全组
+        ///
+        /// 端口移除安全组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RemoveSecurityGroupsResponse> RemoveSecurityGroupsAsync(RemoveSecurityGroupsRequest removeSecurityGroupsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id" , removeSecurityGroupsRequest.PortId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/remove-security-groups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSecurityGroupsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<RemoveSecurityGroupsResponse>(response);
         }
         
         /// <summary>

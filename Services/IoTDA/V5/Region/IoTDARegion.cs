@@ -25,6 +25,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
             "https://iotda.me-east-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IOTDA");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -43,6 +45,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

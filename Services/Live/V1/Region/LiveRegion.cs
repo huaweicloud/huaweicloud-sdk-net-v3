@@ -17,6 +17,8 @@ namespace HuaweiCloud.SDK.Live.V1
         public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
             "https://live.ap-southeast-3.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("LIVE");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -31,6 +33,12 @@ namespace HuaweiCloud.SDK.Live.V1
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

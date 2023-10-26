@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
     public class ExtendParam 
     {
         /// <summary>
-        /// 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
+        /// 计费模式。取值范围：prePaid：预付费，即包年包月; postPaid-后付费，即按需付费。默认值是prePaid。
         /// </summary>
-        /// <value>计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。</value>
+        /// <value>计费模式。取值范围：prePaid：预付费，即包年包月; postPaid-后付费，即按需付费。默认值是prePaid。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargingModeEnum>))]
         public class ChargingModeEnum
         {
@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             /// </summary>
             public static readonly ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
 
+            /// <summary>
+            /// Enum POSTPAID for value: postPaid
+            /// </summary>
+            public static readonly ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
+
             private static readonly Dictionary<string, ChargingModeEnum> StaticFields =
             new Dictionary<string, ChargingModeEnum>()
             {
                 { "prePaid", PREPAID },
+                { "postPaid", POSTPAID },
             };
 
             private string _value;
@@ -241,7 +247,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
 
         /// <summary>
-        /// 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
+        /// 计费模式。取值范围：prePaid：预付费，即包年包月; postPaid-后付费，即按需付费。默认值是prePaid。
         /// </summary>
         [JsonProperty("chargingMode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargingModeEnum ChargingMode { get; set; }

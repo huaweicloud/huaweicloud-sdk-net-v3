@@ -1,3 +1,142 @@
+# 3.1.62 2023-10-26
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 支持接口`ShowStackInstance`、`UpdateStackInstances`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK BMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateBareMetalServers**
+    - 请求参数变更
+      - `+ server.extendparam.chargingMode: enum value [postPaid]`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 支持以下接口：
+    - `CreateRefreshTasks`
+    - `CreatePreheatingTasks`
+    - `ShowHistoryTasks`
+    - `ShowHistoryTaskDetails`
+    - `ShowUrlTaskInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateRefreshTasks**
+    - 请求参数变更
+      - `+ refresh_task.zh_url_encode`
+  - **CreatePreheatingTasks**
+    - 请求参数变更
+      - `+ preheating_task.zh_url_encode`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowBackgroundTaskProgress`
+    - `ListCenterTask`
+    - `StartInstanceResizeCheckJob`
+    - `ShowBackUpInfo`
+    - `CreateOrUpdateBackUpInfo`
+    - `ShowExpireKeyScanInfo`
+    - `ScanExpireKey`
+    - `ListMigrationTaskLogs`
+    - `CheckMigrationConnectivity`
+    - `ExchangeInstanceIp`
+    - `ExecuteCommandMobilization`
+    - `LoginWebCli`
+    - `UpdateMigrationTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListProducts**
+    - 请求参数变更
+      - `+ product_name`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ResizeInstance**
+    - 请求参数变更
+      - `+ tenant_ips`
+      - `+ second_tenant_subnet_id`
+  - **ResizeEngineInstance**
+    - 请求参数变更
+      - `+ tenant_ips`
+      - `+ second_tenant_subnet_id`
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 支持接口`RunCreateAudioStreamModerationJob`、`RunCloseAudioStreamModerationJob`、`RunCreateVideoStreamModerationJob`、`RunCloseVideoStreamModerationJob`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeGeneralTable**
+    - 请求参数变更
+      - `+ with_borders`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`ListInstanceDiagnosis`、`ListInstancesInfoDiagnosis`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowGroup**
+    - 响应参数变更
+      - `+ group_desc`
+  - **CreateConsumerGroupOrBatchDeleteConsumerGroup**
+    - 请求参数变更
+      - `+ group_desc`
+  - **ListInstanceConsumerGroups**
+    - 响应参数变更
+      - `+ groups.group_desc`
+  - **BatchUpdateConsumerGroup**
+    - 请求参数变更
+      - `+ groups.group_desc`
+
 # 3.1.61 2023-10-19
 
 ### HuaweiCloud SDK CBR

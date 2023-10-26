@@ -43,6 +43,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9",
             "https://gaussdb-nosql.cn-north-9.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("GAUSSDBFORNOSQL");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "af-south-1", AF_SOUTH_1 },
@@ -70,6 +72,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

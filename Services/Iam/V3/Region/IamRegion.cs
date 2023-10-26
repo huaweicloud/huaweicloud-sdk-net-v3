@@ -41,6 +41,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9",
             "https://iam.cn-north-9.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IAM");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-2", CN_NORTH_2 },
@@ -67,6 +69,12 @@ namespace HuaweiCloud.SDK.Iam.V3
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

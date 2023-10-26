@@ -784,14 +784,14 @@ namespace HuaweiCloud.SDK.Ces.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<UpdateNotificationMasksResponse> UpdateNotificationMasksAsync(UpdateNotificationMasksRequest updateNotificationMasksRequest)
+        public async Task<UpdateNotificationMaskResponse> UpdateNotificationMaskAsync(UpdateNotificationMaskRequest updateNotificationMaskRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("notification_mask_id" , updateNotificationMasksRequest.NotificationMaskId.ToString());
+            urlParam.Add("notification_mask_id" , updateNotificationMaskRequest.NotificationMaskId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notification-masks/{notification_mask_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNotificationMasksRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNotificationMaskRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerializeNull<UpdateNotificationMasksResponse>(response);
+            return JsonUtils.DeSerializeNull<UpdateNotificationMaskResponse>(response);
         }
         
         /// <summary>

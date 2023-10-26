@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     public class TasksObject 
     {
         /// <summary>
-        /// 任务的类型， 其值可以为refresh或preheating。
+        /// 任务的类型， 其值可以为refresh：刷新任务，或preheating：预热任务。
         /// </summary>
-        /// <value>任务的类型， 其值可以为refresh或preheating。</value>
+        /// <value>任务的类型， 其值可以为refresh：刷新任务，或preheating：预热任务。</value>
         [JsonConverter(typeof(EnumClassConverter<TaskTypeEnum>))]
         public class TaskTypeEnum
         {
@@ -253,7 +253,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 任务的类型， 其值可以为refresh或preheating。
+        /// 任务的类型， 其值可以为refresh：刷新任务，或preheating：预热任务。
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public TaskTypeEnum TaskType { get; set; }

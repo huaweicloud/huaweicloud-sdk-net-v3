@@ -48,7 +48,11 @@ namespace HuaweiCloud.SDK.Cce.V3
             "https://cce.ap-southeast-4.myhuaweicloud.com");
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
             "https://cce.tr-west-1.myhuaweicloud.com");
+        public static readonly Region AE_AD_1 = new Region("ae-ad-1",
+            "https://cce.ae-ad-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CCE");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-1", CN_NORTH_1 },
@@ -72,6 +76,7 @@ namespace HuaweiCloud.SDK.Cce.V3
                 { "ru-northwest-2", RU_NORTHWEST_2 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "tr-west-1", TR_WEST_1 },
+                { "ae-ad-1", AE_AD_1 },
         };
 
         public static Region ValueOf(string regionId)
@@ -79,6 +84,12 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

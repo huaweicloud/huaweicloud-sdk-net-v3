@@ -33,6 +33,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
             "https://gaussdb-opengauss.af-south-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("GAUSSDBFOROPENGAUSS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -55,6 +57,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

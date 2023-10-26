@@ -27,6 +27,9 @@ namespace HuaweiCloud.SDK.Core.Auth
 {
     public class BasicCredentials : Credentials<BasicCredentials>
     {
+
+        internal const string Type = "basic";
+
         public BasicCredentials(string ak, string sk, string projectId = null)
         {
             Ak = ak;

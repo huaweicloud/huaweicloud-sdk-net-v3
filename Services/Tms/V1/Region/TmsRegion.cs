@@ -11,6 +11,8 @@ namespace HuaweiCloud.SDK.Tms.V1
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
             "https://tms.ap-southeast-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("TMS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -22,6 +24,12 @@ namespace HuaweiCloud.SDK.Tms.V1
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

@@ -209,9 +209,16 @@ namespace ListVpcsSolution
 * [2. 认证信息配置](#2-认证信息配置-top)
     * [2.1 使用永久 AK 和 SK](#21-使用永久-ak-和-sk-top)
     * [2.2 使用临时 AK 和 SK](#22-使用临时-ak-和-sk-top)
+    * [2.3 认证信息管理](#23-认证信息管理-top)
+        * [2.3.1 环境变量](#231-环境变量-top)
+        * [2.3.2 配置文件](#232-配置文件-top)
+        * [2.3.3 认证信息提供链](#233-认证信息提供链-top)
 * [3. 客户端初始化](#3-客户端初始化-top)
     * [3.1 指定云服务 Endpoint 方式](#31-指定云服务-endpoint-方式-top)
     * [3.2 指定 Region 方式（推荐）](#32-指定-region-方式-推荐-top)
+    * [3.3 自定义配置](#33-自定义配置-top)
+        * [3.3.1 IAM endpoint配置](#331-IAM-endpoint配置-top)
+        * [3.3.2 Region配置](#332-Region配置-top)
 * [4. 发送请求并查看响应](#4-发送请求并查看响应-top)
     * [4.1 异常处理](#41-异常处理-top)
 * [5. 异步客户端使用](#5-异步客户端使用-top)
@@ -344,6 +351,125 @@ Credentials basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecur
 Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
 ```
 
+#### 2.3 认证信息管理 [:top:](#用户手册-top)
+
+从**3.1.62**版本起，支持从各类提供器中获取认证信息
+
+**Region级服务** 请使用 `XxxCredentialProvider.GetBasic()`
+
+**Global级服务** 请使用 `XxxCredentialProvider.GetGlobal()`
+
+##### 2.3.1 环境变量 [:top:](#用户手册-top)
+
+**AK/SK认证**
+
+| 环境变量  |  说明 |
+| ------------ | ------------ |
+| HUAWEICLOUD_SDK_AK  | 必填，AccessKey  |
+| HUAWEICLOUD_SDK_SK  |  必填，SecretKey |
+| HUAWEICLOUD_SDK_SECURITY_TOKEN  | 可选, 使用临时ak/sk认证时需要指定该参数  |
+| HUAWEICLOUD_SDK_PROJECT_ID  | 可选，用于Region级服务，多ProjectId场景下必填  |
+| HUAWEICLOUD_SDK_DOMAIN_ID  | 可选，用于Global级服务  |
+
+配置环境变量：
+
+```
+// Linux
+export HUAWEICLOUD_SDK_AK=YOUR_AK
+export HUAWEICLOUD_SDK_SK=YOUR_SK
+
+// Windows
+set HUAWEICLOUD_SDK_AK=YOUR_AK
+set HUAWEICLOUD_SDK_SK=YOUR_SK
+```
+
+从配置的环境变量中获取认证信息：
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+// basic
+var basicProvider = EnvCredentialProvider.GetBasic();
+var basicCredentials = basicProvider.GetCredentials();
+
+// global
+var globalProvider = EnvCredentialProvider.GetGlobal();
+var globalCredentials = globalProvider.GetCredentials();
+```
+
+##### 2.3.2 配置文件 [:top:](#用户手册-top)
+
+默认会从用户主目录下读取认证信息配置文件，linux为`~/.huaweicloud/credentials`，windows为`C:\Users\USER_NAME\.huaweicloud\credentials`，可以通过配置环境变量`HUAWEICLOUD_SDK_CREDENTIALS_FILE`来修改默认文件的路径
+
+**AK/SK认证**
+
+| 配置参数  |  说明 |
+| ------------ | ------------ |
+| ak  | 必填，AccessKey  |
+| sk  |  必填，SecretKey |
+| security_token  | 可选, 使用临时ak/sk认证时需要指定该参数  |
+| project_id  | 可选，用于Region级服务，多ProjectId场景下必填  |
+| domain_id  | 可选，用于Global级服务  |
+| iam_endpoint  | 可选，用于身份认证的endpoint，默认为`https://iam.myhuaweicloud.com` |
+
+配置文件内容如下：
+
+```ini
+[basic]
+ak = your_ak
+sk = your_sk
+
+[global]
+ak = your_ak
+sk = your_sk
+```
+
+从配置文件中读取认证信息：
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+// basic
+var basicProvider = ProfileCredentialProvider.GetBasic();
+var basicCredentials = basicProvider.GetCredentials();
+
+// global
+var globalProvider = ProfileCredentialProvider.GetGlobal();
+var globalCredentials = globalProvider.GetCredentials();
+```
+
+##### 2.3.3 认证信息提供链 [:top:](#用户手册-top)
+
+在创建服务客户端，未显式指定认证信息时，按照顺序 **环境变量 -> 配置文件** 尝试加载认证信息
+
+通过提供链获取认证信息：
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+// basic
+var basicChain = CredentialProviderChain.GetBasic();
+var basicCredentials = basicChain.GetCredentials();
+
+// global
+var globalChain = CredentialProviderChain.GetGlobal();
+var globalCredentials = globalChain.GetCredentials();
+```
+
+支持自定义认证信息提供链：
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+var providers = new ICredentialProvider[]
+{
+    ProfileCredentialProvider.GetBasic(),
+    EnvCredentialProvider.GetBasic()
+};
+var chain = new CredentialProviderChain(providers);
+var credentials = chain.GetCredentials();
+```
+
 ### 3. 客户端初始化 [:top:](#用户手册-top)
 
 客户端初始化有两种方式，可根据需要选择下列两种方式中的一种：
@@ -400,6 +526,84 @@ IamClient iamClient = IamClient.NewBuilder()
 | :---- | :---- | :---- | 
 | 指定云服务 Endpoint 方式 | 只要接口已在当前环境发布就可以成功调用 | 需要用户自行查找并填写 projectId 和 endpoint
 | 指定 Region 方式 | 无需指定 projectId 和 endpoint，按照要求配置即可自动获取该值并回填 | 支持的服务和 region 有限制
+
+#### 3.3 自定义配置 [:top:](#用户手册-top)
+
+**注：** 3.1.62版本起支持
+
+##### 3.3.1 IAM endpoint配置 [:top:](#用户手册-top)
+
+自动获取用户的 projectId 和 domainId 会分别调用统一身份认证服务的 [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) 和 [KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) 接口，默认访问的endpoint为 https://iam.myhuaweicloud.com， **欧洲站用户需要指定 endpoint 为 https://iam.eu-west-101.myhuaweicloud.com**
+
+用户可以通过以下两种方式来修改endpoint
+
+###### 3.3.1.1 全局级 [:top:](#用户手册-top)
+
+全局范围生效，通过环境变量`HUAWEICLOUD_SDK_IAM_ENDPOINT`指定
+
+```
+//linux
+export HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
+
+//windows
+set HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
+```
+
+###### 3.3.1.2 凭证级 [:top:](#用户手册-top)
+
+只对单个凭证生效，会覆盖全局配置
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+var iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
+var credentials = new BasicCredentials(ak, sk).WithIamEndpoint(iamEndpoint);
+```
+
+##### 3.3.2 Region配置 [:top:](#用户手册-top)
+
+###### 3.3.2.1 环境变量 [:top:](#用户手册-top)
+
+通过环境变量配置，一个region可以对应多个endpoint，主要endpoint无法连接会自动切换到备用endpoint
+
+格式为`HUAWEICLOUD_SDK_REGION_{SERVICE_NAME}_{REGION_ID}={endpoint1},{endpoint2}`, 多个endpoint之间用英文逗号隔开
+
+注：环境变量名全大写，中划线替换为下划线
+
+```
+// linux
+export HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn
+
+// windows
+set HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn
+```
+
+###### 3.3.2.2 文件配置 [:top:](#用户手册-top)
+
+通过yaml文件配置，默认会从用户主目录下读取region配置文件，linux为`~/.huaweicloud/regions.yaml`，windows为`C:\Users\USER_NAME\.huaweicloud\regions.yaml`，默认配置文件可以不存在，但是如果配置文件存在且内容格式不对会解析错误抛出异常。
+
+可以通过配置环境变量`HUAWEICLOUD_SDK_REGIONS_FILE`来修改默认文件的路径，如`HUAWEICLOUD_SDK_REGIONS_FILE=/tmp/my_regions.yml`
+
+一个region可以对应多个endpoint，主要endpoint无法连接会自动切换到备用endpoint，文件内容格式如下：
+
+```yaml
+# 服务名不区分大小写
+ECS:
+  - id: 'cn-north-9'
+    endpoints:
+      - 'https://ecs.cn-north-9.myhuaweicloud.com'
+      - 'https://ecs.cn-north-9.myhuaweicloud.cn'
+```
+
+###### 3.3.2.3 Region提供链 [:top:](#用户手册-top)
+
+默认查找顺序为 **环境变量 -> 配置文件 -> SDK中已定义Region**，以上方式都找不到region会抛出异常，获取region示例：
+
+```csharp
+using HuaweiCloud.SDK.Ecs.V2;
+
+var region = EcsRegion.ValueOf("cn-north-9");
+```
 
 ### 4. 发送请求并查看响应 [:top:](#用户手册-top)
 

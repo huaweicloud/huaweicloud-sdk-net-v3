@@ -72,6 +72,8 @@ namespace HuaweiCloud.SDK.Cts.V3
             "https://cts.tr-west-1.myhuaweicloud.com",
             "https://cts.tr-west-1.myhuaweicloud.cn");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CTS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "af-south-1", AF_SOUTH_1 },
@@ -103,6 +105,12 @@ namespace HuaweiCloud.SDK.Cts.V3
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

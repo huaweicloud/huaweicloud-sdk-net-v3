@@ -9,6 +9,8 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
             "https://rtc-api.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CLOUDRTC");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -19,6 +21,12 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

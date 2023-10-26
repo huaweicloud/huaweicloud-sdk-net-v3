@@ -51,6 +51,8 @@ namespace HuaweiCloud.SDK.Ims.V2
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://ims.ae-ad-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IMS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "af-south-1", AF_SOUTH_1 },
@@ -82,6 +84,12 @@ namespace HuaweiCloud.SDK.Ims.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 消费组描述，长度0~200个字符。
+        /// </summary>
+        [JsonProperty("group_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupDesc { get; set; }
+
+        /// <summary>
         /// 最大重试次数。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  broadcast: ").Append(Broadcast).Append("\n");
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  groupDesc: ").Append(GroupDesc).Append("\n");
             sb.Append("  retryMaxTime: ").Append(RetryMaxTime).Append("\n");
             sb.Append("  fromBeginning: ").Append(FromBeginning).Append("\n");
             sb.Append("}\n");
@@ -110,6 +117,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.GroupDesc == input.GroupDesc ||
+                    (this.GroupDesc != null &&
+                    this.GroupDesc.Equals(input.GroupDesc))
+                ) && 
+                (
                     this.RetryMaxTime == input.RetryMaxTime ||
                     (this.RetryMaxTime != null &&
                     this.RetryMaxTime.Equals(input.RetryMaxTime))
@@ -137,6 +149,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.GroupDesc != null)
+                    hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
                 if (this.RetryMaxTime != null)
                     hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
                 if (this.FromBeginning != null)

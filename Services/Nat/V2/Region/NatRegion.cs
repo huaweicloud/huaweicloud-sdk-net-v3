@@ -48,7 +48,13 @@ namespace HuaweiCloud.SDK.Nat.V2
             "https://nat.ae-ad-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_0 = new Region("eu-west-0",
             "https://nat.eu-west-0.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://nat.tr-west-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+            "https://nat.ap-southeast-4.myhuaweicloud.cn");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("NAT");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "af-south-1", AF_SOUTH_1 },
@@ -72,6 +78,8 @@ namespace HuaweiCloud.SDK.Nat.V2
                 { "me-east-1", ME_EAST_1 },
                 { "ae-ad-1", AE_AD_1 },
                 { "eu-west-0", EU_WEST_0 },
+                { "tr-west-1", TR_WEST_1 },
+                { "ap-southeast-4", AP_SOUTHEAST_4 },
         };
 
         public static Region ValueOf(string regionId)
@@ -79,6 +87,12 @@ namespace HuaweiCloud.SDK.Nat.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

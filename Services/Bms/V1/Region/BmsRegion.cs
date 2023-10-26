@@ -43,6 +43,8 @@ namespace HuaweiCloud.SDK.Bms.V1
         public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1",
             "https://bms.na-mexico-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("BMS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-2", CN_NORTH_2 },
@@ -70,6 +72,12 @@ namespace HuaweiCloud.SDK.Bms.V1
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

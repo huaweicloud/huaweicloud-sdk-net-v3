@@ -51,8 +51,10 @@ namespace HuaweiCloud.SDK.Cbr.V1
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
             "https://cbr.me-east-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
-            "https://cbr.ae-ad-1.g42cloud.com");
+            "https://cbr.ae-ad-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CBR");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "eu-west-101", EU_WEST_101 },
@@ -85,6 +87,12 @@ namespace HuaweiCloud.SDK.Cbr.V1
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

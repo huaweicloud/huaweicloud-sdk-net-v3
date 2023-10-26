@@ -39,6 +39,8 @@ namespace HuaweiCloud.SDK.Cfw.V1
         public static readonly Region SA_BRAZIL_1 = new Region("sa-brazil-1",
             "https://cfw.sa-brazil-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CFW");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "eu-west-101", EU_WEST_101 },
@@ -64,6 +66,12 @@ namespace HuaweiCloud.SDK.Cfw.V1
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

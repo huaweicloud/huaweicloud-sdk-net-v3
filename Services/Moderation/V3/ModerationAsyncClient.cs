@@ -32,6 +32,40 @@ namespace HuaweiCloud.SDK.Moderation.V3
         }
         
         /// <summary>
+        /// 关闭音频流内容审核作业
+        ///
+        /// 关闭音频流内容审核作业
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RunCloseAudioStreamModerationJobResponse> RunCloseAudioStreamModerationJobAsync(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , runCloseAudioStreamModerationJobRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 关闭视频流内容审核作业
+        ///
+        /// 关闭视频流审核接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RunCloseVideoStreamModerationJobResponse> RunCloseVideoStreamModerationJobAsync(RunCloseVideoStreamModerationJobRequest runCloseVideoStreamModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , runCloseVideoStreamModerationJobRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs/stop/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseVideoStreamModerationJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RunCloseVideoStreamModerationJobResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建音频内容审核作业
         ///
         /// 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
@@ -48,6 +82,22 @@ namespace HuaweiCloud.SDK.Moderation.V3
         }
         
         /// <summary>
+        /// 创建音频流内容审核作业
+        ///
+        /// 创建音频流内容审核作业，创建成功会将作业ID返回给用户
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RunCreateAudioStreamModerationJobResponse> RunCreateAudioStreamModerationJobAsync(RunCreateAudioStreamModerationJobRequest runCreateAudioStreamModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RunCreateAudioStreamModerationJobResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建视频内容审核作业
         ///
         /// 创建视频内容审核作业，创建成功会将作业ID返回给用户
@@ -61,6 +111,22 @@ namespace HuaweiCloud.SDK.Moderation.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoModerationJobRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCreateVideoModerationJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建视频流内容审核作业
+        ///
+        /// 创建视频流内容审核作业，创建成功会将作业ID返回给用户
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RunCreateVideoStreamModerationJobResponse> RunCreateVideoStreamModerationJobAsync(RunCreateVideoStreamModerationJobRequest runCreateVideoStreamModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoStreamModerationJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<RunCreateVideoStreamModerationJobResponse>(response);
         }
         
         /// <summary>

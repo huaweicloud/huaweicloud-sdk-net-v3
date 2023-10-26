@@ -323,7 +323,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给与administration_agency_urn，administration_agency_name只支持接收v3委托名称，若给与了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。
+        /// 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给与administration_agency_urn，administration_agency_name只支持接收v3委托名称，若给与了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。  [创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)
         /// </summary>
         [JsonProperty("administration_agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AdministrationAgencyName { get; set; }
@@ -335,7 +335,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string AdministrationAgencyUrn { get; set; }
 
         /// <summary>
-        /// 被管理的委托名称。  资源编排服务会使用该委托获取实际部署资源所需要的权限  不同成员账号委托给管理账号的委托名称需要保持一致。暂不支持根据不同provider定义不同委托权限  当用户定义SELF_MANAGED权限类型时，必须指定该参数。当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400
+        /// 被管理的委托名称。  资源编排服务会使用该委托获取实际部署资源所需要的权限  不同成员账号委托给管理账号的委托名称需要保持一致。暂不支持根据不同provider定义不同委托权限  当用户定义SELF_MANAGED权限类型时，必须指定该参数。当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400  [创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)
         /// </summary>
         [JsonProperty("managed_agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ManagedAgencyName { get; set; }
@@ -344,7 +344,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// 
         /// </summary>
         [JsonProperty("deployment_targets", NullValueHandling = NullValueHandling.Ignore)]
-        public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets DeploymentTargets { get; set; }
+        public DeploymentTargets DeploymentTargets { get; set; }
 
         /// <summary>
         /// 资源栈集操作的创建时间，格式为YYYY-MM-DDTHH:mm:ss.SSSZ，精确到毫秒，UTC时区，即，如1970-01-01T00:00:00.000Z。

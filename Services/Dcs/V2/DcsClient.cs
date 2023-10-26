@@ -99,6 +99,24 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 数据迁移配置页实例连接测试
+        ///
+        /// 数据迁移配置页实例连接测试
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckMigrationConnectivityResponse CheckMigrationConnectivity(CheckMigrationConnectivityRequest checkMigrationConnectivityRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , checkMigrationConnectivityRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration/{task_id}/connectivity",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkMigrationConnectivityRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            CheckMigrationConnectivityResponse checkMigrationConnectivityResponse = JsonUtils.DeSerializeNull<CheckMigrationConnectivityResponse>(response);
+            return checkMigrationConnectivityResponse;
+        }
+        
+        /// <summary>
         /// 备份指定实例
         ///
         /// 备份指定的缓存实例。
@@ -286,6 +304,24 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOnlineMigrationTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateOnlineMigrationTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 新增/修改高级备份信息
+        ///
+        /// 新增/修改高级备份信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateOrUpdateBackUpInfoResponse CreateOrUpdateBackUpInfo(CreateOrUpdateBackUpInfoRequest createOrUpdateBackUpInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createOrUpdateBackUpInfoRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/additional-backups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOrUpdateBackUpInfoRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            CreateOrUpdateBackUpInfoResponse createOrUpdateBackUpInfoResponse = JsonUtils.DeSerializeNull<CreateOrUpdateBackUpInfoResponse>(response);
+            return createOrUpdateBackUpInfoResponse;
         }
         
         /// <summary>
@@ -485,6 +521,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 进行IP交换
+        ///
+        /// 进行IP交换
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExchangeInstanceIpResponse ExchangeInstanceIp(ExchangeInstanceIpRequest exchangeInstanceIpRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , exchangeInstanceIpRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}/exchange-ip",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exchangeInstanceIpRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<ExchangeInstanceIpResponse>(response);
+        }
+        
+        /// <summary>
         /// 集群分片倒换
         ///
         /// 集群分片倒换，适用于proxy和cluster实例
@@ -501,6 +554,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeClusterSwitchoverRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ExecuteClusterSwitchoverResponse>(response);
+        }
+        
+        /// <summary>
+        /// 执行web-cli命令V2接口
+        ///
+        /// 登入web-cli，执行redis命令
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteCommandMobilizationResponse ExecuteCommandMobilization(ExecuteCommandMobilizationRequest executeCommandMobilizationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , executeCommandMobilizationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/webcli/command",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCommandMobilizationRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ExecuteCommandMobilizationResponse>(response);
         }
         
         /// <summary>
@@ -603,6 +673,22 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBigkeyScanTasksRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListBigkeyScanTasksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询任务中心任务列表
+        ///
+        /// 查询任务中心任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCenterTaskResponse ListCenterTask(ListCenterTaskRequest listCenterTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCenterTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListCenterTaskResponse>(response);
         }
         
         /// <summary>
@@ -771,6 +857,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询迁移日志列表
+        ///
+        /// 查询迁移日志列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListMigrationTaskLogsResponse ListMigrationTaskLogs(ListMigrationTaskLogsRequest listMigrationTaskLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , listMigrationTaskLogsRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}/logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMigrationTaskLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListMigrationTaskLogsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询主维度信息列表
         ///
         /// 查询主维度对象列表，主维度ID当前支持dcs_instance_id，dcs_memcached_instance_id。
@@ -905,6 +1008,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 登录webCli
+        ///
+        /// 登录webCli
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public LoginWebCliResponse LoginWebCli(LoginWebCliRequest loginWebCliRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , loginWebCliRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/webcli/auth",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", loginWebCliRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<LoginWebCliResponse>(response);
+        }
+        
+        /// <summary>
         /// 重置ACL账号密码
         ///
         /// 重置ACL账号密码。
@@ -993,6 +1113,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 立刻扫描过期Key
+        ///
+        /// 立刻扫描过期Key
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ScanExpireKeyResponse ScanExpireKey(ScanExpireKeyRequest scanExpireKeyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , scanExpireKeyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/auto-expire/scan",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", scanExpireKeyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ScanExpireKeyResponse>(response);
+        }
+        
+        /// <summary>
         /// 配置在线数据迁移任务
         ///
         /// 配置在线数据迁移任务。
@@ -1007,6 +1144,41 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setOnlineMigrationTaskRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<SetOnlineMigrationTaskResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询高级备份信息
+        ///
+        /// 查询高级备份信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackUpInfoResponse ShowBackUpInfo(ShowBackUpInfoRequest showBackUpInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showBackUpInfoRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/additional-backups",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackUpInfoRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowBackUpInfoResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询后台任务详细信息
+        ///
+        /// 查询后台任务详细信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackgroundTaskProgressResponse ShowBackgroundTaskProgress(ShowBackgroundTaskProgressRequest showBackgroundTaskProgressRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showBackgroundTaskProgressRequest.InstanceId.ToString());
+            urlParam.Add("task_id" , showBackgroundTaskProgressRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}/progress",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskProgressRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowBackgroundTaskProgressResponse>(response);
         }
         
         /// <summary>
@@ -1076,6 +1248,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisTaskDetailsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowDiagnosisTaskDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询过期Key扫描记录
+        ///
+        /// 查询过期Key扫描记录
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowExpireKeyScanInfoResponse ShowExpireKeyScanInfo(ShowExpireKeyScanInfoRequest showExpireKeyScanInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showExpireKeyScanInfoRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/auto-expire/histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExpireKeyScanInfoRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowExpireKeyScanInfoResponse>(response);
         }
         
         /// <summary>
@@ -1251,6 +1440,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 提交前置检查任务
+        ///
+        /// 提交前置检查任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StartInstanceResizeCheckJobResponse StartInstanceResizeCheckJob(StartInstanceResizeCheckJobRequest startInstanceResizeCheckJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , startInstanceResizeCheckJobRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/resize/check-job",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceResizeCheckJobRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<StartInstanceResizeCheckJobResponse>(response);
         }
         
         /// <summary>
@@ -1441,6 +1647,24 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceBandwidthRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateInstanceBandwidthResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置迁移任务自动重连
+        ///
+        /// 设置迁移任务自动重连
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateMigrationTaskResponse UpdateMigrationTask(UpdateMigrationTaskRequest updateMigrationTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , updateMigrationTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMigrationTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            UpdateMigrationTaskResponse updateMigrationTaskResponse = JsonUtils.DeSerializeNull<UpdateMigrationTaskResponse>(response);
+            return updateMigrationTaskResponse;
         }
         
         /// <summary>

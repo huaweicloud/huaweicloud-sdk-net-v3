@@ -211,9 +211,16 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
 * [2. Credentials Configuration](#2-credentials-configuration-top)
     * [2.1 Use Permanent AK&SK](#21-use-permanent-aksk-top)
     * [2.2 Use Temporary AK&SK](#22-use-temporary-aksk-top)
+    * [2.3 Authentication Management](#23-authentication-management-top)
+        * [2.3.1 Environment Variables](#231-environment-variables-top)
+        * [2.3.2 Profile](#232-profile-top)
+        * [2.3.3 Provider Chain](#233-provider-chain-top)
 * [3. Client Initialization](#3-client-initialization-top)
     * [3.1 Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
     * [3.2 Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
+    * [3.3 Custom Configuration](#33-custom-configuration-top)
+        * [3.3.1 IAM endpoint configuration](#331-iam-endpoint-configuration-top)
+        * [3.3.2 Region configuration](#332-region-configuration-top)
 * [4. Send Requests and Handle Responses](#4-send-requests-and-handle-responses-top)
     * [4.1 Exceptions](#41-exceptions-top)
 * [5. Use Asynchronous Client](#5-use-asynchronous-client-top)
@@ -350,6 +357,125 @@ Credentials basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecur
 Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
 ```
 
+#### 2.3 Authentication Management [:top:](#user-manual-top)
+
+Getting Authentication from providers is supported since `v3.1.62`
+
+**Regional services** use `XxxCredentialProvider.GetBasic()`
+
+**Global services** use `XxxCredentialProvider.GetGlobal()`
+
+##### 2.3.1 Environment Variables [:top:](#user-manual-top)
+
+**AK/SK Auth**
+
+| Environment Variables  |  Notice |
+| ------------ | ------------ |
+| HUAWEICLOUD_SDK_AK  | Required，AccessKey  |
+| HUAWEICLOUD_SDK_SK  |  Required，SecretKey |
+| HUAWEICLOUD_SDK_SECURITY_TOKEN  | Optional, this parameter needs to be specified when using temporary ak/sk  |
+| HUAWEICLOUD_SDK_PROJECT_ID  | Optional, used for regional services, required in multi-ProjectId scenarios  |
+| HUAWEICLOUD_SDK_DOMAIN_ID  | Optional, used for global services  |
+
+Configure environment variables:
+
+```
+// Linux
+export HUAWEICLOUD_SDK_AK=YOUR_AK
+export HUAWEICLOUD_SDK_SK=YOUR_SK
+
+// Windows
+set HUAWEICLOUD_SDK_AK=YOUR_AK
+set HUAWEICLOUD_SDK_SK=YOUR_SK
+```
+
+Get the credentials from configured environment variables:
+
+```java
+using HuaweiCloud.SDK.Core.Auth;
+
+// basic
+var basicProvider = EnvCredentialProvider.GetBasic();
+var basicCredentials = basicProvider.GetCredentials();
+
+// global
+var globalProvider = EnvCredentialProvider.GetGlobal();
+var globalCredentials = globalProvider.GetCredentials();
+```
+
+##### 2.3.2 Profile [:top:](#user-manual-top)
+
+The profile will be read from the user's home directory by default, linux`~/.huaweicloud/credentials`,windows`C:\Users\USER_NAME\.huaweicloud\credentials`, the path to the profile can be modified by configuring the environment variable `HUAWEICLOUD_SDK_CREDENTIALS_FILE`
+
+**AK/SK Auth**
+
+| Configuration Parameters  |  Notice |
+| ------------ | ------------ |
+| ak  | Required，AccessKey  |
+| sk  |  Required，SecretKey |
+| security_token  | Optional, this parameter needs to be specified when using temporary ak/sk  |
+| project_id  | Optional, used for regional services, required in multi-ProjectId scenarios  |
+| domain_id  | Optional, used for global services  |
+| iam_endpoint  | optional, endpoint for authentication, default is `https://iam.myhuaweicloud.com` |
+
+The content of the profile is as follows:
+
+```ini
+[basic]
+ak = your_ak
+sk = your_sk
+
+[global]
+ak = your_ak
+sk = your_sk
+```
+
+Get the credentials from profile:
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+// basic
+var basicProvider = ProfileCredentialProvider.GetBasic();
+var basicCredentials = basicProvider.GetCredentials();
+
+// global
+var globalProvider = ProfileCredentialProvider.GetGlobal();
+var globalCredentials = globalProvider.GetCredentials();
+```
+
+##### 2.3.3 Provider Chain [:top:](#user-manual-top)
+
+When creating a service client without credentials, try to load authentication in the order **Environment Variables -> Profile**
+
+Get authentication from provider chain:
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+// basic
+var basicChain = CredentialProviderChain.GetBasic();
+var basicCredentials = basicChain.GetCredentials();
+
+// global
+var globalChain = CredentialProviderChain.GetGlobal();
+var globalCredentials = globalChain.GetCredentials();
+```
+
+Custom credentials provider chain is supported:
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+var providers = new ICredentialProvider[]
+{
+    ProfileCredentialProvider.GetBasic(),
+    EnvCredentialProvider.GetBasic()
+};
+var chain = new CredentialProviderChain(providers);
+var credentials = chain.GetCredentials();
+```
+
 ### 3. Client Initialization [:top:](#user-manual-top)
 
 There are two ways to initialize the {Service}Client, you could choose one you preferred.
@@ -408,6 +534,86 @@ IamClient iamClient = IamClient.NewBuilder()
 | :---- | :---- | :---- |
 | Specified Endpoint | The API can be invoked successfully once it has been published in the environment. | You need to prepare projectId and endpoint yourself.
 | Specified Region | No need for projectId and endpoint, it supports automatic acquisition if you configure it in the right way. | The supported services and regions are limited.
+
+#### 3.3 Custom Configuration [:top:](#user-manual-top)
+
+**Notice:** Supported since v3.1.62
+
+##### 3.3.1 IAM endpoint configuration [:top:](#user-manual-top)
+
+Automatically acquiring projectId/domainId will invoke the [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) /[KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) interface of IAM service. The default iam enpoint is `https://iam.myhuaweicloud.com`, **European station users need to specify the endpoint as https://iam.eu-west-101.myhuaweicloud.com**, you can modify the endpoint in the following two ways:
+
+###### 3.3.1.1 Global scope [:top:](#user-manual-top)
+
+This configuration takes effect globally, specified by environment variable `HUAWEICLOUD_SDK_IAM_ENDPOINT`
+
+```
+//linux
+export HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
+
+//windows
+set HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
+```
+
+###### 3.3.1.2 Credentials scope [:top:](#user-manual-top)
+
+This configuration is only valid for a credential, and it will override the global configuration
+
+```csharp
+using HuaweiCloud.SDK.Core.Auth;
+
+var iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
+var credentials = new BasicCredentials(ak, sk).WithIamEndpoint(iamEndpoint);
+```
+
+##### 3.3.2 Region configuration [:top:](#user-manual-top)
+
+###### 3.3.2.1 Environment variable [:top:](#user-manual-top)
+
+Specified by environment variable, a region can correspond to multiple endpoints.
+
+If the main endpoint cannot be connected, it will automatically switch to the backup endpoint.
+
+The format is `HUAWEICLOUD_SDK_REGION_{SERVICE_NAME}_{REGION_ID}={endpoint1},{endpoint2}`, separate multiple endpoints with commas.
+
+Notice: the name of environment variable is UPPER-CASE, replacing hyphens with underscores.
+
+```
+// linux
+export HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn
+
+// windows
+set HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn
+```
+
+###### 3.3.2.2 Profile [:top:](#user-manual-top)
+
+The profile will be read from the user's home directory by default, linux`~/.huaweicloud/regions.yaml`,windows`C:\Users\USER_NAME\.huaweicloud\regions.yaml`,the default file may not exist, but if the file exists and the content format is incorrect, an exception will be thrown for parsing errors.
+
+The path to the profile can be modified by configuring the environment variable `HUAWEICLOUD_SDK_REGIONS_FILE`, like `HUAWEICLOUD_SDK_REGIONS_FILE=/tmp/my_regions.yml`
+
+A region can correspond to multiple endpoints, if the main endpoint cannot be connected, it will automatically switch to the backup endpoint.
+
+The file content format is as follows:
+
+```yaml
+# Serivce name is case-insensitive
+ECS:
+  - id: 'cn-north-9'
+    endpoints:
+      - 'https://ecs.cn-north-9.myhuaweicloud.com'
+      - 'https://ecs.cn-north-9.myhuaweicloud.cn'
+```
+
+###### 3.3.2.3 Region supply chain [:top:](#user-manual-top)
+
+The default order is **environment variables -> profile -> region defined in SDK**, if the region is not found in the above ways, an exception will be thrown.
+
+```csharp
+using HuaweiCloud.SDK.Ecs.V2;
+
+var region = EcsRegion.ValueOf("cn-north-9");
+```
 
 ### 4. Send Requests and Handle Responses [:top:](#user-manual-top)
 

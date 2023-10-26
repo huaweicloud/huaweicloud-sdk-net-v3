@@ -279,7 +279,7 @@ namespace HuaweiCloud.SDK.Core
 
                 if (_credentials == null)
                 {
-                    _credentials = EnvCredentials.LoadCredentialsFromEnv(CredentialType[0]);
+                    _credentials = CredentialProviderChain.GetDefault(CredentialType[0]).GetCredentials();
                 }
 
                 if (!CredentialType.Contains(_credentials.GetType().Name))

@@ -666,7 +666,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 此API用于删除指定资源栈集下指定局点（region）或指定成员账户（domain_id）的资源栈实例，并返回资源栈集操作ID（stack_set_operation_id）
         /// 
-        /// **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。
+        /// **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。**
         /// 
         /// * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
         /// 
@@ -804,6 +804,26 @@ namespace HuaweiCloud.SDK.Aos.V1
         }
         
         /// <summary>
+        /// 获取资源栈实例
+        ///
+        /// 获取资源栈实例（ShowStackInstance）
+        /// 
+        /// 用户可以使用此API获取资源栈实例的详细信息，包括关联资源栈名称与id，创建时间，参数覆盖等
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowStackInstanceResponse> ShowStackInstanceAsync(ShowStackInstanceRequest showStackInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , showStackInstanceRequest.StackSetName.ToString());
+            urlParam.Add("stack_instance_addr" , showStackInstanceRequest.StackInstanceAddr.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowStackInstanceResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取资源栈集元数据
         ///
         /// 获取资源栈集元数据（ShowStackSetMetadata）
@@ -864,6 +884,35 @@ namespace HuaweiCloud.SDK.Aos.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerializeNull<ShowStackSetTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新资源栈实例
+        ///
+        /// 更新资源栈实例（UpdateStackInstances）
+        /// 
+        /// 此API用于更新并部署指定资源栈实例集合，并返回资源栈集操作ID（stack_set_operation_id）
+        /// 
+        /// 此API可以通过var_overrides参数，更新指定资源栈实例的参数值，进行参数覆盖。若var_overrides参数未给与，则默认使用当前资源栈集中记录的参数进行部署，详见：var_overrides参数描述。用户只可以更新已经存在的资源栈实例，如果用户想要增加额外的资源栈实例，请使用CreateStackInstances API。
+        /// 
+        /// 通过DeployStackSet API更新资源栈集参数后，资源栈实例中已经被覆盖的参数不会被更新，仍然保留覆盖值。
+        /// 
+        /// 用户只能覆盖已经在资源栈集中记录的参数，如果用户想要增加可以覆盖的参数，需要先通过DeployStackSet API更新资源栈集记录的参数集合。
+        /// 
+        /// * 当触发的部署失败时，资源栈实例不会自动回滚参数覆盖，但部署失败的资源栈会默认自动回滚，已经部署成功的资源栈不会触发回滚。
+        /// 
+        /// * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateStackInstancesResponse> UpdateStackInstancesAsync(UpdateStackInstancesRequest updateStackInstancesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name" , updateStackInstancesRequest.StackSetName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            return JsonUtils.DeSerialize<UpdateStackInstancesResponse>(response);
         }
         
         /// <summary>
@@ -934,7 +983,8 @@ namespace HuaweiCloud.SDK.Aos.V1
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            return JsonUtils.DeSerializeNull<DeleteTemplateResponse>(response);
+            DeleteTemplateResponse deleteTemplateResponse = JsonUtils.DeSerializeNull<DeleteTemplateResponse>(response);
+            return deleteTemplateResponse;
         }
         
         /// <summary>
@@ -959,7 +1009,8 @@ namespace HuaweiCloud.SDK.Aos.V1
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            return JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>(response);
+            DeleteTemplateVersionResponse deleteTemplateVersionResponse = JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>(response);
+            return deleteTemplateVersionResponse;
         }
         
         /// <summary>
@@ -1059,7 +1110,8 @@ namespace HuaweiCloud.SDK.Aos.V1
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>(response);
+            ShowTemplateVersionContentResponse showTemplateVersionContentResponse = JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>(response);
+            return showTemplateVersionContentResponse;
         }
         
         /// <summary>
@@ -1104,7 +1156,8 @@ namespace HuaweiCloud.SDK.Aos.V1
             string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
-            return JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>(response);
+            UpdateTemplateMetadataResponse updateTemplateMetadataResponse = JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>(response);
+            return updateTemplateMetadataResponse;
         }
         
     }

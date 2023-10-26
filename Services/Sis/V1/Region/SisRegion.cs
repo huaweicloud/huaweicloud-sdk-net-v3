@@ -13,6 +13,8 @@ namespace HuaweiCloud.SDK.Sis.V1
         public static readonly Region CN_EAST_3 = new Region("cn-east-3",
             "https://sis-ext.cn-east-3.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("SIS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-1", CN_NORTH_1 },
@@ -25,6 +27,12 @@ namespace HuaweiCloud.SDK.Sis.V1
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

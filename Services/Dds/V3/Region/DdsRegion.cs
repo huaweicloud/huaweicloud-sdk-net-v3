@@ -45,6 +45,8 @@ namespace HuaweiCloud.SDK.Dds.V3
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9",
             "https://dds.cn-north-9.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DDS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "eu-west-101", EU_WEST_101 },
@@ -73,6 +75,12 @@ namespace HuaweiCloud.SDK.Dds.V3
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

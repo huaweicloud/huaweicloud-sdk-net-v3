@@ -11,6 +11,8 @@ namespace HuaweiCloud.SDK.Ivs.V2
         public static readonly Region CN_NORTH_1 = new Region("cn-north-1",
             "https://ivs.cn-north-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IVS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -22,6 +24,12 @@ namespace HuaweiCloud.SDK.Ivs.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

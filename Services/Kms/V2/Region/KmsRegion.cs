@@ -47,6 +47,8 @@ namespace HuaweiCloud.SDK.Kms.V2
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
             "https://kms.tr-west-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("KMS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "eu-west-101", EU_WEST_101 },
@@ -76,6 +78,12 @@ namespace HuaweiCloud.SDK.Kms.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

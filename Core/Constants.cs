@@ -24,6 +24,7 @@ namespace HuaweiCloud.SDK.Core
     public static class Constants
     {
         public const long DefaultProgressInterval = 102400;
+        public const string DefaultProfileDirName = ".huaweicloud";
         public const SigningAlgorithm DefaultSigningAlgorithm = SigningAlgorithm.HmacSha256;
     }
 }

@@ -583,6 +583,22 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取诊断后的实例数量
+        ///
+        /// 获取诊断后的实例数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceDiagnosisResponse ListInstanceDiagnosis(ListInstanceDiagnosisRequest listInstanceDiagnosisRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDiagnosisRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstanceDiagnosisResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询实例参数修改历史
         ///
         /// 实例参数修改历史。
@@ -630,6 +646,22 @@ namespace HuaweiCloud.SDK.Rds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取指定诊断项的诊断结果
+        ///
+        /// 获取指定诊断项的诊断结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstancesInfoDiagnosisResponse ListInstancesInfoDiagnosis(ListInstancesInfoDiagnosisRequest listInstancesInfoDiagnosisRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis/info",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesInfoDiagnosisRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstancesInfoDiagnosisResponse>(response);
         }
         
         /// <summary>

@@ -11,6 +11,8 @@ namespace HuaweiCloud.SDK.Cdn.V2
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
             "https://cdn.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CDN");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-1", CN_NORTH_1 },
@@ -22,6 +24,12 @@ namespace HuaweiCloud.SDK.Cdn.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

@@ -11,6 +11,8 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         public static readonly Region CN_SOUTH_1 = new Region("cn-south-1",
             "https://msgsms.cn-south-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("MSGSMS");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -22,6 +24,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

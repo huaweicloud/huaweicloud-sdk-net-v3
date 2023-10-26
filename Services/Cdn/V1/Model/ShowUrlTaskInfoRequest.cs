@@ -17,56 +17,56 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     {
 
         /// <summary>
-        /// 起始时间戳（毫秒），默认当天00:00
+        /// 起始时间戳（毫秒），默认当天00:00。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间戳（毫秒），默认次日00:00
+        /// 结束时间戳（毫秒），默认次日00:00。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 偏移量
+        /// 偏移量：特定数据字段与起始数据字段位置的距离。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 单次查询数据条数，上限为100
+        /// 单次查询数据条数，上限为100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 刷新预热url
+        /// 刷新预热url。
         /// </summary>
         [SDKProperty("url", IsQuery = true)]
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
         /// <summary>
-        /// 任务类型，REFRESH：刷新任务；PREHEATING：预热任务
+        /// 任务类型，REFRESH：刷新任务；PREHEATING：预热任务。
         /// </summary>
         [SDKProperty("task_type", IsQuery = true)]
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskType { get; set; }
 
         /// <summary>
-        /// url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中
+        /// url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 文件类型，file:文件;directory:目录
+        /// 文件类型，file:文件;directory:目录。
         /// </summary>
         [SDKProperty("file_type", IsQuery = true)]
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]

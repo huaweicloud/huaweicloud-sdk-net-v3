@@ -19,6 +19,8 @@ namespace HuaweiCloud.SDK.Vod.V1
         public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
             "https://vod.ap-southeast-3.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("VOD");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-east-2", CN_EAST_2 },
@@ -34,6 +36,12 @@ namespace HuaweiCloud.SDK.Vod.V1
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

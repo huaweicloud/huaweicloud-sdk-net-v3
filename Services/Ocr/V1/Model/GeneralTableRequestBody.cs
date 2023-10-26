@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("return_rectification_matrix", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnRectificationMatrix { get; set; }
 
+        /// <summary>
+        /// 可选值包括： - true：输入图像仅包含有线表格，仅进行有线表格识别。 - false: 输入图像可能包含无线表格，同时进行有线表格与无线表格识别。  未传入该参数时默认为false，即同时进行有线表格与无线表格识别。当确认输入仅包含有线表格时，该参数设为true可达到更优识别效果。 
+        /// </summary>
+        [JsonProperty("with_borders", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithBorders { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  returnConfidence: ").Append(ReturnConfidence).Append("\n");
             sb.Append("  returnExcel: ").Append(ReturnExcel).Append("\n");
             sb.Append("  returnRectificationMatrix: ").Append(ReturnRectificationMatrix).Append("\n");
+            sb.Append("  withBorders: ").Append(WithBorders).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnRectificationMatrix == input.ReturnRectificationMatrix ||
                     (this.ReturnRectificationMatrix != null &&
                     this.ReturnRectificationMatrix.Equals(input.ReturnRectificationMatrix))
+                ) && 
+                (
+                    this.WithBorders == input.WithBorders ||
+                    (this.WithBorders != null &&
+                    this.WithBorders.Equals(input.WithBorders))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
                 if (this.ReturnRectificationMatrix != null)
                     hashCode = hashCode * 59 + this.ReturnRectificationMatrix.GetHashCode();
+                if (this.WithBorders != null)
+                    hashCode = hashCode * 59 + this.WithBorders.GetHashCode();
                 return hashCode;
             }
         }

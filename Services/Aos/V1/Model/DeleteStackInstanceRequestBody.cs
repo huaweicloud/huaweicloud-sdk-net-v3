@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// 
         /// </summary>
         [JsonProperty("deployment_targets", NullValueHandling = NullValueHandling.Ignore)]
-        public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets DeploymentTargets { get; set; }
+        public DeploymentTargets DeploymentTargets { get; set; }
 
 
 

@@ -45,6 +45,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string AppId { get; set; }
 
         /// <summary>
+        /// **参数说明**：产品名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合。
+        /// </summary>
+        [SDKProperty("product_name", IsQuery = true)]
+        [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductName { get; set; }
+
+        /// <summary>
         /// **参数说明**：表示从marker后偏移offset条记录开始查询。当offset为0时，表示从marker后第一条记录开始输出。限制offset最大值是出于API性能考虑，您可以搭配marker使用该参数实现翻页，例如每页50条记录，1-11页内都可以直接使用offset跳转到指定页，但到11页后，由于offset限制为500，您需要使用第11页返回的marker作为下次查询的marker，以实现翻页到12-22页。 **取值范围**：0-500的整数，默认为0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -64,6 +71,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  productName: ").Append(ProductName).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -107,6 +115,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.AppId.Equals(input.AppId))
                 ) && 
                 (
+                    this.ProductName == input.ProductName ||
+                    (this.ProductName != null &&
+                    this.ProductName.Equals(input.ProductName))
+                ) && 
+                (
                     this.Offset == input.Offset ||
                     (this.Offset != null &&
                     this.Offset.Equals(input.Offset))
@@ -129,6 +142,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.ProductName != null)
+                    hashCode = hashCode * 59 + this.ProductName.GetHashCode();
                 if (this.Offset != null)
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;

@@ -25,6 +25,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         public static readonly Region SA_BRAZIL_1 = new Region("sa-brazil-1",
             "https://projectman-ext.sa-brazil-1.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("PROJECTMAN");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -43,6 +45,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

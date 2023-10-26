@@ -27,6 +27,9 @@ namespace HuaweiCloud.SDK.Core.Auth
 {
     public class GlobalCredentials : Credentials<GlobalCredentials>
     {
+
+        internal const string Type = "global";
+
         public GlobalCredentials(string ak, string sk, string domainId = null)
         {
             Ak = ak;

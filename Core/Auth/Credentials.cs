@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 {
     public abstract class Credentials<T> : ICredential where T : Credentials<T>
     {
-        public static readonly string DEFAULT_ENDPOINT_REG =
+        private const string DEFAULT_ENDPOINT_REG =
             "^[a-z][a-z0-9-]+(\\.[a-z]{2,}-[a-z]+-\\d{1,2})?\\.(my)?(huaweicloud|myhwclouds).(com|cn)";
 
         public static Func<HttpRequest, bool> DefaultDerivedPredicate = httpRequest =>

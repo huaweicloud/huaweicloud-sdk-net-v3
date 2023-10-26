@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
+        /// 空响应体
+        /// </summary>
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public string Body { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("Location", IsHeader = true)]
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowTemplateVersionContentResponse {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -55,6 +62,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
             return 
                 (
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
+                ) && 
+                (
                     this.Location == input.Location ||
                     (this.Location != null &&
                     this.Location.Equals(input.Location))
@@ -69,6 +81,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 if (this.Location != null)
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
                 return hashCode;

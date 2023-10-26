@@ -23,6 +23,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public static readonly Region LA_NORTH_2 = new Region("la-north-2",
             "https://codearts-deploy.la-north-2.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CODEARTSDEPLOY");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "ap-southeast-3", AP_SOUTHEAST_3 },
@@ -40,6 +42,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))

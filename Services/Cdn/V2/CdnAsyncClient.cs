@@ -33,6 +33,38 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 创建预热缓存任务
+        ///
+        /// 创建预热任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePreheatingTasksResponse> CreatePreheatingTasksAsync(CreatePreheatingTasksRequest createPreheatingTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/preheating-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingTasksRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreatePreheatingTasksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建刷新缓存任务
+        ///
+        /// 创建刷新缓存任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRefreshTasksResponse> CreateRefreshTasksAsync(CreateRefreshTasksRequest createRefreshTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/refresh-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRefreshTasksRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateRefreshTasksResponse>(response);
+        }
+        
+        /// <summary>
         /// 下载区域运营商指标数据表格文件
         ///
         /// - 下载区域运营商指标数据表格文件。
@@ -267,6 +299,39 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 查询刷新预热任务详情
+        ///
+        /// 查询刷新预热任务详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowHistoryTaskDetailsResponse> ShowHistoryTaskDetailsAsync(ShowHistoryTaskDetailsRequest showHistoryTaskDetailsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("history_tasks_id" , showHistoryTaskDetailsRequest.HistoryTasksId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks/{history_tasks_id}/detail",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTaskDetailsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowHistoryTaskDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询刷新预热任务
+        ///
+        /// 查询刷新预热任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowHistoryTasksResponse> ShowHistoryTasksAsync(ShowHistoryTasksRequest showHistoryTasksRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTasksRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowHistoryTasksResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询TOP域名
         ///
         /// - 查询TOP域名。
@@ -320,6 +385,22 @@ namespace HuaweiCloud.SDK.Cdn.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopUrlRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowTopUrlResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询刷新预热URL记录
+        ///
+        /// 查询刷新预热URL记录。如需此接口，请提交工单开通。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowUrlTaskInfoResponse> ShowUrlTaskInfoAsync(ShowUrlTaskInfoRequest showUrlTaskInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/contentgateway/url-tasks",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlTaskInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowUrlTaskInfoResponse>(response);
         }
         
         /// <summary>

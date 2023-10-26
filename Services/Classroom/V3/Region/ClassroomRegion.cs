@@ -9,6 +9,8 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
             "https://classroom-ext.cn-north-4.myhuaweicloud.com");
         
+        private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CLASSROOM");
+
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
         {
                 { "cn-north-4", CN_NORTH_4 },
@@ -19,6 +21,12 @@ namespace HuaweiCloud.SDK.Classroom.V3
             if (string.IsNullOrEmpty(regionId))
             {
                 throw new ArgumentNullException(regionId);
+            }
+
+            var region = Provider.GetRegion(regionId);
+            if (region != null)
+            {
+                return region;
             }
 
             if (StaticFields.ContainsKey(regionId))
