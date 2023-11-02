@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// 语言。
+        /// 请求语言类型。默认en-us。 取值范围： - en-us - zh-cn
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public string XLanguage { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// 实例ID，严格匹配UUID规则。
         /// </summary>
         [SDKProperty("instance_id", IsQuery = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string BackupId { get; set; }
 
         /// <summary>
-        /// 备份类型，取值：  - \&quot;auto\&quot;：自动全量备份。 - \&quot;manual\&quot;：手动全量备份。
+        /// 备份类型。  取值范围： - auto：自动全量备份。 - manual：手动全量备份。
         /// </summary>
         [SDKProperty("backup_type", IsQuery = true)]
         [JsonProperty("backup_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -72,6 +72,20 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
+        /// <summary>
+        /// 备份名称。
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 实例名称。
+        /// </summary>
+        [SDKProperty("instance_name", IsQuery = true)]
+        [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceName { get; set; }
+
 
 
         /// <summary>
@@ -89,6 +103,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -149,6 +165,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&
                     this.EndTime.Equals(input.EndTime))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.InstanceName == input.InstanceName ||
+                    (this.InstanceName != null &&
+                    this.InstanceName.Equals(input.InstanceName))
                 );
         }
 
@@ -176,6 +202,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null)
                     hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.InstanceName != null)
+                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 return hashCode;
             }
         }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 转发到的后端主机组的URL配置。rewrite_url_enable为true时，该字段必须传入。
+    /// url重写配置。rewrite_url_enable为true时，该字段必须传入。
     /// </summary>
     public class CreateRewriteUrlConfig 
     {

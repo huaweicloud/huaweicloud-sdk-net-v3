@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 批量删除后端服务器
         ///
-        /// 在指定pool下批量删除后端服务器。一次最多添加200个。
+        /// 在指定pool下批量删除后端服务器。一次最多删除200个。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 批量更新后端服务器
         ///
-        /// 在指定pool下批量更新后端服务器。一次最多添加200个。
+        /// 在指定pool下批量更新后端服务器。一次最多更新200个。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 创建云日志
         ///
-        /// 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+        /// 创建云日志。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -260,8 +260,6 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 创建自定义安全策略
         ///
         /// 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
-        /// 
-        /// [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -414,7 +412,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 删除云日志
         ///
-        /// 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+        /// 删除云日志。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -466,7 +464,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 删除自定义安全策略
         ///
-        /// 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+        /// 删除自定义安全策略。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -636,7 +634,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询云日志列表
         ///
-        /// 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+        /// 查询云日志列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -701,7 +699,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询自定义安全策略列表
         ///
-        /// 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+        /// 查询自定义安全策略列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -875,7 +873,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询云日志详情
         ///
-        /// 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+        /// 云日志详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -943,7 +941,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询自定义安全策略详情
         ///
-        /// 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+        /// 查询自定义安全策略详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1063,7 +1061,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 更新云日志
         ///
-        /// 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+        /// 更新云日志。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1115,7 +1113,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 更新自定义安全策略
         ///
-        /// 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+        /// 更新自定义安全策略。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1146,9 +1144,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 删除IP地址组的IP列表项
+        /// 批量删除IP地址组的IP地址
         ///
-        /// 批量删除IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
+        /// 批量删除IP地址组的IP地址。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1200,7 +1198,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
         /// 
-        /// [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+        /// [不支持IPv6。](tag:dt,dt_test)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1216,7 +1214,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 删除IP地址组
         ///
-        /// 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+        /// 删除IP地址组。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1233,7 +1231,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询IP地址组列表
         ///
-        /// 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+        /// 查询IP地址组列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1249,7 +1247,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询IP地址组详情
         ///
-        /// 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+        /// 获取IP地址组详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1271,7 +1269,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
         /// 
-        /// [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+        /// [不支持IPv6。](tag:dt,dt_test)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1286,9 +1284,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 更新IP地址组的IP列表项
+        /// 更新IP地址组的IP列表
         ///
-        /// 更新IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
+        /// 更新IP地址组的IP列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

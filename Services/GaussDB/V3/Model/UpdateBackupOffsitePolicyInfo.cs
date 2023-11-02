@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool? OpenIncrementalBackup { get; set; }
 
         /// <summary>
-        /// 设置跨区域备份策略的目标project ID。    租户在某一Region下的project ID。                              获取方法请参见[获取项目ID](https://support.huaweicloud.com/api-gaussdb/gaussdb_10_0004.html)。
+        /// 设置跨区域备份策略的目标project ID。    租户在某一Region下的project ID。                              获取方法请参见[获取项目ID](https://support.huaweicloud.com/api-gaussdbformysql/gaussdbformysql_10_0004.html)。
         /// </summary>
         [JsonProperty("destination_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationProjectId { get; set; }

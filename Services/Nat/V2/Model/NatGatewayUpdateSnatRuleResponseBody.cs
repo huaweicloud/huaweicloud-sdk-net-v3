@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class NatGatewayUpdateSnatRuleResponseBody 
     {
         /// <summary>
-        /// 功能说明：SNAT规则的状态。
+        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
-        /// <value>功能说明：SNAT规则的状态。</value>
+        /// <value>SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -198,7 +198,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 功能说明：SNAT规则的状态。
+        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -221,16 +221,28 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
+        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。
         /// </summary>
         [JsonProperty("floating_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string FloatingIpAddress { get; set; }
 
         /// <summary>
-        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
+        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。
         /// </summary>
         [JsonProperty("public_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIpAddress { get; set; }
+
+        /// <summary>
+        /// 全域弹性公网IP的地址。
+        /// </summary>
+        [JsonProperty("global_eip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipAddress { get; set; }
+
+        /// <summary>
+        /// 全域弹性公网IP的id。
+        /// </summary>
+        [JsonProperty("global_eip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipId { get; set; }
 
 
 
@@ -254,6 +266,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  floatingIpAddress: ").Append(FloatingIpAddress).Append("\n");
             sb.Append("  publicIpAddress: ").Append(PublicIpAddress).Append("\n");
+            sb.Append("  globalEipAddress: ").Append(GlobalEipAddress).Append("\n");
+            sb.Append("  globalEipId: ").Append(GlobalEipId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -339,6 +353,16 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.PublicIpAddress == input.PublicIpAddress ||
                     (this.PublicIpAddress != null &&
                     this.PublicIpAddress.Equals(input.PublicIpAddress))
+                ) && 
+                (
+                    this.GlobalEipAddress == input.GlobalEipAddress ||
+                    (this.GlobalEipAddress != null &&
+                    this.GlobalEipAddress.Equals(input.GlobalEipAddress))
+                ) && 
+                (
+                    this.GlobalEipId == input.GlobalEipId ||
+                    (this.GlobalEipId != null &&
+                    this.GlobalEipId.Equals(input.GlobalEipId))
                 );
         }
 
@@ -376,6 +400,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
                 if (this.PublicIpAddress != null)
                     hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.GlobalEipAddress != null)
+                    hashCode = hashCode * 59 + this.GlobalEipAddress.GetHashCode();
+                if (this.GlobalEipId != null)
+                    hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
                 return hashCode;
             }
         }

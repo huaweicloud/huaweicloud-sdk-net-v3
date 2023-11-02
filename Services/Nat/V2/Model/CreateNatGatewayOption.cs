@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("session_conf", NullValueHandling = NullValueHandling.Ignore)]
         public SessionConfiguration SessionConf { get; set; }
 
+        /// <summary>
+        /// 公网NAT网关私有IP地址，由VPC中子网分配。
+        /// </summary>
+        [JsonProperty("ngport_ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string NgportIpAddress { get; set; }
+
 
 
         /// <summary>
@@ -200,6 +206,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  spec: ").Append(Spec).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sessionConf: ").Append(SessionConf).Append("\n");
+            sb.Append("  ngportIpAddress: ").Append(NgportIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -255,6 +262,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.SessionConf == input.SessionConf ||
                     (this.SessionConf != null &&
                     this.SessionConf.Equals(input.SessionConf))
+                ) && 
+                (
+                    this.NgportIpAddress == input.NgportIpAddress ||
+                    (this.NgportIpAddress != null &&
+                    this.NgportIpAddress.Equals(input.NgportIpAddress))
                 );
         }
 
@@ -280,6 +292,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SessionConf != null)
                     hashCode = hashCode * 59 + this.SessionConf.GetHashCode();
+                if (this.NgportIpAddress != null)
+                    hashCode = hashCode * 59 + this.NgportIpAddress.GetHashCode();
                 return hashCode;
             }
         }

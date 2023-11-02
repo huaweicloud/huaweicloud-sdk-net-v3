@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 数据库版本。  数据库支持的版本信息，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的name字段。
+        /// 数据库版本。  数据库支持的版本信息，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlEngineVersion.html)返回的name字段。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }

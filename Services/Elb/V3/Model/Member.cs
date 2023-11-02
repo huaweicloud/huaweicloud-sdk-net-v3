@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string SubnetCidrId { get; set; }
 
         /// <summary>
-        /// 后端服务器业务端口。 &gt;在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
+        /// 后端服务器业务端口。 &gt; 在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
         /// </summary>
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string DeviceId { get; set; }
 
         /// <summary>
-        /// 后端云服务器的健康状态。当status非空时，以status字段中监听器粒度的健康检查状态优先。  取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
+        /// 后端云服务器的健康状态。当响应参数的status字段非空时，以status字段中监听器粒度的健康检查状态优先。  取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
         /// </summary>
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }

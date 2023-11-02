@@ -1,3 +1,266 @@
+# 3.1.63 2023-11-02
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowConfigHistoryDetail`
+    - `UpdateClientIpTransparentTransmission`
+    - `UpdateInstanceConfig`
+    - `ListInstanceOperations`
+    - `ExportInstancesTask`
+    - `ExportExcelJob`
+    - `CreateResizeOrder`
+    - `ShowExpireAutoScanConfig`
+    - `UpdateExpireAutoScanConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowNodesInformation`、`ShowBackUpInfo`、`CreateOrUpdateBackUpInfo`、`CreateConnectivityTest`
+
+### HuaweiCloud SDK DNS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowPrivateZone**
+    - 响应参数变更
+      - `+ enterprise_project_id`
+      - `+ proxy_pattern`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持接口`CollectPositionAsync`、`ShowPositionResult`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListListeners**
+    - 请求参数变更
+      - `+ proxy_protocol_enable`
+    - 响应参数变更
+      - `+ listeners.proxy_protocol_enable`
+      - `+ listeners.insert_headers.X-Forwarded-Proto`
+      - `+ listeners.insert_headers.X-Real-IP`
+      - `+ listeners.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listeners.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listeners.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listeners.insert_headers.X-Forwarded-TLS-Cipher`
+  - **CreateListener**
+    - 请求参数变更
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+    - 响应参数变更
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+  - **ShowListener**
+    - 响应参数变更
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+  - **UpdateListener**
+    - 请求参数变更
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+    - 响应参数变更
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+  - **CreatePool**
+    - 请求参数变更
+      - `+ pool.ip_version`
+  - **UpdatePool**
+    - 请求参数变更
+      - `+ pool.any_port_enable`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowIntelligentDiagnosisAbnormalCountOfInstances`
+    - `ShowIntelligentDiagnosisInstanceInfosPerMetric`
+    - `ShrinkGaussMySqlProxy`
+    - `ShowInstanceDatabaseVersion`
+    - `CopyInstanceConfigurations`
+    - `ShowAutoScalingPolicy`
+    - `UpdateAutoScalingPolicy`
+    - `CheckResource`
+    - `UpdateInstanceConfigurations`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteGaussMySqlBackup**
+    - 响应参数变更
+      - `+ backup_id`
+      - `+ backup_name`
+      - `- job_id`
+  - **CreateGaussMySqlProxy**
+    - 请求参数变更
+      - `+ subnet_id`
+  - **ShowGaussMySqlBackupList**
+    - 请求参数变更
+      - `+ name`
+      - `+ instance_name`
+    - 响应参数变更
+      - `+ backups.instance_name`
+      - `- backups.status: enum value [BUILDING,COMPLETED,FAILED,AVAILABLE]`
+      - `- backups.type: enum value [auto,manual]`
+  - **ShowGaussMySqlProxyList**
+    - 响应参数变更
+      - `+ proxy_list.proxy.subnet_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持接口`DeleteDatabase`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 请求参数变更
+      - `+ charge_mode`
+  - **ListInstancesDetails**
+    - 请求参数变更
+      - `+ charge_mode`
+
+### HuaweiCloud SDK KPS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ImportPrivateKey**
+    - 响应参数变更
+      - `+ keypair.user_id`
+      - `+ keypair.key_protection`
+      - `* keypair: object<KeypairBean> -> object<ImportPrivateKeyAction>`
+
+### HuaweiCloud SDK NAT
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListNatGatewayDnatRules**
+    - 响应参数变更
+      - `+ dnat_rules.global_eip_id`
+      - `+ dnat_rules.global_eip_address`
+  - **CreateNatGatewayDnatRule**
+    - 请求参数变更
+      - `+ dnat_rule.global_eip_id`
+    - 响应参数变更
+      - `+ dnat_rule.global_eip_id`
+      - `+ dnat_rule.global_eip_address`
+  - **ShowNatGatewayDnatRule**
+    - 响应参数变更
+      - `+ dnat_rule.global_eip_id`
+      - `+ dnat_rule.global_eip_address`
+  - **UpdateNatGatewayDnatRule**
+    - 请求参数变更
+      - `+ dnat_rule.global_eip_id`
+    - 响应参数变更
+      - `+ dnat_rule.global_eip_id`
+      - `+ dnat_rule.global_eip_address`
+  - **BatchCreateNatGatewayDnatRules**
+    - 请求参数变更
+      - `+ dnat_rules.global_eip_id`
+    - 响应参数变更
+      - `+ dnat_rules.global_eip_id`
+      - `+ dnat_rules.global_eip_address`
+  - **ListNatGatewaySnatRules**
+    - 响应参数变更
+      - `+ snat_rules.global_eip_id`
+      - `+ snat_rules.global_eip_address`
+  - **CreateNatGatewaySnatRule**
+    - 请求参数变更
+      - `+ snat_rule.global_eip_id`
+    - 响应参数变更
+      - `+ snat_rule.global_eip_id`
+      - `+ snat_rule.global_eip_address`
+  - **ShowNatGatewaySnatRule**
+    - 响应参数变更
+      - `+ snat_rule.global_eip_id`
+      - `+ snat_rule.global_eip_address`
+  - **UpdateNatGatewaySnatRule**
+    - 请求参数变更
+      - `+ snat_rule.global_eip_id`
+    - 响应参数变更
+      - `+ snat_rule.global_eip_address`
+      - `+ snat_rule.global_eip_id`
+  - **ListNatGateways**
+    - 响应参数变更
+      - `+ nat_gateways.ngport_ip_address`
+      - `+ nat_gateways.billing_info`
+      - `+ nat_gateways.dnat_rules_limit`
+      - `+ nat_gateways.snat_rule_public_ip_limit`
+  - **CreateNatGateway**
+    - 请求参数变更
+      - `+ nat_gateway.ngport_ip_address`
+    - 响应参数变更
+      - `+ nat_gateway.ngport_ip_address`
+      - `+ nat_gateway.billing_info`
+      - `+ nat_gateway.dnat_rules_limit`
+      - `+ nat_gateway.snat_rule_public_ip_limit`
+  - **ShowNatGateway**
+    - 响应参数变更
+      - `+ nat_gateway.ngport_ip_address`
+      - `+ nat_gateway.billing_info`
+      - `+ nat_gateway.dnat_rules_limit`
+      - `+ nat_gateway.snat_rule_public_ip_limit`
+  - **UpdateNatGateway**
+    - 响应参数变更
+      - `+ nat_gateway.ngport_ip_address`
+      - `+ nat_gateway.billing_info`
+      - `+ nat_gateway.dnat_rules_limit`
+      - `+ nat_gateway.snat_rule_public_ip_limit`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateRocketMqMigrationTask**
+    - 请求参数变更
+      - `* body: string -> map<string, object>`
+
 # 3.1.62 2023-10-26
 
 ### HuaweiCloud SDK AOS

@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
+        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt,tm)
         /// </summary>
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public string LbAlgorithm { get; set; }
@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public UpdatePoolSlowStartOption SlowStart { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护。  取值：false不开启，true开启。  &gt; 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+        /// 是否开启删除保护。  取值：false不开启，true开启。  &gt; 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
         /// </summary>
         [JsonProperty("member_deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? MemberDeletionProtectionEnable { get; set; }
@@ -196,6 +196,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectionReason { get; set; }
 
+        /// <summary>
+        /// 后端是否开启端口透传，开启后，后端服务器端口与前端监听器端口保持一致。  使用说明： - 仅QUIC,TCP,UDP的pool支持。  &gt; 关闭端口透传后，请求会转发给后端服务器protocol_port字段指定端口。
+        /// </summary>
+        [JsonProperty("any_port_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AnyPortEnable { get; set; }
+
 
 
         /// <summary>
@@ -216,6 +222,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
+            sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -291,6 +298,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ProtectionReason == input.ProtectionReason ||
                     (this.ProtectionReason != null &&
                     this.ProtectionReason.Equals(input.ProtectionReason))
+                ) && 
+                (
+                    this.AnyPortEnable == input.AnyPortEnable ||
+                    (this.AnyPortEnable != null &&
+                    this.AnyPortEnable.Equals(input.AnyPortEnable))
                 );
         }
 
@@ -324,6 +336,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ProtectionReason != null)
                     hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.AnyPortEnable != null)
+                    hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
                 return hashCode;
             }
         }

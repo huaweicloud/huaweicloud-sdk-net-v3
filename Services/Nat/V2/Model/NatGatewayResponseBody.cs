@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
         /// <summary>
-        /// 公网NAT网关实例的状态。
+        /// 公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
-        /// <value>公网NAT网关实例的状态。</value>
+        /// <value>公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -306,7 +306,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
         /// <summary>
-        /// 公网NAT网关实例的状态。
+        /// 公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -346,6 +346,30 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("session_conf", NullValueHandling = NullValueHandling.Ignore)]
         public SessionConfiguration SessionConf { get; set; }
 
+        /// <summary>
+        /// 公网NAT网关私有IP地址，由VPC中子网分配。
+        /// </summary>
+        [JsonProperty("ngport_ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string NgportIpAddress { get; set; }
+
+        /// <summary>
+        /// 订单信息。
+        /// </summary>
+        [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string BillingInfo { get; set; }
+
+        /// <summary>
+        /// 公网NAT网关下DNAT规则数量限制，默认为200。
+        /// </summary>
+        [JsonProperty("dnat_rules_limit", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DnatRulesLimit { get; set; }
+
+        /// <summary>
+        /// 公网NAT网关下SNAT规则EIP池中EIP数量限制，默认为20。
+        /// </summary>
+        [JsonProperty("snat_rule_public_ip_limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SnatRulePublicIpLimit { get; set; }
+
 
 
         /// <summary>
@@ -367,6 +391,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  internalNetworkId: ").Append(InternalNetworkId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sessionConf: ").Append(SessionConf).Append("\n");
+            sb.Append("  ngportIpAddress: ").Append(NgportIpAddress).Append("\n");
+            sb.Append("  billingInfo: ").Append(BillingInfo).Append("\n");
+            sb.Append("  dnatRulesLimit: ").Append(DnatRulesLimit).Append("\n");
+            sb.Append("  snatRulePublicIpLimit: ").Append(SnatRulePublicIpLimit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -447,6 +475,26 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.SessionConf == input.SessionConf ||
                     (this.SessionConf != null &&
                     this.SessionConf.Equals(input.SessionConf))
+                ) && 
+                (
+                    this.NgportIpAddress == input.NgportIpAddress ||
+                    (this.NgportIpAddress != null &&
+                    this.NgportIpAddress.Equals(input.NgportIpAddress))
+                ) && 
+                (
+                    this.BillingInfo == input.BillingInfo ||
+                    (this.BillingInfo != null &&
+                    this.BillingInfo.Equals(input.BillingInfo))
+                ) && 
+                (
+                    this.DnatRulesLimit == input.DnatRulesLimit ||
+                    (this.DnatRulesLimit != null &&
+                    this.DnatRulesLimit.Equals(input.DnatRulesLimit))
+                ) && 
+                (
+                    this.SnatRulePublicIpLimit == input.SnatRulePublicIpLimit ||
+                    (this.SnatRulePublicIpLimit != null &&
+                    this.SnatRulePublicIpLimit.Equals(input.SnatRulePublicIpLimit))
                 );
         }
 
@@ -482,6 +530,14 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SessionConf != null)
                     hashCode = hashCode * 59 + this.SessionConf.GetHashCode();
+                if (this.NgportIpAddress != null)
+                    hashCode = hashCode * 59 + this.NgportIpAddress.GetHashCode();
+                if (this.BillingInfo != null)
+                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
+                if (this.DnatRulesLimit != null)
+                    hashCode = hashCode * 59 + this.DnatRulesLimit.GetHashCode();
+                if (this.SnatRulePublicIpLimit != null)
+                    hashCode = hashCode * 59 + this.SnatRulePublicIpLimit.GetHashCode();
                 return hashCode;
             }
         }

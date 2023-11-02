@@ -24,6 +24,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             "https://iotda.af-south-1.myhuaweicloud.com");
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
             "https://iotda.me-east-1.myhuaweicloud.com");
+        public static readonly Region LA_SOUTH_2 = new Region("la-south-2",
+            "https://iotda.la-south-2.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IOTDA");
 
@@ -38,6 +40,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "af-south-1", AF_SOUTH_1 },
                 { "me-east-1", ME_EAST_1 },
+                { "la-south-2", LA_SOUTH_2 },
         };
 
         public static Region ValueOf(string regionId)

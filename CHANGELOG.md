@@ -1,3 +1,266 @@
+# 3.1.63 2023-11-02
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the following interfaces：
+    - `ShowConfigHistoryDetail`
+    - `UpdateClientIpTransparentTransmission`
+    - `UpdateInstanceConfig`
+    - `ListInstanceOperations`
+    - `ExportInstancesTask`
+    - `ExportExcelJob`
+    - `CreateResizeOrder`
+    - `ShowExpireAutoScanConfig`
+    - `UpdateExpireAutoScanConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the interfaces `ShowNodesInformation`, `ShowBackUpInfo`, `CreateOrUpdateBackUpInfo`, `CreateConnectivityTest`
+
+### HuaweiCloud SDK DNS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPrivateZone**
+    - changes of response param
+      - `+ enterprise_project_id`
+      - `+ proxy_pattern`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the interfaces `CollectPositionAsync`, `ShowPositionResult`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ELB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListListeners**
+    - changes of request param
+      - `+ proxy_protocol_enable`
+    - changes of response param
+      - `+ listeners.proxy_protocol_enable`
+      - `+ listeners.insert_headers.X-Forwarded-Proto`
+      - `+ listeners.insert_headers.X-Real-IP`
+      - `+ listeners.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listeners.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listeners.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listeners.insert_headers.X-Forwarded-TLS-Cipher`
+  - **CreateListener**
+    - changes of request param
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+    - changes of response param
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+  - **ShowListener**
+    - changes of response param
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+  - **UpdateListener**
+    - changes of request param
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+    - changes of response param
+      - `+ listener.proxy_protocol_enable`
+      - `+ listener.insert_headers.X-Forwarded-Proto`
+      - `+ listener.insert_headers.X-Real-IP`
+      - `+ listener.insert_headers.X-Forwarded-ELB-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Certificate-ID`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Protocol`
+      - `+ listener.insert_headers.X-Forwarded-TLS-Cipher`
+  - **CreatePool**
+    - changes of request param
+      - `+ pool.ip_version`
+  - **UpdatePool**
+    - changes of request param
+      - `+ pool.any_port_enable`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the following interfaces：
+    - `ShowIntelligentDiagnosisAbnormalCountOfInstances`
+    - `ShowIntelligentDiagnosisInstanceInfosPerMetric`
+    - `ShrinkGaussMySqlProxy`
+    - `ShowInstanceDatabaseVersion`
+    - `CopyInstanceConfigurations`
+    - `ShowAutoScalingPolicy`
+    - `UpdateAutoScalingPolicy`
+    - `CheckResource`
+    - `UpdateInstanceConfigurations`
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteGaussMySqlBackup**
+    - changes of response param
+      - `+ backup_id`
+      - `+ backup_name`
+      - `- job_id`
+  - **CreateGaussMySqlProxy**
+    - changes of request param
+      - `+ subnet_id`
+  - **ShowGaussMySqlBackupList**
+    - changes of request param
+      - `+ name`
+      - `+ instance_name`
+    - changes of response param
+      - `+ backups.instance_name`
+      - `- backups.status: enum value [BUILDING,COMPLETED,FAILED,AVAILABLE]`
+      - `- backups.type: enum value [auto,manual]`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.subnet_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the interface `DeleteDatabase`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `+ charge_mode`
+  - **ListInstancesDetails**
+    - changes of request param
+      - `+ charge_mode`
+
+### HuaweiCloud SDK KPS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ImportPrivateKey**
+    - changes of response param
+      - `+ keypair.user_id`
+      - `+ keypair.key_protection`
+      - `* keypair: object<KeypairBean> -> object<ImportPrivateKeyAction>`
+
+### HuaweiCloud SDK NAT
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListNatGatewayDnatRules**
+    - changes of response param
+      - `+ dnat_rules.global_eip_id`
+      - `+ dnat_rules.global_eip_address`
+  - **CreateNatGatewayDnatRule**
+    - changes of request param
+      - `+ dnat_rule.global_eip_id`
+    - changes of response param
+      - `+ dnat_rule.global_eip_id`
+      - `+ dnat_rule.global_eip_address`
+  - **ShowNatGatewayDnatRule**
+    - changes of response param
+      - `+ dnat_rule.global_eip_id`
+      - `+ dnat_rule.global_eip_address`
+  - **UpdateNatGatewayDnatRule**
+    - changes of request param
+      - `+ dnat_rule.global_eip_id`
+    - changes of response param
+      - `+ dnat_rule.global_eip_id`
+      - `+ dnat_rule.global_eip_address`
+  - **BatchCreateNatGatewayDnatRules**
+    - changes of request param
+      - `+ dnat_rules.global_eip_id`
+    - changes of response param
+      - `+ dnat_rules.global_eip_id`
+      - `+ dnat_rules.global_eip_address`
+  - **ListNatGatewaySnatRules**
+    - changes of response param
+      - `+ snat_rules.global_eip_id`
+      - `+ snat_rules.global_eip_address`
+  - **CreateNatGatewaySnatRule**
+    - changes of request param
+      - `+ snat_rule.global_eip_id`
+    - changes of response param
+      - `+ snat_rule.global_eip_id`
+      - `+ snat_rule.global_eip_address`
+  - **ShowNatGatewaySnatRule**
+    - changes of response param
+      - `+ snat_rule.global_eip_id`
+      - `+ snat_rule.global_eip_address`
+  - **UpdateNatGatewaySnatRule**
+    - changes of request param
+      - `+ snat_rule.global_eip_id`
+    - changes of response param
+      - `+ snat_rule.global_eip_address`
+      - `+ snat_rule.global_eip_id`
+  - **ListNatGateways**
+    - changes of response param
+      - `+ nat_gateways.ngport_ip_address`
+      - `+ nat_gateways.billing_info`
+      - `+ nat_gateways.dnat_rules_limit`
+      - `+ nat_gateways.snat_rule_public_ip_limit`
+  - **CreateNatGateway**
+    - changes of request param
+      - `+ nat_gateway.ngport_ip_address`
+    - changes of response param
+      - `+ nat_gateway.ngport_ip_address`
+      - `+ nat_gateway.billing_info`
+      - `+ nat_gateway.dnat_rules_limit`
+      - `+ nat_gateway.snat_rule_public_ip_limit`
+  - **ShowNatGateway**
+    - changes of response param
+      - `+ nat_gateway.ngport_ip_address`
+      - `+ nat_gateway.billing_info`
+      - `+ nat_gateway.dnat_rules_limit`
+      - `+ nat_gateway.snat_rule_public_ip_limit`
+  - **UpdateNatGateway**
+    - changes of response param
+      - `+ nat_gateway.ngport_ip_address`
+      - `+ nat_gateway.billing_info`
+      - `+ nat_gateway.dnat_rules_limit`
+      - `+ nat_gateway.snat_rule_public_ip_limit`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateRocketMqMigrationTask**
+    - changes of request param
+      - `* body: string -> map<string, object>`
+
 # 3.1.62 2023-10-26
 
 ### HuaweiCloud SDK AOS

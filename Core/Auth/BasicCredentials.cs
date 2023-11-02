@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
@@ -100,10 +101,9 @@ namespace HuaweiCloud.SDK.Core.Auth
             }
 
             var akWithName = Ak + regionId;
-            var projectId = AuthCache.GetAuth(akWithName);
-            if (!string.IsNullOrEmpty(projectId))
+            if (AuthCache.Value.ContainsKey(akWithName))
             {
-                ProjectId = projectId;
+                ProjectId = AuthCache.Value[akWithName];
                 return this;
             }
 
@@ -111,12 +111,16 @@ namespace HuaweiCloud.SDK.Core.Auth
             DerivedPredicate = null;
 
             IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            var logger = client.GetLogger();
+            logger.LogInformation("Project id of region '{}' not found in BasicCredentials, trying to obtain project id from IAM service: {}",
+                regionId, IamEndpoint);
             var request = IamService.GetKeystoneListProjectsRequest(IamEndpoint, regionId, client.GetHttpConfig());
             request = SignAuthRequest(request).Result;
             try
             {
                 ProjectId = IamService.KeystoneListProjects(client, request);
-                AuthCache.PutAuth(akWithName, ProjectId);
+                logger.LogInformation("Success to obtain project id of region '{}': {}", regionId, ProjectId);
+                AuthCache.Value[akWithName] = ProjectId;
                 DerivedPredicate = derivedFunc;
                 return this;
             }

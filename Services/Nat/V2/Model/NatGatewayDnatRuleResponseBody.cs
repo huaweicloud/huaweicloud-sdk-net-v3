@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class NatGatewayDnatRuleResponseBody 
     {
         /// <summary>
-        /// 功能说明：DNAT规则的状态。
+        /// DNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
-        /// <value>功能说明：DNAT规则的状态。</value>
+        /// <value>DNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -337,7 +337,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public int? ExternalServicePort { get; set; }
 
         /// <summary>
-        /// 功能说明：DNAT规则的状态。
+        /// DNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -370,6 +370,18 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
+        /// <summary>
+        /// 全域弹性公网IP的id。
+        /// </summary>
+        [JsonProperty("global_eip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipId { get; set; }
+
+        /// <summary>
+        /// 全域弹性公网IP的地址。
+        /// </summary>
+        [JsonProperty("global_eip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipAddress { get; set; }
+
 
 
         /// <summary>
@@ -395,6 +407,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  externalServicePortRange: ").Append(ExternalServicePortRange).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  globalEipId: ").Append(GlobalEipId).Append("\n");
+            sb.Append("  globalEipAddress: ").Append(GlobalEipAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -495,6 +509,16 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.GlobalEipId == input.GlobalEipId ||
+                    (this.GlobalEipId != null &&
+                    this.GlobalEipId.Equals(input.GlobalEipId))
+                ) && 
+                (
+                    this.GlobalEipAddress == input.GlobalEipAddress ||
+                    (this.GlobalEipAddress != null &&
+                    this.GlobalEipAddress.Equals(input.GlobalEipAddress))
                 );
         }
 
@@ -538,6 +562,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.GlobalEipId != null)
+                    hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
+                if (this.GlobalEipAddress != null)
+                    hashCode = hashCode * 59 + this.GlobalEipAddress.GetHashCode();
                 return hashCode;
             }
         }

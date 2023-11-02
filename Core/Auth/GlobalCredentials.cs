@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace HuaweiCloud.SDK.Core.Auth
 {
@@ -99,10 +100,9 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
-            var domainId = AuthCache.GetAuth(Ak);
-            if (!string.IsNullOrEmpty(domainId))
+            if (AuthCache.Value.ContainsKey(Ak))
             {
-                DomainId = domainId;
+                DomainId = AuthCache.Value[Ak];
                 return this;
             }
 
@@ -110,12 +110,15 @@ namespace HuaweiCloud.SDK.Core.Auth
             DerivedPredicate = null;
 
             IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            var logger = client.GetLogger();
+            logger.LogInformation("Domain id not found in BasicCredentials, trying to obtain domain id from IAM service: {}", IamEndpoint);
             var request = IamService.GetKeystoneListAuthDomainsRequest(IamEndpoint, client.GetHttpConfig());
             request = SignAuthRequest(request).Result;
             try
             {
                 DomainId = IamService.KeystoneListAuthDomains(client, request);
-                AuthCache.PutAuth(Ak, DomainId);
+                logger.LogInformation("Success to obtain domain id: {}", DomainId);
+                AuthCache.Value[Ak] = DomainId;
                 DerivedPredicate = derivedFunc;
                 return this;
             }

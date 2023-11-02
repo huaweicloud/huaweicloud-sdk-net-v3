@@ -56,6 +56,11 @@ namespace HuaweiCloud.SDK.Core
             return _httpConfig;
         }
 
+        internal ILogger GetLogger()
+        {
+            return _logger;
+        }
+
         private IServiceCollection GetServiceCollection(HttpConfig httpConfig, bool logging, LogLevel logLevel)
         {
             var service = new ServiceCollection()

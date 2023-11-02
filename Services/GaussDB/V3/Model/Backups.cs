@@ -16,251 +16,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     public class Backups 
     {
         /// <summary>
-        /// 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
+        /// 备份级别。当开启一级备份开关时，返回该参数。
         /// </summary>
-        /// <value>备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。</value>
-        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
-        public class StatusEnum
-        {
-            /// <summary>
-            /// Enum BUILDING for value: BUILDING
-            /// </summary>
-            public static readonly StatusEnum BUILDING = new StatusEnum("BUILDING");
-
-            /// <summary>
-            /// Enum COMPLETED for value: COMPLETED
-            /// </summary>
-            public static readonly StatusEnum COMPLETED = new StatusEnum("COMPLETED");
-
-            /// <summary>
-            /// Enum FAILED for value: FAILED
-            /// </summary>
-            public static readonly StatusEnum FAILED = new StatusEnum("FAILED");
-
-            /// <summary>
-            /// Enum AVAILABLE for value: AVAILABLE
-            /// </summary>
-            public static readonly StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
-
-            private static readonly Dictionary<string, StatusEnum> StaticFields =
-            new Dictionary<string, StatusEnum>()
-            {
-                { "BUILDING", BUILDING },
-                { "COMPLETED", COMPLETED },
-                { "FAILED", FAILED },
-                { "AVAILABLE", AVAILABLE },
-            };
-
-            private string _value;
-
-            public StatusEnum()
-            {
-
-            }
-
-            public StatusEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static StatusEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as StatusEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(StatusEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(StatusEnum a, StatusEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(StatusEnum a, StatusEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
-        /// </summary>
-        /// <value>备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。</value>
-        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
-        public class TypeEnum
-        {
-            /// <summary>
-            /// Enum AUTO for value: auto
-            /// </summary>
-            public static readonly TypeEnum AUTO = new TypeEnum("auto");
-
-            /// <summary>
-            /// Enum MANUAL for value: manual
-            /// </summary>
-            public static readonly TypeEnum MANUAL = new TypeEnum("manual");
-
-            private static readonly Dictionary<string, TypeEnum> StaticFields =
-            new Dictionary<string, TypeEnum>()
-            {
-                { "auto", AUTO },
-                { "manual", MANUAL },
-            };
-
-            private string _value;
-
-            public TypeEnum()
-            {
-
-            }
-
-            public TypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static TypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as TypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(TypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(TypeEnum a, TypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(TypeEnum a, TypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
-        /// </summary>
-        /// <value>备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。</value>
+        /// <value>备份级别。当开启一级备份开关时，返回该参数。</value>
         [JsonConverter(typeof(EnumClassConverter<BackupLevelEnum>))]
         public class BackupLevelEnum
         {
@@ -407,9 +165,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum Status { get; set; }
+        public string Status { get; set; }
+
         /// <summary>
-        /// 备份花费时间(单位：minutes)
+        /// 备份花费时间（单位：minutes）
         /// </summary>
         [JsonProperty("take_up_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? TakeUpTime { get; set; }
@@ -418,9 +177,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public TypeEnum Type { get; set; }
+        public string Type { get; set; }
+
         /// <summary>
-        /// 备份大小，(单位：MB)
+        /// 备份大小（单位：MB）。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public long? Size { get; set; }
@@ -432,18 +192,24 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public MysqlDatastoreInBackup Datastore { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// 实例ID，严格匹配UUID规则。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
+        /// 实例名称。
+        /// </summary>
+        [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceName { get; set; }
+
+        /// <summary>
+        /// 备份级别。当开启一级备份开关时，返回该参数。
         /// </summary>
         [JsonProperty("backup_level", NullValueHandling = NullValueHandling.Ignore)]
         public BackupLevelEnum BackupLevel { get; set; }
         /// <summary>
-        /// 备份文件描述信息
+        /// 备份文件描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -467,6 +233,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  datastore: ").Append(Datastore).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("  backupLevel: ").Append(BackupLevel).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -541,6 +308,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
+                    this.InstanceName == input.InstanceName ||
+                    (this.InstanceName != null &&
+                    this.InstanceName.Equals(input.InstanceName))
+                ) && 
+                (
                     this.BackupLevel == input.BackupLevel ||
                     (this.BackupLevel != null &&
                     this.BackupLevel.Equals(input.BackupLevel))
@@ -580,6 +352,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.Datastore.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null)
+                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 if (this.BackupLevel != null)
                     hashCode = hashCode * 59 + this.BackupLevel.GetHashCode();
                 if (this.Description != null)

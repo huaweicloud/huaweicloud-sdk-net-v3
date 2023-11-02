@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// 转发到的后端主机组的配置。当action为REDIRECT_TO_POOL时生效。
     /// </summary>
     public class CreateRedirectPoolsExtendConfig 
     {

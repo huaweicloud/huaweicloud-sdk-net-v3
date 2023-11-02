@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Qps { get; set; }
 
         /// <summary>
-        /// 带宽。单位：Mbit/s。
+        /// 带宽。单位：Kbit/s。
         /// </summary>
         [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bandwidth { get; set; }

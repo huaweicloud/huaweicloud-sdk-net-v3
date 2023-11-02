@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// 任务ID。
+        /// 备份ID。
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupId { get; set; }
+
+        /// <summary>
+        /// 备份名称。
+        /// </summary>
+        [JsonProperty("backup_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupName { get; set; }
 
 
 
@@ -31,7 +37,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteGaussMySqlBackupResponse {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  backupId: ").Append(BackupId).Append("\n");
+            sb.Append("  backupName: ").Append(BackupName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,9 +61,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
 
             return 
                 (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
+                    this.BackupId == input.BackupId ||
+                    (this.BackupId != null &&
+                    this.BackupId.Equals(input.BackupId))
+                ) && 
+                (
+                    this.BackupName == input.BackupName ||
+                    (this.BackupName != null &&
+                    this.BackupName.Equals(input.BackupName))
                 );
         }
 
@@ -68,8 +80,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.BackupId != null)
+                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.BackupName != null)
+                    hashCode = hashCode * 59 + this.BackupName.GetHashCode();
                 return hashCode;
             }
         }

@@ -220,14 +220,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<int?> IpVersion { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+        /// 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
         /// </summary>
         [SDKProperty("deletion_protection_enable", IsQuery = true)]
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }
 
         /// <summary>
-        /// 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type&#x3D;ipv4&amp;elb_virsubnet_type&#x3D;dualstack*。
+        /// 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type&#x3D;ipv4&amp;elb_virsubnet_type&#x3D;dualstack*。  [不支持dualstack。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("elb_virsubnet_type", IsQuery = true)]
         [JsonProperty("elb_virsubnet_type", NullValueHandling = NullValueHandling.Ignore)]

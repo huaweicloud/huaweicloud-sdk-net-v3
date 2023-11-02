@@ -245,6 +245,121 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             }
         }
 
+        /// <summary>
+        /// 计费模式。  取值范围：   postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
+        /// </summary>
+        /// <value>计费模式。  取值范围：   postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。</value>
+        [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
+        public class ChargeModeEnum
+        {
+            /// <summary>
+            /// Enum POSTPAID for value: postPaid
+            /// </summary>
+            public static readonly ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
+
+            /// <summary>
+            /// Enum PREPAID for value: prePaid
+            /// </summary>
+            public static readonly ChargeModeEnum PREPAID = new ChargeModeEnum("prePaid");
+
+            private static readonly Dictionary<string, ChargeModeEnum> StaticFields =
+            new Dictionary<string, ChargeModeEnum>()
+            {
+                { "postPaid", POSTPAID },
+                { "prePaid", PREPAID },
+            };
+
+            private string _value;
+
+            public ChargeModeEnum()
+            {
+
+            }
+
+            public ChargeModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ChargeModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ChargeModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ChargeModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ChargeModeEnum a, ChargeModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 语言
@@ -314,6 +429,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
+        /// <summary>
+        /// 计费模式。  取值范围：   postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
+        /// </summary>
+        [SDKProperty("charge_mode", IsQuery = true)]
+        [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public ChargeModeEnum ChargeMode { get; set; }
 
 
         /// <summary>
@@ -333,6 +454,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -404,6 +526,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.ChargeMode == input.ChargeMode ||
+                    (this.ChargeMode != null &&
+                    this.ChargeMode.Equals(input.ChargeMode))
                 );
         }
 
@@ -435,6 +562,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.ChargeMode != null)
+                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 return hashCode;
             }
         }

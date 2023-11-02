@@ -40,6 +40,42 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("X-Forwarded-Host", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedHost { get; set; }
 
+        /// <summary>
+        /// X-Forwarded-Proto设为true可以将负载均衡器实例的监听协议通过报文的http头带到后端云服务器。
+        /// </summary>
+        [JsonProperty("X-Forwarded-Proto", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? XForwardedProto { get; set; }
+
+        /// <summary>
+        /// X-Real-IP设为true可以将客户端的IP通过报文的http头带到后端云服务器。
+        /// </summary>
+        [JsonProperty("X-Real-IP", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? XRealIP { get; set; }
+
+        /// <summary>
+        /// X-Forwarded-ELB-ID设为true可以将负载均衡器实例的ID通过报文的http头带到后端云服务器。
+        /// </summary>
+        [JsonProperty("X-Forwarded-ELB-ID", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? XForwardedELBID { get; set; }
+
+        /// <summary>
+        /// X-Forwarded-TLS-Certificate-ID设为true可以将负载均衡器实例的证书ID通过报文的http头带到后端云服务器。
+        /// </summary>
+        [JsonProperty("X-Forwarded-TLS-Certificate-ID", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? XForwardedTLSCertificateID { get; set; }
+
+        /// <summary>
+        /// X-Forwarded-TLS-Protocol设为true可以将负载均衡器实例的算法协议通过报文的http头带到后端云服务器。
+        /// </summary>
+        [JsonProperty("X-Forwarded-TLS-Protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? XForwardedTLSProtocol { get; set; }
+
+        /// <summary>
+        /// X-Forwarded-TLS-Cipher设为true可以将负载均衡器实例的算法套件通过报文的http头带到后端云服务器。
+        /// </summary>
+        [JsonProperty("X-Forwarded-TLS-Cipher", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? XForwardedTLSCipher { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +89,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  xForwardedPort: ").Append(XForwardedPort).Append("\n");
             sb.Append("  xForwardedForPort: ").Append(XForwardedForPort).Append("\n");
             sb.Append("  xForwardedHost: ").Append(XForwardedHost).Append("\n");
+            sb.Append("  xForwardedProto: ").Append(XForwardedProto).Append("\n");
+            sb.Append("  xRealIP: ").Append(XRealIP).Append("\n");
+            sb.Append("  xForwardedELBID: ").Append(XForwardedELBID).Append("\n");
+            sb.Append("  xForwardedTLSCertificateID: ").Append(XForwardedTLSCertificateID).Append("\n");
+            sb.Append("  xForwardedTLSProtocol: ").Append(XForwardedTLSProtocol).Append("\n");
+            sb.Append("  xForwardedTLSCipher: ").Append(XForwardedTLSCipher).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +135,36 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.XForwardedHost == input.XForwardedHost ||
                     (this.XForwardedHost != null &&
                     this.XForwardedHost.Equals(input.XForwardedHost))
+                ) && 
+                (
+                    this.XForwardedProto == input.XForwardedProto ||
+                    (this.XForwardedProto != null &&
+                    this.XForwardedProto.Equals(input.XForwardedProto))
+                ) && 
+                (
+                    this.XRealIP == input.XRealIP ||
+                    (this.XRealIP != null &&
+                    this.XRealIP.Equals(input.XRealIP))
+                ) && 
+                (
+                    this.XForwardedELBID == input.XForwardedELBID ||
+                    (this.XForwardedELBID != null &&
+                    this.XForwardedELBID.Equals(input.XForwardedELBID))
+                ) && 
+                (
+                    this.XForwardedTLSCertificateID == input.XForwardedTLSCertificateID ||
+                    (this.XForwardedTLSCertificateID != null &&
+                    this.XForwardedTLSCertificateID.Equals(input.XForwardedTLSCertificateID))
+                ) && 
+                (
+                    this.XForwardedTLSProtocol == input.XForwardedTLSProtocol ||
+                    (this.XForwardedTLSProtocol != null &&
+                    this.XForwardedTLSProtocol.Equals(input.XForwardedTLSProtocol))
+                ) && 
+                (
+                    this.XForwardedTLSCipher == input.XForwardedTLSCipher ||
+                    (this.XForwardedTLSCipher != null &&
+                    this.XForwardedTLSCipher.Equals(input.XForwardedTLSCipher))
                 );
         }
 
@@ -112,6 +184,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.XForwardedForPort.GetHashCode();
                 if (this.XForwardedHost != null)
                     hashCode = hashCode * 59 + this.XForwardedHost.GetHashCode();
+                if (this.XForwardedProto != null)
+                    hashCode = hashCode * 59 + this.XForwardedProto.GetHashCode();
+                if (this.XRealIP != null)
+                    hashCode = hashCode * 59 + this.XRealIP.GetHashCode();
+                if (this.XForwardedELBID != null)
+                    hashCode = hashCode * 59 + this.XForwardedELBID.GetHashCode();
+                if (this.XForwardedTLSCertificateID != null)
+                    hashCode = hashCode * 59 + this.XForwardedTLSCertificateID.GetHashCode();
+                if (this.XForwardedTLSProtocol != null)
+                    hashCode = hashCode * 59 + this.XForwardedTLSProtocol.GetHashCode();
+                if (this.XForwardedTLSCipher != null)
+                    hashCode = hashCode * 59 + this.XForwardedTLSCipher.GetHashCode();
                 return hashCode;
             }
         }

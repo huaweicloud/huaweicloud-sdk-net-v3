@@ -196,6 +196,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("external_service_port_range", NullValueHandling = NullValueHandling.Ignore)]
         public string ExternalServicePortRange { get; set; }
 
+        /// <summary>
+        /// 全域弹性公网IP的id。
+        /// </summary>
+        [JsonProperty("global_eip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipId { get; set; }
+
 
 
         /// <summary>
@@ -215,6 +221,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  externalServicePort: ").Append(ExternalServicePort).Append("\n");
             sb.Append("  internalServicePortRange: ").Append(InternalServicePortRange).Append("\n");
             sb.Append("  externalServicePortRange: ").Append(ExternalServicePortRange).Append("\n");
+            sb.Append("  globalEipId: ").Append(GlobalEipId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -285,6 +292,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.ExternalServicePortRange == input.ExternalServicePortRange ||
                     (this.ExternalServicePortRange != null &&
                     this.ExternalServicePortRange.Equals(input.ExternalServicePortRange))
+                ) && 
+                (
+                    this.GlobalEipId == input.GlobalEipId ||
+                    (this.GlobalEipId != null &&
+                    this.GlobalEipId.Equals(input.GlobalEipId))
                 );
         }
 
@@ -316,6 +328,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.InternalServicePortRange.GetHashCode();
                 if (this.ExternalServicePortRange != null)
                     hashCode = hashCode * 59 + this.ExternalServicePortRange.GetHashCode();
+                if (this.GlobalEipId != null)
+                    hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
                 return hashCode;
             }
         }

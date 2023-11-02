@@ -312,7 +312,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的状态。
+        /// 公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

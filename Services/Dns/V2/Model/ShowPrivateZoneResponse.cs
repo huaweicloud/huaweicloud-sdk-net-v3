@@ -112,6 +112,18 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("routers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Router> Routers { get; set; }
 
+        /// <summary>
+        /// 内网Zone的子域名递归解析代理模式。 取值范围： AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+        /// </summary>
+        [JsonProperty("proxy_pattern", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyPattern { get; set; }
+
+        /// <summary>
+        /// 域名关联的企业项目ID，长度不超过36个字符。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +149,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  masters: ").Append(Masters).Append("\n");
             sb.Append("  routers: ").Append(Routers).Append("\n");
+            sb.Append("  proxyPattern: ").Append(ProxyPattern).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -239,6 +253,16 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.Routers != null &&
                     input.Routers != null &&
                     this.Routers.SequenceEqual(input.Routers)
+                ) && 
+                (
+                    this.ProxyPattern == input.ProxyPattern ||
+                    (this.ProxyPattern != null &&
+                    this.ProxyPattern.Equals(input.ProxyPattern))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -282,6 +306,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.Masters.GetHashCode();
                 if (this.Routers != null)
                     hashCode = hashCode * 59 + this.Routers.GetHashCode();
+                if (this.ProxyPattern != null)
+                    hashCode = hashCode * 59 + this.ProxyPattern.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

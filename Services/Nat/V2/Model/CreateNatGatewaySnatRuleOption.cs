@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("floating_ip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FloatingIpId { get; set; }
 
+        /// <summary>
+        /// 全域弹性公网IP的id。
+        /// </summary>
+        [JsonProperty("global_eip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipId { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  sourceType: ").Append(SourceType).Append("\n");
             sb.Append("  floatingIpId: ").Append(FloatingIpId).Append("\n");
+            sb.Append("  globalEipId: ").Append(GlobalEipId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.FloatingIpId == input.FloatingIpId ||
                     (this.FloatingIpId != null &&
                     this.FloatingIpId.Equals(input.FloatingIpId))
+                ) && 
+                (
+                    this.GlobalEipId == input.GlobalEipId ||
+                    (this.GlobalEipId != null &&
+                    this.GlobalEipId.Equals(input.GlobalEipId))
                 );
         }
 
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.SourceType.GetHashCode();
                 if (this.FloatingIpId != null)
                     hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
+                if (this.GlobalEipId != null)
+                    hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 数据库版本。  两位数的大版本号，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的name字段。
+        /// 数据库版本。  两位数的大版本号，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlEngineVersion.html)返回的name字段。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 内核数据库版本。如果需要指定具体的内核版本，请联系客服人员添加白名单。  完整的四位内核数据库版本，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的kernel_version字段。
+        /// 内核数据库版本。如果需要指定具体的内核版本，请联系客服人员添加白名单。  完整的四位内核数据库版本，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlEngineVersion.html)返回的kernel_version字段。
         /// </summary>
         [JsonProperty("kernel_version", NullValueHandling = NullValueHandling.Ignore)]
         public string KernelVersion { get; set; }

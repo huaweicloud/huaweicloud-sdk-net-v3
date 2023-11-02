@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string XLanguage { get; set; }
 
         /// <summary>
-        /// 备份文件ID。
+        /// 备份文件ID。  获取方法参见[查询备份列表](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlBackupList.html)。
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]

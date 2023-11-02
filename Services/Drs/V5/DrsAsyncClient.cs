@@ -172,6 +172,23 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 采集数据库位点信息
+        ///
+        /// 采集数据库位点信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CollectPositionAsyncResponse> CollectPositionAsyncAsync(CollectPositionAsyncRequest collectPositionAsyncRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , collectPositionAsyncRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/collect-db-position",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectPositionAsyncRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CollectPositionAsyncResponse>(response);
+        }
+        
+        /// <summary>
         /// 提交批量创建异步任务
         ///
         /// 提交批量创建异步任务，当批量异步任务创建或更新参数后，系统会自动开始进行参数校验，待所有任务成功完成参数校验后并且无报错时，可调用此接口开始创建DRS任务实例。
@@ -743,6 +760,23 @@ namespace HuaweiCloud.SDK.Drs.V5
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showObjectMappingRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ShowObjectMappingResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取查询数据库位点的结果
+        ///
+        /// 获取查询数据库位点的结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPositionResultResponse> ShowPositionResultAsync(ShowPositionResultRequest showPositionResultRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , showPositionResultRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/db-position",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPositionResultRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowPositionResultResponse>(response);
         }
         
         /// <summary>

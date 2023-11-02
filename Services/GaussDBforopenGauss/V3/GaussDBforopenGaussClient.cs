@@ -232,6 +232,23 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 删除数据库
+        ///
+        /// 删除指定实例的数据库。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDatabaseResponse DeleteDatabase(DeleteDatabaseRequest deleteDatabaseRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteDatabaseRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDatabaseRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteDatabaseResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除实例
         ///
         /// 删除数据库实例。

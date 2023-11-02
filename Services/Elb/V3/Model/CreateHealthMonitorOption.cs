@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? MaxRetriesDown { get; set; }
 
         /// <summary>
-        /// 健康检查端口号。取值：1-65535，默认为空，表示使用后端云服务器端口号。
+        /// 健康检查端口号。取值：1-65535，默认为空，表示使用后端云服务器端口号。 &gt;当绑定的pool开启了端口透传功能时，该字段为必填。
         /// </summary>
         [JsonProperty("monitor_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? MonitorPort { get; set; }
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+        /// 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS。  [不支持QUIC。](tag:hws_eu,g42,hk_g42,hcso_dt,tm)
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 后端服务器端口
+        /// 后端服务器ID。 &gt;此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 后端服务器名称。
+        /// 后端服务器名称。注意：该名称并非ECS名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

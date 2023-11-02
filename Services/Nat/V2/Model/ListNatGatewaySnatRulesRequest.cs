@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class ListNatGatewaySnatRulesRequest 
     {
         /// <summary>
-        /// 功能说明：SNAT规则的状态。
+        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
-        /// <value>功能说明：SNAT规则的状态。</value>
+        /// <value>SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -177,7 +177,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
+        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。
         /// </summary>
         [SDKProperty("floating_ip_address", IsQuery = true)]
         [JsonProperty("floating_ip_address", NullValueHandling = NullValueHandling.Ignore)]
@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public int? SourceType { get; set; }
 
         /// <summary>
-        /// 功能说明：SNAT规则的状态。
+        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

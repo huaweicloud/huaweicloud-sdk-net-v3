@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// 
         /// </summary>
         [JsonProperty("keypair", NullValueHandling = NullValueHandling.Ignore)]
-        public KeypairBean Keypair { get; set; }
+        public ImportPrivateKeyAction Keypair { get; set; }
 
 
 

@@ -161,10 +161,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public int? RouteMode { get; set; }
 
         /// <summary>
-        /// 数据库节点的读权重设置。
+        /// 数据库节点的读权重设置。  在proxy_mode为readonly时，只能为只读节点选择权重。
         /// </summary>
         [JsonProperty("nodes_read_weight", NullValueHandling = NullValueHandling.Ignore)]
         public List<NodesWeight> NodesReadWeight { get; set; }
+
+        /// <summary>
+        /// 数据库VPC下的子网ID。
+        /// </summary>
+        [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetId { get; set; }
 
 
 
@@ -181,6 +187,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  proxyMode: ").Append(ProxyMode).Append("\n");
             sb.Append("  routeMode: ").Append(RouteMode).Append("\n");
             sb.Append("  nodesReadWeight: ").Append(NodesReadWeight).Append("\n");
+            sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -232,6 +239,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.NodesReadWeight != null &&
                     input.NodesReadWeight != null &&
                     this.NodesReadWeight.SequenceEqual(input.NodesReadWeight)
+                ) && 
+                (
+                    this.SubnetId == input.SubnetId ||
+                    (this.SubnetId != null &&
+                    this.SubnetId.Equals(input.SubnetId))
                 );
         }
 
@@ -255,6 +267,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
                 if (this.NodesReadWeight != null)
                     hashCode = hashCode * 59 + this.NodesReadWeight.GetHashCode();
+                if (this.SubnetId != null)
+                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 return hashCode;
             }
         }

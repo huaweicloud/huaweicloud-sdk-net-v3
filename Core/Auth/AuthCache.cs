@@ -25,16 +25,6 @@ namespace HuaweiCloud.SDK.Core.Auth
 {
     internal static class AuthCache
     {
-        private static readonly ConcurrentDictionary<string, string> AuthDict = new ConcurrentDictionary<string, string>();
-
-        internal static string GetAuth(string akWithName)
-        {
-            return AuthDict.TryGetValue(akWithName, out var value) ? value : null;
-        }
-
-        internal static void PutAuth(string akWithName, string id)
-        {
-            AuthDict.AddOrUpdate(akWithName, id, (key, value) => id);
-        }
+        internal static readonly ConcurrentDictionary<string, string> Value = new ConcurrentDictionary<string, string>();
     }
 }

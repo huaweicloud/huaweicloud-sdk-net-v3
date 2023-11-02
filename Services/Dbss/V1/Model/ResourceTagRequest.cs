@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Dbss.V1.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ResourceTagRequest 
+    {
+
+        /// <summary>
+        /// 标签列表 租户权限时该字段必选，op_service权限时和sys_tags二选一
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<KeyValueBean> Tags { get; set; }
+
+        /// <summary>
+        /// 系统标签列表 op_service权限可以访问，和tags二选一。 目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id value是UUID或0,value为0表示默认企业项目
+        /// </summary>
+        [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<KeyValueBean> SysTags { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ResourceTagRequest {\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  sysTags: ").Append(SysTags).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ResourceTagRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ResourceTagRequest input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.SysTags == input.SysTags ||
+                    this.SysTags != null &&
+                    input.SysTags != null &&
+                    this.SysTags.SequenceEqual(input.SysTags)
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.SysTags != null)
+                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}
