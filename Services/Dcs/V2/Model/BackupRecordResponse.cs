@@ -269,6 +269,121 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             }
         }
 
+        /// <summary>
+        /// 备份类型。
+        /// </summary>
+        /// <value>备份类型。</value>
+        [JsonConverter(typeof(EnumClassConverter<BackupFormatEnum>))]
+        public class BackupFormatEnum
+        {
+            /// <summary>
+            /// Enum AOF for value: aof
+            /// </summary>
+            public static readonly BackupFormatEnum AOF = new BackupFormatEnum("aof");
+
+            /// <summary>
+            /// Enum RDB for value: rdb
+            /// </summary>
+            public static readonly BackupFormatEnum RDB = new BackupFormatEnum("rdb");
+
+            private static readonly Dictionary<string, BackupFormatEnum> StaticFields =
+            new Dictionary<string, BackupFormatEnum>()
+            {
+                { "aof", AOF },
+                { "rdb", RDB },
+            };
+
+            private string _value;
+
+            public BackupFormatEnum()
+            {
+
+            }
+
+            public BackupFormatEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static BackupFormatEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as BackupFormatEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(BackupFormatEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(BackupFormatEnum a, BackupFormatEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(BackupFormatEnum a, BackupFormatEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 备份记录ID。
@@ -346,6 +461,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("is_support_restore", NullValueHandling = NullValueHandling.Ignore)]
         public string IsSupportRestore { get; set; }
 
+        /// <summary>
+        /// 备份类型。
+        /// </summary>
+        [JsonProperty("backup_format", NullValueHandling = NullValueHandling.Ignore)]
+        public BackupFormatEnum BackupFormat { get; set; }
+        /// <summary>
+        /// 执行时间.
+        /// </summary>
+        [JsonProperty("execution_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExecutionAt { get; set; }
+
 
 
         /// <summary>
@@ -368,6 +494,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  remark: ").Append(Remark).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  isSupportRestore: ").Append(IsSupportRestore).Append("\n");
+            sb.Append("  backupFormat: ").Append(BackupFormat).Append("\n");
+            sb.Append("  executionAt: ").Append(ExecutionAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -453,6 +581,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.IsSupportRestore == input.IsSupportRestore ||
                     (this.IsSupportRestore != null &&
                     this.IsSupportRestore.Equals(input.IsSupportRestore))
+                ) && 
+                (
+                    this.BackupFormat == input.BackupFormat ||
+                    (this.BackupFormat != null &&
+                    this.BackupFormat.Equals(input.BackupFormat))
+                ) && 
+                (
+                    this.ExecutionAt == input.ExecutionAt ||
+                    (this.ExecutionAt != null &&
+                    this.ExecutionAt.Equals(input.ExecutionAt))
                 );
         }
 
@@ -490,6 +628,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.IsSupportRestore != null)
                     hashCode = hashCode * 59 + this.IsSupportRestore.GetHashCode();
+                if (this.BackupFormat != null)
+                    hashCode = hashCode * 59 + this.BackupFormat.GetHashCode();
+                if (this.ExecutionAt != null)
+                    hashCode = hashCode * 59 + this.ExecutionAt.GetHashCode();
                 return hashCode;
             }
         }

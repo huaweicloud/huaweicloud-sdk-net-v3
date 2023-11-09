@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dcs.V2.Model
+namespace HuaweiCloud.SDK.Moderation.V3.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class CheckMigrationConnectivityResponse : SdkResponse
+    public class DocumentQueryResponseResultSegments 
     {
 
         /// <summary>
-        /// 
+        /// 命中的敏感词
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
+        [JsonProperty("segment", NullValueHandling = NullValueHandling.Ignore)]
+        public string Segment { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CheckMigrationConnectivityResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class DocumentQueryResponseResultSegments {\n");
+            sb.Append("  segment: ").Append(Segment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CheckMigrationConnectivityResponse);
+            return this.Equals(input as DocumentQueryResponseResultSegments);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CheckMigrationConnectivityResponse input)
+        public bool Equals(DocumentQueryResponseResultSegments input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.Segment == input.Segment ||
+                    (this.Segment != null &&
+                    this.Segment.Equals(input.Segment))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.Segment != null)
+                    hashCode = hashCode * 59 + this.Segment.GetHashCode();
                 return hashCode;
             }
         }

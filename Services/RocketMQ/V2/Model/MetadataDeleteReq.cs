@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// <summary>
         /// 需要删除的任务列表。
         /// </summary>
-        [JsonProperty("taskIds", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("task_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> TaskIds { get; set; }
 
 

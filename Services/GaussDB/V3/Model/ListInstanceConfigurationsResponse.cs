@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public ParameterConfigurationInfo Configurations { get; set; }
 
         /// <summary>
-        /// 配置信息的总数。
+        /// 参数信息的总数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public long? TotalCount { get; set; }

@@ -49,7 +49,8 @@ Install-Package HuaweiCloud.SDK.Vpc
 ## 代码示例
 
 - 使用如下代码同步查询指定 Region 下的 VPC 列表，实际使用中请将 `VpcClient` 替换为您使用的产品/服务相应的 `{Service}Client` 。
-- 调用前请根据实际情况替换如下变量： `{your ak string}` 和 `{your sk string}`
+- 认证用的ak和sk直接写到代码中有很大的安全风险，建议在配置文件或者环境变量中密文存放，使用时解密，确保安全。
+- 本示例中的ak和sk保存在环境变量中，运行本示例前请先在本地环境中配置环境变量`HUAWEICLOUD_SDK_AK`和`HUAWEICLOUD_SDK_SK`。
 
 **精简示例**
 
@@ -67,7 +68,10 @@ namespace ListVpcsSolution
         static void Main(string[] args)
         {
             // 配置认证信息
-            var auth = new BasicCredentials("{your ak string}", "{your sk string}");
+    		// 可通过环境变量等方式配置认证信息，参考2.3认证信息管理章节
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+            var auth = new BasicCredentials(ak, sk);
 
             // 创建客户端
             var client = VpcClient.NewBuilder()
@@ -120,8 +124,12 @@ namespace ListVpcsSolution
         static void Main(string[] args)
         {
             // 配置认证信息
+    		// 可通过环境变量等方式配置认证信息，参考2.3认证信息管理章节
             // 如果未填写projectId，SDK会自动调用IAM服务查询所在region对应的项目id
-            var auth = new BasicCredentials("{your ak string}", "{your sk string}", projectId: "{your projectId string}")
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+            var projectId = "{your projectId string}";
+            var auth = new BasicCredentials(ak, sk, projectId: projectId)
                 // 配置SDK内置的IAM服务地址，默认为https://iam.myhuaweicloud.com
                 .WithIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
 
@@ -132,10 +140,12 @@ namespace ListVpcsSolution
                 // 默认超时时间为120秒，可根据需要配置
                 .WithTimeout(120)
                 // 根据需要配置网络代理
+                // 请根据实际情况替换示例中的代理地址和端口号
                 .WithProxyHost("proxy.huaweicloud.com")
                 .WithProxyPort(8080)
-                .WithIgnoreProxyUsername("username")
-                .WithIgnoreProxyPassword("password");
+                // 如果代理需要认证，请配置用户名和密码
+                .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
+                .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
             // 配置HTTP监听器用于打印原始请求和响应信息,请勿用于生产环境
             var httpHandler = new HttpHandler()
@@ -249,11 +259,12 @@ var client = VpcClient.NewBuilder()
 
 ``` csharp
 var httpConfig = HttpConfig.GetDefaultConfig()
+    // 请根据实际情况替换示例中的代理地址和端口号
     .WithProxyHost("proxy.huaweicloud.com")
-    // 指定端口号为8080
     .WithProxyPort(8080)
-    .WithIgnoreProxyUsername("username")
-    .WithIgnoreProxyPassword("password");
+    // 如果代理需要认证，请配置用户名和密码
+    .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
+    .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
 var client = VpcClient.NewBuilder()
     .WithHttpConfig(httpConfig)
@@ -266,8 +277,9 @@ var client = VpcClient.NewBuilder()
 var httpConfig = HttpConfig.GetDefaultConfig()
     // 协议和端口号均在host中
     .WithProxyHost("https://proxy.huaweicloud.com:8080")
-    .WithIgnoreProxyUsername("username")
-    .WithIgnoreProxyPassword("password");
+    // 如果代理需要认证，请配置用户名和密码
+    .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
+    .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
 var client = VpcClient.NewBuilder()
     .WithHttpConfig(httpConfig)
@@ -320,9 +332,17 @@ Global 级服务使用 GlobalCredentials 初始化，需要提供 domainId 。
 
 ``` csharp
 // Region级服务
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var projectId = "{your projectId string}";
+            
 Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // Global级服务
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var domainId = "{your domainId string}";
+
 Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
 ```
 
@@ -345,9 +365,19 @@ Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
 
 ``` csharp
 // Region级服务
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
+var projectId = "{your projectId string}";
+
 Credentials basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
     
 // Global级服务
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
+var domainId = "{your domainId string}";
+
 Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
 ```
 
@@ -481,6 +511,9 @@ var credentials = chain.GetCredentials();
 String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
 
 // 初始化客户端认证信息，需要填写相应 projectId/domainId，以初始化 BasicCredentials 为例
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var projectId = "{your projectId string}";
 Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // 初始化指定云服务的客户端 {Service}Client，以初始化 Region 级服务 VPC 的 VpcClient 为例
@@ -501,6 +534,8 @@ VpcClient vpcClient = VpcClient.NewBuilder()
 
 ``` csharp
 // 初始化客户端认证信息，使用当前客户端初始化方式可不填 projectId/domainId，以初始化 GlobalCredentials 为例
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 Credentials globalCredentials = new GlobalCredentials(ak, sk);
 
 // 初始化指定云服务的客户端 {Service}Client ，以初始化 Global 级服务 IAM 的 IamClient 为例
@@ -554,9 +589,12 @@ set HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
 只对单个凭证生效，会覆盖全局配置
 
 ```csharp
+using System;
 using HuaweiCloud.SDK.Core.Auth;
 
 var iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var credentials = new BasicCredentials(ak, sk).WithIamEndpoint(iamEndpoint);
 ```
 
@@ -767,10 +805,10 @@ namespace UploadBatchTaskFileDemo
 
         static void Main(string[] args)
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-            const string projectId = "{your project id}";
-            const string endpoint = "{your endpoint string}";
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+            var projectId = "{your project id}";
+            var endpoint = "{your endpoint string}";
 
             var auth = new BasicCredentials(ak, sk, projectId);
 
@@ -815,7 +853,7 @@ SDK 的异步任务无法启动。[原文链接](https://blog.stephencleary.com/
 
 MVC
 
-```c
+```c#
 using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -832,9 +870,8 @@ namespace WebApplication1.Controllers
 
         private static VpcAsyncClient InitAsyncClient()
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
             var auth = new BasicCredentials(ak, sk);
 			
             // 使用异步客户端
@@ -898,9 +935,8 @@ namespace WpfApp1
 
         private static VpcAsyncClient InitAsyncClient()
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
             var auth = new BasicCredentials(ak, sk);
 
             // 使用异步客户端

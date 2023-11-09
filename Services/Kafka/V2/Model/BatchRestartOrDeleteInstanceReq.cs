@@ -254,7 +254,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 参数值为kafka，表示删除租户所有创建失败的Kafka实例。
         /// </summary>
-        [JsonProperty("allFailure", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
 
 

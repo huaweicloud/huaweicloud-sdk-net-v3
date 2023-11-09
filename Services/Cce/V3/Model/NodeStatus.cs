@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class NodeStatus 
     {
         /// <summary>
-        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
+        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。
         /// </summary>
-        /// <value>节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。</value>
+        /// <value>节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。</value>
         [JsonConverter(typeof(EnumClassConverter<PhaseEnum>))]
         public class PhaseEnum
         {
@@ -31,16 +31,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             /// Enum INSTALLING for value: Installing
             /// </summary>
             public static readonly PhaseEnum INSTALLING = new PhaseEnum("Installing");
-
-            /// <summary>
-            /// Enum INSTALLED for value: Installed
-            /// </summary>
-            public static readonly PhaseEnum INSTALLED = new PhaseEnum("Installed");
-
-            /// <summary>
-            /// Enum SHUTDOWN for value: ShutDown
-            /// </summary>
-            public static readonly PhaseEnum SHUTDOWN = new PhaseEnum("ShutDown");
 
             /// <summary>
             /// Enum UPGRADING for value: Upgrading
@@ -72,8 +62,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             {
                 { "Build", BUILD },
                 { "Installing", INSTALLING },
-                { "Installed", INSTALLED },
-                { "ShutDown", SHUTDOWN },
                 { "Upgrading", UPGRADING },
                 { "Active", ACTIVE },
                 { "Abnormal", ABNORMAL },
@@ -174,7 +162,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
+        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public PhaseEnum Phase { get; set; }

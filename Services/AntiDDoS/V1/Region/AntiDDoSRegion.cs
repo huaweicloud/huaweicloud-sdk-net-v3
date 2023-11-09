@@ -20,6 +20,8 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
             "https://antiddos.cn-south-1.myhuaweicloud.com");
         public static readonly Region CN_SOUTH_2 = new Region("cn-south-2",
             "https://antiddos.cn-south-2.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://antiddos.cn-south-4.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2",
             "https://antiddos.cn-southwest-2.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
@@ -58,6 +60,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
                 { "cn-east-2", CN_EAST_2 },
                 { "cn-south-1", CN_SOUTH_1 },
                 { "cn-south-2", CN_SOUTH_2 },
+                { "cn-south-4", CN_SOUTH_4 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "ap-southeast-2", AP_SOUTHEAST_2 },

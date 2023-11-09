@@ -541,6 +541,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 修改实例配置
+        ///
+        /// 修改实例配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyInstanceConfigsResponse> ModifyInstanceConfigsAsync(ModifyInstanceConfigsRequest modifyInstanceConfigsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , modifyInstanceConfigsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceConfigsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<ModifyInstanceConfigsResponse>(response);
+        }
+        
+        /// <summary>
         /// 重置Manager密码
         ///
         /// 重置Manager密码。
@@ -784,6 +801,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取实例配置
+        ///
+        /// 获取实例配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstanceConfigsResponse> ShowInstanceConfigsAsync(ShowInstanceConfigsRequest showInstanceConfigsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showInstanceConfigsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowInstanceConfigsResponse>(response);
         }
         
         /// <summary>

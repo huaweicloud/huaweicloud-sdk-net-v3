@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         [JsonProperty("glossary_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GlossaryName { get; set; }
 
+        /// <summary>
+        /// 命中的风险片段在文本中的位置，起始位置从0开始
+        /// </summary>
+        [JsonProperty("position", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> Position { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             sb.Append("class SegmentResult {\n");
             sb.Append("  segment: ").Append(Segment).Append("\n");
             sb.Append("  glossaryName: ").Append(GlossaryName).Append("\n");
+            sb.Append("  position: ").Append(Position).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.GlossaryName == input.GlossaryName ||
                     (this.GlossaryName != null &&
                     this.GlossaryName.Equals(input.GlossaryName))
+                ) && 
+                (
+                    this.Position == input.Position ||
+                    this.Position != null &&
+                    input.Position != null &&
+                    this.Position.SequenceEqual(input.Position)
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     hashCode = hashCode * 59 + this.Segment.GetHashCode();
                 if (this.GlossaryName != null)
                     hashCode = hashCode * 59 + this.GlossaryName.GetHashCode();
+                if (this.Position != null)
+                    hashCode = hashCode * 59 + this.Position.GetHashCode();
                 return hashCode;
             }
         }

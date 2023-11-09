@@ -428,6 +428,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("serviceNetwork", NullValueHandling = NullValueHandling.Ignore)]
+        public ServiceNetwork ServiceNetwork { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("authentication", NullValueHandling = NullValueHandling.Ignore)]
         public Authentication Authentication { get; set; }
 
@@ -444,7 +450,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<MasterSpec> Masters { get; set; }
 
         /// <summary>
-        /// 服务网段参数，kubernetes clusterIp取值范围，1.11.7版本及以上支持。 
+        /// 服务网段参数，kubernetes clusterIP取值范围，1.11.7版本及以上支持。创建集群时如若未传参，默认为\&quot;10.247.0.0/16\&quot;。该参数废弃中，推荐使用新字段serviceNetwork，包含IPv4服务网段。 
         /// </summary>
         [JsonProperty("kubernetesSvcIpRange", NullValueHandling = NullValueHandling.Ignore)]
         public string KubernetesSvcIpRange { get; set; }
@@ -504,6 +510,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
             sb.Append("  containerNetwork: ").Append(ContainerNetwork).Append("\n");
             sb.Append("  eniNetwork: ").Append(EniNetwork).Append("\n");
+            sb.Append("  serviceNetwork: ").Append(ServiceNetwork).Append("\n");
             sb.Append("  authentication: ").Append(Authentication).Append("\n");
             sb.Append("  billingMode: ").Append(BillingMode).Append("\n");
             sb.Append("  masters: ").Append(Masters).Append("\n");
@@ -592,6 +599,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.EniNetwork.Equals(input.EniNetwork))
                 ) && 
                 (
+                    this.ServiceNetwork == input.ServiceNetwork ||
+                    (this.ServiceNetwork != null &&
+                    this.ServiceNetwork.Equals(input.ServiceNetwork))
+                ) && 
+                (
                     this.Authentication == input.Authentication ||
                     (this.Authentication != null &&
                     this.Authentication.Equals(input.Authentication))
@@ -676,6 +688,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
                 if (this.EniNetwork != null)
                     hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
+                if (this.ServiceNetwork != null)
+                    hashCode = hashCode * 59 + this.ServiceNetwork.GetHashCode();
                 if (this.Authentication != null)
                     hashCode = hashCode * 59 + this.Authentication.GetHashCode();
                 if (this.BillingMode != null)

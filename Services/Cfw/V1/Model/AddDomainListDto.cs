@@ -29,12 +29,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 域名组id
-        /// </summary>
-        [JsonProperty("domain_set_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DomainSetId { get; set; }
-
-        /// <summary>
         /// 域名列表
         /// </summary>
         [JsonProperty("domain_names", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,7 +45,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class AddDomainListDto {\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
-            sb.Append("  domainSetId: ").Append(DomainSetId).Append("\n");
             sb.Append("  domainNames: ").Append(DomainNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -85,11 +78,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.ObjectId.Equals(input.ObjectId))
                 ) && 
                 (
-                    this.DomainSetId == input.DomainSetId ||
-                    (this.DomainSetId != null &&
-                    this.DomainSetId.Equals(input.DomainSetId))
-                ) && 
-                (
                     this.DomainNames == input.DomainNames ||
                     this.DomainNames != null &&
                     input.DomainNames != null &&
@@ -109,8 +97,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
                 if (this.ObjectId != null)
                     hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.DomainSetId != null)
-                    hashCode = hashCode * 59 + this.DomainSetId.GetHashCode();
                 if (this.DomainNames != null)
                     hashCode = hashCode * 59 + this.DomainNames.GetHashCode();
                 return hashCode;

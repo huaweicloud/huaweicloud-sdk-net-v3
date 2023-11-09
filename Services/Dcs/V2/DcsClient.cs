@@ -99,24 +99,6 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
-        /// 数据迁移配置页实例连接测试
-        ///
-        /// 数据迁移配置页实例连接测试
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CheckMigrationConnectivityResponse CheckMigrationConnectivity(CheckMigrationConnectivityRequest checkMigrationConnectivityRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , checkMigrationConnectivityRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration/{task_id}/connectivity",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkMigrationConnectivityRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            CheckMigrationConnectivityResponse checkMigrationConnectivityResponse = JsonUtils.DeSerializeNull<CheckMigrationConnectivityResponse>(response);
-            return checkMigrationConnectivityResponse;
-        }
-        
-        /// <summary>
         /// 备份指定实例
         ///
         /// 备份指定的缓存实例。

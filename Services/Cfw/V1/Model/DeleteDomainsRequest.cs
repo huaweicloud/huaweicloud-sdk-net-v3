@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
+        /// 域名组id
+        /// </summary>
+        [SDKProperty("set_id", IsPath = true)]
+        [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SetId { get; set; }
+
+        /// <summary>
         /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteDomainsRequest {\n");
+            sb.Append("  setId: ").Append(SetId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -63,6 +71,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             return 
                 (
+                    this.SetId == input.SetId ||
+                    (this.SetId != null &&
+                    this.SetId.Equals(input.SetId))
+                ) && 
+                (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
@@ -82,6 +95,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.SetId != null)
+                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Body != null)

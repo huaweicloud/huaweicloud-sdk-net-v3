@@ -97,6 +97,22 @@ namespace HuaweiCloud.SDK.Moderation.V3
         }
         
         /// <summary>
+        /// 创建文档内容审核作业
+        ///
+        /// 创建文档内容审核作业，创建成功会将作业ID返回给用户
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RunCreateDocumentModerationJobResponse RunCreateDocumentModerationJob(RunCreateDocumentModerationJobRequest runCreateDocumentModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateDocumentModerationJobRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RunCreateDocumentModerationJobResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建视频内容审核作业
         ///
         /// 创建视频内容审核作业，创建成功会将作业ID返回给用户
@@ -142,6 +158,23 @@ namespace HuaweiCloud.SDK.Moderation.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryAudioModerationJobRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<RunQueryAudioModerationJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询文档审核作业结果
+        ///
+        /// 查询文档审核结果接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RunQueryDocumentModerationJobResponse RunQueryDocumentModerationJob(RunQueryDocumentModerationJobRequest runQueryDocumentModerationJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , runQueryDocumentModerationJobRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs/{job_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryDocumentModerationJobRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<RunQueryDocumentModerationJobResponse>(response);
         }
         
         /// <summary>

@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public string EventType { get; set; }
 
         /// <summary>
+        /// 文本审核场景，可选值如下： terrorism: 暴恐 porn: 色情 ban: 违禁 abuse: 辱骂 ad: 广告 当categories缺省或为空时，默认审核terrorism、porn、ban、abuse、ad。
+        /// </summary>
+        [JsonProperty("categories", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Categories { get; set; }
+
+        /// <summary>
         /// 检测时使用的自定义黑名单词库列表。自定义黑词库的创建和使用请参见[配置定义黑名单词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html#moderation_03_0027__section12400140132318)。
         /// </summary>
         [JsonProperty("glossary_names", NullValueHandling = NullValueHandling.Ignore)]
@@ -56,6 +62,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             var sb = new StringBuilder();
             sb.Append("class TextDetectionReq {\n");
             sb.Append("  eventType: ").Append(EventType).Append("\n");
+            sb.Append("  categories: ").Append(Categories).Append("\n");
             sb.Append("  glossaryNames: ").Append(GlossaryNames).Append("\n");
             sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("  whiteGlossaryNames: ").Append(WhiteGlossaryNames).Append("\n");
@@ -85,6 +92,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.EventType == input.EventType ||
                     (this.EventType != null &&
                     this.EventType.Equals(input.EventType))
+                ) && 
+                (
+                    this.Categories == input.Categories ||
+                    this.Categories != null &&
+                    input.Categories != null &&
+                    this.Categories.SequenceEqual(input.Categories)
                 ) && 
                 (
                     this.GlossaryNames == input.GlossaryNames ||
@@ -120,6 +133,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                 int hashCode = 41;
                 if (this.EventType != null)
                     hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.Categories != null)
+                    hashCode = hashCode * 59 + this.Categories.GetHashCode();
                 if (this.GlossaryNames != null)
                     hashCode = hashCode * 59 + this.GlossaryNames.GetHashCode();
                 if (this.Data != null)

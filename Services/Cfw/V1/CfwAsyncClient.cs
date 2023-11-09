@@ -88,7 +88,8 @@ namespace HuaweiCloud.SDK.Cfw.V1
         public async Task<AddDomainsResponse> AddDomainsAsync(AddDomainsRequest addDomainsRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-set/domains",urlParam);
+            urlParam.Add("set_id" , addDomainsRequest.SetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-set/domains/{set_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDomainsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AddDomainsResponse>(response);
@@ -249,7 +250,8 @@ namespace HuaweiCloud.SDK.Cfw.V1
         public async Task<DeleteDomainsResponse> DeleteDomainsAsync(DeleteDomainsRequest deleteDomainsRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-set/domains",urlParam);
+            urlParam.Add("set_id" , deleteDomainsRequest.SetId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-set/domains/{set_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteDomainsResponse>(response);

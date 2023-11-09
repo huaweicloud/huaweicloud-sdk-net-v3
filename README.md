@@ -51,7 +51,8 @@ Install-Package HuaweiCloud.SDK.Vpc
 
 - The following example shows how to query a list of VPC in a specific region, you need to substitute your
   real `{Service}Client` for `VpcClient` in actual use.
-- Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint string}` and `{your project id}`.
+- Hard-coding ak and sk for authentication into the code has a great security risk. It is recommended to store the ciphertext in the profile or environment variables and decrypt it when used to ensure security.
+- In this example, ak and sk are stored in environment variables. Please configure the environment variables `HUAWEICLOUD_SDK_AK` and `HUAWEICLOUD_SDK_SK` before running this example.
 
 **Simplified Demo**
 
@@ -69,7 +70,10 @@ namespace ListVpcsSolution
         static void Main(string[] args)
         {
             // Configure authentication
-            var auth = new BasicCredentials("{your ak string}", "{your sk string}");
+        	// Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.3 Authentication Management
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+            var auth = new BasicCredentials(ak, sk);
 
             // Create a service client
             var client = VpcClient.NewBuilder()
@@ -122,8 +126,12 @@ namespace ListVpcsSolution
         static void Main(string[] args)
         {
             // Configure authentication
+        	// Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.3 Authentication Management
             // If projectId is not filled in, the SDK will automatically call the IAM service to query the project id corresponding to the region.
-            var auth = new BasicCredentials("{your ak string}", "{your sk string}", projectId: "{your projectId string}")
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+            var projectId = "{your projectId string}";
+            var auth = new BasicCredentials(ak, sk, projectId: projectId)
                 // Configure the SDK built-in IAM service endpoint, default is https://iam.myhuaweicloud.com
                 .WithIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
 
@@ -134,10 +142,12 @@ namespace ListVpcsSolution
                 // Configure timeout as needed, default timeout is 120 seconds
                 .WithTimeout(120)
                 // Configure proxy as needed
+                // Replace the proxy host and port in the example according to the actual situation
                 .WithProxyHost("proxy.huaweicloud.com")
                 .WithProxyPort(8080)
-                .WithIgnoreProxyUsername("username")
-                .WithIgnoreProxyPassword("password");
+                // Configure the username and password if the proxy requires authentication
+                .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
+                .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
             // Configure HTTP handler to print the original request and response, do not use it in a production environment
             var httpHandler = new HttpHandler()
@@ -251,11 +261,12 @@ Use network proxy if needed.
 
 ``` csharp
 var httpConfig = HttpConfig.GetDefaultConfig()
+    // Replace the proxy host and port in the example according to the actual situation
     .WithProxyHost("proxy.huaweicloud.com")
-// assign proxy port
     .WithProxyPort(8080)
-    .WithIgnoreProxyUsername("username")
-    .WithIgnoreProxyPassword("password");
+    // Configure the username and password if the proxy requires authentication
+    .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
+    .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
 var client = VpcClient.NewBuilder()
     .WithHttpConfig(httpConfig)
@@ -267,8 +278,9 @@ var client = VpcClient.NewBuilder()
 ``` csharp
 var httpConfig = HttpConfig.GetDefaultConfig()
     .WithProxyHost("https://proxy.huaweicloud.com:8080")
-    .WithIgnoreProxyUsername("username")
-    .WithIgnoreProxyPassword("password");
+    // Configure the username and password if the proxy requires authentication
+    .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
+    .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
 var client = VpcClient.NewBuilder()
     .WithHttpConfig(httpConfig)
@@ -322,9 +334,17 @@ configuration.
 
 ``` csharp
 // Regional services
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var projectId = "{your projectId string}";
+
 Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // Global services
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var domainId = "{your domainId string}";
+
 Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
 ```
 
@@ -351,9 +371,19 @@ corresponds to the method of `CreateTemporaryAccessKeyByAgency` in IAM SDK.
 
 ``` csharp
 // Regional services
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
+var projectId = "{your projectId string}";
+
 Credentials basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
     
 // Global services
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
+var domainId = "{your domainId string}";
+
 Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
 ```
 
@@ -487,6 +517,9 @@ There are two ways to initialize the {Service}Client, you could choose one you p
 String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
 
 // Initialize the credentials, you should provide projectId or domainId in this way, take initializing BasicCredentials for example
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var projectId = "{your projectId string}";
 Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // Initialize specified {Service}Client instance, take initializing the regional service VPC's VpcClient for example
@@ -508,6 +541,8 @@ VpcClient vpcClient = VpcClient.NewBuilder()
 
 ``` csharp
 // Initialize the credentials, projectId or domainId could be unassigned in this situation, take initializing GlobalCredentials for example
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 Credentials globalCredentials = new GlobalCredentials(ak, sk);
 
 // Initialize specified {Service}Client instance, take initializing the global service IAM's IamClient for example
@@ -560,9 +595,12 @@ set HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
 This configuration is only valid for a credential, and it will override the global configuration
 
 ```csharp
+using System;
 using HuaweiCloud.SDK.Core.Auth;
 
 var iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var credentials = new BasicCredentials(ak, sk).WithIamEndpoint(iamEndpoint);
 ```
 
@@ -780,10 +818,10 @@ namespace UploadBatchTaskFileDemo
 
         static void Main(string[] args)
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-            const string projectId = "{your project id}";
-            const string endpoint = "{your endpoint string}";
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+            var projectId = "{your project id}";
+            var endpoint = "{your endpoint string}";
 
             var auth = new BasicCredentials(ak, sk, projectId);
 
@@ -849,9 +887,8 @@ namespace WebApplication1.Controllers
 
         private static VpcAsyncClient InitAsyncClient()
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
             var auth = new BasicCredentials(ak, sk);
 			
             // Use asynchronous client
@@ -915,9 +952,8 @@ namespace WpfApp1
 
         private static VpcAsyncClient InitAsyncClient()
         {
-            const string ak = "{your ak string}";
-            const string sk = "{your sk string}";
-
+            var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+            var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
             var auth = new BasicCredentials(ak, sk);
 
             // Use asynchronous client

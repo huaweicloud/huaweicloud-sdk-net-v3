@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public int? SilenceCycle { get; set; }
 
         /// <summary>
-        /// 扩容阈值（百分比数值）。  取值范围：50-100。  status为ON时必填。
+        /// CPU平均使用率（百分比数值）。  取值范围：50-100。  status为ON时必填。
         /// </summary>
         [JsonProperty("enlarge_threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? EnlargeThreshold { get; set; }

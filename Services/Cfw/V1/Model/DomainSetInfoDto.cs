@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 域名组id
-        /// </summary>
-        [JsonProperty("domain_set_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DomainSetId { get; set; }
-
-        /// <summary>
         /// 域名
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -43,7 +37,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DomainSetInfoDto {\n");
-            sb.Append("  domainSetId: ").Append(DomainSetId).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -68,11 +61,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             return 
                 (
-                    this.DomainSetId == input.DomainSetId ||
-                    (this.DomainSetId != null &&
-                    this.DomainSetId.Equals(input.DomainSetId))
-                ) && 
-                (
                     this.DomainName == input.DomainName ||
                     (this.DomainName != null &&
                     this.DomainName.Equals(input.DomainName))
@@ -92,8 +80,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DomainSetId != null)
-                    hashCode = hashCode * 59 + this.DomainSetId.GetHashCode();
                 if (this.DomainName != null)
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.Description != null)

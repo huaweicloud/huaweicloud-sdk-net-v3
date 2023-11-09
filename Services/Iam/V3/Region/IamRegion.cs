@@ -40,6 +40,8 @@ namespace HuaweiCloud.SDK.Iam.V3
             "https://iam.la-north-2.myhuaweicloud.com");
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9",
             "https://iam.cn-north-9.myhuaweicloud.com");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://iam.eu-west-101.myhuaweicloud.eu");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IAM");
 
@@ -62,6 +64,7 @@ namespace HuaweiCloud.SDK.Iam.V3
                 { "na-mexico-1", NA_MEXICO_1 },
                 { "la-north-2", LA_NORTH_2 },
                 { "cn-north-9", CN_NORTH_9 },
+                { "eu-west-101", EU_WEST_101 },
         };
 
         public static Region ValueOf(string regionId)
