@@ -1090,7 +1090,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("log_group_id" , updateLogStreamRequest.LogGroupId.ToString());
             urlParam.Add("log_stream_id" , updateLogStreamRequest.LogStreamId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams_ttl/{log_stream_id}",urlParam);
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams-ttl/{log_stream_id}",urlParam);
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogStreamRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateLogStreamResponse>(response);

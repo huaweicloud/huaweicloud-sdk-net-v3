@@ -82,6 +82,38 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 库级时间点恢复
+        ///
+        /// 库级时间点恢复
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchRestoreDatabaseResponse BatchRestoreDatabase(BatchRestoreDatabaseRequest batchRestoreDatabaseRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/databases",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestoreDatabaseRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchRestoreDatabaseResponse>(response);
+        }
+        
+        /// <summary>
+        /// 表级时间点恢复（PostgreSQL）
+        ///
+        /// 表级时间点恢复（PostgreSQL）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchRestorePostgreSqlTablesResponse BatchRestorePostgreSqlTables(BatchRestorePostgreSqlTablesRequest batchRestorePostgreSqlTablesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/tables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestorePostgreSqlTablesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<BatchRestorePostgreSqlTablesResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量添加标签
         ///
         /// 批量添加标签。
@@ -583,6 +615,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询指定时间点可恢复的库
+        ///
+        /// 查询指定时间点可恢复的库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHistoryDatabaseResponse ListHistoryDatabase(ListHistoryDatabaseRequest listHistoryDatabaseRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name" , listHistoryDatabaseRequest.DatabaseName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{database_name}/instances/history/databases",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryDatabaseRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListHistoryDatabaseResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取诊断后的实例数量
         ///
         /// 获取诊断后的实例数量
@@ -662,38 +711,6 @@ namespace HuaweiCloud.SDK.Rds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesInfoDiagnosisRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListInstancesInfoDiagnosisResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询购买推荐
-        ///
-        /// 查询购买推荐
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListInstancesRecommendationResponse ListInstancesRecommendation(ListInstancesRecommendationRequest listInstancesRecommendationRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/product-recommendation",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRecommendationRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListInstancesRecommendationResponse>(response);
-        }
-        
-        /// <summary>
-        /// 查询监控大盘列表
-        ///
-        /// 查询监控大盘列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListInstancesResourceMetricsResponse ListInstancesResourceMetrics(ListInstancesResourceMetricsRequest listInstancesResourceMetricsRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource-monitoring",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesResourceMetricsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            return JsonUtils.DeSerialize<ListInstancesResourceMetricsResponse>(response);
         }
         
         /// <summary>
@@ -833,6 +850,23 @@ namespace HuaweiCloud.SDK.Rds.V3
             ListPostgresqlHbaInfoHistoryResponse listPostgresqlHbaInfoHistoryResponse = JsonUtils.DeSerializeNull<ListPostgresqlHbaInfoHistoryResponse>(response);
             listPostgresqlHbaInfoHistoryResponse.Body = JsonUtils.DeSerializeList<PostgresqlHbaHistory>(response);
             return listPostgresqlHbaInfoHistoryResponse;
+        }
+        
+        /// <summary>
+        /// 查询指定时间点可恢复的表(PostgreSQL)
+        ///
+        /// 查询指定时间点可恢复的表(PostgreSQL)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPostgresqlListHistoryTablesResponse ListPostgresqlListHistoryTables(ListPostgresqlListHistoryTablesRequest listPostgresqlListHistoryTablesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name" , listPostgresqlListHistoryTablesRequest.DatabaseName.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{database_name}/instances/history/tables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlListHistoryTablesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListPostgresqlListHistoryTablesResponse>(response);
         }
         
         /// <summary>

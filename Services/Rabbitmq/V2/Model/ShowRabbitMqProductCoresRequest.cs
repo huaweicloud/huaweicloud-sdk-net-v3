@@ -8,41 +8,29 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class ListInstancesRecommendationResponse : SdkResponse
+    public class ShowRabbitMqProductCoresRequest 
     {
         /// <summary>
-        /// 引擎类型
+        /// 消息引擎的类型。
         /// </summary>
-        /// <value>引擎类型</value>
+        /// <value>消息引擎的类型。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
         public class EngineEnum
         {
             /// <summary>
-            /// Enum MYSQL for value: mysql
+            /// Enum RABBITMQ for value: rabbitmq
             /// </summary>
-            public static readonly EngineEnum MYSQL = new EngineEnum("mysql");
-
-            /// <summary>
-            /// Enum POSTGRESQL for value: postgresql
-            /// </summary>
-            public static readonly EngineEnum POSTGRESQL = new EngineEnum("postgresql");
-
-            /// <summary>
-            /// Enum SQLSERVER for value: sqlserver
-            /// </summary>
-            public static readonly EngineEnum SQLSERVER = new EngineEnum("sqlserver");
+            public static readonly EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
 
             private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
-                { "mysql", MYSQL },
-                { "postgresql", POSTGRESQL },
-                { "sqlserver", SQLSERVER },
+                { "rabbitmq", RABBITMQ },
             };
 
             private string _value;
@@ -138,15 +126,31 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
 
         /// <summary>
-        /// 引擎类型
+        /// 消息引擎的类型。
         /// </summary>
+        [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 推荐商品信息
+        /// 产品ID。
         /// </summary>
-        [JsonProperty("recommended_products", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RecommendedProduct> RecommendedProducts { get; set; }
+        [SDKProperty("product_id", IsQuery = true)]
+        [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// 代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7
+        /// </summary>
+        [SDKProperty("broker_num", IsQuery = true)]
+        [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BrokerNum { get; set; }
+
+        /// <summary>
+        /// 实例ID。
+        /// </summary>
+        [SDKProperty("instance_id", IsQuery = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -156,9 +160,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListInstancesRecommendationResponse {\n");
+            sb.Append("class ShowRabbitMqProductCoresRequest {\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
-            sb.Append("  recommendedProducts: ").Append(RecommendedProducts).Append("\n");
+            sb.Append("  productId: ").Append(ProductId).Append("\n");
+            sb.Append("  brokerNum: ").Append(BrokerNum).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -168,13 +174,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListInstancesRecommendationResponse);
+            return this.Equals(input as ShowRabbitMqProductCoresRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListInstancesRecommendationResponse input)
+        public bool Equals(ShowRabbitMqProductCoresRequest input)
         {
             if (input == null)
                 return false;
@@ -186,10 +192,19 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.Engine.Equals(input.Engine))
                 ) && 
                 (
-                    this.RecommendedProducts == input.RecommendedProducts ||
-                    this.RecommendedProducts != null &&
-                    input.RecommendedProducts != null &&
-                    this.RecommendedProducts.SequenceEqual(input.RecommendedProducts)
+                    this.ProductId == input.ProductId ||
+                    (this.ProductId != null &&
+                    this.ProductId.Equals(input.ProductId))
+                ) && 
+                (
+                    this.BrokerNum == input.BrokerNum ||
+                    (this.BrokerNum != null &&
+                    this.BrokerNum.Equals(input.BrokerNum))
+                ) && 
+                (
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 );
         }
 
@@ -203,8 +218,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 int hashCode = 41;
                 if (this.Engine != null)
                     hashCode = hashCode * 59 + this.Engine.GetHashCode();
-                if (this.RecommendedProducts != null)
-                    hashCode = hashCode * 59 + this.RecommendedProducts.GetHashCode();
+                if (this.ProductId != null)
+                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.BrokerNum != null)
+                    hashCode = hashCode * 59 + this.BrokerNum.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

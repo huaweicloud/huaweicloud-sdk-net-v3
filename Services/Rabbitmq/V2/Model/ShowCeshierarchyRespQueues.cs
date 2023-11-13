@@ -8,25 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// 失败时返回的对象。
+    /// 
     /// </summary>
-    public class ErrorRsp 
+    public class ShowCeshierarchyRespQueues 
     {
 
         /// <summary>
-        /// 错误码。
+        /// 队列名称。
         /// </summary>
-        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorCode { get; set; }
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// 错误描述。
+        /// 对应的vhost。
         /// </summary>
-        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorMsg { get; set; }
+        [JsonProperty("vhost", NullValueHandling = NullValueHandling.Ignore)]
+        public string Vhost { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorRsp {\n");
-            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
-            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("class ShowCeshierarchyRespQueues {\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  vhost: ").Append(Vhost).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,27 +48,27 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorRsp);
+            return this.Equals(input as ShowCeshierarchyRespQueues);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ErrorRsp input)
+        public bool Equals(ShowCeshierarchyRespQueues input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
+                    this.Vhost == input.Vhost ||
+                    (this.Vhost != null &&
+                    this.Vhost.Equals(input.Vhost))
                 );
         }
 
@@ -80,10 +80,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Vhost != null)
+                    hashCode = hashCode * 59 + this.Vhost.GetHashCode();
                 return hashCode;
             }
         }

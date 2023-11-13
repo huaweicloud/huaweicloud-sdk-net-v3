@@ -396,6 +396,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 删除任务中心任务
+        ///
+        /// 删除任务中心任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteCenterTaskResponse DeleteCenterTask(DeleteCenterTaskRequest deleteCenterTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id" , deleteCenterTaskRequest.TaskId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/tasks/{task_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteCenterTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteCenterTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除自定义模板
         ///
         /// 删除自定义模板
@@ -410,6 +427,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigTemplateRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteConfigTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除诊断记录
+        ///
+        /// 删除诊断记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDiagnosisTaskResponse DeleteDiagnosisTask(DeleteDiagnosisTaskRequest deleteDiagnosisTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteDiagnosisTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/diagnosis",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteDiagnosisTaskRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteDiagnosisTaskResponse>(response);
         }
         
         /// <summary>
@@ -1400,6 +1434,25 @@ namespace HuaweiCloud.SDK.Dcs.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMigrationTaskStatsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowMigrationTaskStatsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询实例节点信息
+        ///
+        /// 查询指定实例的节点信息。
+        /// 仅支持Redis4.0和Redis5.0实例查询。
+        /// 创建中实例不返回节点信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowNodesInformationResponse ShowNodesInformation(ShowNodesInformationRequest showNodesInformationRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showNodesInformationRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/logical-nodes",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodesInformationRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowNodesInformationResponse>(response);
         }
         
         /// <summary>

@@ -293,6 +293,23 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
+        /// 查询实例在CES的监控层级关系
+        ///
+        /// 查询实例在CES的监控层级关系。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowCesHierarchyResponse ShowCesHierarchy(ShowCesHierarchyRequest showCesHierarchyRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showCesHierarchyRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ces-hierarchy",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCesHierarchyRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowCesHierarchyResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询新规格可扩容规格列表
         ///
         /// 查询新规格实例可扩容列表
@@ -360,6 +377,23 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMaintainWindowsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowMaintainWindowsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询RabbitMQ产品规格核数
+        ///
+        /// 查询RabbitMQ产品规格核数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRabbitMqProductCoresResponse ShowRabbitMqProductCores(ShowRabbitMqProductCoresRequest showRabbitMqProductCoresRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine" , showRabbitMqProductCoresRequest.Engine.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products/cores",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRabbitMqProductCoresRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowRabbitMqProductCoresResponse>(response);
         }
         
         /// <summary>

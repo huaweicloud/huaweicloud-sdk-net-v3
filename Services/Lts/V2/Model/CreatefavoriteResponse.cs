@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
+        /// <summary>
+        /// 是否开启日志收藏
+        /// </summary>
+        [JsonProperty("is_global", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsGlobal { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  isGlobal: ").Append(IsGlobal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +160,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.IsGlobal == input.IsGlobal ||
+                    (this.IsGlobal != null &&
+                    this.IsGlobal.Equals(input.IsGlobal))
                 );
         }
 
@@ -182,6 +194,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.IsGlobal != null)
+                    hashCode = hashCode * 59 + this.IsGlobal.GetHashCode();
                 return hashCode;
             }
         }

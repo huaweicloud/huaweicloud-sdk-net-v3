@@ -50,6 +50,8 @@ namespace HuaweiCloud.SDK.Ims.V2
             "https://ims.me-east-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://ims.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://ims.eu-west-101.myhuaweicloud.eu");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IMS");
 
@@ -77,6 +79,7 @@ namespace HuaweiCloud.SDK.Ims.V2
                 { "tr-west-1", TR_WEST_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "ae-ad-1", AE_AD_1 },
+                { "eu-west-101", EU_WEST_101 },
         };
 
         public static Region ValueOf(string regionId)

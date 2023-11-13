@@ -11,22 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
-    /// 实例状态
+    /// 恢复库信息
     /// </summary>
-    public class InstanceState 
+    public class PostgreSQLRestoreDatabase 
     {
 
         /// <summary>
-        /// 实例状态
+        /// 数据库名
         /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
+        [JsonProperty("database", NullValueHandling = NullValueHandling.Ignore)]
+        public string Database { get; set; }
 
         /// <summary>
-        /// 参数变更，是否需要重启
+        /// 模式信息
         /// </summary>
-        [JsonProperty("wait_restart_for_params", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? WaitRestartForParams { get; set; }
+        [JsonProperty("schemas", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PostgreSQLRestoreSchema> Schemas { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InstanceState {\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  waitRestartForParams: ").Append(WaitRestartForParams).Append("\n");
+            sb.Append("class PostgreSQLRestoreDatabase {\n");
+            sb.Append("  database: ").Append(Database).Append("\n");
+            sb.Append("  schemas: ").Append(Schemas).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,27 +48,28 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InstanceState);
+            return this.Equals(input as PostgreSQLRestoreDatabase);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(InstanceState input)
+        public bool Equals(PostgreSQLRestoreDatabase input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.Database == input.Database ||
+                    (this.Database != null &&
+                    this.Database.Equals(input.Database))
                 ) && 
                 (
-                    this.WaitRestartForParams == input.WaitRestartForParams ||
-                    (this.WaitRestartForParams != null &&
-                    this.WaitRestartForParams.Equals(input.WaitRestartForParams))
+                    this.Schemas == input.Schemas ||
+                    this.Schemas != null &&
+                    input.Schemas != null &&
+                    this.Schemas.SequenceEqual(input.Schemas)
                 );
         }
 
@@ -80,10 +81,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.WaitRestartForParams != null)
-                    hashCode = hashCode * 59 + this.WaitRestartForParams.GetHashCode();
+                if (this.Database != null)
+                    hashCode = hashCode * 59 + this.Database.GetHashCode();
+                if (this.Schemas != null)
+                    hashCode = hashCode * 59 + this.Schemas.GetHashCode();
                 return hashCode;
             }
         }
