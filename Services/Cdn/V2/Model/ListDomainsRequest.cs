@@ -45,14 +45,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string ServiceArea { get; set; }
 
         /// <summary>
-        /// 每页加速域名的数量。
+        /// 每页加速域名的数量，取值范围1-10000，默认值为30。
         /// </summary>
         [SDKProperty("page_size", IsQuery = true)]
         [JsonProperty("page_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// 查询的页码，即：从哪一页开始查询。
+        /// 查询的页码，即：从哪一页开始查询，取值范围1-65535，默认值为1。
         /// </summary>
         [SDKProperty("page_number", IsQuery = true)]
         [JsonProperty("page_number", NullValueHandling = NullValueHandling.Ignore)]

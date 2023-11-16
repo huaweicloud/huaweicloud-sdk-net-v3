@@ -16,6 +16,38 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
 
         
         /// <summary>
+        /// 创建构建任务
+        ///
+        /// 创建构建任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateBuildJobResponse> CreateBuildJobAsync(CreateBuildJobRequest createBuildJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/create",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBuildJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateBuildJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建构建模板
+        ///
+        /// 创建构建模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTemplatesResponse> CreateTemplatesAsync(CreateTemplatesRequest createTemplatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/templates/create",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplatesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateTemplatesResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除构建任务
         ///
         /// 删除构建任务
@@ -30,6 +62,23 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBuildJobRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DeleteBuildJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除构建模板
+        ///
+        /// 删除构建模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTemplatesResponse> DeleteTemplatesAsync(DeleteTemplatesRequest deleteTemplatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("uuid" , deleteTemplatesRequest.Uuid.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/templates/{uuid}/delete",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplatesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteTemplatesResponse>(response);
         }
         
         /// <summary>
@@ -50,6 +99,40 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
+        /// 取消通知
+        ///
+        /// 取消通知
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DisableNoticeResponse> DisableNoticeAsync(DisableNoticeRequest disableNoticeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , disableNoticeRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/disable",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableNoticeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<DisableNoticeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 下载全量构建日志
+        ///
+        /// 下载全量构建日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadBuildLogResponse> DownloadBuildLogAsync(DownloadBuildLogRequest downloadBuildLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id" , downloadBuildLogRequest.RecordId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/download-log",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<DownloadBuildLogResponse>(response);
+        }
+        
+        /// <summary>
         /// KeyStore文件下载
         ///
         /// 下载指定租户下的KeyStore文件
@@ -66,20 +149,20 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
-        /// 下载构建日志
+        /// 下载全量构建步骤日志
         ///
-        /// 下载构建日志
+        /// 下载全量构建步骤日志
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<DownloadLogByRecordIdResponse> DownloadLogByRecordIdAsync(DownloadLogByRecordIdRequest downloadLogByRecordIdRequest)
+        public async Task<DownloadTaskLogResponse> DownloadTaskLogAsync(DownloadTaskLogRequest downloadTaskLogRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("record_id" , downloadLogByRecordIdRequest.RecordId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{record_id}/download-log",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadLogByRecordIdRequest);
+            urlParam.Add("record_id" , downloadTaskLogRequest.RecordId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/task-log",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTaskLogRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<DownloadLogByRecordIdResponse>(response);
+            return JsonUtils.DeSerialize<DownloadTaskLogResponse>(response);
         }
         
         /// <summary>
@@ -89,20 +172,70 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<ResumeBuildJobResponse> ResumeBuildJobAsync(ResumeBuildJobRequest resumeBuildJobRequest)
+        public async Task<EnableBuildJobResponse> EnableBuildJobAsync(EnableBuildJobRequest enableBuildJobRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , resumeBuildJobRequest.JobId.ToString());
+            urlParam.Add("job_id" , enableBuildJobRequest.JobId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/recover",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resumeBuildJobRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableBuildJobRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            return JsonUtils.DeSerialize<ResumeBuildJobResponse>(response);
+            return JsonUtils.DeSerialize<EnableBuildJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取构建任务详情
+        ///
+        /// 获取构建任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListJobConfigResponse> ListJobConfigAsync(ListJobConfigRequest listJobConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , listJobConfigRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/query",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobConfigRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListJobConfigResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询通知
+        ///
+        /// 查询通知
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListNoticeResponse> ListNoticeAsync(ListNoticeRequest listNoticeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , listNoticeRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/query",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNoticeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListNoticeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询构建模板
+        ///
+        /// 查询构建模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest listTemplatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/templates/query",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListTemplatesResponse>(response);
         }
         
         /// <summary>
         /// 执行构建任务
         ///
-        /// 执行构建任务,可传自定义参数。
+        /// 执行构建任务,可传自定义参数
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -236,21 +369,39 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
+        /// 获取构建产物详情信息
+        ///
+        /// 获取构建产物详情信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowOutputInfoResponse> ShowOutputInfoAsync(ShowOutputInfoRequest showOutputInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , showOutputInfoRequest.JobId.ToString());
+            urlParam.Add("build_no" , showOutputInfoRequest.BuildNo.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/output-info",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOutputInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowOutputInfoResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取构建记录信息
         ///
         /// 获取构建记录信息
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<ShowRecordInfoResponse> ShowRecordInfoAsync(ShowRecordInfoRequest showRecordInfoRequest)
+        public async Task<ShowRecordDetailResponse> ShowRecordDetailAsync(ShowRecordDetailRequest showRecordDetailRequest)
         {
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showRecordInfoRequest.JobId.ToString());
-            urlParam.Add("build_no" , showRecordInfoRequest.BuildNo.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/record-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordInfoRequest);
+            urlParam.Add("job_id" , showRecordDetailRequest.JobId.ToString());
+            urlParam.Add("build_no" , showRecordDetailRequest.BuildNo.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v4/jobs/{job_id}/{build_no}/record-info",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordDetailRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowRecordInfoResponse>(response);
+            return JsonUtils.DeSerialize<ShowRecordDetailResponse>(response);
         }
         
         /// <summary>
@@ -269,6 +420,107 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBuildJobRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StopBuildJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新构建任务
+        ///
+        /// 更新构建任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateBuildJobResponse> UpdateBuildJobAsync(UpdateBuildJobRequest updateBuildJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/update",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBuildJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpdateBuildJobResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新通知
+        ///
+        /// 更新通知
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateNoticeResponse> UpdateNoticeAsync(UpdateNoticeRequest updateNoticeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , updateNoticeRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/update",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNoticeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpdateNoticeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 下载构建日志(待下线)
+        ///
+        /// 下载构建日志(待下线)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadLogByRecordIdResponse> DownloadLogByRecordIdAsync(DownloadLogByRecordIdRequest downloadLogByRecordIdRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id" , downloadLogByRecordIdRequest.RecordId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{record_id}/download-log",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadLogByRecordIdRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<DownloadLogByRecordIdResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取构建记录的有向无环图(待下线)
+        ///
+        /// 获取构建记录的有向无环图(待下线)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFlowGraphResponse> ShowFlowGraphAsync(ShowFlowGraphRequest showFlowGraphRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("build_flow_record_id" , showFlowGraphRequest.BuildFlowRecordId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{build_flow_record_id}/flow-graph",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowGraphRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowFlowGraphResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取构建记录信息(待下线)
+        ///
+        /// 获取构建记录信息(待下线)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRecordInfoResponse> ShowRecordInfoAsync(ShowRecordInfoRequest showRecordInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , showRecordInfoRequest.JobId.ToString());
+            urlParam.Add("build_no" , showRecordInfoRequest.BuildNo.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/record-info",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowRecordInfoResponse>(response);
+        }
+        
+        /// <summary>
+        /// 停止构建任务(待下线)
+        ///
+        /// 停止构建任务(待下线)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StopJobResponse> StopJobAsync(StopJobRequest stopJobRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/stop",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopJobRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<StopJobResponse>(response);
         }
         
     }

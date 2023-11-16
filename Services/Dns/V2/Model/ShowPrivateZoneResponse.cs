@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<Router> Routers { get; set; }
 
         /// <summary>
-        /// 内网Zone的子域名递归解析代理模式。 取值范围： AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+        /// 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
         /// </summary>
         [JsonProperty("proxy_pattern", NullValueHandling = NullValueHandling.Ignore)]
         public string ProxyPattern { get; set; }

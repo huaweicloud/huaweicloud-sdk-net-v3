@@ -247,7 +247,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
-        /// 查询Demo
+        /// 创建日志收藏
         ///
         /// 创建日志收藏
         /// 

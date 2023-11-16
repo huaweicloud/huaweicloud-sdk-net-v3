@@ -470,6 +470,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
+        /// 资源id。
+        /// </summary>
+        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceId { get; set; }
+
+        /// <summary>
         /// 函数的URN（Uniform Resource Name），唯一标识函数。
         /// </summary>
         [JsonProperty("func_urn", NullValueHandling = NullValueHandling.Ignore)]
@@ -703,6 +709,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListFunctionResult {\n");
+            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  funcUrn: ").Append(FuncUrn).Append("\n");
             sb.Append("  funcName: ").Append(FuncName).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
@@ -762,6 +769,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
+                (
+                    this.ResourceId == input.ResourceId ||
+                    (this.ResourceId != null &&
+                    this.ResourceId.Equals(input.ResourceId))
+                ) && 
                 (
                     this.FuncUrn == input.FuncUrn ||
                     (this.FuncUrn != null &&
@@ -963,6 +975,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ResourceId != null)
+                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.FuncUrn != null)
                     hashCode = hashCode * 59 + this.FuncUrn.GetHashCode();
                 if (this.FuncName != null)

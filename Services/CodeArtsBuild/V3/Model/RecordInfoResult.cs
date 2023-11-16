@@ -179,6 +179,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public string FinishTime { get; set; }
 
         /// <summary>
+        /// 构建时长
+        /// </summary>
+        [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
+        public float? Duration { get; set; }
+
+        /// <summary>
         /// record状态
         /// </summary>
         [JsonProperty("record_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -244,6 +250,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  runnableTime: ").Append(RunnableTime).Append("\n");
             sb.Append("  finishTime: ").Append(FinishTime).Append("\n");
+            sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  recordStatus: ").Append(RecordStatus).Append("\n");
             sb.Append("  usePrivateSlave: ").Append(UsePrivateSlave).Append("\n");
             sb.Append("  region: ").Append(Region).Append("\n");
@@ -406,6 +413,11 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
                     this.FinishTime.Equals(input.FinishTime))
                 ) && 
                 (
+                    this.Duration == input.Duration ||
+                    (this.Duration != null &&
+                    this.Duration.Equals(input.Duration))
+                ) && 
+                (
                     this.RecordStatus == input.RecordStatus ||
                     (this.RecordStatus != null &&
                     this.RecordStatus.Equals(input.RecordStatus))
@@ -494,6 +506,8 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
                     hashCode = hashCode * 59 + this.RunnableTime.GetHashCode();
                 if (this.FinishTime != null)
                     hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
+                if (this.Duration != null)
+                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.RecordStatus != null)
                     hashCode = hashCode * 59 + this.RecordStatus.GetHashCode();
                 if (this.UsePrivateSlave != null)

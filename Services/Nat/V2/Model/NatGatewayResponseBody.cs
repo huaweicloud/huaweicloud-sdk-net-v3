@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的描述，长度限制为255。
+        /// 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含&lt;&gt;
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -353,7 +353,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string NgportIpAddress { get; set; }
 
         /// <summary>
-        /// 订单信息。
+        /// 订单信息。此字段只有在订购包周期资源时才会有订单信息，而在订购按需资源时则为空。
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }

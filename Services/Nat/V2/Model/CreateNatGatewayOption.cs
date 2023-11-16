@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string InternalNetworkId { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的描述，长度限制为255。
+        /// 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含&lt;&gt;
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

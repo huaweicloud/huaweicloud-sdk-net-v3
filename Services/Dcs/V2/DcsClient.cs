@@ -1520,7 +1520,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             Dictionary<string, string> urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id" , startInstanceResizeCheckJobRequest.InstanceId.ToString());
             string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/resize/check-job",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceResizeCheckJobRequest);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", startInstanceResizeCheckJobRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<StartInstanceResizeCheckJobResponse>(response);
         }

@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("is_agency_transfer", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAgencyTransfer { get; set; }
 
+        /// <summary>
+        /// 冷存储量
+        /// </summary>
+        [JsonProperty("cold_storage", NullValueHandling = NullValueHandling.Ignore)]
+        public double? ColdStorage { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  basicTransfer: ").Append(BasicTransfer).Append("\n");
             sb.Append("  seniorTransfer: ").Append(SeniorTransfer).Append("\n");
             sb.Append("  isAgencyTransfer: ").Append(IsAgencyTransfer).Append("\n");
+            sb.Append("  coldStorage: ").Append(ColdStorage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -165,6 +172,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.IsAgencyTransfer == input.IsAgencyTransfer ||
                     (this.IsAgencyTransfer != null &&
                     this.IsAgencyTransfer.Equals(input.IsAgencyTransfer))
+                ) && 
+                (
+                    this.ColdStorage == input.ColdStorage ||
+                    (this.ColdStorage != null &&
+                    this.ColdStorage.Equals(input.ColdStorage))
                 );
         }
 
@@ -196,6 +208,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.SeniorTransfer.GetHashCode();
                 if (this.IsAgencyTransfer != null)
                     hashCode = hashCode * 59 + this.IsAgencyTransfer.GetHashCode();
+                if (this.ColdStorage != null)
+                    hashCode = hashCode * 59 + this.ColdStorage.GetHashCode();
                 return hashCode;
             }
         }

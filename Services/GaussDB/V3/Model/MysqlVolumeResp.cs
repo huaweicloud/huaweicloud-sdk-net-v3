@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 磁盘大小。单位GB。  取值范围：10~128000，为10的整数倍。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public string Size { get; set; }
+        public int? Size { get; set; }
 
 
 

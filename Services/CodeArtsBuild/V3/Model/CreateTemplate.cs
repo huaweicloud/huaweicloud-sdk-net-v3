@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
+namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
 {
     /// <summary>
-    /// Response Object
+    /// 模板中构建执行步骤列表
     /// </summary>
-    public class ShowRabbitMqProductCoresResponse : SdkResponse
+    public class CreateTemplate 
     {
 
         /// <summary>
-        /// 产品规格核数。
+        /// 构建执行的步骤
         /// </summary>
-        [JsonProperty("core_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CoreNum { get; set; }
+        [JsonProperty("steps", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateTemplateSteps> Steps { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowRabbitMqProductCoresResponse {\n");
-            sb.Append("  coreNum: ").Append(CoreNum).Append("\n");
+            sb.Append("class CreateTemplate {\n");
+            sb.Append("  steps: ").Append(Steps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,23 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowRabbitMqProductCoresResponse);
+            return this.Equals(input as CreateTemplate);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowRabbitMqProductCoresResponse input)
+        public bool Equals(CreateTemplate input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.CoreNum == input.CoreNum ||
-                    (this.CoreNum != null &&
-                    this.CoreNum.Equals(input.CoreNum))
+                    this.Steps == input.Steps ||
+                    this.Steps != null &&
+                    input.Steps != null &&
+                    this.Steps.SequenceEqual(input.Steps)
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CoreNum != null)
-                    hashCode = hashCode * 59 + this.CoreNum.GetHashCode();
+                if (this.Steps != null)
+                    hashCode = hashCode * 59 + this.Steps.GetHashCode();
                 return hashCode;
             }
         }

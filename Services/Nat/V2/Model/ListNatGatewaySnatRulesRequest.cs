@@ -198,7 +198,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// SNAT规则的描述，长度限制为255。
+        /// SNAT规则的描述，长度范围小于等于255个字符，不能包含&lt;&gt;
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]

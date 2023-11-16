@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 创建时间。
         /// </summary>
         [JsonProperty("createdAt", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
 
         /// <summary>
         /// 消费组ID。

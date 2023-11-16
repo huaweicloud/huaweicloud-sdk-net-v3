@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("router_region", NullValueHandling = NullValueHandling.Ignore)]
         public string RouterRegion { get; set; }
 
+        /// <summary>
+        /// 资源状态。
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("class Router {\n");
             sb.Append("  routerId: ").Append(RouterId).Append("\n");
             sb.Append("  routerRegion: ").Append(RouterRegion).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     this.RouterRegion == input.RouterRegion ||
                     (this.RouterRegion != null &&
                     this.RouterRegion.Equals(input.RouterRegion))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                     hashCode = hashCode * 59 + this.RouterId.GetHashCode();
                 if (this.RouterRegion != null)
                     hashCode = hashCode * 59 + this.RouterRegion.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

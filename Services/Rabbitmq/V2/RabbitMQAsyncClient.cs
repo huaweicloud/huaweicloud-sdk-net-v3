@@ -381,23 +381,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
-        /// 查询RabbitMQ产品规格核数
-        ///
-        /// 查询RabbitMQ产品规格核数
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowRabbitMqProductCoresResponse> ShowRabbitMqProductCoresAsync(ShowRabbitMqProductCoresRequest showRabbitMqProductCoresRequest)
-        {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , showRabbitMqProductCoresRequest.Engine.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products/cores",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRabbitMqProductCoresRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            return JsonUtils.DeSerialize<ShowRabbitMqProductCoresResponse>(response);
-        }
-        
-        /// <summary>
         /// 查询项目标签
         ///
         /// 查询项目标签。

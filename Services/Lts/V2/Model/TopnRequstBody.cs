@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 排序依据，index/write/storage/basicTransfer/seniorTransfer，必须是search_list中存在的数据
+        /// 排序依据，index/write/storage/basicTransfer/seniorTransfer/coldStorage，必须是search_list中存在的数据
         /// </summary>
         [JsonProperty("sort_by", NullValueHandling = NullValueHandling.Ignore)]
         public string SortBy { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public Dictionary<string, string> Filter { get; set; }
 
         /// <summary>
-        /// 查询数据类型，字符串数组可多种搭配，只能在index/write/storage/basicTransfer/seniorTransfer中选填
+        /// 查询数据类型，字符串数组可多种搭配，只能在index/write/storage/basicTransfer/seniorTransfer/coldStorage中选填
         /// </summary>
         [JsonProperty("search_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SearchList { get; set; }

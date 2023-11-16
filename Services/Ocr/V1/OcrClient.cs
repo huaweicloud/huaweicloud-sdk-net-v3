@@ -528,6 +528,22 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 秘鲁身份证识别
+        ///
+        /// 识别秘鲁身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RecognizePeruIdCardResponse RecognizePeruIdCard(RecognizePeruIdCardRequest recognizePeruIdCardRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/peru-id-card",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePeruIdCardRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<RecognizePeruIdCardResponse>(response);
+        }
+        
+        /// <summary>
         /// 道路运输从业资格证识别
         ///
         /// 识别道路运输从业资格证上的关键文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section25)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。

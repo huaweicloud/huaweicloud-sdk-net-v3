@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
-    /// 更新DNAT规则的响应体。
+    /// 更新DNAT规则的请求体。
     /// </summary>
     public class UpdateNatGatewayDnatRuleRequestBody 
     {

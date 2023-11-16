@@ -44,6 +44,10 @@ namespace HuaweiCloud.SDK.Eip.V2
             "https://vpc.tr-west-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
             "https://vpc.eu-west-101.myhuaweicloud.eu");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://vpc.cn-south-4.myhuaweicloud.com");
+        public static readonly Region ME_EAST_1 = new Region("me-east-1",
+            "https://vpc.me-east-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("EIP");
 
@@ -68,6 +72,8 @@ namespace HuaweiCloud.SDK.Eip.V2
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "tr-west-1", TR_WEST_1 },
                 { "eu-west-101", EU_WEST_101 },
+                { "cn-south-4", CN_SOUTH_4 },
+                { "me-east-1", ME_EAST_1 },
         };
 
         public static Region ValueOf(string regionId)

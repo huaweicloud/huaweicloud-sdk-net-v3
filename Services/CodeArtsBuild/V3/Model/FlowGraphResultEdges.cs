@@ -11,17 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// 
     /// </summary>
-    public class ResumeBuildJobRequest 
+    public class FlowGraphResultEdges 
     {
 
         /// <summary>
-        /// 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)； 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
+        /// 依赖子任务ID
         /// </summary>
-        [SDKProperty("job_id", IsPath = true)]
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
+        public string From { get; set; }
+
+        /// <summary>
+        /// 被依赖的子任务ID
+        /// </summary>
+        [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
+        public string To { get; set; }
 
 
 
@@ -31,8 +36,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ResumeBuildJobRequest {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("class FlowGraphResultEdges {\n");
+            sb.Append("  from: ").Append(From).Append("\n");
+            sb.Append("  to: ").Append(To).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +48,27 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ResumeBuildJobRequest);
+            return this.Equals(input as FlowGraphResultEdges);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ResumeBuildJobRequest input)
+        public bool Equals(FlowGraphResultEdges input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
+                    this.From == input.From ||
+                    (this.From != null &&
+                    this.From.Equals(input.From))
+                ) && 
+                (
+                    this.To == input.To ||
+                    (this.To != null &&
+                    this.To.Equals(input.To))
                 );
         }
 
@@ -69,8 +80,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.From != null)
+                    hashCode = hashCode * 59 + this.From.GetHashCode();
+                if (this.To != null)
+                    hashCode = hashCode * 59 + this.To.GetHashCode();
                 return hashCode;
             }
         }

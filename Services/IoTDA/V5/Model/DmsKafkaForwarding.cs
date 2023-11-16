@@ -53,10 +53,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// **参数说明**：转发kafka关联的鉴权机制。 **取值范围**： - PAAS：非SASL鉴权。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。
+        /// **参数说明**：转发kafka关联的SASL认证机制。 **取值范围**： - PAAS：明文传输，此模式下为非数据加密传输模式，数据传输不安全，建议您使用更安全的数据加密模式。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。一种简单的用户名密码校验机制，在SASL_PLAINTEXT场景下，不建议使用。 - SCRAM-SHA-512：SASL/SCRAM-SHA-512模式。需要填写对应的用户名密码信息。采用哈希算法对用户名与密码生成凭证，进行身份校验的安全认证机制，比PLAIN机制安全性更高。
         /// </summary>
         [JsonProperty("mechanism", NullValueHandling = NullValueHandling.Ignore)]
         public string Mechanism { get; set; }
+
+        /// <summary>
+        /// **参数说明**：kafka传输安全协议，此字段不填默认为SASL_SSL。当mechanism为PAAS或不填时，该字段不生效。 **取值范围**： - SASL_SSL：采用SSL证书进行加密传输，支持帐号密码认证，安全性更高。 - SASL_PLAINTEXT：明文传输，支持帐号密码认证，性能更好，建议mechanism使用SCRAM-SHA-512机制。
+        /// </summary>
+        [JsonProperty("security_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecurityProtocol { get; set; }
 
 
 
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  username: ").Append(Username).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("  mechanism: ").Append(Mechanism).Append("\n");
+            sb.Append("  securityProtocol: ").Append(SecurityProtocol).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -130,6 +137,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Mechanism == input.Mechanism ||
                     (this.Mechanism != null &&
                     this.Mechanism.Equals(input.Mechanism))
+                ) && 
+                (
+                    this.SecurityProtocol == input.SecurityProtocol ||
+                    (this.SecurityProtocol != null &&
+                    this.SecurityProtocol.Equals(input.SecurityProtocol))
                 );
         }
 
@@ -155,6 +167,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
                 if (this.Mechanism != null)
                     hashCode = hashCode * 59 + this.Mechanism.GetHashCode();
+                if (this.SecurityProtocol != null)
+                    hashCode = hashCode * 59 + this.SecurityProtocol.GetHashCode();
                 return hashCode;
             }
         }

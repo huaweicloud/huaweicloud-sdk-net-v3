@@ -13,14 +13,26 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class ResumeBuildJobResponse : SdkResponse
+    public class CreateBuildJobResponse : SdkResponse
     {
 
         /// <summary>
-        /// 返回结果状态
+        /// 
+        /// </summary>
+        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateBuildJobResponseBodyResult Result { get; set; }
+
+        /// <summary>
+        /// 状态信息
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        [JsonProperty("error", NullValueHandling = NullValueHandling.Ignore)]
+        public string Error { get; set; }
 
 
 
@@ -30,8 +42,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ResumeBuildJobResponse {\n");
+            sb.Append("class CreateBuildJobResponse {\n");
+            sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  error: ").Append(Error).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +55,32 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ResumeBuildJobResponse);
+            return this.Equals(input as CreateBuildJobResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ResumeBuildJobResponse input)
+        public bool Equals(CreateBuildJobResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
+                    this.Result == input.Result ||
+                    (this.Result != null &&
+                    this.Result.Equals(input.Result))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Error == input.Error ||
+                    (this.Error != null &&
+                    this.Error.Equals(input.Error))
                 );
         }
 
@@ -68,8 +92,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Result != null)
+                    hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Error != null)
+                    hashCode = hashCode * 59 + this.Error.GetHashCode();
                 return hashCode;
             }
         }

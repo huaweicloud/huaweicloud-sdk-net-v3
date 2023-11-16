@@ -437,6 +437,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 允许异步状态通知
+        ///
+        /// 允许异步状态通知。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<EnableAsyncStatusLogResponse> EnableAsyncStatusLogAsync(EnableAsyncStatusLogRequest enableAsyncStatusLogRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/enable-async-status-logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableAsyncStatusLogRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<EnableAsyncStatusLogResponse>(response);
+        }
+        
+        /// <summary>
         /// 开通lts日志上报功能
         ///
         /// 开通lts日志上报功能。
@@ -534,6 +550,43 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncInvocationsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAsyncInvocationsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取指定函数绑定的servicebridge函数列表
+        ///
+        /// 获取指定函数绑定的servicebridge函数列表信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBridgeFunctionsResponse> ListBridgeFunctionsAsync(ListBridgeFunctionsRequest listBridgeFunctionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_urn" , listBridgeFunctionsRequest.FunctionUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/servicebridge/relation",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBridgeFunctionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ListBridgeFunctionsResponse listBridgeFunctionsResponse = JsonUtils.DeSerializeNull<ListBridgeFunctionsResponse>(response);
+            listBridgeFunctionsResponse.Body = JsonUtils.DeSerializeList<ListFunctionResult>(response);
+            return listBridgeFunctionsResponse;
+        }
+        
+        /// <summary>
+        /// 获取servicebridge可用的版本
+        ///
+        /// 获取servicebridge可用的版本
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBridgeVersionsResponse> ListBridgeVersionsAsync(ListBridgeVersionsRequest listBridgeVersionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/servicebridge/version",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBridgeVersionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ListBridgeVersionsResponse listBridgeVersionsResponse = JsonUtils.DeSerializeNull<ListBridgeVersionsResponse>(response);
+            listBridgeVersionsResponse.Body = JsonUtils.DeSerializeList<ServiceBridgeVersion>(response);
+            return listBridgeVersionsResponse;
         }
         
         /// <summary>
@@ -653,6 +706,40 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionStatisticsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListFunctionStatisticsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询函数标签列表
+        ///
+        /// 查询函数标签列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFunctionTagsResponse> ListFunctionTagsAsync(ListFunctionTagsRequest listFunctionTagsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type" , listFunctionTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id" , listFunctionTagsRequest.ResourceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionTagsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取函数模板列表
+        ///
+        /// 获取函数模板列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFunctionTemplateResponse> ListFunctionTemplateAsync(ListFunctionTemplateRequest listFunctionTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/templates",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionTemplateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionTemplateResponse>(response);
         }
         
         /// <summary>
@@ -882,6 +969,29 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 查询函数实例使用情况指标
+        ///
+        /// 查询函数实例使用情况指标。
+        /// 
+        /// - 指标单位为分钟：
+        ///     当查询时间范围小于1小时,指标周期为1分钟
+        ///     当查询时间范围小于1天,指标周期为30分钟
+        ///     当查询时间范围大于1天,指标周期为180分钟
+        /// - 指标分为如下几类：reservedinstancenum（预留实例使用）、concurrency（实例使用/并发）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFuncReservedInstanceMetricsResponse> ShowFuncReservedInstanceMetricsAsync(ShowFuncReservedInstanceMetricsRequest showFuncReservedInstanceMetricsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("func_urn" , showFuncReservedInstanceMetricsRequest.FuncUrn.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/instancereports",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFuncReservedInstanceMetricsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowFuncReservedInstanceMetricsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询函数快照制作状态
         ///
         /// 查询函数快照制作状态。
@@ -951,6 +1061,41 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 查询函数实例流量指标
+        ///
+        /// 查询函数流量指标。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFunctionMetricsResponse> ShowFunctionMetricsAsync(ShowFunctionMetricsRequest showFunctionMetricsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("func_urn" , showFunctionMetricsRequest.FuncUrn.ToString());
+            urlParam.Add("period" , showFunctionMetricsRequest.Period.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/slareports/{period}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionMetricsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowFunctionMetricsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取指定函数模板
+        ///
+        /// 获取指定函数模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFunctionTemplateResponse> ShowFunctionTemplateAsync(ShowFunctionTemplateRequest showFunctionTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id" , showFunctionTemplateRequest.TemplateId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/templates/{template_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionTemplateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowFunctionTemplateResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定触发器的信息
         ///
         /// 获取特定触发器的信息。
@@ -984,6 +1129,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLtsLogDetailsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLtsLogDetailsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询异步日志详情
+        ///
+        /// 查询异步日志详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowProjectAsyncStatusLogInfoResponse> ShowProjectAsyncStatusLogInfoAsync(ShowProjectAsyncStatusLogInfoRequest showProjectAsyncStatusLogInfoRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/async-status-log-detail",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectAsyncStatusLogInfoRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowProjectAsyncStatusLogInfoResponse>(response);
         }
         
         /// <summary>
@@ -1278,6 +1439,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionCodeRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateFunctionCodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新函数收藏状态
+        ///
+        /// 更新函数收藏状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateFunctionCollectStateResponse> UpdateFunctionCollectStateAsync(UpdateFunctionCollectStateRequest updateFunctionCollectStateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("func_urn" , updateFunctionCollectStateRequest.FuncUrn.ToString());
+            urlParam.Add("state" , updateFunctionCollectStateRequest.State.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/collect/{state}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionCollectStateRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateFunctionCollectStateResponse>(response);
         }
         
         /// <summary>
