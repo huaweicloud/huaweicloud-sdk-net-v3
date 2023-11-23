@@ -367,9 +367,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 方向：0表示外到内，1表示内到外
+        /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
         /// </summary>
-        /// <value>方向：0表示外到内，1表示内到外</value>
+        /// <value>方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】</value>
         [JsonConverter(typeof(EnumClassConverter<DirectionEnum>))]
         public class DirectionEnum
         {
@@ -546,7 +546,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 方向：0表示外到内，1表示内到外
+        /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public DirectionEnum Direction { get; set; }

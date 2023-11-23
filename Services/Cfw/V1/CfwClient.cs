@@ -65,6 +65,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 添加域名组
         ///
+        /// 添加域名组
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -92,6 +93,22 @@ namespace HuaweiCloud.SDK.Cfw.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDomainsRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<AddDomainsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建日志配置
+        ///
+        /// 创建日志配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddLogConfigResponse AddLogConfig(AddLogConfigRequest addLogConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/logs/configuration",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addLogConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<AddLogConfigResponse>(response);
         }
         
         /// <summary>
@@ -129,6 +146,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 批量删除地址组成员
         ///
+        /// 批量删除地址组成员
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -144,6 +162,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 批量删除服务组成员信息
         ///
+        /// 批量删除服务组成员信息
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -170,6 +189,22 @@ namespace HuaweiCloud.SDK.Cfw.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeEastWestFirewallStatusRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ChangeEastWestFirewallStatusResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建东西向防火墙
+        ///
+        /// 创建东西向防火墙
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateEastWestFirewallResponse CreateEastWestFirewall(CreateEastWestFirewallRequest createEastWestFirewallRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/firewall/east-west",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEastWestFirewallRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateEastWestFirewallResponse>(response);
         }
         
         /// <summary>
@@ -226,6 +261,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 删除域名组
         ///
+        /// 删除域名组
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -518,6 +554,22 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 获取日志配置
+        ///
+        /// 获取日志配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLogConfigResponse ListLogConfig(ListLogConfigRequest listLogConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/logs/configuration",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListLogConfigResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询防护VPC数
         ///
         /// 查询防护vpc信息
@@ -635,6 +687,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 更新域名组
         ///
+        /// 更新域名组
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -646,6 +699,22 @@ namespace HuaweiCloud.SDK.Cfw.V1
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainSetRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDomainSetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 更新日志配置
+        ///
+        /// 更新日志配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateLogConfigResponse UpdateLogConfig(UpdateLogConfigRequest updateLogConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/logs/configuration",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateLogConfigResponse>(response);
         }
         
         /// <summary>
@@ -700,6 +769,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 批量更新规则动作
         ///
+        /// 批量更新规则动作
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -781,6 +851,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 查询规则标签
         ///
+        /// 查询规则标签
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -830,7 +901,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 弹性IP开启关闭
         ///
-        /// 开启关闭EIP,客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
+        /// 开启关闭EIP，客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

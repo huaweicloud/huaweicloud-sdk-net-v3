@@ -13,8 +13,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class ChangeIpsSwitchStatusRequest 
+    public class AddLogConfigRequest 
     {
+
+        /// <summary>
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+        /// </summary>
+        [SDKProperty("fw_instance_id", IsQuery = true)]
+        [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwInstanceId { get; set; }
 
         /// <summary>
         /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
@@ -24,25 +31,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
-        /// </summary>
-        [SDKProperty("fw_instance_id", IsQuery = true)]
-        [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string FwInstanceId { get; set; }
-
-        /// <summary>
-        /// 语言头部，默认为zh-cn，如需使用英文，请选择en-us
-        /// </summary>
-        [SDKProperty("X-Language", IsHeader = true)]
-        [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
-        public string XLanguage { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public IpsSwitchDTO Body { get; set; }
+        public LogConfigDto Body { get; set; }
 
 
 
@@ -52,10 +45,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ChangeIpsSwitchStatusRequest {\n");
-            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("class AddLogConfigRequest {\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
-            sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,32 +58,27 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ChangeIpsSwitchStatusRequest);
+            return this.Equals(input as AddLogConfigRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ChangeIpsSwitchStatusRequest input)
+        public bool Equals(AddLogConfigRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
                     this.FwInstanceId == input.FwInstanceId ||
                     (this.FwInstanceId != null &&
                     this.FwInstanceId.Equals(input.FwInstanceId))
                 ) && 
                 (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -108,12 +95,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.FwInstanceId != null)
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

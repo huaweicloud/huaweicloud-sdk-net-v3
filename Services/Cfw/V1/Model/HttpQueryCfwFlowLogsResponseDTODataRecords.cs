@@ -152,13 +152,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 开始时间
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? StartTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
         /// 结束时间
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EndTime { get; set; }
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// 文档ID
@@ -176,7 +176,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 源端口
         /// </summary>
         [JsonProperty("src_port", NullValueHandling = NullValueHandling.Ignore)]
-        public string SrcPort { get; set; }
+        public int? SrcPort { get; set; }
 
         /// <summary>
         /// 目的IP
@@ -194,7 +194,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 目的端口
         /// </summary>
         [JsonProperty("dst_port", NullValueHandling = NullValueHandling.Ignore)]
-        public string DstPort { get; set; }
+        public int? DstPort { get; set; }
 
         /// <summary>
         /// 协议类型:TCP为6,UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空

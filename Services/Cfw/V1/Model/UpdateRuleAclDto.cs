@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 规则方向
+        /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
         /// </summary>
-        /// <value>规则方向</value>
+        /// <value>方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】</value>
         [JsonConverter(typeof(EnumClassConverter<DirectionEnum>))]
         public class DirectionEnum
         {
@@ -476,9 +476,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1:vpc规则，2：nat规则
+        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
-        /// <value>规则type，0：互联网规则，1:vpc规则，2：nat规则</value>
+        /// <value>规则type，0：互联网规则，1：vpc规则，2：nat规则</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -615,7 +615,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public OrderRuleAclDto Sequence { get; set; }
 
         /// <summary>
-        /// 规则方向
+        /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public DirectionEnum Direction { get; set; }
@@ -684,7 +684,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public RuleServiceDto Service { get; set; }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1:vpc规则，2：nat规则
+        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

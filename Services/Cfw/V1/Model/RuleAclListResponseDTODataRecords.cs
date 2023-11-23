@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1：vpc规则，2nat规则
+        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
-        /// <value>规则type，0：互联网规则，1：vpc规则，2nat规则</value>
+        /// <value>规则type，0：互联网规则，1：vpc规则，2：nat规则</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -348,7 +348,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public RuleServiceDto Service { get; set; }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1：vpc规则，2nat规则
+        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

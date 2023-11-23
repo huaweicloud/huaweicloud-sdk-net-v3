@@ -146,7 +146,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 事件时间
         /// </summary>
         [JsonProperty("event_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string EventTime { get; set; }
+        public long? EventTime { get; set; }
 
         /// <summary>
         /// 攻击类型
@@ -182,7 +182,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 攻击规则id
         /// </summary>
         [JsonProperty("attack_rule_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? AttackRuleId { get; set; }
+        public string AttackRuleId { get; set; }
 
         /// <summary>
         /// 命中时间
@@ -227,10 +227,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 
+        /// 攻击日志报文
         /// </summary>
         [JsonProperty("packet", NullValueHandling = NullValueHandling.Ignore)]
-        public Packet Packet { get; set; }
+        public string Packet { get; set; }
 
         /// <summary>
         /// 应用协议
