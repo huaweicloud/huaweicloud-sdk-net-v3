@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public List<ThumbnailRsp> Dots { get; set; }
 
         /// <summary>
+        /// 视频截图信息，截图类型为数量。
+        /// </summary>
+        [JsonProperty("quantity", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ThumbnailRsp> Quantity { get; set; }
+
+        /// <summary>
         /// 执行情况描述。
         /// </summary>
         [JsonProperty("exec_desc", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("class ThumbnailInfo {\n");
             sb.Append("  sample: ").Append(Sample).Append("\n");
             sb.Append("  dots: ").Append(Dots).Append("\n");
+            sb.Append("  quantity: ").Append(Quantity).Append("\n");
             sb.Append("  execDesc: ").Append(ExecDesc).Append("\n");
             sb.Append("  thumbnailStatus: ").Append(ThumbnailStatus).Append("\n");
             sb.Append("}\n");
@@ -87,6 +94,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.Dots.SequenceEqual(input.Dots)
                 ) && 
                 (
+                    this.Quantity == input.Quantity ||
+                    this.Quantity != null &&
+                    input.Quantity != null &&
+                    this.Quantity.SequenceEqual(input.Quantity)
+                ) && 
+                (
                     this.ExecDesc == input.ExecDesc ||
                     (this.ExecDesc != null &&
                     this.ExecDesc.Equals(input.ExecDesc))
@@ -110,6 +123,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     hashCode = hashCode * 59 + this.Sample.GetHashCode();
                 if (this.Dots != null)
                     hashCode = hashCode * 59 + this.Dots.GetHashCode();
+                if (this.Quantity != null)
+                    hashCode = hashCode * 59 + this.Quantity.GetHashCode();
                 if (this.ExecDesc != null)
                     hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
                 if (this.ThumbnailStatus != null)

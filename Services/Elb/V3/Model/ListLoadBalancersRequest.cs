@@ -220,14 +220,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<int?> IpVersion { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+        /// 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
         /// </summary>
         [SDKProperty("deletion_protection_enable", IsQuery = true)]
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }
 
         /// <summary>
-        /// 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type&#x3D;ipv4&amp;elb_virsubnet_type&#x3D;dualstack*。  [不支持dualstack。](tag:dt,dt_test)
+        /// 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type&#x3D;ipv4&amp;elb_virsubnet_type&#x3D;dualstack*。
         /// </summary>
         [SDKProperty("elb_virsubnet_type", IsQuery = true)]
         [JsonProperty("elb_virsubnet_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -253,6 +253,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [SDKProperty("global_eips", IsQuery = true)]
         [JsonProperty("global_eips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> GlobalEips { get; set; }
+
+        /// <summary>
+        /// LB实例绑定的logtank的topic id信息，支持多值查询，查询条件格式：*log_topic_id&#x3D;xxx&amp;log_topic_id&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("log_topic_id", IsQuery = true)]
+        [JsonProperty("log_topic_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogTopicId { get; set; }
+
+        /// <summary>
+        /// LB实例绑定的logtank的group id信息，支持多值查询，查询条件格式：*log_group_id&#x3D;xxx&amp;log_group_id&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("log_group_id", IsQuery = true)]
+        [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupId { get; set; }
 
 
 
@@ -297,6 +311,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  globalEips: ").Append(GlobalEips).Append("\n");
+            sb.Append("  logTopicId: ").Append(LogTopicId).Append("\n");
+            sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -515,6 +531,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.GlobalEips != null &&
                     input.GlobalEips != null &&
                     this.GlobalEips.SequenceEqual(input.GlobalEips)
+                ) && 
+                (
+                    this.LogTopicId == input.LogTopicId ||
+                    (this.LogTopicId != null &&
+                    this.LogTopicId.Equals(input.LogTopicId))
+                ) && 
+                (
+                    this.LogGroupId == input.LogGroupId ||
+                    (this.LogGroupId != null &&
+                    this.LogGroupId.Equals(input.LogGroupId))
                 );
         }
 
@@ -594,6 +620,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.GlobalEips != null)
                     hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
+                if (this.LogTopicId != null)
+                    hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
+                if (this.LogGroupId != null)
+                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 return hashCode;
             }
         }

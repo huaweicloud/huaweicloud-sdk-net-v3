@@ -228,7 +228,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// depend_type为zip类型时必填，为文件流格式,需要base64编码zip文件。
+        /// depend_type为zip类型时必填，为文件流格式,需要base64编码zip文件。上传的文件大小限制为40M，如超过40M，请通过OBS上传。
         /// </summary>
         [JsonProperty("depend_file", NullValueHandling = NullValueHandling.Ignore)]
         public string DependFile { get; set; }
@@ -240,7 +240,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string DependLink { get; set; }
 
         /// <summary>
-        /// 导入类型,目前支持obs和zip。
+        /// 导入类型，目前支持obs和zip。
         /// </summary>
         [JsonProperty("depend_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DependType { get; set; }

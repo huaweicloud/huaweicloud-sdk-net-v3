@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public LoadBalancer Loadbalancer { get; set; }
 
         /// <summary>
-        /// 负载均衡器的ID。[（包周期场景返回该字段）](tag:hws)  [不支持该字段，请勿使用](tag:hws_ocb,ocb,hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+        /// 负载均衡器的id[（包周期场景返回该字段）  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
         /// </summary>
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 订单号。[（包周期场景返回该字段）](tag:hws)  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+        /// 订单号[（包周期规格变更场景返回该字段）  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }

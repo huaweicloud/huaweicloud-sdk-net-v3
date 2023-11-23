@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 停止函数异步调用请求
         ///
-        /// -| 停止函数异步调用请求 当前仅支持recursive为false且force为true的参数。针对1：N的函数做并发异步调用 停止异步请求时实例同时在执行的其他请求也会被一并停止并返回4208 function invocation canceled 目前仅支持广州和贵阳一
+        /// -| 当前仅支持参数recursive为false且force为true的函数。 在1：N的函数做并发异步调用的场景下调用停止异步请求接口时，同一函数实例同时在执行的其他请求也会被一并停止并返回4208 function invocation canceled
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -100,6 +100,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAsyncInvocationRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerializeNull<CancelAsyncInvocationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 回调工作流
+        ///
+        /// 回调工作流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateCallbackWorkflowResponse CreateCallbackWorkflow(CreateCallbackWorkflowRequest createCallbackWorkflowRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id" , createCallbackWorkflowRequest.WorkflowId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/callback",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCallbackWorkflowRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateCallbackWorkflowResponse>(response);
         }
         
         /// <summary>
@@ -165,6 +182,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFunctionRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<CreateFunctionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建应用程序
+        ///
+        /// 创建应用程序
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateFunctionAppResponse CreateFunctionApp(CreateFunctionAppRequest createFunctionAppRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFunctionAppRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<CreateFunctionAppResponse>(response);
         }
         
         /// <summary>
@@ -343,6 +376,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteFunctionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除应用程序
+        ///
+        /// 删除应用程序
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteFunctionAppResponse DeleteFunctionApp(DeleteFunctionAppRequest deleteFunctionAppRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , deleteFunctionAppRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionAppRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteFunctionAppResponse>(response);
         }
         
         /// <summary>
@@ -535,6 +585,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 查询应用程序模板列表
+        ///
+        /// 查询应用程序模板列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAppTemplatesResponse ListAppTemplates(ListAppTemplatesRequest listAppTemplatesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/application/templates",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppTemplatesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListAppTemplatesResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取函数异步调用请求列表
         ///
         /// 获取函数异步调用请求列表
@@ -636,6 +702,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventsRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListEventsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询应用程序列表
+        ///
+        /// 查询应用程序列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListFunctionApplicationsResponse ListFunctionApplications(ListFunctionApplicationsRequest listFunctionApplicationsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionApplicationsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListFunctionApplicationsResponse>(response);
         }
         
         /// <summary>
@@ -915,6 +997,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
+        /// 查询应用程序模板详情
+        ///
+        /// 查询应用程序模板详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAppTemplateResponse ShowAppTemplate(ShowAppTemplateRequest showAppTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , showAppTemplateRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/application/templates/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowAppTemplateResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取指定依赖包
         ///
         /// 获取指定依赖包
@@ -1006,6 +1105,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFuncSnapshotStateRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowFuncSnapshotStateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询应用程序详情
+        ///
+        /// 查询应用程序详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFunctionAppResponse ShowFunctionApp(ShowFunctionAppRequest showFunctionAppRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("id" , showFunctionAppRequest.Id.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications/{id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionAppRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowFunctionAppResponse>(response);
         }
         
         /// <summary>
@@ -1391,7 +1507,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 禁用/启动函数快照
         ///
-        /// 禁用/启动函数快照
+        /// 禁用/启动函数快照，仅支持java运行时函数，且为非latest版本才能开启函数快照功能。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1441,9 +1557,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 更新函数收藏状态
+        /// 更新函数置顶状态
         ///
-        /// 更新函数收藏状态
+        /// 更新函数置顶状态
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

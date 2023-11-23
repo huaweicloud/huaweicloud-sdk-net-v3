@@ -228,6 +228,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 创建客户端流控配置
+        ///
+        /// 该接口用于向Kafka实例提交创建user、client级别的流控任务，若成功则返回流控任务的job id。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateKafkaUserClientQuotaTaskResponse> CreateKafkaUserClientQuotaTaskAsync(CreateKafkaUserClientQuotaTaskRequest createKafkaUserClientQuotaTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaUserClientQuotaTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateKafkaUserClientQuotaTaskResponse>(response);
+        }
+        
+        /// <summary>
         /// 新增Kafka实例指定Topic分区
         ///
         /// 新增Kafka实例指定Topic分区。
@@ -345,6 +362,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除客户端流控设置
+        ///
+        /// 该接口用于向Kafka实例提交删除user、client级别的流控任务，若成功则返回流控任务的job id。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteKafkaUserClientQuotaTaskResponse> DeleteKafkaUserClientQuotaTaskAsync(DeleteKafkaUserClientQuotaTaskRequest deleteKafkaUserClientQuotaTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaUserClientQuotaTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteKafkaUserClientQuotaTaskResponse>(response);
         }
         
         /// <summary>
@@ -943,6 +977,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 查询客户端流控配置
+        ///
+        /// 该接口用于向Kafka实例查询流控的配置，若成功则返回流控配置的列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowKafkaUserClientQuotaResponse> ShowKafkaUserClientQuotaAsync(ShowKafkaUserClientQuotaRequest showKafkaUserClientQuotaRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showKafkaUserClientQuotaRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaUserClientQuotaRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowKafkaUserClientQuotaResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询维护时间窗时间段
         ///
         /// 查询维护时间窗开始时间和结束时间。
@@ -1175,6 +1226,23 @@ namespace HuaweiCloud.SDK.Kafka.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceUserRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateInstanceUserResponse>(response);
+        }
+        
+        /// <summary>
+        /// 修改客户端流控设置
+        ///
+        /// 该接口用于向Kafka实例提交修改user、client级别的流控任务，若成功则返回流控任务的job id。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateKafkaUserClientQuotaTaskResponse> UpdateKafkaUserClientQuotaTaskAsync(UpdateKafkaUserClientQuotaTaskRequest updateKafkaUserClientQuotaTaskRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaUserClientQuotaTaskRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateKafkaUserClientQuotaTaskResponse>(response);
         }
         
         /// <summary>

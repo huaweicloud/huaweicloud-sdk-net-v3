@@ -291,7 +291,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含&lt;&gt;
+        /// 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含“&lt;”和“&gt;”。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]

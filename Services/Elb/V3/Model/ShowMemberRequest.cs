@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 后端服务器ID。 &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。  memberID可以通过查询后端云服务器列表接口获取。
+        /// 后端服务器ID。 &gt;说明： 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
         /// </summary>
         [SDKProperty("member_id", IsPath = true)]
         [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]

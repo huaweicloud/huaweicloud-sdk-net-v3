@@ -89,13 +89,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Ipgroup { get; set; }
 
         /// <summary>
-        /// IP地址组最大可关联的监听器数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup_bindings", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpgroupBindings { get; set; }
 
         /// <summary>
-        /// 单个IP地址组最多可设置的ip地址数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup_max_length", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpgroupMaxLength { get; set; }

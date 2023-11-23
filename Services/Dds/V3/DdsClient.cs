@@ -283,6 +283,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 创建killOp规则
+        ///
+        /// 创建killOp规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateKillOpRuleResponse CreateKillOpRule(CreateKillOpRuleRequest createKillOpRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , createKillOpRuleRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kill-op-rule",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKillOpRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<CreateKillOpRuleResponse>(response);
+        }
+        
+        /// <summary>
         /// 创建手动备份
         ///
         /// 创建数据库实例的手动备份。
@@ -384,6 +401,39 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 删除killOp规则
+        ///
+        /// 删除killOp规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteKillOpRuleListResponse DeleteKillOpRuleList(DeleteKillOpRuleListRequest deleteKillOpRuleListRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteKillOpRuleListRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kill-op-rule",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKillOpRuleListRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteKillOpRuleListResponse>(response);
+        }
+        
+        /// <summary>
+        /// 解除关联LTS日志流
+        ///
+        /// 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteLtsConfigResponse DeleteLtsConfig(DeleteLtsConfigRequest deleteLtsConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLtsConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteLtsConfigResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除手动备份
         ///
         /// 删除数据库实例的手动备份。
@@ -398,6 +448,23 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteManualBackupRequest);
             HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteManualBackupResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除只读节点
+        ///
+        /// 当副本集添加了只读节点后，需要删除对应的只读节点需要调用此API。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteReadonlyNodeResponse DeleteReadonlyNode(DeleteReadonlyNodeRequest deleteReadonlyNodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , deleteReadonlyNodeRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/readonly-node",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReadonlyNodeRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteReadonlyNodeResponse>(response);
         }
         
         /// <summary>
@@ -715,6 +782,39 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesByTagsRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ListInstancesByTagsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询LTS日志配置信息
+        ///
+        /// 查询LTS日志配置信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLtsConfigsResponse ListLtsConfigs(ListLtsConfigsRequest listLtsConfigsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsConfigsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListLtsConfigsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询数据库错误日志
+        ///
+        /// 查询数据库错误日志信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLtsErrorLogsResponse ListLtsErrorLogs(ListLtsErrorLogsRequest listLtsErrorLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listLtsErrorLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/error-logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsErrorLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListLtsErrorLogsResponse>(response);
         }
         
         /// <summary>
@@ -1306,6 +1406,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 获取killOp规则列表
+        ///
+        /// 获取killOp规则列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowKillOpRuleRuleListResponse ShowKillOpRuleRuleList(ShowKillOpRuleRuleListRequest showKillOpRuleRuleListRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showKillOpRuleRuleListRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kill-op-rule",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKillOpRuleRuleListRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowKillOpRuleRuleListResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询配额
         ///
         /// 查询单租户在DDS服务下的资源配额，包括单节点实例配额、副本集实例配额、集群实例配额等。
@@ -1440,6 +1557,23 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 停止备份
+        ///
+        /// 支持紧急情况下停止备份功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopBackupResponse StopBackup(StopBackupRequest stopBackupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("backup_id" , stopBackupRequest.BackupId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBackupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerialize<StopBackupResponse>(response);
+        }
+        
+        /// <summary>
         /// 应用参数模板
         ///
         /// 指定实例变更参数模板。
@@ -1454,6 +1588,24 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchConfigurationRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<SwitchConfigurationResponse>(response);
+        }
+        
+        /// <summary>
+        /// 强制备节点升主
+        ///
+        /// 支持副本集、shard和config备节点强制升主。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchInstancePrimaryResponse SwitchInstancePrimary(SwitchInstancePrimaryRequest switchInstancePrimaryRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchInstancePrimaryRequest.InstanceId.ToString());
+            urlParam.Add("node_id" , switchInstancePrimaryRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/primary",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchInstancePrimaryRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<SwitchInstancePrimaryResponse>(response);
         }
         
         /// <summary>
@@ -1625,6 +1777,41 @@ namespace HuaweiCloud.SDK.Dds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRemarkRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateInstanceRemarkResponse>(response);
+        }
+        
+        /// <summary>
+        /// 启用/禁用killOp规则
+        ///
+        /// 启用/禁用killOp规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateKillOpRuleResponse UpdateKillOpRule(UpdateKillOpRuleRequest updateKillOpRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateKillOpRuleRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kill-op-rule",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKillOpRuleRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateKillOpRuleResponse>(response);
+        }
+        
+        /// <summary>
+        /// 关联LTS日志流
+        ///
+        /// 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+        /// 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+        /// 系统会为当前选择的日志流创建对应日志类型的结构化配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateLtsConfigResponse UpdateLtsConfig(UpdateLtsConfigRequest updateLtsConfigRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLtsConfigRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<UpdateLtsConfigResponse>(response);
         }
         
         /// <summary>

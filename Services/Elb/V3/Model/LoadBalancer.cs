@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class LoadBalancer 
     {
         /// <summary>
-        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈  [不支持dualstack。](tag:dt,dt_test)
+        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
         /// </summary>
-        /// <value>下联面子网类型 - ipv4：ipv4 - dualstack：双栈  [不支持dualstack。](tag:dt,dt_test)</value>
+        /// <value>下联面子网类型 - ipv4：ipv4 - dualstack：双栈</value>
         [JsonConverter(typeof(EnumClassConverter<ElbVirsubnetTypeEnum>))]
         public class ElbVirsubnetTypeEnum
         {
@@ -385,19 +385,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 企业项目ID。创建时不传则返回\&quot;0\&quot;，表示资源属于default企业项目。  注：\&quot;0\&quot;并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt,ctc,cmcc)
+        /// 企业项目ID。创建时不传则返回\&quot;0\&quot;，表示资源属于default企业项目。  注：\&quot;0\&quot;并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 资源账单信息。  [取值： - 空：按需计费。 - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f](tag:hws)  [不支持该字段，请勿使用](tag:hws_ocb,ocb,hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+        /// 资源账单信息。  取值： - 空：按需计费。 [- 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }
 
         /// <summary>
-        /// 四层Flavor ID。[对于弹性扩缩容实例，表示上限规格ID。](tag:hws,hws_hk,ocb,ctc,cmcc,hws_ocb)  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+        /// 四层Flavor ID。  对于弹性扩缩容实例，表示上限规格。  当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
@@ -409,7 +409,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。[对于弹性扩缩容实例，表示上限规格ID。](tag:hws,hws_hk,ocb,ctc,cmcc,hws_ocb)  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt) [- autoscaling.enable&#x3D;true时，修改无意义，不生效。](tag:hws,hws_hk,ocb,ctc,cmcc,hws_ocb)  [只支持设置为l7_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+        /// 七层Flavor ID。 对于弹性扩缩容实例，表示上限规格ID。  当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
@@ -439,12 +439,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> ElbVirsubnetIds { get; set; }
 
         /// <summary>
-        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈  [不支持dualstack。](tag:dt,dt_test)
+        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
         /// </summary>
         [JsonProperty("elb_virsubnet_type", NullValueHandling = NullValueHandling.Ignore)]
         public ElbVirsubnetTypeEnum ElbVirsubnetType { get; set; }
         /// <summary>
-        /// 是否启用跨VPC后端转发。 开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加 [其他VPC、](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs) 其他云、云下数据中心的服务器。  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。 - 使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [- 仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)
+        /// 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
         /// </summary>
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
@@ -462,7 +462,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public BandwidthRef Ipv6Bandwidth { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护。  取值： - false：不开启。 - true：开启。 &gt;退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+        /// 是否开启删除保护。  取值： - false：不开启。 - true：开启。 &gt;退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
         /// </summary>
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }
@@ -480,6 +480,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string PublicBorderGroup { get; set; }
 
         /// <summary>
+        /// 收费模式。取值： - flavor：按规格计费 - lcu：按使用量计费
+        /// </summary>
+        [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ChargeMode { get; set; }
+
+        /// <summary>
         /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
         /// </summary>
         [JsonProperty("waf_failure_action", NullValueHandling = NullValueHandling.Ignore)]
@@ -495,6 +501,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectionReason { get; set; }
+
+        /// <summary>
+        /// LB所绑定的logtank对应的group id
+        /// </summary>
+        [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupId { get; set; }
+
+        /// <summary>
+        /// LB所绑定的logtank对应的topic id
+        /// </summary>
+        [JsonProperty("log_topic_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogTopicId { get; set; }
 
 
 
@@ -544,9 +562,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("  wafFailureAction: ").Append(WafFailureAction).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
+            sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
+            sb.Append("  logTopicId: ").Append(LogTopicId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -772,6 +793,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
                 ) && 
                 (
+                    this.ChargeMode == input.ChargeMode ||
+                    (this.ChargeMode != null &&
+                    this.ChargeMode.Equals(input.ChargeMode))
+                ) && 
+                (
                     this.WafFailureAction == input.WafFailureAction ||
                     (this.WafFailureAction != null &&
                     this.WafFailureAction.Equals(input.WafFailureAction))
@@ -785,6 +811,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ProtectionReason == input.ProtectionReason ||
                     (this.ProtectionReason != null &&
                     this.ProtectionReason.Equals(input.ProtectionReason))
+                ) && 
+                (
+                    this.LogGroupId == input.LogGroupId ||
+                    (this.LogGroupId != null &&
+                    this.LogGroupId.Equals(input.LogGroupId))
+                ) && 
+                (
+                    this.LogTopicId == input.LogTopicId ||
+                    (this.LogTopicId != null &&
+                    this.LogTopicId.Equals(input.LogTopicId))
                 );
         }
 
@@ -874,12 +910,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.ChargeMode != null)
+                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 if (this.WafFailureAction != null)
                     hashCode = hashCode * 59 + this.WafFailureAction.GetHashCode();
                 if (this.ProtectionStatus != null)
                     hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ProtectionReason != null)
                     hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.LogGroupId != null)
+                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogTopicId != null)
+                    hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
                 return hashCode;
             }
         }

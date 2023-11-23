@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。   - GaussDB(for Influx)支持单节点类型，取值为“InfluxdbSingle”。   - GaussDB(for redis)支持集群类型，取值为“Cluster”。   - GaussDB(for redis)支持主备类型，取值为“Replication”。
+        /// 实例类型。   - GeminiDB Cassandra支持集群类型，取值为“Cluster”。   - GeminiDB Mongo4.0版本支持副本集类型，取值为“ReplicaSet”。   - GeminiDB Influx支持集群类型，取值为“Cluster”。   - GeminiDB Influx支持单节点类型，取值为“InfluxdbSingle”。   - GeminiDB redis支持集群类型，取值为“Cluster”。   - GeminiDB redis支持主备类型，取值为“Replication”。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
@@ -119,7 +119,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public RestoreInfo RestoreInfo { get; set; }
 
         /// <summary>
-        /// 数据库访问端口号。 目前仅支持GaussDB(for Redis)实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 不指定端口时，创建GaussDB(for Redis)实例的访问端口默认为6379。 如果该实例计划用于搭建双活容灾场景，请配置为8635端口。
+        /// 数据库访问端口号。 目前仅支持GeminiDB Redis实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 不指定端口时，创建GeminiDB Redis实例的访问端口默认为6379。 如果该实例计划用于搭建双活容灾场景，请配置为8635端口。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }

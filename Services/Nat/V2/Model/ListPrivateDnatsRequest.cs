@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// DNAT规则的描述。长度范围小于等于255个字符，不能包含&lt;&gt;
+        /// DNAT规则的描述。长度范围小于等于255个字符，不能包含“&lt;”和“&gt;”。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]

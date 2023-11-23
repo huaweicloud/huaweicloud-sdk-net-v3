@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 后端云服务器名称。注意：该名称并非ECS名称，若不传则返回为空。
+        /// 后端云服务器名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Weight { get; set; }
 
         /// <summary>
-        /// 后端服务器端口。 &gt; 在开启端口透传的pool下的member，该字段无法更新。
+        /// 后端服务器端口。&gt;在开启端口透传的pool下的member，该字段无法更新
         /// </summary>
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }

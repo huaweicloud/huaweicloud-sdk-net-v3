@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
     public class Thumbnail 
     {
         /// <summary>
-        /// 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+        /// 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。 - quantity： 按照指定张数，根据视频时长等分视频截图。
         /// </summary>
-        /// <value>截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。</value>
+        /// <value>截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。 - quantity： 按照指定张数，根据视频时长等分视频截图。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -32,11 +32,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             /// </summary>
             public static readonly TypeEnum DOTS = new TypeEnum("dots");
 
+            /// <summary>
+            /// Enum QUANTITY for value: quantity
+            /// </summary>
+            public static readonly TypeEnum QUANTITY = new TypeEnum("quantity");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "time", TIME },
                 { "dots", DOTS },
+                { "quantity", QUANTITY },
             };
 
             private string _value;
@@ -132,12 +138,24 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
 
         /// <summary>
-        /// 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+        /// 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。 - quantity： 按照指定张数，根据视频时长等分视频截图。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// **type**取值为time时必填。根据时间间隔采样时的时间间隔值。  取值范围：[1,12]之间的整数。  单位：秒。
+        /// **type**取值为quantity时必填。 按照指定张数，根据视频时长等分视频截图。 取值范围：[1,10]之间的整数。
+        /// </summary>
+        [JsonProperty("quantity", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Quantity { get; set; }
+
+        /// <summary>
+        /// **type**取值为quantity时选填。 按照指定时间间隔取指定张数截图。 取值范围：[0,2147483647]之间的整数。
+        /// </summary>
+        [JsonProperty("quantity_time", NullValueHandling = NullValueHandling.Ignore)]
+        public int? QuantityTime { get; set; }
+
+        /// <summary>
+        /// 根据时间间隔采样时的时间间隔值。单位：秒。 **type**取值为time时。 默认值：12 取值范围：[0,100]之间的整数。
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
         public int? Time { get; set; }
@@ -182,6 +200,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             var sb = new StringBuilder();
             sb.Append("class Thumbnail {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  quantityTime: ").Append(QuantityTime).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  dots: ").Append(Dots).Append("\n");
             sb.Append("  coverPosition: ").Append(CoverPosition).Append("\n");
@@ -213,6 +233,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Quantity == input.Quantity ||
+                    (this.Quantity != null &&
+                    this.Quantity.Equals(input.Quantity))
+                ) && 
+                (
+                    this.QuantityTime == input.QuantityTime ||
+                    (this.QuantityTime != null &&
+                    this.QuantityTime.Equals(input.QuantityTime))
                 ) && 
                 (
                     this.Time == input.Time ||
@@ -257,6 +287,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 int hashCode = 41;
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Quantity != null)
+                    hashCode = hashCode * 59 + this.Quantity.GetHashCode();
+                if (this.QuantityTime != null)
+                    hashCode = hashCode * 59 + this.QuantityTime.GetHashCode();
                 if (this.Time != null)
                     hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.Dots != null)

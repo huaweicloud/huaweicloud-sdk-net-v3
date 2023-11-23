@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? IpVersion { get; set; }
 
         /// <summary>
-        /// 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建。  [华南-深圳局点该参数取值只能为5_gray](tag:hws) [只支持设置为5_gray](tag:dt,dt_test)
+        /// 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建。  [华南-深圳局点该参数取值只能为5_gray](tag:hws) [只支持设置为5_gray](tag:dt)
         /// </summary>
         [JsonProperty("network_type", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkType { get; set; }
 
         /// <summary>
-        /// 资源账单信息。  [取值： - 空：按需计费。 - 非空：包周期计费。](tag:hws)  [不支持该字段，请勿使用](tag:hws_ocb,ocb,hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+        /// 资源账单信息。  取值： - 空：按需计费。 [- 非空：包周期计费。](tag:hws,hk,hws_eu,otc,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk_g42,dt_test,hcso_dt,mix,hk_sbc,hws_ocb,fcs,fcs_dt,dt)  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }

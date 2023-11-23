@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string FuncUrn { get; set; }
 
         /// <summary>
-        /// 时间间隔
+        /// 时间间隔（单位：min）
         /// </summary>
         [SDKProperty("period", IsPath = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]

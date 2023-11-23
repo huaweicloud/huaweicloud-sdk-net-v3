@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 数据库类型。 - GaussDB(for Cassandra)实例取值为“cassandra”。 - GaussDB(for Mongo)实例取值为\&quot;mongodb\&quot;。 - GaussDB(for Influx)实例取值为\&quot;influxdb\&quot;。
+        /// 数据库类型。 - GeminiDB Cassandra实例取值为“cassandra”。 - GeminiDB Mongo实例取值为\&quot;mongodb\&quot;。 - GeminiDB Influx实例取值为\&quot;influxdb\&quot;。 - GeminiDB Redis实例取值为\&quot;redis\&quot;。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持4.0版本，取值为\&quot;4.0\&quot;。 - GaussDB(for Influx)实例支持1.7版本，取值\&quot;1.7\&quot;。
+        /// 数据库版本。 - GeminiDB Cassandra实例支持3.11版本，取值为“3.11”。 - GeminiDB Mongo实例支持4.0版本，取值为\&quot;4.0\&quot;。 - GeminiDB Influx实例支持1.7版本，取值\&quot;1.7\&quot;。 - GeminiDB Redis实例支持5.0版本，取值\&quot;5.0\&quot;。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 数据库部署模式，GaussDB(for Mongo)该参数必选。 - GaussDB(for Mongo) 副本集实例取值为\&quot;ReplicaSet\&quot;。
+        /// 数据库部署模式，GeminiDB Mongo该参数必选。 - GeminiDB Mongo 副本集实例取值为\&quot;ReplicaSet\&quot;。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }

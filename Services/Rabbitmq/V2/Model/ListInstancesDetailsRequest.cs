@@ -28,24 +28,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             public static readonly StatusEnum CREATING = new StatusEnum("CREATING");
 
             /// <summary>
-            /// Enum CREATEFAILED for value: CREATEFAILED
-            /// </summary>
-            public static readonly StatusEnum CREATEFAILED = new StatusEnum("CREATEFAILED");
-
-            /// <summary>
             /// Enum RUNNING for value: RUNNING
             /// </summary>
             public static readonly StatusEnum RUNNING = new StatusEnum("RUNNING");
-
-            /// <summary>
-            /// Enum ERROR for value: ERROR
-            /// </summary>
-            public static readonly StatusEnum ERROR = new StatusEnum("ERROR");
-
-            /// <summary>
-            /// Enum STARTING for value: STARTING
-            /// </summary>
-            public static readonly StatusEnum STARTING = new StatusEnum("STARTING");
 
             /// <summary>
             /// Enum RESTARTING for value: RESTARTING
@@ -53,26 +38,95 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             public static readonly StatusEnum RESTARTING = new StatusEnum("RESTARTING");
 
             /// <summary>
-            /// Enum CLOSING for value: CLOSING
+            /// Enum DELETING for value: DELETING
             /// </summary>
-            public static readonly StatusEnum CLOSING = new StatusEnum("CLOSING");
+            public static readonly StatusEnum DELETING = new StatusEnum("DELETING");
+
+            /// <summary>
+            /// Enum ERROR for value: ERROR
+            /// </summary>
+            public static readonly StatusEnum ERROR = new StatusEnum("ERROR");
+
+            /// <summary>
+            /// Enum CREATEFAILED for value: CREATEFAILED
+            /// </summary>
+            public static readonly StatusEnum CREATEFAILED = new StatusEnum("CREATEFAILED");
+
+            /// <summary>
+            /// Enum FREEZING for value: FREEZING
+            /// </summary>
+            public static readonly StatusEnum FREEZING = new StatusEnum("FREEZING");
 
             /// <summary>
             /// Enum FROZEN for value: FROZEN
             /// </summary>
             public static readonly StatusEnum FROZEN = new StatusEnum("FROZEN");
 
+            /// <summary>
+            /// Enum EXTENDING for value: EXTENDING
+            /// </summary>
+            public static readonly StatusEnum EXTENDING = new StatusEnum("EXTENDING");
+
+            /// <summary>
+            /// Enum SHRINKING for value: SHRINKING
+            /// </summary>
+            public static readonly StatusEnum SHRINKING = new StatusEnum("SHRINKING");
+
+            /// <summary>
+            /// Enum EXTENDEDFAILED for value: EXTENDEDFAILED
+            /// </summary>
+            public static readonly StatusEnum EXTENDEDFAILED = new StatusEnum("EXTENDEDFAILED");
+
+            /// <summary>
+            /// Enum CONFIGURING for value: CONFIGURING
+            /// </summary>
+            public static readonly StatusEnum CONFIGURING = new StatusEnum("CONFIGURING");
+
+            /// <summary>
+            /// Enum UPGRADING for value: UPGRADING
+            /// </summary>
+            public static readonly StatusEnum UPGRADING = new StatusEnum("UPGRADING");
+
+            /// <summary>
+            /// Enum UPGRADINGFAILED for value: UPGRADINGFAILED
+            /// </summary>
+            public static readonly StatusEnum UPGRADINGFAILED = new StatusEnum("UPGRADINGFAILED");
+
+            /// <summary>
+            /// Enum ROLLBACK for value: ROLLBACK
+            /// </summary>
+            public static readonly StatusEnum ROLLBACK = new StatusEnum("ROLLBACK");
+
+            /// <summary>
+            /// Enum ROLLBACKFAILED for value: ROLLBACKFAILED
+            /// </summary>
+            public static readonly StatusEnum ROLLBACKFAILED = new StatusEnum("ROLLBACKFAILED");
+
+            /// <summary>
+            /// Enum VOLUMETYPECHANGING for value: VOLUMETYPECHANGING
+            /// </summary>
+            public static readonly StatusEnum VOLUMETYPECHANGING = new StatusEnum("VOLUMETYPECHANGING");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "CREATING", CREATING },
-                { "CREATEFAILED", CREATEFAILED },
                 { "RUNNING", RUNNING },
-                { "ERROR", ERROR },
-                { "STARTING", STARTING },
                 { "RESTARTING", RESTARTING },
-                { "CLOSING", CLOSING },
+                { "DELETING", DELETING },
+                { "ERROR", ERROR },
+                { "CREATEFAILED", CREATEFAILED },
+                { "FREEZING", FREEZING },
                 { "FROZEN", FROZEN },
+                { "EXTENDING", EXTENDING },
+                { "SHRINKING", SHRINKING },
+                { "EXTENDEDFAILED", EXTENDEDFAILED },
+                { "CONFIGURING", CONFIGURING },
+                { "UPGRADING", UPGRADING },
+                { "UPGRADINGFAILED", UPGRADINGFAILED },
+                { "ROLLBACK", ROLLBACK },
+                { "ROLLBACKFAILED", ROLLBACKFAILED },
+                { "VOLUMETYPECHANGING", VOLUMETYPECHANGING },
             };
 
             private string _value;

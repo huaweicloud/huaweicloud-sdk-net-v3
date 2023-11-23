@@ -632,6 +632,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 
+        ///
+        /// 查询实例大版本升级检查历史。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInspectionHistoriesResponse ListInspectionHistories(ListInspectionHistoriesRequest listInspectionHistoriesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listInspectionHistoriesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection-histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInspectionHistoriesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInspectionHistoriesResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取诊断后的实例数量
         ///
         /// 获取诊断后的实例数量
@@ -1089,6 +1106,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 
+        ///
+        /// 查询实例大版本升级历史信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListUpgradeHistoriesResponse ListUpgradeHistories(ListUpgradeHistoriesRequest listUpgradeHistoriesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listUpgradeHistoriesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade-histories",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeHistoriesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListUpgradeHistoriesResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询扩展日志文件列表
         ///
         /// 查询扩展日志文件列表。
@@ -1401,6 +1435,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 
+        ///
+        /// 查询实例可升级的目标版本
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAvailableVersionResponse ShowAvailableVersion(ShowAvailableVersionRequest showAvailableVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showAvailableVersionRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/available-version",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableVersionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowAvailableVersionResponse>(response);
+        }
+        
+        /// <summary>
         /// 获取备份下载链接
         ///
         /// 获取备份下载链接。
@@ -1616,6 +1667,40 @@ namespace HuaweiCloud.SDK.Rds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecondLevelMonitoringRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ShowSecondLevelMonitoringResponse>(response);
+        }
+        
+        /// <summary>
+        /// 根据实例id查询sqlserver TDE状态
+        ///
+        /// 根据实例id查询sqlserver TDE状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTdeStatusResponse ShowTdeStatus(ShowTdeStatusRequest showTdeStatusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showTdeStatusRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde-status",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTdeStatusRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowTdeStatusResponse>(response);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 查询大版本检查状态或升级状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowUpgradeDbMajorVersionStatusResponse ShowUpgradeDbMajorVersionStatus(ShowUpgradeDbMajorVersionStatusRequest showUpgradeDbMajorVersionStatusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showUpgradeDbMajorVersionStatusRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/status",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeDbMajorVersionStatusRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowUpgradeDbMajorVersionStatusResponse>(response);
         }
         
         /// <summary>
@@ -1904,6 +1989,58 @@ namespace HuaweiCloud.SDK.Rds.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlInstanceAliasRequest);
             HttpResponseMessage response = DoHttpRequestSync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePostgresqlInstanceAliasResponse>(response);
+        }
+        
+        /// <summary>
+        /// sqlserverTDE开关
+        ///
+        /// sqlserverTDE开关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateTdeStatusResponse UpdateTdeStatus(UpdateTdeStatusRequest updateTdeStatusRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , updateTdeStatusRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTdeStatusRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateTdeStatusResponse>(response);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// PostgreSQL数据库升级大版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpgradeDbMajorVersionResponse UpgradeDbMajorVersion(UpgradeDbMajorVersionRequest upgradeDbMajorVersionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , upgradeDbMajorVersionRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            UpgradeDbMajorVersionResponse upgradeDbMajorVersionResponse = JsonUtils.DeSerializeNull<UpgradeDbMajorVersionResponse>(response);
+            return upgradeDbMajorVersionResponse;
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 大版本升级前进行升级检查。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpgradeDbMajorVersionPreCheckResponse UpgradeDbMajorVersionPreCheck(UpgradeDbMajorVersionPreCheckRequest upgradeDbMajorVersionPreCheckRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , upgradeDbMajorVersionPreCheckRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionPreCheckRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<UpgradeDbMajorVersionPreCheckResponse>(response);
         }
         
         /// <summary>

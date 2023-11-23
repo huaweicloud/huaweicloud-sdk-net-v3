@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Ram { get; set; }
 
         /// <summary>
-        /// 资源规格编码。例如：geminidb.cassandra.8xlarge.4   - “geminidb.cassandra”表示云数据库GaussDB NoSQL的Cassandra数据库产品。   - “8xlarge.4”表示节点性能规格。
+        /// 资源规格编码。例如：geminidb.cassandra.8xlarge.4   - “geminidb.cassandra”表示云数据库GeminiDB的Cassandra数据库产品。   - “8xlarge.4”表示节点性能规格。
         /// </summary>
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string SpecCode { get; set; }

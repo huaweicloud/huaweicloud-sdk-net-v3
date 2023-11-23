@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://evs.ae-ad-1.myhuaweicloud.com");
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
-            "https://ecs.me-east-1.myhuaweicloud.com");
+            "https://evs.me-east-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("EVS");
 

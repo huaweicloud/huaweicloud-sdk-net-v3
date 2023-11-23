@@ -414,7 +414,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? MemorySize { get; set; }
 
         /// <summary>
-        /// 函数占用的cpu资源。 单位为millicore（1 core&#x3D;1000 millicores）。 取值与MemorySize成比例，默认是128M内存占0.1个核（100 millicores）。 函数占用的CPU为基础CPU：200 millicores，再加上内存按比例占用的CPU，计算方法：内存/128 *100 + 200。
+        /// 函数占用的cpu资源。 单位为millicore（1 core&#x3D;1000 millicores）。 取值与MemorySize成比例，默认是128M内存占0.1个核（100 millicores）。
         /// </summary>
         [JsonProperty("cpu", NullValueHandling = NullValueHandling.Ignore)]
         public int? Cpu { get; set; }
@@ -527,6 +527,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? InitializerTimeout { get; set; }
 
         /// <summary>
+        /// 函数预停止函数的入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.pre_stop_handler，则表示函数的文件名为myfunction.js，初始化的入口函数名为pre_stop_handler。
+        /// </summary>
+        [JsonProperty("pre_stop_handler", NullValueHandling = NullValueHandling.Ignore)]
+        public string PreStopHandler { get; set; }
+
+        /// <summary>
+        /// 初始化超时时间，超时函数将被强行停止，范围1～90秒。
+        /// </summary>
+        [JsonProperty("pre_stop_timeout", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PreStopTimeout { get; set; }
+
+        /// <summary>
         /// 是否是支持长时间运行
         /// </summary>
         [JsonProperty("long_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -624,6 +636,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
+            sb.Append("  preStopHandler: ").Append(PreStopHandler).Append("\n");
+            sb.Append("  preStopTimeout: ").Append(PreStopTimeout).Append("\n");
             sb.Append("  longTime: ").Append(LongTime).Append("\n");
             sb.Append("  functionAsyncConfig: ").Append(FunctionAsyncConfig).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -801,6 +815,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.InitializerTimeout.Equals(input.InitializerTimeout))
                 ) && 
                 (
+                    this.PreStopHandler == input.PreStopHandler ||
+                    (this.PreStopHandler != null &&
+                    this.PreStopHandler.Equals(input.PreStopHandler))
+                ) && 
+                (
+                    this.PreStopTimeout == input.PreStopTimeout ||
+                    (this.PreStopTimeout != null &&
+                    this.PreStopTimeout.Equals(input.PreStopTimeout))
+                ) && 
+                (
                     this.LongTime == input.LongTime ||
                     (this.LongTime != null &&
                     this.LongTime.Equals(input.LongTime))
@@ -918,6 +942,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.InitializerHandler.GetHashCode();
                 if (this.InitializerTimeout != null)
                     hashCode = hashCode * 59 + this.InitializerTimeout.GetHashCode();
+                if (this.PreStopHandler != null)
+                    hashCode = hashCode * 59 + this.PreStopHandler.GetHashCode();
+                if (this.PreStopTimeout != null)
+                    hashCode = hashCode * 59 + this.PreStopTimeout.GetHashCode();
                 if (this.LongTime != null)
                     hashCode = hashCode * 59 + this.LongTime.GetHashCode();
                 if (this.FunctionAsyncConfig != null)

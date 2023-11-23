@@ -269,7 +269,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]
         public ShareTypeEnum ShareType { get; set; }
         /// <summary>
-        /// 资源账单信息。  [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽 ](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,tm,cmcc)  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs)
+        /// 资源账单信息。  [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽 ](tag:hws,hws_hk,tlf,ctc,hcso,sbc,tm,cmcc)  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 节点角色。 该参数仅对GaussDB(for Mongo)引擎的副本集实例有效。
+        /// 节点角色。 该参数仅对GeminiDB Mongo引擎的副本集实例有效。
         /// </summary>
         [JsonProperty("role", NullValueHandling = NullValueHandling.Ignore)]
         public string Role { get; set; }

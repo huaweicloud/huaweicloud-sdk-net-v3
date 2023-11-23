@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public bool? PatchAvailable { get; set; }
 
         /// <summary>
-        /// 数据库的完整版本号(目前只有GaussDB(for Cassandra)支持)。
+        /// 数据库的完整版本号(目前只有GeminiDB Cassandra支持)。
         /// </summary>
         [JsonProperty("whole_version", NullValueHandling = NullValueHandling.Ignore)]
         public string WholeVersion { get; set; }

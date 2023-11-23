@@ -318,6 +318,39 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 关闭实例节点会话
+        ///
+        /// 关闭实例节点会话。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstancesSessionResponse DeleteInstancesSession(DeleteInstancesSessionRequest deleteInstancesSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("node_id" , deleteInstancesSessionRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstancesSessionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteInstancesSessionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 解除关联LTS日志流
+        ///
+        /// 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteLtsConfigsResponse DeleteLtsConfigs(DeleteLtsConfigsRequest deleteLtsConfigsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLtsConfigsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteLtsConfigsResponse>(response);
+        }
+        
+        /// <summary>
         /// 扩容指定集群实例的节点数量
         ///
         /// 扩容指定集群实例的节点数量。
@@ -349,6 +382,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableFlavorInfosRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListAvailableFlavorInfosResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询GeminiDB(for Cassandra)数据库慢日志
+        ///
+        /// 查询GeminiDB(for Cassandra)数据库慢日志信息，支持日志关键字搜索。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCassandraSlowLogsResponse ListCassandraSlowLogs(ListCassandraSlowLogsRequest listCassandraSlowLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listCassandraSlowLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cassandra/instances/{instance_id}/slow-logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCassandraSlowLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListCassandraSlowLogsResponse>(response);
         }
         
         /// <summary>
@@ -580,6 +630,90 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 获取节点会话列表
+        ///
+        /// 获取节点会话列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstancesSessionResponse ListInstancesSession(ListInstancesSessionRequest listInstancesSessionRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("node_id" , listInstancesSessionRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSessionRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstancesSessionResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询实例节点会话统计信息
+        ///
+        /// 查询实例节点会话统计信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstancesSessionStatisticsResponse ListInstancesSessionStatistics(ListInstancesSessionStatisticsRequest listInstancesSessionStatisticsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("node_id" , listInstancesSessionStatisticsRequest.NodeId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/session-statistics",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSessionStatisticsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListInstancesSessionStatisticsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询LTS日志配置信息
+        ///
+        /// 分页查询实例关联的LTS日志配置信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLtsConfigsResponse ListLtsConfigs(ListLtsConfigsRequest listLtsConfigsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsConfigsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListLtsConfigsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询GeminiDB(for Mongo)数据库错误日志
+        ///
+        /// 查询GeminiDB(for Mongo)数据库错误日志信息，支持日志关键字搜索。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListMongodbErrorLogsResponse ListMongodbErrorLogs(ListMongodbErrorLogsRequest listMongodbErrorLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listMongodbErrorLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/error-logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMongodbErrorLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListMongodbErrorLogsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询GeminiDB(for Mongo)数据库慢日志
+        ///
+        /// 查询GeminiDB(for Mongo)数据库慢日志信息，支持日志关键字搜索。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListMongodbSlowLogsResponse ListMongodbSlowLogs(ListMongodbSlowLogsRequest listMongodbSlowLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listMongodbSlowLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/slow-logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMongodbSlowLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListMongodbSlowLogsResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询项目标签
         ///
         /// 查询指定项目的标签信息。
@@ -609,6 +743,57 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
             HttpResponseMessage response = DoHttpRequestSync("GET",request);
             return JsonUtils.DeSerialize<ListRecycleInstancesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询GeminiDB(for Redis)数据库慢日志
+        ///
+        /// 查询GeminiDB(for Redis)数据库慢日志信息，支持日志关键字搜索。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRedisSlowLogsResponse ListRedisSlowLogs(ListRedisSlowLogsRequest listRedisSlowLogsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRedisSlowLogsRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/slow-logs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRedisSlowLogsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerialize<ListRedisSlowLogsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息
+        ///
+        /// 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRestoreDatabasesResponse ListRestoreDatabases(ListRestoreDatabasesRequest listRestoreDatabasesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRestoreDatabasesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreDatabasesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRestoreDatabasesResponse>(response);
+        }
+        
+        /// <summary>
+        /// 获取GeminiDB(for Cassandra)实例表级恢复的表信息
+        ///
+        /// 获取GeminiDB(for Cassandra)实例表级恢复的表信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRestoreTablesResponse ListRestoreTables(ListRestoreTablesRequest listRestoreTablesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , listRestoreTablesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTablesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ListRestoreTablesResponse>(response);
         }
         
         /// <summary>
@@ -767,6 +952,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 重置自定义参数模板
+        ///
+        /// 重置自定义参数模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResetParamGroupTemplateResponse ResetParamGroupTemplate(ResetParamGroupTemplateRequest resetParamGroupTemplateRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id" , resetParamGroupTemplateRequest.ConfigId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetParamGroupTemplateRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<ResetParamGroupTemplateResponse>(response);
+        }
+        
+        /// <summary>
         /// 修改实例的管理员密码
         ///
         /// 修改实例的管理员密码。
@@ -866,6 +1068,24 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistingInstanceRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<RestoreExistingInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 关联LTS日志流
+        ///
+        /// - 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+        /// - 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+        /// - 系统会为当前选择的日志流创建对应日志类型的结构化配置，若该日志流已存在其他日志类型的结构化配置，系统会进行覆盖。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SaveLtsConfigsResponse SaveLtsConfigs(SaveLtsConfigsRequest saveLtsConfigsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveLtsConfigsRequest);
+            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            return JsonUtils.DeSerializeNull<SaveLtsConfigsResponse>(response);
         }
         
         /// <summary>
@@ -1034,6 +1254,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询实例负载均衡的IP访问黑白名单
+        ///
+        /// 查询实例负载均衡的IP访问黑白名单。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowElbIpGroupResponse ShowElbIpGroup(ShowElbIpGroupRequest showElbIpGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showElbIpGroupRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showElbIpGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowElbIpGroupResponse>(response);
+        }
+        
+        /// <summary>
         /// 查询数据库错误日志信息
         ///
         /// 查询数据库错误日志
@@ -1171,7 +1408,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// <summary>
         /// 查询配额
         ///
-        /// 查询单租户在GaussDBforNoSQL服务下的资源配额。
+        /// 查询单租户在GeminiDB服务下的资源配额。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1249,6 +1486,23 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", shrinkInstanceNodeRequest);
             HttpResponseMessage response = DoHttpRequestSync("POST",request);
             return JsonUtils.DeSerialize<ShrinkInstanceNodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 设置实例负载均衡的IP访问黑白名单
+        ///
+        /// 设置实例负载均衡的IP访问黑白名单，黑名单、白名单只能选一种，每次调用此接口覆盖之前的设置。关闭后不限制连接的源IP地址。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchIpGroupResponse SwitchIpGroup(SwitchIpGroupRequest switchIpGroupRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , switchIpGroupRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchIpGroupRequest);
+            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            return JsonUtils.DeSerializeNull<SwitchIpGroupResponse>(response);
         }
         
         /// <summary>

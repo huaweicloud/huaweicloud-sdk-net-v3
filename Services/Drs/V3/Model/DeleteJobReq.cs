@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
+        /// <summary>
+        /// MySQL为源，实时迁移，实时同步，数据订阅，实时灾备结束任务时是否展示断点信息
+        /// </summary>
+        [JsonProperty("is_show_breakpoint_position", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsShowBreakpointPosition { get; set; }
+
 
 
         /// <summary>
@@ -159,6 +165,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("class DeleteJobReq {\n");
             sb.Append("  deleteType: ").Append(DeleteType).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  isShowBreakpointPosition: ").Append(IsShowBreakpointPosition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +196,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
+                ) && 
+                (
+                    this.IsShowBreakpointPosition == input.IsShowBreakpointPosition ||
+                    (this.IsShowBreakpointPosition != null &&
+                    this.IsShowBreakpointPosition.Equals(input.IsShowBreakpointPosition))
                 );
         }
 
@@ -204,6 +216,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.IsShowBreakpointPosition != null)
+                    hashCode = hashCode * 59 + this.IsShowBreakpointPosition.GetHashCode();
                 return hashCode;
             }
         }

@@ -539,6 +539,92 @@ namespace HuaweiCloud.SDK.Aom.V2
         }
         
         /// <summary>
+        /// 新增Prometheus实例数据源
+        ///
+        /// 该接口用于新增Prometheus实例数据源
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePromInstanceResponse> CreatePromInstanceAsync(CreatePromInstanceRequest createPromInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/prometheus",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPromInstanceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreatePromInstanceResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建预汇聚规则
+        ///
+        /// 该接口用于创建预汇聚规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRecordingRuleResponse> CreateRecordingRuleAsync(CreateRecordingRuleRequest createRecordingRuleRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("prometheus_instance" , createRecordingRuleRequest.PrometheusInstance.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{prometheus_instance}/aom/api/v1/rules",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordingRuleRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            CreateRecordingRuleResponse createRecordingRuleResponse = JsonUtils.DeSerializeNull<CreateRecordingRuleResponse>(response);
+            return createRecordingRuleResponse;
+        }
+        
+        /// <summary>
+        /// 卸载托管Prometheus
+        ///
+        /// 该接口用于卸载托管Prometheus
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePromInstanceResponse> DeletePromInstanceAsync(DeletePromInstanceRequest deletePromInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/prometheus",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePromInstanceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            DeletePromInstanceResponse deletePromInstanceResponse = JsonUtils.DeSerializeNull<DeletePromInstanceResponse>(response);
+            return deletePromInstanceResponse;
+        }
+        
+        /// <summary>
+        /// 获取Prometheus监控所需Token-access code
+        ///
+        /// 该接口用于获取Prometheus监控所需Token-access code
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAccessCodeResponse> ListAccessCodeAsync(ListAccessCodeRequest listAccessCodeRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/access-code",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccessCodeRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListAccessCodeResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询集群Agent信息
+        ///
+        /// 该接口用于查询集群Agent信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAgentsResponse> ListAgentsAsync(ListAgentsRequest listAgentsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id" , listAgentsRequest.ClusterId.ToString());
+            urlParam.Add("namespace" , listAgentsRequest.Namespace.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{cluster_id}/{namespace}/agents",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ListAgentsResponse listAgentsResponse = JsonUtils.DeSerializeNull<ListAgentsResponse>(response);
+            return listAgentsResponse;
+        }
+        
+        /// <summary>
         /// 瞬时数据查询
         ///
         /// 该接口用于查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
@@ -633,6 +719,40 @@ namespace HuaweiCloud.SDK.Aom.V2
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMetadataAomPromGetRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListMetadataAomPromGetResponse>(response);
+        }
+        
+        /// <summary>
+        /// 是否开通aom2.0
+        ///
+        /// 该接口用于查询用户是否已经完成aom2.0授权
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPermissionsResponse> ListPermissionsAsync(ListPermissionsRequest listPermissionsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/auth/grant",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            ListPermissionsResponse listPermissionsResponse = JsonUtils.DeSerializeNull<ListPermissionsResponse>(response);
+            listPermissionsResponse.Body = JsonUtils.DeSerializeMap<string, AuthModel>(response);
+            return listPermissionsResponse;
+        }
+        
+        /// <summary>
+        /// 获取所有正常实例
+        ///
+        /// 该接口用于获取所有正常prometheus实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPromInstanceResponse> ListPromInstanceAsync(ListPromInstanceRequest listPromInstanceRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/prometheus",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPromInstanceRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListPromInstanceResponse>(response);
         }
         
         /// <summary>

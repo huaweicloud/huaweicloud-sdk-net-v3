@@ -712,6 +712,18 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Tags { get; set; }
 
+        /// <summary>
+        /// 数据库实例ID列表，最多支持10个
+        /// </summary>
+        [JsonProperty("instance_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> InstanceIds { get; set; }
+
+        /// <summary>
+        /// DRS绑定数据库实例IP
+        /// </summary>
+        [JsonProperty("instance_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceIp { get; set; }
+
 
 
         /// <summary>
@@ -731,6 +743,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  serviceName: ").Append(ServiceName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  instanceIds: ").Append(InstanceIds).Append("\n");
+            sb.Append("  instanceIp: ").Append(InstanceIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -802,6 +816,17 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.InstanceIds == input.InstanceIds ||
+                    this.InstanceIds != null &&
+                    input.InstanceIds != null &&
+                    this.InstanceIds.SequenceEqual(input.InstanceIds)
+                ) && 
+                (
+                    this.InstanceIp == input.InstanceIp ||
+                    (this.InstanceIp != null &&
+                    this.InstanceIp.Equals(input.InstanceIp))
                 );
         }
 
@@ -833,6 +858,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.InstanceIds != null)
+                    hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
+                if (this.InstanceIp != null)
+                    hashCode = hashCode * 59 + this.InstanceIp.GetHashCode();
                 return hashCode;
             }
         }

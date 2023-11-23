@@ -89,10 +89,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? DetectReproduceResult { get; set; }
 
         /// <summary>
-        /// 判断身份证图像是黑白复印件还是原件，“true”表示是复印件，“false”表示是原件。仅在输入参数detect_copy为true时，返回该字段。           
+        /// 判断身份证图像是黑白复印件还是原件，“true”表示是复印件，“false”表示是原件。仅在输入参数detect_copy为true时，返回该字段。 
         /// </summary>
         [JsonProperty("detect_copy_result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectCopyResult { get; set; }
+
+        /// <summary>
+        /// 身份证头像位置信息的结果，仅在输入参数“return_portrait_location”为true时，返回该字段，当输入身份证背面时返回为空列表。 
+        /// </summary>
+        [JsonProperty("portrait_location", NullValueHandling = NullValueHandling.Ignore)]
+        public List<List<int?>> PortraitLocation { get; set; }
 
 
 
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("  detectReproduceResult: ").Append(DetectReproduceResult).Append("\n");
             sb.Append("  detectCopyResult: ").Append(DetectCopyResult).Append("\n");
+            sb.Append("  portraitLocation: ").Append(PortraitLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +208,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.DetectCopyResult == input.DetectCopyResult ||
                     (this.DetectCopyResult != null &&
                     this.DetectCopyResult.Equals(input.DetectCopyResult))
+                ) && 
+                (
+                    this.PortraitLocation == input.PortraitLocation ||
+                    this.PortraitLocation != null &&
+                    input.PortraitLocation != null &&
+                    this.PortraitLocation.SequenceEqual(input.PortraitLocation)
                 );
         }
 
@@ -238,6 +251,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.DetectReproduceResult.GetHashCode();
                 if (this.DetectCopyResult != null)
                     hashCode = hashCode * 59 + this.DetectCopyResult.GetHashCode();
+                if (this.PortraitLocation != null)
+                    hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
                 return hashCode;
             }
         }

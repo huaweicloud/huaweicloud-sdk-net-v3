@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 测试事件content,为json字符串
+        /// 测试事件content，为json字符串的base64编码
         /// </summary>
         [JsonProperty("content", NullValueHandling = NullValueHandling.Ignore)]
         public string Content { get; set; }

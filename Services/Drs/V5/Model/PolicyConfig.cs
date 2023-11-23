@@ -562,6 +562,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("increment_read_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string IncrementReadMode { get; set; }
 
+        /// <summary>
+        /// DML同步类型。
+        /// </summary>
+        [JsonProperty("dml_types", NullValueHandling = NullValueHandling.Ignore)]
+        public string DmlTypes { get; set; }
+
 
 
         /// <summary>
@@ -579,6 +585,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  supportDdlInfo: ").Append(SupportDdlInfo).Append("\n");
             sb.Append("  syncTypePolicy: ").Append(SyncTypePolicy).Append("\n");
             sb.Append("  incrementReadMode: ").Append(IncrementReadMode).Append("\n");
+            sb.Append("  dmlTypes: ").Append(DmlTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -639,6 +646,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.IncrementReadMode == input.IncrementReadMode ||
                     (this.IncrementReadMode != null &&
                     this.IncrementReadMode.Equals(input.IncrementReadMode))
+                ) && 
+                (
+                    this.DmlTypes == input.DmlTypes ||
+                    (this.DmlTypes != null &&
+                    this.DmlTypes.Equals(input.DmlTypes))
                 );
         }
 
@@ -666,6 +678,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.SyncTypePolicy.GetHashCode();
                 if (this.IncrementReadMode != null)
                     hashCode = hashCode * 59 + this.IncrementReadMode.GetHashCode();
+                if (this.DmlTypes != null)
+                    hashCode = hashCode * 59 + this.DmlTypes.GetHashCode();
                 return hashCode;
             }
         }

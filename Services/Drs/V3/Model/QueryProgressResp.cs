@@ -150,10 +150,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string Progress { get; set; }
 
         /// <summary>
-        /// 增量迁移时延
+        /// 增量迁移时延。单位：s
         /// </summary>
         [JsonProperty("incre_trans_delay", NullValueHandling = NullValueHandling.Ignore)]
         public string IncreTransDelay { get; set; }
+
+        /// <summary>
+        /// 增量迁移时延。单位：ms
+        /// </summary>
+        [JsonProperty("incre_trans_delay_millis", NullValueHandling = NullValueHandling.Ignore)]
+        public string IncreTransDelayMillis { get; set; }
 
         /// <summary>
         /// 迁移模式。 - FULL_TRANS: 全量 - INCR_TRANS: 增量 - FULL_INCR_TRANS: 全量+增量
@@ -208,6 +214,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  progress: ").Append(Progress).Append("\n");
             sb.Append("  increTransDelay: ").Append(IncreTransDelay).Append("\n");
+            sb.Append("  increTransDelayMillis: ").Append(IncreTransDelayMillis).Append("\n");
             sb.Append("  taskMode: ").Append(TaskMode).Append("\n");
             sb.Append("  transferStatus: ").Append(TransferStatus).Append("\n");
             sb.Append("  processTime: ").Append(ProcessTime).Append("\n");
@@ -250,6 +257,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.IncreTransDelay == input.IncreTransDelay ||
                     (this.IncreTransDelay != null &&
                     this.IncreTransDelay.Equals(input.IncreTransDelay))
+                ) && 
+                (
+                    this.IncreTransDelayMillis == input.IncreTransDelayMillis ||
+                    (this.IncreTransDelayMillis != null &&
+                    this.IncreTransDelayMillis.Equals(input.IncreTransDelayMillis))
                 ) && 
                 (
                     this.TaskMode == input.TaskMode ||
@@ -303,6 +315,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.Progress.GetHashCode();
                 if (this.IncreTransDelay != null)
                     hashCode = hashCode * 59 + this.IncreTransDelay.GetHashCode();
+                if (this.IncreTransDelayMillis != null)
+                    hashCode = hashCode * 59 + this.IncreTransDelayMillis.GetHashCode();
                 if (this.TaskMode != null)
                     hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
                 if (this.TransferStatus != null)

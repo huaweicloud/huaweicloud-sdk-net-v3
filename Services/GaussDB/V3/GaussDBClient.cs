@@ -1396,6 +1396,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询表级时间点恢复可选表
+        ///
+        /// 查询表级时间点恢复可选表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRestoreTablesResponse ShowRestoreTables(ShowRestoreTablesRequest showRestoreTablesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , showRestoreTablesRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restore/tables",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreTablesRequest);
+            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            return JsonUtils.DeSerialize<ShowRestoreTablesResponse>(response);
+        }
+        
+        /// <summary>
         /// 减少数据库代理节点的数量
         ///
         /// 缩容数据库代理节点的数量。

@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 私网NAT网关实例的描述。长度范围小于等于255个字符，不能包含&lt;&gt;
+        /// 私网NAT网关实例的描述。长度范围小于等于255个字符，不能包含“&lt;”和“&gt;”。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

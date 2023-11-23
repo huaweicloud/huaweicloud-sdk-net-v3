@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string FuncUrn { get; set; }
 
         /// <summary>
-        /// 收藏状态
+        /// 置顶状态
         /// </summary>
         [SDKProperty("state", IsPath = true)]
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]

@@ -515,10 +515,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("codec", NullValueHandling = NullValueHandling.Ignore)]
         public CodecEnum Codec { get; set; }
         /// <summary>
-        /// 视频时长。  若视频的原时长为非整数，则该字段值为原时长的向上取整。
+        /// 视频时长。  若视频的原时长为非整数，则该字段值为原时长的向下取整。 若视频的原时长小于1，则该字段值为1。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public long? Duration { get; set; }
+
+        /// <summary>
+        /// 视频时长，单位毫秒。
+        /// </summary>
+        [JsonProperty("duration_ms", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DurationMs { get; set; }
 
         /// <summary>
         /// 视频文件大小。  单位：字节。
@@ -574,6 +580,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  packType: ").Append(PackType).Append("\n");
             sb.Append("  codec: ").Append(Codec).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  durationMs: ").Append(DurationMs).Append("\n");
             sb.Append("  videoSize: ").Append(VideoSize).Append("\n");
             sb.Append("  width: ").Append(Width).Append("\n");
             sb.Append("  hight: ").Append(Hight).Append("\n");
@@ -616,6 +623,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
+                ) && 
+                (
+                    this.DurationMs == input.DurationMs ||
+                    (this.DurationMs != null &&
+                    this.DurationMs.Equals(input.DurationMs))
                 ) && 
                 (
                     this.VideoSize == input.VideoSize ||
@@ -668,6 +680,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     hashCode = hashCode * 59 + this.Codec.GetHashCode();
                 if (this.Duration != null)
                     hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.DurationMs != null)
+                    hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
                 if (this.VideoSize != null)
                     hashCode = hashCode * 59 + this.VideoSize.GetHashCode();
                 if (this.Width != null)

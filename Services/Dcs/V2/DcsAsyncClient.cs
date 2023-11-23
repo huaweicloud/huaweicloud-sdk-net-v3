@@ -1073,6 +1073,23 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 登出webCli
+        ///
+        /// 登出webCli
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<LogoffWebCliResponse> LogoffWebCliAsync(LogoffWebCliRequest logoffWebCliRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id" , logoffWebCliRequest.InstanceId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/webcli/logout",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", logoffWebCliRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<LogoffWebCliResponse>(response);
+        }
+        
+        /// <summary>
         /// 重置ACL账号密码
         ///
         /// 重置ACL账号密码。

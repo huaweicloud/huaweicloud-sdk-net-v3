@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string NetworkId { get; set; }
 
         /// <summary>
-        /// SNAT规则的描述，长度范围小于等于255个字符，不能包含&lt;&gt;
+        /// SNAT规则的描述，长度范围小于等于255个字符，不能包含“&lt;”和“&gt;”。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

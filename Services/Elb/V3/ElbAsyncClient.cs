@@ -16,9 +16,26 @@ namespace HuaweiCloud.SDK.Elb.V3
 
         
         /// <summary>
+        /// 新增负载均衡器可用区
+        ///
+        /// 给负载均衡器新增可用区。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchAddAvailableZonesResponse> BatchAddAvailableZonesAsync(BatchAddAvailableZonesRequest batchAddAvailableZonesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id" , batchAddAvailableZonesRequest.LoadbalancerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-add",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddAvailableZonesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<BatchAddAvailableZonesResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量创建后端服务器
         ///
-        /// 在指定pool下批量创建后端服务器。一次最多添加200个。
+        /// 在指定pool下批量创建后端服务器。一次最多创建200个。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -35,7 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 批量删除后端服务器
         ///
-        /// 在指定pool下批量删除后端服务器。一次最多删除200个。
+        /// 在指定pool下批量删除后端服务器。一次最多添加200个。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -50,9 +67,27 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 移除负载均衡器可用区
+        ///
+        /// 移除负载均衡器的可用区。
+        /// &gt; 移除可用区可能导致已有链接断开，请谨慎操作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchRemoveAvailableZonesResponse> BatchRemoveAvailableZonesAsync(BatchRemoveAvailableZonesRequest batchRemoveAvailableZonesRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id" , batchRemoveAvailableZonesRequest.LoadbalancerId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-remove",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveAvailableZonesRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return XmlUtils.DeSerialize<BatchRemoveAvailableZonesResponse>(response);
+        }
+        
+        /// <summary>
         /// 批量更新后端服务器
         ///
-        /// 在指定pool下批量更新后端服务器。一次最多更新200个。
+        /// 在指定pool下批量更新后端服务器。一次最多添加200个。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -194,6 +229,11 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 5. 若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
         /// 6. 不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。
         /// 
+        /// [&gt; 关于计费：
+        /// - 若billing_info非空时，包周期。
+        /// - 若billing_info为空，autoscaling.enable&#x3D;true时，弹性计费。
+        /// - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;lcu，按量计费。
+        /// - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;flavor，固定规格按需计费。](tag:hws)
         /// [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -210,7 +250,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 创建云日志
         ///
-        /// 创建云日志。
+        /// 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -221,6 +261,22 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogtankRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateLogtankResponse>(response);
+        }
+        
+        /// <summary>
+        /// 创建主备后端服务器组
+        ///
+        /// 创建主备后端服务器组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateMasterSlavePoolResponse> CreateMasterSlavePoolAsync(CreateMasterSlavePoolRequest createMasterSlavePoolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMasterSlavePoolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<CreateMasterSlavePoolResponse>(response);
         }
         
         /// <summary>
@@ -260,6 +316,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 创建自定义安全策略
         ///
         /// 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+        /// 
+        /// [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -412,7 +470,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 删除云日志
         ///
-        /// 删除云日志。
+        /// 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -424,6 +482,23 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLogtankResponse>(response);
+        }
+        
+        /// <summary>
+        /// 删除主备后端服务器组
+        ///
+        /// 删除主备后端服务器组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteMasterSlavePoolResponse> DeleteMasterSlavePoolAsync(DeleteMasterSlavePoolRequest deleteMasterSlavePoolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id" , deleteMasterSlavePoolRequest.PoolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMasterSlavePoolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteMasterSlavePoolResponse>(response);
         }
         
         /// <summary>
@@ -464,7 +539,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 删除自定义安全策略
         ///
-        /// 删除自定义安全策略。
+        /// 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -634,7 +709,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询云日志列表
         ///
-        /// 查询云日志列表。
+        /// 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -645,6 +720,22 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogtanksRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListLogtanksResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询主备后端服务器组列表
+        ///
+        /// 主备后端服务器组列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListMasterSlavePoolsResponse> ListMasterSlavePoolsAsync(ListMasterSlavePoolsRequest listMasterSlavePoolsRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMasterSlavePoolsRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListMasterSlavePoolsResponse>(response);
         }
         
         /// <summary>
@@ -699,7 +790,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询自定义安全策略列表
         ///
-        /// 查询自定义安全策略列表。
+        /// 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -873,7 +964,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询云日志详情
         ///
-        /// 云日志详情。
+        /// 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -885,6 +976,23 @@ namespace HuaweiCloud.SDK.Elb.V3
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLogtankResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询主备后端服务器组详情
+        ///
+        /// 主备后端服务器组详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMasterSlavePoolResponse> ShowMasterSlavePoolAsync(ShowMasterSlavePoolRequest showMasterSlavePoolRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id" , showMasterSlavePoolRequest.PoolId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMasterSlavePoolRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ShowMasterSlavePoolResponse>(response);
         }
         
         /// <summary>
@@ -941,7 +1049,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询自定义安全策略详情
         ///
-        /// 查询自定义安全策略详情。
+        /// 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1061,7 +1169,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 更新云日志
         ///
-        /// 更新云日志。
+        /// 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1113,7 +1221,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 更新自定义安全策略
         ///
-        /// 更新自定义安全策略。
+        /// 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1144,9 +1252,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 批量删除IP地址组的IP地址
+        /// 删除IP地址组的IP列表项
         ///
-        /// 批量删除IP地址组的IP地址。
+        /// 批量删除IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1198,7 +1306,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
         /// 
-        /// [不支持IPv6。](tag:dt,dt_test)
+        /// [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1214,7 +1322,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 删除IP地址组
         ///
-        /// 删除IP地址组。
+        /// 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1231,7 +1339,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询IP地址组列表
         ///
-        /// 查询IP地址组列表。
+        /// 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1247,7 +1355,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 查询IP地址组详情
         ///
-        /// 获取IP地址组详情。
+        /// 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1269,7 +1377,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// 
         /// 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
         /// 
-        /// [不支持IPv6。](tag:dt,dt_test)
+        /// [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1284,9 +1392,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 更新IP地址组的IP列表
+        /// 更新IP地址组的IP列表项
         ///
-        /// 更新IP地址组的IP列表。
+        /// 添加新的IP地址到IP地址组的IP列表信息，或更新已有IP地址的描述。[荷兰region不支持该API](tag:dt,dt_test)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

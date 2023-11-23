@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("task_version", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskVersion { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("connection_management", NullValueHandling = NullValueHandling.Ignore)]
+        public ConnectionManagement ConnectionManagement { get; set; }
+
 
 
         /// <summary>
@@ -207,6 +213,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  supportImportFileResp: ").Append(SupportImportFileResp).Append("\n");
             sb.Append("  instanceFeatures: ").Append(InstanceFeatures).Append("\n");
             sb.Append("  taskVersion: ").Append(TaskVersion).Append("\n");
+            sb.Append("  connectionManagement: ").Append(ConnectionManagement).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -363,6 +370,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.TaskVersion == input.TaskVersion ||
                     (this.TaskVersion != null &&
                     this.TaskVersion.Equals(input.TaskVersion))
+                ) && 
+                (
+                    this.ConnectionManagement == input.ConnectionManagement ||
+                    (this.ConnectionManagement != null &&
+                    this.ConnectionManagement.Equals(input.ConnectionManagement))
                 );
         }
 
@@ -426,6 +438,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.InstanceFeatures.GetHashCode();
                 if (this.TaskVersion != null)
                     hashCode = hashCode * 59 + this.TaskVersion.GetHashCode();
+                if (this.ConnectionManagement != null)
+                    hashCode = hashCode * 59 + this.ConnectionManagement.GetHashCode();
                 return hashCode;
             }
         }

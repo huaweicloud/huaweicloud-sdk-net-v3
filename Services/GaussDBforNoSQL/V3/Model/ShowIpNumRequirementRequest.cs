@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public int? NodeNum { get; set; }
 
         /// <summary>
-        /// 数据库引擎名称。没有传入实例ID的时候该字段为必传。 - 取值为“cassandra”，表示GaussDB(for Cassandra)数据库引擎。 - 取值为“mongodb”，表示GaussDB(for Mongo)数据库引擎。 - 取值为“influxdb”，表示GaussDB(for Influx)数据库引擎。 - 取值为“redis”，表示GaussDB(for Redis)数据库引擎。
+        /// 数据库引擎名称。没有传入实例ID的时候该字段为必传。 - 取值为“cassandra”，表示GeminiDB Cassandra数据库引擎。 - 取值为“mongodb”，表示GeminiDB Mongo数据库引擎。 - 取值为“influxdb”，表示GeminiDB Influx数据库引擎。 - 取值为“redis”，表示GeminiDB Redis数据库引擎。
         /// </summary>
         [SDKProperty("engine_name", IsQuery = true)]
         [JsonProperty("engine_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineName { get; set; }
 
         /// <summary>
-        /// 实例类型。没有传入实例ID的时候该字段为必传。 - 取值为“Cluster”，表示GaussDB(for Cassandra)、GaussDB(for Influx)、GaussDB(for Redis)集群实例类型。 - 取值为“ReplicaSet”，表示GaussDB(for Mongo)副本集实例类型。
+        /// 实例类型。没有传入实例ID的时候该字段为必传。 - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。 - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
         /// </summary>
         [SDKProperty("instance_mode", IsQuery = true)]
         [JsonProperty("instance_mode", NullValueHandling = NullValueHandling.Ignore)]

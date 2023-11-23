@@ -238,6 +238,22 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 删除驱动文件
+        ///
+        /// 删除驱动文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteJdbcDriverResponse> DeleteJdbcDriverAsync(DeleteJdbcDriverRequest deleteJdbcDriverRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jdbc-drivers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteJdbcDriverRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerialize<DeleteJdbcDriverResponse>(response);
+        }
+        
+        /// <summary>
         /// 删除指定ID任务
         ///
         /// 删除租户指定ID任务。
@@ -386,6 +402,22 @@ namespace HuaweiCloud.SDK.Drs.V5
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbObjectsRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDbObjectsResponse>(response);
+        }
+        
+        /// <summary>
+        /// 查询驱动文件列表
+        ///
+        /// 查询驱动文件列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListJdbcDriversResponse> ListJdbcDriversAsync(ListJdbcDriversRequest listJdbcDriversRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jdbc-drivers",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJdbcDriversRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerialize<ListJdbcDriversResponse>(response);
         }
         
         /// <summary>
@@ -853,6 +885,23 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 同步驱动文件
+        ///
+        /// 同步驱动文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SyncJdbcDriverResponse> SyncJdbcDriverAsync(SyncJdbcDriverRequest syncJdbcDriverRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id" , syncJdbcDriverRequest.JobId.ToString());
+            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/update-jdbc-driver",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncJdbcDriverRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<SyncJdbcDriverResponse>(response);
+        }
+        
+        /// <summary>
         /// 更新指定ID批量异步任务详情
         ///
         /// 更新租户指定ID批量异步任务详情。
@@ -937,6 +986,22 @@ namespace HuaweiCloud.SDK.Drs.V5
             SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadDbObjectTemplateRequest);
             HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UploadDbObjectTemplateResponse>(response);
+        }
+        
+        /// <summary>
+        /// 上传驱动文件
+        ///
+        /// 上传驱动文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UploadJdbcDriverResponse> UploadJdbcDriverAsync(UploadJdbcDriverRequest uploadJdbcDriverRequest)
+        {
+            Dictionary<string, string> urlParam = new Dictionary<string, string>();
+            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jdbc-driver",urlParam);
+            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadJdbcDriverRequest);
+            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UploadJdbcDriverResponse>(response);
         }
         
         /// <summary>

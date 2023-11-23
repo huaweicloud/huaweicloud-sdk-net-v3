@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("shard_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ShardName { get; set; }
 
+        /// <summary>
+        /// 慢日志数据库id
+        /// </summary>
+        [JsonProperty("database_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DatabaseId { get; set; }
+
+        /// <summary>
+        /// 慢日志名称
+        /// </summary>
+        [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
+        public string Username { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  shardName: ").Append(ShardName).Append("\n");
+            sb.Append("  databaseId: ").Append(DatabaseId).Append("\n");
+            sb.Append("  username: ").Append(Username).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +119,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.ShardName == input.ShardName ||
                     (this.ShardName != null &&
                     this.ShardName.Equals(input.ShardName))
+                ) && 
+                (
+                    this.DatabaseId == input.DatabaseId ||
+                    (this.DatabaseId != null &&
+                    this.DatabaseId.Equals(input.DatabaseId))
+                ) && 
+                (
+                    this.Username == input.Username ||
+                    (this.Username != null &&
+                    this.Username.Equals(input.Username))
                 );
         }
 
@@ -126,6 +150,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.ShardName != null)
                     hashCode = hashCode * 59 + this.ShardName.GetHashCode();
+                if (this.DatabaseId != null)
+                    hashCode = hashCode * 59 + this.DatabaseId.GetHashCode();
+                if (this.Username != null)
+                    hashCode = hashCode * 59 + this.Username.GetHashCode();
                 return hashCode;
             }
         }
